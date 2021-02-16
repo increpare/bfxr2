@@ -16,8 +16,6 @@
 
 .slider.slider.slider-horizontal{
     
-    outline: 3px solid #663931;
-    outline-offset: -3px;
     margin-left:1.5px;
     margin-right:1.5px;
 }
@@ -25,6 +23,9 @@
     background-image: none;
     background-color: transparent;
     border-radius: 0px;
+    /* outline: 3px solid red; */
+    outline-offset: -3px;
+    box-shadow: none;
 }
 
 .slider-handle.round {
@@ -44,7 +45,7 @@
     border-left: 3px solid black;
     border-top: 3px solid black;
     border-bottom: 3px solid black;
-    margin-left: 0px;
+    margin-left: -4.5px;
 }
 
 .slider.slider-horizontal  .max-slider-handle {
@@ -53,7 +54,7 @@
     border-right: 3px solid black;
     border-top: 3px solid black;
     border-bottom: 3px solid black;
-    margin-left: -6px;
+    margin-left: -1.5px;
 }
 
 .slider.slider-horizontal .slider-track {
@@ -76,10 +77,10 @@
     height: 6px;
 }
 .slider.slider-horizontal .slider-tick.round:first-child{
-    margin-left: 0px;
+    /* margin-left: 0px; */
 }
 .slider.slider-horizontal .slider-tick.round:last-child{
-    margin-left: -3px;
+    /* margin-left: -3px; */
 }
 
 .slider.slider-horizontal .slider-tick.round:nth-child(6){
@@ -107,18 +108,35 @@
     box-shadow: none;
 }
 
-#slider12c .slider-selection {
+.slider.slider-horizontal .slider-selection {
 	background: #964e41;
     border-radius: 0;
     display:block;
+    top:5px;
+    height:10px;
+    outline: 2.2px solid #964e41;
+}
+
+.slider.slider-horizontal  .slider-rangeHighlight.category1 {
+    background: #dbaf85;
+    border: 1.5px solid #dbaf85;
+    transform: translate(-1.5px,0);
+    outline:0;
     top:3px;
     height:14px;
 }
-
-#slider12c .slider-rangeHighlight.category1 {
-    background: #dbaf85;
-    border: 1.5px solid #dbaf85;
+.slider-border {
+    position: relative;
+    float: left;
+    width:219px;
+    height:100%;
+    /* background-color: blue; */
+    left:-4.5px;
+    right: 134.5px;    
+    
+    border: 3px solid #663931;
 }
+
 
   </style>
 
@@ -126,6 +144,36 @@
       body {
           background-color: #8f563b;
       }
+
+      .propertylist {
+          width:200px;
+      }
+
+      td{
+          padding:6px !important;
+          padding-top: 1px !important;
+          padding-bottom: 10px !important;
+          margin:0 !important;
+          vertical-align: top;
+          color:black;
+      }
+
+
+      td, tr, thead, table{
+          
+        border-color: #7d483f !important;
+        border-width: 3px !important;
+      }
+
+      .bs-tooltip-top .arrow::before {
+        border-top-color:#4e2821;
+      }
+
+      
+        .tooltip-inner {
+        background-color: #4e2821;
+        color:#dbaf85;
+        }
   </style>
 </head>
 
@@ -137,22 +185,36 @@
     <br><br><br><br><br>
     <div class="container">
         
-        <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+        <!-- <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/> -->
 <br>
 
-        <input id="ex12c" type="text"/><br/>
+<table class="table table-bordered propertylist">
+    <tbody>
+      <tr>
+        <td>Volume</td>
+        <td><input id="ex12c" type="text"/><br/></td>
+      </tr>
+      <tr>
+        <td>Frequency</td>
+        <td><input id="ex12d" type="text"/><br/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
+
+        
     </div>
 
     <br><br><br><br><br>
 
     <script>
         // Without JQuery
-        var slider = new Slider('#ex1', {
-            formatter: function(value) {
-                return 'Current value: ' + value;
-            }
-        });
+        // var slider = new Slider('#ex1', {
+        //     formatter: function(value) {
+        //         return 'Current value: ' + value;
+        //     }
+        // });
 
         var sliderC = new Slider("#ex12c", { 
             id: "slider12c",
@@ -162,18 +224,33 @@
             value: [500, 700],
             rangeHighlights: [
                 {
-                    "start": 100, 
-                    "end": 100, 
-                    "class": "category1" 
-                },
-                {
-                    "start": 1100, 
-                    "end": 1100, 
+                    "start": 530, 
+                    "end": 530, 
                     "class": "category1" 
                 }
+         
             ],
             ticks: [100,200, 300,400, 500, 600, 700, 800, 900, 1000,1100],
          });
+
+         
+        var sliderC = new Slider("#ex12d", { 
+            id: "slider12d",
+            min: 0, 
+            max: 10, 
+            range: true, 
+            value: [2, 8],
+            rangeHighlights: [
+                {
+                    "start": 4, 
+                    "end": 4, 
+                    "class": "category1" 
+                }
+         
+            ],
+            ticks: [0,1, 2,3, 4, 5, 6, 7, 8, 9,10],
+         });
+
 
     </script>
 </body>

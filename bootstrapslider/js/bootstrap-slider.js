@@ -451,6 +451,9 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 				this.sliderElem.className = "slider";
 
 				/* Create slider track elements */
+				var sliderborder = document.createElement("div");
+				sliderborder.className = "slider-border";
+				
 				var sliderTrack = document.createElement("div");
 				sliderTrack.className = "slider-track";
 
@@ -576,6 +579,7 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 				createAndAppendTooltipSubElements(sliderTooltipMax);
 
 				/* Append components to sliderElem */
+				this.sliderElem.appendChild(sliderborder);
 				this.sliderElem.appendChild(sliderTrack);
 				this.sliderElem.appendChild(sliderTooltip);
 				this.sliderElem.appendChild(sliderTooltipMin);
