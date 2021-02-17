@@ -13,8 +13,78 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
   <style>
-:root {
-  --sliderheight: 15px;
+    :root {
+      --sliderheight: 15px;
+      --sliderwidth: 270px;
+      --checkboxbuttonwidth: calc( ( var(--sliderwidth) + 4px) / 6);
+      --lockcellwidth: 40px;
+      --splitcellwidth: 40px;
+      --expandcellwidth: 40px;
+      --fieldtextwidth: 100px;
+      --tabheight: 30px;
+      --tab-border-radius:12px;
+
+      scrollbar-color: #663931 #8f563b !important;
+      scrollbar-width: thin !important;
+}
+
+.btn-group:first-child{
+    padding-top: 4px;
+}
+
+.btn-group:last-child{
+    padding-bottom: 2px;
+}
+.buttongroupcheck {
+    width: var(--checkboxbuttonwidth);
+    height: var(--checkboxbuttonwidth);
+}
+
+.btn-group > .btn {
+            padding:2px;
+        }
+
+
+.btn-group > .btn:not(:first-child), .btn-group > .btn-group:not(:first-child) {
+    margin-left: 0px;
+}
+.btn-outline-primary {
+    border:none;
+    outline: 3px solid black;
+    outline-offset: -1.5px;
+}
+
+.table-bordered > :not(caption) > * {
+    border-width: 3px 0;
+}
+
+.btn-check:checked + .btn-outline-primary, .btn-check:active + .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show {
+    background-color: #964e41;
+    /* outline-color: black; */
+}
+
+.btn-check:checked + .btn-outline-primary:focus, .btn-check:active + .btn-outline-primary:focus, .btn-outline-primary:active:focus, .btn-outline-primary.active:focus, .btn-outline-primary.dropdown-toggle.show:focus{
+    box-shadow: none;
+    background-color: #c28a50;
+    outline: 3px solid black;
+
+}
+.btn-check:focus + .btn-outline-primary, .btn-outline-primary:focus{
+    box-shadow: none;
+    background-color: #c28a50;
+    outline: 3px solid black;
+
+}
+
+.btn-outline-primary:hover {
+    background-color: inherit;
+}
+
+.icon {
+    width:100%;
+    height:100%;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 }
 
 .slider.slider.slider-horizontal{
@@ -22,7 +92,7 @@
     margin-left:1.5px;
     margin-right:1.5px;
     position:relative;
-    top:-5px;
+    top:-4px;
 }
 .slider-track {
     background-image: none;
@@ -45,7 +115,7 @@
 
 
 .slider.slider-horizontal {
-  width: 210px;
+  width: var(--sliderwidth);
   height: var(--sliderheight);
 }
 
@@ -124,6 +194,27 @@
     outline: 2.2px solid #964e41;
 }
 
+
+.slider.slider-horizontal.singleselect .slider-selection {
+	background: transparent;
+    border-radius: 0;
+    display:block;
+    top:5px;
+    height:calc(var(--sliderheight) - 10px);
+    outline: 2.2px solid transparent;
+}
+
+
+.slider.slider-horizontal.singleselect  .min-slider-handle {
+    background-image: none;
+    background-color: #dbaf85;
+    border:none;
+    margin-left: -1.5px;
+    top:3px;
+    width:3px;
+    height:calc(var(--sliderheight) - 6px );
+}
+
 .slider.slider-horizontal .slider-track {
   height: calc(var(--sliderheight));
 }
@@ -139,25 +230,121 @@
 .slider-border {
     position: relative;
     float: left;
-    width:219px;
+    width:calc(var(--sliderwidth)  + 9px);
     height:100%;
     /* background-color: blue; */
     left:-4.5px;
-    right: 134.5px;    
     
     border: 3px solid #663931;
 }
 
+.mode-tabs {
+    width:calc( var(--sliderwidth) + var(--lockcellwidth) + var(--splitcellwidth) + var(--fieldtextwidth) + var(--expandcellwidth));
+    border:none;
+}
 
-  </style>
+.mode-tabs > .nav-item {
+    width:50%;
+}
 
-  <style>
+.mode-tabs > .nav-item >button{
+    width:100%;
+    height:var(--tabheight);
+    padding-top: 0;
+} 
+
+.nav-link:focus:not(:focus-visible) {
+  /* Remove the focus indicator on mouse-focus for browsers
+     that do support :focus-visible */
+  background: transparent;
+}
+
+.mode-tabs > .nav-item > .nav-link {
+    background-color: transparent;
+    color:#7d483f;
+    font-weight: 500;
+    border-radius: 0px;
+    border: 3px solid #7d483f;
+    border-bottom: 0;
+    border-top-left-radius: var(--tab-border-radius);
+    border-top-right-radius: var(--tab-border-radius);
+}
+
+.mode-tabs > .nav-item > .nav-link.active {
+    background-color: transparent;
+    color:black;
+    font-weight: 500;
+    border-radius: 0px;
+    border: 3px solid #663931;
+    border-bottom: 0;
+    border-top-left-radius: var(--tab-border-radius);
+    border-top-right-radius: var(--tab-border-radius);
+}
+.synth-panel {
+    outline: 3px solid #663931;
+    outline-offset: -3px;
+    height:250px;
+    width:calc( var(--sliderwidth) + var(--lockcellwidth) + var(--splitcellwidth) + var(--fieldtextwidth) + var(--expandcellwidth));
+    overflow-y:scroll;
+    overflow-x:hidden !important;
+    ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    }
+    ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+  border: 3px solid #663931;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #663931;
+    border: 4px solid transparent;
+    border-radius: 0px;
+    background-clip: content-box;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #663931;
+    border: 4px solid transparent;
+    border-radius: 0px;
+    background-clip: content-box;
+}
+
       body {
           background-color: #8f563b;
       }
 
-      .propertylist {
-          width:200px;
+      .fieldtext {
+          width: var(--fieldtextwidth);
+      }
+
+      .slidercell {
+        width: calc( var(--sliderwidth) + 20px );
+      }
+      .lockcell {
+        width:var(--lockcellwidth);
+      }
+
+      .splitcell {
+        width:var(--splitcellwidth);
+      }
+      .expandcell {
+        width:var(--expandcellwidth);
       }
 
       td{
@@ -180,16 +367,76 @@
           text-align: right;
           font-weight: 500;
       }
+
+      .timevaryrow > .fieldtext {
+          font-weight: 300;
+          border-top: 0;
+      }
+      
+          
       .tableborder.slidercell{
           border-left:0;
+          border-right:0;
       }
 
       .tableborder.lockcell{
           border-right:0;
           vertical-align: center;
           text-align: center;
-
       }
+      .tableborder.splitcell{
+          border-right:0;
+          border-left: 0;
+          vertical-align: center;
+          text-align: center;
+      }
+      .tableborder.expandcell{
+          border-right:0;
+          border-left: 0;
+          vertical-align: center;
+          text-align: center;
+      }
+
+      .slidercell{
+          border-right: none;
+      }
+
+      .table{
+          margin-bottom: 0;
+      }
+      .tableborder tbody {
+          border: none;
+      }
+
+		.tableborder tr:first-child td{
+			border-top: none;
+		}
+
+		.tableborder tr:last-child td{
+			border-bottom: none;
+		}
+
+		.tableborder tr td:first-child{
+			border-left: none;
+		}
+
+		.tableborder tr td:last-child{
+			border-right: none;
+		}
+
+        .tableborder.timevaryrowheading {
+            border-bottom: 3px solid #66393150; */
+        }
+        .tableborder.timevaryrow {
+            border-top:0;
+            border-bottom: 0;
+            border-bottom: 3px solid #66393150; */
+        }
+        .tableborder.timevaryrow td {
+            border-top:0;
+            /* 10px solid #66393150; */
+        }
+
   </style>
 </head>
 
@@ -205,30 +452,282 @@
         <!-- <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/> -->
 <br>
 
-<table class="table table-bordered propertylist tableborder">
-    <tbody class="tableborder">
-      <tr  class="tableborder">
-          <td class="tableborder lockcell">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
-                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
-              </svg>
-          </td>
-        <td class="tableborder fieldtext">Volume</td>
-        <td class="tableborder slidercell"><input id="ex12c" type="text"/><br/></td>
-      </tr>
-      <tr class="tableborder">
-        <td class="tableborder lockcell">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16">
-                <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z"/>
-              </svg>
-        </td>
-        <td class="tableborder fieldtext">Frequency</td>
-        <td class="tableborder slidercell"><input id="ex12d" type="text"/><br/>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<ul class="nav nav-tabs mode-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="false">Synth</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Designer</button>
+    </li>
+  </ul>
+<div class="overflow-auto synth-panel">
+    <table class="table table-bordered propertylist">
+        <tbody >
+            <tr  class="tableborder">
+                <td class="tableborder lockcell">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                    </svg>
+                </td>
+                <td class="tableborder splitcell">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-distribute-horizontal" viewBox="0 0 16 16">
+                        <!-- <path fill-rule="evenodd" d="M14.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5zm-13 0a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5z"/> -->
+                        <path d="M6 13a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v10z"/>
+                      </svg>
+                </td>
+                <td class="tableborder fieldtext">Volume</td>
+                <td class="tableborder slidercell">
+                    <input id="ex12c" type="text"/>
+                </td>
+                <td class="tableborder expandcell">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05z"/>
+                    </svg>
+                </td>
 
+            </tr>
+            
+        <tr class="tableborder">
+            <td class="tableborder lockcell">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16">
+                    <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z"/>
+                </svg>
+            </td>
+            <td class="tableborder splitcell">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-distribute-horizontal" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M14.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5zm-13 0a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5z"/>
+                    <path d="M6 13a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v10z"/>
+                  </svg>
+            </td>
+            <td class="tableborder fieldtext">Waveform</td>
+            <td class="tableborder slidercell">
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                    <label class="btn btn-outline-primary buttongroupcheck" for="btncheck1">
+                        <img class="icon" src="images/icon_waveform_triangle.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                    <label class="btn btn-outline-primary buttongroupcheck" for="btncheck2">
+                        <img class="icon" src="images/icon_waveform_sine.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                    <label class="btn btn-outline-primary buttongroupcheck" for="btncheck3">
+                        <img class="icon" src="images/icon_waveform_saw.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                    <label class="btn btn-outline-primary buttongroupcheck" for="btncheck4">
+                        <img class="icon" src="images/icon_waveform_square.png">
+                    </label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+                    <label class="btn btn-outline-primary  buttongroupcheck" for="btncheck5">
+                        <img class="icon" src="images/icon_waveform_breaker.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
+                    <label class="btn btn-outline-primary  buttongroupcheck" for="btncheck6">
+                        <img class="icon" src="images/icon_waveform_whistle.png">
+                    </label>
+                
+                    
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+
+                    <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
+                    <label class="btn btn-outline-primary  buttongroupcheck" for="btncheck7">
+                        <img class="icon" src="images/icon_waveform_tan.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off">
+                    <label class="btn btn-outline-primary  buttongroupcheck" for="btncheck8">
+                        <img class="icon" src="images/icon_waveform_holo.png">
+                    </label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
+                    <label class="btn btn-outline-primary  buttongroupcheck" for="btncheck9">
+                        <img class="icon" src="images/icon_waveform_whitenoise.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheck10" autocomplete="off">
+                    <label class="btn btn-outline-primary  buttongroupcheck" for="btncheck10">
+                        <img class="icon" src="images/icon_waveform_pinknoise.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off">
+                    <label class="btn btn-outline-primary  buttongroupcheck" for="btncheck11">
+                        <img class="icon" src="images/icon_waveform_brownnoise.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off">
+                    <label class="btn btn-outline-primary  buttongroupcheck" for="btncheck12">
+                        <img class="icon" src="images/icon_waveform_bitnoise.png">
+                    </label>
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="btncheck13" autocomplete="off">
+                    <label class="btn btn-outline-primary  buttongroupcheck" for="btncheck13">
+                        <img class="icon" src="images/icon_waveform_buzz.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheck14" autocomplete="off">
+                    <label class="btn btn-outline-primary  buttongroupcheck" for="btncheck14">
+                        <img class="icon" src="images/icon_waveform_gravel.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheck15" autocomplete="off">
+                    <label class="btn btn-outline-primary  buttongroupcheck" for="btncheck15">
+                        <img class="icon" src="images/icon_waveform_sand.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheck16" autocomplete="off">
+                    <label class="btn btn-outline-primary  buttongroupcheck" for="btncheck16">
+                        <img class="icon" src="images/icon_waveform_snow.png">
+                    </label>
+                </div>
+            </td>
+            <td class="tableborder expandcell">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05z"/>
+                </svg>
+            </td>
+        </tr>
+        <tr class="tableborder timevaryrowheading">
+            <td class="tableborder lockcell"></td>
+            <td class="tableborder splitcell"></td>
+            <td class="tableborder fieldtext">Pitch</td>
+            <td class="tableborder slidercell"></td>
+            <td class="tableborder expandcell">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
+                </svg>
+            </td>
+        </tr>
+        <tr class="tableborder timevaryrow">
+            <td class="tableborder lockcell">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16">
+                    <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z"/>
+                </svg>
+            </td>
+            <td class="tableborder splitcell">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-distribute-horizontal" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M14.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5zm-13 0a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5z"/>
+                    <path d="M6 13a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v10z"/>
+                  </svg>
+            </td>
+            <td class="tableborder fieldtext">from</td>
+            <td class="tableborder slidercell">
+                <input id="ex12d" type="text"/>
+            </td>
+            <td class="tableborder expandcell">
+
+            </td>
+        </tr>
+        <tr class="tableborder  timevaryrow">
+            <td class="tableborder lockcell">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16">
+                    <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z"/>
+                </svg>
+            </td>
+            <td class="tableborder splitcell">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-distribute-horizontal" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M14.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5zm-13 0a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5z"/>
+                    <path d="M6 13a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v10z"/>
+                  </svg>
+            </td>
+            <td class="tableborder fieldtext">to</td>
+            <td class="tableborder slidercell">
+                <input id="ex12e" type="text"/>
+            </td>
+            <td class="tableborder expandcell">
+
+            </td>
+        </tr>
+
+
+        <tr class="tableborder timevaryrow">
+            <td class="tableborder lockcell">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16">
+                    <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z"/>
+                </svg>
+            </td>
+            <td class="tableborder splitcell">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-distribute-horizontal" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M14.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5zm-13 0a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5z"/>
+                    <path d="M6 13a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v10z"/>
+                  </svg>
+            </td>
+            <td class="tableborder fieldtext">curve</td>
+            <td class="tableborder slidercell">
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="btncheckT1" autocomplete="off">
+                    <label class="btn btn-outline-primary buttongroupcheck" for="btncheckT1">
+                        <img class="icon" src="images/icon_trajectory_linear.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheckT2" autocomplete="off">
+                    <label class="btn btn-outline-primary buttongroupcheck" for="btncheckT2">
+                        <img class="icon" src="images/icon_trajectory_easein.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheckT3" autocomplete="off">
+                    <label class="btn btn-outline-primary buttongroupcheck" for="btncheckT3">
+                        <img class="icon" src="images/icon_trajectory_easeout.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheckT5" autocomplete="off">
+                    <label class="btn btn-outline-primary  buttongroupcheck" for="btncheckT5">
+                        <img class="icon" src="images/icon_trajectory_bounce_linear.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheckT6" autocomplete="off">
+                    <label class="btn btn-outline-primary  buttongroupcheck" for="btncheckT6">
+                        <img class="icon" src="images/icon_trajectory_bounce_smooth.png">
+                    </label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheckT7" autocomplete="off">
+                    <label class="btn btn-outline-primary  buttongroupcheck" for="btncheckT7">
+                        <img class="icon" src="images/icon_trajectory_bounce_transition_sudden.png">
+                    </label>
+                
+                </div>
+                
+            </td>
+            <td class="tableborder expandcell">
+
+            </td>
+        </tr>
+
+
+        <tr  class="tableborder timevaryrow">
+            <td class="tableborder lockcell">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                </svg>
+            </td>
+            <td class="tableborder splitcell">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-distribute-horizontal" viewBox="0 0 16 16">
+                    <!-- <path fill-rule="evenodd" d="M14.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5zm-13 0a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5z"/> -->
+                    <path d="M6 13a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v10z"/>
+                  </svg>
+            </td>
+            <td class="tableborder fieldtext">bias</td>
+            <td class="tableborder slidercell">
+                <input id="ex12f" type="text"/>
+            </td>
+            <td class="tableborder expandcell">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05z"/>
+                </svg>
+            </td>
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>
 
         
     </div>
@@ -247,21 +746,14 @@
             id: "slider12c",
             min: 100, 
             max: 1100, 
-            range: true, 
-            value: [500, 700],
-            rangeHighlights: [
-                {
-                    "start": 530, 
-                    "end": 530, 
-                    "class": "category1" 
-                }
-         
-            ],
-            ticks: [100,200, 300,400, 500, 600, 700, 800, 900, 1000,1100],
+            range: false, 
+            value: 500,
+            ticks: [100,200, 300,400, 500, 600, 700, 800, 900, 1000,1100]
          });
+         sliderC.sliderElem.className += " singleselect";						
 
          
-        var sliderC = new Slider("#ex12d", { 
+        var sliderD = new Slider("#ex12d", { 
             id: "slider12d",
             min: 0, 
             max: 10, 
@@ -278,6 +770,34 @@
             ticks: [0,1, 2,3, 4, 5, 6, 7, 8, 9,10],
          });
 
+
+         var sliderE = new Slider("#ex12e", { 
+            id: "slider12e",
+            min: 0, 
+            max: 10, 
+            range: true, 
+            value: [2, 8],
+            rangeHighlights: [
+                {
+                    "start": 4, 
+                    "end": 4, 
+                    "class": "category1" 
+                }
+         
+            ],
+            ticks: [0,1, 2,3, 4, 5, 6, 7, 8, 9,10],
+         });
+
+         var sliderE = new Slider("#ex12f", { 
+            id: "slider12f",
+            min: 0, 
+            max: 1, 
+            range: false, 
+            value: 0.3,
+            step:0.01,
+            ticks: [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0],
+         });
+         sliderE.sliderElem.className += " singleselect";	
 
     </script>
 </body>

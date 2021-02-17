@@ -613,6 +613,7 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 			this.eventToCallbackMap = {};
 			this.sliderElem.id = this.options.id;
 
+	
 			this.touchCapable = 'ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch;
 
 			this.touchX = 0;
@@ -665,7 +666,7 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 					this._removeClass(tooltip, 'bs-tooltip-top');
 				}, this);
 			}
-
+			
 			if (this.options.orientation === 'vertical') {
 				this._addClass(this.sliderElem, 'slider-vertical');
 				this.stylePos = 'top';
