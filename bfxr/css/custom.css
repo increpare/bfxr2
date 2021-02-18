@@ -61,8 +61,8 @@
     border-width: var(--border-thickness) 0;
 }
 
-.btn-check:checked+.btn-outline-primary,
-.btn-check:active+.btn-outline-primary,
+.slidercell .btn-check:checked+.btn-outline-primary,
+.slidercell .btn-check:active+.btn-outline-primary,
 .btn-outline-primary:active,
 .btn-outline-primary.active,
 .btn-outline-primary.dropdown-toggle.show {
@@ -707,4 +707,58 @@ input {
 
 .slider .tooltip.bs-tooltip-top {
     margin-top: -26px;
+}
+
+.btn.lock-checkbox {
+    background-color: transparent;
+    background-image: url("../images/symbol_mutation_unlocked.png");
+    background-position: center;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    outline: none;
+    outline: 2px solid var(--col-darkbrown);
+    border-radius: 0;
+    ;
+}
+
+.btn-check:checked+.btn-outline-primary.lock-checkbox,
+.btn-check:active+.btn-outline-primary.lock-checkbox,
+.btn-outline-primary.lock-checkbox:active,
+.btn-outline-primary.lock-checkbox.active,
+.btn-outline-primary.lock-checkbox.dropdown-toggle.show {
+    background-color: transparent;
+    background-image: url("../images/symbol_mutation_locked.png");
+    width: 18px;
+    height: 18px;
+    outline: 2px solid var(--col-darkbrown);
+    border-radius: 0;
+    ;
+}
+
+.btn.timevarying-checkbox {
+    background-color: transparent;
+    background-image: url("../images/symbol_parameter_timestatic.png");
+    background-position: center;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    outline: none;
+    outline: 2px solid var(--col-darkbrown);
+    border-radius: 0;
+    ;
+}
+
+.btn-check:checked+.btn-outline-primary.timevarying-checkbox,
+.btn-check:active+.btn-outline-primary.timevarying-checkbox,
+.btn-outline-primary.timevarying-checkbox:active,
+.btn-outline-primary.timevarying-checkbox.active,
+.btn-outline-primary.timevarying-checkbox.dropdown-toggle.show {
+    background-color: transparent;
+    background-image: url("../images/symbol_parameter_timevarying.png");
+    width: 18px;
+    height: 18px;
+    outline: 2px solid var(--col-darkbrown);
+    border-radius: 0;
+    ;
 }

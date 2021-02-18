@@ -403,3 +403,11 @@ var SYNTH_PARAMETERS = [{
     },
 
 ]
+
+var SYNTH_PARAMS_DICT = {};
+
+for (var i = 0; i < SYNTH_PARAMETERS.length; i++) {
+    var parameter = SYNTH_PARAMETERS[i];
+
+    SYNTH_PARAMS_DICT[parameter.name] = parameter;
+}

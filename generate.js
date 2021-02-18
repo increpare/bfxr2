@@ -1,6 +1,7 @@
 const fs = require('fs')
 const pretty = require('pretty');
 
+eval(fs.readFileSync('bfxr/js/utils.js', 'utf8'));
 eval(fs.readFileSync('bfxr/js/synth_parameters.js', 'utf8'));
 
 
@@ -9,24 +10,14 @@ var SYNTHPARAMS_HTML = "";
 
 var ACTIVATIONSCRIPTS_JS = "";
 
-function prettify_param_name(s) {
-    return s.replace(/_/g, ' ');
-}
-
-function variablize_param_name(s) {
-    s = s.replace(/ /g, '_');
-    s = s.replace(/-/g, '_');
-    s = s.replace(/\'/g, ' ');
-    return s;
-}
-
 function spawn_bar(parameter) {
     var varname = variablize_param_name(parameter.name);
 
     SYNTHPARAMS_HTML += `
         <tr class="tableborder">
             <td class="tableborder iconcell">
-                <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                <input type="checkbox" class="btn-check" id="lock_checkbox_${parameter.name}" autocomplete="off">
+                <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_${parameter.name}"></label><br>
             </td>
             <td class="tableborder fieldtext">${prettify_param_name(parameter.name)}</td>
             <td class="tableborder slidercell">
@@ -34,8 +25,9 @@ function spawn_bar(parameter) {
             </td>
             <td class="tableborder expandcell">
                 ${
-                    parameter.can_vary_over_time ? '\
-                    <img class="iconimg" src="images/symbol_parameter_timevarying.png ">' : ''
+                    parameter.can_vary_over_time ? `
+                <input type="checkbox" class="btn-check" id="timevarying_checkbox_${parameter.name}" autocomplete="off">
+                <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_${parameter.name}"></label><br>`:''
                 }
             </svg>
             </td>
@@ -61,7 +53,14 @@ function spawn_bar(parameter) {
             ticks: ${JSON.stringify(rangeticks)}
         });
         slider_${varname}.sliderElem.className += " singleselect";
-        slider_${varname}.sliderElem.getElementsByClassName("slider-tick-container")[0].children[${parameter.default}].classList.add('defaulttick')
+        slider_${varname}.sliderElem.getElementsByClassName("slider-tick-container")[0].children[${parameter.default}].classList.add('defaulttick');
+
+        slider_${varname}.on("slide", function(sliderValue) {
+            onSliderValueChange("${varname}",sliderValue,false);
+        });
+        slider_${varname}.on("slideStop", function(sliderValue) {
+            onSliderValueChange("${varname}",sliderValue,true);
+        });
         `;
 
 }
@@ -72,7 +71,9 @@ function spawn_buttonselect(parameter) {
     SYNTHPARAMS_HTML += `
     <tr class="tableborder">
         <td class="tableborder iconcell">    
-            <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+            <input type="checkbox" class="btn-check" id="lock_checkbox_${parameter.name}" autocomplete="off">
+            <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_${parameter.name}"></label><br>
+            <!--<img class="iconimg" src="images/symbol_mutation_unlocked.png ">-->
         </td>
         <td class="tableborder fieldtext">${parameter.name}</td>
         <td class="tableborder slidercell">`;
@@ -93,10 +94,14 @@ function spawn_buttonselect(parameter) {
         var icon_file_name = parameter.icons[i][0];
         var icon_tooltip = parameter.icons[i][1];
         SYNTHPARAMS_HTML += `
-            <input type="checkbox" class="btn-check " id="buttonselect_${varname}_${i}" autocomplete="off">
+            <input type="checkbox" class="btn-check " id="buttonselect_${varname}_${i}" autocomplete="off" ${i===parameter.default?"checked":""}>
             <label class="btn btn-outline-primary buttongroupcheck" for="buttonselect_${varname}_${i}">
                 <img class="icon" src="${icon_file_name}">
             </label>`;
+
+        ACTIVATIONSCRIPTS_JS += `
+        hook_up_checkbox("${varname}",${i});
+        `;
     }
 
     SYNTHPARAMS_HTML += `</div>

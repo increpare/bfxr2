@@ -21,6 +21,9 @@
     <script src="js/third_party/popper.min.js"></script>
     <script src="js/third_party/bootstrap.js"></script>
     <script src="js/third_party/bootstrap-slider.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/synth_parameters.js"></script>
+    <script src="js/bfxr.js"></script>
 
     <br><br><br><br><br>
     <div class="container">
@@ -180,12 +183,14 @@
 
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_waveform" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_waveform"></label><br>
+                    <!--<img class="iconimg" src="images/symbol_mutation_unlocked.png ">-->
                   </td>
                   <td class="tableborder fieldtext">waveform</td>
                   <td class="tableborder slidercell">
                     <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                      <input type="checkbox" class="btn-check " id="buttonselect_waveform_0" autocomplete="off">
+                      <input type="checkbox" class="btn-check " id="buttonselect_waveform_0" autocomplete="off" checked>
                       <label class="btn btn-outline-primary buttongroupcheck" for="buttonselect_waveform_0">
                         <img class="icon" src="images/icon_waveform_triangle.png">
                       </label>
@@ -257,21 +262,25 @@
                   </td>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_max_sound_duration" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_max_sound_duration"></label><br>
                   </td>
                   <td class="tableborder fieldtext">max sound duration</td>
                   <td class="tableborder slidercell">
                     <input id="max_sound_duration" type="text" />
                   </td>
                   <td class="tableborder expandcell">
-                    <img class="iconimg" src="images/symbol_parameter_timevarying.png ">
+
+                    <input type="checkbox" class="btn-check" id="timevarying_checkbox_max_sound_duration" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_max_sound_duration"></label><br>
                     </svg>
                   </td>
 
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_sustain_volume" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_sustain_volume"></label><br>
                   </td>
                   <td class="tableborder fieldtext">sustain volume</td>
                   <td class="tableborder slidercell">
@@ -285,7 +294,8 @@
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_attack_time" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_attack_time"></label><br>
                   </td>
                   <td class="tableborder fieldtext">attack time</td>
                   <td class="tableborder slidercell">
@@ -299,7 +309,8 @@
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_decay_time" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_decay_time"></label><br>
                   </td>
                   <td class="tableborder fieldtext">decay time</td>
                   <td class="tableborder slidercell">
@@ -313,105 +324,127 @@
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_compression" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_compression"></label><br>
                   </td>
                   <td class="tableborder fieldtext">compression</td>
                   <td class="tableborder slidercell">
                     <input id="compression" type="text" />
                   </td>
                   <td class="tableborder expandcell">
-                    <img class="iconimg" src="images/symbol_parameter_timevarying.png ">
+
+                    <input type="checkbox" class="btn-check" id="timevarying_checkbox_compression" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_compression"></label><br>
                     </svg>
                   </td>
 
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_harmonics" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_harmonics"></label><br>
                   </td>
                   <td class="tableborder fieldtext">harmonics</td>
                   <td class="tableborder slidercell">
                     <input id="harmonics" type="text" />
                   </td>
                   <td class="tableborder expandcell">
-                    <img class="iconimg" src="images/symbol_parameter_timevarying.png ">
+
+                    <input type="checkbox" class="btn-check" id="timevarying_checkbox_harmonics" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_harmonics"></label><br>
                     </svg>
                   </td>
 
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_harmonics_falloff" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_harmonics_falloff"></label><br>
                   </td>
                   <td class="tableborder fieldtext">harmonics falloff</td>
                   <td class="tableborder slidercell">
                     <input id="harmonics_falloff" type="text" />
                   </td>
                   <td class="tableborder expandcell">
-                    <img class="iconimg" src="images/symbol_parameter_timevarying.png ">
+
+                    <input type="checkbox" class="btn-check" id="timevarying_checkbox_harmonics_falloff" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_harmonics_falloff"></label><br>
                     </svg>
                   </td>
 
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_vibrato_speed" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_vibrato_speed"></label><br>
                   </td>
                   <td class="tableborder fieldtext">vibrato speed</td>
                   <td class="tableborder slidercell">
                     <input id="vibrato_speed" type="text" />
                   </td>
                   <td class="tableborder expandcell">
-                    <img class="iconimg" src="images/symbol_parameter_timevarying.png ">
+
+                    <input type="checkbox" class="btn-check" id="timevarying_checkbox_vibrato_speed" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_vibrato_speed"></label><br>
                     </svg>
                   </td>
 
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_vibrato_depth" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_vibrato_depth"></label><br>
                   </td>
                   <td class="tableborder fieldtext">vibrato depth</td>
                   <td class="tableborder slidercell">
                     <input id="vibrato_depth" type="text" />
                   </td>
                   <td class="tableborder expandcell">
-                    <img class="iconimg" src="images/symbol_parameter_timevarying.png ">
+
+                    <input type="checkbox" class="btn-check" id="timevarying_checkbox_vibrato_depth" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_vibrato_depth"></label><br>
                     </svg>
                   </td>
 
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_frequency" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_frequency"></label><br>
                   </td>
                   <td class="tableborder fieldtext">frequency</td>
                   <td class="tableborder slidercell">
                     <input id="frequency" type="text" />
                   </td>
                   <td class="tableborder expandcell">
-                    <img class="iconimg" src="images/symbol_parameter_timevarying.png ">
+
+                    <input type="checkbox" class="btn-check" id="timevarying_checkbox_frequency" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_frequency"></label><br>
                     </svg>
                   </td>
 
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_pitch-jump_repeat_speed" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_pitch-jump_repeat_speed"></label><br>
                   </td>
                   <td class="tableborder fieldtext">pitch-jump repeat speed</td>
                   <td class="tableborder slidercell">
                     <input id="pitch_jump_repeat_speed" type="text" />
                   </td>
                   <td class="tableborder expandcell">
-                    <img class="iconimg" src="images/symbol_parameter_timevarying.png ">
+
+                    <input type="checkbox" class="btn-check" id="timevarying_checkbox_pitch-jump_repeat_speed" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_pitch-jump_repeat_speed"></label><br>
                     </svg>
                   </td>
 
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_pitch-jump-amount-1" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_pitch-jump-amount-1"></label><br>
                   </td>
                   <td class="tableborder fieldtext">pitch-jump-amount-1</td>
                   <td class="tableborder slidercell">
@@ -425,7 +458,8 @@
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_pitch-jump-onset-1" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_pitch-jump-onset-1"></label><br>
                   </td>
                   <td class="tableborder fieldtext">pitch-jump-onset-1</td>
                   <td class="tableborder slidercell">
@@ -439,7 +473,8 @@
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_pitch-jump-amount-2" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_pitch-jump-amount-2"></label><br>
                   </td>
                   <td class="tableborder fieldtext">pitch-jump-amount-2</td>
                   <td class="tableborder slidercell">
@@ -453,7 +488,8 @@
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_pitch-jump-onset-2" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_pitch-jump-onset-2"></label><br>
                   </td>
                   <td class="tableborder fieldtext">pitch-jump-onset-2</td>
                   <td class="tableborder slidercell">
@@ -467,84 +503,102 @@
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_duty" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_duty"></label><br>
                   </td>
                   <td class="tableborder fieldtext">duty</td>
                   <td class="tableborder slidercell">
                     <input id="duty" type="text" />
                   </td>
                   <td class="tableborder expandcell">
-                    <img class="iconimg" src="images/symbol_parameter_timevarying.png ">
+
+                    <input type="checkbox" class="btn-check" id="timevarying_checkbox_duty" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_duty"></label><br>
                     </svg>
                   </td>
 
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_flanger" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_flanger"></label><br>
                   </td>
                   <td class="tableborder fieldtext">flanger</td>
                   <td class="tableborder slidercell">
                     <input id="flanger" type="text" />
                   </td>
                   <td class="tableborder expandcell">
-                    <img class="iconimg" src="images/symbol_parameter_timevarying.png ">
+
+                    <input type="checkbox" class="btn-check" id="timevarying_checkbox_flanger" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_flanger"></label><br>
                     </svg>
                   </td>
 
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_low-pass_filter_cutoff" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_low-pass_filter_cutoff"></label><br>
                   </td>
                   <td class="tableborder fieldtext">low-pass filter cutoff</td>
                   <td class="tableborder slidercell">
                     <input id="low_pass_filter_cutoff" type="text" />
                   </td>
                   <td class="tableborder expandcell">
-                    <img class="iconimg" src="images/symbol_parameter_timevarying.png ">
+
+                    <input type="checkbox" class="btn-check" id="timevarying_checkbox_low-pass_filter_cutoff" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_low-pass_filter_cutoff"></label><br>
                     </svg>
                   </td>
 
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_low-pass_filter_resonance" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_low-pass_filter_resonance"></label><br>
                   </td>
                   <td class="tableborder fieldtext">low-pass filter resonance</td>
                   <td class="tableborder slidercell">
                     <input id="low_pass_filter_resonance" type="text" />
                   </td>
                   <td class="tableborder expandcell">
-                    <img class="iconimg" src="images/symbol_parameter_timevarying.png ">
+
+                    <input type="checkbox" class="btn-check" id="timevarying_checkbox_low-pass_filter_resonance" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_low-pass_filter_resonance"></label><br>
                     </svg>
                   </td>
 
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_high-pass_filter_cutoff" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_high-pass_filter_cutoff"></label><br>
                   </td>
                   <td class="tableborder fieldtext">high-pass filter cutoff</td>
                   <td class="tableborder slidercell">
                     <input id="high_pass_filter_cutoff" type="text" />
                   </td>
                   <td class="tableborder expandcell">
-                    <img class="iconimg" src="images/symbol_parameter_timevarying.png ">
+
+                    <input type="checkbox" class="btn-check" id="timevarying_checkbox_high-pass_filter_cutoff" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_high-pass_filter_cutoff"></label><br>
                     </svg>
                   </td>
 
                 </tr>
                 <tr class="tableborder">
                   <td class="tableborder iconcell">
-                    <img class="iconimg" src="images/symbol_mutation_unlocked.png ">
+                    <input type="checkbox" class="btn-check" id="lock_checkbox_Bit-Crush" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_Bit-Crush"></label><br>
                   </td>
                   <td class="tableborder fieldtext">Bit-Crush</td>
                   <td class="tableborder slidercell">
                     <input id="Bit_Crush" type="text" />
                   </td>
                   <td class="tableborder expandcell">
-                    <img class="iconimg" src="images/symbol_parameter_timevarying.png ">
+
+                    <input type="checkbox" class="btn-check" id="timevarying_checkbox_Bit-Crush" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_Bit-Crush"></label><br>
                     </svg>
                   </td>
 
@@ -572,6 +626,38 @@
       slider_globalvol.sliderElem.className += " singleselect slidernarrow";
 
 
+      hook_up_checkbox("waveform", 0);
+
+      hook_up_checkbox("waveform", 1);
+
+      hook_up_checkbox("waveform", 2);
+
+      hook_up_checkbox("waveform", 3);
+
+      hook_up_checkbox("waveform", 4);
+
+      hook_up_checkbox("waveform", 5);
+
+      hook_up_checkbox("waveform", 6);
+
+      hook_up_checkbox("waveform", 7);
+
+      hook_up_checkbox("waveform", 8);
+
+      hook_up_checkbox("waveform", 9);
+
+      hook_up_checkbox("waveform", 10);
+
+      hook_up_checkbox("waveform", 11);
+
+      hook_up_checkbox("waveform", 12);
+
+      hook_up_checkbox("waveform", 13);
+
+      hook_up_checkbox("waveform", 14);
+
+      hook_up_checkbox("waveform", 15);
+
       var slider_max_sound_duration = new Slider("#max_sound_duration", {
         id: "instanced_max_sound_duration",
         min: 0.3,
@@ -582,7 +668,14 @@
         ticks: [0.3, 0.77, 1.24, 1.7100000000000002, 2.18, 2.65, 3.12, 3.59, 4.0600000000000005, 4.53, 5]
       });
       slider_max_sound_duration.sliderElem.className += " singleselect";
-      slider_max_sound_duration.sliderElem.getElementsByClassName("slider-tick-container")[0].children[5].classList.add('defaulttick')
+      slider_max_sound_duration.sliderElem.getElementsByClassName("slider-tick-container")[0].children[5].classList.add('defaulttick');
+
+      slider_max_sound_duration.on("slide", function(sliderValue) {
+        onSliderValueChange("max_sound_duration", sliderValue, false);
+      });
+      slider_max_sound_duration.on("slideStop", function(sliderValue) {
+        onSliderValueChange("max_sound_duration", sliderValue, true);
+      });
 
       var slider_sustain_volume = new Slider("#sustain_volume", {
         id: "instanced_sustain_volume",
@@ -594,7 +687,14 @@
         ticks: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
       });
       slider_sustain_volume.sliderElem.className += " singleselect";
-      slider_sustain_volume.sliderElem.getElementsByClassName("slider-tick-container")[0].children[7].classList.add('defaulttick')
+      slider_sustain_volume.sliderElem.getElementsByClassName("slider-tick-container")[0].children[7].classList.add('defaulttick');
+
+      slider_sustain_volume.on("slide", function(sliderValue) {
+        onSliderValueChange("sustain_volume", sliderValue, false);
+      });
+      slider_sustain_volume.on("slideStop", function(sliderValue) {
+        onSliderValueChange("sustain_volume", sliderValue, true);
+      });
 
       var slider_attack_time = new Slider("#attack_time", {
         id: "instanced_attack_time",
@@ -606,7 +706,14 @@
         ticks: [0, 3.3, 6.6, 9.9, 13.2, 16.5, 19.8, 23.1, 26.4, 29.7, 33]
       });
       slider_attack_time.sliderElem.className += " singleselect";
-      slider_attack_time.sliderElem.getElementsByClassName("slider-tick-container")[0].children[7].classList.add('defaulttick')
+      slider_attack_time.sliderElem.getElementsByClassName("slider-tick-container")[0].children[7].classList.add('defaulttick');
+
+      slider_attack_time.on("slide", function(sliderValue) {
+        onSliderValueChange("attack_time", sliderValue, false);
+      });
+      slider_attack_time.on("slideStop", function(sliderValue) {
+        onSliderValueChange("attack_time", sliderValue, true);
+      });
 
       var slider_decay_time = new Slider("#decay_time", {
         id: "instanced_decay_time",
@@ -618,7 +725,14 @@
         ticks: [0, 3.3, 6.6, 9.9, 13.2, 16.5, 19.8, 23.1, 26.4, 29.7, 33]
       });
       slider_decay_time.sliderElem.className += " singleselect";
-      slider_decay_time.sliderElem.getElementsByClassName("slider-tick-container")[0].children[7].classList.add('defaulttick')
+      slider_decay_time.sliderElem.getElementsByClassName("slider-tick-container")[0].children[7].classList.add('defaulttick');
+
+      slider_decay_time.on("slide", function(sliderValue) {
+        onSliderValueChange("decay_time", sliderValue, false);
+      });
+      slider_decay_time.on("slideStop", function(sliderValue) {
+        onSliderValueChange("decay_time", sliderValue, true);
+      });
 
       var slider_compression = new Slider("#compression", {
         id: "instanced_compression",
@@ -630,7 +744,14 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_compression.sliderElem.className += " singleselect";
-      slider_compression.sliderElem.getElementsByClassName("slider-tick-container")[0].children[3].classList.add('defaulttick')
+      slider_compression.sliderElem.getElementsByClassName("slider-tick-container")[0].children[3].classList.add('defaulttick');
+
+      slider_compression.on("slide", function(sliderValue) {
+        onSliderValueChange("compression", sliderValue, false);
+      });
+      slider_compression.on("slideStop", function(sliderValue) {
+        onSliderValueChange("compression", sliderValue, true);
+      });
 
       var slider_harmonics = new Slider("#harmonics", {
         id: "instanced_harmonics",
@@ -642,7 +763,14 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_harmonics.sliderElem.className += " singleselect";
-      slider_harmonics.sliderElem.getElementsByClassName("slider-tick-container")[0].children[3].classList.add('defaulttick')
+      slider_harmonics.sliderElem.getElementsByClassName("slider-tick-container")[0].children[3].classList.add('defaulttick');
+
+      slider_harmonics.on("slide", function(sliderValue) {
+        onSliderValueChange("harmonics", sliderValue, false);
+      });
+      slider_harmonics.on("slideStop", function(sliderValue) {
+        onSliderValueChange("harmonics", sliderValue, true);
+      });
 
       var slider_harmonics_falloff = new Slider("#harmonics_falloff", {
         id: "instanced_harmonics_falloff",
@@ -654,7 +782,14 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_harmonics_falloff.sliderElem.className += " singleselect";
-      slider_harmonics_falloff.sliderElem.getElementsByClassName("slider-tick-container")[0].children[3].classList.add('defaulttick')
+      slider_harmonics_falloff.sliderElem.getElementsByClassName("slider-tick-container")[0].children[3].classList.add('defaulttick');
+
+      slider_harmonics_falloff.on("slide", function(sliderValue) {
+        onSliderValueChange("harmonics_falloff", sliderValue, false);
+      });
+      slider_harmonics_falloff.on("slideStop", function(sliderValue) {
+        onSliderValueChange("harmonics_falloff", sliderValue, true);
+      });
 
       var slider_vibrato_speed = new Slider("#vibrato_speed", {
         id: "instanced_vibrato_speed",
@@ -666,7 +801,14 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_vibrato_speed.sliderElem.className += " singleselect";
-      slider_vibrato_speed.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick')
+      slider_vibrato_speed.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
+
+      slider_vibrato_speed.on("slide", function(sliderValue) {
+        onSliderValueChange("vibrato_speed", sliderValue, false);
+      });
+      slider_vibrato_speed.on("slideStop", function(sliderValue) {
+        onSliderValueChange("vibrato_speed", sliderValue, true);
+      });
 
       var slider_vibrato_depth = new Slider("#vibrato_depth", {
         id: "instanced_vibrato_depth",
@@ -678,7 +820,14 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_vibrato_depth.sliderElem.className += " singleselect";
-      slider_vibrato_depth.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick')
+      slider_vibrato_depth.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
+
+      slider_vibrato_depth.on("slide", function(sliderValue) {
+        onSliderValueChange("vibrato_depth", sliderValue, false);
+      });
+      slider_vibrato_depth.on("slideStop", function(sliderValue) {
+        onSliderValueChange("vibrato_depth", sliderValue, true);
+      });
 
       var slider_frequency = new Slider("#frequency", {
         id: "instanced_frequency",
@@ -690,7 +839,14 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_frequency.sliderElem.className += " singleselect";
-      slider_frequency.sliderElem.getElementsByClassName("slider-tick-container")[0].children[3].classList.add('defaulttick')
+      slider_frequency.sliderElem.getElementsByClassName("slider-tick-container")[0].children[3].classList.add('defaulttick');
+
+      slider_frequency.on("slide", function(sliderValue) {
+        onSliderValueChange("frequency", sliderValue, false);
+      });
+      slider_frequency.on("slideStop", function(sliderValue) {
+        onSliderValueChange("frequency", sliderValue, true);
+      });
 
       var slider_pitch_jump_repeat_speed = new Slider("#pitch_jump_repeat_speed", {
         id: "instanced_pitch_jump_repeat_speed",
@@ -702,7 +858,14 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_pitch_jump_repeat_speed.sliderElem.className += " singleselect";
-      slider_pitch_jump_repeat_speed.sliderElem.getElementsByClassName("slider-tick-container")[0].children[3].classList.add('defaulttick')
+      slider_pitch_jump_repeat_speed.sliderElem.getElementsByClassName("slider-tick-container")[0].children[3].classList.add('defaulttick');
+
+      slider_pitch_jump_repeat_speed.on("slide", function(sliderValue) {
+        onSliderValueChange("pitch_jump_repeat_speed", sliderValue, false);
+      });
+      slider_pitch_jump_repeat_speed.on("slideStop", function(sliderValue) {
+        onSliderValueChange("pitch_jump_repeat_speed", sliderValue, true);
+      });
 
       var slider_pitch_jump_amount_1 = new Slider("#pitch_jump_amount_1", {
         id: "instanced_pitch_jump_amount_1",
@@ -714,7 +877,14 @@
         ticks: [-1, -0.8, -0.6, -0.4, -0.19999999999999996, 0, 0.19999999999999996, 0.3999999999999999, 0.6000000000000001, 0.8, 1]
       });
       slider_pitch_jump_amount_1.sliderElem.className += " singleselect";
-      slider_pitch_jump_amount_1.sliderElem.getElementsByClassName("slider-tick-container")[0].children[5].classList.add('defaulttick')
+      slider_pitch_jump_amount_1.sliderElem.getElementsByClassName("slider-tick-container")[0].children[5].classList.add('defaulttick');
+
+      slider_pitch_jump_amount_1.on("slide", function(sliderValue) {
+        onSliderValueChange("pitch_jump_amount_1", sliderValue, false);
+      });
+      slider_pitch_jump_amount_1.on("slideStop", function(sliderValue) {
+        onSliderValueChange("pitch_jump_amount_1", sliderValue, true);
+      });
 
       var slider_pitch_jump_onset_1 = new Slider("#pitch_jump_onset_1", {
         id: "instanced_pitch_jump_onset_1",
@@ -726,7 +896,14 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_pitch_jump_onset_1.sliderElem.className += " singleselect";
-      slider_pitch_jump_onset_1.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick')
+      slider_pitch_jump_onset_1.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
+
+      slider_pitch_jump_onset_1.on("slide", function(sliderValue) {
+        onSliderValueChange("pitch_jump_onset_1", sliderValue, false);
+      });
+      slider_pitch_jump_onset_1.on("slideStop", function(sliderValue) {
+        onSliderValueChange("pitch_jump_onset_1", sliderValue, true);
+      });
 
       var slider_pitch_jump_amount_2 = new Slider("#pitch_jump_amount_2", {
         id: "instanced_pitch_jump_amount_2",
@@ -738,7 +915,14 @@
         ticks: [-1, -0.8, -0.6, -0.4, -0.19999999999999996, 0, 0.19999999999999996, 0.3999999999999999, 0.6000000000000001, 0.8, 1]
       });
       slider_pitch_jump_amount_2.sliderElem.className += " singleselect";
-      slider_pitch_jump_amount_2.sliderElem.getElementsByClassName("slider-tick-container")[0].children[5].classList.add('defaulttick')
+      slider_pitch_jump_amount_2.sliderElem.getElementsByClassName("slider-tick-container")[0].children[5].classList.add('defaulttick');
+
+      slider_pitch_jump_amount_2.on("slide", function(sliderValue) {
+        onSliderValueChange("pitch_jump_amount_2", sliderValue, false);
+      });
+      slider_pitch_jump_amount_2.on("slideStop", function(sliderValue) {
+        onSliderValueChange("pitch_jump_amount_2", sliderValue, true);
+      });
 
       var slider_pitch_jump_onset_2 = new Slider("#pitch_jump_onset_2", {
         id: "instanced_pitch_jump_onset_2",
@@ -750,7 +934,14 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_pitch_jump_onset_2.sliderElem.className += " singleselect";
-      slider_pitch_jump_onset_2.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick')
+      slider_pitch_jump_onset_2.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
+
+      slider_pitch_jump_onset_2.on("slide", function(sliderValue) {
+        onSliderValueChange("pitch_jump_onset_2", sliderValue, false);
+      });
+      slider_pitch_jump_onset_2.on("slideStop", function(sliderValue) {
+        onSliderValueChange("pitch_jump_onset_2", sliderValue, true);
+      });
 
       var slider_duty = new Slider("#duty", {
         id: "instanced_duty",
@@ -762,7 +953,14 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_duty.sliderElem.className += " singleselect";
-      slider_duty.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick')
+      slider_duty.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
+
+      slider_duty.on("slide", function(sliderValue) {
+        onSliderValueChange("duty", sliderValue, false);
+      });
+      slider_duty.on("slideStop", function(sliderValue) {
+        onSliderValueChange("duty", sliderValue, true);
+      });
 
       var slider_flanger = new Slider("#flanger", {
         id: "instanced_flanger",
@@ -774,7 +972,14 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_flanger.sliderElem.className += " singleselect";
-      slider_flanger.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick')
+      slider_flanger.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
+
+      slider_flanger.on("slide", function(sliderValue) {
+        onSliderValueChange("flanger", sliderValue, false);
+      });
+      slider_flanger.on("slideStop", function(sliderValue) {
+        onSliderValueChange("flanger", sliderValue, true);
+      });
 
       var slider_low_pass_filter_cutoff = new Slider("#low_pass_filter_cutoff", {
         id: "instanced_low_pass_filter_cutoff",
@@ -786,7 +991,14 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_low_pass_filter_cutoff.sliderElem.className += " singleselect";
-      slider_low_pass_filter_cutoff.sliderElem.getElementsByClassName("slider-tick-container")[0].children[10].classList.add('defaulttick')
+      slider_low_pass_filter_cutoff.sliderElem.getElementsByClassName("slider-tick-container")[0].children[10].classList.add('defaulttick');
+
+      slider_low_pass_filter_cutoff.on("slide", function(sliderValue) {
+        onSliderValueChange("low_pass_filter_cutoff", sliderValue, false);
+      });
+      slider_low_pass_filter_cutoff.on("slideStop", function(sliderValue) {
+        onSliderValueChange("low_pass_filter_cutoff", sliderValue, true);
+      });
 
       var slider_low_pass_filter_resonance = new Slider("#low_pass_filter_resonance", {
         id: "instanced_low_pass_filter_resonance",
@@ -798,7 +1010,14 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_low_pass_filter_resonance.sliderElem.className += " singleselect";
-      slider_low_pass_filter_resonance.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick')
+      slider_low_pass_filter_resonance.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
+
+      slider_low_pass_filter_resonance.on("slide", function(sliderValue) {
+        onSliderValueChange("low_pass_filter_resonance", sliderValue, false);
+      });
+      slider_low_pass_filter_resonance.on("slideStop", function(sliderValue) {
+        onSliderValueChange("low_pass_filter_resonance", sliderValue, true);
+      });
 
       var slider_high_pass_filter_cutoff = new Slider("#high_pass_filter_cutoff", {
         id: "instanced_high_pass_filter_cutoff",
@@ -810,7 +1029,14 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_high_pass_filter_cutoff.sliderElem.className += " singleselect";
-      slider_high_pass_filter_cutoff.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick')
+      slider_high_pass_filter_cutoff.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
+
+      slider_high_pass_filter_cutoff.on("slide", function(sliderValue) {
+        onSliderValueChange("high_pass_filter_cutoff", sliderValue, false);
+      });
+      slider_high_pass_filter_cutoff.on("slideStop", function(sliderValue) {
+        onSliderValueChange("high_pass_filter_cutoff", sliderValue, true);
+      });
 
       var slider_Bit_Crush = new Slider("#Bit_Crush", {
         id: "instanced_Bit_Crush",
@@ -822,7 +1048,14 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_Bit_Crush.sliderElem.className += " singleselect";
-      slider_Bit_Crush.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick')
+      slider_Bit_Crush.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
+
+      slider_Bit_Crush.on("slide", function(sliderValue) {
+        onSliderValueChange("Bit_Crush", sliderValue, false);
+      });
+      slider_Bit_Crush.on("slideStop", function(sliderValue) {
+        onSliderValueChange("Bit_Crush", sliderValue, true);
+      });
     </script>
   </body>
 
