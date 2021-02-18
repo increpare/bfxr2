@@ -1,0 +1,207 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Bfxr. Make sound effects for your games.</title>
+    <meta name="description" content="Make sound effects for your games.">
+    <meta name="author" content="increpare">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-slider.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+</head>
+
+<body>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-slider.js"></script>
+
+    <br><br><br><br><br>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col col-md-auto  padding-0 generatorcol">
+                <div class="columnheader">
+                    Sounds
+                </div>
+
+                <div class="overflow-auto generatoroptionscard nopadding generatoroverflow">
+                    <ul class="list-group oversize">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">An item
+                            <span class="badge bg-dark rounded-pill">X</span>
+
+                        </li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col col-md-auto  padding-0 generatorcol">
+                <div class="columnheader">
+                    Generators
+                </div>
+                <div class="card generatoroptionscard generator-buttons-panel">
+
+                    <button type="button" class="btn btn-primary">Take Sample</button>
+                    <button type="button" class="btn btn-primary">Apply Change</button>
+                    <button type="button" class="btn btn-primary">Revert Change</button>
+                    <button type="button" class="btn btn-primary">Duplicate</button>
+
+                </div>
+                <div class="overflow-auto generatoroptionscard nopadding generatoroverflow">
+                    <ul class="list-group oversize">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">An item
+                            <span class="badge bg-dark rounded-pill">X</span>
+
+                        </li>
+                        <li class="list-group-item active" aria-current="true">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col order-5 col-md-auto padding-0 rightlist">
+                <canvas class="logo-canvas"></canvas>
+                <br>
+                <div class="card actionscol">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Play on change
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-primary">Play</button>
+                    <div class="globalvolsliderdiv">
+                        <div class="fieldtext">Volume</div>
+                        <div>
+                            <input id="globalvol" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="input-group w-auto">
+                        <button type="button" class="btn btn-primary hiderightborder dropdownbutton-big">Export WAV</button>
+                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split dropdownbutton-side" data-bs-toggle="dropdown" aria-expanded="false">
+                          <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="input-group w-auto">
+                        <button type="button" class="btn btn-primary hiderightborder dropdownbutton-big">Load from disk</button>
+                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split dropdownbutton-side" data-bs-toggle="dropdown" aria-expanded="false">
+                          <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="input-group w-auto">
+                        <button type="button" class="btn btn-primary hiderightborder dropdownbutton-big">Save to disk</button>
+                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split dropdownbutton-side" data-bs-toggle="dropdown" aria-expanded="false">
+                          <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+
+
+                    <button type="button" class="btn btn-primary">Copy</button>
+                    <button type="button" class="btn btn-primary">Paste</button>
+                    <button type="button" class="btn btn-primary">Copy Link</button>
+                    <button type="button" class="btn btn-primary">About</button>
+                </div>
+            </div>
+
+            <!-- <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/> -->
+            <div class="col order-1 col-md-auto  padding-0">
+
+                <ul class="nav nav-tabs mode-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="false">Synth</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Designer</button>
+                    </li>
+                </ul>
+                <div class="overflow-auto synth-panel">
+                    <table class="table table-bordered propertylist">
+                        <tbody>
+
+
+                            <!--__DESIGNERBODY__-->
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br><br>
+
+    <script>
+        var slider_globalvol = new Slider("#globalvol", {
+            id: "globalvol",
+            min: 100,
+            max: 1100,
+            range: false,
+            value: 500,
+            ticks: [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100]
+        });
+        slider_globalvol.sliderElem.className += " singleselect slidernarrow";
+
+        /*__ACTIVATIONSCRIPTS__*/
+    </script>
+</body>
+
+</html>
