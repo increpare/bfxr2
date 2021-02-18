@@ -12,7 +12,7 @@
     --tab-border-radius: 12px;
     --right-col-width: calc( var(--sliderwidthnarrow) + 21px);
     --logo-canvas-height: 100px;
-    --generator-col-width: 200px;
+    --generator-col-width: 150px;
     --col-tanlight: #dbaf85;
     --col-tan: #c89057;
     --col-lightbrown: #a96742;
@@ -306,7 +306,7 @@
     outline: 3px solid var(--col-darkbrown);
     outline-offset: -3px;
     height: var(--synthpanelheight);
-    /* width: calc( var(--sliderwidth) + var(--lockcellwidth) + var(--splitcellwidth) + var(--fieldtextwidth) + var(--expandcellwidth)); */
+    width: calc( var(--sliderwidth) + var(--lockcellwidth) + var(--splitcellwidth) + var(--fieldtextwidth) + var(--expandcellwidth));
     overflow-y: scroll;
     overflow-x: hidden !important;
 }
@@ -613,6 +613,8 @@ tr:first-child td {
 
 .generatorcol {
     width: var(--generator-col-width);
+    min-width: var(--generator-col-width);
+    max-width: var(--generator-col-width);
 }
 
 .generatoroptionscard {
