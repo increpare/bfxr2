@@ -5,9 +5,9 @@
 <head>
     <meta charset="utf-8">
 
-    <title>The HTML5 Herald</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
+    <title>Bfxr. Make sound effects for your games.</title>
+    <meta name="description" content="Make sound effects for your games.">
+    <meta name="author" content="increpare">
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-slider.css">
@@ -23,7 +23,7 @@
     <script src="js/bootstrap-slider.js"></script>
 
     <br><br><br><br><br>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col col-md-auto  padding-0 generatorcol">
                 <div class="columnheader">
@@ -85,8 +85,84 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="col order-5 col-md-auto padding-0 rightlist">
+                <canvas class="logo-canvas"></canvas>
+                <br>
+                <div class="card actionscol">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Play on change
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-primary">Play</button>
+                    <div class="globalvolsliderdiv">
+                        <div class="fieldtext">Volume</div>
+                        <div>
+                            <input id="globalvol" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="input-group w-auto">
+                        <button type="button" class="btn btn-primary hiderightborder dropdownbutton-big">Export WAV</button>
+                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split dropdownbutton-side" data-bs-toggle="dropdown" aria-expanded="false">
+                          <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="input-group w-auto">
+                        <button type="button" class="btn btn-primary hiderightborder dropdownbutton-big">Load from disk</button>
+                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split dropdownbutton-side" data-bs-toggle="dropdown" aria-expanded="false">
+                          <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="input-group w-auto">
+                        <button type="button" class="btn btn-primary hiderightborder dropdownbutton-big">Save to disk</button>
+                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split dropdownbutton-side" data-bs-toggle="dropdown" aria-expanded="false">
+                          <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+
+
+                    <button type="button" class="btn btn-primary">Copy</button>
+                    <button type="button" class="btn btn-primary">Paste</button>
+                    <button type="button" class="btn btn-primary">Copy Link</button>
+                    <button type="button" class="btn btn-primary">About</button>
+                </div>
+            </div>
+
             <!-- <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/> -->
-            <div class="col col-md-auto  padding-0">
+            <div class="col order-1 col-md-auto  padding-0">
 
                 <ul class="nav nav-tabs mode-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
@@ -377,80 +453,6 @@
 
                         </tbody>
                     </table>
-                </div>
-            </div>
-            <div class="col col-md-auto padding-0 rightlist">
-                <canvas class="logo-canvas"></canvas>
-                <br>
-                <div class="card actionscol">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Play on change
-                        </label>
-                    </div>
-                    <button type="button" class="btn btn-primary">Play</button>
-                    <div class="globalvolsliderdiv">
-                        <div class="fieldtext">Volume</div>
-                        <div>
-                            <input id="globalvol" type="text" />
-                        </div>
-                    </div>
-
-                    <div class="input-group w-auto">
-                        <button type="button" class="btn btn-primary hiderightborder dropdownbutton-big">Export WAV</button>
-                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split dropdownbutton-side" data-bs-toggle="dropdown" aria-expanded="false">
-                          <span class="visually-hidden">Toggle Dropdown</span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Separated link</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="input-group w-auto">
-                        <button type="button" class="btn btn-primary hiderightborder dropdownbutton-big">Load from disk</button>
-                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split dropdownbutton-side" data-bs-toggle="dropdown" aria-expanded="false">
-                          <span class="visually-hidden">Toggle Dropdown</span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Separated link</a></li>
-                        </ul>
-                    </div>
-
-
-                    <div class="input-group w-auto">
-                        <button type="button" class="btn btn-primary hiderightborder dropdownbutton-big">Save to disk</button>
-                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split dropdownbutton-side" data-bs-toggle="dropdown" aria-expanded="false">
-                          <span class="visually-hidden">Toggle Dropdown</span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Separated link</a></li>
-                        </ul>
-                    </div>
-
-
-                    <button type="button" class="btn btn-primary">Copy</button>
-                    <button type="button" class="btn btn-primary">Paste</button>
-                    <button type="button" class="btn btn-primary">Copy Link</button>
-                    <button type="button" class="btn btn-primary">About</button>
                 </div>
             </div>
         </div>

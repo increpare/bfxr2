@@ -278,6 +278,14 @@
     /* Remove the focus indicator on mouse-focus for browsers
    that do support :focus-visible */
     background: transparent;
+    outline: 0;
+}
+
+.nav-link:focus-visible {
+    /* Remove the focus indicator on mouse-focus for browsers
+   that do support :focus-visible */
+    background: transparent;
+    outline: 0;
 }
 
 .mode-tabs>.nav-item>.nav-link {
@@ -680,4 +688,10 @@ tr:first-child td {
 
 .form-check-label {
     margin-left: 3px;
+}
+
+.container {
+    width: 860px !important;
+    max-width: 860px !important;
+    min-width: 860px !important;
 }
