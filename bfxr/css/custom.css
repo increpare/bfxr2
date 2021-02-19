@@ -398,6 +398,7 @@ tr:first-child td {
     width: var(--iconcellwidth);
     padding: 0 !important;
     padding-left: 3px !important;
+    padding-top: 2px !important;
     margin: 0 !important;
 }
 
@@ -414,6 +415,8 @@ tr:first-child td {
     width: var(--expandcellwidth);
     padding: 0 !important;
     margin: 0 !important;
+    padding-top: 2px !important;
+    padding-bottom: 4px !important;
 }
 
 .tableborder {
@@ -496,9 +499,21 @@ tr:first-child td {
     border-bottom: var(--border-thickness) solid var(--col-shadowbrown);
 }
 
-.tableborder.timevaryrow td {
+.tableborder.mergewithnext {
+    border-bottom: var(--border-thickness) solid var(--col-shadowbrown);
+}
+
+.tableborder.mergewithnext {
+    border-bottom: 0;
+    border-bottom: var(--border-thickness) solid var(--col-shadowbrown);
+}
+
+.tableborder.mergewithprevious {
     border-top: 0;
-    /* 10px solid var(--col-shadowbrown); */
+}
+
+.tableborder.mergewithprevious td {
+    border-top: 0;
 }
 
 .padding-0 {
@@ -761,4 +776,12 @@ input {
     outline: 2px solid var(--col-darkbrown);
     border-radius: 0;
     ;
+}
+
+.timevarying_expanded>.iconcell>.btn {
+    visibility: hidden;
+}
+
+.timevarying_expanded>.slidercell>div {
+    display: none;
 }

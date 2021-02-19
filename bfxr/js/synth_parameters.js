@@ -12,9 +12,14 @@
 
             can_vary_over_time: BOOL,
             can_randomize: BOOL,
+        
+            group_with_next: BOOL, (if things are visually grouped or not in synth editor)
 */
 
-var SYNTH_PARAMETERS = [{
+var SYNTH_PARAMETERS = [
+
+
+    {
         name: "waveform",
         tooltip: "tooltip",
 
@@ -47,6 +52,45 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: true,
         can_randomize: true,
+
+        group_with_next: true,
+    },
+
+
+    {
+        name: "duty",
+        tooltip: "tooltip",
+
+        type: "FLOAT",
+        unit: "",
+
+        min: 0,
+        max: 1,
+
+        default: 0,
+
+        can_vary_over_time: true,
+        can_randomize: true,
+
+        group_with_next: false,
+    },
+
+    {
+        name: "volume",
+        tooltip: "tooltip",
+
+        type: "FLOAT",
+        unit: "",
+
+        min: 0,
+        max: 1,
+
+        default: 7,
+
+        can_vary_over_time: false,
+        can_randomize: false,
+
+        group_with_next: true,
     },
 
     {
@@ -61,25 +105,12 @@ var SYNTH_PARAMETERS = [{
 
         default: 5,
 
-        can_vary_over_time: true,
-        can_randomize: true,
-    },
-
-    {
-        name: "sustain_volume",
-        tooltip: "tooltip",
-
-        type: "FLOAT",
-        unit: "%",
-
-        min: 0,
-        max: 100,
-
-        default: 7,
-
         can_vary_over_time: false,
         can_randomize: true,
+
+        group_with_next: true,
     },
+
 
     {
         name: "attack_time",
@@ -95,6 +126,8 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: false,
         can_randomize: true,
+
+        group_with_next: true,
     },
 
     {
@@ -111,10 +144,29 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: false,
         can_randomize: true,
+
+        group_with_next: false,
     },
 
 
 
+    {
+        name: "sustain_volume",
+        tooltip: "tooltip",
+
+        type: "FLOAT",
+        unit: "%",
+
+        min: 0,
+        max: 100,
+
+        default: 7,
+
+        can_vary_over_time: false,
+        can_randomize: true,
+
+        group_with_next: false,
+    },
 
     {
         name: "compression",
@@ -130,6 +182,8 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: true,
         can_randomize: true,
+
+        group_with_next: false,
     },
 
 
@@ -149,6 +203,8 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: true,
         can_randomize: true,
+
+        group_with_next: true,
     },
 
 
@@ -168,6 +224,8 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: true,
         can_randomize: true,
+
+        group_with_next: false,
     },
 
     {
@@ -184,6 +242,8 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: true,
         can_randomize: true,
+
+        group_with_next: true,
     },
 
     {
@@ -200,6 +260,8 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: true,
         can_randomize: true,
+
+        group_with_next: false,
     },
 
     {
@@ -216,6 +278,8 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: true,
         can_randomize: true,
+
+        group_with_next: false,
     },
 
 
@@ -233,10 +297,12 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: true,
         can_randomize: true,
+
+        group_with_next: false,
     },
 
     {
-        name: "pitch-jump-amount-1",
+        name: "pitch-jump_amount_1",
         tooltip: "tooltip",
 
         type: "FLOAT",
@@ -249,10 +315,12 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: false,
         can_randomize: true,
+
+        group_with_next: true,
     },
 
     {
-        name: "pitch-jump-onset-1",
+        name: "pitch-jump_onset_1",
         tooltip: "tooltip",
 
         type: "FLOAT",
@@ -265,12 +333,14 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: false,
         can_randomize: true,
+
+        group_with_next: false,
     },
 
 
 
     {
-        name: "pitch-jump-amount-2",
+        name: "pitch-jump_amount_2",
         tooltip: "tooltip",
 
         type: "FLOAT",
@@ -283,10 +353,12 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: false,
         can_randomize: true,
+
+        group_with_next: true,
     },
 
     {
-        name: "pitch-jump-onset-2",
+        name: "pitch-jump_onset_2",
         tooltip: "tooltip",
 
         type: "FLOAT",
@@ -299,23 +371,10 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: false,
         can_randomize: true,
+
+        group_with_next: false,
     },
 
-    {
-        name: "duty",
-        tooltip: "tooltip",
-
-        type: "FLOAT",
-        unit: "",
-
-        min: 0,
-        max: 1,
-
-        default: 0,
-
-        can_vary_over_time: true,
-        can_randomize: true,
-    },
 
     {
         name: "flanger",
@@ -331,6 +390,8 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: true,
         can_randomize: true,
+
+        group_with_next: false,
     },
 
 
@@ -349,6 +410,8 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: true,
         can_randomize: true,
+
+        group_with_next: true,
     },
 
     {
@@ -365,6 +428,8 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: true,
         can_randomize: true,
+
+        group_with_next: false,
     },
 
 
@@ -383,6 +448,8 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: true,
         can_randomize: true,
+
+        group_with_next: false,
     },
 
 
@@ -400,6 +467,8 @@ var SYNTH_PARAMETERS = [{
 
         can_vary_over_time: true,
         can_randomize: true,
+
+        group_with_next: false,
     },
 
 ]

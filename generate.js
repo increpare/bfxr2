@@ -10,14 +10,20 @@ var SYNTHPARAMS_HTML = "";
 
 var ACTIVATIONSCRIPTS_JS = "";
 
+
+function createSynthTableRow(varname, display, slidercell_html_content, canlock, cantimechange) {
+
+}
+
 function spawn_bar(parameter) {
     var varname = variablize_param_name(parameter.name);
-
     SYNTHPARAMS_HTML += `
-        <tr class="tableborder">
-            <td class="tableborder iconcell">
-                <input type="checkbox" class="btn-check" id="lock_checkbox_${parameter.name}" autocomplete="off">
-                <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_${parameter.name}"></label><br>
+        <tr class="tableborder ${parameter.group_with_next?"mergewithnext":""}" id="tablerow_${varname}">
+            <td class="tableborder iconcell">${
+                parameter.can_randomize?`
+                <input type="checkbox" class="btn-check" id="lock_checkbox_${varname}" autocomplete="off">
+                <label class="btn btn-outline-primary lock-checkbox" id="lock_checkbox_${varname}_LABEL" for="lock_checkbox_${varname}"></label><br>
+                ` : ``}
             </td>
             <td class="tableborder fieldtext">${prettify_param_name(parameter.name)}</td>
             <td class="tableborder slidercell">
@@ -26,13 +32,24 @@ function spawn_bar(parameter) {
             <td class="tableborder expandcell">
                 ${
                     parameter.can_vary_over_time ? `
-                <input type="checkbox" class="btn-check" id="timevarying_checkbox_${parameter.name}" autocomplete="off">
-                <label class="btn btn-outline-primary timevarying-checkbox" for="timevarying_checkbox_${parameter.name}"></label><br>`:''
+                <input type="checkbox" class="btn-check" id="timevarying_checkbox_${varname}" autocomplete="off">
+                <label class="btn btn-outline-primary timevarying-checkbox"  id="timevarying_checkbox_${varname}_LABEL" for="timevarying_checkbox_${varname}"></label><br>`:''
                 }
-            </svg>
             </td>
 
         </tr>`;
+
+        if (parameter.can_randomize){
+            ACTIVATIONSCRIPTS_JS += `
+            hook_up_lockbox("${varname}");
+            `;
+        }
+
+        if (parameter.can_vary_over_time){
+            ACTIVATIONSCRIPTS_JS += `
+            hook_up_timevaryswitch("${varname}");
+            `;
+        }
 
     var rangeticks = [];
     for (var i = 0; i <= 10; i++) {
@@ -69,10 +86,10 @@ function spawn_buttonselect(parameter) {
     var varname = variablize_param_name(parameter.name);
 
     SYNTHPARAMS_HTML += `
-    <tr class="tableborder">
+    <tr class="tableborder ${parameter.group_with_next?"mergewithnext":""}" id="tablerow_${varname}">
         <td class="tableborder iconcell">    
             <input type="checkbox" class="btn-check" id="lock_checkbox_${parameter.name}" autocomplete="off">
-            <label class="btn btn-outline-primary lock-checkbox" for="lock_checkbox_${parameter.name}"></label><br>
+            <label class="btn btn-outline-primary lock-checkbox" id="lock_checkbox_${varname}_LABEL" for="lock_checkbox_${parameter.name}"></label><br>
             <!--<img class="iconimg" src="images/symbol_mutation_unlocked.png ">-->
         </td>
         <td class="tableborder fieldtext">${parameter.name}</td>
@@ -95,17 +112,39 @@ function spawn_buttonselect(parameter) {
         var icon_tooltip = parameter.icons[i][1];
         SYNTHPARAMS_HTML += `
             <input type="checkbox" class="btn-check " id="buttonselect_${varname}_${i}" autocomplete="off" ${i===parameter.default?"checked":""}>
-            <label class="btn btn-outline-primary buttongroupcheck" for="buttonselect_${varname}_${i}">
+            <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_${varname}_LABEL" for="buttonselect_${varname}_${i}">
                 <img class="icon" src="${icon_file_name}">
             </label>`;
 
         ACTIVATIONSCRIPTS_JS += `
         hook_up_checkbox("${varname}",${i});
         `;
+        
     }
 
     SYNTHPARAMS_HTML += `</div>
+    
+    <td class="tableborder expandcell">
+        ${
+            parameter.can_vary_over_time ? `
+        <input type="checkbox" class="btn-check" id="timevarying_checkbox_${varname}" autocomplete="off">
+        <label class="btn btn-outline-primary timevarying-checkbox" id="timevarying_checkbox_${varname}_LABEL" for="timevarying_checkbox_${varname}"></label><br>`:''
+        }
+    </td>
     </td>`;
+
+    
+    if (parameter.can_randomize){
+        ACTIVATIONSCRIPTS_JS += `
+        hook_up_lockbox("${varname}");
+        `;
+    }
+
+    if (parameter.can_vary_over_time){
+        ACTIVATIONSCRIPTS_JS += `
+        hook_up_timevaryswitch("${varname}");
+        `;
+    }
 }
 
 for (var i = 0; i < SYNTH_PARAMETERS.length; i++) {
