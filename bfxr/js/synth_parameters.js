@@ -145,7 +145,7 @@ var SYNTH_PARAMETERS = [
         can_vary_over_time: false,
         can_randomize: true,
 
-        group_with_next: false,
+        group_with_next: true,
     },
 
 
@@ -480,3 +480,16 @@ for (var i = 0; i < SYNTH_PARAMETERS.length; i++) {
 
     SYNTH_PARAMS_DICT[parameter.name] = parameter;
 }
+
+var INTERPOLATION_ICONS = [
+    ["images/icon_trajectory_linear.png", "tooltip"],
+    ["images/icon_trajectory_easein.png", "tooltip"],
+    ["images/icon_trajectory_easeout.png", "tooltip"],
+    ["images/icon_trajectory_bounce_linear.png", "tooltip"],
+    ["images/icon_trajectory_bounce_smooth.png", "tooltip"],
+    ["images/icon_trajectory_transition_sudden.png", "tooltip"],
+]
+
+var BUTTONLIST_ICONCOUNT = {};
+
+var SLIDER_OBJECT_INDEX = {};

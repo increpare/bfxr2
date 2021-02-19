@@ -496,7 +496,7 @@ tr:first-child td {
 .tableborder.timevaryrow {
     border-top: 0;
     border-bottom: 0;
-    border-bottom: var(--border-thickness) solid var(--col-shadowbrown);
+    border-bottom: var(--border-thickness) solid var(--col-darkbrown);
 }
 
 .tableborder.mergewithnext {
@@ -549,7 +549,7 @@ tr:first-child td {
 
 .actionscol .btn,
 .generatorcol .btn {
-    background-color: transparent;
+    background-color: var(--col-mediumbrown);
     border: var(--border-thickness) solid var(--col-black);
     border-radius: 0;
     color: var(--col-black);
@@ -568,7 +568,7 @@ tr:first-child td {
 }
 
 .form-check-input {
-    background-color: transparent;
+    background-color: var(--col-mediumbrown);
     border: var(--border-thickness) solid var(--col-black);
     width: 20px;
     height: 20px;
@@ -725,7 +725,7 @@ input {
 }
 
 .btn.lock-checkbox {
-    background-color: transparent;
+    background-color: var(--col-mediumbrown);
     background-image: url("../images/symbol_mutation_unlocked.png");
     background-position: center;
     width: 18px;
@@ -742,7 +742,7 @@ input {
 .btn-outline-primary.lock-checkbox:active,
 .btn-outline-primary.lock-checkbox.active,
 .btn-outline-primary.lock-checkbox.dropdown-toggle.show {
-    background-color: transparent;
+    background-color: var(--col-mediumbrown);
     background-image: url("../images/symbol_mutation_locked.png");
     width: 18px;
     height: 18px;
@@ -752,7 +752,7 @@ input {
 }
 
 .btn.timevarying-checkbox {
-    background-color: transparent;
+    background-color: var(--col-mediumbrown);
     background-image: url("../images/symbol_parameter_timestatic.png");
     background-position: center;
     width: 18px;
@@ -769,7 +769,7 @@ input {
 .btn-outline-primary.timevarying-checkbox:active,
 .btn-outline-primary.timevarying-checkbox.active,
 .btn-outline-primary.timevarying-checkbox.dropdown-toggle.show {
-    background-color: transparent;
+    background-color: var(--col-mediumbrown);
     background-image: url("../images/symbol_parameter_timevarying.png");
     width: 18px;
     height: 18px;
@@ -784,4 +784,40 @@ input {
 
 .timevarying_expanded>.slidercell>div {
     display: none;
+}
+
+.timevaryrow {
+    display: none;
+}
+
+.timevarying_expanded {
+    background-color: var(--col-shadowbrown);
+    border-bottom: 0 !important;
+}
+
+.timevarying_expanded+.timevaryrow {
+    display: table-row;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+}
+
+.timevarying_expanded+*+.timevaryrow {
+    display: table-row;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+}
+
+.timevarying_expanded+*+*+.timevaryrow {
+    display: table-row;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+}
+
+.timevarying_expanded+*+*+*+.timevaryrow {
+    display: table-row;
+    border-top: 0 !important;
+}
+
+.timevaryrow+:not(.timevaryingrow) {
+    background-color: red !;
 }
