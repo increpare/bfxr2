@@ -185,3 +185,10 @@ function onSliderValueChange(varname, value, eventover) {
     synth_state[varname] = value;
     onStateModify();
 }
+
+
+var rightcol_button_play = document.getElementById("rightcol_button_play");
+rightcol_button_play.addEventListener("click", function(event) {
+    console.log("onclick");
+    playSound(313123);
+});
