@@ -82,7 +82,7 @@
         </div>
 
         <div class="col order-5 col-md-auto padding-0 rightlist">
-          <canvas class="logo-canvas"></canvas>
+          <canvas id="logo-canvas"></canvas>
           <br>
           <div class="card actionscol">
             <div class="form-check">
@@ -611,6 +611,21 @@
                   </td>
 
                 </tr>
+                <tr class="tableborder mergewithnext synthtablerow_slider" id="tablerow_note_held_time">
+                  <td class="tableborder iconcell">
+                    <input type="checkbox" class="btn-check" id="note_held_time__locked" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" id="note_held_time__locked__LABEL" for="note_held_time__locked"></label><br>
+
+                  </td>
+                  <td class="tableborder fieldtext">note held time</td>
+                  <td class="tableborder slidercell">
+                    <input id="note_held_time" type="text" />
+                  </td>
+                  <td class="tableborder expandcell">
+
+                  </td>
+
+                </tr>
                 <tr class="tableborder mergewithnext synthtablerow_slider" id="tablerow_attack_time">
                   <td class="tableborder iconcell">
                     <input type="checkbox" class="btn-check" id="attack_time__locked" autocomplete="off">
@@ -641,15 +656,15 @@
                   </td>
 
                 </tr>
-                <tr class="tableborder  synthtablerow_slider" id="tablerow_sustain_volume">
+                <tr class="tableborder  synthtablerow_slider" id="tablerow_sustain_level">
                   <td class="tableborder iconcell">
-                    <input type="checkbox" class="btn-check" id="sustain_volume__locked" autocomplete="off">
-                    <label class="btn btn-outline-primary lock-checkbox" id="sustain_volume__locked__LABEL" for="sustain_volume__locked"></label><br>
+                    <input type="checkbox" class="btn-check" id="sustain_level__locked" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" id="sustain_level__locked__LABEL" for="sustain_level__locked"></label><br>
 
                   </td>
-                  <td class="tableborder fieldtext">sustain volume</td>
+                  <td class="tableborder fieldtext">sustain level</td>
                   <td class="tableborder slidercell">
-                    <input id="sustain_volume" type="text" />
+                    <input id="sustain_level" type="text" />
                   </td>
                   <td class="tableborder expandcell">
 
@@ -962,109 +977,7 @@
                   </td>
 
                 </tr>
-                <tr class="tableborder mergewithnext synthtablerow_slider" id="tablerow_vibrato_speed">
-                  <td class="tableborder iconcell">
-                    <input type="checkbox" class="btn-check" id="vibrato_speed__locked" autocomplete="off">
-                    <label class="btn btn-outline-primary lock-checkbox" id="vibrato_speed__locked__LABEL" for="vibrato_speed__locked"></label><br>
-
-                  </td>
-                  <td class="tableborder fieldtext">vibrato speed</td>
-                  <td class="tableborder slidercell">
-                    <input id="vibrato_speed" type="text" />
-                  </td>
-                  <td class="tableborder expandcell">
-
-                    <input type="checkbox" class="btn-check" id="vibrato_speed__timevarying" autocomplete="off">
-                    <label class="btn btn-outline-primary timevarying-checkbox" id="vibrato_speed__timevarying__LABEL" for="vibrato_speed__timevarying"></label><br>
-                  </td>
-
-                </tr>
-                <tr class="tableborder mergewithnext synthtablerow_slider timevaryrow" id="tablerow_vibrato_speed__timevarying_from">
-                  <td class="tableborder iconcell">
-                    <input type="checkbox" class="btn-check" id="vibrato_speed__timevarying_from__locked" autocomplete="off">
-                    <label class="btn btn-outline-primary lock-checkbox" id="vibrato_speed__timevarying_from__locked__LABEL" for="vibrato_speed__timevarying_from__locked"></label><br>
-
-                  </td>
-                  <td class="tableborder fieldtext">from</td>
-                  <td class="tableborder slidercell">
-                    <input id="vibrato_speed__timevarying_from" type="text" />
-                  </td>
-                  <td class="tableborder expandcell">
-
-                  </td>
-
-                </tr>
-                <tr class="tableborder mergewithnext synthtablerow_slider timevaryrow" id="tablerow_vibrato_speed__timevarying_to">
-                  <td class="tableborder iconcell">
-                    <input type="checkbox" class="btn-check" id="vibrato_speed__timevarying_to__locked" autocomplete="off">
-                    <label class="btn btn-outline-primary lock-checkbox" id="vibrato_speed__timevarying_to__locked__LABEL" for="vibrato_speed__timevarying_to__locked"></label><br>
-
-                  </td>
-                  <td class="tableborder fieldtext">to</td>
-                  <td class="tableborder slidercell">
-                    <input id="vibrato_speed__timevarying_to" type="text" />
-                  </td>
-                  <td class="tableborder expandcell">
-
-                  </td>
-
-                </tr>
-                <tr class="tableborder mergewithnext synthtablerow_buttonlist timevaryrow" id="tablerow_vibrato_speed__timevarying_curve">
-                  <td class="tableborder iconcell">
-                    <input type="checkbox" class="btn-check" id="vibrato_speed__timevarying_curve__locked" autocomplete="off">
-                    <label class="btn btn-outline-primary lock-checkbox" id="vibrato_speed__timevarying_curve__locked__LABEL" for="vibrato_speed__timevarying_curve__locked"></label><br>
-
-                  </td>
-                  <td class="tableborder fieldtext">curve</td>
-                  <td class="tableborder slidercell">
-                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                      <input type="checkbox" class="btn-check " id="buttonselect_vibrato_speed__timevarying_curve_0" autocomplete="off" checked>
-                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_vibrato_speed__timevarying_curve_0_LABEL" for="buttonselect_vibrato_speed__timevarying_curve_0">
-                        <img class="icon" src="images/icon_trajectory_linear.png">
-                      </label>
-                      <input type="checkbox" class="btn-check " id="buttonselect_vibrato_speed__timevarying_curve_1" autocomplete="off">
-                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_vibrato_speed__timevarying_curve_1_LABEL" for="buttonselect_vibrato_speed__timevarying_curve_1">
-                        <img class="icon" src="images/icon_trajectory_easein.png">
-                      </label>
-                      <input type="checkbox" class="btn-check " id="buttonselect_vibrato_speed__timevarying_curve_2" autocomplete="off">
-                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_vibrato_speed__timevarying_curve_2_LABEL" for="buttonselect_vibrato_speed__timevarying_curve_2">
-                        <img class="icon" src="images/icon_trajectory_easeout.png">
-                      </label>
-                      <input type="checkbox" class="btn-check " id="buttonselect_vibrato_speed__timevarying_curve_3" autocomplete="off">
-                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_vibrato_speed__timevarying_curve_3_LABEL" for="buttonselect_vibrato_speed__timevarying_curve_3">
-                        <img class="icon" src="images/icon_trajectory_bounce_linear.png">
-                      </label>
-                      <input type="checkbox" class="btn-check " id="buttonselect_vibrato_speed__timevarying_curve_4" autocomplete="off">
-                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_vibrato_speed__timevarying_curve_4_LABEL" for="buttonselect_vibrato_speed__timevarying_curve_4">
-                        <img class="icon" src="images/icon_trajectory_bounce_smooth.png">
-                      </label>
-                      <input type="checkbox" class="btn-check " id="buttonselect_vibrato_speed__timevarying_curve_5" autocomplete="off">
-                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_vibrato_speed__timevarying_curve_5_LABEL" for="buttonselect_vibrato_speed__timevarying_curve_5">
-                        <img class="icon" src="images/icon_trajectory_transition_sudden.png">
-                      </label>
-                    </div>
-                  </td>
-                  <td class="tableborder expandcell">
-
-                  </td>
-
-                </tr>
-                <tr class="tableborder mergewithnext synthtablerow_slider timevaryrow" id="tablerow_vibrato_speed__timevarying_bias">
-                  <td class="tableborder iconcell">
-                    <input type="checkbox" class="btn-check" id="vibrato_speed__timevarying_bias__locked" autocomplete="off">
-                    <label class="btn btn-outline-primary lock-checkbox" id="vibrato_speed__timevarying_bias__locked__LABEL" for="vibrato_speed__timevarying_bias__locked"></label><br>
-
-                  </td>
-                  <td class="tableborder fieldtext">bias</td>
-                  <td class="tableborder slidercell">
-                    <input id="vibrato_speed__timevarying_bias" type="text" />
-                  </td>
-                  <td class="tableborder expandcell">
-
-                  </td>
-
-                </tr>
-                <tr class="tableborder  synthtablerow_slider" id="tablerow_vibrato_depth">
+                <tr class="tableborder mergewithnext synthtablerow_slider" id="tablerow_vibrato_depth">
                   <td class="tableborder iconcell">
                     <input type="checkbox" class="btn-check" id="vibrato_depth__locked" autocomplete="off">
                     <label class="btn btn-outline-primary lock-checkbox" id="vibrato_depth__locked__LABEL" for="vibrato_depth__locked"></label><br>
@@ -1151,7 +1064,7 @@
                   </td>
 
                 </tr>
-                <tr class="tableborder  synthtablerow_slider timevaryrow" id="tablerow_vibrato_depth__timevarying_bias">
+                <tr class="tableborder mergewithnext synthtablerow_slider timevaryrow" id="tablerow_vibrato_depth__timevarying_bias">
                   <td class="tableborder iconcell">
                     <input type="checkbox" class="btn-check" id="vibrato_depth__timevarying_bias__locked" autocomplete="off">
                     <label class="btn btn-outline-primary lock-checkbox" id="vibrato_depth__timevarying_bias__locked__LABEL" for="vibrato_depth__timevarying_bias__locked"></label><br>
@@ -1160,6 +1073,108 @@
                   <td class="tableborder fieldtext">bias</td>
                   <td class="tableborder slidercell">
                     <input id="vibrato_depth__timevarying_bias" type="text" />
+                  </td>
+                  <td class="tableborder expandcell">
+
+                  </td>
+
+                </tr>
+                <tr class="tableborder  synthtablerow_slider" id="tablerow_vibrato_speed">
+                  <td class="tableborder iconcell">
+                    <input type="checkbox" class="btn-check" id="vibrato_speed__locked" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" id="vibrato_speed__locked__LABEL" for="vibrato_speed__locked"></label><br>
+
+                  </td>
+                  <td class="tableborder fieldtext">vibrato speed</td>
+                  <td class="tableborder slidercell">
+                    <input id="vibrato_speed" type="text" />
+                  </td>
+                  <td class="tableborder expandcell">
+
+                    <input type="checkbox" class="btn-check" id="vibrato_speed__timevarying" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" id="vibrato_speed__timevarying__LABEL" for="vibrato_speed__timevarying"></label><br>
+                  </td>
+
+                </tr>
+                <tr class="tableborder mergewithnext synthtablerow_slider timevaryrow" id="tablerow_vibrato_speed__timevarying_from">
+                  <td class="tableborder iconcell">
+                    <input type="checkbox" class="btn-check" id="vibrato_speed__timevarying_from__locked" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" id="vibrato_speed__timevarying_from__locked__LABEL" for="vibrato_speed__timevarying_from__locked"></label><br>
+
+                  </td>
+                  <td class="tableborder fieldtext">from</td>
+                  <td class="tableborder slidercell">
+                    <input id="vibrato_speed__timevarying_from" type="text" />
+                  </td>
+                  <td class="tableborder expandcell">
+
+                  </td>
+
+                </tr>
+                <tr class="tableborder mergewithnext synthtablerow_slider timevaryrow" id="tablerow_vibrato_speed__timevarying_to">
+                  <td class="tableborder iconcell">
+                    <input type="checkbox" class="btn-check" id="vibrato_speed__timevarying_to__locked" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" id="vibrato_speed__timevarying_to__locked__LABEL" for="vibrato_speed__timevarying_to__locked"></label><br>
+
+                  </td>
+                  <td class="tableborder fieldtext">to</td>
+                  <td class="tableborder slidercell">
+                    <input id="vibrato_speed__timevarying_to" type="text" />
+                  </td>
+                  <td class="tableborder expandcell">
+
+                  </td>
+
+                </tr>
+                <tr class="tableborder mergewithnext synthtablerow_buttonlist timevaryrow" id="tablerow_vibrato_speed__timevarying_curve">
+                  <td class="tableborder iconcell">
+                    <input type="checkbox" class="btn-check" id="vibrato_speed__timevarying_curve__locked" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" id="vibrato_speed__timevarying_curve__locked__LABEL" for="vibrato_speed__timevarying_curve__locked"></label><br>
+
+                  </td>
+                  <td class="tableborder fieldtext">curve</td>
+                  <td class="tableborder slidercell">
+                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                      <input type="checkbox" class="btn-check " id="buttonselect_vibrato_speed__timevarying_curve_0" autocomplete="off" checked>
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_vibrato_speed__timevarying_curve_0_LABEL" for="buttonselect_vibrato_speed__timevarying_curve_0">
+                        <img class="icon" src="images/icon_trajectory_linear.png">
+                      </label>
+                      <input type="checkbox" class="btn-check " id="buttonselect_vibrato_speed__timevarying_curve_1" autocomplete="off">
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_vibrato_speed__timevarying_curve_1_LABEL" for="buttonselect_vibrato_speed__timevarying_curve_1">
+                        <img class="icon" src="images/icon_trajectory_easein.png">
+                      </label>
+                      <input type="checkbox" class="btn-check " id="buttonselect_vibrato_speed__timevarying_curve_2" autocomplete="off">
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_vibrato_speed__timevarying_curve_2_LABEL" for="buttonselect_vibrato_speed__timevarying_curve_2">
+                        <img class="icon" src="images/icon_trajectory_easeout.png">
+                      </label>
+                      <input type="checkbox" class="btn-check " id="buttonselect_vibrato_speed__timevarying_curve_3" autocomplete="off">
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_vibrato_speed__timevarying_curve_3_LABEL" for="buttonselect_vibrato_speed__timevarying_curve_3">
+                        <img class="icon" src="images/icon_trajectory_bounce_linear.png">
+                      </label>
+                      <input type="checkbox" class="btn-check " id="buttonselect_vibrato_speed__timevarying_curve_4" autocomplete="off">
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_vibrato_speed__timevarying_curve_4_LABEL" for="buttonselect_vibrato_speed__timevarying_curve_4">
+                        <img class="icon" src="images/icon_trajectory_bounce_smooth.png">
+                      </label>
+                      <input type="checkbox" class="btn-check " id="buttonselect_vibrato_speed__timevarying_curve_5" autocomplete="off">
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_vibrato_speed__timevarying_curve_5_LABEL" for="buttonselect_vibrato_speed__timevarying_curve_5">
+                        <img class="icon" src="images/icon_trajectory_transition_sudden.png">
+                      </label>
+                    </div>
+                  </td>
+                  <td class="tableborder expandcell">
+
+                  </td>
+
+                </tr>
+                <tr class="tableborder  synthtablerow_slider timevaryrow" id="tablerow_vibrato_speed__timevarying_bias">
+                  <td class="tableborder iconcell">
+                    <input type="checkbox" class="btn-check" id="vibrato_speed__timevarying_bias__locked" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" id="vibrato_speed__timevarying_bias__locked__LABEL" for="vibrato_speed__timevarying_bias__locked"></label><br>
+
+                  </td>
+                  <td class="tableborder fieldtext">bias</td>
+                  <td class="tableborder slidercell">
+                    <input id="vibrato_speed__timevarying_bias" type="text" />
                   </td>
                   <td class="tableborder expandcell">
 
@@ -1430,105 +1445,111 @@
                   </td>
 
                 </tr>
-                <tr class="tableborder  synthtablerow_slider" id="tablerow_flanger">
+                <tr class="tableborder  synthtablerow_slider" id="tablerow_phaser">
                   <td class="tableborder iconcell">
-                    <input type="checkbox" class="btn-check" id="flanger__locked" autocomplete="off">
-                    <label class="btn btn-outline-primary lock-checkbox" id="flanger__locked__LABEL" for="flanger__locked"></label><br>
+                    <input type="checkbox" class="btn-check" id="phaser__locked" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" id="phaser__locked__LABEL" for="phaser__locked"></label><br>
 
                   </td>
-                  <td class="tableborder fieldtext">flanger</td>
+                  <td class="tableborder fieldtext">phaser</td>
                   <td class="tableborder slidercell">
-                    <input id="flanger" type="text" />
+                    <input id="phaser" type="text" />
                   </td>
                   <td class="tableborder expandcell">
 
-                    <input type="checkbox" class="btn-check" id="flanger__timevarying" autocomplete="off">
-                    <label class="btn btn-outline-primary timevarying-checkbox" id="flanger__timevarying__LABEL" for="flanger__timevarying"></label><br>
+                    <input type="checkbox" class="btn-check" id="phaser__timevarying" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" id="phaser__timevarying__LABEL" for="phaser__timevarying"></label><br>
                   </td>
 
                 </tr>
-                <tr class="tableborder mergewithnext synthtablerow_slider timevaryrow" id="tablerow_flanger__timevarying_from">
+                <tr class="tableborder mergewithnext synthtablerow_slider timevaryrow" id="tablerow_phaser__timevarying_from">
                   <td class="tableborder iconcell">
-                    <input type="checkbox" class="btn-check" id="flanger__timevarying_from__locked" autocomplete="off">
-                    <label class="btn btn-outline-primary lock-checkbox" id="flanger__timevarying_from__locked__LABEL" for="flanger__timevarying_from__locked"></label><br>
+                    <input type="checkbox" class="btn-check" id="phaser__timevarying_from__locked" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" id="phaser__timevarying_from__locked__LABEL" for="phaser__timevarying_from__locked"></label><br>
 
                   </td>
                   <td class="tableborder fieldtext">from</td>
                   <td class="tableborder slidercell">
-                    <input id="flanger__timevarying_from" type="text" />
+                    <input id="phaser__timevarying_from" type="text" />
                   </td>
                   <td class="tableborder expandcell">
 
                   </td>
 
                 </tr>
-                <tr class="tableborder mergewithnext synthtablerow_slider timevaryrow" id="tablerow_flanger__timevarying_to">
+                <tr class="tableborder mergewithnext synthtablerow_slider timevaryrow" id="tablerow_phaser__timevarying_to">
                   <td class="tableborder iconcell">
-                    <input type="checkbox" class="btn-check" id="flanger__timevarying_to__locked" autocomplete="off">
-                    <label class="btn btn-outline-primary lock-checkbox" id="flanger__timevarying_to__locked__LABEL" for="flanger__timevarying_to__locked"></label><br>
+                    <input type="checkbox" class="btn-check" id="phaser__timevarying_to__locked" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" id="phaser__timevarying_to__locked__LABEL" for="phaser__timevarying_to__locked"></label><br>
 
                   </td>
                   <td class="tableborder fieldtext">to</td>
                   <td class="tableborder slidercell">
-                    <input id="flanger__timevarying_to" type="text" />
+                    <input id="phaser__timevarying_to" type="text" />
                   </td>
                   <td class="tableborder expandcell">
 
+                    <input type="checkbox" class="btn-check" id="phaser__timevarying_to__timevarying" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" id="phaser__timevarying_to__timevarying__LABEL" for="phaser__timevarying_to__timevarying"></label><br>
                   </td>
 
                 </tr>
-                <tr class="tableborder mergewithnext synthtablerow_buttonlist timevaryrow" id="tablerow_flanger__timevarying_curve">
+                <tr class="tableborder mergewithnext synthtablerow_buttonlist timevaryrow" id="tablerow_phaser__timevarying_curve">
                   <td class="tableborder iconcell">
-                    <input type="checkbox" class="btn-check" id="flanger__timevarying_curve__locked" autocomplete="off">
-                    <label class="btn btn-outline-primary lock-checkbox" id="flanger__timevarying_curve__locked__LABEL" for="flanger__timevarying_curve__locked"></label><br>
+                    <input type="checkbox" class="btn-check" id="phaser__timevarying_curve__locked" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" id="phaser__timevarying_curve__locked__LABEL" for="phaser__timevarying_curve__locked"></label><br>
 
                   </td>
                   <td class="tableborder fieldtext">curve</td>
                   <td class="tableborder slidercell">
                     <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                      <input type="checkbox" class="btn-check " id="buttonselect_flanger__timevarying_curve_0" autocomplete="off" checked>
-                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_flanger__timevarying_curve_0_LABEL" for="buttonselect_flanger__timevarying_curve_0">
+                      <input type="checkbox" class="btn-check " id="buttonselect_phaser__timevarying_curve_0" autocomplete="off" checked>
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_phaser__timevarying_curve_0_LABEL" for="buttonselect_phaser__timevarying_curve_0">
                         <img class="icon" src="images/icon_trajectory_linear.png">
                       </label>
-                      <input type="checkbox" class="btn-check " id="buttonselect_flanger__timevarying_curve_1" autocomplete="off">
-                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_flanger__timevarying_curve_1_LABEL" for="buttonselect_flanger__timevarying_curve_1">
+                      <input type="checkbox" class="btn-check " id="buttonselect_phaser__timevarying_curve_1" autocomplete="off">
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_phaser__timevarying_curve_1_LABEL" for="buttonselect_phaser__timevarying_curve_1">
                         <img class="icon" src="images/icon_trajectory_easein.png">
                       </label>
-                      <input type="checkbox" class="btn-check " id="buttonselect_flanger__timevarying_curve_2" autocomplete="off">
-                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_flanger__timevarying_curve_2_LABEL" for="buttonselect_flanger__timevarying_curve_2">
+                      <input type="checkbox" class="btn-check " id="buttonselect_phaser__timevarying_curve_2" autocomplete="off">
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_phaser__timevarying_curve_2_LABEL" for="buttonselect_phaser__timevarying_curve_2">
                         <img class="icon" src="images/icon_trajectory_easeout.png">
                       </label>
-                      <input type="checkbox" class="btn-check " id="buttonselect_flanger__timevarying_curve_3" autocomplete="off">
-                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_flanger__timevarying_curve_3_LABEL" for="buttonselect_flanger__timevarying_curve_3">
+                      <input type="checkbox" class="btn-check " id="buttonselect_phaser__timevarying_curve_3" autocomplete="off">
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_phaser__timevarying_curve_3_LABEL" for="buttonselect_phaser__timevarying_curve_3">
                         <img class="icon" src="images/icon_trajectory_bounce_linear.png">
                       </label>
-                      <input type="checkbox" class="btn-check " id="buttonselect_flanger__timevarying_curve_4" autocomplete="off">
-                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_flanger__timevarying_curve_4_LABEL" for="buttonselect_flanger__timevarying_curve_4">
+                      <input type="checkbox" class="btn-check " id="buttonselect_phaser__timevarying_curve_4" autocomplete="off">
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_phaser__timevarying_curve_4_LABEL" for="buttonselect_phaser__timevarying_curve_4">
                         <img class="icon" src="images/icon_trajectory_bounce_smooth.png">
                       </label>
-                      <input type="checkbox" class="btn-check " id="buttonselect_flanger__timevarying_curve_5" autocomplete="off">
-                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_flanger__timevarying_curve_5_LABEL" for="buttonselect_flanger__timevarying_curve_5">
+                      <input type="checkbox" class="btn-check " id="buttonselect_phaser__timevarying_curve_5" autocomplete="off">
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_phaser__timevarying_curve_5_LABEL" for="buttonselect_phaser__timevarying_curve_5">
                         <img class="icon" src="images/icon_trajectory_transition_sudden.png">
                       </label>
                     </div>
                   </td>
                   <td class="tableborder expandcell">
 
+                    <input type="checkbox" class="btn-check" id="phaser__timevarying_curve__timevarying" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" id="phaser__timevarying_curve__timevarying__LABEL" for="phaser__timevarying_curve__timevarying"></label><br>
                   </td>
 
                 </tr>
-                <tr class="tableborder  synthtablerow_slider timevaryrow" id="tablerow_flanger__timevarying_bias">
+                <tr class="tableborder  synthtablerow_slider timevaryrow" id="tablerow_phaser__timevarying_bias">
                   <td class="tableborder iconcell">
-                    <input type="checkbox" class="btn-check" id="flanger__timevarying_bias__locked" autocomplete="off">
-                    <label class="btn btn-outline-primary lock-checkbox" id="flanger__timevarying_bias__locked__LABEL" for="flanger__timevarying_bias__locked"></label><br>
+                    <input type="checkbox" class="btn-check" id="phaser__timevarying_bias__locked" autocomplete="off">
+                    <label class="btn btn-outline-primary lock-checkbox" id="phaser__timevarying_bias__locked__LABEL" for="phaser__timevarying_bias__locked"></label><br>
 
                   </td>
                   <td class="tableborder fieldtext">bias</td>
                   <td class="tableborder slidercell">
-                    <input id="flanger__timevarying_bias" type="text" />
+                    <input id="phaser__timevarying_bias" type="text" />
                   </td>
                   <td class="tableborder expandcell">
 
+                    <input type="checkbox" class="btn-check" id="phaser__timevarying_bias__timevarying" autocomplete="off">
+                    <label class="btn btn-outline-primary timevarying-checkbox" id="phaser__timevarying_bias__timevarying__LABEL" for="phaser__timevarying_bias__timevarying"></label><br>
                   </td>
 
                 </tr>
@@ -1962,6 +1983,7 @@
     <script src="js/utils.js"></script>
     <script src="js/synth_parameters.js"></script>
     <script src="js/bfxr_synth.js"></script>
+    <script src="js/visualiser.js"></script>
     <script src="js/bfxr.js"></script>
 
     <script>
@@ -2262,14 +2284,36 @@
 
       hook_up_lockbox("max_sound_duration");
 
+      var slider_note_held_time = new Slider("#note_held_time", {
+        id: "instanced_note_held_time",
+        min: 0,
+        max: 0.66,
+        range: false,
+        step: 0.0066,
+        value: 0.33,
+        ticks: [0, 0.066, 0.132, 0.198, 0.264, 0.33, 0.396, 0.462, 0.528, 0.5940000000000001, 0.66]
+      });
+      slider_note_held_time.sliderElem.className += " singleselect";
+      slider_note_held_time.sliderElem.getElementsByClassName("slider-tick-container")[0].children[5].classList.add('defaulttick');
+
+      slider_note_held_time.on("slide", function(sliderValue) {
+        onSliderValueChange("note_held_time", sliderValue, false);
+      });
+      slider_note_held_time.on("slideStop", function(sliderValue) {
+        onSliderValueChange("note_held_time", sliderValue, true);
+      });
+      SLIDER_OBJECT_INDEX["note_held_time"] = slider_note_held_time;
+
+      hook_up_lockbox("note_held_time");
+
       var slider_attack_time = new Slider("#attack_time", {
         id: "instanced_attack_time",
         min: 0,
-        max: 33,
+        max: 0.33,
         range: false,
-        step: 0.33,
-        value: 23.1,
-        ticks: [0, 3.3, 6.6, 9.9, 13.2, 16.5, 19.8, 23.1, 26.4, 29.7, 33]
+        step: 0.0033,
+        value: 0.231,
+        ticks: [0, 0.033, 0.066, 0.099, 0.132, 0.165, 0.198, 0.231, 0.264, 0.29700000000000004, 0.33]
       });
       slider_attack_time.sliderElem.className += " singleselect";
       slider_attack_time.sliderElem.getElementsByClassName("slider-tick-container")[0].children[7].classList.add('defaulttick');
@@ -2287,11 +2331,11 @@
       var slider_decay_time = new Slider("#decay_time", {
         id: "instanced_decay_time",
         min: 0,
-        max: 33,
+        max: 0.33,
         range: false,
-        step: 0.33,
-        value: 23.1,
-        ticks: [0, 3.3, 6.6, 9.9, 13.2, 16.5, 19.8, 23.1, 26.4, 29.7, 33]
+        step: 0.0033,
+        value: 0.231,
+        ticks: [0, 0.033, 0.066, 0.099, 0.132, 0.165, 0.198, 0.231, 0.264, 0.29700000000000004, 0.33]
       });
       slider_decay_time.sliderElem.className += " singleselect";
       slider_decay_time.sliderElem.getElementsByClassName("slider-tick-container")[0].children[7].classList.add('defaulttick');
@@ -2306,27 +2350,27 @@
 
       hook_up_lockbox("decay_time");
 
-      var slider_sustain_volume = new Slider("#sustain_volume", {
-        id: "instanced_sustain_volume",
+      var slider_sustain_level = new Slider("#sustain_level", {
+        id: "instanced_sustain_level",
         min: 0,
-        max: 100,
+        max: 1,
         range: false,
-        step: 1,
-        value: 70,
-        ticks: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+        step: 0.01,
+        value: 0.7,
+        ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
-      slider_sustain_volume.sliderElem.className += " singleselect";
-      slider_sustain_volume.sliderElem.getElementsByClassName("slider-tick-container")[0].children[7].classList.add('defaulttick');
+      slider_sustain_level.sliderElem.className += " singleselect";
+      slider_sustain_level.sliderElem.getElementsByClassName("slider-tick-container")[0].children[7].classList.add('defaulttick');
 
-      slider_sustain_volume.on("slide", function(sliderValue) {
-        onSliderValueChange("sustain_volume", sliderValue, false);
+      slider_sustain_level.on("slide", function(sliderValue) {
+        onSliderValueChange("sustain_level", sliderValue, false);
       });
-      slider_sustain_volume.on("slideStop", function(sliderValue) {
-        onSliderValueChange("sustain_volume", sliderValue, true);
+      slider_sustain_level.on("slideStop", function(sliderValue) {
+        onSliderValueChange("sustain_level", sliderValue, true);
       });
-      SLIDER_OBJECT_INDEX["sustain_volume"] = slider_sustain_volume;
+      SLIDER_OBJECT_INDEX["sustain_level"] = slider_sustain_level;
 
-      hook_up_lockbox("sustain_volume");
+      hook_up_lockbox("sustain_level");
 
       var slider_compression = new Slider("#compression", {
         id: "instanced_compression",
@@ -2438,11 +2482,11 @@
         max: 1,
         range: false,
         step: 0.01,
-        value: 0.3,
+        value: 0,
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_harmonics.sliderElem.className += " singleselect";
-      slider_harmonics.sliderElem.getElementsByClassName("slider-tick-container")[0].children[3].classList.add('defaulttick');
+      slider_harmonics.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
 
       slider_harmonics.on("slide", function(sliderValue) {
         onSliderValueChange("harmonics", sliderValue, false);
@@ -2462,11 +2506,11 @@
         max: 1,
         range: false,
         step: 0.01,
-        value: 0.3,
+        value: 0,
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_harmonics__timevarying_from.sliderElem.className += " singleselect";
-      slider_harmonics__timevarying_from.sliderElem.getElementsByClassName("slider-tick-container")[0].children[3].classList.add('defaulttick');
+      slider_harmonics__timevarying_from.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
 
       slider_harmonics__timevarying_from.on("slide", function(sliderValue) {
         onSliderValueChange("harmonics__timevarying_from", sliderValue, false);
@@ -2484,11 +2528,11 @@
         max: 1,
         range: false,
         step: 0.01,
-        value: 0.3,
+        value: 0,
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_harmonics__timevarying_to.sliderElem.className += " singleselect";
-      slider_harmonics__timevarying_to.sliderElem.getElementsByClassName("slider-tick-container")[0].children[3].classList.add('defaulttick');
+      slider_harmonics__timevarying_to.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
 
       slider_harmonics__timevarying_to.on("slide", function(sliderValue) {
         onSliderValueChange("harmonics__timevarying_to", sliderValue, false);
@@ -2520,11 +2564,11 @@
         max: 1,
         range: false,
         step: 0.01,
-        value: 0.3,
+        value: 0,
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_harmonics__timevarying_bias.sliderElem.className += " singleselect";
-      slider_harmonics__timevarying_bias.sliderElem.getElementsByClassName("slider-tick-container")[0].children[3].classList.add('defaulttick');
+      slider_harmonics__timevarying_bias.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
 
       slider_harmonics__timevarying_bias.on("slide", function(sliderValue) {
         onSliderValueChange("harmonics__timevarying_bias", sliderValue, false);
@@ -2640,6 +2684,110 @@
 
       hook_up_lockbox("harmonics_falloff__timevarying_bias");
 
+      var slider_vibrato_depth = new Slider("#vibrato_depth", {
+        id: "instanced_vibrato_depth",
+        min: 0,
+        max: 1,
+        range: false,
+        step: 0.01,
+        value: 0.4,
+        ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+      });
+      slider_vibrato_depth.sliderElem.className += " singleselect";
+      slider_vibrato_depth.sliderElem.getElementsByClassName("slider-tick-container")[0].children[4].classList.add('defaulttick');
+
+      slider_vibrato_depth.on("slide", function(sliderValue) {
+        onSliderValueChange("vibrato_depth", sliderValue, false);
+      });
+      slider_vibrato_depth.on("slideStop", function(sliderValue) {
+        onSliderValueChange("vibrato_depth", sliderValue, true);
+      });
+      SLIDER_OBJECT_INDEX["vibrato_depth"] = slider_vibrato_depth;
+
+      hook_up_lockbox("vibrato_depth");
+
+      hook_up_timevaryswitch("vibrato_depth");
+
+      var slider_vibrato_depth__timevarying_from = new Slider("#vibrato_depth__timevarying_from", {
+        id: "instanced_vibrato_depth__timevarying_from",
+        min: 0,
+        max: 1,
+        range: false,
+        step: 0.01,
+        value: 0.4,
+        ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+      });
+      slider_vibrato_depth__timevarying_from.sliderElem.className += " singleselect";
+      slider_vibrato_depth__timevarying_from.sliderElem.getElementsByClassName("slider-tick-container")[0].children[4].classList.add('defaulttick');
+
+      slider_vibrato_depth__timevarying_from.on("slide", function(sliderValue) {
+        onSliderValueChange("vibrato_depth__timevarying_from", sliderValue, false);
+      });
+      slider_vibrato_depth__timevarying_from.on("slideStop", function(sliderValue) {
+        onSliderValueChange("vibrato_depth__timevarying_from", sliderValue, true);
+      });
+      SLIDER_OBJECT_INDEX["vibrato_depth__timevarying_from"] = slider_vibrato_depth__timevarying_from;
+
+      hook_up_lockbox("vibrato_depth__timevarying_from");
+
+      var slider_vibrato_depth__timevarying_to = new Slider("#vibrato_depth__timevarying_to", {
+        id: "instanced_vibrato_depth__timevarying_to",
+        min: 0,
+        max: 1,
+        range: false,
+        step: 0.01,
+        value: 0.4,
+        ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+      });
+      slider_vibrato_depth__timevarying_to.sliderElem.className += " singleselect";
+      slider_vibrato_depth__timevarying_to.sliderElem.getElementsByClassName("slider-tick-container")[0].children[4].classList.add('defaulttick');
+
+      slider_vibrato_depth__timevarying_to.on("slide", function(sliderValue) {
+        onSliderValueChange("vibrato_depth__timevarying_to", sliderValue, false);
+      });
+      slider_vibrato_depth__timevarying_to.on("slideStop", function(sliderValue) {
+        onSliderValueChange("vibrato_depth__timevarying_to", sliderValue, true);
+      });
+      SLIDER_OBJECT_INDEX["vibrato_depth__timevarying_to"] = slider_vibrato_depth__timevarying_to;
+
+      hook_up_lockbox("vibrato_depth__timevarying_to");
+
+      hook_up_checkbox("vibrato_depth__timevarying_curve", 0, 6);
+
+      hook_up_checkbox("vibrato_depth__timevarying_curve", 1, 6);
+
+      hook_up_checkbox("vibrato_depth__timevarying_curve", 2, 6);
+
+      hook_up_checkbox("vibrato_depth__timevarying_curve", 3, 6);
+
+      hook_up_checkbox("vibrato_depth__timevarying_curve", 4, 6);
+
+      hook_up_checkbox("vibrato_depth__timevarying_curve", 5, 6);
+
+      hook_up_lockbox("vibrato_depth__timevarying_curve");
+
+      var slider_vibrato_depth__timevarying_bias = new Slider("#vibrato_depth__timevarying_bias", {
+        id: "instanced_vibrato_depth__timevarying_bias",
+        min: 0,
+        max: 1,
+        range: false,
+        step: 0.01,
+        value: 0.4,
+        ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+      });
+      slider_vibrato_depth__timevarying_bias.sliderElem.className += " singleselect";
+      slider_vibrato_depth__timevarying_bias.sliderElem.getElementsByClassName("slider-tick-container")[0].children[4].classList.add('defaulttick');
+
+      slider_vibrato_depth__timevarying_bias.on("slide", function(sliderValue) {
+        onSliderValueChange("vibrato_depth__timevarying_bias", sliderValue, false);
+      });
+      slider_vibrato_depth__timevarying_bias.on("slideStop", function(sliderValue) {
+        onSliderValueChange("vibrato_depth__timevarying_bias", sliderValue, true);
+      });
+      SLIDER_OBJECT_INDEX["vibrato_depth__timevarying_bias"] = slider_vibrato_depth__timevarying_bias;
+
+      hook_up_lockbox("vibrato_depth__timevarying_bias");
+
       var slider_vibrato_speed = new Slider("#vibrato_speed", {
         id: "instanced_vibrato_speed",
         min: 0,
@@ -2743,110 +2891,6 @@
       SLIDER_OBJECT_INDEX["vibrato_speed__timevarying_bias"] = slider_vibrato_speed__timevarying_bias;
 
       hook_up_lockbox("vibrato_speed__timevarying_bias");
-
-      var slider_vibrato_depth = new Slider("#vibrato_depth", {
-        id: "instanced_vibrato_depth",
-        min: 0,
-        max: 1,
-        range: false,
-        step: 0.01,
-        value: 0,
-        ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
-      });
-      slider_vibrato_depth.sliderElem.className += " singleselect";
-      slider_vibrato_depth.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
-
-      slider_vibrato_depth.on("slide", function(sliderValue) {
-        onSliderValueChange("vibrato_depth", sliderValue, false);
-      });
-      slider_vibrato_depth.on("slideStop", function(sliderValue) {
-        onSliderValueChange("vibrato_depth", sliderValue, true);
-      });
-      SLIDER_OBJECT_INDEX["vibrato_depth"] = slider_vibrato_depth;
-
-      hook_up_lockbox("vibrato_depth");
-
-      hook_up_timevaryswitch("vibrato_depth");
-
-      var slider_vibrato_depth__timevarying_from = new Slider("#vibrato_depth__timevarying_from", {
-        id: "instanced_vibrato_depth__timevarying_from",
-        min: 0,
-        max: 1,
-        range: false,
-        step: 0.01,
-        value: 0,
-        ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
-      });
-      slider_vibrato_depth__timevarying_from.sliderElem.className += " singleselect";
-      slider_vibrato_depth__timevarying_from.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
-
-      slider_vibrato_depth__timevarying_from.on("slide", function(sliderValue) {
-        onSliderValueChange("vibrato_depth__timevarying_from", sliderValue, false);
-      });
-      slider_vibrato_depth__timevarying_from.on("slideStop", function(sliderValue) {
-        onSliderValueChange("vibrato_depth__timevarying_from", sliderValue, true);
-      });
-      SLIDER_OBJECT_INDEX["vibrato_depth__timevarying_from"] = slider_vibrato_depth__timevarying_from;
-
-      hook_up_lockbox("vibrato_depth__timevarying_from");
-
-      var slider_vibrato_depth__timevarying_to = new Slider("#vibrato_depth__timevarying_to", {
-        id: "instanced_vibrato_depth__timevarying_to",
-        min: 0,
-        max: 1,
-        range: false,
-        step: 0.01,
-        value: 0,
-        ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
-      });
-      slider_vibrato_depth__timevarying_to.sliderElem.className += " singleselect";
-      slider_vibrato_depth__timevarying_to.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
-
-      slider_vibrato_depth__timevarying_to.on("slide", function(sliderValue) {
-        onSliderValueChange("vibrato_depth__timevarying_to", sliderValue, false);
-      });
-      slider_vibrato_depth__timevarying_to.on("slideStop", function(sliderValue) {
-        onSliderValueChange("vibrato_depth__timevarying_to", sliderValue, true);
-      });
-      SLIDER_OBJECT_INDEX["vibrato_depth__timevarying_to"] = slider_vibrato_depth__timevarying_to;
-
-      hook_up_lockbox("vibrato_depth__timevarying_to");
-
-      hook_up_checkbox("vibrato_depth__timevarying_curve", 0, 6);
-
-      hook_up_checkbox("vibrato_depth__timevarying_curve", 1, 6);
-
-      hook_up_checkbox("vibrato_depth__timevarying_curve", 2, 6);
-
-      hook_up_checkbox("vibrato_depth__timevarying_curve", 3, 6);
-
-      hook_up_checkbox("vibrato_depth__timevarying_curve", 4, 6);
-
-      hook_up_checkbox("vibrato_depth__timevarying_curve", 5, 6);
-
-      hook_up_lockbox("vibrato_depth__timevarying_curve");
-
-      var slider_vibrato_depth__timevarying_bias = new Slider("#vibrato_depth__timevarying_bias", {
-        id: "instanced_vibrato_depth__timevarying_bias",
-        min: 0,
-        max: 1,
-        range: false,
-        step: 0.01,
-        value: 0,
-        ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
-      });
-      slider_vibrato_depth__timevarying_bias.sliderElem.className += " singleselect";
-      slider_vibrato_depth__timevarying_bias.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
-
-      slider_vibrato_depth__timevarying_bias.on("slide", function(sliderValue) {
-        onSliderValueChange("vibrato_depth__timevarying_bias", sliderValue, false);
-      });
-      slider_vibrato_depth__timevarying_bias.on("slideStop", function(sliderValue) {
-        onSliderValueChange("vibrato_depth__timevarying_bias", sliderValue, true);
-      });
-      SLIDER_OBJECT_INDEX["vibrato_depth__timevarying_bias"] = slider_vibrato_depth__timevarying_bias;
-
-      hook_up_lockbox("vibrato_depth__timevarying_bias");
 
       var slider_frequency = new Slider("#frequency", {
         id: "instanced_frequency",
@@ -3144,8 +3188,94 @@
 
       hook_up_lockbox("pitch_jump_onset_2");
 
-      var slider_flanger = new Slider("#flanger", {
-        id: "instanced_flanger",
+      var slider_phaser = new Slider("#phaser", {
+        id: "instanced_phaser",
+        min: -1,
+        max: 1,
+        range: false,
+        step: 0.02,
+        value: -1,
+        ticks: [-1, -0.8, -0.6, -0.4, -0.19999999999999996, 0, 0.19999999999999996, 0.3999999999999999, 0.6000000000000001, 0.8, 1]
+      });
+      slider_phaser.sliderElem.className += " singleselect";
+      slider_phaser.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
+
+      slider_phaser.on("slide", function(sliderValue) {
+        onSliderValueChange("phaser", sliderValue, false);
+      });
+      slider_phaser.on("slideStop", function(sliderValue) {
+        onSliderValueChange("phaser", sliderValue, true);
+      });
+      SLIDER_OBJECT_INDEX["phaser"] = slider_phaser;
+
+      hook_up_lockbox("phaser");
+
+      hook_up_timevaryswitch("phaser");
+
+      var slider_phaser__timevarying_from = new Slider("#phaser__timevarying_from", {
+        id: "instanced_phaser__timevarying_from",
+        min: -1,
+        max: 1,
+        range: false,
+        step: 0.02,
+        value: -1,
+        ticks: [-1, -0.8, -0.6, -0.4, -0.19999999999999996, 0, 0.19999999999999996, 0.3999999999999999, 0.6000000000000001, 0.8, 1]
+      });
+      slider_phaser__timevarying_from.sliderElem.className += " singleselect";
+      slider_phaser__timevarying_from.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
+
+      slider_phaser__timevarying_from.on("slide", function(sliderValue) {
+        onSliderValueChange("phaser__timevarying_from", sliderValue, false);
+      });
+      slider_phaser__timevarying_from.on("slideStop", function(sliderValue) {
+        onSliderValueChange("phaser__timevarying_from", sliderValue, true);
+      });
+      SLIDER_OBJECT_INDEX["phaser__timevarying_from"] = slider_phaser__timevarying_from;
+
+      hook_up_lockbox("phaser__timevarying_from");
+
+      var slider_phaser__timevarying_to = new Slider("#phaser__timevarying_to", {
+        id: "instanced_phaser__timevarying_to",
+        min: -1,
+        max: 1,
+        range: false,
+        step: 0.02,
+        value: -1,
+        ticks: [-1, -0.8, -0.6, -0.4, -0.19999999999999996, 0, 0.19999999999999996, 0.3999999999999999, 0.6000000000000001, 0.8, 1]
+      });
+      slider_phaser__timevarying_to.sliderElem.className += " singleselect";
+      slider_phaser__timevarying_to.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
+
+      slider_phaser__timevarying_to.on("slide", function(sliderValue) {
+        onSliderValueChange("phaser__timevarying_to", sliderValue, false);
+      });
+      slider_phaser__timevarying_to.on("slideStop", function(sliderValue) {
+        onSliderValueChange("phaser__timevarying_to", sliderValue, true);
+      });
+      SLIDER_OBJECT_INDEX["phaser__timevarying_to"] = slider_phaser__timevarying_to;
+
+      hook_up_lockbox("phaser__timevarying_to");
+
+      hook_up_timevaryswitch("phaser__timevarying_to");
+
+      hook_up_checkbox("phaser__timevarying_curve", 0, 6);
+
+      hook_up_checkbox("phaser__timevarying_curve", 1, 6);
+
+      hook_up_checkbox("phaser__timevarying_curve", 2, 6);
+
+      hook_up_checkbox("phaser__timevarying_curve", 3, 6);
+
+      hook_up_checkbox("phaser__timevarying_curve", 4, 6);
+
+      hook_up_checkbox("phaser__timevarying_curve", 5, 6);
+
+      hook_up_lockbox("phaser__timevarying_curve");
+
+      hook_up_timevaryswitch("phaser__timevarying_curve");
+
+      var slider_phaser__timevarying_bias = new Slider("#phaser__timevarying_bias", {
+        id: "instanced_phaser__timevarying_bias",
         min: 0,
         max: 1,
         range: false,
@@ -3153,100 +3283,20 @@
         value: 0,
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
-      slider_flanger.sliderElem.className += " singleselect";
-      slider_flanger.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
+      slider_phaser__timevarying_bias.sliderElem.className += " singleselect";
+      slider_phaser__timevarying_bias.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
 
-      slider_flanger.on("slide", function(sliderValue) {
-        onSliderValueChange("flanger", sliderValue, false);
+      slider_phaser__timevarying_bias.on("slide", function(sliderValue) {
+        onSliderValueChange("phaser__timevarying_bias", sliderValue, false);
       });
-      slider_flanger.on("slideStop", function(sliderValue) {
-        onSliderValueChange("flanger", sliderValue, true);
+      slider_phaser__timevarying_bias.on("slideStop", function(sliderValue) {
+        onSliderValueChange("phaser__timevarying_bias", sliderValue, true);
       });
-      SLIDER_OBJECT_INDEX["flanger"] = slider_flanger;
+      SLIDER_OBJECT_INDEX["phaser__timevarying_bias"] = slider_phaser__timevarying_bias;
 
-      hook_up_lockbox("flanger");
+      hook_up_lockbox("phaser__timevarying_bias");
 
-      hook_up_timevaryswitch("flanger");
-
-      var slider_flanger__timevarying_from = new Slider("#flanger__timevarying_from", {
-        id: "instanced_flanger__timevarying_from",
-        min: 0,
-        max: 1,
-        range: false,
-        step: 0.01,
-        value: 0,
-        ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
-      });
-      slider_flanger__timevarying_from.sliderElem.className += " singleselect";
-      slider_flanger__timevarying_from.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
-
-      slider_flanger__timevarying_from.on("slide", function(sliderValue) {
-        onSliderValueChange("flanger__timevarying_from", sliderValue, false);
-      });
-      slider_flanger__timevarying_from.on("slideStop", function(sliderValue) {
-        onSliderValueChange("flanger__timevarying_from", sliderValue, true);
-      });
-      SLIDER_OBJECT_INDEX["flanger__timevarying_from"] = slider_flanger__timevarying_from;
-
-      hook_up_lockbox("flanger__timevarying_from");
-
-      var slider_flanger__timevarying_to = new Slider("#flanger__timevarying_to", {
-        id: "instanced_flanger__timevarying_to",
-        min: 0,
-        max: 1,
-        range: false,
-        step: 0.01,
-        value: 0,
-        ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
-      });
-      slider_flanger__timevarying_to.sliderElem.className += " singleselect";
-      slider_flanger__timevarying_to.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
-
-      slider_flanger__timevarying_to.on("slide", function(sliderValue) {
-        onSliderValueChange("flanger__timevarying_to", sliderValue, false);
-      });
-      slider_flanger__timevarying_to.on("slideStop", function(sliderValue) {
-        onSliderValueChange("flanger__timevarying_to", sliderValue, true);
-      });
-      SLIDER_OBJECT_INDEX["flanger__timevarying_to"] = slider_flanger__timevarying_to;
-
-      hook_up_lockbox("flanger__timevarying_to");
-
-      hook_up_checkbox("flanger__timevarying_curve", 0, 6);
-
-      hook_up_checkbox("flanger__timevarying_curve", 1, 6);
-
-      hook_up_checkbox("flanger__timevarying_curve", 2, 6);
-
-      hook_up_checkbox("flanger__timevarying_curve", 3, 6);
-
-      hook_up_checkbox("flanger__timevarying_curve", 4, 6);
-
-      hook_up_checkbox("flanger__timevarying_curve", 5, 6);
-
-      hook_up_lockbox("flanger__timevarying_curve");
-
-      var slider_flanger__timevarying_bias = new Slider("#flanger__timevarying_bias", {
-        id: "instanced_flanger__timevarying_bias",
-        min: 0,
-        max: 1,
-        range: false,
-        step: 0.01,
-        value: 0,
-        ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
-      });
-      slider_flanger__timevarying_bias.sliderElem.className += " singleselect";
-      slider_flanger__timevarying_bias.sliderElem.getElementsByClassName("slider-tick-container")[0].children[0].classList.add('defaulttick');
-
-      slider_flanger__timevarying_bias.on("slide", function(sliderValue) {
-        onSliderValueChange("flanger__timevarying_bias", sliderValue, false);
-      });
-      slider_flanger__timevarying_bias.on("slideStop", function(sliderValue) {
-        onSliderValueChange("flanger__timevarying_bias", sliderValue, true);
-      });
-      SLIDER_OBJECT_INDEX["flanger__timevarying_bias"] = slider_flanger__timevarying_bias;
-
-      hook_up_lockbox("flanger__timevarying_bias");
+      hook_up_timevaryswitch("phaser__timevarying_bias");
 
       var slider_low_pass_filter_cutoff = new Slider("#low_pass_filter_cutoff", {
         id: "instanced_low_pass_filter_cutoff",

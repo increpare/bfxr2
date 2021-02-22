@@ -113,14 +113,32 @@ var SYNTH_PARAMETERS = [
 
 
     {
+        name: "note_held_time",
+        tooltip: "tooltip",
+
+        type: "FLOAT",
+        unit: "sec",
+
+        min: 0.0,
+        max: 0.66,
+
+        default: 5,
+
+        can_vary_over_time: false,
+        can_randomize: true,
+
+        group_with_next: true,
+    },
+
+    {
         name: "attack_time",
         tooltip: "tooltip",
 
         type: "FLOAT",
         unit: "%",
 
-        min: 0,
-        max: 33,
+        min: 0.0,
+        max: 0.33,
 
         default: 7,
 
@@ -137,8 +155,8 @@ var SYNTH_PARAMETERS = [
         type: "FLOAT",
         unit: "%",
 
-        min: 0,
-        max: 33,
+        min: 0.00,
+        max: 0.33,
 
         default: 7,
 
@@ -151,14 +169,14 @@ var SYNTH_PARAMETERS = [
 
 
     {
-        name: "sustain_volume",
+        name: "sustain_level",
         tooltip: "tooltip",
 
         type: "FLOAT",
         unit: "%",
 
         min: 0,
-        max: 100,
+        max: 1,
 
         default: 7,
 
@@ -199,7 +217,7 @@ var SYNTH_PARAMETERS = [
         min: 0,
         max: 1,
 
-        default: 3,
+        default: 0,
 
         can_vary_over_time: true,
         can_randomize: true,
@@ -228,8 +246,9 @@ var SYNTH_PARAMETERS = [
         group_with_next: false,
     },
 
+
     {
-        name: "vibrato_speed",
+        name: "vibrato_depth",
         tooltip: "tooltip",
 
         type: "FLOAT",
@@ -238,7 +257,7 @@ var SYNTH_PARAMETERS = [
         min: 0,
         max: 1,
 
-        default: 0,
+        default: 4,
 
         can_vary_over_time: true,
         can_randomize: true,
@@ -247,7 +266,7 @@ var SYNTH_PARAMETERS = [
     },
 
     {
-        name: "vibrato_depth",
+        name: "vibrato_speed",
         tooltip: "tooltip",
 
         type: "FLOAT",
@@ -377,13 +396,13 @@ var SYNTH_PARAMETERS = [
 
 
     {
-        name: "flanger",
+        name: "phaser",
         tooltip: "tooltip",
 
         type: "FLOAT",
         unit: "",
 
-        min: 0,
+        min: -1,
         max: 1,
 
         default: 0,

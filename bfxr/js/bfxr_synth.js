@@ -628,20 +628,10 @@ SoundEffect.prototype.play = function() {
     ULBS();
 
     var source = AUDIO_CONTEXT.createBufferSource();
-    var filter1 = AUDIO_CONTEXT.createBiquadFilter();
-    var filter2 = AUDIO_CONTEXT.createBiquadFilter();
-    var filter3 = AUDIO_CONTEXT.createBiquadFilter();
 
     source.buffer = this._buffer;
-    source.connect(filter1);
+    source.connect(AUDIO_CONTEXT.destination);
 
-    filter1.frequency.value = 1600;
-    filter2.frequency.value = 1600;
-    filter3.frequency.value = 1600;
-
-    filter1.connect(filter2);
-    filter2.connect(filter3);
-    filter3.connect(AUDIO_CONTEXT.destination);
     var t = AUDIO_CONTEXT.currentTime;
     if (typeof source.start != 'undefined') {
         source.start(t);
@@ -649,7 +639,7 @@ SoundEffect.prototype.play = function() {
         source.noteOn(t);
     }
     source.onended = function() {
-        filter3.disconnect()
+        source.disconnect()
     }
 };
 
@@ -979,19 +969,19 @@ var sfxCache = {};
 var cachedSeeds = [];
 var CACHE_MAX = 50;
 
-function cacheSeed(seed) {
-    if (seed in sfxCache) {
-        return sfxCache[seed];
+function cacheSeed(params) {
+    var str_rep = JSON.stringify(params);
+    if (str_rep in sfxCache) {
+        return sfxCache[str_rep];
     }
 
-    var params = generateFromSeed(seed);
     params.sound_vol = SOUND_VOL;
     params.sample_rate = SAMPLE_RATE;
     params.bit_depth = BIT_DEPTH;
 
     var sound = SoundEffect.generate(params);
-    sfxCache[seed] = sound;
-    cachedSeeds.push(seed);
+    sfxCache[str_rep] = sound;
+    cachedSeeds.push(str_rep);
 
     while (cachedSeeds.length > CACHE_MAX) {
         var toRemove = cachedSeeds[0];
@@ -1003,13 +993,13 @@ function cacheSeed(seed) {
 }
 
 
-function playSound(seed) {
+function playSound(params) {
     if (muted) {
         return;
     }
     checkAudioContextExists();
     if (unitTesting) return;
-    var sound = cacheSeed(seed);
+    var sound = cacheSeed(params);
     sound.play();
 }
 

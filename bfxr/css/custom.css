@@ -521,7 +521,7 @@ tr:first-child td {
     padding-left: 1px;
 }
 
-.logo-canvas {
+#logo-canvas {
     width: var(--right-col-width);
     height: var(--logo-canvas-height);
     border: var(--border-thickness) solid var(--col-shadowbrown);
@@ -708,7 +708,7 @@ tr:first-child td {
 }
 
 input {
-    display: none;
+    /* display: none; */
 }
 
 #javaScriptAccordion {

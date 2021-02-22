@@ -128,6 +128,7 @@ function onStateModify(forceall = false, forceupdate_id = "") {
         previous_state = future_previoua_state;
     }
 
+    playCurrentSound();
 }
 
 function onButtonSelectChange(varname, index, checked, iconcount) {
@@ -140,17 +141,19 @@ function onButtonSelectChange(varname, index, checked, iconcount) {
         var default_index = SYNTH_PARAMS_DICT[varname].default;
         synth_state[varname] = default_index;
     }
+    visualiseFunctionParam(synth_state, varname);
     onStateModify(false, varname);
 }
 
 function onLockboxSelectChange(varname, checked) {
     synth_state[varname + "__locked"] = checked;
+    visualiseFunctionParam(synth_state, varname);
     onStateModify();
 }
 
 function onTimevaryswitchSelectChange(varname, checked) {
     synth_state[varname + "__timevarying"] = checked;
-
+    visualiseFunctionParam(synth_state, varname);
     onStateModify();
 }
 
@@ -179,16 +182,70 @@ function hook_up_timevaryswitch(varname) {
 }
 
 function onSliderValueChange(varname, value, eventover) {
+    synth_state[varname] = value;
+    visualiseFunctionParam(synth_state, varname);
     if (eventover === false) {
         return;
     }
-    synth_state[varname] = value;
     onStateModify();
 }
 
 
+function playCurrentSound() {
+    var params = Params();
+
+    params.wave_type = synth_state.waveform;
+
+    // Envelope
+    params.p_env_attack = 0.0; // Attack time
+    params.p_env_sustain = 0.3; // Sustain time
+    params.p_env_punch = 0.0; // Sustain punch
+    params.p_env_decay = 0.4; // Decay time
+
+    // Tone
+    params.p_base_freq = synth_state.frequency; // Start frequency
+    params.p_freq_limit = 0.0; // Min frequency cutoff
+    params.p_freq_ramp = 0.0; // Slide (SIGNED)
+    params.p_freq_dramp = 0.0; // Delta slide (SIGNED)
+    // Vibrato
+    params.p_vib_strength = synth_state.vibrato_depth; // Vibrato depth
+    params.p_vib_speed = synth_state.vibrato_speed; // Vibrato speed
+
+    // Tonal change
+    params.p_arp_mod = synth_state.jump_amount1; // Change amount (SIGNED)
+    params.p_arp_speed = synth_state.jump_onset1; // Change speed
+
+    // Duty (wat's that?)
+    params.p_duty = synth_state.duty; // Square duty
+    params.p_duty_ramp = 0.0; // Duty sweep (SIGNED)
+
+    // Repeat
+    params.p_repeat_speed = synth_state.repeat_speed; // Repeat speed
+
+    // Phaser
+    params.p_pha_offset = synth_state.phaser; // Phaser offset (SIGNED)
+    params.p_pha_ramp = 0.0; // Phaser sweep (SIGNED)
+
+    // Low-pass filter
+    params.p_lpf_freq = synth_state.low_pass_filter_cutoff; // Low-pass filter cutoff
+    params.p_lpf_ramp = 0.0; // Low-pass filter cutoff sweep (SIGNED)
+    params.p_lpf_resonance = synth_state.low_pass_filter_resonance; // Low-pass filter resonance
+
+    // High-pass filter
+    params.p_hpf_freq = synth_state.high_pass_filter_cutoff; // High-pass filter cutoff
+    params.p_hpf_ramp = 0.0; // High-pass filter cutoff sweep (SIGNED)
+
+    // Sample parameters
+    params.sound_vol = 0.5;
+    params.sample_rate = 44100;
+    params.bit_depth = 8;
+
+
+    playSound(params);
+}
+
 var rightcol_button_play = document.getElementById("rightcol_button_play");
 rightcol_button_play.addEventListener("click", function(event) {
-    console.log("onclick");
-    playSound(313123);
+    console.log(synth_state);
+    playCurrentSound();
 });
