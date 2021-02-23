@@ -190,8 +190,7 @@ function onSliderValueChange(varname, value, eventover) {
     onStateModify();
 }
 
-
-function playCurrentSound() {
+function stateToBfxrParams(){
     var params = Params();
 
     params.wave_type = synth_state.waveform;
@@ -201,6 +200,11 @@ function playCurrentSound() {
     params.p_env_sustain = 0.3; // Sustain time
     params.p_env_punch = 0.0; // Sustain punch
     params.p_env_decay = 0.4; // Decay time
+
+    params.p_env_attack_time = synth_state.attack_time; // Attack time
+    params.p_env_note_held_time = synth_state.note_held_time; // Attack time
+    params.p_env_decay_time = synth_state.decay_time; // Sustain time
+    params.p_env_sustain_level = synth_state.sustain_level; // Sustain time
 
     // Tone
     params.p_base_freq = synth_state.frequency; // Start frequency
@@ -240,12 +244,21 @@ function playCurrentSound() {
     params.sample_rate = 44100;
     params.bit_depth = 8;
 
+    return params;
+
+}
+
+function playCurrentSound() {
+   var params = stateToBfxrParams();
 
     playSound(params);
+    visualiseFunctionParam(synth_state, "Play");
+
 }
 
 var rightcol_button_play = document.getElementById("rightcol_button_play");
 rightcol_button_play.addEventListener("click", function(event) {
     console.log(synth_state);
     playCurrentSound();
+    
 });

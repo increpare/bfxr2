@@ -37,6 +37,48 @@ checkAudioContextExists();
 // Playback volume
 var masterVolume = 1.0;
 
+//returns values before final volume transformation is applied, and time is scaled between 0 and 1.
+function calcEnvelope(attacktime,holdtime,sustain,decaytime) {
+
+    var decaytime_from_peak = decaytime;
+
+    //work in 1x1 grid then transform later (origin still top-left tho) ), also ignore volume param
+
+    var peakval = 1;
+
+    if (holdtime < attacktime) {
+        peakval *= holdtime / attacktime;
+        decaytime *= peakval;
+        attacktime = holdtime
+    }
+
+    if (sustain > peakval) {
+        sustain *= peakval;
+    }
+
+    var peakoffset = attacktime;
+
+
+    var sustain_start_offset = peakoffset + decaytime * (peakval - sustain) / (peakval);
+
+    var sustain_val = sustain;
+
+    var sustain_end_offset = holdtime;
+
+    var decay_end_offset = holdtime + sustain * decaytime;
+
+    if (sustain_end_offset < sustain_start_offset) {
+        var delta = sustain_start_offset - sustain_end_offset;
+        sustain_end_offset += delta;
+        decay_end_offset += delta;
+    }
+
+    decay_end_offset = sustain_end_offset + sustain_val * decaytime_from_peak;
+
+    return [peakoffset, peakval, sustain_start_offset, sustain_val, sustain_end_offset, decay_end_offset];
+}
+
+
 // Sound generation parameters are on [0,1] unless noted SIGNED, & thus [-1,1]
 function Params() {
     var result = {};
@@ -44,10 +86,19 @@ function Params() {
     result.wave_type = SQUARE;
 
     // Envelope
-    result.p_env_attack = 0.0; // Attack time
-    result.p_env_sustain = 0.3; // Sustain time
-    result.p_env_punch = 0.0; // Sustain punch
-    result.p_env_decay = 0.4; // Decay time
+    result.p_env_max_sound_duration = 2.65; // Attack time
+    result.p_env_attack = 0.231; // Attack time
+    result.p_env_note_held_time = 0.33; // Sustain time
+    result.p_env_sustain_level = 0.7; // Sustain punch
+    result.p_env_decay_time = 0.231; // Decay time
+
+
+    // New Envelope
+    result.p_env_attack_time = 0.231; // Attack time
+    result.p_env_note_held_time = 0.33; // Attack time
+    result.p_env_decay_time = 0.3; // Sustain time
+    result.p_env_sustain_level = 0.3; // Sustain time
+
 
     // Tone
     result.p_base_freq = 0.3; // Start frequency
@@ -966,10 +1017,55 @@ if (typeof exports != 'undefined') {
 }
 
 var sfxCache = {};
+var imageCache = {};
+
 var cachedSeeds = [];
 var CACHE_MAX = 50;
 
-function cacheSeed(params) {
+function cacheImage(params,width){
+    var str_rep = JSON.stringify(params);
+   
+    if (str_rep in imageCache) {
+        return imageCache[str_rep];
+    }
+
+    var sound = cacheSound(params);
+
+    var result=[];
+    
+    var buffer=sound.getBuffer();
+
+    var curbar=0;
+    var curmax=buffer[0];
+    var curmin=buffer[0];
+    var len=buffer.length;
+    for (var i=0;i<len;i++){
+        var val = buffer[i];
+        if (i/len>curbar/width){
+            result.push(curmax);
+            result.push(curmin);
+            curbar++;
+            curmin=val;
+            curmax=val;
+        } else {
+            if (val<curmin) {
+                curmin=val;
+            }
+            if (val>curmax) {
+                curmax=val;
+            }
+        }
+    }
+    result.push(curmax);
+    result.push(curmin);
+
+    imageCache[str_rep]=result;
+
+    return result;
+}
+
+
+function cacheSound(params) {
     var str_rep = JSON.stringify(params);
     if (str_rep in sfxCache) {
         return sfxCache[str_rep];
@@ -999,7 +1095,7 @@ function playSound(params) {
     }
     checkAudioContextExists();
     if (unitTesting) return;
-    var sound = cacheSeed(params);
+    var sound = cacheSound(params);
     sound.play();
 }
 

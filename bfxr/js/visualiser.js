@@ -1,50 +1,6 @@
 const canvasEle = document.getElementById('logo-canvas');
 const context2d = canvasEle.getContext('2d');
 
-//returns values before final volume transformation is applied, and time is scaled between 0 and 1.
-function calcEnvelope(state) {
-
-    var attacktime = state.attack_time;
-    var holdtime = state.note_held_time;
-    var sustain = state.sustain_level;
-    var decaytime = state.decay_time;
-    var decaytime_from_peak = decaytime;
-
-    //work in 1x1 grid then transform later (origin still top-left tho) ), also ignore volume param
-
-    var peakval = 1;
-
-    if (holdtime < attacktime) {
-        peakval *= holdtime / attacktime;
-        decaytime *= peakval;
-        attacktime = holdtime
-    }
-
-    if (sustain > peakval) {
-        sustain *= peakval;
-    }
-
-    var peakoffset = attacktime;
-
-
-    var sustain_start_offset = peakoffset + decaytime * (peakval - sustain) / (peakval);
-
-    var sustain_val = sustain;
-
-    var sustain_end_offset = holdtime;
-
-    var decay_end_offset = holdtime + sustain * decaytime;
-
-    if (sustain_end_offset < sustain_start_offset) {
-        var delta = sustain_start_offset - sustain_end_offset;
-        sustain_end_offset += delta;
-        decay_end_offset += delta;
-    }
-
-    decay_end_offset = sustain_end_offset + sustain_val * decaytime_from_peak;
-
-    return [peakoffset, peakval, sustain_start_offset, sustain_val, sustain_end_offset, decay_end_offset];
-}
 
 var visualisefunctions = [
     [
@@ -58,6 +14,52 @@ var visualisefunctions = [
             context2d.stroke(); // this is where the actual drawing happens.
 
         },
+    ],
+    [
+        ["Play"],
+        function(state){
+
+            
+            var w = canvasEle.width;
+            var h = canvasEle.height;
+            var margin = 4;
+            var bmargin = 40;
+            
+
+            h = h - margin - bmargin;
+            w = w - 2 * margin;
+
+            
+            var t = margin;
+            var b = t + h;
+            var l = margin;
+            var r = l + w;
+            
+            var c = t + h/2;
+
+            var params = stateToBfxrParams();
+
+            var silhouette = cacheImage(params,w);
+
+
+            context2d.beginPath();
+            context2d.lineWidth = '1'; // width of the line
+            context2d.strokeStyle = '#663931'; // color of the line
+
+            for (var i=0;i<w;i++){
+                var x = l+i;
+                var u = c+silhouette[2*i+0]*h/2;
+                var d = c+silhouette[2*i+1]*h/2;
+
+                context2d.moveTo(x, u); // begins a new sub-path based on the given x and y values.
+                context2d.lineTo(x, d); // used to create a pointer based on x and y  
+            }
+          
+            context2d.stroke();
+
+            
+            functionDict["attack_time"](state);//draw envelope
+        }
     ],
     [
         [
@@ -91,8 +93,8 @@ var visualisefunctions = [
                 sustain_val,
                 sustain_end_offset,
                 decay_end_offset
-            ] = calcEnvelope(state);
-
+            ] = calcEnvelope(state.attack_time,state.note_held_time,state.sustain_level,state.decay_time);
+                //attacktime,holdtime,sustain,decaytime
             var start_x = 0;
             var start_y = 1;
 
