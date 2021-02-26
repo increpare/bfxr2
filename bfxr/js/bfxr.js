@@ -201,6 +201,8 @@ function stateToBfxrParams(){
     params.p_env_punch = 0.0; // Sustain punch
     params.p_env_decay = 0.4; // Decay time
 
+    params.p_env_volume_multiplier = synth_state.volume;
+    params.p_env_max_sound_duration = synth_state.max_sound_duration;
     params.p_env_attack_time = synth_state.attack_time; // Attack time
     params.p_env_note_held_time = synth_state.note_held_time; // Attack time
     params.p_env_decay_time = synth_state.decay_time; // Sustain time

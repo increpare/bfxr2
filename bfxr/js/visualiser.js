@@ -19,11 +19,11 @@ var visualisefunctions = [
         ["Play"],
         function(state){
 
-            
+            functionDict["attack_time"](state);//draw envelope
             var w = canvasEle.width;
             var h = canvasEle.height;
             var margin = 4;
-            var bmargin = 40;
+            var bmargin = 4;
             
 
             h = h - margin - bmargin;
@@ -39,17 +39,29 @@ var visualisefunctions = [
 
             var params = stateToBfxrParams();
 
-            var silhouette = cacheImage(params,w);
+
+            
+            var [
+                peakoffset,
+                peakval,
+                sustain_start_offset,
+                sustain_val,
+                sustain_end_offset,
+                decay_end_offset
+            ] = calcEnvelope(state.attack_time,state.note_held_time,state.sustain_level,state.decay_time);
+
+            var graphwidth = w*decay_end_offset;
+            var silhouette = cacheImage(params,graphwidth);
 
 
             context2d.beginPath();
             context2d.lineWidth = '1'; // width of the line
             context2d.strokeStyle = '#663931'; // color of the line
 
-            for (var i=0;i<w;i++){
+            for (var i=0;i<graphwidth;i++){
                 var x = l+i;
-                var u = c+silhouette[2*i+0]*h/2;
-                var d = c+silhouette[2*i+1]*h/2;
+                var u = c+silhouette[2*i+0]*1*h;
+                var d = c+silhouette[2*i+1]*1*h;
 
                 context2d.moveTo(x, u); // begins a new sub-path based on the given x and y values.
                 context2d.lineTo(x, d); // used to create a pointer based on x and y  
@@ -58,7 +70,6 @@ var visualisefunctions = [
             context2d.stroke();
 
             
-            functionDict["attack_time"](state);//draw envelope
         }
     ],
     [
@@ -130,7 +141,7 @@ var visualisefunctions = [
             context2d.lineWidth = '5'; // width of the line
             context2d.lineCap = "round";
             context2d.lineJoin = "round";
-            context2d.strokeStyle = '#c89057'; //'#c89057'; // color of the line
+            context2d.strokeStyle = '#c8905780'; //'#c89057'; // color of the line
             context2d.moveTo(start_x, start_y); // begins a new sub-path based on the given x and y values.
             context2d.lineTo(peakpoint_x, peakpoint_y); // begins a new sub-path based on the given x and y values.
             context2d.lineTo(sustain_l_x, sustain_l_y); // begins a new sub-path based on the given x and y values.
@@ -141,13 +152,21 @@ var visualisefunctions = [
 
             context2d.font = "20px Arial";
             context2d.fontWeight = 500;
-            context2d.fillStyle = '#c89057'; //'#c89057'; // color of the line
+            context2d.fillStyle = '#c8905780'; //'#c89057'; // color of the line
             context2d.lineStyle = 'transparent';
             context2d.textAlign = "center";
             context2d.textBaseline = "top";
             context2d.fillText(state.max_sound_duration + "s", l + w / 2, b + 10);
 
         },
+    ],
+    [
+        [
+            "compression",
+        ],
+        function(state){
+
+        }
     ],
     [
         [

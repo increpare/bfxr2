@@ -101,9 +101,9 @@ var SYNTH_PARAMETERS = [
         unit: "sec",
 
         min: 0.3,
-        max: 5.0,
+        max: 10.0,
 
-        default: 5,
+        default: 2,
 
         can_vary_over_time: false,
         can_randomize: true,

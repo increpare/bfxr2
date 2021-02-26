@@ -788,12 +788,44 @@ SoundEffect.generate = function(ps) {
     var env_vol = 0.0;
     var env_stage = 0;
     var env_time = 0;
-    var env_length = [
-        Math.floor(ps.p_env_attack * ps.p_env_attack * 100000.0),
-        Math.floor(ps.p_env_sustain * ps.p_env_sustain * 100000.0),
-        Math.floor(ps.p_env_decay * ps.p_env_decay * 100000.0)
+
+    
+    var [
+        peakoffset,
+        peakval,
+        sustain_start_offset,
+        sustain_val,
+        sustain_end_offset,
+        decay_end_offset
+    ] = calcEnvelope(
+        ps.p_env_attack_time,
+        ps.p_env_note_held_time,
+        ps.p_env_sustain_level,
+        ps.p_env_decay_time
+        );
+    
+    var snd_vol=ps.p_env_volume_multiplier;
+    var max_sound_duration = ps.p_env_max_sound_duration;
+
+    var env_heights = [
+        0,peakval,sustain_val,sustain_val,0
     ];
-    var env_total_length = env_length[0] + env_length[1] + env_length[2];
+    for (i=0;i<env_heights.length;i++){
+        env_heights[i]*=snd_vol;
+    }
+
+    var env_length = [
+        peakoffset * ps.sample_rate * max_sound_duration,
+        sustain_start_offset * ps.sample_rate * max_sound_duration,
+        sustain_end_offset * ps.sample_rate * max_sound_duration,
+        decay_end_offset * ps.sample_rate * max_sound_duration,
+    ];
+    //make deltas rather than absolute offsets
+    env_length[3]-=env_length[2];
+    env_length[2]-=env_length[1];
+    env_length[1]-=env_length[0];
+
+    var env_total_length = env_length[0] + env_length[1] + env_length[2] + env_length[3];
 
     // Phaser
     var phase = 0;
@@ -882,18 +914,17 @@ SoundEffect.generate = function(ps) {
         if (env_time > env_length[env_stage]) {
             env_time = 1;
             env_stage++;
-            while (env_stage < 3 && env_length[env_stage] === 0)
+            while (env_stage < 4 && env_length[env_stage] === 0)
                 env_stage++;
-            if (env_stage === 3)
+            if (env_stage === 4)
                 break;
         }
-        if (env_stage === 0)
-            env_vol = env_time / env_length[0];
-        else if (env_stage === 1)
-            env_vol = 1.0 + Math.pow(1.0 - env_time / env_length[1],
-                1.0) * 2.0 * ps.p_env_punch;
-        else // env_stage == 2
-            env_vol = 1.0 - env_time / env_length[2];
+        
+        var env_vol_left=env_heights[env_stage];
+        var env_vol_right=env_heights[env_stage+1];
+        
+        env_vol = env_vol_left+(env_vol_right-env_vol_left)*env_time/env_length[env_stage];
+
 
         // Phaser step
         fphase += fdphase;
