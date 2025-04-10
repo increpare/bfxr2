@@ -45,29 +45,29 @@ function pd_clip(buffer, min, max){
     return buffer;
 }
 
-function pd_mul(buffer, multiplier){
+function pd_mul(buffer, multiplier_signal){
     for (let i = 0; i < buffer.length; i++) {
-        buffer[i] *= multiplier;
+        buffer[i] *= multiplier_signal[i];
     }
     return buffer;
 }
 
-function pd_div(buffer, divisor){
+function pd_div(buffer, divisor_signal){
     for (let i = 0; i < buffer.length; i++) {
-        buffer[i] /= divisor;
+        buffer[i] /= divisor_signal[i];
     }
     return buffer;
 }
 
-function pd_add(buffer, addend){
+function pd_add(buffer, addend_signal){
     for (let i = 0; i < buffer.length; i++) {
-        buffer[i] += addend;
+        buffer[i] += addend_signal[i];
     }
     return buffer;
 }
 
 
-function pd_constant_signal(value){
+function pd_c(value){
     var result = new Float32Array(puredata_stream_length);    
     result.fill(value);
     return result;
