@@ -12,7 +12,7 @@ var COSTABLENAME;
 function generate_tables(){
     COSTABLENAME = new Float32Array(PD_COSTABLESIZE+1);
     for (let i = 0; i < PD_COSTABLESIZE; i++) {
-        COSTABLENAME[i] = Math.cos(i * 2 * Math.PI / PD_COSTABLESIZE);
+        COSTABLENAME[i] = Math.cos( 2 * Math.PI * i / PD_COSTABLESIZE);
     }
     COSTABLENAME[0] = 1;
     COSTABLENAME[PD_COSTABLESIZE] = 1;
@@ -138,62 +138,72 @@ function pd_hip(buffer, filter_coeff_signal) {
 // https://pd.iem.sh/objects/vcf~/
 // https://github.com/pure-data/pure-data/blob/12de13067aee29e332a34eb3539fa3cb967b63a1/src/d_osc.c#L289
 // https://github.com/pure-data/pure-data/blob/12de13067aee29e332a34eb3539fa3cb967b63a1/src/d_osc.h#L131
+// absolute black magic.  Don't understand it - did my best, then let cursor fix it.
 function pd_vcf(buffer, res_freq_signal, q_signal) {
     let output_buffer = new Float32Array(buffer.length);
     let re = 0;
     let im = 0;
-    let addr=[0,0];
+    
+    // Create a proper tabfudge-like structure to match the original C code
+    let tf = {
+        d: 0,
+        i: new Uint32Array(2)
+    };
+    
+    // Get the normhipart constant similar to the C code
+    tf.d = PD_UNITBIT32;
+    const normhipart = tf.i[PD_HIOFFSET];
     
     for (let i = 0; i < buffer.length; i++) {
         let q = q_signal[i];
-        let qinv = q>0 ? (1/q) : 0;
-        let ampcorrect = 2-2/(q+2);
-        let coefr=0;
-        let coefi=0;
+        let qinv = q > 0 ? (1/q) : 0;
+        let ampcorrect = 2 - 2/(q+2);
+        let coefr = 0;
+        let coefi = 0;
         let tab = COSTABLENAME;
-        dphase=0;
-        var tf_i = [0,0];
-        let normhipart=0;//int
-        let tabindex=0;
-
         
-        var cf=0;
-        var cfindx=0;
-        var r=0;
-        var oneminusr=0;
-
-        cf = res_freq_signal[i]*CONVERSION_FACTOR
-        if (cf<0){
-            cf=0;
-        }
-        cfindx = cf*(PD_COSTABLESIZE/Math.PI*2)
-        r = (qinv>0) ? (1 -cf*qinv) : 0;
-        if (r<0){
-            r=0;
-        }
-        oneminusr = 1-r;
-        dphase = cfindx+PD_UNITBIT32;
-        let tf_d = dphase;
-        tabindex = tf_i[PD_HIOFFSET] & (PD_COSTABLESIZE-1);
-        tf_i[PD_HIOFFSET] =  normhipart;
-        let frac = tf_d - PD_UNITBIT32;
+        // Get the frequency coefficient - use the right conversion factor
+        let cf = res_freq_signal[i] * CONVERSION_FACTOR;
+        if (cf < 0) cf = 0;
+        
+        // Use the same conversion as in the original C code
+        let cfindx = cf * (PD_COSTABLESIZE/6.28318);
+        
+        // Calculate resonance factor
+        let r = (qinv > 0) ? (1 - cf * qinv) : 0;
+        if (r < 0) r = 0;
+        let oneminusr = 1 - r;
+        
+        // Bit-twiddling to get the table index and fraction - similar to original code
+        let dphase = cfindx + PD_UNITBIT32;
+        tf.d = dphase;
+        let tabindex = tf.i[PD_HIOFFSET] & (PD_COSTABLESIZE-1);
+        
+        tf.i[PD_HIOFFSET] = normhipart;
+        let frac = tf.d - PD_UNITBIT32;
+        
+        // Get the real coefficient using interpolation
         let f1 = tab[tabindex];
         let f2 = tab[tabindex+1];
-        coefr = r*(f1+frac*(f2-f1));
-
-        tabindex += ((tabindex-((PD_COSTABLESIZE/4)|0)) & (PD_COSTABLESIZE-1));
+        coefr = r * (f1 + frac * (f2 - f1));
+        
+        // Get the imaginary coefficient using interpolation
+        tabindex = ((tabindex - (PD_COSTABLESIZE/4)) & (PD_COSTABLESIZE-1));
         f1 = tab[tabindex];
         f2 = tab[tabindex+1];
-        coefi = r*(f1+frac*(f2-f1));
-
-        f1 = buffer[i];  // Fixed: use current sample instead of always buffer[0]
-        re2 = re;
-        re = ampcorrect*oneminusr*f1 + coefr*re2-coefi*im;
-        im = coefi*re2+coefr*im;
-
+        coefi = r * (f1 + frac * (f2 - f1));
+        
+        // Apply the filter
+        let inputSample = buffer[i];
+        let re2 = re;
+        re = ampcorrect * oneminusr * inputSample + coefr * re2 - coefi * im;
+        im = coefi * re2 + coefr * im;
+        
+        // Handle numerical instability
+        if (Math.abs(re) < 1e-10) re = 0;
+        if (Math.abs(im) < 1e-10) im = 0;
+        
         output_buffer[i] = re;
-        //don't bother with multiple outputs...
-        //output number 2 should be  the imaginary part.
     }
 
     return output_buffer;
