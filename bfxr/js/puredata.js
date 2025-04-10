@@ -27,6 +27,14 @@ function pd_set_stream_length_seconds(seconds){
     puredata_stream_length = seconds * SAMPLE_RATE;
 }
 
+function pd_fn(fn){
+    var result = new Float32Array(puredata_stream_length);
+    for (let i = 0; i < result.length; i++) {
+        result[i] = fn(i/SAMPLE_RATE);
+    }
+    return result;
+}
+
 // white noise signal (in the range from -1 to 1).
 // https://pd.iem.sh/objects/noise~/
 // https://github.com/pure-data/pure-data/blob/12de13067aee29e332a34eb3539fa3cb967b63a1/src/d_osc.c#L372

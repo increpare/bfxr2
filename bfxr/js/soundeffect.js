@@ -1,4 +1,3 @@
-
 RealizedSound.MIN_SAMPLE_RATE = SAMPLE_RATE;
 
 function RealizedSound(length, sample_rate) {
@@ -57,7 +56,22 @@ if (typeof AUDIO_CONTEXT == 'undefined') {
         }
     };
 
+
+
     RealizedSound.MIN_SAMPLE_RATE = 1;
+}
+
+RealizedSound.prototype.getDataUri = function() {
+    const BIT_DEPTH=16;
+    var raw_buffer = this.getBuffer();
+    var output_buffer = new Array(raw_buffer.length);
+    for (var i = 0; i < raw_buffer.length; i++) {
+        // bit_depth is always 16, rescale [-1.0, 1.0) to [0, 65536)
+        // Use 32768 (2^15) for 16-bit audio conversion (range: -32768 to 32767)
+        output_buffer[i] = Math.floor(32768 * Math.max(-1, Math.min(raw_buffer[i], 1)))|0;
+    }
+    var wav = MakeRiff(SAMPLE_RATE, BIT_DEPTH, output_buffer);
+    return wav.dataURI;
 }
 
 RealizedSound.from_buffer = function(buffer) {

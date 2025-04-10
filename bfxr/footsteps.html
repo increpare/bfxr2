@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Bfxr. Make sound effects for your games.</title>
+    <title>FOOTSTEPPR</title>
     <meta name="description" content="Make sound effects for your games.">
     <meta name="author" content="increpare">
 
@@ -25,7 +25,10 @@
         background-position-x: 5px;
         background-position-y: 5px;
     }
-
+a{
+    color: var(--col-darkbrown);
+    font-weight:bold;
+}
 </style>
 <style>
     .container {
@@ -38,6 +41,9 @@
         margin-left: 3px;
         margin-bottom: 6px;
     }
+    .sliderwidthset {
+        width: calc(var(--right-col-width)-10px);
+    }
 </style>
 </head>
 
@@ -49,18 +55,40 @@
             <canvas id="logo-canvas"></canvas>
             <br>
             <div class="card actionscol">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="rightcol_checkbox_play_on_change"
-                        checked="">
-                    <label class="form-check-label" for="rightcol_checkbox_play_on_change">
-                        Play on change
-                    </label>
-                </div>
                 <button type="button" class="btn btn-primary" id="button_play">Play</button>
                 <div class="vol_slider listslider">
                     <div class="fieldtext">Volume</div>
                     <div>
                         <input id="vol" type="text" />
+                    </div>
+                </div>
+                <td class="tableborder slidercell">
+                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                      <input type="checkbox" class="btn-check " id="buttonselect_terrain_0" autocomplete="off" checked>
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_terrain_0_LABEL" for="buttonselect_terrain_0">
+                        <img class="icon" src="images/terrain_snow.png">
+                      </label>
+                      <input type="checkbox" class="btn-check " id="buttonselect_terrain_1" autocomplete="off">
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_terrain_1_LABEL" for="buttonselect_terrain_1">
+                        <img class="icon" src="images/terrain_grass.png">
+                      </label>
+                      <input type="checkbox" class="btn-check " id="buttonselect_terrain_2" autocomplete="off">
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_terrain_2_LABEL" for="buttonselect_terrain_2">
+                        <img class="icon" src="images/terrain_dirt.png">
+                      </label>
+                      <input type="checkbox" class="btn-check " id="buttonselect_terrain_3" autocomplete="off">
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_terrain_3_LABEL" for="buttonselect_terrain_3">
+                        <img class="icon" src="images/terrain_gravel.png">
+                      </label>
+                      <input type="checkbox" class="btn-check " id="buttonselect_terrain_4" autocomplete="off">
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_terrain_4_LABEL" for="buttonselect_terrain_4">
+                        <img class="icon" src="images/terrain_wood.png">
+                      </label>
+                    </div>
+                <div class="heel_slider listslider">
+                    <div class="fieldtext">Heel</div>
+                    <div>
+                        <input id="heel" type="text" />
                     </div>
                 </div>
                 <div class="roll_slider listslider">
@@ -76,13 +104,15 @@
                     </div>
                 </div>
                 <div class="actor_speed_slider listslider">
-                    <div class="fieldtext">Actor Speed</div>
+                    <div class="fieldtext">Swiftness</div>
                     <div>
                         <input id="actor_speed" type="text" />
                     </div>
                 </div>
                 
-                <button type="button" class="btn btn-primary">Save WAV</button>
+                <a type="button" class="btn btn-primary" id="save_wav" href="blah.wav">Save WAV</a>
+
+                <div class="fieldtext sliderwidthset">original <a href="https://gist.github.com/increpare/dc5d54d7484211b259de9ef9fb0d140c">puredata module</a> by <a href="http://obiwannabe.co.uk/">obiwannabe</a> &lt;3 &lt;3</div>
             </div>
         </div>
 
@@ -93,6 +123,7 @@
 <script src="js/third_party/popper.min.js"></script>
 <script src="js/third_party/bootstrap.js"></script>
 <script src="js/third_party/bootstrap-slider.js"></script>
+<script src="js/riffwave.js"></script>
 <script src="js/globals.js"></script>
 <script src="js/soundeffect.js"></script>
 <script src="js/puredata.js"></script>
@@ -104,14 +135,33 @@
         var slider_vol = new Slider("#vol", {
         id: "vol",
         min: 0,
+        max: 2,
+        range: false,
+        step: 0.01,
+        value: 1.0,
+        ticks: [0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+      });      
+      slider_vol.sliderElem.className += " singleselect slidernarrow";
+      slider_vol.on('slideStop',function(sliderValue){
+        step_vol = sliderValue;
+        doPlay();
+      });
+
+      var slider_heel = new Slider("#heel", {
+        id: "heel",
+        min: 0,
         max: 1,
         range: false,
         step: 0.01,
         value: 0.5,
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
-      slider_vol.sliderElem.className += " singleselect slidernarrow";
-
+      slider_heel.sliderElem.className += " singleselect slidernarrow";
+      slider_heel.on('slideStop',function(sliderValue){
+        step_heel = sliderValue;
+        doPlay();
+      });
+      
       var slider_roll = new Slider("#roll", {
         id: "roll",
         min: 0,
@@ -122,6 +172,10 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_roll.sliderElem.className += " singleselect slidernarrow";
+      slider_roll.on('slideStop',function(sliderValue){
+        step_roll = sliderValue;
+        doPlay();
+      });
 
       var slider_ball = new Slider("#ball", {
         id: "ball",
@@ -133,18 +187,26 @@
         ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });
       slider_ball.sliderElem.className += " singleselect slidernarrow";
-      
+      slider_ball.on('slideStop',function(sliderValue){
+        step_ball = sliderValue;
+        doPlay();
+      });
+
       var slider_actor_speed = new Slider("#actor_speed", {
         id: "actor_speed",
         min: 0,
-        max: 800,
+        max: 1, 
         range: false,
-        step: 1,
-        value: 400,
-        ticks: [0, 100, 200, 300, 400, 500, 600, 700, 800]
+        step: 0.01,
+        value: 0.5,
+        ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
       });   
       slider_actor_speed.sliderElem.className += " singleselect slidernarrow";
-
+      slider_actor_speed.on('slideStop',function(sliderValue){
+        step_speed = sliderValue;
+        doPlay();
+      });
+      doPlay();
     }
 
     //params are heel row ball actorspeed
