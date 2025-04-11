@@ -40,20 +40,8 @@ var visualisefunctions = [
 
             var params = stateToBfxrParams();
 
-
-            
-            var [
-                peakoffset,
-                peakval,
-                sustain_start_offset,
-                sustain_val,
-                sustain_end_offset,
-                decay_end_offset
-            ] = calcEnvelope(state.attack_time,state.note_held_time,state.sustain_level,state.decay_time);
-
             var graphwidth = w*decay_end_offset;
             var silhouette = cacheImage(params,graphwidth);
-
 
             context2d.beginPath();
             context2d.lineWidth = '1'; // width of the line

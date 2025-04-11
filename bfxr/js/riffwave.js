@@ -62,6 +62,17 @@ function u32ToArray(i) { return [i & 0xFF, (i >> 8) & 0xFF, (i >> 16) & 0xFF, (i
 
 function u16ToArray(i) { return [i & 0xFF, (i >> 8) & 0xFF]; }
 
+function split16bitArray(data) {
+  var r = [];
+  var j = 0;
+  var len = data.length;
+  for (var i=0; i<len; i++) {
+      r[j++] = data[i] & 0xFF;
+      r[j++] = (data[i]>>8) & 0xFF;
+  }
+  return r;
+}
+
 function MakeRiff ( sampleRate, bitsPerSample,data) {
   var dat = [];
   var wav=[];
@@ -85,7 +96,7 @@ function MakeRiff ( sampleRate, bitsPerSample,data) {
 
   header.byteRate = (header.sampleRate * header.numChannels * header.bitsPerSample) >> 3;
   header.blockAlign = (header.numChannels * header.bitsPerSample) >> 3;
-  header.subChunk2Size = data.length;
+  header.subChunk2Size = data.length * (header.bitsPerSample >> 3);
   header.chunkSize = 36 + header.subChunk2Size;
 
   wav = header.chunkId.concat(
@@ -101,7 +112,7 @@ function MakeRiff ( sampleRate, bitsPerSample,data) {
       u16ToArray(header.bitsPerSample),
       header.subChunk2Id,
       u32ToArray(header.subChunk2Size),
-      data
+      (header.bitsPerSample === 16) ? split16bitArray(data) : data
     );
     
     dataURI = 'data:audio/wav;base64,' + FastBase64_Encode(wav);
