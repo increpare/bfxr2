@@ -65,24 +65,29 @@ a{
                 <td class="tableborder slidercell">
                     <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
                       <input type="checkbox" class="btn-check " id="buttonselect_terrain_0" autocomplete="off" checked>
-                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_terrain_0_LABEL" for="buttonselect_terrain_0">
+                      <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_terrain_0_LABEL" for="buttonselect_terrain_0" >
                         <img class="icon" src="images/terrain_snow.png">
+                        <span class="tooltiptext">snow</span>
                       </label>
                       <input type="checkbox" class="btn-check " id="buttonselect_terrain_1" autocomplete="off">
                       <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_terrain_1_LABEL" for="buttonselect_terrain_1">
                         <img class="icon" src="images/terrain_grass.png">
+                        <span class="tooltiptext">grass</span>
                       </label>
                       <input type="checkbox" class="btn-check " id="buttonselect_terrain_2" autocomplete="off">
                       <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_terrain_2_LABEL" for="buttonselect_terrain_2">
                         <img class="icon" src="images/terrain_dirt.png">
+                        <span class="tooltiptext">dirt</span>
                       </label>
                       <input type="checkbox" class="btn-check " id="buttonselect_terrain_3" autocomplete="off">
                       <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_terrain_3_LABEL" for="buttonselect_terrain_3">
                         <img class="icon" src="images/terrain_gravel.png">
+                        <span class="tooltiptext">gravel</span>
                       </label>
                       <input type="checkbox" class="btn-check " id="buttonselect_terrain_4" autocomplete="off">
                       <label class="btn btn-outline-primary buttongroupcheck" id="buttonselect_terrain_4_LABEL" for="buttonselect_terrain_4">
                         <img class="icon" src="images/terrain_wood.png">
+                        <span class="tooltiptext">wood</span>
                       </label>
                     </div>
                 <div class="heel_slider listslider">
@@ -130,8 +135,25 @@ a{
 <script src="js/footsteps.js"></script>
 
 <script>
-    
+    BUTTONLIST_ICONCOUNT={};
+    function hook_up_checkbox(varname, index, iconcount) {
+      var buttonselect = document.getElementById(`buttonselect_${varname}_${index}`);
+      buttonselect.addEventListener('change', (event) => {
+          onButtonSelectChange(varname, index, event.currentTarget.checked, iconcount);
+      });
+      if (index === 0) {
+          BUTTONLIST_ICONCOUNT[varname] = iconcount;
+      }
+  }
+
+
     function onload() {
+        hook_up_checkbox("terrain", 0, 5);
+        hook_up_checkbox("terrain", 1, 5);
+        hook_up_checkbox("terrain", 2, 5);
+        hook_up_checkbox("terrain", 3, 5);
+        hook_up_checkbox("terrain", 4, 5);
+        updateCheckbox("terrain",step_terrain);
         var slider_vol = new Slider("#vol", {
         id: "vol",
         min: 0,
@@ -209,8 +231,33 @@ a{
       doPlay();
     }
 
-    //params are heel row ball actorspeed
+
     addEventListener("load",onload);
+
+  function onButtonSelectChange(varname, index, checked, iconcount) {
+      if (checked === false) {
+          checked = true;
+      }
+      switch(varname){
+        case "terrain":
+          step_terrain=index;
+          break;
+      }
+      doPlay();
+      updateCheckbox(varname,index);
+  }
+
+ function updateCheckbox(key,index){
+  var iconcount = BUTTONLIST_ICONCOUNT[key];
+
+  for (var i = 0; i < iconcount; i++) {
+      var checkbox = document.getElementById("buttonselect_" + key + "_" + i);
+      checkbox.checked = i === index;
+  }
+ }
+
+
+    //params are heel row ball actorspeed
 
 </script>
 </html>

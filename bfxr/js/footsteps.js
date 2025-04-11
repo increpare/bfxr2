@@ -19,28 +19,11 @@ function add_fns( ...fns ){
     }
 }
 
-function generateSound(step_heel,step_roll,step_ball,step_speed,step_vol){
-    
-    //speed is between 0 and 1, this corresponds to a step-length between 0.8 and 0.1 
-    var step_length = 0.1+0.7*(1-step_speed)
-    
-    //constant signal 0 
-    pd_set_stream_length_seconds(step_length);
-
-    var heel_envelope = resize_fn(step(step_heel),0,1,0,0.3333);
-    var roll_envelope = resize_fn(step(step_roll),0,1,0.125,0.875);
-    var ball_envelope = resize_fn(step(step_ball),0,1,0.6667,1);
-    var step_envelope_0_1 = add_fns(heel_envelope,roll_envelope,ball_envelope);
-    var step_envelope_resized = resize_fn(step_envelope_0_1,0,1,0,step_length);
-
-    var envelope_signal = pd_fn(step_envelope_resized);
-    envelope_signal = pd_mul(envelope_signal,pd_c(step_vol));
-
-
+function gen_base_snow(){
     var signal = pd_noise();
     var v_200 = pd_c(200);
     var v_1 = pd_c(1);
-    var signal = pd_vcf(signal, v_200, v_1);
+    signal = pd_vcf(signal, v_200, v_1);
 
     var base_noise = pd_noise();
     var alt_noise = pd_noise();
@@ -65,6 +48,37 @@ function generateSound(step_heel,step_roll,step_ball,step_speed,step_vol){
 
     signal = pd_clip(signal,-1,1);
     signal = pd_hip(signal,pd_c(300));
+    return signal;
+}
+
+function generate_terrain_texture(){
+    switch (step_terrain){
+        case 0://snow
+            return gen_base_snow();
+        default:
+            return pd_noise();            
+    }
+
+}
+function generateSound(step_heel,step_roll,step_ball,step_speed,step_vol){
+    
+    //speed is between 0 and 1, this corresponds to a step-length between 0.8 and 0.1 
+    var step_length = 0.1+0.7*(1-step_speed)
+    
+    //constant signal 0 
+    pd_set_stream_length_seconds(step_length);
+
+    var heel_envelope = resize_fn(step(step_heel),0,1,0,0.3333);
+    var roll_envelope = resize_fn(step(step_roll),0,1,0.125,0.875);
+    var ball_envelope = resize_fn(step(step_ball),0,1,0.6667,1);
+    var step_envelope_0_1 = add_fns(heel_envelope,roll_envelope,ball_envelope);
+    var step_envelope_resized = resize_fn(step_envelope_0_1,0,1,0,step_length);
+
+    var envelope_signal = pd_fn(step_envelope_resized);
+    envelope_signal = pd_mul(envelope_signal,pd_c(step_vol));
+
+
+    var signal = generate_terrain_texture();
 
     signal = pd_mul(signal,envelope_signal);
 
@@ -238,6 +252,7 @@ var step_heel=0.5;
 var step_roll=0.5;
 var step_ball=0.5;
 var step_speed=0.5;
+var step_terrain=0;
 
 if (typeof exports != 'undefined') {
     // For node.js

@@ -53,7 +53,7 @@
 
 .btn-outline-primary {
     border: none;
-    outline: 3px solid var(--col-black);
+    outline: 3px solid var(--col-darkbrown);
     outline-offset: -1.5px;
 }
 
@@ -69,6 +69,8 @@
     background-color: var(--col-lipflesh);
     /* outline-color: var(--col-black); */
 }
+
+
 
 .btn-check:checked+.btn-outline-primary:focus,
 .btn-check:active+.btn-outline-primary:focus,
@@ -820,4 +822,40 @@ input {
 
 .timevaryrow+:not(.timevaryingrow) {
     background-color: red !;
+}
+
+.btn-group>.btn {
+    border: 0px;
+    border-radius: 0px;
+}
+
+.btn-check:checked+.btn-outline-primary,
+.btn-check:active+.btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show {
+    color: #fff;
+    background-color: var(--col-tan);
+    border-color: var(--col-tan);
+}
+
+.tooltiptext {
+    display: none;
+}
+
+/*if parent is hovered over, show tooltiptext floating above highighted item - 
+should be centered above the item*/
+.btn:hover .tooltiptext {
+    display:block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--col-black);
+    color: var(--col-white);
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: -30px;
+    z-index: 1000;
+    opacity:0.9;
 }
