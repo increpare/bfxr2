@@ -21,6 +21,14 @@ function generate_tables(){
     COSTABLENAME[(PD_COSTABLESIZE/2)|0] = -1;
 }
 
+function gt(signal_a,signal_b){
+    var result = new Float32Array(signal_a.length);
+    for (let i = 0; i < signal_a.length; i++) {
+        result[i] = signal_a[i] < signal_b[i] ? 1 : 0;
+    }
+    return result;
+}
+
 generate_tables();
 var puredata_stream_length = 0;
 function pd_set_stream_length_seconds(seconds){
@@ -47,31 +55,35 @@ function pd_noise(){
 }
 
 function pd_clip(buffer, min, max){
+    var result = new Float32Array(buffer.length);
     for (let i = 0; i < buffer.length; i++) {
-        buffer[i] = Math.max(min, Math.min(buffer[i], max));
+        result[i] = Math.max(min, Math.min(buffer[i], max));
     }
-    return buffer;
+    return result;
 }
 
 function pd_mul(buffer, multiplier_signal){
+    var result = new Float32Array(buffer.length);
     for (let i = 0; i < buffer.length; i++) {
-        buffer[i] *= multiplier_signal[i];
+        result[i] = buffer[i] * multiplier_signal[i];
     }
-    return buffer;
+    return result;
 }
 
 function pd_div(buffer, divisor_signal){
+    var result = new Float32Array(buffer.length);
     for (let i = 0; i < buffer.length; i++) {
-        buffer[i] /= divisor_signal[i];
+        result[i] = buffer[i] / divisor_signal[i];
     }
-    return buffer;
+    return result;
 }
 
 function pd_add(buffer, addend_signal){
+    var result = new Float32Array(buffer.length);
     for (let i = 0; i < buffer.length; i++) {
-        buffer[i] += addend_signal[i];
+        result[i] = buffer[i] + addend_signal[i];
     }
-    return buffer;
+    return result;
 }
 
 
