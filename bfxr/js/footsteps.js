@@ -56,6 +56,52 @@ function gen_base_snow(envelope_signal){
     return signal;
 }
 
+function gen_base_dirt(envelope_signal){
+    //right column
+    var source_noise = pd_noise();
+    var filtered_noise = pd_lop(source_noise,pd_c(80));
+    filtered_noise = pd_mul(filtered_noise,pd_c(70));
+    var signal_plus_0_3 = pd_add(envelope_signal,pd_c(0.3));
+    var mix = pd_mul(filtered_noise,signal_plus_0_3);
+    mix = pd_mul(mix,pd_c(70));
+    mix = pd_add(mix,pd_c(70));
+    var osc_r = pd_osc(mix);
+    var hip_r = pd_hip(osc_r,pd_c(200));
+    var clipper_r = pd_clip(hip_r,pd_c(-1),pd_c(1));
+    clipper_r = pd_mul(clipper_r,pd_c(0.04));
+
+    //left column
+    var quad_envelope = pd_mul(envelope_signal,envelope_signal);
+    quad_envelope = pd_mul(quad_envelope,quad_envelope);
+    var ll = pd_mul(quad_envelope,pd_c(500));
+    ll = pd_add(ll,pd_c(40));
+    var osc_l = pd_osc(ll);
+
+    var mul_l = pd_mul(osc_l,quad_envelope);
+    var osc_l_2 = pd_mul(mul_l,pd_c(0.5));
+
+    var sum_l = pd_add(osc_l_2,clipper_r);
+    return sum_l;
+}
+
+//cf. with osc.pd
+function pd_test_osc(envelope_signal){
+    var signal = pd_osc(pd_c(1));
+    signal = pd_mul(signal,pd_c(200));
+    signal = pd_osc(signal);
+    signal = pd_clip(signal,pd_c(-1),pd_c(1));
+    signal = pd_mul(signal,pd_c(0.5));
+    return signal;
+}
+function pd_test_slotsum(envelope_signal){
+    var osc1 = pd_osc(pd_c(200));
+    var osc2 = pd_osc(pd_c(400));
+    var signal = pd_mul(pd_polyadd(osc1,osc2),pd_c(0.5));
+    signal = pd_clip(signal,pd_c(-1),pd_c(1));
+    signal = pd_mul(signal,pd_c(0.5));
+    return signal;
+}
+
 function gen_base_grass(envelope_signal){
     var source_noise = pd_noise();
     var signal=source_noise;
@@ -95,9 +141,15 @@ function gen_base_grass(envelope_signal){
 
 
 function generate_terrain_texture(envelope_signal){
+    /*
+    [S]
+    */
     switch (step_terrain){
         case 0://snow
-            return puredata_functions["dirt"](envelope_signal);
+            // return pd_test_slotsum(envelope_signal);
+            // return gen_base_dirt(envelope_signal);
+            // return gen_base_snow(envelope_signal);
+            return puredata_functions["wood"](envelope_signal);
         case 1://grass
             return gen_base_grass(envelope_signal);
         default:
@@ -120,10 +172,10 @@ function generateSound(step_heel,step_roll,step_ball,step_speed,step_vol){
     var step_envelope_resized = resize_fn(step_envelope_0_1,0,1,0,step_length);
 
     var envelope_signal = pd_fn(step_envelope_resized);
-    envelope_signal = pd_mul(envelope_signal,pd_c(step_vol));
 
     var signal = generate_terrain_texture(envelope_signal);
 
+    signal = pd_mul(signal,pd_c(step_vol));
     signal = pd_clip(signal, pd_c(-1.0), pd_c(1.0));
     // signal = pd_mul(signal, pd_c(0.5));
 

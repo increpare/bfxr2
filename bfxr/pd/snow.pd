@@ -15,7 +15,7 @@
 #X obj 190 264 *~;
 #X obj 103 313 *~;
 #X obj 189 286 +~ 0.5;
-#X obj 390 330 inlet~;
+#X obj 424 130 inlet~;
 #X obj 160 507 outlet~;
 #X obj 102 365 hip~ 300;
 #X obj 185 389 +~ 700;
