@@ -46,7 +46,7 @@ function gen_base_snow(envelope_signal){
 
     signal = pd_mul(signal,s4_add);
 
-    signal = pd_clip(signal,-1,1);
+    signal = pd_clip(signal,pd_c(-1),pd_c(1));
     signal = pd_hip(signal,pd_c(300));
 
     var to_mix = pd_add(pd_mul(envelope_signal,pd_c(9000)),pd_c(700));    
@@ -67,12 +67,12 @@ function gen_base_grass(envelope_signal){
     signal = pd_mul(signal,signal);
     signal = pd_mul(signal,signal);
     signal = pd_mul(signal,pd_c(1e-5));
-    signal = pd_clip(signal,-0.9,0.9);
+    signal = pd_clip(signal,pd_c(-0.9),pd_c(0.9));
     
     var side_noise = pd_lop(source_noise,pd_c(16));
     side_noise = pd_mul(side_noise,pd_c(23800));
     side_noise = pd_add(side_noise,pd_c(3400));
-    side_noise = pd_clip(side_noise, 2000,10000);
+    side_noise = pd_clip(side_noise, pd_c(2000),pd_c(10000));
 
     signal = pd_vcf(signal,side_noise,pd_c(1.0));
     signal = pd_hip(signal,pd_c(900));
@@ -86,17 +86,18 @@ function gen_base_grass(envelope_signal){
     left_branch = pd_mul(left_branch,pd_c(600));
     left_branch = pd_add(left_branch,30);
     left_branch = pd_osc(left_branch);
-    left_branch = pd_clip(left_branch,0,0.5);
+    left_branch = pd_clip(left_branch,pd_c(0),pd_c(0.5));
     left_path = pd_mul(left_branch,left_path);
     left_path = pd_mul(left_path,pd_c(0.8));
     signal = pd_add(signal,left_path);
     return signal;
 }
 
+
 function generate_terrain_texture(envelope_signal){
     switch (step_terrain){
         case 0://snow
-            return gen_base_snow(envelope_signal);
+            return puredata_functions["dirt"](envelope_signal);
         case 1://grass
             return gen_base_grass(envelope_signal);
         default:
@@ -121,11 +122,9 @@ function generateSound(step_heel,step_roll,step_ball,step_speed,step_vol){
     var envelope_signal = pd_fn(step_envelope_resized);
     envelope_signal = pd_mul(envelope_signal,pd_c(step_vol));
 
-
     var signal = generate_terrain_texture(envelope_signal);
 
-
-    signal = pd_clip(signal, -1.0, 1.0);
+    signal = pd_clip(signal, pd_c(-1.0), pd_c(1.0));
     // signal = pd_mul(signal, pd_c(0.5));
 
     var sound = RealizedSound.from_buffer(signal);

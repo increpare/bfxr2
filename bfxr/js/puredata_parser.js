@@ -32,6 +32,10 @@ function pd_compile(src){
             case "obj":
                 function_calls.push(toks.slice(4));
                 break;
+            case "msg":
+                //basically the same as sig~
+                function_calls.push(["sig~",toks[4]]);
+                break;
             case "connect":
                 var connection = {
                     from_ob: parseInt(toks[2]),
@@ -51,6 +55,7 @@ function pd_compile(src){
     var function_body = build_function_body(function_tree);
     console.log(function_body);
     var fn = new Function("envelope_signal", function_body);
+    return fn;
 }
 
 var function_info = {
@@ -113,6 +118,16 @@ var function_info = {
         input_slots:1,
         parameter_indices:[0],
         js_name:"pd_osc"
+    },
+    "bp~":{
+        input_slots:3,
+        parameter_indices:[1,2],
+        js_name:"pd_bp"
+    },
+    "sqrt~":{
+        input_slots:1,
+        parameter_indices:[0],
+        js_name:"pd_sqrt"
     }
     
 }
@@ -142,18 +157,25 @@ function build_function_tree(function_calls, connections, cur_node_idx){
     var call_data = {
         node_name: node_name,
         inputs: input_connection_array,
-        scalar_arguments: scalar_arguments
+        scalar_arguments: scalar_arguments,
+        node_id: cur_node_idx
     }
     return call_data;
 }
 
 
-function assign_variable_names(syntax_tree_branch,idx){
-    syntax_tree_branch.var_idx = idx;
+function assign_variable_names(syntax_tree_branch,idx,name_dictionary){
+    if (name_dictionary.hasOwnProperty(syntax_tree_branch.node_id)){
+        if (name_dictionary[syntax_tree_branch.node_id]<idx){
+            name_dictionary[syntax_tree_branch.node_id] = idx;
+        }
+    } else {
+        name_dictionary[syntax_tree_branch.node_id] = idx;
+    }
     idx++;
     for (let i = 0; i < syntax_tree_branch.inputs.length; i++) {
         for (let j = 0; j < syntax_tree_branch.inputs[i].length; j++) {
-            idx = assign_variable_names(syntax_tree_branch.inputs[i][j],idx);
+            idx = assign_variable_names(syntax_tree_branch.inputs[i][j],idx,name_dictionary);
         }
     }
     return idx;
@@ -172,11 +194,12 @@ function reslot_scalar_arguments(fn_name,args){
     return reslot_args;
 }
 
-function flatten_syntax_tree(syntax_tree_branch, result){
+function flatten_syntax_tree(syntax_tree_branch, result,name_dictionary){
     //replace the node_name with the variable name
     var flattened_node = {
         node_name: syntax_tree_branch.node_name,
-        node_idx: syntax_tree_branch.var_idx,
+        node_id: syntax_tree_branch.node_id,
+        node_idx: name_dictionary[syntax_tree_branch.node_id],
         scalar_arguments: reslot_scalar_arguments(syntax_tree_branch.node_name,syntax_tree_branch.scalar_arguments),
         inputs:[]
     };
@@ -185,19 +208,33 @@ function flatten_syntax_tree(syntax_tree_branch, result){
         var slot_input=[];        
         for (let j = 0; j < branch_input_slot.length; j++) {
             var slot_entry = branch_input_slot[j];
-            slot_input.push(slot_entry.var_idx);
-            flatten_syntax_tree(slot_entry, result);
+            var var_idx = name_dictionary[slot_entry.node_id];
+            slot_input.push(var_idx);
+            flatten_syntax_tree(slot_entry, result,name_dictionary);
         }
         flattened_node.inputs.push(slot_input);
     }
     result.push(flattened_node);
 }
 
+function strip_duplicate_nodes(flattened_tree){
+    var visited_ids = [];
+    for (let i = 0; i < flattened_tree.length; i++) {
+        var node = flattened_tree[i];
+        if (visited_ids.includes(node.node_id)){
+            flattened_tree.splice(i,1);
+            i--;
+        }
+        visited_ids.push(node.node_id);
+    }
+}
 function build_function_body(function_tree){
-    assign_variable_names(function_tree,0);
+    var name_dictionary ={};
+    assign_variable_names(function_tree,0,name_dictionary);
     console.log(function_tree);
     var flattened_tree=[];
-    flatten_syntax_tree(function_tree,flattened_tree);
+    flatten_syntax_tree(function_tree,flattened_tree,name_dictionary);
+    strip_duplicate_nodes(flattened_tree);
     //sort by node_idx, big to small
     flattened_tree.sort((a,b) => b.node_idx - a.node_idx);
     console.log(flattened_tree);
@@ -217,7 +254,7 @@ function build_function_body(function_tree){
                 if (node.scalar_arguments[j]===-1){
                     args += "NULL";
                 } else {
-                    args += node.scalar_arguments[j];
+                    args += `pd_c(${node.scalar_arguments[j]})`;
                 }
             } else if (slot_input.length === 1){
                 args += `s_${slot_input[0]}`;
@@ -229,16 +266,16 @@ function build_function_body(function_tree){
         // Fix: Convert PureData function names to valid JavaScript function names
         var js_funcname = node.node_name;
         if (js_funcname==="inlet~"){
-            function_body += `var s_${node.node_idx} = envelope_signal;\n`;
+            function_body += `const s_${node.node_idx} = envelope_signal;\n`;
         } else if (js_funcname==="outlet~"){
-            function_body += `var s_${node.node_idx} = ${args};\n`;
+            function_body += `const s_${node.node_idx} = ${args};\n`;
         } else {
             if (function_info.hasOwnProperty(node.node_name)){
                 js_funcname = function_info[node.node_name].js_name;
             } else {
                 console.error("Unknown function: " + node.node_name);
             }
-            function_body += `var s_${node.node_idx} = ${js_funcname}(${args});\n`;
+            function_body += `const s_${node.node_idx} = ${js_funcname}(${args});\n`;
         }
     }
     function_body += `return s_0;\n`;
@@ -248,7 +285,7 @@ function build_function_body(function_tree){
 for (let i = 0; i < puredata_function_names.length; i++) {
     var function_name = puredata_function_names[i];
     var pd_source = puredata_modules[function_name];
-    console.log(function_name);
+    console.log("loading "+function_name);
     var pd_compiled = pd_compile(pd_source);
     puredata_functions[function_name] = pd_compiled;
 }

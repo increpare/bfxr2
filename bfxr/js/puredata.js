@@ -54,10 +54,10 @@ function pd_noise(){
     return result;
 }
 
-function pd_clip(buffer, min, max){
+function pd_clip(buffer, min_signal, max_signal){
     var result = new Float32Array(buffer.length);
     for (let i = 0; i < buffer.length; i++) {
-        result[i] = Math.max(min, Math.min(buffer[i], max));
+        result[i] = Math.max(min_signal[i], Math.min(buffer[i], max_signal[i]));
     }
     return result;
 }
@@ -165,6 +165,177 @@ function pd_c(value){
     result.fill(value);
     return result;
 }
+
+function pd_sqrt(buffer){
+    var result = new Float32Array(buffer.length);
+    for (let i = 0; i < buffer.length; i++) {
+        result[i] = Math.sqrt(buffer[i]);
+    }
+    return result;
+}
+
+function sigbp_qcos(f)
+{
+    if (f >= -(0.5*Math.PI) && f <= 0.5*Math.PI)
+    {
+        var g = f*f;
+        return (((g*g*g * (-1.0/720.0) + g*g*(1.0/24.0)) - g*0.5) + 1);
+    }
+    else {
+        return 0;
+    }
+}
+
+/*
+// ---------------- bp~ - 2-pole bandpass filter. ----------------- 
+
+typedef struct bpctl
+{
+    t_sample c_x1;
+    t_sample c_x2;
+    t_sample c_coef1;
+    t_sample c_coef2;
+    t_sample c_gain;
+} t_bpctl;
+
+typedef struct sigbp
+{
+    t_object x_obj;
+    t_float x_sr;
+    t_float x_freq;
+    t_float x_q;
+    t_bpctl x_cspace;
+    t_float x_f;
+} t_sigbp;
+
+t_class *sigbp_class;
+
+static void sigbp_docoef(t_sigbp *x, t_floatarg f, t_floatarg q);
+
+static void *sigbp_new(t_floatarg f, t_floatarg q)
+{
+    t_sigbp *x = (t_sigbp *)pd_new(sigbp_class);
+    inlet_new(&x->x_obj, &x->x_obj.ob_pd, gensym("float"), gensym("ft1"));
+    inlet_new(&x->x_obj, &x->x_obj.ob_pd, gensym("float"), gensym("ft2"));
+    outlet_new(&x->x_obj, &s_signal);
+    x->x_sr = 44100;
+    x->x_cspace.c_x1 = 0;
+    x->x_cspace.c_x2 = 0;
+    sigbp_docoef(x, f, q);
+    x->x_f = 0;
+    return (x);
+}
+
+static t_float sigbp_qcos(t_float f)
+{
+    if (f >= -(0.5f*3.14159f) && f <= 0.5f*3.14159f)
+    {
+        t_float g = f*f;
+        return (((g*g*g * (-1.0f/720.0f) + g*g*(1.0f/24.0f)) - g*0.5) + 1);
+    }
+    else return (0);
+}
+
+static void sigbp_docoef(t_sigbp *x, t_floatarg f, t_floatarg q)
+{
+    t_float r, oneminusr, omega;
+    if (f < 0.001) f = 10;
+    if (q < 0) q = 0;
+    x->x_freq = f;
+    x->x_q = q;
+    omega = f * (2.0f * 3.14159f) / x->x_sr;
+    if (q < 0.001) oneminusr = 1.0f;
+    else oneminusr = omega/q;
+    if (oneminusr > 1.0f) oneminusr = 1.0f;
+    r = 1.0f - oneminusr;
+    x->x_cspace.c_coef1 = 2.0f * sigbp_qcos(omega) * r;
+    x->x_cspace.c_coef2 = - r * r;
+    x->x_cspace.c_gain = 2 * oneminusr * (oneminusr + r * omega);
+}
+
+static void sigbp_ft1(t_sigbp *x, t_floatarg f)
+{
+    sigbp_docoef(x, f, x->x_q);
+}
+
+static void sigbp_ft2(t_sigbp *x, t_floatarg q)
+{
+    sigbp_docoef(x, x->x_freq, q);
+}
+
+static void sigbp_clear(t_sigbp *x, t_floatarg q)
+{
+    x->x_cspace.c_x1 = x->x_cspace.c_x2 = 0;
+}
+
+static t_int *sigbp_perform(t_int *w)
+{
+    t_sample *in = (t_sample *)(w[1]);
+    t_sample *out = (t_sample *)(w[2]);
+    t_bpctl *c = (t_bpctl *)(w[3]);
+    int n = (int)w[4];
+    int i;
+    t_sample last = c->c_x1;
+    t_sample prev = c->c_x2;
+    t_sample coef1 = c->c_coef1;
+    t_sample coef2 = c->c_coef2;
+    t_sample gain = c->c_gain;
+    for (i = 0; i < n; i++)
+    {
+        t_sample output =  *in++ + coef1 * last + coef2 * prev;
+        *out++ = gain * output;
+        prev = last;
+        last = output;
+    }
+    if (PD_BIGORSMALL(last))
+        last = 0;
+    if (PD_BIGORSMALL(prev))
+        prev = 0;
+    c->c_x1 = last;
+    c->c_x2 = prev;
+    return (w+5);
+}
+
+*/
+
+// 2-pole bandpass filter
+// https://pd.iem.sh/objects/bp~/
+// https://github.com/pure-data/pure-data/blob/12de13067aee29e332a34eb3539fa3cb967b63a1/src/d_filter.c#L325
+function pd_bp(buffer, center_freq_signal, q_signal) {
+    let output_buffer = new Float32Array(buffer.length);
+    let last = buffer[0];
+    let prev = buffer[0];
+
+    for (let i = 0; i < buffer.length; i++) {
+        let f = center_freq_signal[i];
+        let q = q_signal[i];
+        if (f < 0.001) f = 10;
+        if (q < 0) q = 0;
+        
+        let omega = f * (2.0 * Math.PI) / SAMPLE_RATE;
+        let oneminusr;
+        
+        if (q < 0.001) {
+            oneminusr = 1.0;
+        } else {
+            oneminusr = omega/q;
+        }
+        if (oneminusr > 1.0) oneminusr = 1.0;
+        
+        let r = 1.0 - oneminusr;
+        let coef1 = 2.0 * sigbp_qcos(omega) * r;
+        let coef2 = -r * r;
+        let gain = 2 * oneminusr * (oneminusr + r * omega);
+        
+        let input = buffer[i];
+        let output = input + coef1 * last + coef2 * prev;
+        output_buffer[i] = gain * output;
+        prev = last;
+        last = output;
+    }
+    return output_buffer;
+}
+
 
 // lop one-pole low pass filter.
 // https://pd.iem.sh/objects/lop~/
