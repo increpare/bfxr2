@@ -105,13 +105,16 @@ function pd_osc(freq_signal){
         // Update phase based on frequency
         phase += freq_signal[i] * conv;
         
-        // Keep phase in [0, 2π]
-        while (phase >= 2 * Math.PI) {
+        // Keep phase in [-π, π] for both positive and negative frequencies
+        while (phase >= Math.PI) {
             phase -= 2 * Math.PI;
+        }
+        while (phase < -Math.PI) {
+            phase += 2 * Math.PI;
         }
         
         // Get table index and fractional part
-        let index = (phase / (2 * Math.PI)) * PD_COSTABLESIZE;
+        let index = (((phase + Math.PI) / (2 * Math.PI)) * PD_COSTABLESIZE)|0;
         let idx1 = Math.floor(index) % PD_COSTABLESIZE;
         let idx2 = (idx1 + 1) % PD_COSTABLESIZE;
         let frac = index - idx1;
@@ -149,12 +152,12 @@ function pd_add(buffer, addend_signal){
     return result;
 }
 
-function pd_addmul(...buffers){
+function pd_polyadd(...buffers){
     var result = new Float32Array(buffers[0].length);
     for (let i = 0; i < result.length; i++) {
         result[i] = buffers[0][i];
         for (let j = 1; j < buffers.length; j++) {
-            result[i] *= buffers[j][i];
+            result[i] += buffers[j][i];
         }
     }
     return result;
@@ -163,6 +166,14 @@ function pd_addmul(...buffers){
 function pd_c(value){
     var result = new Float32Array(puredata_stream_length);    
     result.fill(value);
+    return result;
+}
+
+function pd_abs(buffer){
+    var result = new Float32Array(buffer.length);
+    for (let i = 0; i < buffer.length; i++) {
+        result[i] = Math.abs(buffer[i]);
+    }
     return result;
 }
 

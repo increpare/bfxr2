@@ -6,6 +6,7 @@ var puredata_function_names = Object.keys(puredata_modules);
 function pd_compile(src){
     //replace all ";" with ""
     src = src.replace(/;/g, "");
+    src = src.replace(/\r/g, "");
     var lines = src.split("\n");
 
     //split each line at space
@@ -91,7 +92,7 @@ var function_info = {
     },
     "vcf~":{
         input_slots:3,
-        parameter_indices:[1,2],
+        parameter_indices:[2],
         js_name:"pd_vcf"
     },
     "hip~":{
@@ -135,7 +136,7 @@ var function_info = {
 function build_function_tree(function_calls, connections, cur_node_idx){
     var function_call = function_calls[cur_node_idx];
     var node_name = function_call[0];
-    var scalar_arguments = function_call.slice(1);
+    var constructor_arguments = function_call.slice(1);
     if (!function_info.hasOwnProperty(node_name)){
         console.error("Unknown function: " + node_name);
     }
@@ -157,7 +158,7 @@ function build_function_tree(function_calls, connections, cur_node_idx){
     var call_data = {
         node_name: node_name,
         inputs: input_connection_array,
-        scalar_arguments: scalar_arguments,
+        constructor_arguments: constructor_arguments,
         node_id: cur_node_idx
     }
     return call_data;
@@ -182,7 +183,7 @@ function assign_variable_names(syntax_tree_branch,idx,name_dictionary){
 }
 
 
-function reslot_scalar_arguments(fn_name,args){
+function reslot_constructor_arguments(fn_name,args){
     var fn_info = function_info[fn_name];
     var input_slots = fn_info.input_slots;
     var parameter_indices = fn_info.parameter_indices;
@@ -200,7 +201,7 @@ function flatten_syntax_tree(syntax_tree_branch, result,name_dictionary){
         node_name: syntax_tree_branch.node_name,
         node_id: syntax_tree_branch.node_id,
         node_idx: name_dictionary[syntax_tree_branch.node_id],
-        scalar_arguments: reslot_scalar_arguments(syntax_tree_branch.node_name,syntax_tree_branch.scalar_arguments),
+        constructor_arguments: reslot_constructor_arguments(syntax_tree_branch.node_name,syntax_tree_branch.constructor_arguments),
         inputs:[]
     };
     for (let i = 0; i < syntax_tree_branch.inputs.length; i++) {
@@ -243,7 +244,7 @@ function build_function_body(function_tree){
     for (let i = 0; i < flattened_tree.length; i++) {
         var node = flattened_tree[i];
         //inputs is a array of arrays - we need to have the slots like just s_1 if it's one input, or summing if it's multiple, like
-        // pd_addmul(s_1,s_2,s_3)
+        // pd_polyadd(s_1,s_2,s_3)
         var args = "";
         for (let j = 0; j < node.inputs.length; j++) {
             if (j>0){
@@ -251,15 +252,15 @@ function build_function_body(function_tree){
             }
             var slot_input = node.inputs[j];
             if (slot_input.length === 0){
-                if (node.scalar_arguments[j]===-1){
+                if (node.constructor_arguments[j]===-1){
                     args += "NULL";
                 } else {
-                    args += `pd_c(${node.scalar_arguments[j]})`;
+                    args += `pd_c(${node.constructor_arguments[j]})`;
                 }
             } else if (slot_input.length === 1){
                 args += `s_${slot_input[0]}`;
             } else {
-                args += `pd_addmul(${slot_input.map(input => `s_${input}`).join(",")})`;
+                args += `pd_polyadd(${slot_input.map(input => `s_${input}`).join(",")})`;
             }
         }
         
