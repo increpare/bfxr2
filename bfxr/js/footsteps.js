@@ -141,20 +141,14 @@ function gen_base_grass(envelope_signal){
 
 
 function generate_terrain_texture(envelope_signal){
-    /*
-    [S]
-    */
-    switch (step_terrain){
-        case 0://snow
-            // return pd_test_slotsum(envelope_signal);
-            // return gen_base_dirt(envelope_signal);
-            // return gen_base_snow(envelope_signal);
-            return puredata_functions["wood"](envelope_signal);
-        case 1://grass
-            return gen_base_grass(envelope_signal);
-        default:
-            return pd_mul(pd_noise(),envelope_signal);            
+    var terrain_names = ["snow","grass","dirt","gravel","wood"];
+    if (step_terrain >= terrain_names.length){
+        step_terrain = 0;
+        console.log("step_terrain reset to 0");
     }
+    var terrain_name = terrain_names[step_terrain];     
+    console.log("generating terrain texture for " + terrain_name);
+    return puredata_functions[terrain_name](envelope_signal);
 
 }
 function generateSound(step_heel,step_roll,step_ball,step_speed,step_vol){

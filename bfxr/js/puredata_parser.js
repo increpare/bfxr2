@@ -185,6 +185,12 @@ function assign_variable_names(syntax_tree_branch,idx,name_dictionary){
 
 function reslot_constructor_arguments(fn_name,args){
     var fn_info = function_info[fn_name];
+    //in the specific case of vcf~, if someone provides two arguments, we need to index them as [0,a,b]
+    if (fn_name==="vcf~"){
+        if (args.length===2){
+            return [-1,args[0],args[1]];
+        }
+    }
     var input_slots = fn_info.input_slots;
     var parameter_indices = fn_info.parameter_indices;
     //this args[i] should go to args[parameter_indices[i]]
