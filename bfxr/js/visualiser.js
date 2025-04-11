@@ -22,8 +22,8 @@ var visualisefunctions = [
             functionDict["attack_time"](state);//draw envelope
             var w = canvasEle.width;
             var h = canvasEle.height;
-            var margin = 4;
-            var bmargin = 4;
+            var margin = 0;
+            var bmargin = -70;
             
 
             h = h - margin - bmargin;
@@ -34,6 +34,7 @@ var visualisefunctions = [
             var b = t + h;
             var l = margin;
             var r = l + w;
+            
             
             var c = t + h/2;
 

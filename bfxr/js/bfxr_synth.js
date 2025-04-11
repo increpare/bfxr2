@@ -5,15 +5,16 @@ var SOUND_VOL = 0.25;
 var SAMPLE_RATE = 5512;
 var BIT_DEPTH = 8;
 
-var SQUARE = 0;
-var SAWTOOTH = 1;
-var SINE = 2;
-var NOISE = 3;
-var TRIANGLE = 4;
-var BREAKER = 5;
+var TRIANGLE = 0;
+var SINE = 1;
+var SAWTOOTH = 2;
+var SQUARE = 3;
+var BREAKER = 4;
+var NOISE = 5;
+var PULSE = 6;
 
 var SHAPES = [
-    'square', 'sawtooth', 'sine', 'noise', 'triangle', 'breaker'
+    'triangle', 'sine', 'sawtooth', 'square', 'breaker', 'noise','pulse'
 ];
 
 var AUDIO_CONTEXT;
@@ -939,6 +940,7 @@ SoundEffect.generate = function(ps) {
                 flthp = 0.1;
         }
 
+        console.log(fp);
         // 8x supersampling
         var sample = 0.0;
         for (var si = 0; si < 8; ++si) {
@@ -953,48 +955,49 @@ SoundEffect.generate = function(ps) {
 
             // Base waveform
             var fp = phase / period;
-            if (ps.wave_type === SQUARE) {
-                if (fp < square_duty)
-                    sub_sample = 0.5;
-                else
-                    sub_sample = -0.5;
-            } else if (ps.wave_type === SAWTOOTH) {
-                sub_sample = 1.0 - fp * 2;
-            } else if (ps.wave_type === SINE) {
-                sub_sample = Math.sin(fp * 2 * Math.PI);
-            } else if (ps.wave_type === NOISE) {
-                sub_sample = noise_buffer[Math.floor(phase * 32 / period)];
-            } else if (ps.wave_type === TRIANGLE) {
-                sub_sample = Math.abs(1 - fp * 2) - 1;
-            } else if (ps.wave_type === BREAKER) {
-                sub_sample = Math.abs(1 - fp * fp * 2) - 1;
-            } else {
-                throw new Exception('bad wave type! ' + ps.wave_type);
+            switch (ps.wave_type){
+                case TRIANGLE:
+                    sub_sample = Math.abs(1 - fp * 2) - 1;
+                    break;
+                case SINE:
+                    sub_sample = Math.sin(fp * 2 * Math.PI);
+                    break;
+                case SAWTOOTH:
+                    sub_sample = 1.0 - fp * 2;
+                    break;
+                case SQUARE:
+                    if (fp < square_duty)
+                        sub_sample = 0.5;
+                    else
+                        sub_sample = -0.5;
+                    break;
+                case BREAKER:
+                    sub_sample = Math.abs(1 - fp * fp * 2) - 1;
+                    break;
+                case NOISE:
+                    sub_sample = noise_buffer[Math.floor(phase * 32 / period)];
+                    break;
+                case PULSE:
+                    if (fp < square_duty){
+                        var pulse_delta = (square_duty - fp)/square_duty;
+                        // pulse_delta=pulse_delta*pulse_delta;
+                        sub_sample = 0.5-pulse_delta/4;
+                    } else {
+                        var pulse_delta = (fp-square_duty)/square_duty;
+                        // pulse_delta=Math.pow(pulse_delta,4);
+                        // sub_sample = 0.5+pulse_delta/2;
+                        // sub_sample=pulse_delta/2;
+                        sub_sample = -0.5+pulse_delta/4;
+                        // sub_sample=1;
+                    }
+                    break;       
+                default:                        
+                    throw new Exception('bad wave type! ' + ps.wave_type);                                     
             }
+
 
             // Low-pass filter
-            var pp = fltp;
-            fltw *= fltw_d;
-            if (fltw < 0.0) fltw = 0.0;
-            if (fltw > 0.1) fltw = 0.1;
-            if (ps.p_lpf_freq != 1.0) {
-                fltdp += (sub_sample - fltp) * fltw;
-                fltdp -= fltdp * fltdmp;
-            } else {
-                fltp = sub_sample;
-                fltdp = 0.0;
-            }
-            fltp += fltdp;
-
-            // High-pass filter
-            fltphp += fltp - pp;
-            fltphp -= fltphp * flthp;
-            sub_sample = fltphp;
-
-            // Phaser
-            phaser_buffer[ipp & 1023] = sub_sample;
-            sub_sample += phaser_buffer[(ipp - iphase + 1024) & 1023];
-            ipp = (ipp + 1) & 1023;
+            // var pp = fltp;./r
 
             // final accumulation and envelope application
             sample += sub_sample * env_vol;
