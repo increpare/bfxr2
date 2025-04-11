@@ -62,6 +62,69 @@ function pd_clip(buffer, min, max){
     return result;
 }
 
+// cosine wave oscillator
+// https://pd.iem.sh/objects/osc~/
+// https://github.com/pure-data/pure-data/blob/12de13067aee29e332a34eb3539fa3cb967b63a1/src/d_osc.h#L73C1-L99C6
+function pd_osc(freq_signal){
+    /* original code:
+    t_osc *x = (t_osc *)(w[1]);
+    t_sample *in = (t_sample *)(w[2]);
+    t_sample *out = (t_sample *)(w[3]);
+    int n = (int)(w[4]);
+    float *tab = COSTABLENAME, *addr;
+    t_float f1, f2, frac;
+    double dphase = x->x_phase + UNITBIT32;
+    int normhipart;
+    union tabfudge tf;
+    float conv = x->x_conv;
+
+    tf.tf_d = UNITBIT32;
+    normhipart = tf.tf_i[HIOFFSET];
+#if 0
+    while (n--)
+    {
+        tf.tf_d = dphase;
+        dphase += *in++ * conv;
+        addr = tab + (tf.tf_i[HIOFFSET] & (COSTABLESIZE-1));
+        tf.tf_i[HIOFFSET] = normhipart;
+        frac = tf.tf_d - UNITBIT32;
+        f1 = addr[0];
+        f2 = addr[1];
+        *out++ = f1 + frac * (f2 - f1);
+    }
+        */
+    var result = new Float32Array(freq_signal.length);
+    let dphase = PD_UNITBIT32;
+    let conv = 2 * Math.PI / SAMPLE_RATE;
+    
+    // The bit manipulation in C is not directly translatable to JavaScript
+    // Instead, we'll use a simpler approach that achieves the same result
+    let phase = 0;
+    
+    for (let i = 0; i < freq_signal.length; i++) {
+        // Update phase based on frequency
+        phase += freq_signal[i] * conv;
+        
+        // Keep phase in [0, 2π]
+        while (phase >= 2 * Math.PI) {
+            phase -= 2 * Math.PI;
+        }
+        
+        // Get table index and fractional part
+        let index = (phase / (2 * Math.PI)) * PD_COSTABLESIZE;
+        let idx1 = Math.floor(index) % PD_COSTABLESIZE;
+        let idx2 = (idx1 + 1) % PD_COSTABLESIZE;
+        let frac = index - idx1;
+        
+        // Linear interpolation between adjacent table values
+        let f1 = COSTABLENAME[idx1];
+        let f2 = COSTABLENAME[idx2];
+        result[i] = f1 + frac * (f2 - f1);
+    }
+    
+    return result;
+}
+
 function pd_mul(buffer, multiplier_signal){
     var result = new Float32Array(buffer.length);
     for (let i = 0; i < buffer.length; i++) {
@@ -86,6 +149,16 @@ function pd_add(buffer, addend_signal){
     return result;
 }
 
+function pd_addmul(...buffers){
+    var result = new Float32Array(buffers[0].length);
+    for (let i = 0; i < result.length; i++) {
+        result[i] = buffers[0][i];
+        for (let j = 1; j < buffers.length; j++) {
+            result[i] *= buffers[j][i];
+        }
+    }
+    return result;
+}
 
 function pd_c(value){
     var result = new Float32Array(puredata_stream_length);    

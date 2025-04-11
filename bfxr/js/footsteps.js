@@ -56,9 +56,40 @@ function gen_base_snow(envelope_signal){
     return signal;
 }
 
-function gen_base_grass(){
-    var signal = pd_noise();
+function gen_base_grass(envelope_signal){
+    var source_noise = pd_noise();
+    var signal=source_noise;
 
+    var lop_main = pd_lop(signal,pd_c(300));
+    var lop_side = pd_lop(signal,pd_c(2000));
+    signal = pd_mul(lop_main,lop_side);
+    signal = pd_hip(signal,pd_c(2500));
+    signal = pd_mul(signal,signal);
+    signal = pd_mul(signal,signal);
+    signal = pd_mul(signal,pd_c(1e-5));
+    signal = pd_clip(signal,-0.9,0.9);
+    
+    var side_noise = pd_lop(source_noise,pd_c(16));
+    side_noise = pd_mul(side_noise,pd_c(23800));
+    side_noise = pd_add(side_noise,pd_c(3400));
+    side_noise = pd_clip(side_noise, 2000,10000);
+
+    signal = pd_vcf(signal,side_noise,pd_c(1.0));
+    signal = pd_hip(signal,pd_c(900));
+    signal = pd_mul(signal,0.3);
+    signal = pd_mul(signal,envelope_signal);
+
+    var left_path = envelope_signal;
+    left_path = pd_mul(left_path,left_path);
+    left_path = pd_mul(left_path,left_path);
+    var left_branch = left_path;
+    left_branch = pd_mul(left_branch,pd_c(600));
+    left_branch = pd_add(left_branch,30);
+    left_branch = pd_osc(left_branch);
+    left_branch = pd_clip(left_branch,0,0.5);
+    left_path = pd_mul(left_branch,left_path);
+    left_path = pd_mul(left_path,pd_c(0.8));
+    signal = pd_add(signal,left_path);
     return signal;
 }
 
@@ -92,6 +123,7 @@ function generateSound(step_heel,step_roll,step_ball,step_speed,step_vol){
 
 
     var signal = generate_terrain_texture(envelope_signal);
+
 
     signal = pd_clip(signal, -1.0, 1.0);
     // signal = pd_mul(signal, pd_c(0.5));
