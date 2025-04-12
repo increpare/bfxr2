@@ -1,8 +1,14 @@
 <html>
     <head>
         <meta charset="UTF-8">
+
+        <script src="js/third_party/jquery-3.5.1.min.js"></script>  
+        <script src="js/third_party/bootstrap-slider.js"></script>
         <script src="js/guifxr.js"></script>
         <script src="js/bfxr.js"></script>
+        <link rel="stylesheet" href="css/third_party/bootstrap-tooltip.css">
+        <link rel="stylesheet" href="css/third_party/bootstrap-slider.css">
+        <link rel="stylesheet" href="css/slider.css">
         <link rel="stylesheet" href="css/bfxr.css">
     </head>
     <body>
@@ -60,6 +66,7 @@
                                     <img src="img/unlocked.png" alt="lock" class="lock_icon unlocked">
                                 </td>
                                 <td>
+
                                     <!--4x3 grid of buttons -->
                                     <div class="button_grid">
                                         <button class="button_grid_button">Triangle</button>
@@ -79,31 +86,104 @@
                             </tr>
                         </table>
                     </div>
-                    <div id="center_params" class="scroll_container">
+                    <div id="centre_params" >
                         <table class="paramtable">
                             <tr>
                                 <td class="lockcolumn">
                                     <img src="img/unlocked.png" alt="lock" class="lock_icon unlocked">
                                 </td>
-                                <td>
-                                    <span class="parameter_name">Volume</span>
+                                <td  class="labelcolumn">
+                                    <span class="parameter_name" id="attack_time0_label">
+                                        <span class="data-tooltip">I'm asdf ad f</span>
+                                        Attack Time                                        
+                                    </span>                                                                        
                                 </td>
-                                <td>
-                                    <div class="slider_container">
-                                        <input type="range" class="parameter_slider" id="param_volume" class="normie_input" list="param_volume_steplist">
-                                        <div class="slider_ticks">
-                                            <!-- Ticks will be added here via JavaScript -->
-                                        </div>
-                                    </div>
+                                <td class="slider_container">
+                                    <input id="attack_time0" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="lockcolumn">
+                                    <img src="img/unlocked.png" alt="lock" class="lock_icon unlocked">
+                                </td>
+                                <td  class="labelcolumn">
+                                    <span class="parameter_name">
+                                        <span class="data-tooltip">I'm asdf ad f</span>
+                                        Sustain Time
+                                    </span>                         
+                                </td>
+                                <td class="slider_container">
+                                    <input id="attack_time1" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="lockcolumn">
+                                    <img src="img/unlocked.png" alt="lock" class="lock_icon unlocked">
+                                </td>
+                                <td  class="labelcolumn">
+                                    <span class="parameter_name">
+                                        <span class="data-tooltip">I'm asdf ad f</span>
+                                        Punch
+                                    </span>                         
+                                </td>
+                                <td class="slider_container">
+                                    <input id="attack_time2" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="lockcolumn">
+                                    <img src="img/unlocked.png" alt="lock" class="lock_icon unlocked">
+                                </td>
+                                <td  class="labelcolumn">
+                                    <span class="parameter_name">
+                                        <span class="data-tooltip">I'm asdf ad f</span>
+                                        Decay Time
+                                    </span>                         
+                                </td>
+                                <td class="slider_container">
+                                    <input id="attack_time3" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="lockcolumn">
+                                    <img src="img/unlocked.png" alt="lock" class="lock_icon unlocked">
+                                </td>
+                                <td  class="labelcolumn">
+                                    <span class="parameter_name">
+                                        <span class="data-tooltip">I'm asdasd fasd fasdf asdf asdf dsaf sad f ad f</span>
+                                        Compression
+                                    </span>                         
+                                </td>
+                                <td class="slider_container">
+                                    <input id="attack_time4" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="lockcolumn">
+                                    <img src="img/unlocked.png" alt="lock" class="lock_icon unlocked">
+                                </td>
+                                <td  class="labelcolumn">
+                                    <span class="parameter_name">
+                                        <span class="data-tooltip">I'm as adf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asd fdf ad f</span>
+                                        Frequency
+                                    </span>                         
+                                </td>
+                                <td class="slider_container">
+                                    <input id="attack_time5" type="text" />
                                 </td>
                             </tr>
                         </table>
+                                        <!-- by increpare - support paypal github - source code<br><br> -->
+                        
+                
 
                     </div>
                 </div>
                 <div id="right_panel">R</div>
             </div>
-            <div id="footer">by increpare - support paypal github - source code</div>
+            <div id="footer">
+                by increpare - support paypal github - source code
+            </div>
         </div>
     </body>
 </html>

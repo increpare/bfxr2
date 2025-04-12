@@ -1,0 +1,276 @@
+:root {
+    --sliderheight: 15px;
+    --sliderwidth: 150px;
+    --sliderwidthnarrow: 150px;
+    --col-white: #ffffff;
+    --col-tanlight: #dbaf85;
+    --col-tan: #c89057;
+    --col-lightbrown: #a96742;
+    --col-mediumbrown: #8f563b;
+    --col-shadowbrown: #824e37;
+    --col-shadowbrowner: #7a4836;
+    --col-darkbrown: #663931;
+    --col-lipflesh: #964e41;
+    --col-black: #201010;
+    --border-thickness: 2px;
+
+    --slider-border-color: var(--col-darkbrown);
+    --slider-tick-defaultval-color: var(--col-tan);
+    --slider-tick-color: var(--col-lipflesh);
+    --col-sliderhandle: var(--col-darkbrown);
+
+    --tooltip-background-color: #fdfdcc;
+}
+
+.slidercell .btn-check:checked+.btn-outline-primary,
+.slidercell .btn-check:active+.btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show {
+    background-color: var(--col-lipflesh);
+    /* outline-color: var(--col-black); */
+}
+
+
+.slider.slider.slider-horizontal {
+    margin-left: 1.5px;
+    margin-right: 1.5px;
+    position: relative;
+    top: -4px;
+}
+
+.slider-track {
+    background-image: none;
+    background-color: transparent;
+    border-radius: 0px;
+    /* outline: 3px solid red; */
+    outline-offset: -3px;
+    box-shadow: none;
+}
+
+.slider-handle.round {}
+
+.slider.slider-horizontal .slider-handle {
+    border-radius: 0px;
+    width: 6px;
+    margin-left: 0px;
+    box-shadow: none;
+}
+
+.slider.slider-horizontal {
+    width: var(--sliderwidth);
+    height: var(--sliderheight);
+}
+
+.slider.slider-horizontal.slidernarrow {
+    width: var(--sliderwidthnarrow);
+    height: var(--sliderheight);
+}
+
+.slider-handle {
+    height: var(--sliderheight);
+}
+
+.slider.slider-horizontal .min-slider-handle {
+    background-image: none;
+    background-color: transparent;
+    border-left: var(--border-thickness) solid var(--col-black);
+    border-top: var(--border-thickness) solid var(--col-black);
+    border-bottom: var(--border-thickness) solid var(--col-black);
+    margin-left: -4.5px;
+}
+
+.slider.slider-horizontal .max-slider-handle {
+    background-image: none;
+    background-color: transparent;
+    border-right: var(--border-thickness) solid var(--col-black);
+    border-top: var(--border-thickness) solid var(--col-black);
+    border-bottom: var(--border-thickness) solid var(--col-black);
+    margin-left: -1.5px;
+}
+
+.slider.slider-horizontal .slider-track {
+    width: 100%;
+    margin-top: calc(var(--sliderheight) / -2);
+    top: 50%;
+    left: 0;
+}
+
+.slider.slider-horizontal .slider-tick.round {
+    border-radius: 0;
+    background-color: var(--slider-tick-color);
+    background-image: none;
+    width: 3px;
+    margin-left: -1.5px;
+    margin-top: var(--sliderheight);
+    box-shadow: none;
+    height: 4px;
+    opacity: 1.0;
+}
+
+.slider.slider-horizontal .slider-tick.round.defaulttick {
+    background-color: var(--slider-tick-defaultval-color);
+    height: 4px;
+}
+
+.slider-track-high {
+    background-color: transparent;
+    border-radius: 0;
+    display: none;
+    box-shadow: none;
+}
+
+.slider-track-low {
+    background-color: transparent;
+    border-radius: 0;
+    display: none;
+    box-shadow: none;
+}
+
+.slider-selection {
+    background: transparent;
+    border-radius: 0;
+    display: none;
+    box-shadow: none;
+}
+
+.slider.slider-horizontal .slider-selection {
+    background: var(--col-lipflesh);
+    border-radius: 0;
+    display: block;
+    top: 5px;
+    height: calc(var(--sliderheight) - 10px);
+    outline: 2.2px solid var(--col-lipflesh);
+}
+
+.slider.slider-horizontal.singleselect .slider-selection {
+    background: #2b242457;
+    border-radius: 0;
+    display: block;
+    top: 5px;
+    height: calc(var(--sliderheight) - 10px);
+    outline: 2.2px solid transparent;
+}
+
+.slider.slider-horizontal.singleselect .min-slider-handle {
+    background-image: none;
+    background-color: var(--col-sliderhandle);
+    border: none;
+    margin-left: -1.5px;
+    top: 3px;
+    width: 3px;
+    height: calc(var(--sliderheight) - 6px);
+}
+
+.slider.slider-horizontal .slider-track {
+    height: calc(var(--sliderheight));
+}
+
+.slider.slider-horizontal .slider-rangeHighlight.category1 {
+    background: var(--col-tanlight);
+    border: 1.5px solid var(--col-tanlight);
+    transform: translate(-1.5px, 0);
+    outline: 0;
+    top: 3px;
+    height: calc(var(--sliderheight) - 6px);
+}
+
+.slider-border {
+    position: relative;
+    float: left;
+    width: calc(var(--sliderwidth) + 9px);
+    height: 100%;
+    /* background-color: blue; */
+    left: -4.5px;
+    border: var(--border-thickness) solid var(--slider-border-color);
+    box-sizing: border-box;
+}
+
+.slidernarrow>.slider-border {
+    position: relative;
+    float: left;
+    width: calc(var(--sliderwidthnarrow) + 9px);
+    height: 100%;
+    /* background-color: blue; */
+    left: -4.5px;
+    border: var(--border-thickness) solid var(--col-darkbrown);
+}
+
+
+.slider-horizontal {
+    margin-bottom: 3px;
+    margin-top: 6px;
+}
+
+
+.slidercell {
+    width: calc( var(--sliderwidth) + 13px);
+    padding-right: 0 !important;
+}
+
+
+.globalvolsliderdiv>.fieldtext {
+    font-weight: 500;
+    color: var(--col-black);
+}
+
+.tableborder.slidercell {
+    border-left: 0;
+    border-right: 0;
+}
+
+
+
+.slidercell {
+    border-right: none;
+}
+
+
+.globalvolsliderdiv {
+    margin-left: 3px;
+    margin-bottom: 6px;
+}
+
+.slider .tooltip.bs-tooltip-top {
+    margin-top: -36px;
+}
+
+.timevarying_expanded>.slidercell>div {
+    display: none;
+}
+
+
+/* .data-tooltip is a tooltip that is displayed when its parent 
+is hovered over.*/
+
+.data-tooltip{
+    position: absolute;
+    display: block;
+    
+    max-width: 200px;
+
+    opacity: 0;
+    content: attr(data-tooltip);
+    pointer-events: none;
+    transform: translate(-100%,-100%);
+    width:max-content;
+    background: var(--tooltip-background-color);
+    color: var(--tooltip-text-color);
+    z-index: 100;
+
+    border-radius: 3px;
+    padding: 5px;
+    margin-left: 4px;
+    
+    transition: opacity 0.3s ease-in-out;
+    transition-delay: 0.0s;
+
+    /*add drop shadow*/
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+/*when parent hovered*/
+.parameter_name:hover > .data-tooltip{
+    opacity: 1;
+    transition-delay: 0.5s;
+}

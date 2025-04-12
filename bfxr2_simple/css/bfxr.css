@@ -10,12 +10,18 @@
     --tab-unselected-border-color: #3c3831;
     --tab-background-color-selected: var(--panel-background-color);
     --tab-selected-border-color: var(--panel-border-color);
-    --border-thickness: 2px;
+    --panel-border-thickness: 2px;
     --ui-margin: 5px;
     --font-size: 16px;
     --font-size-bigger: 24px;
     --file-item-selected-background-color:#a8c6ee;
     --tick-width: 2px;
+
+    
+    --slider-border-color: var(--tab-selected-border-color);
+    --slider-tick-color: #0000002c;
+    --slider-tick-defaultval-color: #5c574c;
+    --col-sliderhandle: black;
 }
 
 body {
@@ -57,7 +63,7 @@ body {
 
     border-style:solid;
     border-color: var(--tab-unselected-border-color);
-    border-width: var(--border-thickness);
+    border-width: var(--panel-border-thickness);
     border-bottom:none;
 
     padding-top: 3px;
@@ -72,14 +78,14 @@ body {
 
     border-style:solid;
     border-color: var(--tab-selected-border-color);
-    border-width: var(--border-thickness);
+    border-width: var(--panel-border-thickness);
     border-bottom:none;
 
     /*to remove the border between the active tab
      and the main panel, we extend it down a bit: */
-    margin-bottom: calc(-1*var(--border-thickness));
-    margin-left: calc(-1*var(--border-thickness));
-    margin-right: calc(-1*var(--border-thickness));
+    margin-bottom: calc(-1*var(--panel-border-thickness));
+    margin-left: calc(-1*var(--panel-border-thickness));
+    margin-right: calc(-1*var(--panel-border-thickness));
     /*expand the width to overlap the next/previous tabs a bit*/
     z-index: 1;
     
@@ -88,13 +94,13 @@ body {
 
 
 #content {  
-    height: calc(100vh - 100px);
+    height: fit-content;
     /* max-height: 1200px; */
     width: 100%;
     background-color: var(--panel-background-color);
     border-style:solid;
     border-color: var(--panel-border-color);
-    border-width: var(--border-thickness);
+    border-width: var(--panel-border-thickness);
     display: flex;
     flex-direction: row;
 }
@@ -138,12 +144,12 @@ body {
     margin-right: var(--ui-margin);
 
     background-color: transparent;
-    border: var(--border-thickness) solid var(--panel-border-color);
+    border: var(--panel-border-thickness) solid var(--panel-border-color);
     border-bottom:none;
 }
 
 #centre_header {
-    border-bottom: var(--border-thickness) solid var(--panel-border-color);
+    border-bottom: var(--panel-border-thickness) solid var(--panel-border-color);
 }
 #right_panel {
     width: 150px;
@@ -151,8 +157,11 @@ body {
 }
 
 .scroll_container {
-    overflow-x: hidden;
-    overflow-y: auto;
+    /* overflow-x:scroll;
+    overflow-y:scroll; */
+    height:fit-content;
+    overflow-x: hidden; 
+    overflow-y:auto;
 }
 
 #filelist {
@@ -168,7 +177,7 @@ body {
     border-style:solid;
     border-width:0;
     border-color: var(--panel-border-color);
-    border-top-width: var(--border-thickness);
+    border-top-width: var(--panel-border-thickness);
 }
 
 .file_item {
@@ -197,8 +206,15 @@ body {
     text-align: center;
 }
 
-.paramtable {
-    width:100%;
+table.paramtable {
+    width:100%;    
+    border-collapse: collapse;
+}
+
+
+/*alternating row colors*/
+.paramtable tr:nth-child(even) {
+    background-color: #e7d1a7;
 }
 
 .padded_item {
@@ -219,13 +235,12 @@ body {
     opacity: 0.4;
 }
 
-.parameter_name {
-    float:right;
-}
 
 .slider_container {
     position: relative;
-    width: 100%;
+    width: var(--sliderwidth);
+    padding-right: var(--ui-margin);
+    padding-left: var(--ui-margin);
 }
 
 .parameter_slider {
@@ -251,3 +266,27 @@ body {
     background-color: var(--panel-border-color);
 }
 
+
+.tooltip{
+    position: absolute;
+}
+
+td.lockcolumn {
+    width: 15px;
+}
+
+td.labelcolumn {
+    width:max-content;
+    
+}
+
+.centre_params {
+    height:fit-content;
+    width:100%;
+}
+
+
+
+.parameter_name {
+    float:right;
+}
