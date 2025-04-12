@@ -806,8 +806,8 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 						mouseLeave: mouseLeave
 					};
 				} else {
-					this.sliderElem.addEventListener("mouseenter", this.showTooltip, false);
-					this.sliderElem.addEventListener("mouseleave", this.hideTooltip, false);
+					// this.sliderElem.addEventListener("mouseenter", this.showTooltip, false);
+					// this.sliderElem.addEventListener("mouseleave", this.hideTooltip, false);
 
 					if (this.touchCapable) {
 						this.sliderElem.addEventListener("touchstart", this.showTooltip, false);
@@ -1580,6 +1580,8 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 				document.addEventListener("mouseup", this.mouseup, false);
 
 				this._state.inDrag = true;
+				//show tooltip
+				this.showTooltip();
 				var newValue = this._calculateValue();
 
 				this._trigger('slideStart', newValue);
@@ -1765,6 +1767,7 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 				document.removeEventListener("mouseup", this.mouseup, false);
 
 				this._state.inDrag = false;
+				this.hideTooltip();
 				if (this._state.over === false) {
 					this._hideTooltip();
 				}

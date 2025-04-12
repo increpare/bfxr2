@@ -1,7 +1,7 @@
 :root {
     --sliderheight: 15px;
     --sliderwidth: 150px;
-    --sliderwidthnarrow: 150px;
+    --sliderwidthnarrow: 106px;
     --col-white: #ffffff;
     --col-tanlight: #dbaf85;
     --col-tan: #c89057;
@@ -12,14 +12,16 @@
     --col-darkbrown: #663931;
     --col-lipflesh: #964e41;
     --col-black: #201010;
-    --border-thickness: 2px;
+    --border-thickness: 1px;
 
     --slider-border-color: var(--col-darkbrown);
     --slider-tick-defaultval-color: var(--col-tan);
     --slider-tick-color: var(--col-lipflesh);
+    --slider-background-color: var(--col-tanlight);
     --col-sliderhandle: var(--col-darkbrown);
 
     --tooltip-background-color: #fdfdcc;
+    
 }
 
 .slidercell .btn-check:checked+.btn-outline-primary,
@@ -180,7 +182,7 @@
     float: left;
     width: calc(var(--sliderwidth) + 9px);
     height: 100%;
-    /* background-color: blue; */
+    background-color: var(--slider-background-color);
     left: -4.5px;
     border: var(--border-thickness) solid var(--slider-border-color);
     box-sizing: border-box;
@@ -193,7 +195,7 @@
     height: 100%;
     /* background-color: blue; */
     left: -4.5px;
-    border: var(--border-thickness) solid var(--col-darkbrown);
+    border: var(--border-thickness) solid var(--slider-border-color);
 }
 
 
@@ -252,7 +254,7 @@ is hovered over.*/
     opacity: 0;
     content: attr(data-tooltip);
     pointer-events: none;
-    transform: translate(-100%,-100%);
+    transform: translate(-50%,calc(-100% - 10px));
     width:max-content;
     background: var(--tooltip-background-color);
     color: var(--tooltip-text-color);
@@ -273,4 +275,34 @@ is hovered over.*/
 .parameter_name:hover > .data-tooltip{
     opacity: 1;
     transition-delay: 0.5s;
+}
+
+/*when parent hovered*/
+.lockcolumn:hover > .data-tooltip{
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+button:hover > .data-tooltip{
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+.right_col_label{
+    text-align: left;
+    width:100%;
+}
+
+.tooltip-inner{
+    background-color: var(--tooltip-background-color);
+    color: var(--tooltip-text-color);
+}
+
+.slidernarrow{
+    padding-left:2px;
+}
+
+img {
+    /*pixelated*/
+    image-rendering: pixelated;
 }

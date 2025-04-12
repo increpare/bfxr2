@@ -2,7 +2,6 @@
     <head>
         <meta charset="UTF-8">
 
-        <script src="js/third_party/jquery-3.5.1.min.js"></script>  
         <script src="js/third_party/bootstrap-slider.js"></script>
         <script src="js/guifxr.js"></script>
         <script src="js/bfxr.js"></script>
@@ -30,8 +29,10 @@
                         <button class="normie_button">Randomize</button>
                         <button class="normie_button">Mutation</button>
                     </div>
-                    <span class="padded_item"><input type="checkbox" id="checkbox_loop" class="normie_checkbox">
-                    <label for="checkbox_loop">Create new sound</label></span>
+                    <div>
+                        <span class="padded_item"><input type="checkbox" id="checkbox_loop" class="normie_checkbox">
+                        <label for="checkbox_loop">Create new sound</label></span>
+                    </div>
                     <div id="save_commands">
                         <button class="normie_button">Apply Synth</button>
                         <button class="normie_button">Revert Synth</button>
@@ -40,6 +41,30 @@
                     <div class="scroll_container" id="filelist">
                         <div class="file_item modified">
                             Jump* <button class="delete_button">X</button>
+                        </div>
+                        <div class="file_item modified">
+                            Jump* <button class="delete_button">X</button>
+                        </div>
+                        <div class="file_item modified">
+                            Jump* <button class="delete_button">X</button>
+                        </div>
+                        <div class="file_item file_selected">
+                            Jump <button class="delete_button">X</button>
+                        </div>
+                        <div class="file_item">
+                            Jump <button class="delete_button">X</button>
+                        </div>
+                        <div class="file_item modified">
+                            Jump* <button class="delete_button">X</button>
+                        </div>
+                        <div class="file_item modified">
+                            Jump* <button class="delete_button">X</button>
+                        </div>
+                        <div class="file_item file_selected">
+                            Jump <button class="delete_button">X</button>
+                        </div>
+                        <div class="file_item">
+                            Jump <button class="delete_button">X</button>
                         </div>
                         <div class="file_item modified">
                             Jump* <button class="delete_button">X</button>
@@ -91,6 +116,7 @@
                             <tr>
                                 <td class="lockcolumn">
                                     <img src="img/unlocked.png" alt="lock" class="lock_icon unlocked">
+                                    <span class="data-tooltip">I'm as adf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asd fdf ad f</span>
                                 </td>
                                 <td  class="labelcolumn">
                                     <span class="parameter_name" id="attack_time0_label">
@@ -179,10 +205,36 @@
 
                     </div>
                 </div>
-                <div id="right_panel">R</div>
+                <div id="right_panel">
+                    <div class="display_canvas_container">
+                    <canvas id="display_canvas" width="100%" height="200px">
+                    </div>
+                    <div>
+                        <input type="checkbox" id="checkbox_loop" class="normie_checkbox">
+                        <label for="checkbox_loop">Play on Change</label>
+                    </div>
+                    <div id="right_panel_button_list">
+                    <button class="normie_button">Play</button>
+                    <div>
+                        <input id="global_vol" type="text" />
+                        <span class="parameter_name right_col_label" id="attack_time0_label">
+                            <span class="data-tooltip">I'm asdf ad f</span>
+                            Sound Volume                                        
+                        </span>                        
+                    </div>
+                        <button class="normie_button"><span class="data-tooltip">I'm asdf ad f</span>Export WAV</button>
+                        <button class="normie_button">Export All</button>
+                        <button class="normie_button">Save .bfxr</button>
+                        <button class="normie_button">Save .bfxrcol</button>
+                        <button class="normie_button">Copy</button>
+                        <button class="normie_button">Paste</button>
+                        <button class="normie_button">Copy Link</button>
+                        <button class="normie_button">About</button>
+                    </div>
+                </div>
             </div>
             <div id="footer">
-                by increpare - support paypal github - source code
+                by <a href="http://www.increpare.com">increpare</a> · <a href="https://github.com/sponsors/increpare">sponsor</a> · <a href="https://paypal.me/increparegames">paypal</a> · <a href="https://github.com/increpare/bfxr2">source code</a>
             </div>
         </div>
     </body>

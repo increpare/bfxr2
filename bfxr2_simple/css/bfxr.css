@@ -1,7 +1,7 @@
 /*the structure of the page is HEADER, CONTENT, FOOTER */
 
 :root {
-    --page-background-color: #7a7568;
+    --page-background-color: #ccbda1;
     --panel-background-color: #ccbda1;
     --panel-border-color: #5c574c;
     --panel-text-color: #black;
@@ -10,7 +10,7 @@
     --tab-unselected-border-color: #3c3831;
     --tab-background-color-selected: var(--panel-background-color);
     --tab-selected-border-color: var(--panel-border-color);
-    --panel-border-thickness: 2px;
+    --panel-border-thickness: 1px;
     --ui-margin: 5px;
     --font-size: 16px;
     --font-size-bigger: 24px;
@@ -21,13 +21,20 @@
     --slider-border-color: var(--tab-selected-border-color);
     --slider-tick-color: #0000002c;
     --slider-tick-defaultval-color: #5c574c;
+    --slider-background-color: transparent;
     --col-sliderhandle: black;
+
+    --alternating-table-row-color: #e7d1a7;
+    --button-background-color: var(--panel-background-color);
+    --button-pressed-background-color: #e7d1a7;
 }
 
 body {
+    user-select: none;
     margin:0;
     padding:0;
     background-color: var(--page-background-color);
+    background-image: url("../img/bg.png") ;
     font-size: var(--font-size);
 }
 
@@ -103,14 +110,24 @@ body {
     border-width: var(--panel-border-thickness);
     display: flex;
     flex-direction: row;
+    /*big thick drop-shadow*/
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5));
 }
 
 #footer {   
-    height: 100px;
-    width: 100%;
-    background-color: transparent;
+    height: fit-content;
+    width: fit-content;
     padding-top:5px;
     text-align: center;
+    /*align center*/
+    margin: 0 auto;
+    background-color: var(--alternating-table-row-color);
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top:5px;
+    box-shadow: 0 0 3px 0 var(--alternating-table-row-color);
 }
 
 #left_panel {
@@ -126,6 +143,15 @@ body {
     flex-direction: column;
     gap: var(--ui-margin);
     margin: var(--ui-margin);
+}
+
+#right_panel_button_list{
+    display: flex;
+    flex-direction: column;
+    gap: var(--ui-margin);
+    margin: var(--ui-margin);
+    margin-left: 0;
+
 }
 
 #save_commands {
@@ -150,16 +176,18 @@ body {
 
 #centre_header {
     border-bottom: var(--panel-border-thickness) solid var(--panel-border-color);
+    margin-top: var(--ui-margin);
+    padding-bottom: var(--ui-margin);
+    padding-right: var(--ui-margin);
 }
 #right_panel {
-    width: 150px;
+    width: 120px;
     background-color: transparent;
 }
 
 .scroll_container {
     /* overflow-x:scroll;
     overflow-y:scroll; */
-    height:fit-content;
     overflow-x: hidden; 
     overflow-y:auto;
 }
@@ -178,6 +206,10 @@ body {
     border-width:0;
     border-color: var(--panel-border-color);
     border-top-width: var(--panel-border-thickness);
+}
+
+#filelist {    
+    max-height: 200px;
 }
 
 .file_item {
@@ -214,12 +246,13 @@ table.paramtable {
 
 /*alternating row colors*/
 .paramtable tr:nth-child(even) {
-    background-color: #e7d1a7;
+    background-color: var(--alternating-table-row-color);
 }
 
 .padded_item {
     padding-left: var(--ui-margin);
     padding-right: var(--ui-margin);
+    white-space: nowrap;
 }
 
 .button_grid {
@@ -290,3 +323,44 @@ td.labelcolumn {
 .parameter_name {
     float:right;
 }
+
+.display_canmvas {
+}
+.display_canvas_container {
+    margin-top: var(--ui-margin);
+    margin-right: var(--ui-margin);
+    margin-bottom: var(--ui-margin);
+    border: var(--panel-border-thickness) solid var(--panel-border-color);
+    background-image: url("../img/logo.png") ;
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+/* 
+button {
+    background-color: var(--button-background-color);
+    border: var(--panel-border-thickness) solid var(--panel-border-color);
+    border-radius: var(--ui-margin);
+    /* padding: var(--ui-margin); */
+}
+
+/*click state*/
+button:active {
+    background-color: var(--button-pressed-background-color);
+}
+
+ */
+
+ .lockcolumn {
+    /*not selectable*/
+    user-select: none;
+ }
+
+ .normie_checkbox {
+    margin:0;
+ }
+
+ .padleft {
+    padding-left: var(--ui-margin);
+ }
