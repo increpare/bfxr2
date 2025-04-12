@@ -1,0 +1,253 @@
+/*the structure of the page is HEADER, CONTENT, FOOTER */
+
+:root {
+    --page-background-color: #7a7568;
+    --panel-background-color: #ccbda1;
+    --panel-border-color: #5c574c;
+    --panel-text-color: #black;
+    --panel-disabled-text-color: #675f51;
+    --tab-background-color-unselected: #887c66;
+    --tab-unselected-border-color: #3c3831;
+    --tab-background-color-selected: var(--panel-background-color);
+    --tab-selected-border-color: var(--panel-border-color);
+    --border-thickness: 2px;
+    --ui-margin: 5px;
+    --font-size: 16px;
+    --font-size-bigger: 24px;
+    --file-item-selected-background-color:#a8c6ee;
+    --tick-width: 2px;
+}
+
+body {
+    margin:0;
+    padding:0;
+    background-color: var(--page-background-color);
+    font-size: var(--font-size);
+}
+
+#main_container {
+    width:fit-content;
+    background-color: transparent;
+    
+    display: flex;
+    flex-direction: column;
+
+    /*center horizontally*/
+    margin: 0 auto;
+}
+
+#tab_bar {
+    padding-left: 10px;
+    height: 50px;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.tab_button {
+    /* width: 100px; */
+    margin-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: var(--font-size-bigger);
+
+    background-color: var(--tab-background-color-unselected);
+
+    border-style:solid;
+    border-color: var(--tab-unselected-border-color);
+    border-width: var(--border-thickness);
+    border-bottom:none;
+
+    padding-top: 3px;
+
+}
+
+
+.tab_button.active_tab {
+    margin-top: 10px;
+
+    background-color: var(--tab-background-color-selected);
+
+    border-style:solid;
+    border-color: var(--tab-selected-border-color);
+    border-width: var(--border-thickness);
+    border-bottom:none;
+
+    /*to remove the border between the active tab
+     and the main panel, we extend it down a bit: */
+    margin-bottom: calc(-1*var(--border-thickness));
+    margin-left: calc(-1*var(--border-thickness));
+    margin-right: calc(-1*var(--border-thickness));
+    /*expand the width to overlap the next/previous tabs a bit*/
+    z-index: 1;
+    
+    padding-top: 6px;
+}
+
+
+#content {  
+    height: calc(100vh - 100px);
+    /* max-height: 1200px; */
+    width: 100%;
+    background-color: var(--panel-background-color);
+    border-style:solid;
+    border-color: var(--panel-border-color);
+    border-width: var(--border-thickness);
+    display: flex;
+    flex-direction: row;
+}
+
+#footer {   
+    height: 100px;
+    width: 100%;
+    background-color: transparent;
+    padding-top:5px;
+    text-align: center;
+}
+
+#left_panel {
+    /* height: 100%; */
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--ui-margin);
+}
+
+#preset_list {    
+    display: flex;
+    flex-direction: column;
+    gap: var(--ui-margin);
+    margin: var(--ui-margin);
+}
+
+#save_commands {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ui-margin);
+    margin: var(--ui-margin);
+}
+
+#centre_panel {
+    width: 300px;
+
+    margin-top: var(--ui-margin);
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: var(--ui-margin);
+
+    background-color: transparent;
+    border: var(--border-thickness) solid var(--panel-border-color);
+    border-bottom:none;
+}
+
+#centre_header {
+    border-bottom: var(--border-thickness) solid var(--panel-border-color);
+}
+#right_panel {
+    width: 150px;
+    background-color: transparent;
+}
+
+.scroll_container {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#filelist {
+    padding-top: var(--ui-margin);
+    padding-bottom: var(--ui-margin);
+    /* padding: var(--ui-margin); */
+    display: flex;
+    flex-direction: column;
+    gap: var(--ui-margin);
+    height:100%;
+    min-height: 20px;
+    
+    border-style:solid;
+    border-width:0;
+    border-color: var(--panel-border-color);
+    border-top-width: var(--border-thickness);
+}
+
+.file_item {
+    padding: 0 var(--ui-margin);
+    height: 25px;
+    /*align the text vertically*/
+    padding-top: 5px;
+}
+
+/*unselected: */
+.file_item.modified {
+    color: var(--panel-disabled-text-color);
+}
+
+.file_item.file_selected {
+    background-color: var(--file-item-selected-background-color);
+}
+
+
+.delete_button {
+    float:right;
+    font-size: var(--font-size);
+
+    height:20px;
+
+    text-align: center;
+}
+
+.paramtable {
+    width:100%;
+}
+
+.padded_item {
+    padding-left: var(--ui-margin);
+    padding-right: var(--ui-margin);
+}
+
+.button_grid {
+    width:100%;
+    /*4x3 grid of buttons*/
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: var(--ui-margin);
+}
+
+.lock_icon.unlocked {
+    opacity: 0.4;
+}
+
+.parameter_name {
+    float:right;
+}
+
+.slider_container {
+    position: relative;
+    width: 100%;
+}
+
+.parameter_slider {
+    width: 100%;
+    margin: 0;
+    position: relative;
+    z-index: 2; /* Place above ticks for interaction */
+}
+
+.slider_ticks {
+    position: absolute;
+    top: 20px; /* Position below the slider */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between; /* Even spacing */
+    padding: 0 10px; /* Adjust based on browser's track start/end */
+}
+
+.slider_tick {
+    width: var(--tick-width);
+    height: 10px;
+    background-color: var(--panel-border-color);
+}
+
