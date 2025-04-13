@@ -1,3 +1,5 @@
+"use strict";
+
 window.onload = function() {
   var sliders_names=["attack_time0","attack_time1","attack_time2","attack_time3","attack_time4","attack_time5","global_vol"];
   for (var i = 0; i < sliders_names.length; i++) {

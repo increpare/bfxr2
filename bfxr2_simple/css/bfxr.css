@@ -117,7 +117,7 @@ body {
     filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5));
 }
 
-.tab_page.active_tab {
+.tab_page.active_tab_page {
     display: flex;
 }
 
@@ -137,7 +137,7 @@ body {
     box-shadow: 0 0 3px 0 var(--alternating-table-row-color);
 }
 
-#left_panel {
+.left_panel {
     /* height: 100%; */
     width: 150px;
     display: flex;
@@ -145,14 +145,14 @@ body {
     gap: var(--ui-margin);
 }
 
-#preset_list {    
+.preset_list {    
     display: flex;
     flex-direction: column;
     gap: var(--ui-margin);
     margin: var(--ui-margin);
 }
 
-#right_panel_button_list{
+.right_panel_button_list{
     display: flex;
     flex-direction: column;
     gap: var(--ui-margin);
@@ -161,14 +161,14 @@ body {
 
 }
 
-#save_commands {
+.save_commands {
     display: flex;
     flex-direction: column;
     gap: var(--ui-margin);
     margin: var(--ui-margin);
 }
 
-#centre_panel {
+.centre_panel {
     width: 300px;
 
     margin-top: var(--ui-margin);
@@ -181,13 +181,14 @@ body {
     border-bottom:none;
 }
 
-#centre_header {
+.centre_header {
     border-bottom: var(--panel-border-thickness) solid var(--panel-border-color);
     margin-top: var(--ui-margin);
     padding-bottom: var(--ui-margin);
     padding-right: var(--ui-margin);
 }
-#right_panel {
+
+.right_panel {
     width: 120px;
     background-color: transparent;
 }
@@ -199,7 +200,7 @@ body {
     overflow-y:auto;
 }
 
-#filelist {
+.filelist {
     padding-top: var(--ui-margin);
     padding-bottom: var(--ui-margin);
     /* padding: var(--ui-margin); */
@@ -207,15 +208,13 @@ body {
     flex-direction: column;
     gap: var(--ui-margin);
     height:100%;
-    min-height: 20px;
     
     border-style:solid;
     border-width:0;
     border-color: var(--panel-border-color);
     border-top-width: var(--panel-border-thickness);
-}
 
-#filelist {    
+    min-height: 100px;
     max-height: 200px;
 }
 
@@ -348,16 +347,13 @@ td.labelcolumn {
 button {
     background-color: var(--button-background-color);
     border: var(--panel-border-thickness) solid var(--panel-border-color);
-    border-radius: var(--ui-margin);
-    /* padding: var(--ui-margin); */
+    border-radius: var(--ui-margin);    
 }
 
-/*click state*/
 button:active {
     background-color: var(--button-pressed-background-color);
 }
-
- */
+*/
 
  .lockcolumn {
     /*not selectable*/

@@ -1,3 +1,4 @@
+"use strict";
 
 function set_active_tab(tab_name) {
   var tab_page = document.getElementById("tab_page_"+tab_name);
@@ -15,9 +16,9 @@ function set_active_tab(tab_name) {
   for (var i = 0; i < tab_pages.length; i++) {
     var tab_page = tab_pages[i];
     if (tab_page.id != "tab_page_"+tab_name) {
-      tab_page.classList.remove("active_tab");
-    } else if (!tab_page.classList.contains("active_tab")) {
-      tab_page.classList.add("active_tab");
+      tab_page.classList.remove("active_tab_page");
+    } else if (!tab_page.classList.contains("active_tab_page")) {
+      tab_page.classList.add("active_tab_page");
     }
   }
 }
