@@ -177,7 +177,7 @@ function generateSound(step_heel,step_roll,step_ball,step_speed,step_vol){
     
     console.log("updating canvas");
     clearCanvas();
-    drawWaveform([step_heel,step_roll,step_ball,step_length,step_vol],sound);
+    drawWaveform([step_heel,step_roll,step_ball,step_length,step_vol,step_terrain],sound);
     drawFootstep(step_heel,step_roll,step_ball,step_length,step_envelope_resized);
 
     return sound;
