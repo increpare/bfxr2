@@ -1,21 +1,23 @@
-window.onload = function() {
-  var sliders_names=["attack_time0","attack_time1","attack_time2","attack_time3","attack_time4","attack_time5","global_vol"];
-  for (var i = 0; i < sliders_names.length; i++) {
-      var slider_attack_time = new Slider("#"+sliders_names[i], {
-          id: "instanced_"+sliders_names[i],
-          min: 0,
-          max: 0.33,
-          range: false,
-          step: 0.0033,
-          value: 0.231,
-          ticks: [0, 0.033, 0.066, 0.099, 0.132, 0.165, 0.198, 0.231, 0.264, 0.29700000000000004, 0.33]
-        });
-        slider_attack_time.sliderElem.className += " singleselect";
-        slider_attack_time.sliderElem.getElementsByClassName("slider-tick-container")[0].children[7].classList.add('defaulttick');
-        if (sliders_names[i] == "global_vol") {
-          //.slidernarrow
-          slider_attack_time.sliderElem.classList.add('slidernarrow');
-        }
+
+function set_active_tab(tab_name) {
+  var tab_page = document.getElementById("tab_page_"+tab_name);
+  tab_page.classList.add("active_tab");
+  var tab_buttons = document.getElementsByClassName("tab_button");
+  for (var i = 0; i < tab_buttons.length; i++) {
+    var tab_button = tab_buttons[i];  
+    if (tab_button.id != "tab_button_"+tab_name) {
+      tab_button.classList.remove("active_tab");
+    } else if (!tab_button.classList.contains("active_tab")) {
+      tab_button.classList.add("active_tab");
+    }
+  }
+  var tab_pages = document.getElementsByClassName("tab_page");
+  for (var i = 0; i < tab_pages.length; i++) {
+    var tab_page = tab_pages[i];
+    if (tab_page.id != "tab_page_"+tab_name) {
+      tab_page.classList.remove("active_tab");
+    } else if (!tab_page.classList.contains("active_tab")) {
+      tab_page.classList.add("active_tab");
+    }
   }
 }
-

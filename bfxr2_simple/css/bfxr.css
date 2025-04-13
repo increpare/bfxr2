@@ -74,6 +74,7 @@ body {
     border-bottom:none;
 
     padding-top: 3px;
+    cursor: pointer;
 
 }
 
@@ -97,10 +98,12 @@ body {
     z-index: 1;
     
     padding-top: 6px;
+
+    cursor: default;
 }
 
 
-#content {  
+.tab_page {  
     height: fit-content;
     /* max-height: 1200px; */
     width: 100%;
@@ -108,10 +111,14 @@ body {
     border-style:solid;
     border-color: var(--panel-border-color);
     border-width: var(--panel-border-thickness);
-    display: flex;
+    display: none;
     flex-direction: row;
     /*big thick drop-shadow*/
     filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+.tab_page.active_tab {
+    display: flex;
 }
 
 #footer {   
