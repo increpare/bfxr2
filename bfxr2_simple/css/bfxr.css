@@ -1,0 +1,366 @@
+/*the structure of the page is HEADER, CONTENT, FOOTER */
+
+:root {
+    --page-background-color: #ccbda1;
+    --panel-background-color: #ccbda1;
+    --panel-border-color: #5c574c;
+    --panel-text-color: #black;
+    --panel-disabled-text-color: #675f51;
+    --tab-background-color-unselected: #887c66;
+    --tab-unselected-border-color: #3c3831;
+    --tab-background-color-selected: var(--panel-background-color);
+    --tab-selected-border-color: var(--panel-border-color);
+    --panel-border-thickness: 1px;
+    --ui-margin: 5px;
+    --font-size: 16px;
+    --font-size-bigger: 24px;
+    --file-item-selected-background-color:#a8c6ee;
+    --tick-width: 2px;
+
+    
+    --slider-border-color: var(--tab-selected-border-color);
+    --slider-tick-color: #0000002c;
+    --slider-tick-defaultval-color: #5c574c;
+    --slider-background-color: transparent;
+    --col-sliderhandle: black;
+
+    --alternating-table-row-color: #e7d1a7;
+    --button-background-color: var(--panel-background-color);
+    --button-pressed-background-color: #e7d1a7;
+}
+
+body {
+    user-select: none;
+    margin:0;
+    padding:0;
+    background-color: var(--page-background-color);
+    background-image: url("../img/bg.png") ;
+    font-size: var(--font-size);
+}
+
+#main_container {
+    width:fit-content;
+    background-color: transparent;
+    
+    display: flex;
+    flex-direction: column;
+
+    /*center horizontally*/
+    margin: 0 auto;
+}
+
+#tab_bar {
+    padding-left: 10px;
+    height: 50px;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.tab_button {
+    /* width: 100px; */
+    margin-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: var(--font-size-bigger);
+
+    background-color: var(--tab-background-color-unselected);
+
+    border-style:solid;
+    border-color: var(--tab-unselected-border-color);
+    border-width: var(--panel-border-thickness);
+    border-bottom:none;
+
+    padding-top: 3px;
+
+}
+
+
+.tab_button.active_tab {
+    margin-top: 10px;
+
+    background-color: var(--tab-background-color-selected);
+
+    border-style:solid;
+    border-color: var(--tab-selected-border-color);
+    border-width: var(--panel-border-thickness);
+    border-bottom:none;
+
+    /*to remove the border between the active tab
+     and the main panel, we extend it down a bit: */
+    margin-bottom: calc(-1*var(--panel-border-thickness));
+    margin-left: calc(-1*var(--panel-border-thickness));
+    margin-right: calc(-1*var(--panel-border-thickness));
+    /*expand the width to overlap the next/previous tabs a bit*/
+    z-index: 1;
+    
+    padding-top: 6px;
+}
+
+
+#content {  
+    height: fit-content;
+    /* max-height: 1200px; */
+    width: 100%;
+    background-color: var(--panel-background-color);
+    border-style:solid;
+    border-color: var(--panel-border-color);
+    border-width: var(--panel-border-thickness);
+    display: flex;
+    flex-direction: row;
+    /*big thick drop-shadow*/
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+#footer {   
+    height: fit-content;
+    width: fit-content;
+    padding-top:5px;
+    text-align: center;
+    /*align center*/
+    margin: 0 auto;
+    background-color: var(--alternating-table-row-color);
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top:5px;
+    box-shadow: 0 0 3px 0 var(--alternating-table-row-color);
+}
+
+#left_panel {
+    /* height: 100%; */
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--ui-margin);
+}
+
+#preset_list {    
+    display: flex;
+    flex-direction: column;
+    gap: var(--ui-margin);
+    margin: var(--ui-margin);
+}
+
+#right_panel_button_list{
+    display: flex;
+    flex-direction: column;
+    gap: var(--ui-margin);
+    margin: var(--ui-margin);
+    margin-left: 0;
+
+}
+
+#save_commands {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ui-margin);
+    margin: var(--ui-margin);
+}
+
+#centre_panel {
+    width: 300px;
+
+    margin-top: var(--ui-margin);
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: var(--ui-margin);
+
+    background-color: transparent;
+    border: var(--panel-border-thickness) solid var(--panel-border-color);
+    border-bottom:none;
+}
+
+#centre_header {
+    border-bottom: var(--panel-border-thickness) solid var(--panel-border-color);
+    margin-top: var(--ui-margin);
+    padding-bottom: var(--ui-margin);
+    padding-right: var(--ui-margin);
+}
+#right_panel {
+    width: 120px;
+    background-color: transparent;
+}
+
+.scroll_container {
+    /* overflow-x:scroll;
+    overflow-y:scroll; */
+    overflow-x: hidden; 
+    overflow-y:auto;
+}
+
+#filelist {
+    padding-top: var(--ui-margin);
+    padding-bottom: var(--ui-margin);
+    /* padding: var(--ui-margin); */
+    display: flex;
+    flex-direction: column;
+    gap: var(--ui-margin);
+    height:100%;
+    min-height: 20px;
+    
+    border-style:solid;
+    border-width:0;
+    border-color: var(--panel-border-color);
+    border-top-width: var(--panel-border-thickness);
+}
+
+#filelist {    
+    max-height: 200px;
+}
+
+.file_item {
+    padding: 0 var(--ui-margin);
+    height: 25px;
+    /*align the text vertically*/
+    padding-top: 5px;
+}
+
+/*unselected: */
+.file_item.modified {
+    color: var(--panel-disabled-text-color);
+}
+
+.file_item.file_selected {
+    background-color: var(--file-item-selected-background-color);
+}
+
+
+.delete_button {
+    float:right;
+    font-size: var(--font-size);
+
+    height:20px;
+
+    text-align: center;
+}
+
+table.paramtable {
+    width:100%;    
+    border-collapse: collapse;
+}
+
+
+/*alternating row colors*/
+.paramtable tr:nth-child(even) {
+    background-color: var(--alternating-table-row-color);
+}
+
+.padded_item {
+    padding-left: var(--ui-margin);
+    padding-right: var(--ui-margin);
+    white-space: nowrap;
+}
+
+.button_grid {
+    width:100%;
+    /*4x3 grid of buttons*/
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: var(--ui-margin);
+}
+
+.lock_icon.unlocked {
+    opacity: 0.4;
+}
+
+
+.slider_container {
+    position: relative;
+    width: var(--sliderwidth);
+    padding-right: var(--ui-margin);
+    padding-left: var(--ui-margin);
+}
+
+.parameter_slider {
+    width: 100%;
+    margin: 0;
+    position: relative;
+    z-index: 2; /* Place above ticks for interaction */
+}
+
+.slider_ticks {
+    position: absolute;
+    top: 20px; /* Position below the slider */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between; /* Even spacing */
+    padding: 0 10px; /* Adjust based on browser's track start/end */
+}
+
+.slider_tick {
+    width: var(--tick-width);
+    height: 10px;
+    background-color: var(--panel-border-color);
+}
+
+
+.tooltip{
+    position: absolute;
+}
+
+td.lockcolumn {
+    width: 15px;
+}
+
+td.labelcolumn {
+    width:max-content;
+    
+}
+
+.centre_params {
+    height:fit-content;
+    width:100%;
+}
+
+
+
+.parameter_name {
+    float:right;
+}
+
+.display_canmvas {
+}
+.display_canvas_container {
+    margin-top: var(--ui-margin);
+    margin-right: var(--ui-margin);
+    margin-bottom: var(--ui-margin);
+    border: var(--panel-border-thickness) solid var(--panel-border-color);
+    background-image: url("../img/logo.png") ;
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+/* 
+button {
+    background-color: var(--button-background-color);
+    border: var(--panel-border-thickness) solid var(--panel-border-color);
+    border-radius: var(--ui-margin);
+    /* padding: var(--ui-margin); */
+}
+
+/*click state*/
+button:active {
+    background-color: var(--button-pressed-background-color);
+}
+
+ */
+
+ .lockcolumn {
+    /*not selectable*/
+    user-select: none;
+ }
+
+ .normie_checkbox {
+    margin:0;
+ }
+
+ .padleft {
+    padding-left: var(--ui-margin);
+ }

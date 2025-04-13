@@ -1,8 +1,8 @@
 :root {
     --sliderheight: 15px;
     --sliderwidth: 170px;
-    --fieldtextwidth: 200px;
     --sliderwidthnarrow: 150px;
+    --fieldtextwidth: 200px;
     --synthpanelheight: 400px;
     --checkboxbuttonwidth: calc( ( var(--sliderwidth) + 4px) / 6);
     --iconcellwidth: 20px;
