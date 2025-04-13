@@ -1,7 +1,8 @@
 "use strict";
 
 var tabs=[];
-function Tab(tab_name) {    
+function Tab(synth_specification) {    
+    var tab_name = synth_specification.name;
     // Store tab name
     this.name = tab_name;
 
@@ -82,7 +83,28 @@ function Tab(tab_name) {
     tab_page.appendChild(centre_panel);
 
     {
+        var centre_header = document.createElement("div");
+        centre_header.classList.add("centre_header");
+        centre_header.style.display = "none";
+        centre_panel.appendChild(centre_header);
 
+        this.centre_header = centre_header;
+
+        var header_paramtable = document.createElement("table");
+        header_paramtable.classList.add("paramtable");
+        centre_header.appendChild(header_paramtable);
+
+        var centre_params = document.createElement("div");
+        centre_params.classList.add("centre_params");
+        centre_params.classList.add("scroll_container");
+        centre_params.style.display = "none";
+        centre_panel.appendChild(centre_params);
+
+        this.centre_params = centre_params;
+
+        var main_paramtable = document.createElement("table");
+        main_paramtable.classList.add("paramtable");
+        centre_params.appendChild(main_paramtable);
 
     }
 
@@ -127,8 +149,7 @@ function Tab(tab_name) {
         right_panel_button_list.appendChild(global_vol_container_div);
 
         
-        var global_vol_id = tab_name + "_slider_global_vol";
-        this.setup_slider(global_vol_container_div, global_vol_id,this.volume_slider_changed,true);
+        this.setup_slider(global_vol_container_div, "slider_global_vol",0,1,1,this.volume_slider_changed,true);
 
         var global_vol_label = document.createElement("span");
         global_vol_label.innerText = "Sound Volume";
@@ -168,6 +189,59 @@ function Tab(tab_name) {
     this.preset_list = preset_list;
 
     tabs.push(this);
+
+    this.load_params(synth_specification);
+    this.load_presets(synth_specification);
+
+    this.finalize_elements();
+}
+
+Tab.prototype.load_params = function(synth_specification){
+    for (var i = 0; i < synth_specification.param_info.length; i++) {
+        var param = synth_specification.param_info[i];
+        this.load_param(param);
+    }
+}
+
+Tab.prototype.load_param = function(param){
+    //if object
+    if (param.constructor === Array){
+        var display_name = param[0];
+        var tooltip = param[1];
+        var param_name = param[2];
+        var default_value = param[3];
+        var min_value = param[4];
+        var max_value = param[5];
+        var header = param.length>6 && param[6]===true;
+        this.add_slider(param_name, display_name, tooltip, min_value, max_value, default_value, header);
+    } else {
+        switch (param.type){
+            case "BUTTONSELECT":
+                
+                this.add_button_grid(param.name, param.display_name, param.tooltip, param.columns, param.default_value, param.values, param.header===true?true:false);
+                break;
+            default:
+                console.error("Unknown param type: " + param.type);
+        }
+    } 
+}
+
+Tab.prototype.load_presets = function(synth_specification){
+    for (var i = 0; i < synth_specification.presets.length; i++) {
+        let generator = synth_specification.presets[i];
+        this.add_generator(generator);
+    }
+}
+
+Tab.prototype.add_generator = function(generator){
+    /*button_id,button_text,button_handler,button_tooltip
+    */
+   var button_text = generator[0];
+   var button_tooltip = generator[1];
+   var generator_name = generator[2];
+   var button_id = this.name + "_generator_" + generator_name;
+   var button = this.add_button(button_id,button_text,this.preset_clicked.bind(this,generator_name),button_tooltip);
+   this.preset_list.appendChild(button);
 }
 
 Tab.prototype.set_active_tab = function(){
@@ -193,24 +267,38 @@ Tab.prototype.set_active_tab = function(){
     }
 }
 
-Tab.prototype.setup_slider = function(parent_node,slider_id,handler_fn,mini){
+Tab.prototype.setup_slider = function(parent_node,slider_id,min,max,defaultval,handler_fn,mini=false){
+    var uid = this.name + "_slider_" + slider_id;
     var global_vol_input = document.createElement("input");
     global_vol_input.type = "text";
-    global_vol_input.id = slider_id;
+    global_vol_input.id = uid;
     parent_node.appendChild(global_vol_input);
 
+    //ticks
+    var ticks = [];
+    var closest_to_default_i=0;
+    var closest_diff=100000;
+    for (var i = 0; i <= 10; i ++) {
+        var v = min + (max-min)*i/10;
+        ticks.push(v);
+        var diff = Math.abs(v-defaultval);
+        if (diff < closest_diff){
+            closest_diff = diff;
+            closest_to_default_i = i;
+        }
+    }
 
-    var slider = new Slider("#"+slider_id, {
-        id: "instanced_"+slider_id,
-        min: 0,
-        max: 0.33,
+    var slider = new Slider("#"+uid, {
+        id: slider_id   ,
+        min: min,
+        max: max,
         range: false,
-        step: 0.0033,
-        value: 0.231,
-        ticks: [0, 0.033, 0.066, 0.099, 0.132, 0.165, 0.198, 0.231, 0.264, 0.29700000000000004, 0.33]
+        step: 0.00001,
+        value: defaultval,
+        ticks: ticks
       });
       slider.sliderElem.className += " singleselect";
-      slider.sliderElem.getElementsByClassName("slider-tick-container")[0].children[7].classList.add('defaulttick');
+      slider.sliderElem.getElementsByClassName("slider-tick-container")[0].children[closest_to_default_i].classList.add('defaulttick');
 
       if (mini===true){
         slider.sliderElem.classList.add('slidernarrow');
@@ -232,6 +320,114 @@ Tab.prototype.add_button = function(button_id,button_text,button_handler,button_
     return button;
 }
 
+Tab.prototype.create_param_label = function(label,tooltip){
+    var parameter_name_span = document.createElement("span");
+    parameter_name_span.classList.add("parameter_name");
+    parameter_name_span.innerHTML = `<span class="data-tooltip">${tooltip}</span>${label}`;
+    return parameter_name_span;
+}
+Tab.prototype.add_button_grid = function(
+    parameter_name,
+    display_name,
+    tooltip,
+    column_count,
+    default_value,
+    button_list,
+    header = false )
+{
+    var parent_container = header ? this.centre_header : this.centre_params;
+    parent_container.style.display = "block";
+
+    var table = parent_container.children[0];
+
+    var new_row = table.insertRow();
+
+    var lock_cell = new_row.insertCell();
+    lock_cell.classList.add("lockcolumn");
+    var lock_button = this.generate_lock_button(parameter_name);
+    lock_cell.appendChild(lock_button);
+
+    var rowspan=1;
+    if (display_name !== ""){
+        var label_cell = new_row.insertCell();
+        label_cell.classList.add("labelcolumn");
+        var label = this.create_param_label(display_name,tooltip);
+        label_cell.appendChild(label);
+    } else {
+        rowspan = 2;
+    }
+
+    var parameter_cell = new_row.insertCell();
+    parameter_cell.rowSpan = rowspan;
+    var button_grid = document.createElement("div");
+    button_grid.classList.add("button_grid_" + column_count + "c");
+    parameter_cell.appendChild(button_grid);
+
+    for (let i = 0; i < button_list.length; i++) {
+        var button = document.createElement("button");
+        button.classList.add("button_grid_button");
+        button.id = button_list[i][0];
+        button.innerText = button_list[i][0];
+        button.addEventListener("click", ()=> {
+            this.button_grid_button_clicked(button,parameter_name,i);
+        });
+        button_grid.appendChild(button);
+    }
+}
+
+//add_slider("attack_time",0,1,0,"Attack Time","Length of the volume envelope attack.");
+Tab.prototype.add_slider = function(
+    parameter_name,
+    display_name,
+    tooltip,
+    min,
+    max,
+    default_value,
+    header=false
+){
+    var uid = this.name + "_slider_" + parameter_name;
+    
+    var parent_container = header ? this.centre_header : this.centre_params;
+    parent_container.style.display = "block";
+
+    var table = parent_container.children[0];
+
+    var new_row = table.insertRow();
+
+    var lock_cell = new_row.insertCell();
+    lock_cell.classList.add("lockcolumn");
+    var lock_button = this.generate_lock_button(parameter_name);
+    lock_cell.appendChild(lock_button);
+
+    var rowspan=1;
+    if (display_name !== ""){
+        var label_cell = new_row.insertCell();
+        label_cell.classList.add("labelcolumn");
+        var label = this.create_param_label(display_name,tooltip);
+        label_cell.appendChild(label);
+    } else {
+        rowspan = 2;
+    }
+
+    var parameter_cell = new_row.insertCell();
+    parameter_cell.classList.add("slider_container");
+    parameter_cell.rowSpan = rowspan;
+
+    this.setup_slider(parameter_cell,uid,min,max,default_value,this.slider_changed.bind(this,parameter_name));            
+
+}
+
+Tab.prototype.generate_lock_button = function(parameter_name){
+    var lock_button = document.createElement("div");
+    lock_button.classList.add("lockimage");
+    lock_button.addEventListener("click", ()=> {    
+        //unlocked if class unlocked is present
+        var val = lock_button.classList.contains("unlocked") ? true : false;
+        this.lock_param_clicked(lock_button,parameter_name,val)
+    });    
+    return lock_button;
+}
+
 Tab.prototype.add_preset = function (preset_name, button_tooltip, param_fn){
     var button = this.add_button(preset_name,preset_name,param_fn,button_tooltip);
     this.preset_list.appendChild(button);
@@ -242,10 +438,7 @@ Tab.prototype.finalize_elements = function(){
     this.add_preset("Mutation", "Modify each unlocked parameter by a small wee amount... (only modifies unlocked parameters)",this.mutate_params, );
 }
 
-//called after adding all presets/parameters
-Tab.prototype.finalize_layout = function(){
-    this.finalize_elements();
-}
+
 
 
 Tab.prototype.preset_clicked = function(preset_name){
@@ -262,6 +455,10 @@ Tab.prototype.play_on_change_clicked = function(){
 
 Tab.prototype.play_button_clicked = function(){
     console.log("Play button clicked");
+}
+
+Tab.prototype.slider_changed = function(param_name,value){
+    console.log("Slider changed " + param_name + " to " + value);
 }
 
 Tab.prototype.volume_slider_changed = function(value){
@@ -300,6 +497,10 @@ Tab.prototype.about_button_clicked = function(){
     console.log("About button clicked");
 }
 
+Tab.prototype.preset_clicked = function(generator_name){
+    console.log("Preset clicked: " + generator_name);
+}
+
 Tab.prototype.randomize_params = function(){
     console.log("Randomize params");
 }
@@ -318,4 +519,18 @@ Tab.prototype.revert_sfx = function(){
 
 Tab.prototype.duplicate_sfx = function(preset_name){
     console.log("Duplicate sfx");
+}
+
+Tab.prototype.lock_param_clicked = function(node,param_name,value){
+    console.log("Lock param " + param_name + " clickedwith value " + value);
+    value=!value;
+    if (value){
+        node.classList.add("unlocked");
+    } else {
+        node.classList.remove("unlocked");
+    }
+}
+
+Tab.prototype.button_grid_button_clicked = function(node,param_name,value){
+    console.log("Button grid button clicked for " + param_name + " with value " + value);
 }

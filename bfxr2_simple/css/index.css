@@ -13,6 +13,7 @@
     --panel-border-thickness: 1px;
     --ui-margin: 5px;
     --font-size: 16px;
+    --font-size-small: 12px;
     --font-size-bigger: 24px;
     --file-item-selected-background-color:#a8c6ee;
     --tick-width: 2px;
@@ -104,7 +105,7 @@ body {
 
 
 .tab_page {  
-    height: fit-content;
+    height: auto;
     /* max-height: 1200px; */
     width: 100%;
     background-color: var(--panel-background-color);
@@ -169,7 +170,8 @@ body {
 }
 
 .centre_panel {
-    width: 300px;
+    width: 350px;
+    max-height: 600px;
 
     margin-top: var(--ui-margin);
     margin-bottom: 0;
@@ -179,6 +181,9 @@ body {
     background-color: transparent;
     border: var(--panel-border-thickness) solid var(--panel-border-color);
     border-bottom:none;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .centre_header {
@@ -202,7 +207,7 @@ body {
 
 .filelist {
     padding-top: var(--ui-margin);
-    padding-bottom: var(--ui-margin);
+    /* margin-bottom: var(--ui-margin); */
     /* padding: var(--ui-margin); */
     display: flex;
     flex-direction: column;
@@ -249,11 +254,22 @@ table.paramtable {
     border-collapse: collapse;
 }
 
+.centre_params .paramtable tr {
+    border-bottom: var(--panel-border-thickness) solid var(--panel-border-color);
+}
 
-/*alternating row colors*/
+/* alternating row colors - cludged to deal with the fact that there are two tables...*/
 .paramtable tr:nth-child(even) {
     background-color: var(--alternating-table-row-color);
 }
+
+.centre_params .paramtable tr:nth-child(even) {
+    background-color: var(--panel-background-color);
+}
+.centre_params .paramtable tr:nth-child(odd) {
+    background-color: var(--alternating-table-row-color);
+}
+/* cludge end */
 
 .padded_item {
     padding-left: var(--ui-margin);
@@ -261,12 +277,28 @@ table.paramtable {
     white-space: nowrap;
 }
 
-.button_grid {
+/* 3 column grid */
+.button_grid_3c {
     width:100%;
-    /*4x3 grid of buttons*/
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    gap: var(--ui-margin);
+
+}
+
+/* 4 column grid */
+.button_grid_4c {
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--ui-margin);
+}
+
+/* 5 column grid */
+.button_grid_5c {
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: var(--ui-margin);
 }
 
@@ -320,7 +352,7 @@ td.labelcolumn {
 }
 
 .centre_params {
-    height:fit-content;
+    /* height:fit-content; */
     width:100%;
 }
 
@@ -328,6 +360,7 @@ td.labelcolumn {
 
 .parameter_name {
     float:right;
+    font-size: var(--font-size-small);
 }
 
 .display_canmvas {
@@ -366,4 +399,20 @@ button:active {
 
  .padleft {
     padding-left: var(--ui-margin);
+ }
+
+ .lockimage {
+    width: 15px;
+    height: 15px;
+    margin:0;
+    padding:0;
+    margin-left: var(--ui-margin);
+    background-image: url("../img/locked.png");
+    background-repeat: no-repeat;
+    background-position: center;
+ }
+
+ .lockimage.unlocked {
+    background-image: url("../img/unlocked.png");
+    opacity: 0.4;
  }
