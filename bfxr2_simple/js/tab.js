@@ -61,22 +61,13 @@ function Tab(tab_name) {
         save_commands_div.classList.add("save_commands");
         left_panel.appendChild(save_commands_div);
 
-        var apply_sfx_button = document.createElement("button");
-        apply_sfx_button.classList.add("normie_button");
-        apply_sfx_button.innerText = "Apply Sfx";
-        apply_sfx_button.addEventListener("click", this.apply_sfx);
+        var apply_sfx_button = this.add_button("apply_sfx", "Apply Sfx", this.apply_sfx, "Apply the current sound to the current sound");
         save_commands_div.appendChild(apply_sfx_button);
 
-        var revert_sfx_button = document.createElement("button");
-        revert_sfx_button.classList.add("normie_button");
-        revert_sfx_button.innerText = "Revert Sfx";
-        revert_sfx_button.addEventListener("click", this.revert_sfx);
+        var revert_sfx_button = this.add_button("revert_sfx", "Revert Sfx", this.revert_sfx, "Revert the current sound to the original sound");
         save_commands_div.appendChild(revert_sfx_button);
 
-        var duplicate_sfx_button = document.createElement("button");
-        duplicate_sfx_button.classList.add("normie_button");
-        duplicate_sfx_button.innerText = "Duplicate Sfx";
-        duplicate_sfx_button.addEventListener("click", this.duplicate_sfx);
+        var duplicate_sfx_button = this.add_button("duplicate_sfx", "Duplicate Sfx", this.duplicate_sfx, "Duplicate the current sound");
         save_commands_div.appendChild(duplicate_sfx_button);  
          
         var file_list = document.createElement("div");
@@ -129,10 +120,7 @@ function Tab(tab_name) {
         right_panel_button_list.classList.add("right_panel_button_list");
         right_panel.appendChild(right_panel_button_list);
 
-        var play_button = document.createElement("button");
-        play_button.classList.add("normie_button");
-        play_button.innerText = "Play";
-        play_button.addEventListener("click", this.play_button_clicked);
+        var play_button = this.add_button("play", "Play", this.play_button_clicked, "Play the current sound");
         right_panel_button_list.appendChild(play_button);
 
         var global_vol_container_div = document.createElement("div");
@@ -147,52 +135,28 @@ function Tab(tab_name) {
         global_vol_container_div.appendChild(global_vol_label);
 
 
-        var export_wav_button = document.createElement("button");
-        export_wav_button.classList.add("normie_button");
-        export_wav_button.innerText = "Export WAV";
-        export_wav_button.addEventListener("click", this.export_wav_button_clicked);
+        var export_wav_button = this.add_button("export_wav", "Export WAV", this.export_wav_button_clicked, "Export the current sound as a WAV file");
         right_panel_button_list.appendChild(export_wav_button);
 
-        var export_all_button = document.createElement("button");
-        export_all_button.classList.add("normie_button");
-        export_all_button.innerText = "Export All";
-        export_all_button.addEventListener("click", this.export_all_button_clicked);
+        var export_all_button = this.add_button("export_all", "Export All", this.export_all_button_clicked, "Export all sounds as a WAV file");
         right_panel_button_list.appendChild(export_all_button);
 
-        var save_bfxr_button = document.createElement("button");
-        save_bfxr_button.classList.add("normie_button");
-        save_bfxr_button.innerText = "Save .bfxr";
-        save_bfxr_button.addEventListener("click", this.save_bfxr_button_clicked);
+        var save_bfxr_button = this.add_button("save_bfxr", "Save .bfxr", this.save_bfxr_button_clicked, "Save the current sound as a .bfxr file");
         right_panel_button_list.appendChild(save_bfxr_button);
 
-        var save_bfxrcol_button = document.createElement("button");
-        save_bfxrcol_button.classList.add("normie_button");
-        save_bfxrcol_button.innerText = "Save .bcol";
-        save_bfxrcol_button.addEventListener("click", this.save_bfxrcol_button_clicked);
+        var save_bfxrcol_button = this.add_button("save_bfxrcol", "Save .bcol", this.save_bfxrcol_button_clicked, "Save the current sound as a .bcol file");
         right_panel_button_list.appendChild(save_bfxrcol_button);
 
-        var copy_button = document.createElement("button");
-        copy_button.classList.add("normie_button");
-        copy_button.innerText = "Copy";
-        copy_button.addEventListener("click", this.copy_button_clicked);
+        var copy_button = this.add_button("copy", "Copy", this.copy_button_clicked, "Copy the current sound");
         right_panel_button_list.appendChild(copy_button);
 
-        var paste_button = document.createElement("button");
-        paste_button.classList.add("normie_button");
-        paste_button.innerText = "Paste";
-        paste_button.addEventListener("click", this.paste_button_clicked);
+        var paste_button = this.add_button("paste", "Paste", this.paste_button_clicked, "Paste the current sound");
         right_panel_button_list.appendChild(paste_button);
 
-        var copy_link_button = document.createElement("button");
-        copy_link_button.classList.add("normie_button");
-        copy_link_button.innerText = "Copy Link";
-        copy_link_button.addEventListener("click", this.copy_link_button_clicked);
+        var copy_link_button = this.add_button("copy_link", "Copy Link", this.copy_link_button_clicked, "Copy the current sound link");
         right_panel_button_list.appendChild(copy_link_button);
 
-        var about_button = document.createElement("button");
-        about_button.classList.add("normie_button");
-        about_button.innerText = "About";
-        about_button.addEventListener("click", this.about_button_clicked);
+        var about_button = this.add_button("about", "About", this.about_button_clicked, "About the current sound");
         right_panel_button_list.appendChild(about_button);    
         
     }
