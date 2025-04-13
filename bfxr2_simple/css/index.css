@@ -13,6 +13,7 @@
     --panel-border-thickness: 1px;
     --ui-margin: 5px;
     --font-size: 16px;
+    --font-size-small: 12px;
     --font-size-bigger: 24px;
     --file-item-selected-background-color:#a8c6ee;
     --tick-width: 2px;
@@ -74,6 +75,7 @@ body {
     border-bottom:none;
 
     padding-top: 3px;
+    cursor: pointer;
 
 }
 
@@ -97,21 +99,27 @@ body {
     z-index: 1;
     
     padding-top: 6px;
+
+    cursor: default;
 }
 
 
-#content {  
-    height: fit-content;
+.tab_page {  
+    height: auto;
     /* max-height: 1200px; */
     width: 100%;
     background-color: var(--panel-background-color);
     border-style:solid;
     border-color: var(--panel-border-color);
     border-width: var(--panel-border-thickness);
-    display: flex;
+    display: none;
     flex-direction: row;
     /*big thick drop-shadow*/
     filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+.tab_page.active_tab_page {
+    display: flex;
 }
 
 #footer {   
@@ -130,7 +138,7 @@ body {
     box-shadow: 0 0 3px 0 var(--alternating-table-row-color);
 }
 
-#left_panel {
+.left_panel {
     /* height: 100%; */
     width: 150px;
     display: flex;
@@ -138,14 +146,14 @@ body {
     gap: var(--ui-margin);
 }
 
-#preset_list {    
+.preset_list {    
     display: flex;
     flex-direction: column;
     gap: var(--ui-margin);
     margin: var(--ui-margin);
 }
 
-#right_panel_button_list{
+.right_panel_button_list{
     display: flex;
     flex-direction: column;
     gap: var(--ui-margin);
@@ -154,15 +162,16 @@ body {
 
 }
 
-#save_commands {
+.save_commands {
     display: flex;
     flex-direction: column;
     gap: var(--ui-margin);
     margin: var(--ui-margin);
 }
 
-#centre_panel {
-    width: 300px;
+.centre_panel {
+    width: 350px;
+    max-height: 600px;
 
     margin-top: var(--ui-margin);
     margin-bottom: 0;
@@ -172,15 +181,19 @@ body {
     background-color: transparent;
     border: var(--panel-border-thickness) solid var(--panel-border-color);
     border-bottom:none;
+
+    display: flex;
+    flex-direction: column;
 }
 
-#centre_header {
+.centre_header {
     border-bottom: var(--panel-border-thickness) solid var(--panel-border-color);
     margin-top: var(--ui-margin);
     padding-bottom: var(--ui-margin);
     padding-right: var(--ui-margin);
 }
-#right_panel {
+
+.right_panel {
     width: 120px;
     background-color: transparent;
 }
@@ -192,23 +205,21 @@ body {
     overflow-y:auto;
 }
 
-#filelist {
+.filelist {
     padding-top: var(--ui-margin);
-    padding-bottom: var(--ui-margin);
+    /* margin-bottom: var(--ui-margin); */
     /* padding: var(--ui-margin); */
     display: flex;
     flex-direction: column;
     gap: var(--ui-margin);
     height:100%;
-    min-height: 20px;
     
     border-style:solid;
     border-width:0;
     border-color: var(--panel-border-color);
     border-top-width: var(--panel-border-thickness);
-}
 
-#filelist {    
+    min-height: 100px;
     max-height: 200px;
 }
 
@@ -243,11 +254,22 @@ table.paramtable {
     border-collapse: collapse;
 }
 
+.centre_params .paramtable tr {
+    border-bottom: var(--panel-border-thickness) solid var(--panel-border-color);
+}
 
-/*alternating row colors*/
+/* alternating row colors - cludged to deal with the fact that there are two tables...*/
 .paramtable tr:nth-child(even) {
     background-color: var(--alternating-table-row-color);
 }
+
+.centre_params .paramtable tr:nth-child(even) {
+    background-color: var(--panel-background-color);
+}
+.centre_params .paramtable tr:nth-child(odd) {
+    background-color: var(--alternating-table-row-color);
+}
+/* cludge end */
 
 .padded_item {
     padding-left: var(--ui-margin);
@@ -255,12 +277,28 @@ table.paramtable {
     white-space: nowrap;
 }
 
-.button_grid {
+/* 3 column grid */
+.button_grid_3c {
     width:100%;
-    /*4x3 grid of buttons*/
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    gap: var(--ui-margin);
+
+}
+
+/* 4 column grid */
+.button_grid_4c {
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--ui-margin);
+}
+
+/* 5 column grid */
+.button_grid_5c {
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: var(--ui-margin);
 }
 
@@ -314,7 +352,7 @@ td.labelcolumn {
 }
 
 .centre_params {
-    height:fit-content;
+    /* height:fit-content; */
     width:100%;
 }
 
@@ -322,6 +360,7 @@ td.labelcolumn {
 
 .parameter_name {
     float:right;
+    font-size: var(--font-size-small);
 }
 
 .display_canmvas {
@@ -341,16 +380,13 @@ td.labelcolumn {
 button {
     background-color: var(--button-background-color);
     border: var(--panel-border-thickness) solid var(--panel-border-color);
-    border-radius: var(--ui-margin);
-    /* padding: var(--ui-margin); */
+    border-radius: var(--ui-margin);    
 }
 
-/*click state*/
 button:active {
     background-color: var(--button-pressed-background-color);
 }
-
- */
+*/
 
  .lockcolumn {
     /*not selectable*/
@@ -363,4 +399,20 @@ button:active {
 
  .padleft {
     padding-left: var(--ui-margin);
+ }
+
+ .lockimage {
+    width: 15px;
+    height: 15px;
+    margin:0;
+    padding:0;
+    margin-left: var(--ui-margin);
+    background-image: url("../img/locked.png");
+    background-repeat: no-repeat;
+    background-position: center;
+ }
+
+ .lockimage.unlocked {
+    background-image: url("../img/unlocked.png");
+    opacity: 0.4;
  }
