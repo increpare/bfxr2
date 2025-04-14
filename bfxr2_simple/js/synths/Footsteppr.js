@@ -8,7 +8,7 @@ class Footsteppr extends SynthTemplate {
         {
             type: "BUTTONSELECT",
 
-            name: "waveform",
+            name: "terrain",
             display_name: "Terrain",
             tooltip: "",
 
@@ -97,4 +97,51 @@ class Footsteppr extends SynthTemplate {
     generate_pickup_coin() {
         return this.params;
     }
+    
+    /*********************/
+    /* SOUND SYNTHESIS  */
+    /*********************/
+    generate_sound(){
+        var step_heel = this.params.heel;
+        var step_roll = this.params.roll;
+        var step_ball = this.params.ball;
+        var step_speed = this.params.swiftness;
+        var step_vol = this.params.masterVolume;
+
+        //speed is between 0 and 1, this corresponds to a step-length between 0.8 and 0.1 
+        var step_length = 0.1+0.7*(1-step_speed)
+        
+        //constant signal 0 
+        pd_set_stream_length_seconds(step_length);
+    
+        var heel_envelope = resize_fn(step(step_heel),0,1,0,0.3333);
+        var roll_envelope = resize_fn(step(step_roll),0,1,0.125,0.875);
+        var ball_envelope = resize_fn(step(step_ball),0,1,0.6667,1);
+        var step_envelope_0_1 = add_fns(heel_envelope,roll_envelope,ball_envelope);
+        var step_envelope_resized = resize_fn(step_envelope_0_1,0,1,0,step_length);
+    
+        var envelope_signal = pd_fn(step_envelope_resized);
+    
+        var signal = this.generate_terrain_texture(envelope_signal);
+    
+        signal = pd_mul(signal,pd_c(step_vol));
+        signal = pd_clip(signal, pd_c(-1.0), pd_c(1.0));
+        // signal = pd_mul(signal, pd_c(0.5));
+    
+        this.sound = RealizedSound.from_buffer(signal);
+    }
+ 
+    generate_terrain_texture(envelope_signal){
+        var terrain_names = ["snow","grass","dirt","gravel","wood"];
+        if (this.params.terrain >= terrain_names.length){
+            step_terrain = 0;
+            console.log("step_terrain reset to 0");
+        }
+        var terrain_name = terrain_names[this.params.terrain];     
+        console.log("generating terrain texture for " + terrain_name);
+        return puredata_functions[terrain_name](envelope_signal);    
+    }
+    
 }
+
+

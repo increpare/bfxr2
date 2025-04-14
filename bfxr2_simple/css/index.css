@@ -31,6 +31,8 @@
 
     --tween-canvas-width: 75;
     --tween-canvas-height: 32;
+
+    --buttongrid-pressed-background-color: grey;
 }
 
 body {
@@ -346,6 +348,14 @@ table.paramtable {
     gap: var(--ui-margin);
 }
 
+.button_grid_button.selected {
+    background-color: var(--buttongrid-pressed-background-color);
+    /* set disabled */
+    opacity: 1.0;   
+    color: var(--panel-text-color);
+    border-color: transparent;
+    border-radius:2px;
+}
 .lock_icon.unlocked {
     opacity: 0.4;
 }

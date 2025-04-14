@@ -1,5 +1,6 @@
 class SynthTemplate {
 
+    sound = null;
     params = {};
     locked_params = {};
 
@@ -168,7 +169,9 @@ class SynthTemplate {
         this.reset_params();
     }
 
-    play_sound(){
+    play(){
+        this.generate_sound();
+        this.sound.play();
 
     }
 

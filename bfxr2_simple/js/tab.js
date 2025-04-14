@@ -32,7 +32,9 @@ class Tab {
         if (saved_info){
             this.files = saved_info.files;
             this.selected_file_index = saved_info.selected_file_index;
-            this.synth.apply_params(JSON.parse(this.files[this.selected_file_index][1]));
+            if (this.selected_file_index >= 0){
+                this.synth.apply_params(JSON.parse(this.files[this.selected_file_index][1]));
+            }
             this.create_new_sound = saved_info.create_new_sound;
             this.play_on_change = saved_info.play_on_change;
         }        
@@ -164,7 +166,7 @@ class Tab {
             play_on_change_checkbox.id = tab_name + "_checkbox_loop";
             play_on_change_checkbox.classList.add("normie_checkbox");
             play_on_change_checkbox.checked = this.play_on_change;
-            play_on_change_checkbox.addEventListener("click", this.play_on_change_clicked);
+            play_on_change_checkbox.addEventListener("click", this.play_on_change_clicked.bind(this));
             play_on_change_container_div.appendChild(play_on_change_checkbox);
 
             var play_on_change_label = document.createElement("label");
@@ -176,7 +178,7 @@ class Tab {
             right_panel_button_list.classList.add("right_panel_button_list");
             right_panel.appendChild(right_panel_button_list);
 
-            var play_button = this.add_button("play", "Play", this.play_button_clicked, "Play the current sound");
+            var play_button = this.add_button("play", "Play", this.play_button_clicked.bind(this), "Play the current sound");
             right_panel_button_list.appendChild(play_button);
 
             var master_volume_container_div = document.createElement("div");
@@ -299,14 +301,33 @@ class Tab {
         //for each parameter
         for (var i = 0; i < this.synth.param_info.length; i++) {
             var param = this.synth.param_info[i];
-            var value = this.synth.params[param[2]];
             if (param.constructor === Array){
+                var value = this.synth.params[param[2]];
                 var param_name = param[2];
                 //it's a slider
                 var slider = this.sliders[param_name];
                 slider.setValue(value);
             } else {
-                //it's a button array
+                switch (param.type) {
+                    case "BUTTONSELECT":
+                        var value = this.synth.params[param.name];
+                        var button_grid = document.getElementById(this.name + "_button_grid_" + param.name);
+                        for (var j = 0; j < button_grid.children.length; j++) {
+                            var child = button_grid.children[j];
+                            child.disabled = false;
+                            if (child.classList.contains("selected")){
+                                child.classList.remove("selected");
+                            }
+                        }
+                        button_grid.children[value].classList.add("selected");
+                        button_grid.children[value].disabled = true;
+                        break;
+                    case "KNOB_TRANSITION":
+                        console.error("Knob transition not implemented");
+                        break;  
+                    default:
+                        console.error("Unknown param type: " + param.type); 
+                }
             }
         }
     }
@@ -579,16 +600,16 @@ class Tab {
         parameter_cell.rowSpan = rowspan;
         var button_grid = document.createElement("div");
         button_grid.classList.add("button_grid_" + column_count + "c");
+        var uid = this.name + "_button_grid_" + parameter_name;
+        button_grid.id = uid;
         parameter_cell.appendChild(button_grid);
 
         for (let i = 0; i < button_list.length; i++) {
             var button = document.createElement("button");
             button.classList.add("button_grid_button");
-            button.id = button_list[i][0];
+            button.id = uid+"_"+button_list[i][0];
             button.innerText = button_list[i][0];
-            button.addEventListener("click", () => {
-                this.button_grid_button_clicked(button, parameter_name, i);
-            });
+            button.addEventListener("click", this.button_grid_button_clicked.bind(this, button, parameter_name, i));
             button_grid.appendChild(button);
         }
     }
@@ -728,6 +749,7 @@ class Tab {
             }
         }
         this.update_ui();
+        save_all_collections();
     }
 
     set_selected_file(file_name) {
@@ -791,7 +813,7 @@ class Tab {
         
         var delete_button = document.createElement("button");
         delete_button.classList.add("delete_button");
-        delete_button.innerText = "X";
+        delete_button.innerHTML = "<img src='./img/delete.png'>";
         delete_button.addEventListener("click", (event) => {
             this.delete_file(file_name);
         });
@@ -882,6 +904,7 @@ class Tab {
 
     play_button_clicked() {
         console.log("Play button clicked");
+        this.synth.play();
     }
 
     slider_changed(param_name, value) {
@@ -889,10 +912,16 @@ class Tab {
         this.synth.set_param(param_name, value);
         this.files[this.selected_file_index][1] = JSON.stringify(this.synth.params);
         this.update_ablements();
+        if (this.play_on_change){
+            this.synth.play();
+        }
     }
 
     volume_slider_changed(value) {
         console.log("Volume slider changed to " + value);
+        if (this.play_on_change){
+            this.synth.play();
+        }
     }
 
     export_wav_button_clicked() {
@@ -933,6 +962,7 @@ class Tab {
             delete params.synth_type;
             this.synth.apply_params(params);
             this.create_new_sound_from_params(file_name, params);
+            save_all_collections();
         });
     }
 
@@ -1029,11 +1059,32 @@ class Tab {
 
     button_grid_button_clicked(node, param_name, value) {
         console.log("Button grid button clicked for " + param_name + " with value " + value);
+        var conatiner_uid = this.name + "_button_grid_" + param_name;
+        for (var i = 0; i < node.parentElement.children.length; i++) {
+            var selected = value === i;
+            var child = node.parentElement.children[i];
+            if (selected){
+                child.classList.add("selected");
+                child.disabled = true;
+            } else {
+                child.classList.remove("selected");
+                child.disabled = false;
+            }
+        }
+        this.synth.set_param(param_name, value);
+        this.files[this.selected_file_index][1] = JSON.stringify(this.synth.params);
+        this.update_ablements();
+        if (this.play_on_change){
+            this.synth.play();
+        }
     }
 
     file_item_click(file_name,target) {
         console.log("File item clicked: " + file_name);
         this.set_selected_file(file_name);
+        if (this.play_on_change){
+            this.synth.play();
+        }
     }
 
     file_item_renamed(file_name,new_name) {
