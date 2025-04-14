@@ -440,6 +440,7 @@ button:active {
 
  .normie_checkbox {
     margin:0;
+    margin-right: var(--ui-margin); 
  }
 
  .padleft {

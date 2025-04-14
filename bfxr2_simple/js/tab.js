@@ -177,28 +177,28 @@ class Tab {
             master_volume_container_div.appendChild(master_volume_label);
 
 
-            var export_wav_button = this.add_button("export_wav", "Export WAV", this.export_wav_button_clicked, "Export the current sound as a WAV file");
+            var export_wav_button = this.add_button("export_wav", "Export WAV", this.export_wav_button_clicked.bind(this), "Export the current sound as a WAV file");
             right_panel_button_list.appendChild(export_wav_button);
 
-            var export_all_button = this.add_button("export_all", "Export All", this.export_all_button_clicked, "Export all sounds as a WAV file");
+            var export_all_button = this.add_button("export_all", "Export All", this.export_all_button_clicked.bind(this), "Export all sounds as a WAV file");
             right_panel_button_list.appendChild(export_all_button);
 
-            var save_bfxr_button = this.add_button("save_bfxr", "Save .bfxr", this.save_bfxr_button_clicked, "Save the current sound as a .bfxr file");
+            var save_bfxr_button = this.add_button("save_bfxr", "Save .bfxr", this.save_bfxr_button_clicked.bind(this), "Save the current sound as a .bfxr file");
             right_panel_button_list.appendChild(save_bfxr_button);
 
-            var save_bfxrcol_button = this.add_button("save_bfxrcol", "Save .bcol", this.save_bfxrcol_button_clicked, "Save the current sound as a .bcol file");
+            var save_bfxrcol_button = this.add_button("save_bfxrcol", "Save .bcol", this.save_bfxrcol_button_clicked.bind(this), "Save the current sound as a .bcol file");
             right_panel_button_list.appendChild(save_bfxrcol_button);
 
-            var copy_button = this.add_button("copy", "Copy", this.copy_button_clicked, "Copy the current sound");
+            var copy_button = this.add_button("copy", "Copy", this.copy_button_clicked.bind(this), "Copy the current sound");
             right_panel_button_list.appendChild(copy_button);
 
-            var paste_button = this.add_button("paste", "Paste", this.paste_button_clicked, "Paste the current sound");
+            var paste_button = this.add_button("paste", "Paste", this.paste_button_clicked.bind(this), "Paste the current sound");
             right_panel_button_list.appendChild(paste_button);
 
-            var copy_link_button = this.add_button("copy_link", "Copy Link", this.copy_link_button_clicked, "Copy the current sound link");
+            var copy_link_button = this.add_button("copy_link", "Copy Link", this.copy_link_button_clicked.bind(this), "Copy the current sound link");
             right_panel_button_list.appendChild(copy_link_button);
 
-            var about_button = this.add_button("about", "About", this.about_button_clicked, "About the current sound");
+            var about_button = this.add_button("about", "About", this.about_button_clicked.bind(this), "About the current sound");
             right_panel_button_list.appendChild(about_button);
 
         }
@@ -234,6 +234,23 @@ class Tab {
         apply_sfx_button.disabled = !is_current_file_modified;
         var revert_sfx_button = document.getElementById(this.name+"_revert_sfx");
         revert_sfx_button.disabled = !is_current_file_modified;
+
+        //go through file list and set modified_filename
+        for (var i = 0; i < this.files.length; i++) {
+            var file = this.files[i];
+            var file_name = file[0];
+            var file_current_state = file[1];
+            var file_last_saved_state = file[2];
+            var file_item = document.getElementById(this.name + "_file_list").children[i];
+            var file_name_span = file_item.children[0];
+            var modified = file_current_state != file_last_saved_state;
+            if (modified){
+                file_name_span.classList.add("modified_filename");
+            } else {
+                file_name_span.classList.remove("modified_filename");
+            }
+        }
+        
     }
 
     update_ui_file_list(){
@@ -243,14 +260,22 @@ class Tab {
         //clear
         file_list.innerHTML = "";
         //add new
+        var selected_item=null;
         for (var i = 0; i < this.files.length; i++) {
             var file = this.files[i];
             var selected = i == this.selected_file_index;
             var file_item = this.create_file_entry(file,selected);
             file_list.appendChild(file_item);
+            if (selected){
+                selected_item = file_item;
+            }
         }
         //set scroll to bottom
-        file_list.scrollTop = file_list.scrollHeight;
+        file_list.scrollTop = scroll_y;
+        //selected item has to be visible
+        if (selected_item){
+            selected_item.scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
     }
 
     update_ui_params(){
@@ -612,27 +637,56 @@ class Tab {
     /*********************/
 
     find_unique_filename(desired_name,ignore_index=-1){
-        var suffix = -1;
-        var found=true
-        var test_name;
-        while(found){
-            found=false;
-            suffix++;
-            test_name = desired_name;
-            if (suffix !== 0) {
-                test_name = desired_name+suffix;
+        var new_name = desired_name.replace(/[^a-zA-Z0-9_-]/g, "");
+
+        if (new_name.length == 0){
+            new_name = "Sfx";
+        }
+
+        var file_name_already_exists = false;
+        for (var i = 0; i < this.files.length; i++) {
+            if (i===ignore_index){
+                continue;
             }
-            for (var i = 0; i < this.files.length; i++) {
-                if (i == ignore_index) {
-                    continue;
-                }
-                if (this.files[i][0] == test_name) {
-                    found = true;
-                    break;
-                }
+            if (this.files[i][0] == new_name) {
+                file_name_already_exists = true;
+                break;
             }
         }
-        return test_name;
+
+        if (file_name_already_exists){
+            //strip all digits from end of name FROM THE RIGHT
+            while (new_name.length>0 && !isNaN(new_name[new_name.length-1])){
+                new_name = new_name.slice(0, -1);
+            }
+                
+            if (new_name.length == 0){
+                new_name = "Sfx";
+            }
+            
+            var suffix = -1;
+            var found=true
+            var test_name;
+            while(found){
+                found=false;
+                suffix++;
+                test_name = new_name;
+                if (suffix !== 0) {
+                    test_name = new_name+suffix;
+                }
+                for (var i = 0; i < this.files.length; i++) {
+                    if (i == ignore_index) {
+                        continue;
+                    }
+                    if (this.files[i][0].toLowerCase() == test_name.toLowerCase()) {
+                        found = true;
+                        break;
+                    }
+                }
+            }
+            new_name = test_name;
+        } 
+        return new_name;
     }
 
     delete_file(file_name){
@@ -731,6 +785,7 @@ class Tab {
     }
 
     create_new_sound_from_params(preset_name, params) {
+        this.synth.apply_params(params);
         if (this.create_new_sound||this.files.length == 0||this.selected_file_index===-1) {
             this.current_params = params;
             var filename = this.find_unique_filename(preset_name);        
@@ -798,6 +853,9 @@ class Tab {
 
     slider_changed(param_name, value) {
         console.log("Slider changed " + param_name + " to " + value);
+        this.synth.set_param(param_name, value);
+        this.files[this.selected_file_index][1] = JSON.stringify(this.synth.params);
+        this.update_ablements();
     }
 
     volume_slider_changed(value) {
@@ -822,14 +880,46 @@ class Tab {
 
     copy_button_clicked() {
         console.log("Copy button clicked");
+        var file_dat = this.files[this.selected_file_index];
+        var file_name = file_dat[0];
+        var file_jstor = file_dat[1];
+        var file_jstor_json = JSON.parse(file_jstor);
+        file_jstor_json.file_name = file_name;
+        file_jstor_json.synth_type = this.name;
+        var file_jstor_json_string = JSON.stringify(file_jstor_json,null,2);
+        navigator.clipboard.writeText(file_jstor_json_string);
     }
 
     paste_button_clicked() {
-        console.log("Paste button clicked");
+        //load from clipboard
+        navigator.clipboard.readText().then(text => {
+            var params = JSON.parse(text);
+            var file_name = params.file_name;
+            var synth_type = params.synth_type;
+            delete params.file_name;           
+            delete params.synth_type;
+            this.synth.apply_params(params);
+            this.create_new_sound_from_params(file_name, params);
+        });
     }
 
     copy_link_button_clicked() {
         console.log("Copy link button clicked");
+        console.log("Copy button clicked");
+        var file_dat = this.files[this.selected_file_index];
+        var file_name = file_dat[0];
+        var file_jstor = file_dat[1];
+        var params_parsed = JSON.parse(file_jstor);
+        var file_jstor_json_string = shallow_dict_serialize(this.name, file_name, params_parsed);
+        //need to escape it so it can be used as a url parameter
+        var file_jstor_json_string_escaped = encodeURIComponent(file_jstor_json_string);
+        var current_url = window.location.href;
+        //strip the query string
+        var current_url_without_query = current_url.split("?")[0];
+        //add the file_jstor_json_string_escaped to the url
+        var new_url = current_url_without_query + "?sfx=" + file_jstor_json_string_escaped;
+        //copy to clipboard
+        navigator.clipboard.writeText(new_url);        
     }
 
     about_button_clicked() {
@@ -848,16 +938,29 @@ class Tab {
 
     revert_sfx() {
         console.log("Revert sfx");
-        this.files[this.selected_file_index][1] = this.files[this.selected_file_index][2];
+        var synth_params_json = this.files[this.selected_file_index][2];
+        var synth_params = JSON.parse(synth_params_json);
+        this.synth.apply_params(synth_params);
+        this.files[this.selected_file_index][1] = synth_params_json;
         //add modified_filename
         var file_item = document.getElementById(this.name + "_file_list").children[this.selected_file_index];
         var file_name_span = file_item.children[0];
         file_name_span.classList.add("modified_filename");
+        this.update_ui_params();
         this.update_ablements();
     }
 
     duplicate_sfx() {
         console.log("Duplicate sfx");
+        var cur_file_dat = this.files[this.selected_file_index];
+        var file_name = cur_file_dat[0];
+        var file_jstor = cur_file_dat[1];
+        var new_file_name = this.find_unique_filename(file_name);
+        var new_file_dat = [new_file_name, file_jstor, file_jstor];
+        //insert after current file
+        this.files.splice(this.selected_file_index + 1, 0, new_file_dat);
+        this.selected_file_index++;
+        this.update_ui();
     }
 
     lock_param_clicked(node, param_name, value) {
@@ -887,28 +990,7 @@ class Tab {
                 break;
             }
         }
-        if (file_name_index == -1){
-            console.error("File item renamed: " + file_name + " to " + new_name + " but file not found");
-            return file_name;
-        }
-        new_name = new_name.replace(/[^a-zA-Z0-9_-]/g, "");
-        var file_name_already_exists = false;
-        for (var i = 0; i < this.files.length; i++) {
-            if (this.files[i][0] == new_name) {
-                file_name_already_exists = true;
-                break;
-            }
-        }
-        if (file_name_already_exists){
-            //strip all digits from end of name FROM THE RIGHT
-            while (new_name.length>0 && !isNaN(new_name[new_name.length-1])){
-                new_name = new_name.slice(0, -1);
-            }
-            if (new_name.length == 0){
-                new_name = "Sfx";
-            }
-            new_name = this.find_unique_filename(new_name,file_name_index);
-        }
+        new_name = this.find_unique_filename(new_name,file_name_index);
         this.files[file_name_index][0] = new_name;
         console.log("File item renamed: " + file_name + " to " + new_name);
         return new_name;

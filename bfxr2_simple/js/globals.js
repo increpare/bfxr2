@@ -6,3 +6,4 @@ Math.clamp = function(value, min, max){
 copy_obj = function(obj){
     return Object.assign({}, obj);
 }
+
