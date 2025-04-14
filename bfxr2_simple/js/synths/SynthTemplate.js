@@ -168,4 +168,11 @@ class SynthTemplate {
         this.reset_params();
     }
 
+    play_sound(){
+
+    }
+
+    generate_sound_uri(){
+        
+    }
 }
