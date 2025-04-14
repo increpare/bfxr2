@@ -243,7 +243,10 @@ body {
 }
 
 .file_item {
-    padding: 0 var(--ui-margin);
+    display: flex;
+    padding:0;
+    padding-right: var(--ui-margin);
+
     /* height: 25px; */
     /*align the text vertically*/
     /* padding-top: 5px; */
@@ -260,11 +263,13 @@ body {
 
 
 .file_item_name {
+    padding-left: 3px;
     display:inline-block;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    width: calc(100% - 30px);
+    width: calc(100% - 18px);
+    height:100%;
 }
 
 .file_item_name.modified_filename {
@@ -280,6 +285,8 @@ body {
     display:inline-block;
     /* float:right; */
     font-size: var(--font-size);
+    padding:0;
+    margin:0;
 
     height:20px;
 

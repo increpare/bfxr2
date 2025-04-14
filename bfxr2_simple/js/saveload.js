@@ -13,7 +13,9 @@ function save_all_collections(){
         var selected_file_index = tab.selected_file_index;
         var compiled_data = {
             files: files,
-            selected_file_index: selected_file_index
+            selected_file_index: selected_file_index,
+            create_new_sound: tab.create_new_sound,
+            play_on_change: tab.play_on_change
         }
         save_data[tab.synth.name] = compiled_data;
         if (tab.active){

@@ -33,6 +33,8 @@ class Tab {
             this.files = saved_info.files;
             this.selected_file_index = saved_info.selected_file_index;
             this.synth.apply_params(JSON.parse(this.files[this.selected_file_index][1]));
+            this.create_new_sound = saved_info.create_new_sound;
+            this.play_on_change = saved_info.play_on_change;
         }        
 
         // Create DOM elements
