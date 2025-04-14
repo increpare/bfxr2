@@ -190,7 +190,7 @@ class Tab {
             var export_wav_button = this.add_button("export_wav", "Export WAV", this.export_wav_button_clicked.bind(this), "Export the current sound as a WAV file");
             right_panel_button_list.appendChild(export_wav_button);
 
-            var export_all_button = this.add_button("export_all", "Export All", this.export_all_button_clicked.bind(this), "Export all sounds as a WAV file");
+            var export_all_button = this.add_button("export_all", "Export All", this.export_all_button_clicked.bind(this), "Generate all sounds as WAV filesand download as a zipped WAV file");
             right_panel_button_list.appendChild(export_all_button);
 
             var save_bfxr_button = this.add_button("save_bfxr", "Save .bfxr", this.save_bfxr_button_clicked.bind(this), "Save the current sound as a .bfxr file");
