@@ -157,6 +157,7 @@ class Tab {
             display_canvas.width = "113";
             display_canvas.height = "200";
             display_canvas_container.appendChild(display_canvas);
+            display_canvas.id = this.name + "_waveform_canvas";
 
             var play_on_change_container_div = document.createElement("div");
             right_panel.appendChild(play_on_change_container_div);
@@ -185,7 +186,7 @@ class Tab {
             right_panel_button_list.appendChild(master_volume_container_div);
 
 
-            this.setup_slider(master_volume_container_div, this.name+"_slider_master_volume", 0, 1, 1, this.volume_slider_changed, true);
+            this.setup_slider(master_volume_container_div, this.name+"_slider_master_volume", 0, 1, 1, this.volume_slider_changed.bind(this), true);
 
             var master_volume_label = document.createElement("span");
             master_volume_label.innerText = "Sound Volume";
@@ -849,6 +850,9 @@ class Tab {
             this.current_params = params;
             this.files[this.selected_file_index][1] = JSON.stringify(params);
         }
+        if (this.play_on_change){
+            this.play_sound();
+        }
         this.update_ui();
     }
 
@@ -904,7 +908,7 @@ class Tab {
 
     play_button_clicked() {
         console.log("Play button clicked");
-        this.synth.play();
+        this.play_sound();
     }
 
     slider_changed(param_name, value) {
@@ -913,19 +917,27 @@ class Tab {
         this.files[this.selected_file_index][1] = JSON.stringify(this.synth.params);
         this.update_ablements();
         if (this.play_on_change){
-            this.synth.play();
+            this.play_sound();
         }
     }
 
     volume_slider_changed(value) {
         console.log("Volume slider changed to " + value);
         if (this.play_on_change){
-            this.synth.play();
+            this.play_sound();
         }
     }
 
     export_wav_button_clicked() {
-        console.log("Export wav button clicked");
+        
+        
+        var wav_uri = this.synth.generate_sound_uri();
+
+        const a = document.createElement('a');
+        a.href = wav_uri;
+        a.download = 'data.wav';
+        a.click();
+        a.remove();
     }
 
     export_all_button_clicked() {
@@ -1075,7 +1087,7 @@ class Tab {
         this.files[this.selected_file_index][1] = JSON.stringify(this.synth.params);
         this.update_ablements();
         if (this.play_on_change){
-            this.synth.play();
+            this.play_sound();
         }
     }
 
@@ -1083,7 +1095,7 @@ class Tab {
         console.log("File item clicked: " + file_name);
         this.set_selected_file(file_name);
         if (this.play_on_change){
-            this.synth.play();
+            this.play_sound();
         }
     }
 
@@ -1100,5 +1112,18 @@ class Tab {
         console.log("File item renamed: " + file_name + " to " + new_name);
         save_all_collections();
         return new_name;
+    }
+
+    play_sound(){
+        this.synth.play();
+        this.redraw_waveform();
+    }
+
+    redraw_waveform(){
+        var canvas = document.getElementById(this.name + "_waveform_canvas");
+        var context2d = canvas.getContext("2d");
+        //clear
+        context2d.clearRect(0, 0, canvas.width, canvas.height);
+        this.synth.drawWaveform(context2d);
     }
 }

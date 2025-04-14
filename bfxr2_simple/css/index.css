@@ -590,3 +590,11 @@ button:active {
   .dropdown-content img:not(:last-child) {
     border-bottom: none;
   }
+
+  form{
+    display:inline;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-direction: column;
+  }

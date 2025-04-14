@@ -172,10 +172,69 @@ class SynthTemplate {
     play(){
         this.generate_sound();
         this.sound.play();
-
     }
 
     generate_sound_uri(){
+        return this.sound.getDataUri();
+    }
+
+
+    /*********************/
+    /* CANVAS STUFF      */
+    /*********************/
+
+    generateSilhouette(height){
+        var result=[];
         
+        var buffer=this.sound.getBuffer();
+
+        var curbar=0;
+        var curmax=buffer[0];
+        var curmin=buffer[0];
+        var len=buffer.length;
+        for (var i=0;i<len;i++){
+            var val = buffer[i];
+            if (i/len>curbar/height){
+                result.push(curmax);
+                result.push(curmin);
+                curbar++;
+                curmin=val;
+                curmax=val;
+            } else {
+                if (val<curmin) {
+                    curmin=val;
+                }
+                if (val>curmax) {
+                    curmax=val;
+                }
+            }
+        }
+        result.push(curmax);
+        result.push(curmin);
+
+        return result;
+    }
+
+    drawWaveform(context2d){
+        var w = context2d.canvas.width;
+        var h = context2d.canvas.height;
+
+        var silhouette = this.generateSilhouette(h);
+
+        //go from top to bottom, drawing lines
+
+        context2d.beginPath();
+        context2d.lineWidth = '1'; // width of the line
+        context2d.strokeStyle = '#663931'; // color of the line
+    
+        var c = w/2;
+        for (var y=0;y<h;y++){
+            var l = c+silhouette[2*y+0]*4*c;
+            var r = c+silhouette[2*y+1]*4*c;
+            context2d.moveTo(l,h-y);
+            context2d.lineTo(r,h-y);
+        }
+      
+        context2d.stroke();    
     }
 }
