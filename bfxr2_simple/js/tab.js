@@ -3,16 +3,19 @@
 var tabs = [];
 
 class Tab {
-    /*
-        How does a synthesizer tab manage its state?
-        It has active params, which are the params that are currently being edited.
-        It also has a list of files, which are the files that are currently being edited.
-        Each file has both its current state as well as the last saved state.
-    */
+
+
+    /* all the variables that determine the tab's state */
+    create_new_sound = true;
+    play_on_change = true;
+    selected_file_index = -1;
     current_params = {};
     files = [
-        //[current_state, last_saved_state]
+        //[name, current_state, last_saved_state]
     ];
+
+    sliders = {};
+
     synth = null;
 
     constructor(synth_specification) {
@@ -90,6 +93,7 @@ class Tab {
             var file_list = document.createElement("div");
             file_list.classList.add("scroll_container");
             file_list.classList.add("filelist");
+            file_list.id = this.name + "_file_list";
             left_panel.appendChild(file_list);
         }
 
@@ -161,15 +165,15 @@ class Tab {
             var play_button = this.add_button("play", "Play", this.play_button_clicked, "Play the current sound");
             right_panel_button_list.appendChild(play_button);
 
-            var global_vol_container_div = document.createElement("div");
-            right_panel_button_list.appendChild(global_vol_container_div);
+            var master_volume_container_div = document.createElement("div");
+            right_panel_button_list.appendChild(master_volume_container_div);
 
 
-            this.setup_slider(global_vol_container_div, "slider_global_vol", 0, 1, 1, this.volume_slider_changed, true);
+            this.setup_slider(master_volume_container_div, this.name+"_slider_master_volume", 0, 1, 1, this.volume_slider_changed, true);
 
-            var global_vol_label = document.createElement("span");
-            global_vol_label.innerText = "Sound Volume";
-            global_vol_container_div.appendChild(global_vol_label);
+            var master_volume_label = document.createElement("span");
+            master_volume_label.innerText = "Sound Volume";
+            master_volume_container_div.appendChild(master_volume_label);
 
 
             var export_wav_button = this.add_button("export_wav", "Export WAV", this.export_wav_button_clicked, "Export the current sound as a WAV file");
@@ -198,9 +202,6 @@ class Tab {
 
         }
 
-        // Storage for parameters
-        this.params = {};
-        this.presets = [];
 
         this.preset_list = preset_list;
 
@@ -209,18 +210,80 @@ class Tab {
         this.load_params(synth_specification);
         this.load_presets(synth_specification);
 
-        this.select_random_preset();
+        this.create_random_preset();
     }
 
-    select_random_preset() {
-        this.current_params = this.synth.select_random_preset();
+    /*********************/
+    /*      UI           */
+    /*********************/
+
+    update_ui(){
+        this.update_ui_file_list();
+        this.update_ui_params();
     }
 
+    update_ui_file_list(){
+        var file_list = document.getElementById(this.name + "_file_list");
+        //get scroll
+        var scroll_y = file_list.scrollTop;
+        //clear
+        file_list.innerHTML = "";
+        //add new
+        for (var i = 0; i < this.files.length; i++) {
+            var file = this.files[i];
+            var selected = i == this.selected_file_index;
+            var file_item = this.create_file_entry(file,selected);
+            file_list.appendChild(file_item);
+        }
+        //set scroll to bottom
+        file_list.scrollTop = file_list.scrollHeight;
+    }
+
+    update_ui_params(){
+        //for each parameter
+        for (var i = 0; i < this.synth.param_info.length; i++) {
+            var param = this.synth.param_info[i];
+            var value = this.synth.params[param[2]];
+            if (param.constructor === Array){
+                var param_name = param[2];
+                //it's a slider
+                var slider = this.sliders[param_name];
+                slider.setValue(value);
+            } else {
+                //it's a button array
+            }
+        }
+    }
+    
+    set_active_tab() {
+        var tab_page = document.getElementById("tab_page_" + this.name);
+        tab_page.classList.add("active_tab");
+        var tab_buttons = document.getElementsByClassName("tab_button");
+        for (var i = 0; i < tab_buttons.length; i++) {
+            var tab_button = tab_buttons[i];
+            if (tab_button.id != "tab_button_" + this.name) {
+                tab_button.classList.remove("active_tab");
+            } else if (!tab_button.classList.contains("active_tab")) {
+                tab_button.classList.add("active_tab");
+            }
+        }
+        var tab_pages = document.getElementsByClassName("tab_page");
+        for (var i = 0; i < tab_pages.length; i++) {
+            var tab_page = tab_pages[i];
+            if (tab_page.id != "tab_page_" + this.name) {
+                tab_page.classList.remove("active_tab_page");
+            } else if (!tab_page.classList.contains("active_tab_page")) {
+                tab_page.classList.add("active_tab_page");
+            }
+        }
+    }
+    
     load_params(synth_specification) {
         for (var i = 0; i < synth_specification.param_info.length; i++) {
             var param = synth_specification.param_info[i];
             this.load_param(param);
         }
+        this.update_ui();
     }
 
     load_param(param) {
@@ -249,46 +312,6 @@ class Tab {
         }
     }
 
-    load_presets(synth_specification) {
-        for (var i = 0; i < synth_specification.presets.length; i++) {
-            let generator = synth_specification.presets[i];
-            this.add_generator(generator);
-        }
-    }
-
-    add_generator(generator) {
-        /*button_id,button_text,button_handler,button_tooltip
-        */
-        var button_text = generator[0];
-        var button_tooltip = generator[1];
-        var generator_name = generator[2];
-        var button_id = this.name + "_generator_" + generator_name;
-        var button = this.add_button(button_id, button_text, this.preset_clicked.bind(this, generator_name), button_tooltip);
-        this.preset_list.appendChild(button);
-    }
-
-    set_active_tab() {
-        var tab_page = document.getElementById("tab_page_" + this.name);
-        tab_page.classList.add("active_tab");
-        var tab_buttons = document.getElementsByClassName("tab_button");
-        for (var i = 0; i < tab_buttons.length; i++) {
-            var tab_button = tab_buttons[i];
-            if (tab_button.id != "tab_button_" + this.name) {
-                tab_button.classList.remove("active_tab");
-            } else if (!tab_button.classList.contains("active_tab")) {
-                tab_button.classList.add("active_tab");
-            }
-        }
-        var tab_pages = document.getElementsByClassName("tab_page");
-        for (var i = 0; i < tab_pages.length; i++) {
-            var tab_page = tab_pages[i];
-            if (tab_page.id != "tab_page_" + this.name) {
-                tab_page.classList.remove("active_tab_page");
-            } else if (!tab_page.classList.contains("active_tab_page")) {
-                tab_page.classList.add("active_tab_page");
-            }
-        }
-    }
 
     setup_slider(parent_node, slider_id, min, max, defaultval, handler_fn, mini = false) {
         var uid = this.name + "_slider_" + slider_id;
@@ -322,12 +345,14 @@ class Tab {
         });
         slider.sliderElem.className += " singleselect";
         slider.sliderElem.getElementsByClassName("slider-tick-container")[0].children[closest_to_default_i].classList.add('defaulttick');
-
+        
         if (mini === true) {
             slider.sliderElem.classList.add('slidernarrow');
         }
 
         slider.on("slideStop", handler_fn);
+
+        this.sliders[slider_id] = slider;        
     }
 
     add_button(button_id, button_text, button_handler, button_tooltip) {
@@ -545,7 +570,7 @@ class Tab {
         parameter_cell.classList.add("slider_container");
         parameter_cell.rowSpan = rowspan;
 
-        this.setup_slider(parameter_cell, uid, min, max, default_value, this.slider_changed.bind(this, parameter_name));
+        this.setup_slider(parameter_cell, parameter_name, min, max, default_value, this.slider_changed.bind(this, parameter_name));
 
     }
 
@@ -559,14 +584,181 @@ class Tab {
         });
         return lock_button;
     }
+    
+
+    /*********************/
+    /*      WIDGETS      */
+    /*********************/
+
+
+    
+
+    /*********************/
+    /*      FILES        */
+    /*********************/
+
+    find_unique_filename(desired_name,ignore_index=-1){
+        var suffix = -1;
+        var found=true
+        var test_name;
+        while(found){
+            found=false;
+            suffix++;
+            test_name = desired_name;
+            if (suffix !== 0) {
+                test_name = desired_name+suffix;
+            }
+            for (var i = 0; i < this.files.length; i++) {
+                if (i == ignore_index) {
+                    continue;
+                }
+                if (this.files[i][0] == test_name) {
+                    found = true;
+                    break;
+                }
+            }
+        }
+        return test_name;
+    }
+
+    delete_file(file_name){
+        for (var i = 0; i < this.files.length; i++) {
+            if (this.files[i][0] == file_name) {
+                this.files.splice(i, 1);
+                break;
+            }
+        }
+        this.update_ui();
+    }
+
+    set_selected_file(file_name) {
+        for (var i = 0; i < this.files.length; i++) {
+            if (this.files[i][0] == file_name) {
+                this.selected_file_index = i;
+                break;
+            }
+        }
+        
+        var file_list = document.getElementById(this.name + "_file_list");
+        for (var i = 0; i < file_list.children.length; i++) {
+            var file_item = file_list.children[i];
+            file_item.classList.remove("file_selected");
+            let file_name_span = file_item.children[0]; 
+            file_name_span.contentEditable = false;
+        }
+        var file_item = file_list.children[this.selected_file_index];
+        file_item.classList.add("file_selected");
+        let file_name_span = file_item.children[0];
+        file_name_span.contentEditable = true;
+        file_name_span.focus();
+    }
+
+    
+    create_file_entry(file_dat,selected){
+        var modified = file_dat[1] !== file_dat[2];
+        var file_name = file_dat[0];
+        var display_name = file_name;
+        if (modified){
+            display_name = display_name + " *";
+        }
+        var file_item = document.createElement("div");
+        file_item.classList.add("file_item");
+        if (selected){
+            file_item.classList.add("file_selected");
+        }
+        var file_name_span = document.createElement("span");
+        file_name_span.classList.add("file_item_name");
+        file_name_span.innerText = display_name;
+        if (selected){
+            file_name_span.contentEditable = true;
+        }        
+        file_name_span.addEventListener("blur", (event) => {
+            if (file_name_span.innerText !== file_name){
+                file_name = this.file_item_renamed(file_name,file_name_span.innerText);
+                file_name_span.innerText = file_name;
+            }
+        });
+        file_item.appendChild(file_name_span);
+        file_name_span.addEventListener("click", (event) => {
+            this.file_item_click(file_name,event.target);
+        });
+        
+        var delete_button = document.createElement("button");
+        delete_button.classList.add("delete_button");
+        delete_button.innerText = "X";
+        delete_button.addEventListener("click", (event) => {
+            this.delete_file(file_name);
+        });
+        file_item.appendChild(delete_button);
+        return file_item;
+    }
+
+    /*********************/
+    /*      PRESETS      */
+    /*********************/
+
+    load_presets(synth_specification) {
+        for (var i = 0; i < synth_specification.presets.length; i++) {
+            let generator = synth_specification.presets[i];
+            this.add_generator(generator);
+        }
+    }
+
+    create_random_preset() {
+        var [preset_name, params] = this.synth.create_random_preset();
+        this.create_new_sound_from_params(preset_name, params);
+    }
+
+    create_new_sound_from_params(preset_name, params) {
+        if (this.create_new_sound||this.files.length == 0||this.selected_file_index===-1) {
+            this.current_params = params;
+            var filename = this.find_unique_filename(preset_name);
+            this.files.push([filename,params, params]);
+            this.selected_file_index = this.files.length - 1;
+        } else {
+            this.current_params = params;
+            this.files[this.files.length - 1][0] = params;
+        }
+        this.update_ui();
+    }
+
+    add_generator(generator) {
+        /*button_id,button_text,button_handler,button_tooltip
+        */
+        var button_text = generator[0];
+        var button_tooltip = generator[1];
+        var generator_name = generator[2];
+        var button_id = this.name + "_generator_" + generator_name;
+        var button = this.add_button(button_id, button_text, this.preset_clicked.bind(this, generator_name), button_tooltip);
+        this.preset_list.appendChild(button);
+    }
+
+    /*********************/
+    /* STATE MANAGEMENT  */
+    /*********************/
+
 
     add_preset(preset_name, button_tooltip, param_fn) {
         var button = this.add_button(preset_name, preset_name, param_fn, button_tooltip);
         this.preset_list.appendChild(button);
     }
 
+    /*********************/
+    /* Event Handlers    */
+    /*********************/
+
     preset_clicked(preset_name) {
         console.log("Preset clicked: " + preset_name);
+        var preset_data = null;
+        for (var i = 0; i < this.synth.presets.length; i++) {
+            if (this.synth.presets[i][2] == preset_name) {
+                preset_data = this.synth.presets[i];
+                break;
+            }
+        }
+        var file_name = preset_data[3];
+        var params = this.synth[preset_data[2]]();
+        this.create_new_sound_from_params(file_name, params);
     }
 
     create_new_sound_clicked() {
@@ -620,19 +812,7 @@ class Tab {
     about_button_clicked() {
         console.log("About button clicked");
     }
-
-    preset_clicked(generator_name) {
-        console.log("Preset clicked: " + generator_name);
-    }
-
-    randomize_params() {
-        console.log("Randomize params");
-    }
-
-    mutate_params() {
-        console.log("Mutate params");
-    }
-
+    
     apply_sfx() {
         console.log("Apply sfx");
     }
@@ -657,5 +837,45 @@ class Tab {
 
     button_grid_button_clicked(node, param_name, value) {
         console.log("Button grid button clicked for " + param_name + " with value " + value);
+    }
+
+    file_item_click(file_name,target) {
+        console.log("File item clicked: " + file_name);
+        this.set_selected_file(file_name);
+    }
+
+    file_item_renamed(file_name,new_name) {
+        var file_name_index = -1;
+        for (var i = 0; i < this.files.length; i++) {
+            if (this.files[i][0] == file_name) {
+                file_name_index = i;
+                break;
+            }
+        }
+        if (file_name_index == -1){
+            console.error("File item renamed: " + file_name + " to " + new_name + " but file not found");
+            return file_name;
+        }
+        new_name = new_name.replace(/[^a-zA-Z0-9_-]/g, "");
+        var file_name_already_exists = false;
+        for (var i = 0; i < this.files.length; i++) {
+            if (this.files[i][0] == new_name) {
+                file_name_already_exists = true;
+                break;
+            }
+        }
+        if (file_name_already_exists){
+            //strip all digits from end of name FROM THE RIGHT
+            while (new_name.length>0 && !isNaN(new_name[new_name.length-1])){
+                new_name = new_name.slice(0, -1);
+            }
+            if (new_name.length == 0){
+                new_name = "Sfx";
+            }
+            new_name = this.find_unique_filename(new_name,file_name_index);
+        }
+        this.files[file_name_index][0] = new_name;
+        console.log("File item renamed: " + file_name + " to " + new_name);
+        return new_name;
     }
 }

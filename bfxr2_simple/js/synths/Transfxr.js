@@ -8,7 +8,7 @@ class Transfxr extends SynthTemplate {
         {
             type: "KNOB_TRANSITION",
 
-            name: "filterSweep",
+            name: "roll",
             display_name: "Filter Sweep",
 
             default_value_l:0,
@@ -31,11 +31,6 @@ class Transfxr extends SynthTemplate {
             "heel",0.5,0,1
         ],		
         [
-            "Roll",
-            "After making initial contact with the ground, how much you roll your foot to the side.",
-            "roll",0.5,0,1
-        ], 	
-        [
             "Ball",
             "At the final part of your step, how much you dig the front of your foot into the ground.",
             "ball",0.5,0,1
@@ -48,6 +43,18 @@ class Transfxr extends SynthTemplate {
     ];
 
     presets = [        
+        [   
+            "Randomize",
+            "Talking your life into your hands... (only modifies unlocked parameters)",
+            "randomize_params",
+            "Random"
+        ],
+        [
+            "Mutate", 
+            "Modify each unlocked parameter by a small wee amount... (only modifies unlocked parameters)", 
+            "mutate_params",
+            "Mutant"
+        ],
     ];
 
     static tweenfunctions = [
@@ -86,11 +93,6 @@ class Transfxr extends SynthTemplate {
             (t) => Math.sin(t * Math.PI * 2) * (1 - t),
         ],                
     ]
-    
-    constructor() {
-        super();
-        this.generateTweenImages();
-    }
     
     // Generate images for each tween function and store them in the tweenfunctions array
     generateTweenImages() {
@@ -142,6 +144,25 @@ class Transfxr extends SynthTemplate {
             // Store the image in the tweenfunctions array
             Transfxr.tweenfunctions[i][2] = img;
         }
+    }
+    
+    
+    /*********************/
+    /* CONSTRUCTOR       */
+    /*********************/
+
+    constructor() {
+        super();
+        this.post_initialize();
+        this.generateTweenImages();
+    }    
+
+    /*********************/
+    /* PRESET FUNCTIONS  */
+    /*********************/
+
+    generate_pickup_coin() {
+        return this.params;
     }
 
 }

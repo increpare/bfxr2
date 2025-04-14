@@ -87,7 +87,7 @@ function Params() {
     result.wave_type = SQUARE;
 
     // Envelope
-    result.p_env_max_sound_duration = 2.65; // Attack time
+    result.p_env_max_sound_duration = 2.65; // Sound Duration
     result.p_env_attack = 0.231; // Attack time
     result.p_env_note_held_time = 0.33; // Sustain time
     result.p_env_sustain_level = 0.7; // Sustain punch
@@ -161,7 +161,7 @@ function rnd(max) {
 }
 
 
-pickupCoin = function() {
+generate_pickup_coin = function() {
     var result = Params();
     result.wave_type = Math.floor(frnd(SHAPES.length));
     if (result.wave_type === 3) {
@@ -605,7 +605,7 @@ random = function() {
 };
 
 var generators = [
-    pickupCoin,
+    generate_pickup_coin,
     laserShoot,
     explosion,
     powerUp,
@@ -618,7 +618,7 @@ var generators = [
 ];
 
 var generatorNames = [
-    'pickupCoin',
+    'generate_pickup_coin',
     'laserShoot',
     'explosion',
     'powerUp',

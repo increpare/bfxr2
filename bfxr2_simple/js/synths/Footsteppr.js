@@ -70,12 +70,31 @@ class Footsteppr extends SynthTemplate {
         [   
             "Randomize",
             "Talking your life into your hands... (only modifies unlocked parameters)",
-            "randomize_params"
+            "randomize_params",
+            "Random"
+        ],
+        [
+            "Mutate", 
+            "Modify each unlocked parameter by a small wee amount... (only modifies unlocked parameters)", 
+            "mutate_params",
+            "Mutant"
         ],
     ];
+    
+    /*********************/
+    /* CONSTRUCTOR       */
+    /*********************/
 
-    pickupCoin() {
-        var result = this.default_params();
-        return result;
+    constructor() {
+        super();
+        this.post_initialize();
+    }    
+
+    /*********************/
+    /* PRESET FUNCTIONS  */
+    /*********************/
+
+    generate_pickup_coin() {
+        return this.params;
     }
 }

@@ -230,7 +230,7 @@ body {
     /* padding: var(--ui-margin); */
     display: flex;
     flex-direction: column;
-    gap: var(--ui-margin);
+    /* gap: var(--ui-margin); */
     height:100%;
     
     border-style:solid;
@@ -238,15 +238,15 @@ body {
     border-color: var(--panel-border-color);
     border-top-width: var(--panel-border-thickness);
 
-    min-height: 100px;
-    max-height: 200px;
+    /* min-height: 100px;
+    max-height: 200px; */
 }
 
 .file_item {
     padding: 0 var(--ui-margin);
-    height: 25px;
+    /* height: 25px; */
     /*align the text vertically*/
-    padding-top: 5px;
+    /* padding-top: 5px; */
 }
 
 /*unselected: */
@@ -259,8 +259,17 @@ body {
 }
 
 
+.file_item_name {
+    display:inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: calc(100% - 30px);
+}
+
 .delete_button {
-    float:right;
+    display:inline-block;
+    /* float:right; */
     font-size: var(--font-size);
 
     height:20px;
@@ -378,7 +387,8 @@ td.labelcolumn {
 }
 
 .centre_params {
-height:100%;
+    position:relative;
+    height:100%;
     width:100%;
 }
 
