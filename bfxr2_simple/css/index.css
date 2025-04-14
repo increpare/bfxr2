@@ -443,6 +443,7 @@ button:active {
   }
 
   .tween_select_canvas {
+    background-color: transparent;
     display: inline-block;
     width: var(--tween-canvas-width);
     height: var(--tween-canvas-height);
@@ -451,4 +452,96 @@ button:active {
     /*stretch the image to fit the width*/
     object-fit: contain;
     object-position: center;
+  }
+
+
+
+
+
+  /* Dropdown Button */
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+  }
+  
+  /* The search field */
+  #myInput {
+    box-sizing: border-box;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* The search field when it gets focus/clicked on */
+  #myInput:focus {outline: 3px solid #ddd;}
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    padding: 0;
+    display: none;
+    position: absolute;
+    background-color: var(--panel-background-color) ;
+    /* min-width: 230px; */
+    /* border: var(--panel-border-thickness) solid var(--panel-border-color); */
+    z-index: 1;
+    /*no gaps between the images*/
+    flex-direction: row;
+    gap: 0;
+  }
+  
+  .dropdown-content .tween_select_canvas {
+    padding:0;
+    margin:0;
+  }
+
+  .dropdown-content img:hover {
+    background-color: var(--button-pressed-background-color);
+  }
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .dropdown-content.show {
+    left:0;
+    transform: translateX(50%);
+    width:var(--tween-canvas-width);
+    display:flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .dropdown-content img {
+    display:block;
+  }
+
+  /*don't double-up borders between two adjacent images in a dropdown-content*/
+  .dropdown-content img:not(:last-child) {
+    border-bottom: none;
   }

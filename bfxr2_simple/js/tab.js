@@ -375,13 +375,45 @@ Tab.prototype.add_knob_transition = function(
    var knob_l = this.new_knob(parameter_name + "_l",default_value_l,min,max,0.01);
    parameter_cell.appendChild(knob_l);
 
+   var dropdown_uid = this.name + "_dropdown_content_" + parameter_name;
+
 
    var default_tween_img = Transfxr.tweenfunctions[0][2];
    var tween_container = document.createElement("img");
    tween_container.src = default_tween_img.src;
    tween_container.classList.add("tween_select_canvas");
+   tween_container.classList.add("dropdown");
    tween_container.id = parameter_name + "_tween_select_canvas";
    parameter_cell.appendChild(tween_container);
+   tween_container.addEventListener("click", ()=> {
+    document.getElementById(dropdown_uid).classList.toggle("show");
+   });
+
+      /*add dropdown for tween selection
+   looks like:
+
+   <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+    */
+
+    var dropdown_content_div = document.createElement("div");
+    dropdown_content_div.classList.add("dropdown-content");
+    dropdown_content_div.id = dropdown_uid;
+    parameter_cell.appendChild(dropdown_content_div);
+
+    for (var i = 0; i < Transfxr.tweenfunctions.length; i++) {
+        var tween_img = Transfxr.tweenfunctions[i][2];
+        var tween_button = document.createElement("img");
+        tween_button.src = tween_img.src;
+        tween_button.classList.add("tween_select_canvas");
+        dropdown_content_div.appendChild(tween_button);
+    }
 
    var knob_r = this.new_knob(parameter_name + "_r",default_value_r,min,max,0.01);
    parameter_cell.appendChild(knob_r);   

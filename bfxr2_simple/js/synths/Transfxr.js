@@ -17,6 +17,8 @@ class Transfxr extends SynthTemplate {
             max:1,
 
             default_tween: "Linear",
+
+            header: true,
         },
         [
             "Sound Volume",
@@ -93,7 +95,6 @@ class Transfxr extends SynthTemplate {
     constructor() {
         super();
         this.generateTweenImages();
-        this.createTweenVisualizationContainer(document.body);
     }
     
     // Generate images for each tween function and store them in the tweenfunctions array
@@ -148,113 +149,4 @@ class Transfxr extends SynthTemplate {
         }
     }
 
-    // Create a container and display tween function visualizations
-    createTweenVisualizationContainer(parentElement) {
-        if (!parentElement) {
-            console.error("No parent element provided for tween container");
-            return;
-        }
-        
-        // Create a container for the tween visualizations
-        const tweenContainer = document.createElement("div");
-        tweenContainer.id = "tween_container_" + this.name;
-        tweenContainer.classList.add("tween_container");
-        tweenContainer.style.marginTop = "20px";
-        tweenContainer.style.padding = "10px";
-        tweenContainer.style.border = "1px solid #ccc";
-        tweenContainer.style.borderRadius = "5px";
-        tweenContainer.style.backgroundColor = "#fff";
-        
-        // Add the container to the parent
-        parentElement.appendChild(tweenContainer);
-        
-        // Fill the container with visualizations
-        this.displayTweenVisualizations(tweenContainer);
-        
-        return tweenContainer;
-    }
-    
-    // Display tween functions using the pre-generated images
-    displayTweenVisualizations(container) {
-        if (!container) {
-            console.error("No container provided for tween visualizations");
-            return;
-        }
-        
-        // Clear the container
-        container.innerHTML = '';
-        
-        // Add a title
-        const title = document.createElement("h3");
-        title.textContent = "Tween Functions";
-        title.style.margin = "10px 0";
-        title.style.fontSize = "14px";
-        title.style.fontWeight = "bold";
-        title.style.color = "#333";
-        container.appendChild(title);
-        
-        // Create a flex container for the images
-        const flexContainer = document.createElement("div");
-        flexContainer.style.display = "flex";
-        flexContainer.style.flexWrap = "wrap";
-        flexContainer.style.justifyContent = "center";
-        flexContainer.style.gap = "10px";
-        flexContainer.style.padding = "5px";
-        container.appendChild(flexContainer);
-        
-        // Add each tween function image to the container
-        for (let i = 0; i < Transfxr.tweenfunctions.length; i++) {
-            const [name, func, img] = Transfxr.tweenfunctions[i];
-            
-            if (!img) {
-                console.error(`No image generated for tween function: ${name}`);
-                continue;
-            }
-            
-            // Create a wrapper for the image
-            const wrapper = document.createElement("div");
-            wrapper.style.display = "flex";
-            wrapper.style.flexDirection = "column";
-            wrapper.style.alignItems = "center";
-            wrapper.style.margin = "5px";
-            wrapper.style.padding = "5px";
-            wrapper.style.border = "1px solid #ccc";
-            wrapper.style.borderRadius = "3px";
-            wrapper.style.backgroundColor = "#f5f5f5";
-            wrapper.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
-            wrapper.style.cursor = "pointer";
-            
-            // Create label
-            const label = document.createElement("div");
-            label.textContent = name;
-            label.style.fontSize = "12px";
-            label.style.fontWeight = "bold";
-            label.style.textAlign = "center";
-            label.style.marginBottom = "5px";
-            wrapper.appendChild(label);
-            
-            // Clone the image to prevent any parent-child issues
-            const imgClone = img.cloneNode(true);
-            wrapper.appendChild(imgClone);
-            
-            // Add click handler to select this function
-            wrapper.addEventListener('click', () => {
-                console.log(`Selected tween function: ${name}`);
-                
-                // Remove highlight from all wrappers
-                const allWrappers = flexContainer.querySelectorAll('div[style*="border"]');
-                allWrappers.forEach(w => {
-                    w.style.border = "1px solid #ccc";
-                });
-                
-                // Highlight selected wrapper
-                wrapper.style.border = "2px solid #007bff";
-                
-                // Store the selected tween function
-                this.selectedTweenFunction = func;
-            });
-            
-            flexContainer.appendChild(wrapper);
-        }
-    }
 }
