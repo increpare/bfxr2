@@ -50,11 +50,6 @@ class Transfxr extends SynthTemplate {
     presets = [        
     ];
 
-    pickupCoin() {
-        var result = this.Params();
-        return result;
-    }
-
     static tweenfunctions = [
         [        
             "Linear",

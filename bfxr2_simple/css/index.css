@@ -51,6 +51,9 @@ body {
 
     /*center horizontally*/
     margin: 0 auto;
+    /* magic numbers.... */
+    margin-top: calc((100vh - (726px))/2);
+    
 }
 
 #tab_bar {
@@ -127,6 +130,11 @@ body {
     flex-direction: row;
     /*big thick drop-shadow*/
     filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5));
+
+    
+    height: 606px;
+    overflow-y: clip;
+    overflow-x: visible;
 }
 
 .tab_page.active_tab_page {
@@ -370,7 +378,7 @@ td.labelcolumn {
 }
 
 .centre_params {
-    /* height:fit-content; */
+height:100%;
     width:100%;
 }
 

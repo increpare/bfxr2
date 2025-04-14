@@ -3,7 +3,21 @@
 var tabs = [];
 
 class Tab {
+    /*
+        How does a synthesizer tab manage its state?
+        It has active params, which are the params that are currently being edited.
+        It also has a list of files, which are the files that are currently being edited.
+        Each file has both its current state as well as the last saved state.
+    */
+    current_params = {};
+    files = [
+        //[current_state, last_saved_state]
+    ];
+    synth = null;
+
     constructor(synth_specification) {
+        this.synth = synth_specification;
+
         var tab_name = synth_specification.name;
         // Store tab name
         this.name = tab_name;
@@ -195,7 +209,11 @@ class Tab {
         this.load_params(synth_specification);
         this.load_presets(synth_specification);
 
-        this.finalize_elements();
+        this.select_random_preset();
+    }
+
+    select_random_preset() {
+        this.current_params = this.synth.select_random_preset();
     }
 
     load_params(synth_specification) {
@@ -546,14 +564,6 @@ class Tab {
         var button = this.add_button(preset_name, preset_name, param_fn, button_tooltip);
         this.preset_list.appendChild(button);
     }
-
-    finalize_elements() {
-        this.add_preset("Randomize", "Talking your life into your hands... (only modifies unlocked parameters)", this.randomize_params,);
-        this.add_preset("Mutation", "Modify each unlocked parameter by a small wee amount... (only modifies unlocked parameters)", this.mutate_params,);
-    }
-
-
-
 
     preset_clicked(preset_name) {
         console.log("Preset clicked: " + preset_name);

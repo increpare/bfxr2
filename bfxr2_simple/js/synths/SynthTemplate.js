@@ -1,8 +1,8 @@
 class SynthTemplate {
-    Params () {
+    default_params () {
         var result = {};
-        for (var i = 0; i < param_info.length; i++) {
-            var param = param_info[i];
+        for (var i = 0; i < this.param_info.length; i++) {
+            var param = this.param_info[i];
             //if object, then it's a buttonselect
            if (param.constructor === Array) {
                 var param_name = param[2];
@@ -21,4 +21,9 @@ class SynthTemplate {
         }
         return result;
     };
+
+    select_random_preset() {
+        var params = this.default_params();
+        return params;
+    }
 }

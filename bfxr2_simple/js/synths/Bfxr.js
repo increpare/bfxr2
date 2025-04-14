@@ -260,10 +260,18 @@ class Bfxr extends SynthTemplate{
             "You might want to make a variation of this with longer decay for blips that accompany fadeouts or animations.",
             "pickupCoin"
         ],
+        [   
+            "Randomize",
+            "Talking your life into your hands... (only modifies unlocked parameters)",
+            "randomize_params"
+        ],
+        [
+            "Mutation", "Modify each unlocked parameter by a small wee amount... (only modifies unlocked parameters)", "mutate_params"
+        ],
     ];
 
     pickupCoin() {
-        var result = this.Params();
+        var result = this.default_params();
         return result;
     }
 }
