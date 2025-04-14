@@ -267,6 +267,15 @@ body {
     width: calc(100% - 30px);
 }
 
+.file_item_name.modified_filename {
+    color:rgb(78, 78, 78);
+    font-style: italic;
+}
+
+.file_item_name.modified_filename::after {
+    content: "*";
+}
+
 .delete_button {
     display:inline-block;
     /* float:right; */

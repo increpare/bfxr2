@@ -70,7 +70,8 @@ class Tab {
             create_new_sound_checkbox.id = tab_name + "_checkbox_create_new_sound";
             create_new_sound_checkbox.classList.add("normie_checkbox");
             create_new_sound_container_div.appendChild(create_new_sound_checkbox);
-            create_new_sound_checkbox.addEventListener("click", this.create_new_sound_clicked);
+            create_new_sound_checkbox.checked = this.create_new_sound;            
+            create_new_sound_checkbox.addEventListener("click", this.create_new_sound_clicked.bind(this));
 
             var create_new_sound_label = document.createElement("label");
             create_new_sound_label.innerText = "Create new sound";
@@ -81,13 +82,13 @@ class Tab {
             save_commands_div.classList.add("save_commands");
             left_panel.appendChild(save_commands_div);
 
-            var apply_sfx_button = this.add_button("apply_sfx", "Apply Sfx", this.apply_sfx, "Apply the current sound to the current sound");
+            var apply_sfx_button = this.add_button(this.name+"_apply_sfx", "Apply Sfx", this.apply_sfx.bind(this), "Apply the current sound to the current sound");
             save_commands_div.appendChild(apply_sfx_button);
 
-            var revert_sfx_button = this.add_button("revert_sfx", "Revert Sfx", this.revert_sfx, "Revert the current sound to the original sound");
+            var revert_sfx_button = this.add_button(this.name+"_revert_sfx", "Revert Sfx", this.revert_sfx.bind(this), "Revert the current sound to the original sound");
             save_commands_div.appendChild(revert_sfx_button);
 
-            var duplicate_sfx_button = this.add_button("duplicate_sfx", "Duplicate Sfx", this.duplicate_sfx, "Duplicate the current sound");
+            var duplicate_sfx_button = this.add_button(this.name+"_duplicate_sfx", "Duplicate Sfx", this.duplicate_sfx.bind(this), "Duplicate the current sound");
             save_commands_div.appendChild(duplicate_sfx_button);
 
             var file_list = document.createElement("div");
@@ -220,6 +221,19 @@ class Tab {
     update_ui(){
         this.update_ui_file_list();
         this.update_ui_params();
+        this.update_ablements();
+    }
+
+    update_ablements(){
+        if (this.selected_file_index===-1){
+            return;
+        }
+        var is_current_file_modified = this.files[this.selected_file_index][1] != this.files[this.selected_file_index][2];
+
+        var apply_sfx_button = document.getElementById(this.name+"_apply_sfx");
+        apply_sfx_button.disabled = !is_current_file_modified;
+        var revert_sfx_button = document.getElementById(this.name+"_revert_sfx");
+        revert_sfx_button.disabled = !is_current_file_modified;
     }
 
     update_ui_file_list(){
@@ -355,10 +369,10 @@ class Tab {
         this.sliders[slider_id] = slider;        
     }
 
-    add_button(button_id, button_text, button_handler, button_tooltip) {
+    add_button(button_uid, button_text, button_handler, button_tooltip) {
         var button = document.createElement("button");
         button.classList.add("normie_button");
-        button.id = button_id;
+        button.id = button_uid;
         if (button_tooltip != undefined && button_tooltip != "") {
             var tooltip_tag = `<span class="data-tooltip">${button_tooltip}</span>`;
             button_text = tooltip_tag + button_text;
@@ -651,6 +665,13 @@ class Tab {
         let file_name_span = file_item.children[0];
         file_name_span.contentEditable = true;
         file_name_span.focus();
+
+        //update the current params
+        var params = JSON.parse(this.files[this.selected_file_index][1]);
+        this.synth.apply_params(params);
+
+        this.update_ui_params();
+        this.update_ablements();
     }
 
     
@@ -658,9 +679,6 @@ class Tab {
         var modified = file_dat[1] !== file_dat[2];
         var file_name = file_dat[0];
         var display_name = file_name;
-        if (modified){
-            display_name = display_name + " *";
-        }
         var file_item = document.createElement("div");
         file_item.classList.add("file_item");
         if (selected){
@@ -669,6 +687,9 @@ class Tab {
         var file_name_span = document.createElement("span");
         file_name_span.classList.add("file_item_name");
         file_name_span.innerText = display_name;
+        if (modified){
+            file_name_span.classList.add("modified_filename");
+        }
         if (selected){
             file_name_span.contentEditable = true;
         }        
@@ -712,12 +733,12 @@ class Tab {
     create_new_sound_from_params(preset_name, params) {
         if (this.create_new_sound||this.files.length == 0||this.selected_file_index===-1) {
             this.current_params = params;
-            var filename = this.find_unique_filename(preset_name);
-            this.files.push([filename,params, params]);
+            var filename = this.find_unique_filename(preset_name);        
+            this.files.push([filename,JSON.stringify(params), JSON.stringify(params)]);
             this.selected_file_index = this.files.length - 1;
         } else {
             this.current_params = params;
-            this.files[this.files.length - 1][0] = params;
+            this.files[this.selected_file_index][1] = JSON.stringify(params);
         }
         this.update_ui();
     }
@@ -728,8 +749,8 @@ class Tab {
         var button_text = generator[0];
         var button_tooltip = generator[1];
         var generator_name = generator[2];
-        var button_id = this.name + "_generator_" + generator_name;
-        var button = this.add_button(button_id, button_text, this.preset_clicked.bind(this, generator_name), button_tooltip);
+        var button_uid = this.name + "_generator_" + generator_name;
+        var button = this.add_button(button_uid, button_text, this.preset_clicked.bind(this, generator_name), button_tooltip);
         this.preset_list.appendChild(button);
     }
 
@@ -739,7 +760,8 @@ class Tab {
 
 
     add_preset(preset_name, button_tooltip, param_fn) {
-        var button = this.add_button(preset_name, preset_name, param_fn, button_tooltip);
+        var uid = this.name + "_preset_" + preset_name;
+        var button = this.add_button(uid, preset_name, param_fn, button_tooltip);
         this.preset_list.appendChild(button);
     }
 
@@ -757,12 +779,13 @@ class Tab {
             }
         }
         var file_name = preset_data[3];
-        var params = this.synth[preset_data[2]]();
-        this.create_new_sound_from_params(file_name, params);
+        this.synth[preset_data[2]].bind(this.synth)();
+        this.create_new_sound_from_params(file_name, this.synth.params);
     }
 
-    create_new_sound_clicked() {
-        console.log("Create new sound clicked");
+    create_new_sound_clicked(event) {
+        this.create_new_sound = event.target.checked;
+        console.log("Create new sound: " + this.create_new_sound);
     }
 
     play_on_change_clicked() {
@@ -815,10 +838,22 @@ class Tab {
     
     apply_sfx() {
         console.log("Apply sfx");
+        this.files[this.selected_file_index][2] = this.files[this.selected_file_index][1];
+        //remove modified_filename
+        var file_item = document.getElementById(this.name + "_file_list").children[this.selected_file_index];
+        var file_name_span = file_item.children[0];
+        file_name_span.classList.remove("modified_filename");
+        this.update_ablements();
     }
 
     revert_sfx() {
         console.log("Revert sfx");
+        this.files[this.selected_file_index][1] = this.files[this.selected_file_index][2];
+        //add modified_filename
+        var file_item = document.getElementById(this.name + "_file_list").children[this.selected_file_index];
+        var file_name_span = file_item.children[0];
+        file_name_span.classList.add("modified_filename");
+        this.update_ablements();
     }
 
     duplicate_sfx() {

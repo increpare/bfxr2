@@ -100,7 +100,7 @@ class Bfxr extends SynthTemplate {
         [
             "Compression",
             "Pushes amplitudes together into a narrower range to make them stand out more.  Very good for sound effects, where you want them to stick out against background music.",
-            "compressionAmount", 0.3, 0, 1
+            "compressionAmount", 0, 0, 1
         ],
         [
             "Frequency",
