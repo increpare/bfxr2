@@ -163,6 +163,7 @@ class Tab {
             play_on_change_checkbox.type = "checkbox";
             play_on_change_checkbox.id = tab_name + "_checkbox_loop";
             play_on_change_checkbox.classList.add("normie_checkbox");
+            play_on_change_checkbox.checked = this.play_on_change;
             play_on_change_checkbox.addEventListener("click", this.play_on_change_clicked);
             play_on_change_container_div.appendChild(play_on_change_checkbox);
 
@@ -721,6 +722,10 @@ class Tab {
         }
         if (this.selected_file_index >= deleted_file_index){
             this.selected_file_index--;
+            if (this.selected_file_index < 0 && this.files.length > 0){
+                this.selected_file_index = 0;
+                this.set_selected_file(this.files[0][0]);
+            }
         }
         this.update_ui();
     }
@@ -870,8 +875,9 @@ class Tab {
         console.log("Create new sound: " + this.create_new_sound);
     }
 
-    play_on_change_clicked() {
+    play_on_change_clicked(event) {
         console.log("Play on change clicked");
+        this.play_on_change = event.target.checked;
     }
 
     play_button_clicked() {
@@ -987,15 +993,27 @@ class Tab {
 
     duplicate_sfx() {
         console.log("Duplicate sfx");
-        var cur_file_dat = this.files[this.selected_file_index];
-        var file_name = cur_file_dat[0];
-        var file_jstor = cur_file_dat[1];
-        var new_file_name = this.find_unique_filename(file_name);
-        var new_file_dat = [new_file_name, file_jstor, file_jstor];
-        //insert after current file
-        this.files.splice(this.selected_file_index + 1, 0, new_file_dat);
-        this.selected_file_index++;
-        this.update_ui();
+        if (this.selected_file_index===-1){
+            //load from current params
+            var file_name = "Sfx";
+            var file_jstor = JSON.stringify(this.synth.params);
+            var new_file_name = this.find_unique_filename(file_name);
+            var new_file_dat = [new_file_name, file_jstor, file_jstor];
+            //insert after current file
+            this.files.splice(this.selected_file_index + 1, 0, new_file_dat);
+            this.selected_file_index++;
+            this.update_ui();
+        } else {
+            var cur_file_dat = this.files[this.selected_file_index];
+            var file_name = cur_file_dat[0];
+            var file_jstor = cur_file_dat[1];
+            var new_file_name = this.find_unique_filename(file_name);
+            var new_file_dat = [new_file_name, file_jstor, file_jstor];
+            //insert after current file
+            this.files.splice(this.selected_file_index + 1, 0, new_file_dat);
+            this.selected_file_index++;
+            this.update_ui();
+        }
         save_all_collections();
     }
 
