@@ -6,6 +6,7 @@ class Tab {
 
 
     /* all the variables that determine the tab's state */
+    active = false;
     create_new_sound = true;
     play_on_change = true;
     selected_file_index = -1;
@@ -19,11 +20,20 @@ class Tab {
     synth = null;
 
     constructor(synth_specification) {
+
         this.synth = synth_specification;
 
         var tab_name = synth_specification.name;
         // Store tab name
         this.name = tab_name;
+
+        // restore saved state
+        var saved_info = loaded_data[synth_specification.name];
+        if (saved_info){
+            this.files = saved_info.files;
+            this.selected_file_index = saved_info.selected_file_index;
+            this.synth.apply_params(JSON.parse(this.files[this.selected_file_index][1]));
+        }        
 
         // Create DOM elements
         var tab_bar = document.getElementById("tab_bar");
@@ -211,7 +221,11 @@ class Tab {
         this.load_params(synth_specification);
         this.load_presets(synth_specification);
 
-        this.create_random_preset();
+        if (this.files.length == 0){
+            this.create_random_preset();
+        } else {
+            this.update_ui();
+        }
     }
 
     /*********************/
@@ -314,6 +328,11 @@ class Tab {
             } else if (!tab_page.classList.contains("active_tab_page")) {
                 tab_page.classList.add("active_tab_page");
             }
+        }
+
+        for (var i = 0; i < tabs.length; i++){
+            var tab = tabs[i];
+            tab.active = tab.name == this.name;
         }
     }
     
@@ -791,6 +810,7 @@ class Tab {
             var filename = this.find_unique_filename(preset_name);        
             this.files.push([filename,JSON.stringify(params), JSON.stringify(params)]);
             this.selected_file_index = this.files.length - 1;
+            save_all_collections();
         } else {
             this.current_params = params;
             this.files[this.selected_file_index][1] = JSON.stringify(params);
@@ -927,6 +947,9 @@ class Tab {
     }
     
     apply_sfx() {
+        if (this.files[this.selected_file_index][2] === this.files[this.selected_file_index][1]){
+            return;
+        }
         console.log("Apply sfx");
         this.files[this.selected_file_index][2] = this.files[this.selected_file_index][1];
         //remove modified_filename
@@ -934,9 +957,13 @@ class Tab {
         var file_name_span = file_item.children[0];
         file_name_span.classList.remove("modified_filename");
         this.update_ablements();
+        save_all_collections();
     }
 
     revert_sfx() {
+        if (this.files[this.selected_file_index][2] === this.files[this.selected_file_index][1]){
+            return;
+        }
         console.log("Revert sfx");
         var synth_params_json = this.files[this.selected_file_index][2];
         var synth_params = JSON.parse(synth_params_json);
@@ -948,6 +975,7 @@ class Tab {
         file_name_span.classList.add("modified_filename");
         this.update_ui_params();
         this.update_ablements();
+        save_all_collections();
     }
 
     duplicate_sfx() {
@@ -961,6 +989,7 @@ class Tab {
         this.files.splice(this.selected_file_index + 1, 0, new_file_dat);
         this.selected_file_index++;
         this.update_ui();
+        save_all_collections();
     }
 
     lock_param_clicked(node, param_name, value) {
@@ -993,6 +1022,7 @@ class Tab {
         new_name = this.find_unique_filename(new_name,file_name_index);
         this.files[file_name_index][0] = new_name;
         console.log("File item renamed: " + file_name + " to " + new_name);
+        save_all_collections();
         return new_name;
     }
 }
