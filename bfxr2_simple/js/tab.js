@@ -709,11 +709,16 @@ class Tab {
     }
 
     delete_file(file_name){
+        var deleted_file_index = -1;
         for (var i = 0; i < this.files.length; i++) {
             if (this.files[i][0] == file_name) {
+                deleted_file_index = i;
                 this.files.splice(i, 1);
                 break;
             }
+        }
+        if (this.selected_file_index >= deleted_file_index){
+            this.selected_file_index--;
         }
         this.update_ui();
     }
