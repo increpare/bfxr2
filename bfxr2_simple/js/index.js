@@ -2,9 +2,12 @@
 
 var bfxr_tab;
 var footsteppr_tab;
+var transfxr_tab;
+
 function register_bfxr_tab(){
     bfxr_tab = new Tab(new Bfxr());   
     footsteppr_tab = new Tab(new Footsteppr());
+    transfxr_tab = new Tab(new Transfxr());
 }
 
 function bfxr_draw_visualisation(params){

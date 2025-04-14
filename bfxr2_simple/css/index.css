@@ -28,6 +28,9 @@
     --alternating-table-row-color: #e7d1a7;
     --button-background-color: var(--panel-background-color);
     --button-pressed-background-color: #e7d1a7;
+
+    --tween-canvas-width: 75;
+    --tween-canvas-height: 32;
 }
 
 body {
@@ -74,11 +77,19 @@ body {
     border-width: var(--panel-border-thickness);
     border-bottom:none;
 
+    margin-left: 5px;
+    margin-right: 5px;
+
     padding-top: 3px;
     cursor: pointer;
 
 }
-
+.tab_button:first-child {
+    margin-left: 0;
+}
+.tab_button:last-child {
+    margin-right: 0;
+}
 
 .tab_button.active_tab {
     margin-top: 10px;
@@ -93,8 +104,8 @@ body {
     /*to remove the border between the active tab
      and the main panel, we extend it down a bit: */
     margin-bottom: calc(-1*var(--panel-border-thickness));
-    margin-left: calc(-1*var(--panel-border-thickness));
-    margin-right: calc(-1*var(--panel-border-thickness));
+    /* margin-left: calc(-1*var(--panel-border-thickness)); */
+    /* margin-right: calc(-1*var(--panel-border-thickness)); */
     /*expand the width to overlap the next/previous tabs a bit*/
     z-index: 1;
     
@@ -314,6 +325,13 @@ table.paramtable {
     padding-left: var(--ui-margin);
 }
 
+.transition_container {
+    position: relative;
+    width: var(--sliderwidth);
+    padding-right: var(--ui-margin);
+    padding-left: var(--ui-margin);
+}
+
 .parameter_slider {
     width: 100%;
     margin: 0;
@@ -416,3 +434,21 @@ button:active {
     background-image: url("../img/unlocked.png");
     opacity: 0.4;
  }
+
+
+
+ input[type=range].input-knob:focus,input[type=range].input-slider:focus{
+    outline:none;
+    box-shadow:none;
+  }
+
+  .tween_select_canvas {
+    display: inline-block;
+    width: var(--tween-canvas-width);
+    height: var(--tween-canvas-height);
+    border: var(--panel-border-thickness) solid var(--panel-border-color);
+    margin-top: var(--ui-margin);
+    /*stretch the image to fit the width*/
+    object-fit: contain;
+    object-position: center;
+  }

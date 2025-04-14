@@ -220,6 +220,9 @@ Tab.prototype.load_param = function(param){
                 
                 this.add_button_grid(param.name, param.display_name, param.tooltip, param.columns, param.default_value, param.values, param.header===true?true:false);
                 break;
+            case "KNOB_TRANSITION":
+                this.add_knob_transition(param.name, param.display_name, param.tooltip, param.default_value_l, param.default_value_r, param.min, param.max, param.default_tween, param.header===true?true:false);
+                break;
             default:
                 console.error("Unknown param type: " + param.type);
         }
@@ -326,6 +329,84 @@ Tab.prototype.create_param_label = function(label,tooltip){
     parameter_name_span.innerHTML = `<span class="data-tooltip">${tooltip}</span>${label}`;
     return parameter_name_span;
 }
+
+Tab.prototype.add_knob_transition = function(
+    parameter_name,
+    display_name,
+    tooltip,
+    default_value_l,
+    default_value_r,
+    min,
+    max,
+    default_tween,
+    header = false
+){
+    /* should look something like this:
+        <td class="slider_container">
+            <input type="range" class="input-knob" data-width="32" data-height="32" data-bgcolor="#b7a480" data-fgcolor="#3c3831"/>	
+            <input type="range" class="input-knob" data-width="32" data-height="32" data-bgcolor="#c7b490" data-fgcolor="#3c3831" />	
+        </td>
+    */
+   var parent_container = header ? this.centre_header : this.centre_params;
+   parent_container.style.display = "block";
+
+   var table = parent_container.children[0];
+
+   var new_row = table.insertRow();
+
+   var lock_cell = new_row.insertCell();
+   lock_cell.classList.add("lockcolumn");
+   var lock_button = this.generate_lock_button(parameter_name);
+   lock_cell.appendChild(lock_button);
+
+   var rowspan=1;
+   if (display_name !== ""){
+       var label_cell = new_row.insertCell();
+       label_cell.classList.add("labelcolumn");
+       var label = this.create_param_label(display_name,tooltip);
+       label_cell.appendChild(label);
+   } else {
+       rowspan = 2;
+   }
+
+   var parameter_cell = new_row.insertCell();
+   parameter_cell.classList.add("transition_container");
+
+   var knob_l = this.new_knob(parameter_name + "_l",default_value_l,min,max,0.01);
+   parameter_cell.appendChild(knob_l);
+
+
+   var default_tween_img = Transfxr.tweenfunctions[0][2];
+   var tween_container = document.createElement("img");
+   tween_container.src = default_tween_img.src;
+   tween_container.classList.add("tween_select_canvas");
+   tween_container.id = parameter_name + "_tween_select_canvas";
+   parameter_cell.appendChild(tween_container);
+
+   var knob_r = this.new_knob(parameter_name + "_r",default_value_r,min,max,0.01);
+   parameter_cell.appendChild(knob_r);   
+}
+
+Tab.prototype.new_knob = function(id,default_value,min,max,step){
+    var knob = document.createElement("input");
+    var uid = this.name + "_knob_" + id;
+    knob.id = uid;
+    knob.type = "range";
+    knob.classList.add("input-knob");
+    knob.dataset.width = "32";
+    knob.dataset.height = "32";
+    knob.dataset.bgcolor = "#b7a480";
+    knob.dataset.fgcolor = "#3c3831";
+    knob.value = default_value;
+    knob.min = min;
+    knob.max = max;
+    knob.step = step;
+    knob.addEventListener("input", ()=> {
+     this.knob_transition_changed(parameter_name, knob_l.value, knob_r.value);
+    });
+    return knob;
+}
+
 Tab.prototype.add_button_grid = function(
     parameter_name,
     display_name,

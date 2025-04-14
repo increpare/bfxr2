@@ -12,6 +12,8 @@ class SynthTemplate {
                 switch (param.type) {
                     case "BUTTONSELECT":
                         break;
+                    case "KNOB_TRANSITION":
+                        break;
                     default:
                         console.error("Unknown param type: " + param.type);
                 }

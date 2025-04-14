@@ -2,14 +2,21 @@
     <head>
         <meta charset="UTF-8">
 
+
         <script src="js/third_party/bootstrap-slider.js"></script>
+        <script src="js/third_party/input-knobs.js"></script>
+        <script src="js/synths/SynthTemplate.js"></script>
+        <script src="js/synths/Bfxr.js"></script>
+        <script src="js/synths/Footsteppr.js"></script>
+        <script src="js/synths/Transfxr.js"></script>
+        <script src="js/tab.js"></script>
         <script src="js/guifxr.js"></script>
+        <script src="js/index.js"></script>
         <script src="js/guifxrtemplate.js"></script>
-        <!-- <script src="js/bfxr.js"></script> -->
         <link rel="stylesheet" href="css/third_party/bootstrap-tooltip.css">
         <link rel="stylesheet" href="css/third_party/bootstrap-slider.css">
         <link rel="stylesheet" href="css/slider.css">
-        <link rel="stylesheet" href="css/bfxr.css">
+        <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
         <div id="main_container">
@@ -115,6 +122,39 @@
                         </div>
                         <div class="centre_params" >
                             <table class="paramtable">
+                                <tr>
+                                    <td class="lockcolumn">
+                                        <img src="img/unlocked.png" alt="lock" class="lock_icon unlocked">
+                                        <span class="data-tooltip">I'm as adf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asd fdf ad f</span>
+                                    </td>
+                                    <td  class="labelcolumn">
+                                        <span class="parameter_name" id="attack_time0_label">
+                                            <span class="data-tooltip">I'm asdf ad f</span>
+                                            Attack Time                                        
+                                        </span>                                                                        
+                                    </td>
+                                    <td class="slider_container">
+                                        <input type="range" class="input-knob" data-width="32" data-height="32" data-bgcolor="#b7a480" data-fgcolor="#3c3831"/>	
+                                        <input type="range" class="input-knob" data-width="32" data-height="32" data-bgcolor="#c7b490" data-fgcolor="#3c3831" />	
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lockcolumn">
+                                        <img src="img/unlocked.png" alt="lock" class="lock_icon unlocked">
+                                        <span class="data-tooltip">I'm as adf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asd fdf ad f</span>
+                                    </td>
+                                    <td  class="labelcolumn">
+                                        <span class="parameter_name" id="attack_time0_label">
+                                            <span class="data-tooltip">I'm asdf ad f</span>
+                                            Attack Time                                        
+                                        </span>                                                                        
+                                    </td>
+                                    <td class="slider_container">
+                                        <input type="range" class="input-knob" data-width="32" data-height="32" data-bgcolor="#b7a480" data-fgcolor="#3c3831"/>	
+                                        <img src="img/tween_backforth.svg" class="tween_select_canvas" />
+                                        <input type="range" class="input-knob" data-width="32" data-height="32" data-bgcolor="#c7b490" data-fgcolor="#3c3831" />	
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td class="lockcolumn">
                                         <img src="img/unlocked.png" alt="lock" class="lock_icon unlocked">
