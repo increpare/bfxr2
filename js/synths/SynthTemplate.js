@@ -158,6 +158,14 @@ class SynthTemplate {
         this.params[param_name] = Math.clamp(value, min_val, max_val);
     }
 
+    get_param(param_name) {
+        if (!(param_name in this.params)) {
+            console.error(`Could not get parameter (not found): ${param_name}`);
+            return 0;
+        }
+        return this.params[param_name];
+    }
+
     /*********************/
     /* PRESET FUNCTIONS  */
     /*********************/
@@ -185,8 +193,10 @@ class SynthTemplate {
     }
 
     mutate_params() {
-        //for each parameter of slider type, mutate it 5% either way
         for (var i = 0; i < this.param_info.length; i++) {
+            if (Math.random()<0.5){
+                continue;
+            }
             var param = this.param_info[i];
             var param_uniformized = this.get_param_uniformized(param);
             if (param_uniformized.type !== "RANGE") {
@@ -195,7 +205,7 @@ class SynthTemplate {
             var min_val = param_uniformized.min_value;
             var max_val = param_uniformized.max_value;
             var range = max_val - min_val;
-            var mutated_diff = (Math.random()-0.5)*0.05*range;
+            var mutated_diff = (Math.random()-0.5)*0.1*range;
             var mutated_val = this.params[param_uniformized.name] + mutated_diff;
             this.set_param(param_uniformized.name, mutated_val);
         }

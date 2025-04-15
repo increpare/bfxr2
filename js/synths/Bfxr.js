@@ -6,18 +6,18 @@ class Bfxr extends SynthTemplate {
     name = "Bfxr";
     version = Bfxr_DSP.version;
     tooltip = "Bfxr is a simple sound effect generator, based on DrPetter's Sfxr.";
-    
+
     header_properties = ["waveform"];
 
     default_locked = ["masterVolume"];
     hide_params = ["masterVolume"];
-    
+
     param_info = [
         [
             "Sound Volume",
             "Overall volume of the current sound.",
-            "masterVolume",0.5,0,1
-        ], 	
+            "masterVolume", 0.5, 0, 1
+        ],
         {
             type: "BUTTONSELECT",
 
@@ -261,38 +261,38 @@ class Bfxr extends SynthTemplate {
         [
             "Laser/Shoot",
             "Pew pew.  Try playing about with the Frequency properties (slide + delta slide especially).  If you want to add some texture, try adding some light, high-frequency vibrato.",
-            "generate_pickup_coin",
+            "generate_laser_shoot",
             "Shoot"
         ],
         [
             "Explosion",
             "Boom.  To make this louder, try increasing compression, or fiddling with the frequency parameters.  To make this softer, try switching to pink noise or decreasing the frequency.  If you're hearing nothing after messing with parameters, try fiddling with 'frequency cutoff'.",
-            "generate_pickup_coin",
+            "generate_explosion",
             "Boom"
 
         ],
         [
             "Powerup",
             "Whoo.  Try messing with the slide + delta slide parameters to make these less unreservedly exhuberant.  Or how about increasing the decay and playing with the Pitch Jump/Onset parameters?",
-            "generate_pickup_coin",
+            "generate_powerup",
             "PowerUp"
         ],
         [
             "Hit/Hurt",
             "If you want something more crackly, try out a tan wave here.",
-            "generate_pickup_coin",
+            "generate_hit_hurt",
             "Hit"
         ],
         [
             "Jump",
             "Try turn your jump into a soggy kiss with some bitcrush.",
-            "generate_pickup_coin",
+            "generate_jump",
             "Jump"
         ],
         [
             "Blip/Select",
             "You might want to make a variation of this with longer decay for blips that accompany fadeouts or animations.",
-            "generate_pickup_coin",
+            "generate_blip_select",
             "Blip"
         ],
         [
@@ -345,46 +345,270 @@ class Bfxr extends SynthTemplate {
         }
     }
 
-    generate_laser_shoot(){
+    generate_laser_shoot() {
         this.reset_params(true);
+        this.set_param("waveType", (Math.random() * 3)|0, true);
+        if (this.get_param("waveType") == 2 && Math.random() < 0.5) {
+            this.set_param("waveType",
+                (Math.random() * 2)|0, true);
+        }
 
+        this.set_param("startFrequency",
+            0.5 + Math.random() * 0.5, true);
+        this.set_param("minFrequency",
+            this.get_param("startFrequency") - 0.2 - Math.random() * 0.6, true);
+
+        if (this.get_param("minFrequency") < 0.2)
+            this.set_param("minFrequency", 0.2, true);
+
+        this.set_param("slide", -0.15 - Math.random() * 0.2, true);
+
+        if (Math.random() < 0.33) {
+            this.set_param("startFrequency", Math.random() * 0.6, true);
+            this.set_param("minFrequency", Math.random() * 0.1, true);
+            this.set_param("slide", -0.35 - Math.random() * 0.3, true);
+        }
+
+        if (Math.random() < 0.5) {
+            this.set_param("squareDuty", Math.random() * 0.5, true);
+            this.set_param("dutySweep", Math.random() * 0.2, true);
+        }
+        else {
+            this.set_param("squareDuty", 0.4 + Math.random() * 0.5, true);
+            this.set_param("dutySweep", - Math.random() * 0.7, true);
+        }
+
+        this.set_param("sustainTime", 0.1 + Math.random() * 0.2, true);
+        this.set_param("decayTime", Math.random() * 0.4, true);
+        if (Math.random() < 0.5) this.set_param("sustainPunch", Math.random() * 0.3, true);
+
+        if (Math.random() < 0.33) {
+            this.set_param("flangerOffset", Math.random() * 0.2, true);
+            this.set_param("flangerSweep", -Math.random() * 0.2, true);
+        }
+
+        if (Math.random() < 0.5) this.set_param("hpFilterCutoff", Math.random() * 0.3, true);
     }
 
-    generate_explosion(){
+    generate_explosion() {
         this.reset_params(true);
+        if (Math.random() < 0.5) {
+            this.set_param("waveType", 3, true);
+        } else {
+            this.set_param("waveType", 9, true);
+        }
 
+        if (Math.random() < 0.5) {
+            this.set_param("startFrequency", 0.1 + Math.random() * 0.4, true);
+            this.set_param("slide", -0.1 + Math.random() * 0.4, true);
+        }
+        else {
+            this.set_param("startFrequency", 0.2 + Math.random() * 0.7, true);
+            this.set_param("slide", -0.2 - Math.random() * 0.2, true);
+        }
+
+        this.set_param("startFrequency", this.get_param("startFrequency") * this.get_param("startFrequency"), true);
+
+        if (Math.random() < 0.2) this.set_param("slide", 0.0, true);
+        if (Math.random() < 0.33) this.set_param("repeatSpeed", 0.3 + Math.random() * 0.5, true);
+
+        this.set_param("sustainTime", 0.1 + Math.random() * 0.3, true);
+        this.set_param("decayTime", Math.random() * 0.5, true);
+        this.set_param("sustainPunch", 0.2 + Math.random() * 0.6, true);
+
+        if (Math.random() < 0.5) {
+            this.set_param("flangerOffset", -0.3 + Math.random() * 0.9, true);
+            this.set_param("flangerSweep", -Math.random() * 0.3, true);
+        }
+
+        if (Math.random() < 0.33) {
+            this.set_param("changeSpeed", 0.6 + Math.random() * 0.3, true);
+            this.set_param("changeAmount", 0.8 - Math.random() * 1.6, true);
+        }
     }
 
-    generate_powerup(){
+    generate_powerup() {
         this.reset_params(true);
 
+        if (Math.random() < 0.5) this.set_param("waveType", 1, true);
+        else this.set_param("squareDuty", Math.random() * 0.6, true);
+
+        if (Math.random() < 0.5) {
+            this.set_param("startFrequency", 0.2 + Math.random() * 0.3, true);
+            this.set_param("slide", 0.1 + Math.random() * 0.4, true);
+            this.set_param("repeatSpeed", 0.4 + Math.random() * 0.4, true);
+        }
+        else {
+            this.set_param("startFrequency", 0.2 + Math.random() * 0.3, true);
+            this.set_param("slide", 0.05 + Math.random() * 0.2, true);
+
+            if (Math.random() < 0.5) {
+                this.set_param("vibratoDepth", Math.random() * 0.7, true);
+                this.set_param("vibratoSpeed", Math.random() * 0.6, true);
+            }
+        }
+
+        this.set_param("sustainTime", Math.random() * 0.4, true);
+        this.set_param("decayTime", 0.1 + Math.random() * 0.4, true);
     }
 
-    generate_hit_hurt(){
+    generate_hit_hurt() {
         this.reset_params(true);
+        this.set_param("waveType", (Math.random() * 4)|0, true);
+        if (this.get_param("waveType") == 2)
+            this.set_param("waveType", 3, true);//white noise
+        else if (this.get_param("waveType") == 3)
+            this.set_param("waveType", 9, true);//bitnoise
+        else if (this.get_param("waveType") == 0)
+            this.set_param("squareDuty", Math.random() * 0.6);
+
+        this.set_param("startFrequency", 0.2 + Math.random() * 0.6, true);
+        this.set_param("slide", -0.3 - Math.random() * 0.4, true);
+
+        this.set_param("sustainTime", Math.random() * 0.1, true);
+        this.set_param("decayTime", 0.1 + Math.random() * 0.2, true);
+
+        if (Math.random() < 0.5) this.set_param("hpFilterCutoff", Math.random() * 0.3, true);
     }
 
-    generate_jump(){
+    generate_jump() {
         this.reset_params(true);
+        this.set_param("waveType", 0, true);
+        this.set_param("squareDuty", Math.random() * 0.6, true);
+        this.set_param("startFrequency", 0.3 + Math.random() * 0.3, true);
+        this.set_param("slide", 0.1 + Math.random() * 0.2, true);
+
+        this.set_param("sustainTime", 0.1 + Math.random() * 0.3, true);
+        this.set_param("decayTime", 0.1 + Math.random() * 0.2, true);
+
+        if (Math.random() < 0.5) this.set_param("hpFilterCutoff", Math.random() * 0.3, true);
+        if (Math.random() < 0.5) this.set_param("lpFilterCutoff", 1.0 - Math.random() * 0.6, true);
     }
 
-    generate_blip_select(){
+    generate_blip_select() {
         this.reset_params(true);
+        this.set_param("waveType", (Math.random() * 2)|0, true);
+        if (this.get_param("waveType") == 0)
+            this.set_param("squareDuty", Math.random() * 0.6, true);
+
+        this.set_param("startFrequency", 0.2 + Math.random() * 0.4, true);
+
+        this.set_param("sustainTime", 0.1 + Math.random() * 0.1, true);
+        this.set_param("decayTime", Math.random() * 0.2, true);
+        this.set_param("hpFilterCutoff", 0.1, true);
     }
 
-    randomize_params(){
-        super.randomize_params();
-        //frequency cutoff must be less than frequency
-        var cutoff = Math.random() * this.params.startFrequency;
-        this.set_param("minFrequency", cutoff, true);
+    static #RandomizationPower =
+        {
+            attackTime: 4,
+            sustainTime: 2,
+            sustainPunch: 2,
+            overtones: 3,
+            overtoneFalloff: 0.25,
+            vibratoDepth: 3,
+            dutySweep: 3,
+            flangerOffset: 3,
+            flangerSweep: 3,
+            lpFilterCutoff: 0.3,
+            lpFilterSweep: 3,
+            hpFilterCutoff: 5,
+            hpFilterSweep: 5,
+            bitCrush: 4,
+            bitCrushSweep: 5
+        }
+
+    static #WaveTypeWeights =
+        [
+            1,//0:square
+            1,//1:saw
+            1,//2:sin
+            1,//3:noise
+            1,//4:triangle
+            1,//5:pink
+            1,//6:tan
+            1,//7:whistle
+            1,//8:breaker
+            1,//9:bitnoise
+            1,//10:new 1
+            1,//11:buzz
+        ];
+
+    randomize_params() {
+        for (var param in this.params) {
+            if (!this.locked_params[param]) {
+                var min = this.param_min(param);
+                var max = this.param_max(param);
+                var r = Math.random();
+                if (param in RandomizationPower)
+                    r = Math.pow(r, RandomizationPower[param]);
+                _params[param] = min + (max - min) * r;
+            }
+        }
+
+        if (!this.locked_params["waveType"]) {
+            var count = 0;
+            for (var i = 0; i < Bfxr.#WaveTypeWeights.length; i++) {
+                count += Bfxr.#WaveTypeWeights[i];
+            }
+            r = Math.random() * count;
+            for (i = 0; i < Bfxr.#WaveTypeWeights.length; i++) {
+                r -= Bfxr.#WaveTypeWeights[i];
+                if (r <= 0) {
+                    this.set_param("waveType", i);
+                    break;
+                }
+            }
+
+        }
+
+        if (!lockedParam("repeatSpeed")) {
+            if (Math.random() < 0.5)
+                this.set_param("repeatSpeed", 0);
+        }
+
+        if (!lockedParam("slide")) {
+            r = Math.random() * 2 - 1;
+            r = Math.pow(r, 5);
+            this.set_param("slide", r);
+        }
+        if (!lockedParam("deltaSlide")) {
+            r = Math.random() * 2 - 1;
+            r = Math.pow(r, 3);
+            this.set_param("deltaSlide", r);
+        }
+
+        if (!lockedParam("minFrequency"))
+            this.set_param("minFrequency", 0);
+
+        if (!lockedParam("startFrequency"))
+            this.set_param("startFrequency", (Math.random() < 0.5) ? pow(Math.random() * 2 - 1, 2) : (pow(Math.random() * 0.5, 3) + 0.5));
+
+        if ((!lockedParam("sustainTime")) && (!lockedParam("decayTime"))) {
+            if (this.get_param("attackTime") + this.get_param("sustainTime") + this.get_param("decayTime") < 0.2) {
+                this.set_param("sustainTime", 0.2 + Math.random() * 0.3);
+                this.set_param("decayTime", 0.2 + Math.random() * 0.3);
+            }
+        }
+
+        if (!lockedParam("slide")) {
+            if ((this.get_param("startFrequency") > 0.7 && this.get_param("slide") > 0.2) || (this.get_param("startFrequency") < 0.2 && this.get_param("slide") < -0.05)) {
+                this.set_param("slide", -this.get_param("slide"));
+            }
+        }
+
+        if (!lockedParam("lpFilterCutoffSweep")) {
+            if (this.get_param("lpFilterCutoff") < 0.1 && this.get_param("lpFilterCutoffSweep") < -0.05) {
+                this.set_param("lpFilterCutoffSweep", -this.get_param("lpFilterCutoffSweep"));
+            }
+        }
     }
 
     /*********************/
     /* SOUND SYNTHESIS   */
     /*********************/
 
-    generate_sound(){
-        var dsp = new Bfxr_DSP(this.params,this);
+    generate_sound() {
+        var dsp = new Bfxr_DSP(this.params, this);
         dsp.generate_sound();
         this.sound = RealizedSound.from_buffer(dsp.buffer);
     }
