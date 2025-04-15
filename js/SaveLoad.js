@@ -19,7 +19,7 @@ class SaveLoad {
                 selected_file_index: selected_file_index,
                 create_new_sound: tab.create_new_sound,
                 play_on_change: tab.play_on_change,
-                locked_params: tab.locked_params
+                locked_params: tab.synth.locked_params
             }
             save_data[tab.synth.name] = compiled_data;
             if (tab.active){

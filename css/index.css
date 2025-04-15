@@ -303,7 +303,7 @@ body {
 }
 
 .delete_button {
-    display:inline-block;
+    display:flex;
     /* float:right; */
     font-size: var(--font-size);
     padding:0;

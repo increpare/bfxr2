@@ -15,8 +15,6 @@ class Tab {
         //[name, current_state, last_saved_state]
     ];
 
-    locked_params = {};
-
     /* keeping track of frequently used dom elements */
     sliders = {};
     lock_buttons = {};
@@ -39,9 +37,15 @@ class Tab {
             if (this.selected_file_index >= 0){
                 this.synth.apply_params(JSON.parse(this.files[this.selected_file_index][1]));
             }
-            this.create_new_sound = saved_info.create_new_sound;
-            this.play_on_change = saved_info.play_on_change;
-            this.locked_params = saved_info.locked_params;
+            if (saved_info.create_new_sound !== undefined){
+                this.create_new_sound = saved_info.create_new_sound;
+            }
+            if (saved_info.play_on_change !== undefined){
+                this.play_on_change = saved_info.play_on_change;
+            }
+            if (saved_info.locked_params !== undefined){
+                this.synth.locked_params = saved_info.locked_params;
+            }
         }        
 
         // Create DOM elements
@@ -191,7 +195,10 @@ class Tab {
             right_panel_button_list.appendChild(master_volume_container_div);
 
 
-            this.setup_slider(master_volume_container_div, this.name+"_slider_master_volume", 0, 1, 1, this.volume_slider_changed.bind(this), true);
+            var master_vol_min = this.synth.param_min("masterVolume");
+            var master_vol_max = this.synth.param_max("masterVolume");
+            var master_vol_default = this.synth.param_default("masterVolume");
+            this.setup_slider(master_volume_container_div, "masterVolume", master_vol_min, master_vol_max, master_vol_default, this.volume_slider_changed.bind(this), true);
 
             var master_volume_label = document.createElement("span");
             master_volume_label.innerText = "Sound Volume";
@@ -221,6 +228,9 @@ class Tab {
 
             var copy_link_button = this.add_button("copy_link", "Copy Link", this.copy_link_button_clicked.bind(this), "Copy the current sound link");
             right_panel_button_list.appendChild(copy_link_button);
+
+            var clear_all_button = this.add_button("clear_all", "Clear All", this.clear_all_button_clicked.bind(this), "Reset everything! Clean slate!");
+            right_panel_button_list.appendChild(clear_all_button);
 
             var about_button = this.add_button("about", "About", this.about_button_clicked.bind(this), "About the current sound");
             right_panel_button_list.appendChild(about_button);
@@ -301,7 +311,9 @@ class Tab {
         }
         file_list.scrollTop = scroll_y;
         
-        setVisible(selected_item, file_list);
+        if (selected_item){
+            setVisible(selected_item, file_list);
+        }
     }
 
     update_ui_params(){
@@ -345,7 +357,7 @@ class Tab {
         for (var i = 0; i < keys.length; i++){
             var key = keys[i];  
             var lock_button = this.lock_buttons[key];
-            var locked = this.locked_params[key];
+            var locked = this.synth.locked_params[key];
             if (locked){
                 lock_button.classList.add("locked");
             } else {
@@ -384,6 +396,19 @@ class Tab {
     load_params(synth_specification) {
         for (var i = 0; i < synth_specification.param_info.length; i++) {
             var param = synth_specification.param_info[i];
+
+            //regularize info
+            var param_uniformized = synth_specification.get_param_uniformized(param);
+            
+            if (!(param_uniformized.name in synth_specification.locked_params)){
+                var do_lock = !synth_specification.default_locked.includes(param_uniformized.name);
+                this.synth.locked_params[param_uniformized.name]=do_lock;
+            }
+
+            if (synth_specification.hide_params.includes(param_uniformized.name)){
+                continue;
+            }
+            
             this.load_param(param);
         }
         this.update_ui();
@@ -414,11 +439,7 @@ class Tab {
                 default:
                     console.error("Unknown param type: " + param.type);
             }
-        }
-        
-        if (!(param_name in this.locked_params)){
-            this.locked_params[param_name]=false;
-        }
+        }        
     }
 
 
@@ -694,7 +715,7 @@ class Tab {
     generate_lock_button(parameter_name) {
         var lock_button = document.createElement("div");
         lock_button.classList.add("lockimage");
-        if (!this.locked_params[parameter_name]){
+        if (!this.synth.locked_params[parameter_name]){
             lock_button.classList.add("unlocked");
         }
         lock_button.addEventListener("click", () => {
@@ -976,10 +997,7 @@ class Tab {
     }
 
     volume_slider_changed(value) {
-        console.log("Volume slider changed to " + value);
-        if (this.play_on_change){
-            this.play_sound();
-        }
+        this.slider_changed("masterVolume", value);
     }
 
     export_wav_button_clicked() {            
@@ -1070,6 +1088,18 @@ class Tab {
         navigator.clipboard.writeText(new_url);        
     }
 
+
+    clear_all_button_clicked() {
+        //need to confirm with user
+        if (confirm("Are you sure you want to clear all data in this synth (THIS DELETES ALL FILES)?")) {
+            console.log("Clear all button clicked");
+            this.files = [];
+            this.selected_file_index = -1;
+            this.update_ui();
+            SaveLoad.save_all_collections();
+        }
+    }
+
     about_button_clicked() {
         console.log("About button clicked");
     }
@@ -1140,7 +1170,7 @@ class Tab {
         } else {
             node.classList.remove("unlocked");
         }
-        this.locked_params[param_name]=value;
+        this.synth.locked_params[param_name]=!value;
     }
 
     button_grid_button_clicked(node, param_name, value) {

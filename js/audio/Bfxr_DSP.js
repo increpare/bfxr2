@@ -210,12 +210,12 @@ class Bfxr_DSP {
             var sf = params.startFrequency;
             var mf = params.minFrequency;
 
-            var startFrequency_min = this.param_info.get_min("startFrequency");
-            var startFrequency_max = this.param_info.get_max("startFrequency");
+            var startFrequency_min = this.param_info.param_min("startFrequency");
+            var startFrequency_max = this.param_info.param_max("startFrequency");
             var startFrequency_mid = (startFrequency_max + startFrequency_min) / 2;
 
-            var minFrequency_min = this.param_info.get_min("minFrequency");
-            var minFrequency_max = this.param_info.get_max("minFrequency");
+            var minFrequency_min = this.param_info.param_min("minFrequency");
+            var minFrequency_max = this.param_info.param_max("minFrequency");
             var minFrequency_mid = (minFrequency_max + minFrequency_min) / 2;
 
             var delta_start = (sf - startFrequency_min) / (startFrequency_max - startFrequency_min)

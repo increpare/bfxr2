@@ -41,17 +41,17 @@ class SynthTemplate {
     }
 
 
-    apply_params(other_params,overwrite_locked = false) {
+    apply_params(other_params,check_locked = false) {
         for (var key in other_params) {
-            if (overwrite_locked || !this.locked_params[key]) {
+            if ( !check_locked || !this.locked_params[key] ) {
                 this.params[key] = other_params[key];
             }
         }
     }
 
-    reset_params(overwrite_locked = false) {
+    reset_params(check_locked = false) {
         var default_params = this.default_params();
-        this.apply_params(default_params,overwrite_locked);
+        this.apply_params(default_params,check_locked);
     }
 
     post_initialize(){
@@ -130,6 +130,18 @@ class SynthTemplate {
         console.error("Could not find param: " + param_name);
         return 1;
     }
+    
+    param_default(param_name) {
+        for (var i = 0; i < this.param_info.length; i++) {
+            var param_o = this.param_info[i];
+            var param_o_uniformized = this.get_param_uniformized(param_o);
+            if (param_o_uniformized.name === param_name) {
+                return param_o_uniformized.default_value;
+            }
+        }
+        console.error("Could not find param: " + param_name);
+        return 0;
+    }
 
     set_param(param_name, value, checkLocked = false) {
         if (!(param_name in this.params)) {
@@ -151,9 +163,14 @@ class SynthTemplate {
     /*********************/
 
     randomize_params() {
+        this.reset_params(true);
         for (var i = 0; i < this.param_info.length; i++) {
             var param = this.param_info[i];
             var param_uniformized = this.get_param_uniformized(param);
+            
+            if (this.locked_params[param_uniformized.name]) {
+                continue;
+            }
             var min_val = param_uniformized.min_value;
             var max_val = param_uniformized.max_value;
             var random_val = Math.random() * (max_val - min_val) + min_val;
@@ -168,7 +185,21 @@ class SynthTemplate {
     }
 
     mutate_params() {
-        this.reset_params();
+        //for each parameter of slider type, mutate it 5% either way
+        for (var i = 0; i < this.param_info.length; i++) {
+            var param = this.param_info[i];
+            var param_uniformized = this.get_param_uniformized(param);
+            if (param_uniformized.type !== "RANGE") {
+                continue;
+            }
+            var min_val = param_uniformized.min_value;
+            var max_val = param_uniformized.max_value;
+            var range = max_val - min_val;
+            var mutated_diff = (Math.random()-0.5)*0.05*range;
+            var mutated_val = this.params[param_uniformized.name] + mutated_diff;
+            this.set_param(param_uniformized.name, mutated_val);
+        }
+
     }
 
     play(){

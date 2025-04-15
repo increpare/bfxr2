@@ -6,9 +6,15 @@ class Transfxr extends SynthTemplate {
     
     header_properties = ["waveform"];
 
-    force_locked = [ ];
+    default_locked = ["masterVolume"];
+    hide_params = ["masterVolume"];
 
     param_info = [
+        [
+            "Sound Volume",
+            "Overall volume of the current sound.",
+            "masterVolume",0.5,0,1
+        ], 	
         {
             type: "KNOB_TRANSITION",
 
@@ -24,11 +30,6 @@ class Transfxr extends SynthTemplate {
 
             header: true,
         },
-        [
-            "Sound Volume",
-            "Overall volume of the current sound.",
-            "masterVolume",1,0,1
-        ], 	
         [
             "Heel",
             "How hard you strike the ground with your heel.",

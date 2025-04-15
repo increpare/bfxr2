@@ -9,9 +9,15 @@ class Bfxr extends SynthTemplate {
     
     header_properties = ["waveform"];
 
-    force_locked = ["masterVolume"];
+    default_locked = ["masterVolume"];
+    hide_params = ["masterVolume"];
     
     param_info = [
+        [
+            "Sound Volume",
+            "Overall volume of the current sound.",
+            "masterVolume",0.5,0,1
+        ], 	
         {
             type: "BUTTONSELECT",
 
@@ -86,11 +92,6 @@ class Bfxr extends SynthTemplate {
                 ],
             ]
         },
-        [
-            "Sound Volume",
-            "Overall volume of the current sound.",
-            "masterVolume", 0.5, 0, 1
-        ],
         [
             "Attack Time",
             "Length of the volume envelope attack.",
@@ -308,28 +309,6 @@ class Bfxr extends SynthTemplate {
         ],
     ];
 
-
-    get_min(param_name){
-        for (var i=0;i<this.param_info.length;i++){
-            if (this.param_info[i][2] == param_name){
-                return this.param_info[i][4];
-            }
-        }
-        console.error(`get_max: param ${param_name} not found`);
-        return 0;
-    }
-
-    get_max(param_name){
-        for (var i=0;i<this.param_info.length;i++){
-            if (this.param_info[i][2] == param_name){
-                return this.param_info[i][5];
-            }
-        }
-
-        console.error(`get_max: param ${param_name} not found`);
-        return 0;
-    }
-    
     /*********************/
     /* CONSTRUCTOR       */
     /*********************/
@@ -344,12 +323,12 @@ class Bfxr extends SynthTemplate {
     /*********************/
 
     generate_sin() {
-        this.reset_params();
+        this.reset_params(true);
         this.set_param("waveType", 1, true);
     }
 
     generate_pickup_coin() {
-        this.reset_params();
+        this.reset_params(true);
 
         this.set_param("startFrequency", 0.4 + Math.random() * 0.5, true);
 
@@ -367,30 +346,30 @@ class Bfxr extends SynthTemplate {
     }
 
     generate_laser_shoot(){
-        this.reset_params();
+        this.reset_params(true);
 
     }
 
     generate_explosion(){
-        this.reset_params();
+        this.reset_params(true);
 
     }
 
     generate_powerup(){
-        this.reset_params();
+        this.reset_params(true);
 
     }
 
     generate_hit_hurt(){
-        this.reset_params();
+        this.reset_params(true);
     }
 
     generate_jump(){
-        this.reset_params();
+        this.reset_params(true);
     }
 
     generate_blip_select(){
-        this.reset_params();
+        this.reset_params(true);
     }
 
     randomize_params(){
@@ -399,6 +378,7 @@ class Bfxr extends SynthTemplate {
         var cutoff = Math.random() * this.params.startFrequency;
         this.set_param("minFrequency", cutoff, true);
     }
+
     /*********************/
     /* SOUND SYNTHESIS   */
     /*********************/
