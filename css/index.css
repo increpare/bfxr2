@@ -244,6 +244,7 @@ body {
 }
 
 .filelist {
+    position:relative;
     padding-top: var(--ui-margin);
     /* margin-bottom: var(--ui-margin); */
     /* padding: var(--ui-margin); */

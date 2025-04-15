@@ -293,12 +293,9 @@ class Tab {
                 selected_item = file_item;
             }
         }
-        //set scroll to bottom
         file_list.scrollTop = scroll_y;
-        //selected item has to be visible
-        if (selected_item){
-            selected_item.scrollIntoView({behavior: 'smooth', block: 'center'});
-        }
+        
+        setVisible(selected_item, file_list);
     }
 
     update_ui_params(){

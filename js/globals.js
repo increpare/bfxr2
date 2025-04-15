@@ -25,3 +25,33 @@ function add_fns( ...fns ){
         return fns.reduce((acc,fn) => acc + fn(x), 0);
     }
 }
+
+function isVisible (ele, container) {
+    const eleTop = ele.offsetTop;
+    const eleBottom = eleTop + ele.clientHeight;
+
+    const containerTop = container.scrollTop;
+    const containerBottom = containerTop + container.clientHeight;
+
+    // The element is fully visible in the container
+    return (
+        (eleTop >= containerTop && eleBottom <= containerBottom) ||
+        // Some part of the element is visible in the container
+        (eleTop < containerTop && containerTop < eleBottom) ||
+        (eleTop < containerBottom && containerBottom < eleBottom)
+    );
+};
+
+function setVisible (ele, container) {
+    if (isVisible(ele, container)){
+        return;
+    }
+    //if above
+    if (ele.offsetTop < container.scrollTop){
+        container.scrollTop = ele.offsetTop;
+    }
+    //if below
+    else if (ele.offsetTop + ele.offsetHeight > container.scrollTop + container.offsetHeight){
+        container.scrollTop = ele.offsetTop - container.offsetHeight + ele.offsetHeight;
+    }
+}
