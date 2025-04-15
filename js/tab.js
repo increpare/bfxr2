@@ -819,7 +819,7 @@ class Tab {
         
         var delete_button = document.createElement("button");
         delete_button.classList.add("delete_button");
-        delete_button.innerHTML = "<img src='./img/delete.png'>";
+        delete_button.innerHTML = "<img src='./img/delete.png' alt='Delete'>";
         delete_button.addEventListener("click", (event) => {
             this.delete_file(file_name);
         });

@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+# This script should be uploaded to the web server.
+
+use warnings;
+use strict;
+use File::Find;
+system("rm bin/*.gz");
+find (\&wanted, ("bin"));
+sub wanted
+{
+    if (/(.*\.(?:html|css|txt|js)$)/i) {
+        print "Compressing $File::Find::name\n";
+        if (! -f "$_.gz") {
+            system ("gzip -cf --best \"$_\" > \"$_.gz\"");
+        }
+    }
+}
