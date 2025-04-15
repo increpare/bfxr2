@@ -1,3 +1,0 @@
-Andy Farnell for amazing physical audio synthesis tutorials ( https://www.moz.ac.at/sem/lehre/lib/pd-sounddesign/ )
-drpetter for sfxr/sfbtom for as3sfxr
-jmickle for cool audio feedback
