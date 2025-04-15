@@ -34,6 +34,18 @@
 
     --buttongrid-pressed-background-color: grey;
 }
+/* kludge - cf https://stackoverflow.com/questions/7492062/css-overflow-scroll-always-show-vertical-scroll-bar */
+/* ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+} */
+/* end kludge */
 
 body {
     user-select: none;
@@ -42,6 +54,12 @@ body {
     background-color: var(--page-background-color);
     background-image: url("../img/bg.png") ;
     font-size: var(--font-size);
+    /* min-height: 1000px; */
+    overflow-y:auto;
+    /*vertically center content*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #main_container {
@@ -51,11 +69,10 @@ body {
     display: flex;
     flex-direction: column;
 
-    /*center horizontally*/
+
+    /*horizontally center content*/
     margin: 0 auto;
-    /* magic numbers.... */
-    margin-top: calc((100vh - (726px))/2);
-    
+
 }
 
 #tab_bar {
@@ -242,6 +259,7 @@ body {
 
     /* min-height: 100px;
     max-height: 200px; */
+    scrollbar-gutter: stable;
 }
 
 .file_item {
@@ -349,12 +367,12 @@ table.paramtable {
 }
 
 .button_grid_button.selected {
-    background-color: var(--buttongrid-pressed-background-color);
+    /* background-color: var(--buttongrid-pressed-background-color); */
     /* set disabled */
-    opacity: 1.0;   
-    color: var(--panel-text-color);
-    border-color: transparent;
-    border-radius:2px;
+    /* opacity: 1.0;    */
+    /* color: var(--panel-text-color); */
+    /* border-color: transparent; */
+    /* border-radius:2px; */
 }
 .lock_icon.unlocked {
     opacity: 0.4;
@@ -421,8 +439,12 @@ td.labelcolumn {
 
 
 .parameter_name {
-    float:right;
+    float: right;
     font-size: var(--font-size-small);
+    width: 100%;
+    text-align: right;
+    cursor: default;
+    user-select: none;
 }
 
 .display_canmvas {

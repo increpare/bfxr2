@@ -13,7 +13,7 @@ class Bfxr extends SynthTemplate {
         {
             type: "BUTTONSELECT",
 
-            name: "waveform",
+            name: "waveType",
             display_name: "",
             tooltip: "",
 
@@ -232,6 +232,12 @@ class Bfxr extends SynthTemplate {
     presets = [
         //display name, tooltip, function name, file name
         [
+            "Sin test",
+            "Sin test",
+            "generate_sin",
+            "Sin",
+        ],
+        [
             "Pickup/Coin",
             "Blips and baleeps.  Try messing with the wave-forms to get your own sound.",
             "generate_pickup_coin",
@@ -288,6 +294,28 @@ class Bfxr extends SynthTemplate {
         ],
     ];
 
+
+    get_min(param_name){
+        for (var i=0;i<this.param_info.length;i++){
+            if (this.param_info[i][0] == param_name){
+                return this.param_info[i][4];
+            }
+        }
+        console.error(`get_max: param ${param_name} not found`);
+        return 0;
+    }
+
+    get_max(param_name){
+        for (var i=0;i<this.param_info.length;i++){
+            if (this.param_info[i][0] == param_name){
+                return this.param_info[i][5];
+            }
+        }
+
+        console.error(`get_max: param ${param_name} not found`);
+        return 0;
+    }
+    
     /*********************/
     /* CONSTRUCTOR       */
     /*********************/
@@ -300,6 +328,11 @@ class Bfxr extends SynthTemplate {
     /*********************/
     /* PRESET FUNCTIONS  */
     /*********************/
+
+    generate_sin() {
+        this.reset_params();
+        this.set_param("waveType", 1, true);
+    }
 
     generate_pickup_coin() {
         this.reset_params();
@@ -317,5 +350,15 @@ class Bfxr extends SynthTemplate {
 
             this.set_param("changeAmount", cnum / cden, true);
         }
+    }
+    
+    /*********************/
+    /* SOUND SYNTHESIS   */
+    /*********************/
+
+    generate_sound(){
+        var dsp = new Bfxr_DSP(this.params,this);
+        dsp.generate_sound();
+        this.sound = RealizedSound.from_buffer(dsp.buffer);
     }
 }

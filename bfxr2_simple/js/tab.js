@@ -424,7 +424,10 @@ class Tab {
             range: false,
             step: 0.00001,
             value: defaultval,
-            ticks: ticks
+            ticks: ticks,
+            formatter: (val)=>{
+                return val.toFixed(2);
+            }
         });
         slider.sliderElem.className += " singleselect";
         slider.sliderElem.getElementsByClassName("slider-tick-container")[0].children[closest_to_default_i].classList.add('defaulttick');
@@ -443,8 +446,7 @@ class Tab {
         button.classList.add("normie_button");
         button.id = button_uid;
         if (button_tooltip != undefined && button_tooltip != "") {
-            var tooltip_tag = `<span class="data-tooltip">${button_tooltip}</span>`;
-            button_text = tooltip_tag + button_text;
+            button.title = button_tooltip;
         }
         button.innerHTML = button_text;
         button.addEventListener("click", button_handler);
@@ -454,7 +456,10 @@ class Tab {
     create_param_label(label, tooltip) {
         var parameter_name_span = document.createElement("span");
         parameter_name_span.classList.add("parameter_name");
-        parameter_name_span.innerHTML = `<span class="data-tooltip">${tooltip}</span>${label}`;
+        if (tooltip != undefined && tooltip != "") {
+            parameter_name_span.title = tooltip;
+        }
+        parameter_name_span.innerText = label;
         return parameter_name_span;
     }
 

@@ -99,7 +99,7 @@ class Footsteppr extends SynthTemplate {
     }
     
     /*********************/
-    /* SOUND SYNTHESIS  */
+    /* SOUND SYNTHESIS   */
     /*********************/
     
     generate_sound(){

@@ -229,8 +229,8 @@ class SynthTemplate {
     
         var c = w/2;
         for (var y=0;y<h;y++){
-            var l = c+silhouette[2*y+0]*4*c;
-            var r = c+silhouette[2*y+1]*4*c;
+            var l = c+silhouette[2*y+0]*1*c;
+            var r = c+silhouette[2*y+1]*1*c;
             context2d.moveTo(l,h-y);
             context2d.lineTo(r,h-y);
         }
@@ -238,18 +238,17 @@ class SynthTemplate {
         context2d.stroke();    
     }
 
+
     generate_sound(){
-        console.error("generate_sound not implemented");
-        this.sound = {
-            play: function(){
-                console.error("play not implemented");
-            },
-            getDataUri: function(){
-                console.error("getDataUri not implemented");
-                return "";
-            }
-        }
+       console.error("generate_sound not implemented");
+       var tempbuffer = new Float32Array(1);
+       this.sound = RealizedSound.from_buffer(tempbuffer);
     }
 
-
+    set_sound(sound){
+        if (sound){
+           //pause and dispose of the old sound
+        }
+        this.sound = sound;
+    }
 }
