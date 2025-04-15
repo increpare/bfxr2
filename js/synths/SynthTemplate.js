@@ -41,15 +41,17 @@ class SynthTemplate {
     }
 
 
-    apply_params(other_params) {
+    apply_params(other_params,overwrite_locked = false) {
         for (var key in other_params) {
-            this.params[key] = other_params[key];
+            if (overwrite_locked || !this.locked_params[key]) {
+                this.params[key] = other_params[key];
+            }
         }
     }
 
-    reset_params() {
+    reset_params(overwrite_locked = false) {
         var default_params = this.default_params();
-        this.apply_params(default_params);
+        this.apply_params(default_params,overwrite_locked);
     }
 
     post_initialize(){

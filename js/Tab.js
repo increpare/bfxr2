@@ -15,7 +15,11 @@ class Tab {
         //[name, current_state, last_saved_state]
     ];
 
+    locked_params = {};
+
+    /* keeping track of frequently used dom elements */
     sliders = {};
+    lock_buttons = {};
 
     synth = null;
 
@@ -28,7 +32,7 @@ class Tab {
         this.name = tab_name;
 
         // restore saved state
-        var saved_info = loaded_data[synth_specification.name];
+        var saved_info = SaveLoad.loaded_data[synth_specification.name];
         if (saved_info){
             this.files = saved_info.files;
             this.selected_file_index = saved_info.selected_file_index;
@@ -37,6 +41,7 @@ class Tab {
             }
             this.create_new_sound = saved_info.create_new_sound;
             this.play_on_change = saved_info.play_on_change;
+            this.locked_params = saved_info.locked_params;
         }        
 
         // Create DOM elements
@@ -245,6 +250,7 @@ class Tab {
         this.update_ui_file_list();
         this.update_ui_params();
         this.update_ablements();
+        this.update_locks();
     }
 
     update_ablements(){
@@ -333,6 +339,20 @@ class Tab {
         }
     }
     
+    update_locks(){
+        //for each lock-button
+        var keys = Object.keys(this.lock_buttons);
+        for (var i = 0; i < keys.length; i++){
+            var key = keys[i];  
+            var lock_button = this.lock_buttons[key];
+            var locked = this.locked_params[key];
+            if (locked){
+                lock_button.classList.add("locked");
+            } else {
+                lock_button.classList.remove("locked");
+            }
+        }
+    }
     set_active_tab() {
         var tab_page = document.getElementById("tab_page_" + this.name);
         tab_page.classList.add("active_tab");
@@ -370,28 +390,34 @@ class Tab {
     }
 
     load_param(param) {
+        var param_name;
         //if object
         if (param.constructor === Array) {
             var display_name = param[0];
             var tooltip = param[1];
-            var param_name = param[2];
+            param_name = param[2];
             var default_value = param[3];
             var min_value = param[4];
             var max_value = param[5];
             var header = param.length > 6 && param[6] === true;
             this.add_slider(param_name, display_name, tooltip, min_value, max_value, default_value, header);
-        } else {
+        } else {            
             switch (param.type) {
                 case "BUTTONSELECT":
-
                     this.add_button_grid(param.name, param.display_name, param.tooltip, param.columns, param.default_value, param.values, param.header === true ? true : false);
+                    param_name = param.name;
                     break;
                 case "KNOB_TRANSITION":
                     this.add_knob_transition(param.name, param.display_name, param.tooltip, param.default_value_l, param.default_value_r, param.min, param.max, param.default_tween, param.header === true ? true : false);
+                    param_name = param.name;
                     break;
                 default:
                     console.error("Unknown param type: " + param.type);
             }
+        }
+        
+        if (!(param_name in this.locked_params)){
+            this.locked_params[param_name]=false;
         }
     }
 
@@ -615,6 +641,9 @@ class Tab {
             button.classList.add("button_grid_button");
             button.id = uid+"_"+button_list[i][0];
             button.innerText = button_list[i][0];
+            var thumbnail = button_list[i][1];
+            button.title = thumbnail;
+            var click_value = button_list[i][2];
             button.addEventListener("click", this.button_grid_button_clicked.bind(this, button, parameter_name, i));
             button_grid.appendChild(button);
         }
@@ -665,11 +694,16 @@ class Tab {
     generate_lock_button(parameter_name) {
         var lock_button = document.createElement("div");
         lock_button.classList.add("lockimage");
+        if (!this.locked_params[parameter_name]){
+            lock_button.classList.add("unlocked");
+        }
         lock_button.addEventListener("click", () => {
             //unlocked if class unlocked is present
             var val = lock_button.classList.contains("unlocked") ? true : false;
             this.lock_param_clicked(lock_button, parameter_name, val)
         });
+        //add param-name as data attribute
+        this.lock_buttons[parameter_name] = lock_button;
         return lock_button;
     }
     
@@ -755,7 +789,7 @@ class Tab {
             }
         }
         this.update_ui();
-        save_all_collections();
+        SaveLoad.save_all_collections();
     }
 
     set_selected_file(file_name) {
@@ -850,7 +884,7 @@ class Tab {
             var filename = this.find_unique_filename(preset_name);        
             this.files.push([filename,JSON.stringify(params), JSON.stringify(params)]);
             this.selected_file_index = this.files.length - 1;
-            save_all_collections();
+            SaveLoad.save_all_collections();
         } else {
             this.current_params = params;
             this.files[this.selected_file_index][1] = JSON.stringify(params);
@@ -1051,7 +1085,7 @@ class Tab {
         var file_name_span = file_item.children[0];
         file_name_span.classList.remove("modified_filename");
         this.update_ablements();
-        save_all_collections();
+        SaveLoad.save_all_collections();
     }
 
     revert_sfx() {
@@ -1069,7 +1103,7 @@ class Tab {
         file_name_span.classList.add("modified_filename");
         this.update_ui_params();
         this.update_ablements();
-        save_all_collections();
+        SaveLoad.save_all_collections();
     }
 
     duplicate_sfx() {
@@ -1095,7 +1129,7 @@ class Tab {
             this.selected_file_index++;
             this.update_ui();
         }
-        save_all_collections();
+        SaveLoad.save_all_collections();
     }
 
     lock_param_clicked(node, param_name, value) {
@@ -1106,6 +1140,7 @@ class Tab {
         } else {
             node.classList.remove("unlocked");
         }
+        this.locked_params[param_name]=value;
     }
 
     button_grid_button_clicked(node, param_name, value) {
@@ -1149,7 +1184,7 @@ class Tab {
         new_name = this.find_unique_filename(new_name,file_name_index);
         this.files[file_name_index][0] = new_name;
         console.log("File item renamed: " + file_name + " to " + new_name);
-        save_all_collections();
+        SaveLoad.save_all_collections();
         return new_name;
     }
 

@@ -1,6 +1,6 @@
 class Bfxr extends SynthTemplate {
     /*********************/
-    /* METADATA    */
+    /*      METADATA     */
     /*********************/
 
     name = "Bfxr";
@@ -25,51 +25,63 @@ class Bfxr extends SynthTemplate {
             values: [
                 [
                     "Triangle",
-                    "Triangle waves are robust at all frequencies, stand out quite well in most situations, and have a clear, resonant quality."
+                    "Triangle waves are robust at all frequencies, stand out quite well in most situations, and have a clear, resonant quality.",
+                    4
                 ],
                 [
                     "Sin",
-                    "Sin waves are the most elementary of all wave-types.  However, they can be sensitive to context (background noise or accoustics can drown them out sometimes), so be careful."
+                    "Sin waves are the most elementary of all wave-types.  However, they can be sensitive to context (background noise or accoustics can drown them out sometimes), so be careful.",
+                    2
                 ],
                 [
                     "Square",
-                    "quare waves can be quite powerful.  They have two extra properties, Square Duty and Duty Sweep, that can further control the timbre of the wave."
+                    "quare waves can be quite powerful.  They have two extra properties, Square Duty and Duty Sweep, that can further control the timbre of the wave.",
+                    0
                 ],
                 [
                     "Saw",
-                    "Saw waves are pretty raspy"
+                    "Saw waves are pretty raspy",
+                    1
                 ],
                 [
                     "Breaker",
-                    "These are defined by a quadratic equation (a=t*t%1, giving a toothed-shaped), making them a little more hi-fi than other wave-types on this list.  For the most part, like a smoother, slicker triangle wave."
+                    "These are defined by a quadratic equation (a=t*t%1, giving a toothed-shaped), making them a little more hi-fi than other wave-types on this list.  For the most part, like a smoother, slicker triangle wave.",
+                    8
                 ],
                 [
                     "Tan",
-                    "A potentially crazy wave.  Does strange things.  Tends to produce plenty of distortion	 (because the basic shape goes outside of the standard waveform range)."
+                    "A potentially crazy wave.  Does strange things.  Tends to produce plenty of distortion	 (because the basic shape goes outside of the standard waveform range).",
+                    6
                 ],
                 [
                     "Whistle",
-                    "A sin wave with an additional sine wave overlayed at a lower amplitude and 20x the frequency.  It can end up sounding buzzy, hollow, resonant, or breathy."
+                    "A sin wave with an additional sine wave overlayed at a lower amplitude and 20x the frequency.  It can end up sounding buzzy, hollow, resonant, or breathy.",
+                    7
                 ],
                 [
                     "White",
-                    "White noise is your bog standard random number stream.  Quite hard-sounding, compared to pink noise."
+                    "White noise is your bog standard random number stream.  Quite hard-sounding, compared to pink noise.",
+                    3
                 ],
                 [
                     "Pink",
-                    "Pink noise is a stream of random numbers with a filtered frequency spectrum to make it softer than white noise."
+                    "Pink noise is a stream of random numbers with a filtered frequency spectrum to make it softer than white noise.",
+                    5
                 ],
                 [
                     "Bitnoise",
-                    "Periodic 1-bit \"white\" noise. Useful for glitchy and punky sound effects."
+                    "Periodic 1-bit \"white\" noise. Useful for glitchy and punky sound effects.",
+                    9
                 ],
                 [
                     "Buzz",
-                    "Periodic 1-bit noise with a shortened period. It makes a nice digital buzz or clang sound."
+                    "Periodic 1-bit noise with a shortened period. It makes a nice digital buzz or clang sound.",
+                    11
                 ],
                 [
                     "Holo",
-                    "A pretty dense mix of lots of waveforms.  Breathier/distorteder than the classic ones."
+                    "A pretty dense mix of lots of waveforms.  Breathier/distorteder than the classic ones.",
+                    10
                 ],
             ]
         },
