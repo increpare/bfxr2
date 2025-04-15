@@ -101,6 +101,7 @@ class Footsteppr extends SynthTemplate {
     /*********************/
     /* SOUND SYNTHESIS  */
     /*********************/
+    
     generate_sound(){
         var step_heel = this.params.heel;
         var step_roll = this.params.roll;
