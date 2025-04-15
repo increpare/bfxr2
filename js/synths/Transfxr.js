@@ -3,7 +3,10 @@ class Transfxr extends SynthTemplate {
     name = "Transfxr";
     version = "1.0.0";
     tooltip = "An idea for making simple sounds.";
-    header_properties = [ "waveform" ];
+    
+    header_properties = ["waveform"];
+
+    force_locked = [ ];
 
     param_info = [
         {

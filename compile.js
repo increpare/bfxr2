@@ -131,3 +131,8 @@ fs.readdirSync('img').forEach(file => {
 
 //run ./gzipper perl script
 exec("perl gzipper");
+
+//move favicon.icon and favicon.png to bin
+fs.copyFileSync('favicon.ico', 'bin/favicon.ico');
+fs.copyFileSync('favicon.png', 'bin/favicon.png');
+

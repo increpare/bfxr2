@@ -1,6 +1,8 @@
 class SaveLoad {
     static collection_save_enabled=true;
 
+    static loaded_data = {};
+
     static save_all_collections(){
         if (!SaveLoad.collection_save_enabled){
             return;
@@ -31,14 +33,13 @@ class SaveLoad {
         console.log("saved all collections (length " + save_str.length + ")");
     }
 
-    var loaded_data = {};
 
-    function load_all_collections(){
+    static load_all_collections(){
         //check if there is any save data
         if (!localStorage.getItem("save_data")){
             return;
         }
-        loaded_data = JSON.parse(localStorage.getItem("save_data"));    
+        SaveLoad.loaded_data = JSON.parse(localStorage.getItem("save_data"));    
     }
 
 }
