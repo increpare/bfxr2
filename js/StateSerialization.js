@@ -73,6 +73,20 @@ class StateSerialization {
     static load_serialized_collection(str){
         var data = JSON.parse(str);
         var active_tab_index = data.active_tab_index;
+        for (var i = 0; i < tabs.length; i++){
+            var tab = tabs[i];
+            var files = data[tab.synth.name].files;
+            var selected_file_index = data[tab.synth.name].selected_file_index;
+            var create_new_sound = data[tab.synth.name].create_new_sound;
+            var play_on_change = data[tab.synth.name].play_on_change;
+            var locked_params = data[tab.synth.name].locked_params;
+            tab.files = files;
+            tab.selected_file_index = selected_file_index;
+            tab.create_new_sound = create_new_sound;
+            tab.play_on_change = play_on_change;
+            tab.synth.locked_params = locked_params;
+            tab.update_ui();
+        }
         tabs[active_tab_index].set_active_tab();
     }
 
