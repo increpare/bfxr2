@@ -8,26 +8,7 @@ class SaveLoad {
             return;
         }
         //collect all file info together
-        var save_data = {};
-        var active_tab_index=-1;
-        for (var i = 0; i < tabs.length; i++){
-            var tab = tabs[i];
-            var files = tab.files;
-            var selected_file_index = tab.selected_file_index;
-            var compiled_data = {
-                files: files,
-                selected_file_index: selected_file_index,
-                create_new_sound: tab.create_new_sound,
-                play_on_change: tab.play_on_change,
-                locked_params: tab.synth.locked_params
-            }
-            save_data[tab.synth.name] = compiled_data;
-            if (tab.active){
-                active_tab_index = i;
-            }
-        }
-        save_data.active_tab_index = active_tab_index;
-        var save_str = JSON.stringify(save_data);
+        var save_str = StateSerialization.serialize_collection();
         //save to local storage
         localStorage.setItem("save_data", save_str);
         console.log("saved all collections (length " + save_str.length + ")");

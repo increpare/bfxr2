@@ -1,5 +1,5 @@
 class StateSerialization {
-    static check_url_for_sfxr_params = function(){
+    static check_url_for_sfxr_params(){
         var url = window.location.href;
         var querystring = window.location.search;
         var params = new URLSearchParams(querystring);
@@ -20,7 +20,7 @@ class StateSerialization {
         window.history.replaceState({}, '', new_url);
     }
 
-    static shallow_dict_serialize = function(synth_name,filename,dict){
+    static shallow_dict_serialize(synth_name,filename,dict){
         //instead of returning a csv string, returns a csv string (with commas delimited by \)
         var result = synth_name + "_" + filename + "_";
         var keys = Object.keys(dict);
@@ -33,7 +33,7 @@ class StateSerialization {
         return result;
     }
 
-    static shallow_dict_deserialize = function(str){
+    static shallow_dict_deserialize(str){
         var entries = str.split("_");
         var synth_name = entries[0];
         var filename = entries[1];
@@ -53,7 +53,7 @@ class StateSerialization {
     }
 
 
-    static load_serialized_synth = function(str){
+    static load_serialized_synth(str){
         var data = JSON.parse(str);
 
         var synth_name = data.synth_type;
@@ -70,4 +70,33 @@ class StateSerialization {
         tab.create_new_sound_from_params(file_name,params,true);
     }
 
+    static load_serialized_collection(str){
+        var data = JSON.parse(str);
+        var active_tab_index = data.active_tab_index;
+        tabs[active_tab_index].set_active_tab();
+    }
+
+    static serialize_collection(){
+        var save_data = {};
+        var active_tab_index=-1;
+        for (var i = 0; i < tabs.length; i++){
+            var tab = tabs[i];
+            var files = tab.files;
+            var selected_file_index = tab.selected_file_index;
+            var compiled_data = {
+                files: files,
+                selected_file_index: selected_file_index,
+                create_new_sound: tab.create_new_sound,
+                play_on_change: tab.play_on_change,
+                locked_params: tab.synth.locked_params
+            }
+            save_data[tab.synth.name] = compiled_data;
+            if (tab.active){
+                active_tab_index = i;
+            }
+        }
+        save_data.active_tab_index = active_tab_index;
+        var serialized_str = JSON.stringify(save_data);
+        return serialized_str;
+    }
 }

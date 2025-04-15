@@ -245,13 +245,6 @@ class Bfxr extends SynthTemplate {
     ];
 
     presets = [
-        //display name, tooltip, function name, file name
-        [
-            "Sin test",
-            "Sin test",
-            "generate_sin",
-            "Sin",
-        ],
         [
             "Pickup/Coin",
             "Blips and baleeps.  Try messing with the wave-forms to get your own sound.",
@@ -539,9 +532,9 @@ class Bfxr extends SynthTemplate {
                 var min = this.param_min(param);
                 var max = this.param_max(param);
                 var r = Math.random();
-                if (param in RandomizationPower)
-                    r = Math.pow(r, RandomizationPower[param]);
-                _params[param] = min + (max - min) * r;
+                if (param in Bfxr.#RandomizationPower)
+                    r = Math.pow(r, Bfxr.#RandomizationPower[param]);
+                this.params[param] = min + (max - min) * r;
             }
         }
 
@@ -561,42 +554,42 @@ class Bfxr extends SynthTemplate {
 
         }
 
-        if (!lockedParam("repeatSpeed")) {
+        if (!this.locked_params["repeatSpeed"]) {
             if (Math.random() < 0.5)
                 this.set_param("repeatSpeed", 0);
         }
 
-        if (!lockedParam("slide")) {
+        if (!this.locked_params["slide"]) {
             r = Math.random() * 2 - 1;
             r = Math.pow(r, 5);
             this.set_param("slide", r);
         }
-        if (!lockedParam("deltaSlide")) {
+        if (!this.locked_params["deltaSlide"]) {
             r = Math.random() * 2 - 1;
             r = Math.pow(r, 3);
             this.set_param("deltaSlide", r);
         }
 
-        if (!lockedParam("minFrequency"))
+        if (!this.locked_params["minFrequency"])
             this.set_param("minFrequency", 0);
 
-        if (!lockedParam("startFrequency"))
-            this.set_param("startFrequency", (Math.random() < 0.5) ? pow(Math.random() * 2 - 1, 2) : (pow(Math.random() * 0.5, 3) + 0.5));
+        if (!this.locked_params["startFrequency"])
+            this.set_param("startFrequency", (Math.random() < 0.5) ? Math.pow(Math.random() * 2 - 1, 2) : (Math.pow(Math.random() * 0.5, 3) + 0.5));
 
-        if ((!lockedParam("sustainTime")) && (!lockedParam("decayTime"))) {
+        if ((!this.locked_params["sustainTime"]) && (!this.locked_params["decayTime"])) {
             if (this.get_param("attackTime") + this.get_param("sustainTime") + this.get_param("decayTime") < 0.2) {
                 this.set_param("sustainTime", 0.2 + Math.random() * 0.3);
                 this.set_param("decayTime", 0.2 + Math.random() * 0.3);
             }
         }
 
-        if (!lockedParam("slide")) {
+        if (!this.locked_params["slide"]) {
             if ((this.get_param("startFrequency") > 0.7 && this.get_param("slide") > 0.2) || (this.get_param("startFrequency") < 0.2 && this.get_param("slide") < -0.05)) {
                 this.set_param("slide", -this.get_param("slide"));
             }
         }
 
-        if (!lockedParam("lpFilterCutoffSweep")) {
+        if (!this.locked_params["lpFilterCutoffSweep"]) {
             if (this.get_param("lpFilterCutoff") < 0.1 && this.get_param("lpFilterCutoffSweep") < -0.05) {
                 this.set_param("lpFilterCutoffSweep", -this.get_param("lpFilterCutoffSweep"));
             }

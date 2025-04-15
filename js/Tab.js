@@ -1029,6 +1029,11 @@ class Tab {
 
     save_bfxrcol_button_clicked() {
         console.log("Save bfxrcol button clicked");
+        var save_str = StateSerialization.serialize_collection();
+        var a = document.createElement('a');
+        a.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(save_str);
+        a.download = 'collection.bcol';
+        a.click();
     }
 
     load_data_button_clicked() {

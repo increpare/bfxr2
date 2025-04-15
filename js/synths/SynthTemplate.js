@@ -197,6 +197,10 @@ class SynthTemplate {
             if (Math.random()<0.5){
                 continue;
             }
+            //if locked, skip
+            if (this.locked_params[this.param_info[i][2]]) {
+                continue;
+            }
             var param = this.param_info[i];
             var param_uniformized = this.get_param_uniformized(param);
             if (param_uniformized.type !== "RANGE") {
