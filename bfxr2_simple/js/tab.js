@@ -205,6 +205,9 @@ class Tab {
             var save_bfxrcol_button = this.add_button("save_bfxrcol", "Save .bcol", this.save_bfxrcol_button_clicked.bind(this), "Save the current sound as a .bcol file");
             right_panel_button_list.appendChild(save_bfxrcol_button);
 
+            var load_data_button = this.add_button("load_data", "Load Data", this.load_data_button_clicked.bind(this), "Load the current sound from a .bcol file");
+            right_panel_button_list.appendChild(load_data_button);
+
             var copy_button = this.add_button("copy", "Copy", this.copy_button_clicked.bind(this), "Copy the current sound");
             right_panel_button_list.appendChild(copy_button);
 
@@ -843,9 +846,9 @@ class Tab {
         this.create_new_sound_from_params(preset_name, params);
     }
 
-    create_new_sound_from_params(preset_name, params) {
+    create_new_sound_from_params(preset_name, params,forcecreate=false) {
         this.synth.apply_params(params);
-        if (this.create_new_sound||this.files.length == 0||this.selected_file_index===-1) {
+        if (this.create_new_sound||this.files.length == 0||this.selected_file_index===-1||forcecreate) {
             this.current_params = params;
             var filename = this.find_unique_filename(preset_name);        
             this.files.push([filename,JSON.stringify(params), JSON.stringify(params)]);
@@ -883,6 +886,21 @@ class Tab {
         this.preset_list.appendChild(button);
     }
 
+    serialize_params(){
+        var file_dat = this.files[this.selected_file_index];
+        var file_name = file_dat[0];
+        var file_jstor = file_dat[1];
+        var file_jstor_json_dat = JSON.parse(file_jstor);
+        var file_jstor_json = {};
+
+        file_jstor_json.synth_type = this.name;
+        file_jstor_json.version = this.synth.version;
+        file_jstor_json.file_name = file_name;
+        file_jstor_json.params = file_jstor_json_dat;
+
+        var file_jstor_json_string = JSON.stringify(file_jstor_json,null,2);
+        return file_jstor_json_string;
+    }
     /*********************/
     /* Event Handlers    */
     /*********************/
@@ -933,9 +951,7 @@ class Tab {
         }
     }
 
-    export_wav_button_clicked() {
-        
-        
+    export_wav_button_clicked() {            
         var wav_uri = this.synth.generate_sound_uri();
 
         const a = document.createElement('a');
@@ -945,41 +961,62 @@ class Tab {
         a.remove();
     }
 
+    
     export_all_button_clicked() {
         console.log("Export all button clicked");
     }
 
     save_bfxr_button_clicked() {
         console.log("Save bfxr button clicked");
+        //save current params as bfxr        
+        var file_jstor_json_string = this.serialize_params();
+        var file_name = this.files[this.selected_file_index][0]+".bfxr";
+        //save file to local computer
+        var a = document.createElement('a');
+        a.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(file_jstor_json_string);
+        a.download = file_name;
+        a.click();
     }
 
     save_bfxrcol_button_clicked() {
         console.log("Save bfxrcol button clicked");
     }
 
+    load_data_button_clicked() {
+        console.log("Load data button clicked");
+
+        //open file dialog, with .bfxr .bcol accepted   
+        var file_input = document.createElement("input");
+        file_input.type = "file";
+        file_input.accept = ".bfxr,.bcol";
+        file_input.multiple = false;
+        file_input.addEventListener("change", (event) => {
+            console.log("File selected: " + event.target.files[0].name);
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = (event) => {
+                //if extension is .bfxr
+                if (file.name.endsWith(".bfxr")){
+                    StateSerialization.load_serialized_synth(event.target.result);
+                } else if (file.name.endsWith(".bcol")){
+                    StateSerialization.load_serialized_collection(event.target.result);
+                }
+            };
+            reader.readAsText(file);
+        });
+        file_input.click();
+    }
+
     copy_button_clicked() {
         console.log("Copy button clicked");
-        var file_dat = this.files[this.selected_file_index];
-        var file_name = file_dat[0];
-        var file_jstor = file_dat[1];
-        var file_jstor_json = JSON.parse(file_jstor);
-        file_jstor_json.file_name = file_name;
-        file_jstor_json.synth_type = this.name;
-        var file_jstor_json_string = JSON.stringify(file_jstor_json,null,2);
+        var file_jstor_json_string = this.serialize_params();
         navigator.clipboard.writeText(file_jstor_json_string);
     }
 
     paste_button_clicked() {
         //load from clipboard
         navigator.clipboard.readText().then(text => {
-            var params = JSON.parse(text);
-            var file_name = params.file_name;
-            var synth_type = params.synth_type;
-            delete params.file_name;           
-            delete params.synth_type;
-            this.synth.apply_params(params);
-            this.create_new_sound_from_params(file_name, params);
-            save_all_collections();
+            deserialize(text);
         });
     }
 
@@ -990,7 +1027,7 @@ class Tab {
         var file_name = file_dat[0];
         var file_jstor = file_dat[1];
         var params_parsed = JSON.parse(file_jstor);
-        var file_jstor_json_string = shallow_dict_serialize(this.name, file_name, params_parsed);
+        var file_jstor_json_string = StateSerialization.shallow_dict_serialize(this.name, file_name, params_parsed);
         //need to escape it so it can be used as a url parameter
         var file_jstor_json_string_escaped = encodeURIComponent(file_jstor_json_string);
         var current_url = window.location.href;

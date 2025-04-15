@@ -1,6 +1,6 @@
 /**
  * 
- * this uses ported code from Thomas Vian's SfxrSynth:
+ * this uses ported/modified code from Thomas Vian's SfxrSynth:
 	 * SfxrSynth
 	 * 
 	 * Copyright 2010 Thomas Vian
@@ -21,9 +21,9 @@
 	 */
 
 class Bfxr_DSP {
+    static version = "1.0.4"
 
     static MIN_LENGTH = 0.18;
-    static version = 104
     static LoResNoisePeriod = 8;
     static sampleRate = 44100;
     static bitDepth = 16;
@@ -32,6 +32,7 @@ class Bfxr_DSP {
     constructor(params,param_info) {
 
         this.params = params;
+        this.param_info = param_info;
 
         this.reset(true);
     }
@@ -209,12 +210,12 @@ class Bfxr_DSP {
             var sf = params.startFrequency;
             var mf = params.minFrequency;
 
-            var startFrequency_min = param_info.get_min("startFrequency");
-            var startFrequency_max = param_info.get_max("startFrequency");
+            var startFrequency_min = this.param_info.get_min("startFrequency");
+            var startFrequency_max = this.param_info.get_max("startFrequency");
             var startFrequency_mid = (startFrequency_max + startFrequency_min) / 2;
 
-            var minFrequency_min = param_info.get_min("minFrequency");
-            var minFrequency_max = param_info.get_max("minFrequency");
+            var minFrequency_min = this.param_info.get_min("minFrequency");
+            var minFrequency_max = this.param_info.get_max("minFrequency");
             var minFrequency_mid = (minFrequency_max + minFrequency_min) / 2;
 
             var delta_start = (sf - startFrequency_min) / (startFrequency_max - startFrequency_min)
@@ -402,7 +403,7 @@ class Bfxr_DSP {
                     }
                     else if (this.waveType == 6)
                     {
-                        for(n = 0; n < 32; n++) this.loResNoiseBuffer[n] = ((n%LoResNoisePeriod)==0) ? Math.random()*2.0-1.0 : this.loResNoiseBuffer[n-1];							
+                        for(n = 0; n < 32; n++) this.loResNoiseBuffer[n] = ((n%Bfxr_DSP.LoResNoisePeriod)==0) ? Math.random()*2.0-1.0 : this.loResNoiseBuffer[n-1];							
                     }
                     else if (this.waveType == 9)
                     {

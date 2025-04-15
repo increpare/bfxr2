@@ -40,7 +40,7 @@ function bfxr_param_changed(params){
 
 window.onload = function(){
     register_tabs();
-    check_url_for_sfxr_params();
+    StateSerialization.check_url_for_sfxr_params();
 }
 
 function bfxr_preset_pickupcoin(){

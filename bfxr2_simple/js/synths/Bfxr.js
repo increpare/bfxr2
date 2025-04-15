@@ -4,6 +4,7 @@ class Bfxr extends SynthTemplate {
     /*********************/
 
     name = "Bfxr";
+    version = Bfxr_DSP.version;
     tooltip = "Bfxr is a simple sound effect generator, based on DrPetter's Sfxr.";
     header_properties = ["waveform"];
 
@@ -297,7 +298,7 @@ class Bfxr extends SynthTemplate {
 
     get_min(param_name){
         for (var i=0;i<this.param_info.length;i++){
-            if (this.param_info[i][0] == param_name){
+            if (this.param_info[i][2] == param_name){
                 return this.param_info[i][4];
             }
         }
@@ -307,7 +308,7 @@ class Bfxr extends SynthTemplate {
 
     get_max(param_name){
         for (var i=0;i<this.param_info.length;i++){
-            if (this.param_info[i][0] == param_name){
+            if (this.param_info[i][2] == param_name){
                 return this.param_info[i][5];
             }
         }
@@ -352,6 +353,12 @@ class Bfxr extends SynthTemplate {
         }
     }
     
+    randomize_params(){
+        super.randomize_params();
+        //frequency cutoff must be less than frequency
+        var cutoff = Math.random() * this.params.startFrequency;
+        this.set_param("minFrequency", cutoff, true);
+    }
     /*********************/
     /* SOUND SYNTHESIS   */
     /*********************/
