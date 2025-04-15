@@ -237,4 +237,19 @@ class SynthTemplate {
       
         context2d.stroke();    
     }
+
+    generate_sound(){
+        console.error("generate_sound not implemented");
+        this.sound = {
+            play: function(){
+                console.error("play not implemented");
+            },
+            getDataUri: function(){
+                console.error("getDataUri not implemented");
+                return "";
+            }
+        }
+    }
+
+
 }
