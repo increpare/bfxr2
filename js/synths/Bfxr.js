@@ -352,7 +352,34 @@ class Bfxr extends SynthTemplate {
             this.set_param("changeAmount", cnum / cden, true);
         }
     }
-    
+
+    generate_laser_shoot(){
+        this.reset_params();
+
+    }
+
+    generate_explosion(){
+        this.reset_params();
+
+    }
+
+    generate_powerup(){
+        this.reset_params();
+
+    }
+
+    generate_hit_hurt(){
+        this.reset_params();
+    }
+
+    generate_jump(){
+        this.reset_params();
+    }
+
+    generate_blip_select(){
+        this.reset_params();
+    }
+
     randomize_params(){
         super.randomize_params();
         //frequency cutoff must be less than frequency
