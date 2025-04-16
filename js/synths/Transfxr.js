@@ -4,6 +4,8 @@ class Transfxr extends SynthTemplate {
     version = "1.0.0";
     tooltip = "An idea for making simple sounds.";
     
+    canvas_bg_logo = "img/logo_transfxr.png";
+
     header_properties = ["waveform"];
 
     default_locked = ["masterVolume"];

@@ -4,6 +4,8 @@ class Footsteppr extends SynthTemplate {
     version = "1.0.0"
     tooltip = "Bfxr is a wonderful physical simulation of footstep sounds, originally by Obiwannabe.";
     
+    canvas_bg_logo = "img/logo_footsteppr.png";
+    
     header_properties = ["waveform"];
 
     default_locked = ["masterVolume"];

@@ -7,6 +7,8 @@ class Bfxr extends SynthTemplate {
     version = Bfxr_DSP.version;
     tooltip = "Bfxr is a simple sound effect generator, based on DrPetter's Sfxr.";
 
+    canvas_bg_logo = "img/logo_bfxr.png";
+
     header_properties = ["waveform"];
 
     default_locked = ["masterVolume"];

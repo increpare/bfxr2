@@ -459,8 +459,7 @@ td.labelcolumn {
     margin-top: var(--ui-margin);
     margin-right: var(--ui-margin);
     margin-bottom: var(--ui-margin);
-    border: var(--panel-border-thickness) solid var(--panel-border-color);
-    background-image: url("../img/logo.png") ;
+    border: var(--panel-border-thickness) solid var(--panel-border-color);    
     background-size: cover;
     /* background-position: center; */
     background-repeat: no-repeat;

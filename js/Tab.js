@@ -159,6 +159,9 @@ class Tab {
         {
             var display_canvas_container = document.createElement("div");
             display_canvas_container.classList.add("display_canvas_container");
+            if (this.synth.canvas_bg_logo) {
+                display_canvas_container.style.backgroundImage = `url(${this.synth.canvas_bg_logo})`;
+            }
             right_panel.appendChild(display_canvas_container);
 
             var display_canvas = document.createElement("canvas");
