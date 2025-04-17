@@ -26,4 +26,6 @@ So in the end we have that a preset is a group of varieties. In Bfxr when you hi
 
 So ok once you've save the .bcol files in the folder, you need to run ```node insert_templates.js" to generate ```js/synths/tempaltes.js```.  It's a bit annoying, but the whole point is being able to easily load/save/tweak .bcol files, which IMO makes the annoyance worthwhile.
 
-IF you wish to weight a variety so it appears more often than others, just put a number at the start (multiple digits allowed, e.g. "22coin" will appear ten times more often than "2coin").
+If you wish to weight a variety so it appears more often than others, just put a number at the start (multiple digits allowed, e.g. "22coin" will appear ten times more often than "2coin").
+
+(There are some hard-coded presets, e.g. Randomize and Mutate - but any ones defined in ./templates  will overwrite existing ones)
