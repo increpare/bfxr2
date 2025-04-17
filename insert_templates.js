@@ -1,7 +1,7 @@
 /* this script loads up all the json files
- templatess/[synth]/templatesname.bcol
+ templates/[synth]/templatesname.bcol
  and generates a javscript dictionary of the form
- templatess = {
+ templates = {
     "synthname": {
         "templatesname": data
     }
@@ -13,7 +13,7 @@ const fs = require('fs');
 const path = require('path');
 
 const templates_dir = './templates';
-const templatess = {};
+const templates = {};
 
 console.log("Inserting templates...");
 
@@ -25,7 +25,7 @@ const synthDirs = fs.readdirSync(templates_dir, { withFileTypes: true })
 // Process each synth directory
 synthDirs.forEach(synthDir => {
     const synthPath = path.join(templates_dir, synthDir);
-    templatess[synthDir] = {};
+    templates[synthDir] = {};
     
     // Read all templates files in the synth directory
     const templatesFiles = fs.readdirSync(synthPath, { withFileTypes: true })
@@ -76,7 +76,7 @@ synthDirs.forEach(synthDir => {
                     }
                 }
             }
-            templatess[synthDir][templatesName] = varieties;
+            templates[synthDir][templatesName] = varieties;
 
         } catch (error) {
             console.error(`Error parsing ${filePath}: ${error.message}`);
@@ -84,7 +84,7 @@ synthDirs.forEach(synthDir => {
     });
 });
 
-// Write the templatess to a file
-fs.writeFileSync('./js/synths/templatess.js', `const templates_JSON = ${JSON.stringify(templatess, null, 2)};`);
+// Write the templates to a file
+fs.writeFileSync('./js/synths/templates.js', `const templates_JSON = ${JSON.stringify(templates, null, 2)};`);
 
 console.log("Templates inserted.");
