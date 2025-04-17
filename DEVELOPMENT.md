@@ -5,3 +5,7 @@ Uh, it should work just fine. There's an optional compilation step if you want t
 ## How to compile
 
 ```node compile.js```, then everything should be in the bin directory.
+
+## How to add new sound templates.
+
+So, a preset sound effect ('jump', say) is specified in Bfxr (any of the synths) as a .bcol file.  Basically

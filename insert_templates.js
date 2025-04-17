@@ -1,9 +1,9 @@
 /* this script loads up all the json files
- prefabs/[synth]/prefabname.bcol
+ templatess/[synth]/templatesname.bcol
  and generates a javscript dictionary of the form
- prefabs = {
+ templatess = {
     "synthname": {
-        "prefabname": data
+        "templatesname": data
     }
 }
 
@@ -12,32 +12,34 @@
 const fs = require('fs');
 const path = require('path');
 
-const prefab_dir = './prefabs';
-const prefabs = {};
+const templates_dir = './templates';
+const templatess = {};
+
+console.log("Inserting templates...");
 
 // Read all synth directories
-const synthDirs = fs.readdirSync(prefab_dir, { withFileTypes: true })
+const synthDirs = fs.readdirSync(templates_dir, { withFileTypes: true })
     .filter(dirent => dirent.isDirectory())
     .map(dirent => dirent.name);
 
 // Process each synth directory
 synthDirs.forEach(synthDir => {
-    const synthPath = path.join(prefab_dir, synthDir);
-    prefabs[synthDir] = {};
+    const synthPath = path.join(templates_dir, synthDir);
+    templatess[synthDir] = {};
     
-    // Read all prefab files in the synth directory
-    const prefabFiles = fs.readdirSync(synthPath, { withFileTypes: true })
+    // Read all templates files in the synth directory
+    const templatesFiles = fs.readdirSync(synthPath, { withFileTypes: true })
         .filter(dirent => dirent.isFile())
         .map(dirent => dirent.name);
     
-    // Process each prefab file
-    prefabFiles.forEach(prefabFile => {
-        const filePath = path.join(synthPath, prefabFile);
+    // Process each templates file
+    templatesFiles.forEach(templatesFile => {
+        const filePath = path.join(synthPath, templatesFile);
         const fileContent = fs.readFileSync(filePath, 'utf8');
         try {
             const jsonContent = JSON.parse(fileContent);
-            // Extract prefab name without extension
-            const prefabName = path.parse(prefabFile).name;
+            // Extract templates name without extension
+            const templatesName = path.parse(templatesFile).name;
             var files = jsonContent[synthDir].files;
             // a file is an array of [name, data, data]
             //delete the third element
@@ -70,7 +72,7 @@ synthDirs.forEach(synthDir => {
                     this_variety[key].push(variety_data[key]);
                 }
             }
-            prefabs[synthDir][prefabName] = varieties;
+            templatess[synthDir][templatesName] = varieties;
 
         } catch (error) {
             console.error(`Error parsing ${filePath}: ${error.message}`);
@@ -78,7 +80,7 @@ synthDirs.forEach(synthDir => {
     });
 });
 
-// Write the prefabs to a file
-fs.writeFileSync('./js/synths/prefabs.js', `const PREFAB_JSON = ${JSON.stringify(prefabs, null, 2)};`);
+// Write the templatess to a file
+fs.writeFileSync('./js/synths/templatess.js', `const templates_JSON = ${JSON.stringify(templatess, null, 2)};`);
 
 

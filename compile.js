@@ -1,11 +1,16 @@
 const fs = require('fs');
 var UglifyJS = require("uglify-js");
 var CleanCSS = require('clean-css');
-const { exec } = require('child_process');
+const { exec, execSync } = require('child_process');
+
+//bring the templates up to date
+var output = execSync("node insert_templates.js");
+//print stdout of output
+console.log(output.toString());
 
 //load index.html
 var index = fs.readFileSync('index.html', 'utf8');
-
+console.log("processing index.html...");
 
 //all the scripts are contained between <!--SCRIPT_INCLUDES_START--> and <!--SCRIPT_INCLUDES_END-->
 var script_start_tag = '<!--SCRIPT_INCLUDES_START-->';
@@ -25,8 +30,9 @@ var css = index.substring(css_start, css_end+css_end_tag.length);
 const css_includes = css.split('\n');
 const script_includes = scripts.split('\n');
 
-console.log(css_includes);
-console.log(script_includes);
+// console.log(css_includes);
+// console.log(script_includes);
+
 
 //construct css file list
 var css_files = [];
@@ -40,7 +46,7 @@ for (var i = 0; i < css_includes.length; i++) {
         }
     }
 }
-console.log(css_files);
+// console.log(css_files);
 
 
 //construct js file list
@@ -56,7 +62,7 @@ for (var i = 0; i < script_includes.length; i++) {
     }
 }
 
-console.log(js_files);
+// console.log(js_files);
 
 //concatenate all css files
 var css_content = '';
@@ -115,18 +121,13 @@ index = index.replace( css, css_include_line);
 //write the new index.html
 fs.writeFileSync('bin/index.html', index);
 
-//copy img dir
-//mkrid bin/img
+console.log("crushing images...");
 fs.mkdirSync('bin/img');
-//for each image in /img, run pngcrush and copy to bin/img
 fs.readdirSync('img').forEach(file => {
     // First copy the file to bin/img
     fs.copyFileSync(`img/${file}`, `bin/img/${file}`);
-    //run pngcrush command on the bin/img file
     var command = `pngcrush -rem allb -brute -reduce -ow ./bin/img/${file}`;
-    console.log(command);
     exec(command);
-    console.log(`${file} crushed`);
 });
 
 //run ./gzipper perl script

@@ -1,4 +1,4 @@
-const PREFAB_JSON = {
+const TEMPLATES_JSON = {
   "Bfxr": {
     "pickup_coin": {
       "Coin": {
