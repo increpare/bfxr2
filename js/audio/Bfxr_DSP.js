@@ -39,8 +39,9 @@ class Bfxr_DSP {
         WHISTLE: 7,
         BREAKER: 8,
         BITNOISE: 9,
-        HOLO: 10,
-        BUZZ: 11
+        FM_SYNTH: 10,
+        BUZZ: 11,
+        VOICE: 12
     };
     
     constructor(params,param_info) {
@@ -78,38 +79,6 @@ class Bfxr_DSP {
         else {
             this.changeAmount = 1.0 + params.changeAmount * params.changeAmount * 10.0;
         }
-
-        this.changeTime = 0;
-        this.changeReached = false;
-
-        if (params.changeSpeed == 1.0) {
-            this.changeLimit = 0;
-        }
-        else {
-            this.changeLimit = (1.0 - params.changeSpeed) * (1.0 - params.changeSpeed) * 20000 + 32;
-        }
-
-
-        if (params.changeAmount2 > 0.0) {
-            this.changeAmount2 = 1.0 - params.changeAmount2 * params.changeAmount2 * 0.9;
-        }
-        else {
-            this.changeAmount2 = 1.0 + params.changeAmount2 * params.changeAmount2 * 10.0;
-        }
-
-
-        this.changeTime2 = 0;
-        this.changeReached2 = false;
-
-        if (params.changeSpeed2 == 1.0) {
-            this.changeLimit2 = 0;
-        }
-        else this.changeLimit2 = (1.0 - params.changeSpeed2) * (1.0 - params.changeSpeed2) * 20000 + 32;
-
-        this.changeLimit *= (1 - params.changeRepeat + 0.1) / 1.1;
-        this.changeLimit2 *= (1 - params.changeRepeat + 0.1) / 1.1;
-
-        this.masterVolume = params.masterVolume * params.masterVolume;
 
         if (total_reset){
             this.waveType = (params.waveType)|0;
@@ -220,7 +189,40 @@ class Bfxr_DSP {
             }
         }
 
-        if (this.waveType == 9 || this.waveType == 11) {
+        
+        this.changeTime = 0;
+        this.changeReached = false;
+
+        if (params.changeSpeed == 1.0) {
+            this.changeLimit = 0;
+        }
+        else {
+            this.changeLimit = (1.0 - params.changeSpeed) * (1.0 - params.changeSpeed) * 20000 + 32;
+        }
+
+
+        if (params.changeAmount2 > 0.0) {
+            this.changeAmount2 = 1.0 - params.changeAmount2 * params.changeAmount2 * 0.9;
+        }
+        else {
+            this.changeAmount2 = 1.0 + params.changeAmount2 * params.changeAmount2 * 10.0;
+        }
+
+
+        this.changeTime2 = 0;
+        this.changeReached2 = false;
+
+        if (params.changeSpeed2 == 1.0) {
+            this.changeLimit2 = 0;
+        }
+        else this.changeLimit2 = (1.0 - params.changeSpeed2) * (1.0 - params.changeSpeed2) * 20000 + 32;
+
+        this.changeLimit *= (1 - params.changeRepeat + 0.1) / 1.1;
+        this.changeLimit2 *= (1 - params.changeRepeat + 0.1) / 1.1;
+
+        this.masterVolume = params.masterVolume * params.masterVolume;
+        
+        if (this.waveType === 9) {
             var sf = params.startFrequency;
             var mf = params.minFrequency;
 
@@ -344,7 +346,7 @@ class Bfxr_DSP {
             if(this.periodTemp < 8) this.periodTemp = 8;
             
             // Sweeps the square duty
-            if (this.waveType == 0)
+            if (this.waveType === 0)
             {
                 this.squareDuty += this.dutySweep;
                         if(this.squareDuty < 0.0) this.squareDuty = 0.0;
@@ -407,37 +409,33 @@ class Bfxr_DSP {
                     this.phase = this.phase - this.periodTemp;
                     
                     // Generates new random noise for this period
-                    if(this.waveType == 3) 
-                    { 
-                        for(var n = 0; n < 32; n++) this.noiseBuffer[n] = Math.random() * 2.0 - 1.0;
-                    }
-                    else if (this.waveType == 5)
+                    switch(this.waveType)
                     {
-                        for(n = 0; n < 32; n++) this.pinkNoiseBuffer[n] = this.pinkNumber.GetNextValue();							
-                    }
-                    else if (this.waveType == 6)
-                    {
-                        for(n = 0; n < 32; n++) this.loResNoiseBuffer[n] = ((n%Bfxr_DSP.LoResNoisePeriod)==0) ? Math.random()*2.0-1.0 : this.loResNoiseBuffer[n-1];							
-                    }
-                    else if (this.waveType == 9)
-                    {
-                        // Bitnoise
+                        case 3:  // WHITE NOISE
+                            for(var n = 0; n < 32; n++) this.noiseBuffer[n] = Math.random() * 2.0 - 1.0;
+                            break;
+                        case 5: // PINK NOISE
+                            for(n = 0; n < 32; n++) this.pinkNoiseBuffer[n] = this.pinkNumber.GetNextValue();							
+                            break;
+                        case 6: // TAN
+                            for(n = 0; n < 32; n++) this.loResNoiseBuffer[n] = ((n%Bfxr_DSP.LoResNoisePeriod)==0) ? Math.random()*2.0-1.0 : this.loResNoiseBuffer[n-1];							
+                            break;
+                        case 9: // Bitnoise
                         // Based on SN76489 periodic "white" noise
                         // http://www.smspower.org/Development/SN76489?sid=ae16503f2fb18070f3f40f2af56807f1#NoiseChannel
                         // This one matches the behaviour of the SN76489 in the BBC Micro.
                         var feedBit = (this.oneBitNoiseState >> 1 & 1) ^ (this.oneBitNoiseState & 1);
                         this.oneBitNoiseState = this.oneBitNoiseState >> 1 | (feedBit << 14);
                         this.oneBitNoise = (~this.oneBitNoiseState & 1) - 0.5;
-                        
-                    } else if (this.waveType == 11)
-                    {
-                        // Based on SN76489 periodic "white" noise
-                        // http://www.smspower.org/Development/SN76489?sid=ae16503f2fb18070f3f40f2af56807f1#NoiseChannel
-                        // This one doesn't match the behaviour of anything real, but it made a nice sound, so I kept it.
-                        var fb = (this.buzzState >> 3 & 1) ^ (this.buzzState & 1);
-                        this.buzzState = this.buzzState >> 1 | (fb << 14);
-                        this.buzz = (~this.buzzState & 1) - 0.5;
-                        
+                        break;
+                        // case 11: // BUZZ
+                        //     // Based on SN76489 periodic "white" noise
+                        //     // http://www.smspower.org/Development/SN76489?sid=ae16503f2fb18070f3f40f2af56807f1#NoiseChannel
+                        //     // This one doesn't match the behaviour of anything real, but it made a nice sound, so I kept it.
+                        // var fb = (this.buzzState >> 3 & 1) ^ (this.buzzState & 1);
+                        // this.buzzState = this.buzzState >> 1 | (fb << 14);
+                        // this.buzz = (~this.buzzState & 1) - 0.5;
+                        // break;
                     }
                 }
                 
@@ -448,9 +446,7 @@ class Bfxr_DSP {
                     var tempphase = (this.phase*(k+1))%this.periodTemp;
                     // Gets the sample from the oscillator
                     var wtype = this.waveType;
-                    if (wtype==10){
-                        wtype = Math.floor(this.phase/4) %10;
-                    }
+
                     switch(wtype)
                     {
                         case 0: // Square wave
@@ -521,10 +517,25 @@ class Bfxr_DSP {
                             this.sample += overtonestrength*this.oneBitNoise;
                             break;
                         }
-                        //case 10, Holo is its own beast, cf. above.
-                        case 11: //new2
+                        case 10: //FM Synth
                         {
-                            this.sample += overtonestrength*this.buzz;
+                            var sample_index = ((tempphase * 256 / (this.periodTemp|0))|0)%256;
+                            var wave_sample = AKWF.fmsynth_0012[sample_index]/32768-1;
+                            this.sample += overtonestrength*wave_sample;
+                            break;
+                        }
+                        case 11: //Organ
+                        {
+                            var sample_index = ((tempphase * 256 / (this.periodTemp|0))|0)%256;
+                            var wave_sample = AKWF.granular_0044[sample_index]/32768-1;
+                            this.sample += overtonestrength*wave_sample;
+                            break;
+                        } 
+                        case 12: //Vox - wave sampled from AKWF_hvoice_0012
+                        {
+                            var sample_index = ((tempphase * 256 / (this.periodTemp|0))|0)%256;
+                            var wave_sample = AKWF.hvoice_0012[sample_index]/32768-1;
+                            this.sample += overtonestrength*wave_sample;
                             break;
                         }
                     }

@@ -73,9 +73,9 @@ class Bfxr extends SynthBase {
                     3
                 ],
                 [
-                    "Pink",
-                    "Pink noise is a stream of random numbers with a filtered frequency spectrum to make it softer than white noise.",
-                    5
+                    "Voice",
+                    "A digital voice sample.",
+                    12
                 ],
                 [
                     "Bitnoise",
@@ -83,12 +83,12 @@ class Bfxr extends SynthBase {
                     9
                 ],
                 [
-                    "Buzz",
+                    "Organ",
                     "Periodic 1-bit noise with a shortened period. It makes a nice digital buzz or clang sound.",
                     11
                 ],
                 [
-                    "Holo",
+                    "FMSyn",
                     "A pretty dense mix of lots of waveforms.  Breathier/distorteder than the classic ones.",
                     10
                 ],

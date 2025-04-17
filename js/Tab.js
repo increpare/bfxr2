@@ -354,6 +354,14 @@ class Tab {
                 switch (param.type) {
                     case "BUTTONSELECT":
                         var value = this.synth.params[param.name];
+                        var index=-1;
+                        //need to find the index of the selected button with this value 
+                        for (var j = 0; j < param.values.length; j++) {
+                            if (param.values[j][2] === value) {
+                                index = j;
+                                break;
+                            }
+                        }
                         var button_grid = document.getElementById(this.name + "_button_grid_" + param.name);
                         for (var j = 0; j < button_grid.children.length; j++) {
                             var child = button_grid.children[j];
@@ -362,8 +370,8 @@ class Tab {
                                 child.classList.remove("selected");
                             }
                         }
-                        button_grid.children[value].classList.add("selected");
-                        button_grid.children[value].disabled = true;
+                        button_grid.children[index].classList.add("selected");
+                        button_grid.children[index].disabled = true;
                         break;
                     case "KNOB_TRANSITION":
                         console.error("Knob transition not implemented");
@@ -690,7 +698,7 @@ class Tab {
             var thumbnail = button_list[i][1];
             button.title = thumbnail;
             var click_value = button_list[i][2];
-            button.addEventListener("click", this.button_grid_button_clicked.bind(this, button, parameter_name, i));
+            button.addEventListener("click", this.button_grid_button_clicked.bind(this, button, parameter_name, i,click_value));
             button_grid.appendChild(button);
         }
     }
@@ -834,10 +842,12 @@ class Tab {
                 this.selected_file_index = 0;
                 this.set_selected_file(this.files[0][0]);
             }
-            var file_dat = this.files[this.selected_file_index];
-            this.synth.apply_params(JSON.parse(file_dat[1]));
-            this.synth.generate_sound();
-            this.redraw_waveform();
+            if (this.selected_file_index>=0){
+                var file_dat = this.files[this.selected_file_index];
+                this.synth.apply_params(JSON.parse(file_dat[1]));
+                this.synth.generate_sound();
+                this.redraw_waveform();
+            }
         }
         this.update_ui();
         SaveLoad.save_all_collections();
@@ -1173,7 +1183,7 @@ class Tab {
     paste_button_clicked() {
         //load from clipboard
         navigator.clipboard.readText().then(text => {
-            deserialize(text);
+            SaveLoad.load_serialized_synth(text);
         });
     }
 
@@ -1283,11 +1293,11 @@ class Tab {
         this.synth.locked_params[param_name]=!value;
     }
 
-    button_grid_button_clicked(node, param_name, value) {
+    button_grid_button_clicked(node, param_name, button_index,value) {
         console.log("Button grid button clicked for " + param_name + " with value " + value);
         var conatiner_uid = this.name + "_button_grid_" + param_name;
         for (var i = 0; i < node.parentElement.children.length; i++) {
-            var selected = value === i;
+            var selected = button_index === i;
             var child = node.parentElement.children[i];
             if (selected){
                 child.classList.add("selected");

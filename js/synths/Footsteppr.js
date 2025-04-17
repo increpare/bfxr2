@@ -31,23 +31,28 @@ class Footsteppr extends SynthBase {
             values: [ 
                 [
                     "Snow",
-                    "Traipsing around in the snow-blanketed forest."
+                    "Traipsing around in the snow-blanketed forest.",
+                    0
                 ],
                 [
                     "Grass",
-                    "Dancing around the summer meadows."
+                    "Dancing around the summer meadows.",
+                    1
                 ],
                 [
                     "Dirt",
-                    "The grass is all trampled away."
+                    "The grass is all trampled away.",
+                    2
                 ],
                 [
                     "Gravel",
-                    "I hope you're not disrespecting anyone's grave!"
+                    "I hope you're not disrespecting anyone's grave!",
+                    3
                 ],
                 [
                     "Wood",
-                    "Fancy wooden floor - don't scratch it with your caperings."
+                    "Fancy wooden floor - don't scratch it with your caperings.",
+                    4
                 ],
             ]
         },
