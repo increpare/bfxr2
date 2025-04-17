@@ -28,6 +28,20 @@ class Bfxr_DSP {
     static sampleRate = 44100;
     static bitDepth = 16;
 
+    static WaveType = {
+        SQUARE: 0,
+        SAW: 1,
+        SINE: 2,
+        NOISE: 3,
+        TRIANGLE: 4,
+        PINK: 5,
+        TAN: 6,
+        WHISTLE: 7,
+        BREAKER: 8,
+        BITNOISE: 9,
+        HOLO: 10,
+        BUZZ: 11
+    };
     
     constructor(params,param_info) {
 

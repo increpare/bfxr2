@@ -31,7 +31,45 @@ function bfxr_generate_sound(params){
 
 window.onload = function(){
     register_tabs();
-    StateSerialization.check_url_for_sfxr_params();
+    SaveLoad.check_url_for_sfxr_params();
+    register_drop_handlers();
+}
+
+function register_drop_handlers(){
+    
+    const dropZone = document.querySelector('body');
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();        
+        //either file is a single .bcol file, or a list of .bfxr files
+        if (e.dataTransfer.files.length===1 && e.dataTransfer.files[0].name.endsWith('.bcol')){
+            var file = e.dataTransfer.files[0];
+            var reader = new FileReader();
+            reader.onload = (event) => {
+                SaveLoad.load_serialized_collection(event.target.result);
+                SaveLoad.save_all_collections();
+            };
+            reader.readAsText(file);
+        } else {
+            for (var i=0;i<e.dataTransfer.files.length;i++){
+                if (e.dataTransfer.files[i].name.endsWith('.bfxr')){
+                    var file = e.dataTransfer.files[i];
+                    var reader = new FileReader();
+                    reader.onload = (event) => {
+                        SaveLoad.load_serialized_synth(event.target.result);
+                        SaveLoad.save_all_collections();
+                    };
+                    reader.readAsText(file);
+                } else {
+                    console.error("Only .bfxr and .bcol files are supported, but you dropped a file with the following name: " + e.dataTransfer.files[i].name);
+                }
+            }
+        }
+    });
+
+    // Add dragover event listener to prevent default browser behavior
+    document.addEventListener('dragover', (e) => {
+        e.preventDefault();
+    });
 }
 
 function bfxr_preset_pickupcoin(){

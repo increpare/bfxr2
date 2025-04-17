@@ -227,8 +227,8 @@ class Tab {
             var save_bfxrcol_button = this.add_button("save_bfxrcol", "Save .bcol", this.save_bfxrcol_button_clicked.bind(this), "Save the collection of all sounds in all tabs as a .bcol file.");
             right_panel_button_list.appendChild(save_bfxrcol_button);
 
-            var load_data_button = this.add_button("load_data", "<u>L</u>oad Data", this.load_data_button_clicked.bind(this), "Load the current sound from a .bfxr/.bcol file. [CTRL+L]");
-            right_panel_button_list.appendChild(load_data_button);
+            var open_data_button = this.add_button("open_data", "<u>O</u>pen Data", this.open_data_button_clicked.bind(this), "Load the current sound from a .bfxr/.bcol file on your computer. [CTRL+O]");
+            right_panel_button_list.appendChild(open_data_button);
 
             var copy_button = this.add_button("copy", "<u>C</u>opy", this.copy_button_clicked.bind(this), "Copy the current sound [CTRL+C]");
             right_panel_button_list.appendChild(copy_button);
@@ -834,6 +834,10 @@ class Tab {
                 this.selected_file_index = 0;
                 this.set_selected_file(this.files[0][0]);
             }
+            var file_dat = this.files[this.selected_file_index];
+            this.synth.apply_params(JSON.parse(file_dat[1]));
+            this.synth.generate_sound();
+            this.redraw_waveform();
         }
         this.update_ui();
         SaveLoad.save_all_collections();
@@ -1128,14 +1132,14 @@ class Tab {
 
     save_bfxrcol_button_clicked() {
         console.log("Save bfxrcol button clicked");
-        var save_str = StateSerialization.serialize_collection();
+        var save_str = SaveLoad.serialize_collection();
         var a = document.createElement('a');
         a.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(save_str);
         a.download = 'collection.bcol';
         a.click();
     }
 
-    load_data_button_clicked() {
+    open_data_button_clicked() {
         console.log("Load data button clicked");
 
         //open file dialog, with .bfxr .bcol accepted   
@@ -1150,9 +1154,9 @@ class Tab {
             reader.onload = (event) => {
                 //if extension is .bfxr
                 if (file.name.endsWith(".bfxr")){
-                    StateSerialization.load_serialized_synth(event.target.result);
+                    SaveLoad.load_serialized_synth(event.target.result);
                 } else if (file.name.endsWith(".bcol")){
-                    StateSerialization.load_serialized_collection(event.target.result);
+                    SaveLoad.load_serialized_collection(event.target.result);
                 }
             };
             reader.readAsText(file);
@@ -1180,7 +1184,7 @@ class Tab {
         var file_name = file_dat[0];
         var file_jstor = file_dat[1];
         var params_parsed = JSON.parse(file_jstor);
-        var file_jstor_json_string = StateSerialization.shallow_dict_serialize(this.name, file_name, params_parsed);
+        var file_jstor_json_string = SaveLoad.shallow_dict_serialize(this.name, file_name, params_parsed);
         //need to escape it so it can be used as a url parameter
         var file_jstor_json_string_escaped = encodeURIComponent(file_jstor_json_string);
         var current_url = window.location.href;
@@ -1348,47 +1352,55 @@ class Tab {
             }
             var key_upper_case = event.key.toUpperCase();
             console.log(this.name + " Key down: " + event.key);
+            var mod_key = event.ctrlKey || event.metaKey;
             switch (key_upper_case){
                 //ctrl+c
                 case "C":
-                    if (event.ctrlKey){
+                    if (mod_key){
                         this.copy_button_clicked();
                         gobbled=true;
                     }
                     break;  
                 case "V":
-                    if (event.ctrlKey){
+                    if (mod_key){
                         this.paste_button_clicked();
                         gobbled=true;
                     }
                     break;
                 case "S":
-                    if (event.ctrlKey){
+                    if (mod_key){
                         this.save_bfxr_button_clicked();
                         gobbled=true;
                     }
                     break;
                 case "E":
-                    if (event.ctrlKey){
+                    if (mod_key){
                         this.export_wav_button_clicked();
                         gobbled=true;
                     }
                     break;
-                case "L":
-                    if (event.ctrlKey){
+                case "O":
+                    if (mod_key){
                         this.load_data_button_clicked();
-                    } else {
+                        gobbled=true;
+                    } 
+                    break;
+                case "L":
+                    if (!mod_key){
                         this.toggle_all_locks();
+                        gobbled=true;
                     }
-                    gobbled=true;
                     break;
                 case "ENTER":
                 case "NUMPADENTER":
                 case " ":
                     //if button/link not focussed
-                    var node_name_lowercase = document.activeElement.nodeName.toLowerCase();
-                if (node_name_lowercase!=="button" && node_name_lowercase!=="a"){
-                        this.play_sound();
+                    if (!mod_key){
+                        var node_name_lowercase = document.activeElement.nodeName.toLowerCase();
+                        if (node_name_lowercase!=="button" && node_name_lowercase!=="a"){
+                            this.play_sound();
+                            gobbled=true;
+                        }
                     }
                     break;
             }

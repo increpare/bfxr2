@@ -11,7 +11,6 @@
 
         <!--SCRIPT_INCLUDES_START-->
         <script src="js/globals.js"></script>
-        <script src="js/SaveLoad.js"></script>
 
         <script src="js/third_party/bootstrap-slider.js"></script>
         <script src="js/third_party/input-knobs.js"></script>
@@ -33,7 +32,7 @@
         <script src="js/synths/Transfxr.js"></script>
 
         <script src="js/Tab.js"></script>
-        <script src="js/StateSerialization.js"></script>
+        <script src="js/SaveLoad.js"></script>
         <script src="js/index.js"></script>
         <!--SCRIPT_INCLUDES_END-->
         
@@ -70,6 +69,10 @@
                 <div id="shortcuts-tab" class="tab-content">
                     <h2>Keyboard Shortcuts</h2>
                     <dl class="shortcuts-list">
+                        <dt>SPACE/ENTER</dt>
+                        <dd>Play currently selected sound</dd>
+                        <dt>CTRL+O</dt>
+                        <dd>Open .bfxr/.bcol file from disk</dd>
                         <dt>CTRL+E</dt>
                         <dd>Export current sound as WAV file.</dd>
                         <dt>CTRL+S</dt>
