@@ -158,10 +158,6 @@ class Bfxr_DSP {
             if (!this.loResNoiseBuffer) {
                 this.loResNoiseBuffer = new Float32Array(32);
             }
-            if (!this.pinkNumber) {
-                this.pinkNumber = new PinkNumber();
-            }
-
             this.oneBitNoiseState = 1 << 14;
             this.oneBitNoise = 0;
             this.buzzState = 1 << 14;
@@ -172,9 +168,6 @@ class Bfxr_DSP {
             }
             for (i = 0; i < 32; i++) {
                 this.noiseBuffer[i] = Math.random() * 2.0 - 1.0;
-            }
-            for (i = 0; i < 32; i++) {
-                this.pinkNoiseBuffer[i] = this.pinkNumber.GetNextValue();
             }
             for (i = 0; i < 32; i++) {
                 this.loResNoiseBuffer[i] = ((i % Bfxr_DSP.LoResNoisePeriod) == 0) ? Math.random() * 2.0 - 1.0 : this.loResNoiseBuffer[i - 1];
@@ -417,9 +410,6 @@ class Bfxr_DSP {
                     {
                         case 3:  // WHITE NOISE
                             for(var n = 0; n < 32; n++) this.noiseBuffer[n] = Math.random() * 2.0 - 1.0;
-                            break;
-                        case 5: // PINK NOISE
-                            for(n = 0; n < 32; n++) this.pinkNoiseBuffer[n] = this.pinkNumber.GetNextValue();							
                             break;
                         case 6: // TAN
                             for(n = 0; n < 32; n++) this.loResNoiseBuffer[n] = ((n%Bfxr_DSP.LoResNoisePeriod)==0) ? Math.random()*2.0-1.0 : this.loResNoiseBuffer[n-1];							
