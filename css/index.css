@@ -643,7 +643,7 @@ button:active {
     padding: var(--ui-margin);
     /*drop shadow*/
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
-    max-width: var(--about-dialog-width);
+    width: fit-content;
   }
 
   dialog button {
