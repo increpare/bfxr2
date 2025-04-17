@@ -218,7 +218,7 @@ class Tab {
             var export_wav_button = this.add_button("export_wav", "<u>E</u>xport WAV", this.export_wav_button_clicked.bind(this), "Export the current sound as a WAV file. [CTRL+E]");
             right_panel_button_list.appendChild(export_wav_button);
 
-            var export_all_button = this.add_button("export_all", "Export All", this.export_all_button_clicked.bind(this), "Generate all sounds as WAV filesand download as a zipped WAV file.");
+            var export_all_button = this.add_button("export_all", "Export All", this.export_all_button_clicked.bind(this), "Generate all sounds as WAV files and download them as a single zip file.");
             right_panel_button_list.appendChild(export_all_button);
 
             var save_bfxr_button = this.add_button("save_bfxr", "<u>S</u>ave .bfxr", this.save_bfxr_button_clicked.bind(this), "Save the current sound as a .bfxr file. [CTRL+S]");
@@ -1036,14 +1036,82 @@ class Tab {
 
         const a = document.createElement('a');
         a.href = wav_uri;
-        a.download = 'data.wav';
+        a.download = this.files[this.selected_file_index][0]+".wav";
         a.click();
         a.remove();
     }
 
     
-    export_all_button_clicked() {
+
+    async export_all_button_clicked() {
         console.log("Export all button clicked");
+
+        var zip = new JSZip();
+
+        //show export dialog
+        var export_dialog = document.getElementById("export-dialog");
+        export_dialog.showModal();
+        var progress_bar = document.getElementById("export-progress");
+        var download_link = document.getElementById("export-download-link");
+        var export_progress_text = document.getElementById("export-progress-text");
+        //hide download link
+        download_link.style.display = "none";
+        //set progress to 0
+        progress_bar.value = 0;
+        var file_count = 0;
+        for (var i = 0; i < tabs.length; i++) {
+            file_count += tabs[i].files.length;
+        }
+        progress_bar.max = file_count+1;
+        
+        var progress_bar_val=0;
+
+        //each entry is [filename, blob]
+        var generated_files =[];
+
+        //for all tabs
+        for (var i = 0; i < tabs.length; i++) {
+            var tab = tabs[i];
+            var selected_file_index = tab.selected_file_index;
+            var folder = zip.folder(tab.name);
+            //for all files in the tab
+            for (var j = 0; j < tab.files.length; j++) {
+                let file = tab.files[j];
+                //get blob
+                let sound_name = file[0];
+                export_progress_text.innerText = progress_bar_val + "/" + file_count + "(generating " + sound_name + ")";
+                let params = JSON.parse(file[1]);
+
+                tab.synth.apply_params(params);
+                tab.synth.generate_sound();
+                //pause a bit
+                await new Promise(resolve => setTimeout(resolve, 10));
+
+                let datauri = tab.synth.generate_sound_uri();
+                var cropped_datauri = datauri.split(",")[1];
+                folder.file(sound_name+".wav", cropped_datauri, {base64: true});
+                progress_bar_val++;
+                progress_bar.value = progress_bar_val;
+            }
+            //reload selected_file_index in that tab when we're done
+            {
+                let file = tab.files[selected_file_index];
+                let sound_name = file[0];
+                let params = JSON.parse(file[1]);
+                tab.synth.apply_params(params);
+                tab.synth.generate_sound();
+            }            
+        }
+
+        console.log("Generated files: " + generated_files.length);
+        export_progress_text.innerText = "generating zip file...";
+        //create a zip file
+        zip.generateAsync({type:"blob"}).then(function(content) {
+            download_link.href = URL.createObjectURL(content);
+            download_link.style.display = "block";
+            progress_bar.value = progress_bar.max;
+            export_progress_text.innerText = "zip file generated!";
+        });
     }
 
     save_bfxr_button_clicked() {

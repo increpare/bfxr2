@@ -16,6 +16,7 @@
         <script src="js/third_party/bootstrap-slider.js"></script>
         <script src="js/third_party/input-knobs.js"></script>
         
+        <script src="js/third_party/jszip.js"></script>
         <script src="js/audio/riffwave.js"></script>
         <script src="js/audio/audio_globals.js"></script>
         <script src="js/audio/RealizedSound.js"></script>
@@ -87,6 +88,15 @@
                 </div>
             </div>
             <button autofocus onclick="document.getElementById('about-dialog').close()">Close</button>
+        </dialog>
+
+        <dialog id="export-dialog">
+            <h2>Generating Catalogue...</h2>
+            <label for="export-progress">Progress</label>
+            <progress id="export-progress" value="0" max="100">0%</progress>
+            <div id="export-progress-text">0/0 files generated</div>
+            <a id="export-download-link" href="#" download="all_sounds.zip">Download</a>
+            <button autofocus onclick="document.getElementById('export-dialog').close()">Close</button>
         </dialog>
     </body>
 </html>

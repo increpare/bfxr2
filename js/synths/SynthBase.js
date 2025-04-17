@@ -228,6 +228,48 @@ class SynthBase {
         return this.sound.getDataUri();
     }
 
+    generate_sound_blob(){
+        
+        if (!this.sound){
+            this.generate_sound();
+        }
+        var audioBuffer = this.sound;
+
+        var channelData = [],
+            totalLength = 0,
+            channelLength = 0;
+    
+        for (var i = 0; i < audioBuffer.numberOfChannels; i++) {
+            channelData.push(audioBuffer.getChannelData(i));
+            totalLength += channelData[i].length;
+            if (i == 0) channelLength = channelData[i].length;
+        }
+    
+        // interleaved
+        const interleaved = new Float32Array(totalLength);
+    
+        for (
+            let src = 0, dst = 0;
+            src < channelLength;
+            src++, dst += audioBuffer.numberOfChannels
+        ) {
+            for (var j = 0; j < audioBuffer.numberOfChannels; j++) {
+            interleaved[dst + j] = channelData[j][src];
+            }
+            //interleaved[dst] = left[src];
+            //interleaved[dst + 1] = right[src];
+        }
+    
+        // get WAV file bytes and audio params of your audio source
+        const wavBytes = this.getWavBytes(interleaved.buffer, {
+            isFloat: true, // floating point or 16-bit integer
+            numChannels: audioBuffer.numberOfChannels,
+            sampleRate: 48000,
+        });
+        const wav = new Blob([wavBytes], { type: "audio/wav" });
+        return wav;        
+    }
+
 
     /*********************/
     /* CANVAS STUFF      */

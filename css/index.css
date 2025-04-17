@@ -656,7 +656,6 @@ button:active {
   dialog h2 {
     margin-top: var(--ui-margin);
   }
-  /* MODAL DIALOG STUFF END */
 
 /* About Dialog Tabs */
 #about-dialog {
@@ -733,9 +732,9 @@ button:active {
 #about-dialog button[autofocus] {
     margin: var(--ui-margin) auto;
 }
+/* MODAL DIALOG STUFF END */
 
 /* SHORTCUTS DL STUFF BEGIN */
-/* i want the dt and dl to be in a grid, with the dt on the left and the dd on the right */
 .shortcuts-list {
     display: grid;
     grid-template-columns: max-content auto;
@@ -751,3 +750,5 @@ button:active {
     grid-column-start: 2;
     margin: 0;
 }
+/* SHORTCUTS DL STUFF END */
+

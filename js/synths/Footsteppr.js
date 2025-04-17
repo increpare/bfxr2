@@ -134,7 +134,7 @@ class Footsteppr extends SynthBase {
     
         signal = pd_mul(signal,pd_c(step_vol));
         signal = pd_clip(signal, pd_c(-1.0), pd_c(1.0));
-        // signal = pd_mul(signal, pd_c(0.5));
+        signal = pd_mul(signal, pd_c(2.0));
     
         this.sound = RealizedSound.from_buffer(signal);
     }
