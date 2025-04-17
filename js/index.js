@@ -1,15 +1,11 @@
 "use strict";
 
-var bfxr_tab;
-var footsteppr_tab;
-var transfxr_tab;
-
 function register_tabs(){
     SaveLoad.load_all_collections();
     SaveLoad.collection_save_enabled=false;
-    bfxr_tab = new Tab(new Bfxr());   
-    footsteppr_tab = new Tab(new Footsteppr());
-    transfxr_tab = new Tab(new Transfxr());
+    var bfxr_tab = new Tab(new Bfxr());   
+    var footsteppr_tab = new Tab(new Footsteppr());
+    // var transfxr_tab = new Tab(new Transfxr());
     SaveLoad.collection_save_enabled=true;
     set_tab_from_loaded_data();
     SaveLoad.save_all_collections();
@@ -31,11 +27,6 @@ function bfxr_draw_visualisation(params){
 
 function bfxr_generate_sound(params){
 
-}
-
-function bfxr_param_changed(params){
-    var square_wave_set = params["wave_type"] == 2;
-    bfxr_tab.set_parameter_enabled("square_duty", !square_wave_set);
 }
 
 window.onload = function(){
