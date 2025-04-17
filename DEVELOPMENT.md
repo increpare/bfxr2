@@ -28,4 +28,4 @@ So ok once you've save the .bcol files in the folder, you need to run ```node in
 
 If you wish to weight a variety so it appears more often than others, just put a number at the start (multiple digits allowed, e.g. "22coin" will appear ten times more often than "2coin").
 
-(There are some hard-coded tempaltes, i.e. Randomize and Mutate - but any ones defined in ./templates  will overwrite existing ones)
+(There are some hard-coded tempaltes, i.e. Randomize and Mutate - but any ones defined in ./templates  will overwrite existing ones - e.g. pickup_coin.bcol will override any existing generate_pickup_coin method in Bfxr.js)
