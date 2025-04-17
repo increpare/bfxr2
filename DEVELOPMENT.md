@@ -8,7 +8,7 @@ Uh, it should work just fine. There's an optional compilation step if you want t
 
 ## How to add new sound templates.
 
-So, a template sound effect ('jump', say) is specified in Bfxr (any of the synths) as a .bcol file.   This is then stored in "./templates/[Synth Name]/[Preset_Name].bcol" to be referenced in the templates list of the synthesizer you are using.
+So, a template sound effect ('jump', say) is specified in Bfxr (any of the synths) as a .bcol file.   This is then stored in "./templates/[Synth Name]/[Template_Name].bcol" to be referenced in the templates list of the synthesizer you are using.
 
 Sound names in a template look like "varietyname_suffix".  
 

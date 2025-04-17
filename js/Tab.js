@@ -1004,7 +1004,7 @@ class Tab {
     /*********************/
 
     template_clicked(template_name) {
-        console.log("Preset clicked: " + template_name);
+        console.log("Template clicked: " + template_name);
         var template_data = null;
         for (var i = 0; i < this.synth.templates.length; i++) {
             if (this.synth.templates[i][2] == template_name) {
