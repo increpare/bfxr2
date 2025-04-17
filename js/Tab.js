@@ -108,13 +108,13 @@ class Tab {
             save_commands_div.classList.add("save_commands");
             left_panel.appendChild(save_commands_div);
 
-            var apply_sfx_button = this.add_button(this.name+"_apply_sfx", "Apply Sfx", this.apply_sfx.bind(this), "Apply the current sound to the current sound");
+            var apply_sfx_button = this.add_button(this.name+"_apply_sfx", "Apply Sfx", this.apply_sfx.bind(this), "Apply the current sound to the current sound to the clipboard.");
             save_commands_div.appendChild(apply_sfx_button);
 
-            var revert_sfx_button = this.add_button(this.name+"_revert_sfx", "Revert Sfx", this.revert_sfx.bind(this), "Revert the current sound to the original sound");
+            var revert_sfx_button = this.add_button(this.name+"_revert_sfx", "Revert Sfx", this.revert_sfx.bind(this), "Revert the current sound to the original sound to the clipboard.");
             save_commands_div.appendChild(revert_sfx_button);
 
-            var duplicate_sfx_button = this.add_button(this.name+"_duplicate_sfx", "Duplicate Sfx", this.duplicate_sfx.bind(this), "Duplicate the current sound");
+            var duplicate_sfx_button = this.add_button(this.name+"_duplicate_sfx", "Duplicate Sfx", this.duplicate_sfx.bind(this), "Duplicate the currently-selected sound in the file list.");
             save_commands_div.appendChild(duplicate_sfx_button);
 
             var file_list = document.createElement("div");
@@ -183,11 +183,13 @@ class Tab {
             play_on_change_checkbox.classList.add("normie_checkbox");
             play_on_change_checkbox.checked = this.play_on_change;
             play_on_change_checkbox.addEventListener("click", this.play_on_change_clicked.bind(this));
+            play_on_change_checkbox.title = "Whether the sound should play whenever a parameter is changed.";
             play_on_change_container_div.appendChild(play_on_change_checkbox);
 
             var play_on_change_label = document.createElement("label");
             play_on_change_label.innerText = "Play on change";
             play_on_change_label.setAttribute("for", tab_name + "_checkbox_loop");
+            play_on_change_label.title = play_on_change_checkbox.title;
             play_on_change_container_div.appendChild(play_on_change_label);
 
             var right_panel_button_list = document.createElement("div");
@@ -204,32 +206,34 @@ class Tab {
             var master_vol_min = this.synth.param_min("masterVolume");
             var master_vol_max = this.synth.param_max("masterVolume");
             var master_vol_default = this.synth.param_default("masterVolume");
-            this.setup_slider(master_volume_container_div, "masterVolume", master_vol_min, master_vol_max, master_vol_default, this.volume_slider_changed.bind(this), true);
+            var volume_tooltip = "Adjust the volume of the currently selected sound.";
+            this.setup_slider(master_volume_container_div, "masterVolume", master_vol_min, master_vol_max, master_vol_default, this.volume_slider_changed.bind(this), volume_tooltip,true);
 
             var master_volume_label = document.createElement("span");
             master_volume_label.innerText = "Sound Volume";
+            master_volume_label.title = volume_tooltip;
             master_volume_container_div.appendChild(master_volume_label);
 
 
-            var export_wav_button = this.add_button("export_wav", "Export WAV", this.export_wav_button_clicked.bind(this), "Export the current sound as a WAV file");
+            var export_wav_button = this.add_button("export_wav", "<u>E</u>xport WAV", this.export_wav_button_clicked.bind(this), "Export the current sound as a WAV file. [CTRL+E]");
             right_panel_button_list.appendChild(export_wav_button);
 
-            var export_all_button = this.add_button("export_all", "Export All", this.export_all_button_clicked.bind(this), "Generate all sounds as WAV filesand download as a zipped WAV file");
+            var export_all_button = this.add_button("export_all", "Export All", this.export_all_button_clicked.bind(this), "Generate all sounds as WAV filesand download as a zipped WAV file.");
             right_panel_button_list.appendChild(export_all_button);
 
-            var save_bfxr_button = this.add_button("save_bfxr", "Save .bfxr", this.save_bfxr_button_clicked.bind(this), "Save the current sound as a .bfxr file");
+            var save_bfxr_button = this.add_button("save_bfxr", "<u>S</u>ave .bfxr", this.save_bfxr_button_clicked.bind(this), "Save the current sound as a .bfxr file. [CTRL+S]");
             right_panel_button_list.appendChild(save_bfxr_button);
 
-            var save_bfxrcol_button = this.add_button("save_bfxrcol", "Save .bcol", this.save_bfxrcol_button_clicked.bind(this), "Save the current sound as a .bcol file");
+            var save_bfxrcol_button = this.add_button("save_bfxrcol", "Save .bcol", this.save_bfxrcol_button_clicked.bind(this), "Save the collection of all sounds in all tabs as a .bcol file.");
             right_panel_button_list.appendChild(save_bfxrcol_button);
 
-            var load_data_button = this.add_button("load_data", "Load Data", this.load_data_button_clicked.bind(this), "Load the current sound from a .bcol file");
+            var load_data_button = this.add_button("load_data", "<u>L</u>oad Data", this.load_data_button_clicked.bind(this), "Load the current sound from a .bfxr/.bcol file. [CTRL+L]");
             right_panel_button_list.appendChild(load_data_button);
 
-            var copy_button = this.add_button("copy", "Copy", this.copy_button_clicked.bind(this), "Copy the current sound");
+            var copy_button = this.add_button("copy", "<u>C</u>opy", this.copy_button_clicked.bind(this), "Copy the current sound [CTRL+C]");
             right_panel_button_list.appendChild(copy_button);
 
-            var paste_button = this.add_button("paste", "Paste", this.paste_button_clicked.bind(this), "Paste the current sound");
+            var paste_button = this.add_button("paste", "Paste", this.paste_button_clicked.bind(this), "Paste the current sound [CTRL+V]");
             right_panel_button_list.appendChild(paste_button);
 
             var copy_link_button = this.add_button("copy_link", "Copy Link", this.copy_link_button_clicked.bind(this), "Copy the current sound link");
@@ -463,7 +467,7 @@ class Tab {
     }
 
 
-    setup_slider(parent_node, slider_id, min, max, defaultval, handler_fn, mini = false) {
+    setup_slider(parent_node, slider_id, min, max, defaultval, handler_fn, tooltip, mini = false) {
         var uid = this.name + "_slider_" + slider_id;
         var global_vol_input = document.createElement("input");
         global_vol_input.type = "text";
@@ -496,6 +500,7 @@ class Tab {
                 return val.toFixed(2);
             }
         });
+        slider.sliderElem.title = tooltip;
         slider.sliderElem.className += " singleselect";
         slider.sliderElem.getElementsByClassName("slider-tick-container")[0].children[closest_to_default_i].classList.add('defaulttick');
         
@@ -728,13 +733,14 @@ class Tab {
         parameter_cell.classList.add("slider_container");
         parameter_cell.rowSpan = rowspan;
 
-        this.setup_slider(parameter_cell, parameter_name, min, max, default_value, this.slider_changed.bind(this, parameter_name));
+        this.setup_slider(parameter_cell, parameter_name, min, max, default_value, this.slider_changed.bind(this, parameter_name),tooltip);
 
     }
 
     generate_lock_button(parameter_name) {
         var lock_button = document.createElement("div");
         lock_button.classList.add("lockimage");
+        lock_button.title = "Lock/unlock parameter.  This prevents it from being changed when you hit Randomize/Mutate.  Press L to toggle lock on *all* parameters.";
         if (!this.synth.locked_params[parameter_name]){
             lock_button.classList.add("unlocked");
         }
@@ -1264,6 +1270,8 @@ class Tab {
     }
 
     on_key_down(event){
+        var gobbled=false;
+
         //check if the tab is focused
         if (this.active){
             //ignore if currently typing in the filename (into a file_item_name contenteditable has focus)
@@ -1273,6 +1281,39 @@ class Tab {
             var key_upper_case = event.key.toUpperCase();
             console.log(this.name + " Key down: " + event.key);
             switch (key_upper_case){
+                //ctrl+c
+                case "C":
+                    if (event.ctrlKey){
+                        this.copy_button_clicked();
+                        gobbled=true;
+                    }
+                    break;  
+                case "V":
+                    if (event.ctrlKey){
+                        this.paste_button_clicked();
+                        gobbled=true;
+                    }
+                    break;
+                case "S":
+                    if (event.ctrlKey){
+                        this.save_bfxr_button_clicked();
+                        gobbled=true;
+                    }
+                    break;
+                case "E":
+                    if (event.ctrlKey){
+                        this.export_wav_button_clicked();
+                        gobbled=true;
+                    }
+                    break;
+                case "L":
+                    if (event.ctrlKey){
+                        this.load_data_button_clicked();
+                    } else {
+                        this.toggle_all_locks();
+                    }
+                    gobbled=true;
+                    break;
                 case "ENTER":
                 case "NUMPADENTER":
                 case " ":
@@ -1282,10 +1323,13 @@ class Tab {
                         this.play_sound();
                     }
                     break;
-                case "L":
-                    this.toggle_all_locks();
-                    break;
             }
         }
+        if (gobbled){
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+        }
+        return true;
     }
 }

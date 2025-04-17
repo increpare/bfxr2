@@ -657,3 +657,97 @@ button:active {
     margin-top: var(--ui-margin);
   }
   /* MODAL DIALOG STUFF END */
+
+/* About Dialog Tabs */
+#about-dialog {
+    width: fit-content;
+    height: fit-content;
+    padding: var(--ui-margin);
+    overflow: hidden;
+}
+
+.dialog-tabs {
+    display: flex;
+    padding-left: 10px;
+    background-color: transparent;
+}
+
+.dialog-tab {
+    margin-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: var(--font-size);
+    background-color: var(--tab-background-color-unselected);
+    border-style: solid;
+    border-color: var(--tab-unselected-border-color);
+    border-width: var(--panel-border-thickness);
+    border-bottom: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 3px;
+    cursor: pointer;
+}
+
+.dialog-tab:first-child {
+    margin-left: 0;
+}
+
+.dialog-tab:last-child {
+    margin-right: 0;
+}
+
+/*non-active tabs*/
+.dialog-tab:not(.active) {
+    /* transform: translateY(var(--panel-border-thickness)); */
+    transform: translateY(var(--ui-margin));
+}
+
+.dialog-tab.active {
+    background-color: var(--tab-background-color-selected);
+    border-color: var(--tab-selected-border-color);
+    margin-bottom: calc(-1*var(--panel-border-thickness));
+    z-index: 1;
+    padding-top: 6px;
+    cursor: default;
+}
+
+.dialog-content {
+    height: 320px;
+    width: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-style: solid;
+    border-color: var(--panel-border-color);
+    border-width: var(--panel-border-thickness);
+    padding: var(--ui-margin);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+#about-dialog button[autofocus] {
+    margin: var(--ui-margin) auto;
+}
+
+/* SHORTCUTS DL STUFF BEGIN */
+/* i want the dt and dl to be in a grid, with the dt on the left and the dd on the right */
+.shortcuts-list {
+    display: grid;
+    grid-template-columns: max-content auto;
+    grid-gap: 10px;
+}
+
+.shortcuts-list dt {
+    grid-column-start: 1;
+    margin: 0;
+}
+
+.shortcuts-list dd {
+    grid-column-start: 2;
+    margin: 0;
+}

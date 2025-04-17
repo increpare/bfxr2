@@ -222,6 +222,9 @@ class SynthBase {
     }
 
     generate_sound_uri(){
+        if (!this.sound){
+            this.generate_sound();
+        }
         return this.sound.getDataUri();
     }
 

@@ -61,3 +61,26 @@ function bfxr_preset_jump(){
 function bfxr_preset_blipselect(){
     console.log("Blip/Select");
 }
+
+// Initialize dialog tab functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Tab handling for the about dialog
+    const dialogTabs = document.querySelectorAll('.dialog-tab');
+    
+    dialogTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs and content
+            document.querySelectorAll('.dialog-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            // Add active class to current tab
+            tab.classList.add('active');
+            
+            // Show corresponding content
+            const tabContent = document.getElementById(tab.dataset.tab + '-tab');
+            if (tabContent) {
+                tabContent.classList.add('active');
+            }
+        });
+    });
+});
