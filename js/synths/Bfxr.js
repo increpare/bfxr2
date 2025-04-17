@@ -246,7 +246,7 @@ class Bfxr extends SynthBase {
         ]
     ];
 
-    presets = [
+    templates = [
         [
             "Pickup/Coin",
             "Blips and baleeps.  Try messing with the wave-forms to get your own sound.",
@@ -314,7 +314,7 @@ class Bfxr extends SynthBase {
     }
 
     /*********************/
-    /* PRESET FUNCTIONS  */
+    /* TEMPLATE FUNCTIONS  */
     /*********************/
 
     generate_sin() {

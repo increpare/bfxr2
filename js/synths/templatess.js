@@ -1,4 +1,4 @@
-const templates2_JSON = {
+const templates_JSON = {
   "Bfxr": {
     "pickup_coin": {
       "Coin": {

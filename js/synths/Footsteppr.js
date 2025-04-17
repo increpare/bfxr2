@@ -78,7 +78,7 @@ class Footsteppr extends SynthBase {
         ], 		
     ];
 
-    presets = [        
+    templates = [        
         [   
             "Randomize",
             "Talking your life into your hands... (only modifies unlocked parameters)",
@@ -103,7 +103,7 @@ class Footsteppr extends SynthBase {
     }    
 
     /*********************/
-    /* PRESET FUNCTIONS  */
+    /* TEMPLATE FUNCTIONS  */
     /*********************/
 
     generate_pickup_coin() {

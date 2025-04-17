@@ -187,7 +187,7 @@ body {
     gap: var(--ui-margin);
 }
 
-.preset_list {    
+.template_list {    
     display: flex;
     flex-direction: column;
     gap: var(--ui-margin);

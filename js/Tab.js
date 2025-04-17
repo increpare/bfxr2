@@ -80,9 +80,9 @@ class Tab {
         tab_page.appendChild(left_panel);
 
         {
-            var preset_list = document.createElement("div");
-            preset_list.classList.add("preset_list");
-            left_panel.appendChild(preset_list);
+            var template_list = document.createElement("div");
+            template_list.classList.add("template_list");
+            left_panel.appendChild(template_list);
 
             var create_new_sound_div = document.createElement("div");
             create_new_sound_div.classList.add("create_new_sound_div");
@@ -249,15 +249,15 @@ class Tab {
         }
 
 
-        this.preset_list = preset_list;
+        this.template_list = template_list;
 
         tabs.push(this);
 
         this.load_params(synth_specification);
-        this.load_presets(synth_specification);
+        this.load_templates(synth_specification);
 
         if (this.files.length == 0){
-            this.create_random_preset();
+            this.create_random_template();
         } else {
             this.update_ui();
         }
@@ -929,26 +929,26 @@ class Tab {
     }
 
     /*********************/
-    /*      PRESETS      */
+    /*      TEMPLATES      */
     /*********************/
 
-    load_presets(synth_specification) {
-        for (var i = 0; i < synth_specification.presets.length; i++) {
-            let generator = synth_specification.presets[i];
+    load_templates(synth_specification) {
+        for (var i = 0; i < synth_specification.templates.length; i++) {
+            let generator = synth_specification.templates[i];
             this.add_generator(generator);
         }
     }
 
-    create_random_preset() {
-        var [preset_name, params] = this.synth.create_random_preset();
-        this.create_new_sound_from_params(preset_name, params);
+    create_random_template() {
+        var [template_name, params] = this.synth.create_random_template();
+        this.create_new_sound_from_params(template_name, params);
     }
 
-    create_new_sound_from_params(preset_name, params,forcecreate=false) {
+    create_new_sound_from_params(template_name, params,forcecreate=false) {
         this.synth.apply_params(params);
         if (this.create_new_sound||this.files.length == 0||this.selected_file_index===-1||forcecreate) {
             this.current_params = params;
-            var filename = this.find_unique_filename(preset_name);        
+            var filename = this.find_unique_filename(template_name);        
             this.files.push([filename,JSON.stringify(params), JSON.stringify(params)]);
             this.selected_file_index = this.files.length - 1;
             SaveLoad.save_all_collections();
@@ -969,8 +969,8 @@ class Tab {
         var button_tooltip = generator[1];
         var generator_name = generator[2];
         var button_uid = this.name + "_generator_" + generator_name;
-        var button = this.add_button(button_uid, button_text, this.preset_clicked.bind(this, generator_name), button_tooltip);
-        this.preset_list.appendChild(button);
+        var button = this.add_button(button_uid, button_text, this.template_clicked.bind(this, generator_name), button_tooltip);
+        this.template_list.appendChild(button);
     }
 
     /*********************/
@@ -978,10 +978,10 @@ class Tab {
     /*********************/
 
 
-    add_preset(preset_name, button_tooltip, param_fn) {
-        var uid = this.name + "_preset_" + preset_name;
-        var button = this.add_button(uid, preset_name, param_fn, button_tooltip);
-        this.preset_list.appendChild(button);
+    add_template(template_name, button_tooltip, param_fn) {
+        var uid = this.name + "_template_" + template_name;
+        var button = this.add_button(uid, template_name, param_fn, button_tooltip);
+        this.template_list.appendChild(button);
     }
 
     serialize_params(){
@@ -1003,17 +1003,17 @@ class Tab {
     /* Event Handlers    */
     /*********************/
 
-    preset_clicked(preset_name) {
-        console.log("Preset clicked: " + preset_name);
-        var preset_data = null;
-        for (var i = 0; i < this.synth.presets.length; i++) {
-            if (this.synth.presets[i][2] == preset_name) {
-                preset_data = this.synth.presets[i];
+    template_clicked(template_name) {
+        console.log("Preset clicked: " + template_name);
+        var template_data = null;
+        for (var i = 0; i < this.synth.templates.length; i++) {
+            if (this.synth.templates[i][2] == template_name) {
+                template_data = this.synth.templates[i];
                 break;
             }
         }
-        var file_name = preset_data[3];
-        this.synth[preset_data[2]].bind(this.synth)();
+        var file_name = template_data[3];
+        this.synth[template_data[2]].bind(this.synth)();
         this.create_new_sound_from_params(file_name, this.synth.params);
     }
 

@@ -85,6 +85,6 @@ synthDirs.forEach(synthDir => {
 });
 
 // Write the templatess to a file
-fs.writeFileSync('./js/synths/templatess.js', `const templates2_JSON = ${JSON.stringify(templatess, null, 2)};`);
+fs.writeFileSync('./js/synths/templatess.js', `const templates_JSON = ${JSON.stringify(templatess, null, 2)};`);
 
 console.log("Templates inserted.");

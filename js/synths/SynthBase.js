@@ -29,15 +29,15 @@ class SynthBase {
         return result;
     };
 
-    create_random_preset() {
+    create_random_template() {
         this.reset_params();
-        var random_preset_idx = Math.floor(Math.random() * this.presets.length);
-        var preset = this.presets[random_preset_idx];
-        var preset_name = preset[0];
-        var preset_generator_name = preset[2];
-        var preset_file_name = preset[3];
-        this[preset_generator_name]();
-        return [preset_file_name, this.params];
+        var random_template_idx = Math.floor(Math.random() * this.templates.length);
+        var template = this.templates[random_template_idx];
+        var template_name = template[0];
+        var template_generator_name = template[2];
+        var template_file_name = template[3];
+        this[template_generator_name]();
+        return [template_file_name, this.params];
     }
 
 
@@ -170,7 +170,7 @@ class SynthBase {
     }
 
     /*********************/
-    /* PRESET FUNCTIONS  */
+    /* TEMPLATE FUNCTIONS  */
     /*********************/
 
     randomize_params() {

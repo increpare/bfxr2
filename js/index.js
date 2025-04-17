@@ -71,35 +71,6 @@ function register_drop_handlers(){
         e.preventDefault();
     });
 }
-
-function bfxr_preset_pickupcoin(){
-    console.log("Pickup/Coin");
-}
-
-function bfxr_preset_lasershoot(){
-    console.log("Laser/Shoot");
-}
-
-function bfxr_preset_explosion(){
-    console.log("Explosion");
-}
-
-function bfxr_preset_powerup(){
-    console.log("Powerup");
-}
-
-function bfxr_preset_hithurt(){
-    console.log("Hit/Hurt");
-}
-
-function bfxr_preset_jump(){
-    console.log("Jump");
-}
-
-function bfxr_preset_blipselect(){
-    console.log("Blip/Select");
-}
-
 // Initialize dialog tab functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Tab handling for the about dialog
