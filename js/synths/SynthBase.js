@@ -182,6 +182,23 @@ class SynthBase {
         return this.params[param_name];
     }
 
+    get_param_info(param_name) {
+        for (var i = 0; i < this.param_info.length; i++) {
+            var param = this.param_info[i];
+            if (param.constructor === Array) {
+                if (param[2] === param_name) {
+                    return param;
+                }
+            } else {
+                if (param.name === param_name) {
+                    return param;
+                }
+            }
+        }
+        console.error(`Could not find param: ${param_name}`);
+        return null;
+    }
+
     /*********************/
     /* TEMPLATE FUNCTIONS  */
     /*********************/
@@ -378,11 +395,58 @@ class SynthBase {
     /*TEMPLATE FUNCTIONS */
     /*********************/
 
+    pick_variety(varieties){
+        // each variety by default has weight 1. If the name starts with a number (possibly multiple digits), then
+        //  its weight is that number
+        var weights = {};
+        for (var i = 0; i < varieties.length; i++) {
+            var variety = varieties[i];
+            var weight = 1;
+            if (variety.match(/^\d+$/)) {
+                weight = parseInt(variety);
+            }
+            weights[variety] = weight;
+        }
+        console.log("weights",weights);
+        // now pick a variety based on the weights
+        var total_weight = 0;   
+        for (var variety in weights) {  
+            total_weight += weights[variety];
+        }
+        var random_value = Math.random() * total_weight;
+        var cumulative_weight = 0;
+        for (var variety in weights) {  
+            cumulative_weight += weights[variety];
+            if (random_value <= cumulative_weight) {
+                return variety;
+            }
+        }
+        return varieties[0];
+    }
     //this actualy returns a template function ^^
-    generate_template_function_from_bounds_dictionary(bounds_dictionary){
+    generate_template_function_from_bounds_dictionary(varieties_dictionary){
         return function(){
-            for (var key in bounds_dictionary) {
-                this.set_param(key, bounds_dictionary[key][0]);
+            var variety_names = Object.keys(varieties_dictionary);
+            var picked_variety = this.pick_variety(variety_names);
+            var bounds_dictionary = varieties_dictionary[picked_variety];
+            for (var param_name in bounds_dictionary) {
+                var possible_values = bounds_dictionary[param_name];
+                var param_info = this.get_param_info(param_name);                
+                var param_info_normalized = this.get_param_normalized(param_info);
+                switch (param_info_normalized.type) {
+                    case "BUTTONSELECT":
+                        var random_value = possible_values[Math.floor(Math.random() * possible_values.length)];
+                        this.set_param(param_name, random_value,true);
+                        break;
+                    case "RANGE":
+                        var smallest_value = Math.min(...possible_values);
+                        var largest_value = Math.max(...possible_values);
+                        var random_value = Math.random() * (largest_value - smallest_value) + smallest_value;
+                        this.set_param(param_name, random_value,true);
+                        break;
+                    default:
+                        console.error(`Unknown param type: ${param_info.type}`);
+                }
             }
         }
     }
