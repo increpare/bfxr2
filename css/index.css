@@ -33,6 +33,9 @@
     --tween-canvas-height: 32;
 
     --buttongrid-pressed-background-color: grey;
+
+    --about-dialog-width: 300px;
+    --about-dialog-backdrop-color: #ccbda188;
 }
 /* kludge - cf https://stackoverflow.com/questions/7492062/css-overflow-scroll-always-show-vertical-scroll-bar */
 /* ::-webkit-scrollbar {
@@ -625,3 +628,32 @@ button:active {
     display:flex;
     flex-direction: column;
   }
+
+
+  /* MODAL DIALOG STUFF BEGIN */
+  ::backdrop {
+    background-color: var(--about-dialog-backdrop-color);
+    backdrop-filter: blur(5px);
+  }
+
+  
+  dialog {
+    background-color: var(--panel-background-color);
+    border: var(--panel-border-thickness) solid var(--panel-border-color);
+    padding: var(--ui-margin);
+    /*drop shadow*/
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    max-width: var(--about-dialog-width);
+  }
+
+  dialog button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--ui-margin);
+  }
+
+  dialog h2 {
+    margin-top: var(--ui-margin);
+  }
+  /* MODAL DIALOG STUFF END */

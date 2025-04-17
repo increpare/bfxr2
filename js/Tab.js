@@ -1110,6 +1110,8 @@ class Tab {
 
     about_button_clicked() {
         console.log("About button clicked");
+        var about_dialog = document.getElementById("about-dialog");
+        about_dialog.showModal();
     }
     
     apply_sfx() {
