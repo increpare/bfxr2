@@ -23,6 +23,9 @@ class Tab {
 
     constructor(synth_specification) {
 
+        //add a passive onkeydown listener
+        document.addEventListener("keydown", this.on_key_down.bind(this), false);
+
         this.synth = synth_specification;
 
         var tab_name = synth_specification.name;
@@ -259,6 +262,20 @@ class Tab {
     /*      UI           */
     /*********************/
 
+    toggle_all_locks() {
+        //sets *all* parameters to locked or unlocked. use the first lock button to determine the state
+        var lock_names = Object.keys(this.lock_buttons);
+        var first_locked = this.synth.locked_params[lock_names[0]];
+        var target_locked_state = !first_locked;
+        for (let param_name in this.synth.locked_params){
+            if (this.synth.permalocked.includes(param_name)){
+                continue;
+            }
+            this.synth.locked_params[param_name] = target_locked_state;
+        }
+        this.update_locks();
+    }
+
     update_ui(){
         this.update_ui_file_list();
         this.update_ui_params();
@@ -362,9 +379,9 @@ class Tab {
             var lock_button = this.lock_buttons[key];
             var locked = this.synth.locked_params[key];
             if (locked){
-                lock_button.classList.add("locked");
+                lock_button.classList.remove("unlocked");
             } else {
-                lock_button.classList.remove("locked");
+                lock_button.classList.add("unlocked");
             }
         }
     }
@@ -404,7 +421,7 @@ class Tab {
             var param_uniformized = synth_specification.get_param_uniformized(param);
             
             if (!(param_uniformized.name in synth_specification.locked_params)){
-                var do_lock = !synth_specification.default_locked.includes(param_uniformized.name);
+                var do_lock = !synth_specification.permalocked.includes(param_uniformized.name);
                 this.synth.locked_params[param_uniformized.name]=do_lock;
             }
 
@@ -816,9 +833,13 @@ class Tab {
         SaveLoad.save_all_collections();
     }
 
+    //returns true if the selected file was changed, false if it was already selected
     set_selected_file(file_name) {
         for (var i = 0; i < this.files.length; i++) {
             if (this.files[i][0] == file_name) {
+                if (this.selected_file_index===i){
+                    return false;
+                }
                 this.selected_file_index = i;
                 break;
             }
@@ -843,6 +864,7 @@ class Tab {
 
         this.update_ui_params();
         this.update_ablements();
+        return true;
     }
 
     
@@ -1207,8 +1229,8 @@ class Tab {
 
     file_item_click(file_name,target) {
         console.log("File item clicked: " + file_name);
-        this.set_selected_file(file_name);
-        if (this.play_on_change){
+        var file_changed = this.set_selected_file(file_name);
+        if (file_changed && this.play_on_change){
             this.play_sound();
         }
     }
@@ -1239,5 +1261,31 @@ class Tab {
         //clear
         context2d.clearRect(0, 0, canvas.width, canvas.height);
         this.synth.drawWaveform(context2d);
+    }
+
+    on_key_down(event){
+        //check if the tab is focused
+        if (this.active){
+            //ignore if currently typing in the filename (into a file_item_name contenteditable has focus)
+            if (document.activeElement.classList.contains("file_item_name")){
+                return;
+            }
+            var key_upper_case = event.key.toUpperCase();
+            console.log(this.name + " Key down: " + event.key);
+            switch (key_upper_case){
+                case "ENTER":
+                case "NUMPADENTER":
+                case " ":
+                    //if button/link not focussed
+                    var node_name_lowercase = document.activeElement.nodeName.toLowerCase();
+                if (node_name_lowercase!=="button" && node_name_lowercase!=="a"){
+                        this.play_sound();
+                    }
+                    break;
+                case "L":
+                    this.toggle_all_locks();
+                    break;
+            }
+        }
     }
 }

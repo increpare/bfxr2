@@ -1,4 +1,4 @@
-class SynthTemplate {
+class SynthBase {
 
     sound = null;
     params = {};

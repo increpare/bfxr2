@@ -1,4 +1,4 @@
-class Bfxr extends SynthTemplate {
+class Bfxr extends SynthBase {
     /*********************/
     /*      METADATA     */
     /*********************/
@@ -11,7 +11,7 @@ class Bfxr extends SynthTemplate {
 
     header_properties = ["waveform"];
 
-    default_locked = ["masterVolume"];
+    permalocked = ["masterVolume"];
     hide_params = ["masterVolume"];
 
     param_info = [

@@ -1,4 +1,4 @@
-class Footsteppr extends SynthTemplate {
+class Footsteppr extends SynthBase {
 
     name = "Footsteppr";
     version = "1.0.0"
@@ -8,7 +8,7 @@ class Footsteppr extends SynthTemplate {
     
     header_properties = ["waveform"];
 
-    default_locked = ["masterVolume"];
+    permalocked = ["masterVolume"];
     hide_params = ["masterVolume"];
 
     param_info = [

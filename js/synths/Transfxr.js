@@ -1,4 +1,4 @@
-class Transfxr extends SynthTemplate {
+class Transfxr extends SynthBase {
 
     name = "Transfxr";
     version = "1.0.0";
@@ -8,7 +8,7 @@ class Transfxr extends SynthTemplate {
 
     header_properties = ["waveform"];
 
-    default_locked = ["masterVolume"];
+    permalocked = ["masterVolume"];
     hide_params = ["masterVolume"];
 
     param_info = [
