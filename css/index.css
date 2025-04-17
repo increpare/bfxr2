@@ -642,7 +642,7 @@ button:active {
     border: var(--panel-border-thickness) solid var(--panel-border-color);
     padding: var(--ui-margin);
     /*drop shadow*/
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5));
     width: fit-content;
   }
 
