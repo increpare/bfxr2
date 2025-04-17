@@ -16,7 +16,9 @@ Sound names in a template look like "varietyname_suffix".
 
 The sounds are grouped together into varieties, with the idea being that their range of values is the range of possible values of that variety.
 
-![image](https://github.com/user-attachments/assets/052c42ae-918c-4b20-be66-67f94c82e4a8)
+![image](https://github.com/user-attachments/assets/2db70ccc-65c5-45a2-9d71-63cdecd033a0)
+
+(Duplicate values are combined already at this stage.)
 
 So in the end we have that a preset is a group of varieties. In Bfxr when you hit the generate button, Bfxr picks a variety at at random, then generates a sound with paramaters within the ranges it finds in the exemplar sounds.
 
