@@ -10,25 +10,40 @@ class RealizedSound {
         return this._buffer.getChannelData(0);
     }
 
+
+    source = null;
     play() {
         ULBS();
 
-        var source = AUDIO_CONTEXT.createBufferSource();
+        if (this.source!=null){
+            this.stop();
+        }
+        this.source = AUDIO_CONTEXT.createBufferSource();
 
-        source.buffer = this._buffer;
-        source.connect(AUDIO_CONTEXT.destination);
+        this.source.buffer = this._buffer;
+        this.source.connect(AUDIO_CONTEXT.destination);
 
         var t = AUDIO_CONTEXT.currentTime;
-        if (typeof source.start != 'undefined') {
-            source.start(t);
+        if (typeof this.source.start != 'undefined') {
+            this.source.start(t);
         } else {
-            source.noteOn(t);
+            this.source.noteOn(t);
         }
-        source.onended = function() {
-            source.disconnect()
+        this.source.onended = function() {
+            if (this.source){
+                this.source.disconnect()
+            }
         }
     }
 
+    stop() {
+        if (this.source==null){
+            return;
+        }
+        this.source.stop();
+        this.source.disconnect();
+        this.source = null;
+    }
 
     getDataUri() {
         const BIT_DEPTH=16;

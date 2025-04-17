@@ -9,7 +9,7 @@ class Bfxr extends SynthBase {
 
     canvas_bg_logo = "img/logo_bfxr.png";
 
-    header_properties = ["waveform"];
+    header_properties = ["waveType"];
 
     permalocked = ["masterVolume"];
     hide_params = ["masterVolume"];
@@ -85,7 +85,7 @@ class Bfxr extends SynthBase {
                 [
                     "Organ",
                     "Periodic 1-bit noise with a shortened period. It makes a nice digital buzz or clang sound.",
-                    11
+                    5
                 ],
                 [
                     "FMSyn",
@@ -132,7 +132,7 @@ class Bfxr extends SynthBase {
         [
             "Frequency Slide",
             "Slides the frequency up or down.",
-            "slide", 0.0, -1, 1
+            "slide", 0.0, -0.5, 0.5
         ],
         [
             "Delta Slide",
@@ -519,13 +519,12 @@ class Bfxr extends SynthBase {
             1,//2:sin
             1,//3:noise
             1,//4:triangle
-            1,//5:pink
+            1,//5:buzz
             1,//6:tan
             1,//7:whistle
             1,//8:breaker
             1,//9:bitnoise
             1,//10:new 1
-            1,//11:buzz
         ];
 
     randomize_params() {

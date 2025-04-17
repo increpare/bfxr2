@@ -193,11 +193,15 @@ class Bfxr_DSP {
         this.changeTime = 0;
         this.changeReached = false;
 
+        var change_window_size = this.envelopeFullLength;
+        if (params.repeatLimit > 0) {
+            change_window_size = params.repeatLimit;
+        }
         if (params.changeSpeed == 1.0) {
             this.changeLimit = 0;
         }
         else {
-            this.changeLimit = (1.0 - params.changeSpeed) * (1.0 - params.changeSpeed) * 20000 + 32;
+            this.changeLimit = params.changeSpeed * change_window_size + 32;
         }
 
 
@@ -215,7 +219,7 @@ class Bfxr_DSP {
         if (params.changeSpeed2 == 1.0) {
             this.changeLimit2 = 0;
         }
-        else this.changeLimit2 = (1.0 - params.changeSpeed2) * (1.0 - params.changeSpeed2) * 20000 + 32;
+        else this.changeLimit2 = params.changeSpeed2 * change_window_size + 32;
 
         this.changeLimit *= (1 - params.changeRepeat + 0.1) / 1.1;
         this.changeLimit2 *= (1 - params.changeRepeat + 0.1) / 1.1;

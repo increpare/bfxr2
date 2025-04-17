@@ -72,6 +72,7 @@ class Tab {
         if (first_tab) {
             tab_button.classList.add("active_tab");
             tab_page.classList.add("active_tab_page");
+            this.active = true;
         }
 
         var left_panel = document.createElement("div");
@@ -1353,6 +1354,7 @@ class Tab {
 
     on_key_down(event){
         var gobbled=false;
+        console.log(this.name + " sKey down: " + event.key);
 
         //check if the tab is focused
         if (this.active){

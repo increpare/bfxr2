@@ -6,7 +6,7 @@ class Footsteppr extends SynthBase {
     
     canvas_bg_logo = "img/logo_footsteppr.png";
     
-    header_properties = ["waveform"];
+    header_properties = ["waveType"];
 
     permalocked = ["masterVolume"];
     hide_params = ["masterVolume"];
