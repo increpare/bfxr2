@@ -69,7 +69,11 @@ synthDirs.forEach(synthDir => {
                 }
                 this_variety = varieties[variety_name];
                 for (var key in variety_data) {
-                    this_variety[key].push(variety_data[key]);
+                    var list = this_variety[key]
+                    var new_value = variety_data[key];
+                    if (list.indexOf(new_value) === -1) {
+                        this_variety[key].push(new_value);
+                    }
                 }
             }
             templatess[synthDir][templatesName] = varieties;
@@ -81,6 +85,6 @@ synthDirs.forEach(synthDir => {
 });
 
 // Write the templatess to a file
-fs.writeFileSync('./js/synths/templatess.js', `const templates_JSON = ${JSON.stringify(templatess, null, 2)};`);
+fs.writeFileSync('./js/synths/templatess.js', `const templates2_JSON = ${JSON.stringify(templatess, null, 2)};`);
 
-
+console.log("Templates inserted.");
