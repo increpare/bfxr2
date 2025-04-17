@@ -57,6 +57,19 @@ class SynthBase {
     post_initialize(){
         this.params = this.default_params();
         this.create_locked_params_array();
+        this.load_bcol_tempaltes();
+    }
+
+    load_bcol_tempaltes(){
+        var templates_for_me = TEMPLATES_JSON[this.name];
+        var template_names = Object.keys(templates_for_me);
+        for (var i = 0; i < template_names.length; i++) {
+
+            var template_name = template_names[i];
+            var template_method_name = "generate_"+template_names[i];
+            var template_bounds_dictionary = templates_for_me[template_name];
+            this[template_method_name] = this.generate_template_function_from_bounds_dictionary(template_bounds_dictionary);
+        }
     }
 
     create_locked_params_array() {
@@ -78,7 +91,7 @@ class SynthBase {
     /*********************/
 
     /* returns a param with nice fields name/min/max */
-    get_param_uniformized(param){
+    get_param_normalized(param){
         var result={};
         //if array
         if (param.constructor === Array) {
@@ -113,9 +126,9 @@ class SynthBase {
     param_min(param_name) {
         for (var i = 0; i < this.param_info.length; i++) {
             var param_o = this.param_info[i];
-            var param_o_uniformized = this.get_param_uniformized(param_o);
-            if (param_o_uniformized.name === param_name) {
-                return param_o_uniformized.min_value;
+            var param_o_normalized = this.get_param_normalized(param_o);
+            if (param_o_normalized.name === param_name) {
+                return param_o_normalized.min_value;
             }
         }
         console.error("Could not find param: " + param_name);
@@ -125,9 +138,9 @@ class SynthBase {
     param_max(param_name) {
         for (var i = 0; i < this.param_info.length; i++) {
             var param_o = this.param_info[i];
-            var param_o_uniformized = this.get_param_uniformized(param_o);
-            if (param_o_uniformized.name === param_name) {
-                return param_o_uniformized.max_value;
+            var param_o_normalized = this.get_param_normalized(param_o);
+            if (param_o_normalized.name === param_name) {
+                return param_o_normalized.max_value;
             }
         }
         console.error("Could not find param: " + param_name);
@@ -137,9 +150,9 @@ class SynthBase {
     param_default(param_name) {
         for (var i = 0; i < this.param_info.length; i++) {
             var param_o = this.param_info[i];
-            var param_o_uniformized = this.get_param_uniformized(param_o);
-            if (param_o_uniformized.name === param_name) {
-                return param_o_uniformized.default_value;
+            var param_o_normalized = this.get_param_normalized(param_o);
+            if (param_o_normalized.name === param_name) {
+                return param_o_normalized.default_value;
             }
         }
         console.error("Could not find param: " + param_name);
@@ -177,21 +190,21 @@ class SynthBase {
         this.reset_params(true);
         for (var i = 0; i < this.param_info.length; i++) {
             var param = this.param_info[i];
-            var param_uniformized = this.get_param_uniformized(param);
+            var param_normalized = this.get_param_normalized(param);
             
-            if (this.locked_params[param_uniformized.name]) {
+            if (this.locked_params[param_normalized.name]) {
                 continue;
             }
-            var min_val = param_uniformized.min_value;
-            var max_val = param_uniformized.max_value;
+            var min_val = param_normalized.min_value;
+            var max_val = param_normalized.max_value;
             var random_val = Math.random() * (max_val - min_val) + min_val;
-            if (param_uniformized.type === "BUTTONSELECT") {
+            if (param_normalized.type === "BUTTONSELECT") {
                 random_val = Math.floor(random_val);
                 if (random_val >= max_val) {
                     random_val = max_val - 1;
                 }
             }
-            this.set_param(param_uniformized.name, random_val);
+            this.set_param(param_normalized.name, random_val);
         }
     }
 
@@ -205,16 +218,16 @@ class SynthBase {
                 continue;
             }
             var param = this.param_info[i];
-            var param_uniformized = this.get_param_uniformized(param);
-            if (param_uniformized.type !== "RANGE") {
+            var param_normalized = this.get_param_normalized(param);
+            if (param_normalized.type !== "RANGE") {
                 continue;
             }
-            var min_val = param_uniformized.min_value;
-            var max_val = param_uniformized.max_value;
+            var min_val = param_normalized.min_value;
+            var max_val = param_normalized.max_value;
             var range = max_val - min_val;
             var mutated_diff = (Math.random()-0.5)*0.1*range;
-            var mutated_val = this.params[param_uniformized.name] + mutated_diff;
-            this.set_param(param_uniformized.name, mutated_val);
+            var mutated_val = this.params[param_normalized.name] + mutated_diff;
+            this.set_param(param_normalized.name, mutated_val);
         }
 
     }
@@ -358,5 +371,19 @@ class SynthBase {
            //pause and dispose of the old sound
         }
         this.sound = sound;
+    }
+
+    
+    /*********************/
+    /*TEMPLATE FUNCTIONS */
+    /*********************/
+
+    //this actualy returns a template function ^^
+    generate_template_function_from_bounds_dictionary(bounds_dictionary){
+        return function(){
+            for (var key in bounds_dictionary) {
+                this.set_param(key, bounds_dictionary[key][0]);
+            }
+        }
     }
 }

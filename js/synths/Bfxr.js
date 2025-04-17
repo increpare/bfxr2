@@ -75,7 +75,7 @@ class Bfxr extends SynthBase {
                 [
                     "Voice",
                     "A digital voice sample.",
-                    12
+                    11
                 ],
                 [
                     "Bitnoise",
@@ -83,7 +83,7 @@ class Bfxr extends SynthBase {
                     9
                 ],
                 [
-                    "Organ",
+                    "Rasp",
                     "Periodic 1-bit noise with a shortened period. It makes a nice digital buzz or clang sound.",
                     5
                 ],
@@ -314,7 +314,7 @@ class Bfxr extends SynthBase {
     }
 
     /*********************/
-    /* TEMPLATE FUNCTIONS  */
+    /*TEMPLATE FUNCTIONS */
     /*********************/
 
     generate_sin() {

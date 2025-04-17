@@ -431,14 +431,14 @@ class Tab {
             var param = synth_specification.param_info[i];
 
             //regularize info
-            var param_uniformized = synth_specification.get_param_uniformized(param);
+            var param_normalized = synth_specification.get_param_normalized(param);
             
-            if (!(param_uniformized.name in synth_specification.locked_params)){
-                var do_lock = !synth_specification.permalocked.includes(param_uniformized.name);
-                this.synth.locked_params[param_uniformized.name]=do_lock;
+            if (!(param_normalized.name in synth_specification.locked_params)){
+                var do_lock = !synth_specification.permalocked.includes(param_normalized.name);
+                this.synth.locked_params[param_normalized.name]=do_lock;
             }
 
-            if (synth_specification.hide_params.includes(param_uniformized.name)){
+            if (synth_specification.hide_params.includes(param_normalized.name)){
                 continue;
             }
             
@@ -1210,7 +1210,7 @@ class Tab {
 
     clear_all_button_clicked() {
         //need to confirm with user
-        if (confirm("Are you sure you want to clear all data in this synth (THIS DELETES ALL FILES)?")) {
+        if (confirm("Are you sure you want to clear all data in this synth (THIS DELETES ALL SOUNDS FROM THIS TAB)?")) {
             console.log("Clear all button clicked");
             this.files = [];
             this.selected_file_index = -1;

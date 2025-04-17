@@ -28,22 +28,6 @@ class Bfxr_DSP {
     static sampleRate = 44100;
     static bitDepth = 16;
 
-    static WaveType = {
-        SQUARE: 0,
-        SAW: 1,
-        SINE: 2,
-        NOISE: 3,
-        TRIANGLE: 4,
-        PINK: 5,
-        TAN: 6,
-        WHISTLE: 7,
-        BREAKER: 8,
-        BITNOISE: 9,
-        FM_SYNTH: 10,
-        BUZZ: 11,
-        VOICE: 12
-    };
-    
     constructor(params,param_info) {
 
         this.params = params;
@@ -461,7 +445,7 @@ class Bfxr_DSP {
                             this.sample += overtonestrength*(tempsample < 0 ? .225 * (tempsample *-tempsample - tempsample) + tempsample : .225 * (tempsample * tempsample - tempsample) + tempsample);								
                             break;
                         }
-                        case 3: // Noise
+                        case 3: // White Noise
                         {
                             this.sample += overtonestrength*(this.noiseBuffer[((tempphase * 32 / (this.periodTemp|0))|0)%32]);
                             break;
@@ -471,11 +455,13 @@ class Bfxr_DSP {
                             this.sample += overtonestrength*(Math.abs(1-(tempphase / this.periodTemp)*2)-1);
                             break;
                         }
-                        case 5: // Pink Noise
-                        {						
-                            this.sample += overtonestrength*(this.pinkNoiseBuffer[((tempphase * 32 / (this.periodTemp|0))|0)%32]);
+                        case 5: //Organ
+                        {
+                            var sample_index = ((tempphase * 256 / (this.periodTemp|0))|0)%256;
+                            var wave_sample = AKWF.granular_0044[sample_index]/32768-1;
+                            this.sample += overtonestrength*wave_sample;
                             break;
-                        }
+                        } 
                         case 6: // tan
                         {
                             //detuned
@@ -518,14 +504,7 @@ class Bfxr_DSP {
                             this.sample += overtonestrength*wave_sample;
                             break;
                         }
-                        case 11: //Organ
-                        {
-                            var sample_index = ((tempphase * 256 / (this.periodTemp|0))|0)%256;
-                            var wave_sample = AKWF.granular_0044[sample_index]/32768-1;
-                            this.sample += overtonestrength*wave_sample;
-                            break;
-                        } 
-                        case 12: //Vox - wave sampled from AKWF_hvoice_0012
+                        case 11: //Voice - wave sampled from AKWF_hvoice_0012
                         {
                             var sample_index = ((tempphase * 256 / (this.periodTemp|0))|0)%256;
                             var wave_sample = AKWF.hvoice_0012[sample_index]/32768-1;
