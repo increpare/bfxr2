@@ -242,6 +242,12 @@ class SynthTemplate {
         for (var i=0;i<len;i++){
             var val = buffer[i];
             if (i/len>curbar/height){
+                    
+                if (Math.abs(curmax-curmin)<0.01){
+                    curmax+=0.005;
+                    curmin-=0.005;
+                }
+            
                 result.push(curmax);
                 result.push(curmin);
                 curbar++;

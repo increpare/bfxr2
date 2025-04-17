@@ -186,7 +186,7 @@ class Bfxr extends SynthTemplate {
         ],
         [
             "Square Duty",
-            "Square waveform only : Controls the ratio between the up and down states of the square wave, changing the tibre.",
+            "Square waveform only : Controls the ratio between the up and down states of the square wave, changing the timbre.",
             "squareDuty", 0, 0, 1
         ],
         [
@@ -201,7 +201,7 @@ class Bfxr extends SynthTemplate {
         ],
         [
             "Flanger Offset",
-            "Offsets a second copy of the wave by a small phase, changing the tibre.",
+            "Offsets a second copy of the wave by a small phase, changing the timbre.",
             "flangerOffset", 0, -1, 1
         ],
         [
