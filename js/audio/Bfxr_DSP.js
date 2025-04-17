@@ -521,6 +521,7 @@ class Bfxr_DSP {
                             this.sample += overtonestrength*this.oneBitNoise;
                             break;
                         }
+                        //case 10, Holo is its own beast, cf. above.
                         case 11: //new2
                         {
                             this.sample += overtonestrength*this.buzz;
