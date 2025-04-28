@@ -116,7 +116,7 @@ class Bfxr extends SynthBase {
         ],
         [
             "Compression",
-            "Pushes amplitudes together into a narrower range to make them stand out more.  Very good for sound effects, where you want them to stick out against background music.",
+            "Pushes amplitudes together into a narrower range to make them stand out more.  Very good for sound effects, where you want them to stick out against background music. If unlocked, this is set to zero during randomization.",
             "compressionAmount", 0, 0, 1
         ],
         [
@@ -529,7 +529,7 @@ class Bfxr extends SynthBase {
 
     randomize_params() {
         for (var param in this.params) {
-            if (!locked_paramparam]) {
+            if (!this.locked_params[param]) {
                 var min = this.param_min(param);
                 var max = this.param_max(param);
                 var r = Math.random();
@@ -539,7 +539,7 @@ class Bfxr extends SynthBase {
             }
         }
 
-        if (!locked_param"waveType"]) {
+        if (!this.locked_params["waveType"]) {
             var count = 0;
             for (var i = 0; i < Bfxr.#WaveTypeWeights.length; i++) {
                 count += Bfxr.#WaveTypeWeights[i];
@@ -555,46 +555,38 @@ class Bfxr extends SynthBase {
 
         }
 
-        if (!locked_param"repeatSpeed"]) {
-            if (Math.random() < 0.5)
-                this.set_param("repeatSpeed", 0);
-        }
+        if (Math.random() < 0.5)
+            this.set_param("repeatSpeed", 0,true);
+    
+        r = Math.random() * 2 - 1;
+        r = Math.pow(r, 5);
+        this.set_param("slide", r,true);
 
-        if (!locked_param"slide"]) {
-            r = Math.random() * 2 - 1;
-            r = Math.pow(r, 5);
-            this.set_param("slide", r);
-        }
-        if (!locked_param"deltaSlide"]) {
-            r = Math.random() * 2 - 1;
-            r = Math.pow(r, 3);
-            this.set_param("deltaSlide", r);
-        }
+        r = Math.random() * 2 - 1;
+        r = Math.pow(r, 3);
+        this.set_param("deltaSlide", r,true);
+    
+        this.set_param("minFrequency", 0,true);
+    
+        this.set_param("compressionAmount", 0,true);
 
-        if (!locked_param"minFrequency"])
-            this.set_param("minFrequency", 0);
+        this.set_param("startFrequency", (Math.random() < 0.5) ? Math.pow(Math.random() * 2 - 1, 2) : (Math.pow(Math.random() * 0.5, 3) + 0.5),true);
 
-        if (!locked_param"startFrequency"])
-            this.set_param("startFrequency", (Math.random() < 0.5) ? Math.pow(Math.random() * 2 - 1, 2) : (Math.pow(Math.random() * 0.5, 3) + 0.5));
-
-        if ((!locked_param"sustainTime"]) && (!locked_param"decayTime"])) {
+        if ((!this.locked_params["sustainTime"]) && (!this.locked_params["decayTime"])) {
             if (this.get_param("attackTime") + this.get_param("sustainTime") + this.get_param("decayTime") < 0.2) {
                 this.set_param("sustainTime", 0.2 + Math.random() * 0.3);
                 this.set_param("decayTime", 0.2 + Math.random() * 0.3);
             }
         }
 
-        if (!locked_param"slide"]) {
-            if ((this.get_param("startFrequency") > 0.7 && this.get_param("slide") > 0.2) || (this.get_param("startFrequency") < 0.2 && this.get_param("slide") < -0.05)) {
-                this.set_param("slide", -this.get_param("slide"));
-            }
+        if ((this.get_param("startFrequency") > 0.7 && this.get_param("slide") > 0.2) || (this.get_param("startFrequency") < 0.2 && this.get_param("slide") < -0.05)) {
+            this.set_param("slide", -this.get_param("slide"),true);
         }
 
-        if (!locked_param"lpFilterCutoffSweep"]) {
-            if (this.get_param("lpFilterCutoff") < 0.1 && this.get_param("lpFilterCutoffSweep") < -0.05) {
-                this.set_param("lpFilterCutoffSweep", -this.get_param("lpFilterCutoffSweep"));
-            }
+        if (this.get_param("lpFilterCutoff") < 0.1 && this.get_param("lpFilterCutoffSweep") < -0.05) {
+            this.set_param("lpFilterCutoffSweep", -this.get_param("lpFilterCutoffSweep"),true);
         }
+    
     }
 
     /*********************/
