@@ -30,7 +30,7 @@ synthDirs.forEach(synthDir => {
     // Read all templates files in the synth directory
     const templatesFiles = fs.readdirSync(synthPath, { withFileTypes: true })
         .filter(dirent => dirent.isFile())
-        .filter(dirent => path.extname(dirent.name) === '.bcop')
+        .filter(dirent => path.extname(dirent.name) === '.bcol')
         .map(dirent => dirent.name);
     
     // Process each templates file
