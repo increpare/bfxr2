@@ -43,7 +43,7 @@ class SynthBase {
 
     apply_params(other_params,check_locked = false) {
         for (var key in other_params) {
-            if ( !check_locked || !this.locked_params[key] ) {
+            if ( !check_locked || !this.locked_param(key) ) {
                 this.params[key] = other_params[key];
             }
         }
@@ -61,6 +61,9 @@ class SynthBase {
     }
 
     load_bcol_tempaltes(){
+        if (!TEMPLATES_JSON.hasOwnProperty(this.name)){
+            return;
+        }
         var templates_for_me = TEMPLATES_JSON[this.name];
         var template_names = Object.keys(templates_for_me);
         for (var i = 0; i < template_names.length; i++) {
@@ -449,5 +452,21 @@ class SynthBase {
                 }
             }
         }
+    }
+
+
+    locked_param(param_name){
+        if (this.permalocked.includes(param_name)){
+            return true;
+        }
+        return this.locked_params[param_name];
+    }
+    
+    set_locked_param(param_name,value){
+        if (this.permalocked.includes(param_name)){
+            this.locked_params[param_name] = true;
+            return;
+        }
+        this.locked_params[param_name] = value;
     }
 }

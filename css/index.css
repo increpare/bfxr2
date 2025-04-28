@@ -264,6 +264,7 @@ body {
     /* min-height: 100px;
     max-height: 200px; */
     scrollbar-gutter: stable;
+    padding-right:13px;
 }
 
 .file_item {

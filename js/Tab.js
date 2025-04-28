@@ -270,13 +270,14 @@ class Tab {
     toggle_all_locks() {
         //sets *all* parameters to locked or unlocked. use the first lock button to determine the state
         var lock_names = Object.keys(this.lock_buttons);
-        var first_locked = this.synth.locked_params[lock_names[0]];
+        var first_locked = this.synth.locked_param(lock_names[0]);
         var target_locked_state = !first_locked;
         for (let param_name in this.synth.locked_params){
-            if (this.synth.permalocked.includes(param_name)){
-                continue;
-            }
-            this.synth.locked_params[param_name] = target_locked_state;
+            this.synth.set_locked_param(param_name,target_locked_state);
+        }
+        //set all permalocked params to the target locked state
+        for (let param_name in this.synth.permalocked){
+            this.synth.set_locked_param(param_name,true);
         }
         this.update_locks();
     }
@@ -435,7 +436,7 @@ class Tab {
             
             if (!(param_normalized.name in synth_specification.locked_params)){
                 var do_lock = !synth_specification.permalocked.includes(param_normalized.name);
-                this.synth.locked_params[param_normalized.name]=do_lock;
+                this.synth.set_locked_param(param_normalized.name,do_lock);
             }
 
             if (synth_specification.hide_params.includes(param_normalized.name)){
@@ -848,6 +849,9 @@ class Tab {
                 this.synth.apply_params(JSON.parse(file_dat[1]));
                 this.synth.generate_sound();
                 this.redraw_waveform();
+                if (this.play_on_change){
+                    this.play_sound();
+                }
             }
         }
         this.update_ui();
@@ -1190,11 +1194,10 @@ class Tab {
 
     copy_link_button_clicked() {
         console.log("Copy link button clicked");
-        console.log("Copy button clicked");
         var file_dat = this.files[this.selected_file_index];
         var file_name = file_dat[0];
         var file_jstor = file_dat[1];
-        var params_parsed = JSON.parse(file_jstor);
+        var params_parsed = this.synth.params;
         var file_jstor_json_string = SaveLoad.shallow_dict_serialize(this.name, file_name, params_parsed);
         //need to escape it so it can be used as a url parameter
         var file_jstor_json_string_escaped = encodeURIComponent(file_jstor_json_string);
@@ -1254,6 +1257,9 @@ class Tab {
         file_name_span.classList.add("modified_filename");
         this.update_ui_params();
         this.update_ablements();
+        if (this.play_on_change){
+            this.play_sound();
+        }
         SaveLoad.save_all_collections();
     }
 

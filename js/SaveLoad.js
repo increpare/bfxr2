@@ -46,11 +46,12 @@ class SaveLoad {
 
     static shallow_dict_serialize(synth_name,filename,dict){
         //instead of returning a csv string, returns a csv string (with commas delimited by \)
-        var result = synth_name + "_" + filename + "_";
+        var result = synth_name + "~" + filename + "~";
         var keys = Object.keys(dict);
+        console.log("exporting keys: " + keys);
         keys.sort();
         for (var i = 0; i < keys.length; i++){
-            result += dict[keys[i]] + "_";
+            result += dict[keys[i]] + "~";
         }
         //trim final ","
         result = result.slice(0, -1);
@@ -58,7 +59,7 @@ class SaveLoad {
     }
 
     static shallow_dict_deserialize(str){
-        var entries = str.split("_");
+        var entries = str.split("~");
         var synth_name = entries[0];
         var filename = entries[1];
         //need to find the tab that matches the synth_name
@@ -69,6 +70,8 @@ class SaveLoad {
         }
         var default_params = tab.synth.default_params();
         var keys = Object.keys(default_params);
+        keys.sort();
+        console.log("importing keys: " + keys);
         var dict = {};
         for (var i = 0; i < keys.length; i++){
             dict[keys[i]] = parseFloat(entries[i+2]);
