@@ -499,17 +499,20 @@ class Bfxr extends SynthBase {
             sustainTime: 2,
             sustainPunch: 2,
             overtones: 3,
-            overtoneFalloff: 0.25,
+            overtoneFalloff: 2,
             vibratoDepth: 3,
             dutySweep: 3,
             flangerOffset: 3,
             flangerSweep: 3,
-            lpFilterCutoff: 0.3,
+            lpFilterCutoff: 2,
             lpFilterSweep: 3,
             hpFilterCutoff: 5,
             hpFilterSweep: 5,
             bitCrush: 4,
-            bitCrushSweep: 5
+            bitCrushSweep: 5,
+            slide:4,
+            deltaSlide:7,
+            startFrequency:4
         }
 
     static #WaveTypeWeights =
@@ -527,15 +530,44 @@ class Bfxr extends SynthBase {
             1,//10:new 1
         ];
 
+    
+    generate_random_centered_around_x(min,max,centre){
+        //first decided if above or below centre
+        if (Math.random() < 0.5){
+            //above centre
+            var r = Math.random();
+            r = Math.pow(r, 2);
+            return centre + r*(max-centre);
+        }
+        else{
+            //below centre
+            var r = Math.random();
+            r = Math.pow(r, 2);
+            return centre - r*(centre-min);
+        }
+    }
+
     randomize_params() {
         for (var param in this.params) {
             if (!this.locked_params[param]) {
                 var min = this.param_min(param);
                 var max = this.param_max(param);
+                var default_val = this.param_default(param);
                 var r = Math.random();
                 if (param in Bfxr.#RandomizationPower)
                     r = Math.pow(r, Bfxr.#RandomizationPower[param]);
-                this.params[param] = min + (max - min) * r;
+                var above = Math.random() < 0.5;
+                if (min===default_val){
+                    above=true;
+                }
+                if (max===default_val){
+                    above=false;
+                }
+                if (above){
+                    this.params[param] = default_val + (max - default_val) * r;
+                } else {
+                    this.params[param] = default_val - (default_val - min) * r;
+                }
             }
         }
 
@@ -558,19 +590,13 @@ class Bfxr extends SynthBase {
         if (Math.random() < 0.5)
             this.set_param("repeatSpeed", 0,true);
     
-        r = Math.random() * 2 - 1;
-        r = Math.pow(r, 5);
-        this.set_param("slide", r,true);
 
-        r = Math.random() * 2 - 1;
-        r = Math.pow(r, 3);
-        this.set_param("deltaSlide", r,true);
-    
         this.set_param("minFrequency", 0,true);
     
         this.set_param("compressionAmount", 0,true);
 
-        this.set_param("startFrequency", (Math.random() < 0.5) ? Math.pow(Math.random() * 2 - 1, 2) : (Math.pow(Math.random() * 0.5, 3) + 0.5),true);
+        //want startfrequency centered around 0.3, falling off quadratically
+        this.set_param("startFrequency", this.generate_random_centered_around_x(0,0.6,0.3),true);
 
         if ((!this.locked_params["sustainTime"]) && (!this.locked_params["decayTime"])) {
             if (this.get_param("attackTime") + this.get_param("sustainTime") + this.get_param("decayTime") < 0.2) {
@@ -578,6 +604,9 @@ class Bfxr extends SynthBase {
                 this.set_param("decayTime", 0.2 + Math.random() * 0.3);
             }
         }
+        //punch between 0 and 1, but square the random value so that smaller values are more likely
+        var r = Math.random()*Math.random();
+        this.set_param("sustainPunch", r*r, true);
 
         if ((this.get_param("startFrequency") > 0.7 && this.get_param("slide") > 0.2) || (this.get_param("startFrequency") < 0.2 && this.get_param("slide") < -0.05)) {
             this.set_param("slide", -this.get_param("slide"),true);
