@@ -54,8 +54,12 @@ class Bfxr_DSP {
             this.dutySweep = -params.dutySweep * 0.00005;
         }
 
-        this.changePeriod = Math.max(((1 - params.changeRepeat) + 0.1) / 1.1) * 20000 + 32;
-        this.changePeriodTime = 0;
+        //  this.changePeriod = Math.max(((1 - params.changeRepeat) + 0.1) / 1.1) * 20000 + 32;
+        //  this.changePeriodTime = 0;
+        // when params.changeRepeat, it should not repeat (i.e. be the same as the envelope length)
+        // when params.changeRepeat is 1, it should repeat 10 times a second (i.e. sampleRate/10)
+        this.repeat_length_samples = lerp(params.envelopeFullLength_Samples, Bfxr_DSP.sampleRate/10, params.changeRepeat)+32;//adding 32 for safety
+        this.repeat_timestamp_stamples = 0;
 
         if (params.changeAmount > 0.0) {
             this.changeAmount = 1.0 - params.changeAmount * params.changeAmount * 0.9;
@@ -109,12 +113,12 @@ class Bfxr_DSP {
             this.envelopeLength0 = params.attackTime * params.attackTime * 100000.0;
             this.envelopeLength1 = params.sustainTime * params.sustainTime * 100000.0;
             this.envelopeLength2 = params.decayTime * params.decayTime * 100000.0 + 10;
-            this.envelopeLength = this.envelopeLength0;
-            this.envelopeFullLength = this.envelopeLength0 + this.envelopeLength1 + this.envelopeLength2;
+            this.attack_length_samples = this.envelopeLength0;
+            this.envelopeFullLength_Samples = this.envelopeLength0 + this.envelopeLength1 + this.envelopeLength2;
 
             
             this.bitcrush_freq = 1 - Math.pow(params.bitCrush, 1.0 / 3.0);
-            this.bitcrush_freq_sweep = -params.bitCrushSweep / this.envelopeFullLength;
+            this.bitcrush_freq_sweep = -params.bitCrushSweep / this.envelopeFullLength_Samples;
             this.bitcrush_phase = 0;
             this.bitcrush_last = 0;
 
@@ -161,26 +165,25 @@ class Bfxr_DSP {
 
             this.repeatTime = 0;
 
-            if (params.repeatSpeed == 0.0) {
-                this.repeatLimit = 0;
-            } else {
-                this.repeatLimit = ((1.0 - params.repeatSpeed) * (1.0 - params.repeatSpeed) * 20000)|0 + 32;
-            }
+            //if 
+            // when params.repeatSpeed is zero, it should not repeat (i.e. repeat_length_samples should be the same as the envelope length)
+            // when params.repeatSpeed is 1, it should repeat 10 times a second (i.e. sampleRate/10)        
+            params.repeat_length_samples = lerp(params.envelopeFullLength_Samples, Bfxr_DSP.sampleRate/10, params.repeatSpeed)+32;//adding 32 for safety
         }
 
         
         this.changeTime = 0;
         this.changeReached = false;
 
-        var change_window_size = this.envelopeFullLength;
-        if (params.repeatLimit > 0) {
-            change_window_size = params.repeatLimit;
+        var change_window_size = this.envelopeFullLength_Samples;
+        if (params.repeat_length_samples > 0) {
+            change_window_size = params.repeat_length_samples;
         }
-        if (params.changeSpeed == 1.0) {
+        if (params.changeOnset == 1.0) {
             this.changeLimit = 0;
         }
         else {
-            this.changeLimit = params.changeSpeed * change_window_size + 32;
+            this.changeLimit = params.changeOnset * change_window_size + 32;
         }
 
 
@@ -195,10 +198,10 @@ class Bfxr_DSP {
         this.changeTime2 = 0;
         this.changeReached2 = false;
 
-        if (params.changeSpeed2 == 1.0) {
+        if (params.changeOnset2 == 1.0) {
             this.changeLimit2 = 0;
         }
-        else this.changeLimit2 = params.changeSpeed2 * change_window_size + 32;
+        else this.changeLimit2 = params.changeOnset2 * change_window_size + 32;
 
         this.changeLimit *= (1 - params.changeRepeat + 0.1) / 1.1;
         this.changeLimit2 *= (1 - params.changeRepeat + 0.1) / 1.1;
@@ -241,12 +244,12 @@ class Bfxr_DSP {
     }
 
     generate_sound() {
-        var buffer = new Float32Array(this.envelopeFullLength);
+        var buffer = new Float32Array(this.envelopeFullLength_Samples);
 			
         this.sampleCount = 0;
         var bufferSample = 0.0;
         
-        var length = this.envelopeFullLength;
+        var length = this.envelopeFullLength_Samples;
         var finished = false;
         for(var i = 0; i < length; i++)
         {
@@ -255,22 +258,22 @@ class Bfxr_DSP {
                 return true;					
             }
             
-            // Repeats every this.repeatLimit times, partially resetting the sound parameters
-            if(this.repeatLimit != 0)
+            // Repeats every this.repeat_length_samples times, partially resetting the sound parameters
+            if(this.repeat_length_samples != 0)
             {
-                if(++this.repeatTime >= this.repeatLimit)
+                if(++this.repeatTime >= this.repeat_length_samples)
                 {
                     this.repeatTime = 0;
                     this.reset(false);
                 }
             }
             
-            this.changePeriodTime++;
-            if (this.changePeriodTime>=this.changePeriod)
+            this.repeat_timestamp_stamples++;
+            if (this.repeat_timestamp_stamples>=this.repeat_length_samples)
             {				
                 this.changeTime=0;
                 this.changeTime2=0;
-                this.changePeriodTime=0;
+                this.repeat_timestamp_stamples=0;
                 if (this.changeReached)
                 {
                     this.period /= this.changeAmount;
@@ -337,14 +340,14 @@ class Bfxr_DSP {
             }
             
             // Moves through the different stages of the volume envelope
-            if(++this.envelopeTime > this.envelopeLength)
+            if(++this.envelopeTime > this.attack_length_samples)
             {
                 this.envelopeTime = 0;
                 
                 switch(++this.envelopeStage)
                 {
-                    case 1: this.envelopeLength = this.envelopeLength1; break;
-                    case 2: this.envelopeLength = this.envelopeLength2; break;
+                    case 1: this.attack_length_samples = this.envelopeLength1; break;
+                    case 2: this.attack_length_samples = this.envelopeLength2; break;
                 }
             }
             

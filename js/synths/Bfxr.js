@@ -161,28 +161,28 @@ class Bfxr extends SynthBase {
         ],
         [
             "Pitch Jump Repeat Speed",
-            "Larger Values means more pitch jumps, which can be useful for arpeggiation.",
-            "changeRepeat", 0, 0, 1
+            "Larger Values means more pitch jumps, which can be useful for arpeggiation. 0 means a single jump in the whole sound, 1 means 10 jumps a second.",
+            "pitch_jump_Repeat", 0, 0, 1
         ],
         [
             "Pitch Jump Amount 1",
             "Jump in pitch, either up or down.",
-            "changeAmount", 0, -1, 1
+            "pitch_jump_Amount", 0, -1, 1
         ],
         [
             "Pitch Jump Onset 1",
-            "How quickly the note shift happens.",
-            "changeSpeed", 0, 0, 1
+            "When the first pitch-jump happens.",
+            "pitch_jump_Onset", 0, 0, 1
         ],
         [
             "Pitch Jump Amount 2",
-            "Jump in pitch, either up or down.",
-            "changeAmount2", 0, -1, 1
+            "Second jump in pitch, either up or down.",
+            "pitch_jump_Amount2", 0, -1, 1
         ],
         [
             "Pitch Jump Onset 2",
-            "How quickly the note shift happens.",
-            "changeSpeed2", 0, 0, 1
+            "When the second pitch-jump happens.",
+            "pitch_jump_Onset2", 0, 0, 1
         ],
         [
             "Square Duty",
@@ -196,7 +196,7 @@ class Bfxr extends SynthBase {
         ],
         [
             "Repeat Speed",
-            "Speed of the note repeating - certain variables are reset each time.",
+            "Speed of the note repeating - certain variables are reset each time. 0 means no repeat, 1 means 10 repeats a second.",
             "repeatSpeed", 0, 0, 1
         ],
         [
@@ -332,11 +332,11 @@ class Bfxr extends SynthBase {
         this.set_param("sustainPunch", 0.3 + Math.random() * 0.3, true);
 
         if (Math.random() < 0.5) {
-            this.set_param("changeSpeed", 0.5 + Math.random() * 0.2, true);
+            this.set_param("pitch_jump_Speed", 0.5 + Math.random() * 0.2, true);
             var cnum = Math.floor(Math.random() * 7) + 1;
             var cden = Math.floor(Math.random() * 7) + cnum + 2;
 
-            this.set_param("changeAmount", cnum / cden, true);
+            this.set_param("pitch_jump_Amount", cnum / cden, true);
         }
     }
 
@@ -417,8 +417,8 @@ class Bfxr extends SynthBase {
         }
 
         if (Math.random() < 0.33) {
-            this.set_param("changeSpeed", 0.6 + Math.random() * 0.3, true);
-            this.set_param("changeAmount", 0.8 - Math.random() * 1.6, true);
+            this.set_param("pitch_jump_Speed", 0.6 + Math.random() * 0.3, true);
+            this.set_param("pitch_jump_Amount", 0.8 - Math.random() * 1.6, true);
         }
     }
 

@@ -55,3 +55,7 @@ function setVisible (ele, container) {
         container.scrollTop = ele.offsetTop - container.offsetHeight + ele.offsetHeight;
     }
 }
+
+function lerp(a, b, t){
+    return a + t * (b - a);
+}
