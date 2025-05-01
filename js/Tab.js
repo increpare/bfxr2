@@ -874,6 +874,13 @@ class Tab {
         SaveLoad.save_all_collections();
     }
 
+    get_current_file_name(){
+        if (this.selected_file_index===-1){
+            return null;
+        }
+        return this.files[this.selected_file_index][0];
+    }
+
     //returns true if the selected file was changed, false if it was already selected
     set_selected_file(file_name) {
         for (var i = 0; i < this.files.length; i++) {
@@ -1032,7 +1039,9 @@ class Tab {
                 break;
             }
         }
-        var file_name = template_data[3];
+        // special behaviour - if you hit 'mutate', then have the new file-name be
+        // based on the existing one.
+        var file_name = template_name==="mutate_params"?this.get_current_file_name():template_data[3];
         this.synth[template_data[2]].bind(this.synth)();
         this.create_new_sound_from_params(file_name, this.synth.params);
     }

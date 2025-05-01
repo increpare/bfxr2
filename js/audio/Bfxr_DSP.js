@@ -82,11 +82,6 @@ class Bfxr_DSP {
             this.overtones = params.overtones * 10;
             this.overtoneFalloff = params.overtoneFalloff;
 
-            this.bitcrush_freq = 1 - Math.pow(params.bitCrush, 1.0 / 3.0);
-            this.bitcrush_freq_sweep = -params.bitCrushSweep * 0.000015;
-            this.bitcrush_phase = 0;
-            this.bitcrush_last = 0;
-
             this.compression_factor = 1 / (1 + 4 * params.compressionAmount);
 
             this.filters = params.lpFilterCutoff != 1.0 || params.hpFilterCutoff != 0.0;
@@ -116,6 +111,13 @@ class Bfxr_DSP {
             this.envelopeLength2 = params.decayTime * params.decayTime * 100000.0 + 10;
             this.envelopeLength = this.envelopeLength0;
             this.envelopeFullLength = this.envelopeLength0 + this.envelopeLength1 + this.envelopeLength2;
+
+            
+            this.bitcrush_freq = 1 - Math.pow(params.bitCrush, 1.0 / 3.0);
+            this.bitcrush_freq_sweep = -params.bitCrushSweep / this.envelopeFullLength;
+            this.bitcrush_phase = 0;
+            this.bitcrush_last = 0;
+
 
             this.envelopeOverLength0 = 1.0 / this.envelopeLength0;
             this.envelopeOverLength1 = 1.0 / this.envelopeLength1;
