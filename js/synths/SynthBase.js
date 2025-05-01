@@ -85,8 +85,8 @@ class SynthBase {
         }
         this.locked_params = {};
         for (var i = 0; i < this.param_info.length; i++) {
-            var param = this.param_info[i];
-            this.locked_params[param[2]] = false;
+            var param = this.get_param_normalized(this.param_info[i]);
+            this.locked_params[param.name] = false;
         }
         for (var i = 0; i < this.permalocked.length; i++) {
             this.locked_params[this.permalocked[i]] = true;

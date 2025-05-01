@@ -568,7 +568,7 @@ class Bfxr_DSP {
                 this.bitcrush_phase=0;
                 this.bitcrush_last=this.superSample;	 
             }
-            this.bitcrush_freq = Math.max(Math.min(this.bitcrush_freq+this.bitcrush_freq_sweep,1),0);
+            this.bitcrush_freq = Math.max(Math.min(this.bitcrush_freq+this.bitcrush_freq_sweep,1),0.001);
             
             this.superSample=this.bitcrush_last; 				
         
