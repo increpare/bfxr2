@@ -316,6 +316,22 @@ class Tab {
             }
         }
         
+        //for every parameter, check if it is disabled
+        for (var i = 0; i < this.synth.param_info.length; i++) {
+            var param = this.synth.param_info[i];
+            if (param.constructor === Array){
+                var param_name = param[2];
+                var param_disabled = this.synth.param_is_disabled(param_name);
+                var slider = this.sliders[param_name];
+                if (param_disabled){
+                    slider.disable();
+                } else {
+                    slider.enable();
+                }
+            } else {
+                //not supported yet - this code is just for the square duty stuff right now.
+            }   
+        }
     }
 
     update_ui_file_list(){

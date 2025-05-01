@@ -49,6 +49,10 @@ class SynthBase {
         }
     }
 
+    param_is_disabled(param_name){
+        return false;
+    }
+
     reset_params(check_locked = false) {
         var default_params = this.default_params();
         this.apply_params(default_params,check_locked);

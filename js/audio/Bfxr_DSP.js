@@ -330,7 +330,7 @@ class Bfxr_DSP {
             if (this.waveType === 0)
             {
                 this.squareDuty += this.dutySweep;
-                        if(this.squareDuty < 0.0) this.squareDuty = 0.0;
+                if(this.squareDuty < 0.0) this.squareDuty = 0.001;
                 else if (this.squareDuty > 0.5) this.squareDuty = 0.5;
             }
             

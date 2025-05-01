@@ -187,7 +187,7 @@ class Bfxr extends SynthBase {
         [
             "Square Duty",
             "Square waveform only : Controls the ratio between the up and down states of the square wave, changing the timbre.",
-            "squareDuty", 0, 0, 1
+            "squareDuty", 0, 0, 0.99
         ],
         [
             "Duty Sweep",
@@ -615,6 +615,21 @@ class Bfxr extends SynthBase {
         if (this.get_param("lpFilterCutoff") < 0.1 && this.get_param("lpFilterCutoffSweep") < -0.05) {
             this.set_param("lpFilterCutoffSweep", -this.get_param("lpFilterCutoffSweep"),true);
         }
+
+        //if wavetype is not square, set duty values to default
+        if (this.get_param("waveType") !== 0){
+            this.set_param("squareDuty", this.param_default("squareDuty"),true);
+            this.set_param("dutySweep", this.param_default("dutySweep"),true);
+        } else {
+            //when duty is 0, dutysweep can be anything between min and max
+            //when duty is near 1, dutysweep should be <=0 80% of the time, and >=0 20% of the time
+            var duty = this.get_param("squareDuty");
+            var random_param = Math.random();
+            if (duty>0.7 && random_param<0.5){
+                this.set_param("dutySweep", -Math.random()*0.5,true);
+                //this is just to stop the dutySweep from wiping out the sound when it gets too high (too regularly)
+            }
+        }
     
     }
 
@@ -627,4 +642,17 @@ class Bfxr extends SynthBase {
         dsp.generate_sound();
         this.sound = RealizedSound.from_buffer(dsp.buffer);
     }
+
+    /*********************/
+    /* MISCELLANEOUS     */
+    /*********************/
+    param_is_disabled(param_name){
+        if (this.get_param("waveType") !== 0){//if not a square wave, disable squareDuty and dutySweep
+            if (param_name == "squareDuty" || param_name == "dutySweep"){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

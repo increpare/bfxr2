@@ -753,3 +753,8 @@ button:active {
 }
 /* SHORTCUTS DL STUFF END */
 
+
+img {
+    /*pixelated*/
+    image-rendering: pixelated;
+}
