@@ -54,19 +54,12 @@ class Bfxr_DSP {
             this.dutySweep = -params.dutySweep * 0.00005;
         }
 
-        //  this.changePeriod = Math.max(((1 - params.changeRepeat) + 0.1) / 1.1) * 20000 + 32;
-        //  this.changePeriodTime = 0;
-        // when params.changeRepeat, it should not repeat (i.e. be the same as the envelope length)
-        // when params.changeRepeat is 1, it should repeat 10 times a second (i.e. sampleRate/10)
-        this.repeat_length_samples = lerp(params.envelopeFullLength_Samples, Bfxr_DSP.sampleRate/10, params.changeRepeat)+32;//adding 32 for safety
+        //  this.pitch_jump_Period = Math.max(((1 - params.pitch_jump_repeat_speed) + 0.1) / 1.1) * 20000 + 32;
+        //  this.pitch_jump_PeriodTime = 0;
+        // when params.pitch_jump_repeat_speed, it should not repeat (i.e. be the same as the envelope length)
+        // when params.pitch_jump_repeat_speed is 1, it should repeat 10 times a second (i.e. sampleRate/10)
+        this.repeat_length_samples = lerp(this.envelope_full_length_samples, Bfxr_DSP.sampleRate/10, params.repeatSpeed)+32;//adding 32 for safety
         this.repeat_timestamp_stamples = 0;
-
-        if (params.changeAmount > 0.0) {
-            this.changeAmount = 1.0 - params.changeAmount * params.changeAmount * 0.9;
-        }
-        else {
-            this.changeAmount = 1.0 + params.changeAmount * params.changeAmount * 10.0;
-        }
 
         if (total_reset){
             this.waveType = (params.waveType)|0;
@@ -114,11 +107,11 @@ class Bfxr_DSP {
             this.envelopeLength1 = params.sustainTime * params.sustainTime * 100000.0;
             this.envelopeLength2 = params.decayTime * params.decayTime * 100000.0 + 10;
             this.attack_length_samples = this.envelopeLength0;
-            this.envelopeFullLength_Samples = this.envelopeLength0 + this.envelopeLength1 + this.envelopeLength2;
+            this.envelope_full_length_samples = this.envelopeLength0 + this.envelopeLength1 + this.envelopeLength2;
 
             
             this.bitcrush_freq = 1 - Math.pow(params.bitCrush, 1.0 / 3.0);
-            this.bitcrush_freq_sweep = -params.bitCrushSweep / this.envelopeFullLength_Samples;
+            this.bitcrush_freq_sweep = -params.bitCrushSweep / this.envelope_full_length_samples;
             this.bitcrush_phase = 0;
             this.bitcrush_last = 0;
 
@@ -163,48 +156,60 @@ class Bfxr_DSP {
                 this.loResNoiseBuffer[i] = ((i % Bfxr_DSP.LoResNoisePeriod) == 0) ? Math.random() * 2.0 - 1.0 : this.loResNoiseBuffer[i - 1];
             }
 
-            this.repeatTime = 0;
+            this.repeat_timestamp_samples = 0;
 
             //if 
-            // when params.repeatSpeed is zero, it should not repeat (i.e. repeat_length_samples should be the same as the envelope length)
-            // when params.repeatSpeed is 1, it should repeat 10 times a second (i.e. sampleRate/10)        
-            params.repeat_length_samples = lerp(params.envelopeFullLength_Samples, Bfxr_DSP.sampleRate/10, params.repeatSpeed)+32;//adding 32 for safety
+            // when params.pitch_jump_repeat_speed is zero, it should not repeat (i.e. pitch_jump_repeat_length_samples should be the same as the envelope length)
+            // when params.pitch_jump_repeat_speed is 1, it should repeat 10 times a second (i.e. sampleRate/50)        
+            this.pitch_jump_repeat_length_samples = lerp(this.envelope_full_length_samples, Bfxr_DSP.sampleRate/50, params.pitch_jump_repeat_speed)+32;//adding 32 for safety
         }
 
+        // PITCH JUMP START
+
+
+        if (params.pitch_jump_amount > 0.0) {
+            this.pitch_jump_amount = 1.0 - params.pitch_jump_amount * params.pitch_jump_amount * 0.9;
+        }
+        else {
+            this.pitch_jump_amount = 1.0 + params.pitch_jump_amount * params.pitch_jump_amount * 10.0;
+        }        
+        if (params.pitch_jump_2_amount > 0.0) {
+            this.pitch_jump_2_amount = 1.0 - params.pitch_jump_2_amount * params.pitch_jump_2_amount * 0.9;
+        }
+        else {
+            this.pitch_jump_2_amount = 1.0 + params.pitch_jump_2_amount * params.pitch_jump_2_amount * 10.0;
+        }
+
+        this.pitch_jump_current_timestamp_samples = 0;
+
+        this.pitch_jump_reached = false;
+        this.pitch_jump_2_reached = false;
+
+        var pitch_jump_window_size_samples = this.envelope_full_length_samples;
+        if (this.pitch_jump_repeat_length_samples > 0) {
+            pitch_jump_window_size_samples = this.pitch_jump_repeat_length_samples;
+        }
         
-        this.changeTime = 0;
-        this.changeReached = false;
-
-        var change_window_size = this.envelopeFullLength_Samples;
-        if (params.repeat_length_samples > 0) {
-            change_window_size = params.repeat_length_samples;
-        }
-        if (params.changeOnset == 1.0) {
-            this.changeLimit = 0;
+        if (params.pitch_jump_onset_percent == 1.0) {
+            this.pitch_jump_timestamp_sample = 0;
         }
         else {
-            this.changeLimit = params.changeOnset * change_window_size + 32;
+            this.pitch_jump_timestamp_sample = params.pitch_jump_onset_percent * pitch_jump_window_size_samples + 32;
         }
-
-
-        if (params.changeAmount2 > 0.0) {
-            this.changeAmount2 = 1.0 - params.changeAmount2 * params.changeAmount2 * 0.9;
+        if (params.pitch_jump_onset2_percent == 1.0) {
+            this.pitch_jump_2_timestamp_sample = 0;
         }
         else {
-            this.changeAmount2 = 1.0 + params.changeAmount2 * params.changeAmount2 * 10.0;
+            this.pitch_jump_2_timestamp_sample = params.pitch_jump_onset2_percent * pitch_jump_window_size_samples + 32;
         }
 
+        //scale by repeat_length_samples vs envelope_full_length_samples
+        //need to scale by repeat_length_samples/envelope_full_length_samples
+        // var pitch_jump_time_scale_factor = this.pitch_jump_repeat_length_samples / this.envelope_full_length_samples;
+        // this.pitch_jump_timestamp_sample *= pitch_jump_time_scale_factor;
+        // this.pitch_jump_2_timestamp_sample *= pitch_jump_time_scale_factor;
 
-        this.changeTime2 = 0;
-        this.changeReached2 = false;
-
-        if (params.changeOnset2 == 1.0) {
-            this.changeLimit2 = 0;
-        }
-        else this.changeLimit2 = params.changeOnset2 * change_window_size + 32;
-
-        this.changeLimit *= (1 - params.changeRepeat + 0.1) / 1.1;
-        this.changeLimit2 *= (1 - params.changeRepeat + 0.1) / 1.1;
+        //PITCH JUMP END
 
         this.masterVolume = params.masterVolume * params.masterVolume;
         
@@ -244,12 +249,12 @@ class Bfxr_DSP {
     }
 
     generate_sound() {
-        var buffer = new Float32Array(this.envelopeFullLength_Samples);
+        var buffer = new Float32Array(this.envelope_full_length_samples);
 			
         this.sampleCount = 0;
         var bufferSample = 0.0;
         
-        var length = this.envelopeFullLength_Samples;
+        var length = this.envelope_full_length_samples;
         var finished = false;
         for(var i = 0; i < length; i++)
         {
@@ -258,51 +263,49 @@ class Bfxr_DSP {
                 return true;					
             }
             
-            // Repeats every this.repeat_length_samples times, partially resetting the sound parameters
+            // Repeats every this.pitch_jump_repeat_length_samples times, partially resetting the sound parameters
             if(this.repeat_length_samples != 0)
             {
-                if(++this.repeatTime >= this.repeat_length_samples)
+                if(++this.repeat_timestamp_samples >= this.repeat_length_samples)
                 {
-                    this.repeatTime = 0;
+                    this.repeat_timestamp_samples = 0;
                     this.reset(false);
                 }
             }
             
-            this.repeat_timestamp_stamples++;
-            if (this.repeat_timestamp_stamples>=this.repeat_length_samples)
+            this.pitch_jump_current_timestamp_samples++;
+            if (this.pitch_jump_current_timestamp_samples>=this.pitch_jump_repeat_length_samples)
             {				
-                this.changeTime=0;
-                this.changeTime2=0;
-                this.repeat_timestamp_stamples=0;
-                if (this.changeReached)
+                this.pitch_jump_current_timestamp_samples=0;
+                if (this.pitch_jump_reached)
                 {
-                    this.period /= this.changeAmount;
-                    this.changeReached=false;
+                    this.period /= this.pitch_jump_amount;
+                    this.pitch_jump_reached=false;
                 }
-                if (this.changeReached2)
+                if (this.pitch_jump_2_reached)
                 {
-                    this.period /= this.changeAmount2;
-                    this.changeReached2=false;
+                    this.period /= this.pitch_jump_2_amount;
+                    this.pitch_jump_2_reached=false;
                 }
             }
             
-            // If this.changeLimit is reached, shifts the pitch
-            if(!this.changeReached)
+            // If this.pitch_jump_timestamp_sample is reached, shifts the pitch
+            if(!this.pitch_jump_reached)
             {
-                if(++this.changeTime >= this.changeLimit)
+                if(this.pitch_jump_current_timestamp_samples >= this.pitch_jump_timestamp_sample)
                 {
-                    this.changeReached = true;
-                    this.period *= this.changeAmount;
+                    this.pitch_jump_reached = true;
+                    this.period *= this.pitch_jump_amount;
                 }
             }
             
-            // If this.changeLimit is reached, shifts the pitch
-            if(!this.changeReached2)
+            // If this.pitch_jump_timestamp_sample is reached, shifts the pitch
+            if(!this.pitch_jump_2_reached)
             {
-                if(++this.changeTime2 >= this.changeLimit2)
+                if(this.pitch_jump_current_timestamp_samples >= this.pitch_jump_2_timestamp_sample)
                 {
-                    this.period *= this.changeAmount2;
-                    this.changeReached2=true;
+                    this.period *= this.pitch_jump_2_amount;
+                    this.pitch_jump_2_reached=true;
                 }
             }
             

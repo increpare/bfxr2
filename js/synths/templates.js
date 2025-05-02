@@ -51,19 +51,19 @@ const TEMPLATES_JSON = {
         "overtoneFalloff": [
           0
         ],
-        "changeRepeat": [
+        "pitch_jump_repeat_speed": [
           0
         ],
-        "changeAmount": [
+        "pitch_jump_amount": [
           0
         ],
-        "changeSpeed": [
+        "pitch_jump_onset_percent": [
           0
         ],
-        "changeAmount2": [
+        "pitch_jump_2_amount": [
           0
         ],
-        "changeSpeed2": [
+        "pitch_jump_onset2_percent": [
           0
         ],
         "squareDuty": [
@@ -162,21 +162,21 @@ const TEMPLATES_JSON = {
         "overtoneFalloff": [
           0
         ],
-        "changeRepeat": [
+        "pitch_jump_repeat_speed": [
           0
         ],
-        "changeAmount": [
+        "pitch_jump_amount": [
           0.34667,
           0.38667
         ],
-        "changeSpeed": [
+        "pitch_jump_onset_percent": [
           0.32667,
           0.29333
         ],
-        "changeAmount2": [
+        "pitch_jump_2_amount": [
           0
         ],
-        "changeSpeed2": [
+        "pitch_jump_onset2_percent": [
           0
         ],
         "squareDuty": [

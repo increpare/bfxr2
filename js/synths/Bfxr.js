@@ -161,28 +161,28 @@ class Bfxr extends SynthBase {
         ],
         [
             "Pitch Jump Repeat Speed",
-            "Larger Values means more pitch jumps, which can be useful for arpeggiation. 0 means a single jump in the whole sound, 1 means 10 jumps a second.",
-            "pitch_jump_Repeat", 0, 0, 1
+            "Larger Values means more pitch jumps, which can be useful for arpeggiation. 0 means a single jump in the whole sound, 1 means 50 jumps a second.",
+            "pitch_jump_repeat_speed", 0, 0, 1
         ],
         [
             "Pitch Jump Amount 1",
             "Jump in pitch, either up or down.",
-            "pitch_jump_Amount", 0, -1, 1
+            "pitch_jump_amount", 0, -1, 1
         ],
         [
             "Pitch Jump Onset 1",
             "When the first pitch-jump happens.",
-            "pitch_jump_Onset", 0, 0, 1
+            "pitch_jump_onset_percent", 0, 0, 1
         ],
         [
             "Pitch Jump Amount 2",
             "Second jump in pitch, either up or down.",
-            "pitch_jump_Amount2", 0, -1, 1
+            "pitch_jump_2_amount", 0, -1, 1
         ],
         [
             "Pitch Jump Onset 2",
             "When the second pitch-jump happens.",
-            "pitch_jump_Onset2", 0, 0, 1
+            "pitch_jump_onset2_percent", 0, 0, 1
         ],
         [
             "Square Duty",
@@ -336,7 +336,7 @@ class Bfxr extends SynthBase {
             var cnum = Math.floor(Math.random() * 7) + 1;
             var cden = Math.floor(Math.random() * 7) + cnum + 2;
 
-            this.set_param("pitch_jump_Amount", cnum / cden, true);
+            this.set_param("pitch_jump_amount", cnum / cden, true);
         }
     }
 
@@ -418,7 +418,7 @@ class Bfxr extends SynthBase {
 
         if (Math.random() < 0.33) {
             this.set_param("pitch_jump_Speed", 0.6 + Math.random() * 0.3, true);
-            this.set_param("pitch_jump_Amount", 0.8 - Math.random() * 1.6, true);
+            this.set_param("pitch_jump_amount", 0.8 - Math.random() * 1.6, true);
         }
     }
 
