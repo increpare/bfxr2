@@ -125,11 +125,6 @@ class Bfxr extends SynthBase {
             "startFrequency", 0.3, 0, 1
         ],
         [
-            "Frequency Cutoff",
-            "If sliding, the sound will stop at this frequency, to prevent really low notes.  If unlocked, this is set to zero during randomization.",
-            "minFrequency", 0.0, 0, 1
-        ],
-        [
             "Frequency Slide",
             "Slides the frequency up or down.",
             "slide", 0.0, -0.5, 0.5
@@ -138,6 +133,11 @@ class Bfxr extends SynthBase {
             "Delta Slide",
             "Accelerates the frequency slide.  Can be used to get the frequency to change direction.",
             "deltaSlide", 0.0, -1, 1
+        ],
+        [
+            "Frequency Cutoff",
+            "If sliding, the sound will stop at this frequency, to prevent really low notes.  If unlocked, this is set to zero during randomization.",
+            "minFrequency", 0.0, 0, 1
         ],
         [
             "Vibrato Depth",
@@ -196,7 +196,7 @@ class Bfxr extends SynthBase {
         ],
         [
             "Repeat Speed",
-            "Speed of the note repeating - certain variables are reset each time. 0 means no repeat, 1 means 10 repeats a second.",
+            "Speed of the note repeating - certain variables are reset each time (sweeps, pitch slide, delta slide, etc. - doesn't apply to pitch jumps which have their own repeat parameter). 0 means no repeat, 1 means 10 repeats a second.",
             "repeatSpeed", 0, 0, 1
         ],
         [

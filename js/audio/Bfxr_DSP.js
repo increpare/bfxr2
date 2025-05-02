@@ -43,25 +43,17 @@ class Bfxr_DSP {
     reset(total_reset = true){
         var params=this.params;
 
-        this.period = 100.0 / (params.startFrequency * params.startFrequency + 0.001);
-        this.maxPeriod = 100.0 / (params.minFrequency * params.minFrequency + 0.001);
 
-        this.slide = 1.0 - params.slide * params.slide * params.slide * 0.01;
-        this.deltaSlide = -params.deltaSlide * params.deltaSlide * params.deltaSlide * 0.000001;
+        this.frequency_period_samples = 100.0 / (params.startFrequency * params.startFrequency + 0.001);
+        this.frequency_maxPeriod_samples = 100.0 / (params.minFrequency * params.minFrequency + 0.001);
 
-        if ((params.waveType)|0 == 0) {
-            this.squareDuty = 0.5 - params.squareDuty * 0.5;
-            this.dutySweep = -params.dutySweep * 0.00005;
-        }
-
-        //  this.pitch_jump_Period = Math.max(((1 - params.pitch_jump_repeat_speed) + 0.1) / 1.1) * 20000 + 32;
-        //  this.pitch_jump_PeriodTime = 0;
-        // when params.pitch_jump_repeat_speed, it should not repeat (i.e. be the same as the envelope length)
-        // when params.pitch_jump_repeat_speed is 1, it should repeat 10 times a second (i.e. sampleRate/10)
-        this.repeat_length_samples = lerp(this.envelope_full_length_samples, Bfxr_DSP.sampleRate/10, params.repeatSpeed)+32;//adding 32 for safety
-        this.repeat_timestamp_stamples = 0;
+        this.pitch_jump_reached = false;
+        this.pitch_jump_2_reached = false;
 
         if (total_reset){
+
+            this.masterVolume = params.masterVolume * params.masterVolume;
+            
             this.waveType = (params.waveType)|0;
 
             if (params.sustainTime < 0.01) {
@@ -83,18 +75,7 @@ class Bfxr_DSP {
 
             this.filters = params.lpFilterCutoff != 1.0 || params.hpFilterCutoff != 0.0;
 
-            this.lpFilterPos = 0.0;
-            this.lpFilterDeltaPos = 0.0;
-            this.lpFilterCutoff = params.lpFilterCutoff * params.lpFilterCutoff * params.lpFilterCutoff * 0.1;
-            this.lpFilterDeltaCutoff = 1.0 + params.lpFilterCutoffSweep * 0.0001;
-            this.lpFilterDamping = 5.0 / (1.0 + params.lpFilterResonance * params.lpFilterResonance * 20.0) * (0.01 + this.lpFilterCutoff);
-            if (this.lpFilterDamping > 0.8) this.lpFilterDamping = 0.8;
-            this.lpFilterDamping = 1.0 - this.lpFilterDamping;
-            this.lpFilterOn = params.lpFilterCutoff != 1.0;
 
-            this.hpFilterPos = 0.0;
-            this.hpFilterCutoff = params.hpFilterCutoff * params.hpFilterCutoff * 0.1;
-            this.hpFilterDeltaCutoff = 1.0 + params.hpFilterCutoffSweep * 0.0003;
 
             this.vibratoPhase = 0.0;
             this.vibratoSpeed = params.vibratoSpeed * params.vibratoSpeed * 0.01;
@@ -110,7 +91,6 @@ class Bfxr_DSP {
             this.envelope_full_length_samples = this.envelopeLength0 + this.envelopeLength1 + this.envelopeLength2;
 
             
-            this.bitcrush_freq = 1 - Math.pow(params.bitCrush, 1.0 / 3.0);
             this.bitcrush_freq_sweep = -params.bitCrushSweep / this.envelope_full_length_samples;
             this.bitcrush_phase = 0;
             this.bitcrush_last = 0;
@@ -122,10 +102,6 @@ class Bfxr_DSP {
 
             this.flanger = params.flangerOffset != 0.0 || params.flangerSweep != 0.0;
 
-            this.flangerOffset = params.flangerOffset * params.flangerOffset * 1020.0;
-            if (params.flangerOffset < 0.0) {
-                this.flangerOffset = -this.flangerOffset;
-            }
             this.flangerDeltaOffset = params.flangerSweep * params.flangerSweep * params.flangerSweep * 0.2;
             this.flangerPos = 0;
 
@@ -162,78 +138,114 @@ class Bfxr_DSP {
             // when params.pitch_jump_repeat_speed is zero, it should not repeat (i.e. pitch_jump_repeat_length_samples should be the same as the envelope length)
             // when params.pitch_jump_repeat_speed is 1, it should repeat 10 times a second (i.e. sampleRate/50)        
             this.pitch_jump_repeat_length_samples = lerp(this.envelope_full_length_samples, Bfxr_DSP.sampleRate/50, params.pitch_jump_repeat_speed)+32;//adding 32 for safety
+            
+            // PITCH JUMP START
+
+
+            var pitch_jump_window_size_samples = this.envelope_full_length_samples;
+            if (this.pitch_jump_repeat_length_samples > 0) {
+                pitch_jump_window_size_samples = this.pitch_jump_repeat_length_samples;
+            }
+                        
+            if (params.pitch_jump_amount > 0.0) {
+                this.pitch_jump_amount = 1.0 - params.pitch_jump_amount * params.pitch_jump_amount * 0.9;
+            }
+            else {
+                this.pitch_jump_amount = 1.0 + params.pitch_jump_amount * params.pitch_jump_amount * 10.0;
+            }        
+            if (params.pitch_jump_2_amount > 0.0) {
+                this.pitch_jump_2_amount = 1.0 - params.pitch_jump_2_amount * params.pitch_jump_2_amount * 0.9;
+            }
+            else {
+                this.pitch_jump_2_amount = 1.0 + params.pitch_jump_2_amount * params.pitch_jump_2_amount * 10.0;
+            }
+
+            this.pitch_jump_current_timestamp_samples = 0;
+
+            if (params.pitch_jump_onset_percent == 1.0) {
+                this.pitch_jump_timestamp_sample = 0;
+            }
+            else {
+                this.pitch_jump_timestamp_sample = params.pitch_jump_onset_percent * pitch_jump_window_size_samples + 32;
+            }
+            if (params.pitch_jump_onset2_percent == 1.0) {
+                this.pitch_jump_2_timestamp_sample = 0;
+            }
+            else {
+                this.pitch_jump_2_timestamp_sample = params.pitch_jump_onset2_percent * pitch_jump_window_size_samples + 32;
+            }
+
+            //scale by repeat_length_samples vs envelope_full_length_samples
+            //need to scale by repeat_length_samples/envelope_full_length_samples
+            // var pitch_jump_time_scale_factor = this.pitch_jump_repeat_length_samples / this.envelope_full_length_samples;
+            // this.pitch_jump_timestamp_sample *= pitch_jump_time_scale_factor;
+            // this.pitch_jump_2_timestamp_sample *= pitch_jump_time_scale_factor;
+
+            //PITCH JUMP END
+
+            if (this.waveType === 9) { //Bitnoise
+                var sf = params.startFrequency;
+                var mf = params.minFrequency;
+    
+                var startFrequency_min = this.param_info.param_min("startFrequency");
+                var startFrequency_max = this.param_info.param_max("startFrequency");
+                var startFrequency_mid = (startFrequency_max + startFrequency_min) / 2;
+    
+                var minFrequency_min = this.param_info.param_min("minFrequency");
+                var minFrequency_max = this.param_info.param_max("minFrequency");
+                var minFrequency_mid = (minFrequency_max + minFrequency_min) / 2;
+    
+                var delta_start = (sf - startFrequency_min) / (startFrequency_max - startFrequency_min)
+                var delta_min = (mf - minFrequency_min) / (minFrequency_max - minFrequency_min)
+    
+                sf = startFrequency_mid + delta_start;
+                mf = minFrequency_mid + delta_min;
+    
+                this.frequency_period_samples = 100.0 / (sf * sf + 0.001);
+                this.frequency_maxPeriod_samples = 100.0 / (mf * mf + 0.001);
+            }
         }
 
-        // PITCH JUMP START
+        // START sweep paramets designed to be reset with repeat speed
+        this.slide = 1.0 - params.slide * params.slide * params.slide * 0.01;
+        this.deltaSlide = -params.deltaSlide * params.deltaSlide * params.deltaSlide * 0.000001;
 
-
-        if (params.pitch_jump_amount > 0.0) {
-            this.pitch_jump_amount = 1.0 - params.pitch_jump_amount * params.pitch_jump_amount * 0.9;
-        }
-        else {
-            this.pitch_jump_amount = 1.0 + params.pitch_jump_amount * params.pitch_jump_amount * 10.0;
-        }        
-        if (params.pitch_jump_2_amount > 0.0) {
-            this.pitch_jump_2_amount = 1.0 - params.pitch_jump_2_amount * params.pitch_jump_2_amount * 0.9;
-        }
-        else {
-            this.pitch_jump_2_amount = 1.0 + params.pitch_jump_2_amount * params.pitch_jump_2_amount * 10.0;
-        }
-
-        this.pitch_jump_current_timestamp_samples = 0;
-
-        this.pitch_jump_reached = false;
-        this.pitch_jump_2_reached = false;
-
-        var pitch_jump_window_size_samples = this.envelope_full_length_samples;
-        if (this.pitch_jump_repeat_length_samples > 0) {
-            pitch_jump_window_size_samples = this.pitch_jump_repeat_length_samples;
+        this.flangerOffset = params.flangerOffset * params.flangerOffset * 1020.0;
+        if (params.flangerOffset < 0.0) {
+            this.flangerOffset = -this.flangerOffset;
         }
         
-        if (params.pitch_jump_onset_percent == 1.0) {
-            this.pitch_jump_timestamp_sample = 0;
-        }
-        else {
-            this.pitch_jump_timestamp_sample = params.pitch_jump_onset_percent * pitch_jump_window_size_samples + 32;
-        }
-        if (params.pitch_jump_onset2_percent == 1.0) {
-            this.pitch_jump_2_timestamp_sample = 0;
-        }
-        else {
-            this.pitch_jump_2_timestamp_sample = params.pitch_jump_onset2_percent * pitch_jump_window_size_samples + 32;
-        }
+        this.bitcrush_freq = 1 - Math.pow(params.bitCrush, 1.0 / 3.0);
 
-        //scale by repeat_length_samples vs envelope_full_length_samples
-        //need to scale by repeat_length_samples/envelope_full_length_samples
-        // var pitch_jump_time_scale_factor = this.pitch_jump_repeat_length_samples / this.envelope_full_length_samples;
-        // this.pitch_jump_timestamp_sample *= pitch_jump_time_scale_factor;
-        // this.pitch_jump_2_timestamp_sample *= pitch_jump_time_scale_factor;
-
-        //PITCH JUMP END
-
-        this.masterVolume = params.masterVolume * params.masterVolume;
         
-        if (this.waveType === 9) {
-            var sf = params.startFrequency;
-            var mf = params.minFrequency;
-
-            var startFrequency_min = this.param_info.param_min("startFrequency");
-            var startFrequency_max = this.param_info.param_max("startFrequency");
-            var startFrequency_mid = (startFrequency_max + startFrequency_min) / 2;
-
-            var minFrequency_min = this.param_info.param_min("minFrequency");
-            var minFrequency_max = this.param_info.param_max("minFrequency");
-            var minFrequency_mid = (minFrequency_max + minFrequency_min) / 2;
-
-            var delta_start = (sf - startFrequency_min) / (startFrequency_max - startFrequency_min)
-            var delta_min = (mf - minFrequency_min) / (minFrequency_max - minFrequency_min)
-
-            sf = startFrequency_mid + delta_start;
-            mf = minFrequency_mid + delta_min;
-
-            this.period = 100.0 / (sf * sf + 0.001);
-            this.maxPeriod = 100.0 / (mf * mf + 0.001);
+        if ((params.waveType)|0 == 0) {
+            this.squareDuty = 0.5 - params.squareDuty * 0.5;
+            this.dutySweep = -params.dutySweep * 0.00005;
         }
+        
+        this.lpFilterCutoff = params.lpFilterCutoff * params.lpFilterCutoff * params.lpFilterCutoff * 0.1;
+        this.lpFilterDeltaCutoff = 1.0 + params.lpFilterCutoffSweep * 0.0001;
+        this.lpFilterDamping = 5.0 / (1.0 + params.lpFilterResonance * params.lpFilterResonance * 20.0) * (0.01 + this.lpFilterCutoff);
+        if (this.lpFilterDamping > 0.8) this.lpFilterDamping = 0.8;
+        this.lpFilterDamping = 1.0 - this.lpFilterDamping;
+        this.lpFilterOn = params.lpFilterCutoff != 1.0;
+
+        this.lpFilterPos = 0.0;
+        this.lpFilterDeltaPos = 0.0;
+        this.hpFilterPos = 0.0;
+        this.hpFilterCutoff = params.hpFilterCutoff * params.hpFilterCutoff * 0.1;
+        this.hpFilterDeltaCutoff = 1.0 + params.hpFilterCutoffSweep * 0.0003;
+
+        // END sweep paramets designed to be reset with repeat speed
+        
+
+        // when params.pitch_jump_repeat_speed, it should not repeat (i.e. be the same as the envelope length)
+        // when params.pitch_jump_repeat_speed is 1, it should repeat 10 times a second (i.e. sampleRate/10)
+        this.param_reset_period_samples = lerp(this.envelope_full_length_samples, Bfxr_DSP.sampleRate/10, params.repeatSpeed);
+        this.param_reset_current_timestamp_samples = 0;
+
+        
+
     }
 
     clampTotalLength(p)
@@ -264,11 +276,12 @@ class Bfxr_DSP {
             }
             
             // Repeats every this.pitch_jump_repeat_length_samples times, partially resetting the sound parameters
-            if(this.repeat_length_samples != 0)
+            if(this.param_reset_period_samples != 0)
             {
-                if(++this.repeat_timestamp_samples >= this.repeat_length_samples)
+                this.param_reset_current_timestamp_samples++;
+                if(this.param_reset_current_timestamp_samples >= this.param_reset_period_samples)
                 {
-                    this.repeat_timestamp_samples = 0;
+                    this.param_reset_current_timestamp_samples = 0;
                     this.reset(false);
                 }
             }
@@ -279,12 +292,12 @@ class Bfxr_DSP {
                 this.pitch_jump_current_timestamp_samples=0;
                 if (this.pitch_jump_reached)
                 {
-                    this.period /= this.pitch_jump_amount;
+                    this.frequency_period_samples /= this.pitch_jump_amount;
                     this.pitch_jump_reached=false;
                 }
                 if (this.pitch_jump_2_reached)
                 {
-                    this.period /= this.pitch_jump_2_amount;
+                    this.frequency_period_samples /= this.pitch_jump_2_amount;
                     this.pitch_jump_2_reached=false;
                 }
             }
@@ -295,7 +308,7 @@ class Bfxr_DSP {
                 if(this.pitch_jump_current_timestamp_samples >= this.pitch_jump_timestamp_sample)
                 {
                     this.pitch_jump_reached = true;
-                    this.period *= this.pitch_jump_amount;
+                    this.frequency_period_samples *= this.pitch_jump_amount;
                 }
             }
             
@@ -304,31 +317,31 @@ class Bfxr_DSP {
             {
                 if(this.pitch_jump_current_timestamp_samples >= this.pitch_jump_2_timestamp_sample)
                 {
-                    this.period *= this.pitch_jump_2_amount;
+                    this.frequency_period_samples *= this.pitch_jump_2_amount;
                     this.pitch_jump_2_reached=true;
                 }
             }
             
             // Acccelerate and apply slide
             this.slide += this.deltaSlide;
-            this.period *= this.slide;
+            this.frequency_period_samples *= this.slide;
             
             // Checks for frequency getting too low, and stops the sound if a minFrequency was set
-            if(this.period > this.maxPeriod)
+            if(this.frequency_period_samples > this.frequency_maxPeriod_samples)
             {
-                this.period = this.maxPeriod;
+                this.frequency_period_samples = this.frequency_maxPeriod_samples;
                 if(this.minFreqency > 0.0) {
                         this.muted = true;
                 }										
             }
             
-            this.periodTemp = this.period;
+            this.periodTemp = this.frequency_period_samples;
             
             // Applies the vibrato effect
             if(this.vibratoAmplitude > 0.0)
             {
                 this.vibratoPhase += this.vibratoSpeed;
-                this.periodTemp = this.period * (1.0 + Math.sin(this.vibratoPhase) * this.vibratoAmplitude);
+                this.periodTemp = this.frequency_period_samples * (1.0 + Math.sin(this.vibratoPhase) * this.vibratoAmplitude);
             }
             
             this.periodTemp = (this.periodTemp)|0;
