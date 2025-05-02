@@ -280,6 +280,7 @@ class Tab {
             this.synth.set_locked_param(param_name,true);
         }
         this.update_locks();
+        SaveLoad.save_all_collections();
     }
 
     update_ui(){
@@ -1323,6 +1324,7 @@ class Tab {
             node.classList.remove("unlocked");
         }
         this.synth.locked_params[param_name]=!value;
+        SaveLoad.save_all_collections();
     }
 
     button_grid_button_clicked(node, param_name, button_index,value) {
