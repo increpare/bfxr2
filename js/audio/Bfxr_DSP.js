@@ -577,9 +577,7 @@ class Bfxr_DSP {
             // Clipping if too loud
             if(this.superSample > 8.0) 	this.superSample = 8.0;
             else if(this.superSample < -8.0) 	this.superSample = -8.0;					 				 				
-            
-            // Averages out the super samples and applies volumes
-            this.superSample = this.masterVolume * this.envelopeVolume * this.superSample * 0.125;				
+            		
             
             
             //BIT CRUSH				
@@ -589,10 +587,12 @@ class Bfxr_DSP {
                 this.bitcrush_phase=0;
                 this.bitcrush_last=this.superSample;	 
             }
-            this.bitcrush_freq = Math.max(Math.min(this.bitcrush_freq+this.bitcrush_freq_sweep,1),0.001);
-            
+            var multiplier = lerp(1,50*this.bitcrush_freq,Math.sqrt(this.bitcrush_freq));
+            this.bitcrush_freq = Math.max(Math.min(this.bitcrush_freq+multiplier*this.bitcrush_freq_sweep,1),0.00001);
             this.superSample=this.bitcrush_last; 				
         
+            // Averages out the super samples and applies volumes
+            this.superSample = this.masterVolume * this.envelopeVolume * this.superSample * 0.125;		
                             
             //compressor
                 
