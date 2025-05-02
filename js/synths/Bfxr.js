@@ -596,7 +596,12 @@ class Bfxr extends SynthBase {
         this.set_param("compressionAmount", 0,true);
 
         //want startfrequency centered around 0.3, falling off quadratically
-        this.set_param("startFrequency", this.generate_random_centered_around_x(0,0.6,0.3),true);
+        var frequency_default = this.param_default("startFrequency");
+        //set to 0.2 if waveType is voice (11)
+        if (this.get_param("waveType") == 11){
+            frequency_default = 0.22;
+        }
+        this.set_param("startFrequency", this.generate_random_centered_around_x(0,0.6,frequency_default),true);
 
         if ((!this.locked_params["sustainTime"]) && (!this.locked_params["decayTime"])) {
             if (this.get_param("attackTime") + this.get_param("sustainTime") + this.get_param("decayTime") < 0.2) {
