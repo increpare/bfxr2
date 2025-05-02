@@ -212,7 +212,7 @@ class Bfxr extends SynthBase {
         [
             "Low-pass Filter Cutoff",
             "Frequency at which the low-pass filter starts attenuating higher frequencies.  Named most likely to result in 'Huh why can't I hear anything?' at her high-school grad. ",
-            "lpFilterCutoff", 1, 0, 1
+            "lpFilterCutoff", 1, 0.01, 1
         ],
         [
             "Low-pass Filter Cutoff Sweep",
