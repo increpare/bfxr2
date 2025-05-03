@@ -35,11 +35,21 @@ window.onload = function(){
     register_drop_handlers();
 }
 
+function showDropZone() {
+    const dropZone = document.getElementById('dropzone');
+	dropZone.style.display = "flex";
+}
+function hideDropZone() {
+    const dropZone = document.getElementById('dropzone');
+    dropZone.style.display = "none";
+}
+
 function register_drop_handlers(){
     
-    const dropZone = document.querySelector('body');
+    const dropZone = document;
     dropZone.addEventListener('drop', (e) => {
         e.preventDefault();        
+        hideDropZone();
         //either file is a single .bcol file, or a list of .bfxr files
         if (e.dataTransfer.files.length===1 && e.dataTransfer.files[0].name.endsWith('.bcol')){
             var file = e.dataTransfer.files[0];
@@ -68,8 +78,24 @@ function register_drop_handlers(){
 
     // Add dragover event listener to prevent default browser behavior
     document.addEventListener('dragover', (e) => {
+        e.dataTransfer.dropEffect = "copy   ";
         e.preventDefault();
+        showDropZone();
     });
+
+    document.addEventListener('dragleave', (e) => {
+        console.log("dragleave");
+        console.log(e);
+        if (e.fromElement==null){
+            hideDropZone();
+        }
+    });
+
+    
+    document.addEventListener('dragend', (e) => {
+        hideDropZone();
+    });
+
 }
 // Initialize dialog tab functionality
 document.addEventListener('DOMContentLoaded', function() {
