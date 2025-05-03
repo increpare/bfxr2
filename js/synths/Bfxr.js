@@ -667,6 +667,12 @@ class Bfxr extends SynthBase {
                 return true;
             }
         }
+        if (param_name == "min_frequency_relative_to_starting_frequency"){
+            //disable if frequency slide and frequency delta are both non-negative
+            if (this.get_param("frequency_slide") >= 0 && this.get_param("frequency_delta") >= 0){
+                return true;
+            }
+        }
         return false;
     }
 

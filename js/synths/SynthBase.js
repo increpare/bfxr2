@@ -365,13 +365,18 @@ class SynthBase {
         context2d.strokeStyle = '#663931'; // color of the line
     
         var c = w/2;
+        var prev_l = 0;
+        var prev_r = 0;
         for (var y=0;y<h;y++){
             var l = c+silhouette[2*y+0]*1*c;
             var r = c+silhouette[2*y+1]*1*c;
-            context2d.moveTo(l,h-y);
+            context2d.lineTo(l,h-y);
             context2d.lineTo(r,h-y);
+            prev_l = l;
+            prev_r = r;
         }
-      
+        context2d.lineTo(prev_l,h-h);
+        context2d.lineTo(prev_r,h-h);
         context2d.stroke();    
     }
 

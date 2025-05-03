@@ -269,6 +269,7 @@ class Bfxr_DSP {
         
         var length = this.envelope_full_length_samples;
         var finished = false;
+        var last_nonzero_sample_index = -1;
         for(var i = 0; i < length; i++)
         {
             if (finished) 
@@ -608,13 +609,21 @@ class Bfxr_DSP {
             
             if (this.muted)
             {
-                this.superSample = 0;
+                //early out - resize buffer to current length, and return
+                buffer = buffer.slice(0,i);
+                break;
             }            
             
-            
+            //approimxate zero (say ~ e-19)
+            if (Math.abs(this.superSample)>1e-3){
+                last_nonzero_sample_index = i;
+            }
             buffer[i] = Math.clamp(this.superSample, -1, 1);
         }
         
+        if (last_nonzero_sample_index<buffer.length-1){
+            buffer = buffer.slice(0,last_nonzero_sample_index+1);
+        }
         this.buffer = buffer;    
     }
 }   
