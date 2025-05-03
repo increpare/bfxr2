@@ -112,7 +112,7 @@ class Bfxr extends SynthBase {
         [
             "Decay Time",
             "Length of the volume envelope decay (yes, I know it's called release).",
-            "decayTime", 0.4, 0, 1
+            "decayTime", 0.4, 0.03, 1
         ],
         [
             "Compression",
@@ -457,12 +457,8 @@ class Bfxr extends SynthBase {
 
     generate_hit_hurt() {
         this.reset_params(true);
-        this.set_param("waveType", (Math.random() * 4)|0, true);
-        if (this.get_param("waveType") == 2)
-            this.set_param("waveType", 3, true);//white noise
-        else if (this.get_param("waveType") == 3)
-            this.set_param("waveType", 9, true);//bitnoise
-        else if (this.get_param("waveType") == 0)
+        this.set_param("waveType", this.select_random_wave_type("White","Bitnoise","Saw","Square","Voice"), true);
+        if (this.get_param("waveType") == 0)
             this.set_param("squareDuty", Math.random() * 0.6);
 
         this.set_param("frequency_start", 0.2 + Math.random() * 0.6, true);
@@ -473,10 +469,11 @@ class Bfxr extends SynthBase {
 
         if (Math.random() < 0.5) this.set_param("hpFilterCutoff", Math.random() * 0.3, true);
     }
-
+    
     generate_jump() {
         this.reset_params(true);
-        this.set_param("waveType", 0, true);
+
+        this.set_param("waveType", this.select_random_wave_type("Square","Saw","FMSyn"), true);
         this.set_param("squareDuty", Math.random() * 0.6, true);
         this.set_param("frequency_start", 0.3 + Math.random() * 0.3, true);
         this.set_param("frequency_slide", 0.1 + Math.random() * 0.2, true);
@@ -490,7 +487,7 @@ class Bfxr extends SynthBase {
 
     generate_blip_select() {
         this.reset_params(true);
-        this.set_param("waveType", (Math.random() * 2)|0, true);
+        this.set_param("waveType", this.select_random_wave_type("Square","Saw","FMSyn","Whistle"), true);
         if (this.get_param("waveType") == 0)
             this.set_param("squareDuty", Math.random() * 0.6, true);
 
@@ -538,7 +535,26 @@ class Bfxr extends SynthBase {
             1,//10:new 1
         ];
 
+    static #WaveTypeIndices = {
+        "Triangle":4,
+        "Sin":2,
+        "Square":0,
+        "Saw":1,
+        "Breaker":8,
+        "Tan":6,
+        "Whistle":7,
+        "White":3,
+        "Voice":11,
+        "Bitnoise":9,
+        "Rasp":5,
+        "FMSyn":10
+    }
     
+    select_random_wave_type(...possible_wave_types){
+        var wave_type_name = possible_wave_types[Math.floor(Math.random() * possible_wave_types.length)];
+        var wave_type_index = Bfxr.#WaveTypeIndices[wave_type_name];
+        return wave_type_index;
+    }
     generate_random_centered_around_x(min,max,centre){
         //first decided if above or below centre
         if (Math.random() < 0.5){
