@@ -348,20 +348,28 @@ class Bfxr extends SynthBase {
                 (Math.random() * 2)|0, true);
         }
 
-        this.set_param("frequency_start",
-            0.5 + Math.random() * 0.5, true);
-        this.set_param("min_frequency_relative_to_starting_frequency",
-            this.get_param("frequency_start") - 0.2 - Math.random() * 0.6, true);
-
-        if (this.get_param("min_frequency_relative_to_starting_frequency") < 0.2)
-            this.set_param("min_frequency_relative_to_starting_frequency", 0.2, true);
-
-        this.set_param("frequency_slide", -0.15 - Math.random() * 0.2, true);
-
         if (Math.random() < 0.33) {
-            this.set_param("frequency_start", Math.random() * 0.6, true);
+            this.set_param("frequency_start", 0.1+Math.random() * 0.5, true);
             this.set_param("min_frequency_relative_to_starting_frequency", Math.random() * 0.1, true);
             this.set_param("frequency_slide", -0.35 - Math.random() * 0.3, true);
+        } else {
+            this.set_param("frequency_start",
+                0.5 + Math.random() * 0.5, true);
+            this.set_param("min_frequency_relative_to_starting_frequency",
+                this.get_param("frequency_start") - 0.2 - Math.random() * 0.6, true);
+    
+            if (this.get_param("min_frequency_relative_to_starting_frequency") < 0.2)
+                this.set_param("min_frequency_relative_to_starting_frequency", 0.2, true);
+    
+            this.set_param("frequency_slide", -0.15 - Math.random() * 0.2, true);
+        }
+
+        //if frequency_start is less than 0.15, cutoff should be zero
+        if (this.get_param("frequency_start") < 0.15) {
+            this.set_param("min_frequency_relative_to_starting_frequency", 0, true);
+            //frequency_slide should be between -.2 and -0.05
+            this.set_param("frequency_slide", -0.1 - Math.random() * 0.1, true);
+            console.log("adjusting for low frequency");
         }
 
         if (Math.random() < 0.5) {
