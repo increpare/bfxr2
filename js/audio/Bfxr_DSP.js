@@ -45,7 +45,7 @@ class Bfxr_DSP {
 
 
         this.frequency_period_samples = 100.0 / (params.startFrequency * params.startFrequency + 0.001);
-        var minimum_frequency = Math.pow(params.min_frequency_relative_to_starting_frequency,0.25)*params.startFrequency;
+        var minimum_frequency = Math.pow(params.min_frequency_relative_to_starting_frequency,0.4)*params.startFrequency;
         this.frequency_maxPeriod_samples = 100.0 / (minimum_frequency * minimum_frequency + 0.001);
 
         this.pitch_jump_reached = false;
