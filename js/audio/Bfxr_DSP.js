@@ -44,8 +44,8 @@ class Bfxr_DSP {
         var params=this.params;
 
 
-        this.frequency_period_samples = 100.0 / (params.startFrequency * params.startFrequency + 0.001);
-        var minimum_frequency = Math.pow(params.min_frequency_relative_to_starting_frequency,0.4)*params.startFrequency;
+        this.frequency_period_samples = 100.0 / (params.frequency_start * params.frequency_start + 0.001);
+        var minimum_frequency = Math.pow(params.min_frequency_relative_to_starting_frequency,0.4)*params.frequency_start;
         this.frequency_maxPeriod_samples = 100.0 / (minimum_frequency * minimum_frequency + 0.001);
 
         this.pitch_jump_reached = false;
@@ -185,11 +185,11 @@ class Bfxr_DSP {
             //PITCH JUMP END
 
             if (this.waveType === 9) { //Bitnoise
-                var sf = params.startFrequency;
+                var sf = params.frequency_start;
                 var mf = params.min_frequency_relative_to_starting_frequency;
     
-                var startFrequency_min = this.param_info.param_min("startFrequency");
-                var startFrequency_max = this.param_info.param_max("startFrequency");
+                var startFrequency_min = this.param_info.param_min("frequency_start");
+                var startFrequency_max = this.param_info.param_max("frequency_start");
                 var startFrequency_mid = (startFrequency_max + startFrequency_min) / 2;
     
                 var minFrequency_min = this.param_info.param_min("min_frequency_relative_to_starting_frequency");
@@ -208,8 +208,8 @@ class Bfxr_DSP {
         }
 
         // START sweep paramets designed to be reset with repeat speed
-        this.slide = 1.0 - params.slide * params.slide * params.slide * 0.01;
-        this.deltaSlide = -params.deltaSlide * params.deltaSlide * params.deltaSlide * 0.000001;
+        this.slide = 1.0 - params.frequency_slide * params.frequency_slide * params.frequency_slide * 0.01;
+        this.frequency_acceleration = -params.frequency_acceleration * params.frequency_acceleration * params.frequency_acceleration * 0.000001;
 
         this.flangerOffset = params.flangerOffset * params.flangerOffset * 1020.0;
         if (params.flangerOffset < 0.0) {
@@ -325,7 +325,7 @@ class Bfxr_DSP {
             }
             
             // Acccelerate and apply slide
-            this.slide += this.deltaSlide;
+            this.slide += this.frequency_acceleration;
             this.frequency_period_samples *= this.slide;
             
             // Checks for frequency getting too low, and stops the sound if a min_frequency_relative_to_starting_frequency was set
@@ -615,13 +615,15 @@ class Bfxr_DSP {
             }            
             
             //approimxate zero (say ~ e-19)
-            if (Math.abs(this.superSample)>1e-3){
+            if (Math.abs(this.superSample)>0.2e-2){
                 last_nonzero_sample_index = i;
             }
             buffer[i] = Math.clamp(this.superSample, -1, 1);
         }
         
         if (last_nonzero_sample_index<buffer.length-1){
+            //min value of 10
+            last_nonzero_sample_index = Math.max(last_nonzero_sample_index,10);
             buffer = buffer.slice(0,last_nonzero_sample_index+1);
         }
         this.buffer = buffer;    

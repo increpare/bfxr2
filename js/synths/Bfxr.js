@@ -122,21 +122,21 @@ class Bfxr extends SynthBase {
         [
             "Frequency",
             "Base note of the sound.",
-            "startFrequency", 0.3, 0, 1
+            "frequency_start", 0.3, 0, 1
         ],
         [
             "Frequency Slide",
             "Slides the frequency up or down.",
-            "slide", 0.0, -0.5, 0.5
+            "frequency_slide", 0.0, -0.5, 0.5
         ],
         [
             "Delta Slide",
-            "Accelerates the frequency slide.  Can be used to get the frequency to change direction.",
-            "deltaSlide", 0.0, -1, 1
+            "Accelerates the frequency.  Can be used to get the frequency to change direction.",
+            "frequency_acceleration", 0.0, -1, 1
         ],
         [
             "Frequency Cutoff",
-            "If sliding, the sound will stop at this frequency, to prevent really low notes.  0 means no cuttoff, 1 refers to the starting frequency of the sound.",
+            "If sliding, the sound will stop at this frequency, to prevent really low notes.  0 means no cuttoff, 1 refers to the starting frequency of the sound.  Ignores vibrato.",
             "min_frequency_relative_to_starting_frequency", 0.0, 0, 0.99
         ],
         [
@@ -325,7 +325,7 @@ class Bfxr extends SynthBase {
     generate_pickup_coin() {
         this.reset_params(true);
 
-        this.set_param("startFrequency", 0.4 + Math.random() * 0.5, true);
+        this.set_param("frequency_start", 0.4 + Math.random() * 0.5, true);
 
         this.set_param("sustainTime", Math.random() * 0.1, true);
         this.set_param("decayTime", 0.1 + Math.random() * 0.4, true);
@@ -348,20 +348,20 @@ class Bfxr extends SynthBase {
                 (Math.random() * 2)|0, true);
         }
 
-        this.set_param("startFrequency",
+        this.set_param("frequency_start",
             0.5 + Math.random() * 0.5, true);
         this.set_param("min_frequency_relative_to_starting_frequency",
-            this.get_param("startFrequency") - 0.2 - Math.random() * 0.6, true);
+            this.get_param("frequency_start") - 0.2 - Math.random() * 0.6, true);
 
         if (this.get_param("min_frequency_relative_to_starting_frequency") < 0.2)
             this.set_param("min_frequency_relative_to_starting_frequency", 0.2, true);
 
-        this.set_param("slide", -0.15 - Math.random() * 0.2, true);
+        this.set_param("frequency_slide", -0.15 - Math.random() * 0.2, true);
 
         if (Math.random() < 0.33) {
-            this.set_param("startFrequency", Math.random() * 0.6, true);
+            this.set_param("frequency_start", Math.random() * 0.6, true);
             this.set_param("min_frequency_relative_to_starting_frequency", Math.random() * 0.1, true);
-            this.set_param("slide", -0.35 - Math.random() * 0.3, true);
+            this.set_param("frequency_slide", -0.35 - Math.random() * 0.3, true);
         }
 
         if (Math.random() < 0.5) {
@@ -394,17 +394,17 @@ class Bfxr extends SynthBase {
         }
 
         if (Math.random() < 0.5) {
-            this.set_param("startFrequency", 0.1 + Math.random() * 0.4, true);
-            this.set_param("slide", -0.1 + Math.random() * 0.4, true);
+            this.set_param("frequency_start", 0.1 + Math.random() * 0.4, true);
+            this.set_param("frequency_slide", -0.1 + Math.random() * 0.4, true);
         }
         else {
-            this.set_param("startFrequency", 0.2 + Math.random() * 0.7, true);
-            this.set_param("slide", -0.2 - Math.random() * 0.2, true);
+            this.set_param("frequency_start", 0.2 + Math.random() * 0.7, true);
+            this.set_param("frequency_slide", -0.2 - Math.random() * 0.2, true);
         }
 
-        this.set_param("startFrequency", this.get_param("startFrequency") * this.get_param("startFrequency"), true);
+        this.set_param("frequency_start", this.get_param("frequency_start") * this.get_param("frequency_start"), true);
 
-        if (Math.random() < 0.2) this.set_param("slide", 0.0, true);
+        if (Math.random() < 0.2) this.set_param("frequency_slide", 0.0, true);
         if (Math.random() < 0.33) this.set_param("repeatSpeed", 0.3 + Math.random() * 0.5, true);
 
         this.set_param("sustainTime", 0.1 + Math.random() * 0.3, true);
@@ -429,13 +429,13 @@ class Bfxr extends SynthBase {
         else this.set_param("squareDuty", Math.random() * 0.6, true);
 
         if (Math.random() < 0.5) {
-            this.set_param("startFrequency", 0.2 + Math.random() * 0.3, true);
-            this.set_param("slide", 0.1 + Math.random() * 0.4, true);
+            this.set_param("frequency_start", 0.2 + Math.random() * 0.3, true);
+            this.set_param("frequency_slide", 0.1 + Math.random() * 0.4, true);
             this.set_param("repeatSpeed", 0.4 + Math.random() * 0.4, true);
         }
         else {
-            this.set_param("startFrequency", 0.2 + Math.random() * 0.3, true);
-            this.set_param("slide", 0.05 + Math.random() * 0.2, true);
+            this.set_param("frequency_start", 0.2 + Math.random() * 0.3, true);
+            this.set_param("frequency_slide", 0.05 + Math.random() * 0.2, true);
 
             if (Math.random() < 0.5) {
                 this.set_param("vibratoDepth", Math.random() * 0.7, true);
@@ -457,8 +457,8 @@ class Bfxr extends SynthBase {
         else if (this.get_param("waveType") == 0)
             this.set_param("squareDuty", Math.random() * 0.6);
 
-        this.set_param("startFrequency", 0.2 + Math.random() * 0.6, true);
-        this.set_param("slide", -0.3 - Math.random() * 0.4, true);
+        this.set_param("frequency_start", 0.2 + Math.random() * 0.6, true);
+        this.set_param("frequency_slide", -0.3 - Math.random() * 0.4, true);
 
         this.set_param("sustainTime", Math.random() * 0.1, true);
         this.set_param("decayTime", 0.1 + Math.random() * 0.2, true);
@@ -470,8 +470,8 @@ class Bfxr extends SynthBase {
         this.reset_params(true);
         this.set_param("waveType", 0, true);
         this.set_param("squareDuty", Math.random() * 0.6, true);
-        this.set_param("startFrequency", 0.3 + Math.random() * 0.3, true);
-        this.set_param("slide", 0.1 + Math.random() * 0.2, true);
+        this.set_param("frequency_start", 0.3 + Math.random() * 0.3, true);
+        this.set_param("frequency_slide", 0.1 + Math.random() * 0.2, true);
 
         this.set_param("sustainTime", 0.1 + Math.random() * 0.3, true);
         this.set_param("decayTime", 0.1 + Math.random() * 0.2, true);
@@ -486,7 +486,7 @@ class Bfxr extends SynthBase {
         if (this.get_param("waveType") == 0)
             this.set_param("squareDuty", Math.random() * 0.6, true);
 
-        this.set_param("startFrequency", 0.2 + Math.random() * 0.4, true);
+        this.set_param("frequency_start", 0.2 + Math.random() * 0.4, true);
 
         this.set_param("sustainTime", 0.1 + Math.random() * 0.1, true);
         this.set_param("decayTime", Math.random() * 0.2, true);
@@ -511,8 +511,8 @@ class Bfxr extends SynthBase {
             bitCrush: 4,
             bitCrushSweep: 5,
             slide:4,
-            deltaSlide:7,
-            startFrequency:4
+            frequency_acceleration:7,
+            frequency_start:4
         }
 
     static #WaveTypeWeights =
@@ -607,12 +607,12 @@ class Bfxr extends SynthBase {
     //tidies up bad parameters that might cause the sound to be inaudible/bad
     rectify_params(){
         //want startfrequency centered around 0.3, falling off quadratically
-        var frequency_default = this.param_default("startFrequency");
+        var frequency_default = this.param_default("frequency_start");
         //set to 0.2 if waveType is voice (11)
         if (this.get_param("waveType") == 11){
             frequency_default = 0.22;
         }
-        this.set_param("startFrequency", this.generate_random_centered_around_x(0,0.6,frequency_default),true);
+        this.set_param("frequency_start", this.generate_random_centered_around_x(0,0.6,frequency_default),true);
 
         if ((!this.locked_params["sustainTime"]) && (!this.locked_params["decayTime"])) {
             if (this.get_param("attackTime") + this.get_param("sustainTime") + this.get_param("decayTime") < 0.2) {
@@ -624,8 +624,8 @@ class Bfxr extends SynthBase {
         var r = Math.random()*Math.random();
         this.set_param("sustainPunch", r*r, true);
 
-        if ((this.get_param("startFrequency") > 0.7 && this.get_param("slide") > 0.2) || (this.get_param("startFrequency") < 0.2 && this.get_param("slide") < -0.05)) {
-            this.set_param("slide", -this.get_param("slide"),true);
+        if ((this.get_param("frequency_start") > 0.7 && this.get_param("frequency_slide") > 0.2) || (this.get_param("frequency_start") < 0.2 && this.get_param("frequency_slide") < -0.05)) {
+            this.set_param("frequency_slide", -this.get_param("frequency_slide"),true);
         }
 
         if (this.get_param("lpFilterCutoff") < 0.1 && this.get_param("lpFilterCutoffSweep") < 0) {
@@ -669,7 +669,7 @@ class Bfxr extends SynthBase {
         }
         if (param_name == "min_frequency_relative_to_starting_frequency"){
             //disable if frequency slide and frequency delta are both non-negative
-            if (this.get_param("frequency_slide") >= 0 && this.get_param("frequency_delta") >= 0){
+            if (this.get_param("frequency_slide") >= 0 && this.get_param("frequency_acceleration") >= 0){
                 return true;
             }
         }

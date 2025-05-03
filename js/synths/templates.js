@@ -26,17 +26,17 @@ const TEMPLATES_JSON = {
         "compressionAmount": [
           0
         ],
-        "startFrequency": [
+        "frequency_start": [
           0.4,
           0.9
         ],
         "min_frequency_relative_to_starting_frequency": [
           0
         ],
-        "slide": [
+        "frequency_slide": [
           0
         ],
-        "deltaSlide": [
+        "frequency_acceleration": [
           0
         ],
         "vibratoDepth": [
@@ -135,18 +135,18 @@ const TEMPLATES_JSON = {
         "compressionAmount": [
           0
         ],
-        "startFrequency": [
+        "frequency_start": [
           0.4,
           0.9
         ],
         "min_frequency_relative_to_starting_frequency": [
           0
         ],
-        "slide": [
+        "frequency_slide": [
           0,
           0.05333
         ],
-        "deltaSlide": [
+        "frequency_acceleration": [
           0,
           0.09333
         ],
