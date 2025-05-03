@@ -136,7 +136,7 @@ class Bfxr extends SynthBase {
         ],
         [
             "Frequency Cutoff",
-            "If sliding, the sound will stop at this frequency, to prevent really low notes.  0 means no cuttoff, 1 refers to the starting frequency of the sound.  Ignores vibrato.",
+            "If sliding, the sound will stop at this frequency, to prevent really low notes.  0 means no cuttoff, 1 refers to the starting frequency of the sound. Ignores vibrato.  If the sound trajectory only goes up, this is disabled.",
             "min_frequency_relative_to_starting_frequency", 0.0, 0, 0.99
         ],
         [
@@ -148,16 +148,6 @@ class Bfxr extends SynthBase {
             "Vibrato Speed",
             "Speed of the vibrato effect (i.e. frequency).",
             "vibratoSpeed", 0, 0, 1
-        ],
-        [
-            "Harmonics",
-            "Overlays copies of the waveform with copies and multiples of its frequency.  Good for bulking out or otherwise enriching the texture of the sounds (warning: this is the number 1 cause of bfxr slowdown!).",
-            "overtones", 0, 0, 1
-        ],
-        [
-            "Harmonics Falloff",
-            "The rate at which higher overtones should decay.",
-            "overtoneFalloff", 0, 0, 1
         ],
         [
             "Pitch Jump Repeat Speed",
@@ -183,6 +173,16 @@ class Bfxr extends SynthBase {
             "Pitch Jump Onset 2",
             "When the second pitch-jump happens.",
             "pitch_jump_onset2_percent", 0, 0, 1
+        ],
+        [
+            "Harmonics",
+            "Overlays copies of the waveform with copies and multiples of its frequency.  Good for bulking out or otherwise enriching the texture of the sounds (warning: this is the number 1 cause of bfxr slowdown!).",
+            "overtones", 0, 0, 1
+        ],
+        [
+            "Harmonics Falloff",
+            "The rate at which higher overtones should decay.",
+            "overtoneFalloff", 0, 0, 1
         ],
         [
             "Square Duty",
@@ -624,6 +624,14 @@ class Bfxr extends SynthBase {
     }
 
     mutate_params(){
+        //with a small probability, mutate the waveType
+        if (Math.random() < 0.1){
+            var wave_count = Object.keys(Bfxr.#WaveTypeIndices).length;
+            var random_wave_index_offset = Math.floor(Math.random() * (wave_count-1));
+            var random_wave_index = (this.get_param("waveType") + random_wave_index_offset) % wave_count;
+            this.set_param("waveType", random_wave_index, true);
+            return;
+        }
         super.mutate_params();
         this.rectify_params();
     }
