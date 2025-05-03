@@ -520,12 +520,14 @@ class Tab {
             min: min,
             max: max,
             range: false,
-            step: 0.00001,
+            step: 0.01,
             value: defaultval,
             ticks: ticks,
             formatter: (val)=>{
                 return val.toFixed(2);
-            }
+            },
+            ticks_snap_bounds: 0.005,
+            natural_arrow_keys:true
         });
         slider.sliderElem.title = tooltip;
         slider.sliderElem.className += " singleselect";

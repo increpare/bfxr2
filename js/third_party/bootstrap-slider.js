@@ -527,6 +527,12 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 								mouseLeave: leaveCallback
 							};
 						}
+						//store floating point value of tick in data attribute
+						var min = this.options.min;
+						var max = this.options.max;
+						var range = max - min;
+						var tick_value = min + range * i / (this.options.ticks.length - 1);
+						tick.setAttribute('data-tick-value', tick_value);
 						this.ticks.push(tick);
 						this.ticksContainer.appendChild(tick);
 					}
@@ -1582,10 +1588,14 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 				this._state.inDrag = true;
 				//show tooltip
 				this.showTooltip();
-				var newValue = this._calculateValue();
+				var newValue = this._calculateValue(true);
 
 				this._trigger('slideStart', newValue);
 
+				//if target has class slider-tick, set newValue to data-tick-value
+				if (ev.target.classList.contains('slider-tick')) {
+					newValue = parseFloat(ev.target.getAttribute('data-tick-value'));
+				}
 				this.setValue(newValue, false, true);
 
 				ev.returnValue = false;
@@ -1712,6 +1722,11 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 				this._state.percentage[this._state.dragged] = percentage;
 
 				var val = this._calculateValue(true);
+				
+				if (ev.target.classList.contains('slider-tick')) {
+					val = parseFloat(ev.target.getAttribute('data-tick-value'));
+				}
+
 				this.setValue(val, true, true);
 
 				return false;
@@ -1772,6 +1787,11 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 					this._hideTooltip();
 				}
 				var val = this._calculateValue(true);
+
+				
+				if (ev.target.classList.contains('slider-tick')) {
+					val = parseFloat(ev.target.getAttribute('data-tick-value'));
+				}
 
 				this.setValue(val, false, true);
 				this._trigger('slideStop', val);
