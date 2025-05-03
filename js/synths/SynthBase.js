@@ -216,9 +216,6 @@ class SynthBase {
             var param = this.param_info[i];
             var param_normalized = this.get_param_normalized(param);
             
-            if (this.locked_params[param_normalized.name]) {
-                continue;
-            }
             var min_val = param_normalized.min_value;
             var max_val = param_normalized.max_value;
             var random_val = Math.random() * (max_val - min_val) + min_val;
@@ -228,17 +225,15 @@ class SynthBase {
                     random_val = max_val - 1;
                 }
             }
-            this.set_param(param_normalized.name, random_val);
+            this.set_param(param_normalized.name, random_val,true);
         }
     }
 
     mutate_params() {
+
+ 
         for (var i = 0; i < this.param_info.length; i++) {
             if (Math.random()<0.5){
-                continue;
-            }
-            //if locked, skip
-            if (this.locked_params[this.param_info[i][2]]) {
                 continue;
             }
             var param = this.param_info[i];
@@ -251,7 +246,7 @@ class SynthBase {
             var range = max_val - min_val;
             var mutated_diff = (Math.random()-0.5)*0.1*range;
             var mutated_val = this.params[param_normalized.name] + mutated_diff;
-            this.set_param(param_normalized.name, mutated_val);
+            this.set_param(param_normalized.name, mutated_val,true);
         }
 
     }
@@ -472,5 +467,21 @@ class SynthBase {
             return;
         }
         this.locked_params[param_name] = value;
+    }
+
+    //when passed another param dictionary, lerps the values of this synth towards the values provided
+    lerp_params(other_params,amount){
+        for (var param_name in other_params) {
+            //get param info
+            var param_info = this.get_param_info(param_name);
+            //if array, continue
+            if (param_info.constructor !== Array) {
+                continue;
+            }
+            var other_param_value = other_params[param_name];
+            var this_param_value = this.get_param(param_name);
+            var lerped_value = this_param_value + (other_param_value - this_param_value) * amount;
+            this.set_param(param_name, lerped_value,true);
+        }
     }
 }

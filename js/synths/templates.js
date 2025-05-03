@@ -30,7 +30,7 @@ const TEMPLATES_JSON = {
           0.4,
           0.9
         ],
-        "minFrequency": [
+        "min_frequency_relative_to_starting_frequency": [
           0
         ],
         "slide": [
@@ -139,7 +139,7 @@ const TEMPLATES_JSON = {
           0.4,
           0.9
         ],
-        "minFrequency": [
+        "min_frequency_relative_to_starting_frequency": [
           0
         ],
         "slide": [

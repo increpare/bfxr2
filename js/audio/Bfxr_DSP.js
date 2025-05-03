@@ -45,7 +45,8 @@ class Bfxr_DSP {
 
 
         this.frequency_period_samples = 100.0 / (params.startFrequency * params.startFrequency + 0.001);
-        this.frequency_maxPeriod_samples = 100.0 / (params.minFrequency * params.minFrequency + 0.001);
+        var minimum_frequency = Math.pow(params.min_frequency_relative_to_starting_frequency,0.25)*params.startFrequency;
+        this.frequency_maxPeriod_samples = 100.0 / (minimum_frequency * minimum_frequency + 0.001);
 
         this.pitch_jump_reached = false;
         this.pitch_jump_2_reached = false;
@@ -66,7 +67,7 @@ class Bfxr_DSP {
 
             this.phase = 0;
 
-            this.minFreqency = params.minFrequency;
+            this.minFreqency = params.min_frequency_relative_to_starting_frequency;
             this.muted = false;
             this.overtones = params.overtones * 10;
             this.overtoneFalloff = params.overtoneFalloff;
@@ -185,14 +186,14 @@ class Bfxr_DSP {
 
             if (this.waveType === 9) { //Bitnoise
                 var sf = params.startFrequency;
-                var mf = params.minFrequency;
+                var mf = params.min_frequency_relative_to_starting_frequency;
     
                 var startFrequency_min = this.param_info.param_min("startFrequency");
                 var startFrequency_max = this.param_info.param_max("startFrequency");
                 var startFrequency_mid = (startFrequency_max + startFrequency_min) / 2;
     
-                var minFrequency_min = this.param_info.param_min("minFrequency");
-                var minFrequency_max = this.param_info.param_max("minFrequency");
+                var minFrequency_min = this.param_info.param_min("min_frequency_relative_to_starting_frequency");
+                var minFrequency_max = this.param_info.param_max("min_frequency_relative_to_starting_frequency");
                 var minFrequency_mid = (minFrequency_max + minFrequency_min) / 2;
     
                 var delta_start = (sf - startFrequency_min) / (startFrequency_max - startFrequency_min)
@@ -326,7 +327,7 @@ class Bfxr_DSP {
             this.slide += this.deltaSlide;
             this.frequency_period_samples *= this.slide;
             
-            // Checks for frequency getting too low, and stops the sound if a minFrequency was set
+            // Checks for frequency getting too low, and stops the sound if a min_frequency_relative_to_starting_frequency was set
             if(this.frequency_period_samples > this.frequency_maxPeriod_samples)
             {
                 this.frequency_period_samples = this.frequency_maxPeriod_samples;

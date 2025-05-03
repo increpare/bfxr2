@@ -136,8 +136,8 @@ class Bfxr extends SynthBase {
         ],
         [
             "Frequency Cutoff",
-            "If sliding, the sound will stop at this frequency, to prevent really low notes.  If unlocked, this is set to zero during randomization.",
-            "minFrequency", 0.0, 0, 1
+            "If sliding, the sound will stop at this frequency, to prevent really low notes.  0 means no cuttoff, 1 refers to the starting frequency of the sound.",
+            "min_frequency_relative_to_starting_frequency", 0.0, 0, 0.99
         ],
         [
             "Vibrato Depth",
@@ -350,17 +350,17 @@ class Bfxr extends SynthBase {
 
         this.set_param("startFrequency",
             0.5 + Math.random() * 0.5, true);
-        this.set_param("minFrequency",
+        this.set_param("min_frequency_relative_to_starting_frequency",
             this.get_param("startFrequency") - 0.2 - Math.random() * 0.6, true);
 
-        if (this.get_param("minFrequency") < 0.2)
-            this.set_param("minFrequency", 0.2, true);
+        if (this.get_param("min_frequency_relative_to_starting_frequency") < 0.2)
+            this.set_param("min_frequency_relative_to_starting_frequency", 0.2, true);
 
         this.set_param("slide", -0.15 - Math.random() * 0.2, true);
 
         if (Math.random() < 0.33) {
             this.set_param("startFrequency", Math.random() * 0.6, true);
-            this.set_param("minFrequency", Math.random() * 0.1, true);
+            this.set_param("min_frequency_relative_to_starting_frequency", Math.random() * 0.1, true);
             this.set_param("slide", -0.35 - Math.random() * 0.3, true);
         }
 
@@ -504,7 +504,7 @@ class Bfxr extends SynthBase {
             dutySweep: 3,
             flangerOffset: 3,
             flangerSweep: 3,
-            lpFilterCutoff: 2,
+            lpFilterCutoff: 3,
             lpFilterSweep: 3,
             hpFilterCutoff: 5,
             hpFilterSweep: 5,
@@ -591,10 +591,21 @@ class Bfxr extends SynthBase {
             this.set_param("repeatSpeed", 0,true);
     
 
-        this.set_param("minFrequency", 0,true);
+        this.set_param("min_frequency_relative_to_starting_frequency", 0,true);
     
         this.set_param("compressionAmount", 0,true);
 
+        this.rectify_params();
+    
+    }
+
+    mutate_params(){
+        super.mutate_params();
+        this.rectify_params();
+    }
+
+    //tidies up bad parameters that might cause the sound to be inaudible/bad
+    rectify_params(){
         //want startfrequency centered around 0.3, falling off quadratically
         var frequency_default = this.param_default("startFrequency");
         //set to 0.2 if waveType is voice (11)
@@ -617,8 +628,8 @@ class Bfxr extends SynthBase {
             this.set_param("slide", -this.get_param("slide"),true);
         }
 
-        if (this.get_param("lpFilterCutoff") < 0.1 && this.get_param("lpFilterCutoffSweep") < -0.05) {
-            this.set_param("lpFilterCutoffSweep", -this.get_param("lpFilterCutoffSweep"),true);
+        if (this.get_param("lpFilterCutoff") < 0.1 && this.get_param("lpFilterCutoffSweep") < 0) {
+            this.set_param("lpFilterCutoffSweep", -this.get_param("lpFilterCutoffSweep")+0.2,true);
         }
 
         //if wavetype is not square, set duty values to default
@@ -635,7 +646,6 @@ class Bfxr extends SynthBase {
                 //this is just to stop the dutySweep from wiping out the sound when it gets too high (too regularly)
             }
         }
-    
     }
 
     /*********************/
