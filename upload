@@ -7,5 +7,6 @@ if [ "$confirm" != "UPLOAD" ]; then
     exit 1
 fi
 
+node insert_templates.js
 node compile.js
 rsync -avW -e "ssh" bin/ r3okadmin_bfxrnet@ssh.nyc1.nearlyfreespeech.net:/home/public/
