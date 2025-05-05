@@ -217,7 +217,5 @@ const TEMPLATES_JSON = {
         ]
       }
     }
-  },
-  "Footsteppr": {},
-  "Transfxr": {}
+  }
 };
