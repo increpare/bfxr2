@@ -157,7 +157,7 @@ class Tab {
         }
 
         var right_panel = document.createElement("div");
-        right_panel.classList.add("right_panel");
+        right_panel.classList.add("right_panel", "scroll_container");
         tab_page.appendChild(right_panel);
 
         {
