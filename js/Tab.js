@@ -76,7 +76,7 @@ class Tab {
         }
 
         var left_panel = document.createElement("div");
-        left_panel.classList.add("left_panel");
+        left_panel.classList.add("left_panel", "scroll_container");
         tab_page.appendChild(left_panel);
 
         {
@@ -119,7 +119,6 @@ class Tab {
             save_commands_div.appendChild(duplicate_sfx_button);
 
             var file_list = document.createElement("div");
-            file_list.classList.add("scroll_container");
             file_list.classList.add("filelist");
             file_list.id = this.name + "_file_list";
             left_panel.appendChild(file_list);
