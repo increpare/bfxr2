@@ -32,6 +32,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--top-k", type=int, default=3)
     parser.add_argument("--jobs", type=int, default=None)
     parser.add_argument("--html-report", action="store_true")
+    parser.add_argument("--resume", action="store_true",
+                        help="skip targets whose outputs already exist")
     args = parser.parse_args(argv)
 
     files = sorted(
@@ -46,6 +48,11 @@ def main(argv: list[str] | None = None) -> int:
     rows = []
     for f in files:
         sub = args.out / f.stem
+        done = (sub / "report.json").exists() and f.with_suffix(".bfxr.wav").exists()
+        if args.resume and done:
+            print(f"\n=== {f.name} === (already done, skipping)", file=sys.stderr)
+            rows.append((f.stem, json.loads((sub / "report.json").read_text())))
+            continue
         print(f"\n=== {f.name} ===", file=sys.stderr)
         forwarded = [str(f), "-o", str(sub)]
         for flag in ("--allow-pitch-shift", "--allow-time-stretch", "--html-report"):
@@ -61,7 +68,12 @@ def main(argv: list[str] | None = None) -> int:
             forwarded += ["--jobs", str(args.jobs)]
         if args.wavetypes:
             forwarded += ["--wavetypes", args.wavetypes]
-        match_main(forwarded)
+        try:
+            match_main(forwarded)
+        except Exception:  # one bad target must not kill the batch
+            import traceback
+            traceback.print_exc()
+            continue
         report = json.loads((sub / "report.json").read_text())
         rows.append((f.stem, report))
         # best match beside the original: X.wav -> X.bfxr + X.bfxr.wav
