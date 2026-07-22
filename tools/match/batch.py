@@ -38,7 +38,9 @@ def main(argv: list[str] | None = None) -> int:
 
     files = sorted(
         f for f in args.target.iterdir()
-        if f.suffix.lower() in AUDIO_EXTS and not f.name.startswith(".")
+        if f.suffix.lower() in AUDIO_EXTS
+        and not f.name.startswith(".")
+        and not f.name.lower().endswith(".bfxr.wav")  # our own outputs
     )
     if not files:
         print(f"no audio files found in {args.target}", file=sys.stderr)
