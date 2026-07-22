@@ -10,17 +10,28 @@ import json
 import sys
 from pathlib import Path
 
-from .match import build_parser, main as match_main
+from .match import main as match_main
 
 AUDIO_EXTS = {".wav", ".flac", ".ogg", ".aif", ".aiff", ".mp3"}
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        prog="batch", description="Match every audio file in a directory.",
-        parents=[build_parser()], conflict_handler="resolve")
+        prog="batch", description="Match every audio file in a directory.")
     parser.add_argument("target", type=Path, help="directory of audio files")
-    args, extra = parser.parse_known_args(argv)
+    parser.add_argument("-o", "--out", type=Path, default=Path("batch_out"))
+    parser.add_argument("--allow-pitch-shift", action="store_true")
+    parser.add_argument("--allow-time-stretch", action="store_true")
+    parser.add_argument("--budget", type=int, default=5000)
+    parser.add_argument("--time-budget", type=float, default=None)
+    parser.add_argument("--popsize", type=int, default=28)
+    parser.add_argument("--avg-seeds", type=int, default=1)
+    parser.add_argument("--rng-seed", type=int, default=0)
+    parser.add_argument("--wavetypes", type=str, default=None)
+    parser.add_argument("--top-k", type=int, default=3)
+    parser.add_argument("--jobs", type=int, default=None)
+    parser.add_argument("--html-report", action="store_true")
+    args = parser.parse_args(argv)
 
     files = sorted(
         f for f in args.target.iterdir()

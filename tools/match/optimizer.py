@@ -202,9 +202,14 @@ class StagedOptimizer:
     def _stage0(self, wave_types: list[int]) -> dict[int, Candidate]:
         best: dict[int, Candidate] = {}
         defaults = np.clip(self.space.defaults_unit(), 0.0, self.upper)
+        # spend at most half the eval budget screening
+        n_screen = min(self.s.screen_size,
+                       max(2, self.s.budget // (2 * len(wave_types))))
         for wt in wave_types:
+            if best and self._out_of_budget():  # always screen at least one
+                break
             units = [defaults] + [self._screen_sample()
-                                  for _ in range(self.s.screen_size - 1)]
+                                  for _ in range(n_screen - 1)]
             scores = self._evaluate(units, [wt] * len(units))
             i = int(np.argmin(scores))
             best[wt] = Candidate(float(scores[i]), wt, units[i])
