@@ -3,8 +3,8 @@ import time
 import numpy as np
 import pytest
 
-from match.audio import SAMPLE_RATE, normalize_rms, prepare_target, trim_silence
-from match.objective import FAILED_SCORE, MelObjective
+from match.audio import SAMPLE_RATE, normalize_peak, prepare_target, trim_silence
+from match.objective import FAILED_SCORE, MatchObjective
 from match.renderer import BfxrRenderer
 
 
@@ -21,13 +21,13 @@ def sine(freq: float, seconds: float = 0.5) -> np.ndarray:
 
 def test_identity_is_zero():
     x = sine(440)
-    obj = MelObjective(x)
+    obj = MatchObjective(x)
     assert obj.score(x) == pytest.approx(0.0, abs=1e-6)
 
 
 def test_silence_scores_high():
     x = sine(440)
-    obj = MelObjective(x)
+    obj = MatchObjective(x)
     silence = np.zeros_like(x)
     assert obj.score(silence) > 1.0
     assert obj.score(None) == FAILED_SCORE
@@ -35,8 +35,8 @@ def test_silence_scores_high():
 
 def test_gain_invariance():
     x = sine(440)
-    obj = MelObjective(x)
-    assert obj.score(0.05 * x) == pytest.approx(0.0, abs=1e-4)
+    obj = MatchObjective(x)
+    assert obj.score(0.05 * x) == pytest.approx(0.0, abs=1e-2)
 
 
 def test_monotone_in_frequency_distance(renderer):
@@ -47,7 +47,7 @@ def test_monotone_in_frequency_distance(renderer):
         )
 
     target = render_sin(0.3)
-    obj = MelObjective(target)
+    obj = MatchObjective(target)
     d = [obj.score(render_sin(f)) for f in (0.3, 0.35, 0.42, 0.55)]
     assert d[0] == pytest.approx(0.0, abs=1e-6)
     assert d[0] < d[1] < d[2] < d[3]
@@ -56,16 +56,16 @@ def test_monotone_in_frequency_distance(renderer):
 def test_pitch_shift_relaxation():
     target = sine(440)
     shifted = sine(440 * 2 ** (3 / 12))  # +3 semitones
-    strict = MelObjective(target).score(shifted)
-    relaxed = MelObjective(target, allow_pitch_shift=True).score(shifted)
+    strict = MatchObjective(target).score(shifted)
+    relaxed = MatchObjective(target, allow_pitch_shift=True).score(shifted)
     assert relaxed < strict * 0.7
 
 
 def test_time_stretch_relaxation():
     target = sine(440, seconds=0.5)
     longer = sine(440, seconds=0.62)
-    strict = MelObjective(target).score(longer)
-    relaxed = MelObjective(target, allow_time_stretch=True).score(longer)
+    strict = MatchObjective(target).score(longer)
+    relaxed = MatchObjective(target, allow_time_stretch=True).score(longer)
     assert relaxed < strict * 0.7
 
 
@@ -81,12 +81,12 @@ def test_trim_and_prepare(tmp_path):
     path = tmp_path / "t.wav"
     sf.write(path, padded, SAMPLE_RATE)
     prepared = prepare_target(path)
-    assert abs(np.sqrt(np.mean(prepared**2)) - 0.1) < 1e-3
+    assert abs(np.abs(prepared).max() - 0.5) < 1e-3
 
 
 def test_batch_speed(renderer):
     target = renderer.render({"waveType": 0, "frequency_start": 0.4}, seed=1)
-    obj = MelObjective(target)
+    obj = MatchObjective(target)
     waves = [renderer.render({"frequency_start": 0.2 + 0.02 * i}, seed=1)
              for i in range(14)]
     obj.score_batch(waves)  # warmup

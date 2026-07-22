@@ -15,7 +15,7 @@ import numpy as np
 
 from .audio import SAMPLE_RATE
 from .bfxr_io import ParamSpace
-from .objective import MelObjective
+from .objective import MatchObjective
 from .renderer import BfxrRenderer
 
 RENDER_SEED = 1234
@@ -62,7 +62,7 @@ class StagedOptimizer:
         self,
         space: ParamSpace,
         renderer: BfxrRenderer,
-        objective: MelObjective,
+        objective: MatchObjective,
         settings: OptimizeSettings,
         target: np.ndarray | None = None,
     ):

@@ -66,9 +66,15 @@ uv run pytest -m slow      # round-trip: render known params -> re-find them
 
 ## How matching works
 
-- **Objective**: multi-scale log-mel spectrogram L1 distance (4 scales,
-  loudness normalized, slight frequency blur so near-miss pitches still get
-  a gradient). Strict about timing/pitch/duration unless relaxed by flags.
+- **Objective**: a weighted sum of per-frame perceptual contour distances —
+  volume envelope (dB, peak-normalized), pitch contour from an
+  autocorrelation f0 tracker with a voiced/noise flag, pitch slope
+  (rising/falling/jumps), and timbre contour (spectral centroid +
+  noise-vs-tonal axis) — plus a low-weight multi-scale blurred log-mel term
+  for residual detail (`match/features.py`, `match/objective.py`). A raw
+  spectrogram distance can't rank structural errors (rising vs falling
+  sweeps are equally far from a rising target in mel space);
+  `tests/test_metric_rankings.py` pins the orderings that matter.
 - **Search**: per-wave-type random screening seeded with the target's
   estimated fundamental, then CMA-ES on the best few wave types, then a full
   CMA-ES run on the winner (`match/optimizer.py`). The DSP is not

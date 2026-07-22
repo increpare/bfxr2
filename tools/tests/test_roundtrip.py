@@ -11,18 +11,19 @@ from pathlib import Path
 import pytest
 
 from match.bfxr_io import ParamSpace, read_bfxr
-from match.objective import MelObjective
+from match.objective import MatchObjective
 from match.optimizer import RENDER_SEED, OptimizeSettings, StagedOptimizer
 from match.renderer import BfxrRenderer
 
 FIXTURES = sorted((Path(__file__).parent / "fixtures").glob("*.bfxr"))
 
-# Calibrated on 2026-07-22 (budget 1600, rng_seed 0 — runs are
-# deterministic): observed best scores 0.11 (bitnoise_glitch) to 2.46
-# (sine_powerup; sliding pitch is the hardest case for the strict metric).
-# Silence scores ~9, arbitrary wrong sounds ~4+. The threshold catches
-# regressions (metric broken, optimizer stuck); it is not a quality bar.
-SCORE_THRESHOLD = 3.0
+# Calibrated on 2026-07-22 against the contour-feature metric (budget 1600,
+# rng_seed 0 — runs are deterministic): observed best scores up to 3.06
+# (sine_powerup; sliding pitch remains the hardest case, and it lands on
+# Triangle rather than Sin — a close timbral cousin). Wrong-genre sounds
+# score ~5+, silence far higher. The threshold catches regressions (metric
+# broken, optimizer stuck); it is not a quality bar.
+SCORE_THRESHOLD = 3.5
 BUDGET = 1600
 
 
@@ -40,7 +41,7 @@ def test_roundtrip(renderer, fixture):
     target = renderer.render(truth, seed=RENDER_SEED)
     assert target is not None
 
-    objective = MelObjective(target)
+    objective = MatchObjective(target)
     settings = OptimizeSettings(budget=BUDGET, screen_size=32,
                                 stage1_iters=10, verbose=False)
     optimizer = StagedOptimizer(space, renderer, objective, settings, target=target)

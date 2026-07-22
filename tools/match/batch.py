@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import sys
 from pathlib import Path
 
@@ -63,6 +64,9 @@ def main(argv: list[str] | None = None) -> int:
         match_main(forwarded)
         report = json.loads((sub / "report.json").read_text())
         rows.append((f.stem, report))
+        # best match beside the original: X.wav -> X.bfxr + X.bfxr.wav
+        shutil.copyfile(sub / "match.bfxr", f.with_suffix(".bfxr"))
+        shutil.copyfile(sub / "match.wav", f.with_suffix(".bfxr.wav"))
 
     lines = ["<!DOCTYPE html><html><head><meta charset='utf-8'>",
              "<title>bfxr batch match</title>",

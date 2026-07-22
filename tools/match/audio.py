@@ -44,12 +44,14 @@ def trim_silence(x: np.ndarray, threshold_db: float = SILENCE_DB) -> np.ndarray:
     return x[start:end]
 
 
-def normalize_rms(x: np.ndarray, target_rms: float = TARGET_RMS) -> np.ndarray:
-    rms = np.sqrt(np.mean(x**2))
-    if rms < 1e-8:
+def normalize_peak(x: np.ndarray, target_peak: float = 0.5) -> np.ndarray:
+    """Peak normalization. RMS normalization is wrong for one-shot sfx: a
+    long quiet reverb tail drags RMS down and inflates the attack."""
+    peak = np.abs(x).max()
+    if peak < 1e-8:
         return x
-    return (x * (target_rms / rms)).astype(np.float32)
+    return (x * (target_peak / peak)).astype(np.float32)
 
 
 def prepare_target(path: Path | str) -> np.ndarray:
-    return normalize_rms(trim_silence(load_audio(path)))
+    return normalize_peak(trim_silence(load_audio(path)))

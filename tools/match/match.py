@@ -15,7 +15,7 @@ from pathlib import Path
 
 from .audio import SAMPLE_RATE, prepare_target
 from .bfxr_io import ParamSpace, write_bfxr
-from .objective import MelObjective
+from .objective import MatchObjective
 from .optimizer import RENDER_SEED, OptimizeSettings, StagedOptimizer
 from .renderer import BfxrRenderer, default_jobs
 
@@ -58,7 +58,7 @@ def main(argv: list[str] | None = None) -> int:
           file=sys.stderr)
 
     space = ParamSpace()
-    objective = MelObjective(
+    objective = MatchObjective(
         target,
         allow_pitch_shift=args.allow_pitch_shift,
         allow_time_stretch=args.allow_time_stretch,
