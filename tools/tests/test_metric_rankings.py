@@ -101,6 +101,57 @@ def test_pitch_jump_beats_flat(renderer):
     assert obj.score(jumpy) < obj.score(flat)
 
 
+def test_pitch_accuracy_outranks_envelope_detail(renderer):
+    """'mario 2 - jump': a 1.5-semitone pitch error is glaring to ears and
+    must cost more than a mildly different envelope."""
+    target = render(renderer, waveType=0, frequency_start=0.4,
+                    sustainTime=0.2, decayTime=0.25)
+    right_pitch = render(renderer, waveType=0, frequency_start=0.4,
+                         sustainTime=0.22, decayTime=0.27)
+    off_pitch = render(renderer, waveType=0, frequency_start=0.418,  # ~ +1.5 st
+                       sustainTime=0.2, decayTime=0.25)
+    obj = MatchObjective(target)
+    assert obj.score(right_pitch) < obj.score(off_pitch)
+
+
+def test_amplitude_modulation_beats_static():
+    """'mario 3 - flame': a jumpy-amplitude target must prefer a candidate
+    with amplitude motion over a statically decaying one. Synthetic signals:
+    bfxr itself has no tremolo parameter (repeatSpeed alone doesn't touch
+    the envelope), but the metric must still hear the difference."""
+    sr = 44100
+    rng = np.random.default_rng(0)
+    t = np.arange(int(0.6 * sr)) / sr
+
+    def band_noise(seed):
+        return np.convolve(np.random.default_rng(seed).standard_normal(len(t)),
+                           np.ones(8) / 8, mode="same").astype(np.float32)
+
+    def tremolo(hz, phase=0.0):
+        return (0.55 + 0.45 * np.sign(np.sin(2 * np.pi * hz * t + phase))).astype(np.float32)
+
+    target = band_noise(0) * tremolo(8)
+    modulated = band_noise(1) * tremolo(7, phase=1.0)
+    static = band_noise(0) * 0.55
+    obj = MatchObjective(target)
+    assert obj.score(modulated) < obj.score(static)
+
+
+def test_discrete_steps_beat_glissando(renderer):
+    """'mega_man_ii_beam-out': discrete repeated pitch steps are not a
+    glissando, even when start/end pitches agree."""
+    target = render(renderer, waveType=2, frequency_start=0.3,
+                    pitch_jump_amount=0.3, pitch_jump_repeat_speed=0.7,
+                    sustainTime=0.35, decayTime=0.2)
+    steppy = render(renderer, waveType=2, frequency_start=0.31,
+                    pitch_jump_amount=0.28, pitch_jump_repeat_speed=0.65,
+                    sustainTime=0.35, decayTime=0.2)
+    gliss = render(renderer, waveType=2, frequency_start=0.3,
+                   frequency_slide=0.12, sustainTime=0.35, decayTime=0.2)
+    obj = MatchObjective(target)
+    assert obj.score(steppy) < obj.score(gliss)
+
+
 def test_matching_pitch_beats_wrong_octave(renderer):
     """'Mario 3 - jump (nes)': right trend but wrong pitch level."""
     target = render(renderer, waveType=2, frequency_start=0.4,

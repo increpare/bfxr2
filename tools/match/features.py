@@ -77,17 +77,13 @@ class FeatureExtractor:
         psum = power.sum(dim=2) + 1e-12
         centroid = (power * self.freqs).sum(dim=2) / psum
         centroid_log2 = torch.log2(centroid.clamp(min=20.0))
-        flatness = torch.exp(torch.log(power + 1e-12).mean(dim=2)) / (
-            power.mean(dim=2) + 1e-12
-        )
-        flatness_db = 10.0 * torch.log10(flatness + 1e-12)
-        # squash to a noise-vs-tonal axis: raw flatness differences between
-        # two tonal sounds (-35 vs -60 dB) are aliasing/harmonic-grid noise,
-        # while noise vs tone (-10 vs -40 dB) is the distinction that matters
-        noisiness = torch.sigmoid((flatness_db + 20.0) / 5.0)
-
         f0_log2, clarity = self._track_pitch(batch, n_t)
         voiced = (clarity > CLARITY_THRESHOLD) & active
+        # noisiness = aperiodicity. Spectral flatness is the wrong axis: it
+        # measures broadband-ness, so band-limited noise (a low rumble)
+        # reads as "tonal". Lack of an autocorrelation peak is what noise
+        # actually means.
+        noisiness = (1.0 - clarity).clamp(0.0, 1.0)
         return Features(
             env_db=env_db,
             f0_log2=f0_log2,
@@ -114,15 +110,20 @@ class FeatureExtractor:
         # multiples with similar height. Take the SMALLEST lag that is a
         # LOCAL max within 90% of the global peak — local, because the ACF's
         # near-zero-lag shoulder is high for any signal but is never a peak.
+        # No local max at all = aperiodic frame: clarity 0, NOT a fallback
+        # pick (the fallback used to land on the shoulder and call bassy
+        # noise a voiced 4kHz tone).
         local_max = (seg[..., 1:-1] > seg[..., :-2]) & (seg[..., 1:-1] >= seg[..., 2:])
         local_max = torch.nn.functional.pad(local_max, (1, 1), value=False)
         max_val = seg.amax(dim=2, keepdim=True)
         near = local_max & (seg >= 0.9 * max_val)
         has_peak = near.any(dim=2)
         best = torch.where(
-            has_peak, near.float().argmax(dim=2), seg.argmax(dim=2)
+            has_peak, near.float().argmax(dim=2),
+            torch.zeros_like(near.float().argmax(dim=2)),
         )
         clarity = seg.gather(2, best.unsqueeze(2)).squeeze(2).clamp(max=1.0)
+        clarity = torch.where(has_peak, clarity, torch.zeros_like(clarity))
         lag = best + _LAG_MIN
 
         # parabolic interpolation around the peak for sub-sample lag
@@ -154,11 +155,19 @@ class FeatureExtractor:
 @dataclass
 class FeatureWeights:
     env: float = 1.0
-    pitch: float = 1.5
-    voiced_mismatch: float = 1.0
+    env_motion: float = 1.0      # amplitude-modulation structure
+    pitch: float = 1.5           # unit = 3 semitones of average error
+    voiced_mismatch: float = 1.5
     pitch_slope: float = 1.0
+    pitch_movement: float = 1.0  # still/glide/jump distribution
     timbre: float = 1.0
     mel: float = 0.35
+
+
+# per-frame |Δf0| thresholds (semitones) splitting pitch motion into
+# still / gliding / jumping — "is the contour discrete or continuous"
+MOVE_STILL_ST = 0.3
+MOVE_JUMP_ST = 1.2
 
 
 def _fit_frames(x: torch.Tensor, t: int) -> torch.Tensor:
@@ -207,15 +216,33 @@ def feature_distance(
         return torch.nn.functional.pad(x, (0, t - x.shape[1]), value=value)
 
     env_a, env_b = pad(a.env_db, ENV_FLOOR_DB), pad(b.env_db, ENV_FLOOR_DB)
-    env_term = float((env_a - env_b).abs().mean()) / 20.0
+    # per-frame error capped at 30 dB: "sound where there should be silence"
+    # is one kind of error, not four stacked ones — uncapped, a slightly
+    # longer decay outweighs an audibly wrong pitch
+    env_term = float((env_a - env_b).abs().clamp(max=30.0).mean()) / 20.0
 
+    # amplitude-modulation structure, compared as a per-sound statistic
+    # (mean per-frame |Δenv| over its own active frames): a crackling sound
+    # must prefer any crackling candidate over a static one, regardless of
+    # whether the crackles line up in phase
+    def motion(env: torch.Tensor, act: torch.Tensor) -> float:
+        d = (env[:, 1:] - env[:, :-1]).abs().clamp(max=12.0)
+        m = (act[:, 1:] * act[:, :-1])
+        return float((d * m).sum() / m.sum().clamp(min=1))
+
+    act_a, act_b = pad(a.active.float(), 0), pad(b.active.float(), 0)
+    env_motion_term = abs(motion(env_a, act_a) - motion(env_b, act_b)) / 4.0
+
+    # tonal-vs-noisy disagreement, only where BOTH are sounding — frames
+    # where one sound has already ended are a duration error, and that is
+    # env's job to price, once
     voiced_a, voiced_b = pad(a.voiced.float(), 0), pad(b.voiced.float(), 0)
-    active_either = (pad(a.active.float(), 0) + pad(b.active.float(), 0)) > 0
-    n_either = int(active_either.sum())
-    if n_either > 0:
+    both_act = (act_a * act_b) > 0
+    n_both_act = int(both_act.sum())
+    if n_both_act > 0:
         voiced_mm = float(
-            ((voiced_a - voiced_b).abs() * active_either).sum()
-        ) / n_either
+            ((voiced_a - voiced_b).abs() * both_act).sum()
+        ) / n_both_act
     else:
         voiced_mm = 0.0
 
@@ -224,14 +251,16 @@ def feature_distance(
     n_both = int(both_voiced.sum())
     pitch_term = 0.0
     slope_term = 0.0
+    movement_term = 0.0
     if n_both > 0:
-        diff = f0_a - f0_b  # octaves
+        diff = (f0_a - f0_b) * 12.0  # semitones
         if allow_pitch_shift:
             diff = diff - diff[both_voiced].median()
-        pitch_term = float((diff.abs() * both_voiced).sum()) / n_both
+        # 1.0 = three semitones of average error: being audibly off-key must
+        # cost on the same scale as a wrong envelope, not pocket change
+        pitch_term = float((diff.abs().clamp(max=12.0) * both_voiced).sum()) / n_both / 3.0
 
-        # frame-to-frame pitch slope: distinguishes glides from jumps and
-        # rising from falling
+        # frame-to-frame pitch slope: rising vs falling, glides vs jumps
         da, db = f0_a[:, 1:] - f0_a[:, :-1], f0_b[:, 1:] - f0_b[:, :-1]
         both2 = both_voiced[:, 1:] & both_voiced[:, :-1]
         n2 = int(both2.sum())
@@ -239,14 +268,23 @@ def feature_distance(
             # zero deltas across unvoiced boundaries, then smooth over 3
             # frames: a pitch jump landing one frame off must cost less
             # than omitting the jump entirely
-            da = torch.nn.functional.avg_pool1d(
+            da_s = torch.nn.functional.avg_pool1d(
                 (da * both2).unsqueeze(1), 3, stride=1, padding=1
             ).squeeze(1)
-            db = torch.nn.functional.avg_pool1d(
+            db_s = torch.nn.functional.avg_pool1d(
                 (db * both2).unsqueeze(1), 3, stride=1, padding=1
             ).squeeze(1)
-            slope_diff = (da - db).abs().clamp(max=0.5)
+            slope_diff = (da_s - db_s).abs().clamp(max=0.5)
             slope_term = float(slope_diff.sum()) / n2 * 8.0
+
+            # discrete vs continuous: fraction of voiced motion that is
+            # still / gliding / jumping, compared as distributions — a run
+            # of discrete notes and a glissando differ here even when their
+            # start/end pitches agree
+            movement_term = float(
+                (_movement_hist(da, both2) - _movement_hist(db, both2))
+                .abs().sum()
+            ) / 2.0
 
     cen_a, cen_b = pad(a.centroid_log2, 0), pad(b.centroid_log2, 0)
     ns_a, ns_b = pad(a.noisiness, 0), pad(b.noisiness, 0)
@@ -261,8 +299,20 @@ def feature_distance(
 
     return {
         "env": w.env * env_term,
+        "env_motion": w.env_motion * env_motion_term,
         "pitch": w.pitch * pitch_term,
         "voiced_mismatch": w.voiced_mismatch * voiced_mm,
         "pitch_slope": w.pitch_slope * slope_term,
+        "pitch_movement": w.pitch_movement * movement_term,
         "timbre": w.timbre * timbre_term,
     }
+
+
+def _movement_hist(deltas: torch.Tensor, mask: torch.Tensor) -> torch.Tensor:
+    """Fractions of masked frames whose |Δf0| is still / gliding / jumping."""
+    st = deltas.abs() * 12.0
+    n = mask.sum().clamp(min=1)
+    still = ((st < MOVE_STILL_ST) & mask).sum() / n
+    jump = ((st >= MOVE_JUMP_ST) & mask).sum() / n
+    glide = 1.0 - still - jump
+    return torch.stack([still, glide, jump])
