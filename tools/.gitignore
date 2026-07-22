@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.pytest_cache/
+out/
+batch_out/
+targets/*
+!targets/README.md

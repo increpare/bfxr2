@@ -1,0 +1,11 @@
+{
+ "synth_type": "Bfxr",
+ "version": "1.0.4",
+ "file_name": "tan_hit",
+ "params": {
+  "waveType": 6,
+  "frequency_start": 0.5,
+  "decayTime": 0.2,
+  "hpFilterCutoff": 0.2
+ }
+}

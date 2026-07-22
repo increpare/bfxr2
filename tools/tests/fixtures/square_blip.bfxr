@@ -1,0 +1,12 @@
+{
+ "synth_type": "Bfxr",
+ "version": "1.0.4",
+ "file_name": "square_blip",
+ "params": {
+  "waveType": 0,
+  "frequency_start": 0.45,
+  "sustainTime": 0.08,
+  "decayTime": 0.15,
+  "squareDuty": 0.3
+ }
+}

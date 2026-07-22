@@ -1,0 +1,76 @@
+"""Run the matcher over every audio file in a directory and build one
+combined index page.
+
+    cd tools && uv run python -m match.batch targets/ -o batch_out/ --html-report
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+
+from .match import build_parser, main as match_main
+
+AUDIO_EXTS = {".wav", ".flac", ".ogg", ".aif", ".aiff", ".mp3"}
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        prog="batch", description="Match every audio file in a directory.",
+        parents=[build_parser()], conflict_handler="resolve")
+    parser.add_argument("target", type=Path, help="directory of audio files")
+    args, extra = parser.parse_known_args(argv)
+
+    files = sorted(
+        f for f in args.target.iterdir()
+        if f.suffix.lower() in AUDIO_EXTS and not f.name.startswith(".")
+    )
+    if not files:
+        print(f"no audio files found in {args.target}", file=sys.stderr)
+        return 1
+
+    args.out.mkdir(parents=True, exist_ok=True)
+    rows = []
+    for f in files:
+        sub = args.out / f.stem
+        print(f"\n=== {f.name} ===", file=sys.stderr)
+        forwarded = [str(f), "-o", str(sub)]
+        for flag in ("--allow-pitch-shift", "--allow-time-stretch", "--html-report"):
+            if getattr(args, flag.lstrip("-").replace("-", "_")):
+                forwarded.append(flag)
+        forwarded += ["--budget", str(args.budget), "--top-k", str(args.top_k),
+                      "--rng-seed", str(args.rng_seed),
+                      "--avg-seeds", str(args.avg_seeds),
+                      "--popsize", str(args.popsize)]
+        if args.time_budget is not None:
+            forwarded += ["--time-budget", str(args.time_budget)]
+        if args.jobs is not None:
+            forwarded += ["--jobs", str(args.jobs)]
+        if args.wavetypes:
+            forwarded += ["--wavetypes", args.wavetypes]
+        match_main(forwarded)
+        report = json.loads((sub / "report.json").read_text())
+        rows.append((f.stem, report))
+
+    lines = ["<!DOCTYPE html><html><head><meta charset='utf-8'>",
+             "<title>bfxr batch match</title>",
+             "<style>body{font-family:system-ui;margin:2em;background:#1b1b1f;color:#e8e8ea}",
+             "table{border-collapse:collapse}td,th{padding:.5em 1em;border-bottom:1px solid #333;text-align:left}",
+             "a{color:#7cb8ff}</style></head><body><h1>bfxr batch match</h1><table>",
+             "<tr><th>target</th><th>best score</th><th>wave type</th><th>report</th></tr>"]
+    for stem, report in rows:
+        best = report["results"][0]
+        link = (f"<a href='{stem}/report.html'>report</a>"
+                if (args.out / stem / "report.html").exists() else "")
+        lines.append(f"<tr><td>{stem}</td><td>{best['score']:.3f}</td>"
+                     f"<td>{best['wave_type_name']}</td><td>{link}</td></tr>")
+    lines.append("</table></body></html>")
+    index = args.out / "index.html"
+    index.write_text("\n".join(lines))
+    print(f"\nwrote {index}", file=sys.stderr)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

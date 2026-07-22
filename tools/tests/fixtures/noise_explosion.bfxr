@@ -1,0 +1,13 @@
+{
+ "synth_type": "Bfxr",
+ "version": "1.0.4",
+ "file_name": "noise_explosion",
+ "params": {
+  "waveType": 3,
+  "frequency_start": 0.2,
+  "frequency_slide": -0.1,
+  "sustainTime": 0.25,
+  "decayTime": 0.45,
+  "sustainPunch": 0.5
+ }
+}

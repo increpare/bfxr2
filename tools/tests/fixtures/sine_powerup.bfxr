@@ -1,0 +1,12 @@
+{
+ "synth_type": "Bfxr",
+ "version": "1.0.4",
+ "file_name": "sine_powerup",
+ "params": {
+  "waveType": 2,
+  "frequency_start": 0.35,
+  "frequency_slide": 0.25,
+  "sustainTime": 0.3,
+  "decayTime": 0.3
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "synth_type": "Bfxr",
+ "version": "1.0.4",
+ "file_name": "saw_laser",
+ "params": {
+  "waveType": 1,
+  "frequency_start": 0.7,
+  "frequency_slide": -0.3,
+  "sustainTime": 0.15,
+  "decayTime": 0.25
+ }
+}

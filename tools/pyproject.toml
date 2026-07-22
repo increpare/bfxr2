@@ -1,0 +1,27 @@
+[project]
+name = "bfxr-tools"
+version = "0.1.0"
+description = "Offline tooling for bfxr2: headless rendering, wav->bfxr matching"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy>=1.26",
+    "torch>=2.2",
+    "torchaudio>=2.2",
+    "cma>=3.3",
+    "soundfile>=0.12",
+]
+
+[project.optional-dependencies]
+report = ["matplotlib>=3.8"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = ["slow: long-running round-trip tests"]
+addopts = "-m 'not slow'"
