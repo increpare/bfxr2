@@ -5,3 +5,6 @@ out/
 batch_out/
 targets/*
 !targets/README.md
+bfxr_native/build/
+metric_lib/
+metric_compare/

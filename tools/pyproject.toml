@@ -13,6 +13,11 @@ dependencies = [
 
 [project.optional-dependencies]
 report = ["matplotlib>=3.8"]
+bakeoff = [
+    "zimtohrli>=0.2.1",
+    "transformers>=4.40",
+    "torchvision>=0.17",
+]
 
 [dependency-groups]
 dev = ["pytest>=8"]

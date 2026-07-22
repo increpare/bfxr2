@@ -31,13 +31,14 @@ def main() -> None:
     OUT_H.parent.mkdir(parents=True, exist_ok=True)
     OUT_CC.parent.mkdir(parents=True, exist_ok=True)
 
+    # JS stores these as plain Numbers (often > 32767); divide by 32768 in DSP.
     OUT_H.write_text(
         "#pragma once\n"
         "#include <cstdint>\n\n"
         "namespace bfxr {\n\n"
         "constexpr int kAkwfLen = 256;\n\n"
         + "".join(
-            f"extern const int16_t {name}[kAkwfLen];\n" for name in TABLES
+            f"extern const uint16_t {name}[kAkwfLen];\n" for name in TABLES
         )
         + "\n}  // namespace bfxr\n"
     )
@@ -47,7 +48,7 @@ def main() -> None:
         "namespace bfxr {\n",
     ]
     for name, nums in tables.items():
-        lines.append(f"const int16_t {name}[kAkwfLen] = {{")
+        lines.append(f"const uint16_t {name}[kAkwfLen] = {{")
         for i in range(0, 256, 16):
             chunk = ", ".join(str(n) for n in nums[i : i + 16])
             lines.append(f"  {chunk},")

@@ -55,6 +55,9 @@ class OptimizeSettings:
     rng_seed: int = 0
     top_k: int = 3
     verbose: bool = True
+    refine_steps: int = 0  # 0 = skip Stage 3
+    refine_eps: float = 0.015
+    refine_step0: float = 0.05
 
 
 class StagedOptimizer:
@@ -265,6 +268,31 @@ class StagedOptimizer:
             if c.wave_type not in by_wt or c.score < by_wt[c.wave_type].score:
                 by_wt[c.wave_type] = c
         results = sorted(by_wt.values())[: self.s.top_k]
+        if self.s.refine_steps > 0:
+            from .refine import RefineSettings, free_mask, make_evaluate, steepest_descent
+
+            polished: list[Candidate] = []
+            for cand in results:
+                self._log(f"stage3 refine waveType={cand.wave_type} "
+                          f"steps={self.s.refine_steps}")
+                mask = free_mask(self.space, cand.wave_type)
+                u0 = cand.unit.copy()
+                if cand.wave_type != 0:
+                    for name in SQUARE_ONLY_PARAMS:
+                        i = self.space.names.index(name)
+                        u0[i] = float(self.space.defaults_unit()[i])
+                evaluate = make_evaluate(self, cand.wave_type)
+                u1, sc, _ = steepest_descent(
+                    u0, cand.wave_type, evaluate, self.upper, mask=mask,
+                    settings=RefineSettings(
+                        max_steps=self.s.refine_steps,
+                        eps=self.s.refine_eps,
+                        step0=self.s.refine_step0,
+                        verbose=self.s.verbose,
+                    ),
+                )
+                polished.append(Candidate(sc, cand.wave_type, u1))
+            results = sorted(polished)[: self.s.top_k]
         self._log(f"done: best {results[0].score:.4f} "
                   f"(waveType={results[0].wave_type}), {self.evals} evals")
         return results

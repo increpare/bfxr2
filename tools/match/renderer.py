@@ -1,11 +1,10 @@
-"""Python client for the persistent Node render worker(s).
+"""Python client for the persistent render worker(s).
 
-Protocol (see render/render_worker.js):
+Protocol (see render/render_worker.js / bfxr_native worker):
   request:  NDJSON line {"id", "seed", "params"}
   response: uint32LE id | int32LE status | uint32LE n_samples | float32LE data
 
-A single render is CPU-bound at ~45 ms per second of audio, so batches are
-fanned out across several worker processes.
+Prefers the native C++ worker when built; falls back to Node.
 """
 from __future__ import annotations
 
@@ -17,7 +16,7 @@ import threading
 
 import numpy as np
 
-from .bfxr_io import RENDER_WORKER
+from .bfxr_io import render_worker_cmd
 
 STATUS_OK = 0
 
@@ -35,7 +34,7 @@ def default_jobs() -> int:
 class _Worker:
     def __init__(self):
         self.proc = subprocess.Popen(
-            ["node", str(RENDER_WORKER)],
+            render_worker_cmd(),
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=subprocess.DEVNULL,

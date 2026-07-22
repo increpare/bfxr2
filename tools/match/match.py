@@ -42,6 +42,8 @@ def build_parser() -> argparse.ArgumentParser:
                    help="comma-separated internal wave type ids to search (default all)")
     p.add_argument("--top-k", type=int, default=3,
                    help="emit best result for the K best distinct wave types")
+    p.add_argument("--refine-steps", type=int, default=0,
+                   help="Stage 3 FD steepest-descent steps (0=off)")
     p.add_argument("--jobs", type=int, default=None,
                    help=f"render worker processes (default {default_jobs()})")
     p.add_argument("--html-report", action="store_true",
@@ -71,6 +73,7 @@ def main(argv: list[str] | None = None) -> int:
         rng_seed=args.rng_seed,
         wave_types=[int(w) for w in args.wavetypes.split(",")] if args.wavetypes else None,
         top_k=args.top_k,
+        refine_steps=args.refine_steps,
     )
 
     t0 = time.perf_counter()

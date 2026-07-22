@@ -3,3 +3,5 @@ node_modules
 *.gz
 /node_modules
 /node_modules
+*.wav
+/tools/bfxr_native/testdata

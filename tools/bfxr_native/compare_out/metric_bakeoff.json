@@ -1,0 +1,654 @@
+{
+  "summary": {
+    "current": {
+      "n": 14,
+      "passed": 13,
+      "by_group": {
+        "real_match": {
+          "passed": 8,
+          "n": 8
+        },
+        "sanity": {
+          "passed": 1,
+          "n": 1
+        },
+        "structure": {
+          "passed": 3,
+          "n": 3
+        },
+        "timbre": {
+          "passed": 1,
+          "n": 2
+        }
+      }
+    },
+    "zimtohrli": {
+      "n": 14,
+      "passed": 10,
+      "by_group": {
+        "real_match": {
+          "passed": 5,
+          "n": 8
+        },
+        "sanity": {
+          "passed": 1,
+          "n": 1
+        },
+        "structure": {
+          "passed": 2,
+          "n": 3
+        },
+        "timbre": {
+          "passed": 2,
+          "n": 2
+        }
+      }
+    },
+    "clap": {
+      "n": 14,
+      "passed": 13,
+      "by_group": {
+        "real_match": {
+          "passed": 7,
+          "n": 8
+        },
+        "sanity": {
+          "passed": 1,
+          "n": 1
+        },
+        "structure": {
+          "passed": 3,
+          "n": 3
+        },
+        "timbre": {
+          "passed": 2,
+          "n": 2
+        }
+      }
+    },
+    "harmonic": {
+      "n": 14,
+      "passed": 7,
+      "by_group": {
+        "real_match": {
+          "passed": 2,
+          "n": 8
+        },
+        "sanity": {
+          "passed": 1,
+          "n": 1
+        },
+        "structure": {
+          "passed": 2,
+          "n": 3
+        },
+        "timbre": {
+          "passed": 2,
+          "n": 2
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "group": "structure",
+      "name": "rising_beats_falling",
+      "metric": "current",
+      "d_winner": 9.102427398874156,
+      "d_loser": 13.093836873791364,
+      "margin": 3.9914094749172087,
+      "pass": true,
+      "note": "rising sweep should beat falling against rising target"
+    },
+    {
+      "group": "structure",
+      "name": "rising_beats_falling",
+      "metric": "zimtohrli",
+      "d_winner": 0.03693109750747681,
+      "d_loser": 0.046703040599823,
+      "margin": 0.009771943092346191,
+      "pass": true,
+      "note": "rising sweep should beat falling against rising target"
+    },
+    {
+      "group": "structure",
+      "name": "rising_beats_falling",
+      "metric": "clap",
+      "d_winner": 0.06103116273880005,
+      "d_loser": 0.45252907276153564,
+      "margin": 0.3914979100227356,
+      "pass": true,
+      "note": "rising sweep should beat falling against rising target"
+    },
+    {
+      "group": "structure",
+      "name": "rising_beats_falling",
+      "metric": "harmonic",
+      "d_winner": 0.9699995090261787,
+      "d_loser": 0.8678561180209914,
+      "margin": -0.10214339100518732,
+      "pass": false,
+      "note": "rising sweep should beat falling against rising target"
+    },
+    {
+      "group": "structure",
+      "name": "noise_beats_tone",
+      "metric": "current",
+      "d_winner": 2.3188860403937195,
+      "d_loser": 5.338402847155093,
+      "margin": 3.0195168067613736,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "group": "structure",
+      "name": "noise_beats_tone",
+      "metric": "zimtohrli",
+      "d_winner": 0.012584805488586426,
+      "d_loser": 0.01503831148147583,
+      "margin": 0.0024535059928894043,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "group": "structure",
+      "name": "noise_beats_tone",
+      "metric": "clap",
+      "d_winner": 0.0697472095489502,
+      "d_loser": 0.6576741337776184,
+      "margin": 0.5879269242286682,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "group": "structure",
+      "name": "noise_beats_tone",
+      "metric": "harmonic",
+      "d_winner": 0.0,
+      "d_loser": 1.608707126326391,
+      "margin": 1.608707126326391,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "group": "structure",
+      "name": "tone_beats_noise",
+      "metric": "current",
+      "d_winner": 4.026949427354548,
+      "d_loser": 5.309710338031068,
+      "margin": 1.2827609106765197,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "group": "structure",
+      "name": "tone_beats_noise",
+      "metric": "zimtohrli",
+      "d_winner": 0.01621842384338379,
+      "d_loser": 0.015008032321929932,
+      "margin": -0.0012103915214538574,
+      "pass": false,
+      "note": ""
+    },
+    {
+      "group": "structure",
+      "name": "tone_beats_noise",
+      "metric": "clap",
+      "d_winner": 0.18786710500717163,
+      "d_loser": 0.6249111294746399,
+      "margin": 0.43704402446746826,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "group": "structure",
+      "name": "tone_beats_noise",
+      "metric": "harmonic",
+      "d_winner": 0.7480540637672732,
+      "d_loser": 1.5724949530640222,
+      "margin": 0.824440889296749,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "group": "timbre",
+      "name": "rich_beats_pure",
+      "metric": "current",
+      "d_winner": 1.577854359133926,
+      "d_loser": 1.8526583772406664,
+      "margin": 0.2748040181067404,
+      "pass": true,
+      "note": "overtone-rich square should beat sine against rich target"
+    },
+    {
+      "group": "timbre",
+      "name": "rich_beats_pure",
+      "metric": "zimtohrli",
+      "d_winner": 0.012985646724700928,
+      "d_loser": 0.01709049940109253,
+      "margin": 0.0041048526763916016,
+      "pass": true,
+      "note": "overtone-rich square should beat sine against rich target"
+    },
+    {
+      "group": "timbre",
+      "name": "rich_beats_pure",
+      "metric": "clap",
+      "d_winner": 0.017697811126708984,
+      "d_loser": 0.3390021324157715,
+      "margin": 0.3213043212890625,
+      "pass": true,
+      "note": "overtone-rich square should beat sine against rich target"
+    },
+    {
+      "group": "timbre",
+      "name": "rich_beats_pure",
+      "metric": "harmonic",
+      "d_winner": 0.10152318873466266,
+      "d_loser": 2.3061724930211973,
+      "margin": 2.2046493042865345,
+      "pass": true,
+      "note": "overtone-rich square should beat sine against rich target"
+    },
+    {
+      "group": "timbre",
+      "name": "square_beats_saw",
+      "metric": "current",
+      "d_winner": 1.383480750161331,
+      "d_loser": 0.4639492851520062,
+      "margin": -0.9195314650093249,
+      "pass": false,
+      "note": ""
+    },
+    {
+      "group": "timbre",
+      "name": "square_beats_saw",
+      "metric": "zimtohrli",
+      "d_winner": 0.005838215351104736,
+      "d_loser": 0.011590003967285156,
+      "margin": 0.00575178861618042,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "group": "timbre",
+      "name": "square_beats_saw",
+      "metric": "clap",
+      "d_winner": 0.013841390609741211,
+      "d_loser": 0.03544127941131592,
+      "margin": 0.021599888801574707,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "group": "timbre",
+      "name": "square_beats_saw",
+      "metric": "harmonic",
+      "d_winner": 0.07762231560328708,
+      "d_loser": 0.10707902575255762,
+      "margin": 0.029456710149270537,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "group": "sanity",
+      "name": "identity_beats_other",
+      "metric": "current",
+      "d_winner": 0.0,
+      "d_loser": 10.968934791365083,
+      "margin": 10.968934791365083,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "group": "sanity",
+      "name": "identity_beats_other",
+      "metric": "zimtohrli",
+      "d_winner": 0.0,
+      "d_loser": 0.0292397141456604,
+      "margin": 0.0292397141456604,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "group": "sanity",
+      "name": "identity_beats_other",
+      "metric": "clap",
+      "d_winner": -1.1920928955078125e-07,
+      "d_loser": 0.5651524662971497,
+      "margin": 0.5651525855064392,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "group": "sanity",
+      "name": "identity_beats_other",
+      "metric": "harmonic",
+      "d_winner": 0.0,
+      "d_loser": 1.93301959005779,
+      "margin": 1.93301959005779,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 1 - Jump",
+      "metric": "current",
+      "d_winner": 3.4964470925092908,
+      "d_loser": 10.984139682626182,
+      "margin": 7.487692590116891,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (Mario 3 - jump (snes).bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 1 - Jump",
+      "metric": "zimtohrli",
+      "d_winner": 0.01626366376876831,
+      "d_loser": 0.039486825466156006,
+      "margin": 0.023223161697387695,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (Mario 3 - jump (snes).bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 1 - Jump",
+      "metric": "clap",
+      "d_winner": 0.500964879989624,
+      "d_loser": 0.507577657699585,
+      "margin": 0.0066127777099609375,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (Mario 3 - jump (snes).bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 1 - Jump",
+      "metric": "harmonic",
+      "d_winner": 0.7407591899431971,
+      "d_loser": 0.944008433370243,
+      "margin": 0.20324924342704587,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (Mario 3 - jump (snes).bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 2 - Throw",
+      "metric": "current",
+      "d_winner": 3.068749776616506,
+      "d_loser": 3.6350175302930348,
+      "margin": 0.5662677536765286,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (Mario Break Brick.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 2 - Throw",
+      "metric": "zimtohrli",
+      "d_winner": 0.029763460159301758,
+      "d_loser": 0.03922879695892334,
+      "margin": 0.009465336799621582,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (Mario Break Brick.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 2 - Throw",
+      "metric": "clap",
+      "d_winner": 0.6987919807434082,
+      "d_loser": 0.5299832820892334,
+      "margin": -0.1688086986541748,
+      "pass": false,
+      "note": "matched bfxr should beat unrelated match (Mario Break Brick.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 2 - Throw",
+      "metric": "harmonic",
+      "d_winner": 1.8857533949929224,
+      "d_loser": 1.8857533949929224,
+      "margin": 0.0,
+      "pass": false,
+      "note": "matched bfxr should beat unrelated match (Mario Break Brick.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 3 - jump (nes)",
+      "metric": "current",
+      "d_winner": 4.393601908121376,
+      "d_loser": 13.424940309213127,
+      "margin": 9.031338401091752,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (Mario World - Jump (reverb).bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 3 - jump (nes)",
+      "metric": "zimtohrli",
+      "d_winner": 0.029558658599853516,
+      "d_loser": 0.03783828020095825,
+      "margin": 0.008279621601104736,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (Mario World - Jump (reverb).bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 3 - jump (nes)",
+      "metric": "clap",
+      "d_winner": 0.5883743166923523,
+      "d_loser": 0.7577850222587585,
+      "margin": 0.16941070556640625,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (Mario World - Jump (reverb).bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 3 - jump (nes)",
+      "metric": "harmonic",
+      "d_winner": 1.5921979486641917,
+      "d_loser": 1.2233881474557242,
+      "margin": -0.3688098012084675,
+      "pass": false,
+      "note": "matched bfxr should beat unrelated match (Mario World - Jump (reverb).bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 3 - jump (snes)",
+      "metric": "current",
+      "d_winner": 3.199192257958852,
+      "d_loser": 3.6669990768547662,
+      "margin": 0.46780681889591413,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_attack.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 3 - jump (snes)",
+      "metric": "zimtohrli",
+      "d_winner": 0.030774235725402832,
+      "d_loser": 0.02389681339263916,
+      "margin": -0.006877422332763672,
+      "pass": false,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_attack.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 3 - jump (snes)",
+      "metric": "clap",
+      "d_winner": 0.26741743087768555,
+      "d_loser": 0.5250124931335449,
+      "margin": 0.2575950622558594,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_attack.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario 3 - jump (snes)",
+      "metric": "harmonic",
+      "d_winner": 0.8613906405022045,
+      "d_loser": 1.850172502439061,
+      "margin": 0.9887818619368565,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_attack.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario Break Brick",
+      "metric": "current",
+      "d_winner": 1.585494924770777,
+      "d_loser": 5.673259249959074,
+      "margin": 4.087764325188297,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_charm1.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario Break Brick",
+      "metric": "zimtohrli",
+      "d_winner": 0.047085344791412354,
+      "d_loser": 0.04461890459060669,
+      "margin": -0.002466440200805664,
+      "pass": false,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_charm1.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario Break Brick",
+      "metric": "clap",
+      "d_winner": 0.5110429525375366,
+      "d_loser": 0.749620258808136,
+      "margin": 0.23857730627059937,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_charm1.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario Break Brick",
+      "metric": "harmonic",
+      "d_winner": 1.663813005388945,
+      "d_loser": 1.663813005388945,
+      "margin": 0.0,
+      "pass": false,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_charm1.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario World - Jump (reverb)",
+      "metric": "current",
+      "d_winner": 3.7021941593476537,
+      "d_loser": 4.599769921757327,
+      "margin": 0.897575762409673,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_draw.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario World - Jump (reverb)",
+      "metric": "zimtohrli",
+      "d_winner": 0.028540432453155518,
+      "d_loser": 0.03580576181411743,
+      "margin": 0.007265329360961914,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_draw.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario World - Jump (reverb)",
+      "metric": "clap",
+      "d_winner": 0.6415277719497681,
+      "d_loser": 0.7903245687484741,
+      "margin": 0.14879679679870605,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_draw.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "Mario World - Jump (reverb)",
+      "metric": "harmonic",
+      "d_winner": 2.315078298576971,
+      "d_loser": 1.6366883264173062,
+      "margin": -0.6783899721596647,
+      "pass": false,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_draw.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "chrono_trigger_attack",
+      "metric": "current",
+      "d_winner": 2.365190025091517,
+      "d_loser": 7.825164566046965,
+      "margin": 5.459974540955448,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_fall.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "chrono_trigger_attack",
+      "metric": "zimtohrli",
+      "d_winner": 0.030504345893859863,
+      "d_loser": 0.024884402751922607,
+      "margin": -0.005619943141937256,
+      "pass": false,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_fall.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "chrono_trigger_attack",
+      "metric": "clap",
+      "d_winner": 0.6424540877342224,
+      "d_loser": 0.9451279044151306,
+      "margin": 0.3026738166809082,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_fall.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "chrono_trigger_attack",
+      "metric": "harmonic",
+      "d_winner": 1.5055506118601694,
+      "d_loser": 1.5055506118601694,
+      "margin": 0.0,
+      "pass": false,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_fall.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "chrono_trigger_charm1",
+      "metric": "current",
+      "d_winner": 4.94910377676538,
+      "d_loser": 6.668338608223179,
+      "margin": 1.7192348314577988,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_gateActivate.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "chrono_trigger_charm1",
+      "metric": "zimtohrli",
+      "d_winner": 0.02721846103668213,
+      "d_loser": 0.04052615165710449,
+      "margin": 0.013307690620422363,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_gateActivate.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "chrono_trigger_charm1",
+      "metric": "clap",
+      "d_winner": 0.7809028625488281,
+      "d_loser": 0.8584922552108765,
+      "margin": 0.07758939266204834,
+      "pass": true,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_gateActivate.bfxr)"
+    },
+    {
+      "group": "real_match",
+      "name": "chrono_trigger_charm1",
+      "metric": "harmonic",
+      "d_winner": 1.5949932539083345,
+      "d_loser": 1.5949932539083345,
+      "margin": 0.0,
+      "pass": false,
+      "note": "matched bfxr should beat unrelated match (chrono_trigger_gateActivate.bfxr)"
+    }
+  ]
+}

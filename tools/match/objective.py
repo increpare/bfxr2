@@ -13,6 +13,8 @@ tiebreaker. Loudness is normalized away (peak). Optional relaxations:
 """
 from __future__ import annotations
 
+from dataclasses import dataclass
+
 import numpy as np
 import torch
 import torchaudio
@@ -20,6 +22,7 @@ import torchaudio
 from .audio import SAMPLE_RATE, normalize_peak
 from .features import (
     FeatureExtractor,
+    Features,
     FeatureWeights,
     feature_distance,
     frame_count,
@@ -48,6 +51,34 @@ MIN_WAVE_LEN = 4096
 TAIL_PAD = 2048
 
 
+@dataclass
+class CandidateCache:
+    """Per-candidate mels + contour features, reusable across targets."""
+    lengths: list[int]
+    mels: list[list[torch.Tensor]]  # [i][scale] -> (n_mels, T_i)
+    features: list[Features]
+
+
+def _mel_bank() -> tuple[list, list[torch.Tensor]]:
+    transforms = [
+        torchaudio.transforms.MelSpectrogram(
+            sample_rate=SAMPLE_RATE,
+            n_fft=n_fft,
+            hop_length=hop,
+            n_mels=n_mels,
+            f_min=30.0,
+            f_max=18000.0,
+            power=2.0,
+        )
+        for n_fft, hop, n_mels in SCALES
+    ]
+    blurs = [
+        _blur_matrix(n_mels, MEL_BLUR_SIGMA * n_mels / 128)
+        for _, _, n_mels in SCALES
+    ]
+    return transforms, blurs
+
+
 class MatchObjective:
     def __init__(
         self,
@@ -60,22 +91,7 @@ class MatchObjective:
         self.allow_time_stretch = allow_time_stretch
         self.weights = weights or FeatureWeights()
         self.extractor = FeatureExtractor()
-        self.transforms = [
-            torchaudio.transforms.MelSpectrogram(
-                sample_rate=SAMPLE_RATE,
-                n_fft=n_fft,
-                hop_length=hop,
-                n_mels=n_mels,
-                f_min=30.0,
-                f_max=18000.0,
-                power=2.0,
-            )
-            for n_fft, hop, n_mels in SCALES
-        ]
-        self.blurs = [
-            _blur_matrix(n_mels, MEL_BLUR_SIGMA * n_mels / 128)
-            for _, _, n_mels in SCALES
-        ]
+        self.transforms, self.blurs = _mel_bank()
         target = normalize_peak(np.asarray(target, dtype=np.float32))
         self.target_len = max(len(target), MIN_WAVE_LEN)
         self.target_mels = []
@@ -88,6 +104,74 @@ class MatchObjective:
             self.target_features = self.extractor.extract(wave).slice(
                 0, frame_count(self.target_len)
             )
+
+    @staticmethod
+    def precompute_candidates(
+        waves: list[np.ndarray], chunk: int = 64
+    ) -> CandidateCache:
+        """Analyze library waves once; reuse via score_candidates()."""
+        extractor = FeatureExtractor()
+        transforms, blurs = _mel_bank()
+        lengths: list[int] = []
+        mels: list[list[torch.Tensor]] = []
+        features: list[Features] = []
+        with torch.no_grad():
+            for i in range(0, len(waves), chunk):
+                batch_waves = waves[i : i + chunk]
+                batch_lengths = [max(len(w), MIN_WAVE_LEN) for w in batch_waves]
+                batch_len = max(batch_lengths) + TAIL_PAD
+                batch = torch.zeros(len(batch_waves), batch_len)
+                for row, w in enumerate(batch_waves):
+                    batch[row, : len(w)] = torch.from_numpy(
+                        normalize_peak(np.asarray(w, dtype=np.float32)).copy()
+                    )
+                scale_mels = []
+                for scale_idx, ((_, hop, _), transform) in enumerate(
+                    zip(SCALES, transforms)
+                ):
+                    logged = blurs[scale_idx] @ torch.log(transform(batch) + LOG_EPS)
+                    scale_mels.append(
+                        [
+                            logged[row, :, : length // hop + 1].contiguous()
+                            for row, length in enumerate(batch_lengths)
+                        ]
+                    )
+                batch_features = extractor.extract(batch)
+                for row, length in enumerate(batch_lengths):
+                    lengths.append(length)
+                    mels.append([scale_mels[s][row] for s in range(len(SCALES))])
+                    features.append(batch_features.slice(row, frame_count(length)))
+                done = min(i + chunk, len(waves))
+                if (i // chunk) % 20 == 0 or done == len(waves):
+                    print(f"  current analyze {done}/{len(waves)}", flush=True)
+        return CandidateCache(lengths=lengths, mels=mels, features=features)
+
+    def score_candidates(self, cache: CandidateCache) -> np.ndarray:
+        """Score precomputed candidates against this target (no re-analysis)."""
+        n = len(cache.lengths)
+        totals = np.zeros(n, dtype=np.float64)
+        for row in range(n):
+            mel_total = 0.0
+            for scale_idx, (_, _, n_mels) in enumerate(SCALES):
+                target_mel = self.target_mels[scale_idx]
+                shift_bins = (
+                    round(PITCH_SHIFT_BINS * n_mels / 128)
+                    if self.allow_pitch_shift else 0
+                )
+                mel_total += self._pair_distance(
+                    cache.mels[row][scale_idx],
+                    target_mel,
+                    target_mel.shape[1],
+                    shift_bins,
+                )
+            terms = feature_distance(
+                self.target_features, cache.features[row], self.weights,
+                allow_pitch_shift=self.allow_pitch_shift,
+                allow_time_stretch=self.allow_time_stretch,
+            )
+            terms["mel"] = self.weights.mel * mel_total / len(SCALES) / 3.0
+            totals[row] = sum(terms.values())
+        return totals
 
     def score(self, wave: np.ndarray | None) -> float:
         return float(self.score_batch([wave])[0])

@@ -32,6 +32,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--top-k", type=int, default=3)
     parser.add_argument("--jobs", type=int, default=None)
     parser.add_argument("--html-report", action="store_true")
+    parser.add_argument("--refine-steps", type=int, default=0,
+                        help="Stage 3 local-refine steps (0=off)")
     parser.add_argument("--resume", action="store_true",
                         help="skip targets whose outputs already exist")
     args = parser.parse_args(argv)
@@ -70,6 +72,8 @@ def main(argv: list[str] | None = None) -> int:
             forwarded += ["--jobs", str(args.jobs)]
         if args.wavetypes:
             forwarded += ["--wavetypes", args.wavetypes]
+        if args.refine_steps:
+            forwarded += ["--refine-steps", str(args.refine_steps)]
         try:
             match_main(forwarded)
         except Exception:  # one bad target must not kill the batch

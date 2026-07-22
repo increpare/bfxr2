@@ -1,12 +1,13 @@
 """Bfxr parameter metadata and serialization.
 
-Single source of truth for parameter names/ranges is the JS side
-(render_cli.js --dump-info); nothing is duplicated here.
+Parameter names/ranges come from `--dump-info` on the active renderer CLI
+(native C++ when built, otherwise the Node render_cli.js).
 """
 from __future__ import annotations
 
 import functools
 import json
+import os
 import subprocess
 from pathlib import Path
 
@@ -14,14 +15,40 @@ import numpy as np
 
 TOOLS_DIR = Path(__file__).resolve().parent.parent
 REPO_ROOT = TOOLS_DIR.parent
-RENDER_CLI = TOOLS_DIR / "render" / "render_cli.js"
-RENDER_WORKER = TOOLS_DIR / "render" / "render_worker.js"
+
+_NODE_CLI = TOOLS_DIR / "render" / "render_cli.js"
+_NODE_WORKER = TOOLS_DIR / "render" / "render_worker.js"
+_NATIVE_CLI = TOOLS_DIR / "bfxr_native" / "build" / "bfxr_render"
+_NATIVE_WORKER = TOOLS_DIR / "bfxr_native" / "build" / "bfxr_worker"
+
+
+def _prefer_native() -> bool:
+    if os.environ.get("BFXR_RENDER_NATIVE", "1") == "0":
+        return False
+    return _NATIVE_WORKER.is_file() and os.access(_NATIVE_WORKER, os.X_OK)
+
+
+def render_cli_cmd() -> list[str]:
+    if _prefer_native() and _NATIVE_CLI.is_file() and os.access(_NATIVE_CLI, os.X_OK):
+        return [str(_NATIVE_CLI)]
+    return ["node", str(_NODE_CLI)]
+
+
+def render_worker_cmd() -> list[str]:
+    if _prefer_native():
+        return [str(_NATIVE_WORKER)]
+    return ["node", str(_NODE_WORKER)]
+
+
+# Back-compat aliases used by older call sites / docs.
+RENDER_CLI = _NODE_CLI
+RENDER_WORKER = _NODE_WORKER
 
 
 @functools.cache
 def param_info() -> dict:
     out = subprocess.run(
-        ["node", str(RENDER_CLI), "--dump-info"],
+        [*render_cli_cmd(), "--dump-info"],
         check=True, capture_output=True, text=True,
     ).stdout
     return json.loads(out)

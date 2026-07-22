@@ -35,8 +35,10 @@ def _spectrogram_data_uri(wave: np.ndarray) -> str:
     logmel = torch.log(mel + 1e-5).numpy()
 
     fig, ax = plt.subplots(figsize=(5, 2.2), dpi=100)
+    vmin = -11.5
+    vmax = float(max(logmel.max(), vmin + 1e-3))
     ax.imshow(logmel, origin="lower", aspect="auto", cmap="magma",
-              vmin=-11.5, vmax=logmel.max())
+              vmin=vmin, vmax=vmax)
     ax.set_xticks([]); ax.set_yticks([])
     fig.tight_layout(pad=0.2)
     buf = io.BytesIO()

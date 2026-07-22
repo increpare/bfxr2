@@ -10,12 +10,17 @@ perceptual distance) for mining tag-labeled preset regions later.
 
 ## Setup
 
-Requires `node` (any recent version) and [`uv`](https://docs.astral.sh/uv/).
+Requires `node` (any recent version), a C++17 compiler, and [`uv`](https://docs.astral.sh/uv/).
 
 ```sh
 cd tools
+make -C bfxr_native                  # fast native renderer (preferred)
 uv sync --extra report --group dev   # torch CPU build; first sync is big
 ```
+
+Matching/rendering prefers `bfxr_native/build/bfxr_worker` when present. Set
+`BFXR_RENDER_NATIVE=0` to force the Node worker (oracle/debug). Node remains
+required to regenerate goldens and as a fallback.
 
 ## Usage
 
@@ -45,22 +50,61 @@ uv run python -m match.batch targets/ -o batch_out/ --html-report
 open batch_out/index.html
 ```
 
-## Headless rendering (Node, no npm deps)
+### Local refine (steepest descent)
+
+Polish a seed `.bfxr` on continuous params (wave type + square-only knobs frozen):
 
 ```sh
-node render/render_cli.js --dump-info                 # param metadata JSON
+uv run python -m match.refine \
+  --target targets/mega_man_ii_hurt.wav \
+  --seed metric_compare/mega_man_ii_hurt/current_match.bfxr \
+  -o refine_hurt/ --steps 200
+open refine_hurt/compare.html
+```
+
+## Metric bake-off (fixed library, fair compare)
+
+Build one short-biased library of N bfxr renders, then for each target find
+the nearest library sound under each metric (same candidates for everyone):
+
+```sh
+make -C bfxr_native
+uv run python -m match.metric_bakeoff build-lib -o metric_lib/ --n 5000
+uv run python -m match.metric_bakeoff rank targets/ --lib metric_lib/ -o metric_compare/
+open metric_compare/index.html
+```
+
+Metrics: `current` (contour objective), `harmonic` (partial fingerprint),
+`zimtohrli`, `clap`. Setup:
+
+```sh
+uv sync --extra report --extra bakeoff   # matplotlib + zimtohrli + transformers
+```
+
+## Headless rendering
+
+Native (preferred after `make -C bfxr_native`):
+
+```sh
+bfxr_native/build/bfxr_render --dump-info
+bfxr_native/build/bfxr_render --in sound.bfxr --out out.wav --seed 1
+```
+
+Node fallback (no npm deps; also the parity oracle):
+
+```sh
+node render/render_cli.js --dump-info
 node render/render_cli.js --in sound.bfxr --out out.wav --seed 1
 ```
 
-`render/render_worker.js` is the persistent batch protocol used by Python
-(NDJSON requests on stdin, binary frames on stdout). Renders are
-deterministic per seed — `Math.random` is replaced by a seeded PRNG inside
-the vm context.
+Both expose the same persistent worker protocol used by Python (NDJSON on
+stdin, binary float32 frames on stdout). Renders are deterministic per seed
+(mulberry32 PRNG). See `bfxr_native/README.md`.
 
 ## Tests
 
 ```sh
-uv run pytest              # fast suite (renderer protocol, metric sanity)
+uv run pytest              # fast suite (renderer protocol, metric sanity, native parity)
 uv run pytest -m slow      # round-trip: render known params -> re-find them
 ```
 
@@ -79,6 +123,6 @@ uv run pytest -m slow      # round-trip: render known params -> re-find them
   estimated fundamental, then CMA-ES on the best few wave types, then a full
   CMA-ES run on the winner (`match/optimizer.py`). The DSP is not
   differentiable, so everything is black-box.
-- **Speed**: renders fan out over multiple Node worker processes; candidate
-  envelope parameters are capped/projected so nothing renders much longer
-  than the target.
+- **Speed**: renders fan out over multiple worker processes (native C++ when
+  built, otherwise Node); candidate envelope parameters are capped/projected
+  so nothing renders much longer than the target.
