@@ -1,0 +1,295 @@
+{
+  "version": "1.0.4",
+  "sampleRate": 44100,
+  "permalocked": [
+    "masterVolume"
+  ],
+  "params": [
+    {
+      "name": "masterVolume",
+      "type": "RANGE",
+      "default": 0.5,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "waveType",
+      "type": "BUTTONSELECT",
+      "default": 0,
+      "values": [
+        4,
+        2,
+        0,
+        1,
+        8,
+        6,
+        7,
+        3,
+        11,
+        9,
+        5,
+        10
+      ]
+    },
+    {
+      "name": "attackTime",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "sustainTime",
+      "type": "RANGE",
+      "default": 0.3,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "sustainPunch",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "decayTime",
+      "type": "RANGE",
+      "default": 0.4,
+      "min": 0.03,
+      "max": 1
+    },
+    {
+      "name": "compressionAmount",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "frequency_start",
+      "type": "RANGE",
+      "default": 0.3,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "frequency_slide",
+      "type": "RANGE",
+      "default": 0,
+      "min": -0.5,
+      "max": 0.5
+    },
+    {
+      "name": "frequency_acceleration",
+      "type": "RANGE",
+      "default": 0,
+      "min": -1,
+      "max": 1
+    },
+    {
+      "name": "min_frequency_relative_to_starting_frequency",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 0.99
+    },
+    {
+      "name": "vibratoDepth",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "vibratoSpeed",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "pitch_jump_repeat_speed",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "pitch_jump_amount",
+      "type": "RANGE",
+      "default": 0,
+      "min": -1,
+      "max": 1
+    },
+    {
+      "name": "pitch_jump_onset_percent",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "pitch_jump_2_amount",
+      "type": "RANGE",
+      "default": 0,
+      "min": -1,
+      "max": 1
+    },
+    {
+      "name": "pitch_jump_onset2_percent",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "overtones",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "overtoneFalloff",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "squareDuty",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 0.99
+    },
+    {
+      "name": "dutySweep",
+      "type": "RANGE",
+      "default": 0,
+      "min": -1,
+      "max": 1
+    },
+    {
+      "name": "repeatSpeed",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "flangerOffset",
+      "type": "RANGE",
+      "default": 0,
+      "min": -1,
+      "max": 1
+    },
+    {
+      "name": "flangerSweep",
+      "type": "RANGE",
+      "default": 0,
+      "min": -1,
+      "max": 1
+    },
+    {
+      "name": "lpFilterCutoff",
+      "type": "RANGE",
+      "default": 1,
+      "min": 0.01,
+      "max": 1
+    },
+    {
+      "name": "lpFilterCutoffSweep",
+      "type": "RANGE",
+      "default": 0,
+      "min": -1,
+      "max": 1
+    },
+    {
+      "name": "lpFilterResonance",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "hpFilterCutoff",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "hpFilterCutoffSweep",
+      "type": "RANGE",
+      "default": 0,
+      "min": -1,
+      "max": 1
+    },
+    {
+      "name": "bitCrush",
+      "type": "RANGE",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "bitCrushSweep",
+      "type": "RANGE",
+      "default": 0,
+      "min": -1,
+      "max": 1
+    }
+  ],
+  "waveTypes": [
+    {
+      "name": "Triangle",
+      "value": 4
+    },
+    {
+      "name": "Sin",
+      "value": 2
+    },
+    {
+      "name": "Square",
+      "value": 0
+    },
+    {
+      "name": "Saw",
+      "value": 1
+    },
+    {
+      "name": "Breaker",
+      "value": 8
+    },
+    {
+      "name": "Tan",
+      "value": 6
+    },
+    {
+      "name": "Whistle",
+      "value": 7
+    },
+    {
+      "name": "White",
+      "value": 3
+    },
+    {
+      "name": "Voice",
+      "value": 11
+    },
+    {
+      "name": "Bitnoise",
+      "value": 9
+    },
+    {
+      "name": "Rasp",
+      "value": 5
+    },
+    {
+      "name": "FMSyn",
+      "value": 10
+    }
+  ]
+}

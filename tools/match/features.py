@@ -154,9 +154,10 @@ class FeatureExtractor:
 
 @dataclass
 class FeatureWeights:
+    coverage: float = 3.0        # candidate silent where target sounds (and vice versa)
     env: float = 1.0
     env_motion: float = 1.0      # amplitude-modulation structure
-    pitch: float = 1.5           # unit = 3 semitones of average error
+    pitch: float = 2.0           # unit = 3 semitones of average error
     voiced_mismatch: float = 1.5
     pitch_slope: float = 1.0
     pitch_movement: float = 1.0  # still/glide/jump distribution
@@ -233,6 +234,26 @@ def feature_distance(
     act_a, act_b = pad(a.active.float(), 0), pad(b.active.float(), 0)
     env_motion_term = abs(motion(env_a, act_a) - motion(env_b, act_b)) / 4.0
 
+    # Coverage: every content term below only scores frames where BOTH
+    # sounds are active, so without this term a mostly-silent candidate is
+    # excused from pitch/timbre/voicedness entirely and silence becomes the
+    # cheapest way to be wrong. Charge absence per target-active frame, and
+    # spurious sound per target-silent frame, as the dominant cost.
+    # Presence is graded by audibility (0 at the -60dB active threshold,
+    # 1 at 25dB above it) so a nearly-inaudible decay tail is not billed
+    # like a missing note.
+    soft_a = ((env_a - ACTIVE_DB) / 25.0).clamp(0.0, 1.0)
+    soft_b = ((env_b - ACTIVE_DB) / 25.0).clamp(0.0, 1.0)
+    n_target_active = float(soft_a.sum())
+    if n_target_active > 0:
+        missing = float((soft_a * (1.0 - soft_b)).sum()) / n_target_active
+        extra = float((soft_b * (1.0 - soft_a)).sum()) / n_target_active
+        # first 15% of overrun is tolerated: env already prices it, and a
+        # slightly longer sound is a far milder error than a missing one
+        coverage_term = missing + 0.5 * min(max(extra - 0.15, 0.0), 2.0)
+    else:
+        coverage_term = float(soft_b.mean())
+
     # tonal-vs-noisy disagreement, only where BOTH are sounding — frames
     # where one sound has already ended are a duration error, and that is
     # env's job to price, once
@@ -298,6 +319,7 @@ def feature_distance(
         )
 
     return {
+        "coverage": w.coverage * coverage_term,
         "env": w.env * env_term,
         "env_motion": w.env_motion * env_motion_term,
         "pitch": w.pitch * pitch_term,

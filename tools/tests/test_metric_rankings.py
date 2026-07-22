@@ -152,6 +152,22 @@ def test_discrete_steps_beat_glissando(renderer):
     assert obj.score(steppy) < obj.score(gliss)
 
 
+def test_silence_is_never_the_cheapest_error(renderer):
+    """Batch round 3: several 'best matches' were silent for most of the
+    target. A full-length candidate with clearly wrong pitch must still
+    beat a perfect-pitch candidate that only covers a quarter of the
+    target — absence has to be the most expensive error, because every
+    both-active content term silently excuses it."""
+    target = render(renderer, waveType=0, frequency_start=0.4,
+                    sustainTime=0.4, decayTime=0.3)
+    wrong_pitch_full = render(renderer, waveType=0, frequency_start=0.45,
+                              sustainTime=0.4, decayTime=0.3)
+    right_pitch_short = render(renderer, waveType=0, frequency_start=0.4,
+                               sustainTime=0.1, decayTime=0.1)
+    obj = MatchObjective(target)
+    assert obj.score(wrong_pitch_full) < obj.score(right_pitch_short)
+
+
 def test_matching_pitch_beats_wrong_octave(renderer):
     """'Mario 3 - jump (nes)': right trend but wrong pitch level."""
     target = render(renderer, waveType=2, frequency_start=0.4,
