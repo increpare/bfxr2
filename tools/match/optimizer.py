@@ -61,6 +61,9 @@ class OptimizeSettings:
     seed_units: list[tuple[int, np.ndarray]] | None = None  # (wave_type, unit)
     seed_jitter: float = 0.05
     seed_jitter_copies: int = 8
+    # >0 forbids the search from collapsing below this fraction of the target's
+    # length (fills the decay tail); 0 = off (original behavior).
+    duration_floor: float = 0.0
 
 
 class StagedOptimizer:
@@ -131,18 +134,32 @@ class StagedOptimizer:
 
     def _cap_envelope(self) -> None:
         """Cap envelope params so candidates can't be much longer than the
-        target — long renders are pure wasted CPU."""
+        target — long renders are pure wasted CPU. Optionally also floor the
+        envelope length (settings.duration_floor) so the search can't collapse
+        to a tiny fraction of the target: a same-length rough match reads as
+        'related' where a blip reads as unrelated, even at a small cost to the
+        spectral terms."""
         target_samples = self.objective.target_len
         self.cap_samples = max(1.6 * target_samples, 0.3 * SAMPLE_RATE)
+        # only floor when meaningfully long, so genuinely short targets are free
+        floor_frac = max(self.s.duration_floor, 0.0)
+        self.floor_samples = (
+            floor_frac * target_samples
+            if floor_frac > 0.0 and target_samples > 0.1 * SAMPLE_RATE
+            else 0.0
+        )
         cap_value = np.sqrt(self.cap_samples / ENVELOPE_SAMPLES_PER_UNIT)
         self.envelope_idx = [self.space.names.index(n) for n in ENVELOPE_PARAMS]
+        self.decay_idx = self.space.names.index("decayTime")
         for i in self.envelope_idx:
             span = self.space.maxs[i] - self.space.mins[i]
             self.upper[i] = np.clip((cap_value - self.space.mins[i]) / span, 0.05, 1.0)
 
     def _project_envelope(self, params: dict) -> None:
-        """Scale attack/sustain/decay down so the summed envelope length
-        stays under the cap (the box bound alone still allows 3x)."""
+        """Scale attack/sustain/decay down so the summed envelope length stays
+        under the cap (the box bound alone still allows 3x); if a duration
+        floor is set, extend the decay tail up so the sound fills at least
+        floor_samples."""
         total = sum(
             params[n] ** 2 * ENVELOPE_SAMPLES_PER_UNIT for n in ENVELOPE_PARAMS
         )
@@ -150,6 +167,16 @@ class StagedOptimizer:
             scale = float(np.sqrt(self.cap_samples / total))
             for n in ENVELOPE_PARAMS:
                 params[n] *= scale
+        elif self.floor_samples > 0.0 and total < self.floor_samples:
+            # fill the missing length via the decay tail (preserves attack /
+            # sustain shape); clamp to the param's own max.
+            decay_samples = params["decayTime"] ** 2 * ENVELOPE_SAMPLES_PER_UNIT
+            others = total - decay_samples
+            need = max(self.floor_samples - others, 0.0)
+            decay_max = float(self.space.maxs[self.decay_idx])
+            params["decayTime"] = min(
+                float(np.sqrt(need / ENVELOPE_SAMPLES_PER_UNIT)), decay_max
+            )
 
     # ---------- evaluation ----------
 

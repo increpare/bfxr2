@@ -52,6 +52,9 @@ def build_parser() -> argparse.ArgumentParser:
                    help="invert checkpoint to replace stage-0 random screen")
     p.add_argument("--one-shot", action="store_true",
                    help="emit raw model top prediction only (requires --seed-model)")
+    p.add_argument("--duration-floor", type=float, default=0.0,
+                   help="forbid candidates shorter than this fraction of the "
+                        "target length (fills the decay tail; 0=off)")
     return p
 
 
@@ -96,7 +99,8 @@ def main(argv: list[str] | None = None) -> int:
             # params_for needs envelope projection; reuse optimizer helper
             opt = StagedOptimizer(
                 space, renderer, objective,
-                OptimizeSettings(budget=1, verbose=False),
+                OptimizeSettings(budget=1, verbose=False,
+                                 duration_floor=args.duration_floor),
                 target=target,
             )
             params = opt.params_for(unit, wt)
@@ -153,6 +157,7 @@ def main(argv: list[str] | None = None) -> int:
         top_k=args.top_k,
         refine_steps=args.refine_steps,
         seed_units=seed_units,
+        duration_floor=args.duration_floor,
     )
 
     t0 = time.perf_counter()
