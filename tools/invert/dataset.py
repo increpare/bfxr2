@@ -23,9 +23,19 @@ from .constants import (
     SQUARE_ONLY,
 )
 from .features_pack import pack_features
-from .sampler import sample_example, wave_type_index_map
+from .presets import harvest_preset_params
+from .sampler import finalize_example, sample_example, sample_unit, wave_type_index_map
 
 FEATURE_NOTE = f"contours+blurred_logmel_scale{FEATURES_MEL_SCALE_IDX}"
+
+MIX = {
+    "biased": 0.35,
+    "uniform": 0.15,
+    "kknob": 0.30,
+    "preset": 0.20,
+}
+_NON_PRESET_MODES = ("biased", "uniform", "kknob")
+_NON_PRESET_MODE_P = (0.4375, 0.1875, 0.375)
 
 
 def write_shard(path: Path | str, payload: dict) -> None:
@@ -120,7 +130,70 @@ def _stratified_wave_types(space: ParamSpace, n: int, rng: np.random.Generator) 
     return wt_list
 
 
-def _render_accepted(
+def _build_generation_specs(
+    space: ParamSpace,
+    n: int,
+    seed: int,
+    rng: np.random.Generator,
+) -> list[dict]:
+    n_preset = round(n * MIX["preset"])
+    n_other = n - n_preset
+    preset_rows = harvest_preset_params(n_preset, seed) if n_preset else []
+    wt_list = _stratified_wave_types(space, n_other, rng)
+    specs: list[dict] = [{"kind": "preset", "row": row} for row in preset_rows]
+    for wt in wt_list:
+        mode = str(rng.choice(_NON_PRESET_MODES, p=_NON_PRESET_MODE_P))
+        specs.append({"kind": "sample", "mode": mode, "wave_type": int(wt)})
+    rng.shuffle(specs)
+    return specs
+
+
+def _example_from_spec(
+    space: ParamSpace,
+    rng: np.random.Generator,
+    spec: dict,
+) -> dict:
+    if spec["kind"] == "preset":
+        unit, wt = space.unit_from_params(spec["row"]["params"])
+        return finalize_example(space, unit, wt)
+    unit = sample_unit(space, rng, mode=spec["mode"])
+    return finalize_example(space, unit, spec["wave_type"])
+
+
+def _fresh_preset_row(rng: np.random.Generator) -> dict:
+    new_seed = int(rng.integers(0, 2**31))
+    return harvest_preset_params(1, new_seed)[0]
+
+
+def _resample_accepted(
+    space: ParamSpace,
+    rng: np.random.Generator,
+    renderer: BfxrRenderer,
+    spec: dict,
+    *,
+    max_tries: int = 8,
+) -> tuple[dict, np.ndarray]:
+    """Resample with the same mode (preset: fresh harvest seed) until render succeeds."""
+    current = spec
+    for attempt in range(max_tries):
+        if current["kind"] == "preset" and attempt > 0:
+            current = {"kind": "preset", "row": _fresh_preset_row(rng)}
+        ex = _example_from_spec(space, rng, current)
+        params = space.params_dict(ex["unit"], ex["wave_type"])
+        wave = renderer.render(params, seed=RENDER_SEED)
+        if _is_acceptable_wave(wave):
+            assert wave is not None
+            return ex, wave
+
+    force_wave_type = (
+        int(space.unit_from_params(current["row"]["params"])[1])
+        if current["kind"] == "preset"
+        else int(current["wave_type"])
+    )
+    return _render_accepted_fallback(space, rng, renderer, force_wave_type)
+
+
+def _render_accepted_fallback(
     space: ParamSpace,
     rng: np.random.Generator,
     renderer: BfxrRenderer,
@@ -128,9 +201,8 @@ def _render_accepted(
     *,
     max_tries: int = 64,
 ) -> tuple[dict, np.ndarray]:
-    """Resample until a non-silent render lands. Biases toward defaults after a few misses."""
+    """Last-resort resample until a non-silent render lands."""
     for attempt in range(max_tries):
-        # Early tries keep the normal mix; later tries drop full-uniform (quieter mush).
         uniform_frac = 0.2 if attempt < 8 else 0.0
         ex = sample_example(
             space, rng=rng, force_wave_type=force_wave_type, uniform_frac=uniform_frac
@@ -141,7 +213,6 @@ def _render_accepted(
             assert wave is not None
             return ex, wave
 
-    # Last resort: pinned defaults for this wave type (almost always audible).
     unit = space.defaults_unit().copy()
     if force_wave_type != 0:
         du = space.defaults_unit()
@@ -213,7 +284,7 @@ def generate_shards(
     seed: int,
     jobs: int | None,
     shard_size: int = 2048,
-    augment_p: float = 0.5,
+    augment_p: float = 0.25,
 ) -> None:
     """Sample/render/pack in shard-sized chunks so peak RAM stays O(shard_size)."""
     out_dir = Path(out_dir)
@@ -221,7 +292,7 @@ def generate_shards(
     _clear_out_dir(out_dir)
     space = ParamSpace()
     rng = np.random.default_rng(seed)
-    wt_list = _stratified_wave_types(space, n, rng)
+    specs = _build_generation_specs(space, n, seed, rng)
 
     print(f"rendering {n} invert examples (chunk={shard_size})…", file=sys.stderr)
     shard_idx = 0
@@ -229,11 +300,11 @@ def generate_shards(
 
     with BfxrRenderer(jobs=jobs) as renderer:
         for chunk_start in range(0, n, shard_size):
-            chunk_wts = wt_list[chunk_start : chunk_start + shard_size]
+            chunk_specs = specs[chunk_start : chunk_start + shard_size]
             examples: list[dict] = []
             params_list: list[dict] = []
-            for wt in chunk_wts:
-                ex = sample_example(space, rng=rng, force_wave_type=wt)
+            for spec in chunk_specs:
+                ex = _example_from_spec(space, rng, spec)
                 examples.append(ex)
                 params_list.append(space.params_dict(ex["unit"], ex["wave_type"]))
 
@@ -246,7 +317,9 @@ def generate_shards(
                     file=sys.stderr,
                 )
                 for i in failed:
-                    ex, wave = _render_accepted(space, rng, renderer, chunk_wts[i])
+                    ex, wave = _resample_accepted(
+                        space, rng, renderer, chunk_specs[i]
+                    )
                     examples[i] = ex
                     waves[i] = wave
 
@@ -269,6 +342,7 @@ def generate_shards(
         "render_seed": RENDER_SEED,
         "shard_size": shard_size,
         "augment_p": augment_p,
+        "mix": dict(MIX),
     }
     (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
 
@@ -280,7 +354,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--seed", type=int, default=0)
     p.add_argument("--jobs", type=int, default=None)
     p.add_argument("--shard-size", type=int, default=2048)
-    p.add_argument("--augment-p", type=float, default=0.5)
+    p.add_argument("--augment-p", type=float, default=0.25)
     args = p.parse_args(argv)
     generate_shards(
         args.out,

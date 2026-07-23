@@ -7,7 +7,8 @@ N_CHANNELS = N_CONTOURS + N_MELS
 N_PARAMS = 30
 N_WAVETYPES = 12
 # v2: pack_features silence-trims before extract (matches prepare_target)
-DATASET_VERSION = "v2"
+# v3: mixture sampling (biased/uniform/kknob/preset), augment_p 0.25
+DATASET_VERSION = "v3"
 SILENCE_PEAK = 1e-3
 TRAIN_CAP_SECONDS = 1.5
 FEATURES_MEL_SCALE_IDX = 2

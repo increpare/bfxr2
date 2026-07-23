@@ -24,30 +24,35 @@ def _project_envelope(params: dict, cap_samples: float) -> None:
             params[n] *= scale
 
 
-def sample_unit(space: ParamSpace, rng: np.random.Generator, *, fully_uniform: bool) -> np.ndarray:
-    if fully_uniform:
-        return rng.random(space.dim)
-    unit = space.defaults_unit().copy()
-    mask = rng.random(space.dim) > 0.5
-    unit[mask] = rng.random(int(mask.sum()))
-    return unit
-
-
-def sample_example(
+def sample_unit(
     space: ParamSpace,
     rng: np.random.Generator,
     *,
-    force_wave_type: int | None = None,
-    uniform_frac: float = 0.2,
-) -> dict:
-    """Return {unit, wave_type, class_idx} with labels in search-reachable space."""
-    fully_uniform = bool(rng.random() < uniform_frac)
-    unit = sample_unit(space, rng, fully_uniform=fully_uniform)
-    if force_wave_type is None:
-        wave_type = int(rng.choice(space.wave_types))
-    else:
-        wave_type = int(force_wave_type)
+    mode: str = "biased",
+    fully_uniform: bool | None = None,
+) -> np.ndarray:
+    if fully_uniform is not None:
+        mode = "uniform" if fully_uniform else "biased"
+    if mode == "uniform":
+        return rng.random(space.dim)
+    if mode == "kknob":
+        unit = space.defaults_unit().copy()
+        k = int(rng.integers(1, 7))
+        idx = rng.choice(space.dim, size=k, replace=False)
+        unit[idx] = rng.random(k)
+        return unit
+    if mode == "biased":
+        unit = space.defaults_unit().copy()
+        mask = rng.random(space.dim) > 0.5
+        unit[mask] = rng.random(int(mask.sum()))
+        return unit
+    raise ValueError(mode)
 
+
+def finalize_example(space: ParamSpace, unit: np.ndarray, wave_type: int) -> dict:
+    """Pin square-only params, cap the envelope, round-trip through params
+    so labels live in exactly the space search explores."""
+    unit = np.asarray(unit, dtype=np.float64).copy()
     if wave_type != 0:
         du = space.defaults_unit()
         for name in SQUARE_ONLY_PARAMS:
@@ -61,6 +66,25 @@ def sample_example(
     id_to_cls, _ = wave_type_index_map(space)
     return {
         "unit": unit.astype(np.float64),
-        "wave_type": wave_type,
-        "class_idx": id_to_cls[wave_type],
+        "wave_type": int(wave_type),
+        "class_idx": id_to_cls[int(wave_type)],
     }
+
+
+def sample_example(
+    space: ParamSpace,
+    rng: np.random.Generator,
+    *,
+    force_wave_type: int | None = None,
+    uniform_frac: float = 0.2,
+    mode: str | None = None,
+) -> dict:
+    """Return {unit, wave_type, class_idx} with labels in search-reachable space."""
+    if mode is None:
+        mode = "uniform" if rng.random() < uniform_frac else "biased"
+    unit = sample_unit(space, rng, mode=mode)
+    if force_wave_type is None:
+        wave_type = int(rng.choice(space.wave_types))
+    else:
+        wave_type = int(force_wave_type)
+    return finalize_example(space, unit, wave_type)

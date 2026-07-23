@@ -42,3 +42,14 @@ def test_sampler_envelope_under_cap():
         params = space.params_dict(ex["unit"], ex["wave_type"])
         total = sum(params[n] ** 2 * ENVELOPE_SAMPLES_PER_UNIT for n in ENVELOPE_PARAMS)
         assert total <= cap + 1.0  # float slack
+
+
+def test_kknob_moves_few_params():
+    from invert.sampler import sample_unit
+
+    space = ParamSpace()
+    rng = np.random.default_rng(3)
+    for _ in range(20):
+        unit = sample_unit(space, rng, mode="kknob")
+        moved = int((unit != space.defaults_unit()).sum())
+        assert 1 <= moved <= 6
