@@ -173,6 +173,7 @@ def train(
     ce_weight: float = 0.5,
     width: int = 128,
     dilated: bool = False,
+    phase1_epochs: int = 0,
 ) -> Path:
     device_s = device or _default_device()
     device_t = torch.device(device_s)
@@ -205,16 +206,40 @@ def train(
     best_path = out / "best.pt"
     best_val = float("inf")
 
+    def _freeze_encoder_and_wavetype() -> None:
+        # Freeze conv trunk + classifier; keep flatten proj + unit head trainable
+        # so knobs can remount on the pretrained time features.
+        for module in (model.encoder, model.wavetype_head):
+            for p in module.parameters():
+                p.requires_grad = False
+        if getattr(model, "dilated_conv", None) is not None:
+            for p in model.dilated_conv.parameters():
+                p.requires_grad = False
+
     with log_path.open("w", encoding="utf-8") as log_f:
         for epoch in range(1, epochs + 1):
+            if phase1_epochs > 0 and epoch == phase1_epochs + 1:
+                _freeze_encoder_and_wavetype()
+                trainable = [p for p in model.parameters() if p.requires_grad]
+                opt = torch.optim.AdamW(trainable, lr=lr)
+                print(
+                    f"two-phase: froze encoder/wavetype after epoch {phase1_epochs}; "
+                    f"training {sum(p.numel() for p in trainable)} knob params",
+                    file=sys.stderr,
+                )
+
+            in_phase1 = phase1_epochs > 0 and epoch <= phase1_epochs
+            ew_unit = 0.0 if in_phase1 else unit_weight
+            ew_ce = 1.0 if in_phase1 else (0.0 if phase1_epochs > 0 else ce_weight)
+
             train_metrics = _run_epoch(
                 model,
                 train_loader,
                 space,
                 device_t,
                 optimizer=opt,
-                unit_weight=unit_weight,
-                ce_weight=ce_weight,
+                unit_weight=ew_unit,
+                ce_weight=ew_ce,
             )
             if val_loader is not None:
                 val_metrics = _run_epoch(
@@ -223,16 +248,17 @@ def train(
                     space,
                     device_t,
                     optimizer=None,
-                    unit_weight=unit_weight,
-                    ce_weight=ce_weight,
+                    unit_weight=ew_unit,
+                    ce_weight=ew_ce,
                 )
             else:
                 val_metrics = train_metrics
 
             if "r2" in val_metrics:
                 worst = sorted(val_metrics["r2"].items(), key=lambda kv: kv[1])[:3]
+                phase = "p1" if in_phase1 else ("p2" if phase1_epochs > 0 else "joint")
                 print(
-                    f"epoch {epoch}: val unit_mse {val_metrics['unit_mse']:.4f} "
+                    f"epoch {epoch} ({phase}): val unit_mse {val_metrics['unit_mse']:.4f} "
                     f"top3 {val_metrics['wavetype_top3']:.2%} "
                     f"worst r2: " + ", ".join(f"{n}={v:.2f}" for n, v in worst),
                     file=sys.stderr,
@@ -240,12 +266,16 @@ def train(
 
             row = {
                 "epoch": epoch,
+                "phase": "wavetype" if in_phase1 else "knobs",
                 "train": train_metrics,
                 "val": val_metrics,
             }
             log_f.write(json.dumps(row) + "\n")
             log_f.flush()
 
+            # Only select best.pt on regression once knobs are training.
+            if in_phase1:
+                continue
             val_metric = val_metrics["unit_mse"]
             if val_metric < best_val:
                 best_val = val_metric
@@ -262,6 +292,7 @@ def train(
                         "selection_metric": "val_unit_mse",
                         "channel_mean": list(CHANNEL_MEAN),
                         "channel_std": list(CHANNEL_STD),
+                        "phase1_epochs": phase1_epochs,
                     },
                     best_path,
                 )
@@ -282,6 +313,13 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--unit-weight", type=float, default=10.0)
     p.add_argument("--ce-weight", type=float, default=0.5)
     p.add_argument(
+        "--phase1-epochs",
+        type=int,
+        default=0,
+        help="If >0: train wavetype-only for N epochs, then freeze encoder/"
+        "wavetype and train knobs for the remaining epochs",
+    )
+    p.add_argument(
         "--device",
         type=str,
         choices=("cpu", "mps", "cuda"),
@@ -301,6 +339,7 @@ def main(argv: list[str] | None = None) -> None:
         ce_weight=args.ce_weight,
         width=args.width,
         dilated=args.dilated,
+        phase1_epochs=args.phase1_epochs,
     )
     print(f"wrote {best}")
 
