@@ -62,6 +62,35 @@ uv run python -m match.refine \
 open refine_hurt/compare.html
 ```
 
+## Inverse model (seeder)
+
+Optional neural Stage-0: train a wav→params model on synthetic renders, then
+use it to seed (or replace) the matcher search.
+
+```sh
+# 1) generate ~300k feature shards (~1–2h dominated by feature extract)
+uv run python -m invert.dataset --out invert/data/v1 --n 300000 --seed 0
+
+# 2) train (MPS on Apple Silicon)
+uv run python -m invert.train --data invert/data/v1 --out invert/runs/v1 --version 1 --epochs 30
+
+# 3) match with model Stage-0
+uv run python -m match.match targets/mega_man_ii_hurt.wav -o out/ \
+  --seed-model invert/runs/v1/best.pt --budget 5000 --html-report
+
+# 4) one-shot growth metric
+uv run python -m match.match targets/mega_man_ii_hurt.wav -o out_os/ \
+  --seed-model invert/runs/v1/best.pt --one-shot
+
+# 5) eval table
+uv run python -m invert.eval_targets --targets targets/ \
+  --ckpt invert/runs/v1/best.pt --budget 2000 -o invert/runs/v1/eval/
+```
+
+`--seed-model` replaces the stage-0 random screen; CMA-ES / refine still run
+unless `--one-shot` (raw model top prediction only). Eval writes
+`results.json` / `results.md` with columns current | model-seeded | one-shot.
+
 ## Metric bake-off (fixed library, fair compare)
 
 Build one short-biased library of N bfxr renders, then for each target find
