@@ -54,6 +54,8 @@ def invert_loss(
     class_idx: torch.Tensor,
     space: ParamSpace,
     version: int = 1,
+    unit_weight: float = 10.0,
+    ce_weight: float = 0.5,
 ) -> tuple[torch.Tensor, dict[str, float]]:
     unit_pred = select_unit_pred(out, class_idx, version)
 
@@ -64,7 +66,7 @@ def invert_loss(
 
     unit_mse = ((unit_pred - unit_tgt) ** 2 * mask).sum() / mask.sum().clamp(min=1)
     ce = F.cross_entropy(out["wavetype_logits"], class_idx.long())
-    loss = unit_mse + ce
+    loss = unit_weight * unit_mse + ce_weight * ce
     parts = {
         "unit_mse": float(unit_mse.detach()),
         "ce": float(ce.detach()),
@@ -93,6 +95,8 @@ def _run_epoch(
     device: torch.device,
     *,
     optimizer: torch.optim.Optimizer | None,
+    unit_weight: float = 10.0,
+    ce_weight: float = 0.5,
 ) -> dict[str, float]:
     train = optimizer is not None
     collect = optimizer is None
@@ -114,7 +118,16 @@ def _run_epoch(
             optimizer.zero_grad(set_to_none=True)
 
         out = model(x, log_dur)
-        loss, parts = invert_loss(out, unit, wt, cls, space, version=model.version)
+        loss, parts = invert_loss(
+            out,
+            unit,
+            wt,
+            cls,
+            space,
+            version=model.version,
+            unit_weight=unit_weight,
+            ce_weight=ce_weight,
+        )
 
         if train:
             loss.backward()
@@ -156,6 +169,8 @@ def train(
     version: int = 1,
     device: str | None = None,
     val_ratio: float = 0.05,
+    unit_weight: float = 10.0,
+    ce_weight: float = 0.5,
 ) -> Path:
     device_s = device or _default_device()
     device_t = torch.device(device_s)
@@ -185,16 +200,26 @@ def train(
     with log_path.open("w", encoding="utf-8") as log_f:
         for epoch in range(1, epochs + 1):
             train_metrics = _run_epoch(
-                model, train_loader, space, device_t, optimizer=opt
+                model,
+                train_loader,
+                space,
+                device_t,
+                optimizer=opt,
+                unit_weight=unit_weight,
+                ce_weight=ce_weight,
             )
             if val_loader is not None:
                 val_metrics = _run_epoch(
-                    model, val_loader, space, device_t, optimizer=None
+                    model,
+                    val_loader,
+                    space,
+                    device_t,
+                    optimizer=None,
+                    unit_weight=unit_weight,
+                    ce_weight=ce_weight,
                 )
-                val_loss = val_metrics["loss"]
             else:
                 val_metrics = train_metrics
-                val_loss = train_metrics["loss"]
 
             if "r2" in val_metrics:
                 worst = sorted(val_metrics["r2"].items(), key=lambda kv: kv[1])[:3]
@@ -213,8 +238,9 @@ def train(
             log_f.write(json.dumps(row) + "\n")
             log_f.flush()
 
-            if val_loss < best_val:
-                best_val = val_loss
+            val_metric = val_metrics["unit_mse"]
+            if val_metric < best_val:
+                best_val = val_metric
                 torch.save(
                     {
                         "model_state": model.state_dict(),
@@ -223,6 +249,7 @@ def train(
                         "space_names": list(space.names),
                         "wave_types_order": wave_types_order,
                         "best_val": best_val,
+                        "selection_metric": "val_unit_mse",
                         "channel_mean": list(CHANNEL_MEAN),
                         "channel_std": list(CHANNEL_STD),
                     },
@@ -240,6 +267,8 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--batch-size", type=int, default=64)
     p.add_argument("--lr", type=float, default=1e-3)
     p.add_argument("--version", type=int, choices=(1, 2), default=1)
+    p.add_argument("--unit-weight", type=float, default=10.0)
+    p.add_argument("--ce-weight", type=float, default=0.5)
     p.add_argument(
         "--device",
         type=str,
@@ -256,6 +285,8 @@ def main(argv: list[str] | None = None) -> None:
         lr=args.lr,
         version=args.version,
         device=args.device,
+        unit_weight=args.unit_weight,
+        ce_weight=args.ce_weight,
     )
     print(f"wrote {best}")
 

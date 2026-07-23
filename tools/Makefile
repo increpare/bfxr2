@@ -9,8 +9,9 @@
 N            ?= 300000
 SEED         ?= 0
 EPOCHS       ?= 30
+VERSION      ?= 1
 DATA         ?= invert/data/v1
-RUN          ?= invert/runs/v1
+RUN          ?= invert/runs/v2_flatten
 CKPT         ?= $(RUN)/best.pt
 TARGET       ?= targets/mega_man_ii_hurt.wav
 OUT          ?= out
@@ -41,10 +42,10 @@ native:
 
 rebuild_inverse_model: native
 	uv run python -m invert.dataset --out $(DATA) --n $(N) --seed $(SEED)
-	uv run python -m invert.train --data $(DATA) --out $(RUN) --version 1 --epochs $(EPOCHS)
+	uv run python -m invert.train --data $(DATA) --out $(RUN) --version $(VERSION) --epochs $(EPOCHS)
 
 train_inverse_model:
-	uv run python -m invert.train --data $(DATA) --out $(RUN) --version 1 --epochs $(EPOCHS)
+	uv run python -m invert.train --data $(DATA) --out $(RUN) --version $(VERSION) --epochs $(EPOCHS)
 
 run_inverse_model:
 	uv sync --extra report --group dev

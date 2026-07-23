@@ -36,3 +36,25 @@ def test_select_unit_pred_versions():
     got = select_unit_pred({"unit_per_class": per_class}, cls, 2)
     for b in range(4):
         assert torch.equal(got[b], per_class[b, cls[b]])
+
+
+def test_invert_loss_weighted_sum_and_raw_parts():
+    from invert.train import invert_loss
+
+    space = ParamSpace()
+    out = {"unit": torch.rand(8, 30), "wavetype_logits": torch.randn(8, 12)}
+    tgt = torch.rand(8, 30)
+    wt = torch.zeros(8).long()
+    cls = torch.zeros(8).long()
+    loss, parts = invert_loss(
+        out,
+        tgt,
+        wt,
+        cls,
+        space,
+        version=1,
+        unit_weight=10.0,
+        ce_weight=0.5,
+    )
+    expected = 10.0 * parts["unit_mse"] + 0.5 * parts["ce"]
+    assert abs(float(loss) - expected) < 1e-5
