@@ -31,19 +31,45 @@ def test_v2_forward_shapes():
 def test_invert_loss_masks_square_only():
     space = ParamSpace()
     id_to_cls, _ = wave_type_index_map(space)
-    sq_idx = [space.names.index(n) for n in ("squareDuty", "dutySweep")]
-    unit_tgt = torch.rand(2, 30)
+    sq_j = space.names.index("squareDuty")
+
+    unit_tgt = torch.zeros(1, 30)
     unit_pred = unit_tgt.clone()
-    unit_pred[0, sq_idx[0]] += 1.0  # huge error on square-only
-    # example 0 = nonsquare, example 1 = square
-    wave_types = torch.tensor([9, 0])
-    class_idx = torch.tensor([id_to_cls[9], id_to_cls[0]])
-    logits = torch.zeros(2, 12)
-    logits[range(2), class_idx] = 10.0
-    out = {"unit": unit_pred, "wavetype_logits": logits}
-    loss, parts = invert_loss(out, unit_tgt, wave_types, class_idx, space, version=1)
-    assert torch.isfinite(loss)
-    assert parts["unit_mse"] < 0.1
+    unit_pred[0, sq_j] = 1.0  # huge error only on square-only dim
+
+    # Nonsquare: square-only dim must be masked → unit_mse ≈ 0
+    wt_ns = torch.tensor([9])
+    cls_ns = torch.tensor([id_to_cls[9]])
+    logits_ns = torch.zeros(1, 12)
+    logits_ns[0, cls_ns[0]] = 10.0
+    loss_ns, parts_ns = invert_loss(
+        {"unit": unit_pred, "wavetype_logits": logits_ns},
+        unit_tgt,
+        wt_ns,
+        cls_ns,
+        space,
+        version=1,
+    )
+    assert torch.isfinite(loss_ns)
+    assert torch.isfinite(torch.tensor(parts_ns["ce"]))
+    assert parts_ns["unit_mse"] < 1e-6
+
+    # Square: same error must contribute → unit_mse clearly larger
+    wt_sq = torch.tensor([0])
+    cls_sq = torch.tensor([id_to_cls[0]])
+    logits_sq = torch.zeros(1, 12)
+    logits_sq[0, cls_sq[0]] = 10.0
+    loss_sq, parts_sq = invert_loss(
+        {"unit": unit_pred, "wavetype_logits": logits_sq},
+        unit_tgt,
+        wt_sq,
+        cls_sq,
+        space,
+        version=1,
+    )
+    assert torch.isfinite(loss_sq)
+    assert torch.isfinite(torch.tensor(parts_sq["ce"]))
+    assert parts_sq["unit_mse"] > 0.01
 
 
 def test_train_step_smoke():
