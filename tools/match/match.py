@@ -48,11 +48,18 @@ def build_parser() -> argparse.ArgumentParser:
                    help=f"render worker processes (default {default_jobs()})")
     p.add_argument("--html-report", action="store_true",
                    help="write report.html (requires: uv sync --extra report)")
+    p.add_argument("--seed-model", type=Path, default=None,
+                   help="invert checkpoint to replace stage-0 random screen")
+    p.add_argument("--one-shot", action="store_true",
+                   help="emit raw model top prediction only (requires --seed-model)")
     return p
 
 
 def main(argv: list[str] | None = None) -> int:
-    args = build_parser().parse_args(argv)
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    if args.one_shot and args.seed_model is None:
+        parser.error("--one-shot requires --seed-model")
     args.out.mkdir(parents=True, exist_ok=True)
 
     target = prepare_target(args.target)
@@ -65,6 +72,71 @@ def main(argv: list[str] | None = None) -> int:
         allow_pitch_shift=args.allow_pitch_shift,
         allow_time_stretch=args.allow_time_stretch,
     )
+
+    seed_units = None
+    if args.seed_model is not None:
+        from invert.predict import load_checkpoint, predict_wave
+
+        model, meta = load_checkpoint(args.seed_model, device="cpu")
+        top_k = 1 if args.one_shot else 3
+        guesses = predict_wave(model, meta, target, top_k=top_k)
+        seed_units = [(g["wave_type"], g["unit"]) for g in guesses]
+
+    if args.one_shot:
+        assert seed_units is not None and len(seed_units) >= 1
+        wt, unit = seed_units[0]
+        t0 = time.perf_counter()
+        with BfxrRenderer(jobs=args.jobs) as renderer:
+            # params_for needs envelope projection; reuse optimizer helper
+            opt = StagedOptimizer(
+                space, renderer, objective,
+                OptimizeSettings(budget=1, verbose=False),
+                target=target,
+            )
+            params = opt.params_for(unit, wt)
+            import soundfile as sf
+            wave = renderer.render(params, seed=RENDER_SEED)
+            score = float(objective.score_batch([wave])[0])
+            write_bfxr(args.out / "match.bfxr", params,
+                       file_name=f"{args.target.stem}_match")
+            sf.write(args.out / "match.wav", wave, SAMPLE_RATE, subtype="PCM_16")
+            matches = [{
+                "name": f"match ({space.wave_type_names[wt]})",
+                "wave": wave,
+                "score": score,
+                "params": params,
+            }]
+        elapsed = time.perf_counter() - t0
+        report = {
+            "target": str(args.target),
+            "target_seconds": len(target) / SAMPLE_RATE,
+            "flags": {
+                "allow_pitch_shift": args.allow_pitch_shift,
+                "allow_time_stretch": args.allow_time_stretch,
+                "avg_seeds": args.avg_seeds,
+                "one_shot": True,
+                "seed_model": str(args.seed_model),
+            },
+            "budget": 0,
+            "evals": 0,
+            "elapsed_seconds": round(elapsed, 1),
+            "freq_seeds": [],
+            "results": [{
+                "file": "match.bfxr",
+                "score": score,
+                "wave_type": wt,
+                "wave_type_name": space.wave_type_names[wt],
+            }],
+            "trace": [],
+        }
+        (args.out / "report.json").write_text(json.dumps(report, indent=1))
+        if args.html_report:
+            from .report import write_html_report
+            write_html_report(args.out / "report.html", args.target.name, target, matches)
+        print(f"one-shot score {score:.4f} ({space.wave_type_names[wt]}) "
+              f"in {elapsed:.0f}s, outputs in {args.out}/", file=sys.stderr)
+        return 0
+
     settings = OptimizeSettings(
         budget=args.budget,
         time_budget=args.time_budget,
@@ -74,6 +146,7 @@ def main(argv: list[str] | None = None) -> int:
         wave_types=[int(w) for w in args.wavetypes.split(",")] if args.wavetypes else None,
         top_k=args.top_k,
         refine_steps=args.refine_steps,
+        seed_units=seed_units,
     )
 
     t0 = time.perf_counter()
@@ -105,6 +178,7 @@ def main(argv: list[str] | None = None) -> int:
             "allow_pitch_shift": args.allow_pitch_shift,
             "allow_time_stretch": args.allow_time_stretch,
             "avg_seeds": args.avg_seeds,
+            "seed_model": str(args.seed_model) if args.seed_model else None,
         },
         "budget": args.budget,
         "evals": optimizer.evals,

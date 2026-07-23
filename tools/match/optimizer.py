@@ -58,6 +58,9 @@ class OptimizeSettings:
     refine_steps: int = 0  # 0 = skip Stage 3
     refine_eps: float = 0.015
     refine_step0: float = 0.05
+    seed_units: list[tuple[int, np.ndarray]] | None = None  # (wave_type, unit)
+    seed_jitter: float = 0.05
+    seed_jitter_copies: int = 8
 
 
 class StagedOptimizer:
@@ -203,6 +206,8 @@ class StagedOptimizer:
         return np.clip(unit, 0.0, self.upper)
 
     def _stage0(self, wave_types: list[int]) -> dict[int, Candidate]:
+        if self.s.seed_units is not None:
+            return self._stage0_seeded()
         best: dict[int, Candidate] = {}
         defaults = np.clip(self.space.defaults_unit(), 0.0, self.upper)
         # spend at most half the eval budget screening
@@ -218,6 +223,27 @@ class StagedOptimizer:
             best[wt] = Candidate(float(scores[i]), wt, units[i])
             self._log(f"stage0 waveType={wt} ({self.space.wave_type_names[wt]}): "
                       f"best {scores[i]:.4f}")
+        return best
+
+    def _stage0_seeded(self) -> dict[int, Candidate]:
+        """Evaluate model seeds (+ Gaussian jitter) instead of f0 screening."""
+        best: dict[int, Candidate] = {}
+        assert self.s.seed_units is not None
+        for wt, unit in self.s.seed_units:
+            if best and self._out_of_budget():
+                break
+            base = np.clip(np.asarray(unit, dtype=np.float64), 0.0, self.upper)
+            units = [base]
+            for _ in range(self.s.seed_jitter_copies):
+                noise = self.rng.normal(0.0, self.s.seed_jitter, size=base.shape)
+                units.append(np.clip(base + noise, 0.0, self.upper))
+            scores = self._evaluate(units, [wt] * len(units))
+            i = int(np.argmin(scores))
+            cand = Candidate(float(scores[i]), wt, units[i])
+            if wt not in best or cand.score < best[wt].score:
+                best[wt] = cand
+            self._log(f"stage0 seed waveType={wt} "
+                      f"({self.space.wave_type_names[wt]}): best {scores[i]:.4f}")
         return best
 
     def _run_cma(self, start: Candidate, max_iters: int | None) -> None:
