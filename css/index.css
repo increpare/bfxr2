@@ -143,7 +143,7 @@ body {
 
 
 .tab_page {  
-    height: auto;
+    height: 80vh;
     /* max-height: 1200px; */
     width: 100%;
     background-color: var(--panel-background-color);
@@ -156,7 +156,6 @@ body {
     filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5));
 
     
-    height: 606px;
     overflow-y: clip;
     overflow-x: visible;
 }
@@ -214,7 +213,7 @@ body {
 
 .centre_panel {
     width: 350px;
-    max-height: 600px;
+    max-height: 100%;
 
     margin-top: var(--ui-margin);
     margin-bottom: 0;
