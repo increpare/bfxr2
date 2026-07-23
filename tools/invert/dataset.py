@@ -55,6 +55,11 @@ class InvertShardDataset(Dataset):
         class_idx: list[torch.Tensor] = []
         for p in paths:
             shard = read_shard(p)
+            ver = shard.get("meta", {}).get("dataset_version")
+            if ver != DATASET_VERSION:
+                raise ValueError(
+                    f"{p}: dataset_version {ver!r} != expected {DATASET_VERSION!r}"
+                )
             features.append(shard["features"])
             log_duration.append(shard["log_duration"])
             unit.append(shard["unit"])
@@ -66,6 +71,16 @@ class InvertShardDataset(Dataset):
         self.unit = torch.cat(unit, dim=0)
         self.wave_type = torch.cat(wave_type, dim=0)
         self.class_idx = torch.cat(class_idx, dim=0)
+
+        manifest_path = root / "manifest.json"
+        if manifest_path.exists() and max_shards is None:
+            manifest = json.loads(manifest_path.read_text())
+            expected = int(manifest["n"])
+            got = int(self.features.shape[0])
+            if got != expected:
+                raise ValueError(
+                    f"{root}: loaded {got} examples but manifest.json has n={expected}"
+                )
 
     def __len__(self) -> int:
         return int(self.features.shape[0])
@@ -80,10 +95,17 @@ class InvertShardDataset(Dataset):
         }
 
 
-def _is_bad_wave(wave: np.ndarray | None) -> bool:
+def _is_acceptable_wave(wave: np.ndarray | None) -> bool:
+    """True if wave is usable training audio (finite, non-silent, non-empty)."""
     if wave is None or len(wave) == 0:
-        return True
-    return float(np.max(np.abs(wave))) < SILENCE_PEAK
+        return False
+    w = np.asarray(wave)
+    if not np.isfinite(w).all():
+        return False
+    peak = float(np.max(np.abs(w)))
+    if not np.isfinite(peak) or peak < SILENCE_PEAK:
+        return False
+    return True
 
 
 def _stratified_wave_types(space: ParamSpace, n: int, rng: np.random.Generator) -> list[int]:
@@ -106,10 +128,18 @@ def _render_accepted(
         ex = sample_example(space, rng=rng, force_wave_type=force_wave_type)
         params = space.params_dict(ex["unit"], ex["wave_type"])
         wave = renderer.render(params, seed=RENDER_SEED)
-        if not _is_bad_wave(wave):
+        if _is_acceptable_wave(wave):
             assert wave is not None
             return ex, wave
     raise RuntimeError(f"could not render accepted wave for wave_type={force_wave_type}")
+
+
+def _clear_out_dir(out_dir: Path) -> None:
+    for p in out_dir.glob("shard_*.pt"):
+        p.unlink()
+    manifest = out_dir / "manifest.json"
+    if manifest.exists():
+        manifest.unlink()
 
 
 def generate_shards(
@@ -122,6 +152,7 @@ def generate_shards(
 ) -> None:
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
+    _clear_out_dir(out_dir)
     space = ParamSpace()
     rng = np.random.default_rng(seed)
     wt_list = _stratified_wave_types(space, n, rng)
@@ -138,7 +169,7 @@ def generate_shards(
 
     with BfxrRenderer(jobs=jobs) as renderer:
         waves = renderer.render_batch(params_list, seeds=RENDER_SEED)
-        failed = [i for i, w in enumerate(waves) if _is_bad_wave(w)]
+        failed = [i for i, w in enumerate(waves) if not _is_acceptable_wave(w)]
         if failed:
             print(f"  {len(failed)} failed/silent, resampling…", file=sys.stderr)
             for i in failed:
