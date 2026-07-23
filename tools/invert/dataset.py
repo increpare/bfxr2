@@ -51,7 +51,16 @@ def read_shard(path: Path | str) -> dict:
 class InvertShardDataset(Dataset):
     """Loads shard_*.pt files into RAM and indexes examples across them."""
 
-    def __init__(self, root: Path | str, *, max_shards: int | None = None):
+    def __init__(
+        self,
+        root: Path | str,
+        *,
+        max_shards: int | None = None,
+        dataset_version: str | None = None,
+    ):
+        # dataset_version=None → current DATASET_VERSION; pass "v2" to load
+        # historical invert/data/v1 shards after the v3 bump.
+        expected = DATASET_VERSION if dataset_version is None else dataset_version
         root = Path(root)
         paths = sorted(root.glob("shard_*.pt"))
         if max_shards is not None:
@@ -67,9 +76,9 @@ class InvertShardDataset(Dataset):
         for p in paths:
             shard = read_shard(p)
             ver = shard.get("meta", {}).get("dataset_version")
-            if ver != DATASET_VERSION:
+            if ver != expected:
                 raise ValueError(
-                    f"{p}: dataset_version {ver!r} != expected {DATASET_VERSION!r}"
+                    f"{p}: dataset_version {ver!r} != expected {expected!r}"
                 )
             features.append(shard["features"])
             log_duration.append(shard["log_duration"])
