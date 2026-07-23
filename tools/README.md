@@ -68,24 +68,15 @@ Optional neural Stage-0: train a wav→params model on synthetic renders, then
 use it to seed (or replace) the matcher search.
 
 ```sh
-# 1) generate ~300k feature shards (~1–2h dominated by feature extract)
-#    (dataset_version v2: silence-trimmed packs; wipes out_dir shards on restart)
-uv run python -m invert.dataset --out invert/data/v1 --n 300000 --seed 0
+make help                      # list targets
+make rebuild_inverse_model     # gen 300k shards + train → invert/runs/v1/best.pt
+make run_inverse_model         # seeded match (default: mega_man_ii_hurt)
+make one_shot_inverse_model    # raw model guess, no search
+make eval_inverse_model        # current vs seeded vs one-shot table
 
-# 2) train (MPS on Apple Silicon; casts float16 shards → float32 + channel z-score)
-uv run python -m invert.train --data invert/data/v1 --out invert/runs/v1 --version 1 --epochs 30
-
-# 3) match with model Stage-0
-uv run python -m match.match targets/mega_man_ii_hurt.wav -o out/ \
-  --seed-model invert/runs/v1/best.pt --budget 5000 --html-report
-
-# 4) one-shot growth metric
-uv run python -m match.match targets/mega_man_ii_hurt.wav -o out_os/ \
-  --seed-model invert/runs/v1/best.pt --one-shot
-
-# 5) eval table (default --targets is tools/targets)
-uv run python -m invert.eval_targets \
-  --ckpt invert/runs/v1/best.pt --budget 2000 -o invert/runs/v1/eval/
+# overrides
+make rebuild_inverse_model N=2048 EPOCHS=2   # smoke
+make run_inverse_model TARGET=targets/mario\ 3\ -\ flame.WAV OUT=out_flame
 ```
 
 `--seed-model` replaces the stage-0 random screen; CMA-ES / refine still run
