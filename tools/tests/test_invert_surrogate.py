@@ -1,7 +1,10 @@
+import warnings
 from pathlib import Path
 
+import pytest
 import torch
-from invert.surrogate import SurrogateSynth, train_surrogate
+from invert import constants
+from invert.surrogate import SurrogateSynth, load_surrogate, train_surrogate
 from invert.constants import DATASET_VERSION, N_CHANNELS, N_FRAMES, N_PARAMS, N_WAVETYPES
 from invert.dataset import write_shard
 
@@ -37,3 +40,37 @@ def test_train_surrogate_writes_checkpoint(tmp_path: Path):
     assert out.is_file()
     ck = torch.load(out, weights_only=False)
     assert ck["width"] == 128 and "model_state" in ck
+
+
+def _tiny_checkpoint(path: Path, *, channel_mean, channel_std) -> None:
+    model = SurrogateSynth(width=4)
+    torch.save(
+        {
+            "model_state": model.state_dict(),
+            "width": 4,
+            "channel_mean": list(channel_mean),
+            "channel_std": list(channel_std),
+        },
+        path,
+    )
+
+
+def test_load_surrogate_warns_on_channel_stats_mismatch(tmp_path: Path):
+    path = tmp_path / "surrogate_mismatch.pt"
+    mismatched_mean = [m + 1.0 for m in constants.CHANNEL_MEAN]
+    _tiny_checkpoint(path, channel_mean=mismatched_mean, channel_std=constants.CHANNEL_STD)
+
+    with pytest.warns(UserWarning):
+        load_surrogate(path, torch.device("cpu"))
+
+
+def test_load_surrogate_no_warning_when_channel_stats_match(tmp_path: Path):
+    path = tmp_path / "surrogate_match.pt"
+    _tiny_checkpoint(
+        path, channel_mean=constants.CHANNEL_MEAN, channel_std=constants.CHANNEL_STD
+    )
+
+    with warnings.catch_warnings(record=True) as caught:
+        warnings.simplefilter("always")
+        load_surrogate(path, torch.device("cpu"))
+    assert len(caught) == 0

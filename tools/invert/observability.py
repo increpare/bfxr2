@@ -74,7 +74,7 @@ def sensitivity_to_weights(
     *,
     floor: float = 0.1,
 ) -> list[float]:
-    """Per-param loss weights, mean ~1.0 over active params, clamped [floor, 4.0].
+    """Per-param loss weights scaled by the median sensitivity, clamped [floor, 4.0].
 
     Uses the median (not the mean) of all raw sensitivities as the scale: the
     mean is dominated by whichever param happens to be most sensitive, which

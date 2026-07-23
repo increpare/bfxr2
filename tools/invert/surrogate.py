@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import warnings
 from pathlib import Path
 
 import torch
@@ -110,6 +111,12 @@ def train_surrogate(
     return ckpt
 
 
+def _channel_stats_mismatch(stored: list[float], current: tuple[float, ...], tol: float = 1e-4) -> bool:
+    if len(stored) != len(current):
+        return True
+    return any(abs(a - b) > tol for a, b in zip(stored, current))
+
+
 def load_surrogate(path: Path, device: torch.device) -> SurrogateSynth:
     ck = torch.load(Path(path), weights_only=False)
     model = SurrogateSynth(width=ck["width"]).to(device)
@@ -117,6 +124,20 @@ def load_surrogate(path: Path, device: torch.device) -> SurrogateSynth:
     model.eval()
     for p in model.parameters():
         p.requires_grad_(False)
+
+    if "channel_mean" in ck and "channel_std" in ck:
+        mismatched = _channel_stats_mismatch(
+            ck["channel_mean"], CHANNEL_MEAN
+        ) or _channel_stats_mismatch(ck["channel_std"], CHANNEL_STD)
+        if mismatched:
+            warnings.warn(
+                "Surrogate checkpoint was trained under different channel_mean/"
+                "channel_std than invert.constants.CHANNEL_MEAN/CHANNEL_STD. "
+                "The spectral loss computed against this surrogate may be "
+                "miscalibrated.",
+                stacklevel=2,
+            )
+
     return model
 
 

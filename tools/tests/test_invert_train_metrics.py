@@ -1,7 +1,6 @@
 # tools/tests/test_invert_train_metrics.py
 from pathlib import Path
 
-import numpy as np
 import torch
 
 from invert.constants import DATASET_VERSION, N_CHANNELS, N_FRAMES, N_PARAMS
