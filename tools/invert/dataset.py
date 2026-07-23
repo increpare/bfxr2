@@ -26,7 +26,7 @@ from .features_pack import pack_features
 from .presets import harvest_preset_params
 from .sampler import finalize_example, sample_example, sample_unit, wave_type_index_map
 
-FEATURE_NOTE = f"contours+blurred_logmel_scale{FEATURES_MEL_SCALE_IDX}"
+FEATURE_NOTE = f"contours+padcrop_t_abs+unblurred_logmel_scale{FEATURES_MEL_SCALE_IDX}"
 
 MIX = {
     "biased": 0.35,
