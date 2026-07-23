@@ -11,8 +11,9 @@ from torch.utils.data import DataLoader, Subset
 
 from match.bfxr_io import ParamSpace
 
-from .constants import SQUARE_ONLY
+from .constants import CHANNEL_MEAN, CHANNEL_STD, SQUARE_ONLY
 from .dataset import InvertShardDataset
+from .features_pack import normalize_channels
 from .model import InverseModel
 from .sampler import wave_type_index_map
 
@@ -77,9 +78,10 @@ def _run_epoch(
     total_ce = 0.0
     n_batches = 0
     for batch in loader:
-        x = batch["features"].to(device)
-        log_dur = batch["log_duration"].to(device)
-        unit = batch["unit"].to(device)
+        # float16 shards → float32; z-score channels before the CNN
+        x = normalize_channels(batch["features"].to(device).float())
+        log_dur = batch["log_duration"].to(device).float()
+        unit = batch["unit"].to(device).float()
         wt = batch["wave_type"].to(device)
         cls = batch["class_idx"].to(device)
 
@@ -173,6 +175,8 @@ def train(
                         "space_names": list(space.names),
                         "wave_types_order": wave_types_order,
                         "best_val": best_val,
+                        "channel_mean": list(CHANNEL_MEAN),
+                        "channel_std": list(CHANNEL_STD),
                     },
                     best_path,
                 )

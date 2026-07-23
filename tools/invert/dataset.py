@@ -20,9 +20,10 @@ from .constants import (
     N_CHANNELS,
     N_FRAMES,
     SILENCE_PEAK,
+    SQUARE_ONLY,
 )
 from .features_pack import pack_features
-from .sampler import sample_example
+from .sampler import sample_example, wave_type_index_map
 
 FEATURE_NOTE = f"contours+blurred_logmel_scale{FEATURES_MEL_SCALE_IDX}"
 
@@ -86,10 +87,11 @@ class InvertShardDataset(Dataset):
         return int(self.features.shape[0])
 
     def __getitem__(self, idx: int) -> dict[str, torch.Tensor]:
+        # Shards store features as float16; model weights are float32.
         return {
-            "features": self.features[idx],
-            "log_duration": self.log_duration[idx],
-            "unit": self.unit[idx],
+            "features": self.features[idx].float(),
+            "log_duration": self.log_duration[idx].float(),
+            "unit": self.unit[idx].float(),
             "wave_type": self.wave_type[idx],
             "class_idx": self.class_idx[idx],
         }
@@ -123,14 +125,38 @@ def _render_accepted(
     rng: np.random.Generator,
     renderer: BfxrRenderer,
     force_wave_type: int,
+    *,
+    max_tries: int = 64,
 ) -> tuple[dict, np.ndarray]:
-    for _ in range(8):
-        ex = sample_example(space, rng=rng, force_wave_type=force_wave_type)
+    """Resample until a non-silent render lands. Biases toward defaults after a few misses."""
+    for attempt in range(max_tries):
+        # Early tries keep the normal mix; later tries drop full-uniform (quieter mush).
+        uniform_frac = 0.2 if attempt < 8 else 0.0
+        ex = sample_example(
+            space, rng=rng, force_wave_type=force_wave_type, uniform_frac=uniform_frac
+        )
         params = space.params_dict(ex["unit"], ex["wave_type"])
         wave = renderer.render(params, seed=RENDER_SEED)
         if _is_acceptable_wave(wave):
             assert wave is not None
             return ex, wave
+
+    # Last resort: pinned defaults for this wave type (almost always audible).
+    unit = space.defaults_unit().copy()
+    if force_wave_type != 0:
+        du = space.defaults_unit()
+        for name in SQUARE_ONLY:
+            unit[space.names.index(name)] = float(du[space.names.index(name)])
+    params = space.params_dict(unit, force_wave_type)
+    wave = renderer.render(params, seed=RENDER_SEED)
+    if _is_acceptable_wave(wave):
+        assert wave is not None
+        id_to_cls, _ = wave_type_index_map(space)
+        return {
+            "unit": unit.astype(np.float64),
+            "wave_type": int(force_wave_type),
+            "class_idx": id_to_cls[int(force_wave_type)],
+        }, wave
     raise RuntimeError(f"could not render accepted wave for wave_type={force_wave_type}")
 
 

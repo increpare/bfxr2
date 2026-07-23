@@ -60,6 +60,12 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if args.one_shot and args.seed_model is None:
         parser.error("--one-shot requires --seed-model")
+    if args.seed_model is not None and args.wavetypes is not None:
+        print(
+            "warning: --wavetypes is ignored when --seed-model is set "
+            "(stage 0 uses the model's wave-type picks)",
+            file=sys.stderr,
+        )
     args.out.mkdir(parents=True, exist_ok=True)
 
     target = prepare_target(args.target)

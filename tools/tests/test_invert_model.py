@@ -87,3 +87,43 @@ def test_train_step_smoke():
     loss.backward()
     opt.step()
     assert torch.isfinite(loss)
+
+
+def test_train_step_on_float16_shard_payload():
+    """Shards store float16 features; training must cast before the CNN."""
+    import numpy as np
+
+    from invert.dataset import _pack_shard_payload
+    from invert.features_pack import normalize_channels
+
+    space = ParamSpace()
+    id_to_cls, _ = wave_type_index_map(space)
+    rng = np.random.default_rng(0)
+    n = 4
+    examples = [
+        {
+            "unit": rng.random(30).astype(np.float64),
+            "wave_type": wt,
+            "class_idx": id_to_cls[wt],
+        }
+        for wt in (0, 9, 1, 4)
+    ]
+    waves = [rng.standard_normal(8000).astype(np.float32) * 0.2 for _ in range(n)]
+    payload = _pack_shard_payload(examples, waves, rng, augment_p=0.0)
+    assert payload["features"].dtype == torch.float16
+
+    # Mimic InvertShardDataset.__getitem__ + _run_epoch casting/norm
+    x = normalize_channels(payload["features"].float())
+    log_dur = payload["log_duration"].float()
+    unit = payload["unit"].float()
+    wt = payload["wave_type"]
+    cls = payload["class_idx"]
+
+    m = InverseModel(version=1)
+    opt = torch.optim.Adam(m.parameters(), lr=1e-3)
+    out = m(x, log_dur)
+    loss, parts = invert_loss(out, unit, wt, cls, space, version=1)
+    loss.backward()
+    opt.step()
+    assert torch.isfinite(loss)
+    assert parts["ce"] > 1.0  # near ln(12)≈2.48 at init, not collapsed

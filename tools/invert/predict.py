@@ -15,8 +15,8 @@ import torch.nn.functional as F
 from match.audio import prepare_target
 from match.bfxr_io import ParamSpace, write_bfxr
 
-from .constants import SQUARE_ONLY
-from .features_pack import pack_features
+from .constants import CHANNEL_MEAN, CHANNEL_STD, SQUARE_ONLY
+from .features_pack import normalize_channels, pack_features
 from .model import InverseModel
 
 
@@ -31,6 +31,8 @@ def load_checkpoint(path: Path | str, device: str = "cpu") -> tuple[InverseModel
         "version": version,
         "wave_types_order": list(ckpt["wave_types_order"]),
         "space_names": list(ckpt["space_names"]),
+        "channel_mean": list(ckpt.get("channel_mean", CHANNEL_MEAN)),
+        "channel_std": list(ckpt.get("channel_std", CHANNEL_STD)),
     }
     return model, meta
 
@@ -58,7 +60,7 @@ def predict_wave(
 
     feat, log_dur = pack_features(wave)
     device = next(model.parameters()).device
-    x = torch.from_numpy(feat).unsqueeze(0).to(device)
+    x = normalize_channels(torch.from_numpy(feat).unsqueeze(0).to(device).float())
     log_duration = torch.tensor([log_dur], dtype=torch.float32, device=device)
 
     out = model(x, log_duration)

@@ -69,9 +69,10 @@ use it to seed (or replace) the matcher search.
 
 ```sh
 # 1) generate ~300k feature shards (~1–2h dominated by feature extract)
+#    (dataset_version v2: silence-trimmed packs; wipes out_dir shards on restart)
 uv run python -m invert.dataset --out invert/data/v1 --n 300000 --seed 0
 
-# 2) train (MPS on Apple Silicon)
+# 2) train (MPS on Apple Silicon; casts float16 shards → float32 + channel z-score)
 uv run python -m invert.train --data invert/data/v1 --out invert/runs/v1 --version 1 --epochs 30
 
 # 3) match with model Stage-0

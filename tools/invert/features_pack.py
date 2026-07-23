@@ -3,7 +3,7 @@ from __future__ import annotations
 import numpy as np
 import torch
 
-from match.audio import SAMPLE_RATE, normalize_peak
+from match.audio import SAMPLE_RATE, normalize_peak, trim_silence
 from match.features import FeatureExtractor, stretch_to, frame_count
 from match.objective import (
     LOG_EPS,
@@ -15,16 +15,25 @@ from match.objective import (
 )
 import torchaudio
 
-from .constants import FEATURES_MEL_SCALE_IDX, N_FRAMES, N_MELS
+from .constants import (
+    CHANNEL_MEAN,
+    CHANNEL_STD,
+    FEATURES_MEL_SCALE_IDX,
+    N_CHANNELS,
+    N_FRAMES,
+    N_MELS,
+)
 
 
 _extractor: FeatureExtractor | None = None
 _mel_transform = None
 _mel_blur: torch.Tensor | None = None
+_channel_mean: torch.Tensor | None = None
+_channel_std: torch.Tensor | None = None
 
 
 def _ensure_backends():
-    global _extractor, _mel_transform, _mel_blur
+    global _extractor, _mel_transform, _mel_blur, _channel_mean, _channel_std
     if _extractor is None:
         _extractor = FeatureExtractor()
         n_fft, hop, n_mels = SCALES[FEATURES_MEL_SCALE_IDX]
@@ -39,15 +48,34 @@ def _ensure_backends():
             power=2.0,
         )
         _mel_blur = _blur_matrix(n_mels, MEL_BLUR_SIGMA * n_mels / 128)
+        assert len(CHANNEL_MEAN) == N_CHANNELS and len(CHANNEL_STD) == N_CHANNELS
+        _channel_mean = torch.tensor(CHANNEL_MEAN, dtype=torch.float32).view(N_CHANNELS, 1)
+        _channel_std = torch.tensor(CHANNEL_STD, dtype=torch.float32).view(N_CHANNELS, 1)
+
+
+def normalize_channels(x: torch.Tensor) -> torch.Tensor:
+    """Z-score each input channel. x: (..., C, T) float32."""
+    _ensure_backends()
+    assert _channel_mean is not None and _channel_std is not None
+    mean = _channel_mean.to(device=x.device, dtype=x.dtype)
+    std = _channel_std.to(device=x.device, dtype=x.dtype)
+    # Broadcast over leading batch dims: mean/std are (C, 1)
+    while mean.ndim < x.ndim:
+        mean = mean.unsqueeze(0)
+        std = std.unsqueeze(0)
+    return (x - mean) / std
 
 
 @torch.no_grad()
 def pack_features(wave: np.ndarray) -> tuple[np.ndarray, float]:
-    """Return (channels, N_FRAMES) float32 + scalar log_duration."""
+    """Return (channels, N_FRAMES) float32 + scalar log_duration.
+
+    Silence-trims like prepare_target so train/inference duration contours match.
+    """
     _ensure_backends()
     assert _extractor is not None and _mel_transform is not None and _mel_blur is not None
 
-    w = normalize_peak(np.asarray(wave, dtype=np.float32))
+    w = normalize_peak(trim_silence(np.asarray(wave, dtype=np.float32)))
     duration_s = max(len(w), 1) / SAMPLE_RATE
     log_duration = float(np.log(duration_s + 1e-4))
 
