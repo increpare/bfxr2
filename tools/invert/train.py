@@ -57,6 +57,10 @@ def invert_loss(
     unit_weight: float = 10.0,
     ce_weight: float = 0.5,
     unit_loss_weights: torch.Tensor | None = None,
+    surrogate=None,
+    spectral_weight: float = 0.0,
+    norm_features: torch.Tensor | None = None,
+    log_duration: torch.Tensor | None = None,
 ) -> tuple[torch.Tensor, dict[str, float]]:
     unit_pred = select_unit_pred(out, class_idx, version)
 
@@ -82,6 +86,15 @@ def invert_loss(
         "unit_mse": float(unit_mse.detach()),
         "ce": float(ce.detach()),
     }
+
+    if surrogate is not None and spectral_weight > 0.0:
+        assert norm_features is not None and log_duration is not None
+        onehot = F.one_hot(class_idx.long(), out["wavetype_logits"].shape[1]).float()
+        pred_feat = surrogate(unit_pred, onehot, log_duration)
+        spectral = F.mse_loss(pred_feat, norm_features)
+        loss = loss + spectral_weight * spectral
+        parts["spectral"] = float(spectral.detach())
+
     return loss, parts
 
 
@@ -123,6 +136,8 @@ def _run_epoch(
     unit_weight: float = 10.0,
     ce_weight: float = 0.5,
     unit_loss_weights: torch.Tensor | None = None,
+    surrogate=None,
+    spectral_weight: float = 0.0,
 ) -> dict[str, float]:
     train = optimizer is not None
     collect = optimizer is None
@@ -130,6 +145,7 @@ def _run_epoch(
     total_loss = 0.0
     total_unit = 0.0
     total_ce = 0.0
+    total_spectral = 0.0
     n_batches = 0
     preds, tgts, all_logits, all_cls = [], [], [], []
     for batch in loader:
@@ -154,6 +170,10 @@ def _run_epoch(
             unit_weight=unit_weight,
             ce_weight=ce_weight,
             unit_loss_weights=unit_loss_weights,
+            surrogate=surrogate,
+            spectral_weight=spectral_weight,
+            norm_features=x,
+            log_duration=log_dur,
         )
 
         if train:
@@ -163,6 +183,7 @@ def _run_epoch(
         total_loss += float(loss.detach())
         total_unit += parts["unit_mse"]
         total_ce += parts["ce"]
+        total_spectral += parts.get("spectral", 0.0)
         n_batches += 1
 
         if collect:
@@ -176,6 +197,7 @@ def _run_epoch(
         "loss": total_loss / denom,
         "unit_mse": total_unit / denom,
         "ce": total_ce / denom,
+        "spectral": total_spectral / denom,
     }
     if collect and preds:
         pred_cat, tgt_cat = torch.cat(preds), torch.cat(tgts)
@@ -202,6 +224,8 @@ def train(
     dilated: bool = False,
     phase1_epochs: int = 0,
     curriculum_epochs: int = 0,
+    surrogate_path: Path | None = None,
+    spectral_weight: float = 0.0,
 ) -> Path:
     device_s = device or _default_device()
     device_t = torch.device(device_s)
@@ -233,6 +257,11 @@ def train(
 
     model = InverseModel(version=version, width=width, dilated=dilated).to(device_t)
     opt = torch.optim.AdamW(model.parameters(), lr=lr)
+
+    surrogate = None
+    if surrogate_path is not None and spectral_weight > 0.0:
+        from .surrogate import load_surrogate
+        surrogate = load_surrogate(surrogate_path, device_t)
 
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
@@ -276,6 +305,8 @@ def train(
                 unit_weight=ew_unit,
                 ce_weight=ew_ce,
                 unit_loss_weights=epoch_w,
+                surrogate=surrogate,
+                spectral_weight=spectral_weight,
             )
             if val_loader is not None:
                 val_metrics = _run_epoch(
@@ -287,6 +318,8 @@ def train(
                     unit_weight=ew_unit,
                     ce_weight=ew_ce,
                     unit_loss_weights=None,
+                    surrogate=surrogate,
+                    spectral_weight=spectral_weight,
                 )
             else:
                 val_metrics = train_metrics
@@ -330,6 +363,8 @@ def train(
                         "channel_mean": list(CHANNEL_MEAN),
                         "channel_std": list(CHANNEL_STD),
                         "phase1_epochs": phase1_epochs,
+                        "spectral_weight": spectral_weight,
+                        "surrogate": str(surrogate_path) if surrogate_path else None,
                     },
                     best_path,
                 )
@@ -369,6 +404,9 @@ def main(argv: list[str] | None = None) -> None:
         default=None,
         help="Default: mps if available else cpu",
     )
+    p.add_argument("--surrogate", type=Path, default=None,
+                   help="Path to surrogate.pt; enables spectral loss")
+    p.add_argument("--spectral-weight", type=float, default=0.0)
     args = p.parse_args(argv)
     best = train(
         args.data,
@@ -384,6 +422,8 @@ def main(argv: list[str] | None = None) -> None:
         dilated=args.dilated,
         phase1_epochs=args.phase1_epochs,
         curriculum_epochs=args.curriculum_epochs,
+        surrogate_path=args.surrogate,
+        spectral_weight=args.spectral_weight,
     )
     print(f"wrote {best}")
 
