@@ -8,7 +8,13 @@ from .constants import N_CHANNELS, N_FRAMES, N_PARAMS, N_WAVETYPES
 
 
 class InverseModel(nn.Module):
-    def __init__(self, version: int = 1, width: int = 128, readout: str = "flatten"):
+    def __init__(
+        self,
+        version: int = 1,
+        width: int = 128,
+        readout: str = "flatten",
+        dilated: bool = False,
+    ):
         super().__init__()
         if version not in (1, 2):
             raise ValueError(version)
@@ -16,6 +22,8 @@ class InverseModel(nn.Module):
             raise ValueError(readout)
         self.version = version
         self.readout = readout
+        self.width = width
+        self.dilated = dilated
         self.encoder = nn.Sequential(
             nn.Conv1d(N_CHANNELS, width, 5, padding=2),
             nn.ReLU(inplace=True),
@@ -26,6 +34,11 @@ class InverseModel(nn.Module):
             nn.Conv1d(width * 2, width * 2, 5, padding=2, stride=2),
             nn.ReLU(inplace=True),
         )
+        if dilated:
+            self.dilated_conv = nn.Sequential(
+                nn.Conv1d(width * 2, width * 2, 5, padding=4, dilation=2),
+                nn.ReLU(inplace=True),
+            )
         n_out_frames = N_FRAMES // 8  # three stride-2 convs: 128 -> 16
         if readout == "gap":
             feat_dim = width * 2
@@ -46,6 +59,8 @@ class InverseModel(nn.Module):
 
     def encode(self, x: torch.Tensor, log_duration: torch.Tensor) -> torch.Tensor:
         h = self.encoder(x)
+        if self.dilated:
+            h = self.dilated_conv(h)
         if self.readout == "gap":
             h = h.mean(dim=-1)
         else:

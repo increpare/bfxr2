@@ -171,6 +171,8 @@ def train(
     val_ratio: float = 0.05,
     unit_weight: float = 10.0,
     ce_weight: float = 0.5,
+    width: int = 128,
+    dilated: bool = False,
 ) -> Path:
     device_s = device or _default_device()
     device_t = torch.device(device_s)
@@ -194,7 +196,7 @@ def train(
         DataLoader(val_ds, batch_size=batch_size, shuffle=False) if val_ds is not None else None
     )
 
-    model = InverseModel(version=version).to(device_t)
+    model = InverseModel(version=version, width=width, dilated=dilated).to(device_t)
     opt = torch.optim.AdamW(model.parameters(), lr=lr)
 
     out = Path(out)
@@ -252,6 +254,8 @@ def train(
                         "model_state": model.state_dict(),
                         "version": version,
                         "readout": model.readout,
+                        "width": model.width,
+                        "dilated": model.dilated,
                         "space_names": list(space.names),
                         "wave_types_order": wave_types_order,
                         "best_val": best_val,
@@ -273,6 +277,8 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--batch-size", type=int, default=64)
     p.add_argument("--lr", type=float, default=1e-3)
     p.add_argument("--version", type=int, choices=(1, 2), default=1)
+    p.add_argument("--width", type=int, default=128)
+    p.add_argument("--dilated", action="store_true")
     p.add_argument("--unit-weight", type=float, default=10.0)
     p.add_argument("--ce-weight", type=float, default=0.5)
     p.add_argument(
@@ -293,6 +299,8 @@ def main(argv: list[str] | None = None) -> None:
         device=args.device,
         unit_weight=args.unit_weight,
         ce_weight=args.ce_weight,
+        width=args.width,
+        dilated=args.dilated,
     )
     print(f"wrote {best}")
 
