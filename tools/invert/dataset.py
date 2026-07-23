@@ -142,6 +142,45 @@ def _clear_out_dir(out_dir: Path) -> None:
         manifest.unlink()
 
 
+def _pack_shard_payload(
+    examples: list[dict],
+    waves: list[np.ndarray | None],
+    rng: np.random.Generator,
+    augment_p: float,
+) -> dict:
+    """Augment + pack one chunk of waves into a shard payload (float16 features)."""
+    feat_buf: list[np.ndarray] = []
+    log_dur_buf: list[float] = []
+    unit_buf: list[np.ndarray] = []
+    wave_type_buf: list[int] = []
+    class_idx_buf: list[int] = []
+    for i, ex in enumerate(examples):
+        wave = waves[i]
+        assert wave is not None
+        aug = maybe_augment(wave, rng=rng, p=augment_p)
+        feat, log_dur = pack_features(aug)
+        assert feat.shape == (N_CHANNELS, N_FRAMES)
+        feat_buf.append(feat)
+        log_dur_buf.append(log_dur)
+        unit_buf.append(ex["unit"])
+        wave_type_buf.append(int(ex["wave_type"]))
+        class_idx_buf.append(int(ex["class_idx"]))
+    m = len(feat_buf)
+    return {
+        "features": torch.from_numpy(np.stack(feat_buf)).half(),
+        "log_duration": torch.tensor(log_dur_buf, dtype=torch.float32),
+        "unit": torch.from_numpy(np.stack(unit_buf).astype(np.float32)),
+        "wave_type": torch.tensor(wave_type_buf, dtype=torch.long),
+        "class_idx": torch.tensor(class_idx_buf, dtype=torch.long),
+        "meta": {
+            "dataset_version": DATASET_VERSION,
+            "n": m,
+            "feature_note": FEATURE_NOTE,
+            "render_seed": RENDER_SEED,
+        },
+    }
+
+
 def generate_shards(
     out_dir: Path | str,
     n: int,
@@ -150,6 +189,7 @@ def generate_shards(
     shard_size: int = 2048,
     augment_p: float = 0.5,
 ) -> None:
+    """Sample/render/pack in shard-sized chunks so peak RAM stays O(shard_size)."""
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     _clear_out_dir(out_dir)
@@ -157,75 +197,43 @@ def generate_shards(
     rng = np.random.default_rng(seed)
     wt_list = _stratified_wave_types(space, n, rng)
 
-    print(f"rendering {n} invert examples…", file=sys.stderr)
-    examples: list[dict] = []
-    waves: list[np.ndarray | None] = [None] * n
-    params_list: list[dict] = []
-
-    for wt in wt_list:
-        ex = sample_example(space, rng=rng, force_wave_type=wt)
-        examples.append(ex)
-        params_list.append(space.params_dict(ex["unit"], ex["wave_type"]))
-
-    with BfxrRenderer(jobs=jobs) as renderer:
-        waves = renderer.render_batch(params_list, seeds=RENDER_SEED)
-        failed = [i for i, w in enumerate(waves) if not _is_acceptable_wave(w)]
-        if failed:
-            print(f"  {len(failed)} failed/silent, resampling…", file=sys.stderr)
-            for i in failed:
-                ex, wave = _render_accepted(space, rng, renderer, wt_list[i])
-                examples[i] = ex
-                waves[i] = wave
-
-    feat_buf: list[np.ndarray] = []
-    log_dur_buf: list[float] = []
-    unit_buf: list[np.ndarray] = []
-    wave_type_buf: list[int] = []
-    class_idx_buf: list[int] = []
+    print(f"rendering {n} invert examples (chunk={shard_size})…", file=sys.stderr)
     shard_idx = 0
     written = 0
 
-    def flush() -> None:
-        nonlocal shard_idx, written, feat_buf, log_dur_buf, unit_buf, wave_type_buf, class_idx_buf
-        if not feat_buf:
-            return
-        m = len(feat_buf)
-        payload = {
-            "features": torch.from_numpy(np.stack(feat_buf)).half(),
-            "log_duration": torch.tensor(log_dur_buf, dtype=torch.float32),
-            "unit": torch.from_numpy(np.stack(unit_buf).astype(np.float32)),
-            "wave_type": torch.tensor(wave_type_buf, dtype=torch.long),
-            "class_idx": torch.tensor(class_idx_buf, dtype=torch.long),
-            "meta": {
-                "dataset_version": DATASET_VERSION,
-                "n": m,
-                "feature_note": FEATURE_NOTE,
-                "render_seed": RENDER_SEED,
-            },
-        }
-        write_shard(out_dir / f"shard_{shard_idx:04d}.pt", payload)
-        written += m
-        shard_idx += 1
-        feat_buf = []
-        log_dur_buf = []
-        unit_buf = []
-        wave_type_buf = []
-        class_idx_buf = []
+    with BfxrRenderer(jobs=jobs) as renderer:
+        for chunk_start in range(0, n, shard_size):
+            chunk_wts = wt_list[chunk_start : chunk_start + shard_size]
+            examples: list[dict] = []
+            params_list: list[dict] = []
+            for wt in chunk_wts:
+                ex = sample_example(space, rng=rng, force_wave_type=wt)
+                examples.append(ex)
+                params_list.append(space.params_dict(ex["unit"], ex["wave_type"]))
 
-    for i in range(n):
-        wave = waves[i]
-        assert wave is not None
-        aug = maybe_augment(wave, rng=rng, p=augment_p)
-        feat, log_dur = pack_features(aug)
-        assert feat.shape == (N_CHANNELS, N_FRAMES)
-        feat_buf.append(feat)
-        log_dur_buf.append(log_dur)
-        unit_buf.append(examples[i]["unit"])
-        wave_type_buf.append(int(examples[i]["wave_type"]))
-        class_idx_buf.append(int(examples[i]["class_idx"]))
-        if len(feat_buf) >= shard_size:
-            flush()
-    flush()
+            waves = renderer.render_batch(params_list, seeds=RENDER_SEED)
+            del params_list
+            failed = [i for i, w in enumerate(waves) if not _is_acceptable_wave(w)]
+            if failed:
+                print(
+                    f"  shard {shard_idx}: {len(failed)} failed/silent, resampling…",
+                    file=sys.stderr,
+                )
+                for i in failed:
+                    ex, wave = _render_accepted(space, rng, renderer, chunk_wts[i])
+                    examples[i] = ex
+                    waves[i] = wave
+
+            payload = _pack_shard_payload(examples, waves, rng, augment_p)
+            del waves, examples
+            write_shard(out_dir / f"shard_{shard_idx:04d}.pt", payload)
+            written += int(payload["meta"]["n"])
+            print(
+                f"  wrote shard_{shard_idx:04d}.pt ({written}/{n})",
+                file=sys.stderr,
+            )
+            shard_idx += 1
+            del payload
 
     manifest = {
         "n": written,

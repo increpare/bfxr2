@@ -82,14 +82,19 @@ uv run python -m match.match targets/mega_man_ii_hurt.wav -o out/ \
 uv run python -m match.match targets/mega_man_ii_hurt.wav -o out_os/ \
   --seed-model invert/runs/v1/best.pt --one-shot
 
-# 5) eval table
-uv run python -m invert.eval_targets --targets targets/ \
+# 5) eval table (default --targets is tools/targets)
+uv run python -m invert.eval_targets \
   --ckpt invert/runs/v1/best.pt --budget 2000 -o invert/runs/v1/eval/
 ```
 
 `--seed-model` replaces the stage-0 random screen; CMA-ES / refine still run
 unless `--one-shot` (raw model top prediction only). Eval writes
 `results.json` / `results.md` with columns current | model-seeded | one-shot.
+
+Target wavs under `tools/targets/` are often gitignored. In a git worktree,
+symlink or copy them from the main checkout if the directory is empty
+(e.g. `ln -sf /path/to/main/tools/targets/* tools/targets/` or pass
+`--targets` to a populated directory).
 
 ## Metric bake-off (fixed library, fair compare)
 

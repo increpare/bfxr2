@@ -1,10 +1,15 @@
 """Equal-budget eval table: current vs model-seeded vs one-shot.
 
     cd tools && uv run python -m invert.eval_targets \\
-      --targets /Users/stephenlavelle/Documents/bfxr2/tools/targets/ \\
+      --targets targets/ \\
       --ckpt invert/runs/v1/best.pt \\
       --budget 2000 \\
       -o invert/runs/v1/eval/
+
+Default ``--targets`` is ``tools/targets`` (repo-relative). Audio there is often
+gitignored; in git worktrees you may need to symlink or copy samples from the
+main checkout (e.g. ``ln -s ../../tools/targets tools/targets_wavs`` and pass
+``--targets``), or populate ``tools/targets`` locally.
 """
 from __future__ import annotations
 
@@ -19,8 +24,8 @@ from match.match import main as match_main
 
 AUDIO_EXTS = {".wav", ".flac", ".ogg", ".aif", ".aiff", ".mp3"}
 
-# Pass/fail commentary only — not used to gate the run.
-DEFAULT_TARGETS = Path("/Users/stephenlavelle/Documents/bfxr2/tools/targets")
+# Repo-relative default: tools/targets (may be empty / need a symlink in worktrees).
+DEFAULT_TARGETS = Path(__file__).resolve().parent.parent / "targets"
 HARD_TARGET_NEEDLES = (
     "flame",
     "beam-out",
