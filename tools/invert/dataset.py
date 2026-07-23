@@ -174,10 +174,11 @@ def _resample_accepted(
     max_tries: int = 8,
 ) -> tuple[dict, np.ndarray]:
     """Resample with the same mode (preset: fresh harvest seed) until render succeeds."""
-    current = spec
     for attempt in range(max_tries):
-        if current["kind"] == "preset" and attempt > 0:
+        if spec["kind"] == "preset":
             current = {"kind": "preset", "row": _fresh_preset_row(rng)}
+        else:
+            current = spec
         ex = _example_from_spec(space, rng, current)
         params = space.params_dict(ex["unit"], ex["wave_type"])
         wave = renderer.render(params, seed=RENDER_SEED)
@@ -186,9 +187,9 @@ def _resample_accepted(
             return ex, wave
 
     force_wave_type = (
-        int(space.unit_from_params(current["row"]["params"])[1])
-        if current["kind"] == "preset"
-        else int(current["wave_type"])
+        int(space.unit_from_params(spec["row"]["params"])[1])
+        if spec["kind"] == "preset"
+        else int(spec["wave_type"])
     )
     return _render_accepted_fallback(space, rng, renderer, force_wave_type)
 
