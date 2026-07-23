@@ -1,7 +1,19 @@
 # tools/tests/test_invert_train_metrics.py
+from pathlib import Path
+
+import numpy as np
 import torch
 
-from invert.train import invert_loss, per_param_r2, select_unit_pred, wavetype_topk_accuracy
+from invert.constants import DATASET_VERSION, N_CHANNELS, N_FRAMES, N_PARAMS
+from invert.dataset import write_shard
+from invert.train import (
+    curriculum_weights,
+    invert_loss,
+    per_param_r2,
+    select_unit_pred,
+    train,
+    wavetype_topk_accuracy,
+)
 from match.bfxr_io import ParamSpace
 
 
@@ -88,3 +100,35 @@ def test_invert_loss_weights_scale_reported_mse_is_unweighted():
     assert abs(parts_u["unit_mse"] - parts_s["unit_mse"]) < 1e-6
     # the training loss does change when weights change
     assert abs(float(loss_u) - float(loss_s)) > 1e-6
+
+
+def test_curriculum_ramps_hard_params_only():
+    base = torch.tensor([2.0, 2.0, 1.0, 1.0])
+    easy = torch.tensor([1.0, 1.0, 0.0, 0.0])  # first two are "easy"
+    # epoch 1 of 4: hard params at 0.25 * base; easy unchanged
+    w1 = curriculum_weights(base, easy, epoch=1, curriculum_epochs=4)
+    assert torch.allclose(w1, torch.tensor([2.0, 2.0, 0.25, 0.25]))
+    # at/after curriculum end: full base weights
+    w4 = curriculum_weights(base, easy, epoch=4, curriculum_epochs=4)
+    assert torch.allclose(w4, base)
+    # disabled: returns base unchanged
+    w0 = curriculum_weights(base, easy, epoch=1, curriculum_epochs=0)
+    assert torch.allclose(w0, base)
+
+
+def test_train_smoke_with_curriculum(tmp_path: Path):
+    n = 32
+    payload = {
+        "features": torch.rand(n, N_CHANNELS, N_FRAMES).half(),
+        "log_duration": torch.zeros(n),
+        "unit": torch.rand(n, N_PARAMS),
+        "wave_type": torch.zeros(n, dtype=torch.long),
+        "class_idx": torch.zeros(n, dtype=torch.long),
+        "meta": {"dataset_version": DATASET_VERSION, "n": n},
+    }
+    data = tmp_path / "data"
+    write_shard(data / "shard_0000.pt", payload)
+    (data / "manifest.json").write_text('{"n": %d}' % n)
+    best = train(data, tmp_path / "run", epochs=2, batch_size=16,
+                 curriculum_epochs=2, device="cpu")
+    assert best.is_file()

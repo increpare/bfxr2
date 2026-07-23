@@ -85,6 +85,20 @@ def invert_loss(
     return loss, parts
 
 
+def curriculum_weights(
+    base_weights: torch.Tensor,
+    easy_mask: torch.Tensor,
+    epoch: int,
+    curriculum_epochs: int,
+) -> torch.Tensor:
+    """Easy params keep base weight from epoch 1; hard params ramp in linearly."""
+    if curriculum_epochs <= 0:
+        return base_weights
+    alpha = min(1.0, epoch / max(1, curriculum_epochs))
+    hard_scale = easy_mask + (1.0 - easy_mask) * alpha
+    return base_weights * hard_scale
+
+
 def _default_device() -> str:
     if torch.backends.mps.is_available():
         return "mps"
@@ -108,6 +122,7 @@ def _run_epoch(
     optimizer: torch.optim.Optimizer | None,
     unit_weight: float = 10.0,
     ce_weight: float = 0.5,
+    unit_loss_weights: torch.Tensor | None = None,
 ) -> dict[str, float]:
     train = optimizer is not None
     collect = optimizer is None
@@ -138,6 +153,7 @@ def _run_epoch(
             version=model.version,
             unit_weight=unit_weight,
             ce_weight=ce_weight,
+            unit_loss_weights=unit_loss_weights,
         )
 
         if train:
@@ -185,12 +201,19 @@ def train(
     width: int = 128,
     dilated: bool = False,
     phase1_epochs: int = 0,
+    curriculum_epochs: int = 0,
 ) -> Path:
     device_s = device or _default_device()
     device_t = torch.device(device_s)
     space = ParamSpace()
     _, cls_to_id = wave_type_index_map(space)
     wave_types_order = [cls_to_id[i] for i in range(len(cls_to_id))]
+
+    from .constants import IDENTIFIABILITY_WEIGHT, EASY_PARAM_COUNT
+    base_w = torch.tensor(IDENTIFIABILITY_WEIGHT, dtype=torch.float32, device=device_t)
+    easy_idx = torch.topk(base_w, k=EASY_PARAM_COUNT).indices
+    easy_mask = torch.zeros_like(base_w)
+    easy_mask[easy_idx] = 1.0
 
     # Historical dirs (e.g. invert/data/v1) may carry an older dataset_version.
     manifest_path = Path(data) / "manifest.json"
@@ -242,6 +265,7 @@ def train(
             in_phase1 = phase1_epochs > 0 and epoch <= phase1_epochs
             ew_unit = 0.0 if in_phase1 else unit_weight
             ew_ce = 1.0 if in_phase1 else (0.0 if phase1_epochs > 0 else ce_weight)
+            epoch_w = curriculum_weights(base_w, easy_mask, epoch, curriculum_epochs)
 
             train_metrics = _run_epoch(
                 model,
@@ -251,6 +275,7 @@ def train(
                 optimizer=opt,
                 unit_weight=ew_unit,
                 ce_weight=ew_ce,
+                unit_loss_weights=epoch_w,
             )
             if val_loader is not None:
                 val_metrics = _run_epoch(
@@ -261,6 +286,7 @@ def train(
                     optimizer=None,
                     unit_weight=ew_unit,
                     ce_weight=ew_ce,
+                    unit_loss_weights=None,
                 )
             else:
                 val_metrics = train_metrics
@@ -331,6 +357,12 @@ def main(argv: list[str] | None = None) -> None:
         "wavetype and train knobs for the remaining epochs",
     )
     p.add_argument(
+        "--curriculum-epochs",
+        type=int,
+        default=0,
+        help="Ramp hard-param loss weights in over N epochs (0=off)",
+    )
+    p.add_argument(
         "--device",
         type=str,
         choices=("cpu", "mps", "cuda"),
@@ -351,6 +383,7 @@ def main(argv: list[str] | None = None) -> None:
         width=args.width,
         dilated=args.dilated,
         phase1_epochs=args.phase1_epochs,
+        curriculum_epochs=args.curriculum_epochs,
     )
     print(f"wrote {best}")
 
