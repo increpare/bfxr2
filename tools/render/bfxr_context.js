@@ -83,7 +83,22 @@ function __paramInfo() {
     };
 }
 
-({ render: __render, paramInfo: __paramInfo });
+function __samplePreset(name, seed) {
+    if (typeof __synth[name] !== 'function') return null;
+    __setSeed(seed);
+    // pickup_coin/powerup hit a known set_param typo that console.errors;
+    // mute it during harvest (behavior is identical either way)
+    var err = console.error;
+    console.error = function () {};
+    try {
+        __synth[name]();   // generators reset_params() first, then randomize
+    } finally {
+        console.error = err;
+    }
+    return JSON.stringify(__synth.params);
+}
+
+({ render: __render, paramInfo: __paramInfo, samplePreset: __samplePreset });
 `;
 
 function createBfxrContext() {
@@ -97,6 +112,7 @@ function createBfxrContext() {
         // -> Float32Array (vm realm, contents fine) or null on failed render
         render: (params, seed) => api.render(params, seed >>> 0),
         paramInfo: () => api.paramInfo(),
+        samplePreset: (name, seed) => api.samplePreset(name, seed >>> 0),
     };
 }
 
