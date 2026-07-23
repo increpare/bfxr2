@@ -178,7 +178,13 @@ def train(
     _, cls_to_id = wave_type_index_map(space)
     wave_types_order = [cls_to_id[i] for i in range(len(cls_to_id))]
 
-    ds = InvertShardDataset(data)
+    # Historical dirs (e.g. invert/data/v1) may carry an older dataset_version.
+    manifest_path = Path(data) / "manifest.json"
+    ds_version = None
+    if manifest_path.is_file():
+        import json
+        ds_version = json.loads(manifest_path.read_text()).get("dataset_version")
+    ds = InvertShardDataset(data, dataset_version=ds_version)
     train_idx, val_idx = _split_indices(len(ds), val_ratio=val_ratio)
     train_ds = Subset(ds, train_idx)
     val_ds = Subset(ds, val_idx) if val_idx else None
