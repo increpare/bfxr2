@@ -4,7 +4,7 @@
 .PHONY: rebuild_inverse_model train_inverse_model \
 	run_inverse_model one_shot_inverse_model \
 	render_bfxr_targets eval_inverse_model eval_inverse_model_bfxr \
-	eval_inverse_model_all native help observability
+	eval_inverse_model_all native help observability train_surrogate
 
 N            ?= 300000
 SEED         ?= 0
@@ -23,6 +23,7 @@ BFXR_WAV_DIR ?= $(RUN)/bfxr_rendered
 EVAL_BFXR_OUT ?= $(RUN)/eval_bfxr
 RENDER       ?= bfxr_native/build/bfxr_render
 RENDER_SEED  ?= 1234
+SURROGATE    ?= invert/runs/surrogate
 
 help:
 	@echo "Inverse model:"
@@ -87,3 +88,6 @@ eval_inverse_model_all: eval_inverse_model_bfxr eval_inverse_model
 # invert/constants.py IDENTIFIABILITY_WEIGHT if the feature pack changes.
 observability:
 	uv run python -m invert.observability --n-probes 300 --seed 0
+
+train_surrogate:
+	uv run python -m invert.surrogate --data $(DATA) --out $(SURROGATE) --epochs $(EPOCHS)
