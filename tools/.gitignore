@@ -8,3 +8,5 @@ targets/*
 bfxr_native/build/
 metric_lib/
 metric_compare/
+invert/data/
+invert/runs/

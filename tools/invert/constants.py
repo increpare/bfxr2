@@ -1,0 +1,13 @@
+from __future__ import annotations
+
+N_FRAMES = 128
+N_CONTOURS = 6
+N_MELS = 64
+N_CHANNELS = N_CONTOURS + N_MELS
+N_PARAMS = 30
+N_WAVETYPES = 12
+DATASET_VERSION = "v1"
+SILENCE_PEAK = 1e-3
+TRAIN_CAP_SECONDS = 1.5
+FEATURES_MEL_SCALE_IDX = 2
+SQUARE_ONLY = ("squareDuty", "dutySweep")
