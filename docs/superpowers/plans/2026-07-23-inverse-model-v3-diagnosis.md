@@ -14,7 +14,7 @@ We've hit an **information ceiling**, not a modeling wall — but the ceiling ha
 1. **Self-inflicted representation ceiling** — invert reuses matcher features (`stretch_to` + coarse contour hop). For typical bfxr/preset SFX the contour time series barely exists before stretch invents one (median ~9 native frames → 128, ~14×). Envelope knobs cannot be recovered from that no matter how wide the net is.
 2. **Task ill-posedness** — many params are weakly audible or inactive in most renders; uniform MSE dilutes the loss toward predicting their means.
 
-Stop scaling the network. Instead: (1) **invert-specific time features** (finer hop, pad/crop, no stretch-up); (2) **identifiability-weighted loss + honest re-gate**; (3) treat the model as a search *seeder*; (4) longer-term, render-in-the-loop via a differentiable surrogate if one-shot must improve. Deprioritize Wave-3 multi-hypothesis heads and any further width experiments.
+Stop scaling the network. Instead: (1) **invert-specific time features** (finer hop, pad/crop, no stretch-up); (1b) **sharper / multi-scale spectral detail** once time is honest; (2) **identifiability-weighted loss + honest re-gate**; (3) treat the model as a search *seeder*; (4) longer-term, render-in-the-loop via a differentiable surrogate if one-shot must improve. Deprioritize Wave-3 multi-hypothesis heads and any further width experiments.
 
 ---
 
@@ -82,6 +82,27 @@ The design already noted contours alone cannot see duty / flanger / resonance, s
 
 `active` is nearly constant on these loud short renders (near-useless channel).
 
+### Spectral detail: what we feed vs what a human “sees”
+
+Invert does **not** get a raw spectrogram. Input today:
+
+- 6 contours + **one** log-mel scale (64 bands, `n_fft=512`, hop=128 — `FEATURES_MEL_SCALE_IDX=2`)
+- Mel is **Gaussian-blurred along frequency** (`MEL_BLUR_SIGMA=2` → ~1 bin σ) — matcher heritage so near-miss tones aren’t distance needles
+- Time-stretched to 128 frames
+
+The matcher scores **four** mel scales; invert packs only one. No linear STFT, no multi-scale mel stack, no Fourier-along-time (modulation spectrum) / cepstral map.
+
+That matches matcher philosophy (contours for structure; blurred mel as a soft tiebreaker) but under-serves knobs that live in **fine frequency texture**. Humans often reject a candidate from a glance at a sharp spectrogram; our net never sees that picture.
+
+| Idea | Likely helps | Caveat |
+| --- | --- | --- |
+| Unblurred / sharper mel or linear STFT | Flanger, harmonics, duty fine structure | Larger input; pitch-shift brittle |
+| Multi-scale mel (matcher’s 4 scales) | Short vs long spectral structure | Still useless for envelope if stretch-up remains |
+| FFT along time of mel (modulation spectrum) | Vibrato, repeats, jump/repeat cadence | Needs a *real* time axis first |
+| Quefrency / harmonic regularity maps | Pitch / harmonic stack | Overlaps f0 contour; extra complexity |
+
+**Order:** fix time framing (finer hop, pad/crop) first; then less-blurred or multi-scale mel as the spectral-detail experiment. Modulation FFT is a follow-on once time is honest — not a substitute for it.
+
 ### Why capacity / two-phase could not move the floor
 
 More width cannot invent temporal samples that stretch interpolated away. Two-phase lands on the same regression floor for the same reason.
@@ -146,6 +167,12 @@ Highest leverage against the representation ceiling; requires `DATASET_VERSION` 
 - Keep matcher `stretch_to` untouched — invert pack diverges on purpose.
 - **Success check before more architecture:** sustain/decay and pitch-trajectory R² rise materially on a clean (`augment_p=0`) or v3-mixture retrain; in-domain one-shot median drops.
 
+### 1b. Spectral detail (after or with time fix)
+
+- Reduce / remove mel frequency blur for invert, and/or pack multi-scale mel (or a sharper STFT) so flanger/resonance/harmonics are visible.
+- Optional later: modulation spectrum (FFT along time) once pad/crop gives a real timeline.
+- Do not expect sharper spectra alone to fix sustain/decay while stretch-up remains.
+
 ### 2. Identifiability-weighted loss + honest re-gate
 
 Cheap; complementary to (1).
@@ -175,4 +202,4 @@ Train a small differentiable surrogate (params → log-mel), then spectrogram lo
 - `tools/invert/runs/v3/train_log.jsonl` — 15-epoch curve; train unit_mse 0.0480→0.0427, val 0.0460→0.0442, top-3 ~0.84.
 - `tools/invert/runs/v3/eval_bfxr/results.md`, `eval_targets/results.md` — seeded 5/9 in-domain, 8/32 real.
 - `tools/invert/runs/v2_flatten/gate.md` — Wave-1 gate + input-sanity canary (frequency_start isolated corr 0.73; label pairing corr 0.999).
-- Feature-pack probes (2026-07-23): preset native-frame / stretch stats; clean f0 and duration correlations; square/saw and duty mel sensitivity; flanger mel corr ≈ 0; oracle-wavetype one-shot attribution.
+- Feature-pack probes (2026-07-23): preset native-frame / stretch stats; clean f0 and duration correlations; square/saw and duty mel sensitivity; flanger mel corr ≈ 0; oracle-wavetype one-shot attribution; invert mel = single blurred scale (not raw STFT).
