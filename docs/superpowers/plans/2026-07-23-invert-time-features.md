@@ -28,8 +28,8 @@
 - Placeholder CHANNEL_MEAN/STD length still N_CHANNELS; Task 2 re-estimates.
 
 - [x] Tests: short wave → many pad frames + increasing t_abs on real region; long wave → no stretch (native-ish timing); shape (70, 128); determinism.
-- [ ] Implement; `uv run pytest tests/test_invert_features_pack.py -q`
-- [ ] Commit: `Invert v4 pack: pad/crop, hop=128, t_abs, unblurred mel`
+- [x] Implement; `uv run pytest tests/test_invert_features_pack.py -q`
+- [x] Commit: `Invert v4 pack: pad/crop, hop=128, t_abs, unblurred mel`
 
 ### Task 2: Re-estimate channel stats + smoke dataset
 
@@ -37,15 +37,15 @@
 - Modify: `tools/invert/constants.py` (CHANNEL_MEAN/STD)
 - Optional script inline in commit message / one-shot Python
 
-- [ ] Generate ~256 clean examples (or smoke shards), compute per-channel mean/std over non-pad-dominated frames (or all frames — document choice).
-- [ ] Write stats into constants.
-- [ ] `uv run python -m invert.dataset --out /tmp/inv_v4_smoke --n 64 --shard-size 32 --seed 1`
-- [ ] Commit: `v4: refresh CHANNEL_MEAN/STD for new pack`
+- [x] Generate ~256 clean examples (or smoke shards), compute per-channel mean/std over non-pad-dominated frames (or all frames — document choice).
+- [x] Write stats into constants.
+- [x] `uv run python -m invert.dataset --out /tmp/inv_v4_smoke --n 64 --shard-size 32 --seed 1`
+- [x] Commit: `v4: refresh CHANNEL_MEAN/STD for new pack`
 
 ### Task 3: Identifiability canary (no full train yet)
 
-- [ ] On clean isolated envelope/pitch renders through **v4** pack: corr(mean f0, frequency_start), corr(log_duration, sus+dec), and corr(voiced_frac or env width, sustain) — expect material lift vs stretch-era probes.
-- [ ] Document numbers in `tools/invert/runs/v4_canary.md` (or stderr + commit note).
+- [x] On clean isolated envelope/pitch renders through **v4** pack: corr(mean f0, frequency_start), corr(log_duration, sus+dec), and corr(voiced_frac or env width, sustain) — expect material lift vs stretch-era probes.
+- [x] Document numbers in `tools/invert/runs/v4_canary.md` (or stderr + commit note).
 
 ### Task 4: Regen v4 data + train + gate
 
