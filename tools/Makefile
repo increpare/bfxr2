@@ -4,7 +4,7 @@
 .PHONY: rebuild_inverse_model train_inverse_model \
 	run_inverse_model one_shot_inverse_model \
 	render_bfxr_targets eval_inverse_model eval_inverse_model_bfxr \
-	eval_inverse_model_all native help
+	eval_inverse_model_all native help observability
 
 N            ?= 300000
 SEED         ?= 0
@@ -82,3 +82,8 @@ eval_inverse_model:
 	@echo "open $(EVAL_OUT)/results.md"
 
 eval_inverse_model_all: eval_inverse_model_bfxr eval_inverse_model
+
+# Re-measure per-param audio sensitivity → paste weights_list into
+# invert/constants.py IDENTIFIABILITY_WEIGHT if the feature pack changes.
+observability:
+	uv run python -m invert.observability --n-probes 300 --seed 0

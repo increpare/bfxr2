@@ -1,7 +1,7 @@
 # tools/tests/test_invert_train_metrics.py
 import torch
 
-from invert.train import per_param_r2, select_unit_pred, wavetype_topk_accuracy
+from invert.train import invert_loss, per_param_r2, select_unit_pred, wavetype_topk_accuracy
 from match.bfxr_io import ParamSpace
 
 
@@ -58,3 +58,33 @@ def test_invert_loss_weighted_sum_and_raw_parts():
     )
     expected = 10.0 * parts["unit_mse"] + 0.5 * parts["ce"]
     assert abs(float(loss) - expected) < 1e-5
+
+
+def _fake_out(space, batch=4):
+    n = len(space.names)
+    return {
+        "unit": torch.rand(batch, n, requires_grad=True),
+        "wavetype_logits": torch.randn(batch, 12, requires_grad=True),
+    }
+
+
+def test_invert_loss_weights_scale_reported_mse_is_unweighted():
+    space = ParamSpace()
+    n = len(space.names)
+    torch.manual_seed(0)
+    out = _fake_out(space)
+    tgt = torch.rand(4, n)
+    wt = torch.zeros(4, dtype=torch.long)   # square, so no square-only masking
+    cls = torch.zeros(4, dtype=torch.long)
+
+    w_uniform = torch.ones(n)
+    w_skew = torch.ones(n)
+    w_skew[0] = 4.0  # up-weight param 0
+
+    loss_u, parts_u = invert_loss(out, tgt, wt, cls, space, unit_loss_weights=w_uniform)
+    loss_s, parts_s = invert_loss(out, tgt, wt, cls, space, unit_loss_weights=w_skew)
+
+    # reported unit_mse is the plain masked MSE — identical regardless of weights
+    assert abs(parts_u["unit_mse"] - parts_s["unit_mse"]) < 1e-6
+    # the training loss does change when weights change
+    assert abs(float(loss_u) - float(loss_s)) > 1e-6

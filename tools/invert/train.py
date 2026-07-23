@@ -56,6 +56,7 @@ def invert_loss(
     version: int = 1,
     unit_weight: float = 10.0,
     ce_weight: float = 0.5,
+    unit_loss_weights: torch.Tensor | None = None,
 ) -> tuple[torch.Tensor, dict[str, float]]:
     unit_pred = select_unit_pred(out, class_idx, version)
 
@@ -64,9 +65,19 @@ def invert_loss(
         j = space.names.index(name)
         mask[:, j] = (wave_types == 0).float()
 
-    unit_mse = ((unit_pred - unit_tgt) ** 2 * mask).sum() / mask.sum().clamp(min=1)
+    sq_err = (unit_pred - unit_tgt) ** 2
+    # Reported unit_mse stays UNWEIGHTED so it is comparable across runs/gates.
+    unit_mse = (sq_err * mask).sum() / mask.sum().clamp(min=1)
+
+    if unit_loss_weights is None:
+        weighted_mse = unit_mse
+    else:
+        w = unit_loss_weights.to(sq_err.device, sq_err.dtype).view(1, -1)
+        wm = mask * w
+        weighted_mse = (sq_err * wm).sum() / wm.sum().clamp(min=1)
+
     ce = F.cross_entropy(out["wavetype_logits"], class_idx.long())
-    loss = unit_weight * unit_mse + ce_weight * ce
+    loss = unit_weight * weighted_mse + ce_weight * ce
     parts = {
         "unit_mse": float(unit_mse.detach()),
         "ce": float(ce.detach()),
