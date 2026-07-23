@@ -156,6 +156,38 @@ Out-of-domain game SFX often live outside bfxr's reachable space — no inverse 
 
 ---
 
+## Two regimes: in-domain identification vs general-purpose matching
+
+The perceptual question ("should we perceptually preprocess the wave?") has opposite answers in the two regimes, and the difference is **domain shift**, not taste.
+
+**In-domain (self-inversion): preserve everything, even inaudible signal.** The input was rendered by bfxr, so every systematic cue is real and trustworthy — a flanger comb notch is faint but perfectly informative about `flangerOffset`. Perceptual preprocessing (mel blur, equal-loudness weighting, A-weighting) is designed to *discard differences humans can't hear*, which is exactly what zeroed flanger's mel correlation. For inference you want the opposite: **information preservation** (Rec 1b — un-blur, sharper / multi-scale spectra). Perceptual weighting here throws away the signal you're trying to read.
+
+**General-purpose (real SFX → bfxr): loosen, but not in the model input.** A real game SFX is *off the bfxr manifold* — it was never produced by the synth. Information-preserving features are only trustworthy on-manifold; off-manifold, incidental fine structure (recording artifacts, foreign effects, resampling ringing) mimics bfxr cues that aren't there, so a model trained to key off inaudible detail will **hallucinate** knobs (a flanger from noise). Perceptual features are more manifold-invariant (the audible envelope of a coin sound is shared bfxr↔SNES; the inaudible comb structure is not), so perceptual = regularization against domain shift.
+
+**But put the loosening in scoring, not in the model input.** Cleanest division of labor:
+
+- **Model proposes, using everything** — keep it information-rich, trained on sharp features, maximally sensitive in-domain. It is only a seeder.
+- **The perceptual metric disposes, judging only what's audible** — the match objective that scores and CMA-ES-refines is *already* perceptual (multi-scale log-mel). That is the correct home for "ignore inaudible mismatch," and it applies automatically to off-manifold targets. The model over-reaches; refine walks it back to the closest audible match.
+
+This gets general-purpose loosening "for free" without a second model and without blinding the inverter.
+
+**If model *seeds* for real SFX are still bad** (the model over-trusts bfxr-specific fine structure), the fix is **domain-robustness augmentation** — perturb training inputs to mimic real-SFX artifacts so the model learns which cues transfer — *not* perceptually degrading the input. Full resolution in-domain; learned skepticism about non-transferable detail.
+
+**Sequencing:** do not build for the general case yet. Self-inversion is the diagnostic instrument (the only regime with known answers and measurable R²). Nail it with information-preserving features first; then let general-purpose failures show where perceptual scoring or robustness augmentation is actually needed. Premature perceptual loosening would degrade the very signal needed to prove the pipeline works.
+
+### Perceptual preprocessing verdict
+
+| technique | in-domain | general-purpose | notes |
+| --- | --- | --- | --- |
+| PCEN / adaptive gain control | worth trying | worth trying | transient/onset emphasis + loudness robustness; best candidate, slot under Rec 1b |
+| pre-emphasis (HF boost) | helps | neutral | exposes harmonic/flanger fine structure — *preserves more*, not perceptual discard |
+| mel blur / equal-loudness / A-weighting | **avoid** | belongs in the *metric*, not the model input | discards predictive signal (killed flanger; A-weighting drops LF pitch energy) |
+| gammatone / ERB filterbank | skip | skip | marginal over mel, which is already a perceptual scale |
+
+Net: keep wave-domain prep as-is (mono → resample → trim → normalize); do not add perceptual *feature* weighting to the inverter; hold PCEN as a small experiment after the time-axis fix.
+
+---
+
 ## Recommendations (priority order)
 
 ### 1. Invert-specific time features — do this first
@@ -181,6 +213,27 @@ Cheap; complementary to (1).
 - Weight / drop dead params in unit loss so gradients focus on readable knobs.
 - Re-gate on the identifiable set (and on match/seeder metrics). Drop blanket `frequency_start ≥ 0.8` until the representation probe says it's in reach.
 
+### 2b. Grouped representation heads + observability analysis
+
+The decomposition instinct ("detect waveform with one model, envelope with another…") is right, but the axis to split on is the **input representation**, not N independent nets. No single tensor serves every parameter:
+
+| group | evidence in | representation it needs |
+| --- | --- | --- |
+| wavetype | harmonic/spectral shape | spectrogram; timing irrelevant (already top-3 0.84) |
+| envelope (attack/sustain/decay/punch) | amplitude-over-time | RMS contour at real time resolution (Rec 1) |
+| pitch (start/slide/accel/vibrato/jumps) | f0-over-time | pitch track at real time resolution (Rec 1) |
+| timbre/filter (cutoffs, resonance, duty, flanger, bitcrush) | fine spectral texture | un-blurred / sharp spectra (Rec 1b) |
+
+**Architecture:** one shared front-end → representation branches → grouped heads. *Not* independent from-scratch models (they re-learn the same audio front-end and stay entangled). This is standard multi-task learning — a shared trunk regularizes while heads specialize, usually beating both the monolith and isolated nets. It **subsumes Wave-3**: per-wavetype heads are one group split.
+
+**Handle entanglement with a cascade, not flat parallel heads.** The *evidence* is entangled, not just the params (a filter sweep fakes a short duration; f0 can't be tracked before you know it's tonal vs noise). So detect the confident, easy factors first (wavetype, gross pitch, duration, attack), then **condition the hard heads on them** — estimate flanger/resonance from the *residual* spectrum after the coarse tone is explained (analysis-by-synthesis; residuals expose faint cues the raw mix buries).
+
+**Observability analysis (the "PCA-like" idea, done right).** Finite-difference the renderer to get the Jacobian of audio-features w.r.t. params, then SVD it: large singular values are the param-space *directions* the audio determines; near-zero ones are unrecoverable regardless of model. This is the principled form of Rec 2's sensitivity probe and should drive loss weighting, gating, and the honest gate. **Diagnose in this observability basis; keep predicting in the native param basis** — a rotated output basis destroys conditional activation (mixes `squareDuty` into everything) and per-knob interpretability/renderability.
+
+**Caveat:** grouping de-conflates the loss and matches representations to targets, but does **not create information**. A flanger head still recovers nothing from blurred mel (needs Rec 1b); a genuinely inaudible-in-context param stays lost. This architecture is what lets Rec 1/1b pay off — not a substitute for them.
+
+**Sequencing:** first confirm the Rec 1 time-axis fix lifts envelope R² in the *current single* model (isolates whether the ceiling is representational, one variable at a time). Only then build the grouped trunk — four heads on today's stretched/blurred features would just share one ceiling.
+
 ### 3. Judge and ship the model as a seeder
 
 Seed-then-refine (CMA-ES from model seed); evaluate on match score. Matches the original design bar.
@@ -191,7 +244,7 @@ Train a small differentiable surrogate (params → log-mel), then spectrogram lo
 
 ### Deprioritize
 
-- **Wave-3 multi-hypothesis / per-wavetype heads.** Residual evidence does not currently show pitch multimodality; keep behind an explicit trigger (e.g. bimodal ±octave error histograms after better features).
+- **Wave-3 per-wavetype heads as a standalone step.** Not dead — folded into Rec 2b as one group split, and gated behind the Rec 1 time-axis probe. Multi-*hypothesis* (K-way) heads stay behind an explicit trigger (bimodal ±octave error histograms after better features); current `frequency_start` residuals are unimodal, so no trigger yet.
 - **Further width/capacity experiments.** Already falsified by `v3_wide`.
 
 ---
