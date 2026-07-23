@@ -86,14 +86,17 @@ function __paramInfo() {
 function __samplePreset(name, seed) {
     if (typeof __synth[name] !== 'function') return null;
     __setSeed(seed);
-    // pickup_coin/powerup hit a known set_param typo that console.errors;
-    // mute it during harvest (behavior is identical either way)
+    // pickup_coin logs weights and hits a set_param typo that console.errors;
+    // mute stdout/stderr noise during harvest (behavior is identical either way)
     var err = console.error;
+    var log = console.log;
     console.error = function () {};
+    console.log = function () {};
     try {
         __synth[name]();   // generators reset_params() first, then randomize
     } finally {
         console.error = err;
+        console.log = log;
     }
     return JSON.stringify(__synth.params);
 }
