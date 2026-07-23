@@ -226,6 +226,7 @@ def train(
     curriculum_epochs: int = 0,
     surrogate_path: Path | None = None,
     spectral_weight: float = 0.0,
+    uniform_weights: bool = False,
 ) -> Path:
     device_s = device or _default_device()
     device_t = torch.device(device_s)
@@ -234,7 +235,12 @@ def train(
     wave_types_order = [cls_to_id[i] for i in range(len(cls_to_id))]
 
     from .constants import IDENTIFIABILITY_WEIGHT, EASY_PARAM_COUNT
-    base_w = torch.tensor(IDENTIFIABILITY_WEIGHT, dtype=torch.float32, device=device_t)
+    # uniform_weights=True gives a true param-only baseline (all knobs weighted 1),
+    # isolating the effect of identifiability weighting + curriculum.
+    if uniform_weights:
+        base_w = torch.ones(len(space.names), dtype=torch.float32, device=device_t)
+    else:
+        base_w = torch.tensor(IDENTIFIABILITY_WEIGHT, dtype=torch.float32, device=device_t)
     easy_idx = torch.topk(base_w, k=EASY_PARAM_COUNT).indices
     easy_mask = torch.zeros_like(base_w)
     easy_mask[easy_idx] = 1.0
@@ -407,6 +413,8 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--surrogate", type=Path, default=None,
                    help="Path to surrogate.pt; enables spectral loss")
     p.add_argument("--spectral-weight", type=float, default=0.0)
+    p.add_argument("--uniform-weights", action="store_true",
+                   help="Disable identifiability weighting (true param-only baseline)")
     args = p.parse_args(argv)
     best = train(
         args.data,
@@ -424,6 +432,7 @@ def main(argv: list[str] | None = None) -> None:
         curriculum_epochs=args.curriculum_epochs,
         surrogate_path=args.surrogate,
         spectral_weight=args.spectral_weight,
+        uniform_weights=args.uniform_weights,
     )
     print(f"wrote {best}")
 
