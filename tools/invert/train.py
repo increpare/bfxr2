@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import sys
 from pathlib import Path
 
 import torch
@@ -18,6 +19,34 @@ from .model import InverseModel
 from .sampler import wave_type_index_map
 
 
+def select_unit_pred(
+    out: dict[str, torch.Tensor], class_idx: torch.Tensor, version: int
+) -> torch.Tensor:
+    if version == 1:
+        return out["unit"]
+    if version == 2:
+        b = torch.arange(class_idx.shape[0], device=class_idx.device)
+        return out["unit_per_class"][b, class_idx]
+    raise ValueError(version)
+
+
+def per_param_r2(
+    pred: torch.Tensor, tgt: torch.Tensor, names: list[str]
+) -> dict[str, float]:
+    """1 - MSE/Var per param. ~0 = predicting the mean; 1 = perfect."""
+    mse = ((pred - tgt) ** 2).mean(dim=0)
+    var = tgt.var(dim=0, unbiased=False).clamp_min(1e-8)
+    r2 = 1.0 - mse / var
+    return {n: float(r2[i]) for i, n in enumerate(names)}
+
+
+def wavetype_topk_accuracy(
+    logits: torch.Tensor, class_idx: torch.Tensor, k: int
+) -> float:
+    topk = logits.topk(k, dim=1).indices
+    return float((topk == class_idx[:, None]).any(dim=1).float().mean())
+
+
 def invert_loss(
     out: dict[str, torch.Tensor],
     unit_tgt: torch.Tensor,
@@ -26,13 +55,7 @@ def invert_loss(
     space: ParamSpace,
     version: int = 1,
 ) -> tuple[torch.Tensor, dict[str, float]]:
-    if version == 1:
-        unit_pred = out["unit"]
-    elif version == 2:
-        b = torch.arange(unit_tgt.shape[0], device=unit_tgt.device)
-        unit_pred = out["unit_per_class"][b, class_idx]
-    else:
-        raise ValueError(version)
+    unit_pred = select_unit_pred(out, class_idx, version)
 
     mask = torch.ones_like(unit_tgt)
     for name in SQUARE_ONLY:
@@ -72,11 +95,13 @@ def _run_epoch(
     optimizer: torch.optim.Optimizer | None,
 ) -> dict[str, float]:
     train = optimizer is not None
+    collect = optimizer is None
     model.train(train)
     total_loss = 0.0
     total_unit = 0.0
     total_ce = 0.0
     n_batches = 0
+    preds, tgts, all_logits, all_cls = [], [], [], []
     for batch in loader:
         # float16 shards → float32; z-score channels before the CNN
         x = normalize_channels(batch["features"].to(device).float())
@@ -100,12 +125,25 @@ def _run_epoch(
         total_ce += parts["ce"]
         n_batches += 1
 
+        if collect:
+            preds.append(select_unit_pred(out, cls, model.version).detach().cpu())
+            tgts.append(unit.detach().cpu())
+            all_logits.append(out["wavetype_logits"].detach().cpu())
+            all_cls.append(cls.detach().cpu())
+
     denom = max(n_batches, 1)
-    return {
+    metrics: dict[str, float | dict[str, float]] = {
         "loss": total_loss / denom,
         "unit_mse": total_unit / denom,
         "ce": total_ce / denom,
     }
+    if collect and preds:
+        pred_cat, tgt_cat = torch.cat(preds), torch.cat(tgts)
+        logit_cat, cls_cat = torch.cat(all_logits), torch.cat(all_cls)
+        metrics["r2"] = per_param_r2(pred_cat, tgt_cat, list(space.names))
+        metrics["wavetype_top1"] = wavetype_topk_accuracy(logit_cat, cls_cat, 1)
+        metrics["wavetype_top3"] = wavetype_topk_accuracy(logit_cat, cls_cat, 3)
+    return metrics
 
 
 def train(
@@ -157,6 +195,15 @@ def train(
             else:
                 val_metrics = train_metrics
                 val_loss = train_metrics["loss"]
+
+            if "r2" in val_metrics:
+                worst = sorted(val_metrics["r2"].items(), key=lambda kv: kv[1])[:3]
+                print(
+                    f"epoch {epoch}: val unit_mse {val_metrics['unit_mse']:.4f} "
+                    f"top3 {val_metrics['wavetype_top3']:.2%} "
+                    f"worst r2: " + ", ".join(f"{n}={v:.2f}" for n, v in worst),
+                    file=sys.stderr,
+                )
 
             row = {
                 "epoch": epoch,
