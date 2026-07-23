@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Sequence
+
 import numpy as np
 import torch
 
@@ -53,17 +55,35 @@ def _ensure_backends():
         _channel_std = torch.tensor(CHANNEL_STD, dtype=torch.float32).view(N_CHANNELS, 1)
 
 
-def normalize_channels(x: torch.Tensor) -> torch.Tensor:
-    """Z-score each input channel. x: (..., C, T) float32."""
+def normalize_channels(
+    x: torch.Tensor,
+    mean: Sequence[float] | None = None,
+    std: Sequence[float] | None = None,
+) -> torch.Tensor:
+    """Z-score each input channel. x: (..., C, T) float32.
+
+    Pass checkpoint-stored mean/std at inference so old models stay aligned
+    if constants.py is re-estimated later. Defaults to CHANNEL_MEAN/STD.
+    """
     _ensure_backends()
-    assert _channel_mean is not None and _channel_std is not None
-    mean = _channel_mean.to(device=x.device, dtype=x.dtype)
-    std = _channel_std.to(device=x.device, dtype=x.dtype)
-    # Broadcast over leading batch dims: mean/std are (C, 1)
-    while mean.ndim < x.ndim:
-        mean = mean.unsqueeze(0)
-        std = std.unsqueeze(0)
-    return (x - mean) / std
+    if mean is None or std is None:
+        assert _channel_mean is not None and _channel_std is not None
+        mean_t = _channel_mean
+        std_t = _channel_std
+    else:
+        if len(mean) != N_CHANNELS or len(std) != N_CHANNELS:
+            raise ValueError(
+                f"channel mean/std must have length {N_CHANNELS}, "
+                f"got {len(mean)}/{len(std)}"
+            )
+        mean_t = torch.as_tensor(mean, dtype=torch.float32).view(N_CHANNELS, 1)
+        std_t = torch.as_tensor(std, dtype=torch.float32).view(N_CHANNELS, 1)
+    mean_t = mean_t.to(device=x.device, dtype=x.dtype)
+    std_t = std_t.to(device=x.device, dtype=x.dtype)
+    while mean_t.ndim < x.ndim:
+        mean_t = mean_t.unsqueeze(0)
+        std_t = std_t.unsqueeze(0)
+    return (x - mean_t) / std_t
 
 
 @torch.no_grad()

@@ -60,7 +60,11 @@ def predict_wave(
 
     feat, log_dur = pack_features(wave)
     device = next(model.parameters()).device
-    x = normalize_channels(torch.from_numpy(feat).unsqueeze(0).to(device).float())
+    x = normalize_channels(
+        torch.from_numpy(feat).unsqueeze(0).to(device).float(),
+        mean=meta["channel_mean"],
+        std=meta["channel_std"],
+    )
     log_duration = torch.tensor([log_dur], dtype=torch.float32, device=device)
 
     out = model(x, log_duration)
