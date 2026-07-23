@@ -127,3 +127,43 @@ def test_train_step_on_float16_shard_payload():
     opt.step()
     assert torch.isfinite(loss)
     assert parts["ce"] > 1.0  # near ln(12)≈2.48 at init, not collapsed
+
+
+def test_flatten_readout_forward_shapes():
+    import torch
+    from invert.constants import N_CHANNELS, N_FRAMES, N_PARAMS, N_WAVETYPES
+    from invert.model import InverseModel
+
+    for version in (1, 2):
+        model = InverseModel(version=version, readout="flatten")
+        x = torch.randn(3, N_CHANNELS, N_FRAMES)
+        out = model(x, torch.zeros(3))
+        assert out["wavetype_logits"].shape == (3, N_WAVETYPES)
+        if version == 1:
+            assert out["unit"].shape == (3, N_PARAMS)
+        else:
+            assert out["unit_per_class"].shape == (3, N_WAVETYPES, N_PARAMS)
+
+
+def test_gap_checkpoint_still_loads(tmp_path):
+    """Pre-readout checkpoints (no 'readout' key) must load as GAP models."""
+    import torch
+    from invert.model import InverseModel
+    from invert.predict import load_checkpoint
+    from match.bfxr_io import ParamSpace
+
+    space = ParamSpace()
+    old = InverseModel(version=1, readout="gap")
+    ckpt = {
+        "model_state": old.state_dict(),
+        "version": 1,
+        "space_names": list(space.names),
+        "wave_types_order": sorted(space.wave_types),
+        "best_val": 0.0,
+        # deliberately no "readout" key
+    }
+    path = tmp_path / "gap_ckpt.pt"
+    torch.save(ckpt, path)
+    model, meta = load_checkpoint(path)
+    assert meta["readout"] == "gap"
+    assert model.readout == "gap"

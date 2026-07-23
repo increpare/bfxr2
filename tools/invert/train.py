@@ -219,6 +219,7 @@ def train(
                     {
                         "model_state": model.state_dict(),
                         "version": version,
+                        "readout": model.readout,
                         "space_names": list(space.names),
                         "wave_types_order": wave_types_order,
                         "best_val": best_val,

@@ -4,15 +4,18 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from .constants import N_CHANNELS, N_PARAMS, N_WAVETYPES
+from .constants import N_CHANNELS, N_FRAMES, N_PARAMS, N_WAVETYPES
 
 
 class InverseModel(nn.Module):
-    def __init__(self, version: int = 1, width: int = 128):
+    def __init__(self, version: int = 1, width: int = 128, readout: str = "flatten"):
         super().__init__()
         if version not in (1, 2):
             raise ValueError(version)
+        if readout not in ("gap", "flatten"):
+            raise ValueError(readout)
         self.version = version
+        self.readout = readout
         self.encoder = nn.Sequential(
             nn.Conv1d(N_CHANNELS, width, 5, padding=2),
             nn.ReLU(inplace=True),
@@ -22,9 +25,17 @@ class InverseModel(nn.Module):
             nn.ReLU(inplace=True),
             nn.Conv1d(width * 2, width * 2, 5, padding=2, stride=2),
             nn.ReLU(inplace=True),
-            nn.AdaptiveAvgPool1d(1),
         )
-        enc_dim = width * 2 + 1  # + log_duration
+        n_out_frames = N_FRAMES // 8  # three stride-2 convs: 128 -> 16
+        if readout == "gap":
+            feat_dim = width * 2
+        else:
+            self.proj = nn.Sequential(
+                nn.Linear(width * 2 * n_out_frames, 512),
+                nn.ReLU(inplace=True),
+            )
+            feat_dim = 512
+        enc_dim = feat_dim + 1  # + log_duration
         self.wavetype_head = nn.Linear(enc_dim, N_WAVETYPES)
         if version == 1:
             self.unit_head = nn.Linear(enc_dim, N_PARAMS)
@@ -34,7 +45,11 @@ class InverseModel(nn.Module):
             )
 
     def encode(self, x: torch.Tensor, log_duration: torch.Tensor) -> torch.Tensor:
-        h = self.encoder(x).squeeze(-1)
+        h = self.encoder(x)
+        if self.readout == "gap":
+            h = h.mean(dim=-1)
+        else:
+            h = self.proj(h.flatten(1))
         return torch.cat([h, log_duration.unsqueeze(-1)], dim=-1)
 
     def forward(self, x: torch.Tensor, log_duration: torch.Tensor) -> dict[str, torch.Tensor]:

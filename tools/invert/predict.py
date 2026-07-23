@@ -23,12 +23,14 @@ from .model import InverseModel
 def load_checkpoint(path: Path | str, device: str = "cpu") -> tuple[InverseModel, dict[str, Any]]:
     ckpt = torch.load(path, map_location=device, weights_only=False)
     version = int(ckpt["version"])
-    model = InverseModel(version=version)
+    readout = str(ckpt.get("readout", "gap"))  # all pre-readout checkpoints were GAP
+    model = InverseModel(version=version, readout=readout)
     model.load_state_dict(ckpt["model_state"])
     model.to(device)
     model.eval()
     meta = {
         "version": version,
+        "readout": readout,
         "wave_types_order": list(ckpt["wave_types_order"]),
         "space_names": list(ckpt["space_names"]),
         "channel_mean": list(ckpt.get("channel_mean", CHANNEL_MEAN)),

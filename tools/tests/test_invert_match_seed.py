@@ -14,6 +14,7 @@ def _write_random_ckpt(path, version: int = 1) -> None:
         {
             "model_state": m.state_dict(),
             "version": version,
+            "readout": m.readout,
             "wave_types_order": sorted(space.wave_types),
             "space_names": space.names,
         },
