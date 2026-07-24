@@ -44,15 +44,18 @@ class Features:
                           for f in self.__dataclass_fields__.values()))
 
 
-def frame_count(n_samples: int) -> int:
-    return max(1, (n_samples - FRAME) // HOP + 1)
+def frame_count(n_samples: int, frame: int = FRAME, hop: int = HOP) -> int:
+    return max(1, (n_samples - frame) // hop + 1)
 
 
 class FeatureExtractor:
-    def __init__(self):
-        self.window = torch.hann_window(FRAME)
+    def __init__(self, frame: int = FRAME, hop: int = HOP):
+        # Defaults preserve matcher behavior. Invert may pass a finer hop.
+        self.frame = int(frame)
+        self.hop = int(hop)
+        self.window = torch.hann_window(self.frame)
         self.pitch_window = torch.hann_window(PITCH_FRAME)
-        self.freqs = torch.fft.rfftfreq(FRAME, 1.0 / SAMPLE_RATE)
+        self.freqs = torch.fft.rfftfreq(self.frame, 1.0 / SAMPLE_RATE)
         # the window's own autocorrelation tapers the signal ACF, biasing
         # peaks ~7% toward shorter lags; divide it out
         wspec = torch.fft.rfft(self.pitch_window, n=ACF_N)
@@ -62,8 +65,8 @@ class FeatureExtractor:
 
     @torch.no_grad()
     def extract(self, batch: torch.Tensor) -> Features:
-        """batch: (B, L) float32, L >= FRAME."""
-        frames = batch.unfold(1, FRAME, HOP)  # (B, T, FRAME)
+        """batch: (B, L) float32, L >= frame."""
+        frames = batch.unfold(1, self.frame, self.hop)  # (B, T, frame)
         n_t = frames.shape[1]
 
         energy = (frames**2).mean(dim=2)  # (B, T)
@@ -98,7 +101,7 @@ class FeatureExtractor:
     ) -> tuple[torch.Tensor, torch.Tensor]:
         """Autocorrelation pitch track on short frames, sliced/padded to the
         spectral frame count n_t."""
-        frames = batch.unfold(1, PITCH_FRAME, HOP)  # (B, T2, PITCH_FRAME)
+        frames = batch.unfold(1, PITCH_FRAME, self.hop)  # (B, T2, PITCH_FRAME)
         spec = torch.fft.rfft(frames * self.pitch_window, n=ACF_N)
         power = spec.real**2 + spec.imag**2
         acf = torch.fft.irfft(power, n=ACF_N)[..., : _LAG_MAX + 2]

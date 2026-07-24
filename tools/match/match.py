@@ -16,7 +16,12 @@ from pathlib import Path
 from .audio import SAMPLE_RATE, prepare_target
 from .bfxr_io import ParamSpace, write_bfxr
 from .objective import MatchObjective
-from .optimizer import RENDER_SEED, OptimizeSettings, StagedOptimizer
+from .optimizer import (
+    RENDER_SEED,
+    OptimizeSettings,
+    StagedOptimizer,
+    repair_silent_params,
+)
 from .renderer import BfxrRenderer, default_jobs
 
 
@@ -52,6 +57,9 @@ def build_parser() -> argparse.ArgumentParser:
                    help="invert checkpoint to replace stage-0 random screen")
     p.add_argument("--one-shot", action="store_true",
                    help="emit raw model top prediction only (requires --seed-model)")
+    p.add_argument("--duration-floor", type=float, default=0.0,
+                   help="forbid candidates shorter than this fraction of the "
+                        "target length (fills the decay tail; 0=off)")
     return p
 
 
@@ -96,12 +104,21 @@ def main(argv: list[str] | None = None) -> int:
             # params_for needs envelope projection; reuse optimizer helper
             opt = StagedOptimizer(
                 space, renderer, objective,
-                OptimizeSettings(budget=1, verbose=False),
+                OptimizeSettings(budget=1, verbose=False,
+                                 duration_floor=args.duration_floor),
                 target=target,
             )
             params = opt.params_for(unit, wt)
+            import numpy as np
             import soundfile as sf
             wave = renderer.render(params, seed=RENDER_SEED)
+            # off-manifold the model can crank a filter shut -> silence;
+            # open it so the one-shot emits an audible clip, not a dead one
+            params, wave = repair_silent_params(params, wave, renderer, space,
+                                                seed=RENDER_SEED)
+            if wave is None or len(wave) == 0:
+                # unrenderable prediction: emit silence rather than crash
+                wave = np.zeros(objective.target_len, dtype=np.float32)
             score = float(objective.score_batch([wave])[0])
             write_bfxr(args.out / "match.bfxr", params,
                        file_name=f"{args.target.stem}_match")
@@ -153,6 +170,7 @@ def main(argv: list[str] | None = None) -> int:
         top_k=args.top_k,
         refine_steps=args.refine_steps,
         seed_units=seed_units,
+        duration_floor=args.duration_floor,
     )
 
     t0 = time.perf_counter()

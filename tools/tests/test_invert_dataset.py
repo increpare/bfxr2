@@ -6,14 +6,18 @@ import numpy as np
 import pytest
 import torch
 
-from invert.constants import DATASET_VERSION, N_CHANNELS, N_FRAMES
+from invert.constants import ACCEPT_PEAK, DATASET_VERSION, MIN_AUDIBLE_SAMPLES, N_CHANNELS, N_FRAMES
 from invert.dataset import (
+    MIX,
     InvertShardDataset,
+    _build_generation_specs,
     _is_acceptable_wave,
     generate_shards,
     read_shard,
     write_shard,
 )
+from invert.sampler import TONAL_WAVE_TYPES
+from match.bfxr_io import ParamSpace
 
 
 def _shard_payload(n: int = 2, *, dataset_version: str = DATASET_VERSION) -> dict:
@@ -68,17 +72,57 @@ def test_generate_clears_stale_shards(tmp_path: Path):
     assert len(ds) == manifest["n"] == 4
 
 
-def test_is_acceptable_wave_rejects_nonfinite():
-    ok = np.ones(100, dtype=np.float32) * 0.2
-    assert _is_acceptable_wave(ok)
+def _tone(n, peak=0.5, hz=440, sr=44100):
+    t = np.arange(n) / sr
+    return (peak * np.sin(2 * np.pi * hz * t)).astype(np.float32)
+
+
+def test_accepts_normal_and_legit_short():
+    assert _is_acceptable_wave(_tone(20000))
+    assert _is_acceptable_wave(_tone(3000))
+
+
+def test_rejects_degenerate_click():
+    click = np.zeros(20000, dtype=np.float32)
+    click[:200] = 0.6
+    assert not _is_acceptable_wave(click)
+
+
+def test_rejects_near_mute():
+    assert not _is_acceptable_wave(_tone(20000, peak=0.01))
+
+
+def test_rejects_none_empty_nonfinite():
     assert not _is_acceptable_wave(None)
-    assert not _is_acceptable_wave(np.zeros(10, dtype=np.float32))
-    nan = ok.copy()
-    nan[3] = np.nan
-    assert not _is_acceptable_wave(nan)
+    assert not _is_acceptable_wave(np.zeros(0, dtype=np.float32))
+    bad = _tone(20000)
+    bad[5] = np.nan
+    assert not _is_acceptable_wave(bad)
+
+
+def test_is_acceptable_wave_rejects_nonfinite():
+    ok = np.ones(20000, dtype=np.float32) * 0.2
+    assert _is_acceptable_wave(ok)
     inf = ok.copy()
     inf[5] = np.inf
     assert not _is_acceptable_wave(inf)
+
+
+def test_mix_sums_to_one_and_keeps_preset():
+    assert abs(sum(MIX.values()) - 1.0) < 1e-9
+    assert MIX["preset"] == 0.20
+    assert MIX["structured"] == 0.25
+
+
+def test_generation_specs_have_structured_with_tonal_wave_types():
+    space = ParamSpace()
+    n = 400
+    rng = np.random.default_rng(0)
+    specs = _build_generation_specs(space, n, seed=0, rng=rng)
+    structured = [s for s in specs if s.get("kind") == "sample" and s.get("mode") == "structured"]
+    assert len(specs) == n
+    assert 0.20 * n <= len(structured) <= 0.30 * n
+    assert all(s["wave_type"] in TONAL_WAVE_TYPES for s in structured)
 
 
 def test_dataset_version_mismatch_raises(tmp_path: Path):

@@ -1,6 +1,12 @@
 import numpy as np
 
-from invert.augment import maybe_augment
+from invert.augment import maybe_augment, _retro_degrade
+from invert.constants import ACCEPT_PEAK
+
+
+def _tone(n=8000, hz=440, sr=44100):
+    t = np.arange(n) / sr
+    return (0.5 * np.sin(2 * np.pi * hz * t)).astype(np.float32)
 
 
 def test_augment_can_noop():
@@ -24,3 +30,24 @@ def test_augment_does_not_mutate_input():
     x_copy = x.copy()
     _ = maybe_augment(x, rng=rng, p=1.0)
     assert np.allclose(x, x_copy)
+
+
+def test_retro_degrade_stays_finite_and_same_length():
+    x = _tone()
+    y = _retro_degrade(x, np.random.default_rng(0))
+    assert y.shape == x.shape and y.dtype == np.float32
+    assert np.isfinite(y).all()
+
+
+def test_retro_degrade_is_seed_deterministic():
+    x = _tone()
+    a = _retro_degrade(x, np.random.default_rng(3))
+    b = _retro_degrade(x, np.random.default_rng(3))
+    assert np.array_equal(a, b)
+
+
+def test_augment_never_silences_an_audible_input():
+    x = _tone()
+    for s in range(30):
+        y = maybe_augment(x, rng=np.random.default_rng(s), p=1.0)
+        assert float(np.max(np.abs(y))) >= ACCEPT_PEAK

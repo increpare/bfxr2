@@ -13,6 +13,7 @@ def test_predict_topk_from_random_checkpoint(tmp_path):
     ckpt = {
         "model_state": m.state_dict(),
         "version": 1,
+        "readout": m.readout,
         "wave_types_order": sorted(space.wave_types),
         "space_names": space.names,
         "channel_mean": list(CHANNEL_MEAN),
@@ -48,6 +49,7 @@ def test_predict_v2_per_class_units(tmp_path):
     ckpt = {
         "model_state": m.state_dict(),
         "version": 2,
+        "readout": m.readout,
         "wave_types_order": sorted(space.wave_types),
         "space_names": space.names,
     }

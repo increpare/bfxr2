@@ -19,6 +19,9 @@ from .objective import MatchObjective
 from .renderer import BfxrRenderer
 
 RENDER_SEED = 1234
+# peak below this is effectively silence: normal bfxr renders peak well above
+# 0.1, so a ~0.006-peak clip (the near-closed-low-pass artifact) is inaudible
+SILENCE_PEAK = 0.02
 ENVELOPE_PARAMS = ("attackTime", "sustainTime", "decayTime")
 # envelope stage length in samples is param^2 * 100000 (Bfxr_DSP.js reset())
 ENVELOPE_SAMPLES_PER_UNIT = 100000.0
@@ -33,6 +36,49 @@ def freq_param_from_hz(hz: float) -> float | None:
     if fs_sq <= 0:
         return None
     return float(np.sqrt(fs_sq))
+
+
+def _peak(wave: np.ndarray | None) -> float:
+    if wave is None or len(wave) == 0:
+        return 0.0
+    return float(np.max(np.abs(wave)))
+
+
+def repair_silent_params(
+    params: dict,
+    wave: np.ndarray | None,
+    renderer: BfxrRenderer,
+    space: ParamSpace,
+    *,
+    seed: int = RENDER_SEED,
+) -> tuple[dict, np.ndarray | None]:
+    """Off-manifold, the inverse model sometimes sets a filter to block the
+    whole band and renders dead (or near-dead) silence -- verified culprits:
+    ``lpFilterCutoff`` ~0.01 (low-pass shut) and ``hpFilterCutoff`` ~0.9
+    (high-pass shut). The staged search rejects such candidates via scoring,
+    but the one-shot path emits the raw prediction unguarded, so a useless
+    silent clip reaches the user. When the render is silent, neutralize the
+    filters stepwise (open the low-pass, then also drop the high-pass) and
+    return the first audible render; if nothing helps -- e.g. a genuinely
+    degenerate oscillator render -- return the original untouched."""
+    if _peak(wave) >= SILENCE_PEAK:
+        return params, wave
+    lp_max = float(space.maxs[space.names.index("lpFilterCutoff")])
+    lp_now = params.get("lpFilterCutoff", 0.0)
+    attempts: list[dict] = [
+        {"lpFilterCutoff": lp} for lp in (0.3, 0.6, lp_max) if lp > lp_now
+    ]
+    # last resort: fully neutral filtering (low-pass open, high-pass off)
+    attempts.append({"lpFilterCutoff": lp_max, "hpFilterCutoff": 0.0})
+    for override in attempts:
+        trial = dict(params)
+        trial.update(override)
+        if trial == params:
+            continue
+        w = renderer.render(trial, seed=seed)
+        if _peak(w) >= SILENCE_PEAK:
+            return trial, w
+    return params, wave
 
 
 @dataclass(order=True)
@@ -61,6 +107,12 @@ class OptimizeSettings:
     seed_units: list[tuple[int, np.ndarray]] | None = None  # (wave_type, unit)
     seed_jitter: float = 0.05
     seed_jitter_copies: int = 8
+    # >0 forbids the search from collapsing below this fraction of the target's
+    # length (fills the decay tail); 0 = off (original behavior).
+    duration_floor: float = 0.0
+    # seed the search with pitch-jump (arpeggio) candidates when the target is
+    # a discrete flat-note sequence
+    arp_seeds: bool = True
 
 
 class StagedOptimizer:
@@ -87,7 +139,14 @@ class StagedOptimizer:
         self.freq_idx = space.names.index("frequency_start")
         self.slide_idx = space.names.index("frequency_slide")
         self.pitch_trend = 0
+        self.note_seq: list[tuple[float, float]] = []
         self.freq_seeds = self._estimate_freq_seeds(target) if target is not None else []
+        # coherent pitch-jump (arpeggio) candidates when the target is a
+        # discrete flat-note sequence; empty otherwise (purely additive)
+        self.arp_units = (
+            self._estimate_arp_seeds()
+            if target is not None and self.s.arp_seeds else []
+        )
 
     @staticmethod
     def _dominant_hz(segment: np.ndarray) -> float | None:
@@ -129,20 +188,48 @@ class StagedOptimizer:
                     seeds.append(fs)
         return sorted(set(round(s, 4) for s in seeds))
 
+    def _estimate_arp_seeds(self) -> list[np.ndarray]:
+        """Detect a discrete flat-note sequence in the target (reusing the
+        objective's pitch track) and build pitch-jump seed candidates. Returns
+        [] for glides / single notes / noise, so this never fires spuriously."""
+        from .notes import build_arp_seed_units, detect_note_sequence
+
+        feats = self.objective.target_features
+        f0 = feats.f0_log2.reshape(-1).detach().cpu().numpy()
+        voiced = feats.voiced.reshape(-1).detach().cpu().numpy()
+        self.note_seq = detect_note_sequence(f0, voiced)
+        return build_arp_seed_units(
+            self.space, self.note_seq, self.upper, self.objective.target_len
+        )
+
     def _cap_envelope(self) -> None:
         """Cap envelope params so candidates can't be much longer than the
-        target — long renders are pure wasted CPU."""
+        target — long renders are pure wasted CPU. Optionally also floor the
+        envelope length (settings.duration_floor) so the search can't collapse
+        to a tiny fraction of the target: a same-length rough match reads as
+        'related' where a blip reads as unrelated, even at a small cost to the
+        spectral terms."""
         target_samples = self.objective.target_len
         self.cap_samples = max(1.6 * target_samples, 0.3 * SAMPLE_RATE)
+        # only floor when meaningfully long, so genuinely short targets are free
+        floor_frac = max(self.s.duration_floor, 0.0)
+        self.floor_samples = (
+            floor_frac * target_samples
+            if floor_frac > 0.0 and target_samples > 0.1 * SAMPLE_RATE
+            else 0.0
+        )
         cap_value = np.sqrt(self.cap_samples / ENVELOPE_SAMPLES_PER_UNIT)
         self.envelope_idx = [self.space.names.index(n) for n in ENVELOPE_PARAMS]
+        self.decay_idx = self.space.names.index("decayTime")
         for i in self.envelope_idx:
             span = self.space.maxs[i] - self.space.mins[i]
             self.upper[i] = np.clip((cap_value - self.space.mins[i]) / span, 0.05, 1.0)
 
     def _project_envelope(self, params: dict) -> None:
-        """Scale attack/sustain/decay down so the summed envelope length
-        stays under the cap (the box bound alone still allows 3x)."""
+        """Scale attack/sustain/decay down so the summed envelope length stays
+        under the cap (the box bound alone still allows 3x); if a duration
+        floor is set, extend the decay tail up so the sound fills at least
+        floor_samples."""
         total = sum(
             params[n] ** 2 * ENVELOPE_SAMPLES_PER_UNIT for n in ENVELOPE_PARAMS
         )
@@ -150,6 +237,16 @@ class StagedOptimizer:
             scale = float(np.sqrt(self.cap_samples / total))
             for n in ENVELOPE_PARAMS:
                 params[n] *= scale
+        elif self.floor_samples > 0.0 and total < self.floor_samples:
+            # fill the missing length via the decay tail (preserves attack /
+            # sustain shape); clamp to the param's own max.
+            decay_samples = params["decayTime"] ** 2 * ENVELOPE_SAMPLES_PER_UNIT
+            others = total - decay_samples
+            need = max(self.floor_samples - others, 0.0)
+            decay_max = float(self.space.maxs[self.decay_idx])
+            params["decayTime"] = min(
+                float(np.sqrt(need / ENVELOPE_SAMPLES_PER_UNIT)), decay_max
+            )
 
     # ---------- evaluation ----------
 
@@ -266,7 +363,36 @@ class StagedOptimizer:
             es.tell(xs, scores.tolist())
             iters += 1
 
+    def _run_arp_stage(self, wave_types: list[int]) -> None:
+        """Refine the best pitch-jump (arpeggio) candidate on *additional*
+        budget (see run()), so it never competes with the model/search pipeline
+        for its budget. Arp seeds score well early but that doesn't predict
+        refinement, so letting them win shared stage-2 slots starves better
+        model basins (verified on noisy targets); and stealing budget up front
+        hurts hard targets that need it all. Extra budget keeps arp strictly
+        additive — the main run is untouched, so the result can only improve."""
+        if not self.arp_units or self._out_of_budget():
+            return
+        if self.s.seed_units is not None:
+            cand_wts = {wt for wt, _ in self.s.seed_units} | {0}
+        else:
+            cand_wts = set(wave_types) | {0}
+        best: Candidate | None = None
+        for wt in sorted(cand_wts):
+            if self._out_of_budget():
+                break
+            units = [u.copy() for u in self.arp_units]
+            scores = self._evaluate(units, [wt] * len(units))
+            i = int(np.argmin(scores))
+            c = Candidate(float(scores[i]), wt, units[i])
+            if best is None or c.score < best.score:
+                best = c
+        if best is not None and not self._out_of_budget():
+            self._log(f"arp stage waveType={best.wave_type} start {best.score:.4f}")
+            self._run_cma(best, max_iters=None)
+
     def run(self) -> list[Candidate]:
+        full_budget = self.s.budget
         wave_types = self.s.wave_types or self.space.wave_types
         best_by_wt = self._stage0(wave_types)
 
@@ -288,6 +414,14 @@ class StagedOptimizer:
             self._log(f"stage2 waveType={winner.wave_type} "
                       f"({self.space.wave_type_names[winner.wave_type]})")
             self._run_cma(winner, max_iters=None)
+
+        # arp refinement on ADDITIONAL budget: an arpeggio-looking target just
+        # searches a bit longer, rather than stealing budget the main pipeline
+        # may need. Keeps the main result intact, so arp can only improve it.
+        if self.arp_units:
+            self.s.budget = full_budget + int(0.5 * full_budget)
+            self._run_arp_stage(wave_types)
+            self.s.budget = full_budget
 
         by_wt = {}
         for c in self.archive:

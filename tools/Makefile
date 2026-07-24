@@ -4,13 +4,14 @@
 .PHONY: rebuild_inverse_model train_inverse_model \
 	run_inverse_model one_shot_inverse_model \
 	render_bfxr_targets eval_inverse_model eval_inverse_model_bfxr \
-	eval_inverse_model_all native help
+	eval_inverse_model_all native help observability train_surrogate
 
 N            ?= 300000
 SEED         ?= 0
 EPOCHS       ?= 30
+VERSION      ?= 1
 DATA         ?= invert/data/v1
-RUN          ?= invert/runs/v1
+RUN          ?= invert/runs/v2_flatten
 CKPT         ?= $(RUN)/best.pt
 TARGET       ?= targets/mega_man_ii_hurt.wav
 OUT          ?= out
@@ -22,6 +23,7 @@ BFXR_WAV_DIR ?= $(RUN)/bfxr_rendered
 EVAL_BFXR_OUT ?= $(RUN)/eval_bfxr
 RENDER       ?= bfxr_native/build/bfxr_render
 RENDER_SEED  ?= 1234
+SURROGATE    ?= invert/runs/surrogate
 
 help:
 	@echo "Inverse model:"
@@ -41,10 +43,10 @@ native:
 
 rebuild_inverse_model: native
 	uv run python -m invert.dataset --out $(DATA) --n $(N) --seed $(SEED)
-	uv run python -m invert.train --data $(DATA) --out $(RUN) --version 1 --epochs $(EPOCHS)
+	uv run python -m invert.train --data $(DATA) --out $(RUN) --version $(VERSION) --epochs $(EPOCHS)
 
 train_inverse_model:
-	uv run python -m invert.train --data $(DATA) --out $(RUN) --version 1 --epochs $(EPOCHS)
+	uv run python -m invert.train --data $(DATA) --out $(RUN) --version $(VERSION) --epochs $(EPOCHS)
 
 run_inverse_model:
 	uv sync --extra report --group dev
@@ -81,3 +83,11 @@ eval_inverse_model:
 	@echo "open $(EVAL_OUT)/results.md"
 
 eval_inverse_model_all: eval_inverse_model_bfxr eval_inverse_model
+
+# Re-measure per-param audio sensitivity → paste weights_list into
+# invert/constants.py IDENTIFIABILITY_WEIGHT if the feature pack changes.
+observability:
+	uv run python -m invert.observability --n-probes 300 --seed 0
+
+train_surrogate:
+	uv run python -m invert.surrogate --data $(DATA) --out $(SURROGATE) --epochs $(EPOCHS)
