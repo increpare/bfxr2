@@ -85,20 +85,48 @@ def test_boundary_frame_does_not_discard_a_flat_note():
 
 
 def test_four_frame_segment_trims_and_detects():
-    """Segments of exactly 4 frames trim to a 2-frame interior for flatness
-    judgment, and a flat 4-frame segment should still be detected as a note."""
-    f0, v = _track([400, 600], per=4)
+    """A 4-frame segment [x, a, a, y] shaped with boundary frames x and y
+    (each 1.4 st from center pitch a) has raw spread ~2.8 st, exceeding FLAT_ST.
+    Trimming to interior [a, a] recovers flatness. The note IS detected because
+    trimming happens. Changing the >= 4 guard to > 4 would fail this test."""
+    a = np.log2(400.0)
+    x = np.log2(400.0 * 2 ** (-1.4 / 12))  # -1.4 st: within JUMP_ST
+    y = np.log2(400.0 * 2 ** (1.4 / 12))   # +1.4 st: within JUMP_ST
+
+    note1_with_boundary = np.array([x, a, a, y])
+    note2_clean = np.full(5, np.log2(600.0))
+    f0 = np.concatenate([note1_with_boundary, note2_clean])
+    v = np.ones(f0.size, dtype=bool)
+
     notes = detect_note_sequence(f0, v)
     assert len(notes) == 2
-    assert abs(notes[0][0] - 400) < 20
-    assert abs(notes[1][0] - 600) < 20
+    assert abs(notes[0][0] - 400.0) < 20
+    assert abs(notes[1][0] - 600.0) < 20
 
 
 def test_three_frame_segment_does_not_trim():
-    """Segments of exactly 3 frames do not trim (no >= 4 guard), and a flat
-    3-frame segment should be detected as a note."""
-    f0, v = _track([400, 600], per=3)
+    """A 3-frame segment [a, a, y] with boundary frame y (+1.4 st) has raw
+    spread ~1.4 st, exceeding FLAT_ST. No trim occurs (segment < 4 frames), so
+    segment is discarded. Wrongly lowering guard to >= 3 would trim to 1-frame
+    interior with vacuous spread, failing this test. Two clean notes ensure
+    a sequence is returned even if the contaminated note is absent."""
+    a = np.log2(400.0)
+    y = np.log2(400.0 * 2 ** (1.4 / 12))
+
+    note1_contaminated = np.array([a, a, y])
+    gap = np.zeros(1)  # Separate segments
+    note2_clean = np.full(5, np.log2(400.0))
+    note3_clean = np.full(5, np.log2(600.0))
+
+    f0 = np.concatenate([note1_contaminated, gap, note2_clean, note3_clean])
+    v = np.concatenate([
+        np.ones(3, dtype=bool),
+        np.zeros(1, dtype=bool),
+        np.ones(5, dtype=bool),
+        np.ones(5, dtype=bool),
+    ])
+
     notes = detect_note_sequence(f0, v)
     assert len(notes) == 2
-    assert abs(notes[0][0] - 400) < 20
-    assert abs(notes[1][0] - 600) < 20
+    assert abs(notes[0][0] - 400.0) < 20
+    assert abs(notes[1][0] - 600.0) < 20
