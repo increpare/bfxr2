@@ -15,7 +15,7 @@
 - Never commit anything under `invert/data/**` or `invert/runs/**` (gitignored).
 - Final `MIX` (must sum to 1.0): `biased 0.20 / uniform 0.10 / kknob 0.25 / preset 0.20 / structured 0.25`. **Preset stays 0.20.**
 - Default `augment_p` = **0.4** (baked augmentation → keep clean data the majority; the retro chain is strong, so a moderate rate suffices). Effective heavy-degradation rate is lower still (retro stage has its own 0.6 sub-probability).
-- `DATASET_VERSION` = **"v5"**; new shards live in `invert/data/v5`. Dataset size = **750k** examples (~13 GB, gitignored); scale training epochs down ~proportionally (v5 is 2.5× v4) so examples-seen stays near v6's.
+- `DATASET_VERSION` = **"v5"**. Dataset size is chosen by a **staged scan (500k → 750k → 1M)**, growing only while the eval still improves (see Task 6 stop-gate); shard dirs are `invert/data/v5_500k` / `v5_750k` / `v5_1m` (gitignored, ~9–18 GB). Scale training epochs so examples-seen ≈ v6's run at each size.
 - Tonal wave types (arpeggios): `(0, 1, 2, 4, 5, 6, 7, 8, 10, 11)` — exclude White(3) and Bitnoise(9).
 - `[-1,1]`-range params (`pitch_jump_amount`, `pitch_jump_2_amount`, `lpFilterCutoffSweep`) need `unit = (value+1)/2`; all others here are `[0,1]` so `unit = value`.
 - Loss config for BOTH training arms held identical to v6 (param loss + surrogate spectral term + identifiability weighting) — the only change under test is the data.
@@ -662,65 +662,97 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 
 ---
 
-### Task 6: Regenerate dataset, train both arms, evaluate, decide (operational)
+### Task 6: Staged data-scaling, train, evaluate, decide (operational)
 
 **Files:** none committed (outputs are gitignored `invert/data/**`, `invert/runs/**`). This task produces a written results note.
 
-**Not TDD** — this is the compute run. Use the exact commands; record numbers as you go.
+**Not TDD** — this is the compute run. Use the exact commands; record numbers as you go. The dataset size grows **adaptively**: start at 500k, grow to 1M only while the eval is still improving. The staged scan runs on the **from-scratch arm only**; the finetune arm is trained once at the chosen size (avoids doing the ladder twice).
 
-- [ ] **Step 1: Regenerate the v5 dataset**
+**Stop-gate ("still improving?"):** after each size round, stop growing when **both** hold vs the previous round: real-SFX seeded-median improves by **< 0.05**, *and* held-out synthetic val loss improves by **< 1%**. Otherwise grow to the next size (cap 1M).
 
-Run (match the existing generation entrypoint's flags — confirm with `uv run python -m invert.dataset --help`):
+- [ ] **Step 1: Generate the 500k base dataset**
+
+Confirm flags with `uv run python -m invert.dataset --help`, then:
 
 ```bash
-cd tools && uv run python -m invert.dataset --out invert/data/v5 --n 750000 --augment-p 0.4 --seed 0
+cd tools && uv run python -m invert.dataset --out invert/data/v5_500k --n 500000 --augment-p 0.4 --seed 0
 ```
-Expected: shards `shard_*.pt` + `manifest.json` under `invert/data/v5`; manifest `mix` shows the new proportions and `augment_p 0.4`. (`--n 750000` per the dataset-size decision below; features are ~18 KB/example → ~13 GB on disk, gitignored.)
+Expected: shards + `manifest.json`; manifest `mix` shows the new proportions and `augment_p 0.4`. (~18 KB/example → ~9 GB at 500k, gitignored.)
 
-- [ ] **Step 2: Sanity-check the v5 dataset**
+- [ ] **Step 2: Sanity-check the dataset**
 
-Spot-check that structured examples render as audible arpeggios and that culling is active (no near-mute/degenerate pairs). A quick script: load a shard, count wave-type distribution, and render a few structured labels to confirm discrete notes. Expected: ~25% structured, ~20% preset; structured samples audibly step through notes.
+Load a shard: confirm wave-type distribution (~25% structured, ~20% preset), that culling is active (no near-mute/degenerate pairs), and render a few structured labels to confirm they audibly step through discrete notes.
 
-- [ ] **Step 3: Train arm A (from scratch)**
+- [ ] **Step 3: Round 1 — train from scratch on 500k, eval**
 
-Scale `--epochs` **down** ~in proportion to the dataset growth so total examples-seen
-stays near v6's (v5 is 2.5× v4, so ≈ v6_epochs / 2.5) — more unique data, fewer passes,
-less over-repetition. Run (match v6's loss flags — confirm the surrogate path and
-spectral-weight used for v6):
+Match v6's loss flags (confirm the surrogate path + `--spectral-weight` from v6's run config). Scale `--epochs` so examples-seen ≈ v6's run (500k is ~1.7× v4 → ≈ v6_epochs / 1.7):
 
 ```bash
-cd tools && uv run python -m invert.train --data invert/data/v5 --out invert/runs/v7_scratch \
+cd tools && uv run python -m invert.train --data invert/data/v5_500k --out invert/runs/v7_scratch_500k \
   --surrogate invert/runs/surrogate/surrogate.pt --spectral-weight <v6_value> [other v6 flags]
 ```
-Expected: `invert/runs/v7_scratch/best.pt` written; train/val curves recorded.
-
-- [ ] **Step 4: Train arm B (finetune v6)**
+Then eval (val loss is in the run log; real-SFX below):
 
 ```bash
-cd tools && uv run python -m invert.train --data invert/data/v5 --out invert/runs/v7_finetune \
+cd tools && uv run python -m invert.eval_targets --targets targets/ \
+  --ckpt invert/runs/v7_scratch_500k/best.pt --budget 2000 --duration-floor 0.5 \
+  -o invert/runs/v7_scratch_500k/eval_targets
+```
+Record: real-SFX median + val loss.
+
+- [ ] **Step 4: Round 2 — grow to 750k, continue training, eval**
+
+Generate a fresh 750k dataset (distinct seed; generation is cheap, so regenerate rather than splice shards):
+
+```bash
+cd tools && uv run python -m invert.dataset --out invert/data/v5_750k --n 750000 --augment-p 0.4 --seed 1
+```
+Continue training from round 1 (warm start) on the larger set, then eval:
+
+```bash
+cd tools && uv run python -m invert.train --data invert/data/v5_750k --out invert/runs/v7_scratch_750k \
+  --init-weights invert/runs/v7_scratch_500k/best.pt \
+  --surrogate invert/runs/surrogate/surrogate.pt --spectral-weight <v6_value> [other v6 flags]
+cd tools && uv run python -m invert.eval_targets --targets targets/ \
+  --ckpt invert/runs/v7_scratch_750k/best.pt --budget 2000 --duration-floor 0.5 \
+  -o invert/runs/v7_scratch_750k/eval_targets
+```
+Apply the stop-gate vs round 1. If improving, continue to Step 5; else the winning size is 500k — skip to Step 6 with `v7_scratch_500k`.
+
+- [ ] **Step 5: Round 3 — grow to 1M, continue, eval (cap)**
+
+```bash
+cd tools && uv run python -m invert.dataset --out invert/data/v5_1m --n 1000000 --augment-p 0.4 --seed 2
+cd tools && uv run python -m invert.train --data invert/data/v5_1m --out invert/runs/v7_scratch_1m \
+  --init-weights invert/runs/v7_scratch_750k/best.pt \
+  --surrogate invert/runs/surrogate/surrogate.pt --spectral-weight <v6_value> [other v6 flags]
+cd tools && uv run python -m invert.eval_targets --targets targets/ \
+  --ckpt invert/runs/v7_scratch_1m/best.pt --budget 2000 --duration-floor 0.5 \
+  -o invert/runs/v7_scratch_1m/eval_targets
+```
+The winning from-scratch size `N*` = the last round that cleared the stop-gate (cap 1M). Call its checkpoint `v7_scratch` and its dataset dir `invert/data/v5_<N*>`.
+
+Note: warm-start continuation measures *marginal data value* cheaply; it is not a pristine from-scratch-at-each-size ablation (acceptable — the goal is to pick a good size, not a scaling law).
+
+- [ ] **Step 6: Train the finetune arm once at N\***
+
+```bash
+cd tools && uv run python -m invert.train --data invert/data/v5_<N*> --out invert/runs/v7_finetune \
   --init-weights invert/runs/v6_spectral/best.pt \
   --surrogate invert/runs/surrogate/surrogate.pt --spectral-weight <v6_value> [other v6 flags]
+cd tools && uv run python -m invert.eval_targets --targets targets/ \
+  --ckpt invert/runs/v7_finetune/best.pt --budget 2000 --duration-floor 0.5 \
+  -o invert/runs/v7_finetune/eval_targets
 ```
-Expected: `invert/runs/v7_finetune/best.pt` written.
 
-- [ ] **Step 5: Real-SFX eval (primary decision metric)**
+- [ ] **Step 7: Arp one-shot probe + in-domain sanity**
 
-```bash
-cd tools && for ck in v6_spectral v7_scratch v7_finetune; do
-  uv run python -m invert.eval_targets --targets targets/ --ckpt invert/runs/$ck/best.pt \
-    --budget 2000 --duration-floor 0.5 -o invert/runs/$ck/eval_targets_v5
-done
-```
-Compare seeded-search medians across v6 / v7_scratch / v7_finetune. Expected artifact: `results.json` per run.
+- Re-run the discrete-note one-shot check (the controlled arpeggio target + Throw/cursor/leeneBell) for `v7_scratch`, `v7_finetune`, and v6; confirm the **raw one-shot** predicts discrete notes better than v6.
+- On a small held-out synthetic set (fresh seed), measure param R² / spectral score for each model to quantify any in-domain cost.
 
-- [ ] **Step 6: Arp one-shot probe + in-domain sanity**
+- [ ] **Step 8: Decide + write results note**
 
-- Re-run the discrete-note one-shot check (the controlled arpeggio target + Throw/cursor/leeneBell) for each model; confirm the **raw one-shot** predicts discrete notes better than v6.
-- Generate a small held-out synthetic eval set (fresh seed) and measure param R²/spectral score to quantify any in-domain cost.
-
-- [ ] **Step 7: Decide + write results note**
-
-Write `docs/superpowers/plans/2026-07-24-inverse-model-data-retrain-results.md`: real-SFX medians (v6 vs v7_scratch vs v7_finetune), arp one-shot verdict, in-domain cost. **Winner = best real-SFX median without catastrophic in-domain regression.** If neither v7 beats v6, keep v6 and report the negative result (do not ship a regression). Commit the results note (not the runs).
+Write `docs/superpowers/plans/2026-07-24-inverse-model-data-retrain-results.md`: the data-scaling curve (real-SFX median + val loss at 500k/750k/1M), the chosen size `N*`, real-SFX medians (v6 vs v7_scratch vs v7_finetune), the arp one-shot verdict, and in-domain cost. **Winner = best real-SFX median without catastrophic in-domain regression.** If neither v7 beats v6, keep v6 and report the negative result (do not ship a regression). Commit the results note (not the runs).
 
 ---
 

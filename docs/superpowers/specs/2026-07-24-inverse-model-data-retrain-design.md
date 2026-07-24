@@ -117,17 +117,22 @@ are exactly the degenerate case.
 
 ## Section 4 — Training & eval protocol
 
-- **Regenerate dataset** with the above as `DATASET_VERSION = "v5"` (`invert/data/v5`),
-  **~750k examples** (up from v4's 300k). One dataset feeds both arms.
-  - *Why more:* v3's plateau was an ill-posedness *ceiling* (train≈val, capacity-
-    invariant), so more of the *same* distribution wouldn't have helped. But we're
-    now adding retro augmentation (large effective diversity — many corruptions per
-    param set) and structured coverage (a big arp param space), which *do* benefit
-    from denser sampling. Generation is cheap; training is the cost.
-  - *Keep training compute bounded:* scale epochs **down** roughly in proportion so
-    total examples-seen stays similar to v4's run — more unique data at fewer passes
-    reduces memorization/over-repetition. (~750k is a deliberate 2.5×, not 10×;
-    returns diminish past a point.) ~13 GB on disk, gitignored.
+- **Regenerate dataset** as `DATASET_VERSION = "v5"`, with size chosen by an
+  **adaptive staged scan**: 500k → 750k → 1M, growing only while the eval still
+  improves (stop-gate: real-SFX median gain < 0.05 **and** val-loss gain < 1% vs the
+  previous size). Min 500k, cap 1M.
+  - *Why grow at all:* v3's plateau was an ill-posedness *ceiling* (train≈val,
+    capacity-invariant), so more of the *same* distribution wouldn't help. But retro
+    augmentation (large effective diversity — many corruptions per param set) and
+    structured coverage (a big arp param space) *do* benefit from denser sampling.
+  - *Why staged, not just 1M:* generation is cheap but **training** is the cost;
+    staging lets us stop at the smallest size that still helps. The scan runs on the
+    **from-scratch arm only**; the finetune arm is then trained once at the chosen
+    size `N*` (avoids running the ladder twice).
+  - *Mechanics:* warm-start each larger round from the previous checkpoint
+    (`--init-weights`); scale epochs so examples-seen ≈ v6's run. This measures
+    marginal data value cheaply (not a pristine per-size ablation — acceptable, the
+    goal is to pick a good size). ~9–18 GB on disk, gitignored.
 - New `dataset.MIX`: `biased .20 / uniform .10 / kknob .25 / preset .20 /
   structured .25`.
 - **Two training arms**, loss config held identical to v6 (param loss + surrogate
