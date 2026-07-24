@@ -110,6 +110,9 @@ class OptimizeSettings:
     # >0 forbids the search from collapsing below this fraction of the target's
     # length (fills the decay tail); 0 = off (original behavior).
     duration_floor: float = 0.0
+    # seed the search with pitch-jump (arpeggio) candidates when the target is
+    # a discrete flat-note sequence
+    arp_seeds: bool = True
 
 
 class StagedOptimizer:
@@ -136,7 +139,14 @@ class StagedOptimizer:
         self.freq_idx = space.names.index("frequency_start")
         self.slide_idx = space.names.index("frequency_slide")
         self.pitch_trend = 0
+        self.note_seq: list[tuple[float, float]] = []
         self.freq_seeds = self._estimate_freq_seeds(target) if target is not None else []
+        # coherent pitch-jump (arpeggio) candidates when the target is a
+        # discrete flat-note sequence; empty otherwise (purely additive)
+        self.arp_units = (
+            self._estimate_arp_seeds()
+            if target is not None and self.s.arp_seeds else []
+        )
 
     @staticmethod
     def _dominant_hz(segment: np.ndarray) -> float | None:
@@ -177,6 +187,20 @@ class StagedOptimizer:
                 if fs is not None and 0.02 <= fs <= 1.0:
                     seeds.append(fs)
         return sorted(set(round(s, 4) for s in seeds))
+
+    def _estimate_arp_seeds(self) -> list[np.ndarray]:
+        """Detect a discrete flat-note sequence in the target (reusing the
+        objective's pitch track) and build pitch-jump seed candidates. Returns
+        [] for glides / single notes / noise, so this never fires spuriously."""
+        from .notes import build_arp_seed_units, detect_note_sequence
+
+        feats = self.objective.target_features
+        f0 = feats.f0_log2.reshape(-1).detach().cpu().numpy()
+        voiced = feats.voiced.reshape(-1).detach().cpu().numpy()
+        self.note_seq = detect_note_sequence(f0, voiced)
+        return build_arp_seed_units(
+            self.space, self.note_seq, self.upper, self.objective.target_len
+        )
 
     def _cap_envelope(self) -> None:
         """Cap envelope params so candidates can't be much longer than the
@@ -291,6 +315,7 @@ class StagedOptimizer:
                 break
             units = [defaults] + [self._screen_sample()
                                   for _ in range(n_screen - 1)]
+            units += [u.copy() for u in self.arp_units]  # coherent arpeggios
             scores = self._evaluate(units, [wt] * len(units))
             i = int(np.argmin(scores))
             best[wt] = Candidate(float(scores[i]), wt, units[i])
@@ -317,6 +342,19 @@ class StagedOptimizer:
                 best[wt] = cand
             self._log(f"stage0 seed waveType={wt} "
                       f"({self.space.wave_type_names[wt]}): best {scores[i]:.4f}")
+
+        # arpeggio candidates: the model rarely predicts coherent pitch jumps,
+        # so offer them explicitly under the model's wave types (plus square, a
+        # reliable tonal carrier) for the search to refine
+        if self.arp_units and not self._out_of_budget():
+            arp_wts = {wt for wt, _ in self.s.seed_units} | {0}
+            for wt in arp_wts:
+                units = [u.copy() for u in self.arp_units]
+                scores = self._evaluate(units, [wt] * len(units))
+                i = int(np.argmin(scores))
+                cand = Candidate(float(scores[i]), wt, units[i])
+                if wt not in best or cand.score < best[wt].score:
+                    best[wt] = cand
         return best
 
     def _run_cma(self, start: Candidate, max_iters: int | None) -> None:
