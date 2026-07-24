@@ -27,6 +27,7 @@ from .features import (
     feature_distance,
     frame_count,
 )
+from .structure import pitch_structure_penalty, summarize
 
 # (n_fft, hop, n_mels)
 SCALES = [(2048, 512, 128), (1024, 256, 96), (512, 128, 64), (256, 64, 32)]
@@ -104,6 +105,7 @@ class MatchObjective:
             self.target_features = self.extractor.extract(wave).slice(
                 0, frame_count(self.target_len)
             )
+        self.target_structure = summarize(self.target_features)
 
     @staticmethod
     def precompute_candidates(
@@ -170,6 +172,11 @@ class MatchObjective:
                 allow_time_stretch=self.allow_time_stretch,
             )
             terms["mel"] = self.weights.mel * mel_total / len(SCALES) / 3.0
+            terms["structure_pitch"] = self.weights.structure_pitch * (
+                pitch_structure_penalty(
+                    self.target_structure, summarize(cache.features[row])
+                )
+            )
             totals[row] = sum(terms.values())
         return totals
 
@@ -232,6 +239,11 @@ class MatchObjective:
             )
             # typical mel L1 magnitudes are ~1-3; bring to unit-ish scale
             terms["mel"] = self.weights.mel * mel_totals[row] / len(SCALES) / 3.0
+            terms["structure_pitch"] = self.weights.structure_pitch * (
+                pitch_structure_penalty(
+                    self.target_structure, summarize(cand_features)
+                )
+            )
             totals[row] = sum(terms.values())
             components.append(terms)
         return totals, components

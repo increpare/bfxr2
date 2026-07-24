@@ -166,6 +166,8 @@ class FeatureWeights:
     pitch_movement: float = 1.0  # still/glide/jump distribution
     timbre: float = 1.0
     mel: float = 0.35
+    # sound-level pitch structure (structure.py); 0.0 = pre-2026-07-24 objective
+    structure_pitch: float = 1.0
 
 
 # per-frame |Δf0| thresholds (semitones) splitting pitch motion into
