@@ -83,7 +83,15 @@ def detect_note_sequence(
     for start, end in segments:
         if end - start < min_frames:
             continue
-        chunk = f0[start:end]
+        # The tracker emits a transitional frame at each note boundary. When
+        # its step lands just under jump_st it is absorbed into this segment,
+        # and judging flatness on the raw segment then discards an otherwise
+        # flat note (measured: a 25-frame note lost to one 1.47-semitone
+        # frame). Judge flatness and pitch on the interior, where the segment
+        # is long enough to have one. start_frac stays segment-relative so
+        # arp-seed onsets are unchanged.
+        lo, hi = (start + 1, end - 1) if end - start >= 4 else (start, end)
+        chunk = f0[lo:hi]
         if (chunk.max() - chunk.min()) * 12.0 > flat_st:
             continue  # not flat -> part of a glide, not a note
         hz = float(2.0 ** float(np.median(chunk)))

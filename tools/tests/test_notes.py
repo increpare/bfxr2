@@ -64,3 +64,21 @@ def test_two_note_with_unvoiced_gap():
     notes = detect_note_sequence(f0, v)
     assert len(notes) == 2
     assert abs(notes[1][0] / notes[0][0] - 2.0) < 0.1
+
+
+def test_boundary_frame_does_not_discard_a_flat_note():
+    """The pitch tracker emits one transitional frame between notes. When its
+    step lands just under JUMP_ST it gets absorbed into the preceding segment,
+    and judging flatness on the raw segment then blows past FLAT_ST and
+    discards an otherwise-flat note. Measured on a real render: a 25-frame
+    flat note lost to a single 1.47-semitone boundary frame."""
+    a = np.full(10, np.log2(361.0))
+    transitional = np.array([np.log2(361.0 * 2 ** (1.4 / 12))])  # 1.4 st < JUMP_ST
+    b = np.full(10, np.log2(441.0))
+    f0 = np.concatenate([a, transitional, b])
+    v = np.ones(f0.size, dtype=bool)
+
+    notes = detect_note_sequence(f0, v)
+    assert len(notes) == 2
+    assert abs(notes[0][0] - 361.0) < 5.0
+    assert abs(notes[1][0] - 441.0) < 5.0
