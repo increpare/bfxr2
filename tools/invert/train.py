@@ -267,7 +267,8 @@ def train(
         version = int(ckpt.get("version", version))
         width = int(ckpt.get("width", width))
         dilated = bool(ckpt.get("dilated", dilated))
-        readout = str(ckpt.get("readout", "flatten"))
+        # Match predict.load_checkpoint: pre-readout checkpoints were GAP.
+        readout = str(ckpt.get("readout", "gap"))
         model = InverseModel(
             version=version, width=width, readout=readout, dilated=dilated
         ).to(device_t)
