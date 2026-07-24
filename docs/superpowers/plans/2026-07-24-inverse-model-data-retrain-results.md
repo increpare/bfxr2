@@ -43,5 +43,11 @@ Holdout spectral: 0.356 → 0.315 over 5 epochs (monotonic).
 
 ## Decision
 
-**Ship candidate:** `invert/runs/v7_real_ft/best.pt`  
-Beats v6 and synth-only canary on product one-shot and seeded medians. Metric scores remain trends only — listen to recreations before treating as product-ready.
+**Best relative baseline (not product-ready):** `invert/runs/v7_real_ft/best.pt`  
+Beats v6 and synth-only canary on product medians; listen pairwise also prefers real FT
+one-shots vs v6 (20–12) and vs synth FT (18–14). Absolute quality is still far from
+acceptable (~1–3/5 on a hard slice). Synth FT is a metric mirage on one-shots (ears
+13–19 vs v6).
+
+**Next:** structure-aware metric + auto probes before more training — see
+`docs/superpowers/specs/2026-07-24-inverse-model-structure-metric-design.md`.
