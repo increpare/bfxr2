@@ -89,7 +89,9 @@ def detect_note_sequence(
         # flat note (measured: a 25-frame note lost to one 1.47-semitone
         # frame). Judge flatness and pitch on the interior, where the segment
         # is long enough to have one. start_frac stays segment-relative so
-        # arp-seed onsets are unchanged.
+        # arp-seed onsets are unchanged. Only trim when segment >= 4 frames to
+        # ensure a 2-frame interior; a 1-frame interior has zero spread and
+        # makes flatness vacuous, inventing spurious notes on noisy tracks.
         lo, hi = (start + 1, end - 1) if end - start >= 4 else (start, end)
         chunk = f0[lo:hi]
         if (chunk.max() - chunk.min()) * 12.0 > flat_st:

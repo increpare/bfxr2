@@ -82,3 +82,23 @@ def test_boundary_frame_does_not_discard_a_flat_note():
     assert len(notes) == 2
     assert abs(notes[0][0] - 361.0) < 5.0
     assert abs(notes[1][0] - 441.0) < 5.0
+
+
+def test_four_frame_segment_trims_and_detects():
+    """Segments of exactly 4 frames trim to a 2-frame interior for flatness
+    judgment, and a flat 4-frame segment should still be detected as a note."""
+    f0, v = _track([400, 600], per=4)
+    notes = detect_note_sequence(f0, v)
+    assert len(notes) == 2
+    assert abs(notes[0][0] - 400) < 20
+    assert abs(notes[1][0] - 600) < 20
+
+
+def test_three_frame_segment_does_not_trim():
+    """Segments of exactly 3 frames do not trim (no >= 4 guard), and a flat
+    3-frame segment should be detected as a note."""
+    f0, v = _track([400, 600], per=3)
+    notes = detect_note_sequence(f0, v)
+    assert len(notes) == 2
+    assert abs(notes[0][0] - 400) < 20
+    assert abs(notes[1][0] - 600) < 20
