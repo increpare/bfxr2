@@ -15,11 +15,12 @@ from match.renderer import BfxrRenderer
 
 from .augment import maybe_augment
 from .constants import (
+    ACCEPT_PEAK,
     DATASET_VERSION,
     FEATURES_MEL_SCALE_IDX,
+    MIN_AUDIBLE_SAMPLES,
     N_CHANNELS,
     N_FRAMES,
-    SILENCE_PEAK,
     SQUARE_ONLY,
 )
 from .features_pack import pack_features
@@ -117,14 +118,18 @@ class InvertShardDataset(Dataset):
 
 
 def _is_acceptable_wave(wave: np.ndarray | None) -> bool:
-    """True if wave is usable training audio (finite, non-silent, non-empty)."""
+    """True if wave is usable training audio: finite, audibly loud, and not a
+    degenerate (pathologically short) click."""
     if wave is None or len(wave) == 0:
         return False
     w = np.asarray(wave)
     if not np.isfinite(w).all():
         return False
     peak = float(np.max(np.abs(w)))
-    if not np.isfinite(peak) or peak < SILENCE_PEAK:
+    if not np.isfinite(peak) or peak < ACCEPT_PEAK:
+        return False
+    floor = peak * 10 ** (-40 / 20)   # -40 dB below peak
+    if int(np.sum(np.abs(w) >= floor)) < MIN_AUDIBLE_SAMPLES:
         return False
     return True
 

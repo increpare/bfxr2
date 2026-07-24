@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 import torch
 
-from invert.constants import DATASET_VERSION, N_CHANNELS, N_FRAMES
+from invert.constants import ACCEPT_PEAK, DATASET_VERSION, MIN_AUDIBLE_SAMPLES, N_CHANNELS, N_FRAMES
 from invert.dataset import (
     InvertShardDataset,
     _is_acceptable_wave,
@@ -68,14 +68,37 @@ def test_generate_clears_stale_shards(tmp_path: Path):
     assert len(ds) == manifest["n"] == 4
 
 
-def test_is_acceptable_wave_rejects_nonfinite():
-    ok = np.ones(100, dtype=np.float32) * 0.2
-    assert _is_acceptable_wave(ok)
+def _tone(n, peak=0.5, hz=440, sr=44100):
+    t = np.arange(n) / sr
+    return (peak * np.sin(2 * np.pi * hz * t)).astype(np.float32)
+
+
+def test_accepts_normal_and_legit_short():
+    assert _is_acceptable_wave(_tone(20000))
+    assert _is_acceptable_wave(_tone(3000))
+
+
+def test_rejects_degenerate_click():
+    click = np.zeros(20000, dtype=np.float32)
+    click[:200] = 0.6
+    assert not _is_acceptable_wave(click)
+
+
+def test_rejects_near_mute():
+    assert not _is_acceptable_wave(_tone(20000, peak=0.01))
+
+
+def test_rejects_none_empty_nonfinite():
     assert not _is_acceptable_wave(None)
-    assert not _is_acceptable_wave(np.zeros(10, dtype=np.float32))
-    nan = ok.copy()
-    nan[3] = np.nan
-    assert not _is_acceptable_wave(nan)
+    assert not _is_acceptable_wave(np.zeros(0, dtype=np.float32))
+    bad = _tone(20000)
+    bad[5] = np.nan
+    assert not _is_acceptable_wave(bad)
+
+
+def test_is_acceptable_wave_rejects_nonfinite():
+    ok = np.ones(20000, dtype=np.float32) * 0.2
+    assert _is_acceptable_wave(ok)
     inf = ok.copy()
     inf[5] = np.inf
     assert not _is_acceptable_wave(inf)
