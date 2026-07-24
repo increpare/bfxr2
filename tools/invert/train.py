@@ -227,6 +227,7 @@ def train(
     surrogate_path: Path | None = None,
     spectral_weight: float = 0.0,
     uniform_weights: bool = False,
+    init_weights: Path | None = None,
 ) -> Path:
     device_s = device or _default_device()
     device_t = torch.device(device_s)
@@ -261,7 +262,18 @@ def train(
         DataLoader(val_ds, batch_size=batch_size, shuffle=False) if val_ds is not None else None
     )
 
-    model = InverseModel(version=version, width=width, dilated=dilated).to(device_t)
+    if init_weights is not None:
+        ckpt = torch.load(init_weights, map_location=device_t, weights_only=False)
+        version = int(ckpt.get("version", version))
+        width = int(ckpt.get("width", width))
+        dilated = bool(ckpt.get("dilated", dilated))
+        readout = str(ckpt.get("readout", "flatten"))
+        model = InverseModel(
+            version=version, width=width, readout=readout, dilated=dilated
+        ).to(device_t)
+        model.load_state_dict(ckpt["model_state"])
+    else:
+        model = InverseModel(version=version, width=width, dilated=dilated).to(device_t)
     opt = torch.optim.AdamW(model.parameters(), lr=lr)
 
     surrogate = None
@@ -378,7 +390,7 @@ def train(
     return best_path
 
 
-def main(argv: list[str] | None = None) -> None:
+def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Train InverseModel on invert shards")
     p.add_argument("--data", type=Path, required=True, help="Directory of shard_*.pt")
     p.add_argument("--out", type=Path, required=True, help="Output run directory")
@@ -415,7 +427,18 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--spectral-weight", type=float, default=0.0)
     p.add_argument("--uniform-weights", action="store_true",
                    help="Disable identifiability weighting (true param-only baseline)")
-    args = p.parse_args(argv)
+    p.add_argument(
+        "--init-weights",
+        type=Path,
+        default=None,
+        help="load model weights from this checkpoint before training "
+        "(finetune); architecture flags must match the checkpoint",
+    )
+    return p
+
+
+def main(argv: list[str] | None = None) -> None:
+    args = build_parser().parse_args(argv)
     best = train(
         args.data,
         args.out,
@@ -433,6 +456,7 @@ def main(argv: list[str] | None = None) -> None:
         surrogate_path=args.surrogate,
         spectral_weight=args.spectral_weight,
         uniform_weights=args.uniform_weights,
+        init_weights=args.init_weights,
     )
     print(f"wrote {best}")
 

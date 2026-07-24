@@ -5,7 +5,9 @@ import torch
 
 from invert.constants import DATASET_VERSION, N_CHANNELS, N_FRAMES, N_PARAMS
 from invert.dataset import write_shard
+from invert.model import InverseModel
 from invert.train import (
+    build_parser,
     curriculum_weights,
     invert_loss,
     per_param_r2,
@@ -13,6 +15,7 @@ from invert.train import (
     train,
     wavetype_topk_accuracy,
 )
+from invert.sampler import wave_type_index_map
 from match.bfxr_io import ParamSpace
 
 
@@ -113,6 +116,73 @@ def test_curriculum_ramps_hard_params_only():
     # disabled: returns base unchanged
     w0 = curriculum_weights(base, easy, epoch=1, curriculum_epochs=0)
     assert torch.allclose(w0, base)
+
+
+def test_init_weights_flag_parses(tmp_path: Path):
+    args = build_parser().parse_args(
+        [
+            "--data",
+            str(tmp_path),
+            "--out",
+            str(tmp_path / "o"),
+            "--init-weights",
+            str(tmp_path / "w.pt"),
+        ]
+    )
+    assert args.init_weights == tmp_path / "w.pt"
+
+
+def test_train_init_weights_loads_checkpoint_meta(tmp_path: Path):
+    space = ParamSpace()
+    _, cls_to_id = wave_type_index_map(space)
+    wave_types_order = [cls_to_id[i] for i in range(len(cls_to_id))]
+
+    model = InverseModel(version=1, width=64, readout="flatten", dilated=True)
+    ckpt_path = tmp_path / "init.pt"
+    torch.save(
+        {
+            "model_state": model.state_dict(),
+            "version": 1,
+            "width": 64,
+            "readout": "flatten",
+            "dilated": True,
+            "space_names": list(space.names),
+            "wave_types_order": wave_types_order,
+        },
+        ckpt_path,
+    )
+
+    n = 32
+    payload = {
+        "features": torch.rand(n, N_CHANNELS, N_FRAMES).half(),
+        "log_duration": torch.zeros(n),
+        "unit": torch.rand(n, N_PARAMS),
+        "wave_type": torch.zeros(n, dtype=torch.long),
+        "class_idx": torch.zeros(n, dtype=torch.long),
+        "meta": {"dataset_version": DATASET_VERSION, "n": n},
+    }
+    data = tmp_path / "data"
+    write_shard(data / "shard_0000.pt", payload)
+    (data / "manifest.json").write_text('{"n": %d}' % n)
+
+    best = train(
+        data,
+        tmp_path / "run",
+        epochs=1,
+        batch_size=16,
+        device="cpu",
+        init_weights=ckpt_path,
+        # CLI defaults that differ from checkpoint — init_weights should win
+        version=2,
+        width=128,
+        dilated=False,
+    )
+    assert best.is_file()
+    saved = torch.load(best, map_location="cpu", weights_only=False)
+    assert saved["version"] == 1
+    assert saved["width"] == 64
+    assert saved["readout"] == "flatten"
+    assert saved["dilated"] is True
 
 
 def test_train_smoke_with_curriculum(tmp_path: Path):
