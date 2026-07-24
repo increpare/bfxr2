@@ -5,6 +5,7 @@ out/
 batch_out/
 targets/*
 !targets/README.md
+targets_non_bfxr_big
 targets_non_bfxr_big/
 bfxr_native/build/
 metric_lib/
