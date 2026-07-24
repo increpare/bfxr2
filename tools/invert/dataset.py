@@ -25,18 +25,25 @@ from .constants import (
 )
 from .features_pack import pack_features
 from .presets import harvest_preset_params
-from .sampler import finalize_example, sample_example, sample_unit, wave_type_index_map
+from .sampler import (
+    TONAL_WAVE_TYPES,
+    finalize_example,
+    sample_example,
+    sample_unit,
+    wave_type_index_map,
+)
 
 FEATURE_NOTE = f"contours+padcrop_t_abs+unblurred_logmel_scale{FEATURES_MEL_SCALE_IDX}"
 
 MIX = {
-    "biased": 0.35,
-    "uniform": 0.15,
-    "kknob": 0.30,
+    "biased": 0.20,
+    "uniform": 0.10,
+    "kknob": 0.25,
     "preset": 0.20,
+    "structured": 0.25,
 }
-_NON_PRESET_MODES = ("biased", "uniform", "kknob")
-_NON_PRESET_MODE_P = (0.4375, 0.1875, 0.375)
+_RANDOM_MODES = ("biased", "uniform", "kknob")
+_RANDOM_MODE_P = (0.20 / 0.55, 0.10 / 0.55, 0.25 / 0.55)
 
 
 def write_shard(path: Path | str, payload: dict) -> None:
@@ -151,13 +158,20 @@ def _build_generation_specs(
     rng: np.random.Generator,
 ) -> list[dict]:
     n_preset = round(n * MIX["preset"])
-    n_other = n - n_preset
+    n_structured = round(n * MIX["structured"])
+    n_random = n - n_preset - n_structured
+
     preset_rows = harvest_preset_params(n_preset, seed) if n_preset else []
-    wt_list = _stratified_wave_types(space, n_other, rng)
     specs: list[dict] = [{"kind": "preset", "row": row} for row in preset_rows]
-    for wt in wt_list:
-        mode = str(rng.choice(_NON_PRESET_MODES, p=_NON_PRESET_MODE_P))
+
+    for _ in range(n_structured):
+        wt = int(rng.choice(TONAL_WAVE_TYPES))
+        specs.append({"kind": "sample", "mode": "structured", "wave_type": wt})
+
+    for wt in _stratified_wave_types(space, n_random, rng):
+        mode = str(rng.choice(_RANDOM_MODES, p=_RANDOM_MODE_P))
         specs.append({"kind": "sample", "mode": mode, "wave_type": int(wt)})
+
     rng.shuffle(specs)
     return specs
 
@@ -299,7 +313,7 @@ def generate_shards(
     seed: int,
     jobs: int | None,
     shard_size: int = 2048,
-    augment_p: float = 0.25,
+    augment_p: float = 0.4,
 ) -> None:
     """Sample/render/pack in shard-sized chunks so peak RAM stays O(shard_size)."""
     out_dir = Path(out_dir)
@@ -369,7 +383,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--seed", type=int, default=0)
     p.add_argument("--jobs", type=int, default=None)
     p.add_argument("--shard-size", type=int, default=2048)
-    p.add_argument("--augment-p", type=float, default=0.25)
+    p.add_argument("--augment-p", type=float, default=0.4)
     args = p.parse_args(argv)
     generate_shards(
         args.out,

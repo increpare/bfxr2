@@ -8,12 +8,16 @@ import torch
 
 from invert.constants import ACCEPT_PEAK, DATASET_VERSION, MIN_AUDIBLE_SAMPLES, N_CHANNELS, N_FRAMES
 from invert.dataset import (
+    MIX,
     InvertShardDataset,
+    _build_generation_specs,
     _is_acceptable_wave,
     generate_shards,
     read_shard,
     write_shard,
 )
+from invert.sampler import TONAL_WAVE_TYPES
+from match.bfxr_io import ParamSpace
 
 
 def _shard_payload(n: int = 2, *, dataset_version: str = DATASET_VERSION) -> dict:
@@ -102,6 +106,23 @@ def test_is_acceptable_wave_rejects_nonfinite():
     inf = ok.copy()
     inf[5] = np.inf
     assert not _is_acceptable_wave(inf)
+
+
+def test_mix_sums_to_one_and_keeps_preset():
+    assert abs(sum(MIX.values()) - 1.0) < 1e-9
+    assert MIX["preset"] == 0.20
+    assert MIX["structured"] == 0.25
+
+
+def test_generation_specs_have_structured_with_tonal_wave_types():
+    space = ParamSpace()
+    n = 400
+    rng = np.random.default_rng(0)
+    specs = _build_generation_specs(space, n, seed=0, rng=rng)
+    structured = [s for s in specs if s.get("kind") == "sample" and s.get("mode") == "structured"]
+    assert len(specs) == n
+    assert 0.20 * n <= len(structured) <= 0.30 * n
+    assert all(s["wave_type"] in TONAL_WAVE_TYPES for s in structured)
 
 
 def test_dataset_version_mismatch_raises(tmp_path: Path):

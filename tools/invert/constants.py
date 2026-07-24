@@ -9,7 +9,8 @@ N_WAVETYPES = 12
 # v2: pack_features silence-trims before extract (matches prepare_target)
 # v3: mixture sampling (biased/uniform/kknob/preset), augment_p 0.25
 # v4: pad/crop (no stretch), hop=128 contours, t_abs replaces active, unblurred mel
-DATASET_VERSION = "v4"
+# v5: structured slice in MIX, augment_p 0.4
+DATASET_VERSION = "v5"
 SILENCE_PEAK = 1e-3
 ACCEPT_PEAK = 0.02          # perceptual audibility floor (peak, post-render)
 MIN_AUDIBLE_SAMPLES = 882   # ~20 ms @ 44100: reject degenerate "click" renders
