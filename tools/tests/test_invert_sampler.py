@@ -4,7 +4,13 @@ from match.bfxr_io import ParamSpace
 from match.optimizer import ENVELOPE_PARAMS, ENVELOPE_SAMPLES_PER_UNIT, SQUARE_ONLY_PARAMS
 from match.audio import SAMPLE_RATE
 from invert.constants import TRAIN_CAP_SECONDS
-from invert.sampler import sample_example, wave_type_index_map
+from invert.sampler import (
+    TONAL_WAVE_TYPES,
+    _structured_unit,
+    sample_example,
+    sample_unit,
+    wave_type_index_map,
+)
 
 
 def test_wave_type_index_map_bijective():
@@ -45,11 +51,48 @@ def test_sampler_envelope_under_cap():
 
 
 def test_kknob_moves_few_params():
-    from invert.sampler import sample_unit
-
     space = ParamSpace()
     rng = np.random.default_rng(3)
     for _ in range(20):
         unit = sample_unit(space, rng, mode="kknob")
         moved = int((unit != space.defaults_unit()).sum())
         assert 1 <= moved <= 6
+
+
+def _idx(space, name):
+    return space.names.index(name)
+
+
+def test_structured_unit_sets_a_pitch_jump_and_audible_envelope():
+    space = ParamSpace()
+    rng = np.random.default_rng(0)
+    u = _structured_unit(space, rng)
+    assert u.shape == (space.dim,)
+    assert np.all((u >= 0.0) & (u <= 1.0))
+    # at least the first jump is non-default (default pitch_jump_amount unit = 0.5)
+    assert abs(u[_idx(space, "pitch_jump_amount")] - 0.5) > 1e-6
+    # onset ordered when a second jump is present
+    a2 = u[_idx(space, "pitch_jump_2_amount")]
+    if abs(a2 - 0.5) > 1e-6:
+        assert u[_idx(space, "pitch_jump_onset2_percent")] >= u[_idx(space, "pitch_jump_onset_percent")]
+    # envelope has real sustain (audible), not the degenerate near-zero
+    assert u[_idx(space, "sustainTime")] > 0.2
+
+
+def test_structured_unit_is_deterministic_under_seed():
+    space = ParamSpace()
+    a = _structured_unit(space, np.random.default_rng(7))
+    b = _structured_unit(space, np.random.default_rng(7))
+    assert np.array_equal(a, b)
+
+
+def test_sample_unit_structured_mode_dispatches():
+    space = ParamSpace()
+    u = sample_unit(space, np.random.default_rng(1), mode="structured")
+    assert u.shape == (space.dim,)
+    assert abs(u[_idx(space, "pitch_jump_amount")] - 0.5) > 1e-6
+
+
+def test_tonal_wave_types_exclude_noise():
+    assert 3 not in TONAL_WAVE_TYPES and 9 not in TONAL_WAVE_TYPES
+    assert 0 in TONAL_WAVE_TYPES
