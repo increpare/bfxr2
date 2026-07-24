@@ -315,7 +315,6 @@ class StagedOptimizer:
                 break
             units = [defaults] + [self._screen_sample()
                                   for _ in range(n_screen - 1)]
-            units += [u.copy() for u in self.arp_units]  # coherent arpeggios
             scores = self._evaluate(units, [wt] * len(units))
             i = int(np.argmin(scores))
             best[wt] = Candidate(float(scores[i]), wt, units[i])
@@ -342,19 +341,6 @@ class StagedOptimizer:
                 best[wt] = cand
             self._log(f"stage0 seed waveType={wt} "
                       f"({self.space.wave_type_names[wt]}): best {scores[i]:.4f}")
-
-        # arpeggio candidates: the model rarely predicts coherent pitch jumps,
-        # so offer them explicitly under the model's wave types (plus square, a
-        # reliable tonal carrier) for the search to refine
-        if self.arp_units and not self._out_of_budget():
-            arp_wts = {wt for wt, _ in self.s.seed_units} | {0}
-            for wt in arp_wts:
-                units = [u.copy() for u in self.arp_units]
-                scores = self._evaluate(units, [wt] * len(units))
-                i = int(np.argmin(scores))
-                cand = Candidate(float(scores[i]), wt, units[i])
-                if wt not in best or cand.score < best[wt].score:
-                    best[wt] = cand
         return best
 
     def _run_cma(self, start: Candidate, max_iters: int | None) -> None:
@@ -377,7 +363,36 @@ class StagedOptimizer:
             es.tell(xs, scores.tolist())
             iters += 1
 
+    def _run_arp_stage(self, wave_types: list[int]) -> None:
+        """Refine the best pitch-jump (arpeggio) candidate on *additional*
+        budget (see run()), so it never competes with the model/search pipeline
+        for its budget. Arp seeds score well early but that doesn't predict
+        refinement, so letting them win shared stage-2 slots starves better
+        model basins (verified on noisy targets); and stealing budget up front
+        hurts hard targets that need it all. Extra budget keeps arp strictly
+        additive — the main run is untouched, so the result can only improve."""
+        if not self.arp_units or self._out_of_budget():
+            return
+        if self.s.seed_units is not None:
+            cand_wts = {wt for wt, _ in self.s.seed_units} | {0}
+        else:
+            cand_wts = set(wave_types) | {0}
+        best: Candidate | None = None
+        for wt in sorted(cand_wts):
+            if self._out_of_budget():
+                break
+            units = [u.copy() for u in self.arp_units]
+            scores = self._evaluate(units, [wt] * len(units))
+            i = int(np.argmin(scores))
+            c = Candidate(float(scores[i]), wt, units[i])
+            if best is None or c.score < best.score:
+                best = c
+        if best is not None and not self._out_of_budget():
+            self._log(f"arp stage waveType={best.wave_type} start {best.score:.4f}")
+            self._run_cma(best, max_iters=None)
+
     def run(self) -> list[Candidate]:
+        full_budget = self.s.budget
         wave_types = self.s.wave_types or self.space.wave_types
         best_by_wt = self._stage0(wave_types)
 
@@ -399,6 +414,14 @@ class StagedOptimizer:
             self._log(f"stage2 waveType={winner.wave_type} "
                       f"({self.space.wave_type_names[winner.wave_type]})")
             self._run_cma(winner, max_iters=None)
+
+        # arp refinement on ADDITIONAL budget: an arpeggio-looking target just
+        # searches a bit longer, rather than stealing budget the main pipeline
+        # may need. Keeps the main result intact, so arp can only improve it.
+        if self.arp_units:
+            self.s.budget = full_budget + int(0.5 * full_budget)
+            self._run_arp_stage(wave_types)
+            self.s.budget = full_budget
 
         by_wt = {}
         for c in self.archive:
