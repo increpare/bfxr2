@@ -19,6 +19,9 @@ from .objective import MatchObjective
 from .renderer import BfxrRenderer
 
 RENDER_SEED = 1234
+# peak below this is effectively silence: normal bfxr renders peak well above
+# 0.1, so a ~0.006-peak clip (the near-closed-low-pass artifact) is inaudible
+SILENCE_PEAK = 0.02
 ENVELOPE_PARAMS = ("attackTime", "sustainTime", "decayTime")
 # envelope stage length in samples is param^2 * 100000 (Bfxr_DSP.js reset())
 ENVELOPE_SAMPLES_PER_UNIT = 100000.0
@@ -33,6 +36,49 @@ def freq_param_from_hz(hz: float) -> float | None:
     if fs_sq <= 0:
         return None
     return float(np.sqrt(fs_sq))
+
+
+def _peak(wave: np.ndarray | None) -> float:
+    if wave is None or len(wave) == 0:
+        return 0.0
+    return float(np.max(np.abs(wave)))
+
+
+def repair_silent_params(
+    params: dict,
+    wave: np.ndarray | None,
+    renderer: BfxrRenderer,
+    space: ParamSpace,
+    *,
+    seed: int = RENDER_SEED,
+) -> tuple[dict, np.ndarray | None]:
+    """Off-manifold, the inverse model sometimes sets a filter to block the
+    whole band and renders dead (or near-dead) silence -- verified culprits:
+    ``lpFilterCutoff`` ~0.01 (low-pass shut) and ``hpFilterCutoff`` ~0.9
+    (high-pass shut). The staged search rejects such candidates via scoring,
+    but the one-shot path emits the raw prediction unguarded, so a useless
+    silent clip reaches the user. When the render is silent, neutralize the
+    filters stepwise (open the low-pass, then also drop the high-pass) and
+    return the first audible render; if nothing helps -- e.g. a genuinely
+    degenerate oscillator render -- return the original untouched."""
+    if _peak(wave) >= SILENCE_PEAK:
+        return params, wave
+    lp_max = float(space.maxs[space.names.index("lpFilterCutoff")])
+    lp_now = params.get("lpFilterCutoff", 0.0)
+    attempts: list[dict] = [
+        {"lpFilterCutoff": lp} for lp in (0.3, 0.6, lp_max) if lp > lp_now
+    ]
+    # last resort: fully neutral filtering (low-pass open, high-pass off)
+    attempts.append({"lpFilterCutoff": lp_max, "hpFilterCutoff": 0.0})
+    for override in attempts:
+        trial = dict(params)
+        trial.update(override)
+        if trial == params:
+            continue
+        w = renderer.render(trial, seed=seed)
+        if _peak(w) >= SILENCE_PEAK:
+            return trial, w
+    return params, wave
 
 
 @dataclass(order=True)
