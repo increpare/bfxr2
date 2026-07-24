@@ -85,7 +85,18 @@ console samples), applied as a weighted sub-choice inside `maybe_augment`:
 - Occasional hard clip / drive.
 
 Labels stay the **clean** params → the model learns to recover the underlying sound
-through degradation (denoiser framing). Raise default `augment_p` 0.25 → **0.55**.
+through degradation (denoiser framing). Raise default `augment_p` 0.25 → **0.4**.
+
+Note on the rate: augmentation here is **baked** into shards (features are computed
+from the augmented wave), so an augmented example is *permanently* corrupted — unlike
+on-the-fly augmentation, where the model re-sees each example clean and differently-
+corrupted every epoch and near-100% rates are normal. Baked → keep clean data the
+majority (0.4 = 60% clean / 40% roughed); the retro chain is strong, so a moderate
+rate suffices, and the effective heavy-degradation rate is lower still (retro stage
+has its own 0.6 sub-probability). *Future option (not in scope):* a hybrid — bake the
+wave-level retro chain moderately, add cheap on-the-fly feature-space noise/masking at
+train time for per-epoch diversity (full on-the-fly retro is impractical: shards store
+features, not the ~40 GB of raw waves it would need).
 
 ## Section 3 — Degenerate-culling (`dataset.py`, `augment.py`)
 
@@ -107,7 +118,16 @@ are exactly the degenerate case.
 ## Section 4 — Training & eval protocol
 
 - **Regenerate dataset** with the above as `DATASET_VERSION = "v5"` (`invert/data/v5`),
-  **same ~300k scale** as v4 for clean comparison. One dataset feeds both arms.
+  **~750k examples** (up from v4's 300k). One dataset feeds both arms.
+  - *Why more:* v3's plateau was an ill-posedness *ceiling* (train≈val, capacity-
+    invariant), so more of the *same* distribution wouldn't have helped. But we're
+    now adding retro augmentation (large effective diversity — many corruptions per
+    param set) and structured coverage (a big arp param space), which *do* benefit
+    from denser sampling. Generation is cheap; training is the cost.
+  - *Keep training compute bounded:* scale epochs **down** roughly in proportion so
+    total examples-seen stays similar to v4's run — more unique data at fewer passes
+    reduces memorization/over-repetition. (~750k is a deliberate 2.5×, not 10×;
+    returns diminish past a point.) ~13 GB on disk, gitignored.
 - New `dataset.MIX`: `biased .20 / uniform .10 / kknob .25 / preset .20 /
   structured .25`.
 - **Two training arms**, loss config held identical to v6 (param loss + surrogate
@@ -132,7 +152,7 @@ are exactly the degenerate case.
 
 - `sampler.py`: add `mode="structured"` + `_structured_unit()` helper.
 - `dataset.py`: new `MIX`; thread `structured` through mode selection + resample;
-  default `augment_p` → 0.55; tighten `_is_acceptable_wave` (min duration + peak).
+  default `augment_p` → 0.4; tighten `_is_acceptable_wave` (min duration + peak).
 - `augment.py`: retro-chain helpers (samplerate crush, bitcrush, companding, clip);
   bound so output stays audible.
 - `constants.py`: `DATASET_VERSION` → `"v5"` (+ any new audibility constants).

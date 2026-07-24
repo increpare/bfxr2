@@ -14,8 +14,8 @@
 - Never edit anything under `js/` (browser app). Reading it is fine.
 - Never commit anything under `invert/data/**` or `invert/runs/**` (gitignored).
 - Final `MIX` (must sum to 1.0): `biased 0.20 / uniform 0.10 / kknob 0.25 / preset 0.20 / structured 0.25`. **Preset stays 0.20.**
-- Default `augment_p` = **0.55**.
-- `DATASET_VERSION` = **"v5"**; new shards live in `invert/data/v5`.
+- Default `augment_p` = **0.4** (baked augmentation → keep clean data the majority; the retro chain is strong, so a moderate rate suffices). Effective heavy-degradation rate is lower still (retro stage has its own 0.6 sub-probability).
+- `DATASET_VERSION` = **"v5"**; new shards live in `invert/data/v5`. Dataset size = **750k** examples (~13 GB, gitignored); scale training epochs down ~proportionally (v5 is 2.5× v4) so examples-seen stays near v6's.
 - Tonal wave types (arpeggios): `(0, 1, 2, 4, 5, 6, 7, 8, 10, 11)` — exclude White(3) and Bitnoise(9).
 - `[-1,1]`-range params (`pitch_jump_amount`, `pitch_jump_2_amount`, `lpFilterCutoffSweep`) need `unit = (value+1)/2`; all others here are `[0,1]` so `unit = value`.
 - Loss config for BOTH training arms held identical to v6 (param loss + surrogate spectral term + identifiability weighting) — the only change under test is the data.
@@ -26,7 +26,7 @@
 - `invert/constants.py` — MODIFY: `DATASET_VERSION` → `"v5"`; add `ACCEPT_PEAK`, `MIN_AUDIBLE_SAMPLES`.
 - `invert/sampler.py` — MODIFY: add `TONAL_WAVE_TYPES`, `_to_unit`, `_structured_unit`, `"structured"` branch in `sample_unit`.
 - `invert/augment.py` — MODIFY: add retro-chain helpers + a wired, bounded retro stage in `maybe_augment`.
-- `invert/dataset.py` — MODIFY: tighten `_is_acceptable_wave`; new `MIX` + `structured` specs in `_build_generation_specs`; default `augment_p` 0.55.
+- `invert/dataset.py` — MODIFY: tighten `_is_acceptable_wave`; new `MIX` + `structured` specs in `_build_generation_specs`; default `augment_p` 0.4.
 - `invert/train.py` — MODIFY: add `--init-weights` to load a checkpoint before training (finetune arm).
 - `tests/test_invert_sampler.py`, `tests/test_invert_augment.py`, `tests/test_invert_dataset.py` — MODIFY (extend).
 
@@ -549,13 +549,13 @@ def _build_generation_specs(
 
 `_example_from_spec` needs **no change**: its `sample` branch already calls `sample_unit(space, rng, mode=spec["mode"])`, which now handles `"structured"` (Task 1).
 
-Update the default `augment_p` (both the `write_shard`/`_pack_shard_payload` caller default and the CLI arg) from `0.25` to `0.55`:
+Update the default `augment_p` (both the `write_shard`/`_pack_shard_payload` caller default and the CLI arg) from `0.25` to `0.4`:
 
 ```python
-    p.add_argument("--augment-p", type=float, default=0.55)
+    p.add_argument("--augment-p", type=float, default=0.4)
 ```
 
-and the function signature default (`augment_p: float = 0.55`).
+and the function signature default (`augment_p: float = 0.4`).
 
 In `invert/constants.py`:
 
@@ -673,9 +673,9 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 Run (match the existing generation entrypoint's flags — confirm with `uv run python -m invert.dataset --help`):
 
 ```bash
-cd tools && uv run python -m invert.dataset --out invert/data/v5 --n 300000 --augment-p 0.55 --seed 0
+cd tools && uv run python -m invert.dataset --out invert/data/v5 --n 750000 --augment-p 0.4 --seed 0
 ```
-Expected: shards `shard_*.pt` + `manifest.json` under `invert/data/v5`; manifest `mix` shows the new proportions and `augment_p 0.55`.
+Expected: shards `shard_*.pt` + `manifest.json` under `invert/data/v5`; manifest `mix` shows the new proportions and `augment_p 0.4`. (`--n 750000` per the dataset-size decision below; features are ~18 KB/example → ~13 GB on disk, gitignored.)
 
 - [ ] **Step 2: Sanity-check the v5 dataset**
 
@@ -683,7 +683,10 @@ Spot-check that structured examples render as audible arpeggios and that culling
 
 - [ ] **Step 3: Train arm A (from scratch)**
 
-Run (match v6's loss flags — confirm the surrogate path and spectral-weight used for v6):
+Scale `--epochs` **down** ~in proportion to the dataset growth so total examples-seen
+stays near v6's (v5 is 2.5× v4, so ≈ v6_epochs / 2.5) — more unique data, fewer passes,
+less over-repetition. Run (match v6's loss flags — confirm the surrogate path and
+spectral-weight used for v6):
 
 ```bash
 cd tools && uv run python -m invert.train --data invert/data/v5 --out invert/runs/v7_scratch \
