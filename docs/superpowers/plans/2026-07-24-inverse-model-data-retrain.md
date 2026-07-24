@@ -2,23 +2,36 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Improve the inverse model on real/general SFX and discrete-note structure by upgrading the synthetic data generator (structured sampler + retro-degradation augmentation + degenerate-culling), then training two candidate models and picking the winner on a held-out real-SFX eval.
+**Goal:** Improve the inverse model on real/general SFX and discrete-note structure by upgrading the synthetic data generator (structured sampler + retro-degradation augmentation + degenerate-culling), training scratch + v6-finetune candidates, then optionally spectral-finetuning the winner on unlabeled real audio (`tools/targets_non_bfxr_big`, especially `tags/`).
 
-**Architecture:** Pure data-generator changes in `invert/` — a new `structured` sampler mode that builds coherent arpeggios, a retro-degradation augmentation chain, and a tightened acceptance gate. Regenerate the dataset as `v5`, train a from-scratch model and a v6-finetune, decide on the real-SFX eval. No model-architecture change; loss config held identical to v6.
+**Architecture:** Data-generator changes in `invert/` — `structured` sampler, retro-degradation aug, tightened acceptance gate. Regenerate as `v5` (canary → staged scale). Train scratch + finetune (lower LR). Decide primarily on **one-shot** / arp probes (seeded median secondary). Then Task 7: real-audio spectral finetune. No model-architecture change for Tasks 1–6; loss config for synth arms matches v6.
 
-**Tech Stack:** Python 3.12 (`uv`), NumPy, PyTorch (CPU), the existing Node headless renderer.
+**Tech Stack:** Python 3.12 (`uv`), NumPy, PyTorch (MPS/CPU), the existing Node headless renderer.
+
+## Scope 3 amendments (2026-07-24)
+
+Approved deviations from the original synth-only plan:
+
+1. **Canary first:** generate/train `invert/data/v5_200k` before any 500k+ ladder. Only grow if canary beats v6 on the primary gates.
+2. **Primary decision metrics:** real-SFX **one-shot** median + arp one-shot probe (listen). Seeded-search median is secondary. In-domain synth sanity still required (no catastrophic regression).
+3. **Finetune hyperparameters:** `--init-weights` from v6 with **`lr=1e-4`**, `curriculum_epochs=0`, fewer epochs than scratch (default 5 unless canary says otherwise). Scratch keeps v6's `lr=1e-3`, `curriculum-epochs 5`, `spectral-weight 1.0`.
+4. **`--init-weights` must load architecture meta** from the checkpoint (`version`, `width`, `readout`, `dilated`) the way `predict.load_checkpoint` does — not only `model_state`.
+5. **Exact v6 CLI for scratch:** `--epochs` scaled for examples-seen ≈ 300k×15; `--curriculum-epochs 5 --surrogate invert/runs/surrogate/surrogate.pt --spectral-weight 1.0`.
+6. **Real-audio track (Task 7):** after synth winner chosen, spectral-only (or spectral-dominated) finetune on unlabeled real waves. Train pool = stratified subsample of `targets_non_bfxr_big` (cap huge dumps; prefer `tags/` + Kenney/console packs; tiny-weight voiceover). **Never train on `tools/targets/`** (product eval holdout). Judge with listen + one-shot on `tools/targets/` and a held-out slice of `tags/`.
+7. **Gitignore** `tools/targets_non_bfxr_big/` (do not commit ~1GB audio).
+8. **CHANNEL_MEAN/STD:** after canary shard exists, re-estimate or at least log mean drift vs v4 constants before full-scale train; bake updated constants if drift is material.
 
 ## Global Constraints
 
 - Run all module commands from `tools/` with `uv` (e.g. `cd tools && uv run pytest`). Python >=3.12,<3.13.
 - Never edit anything under `js/` (browser app). Reading it is fine.
-- Never commit anything under `invert/data/**` or `invert/runs/**` (gitignored).
+- Never commit anything under `invert/data/**`, `invert/runs/**`, or `targets_non_bfxr_big/**` (gitignored).
 - Final `MIX` (must sum to 1.0): `biased 0.20 / uniform 0.10 / kknob 0.25 / preset 0.20 / structured 0.25`. **Preset stays 0.20.**
 - Default `augment_p` = **0.4** (baked augmentation → keep clean data the majority; the retro chain is strong, so a moderate rate suffices). Effective heavy-degradation rate is lower still (retro stage has its own 0.6 sub-probability).
-- `DATASET_VERSION` = **"v5"**. Dataset size is chosen by a **staged scan (500k → 750k → 1M)**, growing only while the eval still improves (see Task 6 stop-gate); shard dirs are `invert/data/v5_500k` / `v5_750k` / `v5_1m` (gitignored, ~9–18 GB). Scale training epochs so examples-seen ≈ v6's run at each size.
+- `DATASET_VERSION` = **"v5"**. Sizes: **canary 200k**, then staged **500k → 750k → 1M** only while primary gates still improve (Task 6). Shard dirs `invert/data/v5_200k` / `v5_500k` / … (gitignored). Scale epochs so examples-seen ≈ v6's 4.5M for scratch at each size (e.g. ~9 epochs @ 500k).
 - Tonal wave types (arpeggios): `(0, 1, 2, 4, 5, 6, 7, 8, 10, 11)` — exclude White(3) and Bitnoise(9).
 - `[-1,1]`-range params (`pitch_jump_amount`, `pitch_jump_2_amount`, `lpFilterCutoffSweep`) need `unit = (value+1)/2`; all others here are `[0,1]` so `unit = value`.
-- Loss config for BOTH training arms held identical to v6 (param loss + surrogate spectral term + identifiability weighting) — the only change under test is the data.
+- Synth-arm loss config matches v6 (param loss + surrogate spectral + identifiability weighting) except finetune LR/curriculum as above.
 - End commit messages with `Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>`.
 
 ## File structure
@@ -27,8 +40,12 @@
 - `invert/sampler.py` — MODIFY: add `TONAL_WAVE_TYPES`, `_to_unit`, `_structured_unit`, `"structured"` branch in `sample_unit`.
 - `invert/augment.py` — MODIFY: add retro-chain helpers + a wired, bounded retro stage in `maybe_augment`.
 - `invert/dataset.py` — MODIFY: tighten `_is_acceptable_wave`; new `MIX` + `structured` specs in `_build_generation_specs`; default `augment_p` 0.4.
-- `invert/train.py` — MODIFY: add `--init-weights` to load a checkpoint before training (finetune arm).
+- `invert/train.py` — MODIFY: add `--init-weights` loading `model_state` + architecture meta from checkpoint.
+- `invert/real_audio.py` (Task 7) — NEW: manifest builder + unlabeled feature dataset from wav/ogg trees.
+- `invert/finetune_real.py` (Task 7) — NEW: spectral-only finetune loop from a checkpoint.
+- `tools/.gitignore` — MODIFY: ignore `targets_non_bfxr_big/`.
 - `tests/test_invert_sampler.py`, `tests/test_invert_augment.py`, `tests/test_invert_dataset.py` — MODIFY (extend).
+- `tests/test_invert_real_audio.py` (Task 7) — NEW.
 
 ---
 
@@ -309,14 +326,15 @@ In `maybe_augment`, after the existing roughening block and before the final ret
 ```python
     # console-sample degradation (retro chain)
     pre_peak = float(np.max(np.abs(x))) if len(x) else 0.0
+    before_retro = x
     if rng.random() < 0.6:
         x = _retro_degrade(x, rng)
 
     # bound: never turn an audible input into a (near-)silent pair — the aug is
     # baked into the shard, so a silenced aug is a bad training pair
     post_peak = float(np.max(np.abs(x))) if len(x) else 0.0
-    if pre_peak >= ACCEPT_PEAK and 0.0 < post_peak < ACCEPT_PEAK:
-        x = (x * (pre_peak / post_peak)).astype(np.float32)
+    if pre_peak >= ACCEPT_PEAK and post_peak < ACCEPT_PEAK:
+        x = before_retro  # restore pre-retro wave (covers exact silence too)
 
     return x
 ```
@@ -632,13 +650,22 @@ Add the CLI arg in `build_parser`:
                         "(finetune); architecture flags must match the checkpoint")
 ```
 
-Add `init_weights: Path | None = None` to the `train(...)` signature, and after the model is constructed (and moved to `device`) but before the optimizer/training loop, load the weights (use the exact key confirmed in Step 1):
+Add `init_weights: Path | None = None` to the `train(...)` signature. When set, load checkpoint **architecture meta + weights** (same contract as `predict.load_checkpoint`) before the optimizer/loop:
 
 ```python
     if init_weights is not None:
-        state = torch.load(init_weights, map_location=device)
-        model.load_state_dict(state["model_state"])
+        ckpt = torch.load(init_weights, map_location=device_t, weights_only=False)
+        # Prefer ckpt meta over CLI when present so finetune cannot silently
+        # build the wrong net.
+        version = int(ckpt.get("version", version))
+        width = int(ckpt.get("width", width))
+        dilated = bool(ckpt.get("dilated", dilated))
+        readout = str(ckpt.get("readout", "flatten"))
+        model = InverseModel(version=version, width=width, readout=readout, dilated=dilated).to(device_t)
+        model.load_state_dict(ckpt["model_state"])
 ```
+
+(Refactor so the model is constructed once — either from CLI defaults or from ckpt meta — then optionally `load_state_dict`. Do not construct twice carelessly.)
 
 Thread the CLI value into the `train(...)` call in `main`:
 
@@ -662,97 +689,75 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 
 ---
 
-### Task 6: Staged data-scaling, train, evaluate, decide (operational)
+### Task 6: Canary → staged scale, train, evaluate, decide (operational)
 
 **Files:** none committed (outputs are gitignored `invert/data/**`, `invert/runs/**`). This task produces a written results note.
 
-**Not TDD** — this is the compute run. Use the exact commands; record numbers as you go. The dataset size grows **adaptively**: start at 500k, grow to 1M only while the eval is still improving. The staged scan runs on the **from-scratch arm only**; the finetune arm is trained once at the chosen size (avoids doing the ladder twice).
+**Not TDD** — compute run. Record numbers as you go.
 
-**Stop-gate ("still improving?"):** after each size round, stop growing when **both** hold vs the previous round: real-SFX seeded-median improves by **< 0.05**, *and* held-out synthetic val loss improves by **< 1%**. Otherwise grow to the next size (cap 1M).
+**Order:** (0) canary 200k scratch + finetune → gate vs v6; only if canary wins primary gates, (1) grow 500k→750k→1M on scratch arm with stop-gate; (2) finetune once at chosen `N*`; (3) decide.
 
-- [ ] **Step 1: Generate the 500k base dataset**
+**Primary gates (must improve vs v6, or clear win on arp with no catastrophe elsewhere):**
+- real-SFX **one-shot** median on `tools/targets/` (product holdout — never trained on)
+- arp one-shot probe (controlled arpeggio + Throw/cursor/leeneBell), listen + score
 
-Confirm flags with `uv run python -m invert.dataset --help`, then:
+**Secondary:** seeded-search median; synth held-out val loss / param R² (no catastrophic in-domain regression).
 
+**Stop-gate for growing past canary/500k:** stop when **both** hold vs previous size: one-shot median improves by **< 0.05**, *and* held-out synth val loss improves by **< 1%**. Cap 1M. Prefer matching total examples-seen across sizes when comparing (avoid pure warm-start confound); warm-start continuation is allowed for cost but note it in the results doc.
+
+**Scratch CLI template:**
 ```bash
-cd tools && uv run python -m invert.dataset --out invert/data/v5_500k --n 500000 --augment-p 0.4 --seed 0
+uv run python -m invert.train --data invert/data/v5_<N> --out invert/runs/v7_scratch_<N> \
+  --epochs <scaled> --curriculum-epochs 5 \
+  --surrogate invert/runs/surrogate/surrogate.pt --spectral-weight 1.0
 ```
-Expected: shards + `manifest.json`; manifest `mix` shows the new proportions and `augment_p 0.4`. (~18 KB/example → ~9 GB at 500k, gitignored.)
-
-- [ ] **Step 2: Sanity-check the dataset**
-
-Load a shard: confirm wave-type distribution (~25% structured, ~20% preset), that culling is active (no near-mute/degenerate pairs), and render a few structured labels to confirm they audibly step through discrete notes.
-
-- [ ] **Step 3: Round 1 — train from scratch on 500k, eval**
-
-Match v6's loss flags (confirm the surrogate path + `--spectral-weight` from v6's run config). Scale `--epochs` so examples-seen ≈ v6's run (500k is ~1.7× v4 → ≈ v6_epochs / 1.7):
-
+**Finetune CLI template:**
 ```bash
-cd tools && uv run python -m invert.train --data invert/data/v5_500k --out invert/runs/v7_scratch_500k \
-  --surrogate invert/runs/surrogate/surrogate.pt --spectral-weight <v6_value> [other v6 flags]
-```
-Then eval (val loss is in the run log; real-SFX below):
-
-```bash
-cd tools && uv run python -m invert.eval_targets --targets targets/ \
-  --ckpt invert/runs/v7_scratch_500k/best.pt --budget 2000 --duration-floor 0.5 \
-  -o invert/runs/v7_scratch_500k/eval_targets
-```
-Record: real-SFX median + val loss.
-
-- [ ] **Step 4: Round 2 — grow to 750k, continue training, eval**
-
-Generate a fresh 750k dataset (distinct seed; generation is cheap, so regenerate rather than splice shards):
-
-```bash
-cd tools && uv run python -m invert.dataset --out invert/data/v5_750k --n 750000 --augment-p 0.4 --seed 1
-```
-Continue training from round 1 (warm start) on the larger set, then eval:
-
-```bash
-cd tools && uv run python -m invert.train --data invert/data/v5_750k --out invert/runs/v7_scratch_750k \
-  --init-weights invert/runs/v7_scratch_500k/best.pt \
-  --surrogate invert/runs/surrogate/surrogate.pt --spectral-weight <v6_value> [other v6 flags]
-cd tools && uv run python -m invert.eval_targets --targets targets/ \
-  --ckpt invert/runs/v7_scratch_750k/best.pt --budget 2000 --duration-floor 0.5 \
-  -o invert/runs/v7_scratch_750k/eval_targets
-```
-Apply the stop-gate vs round 1. If improving, continue to Step 5; else the winning size is 500k — skip to Step 6 with `v7_scratch_500k`.
-
-- [ ] **Step 5: Round 3 — grow to 1M, continue, eval (cap)**
-
-```bash
-cd tools && uv run python -m invert.dataset --out invert/data/v5_1m --n 1000000 --augment-p 0.4 --seed 2
-cd tools && uv run python -m invert.train --data invert/data/v5_1m --out invert/runs/v7_scratch_1m \
-  --init-weights invert/runs/v7_scratch_750k/best.pt \
-  --surrogate invert/runs/surrogate/surrogate.pt --spectral-weight <v6_value> [other v6 flags]
-cd tools && uv run python -m invert.eval_targets --targets targets/ \
-  --ckpt invert/runs/v7_scratch_1m/best.pt --budget 2000 --duration-floor 0.5 \
-  -o invert/runs/v7_scratch_1m/eval_targets
-```
-The winning from-scratch size `N*` = the last round that cleared the stop-gate (cap 1M). Call its checkpoint `v7_scratch` and its dataset dir `invert/data/v5_<N*>`.
-
-Note: warm-start continuation measures *marginal data value* cheaply; it is not a pristine from-scratch-at-each-size ablation (acceptable — the goal is to pick a good size, not a scaling law).
-
-- [ ] **Step 6: Train the finetune arm once at N\***
-
-```bash
-cd tools && uv run python -m invert.train --data invert/data/v5_<N*> --out invert/runs/v7_finetune \
-  --init-weights invert/runs/v6_spectral/best.pt \
-  --surrogate invert/runs/surrogate/surrogate.pt --spectral-weight <v6_value> [other v6 flags]
-cd tools && uv run python -m invert.eval_targets --targets targets/ \
-  --ckpt invert/runs/v7_finetune/best.pt --budget 2000 --duration-floor 0.5 \
-  -o invert/runs/v7_finetune/eval_targets
+uv run python -m invert.train --data invert/data/v5_<N> --out invert/runs/v7_finetune_<N> \
+  --init-weights invert/runs/v6_spectral/best.pt --lr 1e-4 --epochs 5 --curriculum-epochs 0 \
+  --surrogate invert/runs/surrogate/surrogate.pt --spectral-weight 1.0
 ```
 
-- [ ] **Step 7: Arp one-shot probe + in-domain sanity**
+- [ ] **Step 0: Generate canary 200k + sanity-check**
 
-- Re-run the discrete-note one-shot check (the controlled arpeggio target + Throw/cursor/leeneBell) for `v7_scratch`, `v7_finetune`, and v6; confirm the **raw one-shot** predicts discrete notes better than v6.
-- On a small held-out synthetic set (fresh seed), measure param R² / spectral score for each model to quantify any in-domain cost.
+```bash
+cd tools && uv run python -m invert.dataset --out invert/data/v5_200k --n 200000 --augment-p 0.4 --seed 0
+```
+Confirm mix proportions, cull active, structured examples audibly step notes. Log feature-channel means vs `CHANNEL_MEAN` (update constants if material drift).
 
-- [ ] **Step 8: Decide + write results note**
+- [ ] **Step 1: Canary train scratch + finetune, eval vs v6**
 
-Write `docs/superpowers/plans/2026-07-24-inverse-model-data-retrain-results.md`: the data-scaling curve (real-SFX median + val loss at 500k/750k/1M), the chosen size `N*`, real-SFX medians (v6 vs v7_scratch vs v7_finetune), the arp one-shot verdict, and in-domain cost. **Winner = best real-SFX median without catastrophic in-domain regression.** If neither v7 beats v6, keep v6 and report the negative result (do not ship a regression). Commit the results note (not the runs).
+Train scratch (~15×300k/200k ≈ 22 epochs for examples-seen parity, or 15 if time-boxed — record choice). Train finetune with lr 1e-4. Eval one-shot + seeded on `targets/`; run arp probe. **If neither canary arm beats v6 on primary gates, STOP** — write negative results note; skip scale ladder (still may try Task 7 spectral finetune from v6 as a separate experiment).
+
+- [ ] **Step 2–4: Scale ladder (only if canary won)** — 500k / 750k / 1M as in original plan Steps 3–5, but gate on **one-shot** median; finetune only at final `N*`.
+
+- [ ] **Step 5: Decide synth winner** — best primary gates without catastrophic in-domain regression. Call it `v7_synth`.
+
+- [ ] **Step 6: Write interim results** into the final results note (complete after Task 7).
+
+---
+
+### Task 7: Real-audio spectral finetune
+
+**Files:**
+- Create: `invert/real_audio.py`, `invert/finetune_real.py`
+- Create: `tests/test_invert_real_audio.py`
+- Modify: `tools/.gitignore` (if not already)
+
+**Goal:** Finetune `v7_synth` (or v6 if synth failed) with **spectral loss only** on unlabeled real audio so the model adapts toward diverse real SFX without fake param labels.
+
+**Interfaces:**
+- `real_audio.build_manifest(roots, *, out_json, seed, holdout_frac=0.1, caps: dict[str,int] | None) -> Path` — enumerate wav/ogg, assign train/holdout by file-hash, cap per top-level pack (e.g. minecraft≤2000, RAREVGSFX≤2000, voiceover≤100; tags uncapped).
+- `real_audio.RealAudioFeatureDataset(manifest_rows)` — loads/resamples via existing `match.audio` helpers, `pack_features`, yields `{features, log_duration}` (no unit labels).
+- `finetune_real.finetune(..., init_weights, surrogate, spectral_weight=1.0, lr=1e-4, epochs=3–5)` — load ckpt meta+weights; minimize spectral MSE only; select best by holdout spectral loss; never read `tools/targets/`.
+
+- [ ] **Step 1: Gitignore + failing tests for manifest/dataset**
+- [ ] **Step 2: Implement real_audio.py; tests pass**
+- [ ] **Step 3: Implement finetune_real.py; smoke on tiny subset**
+- [ ] **Step 4: Full finetune from `v7_synth` (or v6); eval one-shot on `tools/targets/` + listen on held-out tags**
+- [ ] **Step 5: Final results note** `docs/superpowers/plans/2026-07-24-inverse-model-data-retrain-results.md` — synth curve, real-finetune delta, listen notes. Winner = best product one-shot without catastrophic in-domain regression. Commit the note only.
+
+**Eval discipline:** product `tools/targets/` is holdout forever. Metric scores are trends only; require listen pass on a fixed tag subset (jump/hit/shoot/explode/power_up).
 
 ---
 
