@@ -38,6 +38,9 @@ def build_parser() -> argparse.ArgumentParser:
                    help="tolerate uniform time stretch of the candidate")
     p.add_argument("--budget", type=int, default=5000,
                    help="total render evaluations (default 5000)")
+    p.add_argument("--restarts", action="store_true",
+                   help="spend leftover budget with CMA restarts (headroom "
+                        "experiments; shipping default is off)")
     p.add_argument("--time-budget", type=float, default=None,
                    help="wall-clock cap in seconds")
     p.add_argument("--popsize", type=int, default=28)
@@ -190,6 +193,7 @@ def main(argv: list[str] | None = None) -> int:
                 "surrogate_refine_steps": args.surrogate_refine_steps,
                 "surrogate_refine_lr": args.surrogate_refine_lr,
                 "surrogate": str(args.surrogate) if args.surrogate else None,
+                "restarts": args.restarts,
             },
             "budget": 0,
             "evals": 0,
@@ -222,6 +226,7 @@ def main(argv: list[str] | None = None) -> int:
         refine_steps=args.refine_steps,
         seed_units=seed_units,
         duration_floor=args.duration_floor,
+        restarts=args.restarts,
     )
 
     t0 = time.perf_counter()
@@ -258,6 +263,7 @@ def main(argv: list[str] | None = None) -> int:
             "surrogate_refine_steps": args.surrogate_refine_steps,
             "surrogate_refine_lr": args.surrogate_refine_lr,
             "surrogate": str(args.surrogate) if args.surrogate else None,
+            "restarts": args.restarts,
         },
         "budget": args.budget,
         "evals": optimizer.evals,

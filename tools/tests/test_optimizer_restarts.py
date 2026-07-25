@@ -85,3 +85,16 @@ def test_restarts_off_does_not_invoke_the_loop():
 
     opt._run_restarts = _boom
     opt.run()  # must not raise
+
+
+from match.match import build_parser
+
+
+def test_restarts_flag_defaults_off():
+    args = build_parser().parse_args(["x.wav", "-o", "out"])
+    assert args.restarts is False
+
+
+def test_restarts_flag_can_be_enabled():
+    args = build_parser().parse_args(["x.wav", "-o", "out", "--restarts"])
+    assert args.restarts is True
