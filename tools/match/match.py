@@ -50,6 +50,13 @@ def build_parser() -> argparse.ArgumentParser:
                    help="emit best result for the K best distinct wave types")
     p.add_argument("--refine-steps", type=int, default=0,
                    help="Stage 3 FD steepest-descent steps (0=off)")
+    p.add_argument("--surrogate-refine-steps", type=int, default=0,
+                   help="Adam steps on seed unit through SurrogateSynth (0=off; "
+                        "requires --seed-model and --surrogate)")
+    p.add_argument("--surrogate-refine-lr", type=float, default=1e-2,
+                   help="Adam lr for --surrogate-refine-steps (default 1e-2)")
+    p.add_argument("--surrogate", type=Path, default=None,
+                   help="SurrogateSynth checkpoint for --surrogate-refine-steps")
     p.add_argument("--jobs", type=int, default=None,
                    help=f"render worker processes (default {default_jobs()})")
     p.add_argument("--html-report", action="store_true",
@@ -74,6 +81,11 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if args.one_shot and args.seed_model is None:
         parser.error("--one-shot requires --seed-model")
+    if args.surrogate_refine_steps > 0:
+        if args.seed_model is None:
+            parser.error("--surrogate-refine-steps requires --seed-model")
+        if args.surrogate is None:
+            parser.error("--surrogate-refine-steps requires --surrogate")
     if args.seed_model is not None and args.wavetypes is not None:
         print(
             "warning: --wavetypes is ignored when --seed-model is set "
@@ -99,11 +111,37 @@ def main(argv: list[str] | None = None) -> int:
     seed_units = None
     if args.seed_model is not None:
         from invert.predict import load_checkpoint, predict_wave
+        from invert.features_pack import normalize_channels, pack_features
+        from invert.surrogate import load_surrogate
+        from invert.refine import refine_unit
+        import torch
 
         model, meta = load_checkpoint(args.seed_model, device="cpu")
         top_k = 1 if args.one_shot else 3
         guesses = predict_wave(model, meta, target, top_k=top_k)
-        seed_units = [(g["wave_type"], g["unit"]) for g in guesses]
+
+        if args.surrogate_refine_steps > 0:
+            feat, log_dur = pack_features(target)
+            device = torch.device("cpu")
+            x = normalize_channels(
+                torch.from_numpy(feat).unsqueeze(0).float(),
+                mean=meta["channel_mean"],
+                std=meta["channel_std"],
+            )
+            log_duration = torch.tensor([log_dur], dtype=torch.float32)
+            surrogate = load_surrogate(args.surrogate, device)
+            refined = []
+            for g in guesses:
+                unit = refine_unit(
+                    g["unit"], g["wave_type"], x, log_duration, surrogate,
+                    steps=args.surrogate_refine_steps,
+                    lr=args.surrogate_refine_lr,
+                    device=device,
+                )
+                refined.append((g["wave_type"], unit))
+            seed_units = refined
+        else:
+            seed_units = [(g["wave_type"], g["unit"]) for g in guesses]
 
     if args.one_shot:
         assert seed_units is not None and len(seed_units) >= 1
@@ -149,6 +187,9 @@ def main(argv: list[str] | None = None) -> int:
                 "one_shot": True,
                 "seed_model": str(args.seed_model),
                 "structure_objective": args.structure_objective,
+                "surrogate_refine_steps": args.surrogate_refine_steps,
+                "surrogate_refine_lr": args.surrogate_refine_lr,
+                "surrogate": str(args.surrogate) if args.surrogate else None,
             },
             "budget": 0,
             "evals": 0,
@@ -214,6 +255,9 @@ def main(argv: list[str] | None = None) -> int:
             "avg_seeds": args.avg_seeds,
             "seed_model": str(args.seed_model) if args.seed_model else None,
             "structure_objective": args.structure_objective,
+            "surrogate_refine_steps": args.surrogate_refine_steps,
+            "surrogate_refine_lr": args.surrogate_refine_lr,
+            "surrogate": str(args.surrogate) if args.surrogate else None,
         },
         "budget": args.budget,
         "evals": optimizer.evals,
