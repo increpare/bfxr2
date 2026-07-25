@@ -61,9 +61,11 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--duration-floor", type=float, default=0.0,
                    help="forbid candidates shorter than this fraction of the "
                         "target length (fills the decay tail; 0=off)")
-    p.add_argument("--legacy-objective", action="store_true",
-                   help="disable the sound-level pitch-structure term "
-                        "(pre-2026-07-24 objective; for A/B comparison)")
+    p.add_argument("--structure-objective", action="store_true",
+                   help="enable the sound-level pitch-structure term "
+                        "(off by default since it failed the 2026-07-25 "
+                        "listen gate; for A/B comparison, see "
+                        "docs/superpowers/plans/2026-07-24-gate-a-results.md §7)")
     return p
 
 
@@ -90,7 +92,7 @@ def main(argv: list[str] | None = None) -> int:
         allow_pitch_shift=args.allow_pitch_shift,
         allow_time_stretch=args.allow_time_stretch,
         weights=(
-            FeatureWeights(structure_pitch=0.0) if args.legacy_objective else None
+            FeatureWeights(structure_pitch=1.0) if args.structure_objective else None
         ),
     )
 
@@ -146,7 +148,7 @@ def main(argv: list[str] | None = None) -> int:
                 "avg_seeds": args.avg_seeds,
                 "one_shot": True,
                 "seed_model": str(args.seed_model),
-                "legacy_objective": args.legacy_objective,
+                "structure_objective": args.structure_objective,
             },
             "budget": 0,
             "evals": 0,
@@ -211,7 +213,7 @@ def main(argv: list[str] | None = None) -> int:
             "allow_time_stretch": args.allow_time_stretch,
             "avg_seeds": args.avg_seeds,
             "seed_model": str(args.seed_model) if args.seed_model else None,
-            "legacy_objective": args.legacy_objective,
+            "structure_objective": args.structure_objective,
         },
         "budget": args.budget,
         "evals": optimizer.evals,

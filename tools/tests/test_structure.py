@@ -76,8 +76,10 @@ def test_penalty_is_bounded():
     assert 0.0 <= pitch_structure_penalty(target, worst) <= PENALTY_CAP
 
 
-def test_legacy_weights_disable_the_term():
-    """--legacy-objective must reproduce the pre-structure-term objective."""
+def test_structure_pitch_weight_gates_the_term():
+    """FeatureWeights.structure_pitch defaults to 0.0 (off — it failed the
+    2026-07-25 listen gate) but the term stays fully recoverable by setting
+    the weight back to nonzero; this pins that mechanism."""
     import numpy as np
 
     from match.features import FeatureWeights
@@ -93,12 +95,12 @@ def test_legacy_weights_disable_the_term():
         target = renderer.render(params_target, seed=1234)
         gliss = renderer.render(params_gliss, seed=1234)
 
-    new = MatchObjective(target)
-    legacy = MatchObjective(target, weights=FeatureWeights(structure_pitch=0.0))
-    assert new.score_components(gliss)["structure_pitch"] > 0.0
-    assert legacy.score_components(gliss)["structure_pitch"] == 0.0
-    assert legacy.score(gliss) < new.score(gliss)
+    default = MatchObjective(target)
+    enabled = MatchObjective(target, weights=FeatureWeights(structure_pitch=1.0))
+    assert default.score_components(gliss)["structure_pitch"] == 0.0
+    assert enabled.score_components(gliss)["structure_pitch"] > 0.0
+    assert default.score(gliss) < enabled.score(gliss)
     assert np.isclose(
-        legacy.score(gliss),
-        new.score(gliss) - new.score_components(gliss)["structure_pitch"],
+        default.score(gliss),
+        enabled.score(gliss) - enabled.score_components(gliss)["structure_pitch"],
     )

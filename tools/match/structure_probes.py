@@ -20,6 +20,14 @@ real targets.
 Structure families use sustainTime=0.6 (~71 frames): at sustainTime=0.3 (22
 frames) the note detector misses the middle note of a 3-note arpeggio.
 
+FeatureWeights.structure_pitch now defaults to 0.0 — the term failed its
+2026-07-25 human listen gate (docs/superpowers/plans/
+2026-07-24-gate-a-results.md §7) and ships disabled. This suite builds its
+own objective with structure_pitch explicitly enabled so it keeps measuring
+the term's capability in isolation, independent of the shipping default; a
+future redesign needs this harness (and the negative result) to stay
+reproducible.
+
     PYTHONPATH=. uv run python -m match.structure_probes
     PYTHONPATH=. uv run python -m match.structure_probes --describe
 """
@@ -27,9 +35,18 @@ from __future__ import annotations
 
 import argparse
 from dataclasses import dataclass
+from functools import partial
 
+from .features import FeatureWeights
 from .objective import MatchObjective
 from .renderer import BfxrRenderer
+
+# The suite deliberately measures the term with it turned ON, regardless of
+# the shipping default (FeatureWeights.structure_pitch defaults to 0.0).
+_STRUCTURE_ENABLED_WEIGHTS = FeatureWeights(structure_pitch=1.0)
+_DEFAULT_OBJECTIVE_FACTORY = partial(
+    MatchObjective, weights=_STRUCTURE_ENABLED_WEIGHTS
+)
 
 RENDER_SEED = 1234
 PASS_THRESHOLD = 12  # of len(PROBES); spec Section 1
@@ -196,7 +213,7 @@ STRUCTURE_IDS = (
 )
 
 
-def evaluate(objective_factory=MatchObjective) -> list[ProbeResult]:
+def evaluate(objective_factory=_DEFAULT_OBJECTIVE_FACTORY) -> list[ProbeResult]:
     """Render every probe and score good/bad/severe against its target."""
     results: list[ProbeResult] = []
     with BfxrRenderer() as renderer:

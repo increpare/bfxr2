@@ -267,11 +267,17 @@ test pins that), but it does not happen to fire on these ten targets.
 ### Consequences
 
 Per the plan: on a Gate B failure, fix objective/weights — **do not retrain**, and
-do not switch the search default to the new objective. The term stays in the code
-but its default weight is now an open question, and §6's evidence (no gradient
+do not switch the search default to the new objective. §6's evidence (no gradient
 where it fires hardest, plus false-positive note detection on noisy and
-glissando targets) argues for either a stricter voicing/interval gate or
+glissando targets) argued for either a stricter voicing/interval gate or
 defaulting `structure_pitch` to 0.0 pending a redesign.
+
+**Done (post-Gate-B):** `FeatureWeights.structure_pitch` now defaults to `0.0`.
+The A/B flag polarity flipped with it: `--legacy-objective` (opt-out) became
+`--structure-objective` (opt-in). The term, probes, and `--structure-objective`
+path stay in the tree for a redesign; shipping search no longer pays the term.
+Historical Gate A/B commands in this document that say `--legacy-objective`
+refer to the pre-flip flag.
 
 ## 8. Gate A verdict
 
@@ -281,14 +287,22 @@ appeared. **No claim of improvement is made here.** Proceed to Gate B.
 
 ## Appendix — reproducing
 
+Gate A was run when `structure_pitch` defaulted to `1.0` and the opt-out flag
+was `--legacy-objective`. After the Gate B failure that polarity flipped
+(`structure_pitch=0.0` default; `--structure-objective` opt-in). Equivalent
+commands today:
+
 ```bash
 cd tools
 CKPT=.../\.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt
+# baseline = shipping default (structure term off)
 PYTHONPATH=. uv run python -m invert.eval_targets --targets targets/ \
-  --ckpt "$CKPT" --budget 2000 -o invert/runs/gateA_legacy/ --legacy-objective
+  --ckpt "$CKPT" --budget 2000 -o invert/runs/gateA_legacy/
+# candidate = structure term on
 PYTHONPATH=. uv run python -m invert.eval_targets --targets targets/ \
-  --ckpt "$CKPT" --budget 2000 -o invert/runs/gateA_new/
+  --ckpt "$CKPT" --budget 2000 -o invert/runs/gateA_new/ --structure-objective
 PYTHONPATH=. uv run python -m match.length_report \
   --eval-root invert/runs/gateA_new --targets targets/ --mode model_seeded
+# probes always force the term on, independent of the shipping default
 PYTHONPATH=. uv run python -m match.structure_probes
 ```

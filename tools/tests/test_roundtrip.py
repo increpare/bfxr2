@@ -6,21 +6,25 @@ the test proves the optimizer + metric work, not that real-world sounds match
 well. Parameter recovery is deliberately not asserted (the parametrization is
 redundant: different params can produce near-identical audio).
 
-Two scales are in play here. The search itself always runs under the real,
-current `MatchObjective` (including the sound-level structure_pitch term
-from structure.py) — that is what we want optimized, and weakening it here
-would hide regressions in the thing that actually matters. But
-SCORE_THRESHOLD was calibrated on 2026-07-22 against the pre-structure-term
-("legacy") objective, and the bounded [0, PENALTY_CAP] structure term shifts
-the scale: on these fixtures it saturates at its cap for every candidate the
-search can reach, so it adds no gradient, only reshuffles which candidates
-survive early screening (search-trajectory noise, not systematic bias —
-measured across 32 real targets, roughly as many winners improve as regress
-on the legacy metric). So the assertion re-scores the winning render with the
-legacy objective (structure_pitch=0.0) and checks that against
-SCORE_THRESHOLD, keeping the threshold's originally-calibrated meaning as an
-optimizer+metric health check. The serialization guard below still checks
-the real objective, unchanged.
+Two scales are in play here, though as of 2026-07-25 they coincide.
+SCORE_THRESHOLD was calibrated on 2026-07-22 against the contour-feature
+("legacy") objective, before the sound-level structure_pitch term
+(structure.py) existed. That term later shipped default-on, then failed its
+2026-07-25 human listen gate (docs/superpowers/plans/
+2026-07-24-gate-a-results.md §7): on these fixtures it saturates at its cap
+for every candidate the search can reach, so it added no gradient, only
+reshuffled which candidates survive early screening (search-trajectory
+noise, not systematic bias — measured across 32 real targets, roughly as
+many winners improve as regress on the legacy metric). FeatureWeights.
+structure_pitch now defaults to 0.0, so the real, default `MatchObjective`
+used by the search below (line ~84) is once again the legacy-scale metric.
+The assertion still re-scores the winning render with an explicitly
+constructed FeatureWeights(structure_pitch=0.0) objective rather than
+relying on the default matching it — the whole point is pinning
+SCORE_THRESHOLD's originally-calibrated scale, which must hold even if the
+default changes again (e.g. a future redesign re-enables the term). The
+serialization guard below still checks the real (default) objective,
+unchanged.
 """
 from pathlib import Path
 
@@ -96,7 +100,9 @@ def test_roundtrip(renderer, fixture):
     assert abs(objective.score(rerendered) - best.score) < 0.05
 
     # Assert against the legacy-scale score so SCORE_THRESHOLD keeps the
-    # meaning it was calibrated with (see module docstring).
+    # meaning it was calibrated with (see module docstring). This weights=
+    # override is now the same as the default, but stays explicit: the
+    # point is pinning the scale, not tracking wherever the default drifts.
     legacy_objective = MatchObjective(target, weights=FeatureWeights(structure_pitch=0.0))
     legacy_score = legacy_objective.score(rerendered)
     assert legacy_score < SCORE_THRESHOLD, (
