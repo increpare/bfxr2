@@ -731,7 +731,13 @@ Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
 
 **Interfaces:**
 - Consumes: `rescore_heldout`, `make_preset_targets` (Tasks 3 & 5); `match.match.main` as `match_main`; `HARD_SLICE` from `match.listen_compare`.
-- Produces: `ARMS: dict[str, dict[str, Any]]`; `run_arm(target: Path, out_dir: Path, arm: str, ckpt: Path, jobs: int | None, rng_seed: int) -> dict[str, Any]`; `main(argv: list[str] | None = None) -> int`.
+- Produces: `ARMS: dict[str, dict[str, Any]]`; `heldout_for_run(target: Path, bfxr_path: Path, jobs: int | None) -> float`; `run_arm(target: Path, out_dir: Path, arm: str, *, ckpt: Path, jobs: int | None, rng_seed: int) -> dict[str, Any]`; `main(argv: list[str] | None = None) -> int`.
+
+**Why `heldout_for_run` is a separate function:** it is the seam that keeps the
+Node renderer out of the unit tests. Building `MatchObjective`/`BfxrRenderer`
+inline inside `run_arm` would spawn real render workers (and call
+`prepare_target` on a fixture path) even when `rescore_heldout` is monkeypatched,
+violating the global constraint that tests must not require Node.
 
 - [ ] **Step 1: Write the failing test**
 
@@ -776,7 +782,7 @@ def test_run_arm_builds_the_expected_argv(tmp_path, monkeypatch):
         return 0
 
     monkeypatch.setattr("match.headroom.match_main", _fake_match_main)
-    monkeypatch.setattr("match.headroom.rescore_heldout",
+    monkeypatch.setattr("match.headroom.heldout_for_run",
                         lambda *a, **k: 1.9)
 
     row = run_arm(tmp_path / "t.wav", tmp_path / "out", "big_seeded",
@@ -806,7 +812,7 @@ def test_baseline_unseeded_omits_the_model(tmp_path, monkeypatch):
         return 0
 
     monkeypatch.setattr("match.headroom.match_main", _fake_match_main)
-    monkeypatch.setattr("match.headroom.rescore_heldout", lambda *a, **k: 2.2)
+    monkeypatch.setattr("match.headroom.heldout_for_run", lambda *a, **k: 2.2)
 
     run_arm(tmp_path / "t.wav", tmp_path / "out2", "baseline_unseeded",
             ckpt=tmp_path / "best.pt", jobs=None, rng_seed=0)
@@ -839,6 +845,17 @@ ARMS: dict[str, dict[str, Any]] = {
 BEST_FILE = "match.bfxr"
 
 
+def heldout_for_run(target: Path, bfxr_path: Path, jobs: int | None) -> float:
+    """Score a saved winner on the held-out render seed.
+
+    Kept separate from run_arm so unit tests can stub it out; building the
+    objective and renderer inline would spawn Node workers in every test.
+    """
+    objective = MatchObjective(prepare_target(target))
+    with BfxrRenderer(jobs=jobs) as renderer:
+        return rescore_heldout(bfxr_path, objective, renderer)
+
+
 def run_arm(
     target: Path,
     out_dir: Path,
@@ -869,9 +886,7 @@ def run_arm(
     report = json.loads((out_dir / "report.json").read_text())
     best = report["results"][0]
 
-    objective = MatchObjective(prepare_target(target))
-    with BfxrRenderer(jobs=jobs) as renderer:
-        heldout = rescore_heldout(out_dir / BEST_FILE, objective, renderer)
+    heldout = heldout_for_run(target, out_dir / BEST_FILE, jobs)
 
     return {
         "arm": arm,
