@@ -74,3 +74,31 @@ def test_penalty_is_bounded():
     target = summarize(_features([400, 600, 900]))
     worst = StructureSummary(note_count=0, first_interval_st=0.0, voiced_frac=1.0)
     assert 0.0 <= pitch_structure_penalty(target, worst) <= PENALTY_CAP
+
+
+def test_legacy_weights_disable_the_term():
+    """--legacy-objective must reproduce the pre-structure-term objective."""
+    import numpy as np
+
+    from match.features import FeatureWeights
+    from match.objective import MatchObjective
+    from match.renderer import BfxrRenderer
+
+    params_target = dict(waveType=2, frequency_start=0.30,
+                         pitch_jump_amount=0.61, pitch_jump_onset_percent=0.5,
+                         sustainTime=0.6, decayTime=0.15)
+    params_gliss = dict(waveType=2, frequency_start=0.30,
+                        frequency_slide=0.10, sustainTime=0.6, decayTime=0.15)
+    with BfxrRenderer() as renderer:
+        target = renderer.render(params_target, seed=1234)
+        gliss = renderer.render(params_gliss, seed=1234)
+
+    new = MatchObjective(target)
+    legacy = MatchObjective(target, weights=FeatureWeights(structure_pitch=0.0))
+    assert new.score_components(gliss)["structure_pitch"] > 0.0
+    assert legacy.score_components(gliss)["structure_pitch"] == 0.0
+    assert legacy.score(gliss) < new.score(gliss)
+    assert np.isclose(
+        legacy.score(gliss),
+        new.score(gliss) - new.score_components(gliss)["structure_pitch"],
+    )

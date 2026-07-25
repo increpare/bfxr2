@@ -15,6 +15,7 @@ from pathlib import Path
 
 from .audio import SAMPLE_RATE, prepare_target
 from .bfxr_io import ParamSpace, write_bfxr
+from .features import FeatureWeights
 from .objective import MatchObjective
 from .optimizer import (
     RENDER_SEED,
@@ -60,6 +61,9 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--duration-floor", type=float, default=0.0,
                    help="forbid candidates shorter than this fraction of the "
                         "target length (fills the decay tail; 0=off)")
+    p.add_argument("--legacy-objective", action="store_true",
+                   help="disable the sound-level pitch-structure term "
+                        "(pre-2026-07-24 objective; for A/B comparison)")
     return p
 
 
@@ -85,6 +89,9 @@ def main(argv: list[str] | None = None) -> int:
         target,
         allow_pitch_shift=args.allow_pitch_shift,
         allow_time_stretch=args.allow_time_stretch,
+        weights=(
+            FeatureWeights(structure_pitch=0.0) if args.legacy_objective else None
+        ),
     )
 
     seed_units = None
