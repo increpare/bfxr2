@@ -113,6 +113,14 @@ class OptimizeSettings:
     # seed the search with pitch-jump (arpeggio) candidates when the target is
     # a discrete flat-note sequence
     arp_seeds: bool = True
+    # Spend leftover budget with IPOP-style CMA restarts. A single CMA run
+    # stops on tolfun long before a large budget is exhausted; without this a
+    # big-budget arm silently under-spends and a flat result would be an
+    # artifact of early stopping, not evidence of a ceiling.
+    # SHIPPING PATH KEEPS THIS False.
+    restarts: bool = False
+    restart_popsize_factor: float = 2.0
+    restart_popsize_cap: int = 256
 
 
 class StagedOptimizer:
@@ -343,11 +351,18 @@ class StagedOptimizer:
                       f"({self.space.wave_type_names[wt]}): best {scores[i]:.4f}")
         return best
 
-    def _run_cma(self, start: Candidate, max_iters: int | None) -> None:
+    def _run_cma(
+        self,
+        start: Candidate,
+        max_iters: int | None,
+        *,
+        popsize: int | None = None,
+        cma_seed: int | None = None,
+    ) -> None:
         opts = {
             "bounds": [np.zeros(self.space.dim).tolist(), self.upper.tolist()],
-            "popsize": self.s.popsize,
-            "seed": self.s.rng_seed + 1,
+            "popsize": self.s.popsize if popsize is None else popsize,
+            "seed": (self.s.rng_seed + 1) if cma_seed is None else cma_seed,
             "verbose": -9,
             "tolfun": 1e-4,
         }
@@ -391,6 +406,49 @@ class StagedOptimizer:
             self._log(f"arp stage waveType={best.wave_type} start {best.score:.4f}")
             self._run_cma(best, max_iters=None)
 
+    def _run_restarts(self, wave_types: list[int]) -> None:
+        """Spend whatever budget stage 2 left on the table.
+
+        Alternates a perturbed archive-best (exploit, keeps that candidate's
+        wave type) with a fresh random unit on a survivor wave type (explore),
+        growing popsize each time. The shared archive means restarts can only
+        improve the final result.
+        """
+        survivors = sorted({c.wave_type for c in self.archive}) or list(wave_types)
+        popsize = self.s.popsize
+        i = 0
+        while not self._out_of_budget():
+            before = self.evals
+            popsize = min(
+                int(popsize * self.s.restart_popsize_factor),
+                self.s.restart_popsize_cap,
+            )
+            if i % 2 == 0 and self.archive:
+                base = min(self.archive)
+                unit = np.clip(
+                    base.unit + self.rng.normal(0.0, 0.1, size=base.unit.shape),
+                    0.0,
+                    self.upper,
+                )
+                start = Candidate(base.score, base.wave_type, unit)
+            else:
+                wt = survivors[(i // 2) % len(survivors)]
+                start = Candidate(float("inf"), wt, self._screen_sample())
+            self._log(
+                f"restart {i} waveType={start.wave_type} popsize={popsize}"
+            )
+            self._run_cma(
+                start,
+                max_iters=None,
+                popsize=popsize,
+                cma_seed=self.s.rng_seed + 1000 + i,
+            )
+            i += 1
+            if self.evals == before:
+                # a restart that evaluates nothing would spin forever
+                self._log("restart made no progress; stopping")
+                break
+
     def run(self) -> list[Candidate]:
         full_budget = self.s.budget
         wave_types = self.s.wave_types or self.space.wave_types
@@ -422,6 +480,9 @@ class StagedOptimizer:
             self.s.budget = full_budget + int(0.5 * full_budget)
             self._run_arp_stage(wave_types)
             self.s.budget = full_budget
+
+        if self.s.restarts:
+            self._run_restarts(wave_types)
 
         by_wt = {}
         for c in self.archive:
