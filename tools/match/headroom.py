@@ -31,6 +31,15 @@ from .renderer import BfxrRenderer
 # noise -- a real risk at 200k evals with avg_seeds=1.
 HELDOUT_RENDER_SEED = 8765
 
+# Seed the in-domain control targets are RENDERED with. Must differ from both
+# RENDER_SEED (or the search would be handed the target's exact noise
+# realization for free) and HELDOUT_RENDER_SEED (or a well-recovered preset
+# would reproduce the target's own noise on the held-out re-score, collapsing
+# its held-out score toward 0 -- deflating the in-domain floor more for the
+# better-recovering big-budget arm and firing the "reachability ceiling"
+# branch of the decision rule for a reason unrelated to reachability).
+PRESET_TARGET_RENDER_SEED = 31337
+
 
 def rescore_heldout(
     bfxr_path: Path,
@@ -49,6 +58,7 @@ def make_preset_targets(
     n: int = 10,
     seed: int = 4242,
     renderer: Any | None = None,
+    jobs: int | None = None,
 ) -> list[Path]:
     """Render N bfxr presets to wavs: the known-reachable control set.
 
@@ -57,11 +67,18 @@ def make_preset_targets(
     """
     out_dir.mkdir(parents=True, exist_ok=True)
     params_list = harvest_preset_params(n, seed)
+    if len(params_list) != n:
+        raise RuntimeError(
+            f"preset harvest returned {len(params_list)} params, expected {n}: "
+            "the control set would silently shrink"
+        )
     if renderer is None:
-        with BfxrRenderer() as owned:
-            waves = owned.render_batch(params_list, seeds=HELDOUT_RENDER_SEED)
+        with BfxrRenderer(jobs=jobs) as owned:
+            waves = owned.render_batch(params_list,
+                                       seeds=PRESET_TARGET_RENDER_SEED)
     else:
-        waves = renderer.render_batch(params_list, seeds=HELDOUT_RENDER_SEED)
+        waves = renderer.render_batch(params_list,
+                                      seeds=PRESET_TARGET_RENDER_SEED)
 
     # Validate that we have a healthy control set.
     # Check for None waves (renderer failures).
@@ -162,6 +179,12 @@ def run_arm(
         "elapsed_seconds": float(report["elapsed_seconds"]),
         "trace": report.get("trace", []),
     }
+    # A restart arm that stops far short of its budget is an early-stopping
+    # artifact, not evidence of a ceiling -- exactly the confound this probe
+    # exists to rule out. Flag it so a flat result can't be read as converged.
+    row["underspent"] = bool(
+        cfg["restarts"] and row["evals"] < 0.9 * int(cfg["budget"])
+    )
 
     try:
         row["heldout_score"] = heldout_for_run(target, out_dir / BEST_FILE, jobs)
@@ -182,6 +205,38 @@ def _write_json_atomic(path: Path, data: Any) -> None:
     tmp = path.with_suffix(path.suffix + f".tmp{os.getpid()}")
     tmp.write_text(json.dumps(data, indent=2))
     os.replace(tmp, path)
+
+
+def _row_key(row: dict[str, Any]) -> tuple[Any, Any, Any]:
+    return (row.get("kind"), row.get("target"), row.get("arm"))
+
+
+def load_existing_rows(path: Path) -> list[dict[str, Any]]:
+    """Rows from a previous (possibly interrupted) invocation, or []."""
+    try:
+        data = json.loads(path.read_text())
+    except (OSError, ValueError):
+        return []
+    rows = data.get("rows") if isinstance(data, dict) else None
+    return [r for r in rows if isinstance(r, dict)] if isinstance(rows, list) else []
+
+
+def merge_rows(
+    old: list[dict[str, Any]], new: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
+    """Merge by (kind, target, arm); rows from `new` replace same-key old rows.
+
+    Without this, a crash at hour 5 plus a relaunch -- or a second partial
+    invocation with --arms -- would leave results.json holding only the newly
+    computed rows. The per-arm report.json files survive on disk, but the
+    held-out scores live only here.
+    """
+    merged: dict[tuple[Any, Any, Any], dict[str, Any]] = {}
+    for row in old:
+        merged[_row_key(row)] = row
+    for row in new:
+        merged[_row_key(row)] = row
+    return list(merged.values())
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -222,11 +277,26 @@ def main(argv: list[str] | None = None) -> int:
         work.append(("real", path, args.arms))
 
     if args.presets > 0:
-        preset_paths = make_preset_targets(args.out / "preset_targets",
-                                           n=args.presets)
+        # A renderer hiccup or a degeneracy guard here must not abort the whole
+        # unattended run before a single real target is searched.
+        try:
+            preset_paths = make_preset_targets(args.out / "preset_targets",
+                                               n=args.presets,
+                                               jobs=args.jobs)
+        except Exception as exc:
+            traceback.print_exc()
+            print(
+                "warning: could not build the in-domain control set "
+                f"({type(exc).__name__}: {exc}); continuing with real targets "
+                "only -- the in-domain floor will be missing from this run",
+                file=sys.stderr,
+            )
+            preset_paths = []
         for path in preset_paths:
             work.append(("in_domain", path, args.preset_arms))
 
+    results_path = args.out / "results.json"
+    prior_rows = load_existing_rows(results_path)
     rows: list[dict[str, Any]] = []
     for kind, path, arms in work:
         for arm in arms:
@@ -241,10 +311,13 @@ def main(argv: list[str] | None = None) -> int:
             row["kind"] = kind
             row["target"] = path.stem
             rows.append(row)
-            # written after every arm so an interrupted run is still readable
-            _write_json_atomic(args.out / "results.json", {
+            # written after every arm so an interrupted run is still readable,
+            # merged with any prior run's rows so a resume never truncates
+            _write_json_atomic(results_path, {
                 "ckpt": str(args.ckpt), "rng_seed": args.rng_seed,
-                "heldout_seed": HELDOUT_RENDER_SEED, "rows": rows,
+                "heldout_seed": HELDOUT_RENDER_SEED,
+                "preset_target_seed": PRESET_TARGET_RENDER_SEED,
+                "rows": merge_rows(prior_rows, rows),
             })
 
     listen_arms = [(a, args.out / a) for a in args.arms if a != "baseline_unseeded"]

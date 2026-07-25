@@ -29,6 +29,10 @@ SQUARE_ONLY_PARAMS = ("squareDuty", "dutySweep")
 # oscillator period is 100/(fs^2+0.001) supersamples at 8x supersampling,
 # so pitch in Hz = 8 * 44100 * (fs^2 + 0.001) / 100 (verified empirically)
 SUPERSAMPLED_RATE = 8 * SAMPLE_RATE
+# consecutive restarts that evaluate nothing before _run_restarts gives up
+NO_PROGRESS_RESTART_LIMIT = 3
+# the arp stage's additive allowance, as a fraction of the run's own budget
+ARP_EXTRA_BUDGET_FRACTION = 0.5
 
 
 def freq_param_from_hz(hz: float) -> float | None:
@@ -417,6 +421,7 @@ class StagedOptimizer:
         survivors = sorted({c.wave_type for c in self.archive}) or list(wave_types)
         popsize = self.s.popsize
         i = 0
+        stalled = 0
         while not self._out_of_budget():
             before = self.evals
             popsize = min(
@@ -445,9 +450,21 @@ class StagedOptimizer:
             )
             i += 1
             if self.evals == before:
-                # a restart that evaluates nothing would spin forever
-                self._log("restart made no progress; stopping")
-                break
+                # A single barren restart is not a reason to abandon the
+                # budget: CMA can stop at initialisation for one start point
+                # (es.stop() already true) while the next restart kind -- the
+                # alternating explore/exploit start, a different wave type, a
+                # bigger popsize -- spends fine. Bailing on the first one left
+                # most of a 200000 budget unspent, i.e. the very early-stopping
+                # artifact this probe exists to rule out. Only give up when
+                # nothing at all makes progress.
+                stalled += 1
+                self._log(f"restart made no progress ({stalled} in a row)")
+                if stalled >= NO_PROGRESS_RESTART_LIMIT:
+                    self._log("restarts cannot spend the budget; stopping")
+                    break
+            else:
+                stalled = 0
 
     def run(self) -> list[Candidate]:
         full_budget = self.s.budget
@@ -473,16 +490,27 @@ class StagedOptimizer:
                       f"({self.space.wave_type_names[winner.wave_type]})")
             self._run_cma(winner, max_iters=None)
 
+        # Restarts are part of the MAIN pipeline: they spend what stage 2 left
+        # of `budget`, and must run before the arp stage. If arp went first it
+        # could consume its 1.5x allowance and leave the restart loop already
+        # out of budget -- so an arp-detected target would silently get no
+        # restarts at all, and its baseline arm would reach 1.5x its budget
+        # while its big arm stayed capped at 1x (a ~66x arm ratio instead of
+        # the intended 100x). Running restarts first gives every arm the same
+        # treatment at every stage: main pipeline up to `budget`, then arp's
+        # additive allowance on top.
+        if self.s.restarts:
+            self._run_restarts(wave_types)
+
         # arp refinement on ADDITIONAL budget: an arpeggio-looking target just
         # searches a bit longer, rather than stealing budget the main pipeline
         # may need. Keeps the main result intact, so arp can only improve it.
         if self.arp_units:
-            self.s.budget = full_budget + int(0.5 * full_budget)
+            self.s.budget = full_budget + int(
+                ARP_EXTRA_BUDGET_FRACTION * full_budget
+            )
             self._run_arp_stage(wave_types)
             self.s.budget = full_budget
-
-        if self.s.restarts:
-            self._run_restarts(wave_types)
 
         by_wt = {}
         for c in self.archive:

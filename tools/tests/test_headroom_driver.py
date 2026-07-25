@@ -1,6 +1,13 @@
 import json
 
-from match.headroom import ARMS, _safe_dir, main, run_arm
+from match.headroom import (
+    ARMS,
+    _safe_dir,
+    load_existing_rows,
+    main,
+    merge_rows,
+    run_arm,
+)
 
 
 def test_arm_matrix_matches_the_spec():
@@ -205,7 +212,8 @@ def test_main_results_json_is_valid_with_one_row_per_target_arm(
                 "wave_type_name": "Square", "evals": 10,
                 "elapsed_seconds": 1.0, "trace": []}
 
-    def _fake_make_preset_targets(out_dir_arg, n=10, seed=4242, renderer=None):
+    def _fake_make_preset_targets(out_dir_arg, n=10, seed=4242, renderer=None,
+                                  jobs=None):
         return preset_paths
 
     monkeypatch.setattr("match.headroom.run_arm", _fake_run_arm)
@@ -232,3 +240,156 @@ def test_main_results_json_is_valid_with_one_row_per_target_arm(
     assert "error" not in by_target[real_name]
     assert "error" not in by_target["preset_00"]
     assert "error" in by_target["preset_01"]
+
+
+# --- underspend detection -------------------------------------------------
+
+
+def _stub_match_main(tmp_path, out_name, evals):
+    def _fake(argv):
+        out = tmp_path / out_name
+        out.mkdir(parents=True, exist_ok=True)
+        (out / "report.json").write_text(json.dumps({
+            "evals": evals, "elapsed_seconds": 1.0, "trace": [],
+            "results": [{"file": "match.bfxr", "score": 1.0,
+                         "wave_type": 0, "wave_type_name": "Square"}],
+        }))
+        return 0
+    return _fake
+
+
+def test_restart_arm_that_underspends_its_budget_is_flagged(tmp_path, monkeypatch):
+    """A big arm that stops far short of 200000 is an early-stopping artifact,
+    not a converged ceiling; the row must say so."""
+    monkeypatch.setattr("match.headroom.match_main",
+                        _stub_match_main(tmp_path, "u1", 1000))
+    monkeypatch.setattr("match.headroom.heldout_for_run", lambda *a, **k: 1.0)
+    row = run_arm(tmp_path / "t.wav", tmp_path / "u1", "big_seeded",
+                  ckpt=tmp_path / "best.pt", jobs=None, rng_seed=0)
+    assert row["underspent"] is True
+
+
+def test_restart_arm_that_spends_its_budget_is_not_flagged(tmp_path, monkeypatch):
+    monkeypatch.setattr("match.headroom.match_main",
+                        _stub_match_main(tmp_path, "u2", 199000))
+    monkeypatch.setattr("match.headroom.heldout_for_run", lambda *a, **k: 1.0)
+    row = run_arm(tmp_path / "t.wav", tmp_path / "u2", "big_seeded",
+                  ckpt=tmp_path / "best.pt", jobs=None, rng_seed=0)
+    assert row["underspent"] is False
+
+
+def test_baseline_arm_is_never_flagged_underspent(tmp_path, monkeypatch):
+    """Baseline arms don't request restarts, so stopping early is expected."""
+    monkeypatch.setattr("match.headroom.match_main",
+                        _stub_match_main(tmp_path, "u3", 300))
+    monkeypatch.setattr("match.headroom.heldout_for_run", lambda *a, **k: 1.0)
+    row = run_arm(tmp_path / "t.wav", tmp_path / "u3", "baseline_seeded",
+                  ckpt=tmp_path / "best.pt", jobs=None, rng_seed=0)
+    assert row["underspent"] is False
+
+
+# --- results.json resume/merge -------------------------------------------
+
+
+def test_merge_rows_replaces_by_kind_target_arm():
+    old = [
+        {"kind": "real", "target": "a", "arm": "baseline_seeded", "score": 1.0},
+        {"kind": "real", "target": "a", "arm": "big_seeded", "score": 2.0},
+        {"kind": "in_domain", "target": "a", "arm": "big_seeded", "score": 3.0},
+    ]
+    new = [{"kind": "real", "target": "a", "arm": "big_seeded", "score": 9.0}]
+    merged = merge_rows(old, new)
+    assert len(merged) == 3
+    by_key = {(r["kind"], r["target"], r["arm"]): r["score"] for r in merged}
+    assert by_key[("real", "a", "big_seeded")] == 9.0
+    # same target+arm but a different kind is a different row
+    assert by_key[("in_domain", "a", "big_seeded")] == 3.0
+    assert by_key[("real", "a", "baseline_seeded")] == 1.0
+
+
+def test_load_existing_rows_tolerates_missing_or_corrupt_file(tmp_path):
+    assert load_existing_rows(tmp_path / "nope.json") == []
+    bad = tmp_path / "bad.json"
+    bad.write_text("{not json")
+    assert load_existing_rows(bad) == []
+
+
+def _run_main(tmp_path, targets_dir, out_dir, arms):
+    return main([
+        "--targets", str(targets_dir),
+        "--ckpt", str(tmp_path / "best.pt"),
+        "-o", str(out_dir),
+        "--presets", "0",
+        "--arms", *arms,
+    ])
+
+
+def test_a_partial_rerun_preserves_rows_it_did_not_recompute(
+    tmp_path, monkeypatch
+):
+    """Important: a crash at hour 5 plus a relaunch (or a second `--arms`
+    invocation) must not truncate results.json to only the new rows."""
+    name = "Mario 3 - jump (nes)"
+    targets_dir = _make_targets_dir(tmp_path, [name])
+    out_dir = tmp_path / "out"
+
+    scores = {"v": 1.0}
+
+    def _fake_run_arm(target, out_dir_arg, arm, *, ckpt, jobs, rng_seed):
+        return {"arm": arm, "score": scores["v"], "heldout_score": 1.0,
+                "wave_type_name": "Square", "evals": 10,
+                "elapsed_seconds": 1.0, "trace": []}
+
+    monkeypatch.setattr("match.headroom.run_arm", _fake_run_arm)
+    monkeypatch.setattr("match.headroom.write_arms_page", lambda *a, **k: None)
+
+    assert _run_main(tmp_path, targets_dir, out_dir,
+                     ["baseline_seeded", "big_seeded"]) == 0
+    rows = json.loads((out_dir / "results.json").read_text())["rows"]
+    assert len(rows) == 2
+
+    # second, partial invocation: only one arm re-run
+    scores["v"] = 7.0
+    assert _run_main(tmp_path, targets_dir, out_dir, ["big_seeded"]) == 0
+    rows = json.loads((out_dir / "results.json").read_text())["rows"]
+    by_arm = {r["arm"]: r for r in rows}
+    assert set(by_arm) == {"baseline_seeded", "big_seeded"}
+    assert by_arm["baseline_seeded"]["score"] == 1.0  # preserved, not dropped
+    assert by_arm["big_seeded"]["score"] == 7.0  # replaced by the new run
+
+
+# --- control-set failure must not kill the run ---------------------------
+
+
+def test_control_set_failure_still_runs_the_real_targets(tmp_path, monkeypatch):
+    """make_preset_targets raising (renderer hiccup, degeneracy guard) used to
+    abort main() before a single real target was searched -- and the run is
+    launched with nohup, so that costs the whole night."""
+    name = "Mario 3 - jump (nes)"
+    targets_dir = _make_targets_dir(tmp_path, [name])
+    out_dir = tmp_path / "out"
+
+    def _boom(*a, **k):
+        raise RuntimeError("control set is degenerate")
+
+    def _fake_run_arm(target, out_dir_arg, arm, *, ckpt, jobs, rng_seed):
+        return {"arm": arm, "score": 1.0, "heldout_score": 1.0,
+                "wave_type_name": "Square", "evals": 10,
+                "elapsed_seconds": 1.0, "trace": []}
+
+    monkeypatch.setattr("match.headroom.make_preset_targets", _boom)
+    monkeypatch.setattr("match.headroom.run_arm", _fake_run_arm)
+    monkeypatch.setattr("match.headroom.write_arms_page", lambda *a, **k: None)
+
+    rc = main([
+        "--targets", str(targets_dir),
+        "--ckpt", str(tmp_path / "best.pt"),
+        "-o", str(out_dir),
+        "--presets", "10",
+        "--arms", "baseline_seeded",
+    ])
+
+    assert rc == 0
+    rows = json.loads((out_dir / "results.json").read_text())["rows"]
+    assert [r["kind"] for r in rows] == ["real"]
+    assert rows[0]["target"] == name
