@@ -12,6 +12,8 @@ with ears, and a visible number anchors the verdict.
 from __future__ import annotations
 
 import argparse
+import json
+import random
 from pathlib import Path
 
 import numpy as np
@@ -108,6 +110,63 @@ def write_compare_page(
         + "".join(rows) +
         "</table>"
     )
+
+
+def write_arms_page(
+    out: Path,
+    key_out: Path,
+    targets_dir: Path,
+    arms: list[tuple[str, Path]],
+    mode: str = "model_seeded",
+    only: set[str] | None = None,
+    shuffle_seed: int = 0,
+) -> None:
+    """Blind N-arm listen page: candidate columns are shuffled per row and
+    labelled A/B/C..., with the mapping written to `key_out` instead of the
+    page. Scores and arm names stay hidden so the listener cannot anchor."""
+    letters = [chr(ord("A") + i) for i in range(len(arms))]
+    key: dict[str, dict[str, str]] = {}
+    rows = []
+    for target_path in sorted(targets_dir.iterdir()):
+        if target_path.suffix.lower() not in AUDIO_EXTS:
+            continue
+        if only is not None and target_path.stem not in only:
+            continue
+        safe = _safe_stem(target_path.stem)
+        rng = random.Random(f"{shuffle_seed}:{target_path.stem}")
+        order = list(arms)
+        rng.shuffle(order)
+        key[target_path.stem] = {
+            letter: name for letter, (name, _) in zip(letters, order)
+        }
+        cells = [f"<td class='name'>{target_path.stem}</td>",
+                 _cell(_read(target_path))]
+        for _, root in order:
+            cells.append(_cell(_read(root / safe / mode / "match.wav")))
+        rows.append("<tr>" + "".join(cells) + "</tr>")
+
+    head = "".join(f"<th>{letter}</th>" for letter in letters)
+    out.write_text(
+        "<!doctype html><meta charset='utf-8'>"
+        "<title>Headroom probe - blind arms</title>"
+        "<style>"
+        "body{font:14px system-ui;margin:20px}"
+        "table{border-collapse:collapse}"
+        "td,th{border:1px solid #ccc;padding:6px;vertical-align:top}"
+        ".name{font-weight:600;white-space:nowrap}"
+        ".miss{color:#999;text-align:center}"
+        "img{display:block;width:220px}"
+        "audio{width:220px}"
+        "</style>"
+        "<h1>Headroom probe - blind arms</h1>"
+        "<p>Score each lettered column 0-5 against the original. Column order "
+        "is <b>reshuffled on every row</b> and the arm names are withheld on "
+        "purpose - do not guess which is which.</p>"
+        f"<table><tr><th>target</th><th>original</th>{head}</tr>"
+        + "".join(rows) +
+        "</table>"
+    )
+    key_out.write_text(json.dumps(key, indent=2))
 
 
 def main(argv: list[str] | None = None) -> int:
