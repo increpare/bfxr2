@@ -189,7 +189,91 @@ comfortably clear of the 0.35 gate. If Gate B finds the eight capped targets
 sound worse, raising `VOICED_MIN` or adding an interval-sanity gate is the
 follow-up, and it should be driven by that evidence rather than by this test.
 
-## 7. Gate A verdict
+## 7. GATE B VERDICT — FAILED (2026-07-25)
+
+Human listen pass over the 10-target hard slice, 0–5 per column.
+
+| Target | base 1-shot | cand 1-shot | base seeded | cand seeded |
+| --- | --- | --- | --- | --- |
+| Mario 1 - Jump | 2 | 2 | 1.5 | 1.5 |
+| Mario 2 - Throw | 1 | 1 | 4 | 4 |
+| Mario 3 - jump (nes) | 1.5 | 1.5 | 1 | **1.5** |
+| Mario 3 - jump (snes) | 1.5 | 1.5 | 1.5 | 1.5 |
+| Mario Break Brick | 1 | 1 | 1.5 | 1.5 |
+| chrono_trigger_leeneBell | 1 | 1 | 4 | 4 |
+| mario 2 - jump | 1 | 1 | 2 | 2 |
+| mega_man_ii_beam-out | 1 | 1 | 3 | 3 |
+| mega_man_ii_one-up | 1 | 1 | 3 | 3 |
+| mega_man_iii_cursor | 1 | 1 | 4 | 4 |
+| **mean** | **1.20** | **1.20** | **2.55** | **2.60** |
+
+**Baseline and candidate are identical on 9 of 10 rows.** The listener wrote
+"Baseline and candidate identical" unprompted on six of them. The single delta is
+`Mario 3 - jump (nes)` seeded (1 → 1.5) on a target described as "trash... really
+none of them match."
+
+**The structure term does not produce an audible improvement on the hard slice.**
+Per the plan's own rule — "Verdict from listener: is the candidate *acceptably
+better* on structure failures without obvious new regressions? Metric deltas are
+footnotes" — this is a failed gate. No improvement is claimed. The engineering
+gate (probes 8/14 → 14/14) measured a real property of the metric that turned out
+not to matter to ears on this slice.
+
+### The seeded column is strong, but this experiment cannot credit the term for it
+
+`Throw` 4, `leeneBell` 4, `cursor` 4, `beam-out` 3, `one-up` 3, with listener
+notes "seeded found the arpeggios :)" and, on leeneBell, "seeded versions capture
+the third tone, and the timbre as well as can be done I think. extraordinary."
+
+That is a real result — and it appears in **both** arms, so this A/B cannot
+credit the structure term for it.
+
+`--legacy-objective` zeroes only `structure_pitch`; both arms still carry Task 1's
+`detect_note_sequence` boundary-frame fix, which feeds pitch-jump arp seeding.
+leeneBell capturing its third tone is exactly the v7 complaint ("two of three
+notes, wrong slope"), so the detector fix looked like the likely cause.
+
+**Tested, and it is not.** Running the pre-Task-1 and post-Task-1 detectors over
+the same hard-slice targets gives **identical note sequences on 10 of 10**:
+
+```
+Mario 2 - Throw            OLD 3: [1190, 1415, 1597]   NEW 3: [1190, 1415, 1597]
+chrono_trigger_leeneBell   OLD 3: [521, 174, 292]      NEW 3: [521, 174, 292]
+mega_man_ii_beam-out       OLD 3: [842, 1076, 1509]    NEW 3: [842, 1076, 1509]
+mega_man_iii_cursor        OLD 2: [836, 560]           NEW 2: [836, 560]
+note-count changed by the Task 1 fix on 0/10 hard-slice targets
+```
+
+leeneBell already detected 3 notes before the fix. So the strong seeded column is
+the **pre-existing pitch-jump arp seeding** shipped on the earlier branch, which
+both arms carry and which this plan never modified.
+
+**Conclusion: this plan contributed nothing audible to the hard slice** — not via
+the structure term, and not via the detector fix. Task 1 remains a correct bug fix
+(it demonstrably rescues a discarded note on synthetic tracks and its regression
+test pins that), but it does not happen to fire on these ten targets.
+
+### Defects the listener surfaced
+
+- **`Mario 3 - jump (snes)`: "is a rising glissando, analysed as two notes."** A
+  false-positive note detection on a genuine glissando — the same artifact class
+  as `bitnoise_glitch` in §6. The structure term then *penalizes* correctly-
+  glissando candidates, i.e. it actively pushes the wrong way here.
+- **`mario 2 - jump`: "seeded ones are drooping a bit when they should be
+  rising?"** A possible direction error surviving the term designed to catch it.
+- Both one-shot columns remain ~1.2/5. The raw model is still far from usable on
+  this slice; nothing here changes that.
+
+### Consequences
+
+Per the plan: on a Gate B failure, fix objective/weights — **do not retrain**, and
+do not switch the search default to the new objective. The term stays in the code
+but its default weight is now an open question, and §6's evidence (no gradient
+where it fires hardest, plus false-positive note detection on noisy and
+glissando targets) argues for either a stricter voicing/interval gate or
+defaulting `structure_pitch` to 0.0 pending a redesign.
+
+## 8. Gate A verdict
 
 Cleared to ask for ears. The probe gate passes, the term demonstrably engages on
 a majority of real targets, the A/B control held, and no duration regression
