@@ -66,12 +66,27 @@ def make_preset_targets(
     floor is the reference the real-SFX floor is measured against.
     """
     out_dir.mkdir(parents=True, exist_ok=True)
-    params_list = harvest_preset_params(n, seed)
-    if len(params_list) != n:
+    rows = harvest_preset_params(n, seed)
+    if len(rows) != n:
         raise RuntimeError(
-            f"preset harvest returned {len(params_list)} params, expected {n}: "
+            f"preset harvest returned {len(rows)} params, expected {n}: "
             "the control set would silently shrink"
         )
+    # harvest_preset_params yields records {"preset", "seed", "params"}, not
+    # bare param dicts (see invert/dataset.py, which reads row["params"] the
+    # same way). Handing the records straight to the renderer is silent: the
+    # worker merges them over the defaults, every unknown key is ignored, and
+    # all N presets render as the identical default sound.
+    params_list = []
+    for i, row in enumerate(rows):
+        params = row.get("params") if isinstance(row, dict) else None
+        if not isinstance(params, dict):
+            raise RuntimeError(
+                f"preset harvest row {i} has no 'params' dict (keys: "
+                f"{sorted(row) if isinstance(row, dict) else type(row).__name__}): "
+                "the control set would render as N copies of the default sound"
+            )
+        params_list.append(params)
     if renderer is None:
         with BfxrRenderer(jobs=jobs) as owned:
             waves = owned.render_batch(params_list,
