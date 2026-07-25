@@ -1,7 +1,7 @@
 # Inverse Model — Test-Time Surrogate Refine Design
 
 **Date:** 2026-07-25  
-**Status:** design approved — awaiting user review of this spec → implementation plan  
+**Status:** design approved — implementation plan next  
 **Branch:** `feature/inverse-model-structure-metric`  
 **Strategy context:** `docs/superpowers/plans/2026-07-25-inverse-model-next-bets.md` (product mode C; bet 1)  
 **Baseline checkpoint:** `tools/invert/runs/v7_real_ft/best.pt` (frozen — no inverse-model retrain in this plan)  
@@ -39,7 +39,7 @@ better one-shot / sub-second refine as the path toward a nicer “instant” UX.
 | Inverse model / surrogate | **Frozen**; only the param vector (and optimizer state on it) updates |
 | Wavetype | **Fixed** to the model’s chosen class (hard one-hot); soft wavetype deferred |
 | Scope of first plan | Refine every unit `predict_wave` already returns (1 if one-shot, else top‑3). Not a new multi-hypothesis sampler |
-| CLI | `--refine-steps N` (default **0** = off); `--refine-lr`; `--surrogate` required when steps > 0 |
+| CLI | `--surrogate-refine-steps N` (default **0** = off); `--surrogate-refine-lr`; `--surrogate` required when steps > 0. **Not** `--refine-steps` — that flag already means Stage 3 FD steepest descent in `match.py` / `OptimizeSettings` |
 | Default on | **Off** until listen gate passes; then consider a small non-zero default |
 | Claim gate | Human listen on the hard slice: refined one-shot vs raw one-shot; seeded as ceiling |
 | Retrain | **Out of scope** |
@@ -76,36 +76,35 @@ the surrogate’s feature MSE; rendering inside the refine loop.
 - Thin wrapper that loads surrogate if given a path.
 
 **Call site:** `tools/match/match.py` after `predict_wave`, when
-`--refine-steps > 0` and `--seed-model` is set:
+`--surrogate-refine-steps > 0` and `--seed-model` is set:
 
 - **One-shot:** refine the single top guess, then render as today.
 - **Seeded CMA:** refine every seed `predict_wave` returned (typically top‑3).
   Cheap at 50–100 Adam steps; preserves existing top‑K diversity. Not a new
   multi-hypothesis generator.
 
-**Flags (match CLI + passthrough from `invert.eval_targets` if needed for
-batch A/B):**
+**Flags (match CLI + passthrough from `invert.eval_targets` for batch A/B):**
 
 | Flag | Default | Notes |
 | --- | --- | --- |
-| `--refine-steps` | `0` | Off |
-| `--refine-lr` | `1e-2` | Adam on unit |
+| `--surrogate-refine-steps` | `0` | Off (name avoids clashing with Stage 3 `--refine-steps`) |
+| `--surrogate-refine-lr` | `1e-2` | Adam on unit |
 | `--surrogate` | required if steps > 0 | Path to `surrogate.pt` |
 
-Report JSON should record `refine_steps`, `refine_lr`, and surrogate path when
-used.
+Report JSON should record `surrogate_refine_steps`, `surrogate_refine_lr`, and
+surrogate path when used.
 
 ## Section 3 — Tests
 
 Unit-level (no full CMA):
 
-1. **Smoke:** `refine_steps=0` path unchanged (no surrogate load).
-2. **Loss drops:** on a synthetic in-domain render (known params → wave →
-   pack), start from a mildly perturbed unit; after N steps, surrogate MSE to
-   target features is ≤ initial MSE (allow tiny numerical slack).
+1. **Smoke:** `surrogate_refine_steps=0` path unchanged (no surrogate load).
+2. **Loss drops:** build target features as `surrogate(unit_true)` (same
+   frozen net); start from a perturbed unit; after N steps, MSE to those
+   features is strictly below the initial MSE.
 3. **Bounds:** refined unit stays in `[0, 1]`; non-square wavetype still has
    square-only dims pinned to defaults after refine.
-4. **Wavetype fixed:** class index / wave_type id unchanged by refine.
+4. **Wavetype fixed:** wave_type id is an input and is not changed by refine.
 
 No claim that match-objective score always drops — the surrogate feature space
 is not identical to `MatchObjective`.
@@ -119,8 +118,8 @@ is not identical to `MatchObjective`.
 **Claim gate (human):** listen page with columns at least:
 
 - original
-- raw one-shot (`--refine-steps 0`)
-- refined one-shot (`--refine-steps` = chosen default candidate, e.g. 50 or 100)
+- raw one-shot (`--surrogate-refine-steps 0`)
+- refined one-shot (`--surrogate-refine-steps` = candidate, e.g. 50 or 100)
 - current `model_seeded` (ceiling reference)
 
 **Success:** refined one-shot is acceptably better than raw by ear on the hard
@@ -128,8 +127,8 @@ slice, without obvious new mutes/trash. Seeded may still win; that is OK under
 product mode C.
 
 **Failure:** no audible one-shot gain, or systematic trash → leave default
-`--refine-steps 0`, document in a results note, proceed to next-bets (2)
-rather than retuning lr forever.
+`--surrogate-refine-steps 0`, document in a results note, proceed to next-bets
+(2) rather than retuning lr forever.
 
 ## Section 5 — Out of scope
 
