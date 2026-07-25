@@ -42,7 +42,7 @@ Run from `tools/`, probe renders seeded 1234.
 | Probes, **mild handicap** (the gate) | **8/14** | **14/14** |
 | Probes, **severe handicap** (report-only) | **6/14** | 10/14 |
 | `tests/` (notes, rankings, objective, duration_floor) | 30 passed in 1.73s | 30 passed |
-| `tests/` full suite (`uv run pytest -q`) | 130 passed, 6 deselected | 130 passed |
+| `tests/` full suite (`uv run pytest -q`) | 130 passed, 6 deselected | 148 passed (130 + 2 Task 1 + 8 Task 2 + 8 Task 3) |
 
 The six mild-tier failures and their score deficits — these are what the new
 term must overcome, and they are small, so a modest weight suffices:
@@ -1071,7 +1071,12 @@ COLLAPSE_RATIO = 0.5  # spec: flag candidates under 0.5x the target duration
 
 
 def _safe_stem(stem: str) -> str:
-    return "".join(c if c.isalnum() or c in "-_" else "_" for c in stem)
+    """Must match invert.eval_targets._safe_stem EXACTLY — that is the function
+    that creates the per-target output directory this tool reads back. It only
+    strips path separators and KEEPS spaces and parentheses: real dirs are named
+    e.g. "Mario 3 - jump (nes)". Mangling every non-alnum character finds zero
+    renders and reports an empty table that reads like "no collapses"."""
+    return stem.replace("/", "_").replace("\\", "_")
 
 
 def _read(path: Path) -> np.ndarray:
@@ -1275,7 +1280,11 @@ HARD_SLICE = (
 
 
 def _safe_stem(stem: str) -> str:
-    return "".join(c if c.isalnum() or c in "-_" else "_" for c in stem)
+    """Must match invert.eval_targets._safe_stem EXACTLY (see length_report.py):
+    only strip path separators, KEEP spaces and parens. Real eval dirs are named
+    e.g. "Mario 3 - jump (nes)"; mangling non-alnum characters silently yields a
+    page with every match cell empty."""
+    return stem.replace("/", "_").replace("\\", "_")
 
 
 def _read(path: Path) -> np.ndarray | None:
