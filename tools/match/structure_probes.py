@@ -135,7 +135,7 @@ PROBES: list[Probe] = [
           _t(waveType=2, frequency_start=0.30, pitch_jump_amount=0.58,
              pitch_jump_onset_percent=0.5),
           _g(waveType=0, frequency_start=0.318, frequency_slide=0.10)),
-    Probe("gliss_down_steps", "gliss_up",
+    Probe("gliss_down_steps", "gliss_down",
           _t(waveType=2, frequency_start=0.50, frequency_slide=-0.10),
           _g(waveType=2, frequency_start=0.53, frequency_slide=-0.10),
           _t(waveType=2, frequency_start=0.50, pitch_jump_amount=-0.21,

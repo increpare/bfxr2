@@ -71,6 +71,12 @@ def pitch_structure_penalty(
     if target.note_count >= 2:
         penalty = COUNT_W * min(abs(target.note_count - cand.note_count), 2)
         if cand.note_count >= 2:
+            # Cross-module invariant (notes.py:detect_note_sequence): it
+            # returns [] unless the first interval is at least JUMP_ST
+            # (1.5 st), so any summary with note_count >= 2 has
+            # |first_interval_st| >= 1.5 here -- never exactly 0.0. An exact
+            # 0.0 would read as "descending" below, but that case is
+            # unreachable.
             if (target.first_interval_st > 0.0) != (cand.first_interval_st > 0.0):
                 penalty += DIR_W       # wrong direction
             else:

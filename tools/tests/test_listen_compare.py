@@ -2,6 +2,8 @@ import numpy as np
 import pytest
 import soundfile as sf
 
+pytest.importorskip("matplotlib")
+
 from invert.eval_targets import _safe_stem as eval_targets_safe_stem
 from match.audio import SAMPLE_RATE
 from match.listen_compare import HARD_SLICE, _safe_stem, main, write_compare_page

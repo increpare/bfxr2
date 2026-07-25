@@ -46,13 +46,16 @@ def _read(path: Path) -> np.ndarray:
     return mono
 
 
+def _discovered_targets(targets_dir: Path) -> list[Path]:
+    return [p for p in sorted(targets_dir.iterdir())
+            if p.suffix.lower() in AUDIO_EXTS]
+
+
 def length_ratios(
     eval_root: Path, targets_dir: Path, mode: str
 ) -> list[tuple[str, float, float]]:
     rows: list[tuple[str, float, float]] = []
-    for target_path in sorted(targets_dir.iterdir()):
-        if target_path.suffix.lower() not in AUDIO_EXTS:
-            continue
+    for target_path in _discovered_targets(targets_dir):
         cand_path = eval_root / _safe_stem(target_path.stem) / mode / "match.wav"
         if not cand_path.is_file():
             continue
@@ -76,10 +79,15 @@ def main(argv: list[str] | None = None) -> int:
                    choices=("current", "model_seeded", "one_shot"))
     args = p.parse_args(argv)
 
+    n_discovered = len(_discovered_targets(args.targets))
     rows = length_ratios(args.eval_root, args.targets, args.mode)
     if not rows:
         print("no matched renders found")
         return 1
+
+    if len(rows) < n_discovered:
+        print(f"{len(rows)} of {n_discovered} discovered targets had renders "
+              f"(missing renders are silently excluded below)\n")
 
     print(f"{'target':40s} {'dur x':>8s} {'energy x':>9s}")
     for stem, dur, energy in sorted(rows, key=lambda r: r[1]):

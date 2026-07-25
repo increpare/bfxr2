@@ -15,7 +15,7 @@ def results():
 def test_every_family_has_a_case():
     families = {p.family for p in PROBES}
     assert families == {
-        "notes_2_up", "notes_2_down", "notes_3_arp", "gliss_up",
+        "notes_2_up", "notes_2_down", "notes_3_arp", "gliss_up", "gliss_down",
         "dir_flip", "mute_tail", "noise_onset",
     }
 
