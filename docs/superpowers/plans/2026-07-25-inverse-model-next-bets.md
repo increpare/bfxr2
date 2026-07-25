@@ -105,8 +105,8 @@ For targets that aren’t bfxr-reachable, improve the synth (colored noise / for
 | Decision | Choice |
 | --- | --- |
 | Product success mode | **C** — seed+search first; one-shot as bonus / fast path |
-| Next implementation bet | **(1) Test-time surrogate refine** |
-| Follow-ups | (2) multi-hypothesis seeds if refine helps but basins wrong; (3) surrogate retrain only if (1)’s gradient is useful |
+| Bet (1) test-time surrogate refine | **FAILED listen** — refined mean 1.32 vs raw 1.55; mute on `mario 2 - jump`. Default stays `--surrogate-refine-steps 0`. See `2026-07-25-test-time-refine-results.md` |
+| Next implementation bet | **(2) Multi-hypothesis seeding** (or park and reopen product priorities) |
 | Structure term | Remains default-off; not the next lever |
 
 ---
