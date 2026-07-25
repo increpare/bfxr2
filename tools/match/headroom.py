@@ -9,6 +9,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
+import numpy as np
 import soundfile as sf
 
 from invert.presets import harvest_preset_params
@@ -53,6 +54,35 @@ def make_preset_targets(
             waves = owned.render_batch(params_list, seeds=HELDOUT_RENDER_SEED)
     else:
         waves = renderer.render_batch(params_list, seeds=HELDOUT_RENDER_SEED)
+
+    # Validate that we have a healthy control set.
+    # Check for None waves (renderer failures).
+    for i, wave in enumerate(waves):
+        if wave is None:
+            raise RuntimeError(
+                f"Renderer returned None for preset {i}: control set is invalid"
+            )
+
+    # Check for all-silent waves (degenerate: no content).
+    all_silent = all(np.max(np.abs(wave)) < 1e-6 for wave in waves)
+    if all_silent:
+        raise RuntimeError(
+            f"All {n} rendered preset waves are silent (max amplitude < 1e-6): "
+            "control set is degenerate"
+        )
+
+    # Check for too few distinct waves (degenerate: no diversity).
+    if n >= 2:
+        # Convert waves to a tuple representation for uniqueness checking.
+        unique_waves = set()
+        for wave in waves:
+            unique_waves.add(tuple(wave.astype(np.float32)))
+        if len(unique_waves) < 2:
+            raise RuntimeError(
+                f"Only {len(unique_waves)} distinct wave(s) from {n} presets: "
+                "control set is degenerate (all waves identical)"
+            )
+
     paths = []
     for i, wave in enumerate(waves):
         path = out_dir / f"preset_{i:02d}.wav"
