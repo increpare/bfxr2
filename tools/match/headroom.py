@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import traceback
 from pathlib import Path
@@ -150,17 +151,37 @@ def run_arm(
     report = json.loads((out_dir / "report.json").read_text())
     best = report["results"][0]
 
-    heldout = heldout_for_run(target, out_dir / BEST_FILE, jobs)
-
-    return {
+    # Build the row from the (expensive, already-completed) search result
+    # first. The held-out re-score is seconds of work; if it flakes (e.g. a
+    # Node renderer hiccup) it must not discard a 200000-eval search.
+    row: dict[str, Any] = {
         "arm": arm,
         "score": float(best["score"]),
-        "heldout_score": heldout,
         "wave_type_name": str(best["wave_type_name"]),
         "evals": int(report["evals"]),
         "elapsed_seconds": float(report["elapsed_seconds"]),
         "trace": report.get("trace", []),
     }
+
+    try:
+        row["heldout_score"] = heldout_for_run(target, out_dir / BEST_FILE, jobs)
+    except Exception as exc:
+        row["heldout_score"] = None
+        row["heldout_error"] = f"{type(exc).__name__}: {exc}"
+
+    return row
+
+
+def _write_json_atomic(path: Path, data: Any) -> None:
+    """Write JSON atomically: serialize to a temp file, then os.replace.
+
+    results.json is the sole record of an unattended overnight run; a crash
+    or kill mid `write_text` would otherwise leave truncated/invalid JSON as
+    the only artifact.
+    """
+    tmp = path.with_suffix(path.suffix + f".tmp{os.getpid()}")
+    tmp.write_text(json.dumps(data, indent=2))
+    os.replace(tmp, path)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -221,11 +242,10 @@ def main(argv: list[str] | None = None) -> int:
             row["target"] = path.stem
             rows.append(row)
             # written after every arm so an interrupted run is still readable
-            (args.out / "results.json").write_text(json.dumps(
-                {"ckpt": str(args.ckpt), "rng_seed": args.rng_seed,
-                 "heldout_seed": HELDOUT_RENDER_SEED, "rows": rows},
-                indent=2,
-            ))
+            _write_json_atomic(args.out / "results.json", {
+                "ckpt": str(args.ckpt), "rng_seed": args.rng_seed,
+                "heldout_seed": HELDOUT_RENDER_SEED, "rows": rows,
+            })
 
     listen_arms = [(a, args.out / a) for a in args.arms if a != "baseline_unseeded"]
     write_arms_page(
