@@ -16,6 +16,11 @@ budget is not wasted; there is simply almost nothing better to find inside
 bfxr's reachable set. The next project is **capability (synth extensions /
 pairs-of-sounds)**, not seeding and not the objective.
 
+The single-listener blind confirmation agreed: 100x did not sound clearly
+better. `baseline_seeded` had the best mean and median; `big_seeded` never won
+against it (6 ties, 4 losses). This is descriptive confirmation on this slice,
+not a claim of statistical significance.
+
 This **de-selects bet (2) multi-hypothesis seeding**, which the handoff named
 as the next bet. A better seed cannot beat a ceiling that a 100x-converged
 search also cannot beat.
@@ -130,7 +135,7 @@ Applied to held-out-seed medians, as pre-registered.
 | Reading | Rule | Measured | Fired? |
 | --- | --- | --- | --- |
 | **Search ceiling** | median improves >= 10% at 100x | **+3.2%** seeded, +4.2% unseeded | **NO** |
-| **Metric ceiling** | objective improves >= 10% **but** blind listen gains < 0.5/5 | precondition not met (+3.2% < 10%) | **NO** — not reachable |
+| **Metric ceiling** | objective improves >= 10% **but** blind listen gains < 0.5/5 | seeded listen mean gain **-0.45/5** (< +0.5), but objective gain only **+3.2%** (< 10%) | **NO** — listening threshold met; objective precondition not met |
 | **Reachability ceiling** | real/in-domain floor ratio **does not shrink** as budget goes 2 000 → 200 000 | ratio **1.328 → 2.420**: it nearly doubled | **YES** |
 
 The reachability rule was deliberately written as "does not shrink" rather than
@@ -139,6 +144,11 @@ cut would have fired trivially (spec §4). The measured ratio does not merely
 fail to shrink — it grows by 82%, because 100x budget closes most of the
 in-domain gap and almost none of the real gap. That is as clean a firing of
 this branch as the design allowed for.
+
+The listen meets the metric-ceiling rule's listening-side threshold, but the
+full rule does **not** fire because its objective precondition was not met.
+The reachability verdict therefore remains, and this confirmation does not
+reopen objective work.
 
 Absolute ratios, reported as context rather than as a trigger:
 
@@ -199,22 +209,48 @@ Arms on the page: `baseline_seeded`, `big_seeded`, `big_unseeded`
 
 | target | A | B | C | notes |
 | --- | ---: | ---: | ---: | --- |
-| Mario 1 - Jump | | | | |
-| Mario 2 - Throw | | | | |
-| Mario 3 - jump (nes) | | | | |
-| Mario 3 - jump (snes) | | | | |
-| Mario Break Brick | | | | |
-| chrono_trigger_leeneBell | | | | |
-| mario 2 - jump | | | | |
-| mega_man_ii_beam-out | | | | |
-| mega_man_ii_one-up | | | | |
-| mega_man_iii_cursor | | | | |
+| Mario 1 - Jump | 1 | 3 | 3 | |
+| Mario 2 - Throw | 1 | 3 | 1.5 | |
+| Mario 3 - jump (nes) | 1 | 1 | 1 | |
+| Mario 3 - jump (snes) | 2 | 1 | 1 | |
+| Mario Break Brick | 2 | 1.5 | 3 | |
+| chrono_trigger_leeneBell | 4 | 4 | 4 | |
+| mario 2 - jump | 2 | 2 | 1.5 | |
+| mega_man_ii_beam-out | 4 | 4 | 4 | |
+| mega_man_ii_one-up | 1.5 | 1.5 | 3 | |
+| mega_man_iii_cursor | 4 | 5 | 4 | wow finally got a 5/5! |
 
-**Status: not yet scored.** The metric-ceiling reading cannot fire regardless
-of the outcome (its >= 10% objective precondition was not met), so the listen
-is a confirmation rather than a trigger. What it can still change: if 100x
-sounds clearly better despite a 3% objective delta, that is evidence the
-objective under-reports real gains and would reopen objective work.
+Revealed through the separately held key:
+
+| target | `baseline_seeded` | `big_seeded` | `big_unseeded` |
+| --- | ---: | ---: | ---: |
+| Mario 1 - Jump | 3 | 3 | 1 |
+| Mario 2 - Throw | 3 | 1.5 | 1 |
+| Mario 3 - jump (nes) | 1 | 1 | 1 |
+| Mario 3 - jump (snes) | 2 | 1 | 1 |
+| Mario Break Brick | 2 | 1.5 | 3 |
+| chrono_trigger_leeneBell | 4 | 4 | 4 |
+| mario 2 - jump | 2 | 2 | 1.5 |
+| mega_man_ii_beam-out | 4 | 4 | 4 |
+| mega_man_ii_one-up | 3 | 1.5 | 1.5 |
+| mega_man_iii_cursor | 4 | 4 | **5** |
+
+Deltas and W/T/L are computed per target against the baseline before
+aggregation.
+
+| Arm | Mean | Median | Mean paired delta vs baseline | Median paired delta vs baseline | W / T / L vs baseline |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `baseline_seeded` | **2.80** | **3.00** | — | — | — |
+| `big_seeded` | 2.35 | 1.75 | **-0.45** | 0.00 | **0 / 6 / 4** |
+| `big_unseeded` | 2.30 | 1.50 | **-0.50** | -0.25 | **2 / 3 / 5** |
+
+For this one listener on this ten-target slice, 100x did not sound clearly
+better. `big_seeded` never won, tied six times, and lost four; the baseline
+had the best mean and median. `big_unseeded` produced the sole 5/5 on
+`mega_man_iii_cursor` and won on Mario Break Brick, but those two wins are
+isolated rather than a general improvement. The listen is confirmation, not
+a statistically powered result. It does not reopen objective work, while the
+render-seed caveat in §4 remains in force.
 
 ## 6. Harness defects found and fixed during validation
 
