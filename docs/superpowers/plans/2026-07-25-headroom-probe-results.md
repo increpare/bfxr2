@@ -1,7 +1,7 @@
 # Headroom probe — results and ceiling attribution
 
 **Date:** 2026-07-26
-**Spec:** `2026-07-25-headroom-probe-design.md` (decision rule pre-registered in §4)
+**Spec:** `../specs/2026-07-25-headroom-probe-design.md` (decision rule pre-registered in §4)
 **Plan:** `2026-07-25-headroom-probe.md`
 **Branch:** `feature/inverse-model-structure-metric`
 **Checkpoint:** `v7_real_ft/best.pt` (frozen; no retrain)
@@ -129,12 +129,12 @@ it does not prove that no unobserved basin exists.
 Per-target real knees: 1 147 / 1 175 / 1 427 / 1 763 / 2 183 / 9 771 / 11 843 /
 18 451 / 26 627 / 74 199.
 
-**Free upside (follow-up, not this branch).** The two targets that actually
-showed seeded objective reductions have knees at 9 771 (Throw, +18.7%) and
-26 627 (Break Brick, +50.3%). A shipping budget of ~10 000 rather than 2 000
-would capture most of those measured objective reductions at ~5x the current
-search cost. Per spec §6 that is a separate change with its own listen gate —
-the objective delta alone must not ship it.
+**Free upside (follow-up, not this branch).** The two targets with >10% seeded
+objective reductions have knees at 9 771 (Throw, +18.7%) and 26 627 (Break
+Brick, +50.3%). A shipping budget of ~10 000 rather than 2 000 would capture
+most of those measured objective reductions at ~5x the current search cost.
+Per spec §6 that is a separate change with its own listen gate — the objective
+delta alone must not ship it.
 
 ## 3. Pre-registered decision rule (spec §4)
 

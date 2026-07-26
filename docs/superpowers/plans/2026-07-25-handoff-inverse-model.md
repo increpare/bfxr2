@@ -7,7 +7,7 @@ Pass this to a cold agent. Do **not** re-litigate closed bets without new eviden
 | Item | Value |
 | --- | --- |
 | Branch | `feature/inverse-model-structure-metric` |
-| Tip (at handoff) | `>= e3f3834` (scored headroom results) |
+| Tip (at handoff) | `>= 27650bb` (calibrated headroom decision/results) |
 | Repo | `/Users/stephenlavelle/Documents/bfxr2` |
 | Tools cwd | `cd tools && uv run …` / `PYTHONPATH=.` |
 | Baseline ckpt | `.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt` |
@@ -170,7 +170,7 @@ From `match.listen_compare.HARD_SLICE`:
 
 ## Immediate agent TODO (if continuing)
 
-1. Confirm branch tip `>= e3f3834` (scored headroom results).
+1. Confirm branch tip `>= 27650bb` (calibrated headroom decision/results).
 2. Read `2026-07-25-headroom-probe-results.md` and
    `2026-07-25-inverse-model-next-bets.md` end-to-end.
 3. **Brainstorm → design → plan** the selected **synth capability /

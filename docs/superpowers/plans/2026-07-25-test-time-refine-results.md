@@ -42,10 +42,14 @@ experiments; shipping path unchanged.
 
 ## Consequences / next
 
-From `2026-07-25-inverse-model-next-bets.md`:
+At the time of this result, the strategy sequence was:
 
 1. ~~Test-time surrogate refine~~ — tried; failed listen gate.
-2. **Multi-hypothesis seeding** — next bet if still optimizing seed+search.
+2. **Multi-hypothesis seeding** — was the next bet at that time, but this
+   guidance is superseded. The subsequent
+   `2026-07-25-headroom-probe-results.md` de-selected it as the next project.
 3. Sharper surrogate → short real-FT — only if a future proxy proves useful
    at inference; this run argues the current surrogate gradient hurts
    one-shots on the hard slice.
+4. **Synth capability / pairs-of-sounds** — current selected next project after
+   the headroom probe's REACHABILITY CEILING verdict.
