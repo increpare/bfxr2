@@ -17,7 +17,11 @@
 
 **A as “one forward pass = current seeded quality” is probably not realistic soon.** Gate B already shows the gap: one-shot ~1.2/5 vs seeded 3–4/5 on the same hard-slice sounds. That gap is the ill-posed inverse plus weak envelope/jump identification — not a missing match-objective term.
 
-What *is* realistic for “feels like A” later: **one-shot → cheap refine (&lt;1s through the surrogate) → optional short CMA**. That is still strategy C, with a fast path that can become the default UX.
+What may still produce “feels like A” later is **one-shot → a cheap,
+perceptually valid fast path → optional short CMA**. The current
+surrogate-gradient refine is not that fast path: its hard-slice listen failed.
+This remains strategy C, with seed + short search as the product mode while a
+better fast path is only a possible future bonus.
 
 ---
 
@@ -43,8 +47,15 @@ So the pipeline *can* land in the right basin. What’s weak is mostly the **raw
 3. **Envelope / jump params still poorly identified.** `sustainTime` / `decayTime` R² ~0.24 even after v4 time-features; `pitch_jump_amount` only ~0.2–0.28 after structured data. Identifiability reweighting was a wash; time-features alone did not fix envelopes.
 4. **Surrogate is the spectral gradient.** Recon MSE **0.226** (~77% of feature variance). Spectral training and real-FT both lean on it; a blurry surrogate → a blurry “sound” signal at train and (if we use it) at inference.
 5. **Domain gap.** Spectral-on-synth alone did not transfer to real SFX. Real-FT helped relatively; absolute quality is still low. The surrogate remains on the bfxr feature manifold.
-6. **Hard ceiling.** Some targets are outside bfxr’s reachable set (rich Mario / formant-ish timbres). No amount of inverse-model training fixes that without synth extensions.
-7. **Wrong lever already tried.** Sound-level `structure_pitch` in the match objective: probes 8/14 → 14/14, ears unchanged on the hard slice (Gate B FAILED). Term now defaults to weight 0.0; `--structure-objective` keeps it for experiments. Do not spend another cycle retuning that term before changing the *model/seed* path.
+6. **Measured reachability ceiling on the real hard slice.** At 100x search
+   budget, the seeded held-out objective improved only **3.2%** on real targets
+   versus **46.9%** on reachable in-domain controls, and the real/in-domain
+   floor ratio grew **1.328 → 2.420**. This does **not** establish that every
+   real target is unreachable: Throw and Break Brick still gained, and a
+   larger shipping budget may capture some of that upside. It does establish
+   that the hard-slice median is now limited primarily by bfxr's reachable set,
+   not by the current seed or search budget. See the headroom results.
+7. **Wrong lever already tried.** Sound-level `structure_pitch` in the match objective: probes 8/14 → 14/14, ears unchanged on the hard slice (Gate B FAILED). Term now defaults to weight 0.0; `--structure-objective` keeps it for experiments. Do not spend another cycle retuning that term instead of pursuing the selected capability track.
 
 ### What a retrain would *not* learn from Gate A/B
 
@@ -58,38 +69,53 @@ The structure-metric branch changed search/eval tooling (`structure.py`, probes,
 | --- | --- | --- |
 | Spectral / audio loss + real unlabeled FT | Masuda & Saito (DDSP sound matching; TASLP 2023) | **Already done** (v6 spectral → v7 real FT) |
 | Keep joint param + spectral (don’t drop param loss on OOD) | Masuda 2023 | Worth checking if real-FT was spectral-only too aggressively |
-| **Inference-time finetune through a synth proxy** | InverSynth II (ISMIR 2023) | **High value, not done** — `SurrogateSynth` already exists |
-| Generative / multi-hypothesis params | ISMIR 2025 flow matching; projects like synth-setter | Sample K seeds → score with matcher (pairs with CMA) |
+| **Inference-time finetune through a synth proxy** | InverSynth II (ISMIR 2023) | **Done; failed hard-slice listen** with the current `SurrogateSynth`; remains default-off |
+| Generative / multi-hypothesis params | ISMIR 2025 flow matching; projects like synth-setter | Historical seed-quality direction; **de-selected by the headroom probe** |
 | True differentiable synth | DDSP / Masuda | Bigger project than improving the surrogate |
 | Retrieval + nearest presets / CLAP | Synth-galaxy, Syntheon (Vital) | Useful as a seed library later, not a full replacement |
-| Synth capability gaps | next-directions “Q8” | Separate track for unreachable timbres |
+| Synth capability gaps | next-directions “Q8” | **Selected next** after the measured reachability ceiling |
 
 Also relevant: *Learning to Solve Inverse Problems for Perceptual Sound Matching* (PNP / JTFS) — perceptual features matter more than many architecture knobs when the synth is differentiable; for us the cheap analogue is “score and refine in a better audio feature space,” which we already partly do via the match objective and the surrogate.
 
 ---
 
-## Ranked next bets (value / effort)
+## Ranked bets — historical order and resolution
 
-### 1. Test-time surrogate refine — **do first** (chosen)
+This was the ranking before the headroom measurement. It is retained as the
+decision trail, not as current implementation advice.
+
+### 1. Test-time surrogate refine — **FAILED**
 
 After one-shot (and/or before CMA): a few gradient steps on predicted params minimizing spectral distance to the target **through the frozen `SurrogateSynth`**. Same shape as InverSynth II’s inference-time finetuning.
 
-- No new data, no retrain.
-- Directly attacks the one-shot gap.
-- Clear listen A/B: raw one-shot vs refined one-shot vs current seeded.
-- Also builds the “almost-A” fast path under strategy C.
+The implementation and listen gate are complete. Refined one-shots scored
+worse by ear (mean 1.32 vs 1.55 raw), including one mute/trash result, and the
+match objective was worse on all 10 hard-slice targets. It remains available
+for experiments but defaults to `--surrogate-refine-steps 0`.
 
-### 2. Multi-hypothesis seeding — follow-up if (1) helps but basins stay wrong
+### 2. Multi-hypothesis seeding — **DE-SELECTED BY HEADROOM**
 
-Emit top‑K diverse param / wavetype guesses (dropout, noise, or later a small conditional generative head). Score each with the existing match objective; keep the winner as CMA seed. Directly addresses ill-posedness; matches “search already does the impressive part.”
+The historical proposal was to emit top-K diverse parameter / wavetype
+hypotheses and score them as CMA seeds. The headroom probe removed its premise:
+at convergence `big_unseeded` reached a slightly better objective than
+`big_seeded` (2.2877 vs 2.3441 median), so the model seed is a time-saver, not
+the binding quality lever. A more diverse seed set cannot beat the measured
+reachable-set ceiling that both converged arms hit.
 
-### 3. Sharper surrogate → short real-FT — only after (1) proves the proxy
+### 3. Sharper surrogate → short real-FT — **STILL DEPRIORITIZED**
 
-Widen/deeper surrogate, multi-scale mel target (the matcher already uses multiple scales), retrain surrogate, then a short real-FT from v7. Costly; only worth it once inference-time refine shows the surrogate gradient is useful on real targets.
+Widen/deeper surrogate, multi-scale mel target (the matcher already uses
+multiple scales), retrain surrogate, then a short real-FT from v7. This remains
+costly and aimed at seed quality; test-time refine failed and the headroom
+probe shows seed quality is not binding at convergence.
 
-### 4. Name the ceiling; optional synth extensions
+### 4. Synth capability / pairs-of-sounds — **SELECTED NEXT**
 
-For targets that aren’t bfxr-reachable, improve the synth (colored noise / formants / etc.) rather than the inverse model. Longer horizon; frames expectations.
+The reachability premise is now measured rather than speculative. The next
+project should expand what the synth can express, including the
+pairs-of-sounds direction, before spending another cycle on inverse-model seed
+quality. This needs a fresh brainstorm → design → plan; the headroom result
+selects the problem, not a particular implementation.
 
 ### Deprioritize for now
 
@@ -100,13 +126,18 @@ For targets that aren’t bfxr-reachable, improve the synth (colored noise / for
 
 ---
 
-## Decision log (2026-07-25)
+## Decision log (updated 2026-07-26)
 
 | Decision | Choice |
 | --- | --- |
 | Product success mode | **C** — seed+search first; one-shot as bonus / fast path |
 | Bet (1) test-time surrogate refine | **FAILED listen** — refined mean 1.32 vs raw 1.55; mute on `mario 2 - jump`. Default stays `--surrogate-refine-steps 0`. See `2026-07-25-test-time-refine-results.md` |
-| Next implementation bet | **(2) Multi-hypothesis seeding** (or park and reopen product priorities) |
+| Headroom verdict | **REACHABILITY CEILING.** At 100x budget, seeded held-out objective improved **+3.2%** on the real hard slice vs **+46.9%** on reachable in-domain controls; the real/in-domain floor ratio grew **1.328 → 2.420**. |
+| Blind-listen confirmation | `baseline_seeded` mean/median **2.80/3.00** vs `big_seeded` **2.35/1.75** (**0/6/4** W/T/L) and `big_unseeded` **2.30/1.50** (**2/3/5**). The sole 5/5 was an isolated `big_unseeded` cursor win. |
+| Metric interpretation | **Metric ceiling did not fire:** the listen side was flat/worse, but its objective-improvement precondition (>=10%) was not met. The listen does not reopen objective work. |
+| Bet (2) multi-hypothesis seeding | **DE-SELECTED.** `big_unseeded` converged slightly better in objective than `big_seeded`; the model seed does not determine converged quality. |
+| Next project | **(4) Synth capability / pairs-of-sounds.** Begin with a new brainstorm → design → plan. |
+| Candidate free upside | A shipping budget around 10k may capture gains on some targets, but requires a separate listen gate. No budget, restart, or default change in this branch. |
 | Structure term | Remains default-off; not the next lever |
 
 ---
@@ -117,3 +148,6 @@ For targets that aren’t bfxr-reachable, improve the synth (colored noise / for
 - Spectral experiment: `2026-07-23-inverse-model-spectral-results.md`
 - Data retrain / v7: `2026-07-24-inverse-model-data-retrain-results.md`
 - Structure metric Gate A/B (FAILED listen): `2026-07-24-gate-a-results.md`
+- Headroom verdict (REACHABILITY CEILING): `2026-07-25-headroom-probe-results.md`
+- Headroom decision rule / design: `../specs/2026-07-25-headroom-probe-design.md`
+- Headroom implementation + run plan: `2026-07-25-headroom-probe.md`

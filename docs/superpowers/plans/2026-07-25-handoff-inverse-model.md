@@ -7,7 +7,7 @@ Pass this to a cold agent. Do **not** re-litigate closed bets without new eviden
 | Item | Value |
 | --- | --- |
 | Branch | `feature/inverse-model-structure-metric` |
-| Tip (at handoff) | `88b6dba` |
+| Tip (at handoff) | `>= e3f3834` (scored headroom results) |
 | Repo | `/Users/stephenlavelle/Documents/bfxr2` |
 | Tools cwd | `cd tools && uv run …` / `PYTHONPATH=.` |
 | Baseline ckpt | `.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt` |
@@ -17,10 +17,46 @@ Pass this to a cold agent. Do **not** re-litigate closed bets without new eviden
 
 Other worktree (older line): `.worktrees/inverse-model-next` on `feature/inverse-model-next-steps` — holds training runs / v7 artifacts; not required for match-only work if checkpoints are reachable via the paths above.
 
+## Read first — headroom verdict: REACHABILITY CEILING
+
+The completed 100x-budget probe selects the next project. Do not start from the
+older multi-hypothesis suggestion.
+
+- Seeded held-out objective improved only **+3.2%** on the real hard slice
+  versus **+46.9%** on reachable in-domain controls. The real/in-domain floor
+  ratio grew **1.328 → 2.420**.
+- At convergence, `big_unseeded` was slightly better in objective than
+  `big_seeded` (2.2877 vs 2.3441 median). The model seed saves time; it does not
+  determine converged quality on this slice.
+- Single-listener blind scores were `baseline_seeded` mean/median
+  **2.80/3.00**, `big_seeded` **2.35/1.75** with **0 wins / 6 ties / 4 losses**,
+  and `big_unseeded` **2.30/1.50** with **2/3/5**. The sole 5/5 was an isolated
+  `big_unseeded` cursor win.
+- The **metric ceiling did not fire** because its >=10% objective-improvement
+  precondition was not met. The listen confirms that 100x did not provide a
+  general audible gain; it does not reopen objective work.
+
+Consequences: multi-hypothesis seeding is de-selected, a sharper surrogate
+remains deprioritized, and **synth capability / pairs-of-sounds is selected
+next**. This is a hard-slice median result, not a claim that every target is
+unreachable: Throw and Break Brick did gain, and a shipping budget around 10k
+is candidate upside only after a separate listen gate.
+
+One `big_unseeded` White-noise candidate severely overfit its render seed
+(2.6120 search score vs 10.6469 held-out). `avg_seeds=1` is a live risk for
+White noise, especially at larger budgets; do not treat the other held-out
+ties as proof that render-seed overfit is generally absent.
+
+Full evidence:
+`docs/superpowers/plans/2026-07-25-headroom-probe-results.md`.
+
 ## Product goal (locked)
 
 **Mode C:** optimize **seed + short search** first; treat one-shot as a bonus / path toward “feels instant.”  
 Pure one-shot matching seeded quality is **not** the near-term bar (hard-slice one-shot ~1–1.5/5 vs seeded often 3–4/5).
+
+Capability expansion supports this product mode by widening what seed + short
+search can reach; it does not replace Mode C with a different fitting mode.
 
 Strategy essay: `docs/superpowers/plans/2026-07-25-inverse-model-next-bets.md`
 
@@ -55,29 +91,47 @@ Strategy essay: `docs/superpowers/plans/2026-07-25-inverse-model-next-bets.md`
 
 **Do not** burn another cycle retuning lr/steps for bet (1) without a new theory (e.g. much better surrogate). Plan said: on fail → leave default 0, move on.
 
+### 3. Multi-hypothesis seeding — DE-SELECTED by headroom
+
+- This was the former bet (2), not an implemented failure.
+- At 200 000 evaluations plus restarts, `big_unseeded` converged slightly
+  better in objective than `big_seeded` (2.2877 vs 2.3441 median).
+- Therefore the initial model seed is not binding converged quality on the hard
+  slice. More or more-diverse hypotheses would optimize a time-saver, not the
+  measured reachability limit.
+- Do not reopen it without new evidence that changes that premise.
+
 ## What a retrain would *not* learn from this branch
 
 Structure metric + test-time refine are **search/eval-time**. They do not change training data, labels, or loss. Retrain only if you change the **training** side again.
 
 v5 data / v7 trains already happened (structured sampler, retro, cull, real FT). Results: `docs/superpowers/plans/2026-07-24-inverse-model-data-retrain-results.md`.
 
-## Suggested next bet
+## Selected next project
 
-**(2) Multi-hypothesis seeding** — from next-bets:
+**(4) Synth capability / pairs-of-sounds.**
 
-- Emit top‑K diverse param/wavetype hypotheses (beyond today’s `predict_wave` top‑k), score with existing `MatchObjective`, keep best as CMA seed (and/or one-shot pick).
-- Attacks ill-posed inverse / mode collapse; fits mode C (search already does the heavy lifting).
-- Literature pointer: generative / multi-modal param prediction (e.g. ISMIR 2025 flow-matching / Param2Tok style); practically start cheaper (dropout, noise, or score all top‑k renders) before a full generative head.
+The headroom probe measured the missing premise for capability work: the
+existing search still improves substantially on reachable in-domain controls
+at 100x budget, while the real hard-slice median barely moves. The next project
+should expand the reachable sound set.
 
-**(3) Sharper surrogate → real-FT** — deprioritized until a proxy proves useful at inference; bet (1) argues the current surrogate gradient **hurts** hard-slice one-shots.
+New work must start with **brainstorm → design → implementation plan**. This
+handoff intentionally does not choose a synth extension, pairing scheme,
+segmentation strategy, or model architecture.
 
-Also still true from older next-directions: synth capability ceiling on unreachable timbres; length/envelope issues partly mitigated elsewhere.
+**(3) Sharper surrogate → real-FT** remains deprioritized. Bet (1) showed the
+current surrogate gradient hurts hard-slice one-shots, and headroom showed
+seed quality is not binding at convergence.
 
 ## Key files on this branch
 
 | Path | Role |
 | --- | --- |
 | `docs/superpowers/plans/2026-07-25-inverse-model-next-bets.md` | Strategy + ranked bets + decision log |
+| `docs/superpowers/plans/2026-07-25-headroom-probe-results.md` | **Authoritative REACHABILITY CEILING verdict**, arm/objective/listen evidence, render-seed risk |
+| `docs/superpowers/specs/2026-07-25-headroom-probe-design.md` | Pre-registered ceiling decision rule and scope |
+| `docs/superpowers/plans/2026-07-25-headroom-probe.md` | Headroom implementation and run plan (historical) |
 | `docs/superpowers/plans/2026-07-25-test-time-refine-results.md` | Bet (1) FAIL listen table |
 | `docs/superpowers/specs/2026-07-25-inverse-model-test-time-refine-design.md` | Bet (1) design (historical) |
 | `docs/superpowers/plans/2026-07-25-inverse-model-test-time-refine.md` | Bet (1) implementation plan |
@@ -87,6 +141,7 @@ Also still true from older next-directions: synth capability ceiling on unreacha
 | `tools/match/structure.py` / `structure_probes.py` | Structure term (default weight 0) |
 | `tools/match/listen_compare.py` | Gate B baseline vs candidate page |
 | `tools/match/listen_refine_compare.py` | Raw vs refined vs seeded page |
+| `tools/match/headroom.py` | Four-arm real/control headroom driver and held-out rescoring |
 | `tools/invert/predict.py` | `predict_wave` top‑k seeds |
 | `tools/invert/surrogate.py` | `SurrogateSynth` |
 
@@ -104,14 +159,22 @@ From `match.listen_compare.HARD_SLICE`:
 
 ## Immediate agent TODO (if continuing)
 
-1. Confirm branch tip ≥ `88b6dba`.
-2. Read `2026-07-25-inverse-model-next-bets.md` end-to-end.
-3. **Brainstorm → design → plan** for bet **(2) multi-hypothesis seeding** (do not jump straight into code).
-4. Or ask the human whether to park / PR-merge this branch as “negative results + disabled defaults” before starting (2).
+1. Confirm branch tip `>= e3f3834` (scored headroom results).
+2. Read `2026-07-25-headroom-probe-results.md` and
+   `2026-07-25-inverse-model-next-bets.md` end-to-end.
+3. **Brainstorm → design → plan** the selected **synth capability /
+   pairs-of-sounds** project. Do not jump straight into code or pre-select an
+   architecture from this handoff.
+4. Confirm with the human whether to begin that new project on a fresh branch
+   after integrating this results branch.
 
 ## Out of scope unless human asks
 
 - Re-enabling `structure_pitch` by default
 - Enabling `--surrogate-refine-steps` by default
+- Shipping the ~10k budget candidate without its own listen gate
+- Enabling `restarts` by default or otherwise changing shipping search defaults
+- Changing `avg_seeds` defaults without a separate design and listen gate
+- Reopening multi-hypothesis seeding without evidence that the seed is binding
 - Another 500k→1M data ladder with the same recipe
 - Retraining “because Gate B / refine failed”
