@@ -166,6 +166,10 @@ class FeatureWeights:
     pitch_movement: float = 1.0  # still/glide/jump distribution
     timbre: float = 1.0
     mel: float = 0.35
+    # sound-level pitch structure (structure.py). Off by default: it failed
+    # the 2026-07-25 human listen gate (docs/superpowers/plans/
+    # 2026-07-24-gate-a-results.md §7). Set to 1.0 to re-enable for probing.
+    structure_pitch: float = 0.0
 
 
 # per-frame |Δf0| thresholds (semitones) splitting pitch motion into

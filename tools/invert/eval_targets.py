@@ -60,6 +60,14 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--duration-floor", type=float, default=0.0,
                    help="forbid candidates shorter than this fraction of the "
                         "target length (0=off)")
+    p.add_argument("--structure-objective", action="store_true",
+                   help="run match with the sound-level pitch-structure term "
+                        "enabled (off by default since the 2026-07-25 "
+                        "listen gate failure)")
+    p.add_argument("--surrogate-refine-steps", type=int, default=0)
+    p.add_argument("--surrogate-refine-lr", type=float, default=1e-2)
+    p.add_argument("--surrogate", type=Path, default=None,
+                   help="required when --surrogate-refine-steps > 0")
     p.add_argument("-o", "--out", type=Path, required=True,
                    help="output directory for results.json / results.md")
     return p
@@ -109,6 +117,10 @@ def run_mode(
     seed_model: bool,
     one_shot: bool,
     duration_floor: float = 0.0,
+    structure_objective: bool = False,
+    surrogate_refine_steps: int = 0,
+    surrogate_refine_lr: float = 1e-2,
+    surrogate: Path | None = None,
 ) -> dict[str, Any]:
     out_dir.mkdir(parents=True, exist_ok=True)
     argv = [str(target), "-o", str(out_dir), "--rng-seed", str(rng_seed)]
@@ -116,6 +128,16 @@ def run_mode(
         argv += ["--jobs", str(jobs)]
     if duration_floor > 0.0:
         argv += ["--duration-floor", str(duration_floor)]
+    if structure_objective:
+        argv += ["--structure-objective"]
+    if surrogate_refine_steps > 0:
+        if surrogate is None:
+            raise ValueError("--surrogate-refine-steps requires --surrogate")
+        argv += [
+            "--surrogate-refine-steps", str(surrogate_refine_steps),
+            "--surrogate-refine-lr", str(surrogate_refine_lr),
+            "--surrogate", str(surrogate),
+        ]
     if one_shot:
         argv += ["--seed-model", str(ckpt), "--one-shot"]
     elif seed_model:
@@ -141,6 +163,10 @@ def eval_one_target(
     rng_seed: int,
     jobs: int | None,
     duration_floor: float = 0.0,
+    structure_objective: bool = False,
+    surrogate_refine_steps: int = 0,
+    surrogate_refine_lr: float = 1e-2,
+    surrogate: Path | None = None,
 ) -> dict[str, Any]:
     row: dict[str, Any] = {
         "target": target.name,
@@ -166,6 +192,10 @@ def eval_one_target(
                     seed_model=flags["seed_model"],
                     one_shot=flags["one_shot"],
                     duration_floor=duration_floor,
+                    structure_objective=structure_objective,
+                    surrogate_refine_steps=surrogate_refine_steps,
+                    surrogate_refine_lr=surrogate_refine_lr,
+                    surrogate=surrogate,
                 )
             except Exception as exc:  # one mode failure should not kill others
                 traceback.print_exc()
@@ -259,6 +289,10 @@ def main(argv: list[str] | None = None) -> int:
                 rng_seed=args.rng_seed,
                 jobs=args.jobs,
                 duration_floor=args.duration_floor,
+                structure_objective=args.structure_objective,
+                surrogate_refine_steps=args.surrogate_refine_steps,
+                surrogate_refine_lr=args.surrogate_refine_lr,
+                surrogate=args.surrogate,
             )
         except Exception as exc:
             traceback.print_exc()

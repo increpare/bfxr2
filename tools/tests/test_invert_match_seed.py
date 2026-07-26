@@ -73,3 +73,42 @@ def test_match_one_shot_smoke(tmp_path):
     )
     assert rc == 0
     assert (out / "match.bfxr").is_file()
+
+
+def test_match_one_shot_surrogate_refine_smoke(tmp_path):
+    from invert.surrogate import SurrogateSynth
+    import torch
+    from invert import constants
+
+    ckpt = tmp_path / "ckpt.pt"
+    wav = tmp_path / "target.wav"
+    out = tmp_path / "out_ref"
+    sur_path = tmp_path / "surrogate.pt"
+    _write_random_ckpt(ckpt)
+    _write_short_wav(wav)
+    m = SurrogateSynth(width=8)
+    torch.save(
+        {
+            "model_state": m.state_dict(),
+            "width": 8,
+            "channel_mean": list(constants.CHANNEL_MEAN),
+            "channel_std": list(constants.CHANNEL_STD),
+        },
+        sur_path,
+    )
+
+    rc = main(
+        [
+            str(wav),
+            "--seed-model", str(ckpt),
+            "--one-shot",
+            "--surrogate-refine-steps", "5",
+            "--surrogate", str(sur_path),
+            "-o", str(out),
+            "--jobs", "1",
+        ]
+    )
+    assert rc == 0
+    assert (out / "match.bfxr").is_file()
+    report = __import__("json").loads((out / "report.json").read_text())
+    assert report["flags"]["surrogate_refine_steps"] == 5
