@@ -51,10 +51,11 @@ So the pipeline *can* land in the right basin. What’s weak is mostly the **raw
    budget, the seeded held-out objective improved only **3.2%** on real targets
    versus **46.9%** on reachable in-domain controls, and the real/in-domain
    floor ratio grew **1.328 → 2.420**. This does **not** establish that every
-   real target is unreachable: Throw and Break Brick still gained, and a
-   larger shipping budget may capture some of that upside. It does establish
-   that the hard-slice median is now limited primarily by bfxr's reachable set,
-   not by the current seed or search budget. See the headroom results.
+   real target is unreachable: Throw and Break Brick showed seeded objective
+   reductions, and a larger shipping budget may capture some of that objective
+   upside. It does establish that the hard-slice median is now limited
+   primarily by bfxr's reachable set, not by the current seed or search budget.
+   See the headroom results.
 7. **Wrong lever already tried.** Sound-level `structure_pitch` in the match objective: probes 8/14 → 14/14, ears unchanged on the hard slice (Gate B FAILED). Term now defaults to weight 0.0; `--structure-objective` keeps it for experiments. Do not spend another cycle retuning that term instead of pursuing the selected capability track.
 
 ### What a retrain would *not* learn from Gate A/B
@@ -97,17 +98,23 @@ for experiments but defaults to `--surrogate-refine-steps 0`.
 
 The historical proposal was to emit top-K diverse parameter / wavetype
 hypotheses and score them as CMA seeds. The headroom probe removed its premise:
-at convergence `big_unseeded` reached a slightly better objective than
-`big_seeded` (2.2877 vs 2.3441 median), so the model seed is a time-saver, not
-the binding quality lever. A more diverse seed set cannot beat the measured
-reachable-set ceiling that both converged arms hit.
+at the measured 200 000-evaluation endpoint, `big_unseeded` reached a slightly
+better objective than `big_seeded` (2.2877 vs 2.3441 median), and at 2 000
+evaluations seeded was also slightly worse (2.4226 vs 2.3891). The current
+seed therefore did not improve hard-slice median quality at either endpoint;
+the probe did not measure or establish a time-to-quality benefit. This
+de-selects multi-hypothesis seeding as the next project because it does not
+address the pre-registered median reachability result. The finite endpoints do
+not rule out a learned seed finding an unobserved basin; reopen only with new
+evidence that seed quality is binding.
 
 ### 3. Sharper surrogate → short real-FT — **STILL DEPRIORITIZED**
 
 Widen/deeper surrogate, multi-scale mel target (the matcher already uses
 multiple scales), retrain surrogate, then a short real-FT from v7. This remains
 costly and aimed at seed quality; test-time refine failed and the headroom
-probe shows seed quality is not binding at convergence.
+endpoint comparisons do not identify current seed quality as the next binding
+lever.
 
 ### 4. Synth capability / pairs-of-sounds — **SELECTED NEXT**
 
@@ -133,11 +140,11 @@ selects the problem, not a particular implementation.
 | Product success mode | **C** — seed+search first; one-shot as bonus / fast path |
 | Bet (1) test-time surrogate refine | **FAILED listen** — refined mean 1.32 vs raw 1.55; mute on `mario 2 - jump`. Default stays `--surrogate-refine-steps 0`. See `2026-07-25-test-time-refine-results.md` |
 | Headroom verdict | **REACHABILITY CEILING.** At 100x budget, seeded held-out objective improved **+3.2%** on the real hard slice vs **+46.9%** on reachable in-domain controls; the real/in-domain floor ratio grew **1.328 → 2.420**. |
-| Blind-listen confirmation | `baseline_seeded` mean/median **2.80/3.00** vs `big_seeded` **2.35/1.75** (**0/6/4** W/T/L) and `big_unseeded` **2.30/1.50** (**2/3/5**). The sole 5/5 was an isolated `big_unseeded` cursor win. |
+| Blind-listen result | For this one listener on the ten-target slice, 100x did not show a general audible gain: `baseline_seeded` mean/median **2.80/3.00** vs `big_seeded` **2.35/1.75** (**0/6/4** W/T/L) and `big_unseeded` **2.30/1.50** (**2/3/5**). The sole 5/5 was an isolated `big_unseeded` cursor win. |
 | Metric interpretation | **Metric ceiling did not fire:** the listen side was flat/worse, but its objective-improvement precondition (>=10%) was not met. The listen does not reopen objective work. |
-| Bet (2) multi-hypothesis seeding | **DE-SELECTED.** `big_unseeded` converged slightly better in objective than `big_seeded`; the model seed does not determine converged quality. |
+| Bet (2) multi-hypothesis seeding | **DE-SELECTED AS THE NEXT PROJECT.** The current seed did not improve hard-slice median quality at either measured endpoint; time-to-quality was not measured. Reopen only with new evidence that seed quality is binding. |
 | Next project | **(4) Synth capability / pairs-of-sounds.** Begin with a new brainstorm → design → plan. |
-| Candidate free upside | A shipping budget around 10k may capture gains on some targets, but requires a separate listen gate. No budget, restart, or default change in this branch. |
+| Candidate free upside | A shipping budget around 10k may capture objective gains on some targets, but requires a separate listen gate. No budget, restart, or default change in this branch. |
 | Structure term | Remains default-off; not the next lever |
 
 ---

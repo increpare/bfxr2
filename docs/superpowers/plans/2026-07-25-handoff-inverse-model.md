@@ -25,22 +25,29 @@ older multi-hypothesis suggestion.
 - Seeded held-out objective improved only **+3.2%** on the real hard slice
   versus **+46.9%** on reachable in-domain controls. The real/in-domain floor
   ratio grew **1.328 → 2.420**.
-- At convergence, `big_unseeded` was slightly better in objective than
-  `big_seeded` (2.2877 vs 2.3441 median). The model seed saves time; it does not
-  determine converged quality on this slice.
+- At the measured 200 000-evaluation endpoint, `big_unseeded` was slightly
+  better in objective than `big_seeded` (2.2877 vs 2.3441 median); at 2 000
+  evaluations seeded was also slightly worse (2.4226 vs 2.3891). The current
+  seed did not improve hard-slice median quality at either endpoint.
+  Time-to-quality was not measured, so no speed benefit was established.
 - Single-listener blind scores were `baseline_seeded` mean/median
   **2.80/3.00**, `big_seeded` **2.35/1.75** with **0 wins / 6 ties / 4 losses**,
   and `big_unseeded` **2.30/1.50** with **2/3/5**. The sole 5/5 was an isolated
   `big_unseeded` cursor win.
 - The **metric ceiling did not fire** because its >=10% objective-improvement
-  precondition was not met. The listen confirms that 100x did not provide a
-  general audible gain; it does not reopen objective work.
+  precondition was not met. For this one listener on the ten-target slice,
+  100x did not show a general audible gain; the listen does not reopen
+  objective work.
 
-Consequences: multi-hypothesis seeding is de-selected, a sharper surrogate
-remains deprioritized, and **synth capability / pairs-of-sounds is selected
-next**. This is a hard-slice median result, not a claim that every target is
-unreachable: Throw and Break Brick did gain, and a shipping budget around 10k
-is candidate upside only after a separate listen gate.
+Consequences: multi-hypothesis seeding is de-selected as the next project
+because it does not address the pre-registered median reachability result, a
+sharper surrogate remains deprioritized, and **synth capability /
+pairs-of-sounds is selected next**. This finite-endpoint result does not prove
+that a learned seed could never find an unobserved basin; reopen seeding only
+with new evidence that seed quality is binding. It is also not a claim that
+every target is unreachable: Throw and Break Brick showed seeded objective
+reductions, and a shipping budget around 10k is candidate objective upside
+only after a separate listen gate.
 
 One `big_unseeded` White-noise candidate severely overfit its render seed
 (2.6120 search score vs 10.6469 held-out). `avg_seeds=1` is a live risk for
@@ -94,12 +101,16 @@ Strategy essay: `docs/superpowers/plans/2026-07-25-inverse-model-next-bets.md`
 ### 3. Multi-hypothesis seeding — DE-SELECTED by headroom
 
 - This was the former bet (2), not an implemented failure.
-- At 200 000 evaluations plus restarts, `big_unseeded` converged slightly
-  better in objective than `big_seeded` (2.2877 vs 2.3441 median).
-- Therefore the initial model seed is not binding converged quality on the hard
-  slice. More or more-diverse hypotheses would optimize a time-saver, not the
-  measured reachability limit.
-- Do not reopen it without new evidence that changes that premise.
+- At the 200 000-evaluation endpoint plus restarts, `big_unseeded` had a
+  slightly lower objective than `big_seeded` (2.2877 vs 2.3441 median).
+- At 2 000 evaluations, seeded was also slightly worse (2.4226 vs 2.3891).
+- Thus the current seed did not improve hard-slice median quality at either
+  measured endpoint. The probe did not compare matched time-to-quality, so it
+  established no speed benefit.
+- This de-selects multi-hypothesis seeding as the next project because it does
+  not address the pre-registered median reachability result. It does not prove
+  every possible learned seed would fail to find an unobserved basin.
+- Reopen only with new evidence that seed quality is binding.
 
 ## What a retrain would *not* learn from this branch
 
@@ -122,7 +133,7 @@ segmentation strategy, or model architecture.
 
 **(3) Sharper surrogate → real-FT** remains deprioritized. Bet (1) showed the
 current surrogate gradient hurts hard-slice one-shots, and headroom showed
-seed quality is not binding at convergence.
+the current seed did not improve median quality at the measured endpoints.
 
 ## Key files on this branch
 

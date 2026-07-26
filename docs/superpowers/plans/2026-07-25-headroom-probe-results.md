@@ -12,18 +12,22 @@
 
 100x budget cuts the objective by **47%** on targets the synth provably can
 make, and by **3%** on the real hard slice. The search is not stuck and the
-budget is not wasted; there is simply almost nothing better to find inside
-bfxr's reachable set. The next project is **capability (synth extensions /
-pairs-of-sounds)**, not seeding and not the objective.
+budget is not wasted: this contrast fires the pre-registered reachability
+rule. On this slice, increasing budget barely lowered the real-target median
+while strongly lowering the reachable-control median. The next project is
+**capability (synth extensions / pairs-of-sounds)**, not seeding and not the
+objective.
 
-The single-listener blind confirmation agreed: 100x did not sound clearly
-better. `baseline_seeded` had the best mean and median; `big_seeded` never won
-against it (6 ties, 4 losses). This is descriptive confirmation on this slice,
-not a claim of statistical significance.
+For this one listener on the ten-target slice, 100x did not show a general
+audible gain. `baseline_seeded` had the best mean and median; `big_seeded`
+never won against it (6 ties, 4 losses). This is descriptive evidence on this
+slice, not a claim of statistical significance.
 
 This **de-selects bet (2) multi-hypothesis seeding**, which the handoff named
-as the next bet. A better seed cannot beat a ceiling that a 100x-converged
-search also cannot beat.
+as the next project, because it does not address the pre-registered median
+reachability result. The finite endpoints do not prove that every possible
+learned seed would fail to find an unobserved basin; reopen the bet only with
+new evidence that seed quality is binding.
 
 ## Run health
 
@@ -57,13 +61,15 @@ evidence of a ceiling. This was the probe's single correctness risk (spec §1a).
 - **+4.2%** on real targets, unseeded
 - **+46.9%** on in-domain targets
 
-### The model seed does not survive convergence
+### The current model seed did not improve endpoint quality
 
 `big_unseeded` (2.2877) is **better** than `big_seeded` (2.3441). The spec
-called this "the sharpest arm on the table," and it landed: at convergence the
-inverse model earns its keep as a **time-saver, not a quality lever**. At 2 000
-evals the seeded arm is also not ahead (2.4226 vs 2.3891 unseeded) — on this
-slice, f0 screening is already competitive with the v7 seed.
+called this "the sharpest arm on the table," and it landed at the measured
+200 000-evaluation endpoint. At 2 000 evaluations the seeded arm is also not
+ahead (2.4226 vs 2.3891 unseeded). Thus the current model seed did not improve
+hard-slice median quality at either measured endpoint. The probe did not
+compare matched time-to-quality, so it did not establish a speed benefit. It
+also does not rule out a different learned seed finding an unobserved basin.
 
 (One of `big_unseeded`'s ten wins is a render-seed artifact rather than a real
 match — see §4. It is not the median, so the comparison stands, but the arm's
@@ -115,18 +121,20 @@ spurious "knee" at ~200 000):
 
 This is the reachability reading arriving a second time by an independent
 route. On reachable targets the search is still meaningfully improving out to
-~65 000 evals. On real targets it goes quiet after ~6 000 — not because it has
-converged on the right answer, but because there is nothing better within
-reach to find.
+~65 000 evals. On real targets the measured trace is usually within 5% of its
+final endpoint by ~6 000. The much earlier real-target knee, paired with the
+control behavior, is consistent with the pre-registered reachability reading;
+it does not prove that no unobserved basin exists.
 
 Per-target real knees: 1 147 / 1 175 / 1 427 / 1 763 / 2 183 / 9 771 / 11 843 /
 18 451 / 26 627 / 74 199.
 
 **Free upside (follow-up, not this branch).** The two targets that actually
-gained have knees at 9 771 (Throw, +18.7%) and 26 627 (Break Brick, +50.3%).
-A shipping budget of ~10 000 rather than 2 000 would capture most of the
-available gain at ~5x the current search cost. Per spec §6 that is a separate
-change with its own listen gate — the objective delta alone must not ship it.
+showed seeded objective reductions have knees at 9 771 (Throw, +18.7%) and
+26 627 (Break Brick, +50.3%). A shipping budget of ~10 000 rather than 2 000
+would capture most of those measured objective reductions at ~5x the current
+search cost. Per spec §6 that is a separate change with its own listen gate —
+the objective delta alone must not ship it.
 
 ## 3. Pre-registered decision rule (spec §4)
 
@@ -147,7 +155,7 @@ this branch as the design allowed for.
 
 The listen meets the metric-ceiling rule's listening-side threshold, but the
 full rule does **not** fire because its objective precondition was not met.
-The reachability verdict therefore remains, and this confirmation does not
+The reachability verdict therefore remains, and this listen result does not
 reopen objective work.
 
 Absolute ratios, reported as context rather than as a trigger:
@@ -244,13 +252,13 @@ aggregation.
 | `big_seeded` | 2.35 | 1.75 | **-0.45** | 0.00 | **0 / 6 / 4** |
 | `big_unseeded` | 2.30 | 1.50 | **-0.50** | -0.25 | **2 / 3 / 5** |
 
-For this one listener on this ten-target slice, 100x did not sound clearly
-better. `big_seeded` never won, tied six times, and lost four; the baseline
-had the best mean and median. `big_unseeded` produced the sole 5/5 on
+For this one listener on the ten-target slice, 100x did not show a general
+audible gain. `big_seeded` never won, tied six times, and lost four; the
+baseline had the best mean and median. `big_unseeded` produced the sole 5/5 on
 `mega_man_iii_cursor` and won on Mario Break Brick, but those two wins are
-isolated rather than a general improvement. The listen is confirmation, not
-a statistically powered result. It does not reopen objective work, while the
-render-seed caveat in §4 remains in force.
+isolated rather than a general improvement. The listen is descriptive
+evidence, not a statistically powered result. It does not reopen objective
+work, while the render-seed caveat in §4 remains in force.
 
 ## 6. Harness defects found and fixed during validation
 
@@ -282,8 +290,8 @@ evals, identical score, all six output artifacts byte-identical), so
 
 | Bet | Status after this probe |
 | --- | --- |
-| (2) Multi-hypothesis seeding | **De-selected.** Converged search without the model already matches converged search with it; a better seed cannot beat a ceiling both arms hit. |
-| (3) Sharper surrogate → real-FT | Still deprioritized; it targets seed quality, which this probe shows is not binding. |
+| (2) Multi-hypothesis seeding | **De-selected as the next project.** The current seed did not improve hard-slice median quality at the measured 2 000- or 200 000-evaluation endpoints, and the bet does not address the pre-registered median reachability result. Time-to-quality and possible unobserved basins were not measured; reopen only with new evidence that seed quality is binding. |
+| (3) Sharper surrogate → real-FT | Still deprioritized; it targets seed quality, which the current endpoint comparisons do not identify as the next binding lever. |
 | (4) Synth capability / pairs-of-sounds | **Selected.** The measurement its premise was missing now exists. |
 | Shipping budget 2 000 → ~10 000 | Candidate follow-up with its own listen gate; not this branch. |
 | `structure_pitch`, test-time refine | Unchanged; both remain default-off. |
