@@ -16,6 +16,7 @@ class Breathr extends PresetSynth {
         ['Enclosure','Short reflections around a mask, helmet or cave.','space',0.1,0,1]
     ];
     recipes=[
+        {name:'Snore',id:'snore',tip:'A soft snuffle, a rattling inhale, a sleepy release.',values:{source:2,duration:[2.1,3.8],cycles:1,effort:[0.18,0.48],inhale:[0.45,0.65],hold:[0.08,0.22],throat:[0.4,0.78],rasp:[0.55,0.95],flutter:[0.28,0.65],space:[0,0.16]}},
         {name:'Tired Runner',id:'tired_runner',tip:'Fast, uneven breaths after a sprint.',values:{source:[0,1],duration:[1.5,2.8],cycles:[3,6],effort:[0.65,1],inhale:[0.3,0.46],hold:[0,0.08],throat:[0.25,0.55],rasp:[0.2,0.5],flutter:[0.25,0.6],space:[0,0.12]}},
         {name:'Deep Breath',id:'deep_breath',tip:'One full, deliberate breath.',values:{source:0,duration:[2.5,4.8],cycles:1,effort:[0.2,0.5],inhale:[0.42,0.58],hold:[0.02,0.12],throat:[0.4,0.75],rasp:[0,0.12],flutter:[0,0.1],space:[0,0.1]}},
         {name:'Held Breath',id:'held_breath',tip:'Air drawn in, held, then slowly released.',values:{source:0,duration:[2.4,4.8],cycles:1,effort:[0.2,0.45],inhale:[0.23,0.45],hold:[0.42,0.68],throat:[0.25,0.6],rasp:[0.05,0.2],flutter:[0.05,0.3],space:[0,0.08]}},

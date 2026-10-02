@@ -55,7 +55,7 @@ for (var i = 0; i < script_includes.length; i++) {
     const line = script_includes[i];
     var match = line.match(/<script src="(.+?)"/);
     if (match){
-        var js_file = match[1];
+        var js_file = match[1].split('?')[0];
         if (js_file.endsWith('.js')){
             js_files.push(js_file);
         }

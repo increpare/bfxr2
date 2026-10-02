@@ -1,6 +1,23 @@
 // Sample a measured family as a joint sound state, preserving its correlations.
 // This file contains no renderer or analysis dependencies.
 class PresetFamily {
+    static constrain(params, family) {
+        const set = (path, value) => {
+            const parts = path.split('.');
+            let target = params;
+            for (const part of parts.slice(0, -1)) target = target[part] ||= {};
+            const key = parts.at(-1);
+            target[key] = Array.isArray(value) ? Math.max(value[0], Math.min(value[1], target[key])) : value;
+        };
+        for (const [path, value] of Object.entries(family.limits || {})) set(path, value);
+        for (const [name, range] of Object.entries(family.intervals || {})) {
+            const row = params[name];
+            row.end = row.start + Math.max(range[0], Math.min(range[1], row.end - row.start));
+            if (family.limits[name+'.end']) set(name+'.end', family.limits[name+'.end']);
+        }
+        return params;
+    }
+
     static compatible(a, b) {
         if (a.waveType !== b.waveType) return false;
         return ['pitch','tone','noise','vibrato','level'].every(name =>
@@ -30,8 +47,9 @@ class PresetFamily {
         const time = 0.85 + random() * 0.3;
         if (p.duration !== undefined) p.duration *= time;
         for (const name of ['attack','release']) if (p[name] !== undefined) p[name] *= time;
-        for (const [name, extent] of [['pitch',0.07],['tone',0.1],['noise',0.06],['vibrato',0.1],['level',0.1]]) {
+        for (const [name, standardExtent] of [['pitch',0.07],['tone',0.1],['noise',0.06],['vibrato',0.1],['level',0.1]]) {
             if (!p[name]) continue;
+            const extent = family.variation?.[name] ?? standardExtent;
             const shift = offset(extent);
             for (const side of ['start','end']) p[name][side] = clamp(p[name][side] + shift);
         }
@@ -39,6 +57,6 @@ class PresetFamily {
             // Even a little echo adds a long tail to a dry click or static fleck.
             p[name] = name === 'echo' && anchor.echo === 0 ? 0 : clamp(p[name] + offset(0.08));
         }
-        return p;
+        return this.constrain(p, family);
     }
 }

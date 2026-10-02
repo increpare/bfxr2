@@ -5,7 +5,7 @@ class Transfxr extends SynthBase {
     canvas_bg_logo = 'img/logo_transfxr.png';
     header_properties = ['waveType'];
     permalocked = ['masterVolume'];
-    hide_params = ['masterVolume'];
+    hide_params = ['masterVolume','waveTo'];
     static tweenfunctions = Transfxr_DSP.curves;
     static preset_families = typeof TRANSFXR_PRESET_FAMILIES === 'undefined' ? [] : TRANSFXR_PRESET_FAMILIES;
 
@@ -17,7 +17,7 @@ class Transfxr extends SynthBase {
 
     param_info = [
         ['Sound Volume', 'Overall volume of the current sound.', 'masterVolume', 0.5, 0, 1],
-        {type:'BUTTONSELECT', name:'waveType', display_name:'Voice', tooltip:'The oscillator beneath the changing sound.',
+        {type:'BUTTONSELECT', name:'waveType', display_name:'', tooltip:'The oscillator beneath the changing sound.',
             default_value:0, columns:4, header:true,
             values:BfxrWaveforms.choices.map(([label,tip,id])=>[label,tip,
                 ({2:0,4:1,1:2,0:3,8:4,6:5,7:6,3:7,11:8,9:9,5:10,10:11})[id]])},
@@ -30,7 +30,10 @@ class Transfxr extends SynthBase {
         ['Attack', 'Fade-in time in seconds, within the duration.', 'attack', 0.008, 0, 1],
         ['Release', 'Fade-out time in seconds, within the duration.', 'release', 0.18, 0, 1],
         ['Resonance', 'Emphasize the moving filter frequency.', 'resonance', 0.15, 0, 1],
-        ['Echo', 'Repeating, fading reflections after the voice.', 'echo', 0.15, 0, 0.8]
+        ['Echo', 'Repeating, fading reflections after the voice.', 'echo', 0.15, 0, 0.8],
+        {type:'BUTTONSELECT',name:'waveTo',display_name:'Morph to',default_value:-1,columns:4,
+            values:[['Same waveform','Keep the starting waveform.',-1],...BfxrWaveforms.choices.map(([label,tip,id])=>[label,tip,({2:0,4:1,1:2,0:3,8:4,6:5,7:6,3:7,11:8,9:9,5:10,10:11})[id]])]},
+        Transfxr.transitionParam('morph','Morph','Blend from the starting waveform into the chosen destination.',0,1,'Smooth')
     ];
 
     // Original exact recipes remain available for saved examples and rendering tools.
@@ -67,6 +70,7 @@ class Transfxr extends SynthBase {
         ...(Transfxr.preset_families.length ? Transfxr.preset_families.map(p =>
             [p.name,p.tip,'generate_family_'+p.id,p.name.replace(/ /g,'')]) :
             Transfxr.examples.map(p => [p.name,p.tip,'generate_'+p.id,p.name.replace(/ /g,'')])),
+        ['Timbral Morph','Generate a journey between two waveform characters.','generate_morph','Morph'],
         ['Randomize','Find a new journey; locked controls stay put.','randomize_params','Random'],
         ['Mutate','Nudge both endpoints of unlocked controls.','mutate_params','Mutant']
     ];
@@ -79,6 +83,11 @@ class Transfxr extends SynthBase {
     }
 
     apply_params(params, check_locked = false) {
+        if(!params||typeof params!=='object')return;
+        if(['waveType','duration','pitch','tone','noise','vibrato','level'].every(key=>Object.prototype.hasOwnProperty.call(params,key))) {
+            const defaults=this.default_params();
+            for(const key of ['waveTo','morph'])if(!Object.prototype.hasOwnProperty.call(params,key))this.set_param(key,defaults[key],check_locked);
+        }
         // File/link input is data, not a guarantee of finite, in-range controls.
         for (const info of this.param_info) {
             const name = this.get_param_normalized(info).name;
@@ -96,6 +105,17 @@ class Transfxr extends SynthBase {
                     end:value[1] + (key==='pitch'?shift:0),curve:value[2] || 'Linear'}, true);
             } else this.set_param(key, value, true);
         }
+    }
+
+    create_editor(tab,parent) { return new MorphEditor(tab,parent); }
+
+    generate_morph() {
+        this.create_random_template();
+        this.set_param('waveTo',(this.params.waveType+1+Math.floor(Math.random()*11))%12,true);
+        this.set_param('morph',{start:0,end:1,curve:['Smooth','Ease In','Ease Out','Pulse'][Math.floor(Math.random()*4)]},true);
+        this.set_param('noise',{start:0,end:Math.random()*.08,curve:'Linear'},true);
+        this.set_param('tone',{start:.8,end:.75+Math.random()*.25,curve:'Smooth'},true);
+        this.set_param('duration',.5+Math.random()*1.2,true);
     }
 
     generate_family(id) {
@@ -138,4 +158,19 @@ class Transfxr extends SynthBase {
         this.sound = RealizedSound.from_buffer(Transfxr_DSP.render(this.params));
         this.sound_params = JSON.stringify(this.params);
     }
+}
+
+class MorphEditor {
+    constructor(tab,parent) {
+        this.tab=tab;
+        const row=document.createElement('label');row.className='morph-target';row.textContent='Morph to';
+        this.select=document.createElement('select');this.select.setAttribute('aria-label','Morph to');
+        for(const [label,tip,value] of tab.synth.get_param_info('waveTo').values){
+            const option=document.createElement('option');option.value=value;option.textContent=label;option.title=tip;this.select.appendChild(option);
+        }
+        this.select.addEventListener('change',()=>{tab.synth.set_param('waveTo',+this.select.value);tab.parameter_changed();});
+        this.select.addEventListener('keydown',event=>event.stopPropagation());
+        row.appendChild(this.select);parent.appendChild(row);this.update();
+    }
+    update(){this.select.value=this.tab.synth.params.waveTo;}
 }

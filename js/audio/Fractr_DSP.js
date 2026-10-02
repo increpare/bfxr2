@@ -23,6 +23,7 @@ class Fractr_DSP {
         const tuned = materialIndex === 2 || materialIndex === 4;
         const fragments = round(value('fragments', 32, 3, 96));
         const size = value('fragmentSize', 0.4), spread = value('spread', 0.6);
+        const stress = value('stress', 0.4), fracture = value('fracture', 0.75);
         const decay = value('decay', 0.4), gravity = value('gravity', 0.5), bounce = value('bounce', 0.4);
         const cascadeTime = duration * (0.012 + spread * 0.72) * (1 - gravity * 0.6);
         const gain = 1.45 / pow(fragments, 0.3), tau = 2 * PI;
@@ -68,7 +69,7 @@ class Fractr_DSP {
                     const hit = contacts[nextContact++].strength;
                     const modeGain = tuned ? 1 : 0.12;
                     ar += hit * modeGain; br += hit * modeGain * 0.44; cr += hit * modeGain * 0.24;
-                    noiseEnvelope += hit * material.noise;
+                    noiseEnvelope += hit * material.noise * (tuned ? 1 : 0.58);
                     // An initial split has several tiny failures; later contacts scrape once.
                     contactStrength = hit;
                     crackLeft = tuned ? 0 : (nextContact === 1 ? 3 + round(shardSize * 4) : 1);
@@ -93,6 +94,46 @@ class Fractr_DSP {
                     + (dust - body * 0.5) * crackEnvelope;
                 noiseEnvelope *= noiseRadius;
                 crackEnvelope *= crackRadius;
+            }
+        }
+        // The parent object fails before its loose fragments land. Bipolar stress
+        // releases have finite width: sharp tensile snaps, not a sustained hiss.
+        // Their clusters branch in time, with a slower mass response underneath.
+        const structuralRandom = SoundDSP.rng(value('seed', 0.5) * 0.79 + 0.137);
+        const splitTime = 0.011 + stress * 0.029;
+        const widths = [0.00016, 0.00048, 0.0002, 0.0015, 0.00015, 0.00023, 0.00065];
+        const mass = [0.12, 0.55, 0.08, 1, 0.02, 0.35, 0.32][materialIndex];
+        const width = widths[materialIndex] * (0.7 + size * 0.8);
+        const splitGain = fracture * (tuned ? 0.25 : 1.65);
+        const branches = 7 + round(size * 9);
+        for (let branch = 0; branch < branches; branch++) {
+            const u = branch / branches;
+            const delay = branch === 0 ? 0 : 0.001 + pow(u, 1.6) * (0.022 + stress * 0.035);
+            const start = round((splitTime + delay) * rate);
+            const release = width * (0.7 + structuralRandom() * 0.9);
+            const weight = splitGain * (branch === 0 ? 1 : 0.25 + 0.4 * (1 - u));
+            const length = min(output.length - start, round((release * 9 + 0.009 * mass) * rate));
+            let gritLow = 0;
+            const gritRate = 1 - exp(-tau * material.cutoff * 0.55 / rate);
+            for (let j = 0; j < length; j++) {
+                const t = j / rate, q = t / release;
+                gritLow += gritRate * (structuralRandom() * 2 - 1 - gritLow);
+                const tensile = (1 - q) * exp(-q);
+                const tearing = gritLow * exp(-t / (release * 3)) * 0.55;
+                const bodyQ = t / (0.002 + mass * 0.004);
+                const body = (1 - bodyQ) * exp(-bodyQ) * mass * 0.55;
+                output[start + j] += weight * (tensile + tearing + body);
+            }
+        }
+        if (!tuned && stress > 0) {
+            // Intermittent pre-failure strain; no ringing musical mode.
+            let slow = 0, fast = 0;
+            const end = min(output.length, round(splitTime * rate));
+            for (let i = round(0.005 * rate); i < end; i++) {
+                const u = i / end, noise = structuralRandom() * 2 - 1;
+                slow += 0.006 * (noise - slow); fast += 0.055 * (noise - fast);
+                const stutter = pow(0.5 + 0.5 * sin(u * (36 + materialIndex * 9)), 5);
+                output[i] += (fast - slow) * stutter * stress * u * 2.5;
             }
         }
         return SoundDSP.finish(output, value('masterVolume', 0.5));

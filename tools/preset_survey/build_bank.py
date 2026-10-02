@@ -39,7 +39,7 @@ HTML = r'''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="view
 const audio=document.getElementById('audio'),now=document.getElementById('now'),edit=document.getElementById('edit');
 let offset=80,filtered=[],reelToken=0;
 const byId=new Map(DATA.sounds.map(s=>[s.id,s]));
-function importLink(s){const keys=Object.keys(s.params).sort();const serialized='Transfxr~'+s.id+'~'+keys.map(k=>JSON.stringify(s.params[k])).join('~');return '../../../index.html?sfx='+encodeURIComponent(serialized);}
+function importLink(s){const serialized='Transfxr~@2~'+JSON.stringify({filename:s.id,params:s.params}).replace(/~/g,'\\u007e');return '../../../index.html?sfx='+encodeURIComponent(serialized);}
 function play(id){const s=byId.get(id);reelToken++;now.textContent=s.id+' · '+DATA.groups[s.cluster].name;audio.src=s.audio;edit.href=importLink(s);edit.hidden=false;audio.play().catch(error=>document.getElementById('status').textContent=error.message);}
 function sequence(ids){const token=++reelToken;let index=0;function next(){if(token!==reelToken||index>=ids.length){audio.onended=null;return;}const s=byId.get(ids[index++]);now.textContent=s.id+' · '+DATA.groups[s.cluster].name+' ('+index+'/'+ids.length+')';audio.src=s.audio;edit.href=importLink(s);edit.hidden=false;audio.onended=next;audio.play().catch(()=>{});}next();}
 function profile(g){const points=g.profile.map((value,i)=>`${i/31*250},${85-value*70}`).join(' ');return `<svg viewBox="0 0 250 90" aria-label="Median loudness profile"><path d="M0 85H250" stroke="#41574a"/><polyline points="${points}" fill="none" stroke="#a9e4c2" stroke-width="2"/></svg>`;}
@@ -152,4 +152,8 @@ WAVs and the listening reel are generated locally and ignored by Git. A fresh ch
     return bank
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('directory');parser.add_argument('--bank',default='js/synths/TransfxrPresets.js');args=parser.parse_args();build(args.directory,args.bank)
+    parser=argparse.ArgumentParser();parser.add_argument('directory');parser.add_argument('--bank',default='js/synths/TransfxrPresets.js');args=parser.parse_args()
+    if (Path(args.directory)/'curated.json').exists():
+        from build_curated_catalogue import build_curated
+        build_curated(args.directory,args.bank)
+    else:build(args.directory,args.bank)

@@ -42,16 +42,16 @@ for (const family of families) {
     });
 }
 
-test('new tabs are appended so saved active-tab indexes keep their meaning', () => {
+test('navigation prunes redundant engines while retaining legacy renderers', () => {
     const api = createContext(families);
     api.load('js/SaveLoad.js');
     api.run(`var window={}; var document={addEventListener(){}}; var tabs=[];
         class Tab {constructor(synth){this.synth=synth; tabs.push(this);} set_active_tab(){}}
-        var previous=['Bfxr','Footsteppr','Transfxr','Chattr','Clonkr','Machinr','Weathr','Jinglr','Squishr','Stackr'];
+        var previous=['Mixr','Bfxr','Footsteppr','Transfxr','Chattr','Clonkr','Machinr','Weathr','Jinglr','Squishr','Stackr'];
         previous.forEach(name=>globalThis[name]=class {constructor(){this.name=name;}});`);
     api.load('js/index.js');
     const names = plain(api.run('register_tabs(); tabs.map(tab=>tab.synth.name)'));
-    assert.deepEqual(names, ['Bfxr','Footsteppr','Transfxr','Chattr','Clonkr','Machinr','Weathr','Jinglr','Squishr','Stackr', ...families]);
+    assert.deepEqual(names, ['Bfxr','Footsteppr','Transfxr','Chattr','Clonkr','Machinr','Jinglr','Squishr','Mixr', ...families.filter(name=>!['Tappr','Notifr','Tickr','Holor','Rollr','Pulser'].includes(name))]);
     const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
     for (const family of families) {
         assert.ok(html.includes(`src="js/audio/${family}_DSP.js"`));

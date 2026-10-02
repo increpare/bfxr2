@@ -49,7 +49,7 @@ class Tab {
                 this.play_on_change = saved_info.play_on_change;
             }
             if (saved_info.locked_params !== undefined){
-                this.synth.locked_params = saved_info.locked_params;
+                this.synth.locked_params = {...this.synth.locked_params,...saved_info.locked_params};
             }
         }        
 
@@ -60,7 +60,7 @@ class Tab {
         var first_tab = tab_bar.children.length == 0;
 
         var tab_button = document.createElement("div");
-        tab_button.innerText = tab_name;
+        tab_button.innerText = synth_specification.display_name || tab_name;
         tab_button.id = "tab_button_" + tab_name;
         tab_button.classList.add("tab_button");
         tab_bar.appendChild(tab_button);
@@ -165,7 +165,7 @@ class Tab {
         {
             var display_canvas_container = document.createElement("div");
             display_canvas_container.classList.add("display_canvas_container");
-            display_canvas_container.dataset.synth = this.name;
+            display_canvas_container.dataset.synth = this.synth.display_name || this.name;
             if (this.synth.canvas_bg_logo) {
                 display_canvas_container.classList.add("has_logo");
                 display_canvas_container.style.backgroundImage = `url(${this.synth.canvas_bg_logo})`;
@@ -248,9 +248,9 @@ class Tab {
             var paste_button = this.add_button("paste", "Paste", this.paste_button_clicked.bind(this), "Paste the current sound [CTRL+V]");
             right_panel_button_list.appendChild(paste_button);
 
-            if (this.name !== 'Stackr' && typeof Stackr !== 'undefined') {
-                this.stack_button = this.add_button(this.name+'_layer_in_stackr','Layer in Stackr',
-                    this.layer_in_stackr.bind(this),'Copy this sound into the current stack and open it.');
+            if (this.name !== 'Mixr' && this.name !== 'Stackr' && typeof Mixr !== 'undefined') {
+                this.stack_button = this.add_button(this.name+'_mix_sound','Mix this sound',
+                    this.mix_sound.bind(this),'Copy this sound into Mixr.');
                 right_panel_button_list.appendChild(this.stack_button);
             }
 
@@ -329,6 +329,8 @@ class Tab {
 
     update_stack_button(){
         if (this.stack_button) {
+            const mix=tabs.find(tab=>tab.name==='Mixr');
+            if(mix){this.stack_button.disabled=false;this.stack_button.title='Copy this sound into Mixr.';return;}
             const stack=tabs.find(tab=>tab.name==='Stackr');
             this.stack_button.disabled=!!stack && stack.synth.get_layers().length>=6;
             this.stack_button.title=this.stack_button.disabled ? 'Stack full. Open Stackr and start a new stack or remove a layer.'
@@ -1206,6 +1208,20 @@ class Tab {
             reader.readAsText(file);
         });
         file_input.click();
+    }
+
+    mix_sound() {
+        const mix=tabs.find(tab=>tab.name==='Mixr');
+        if(!mix)return;
+        const sources=mix.synth.get_sources();
+        const slot=!sources[0]?0:!sources[1]?1:-1;
+        mix.set_active_tab();
+        if(slot<0){
+            const params={...mix.synth.default_params(),masterVolume:mix.synth.params.masterVolume};
+            mix.create_new_sound_from_params('Mix',params,true);
+        }
+        mix.synth.set_source(slot<0?0:slot,this.synth,this.get_current_file_name());
+        mix.parameter_changed();
     }
 
     layer_in_stackr() {

@@ -181,7 +181,7 @@ test('voice edits refresh the portrait with autoplay off',()=>{
 
 test('speech uses English phonemes, silent letters, vowel distinctions and stress',()=>{
     const run=context();
-    const phones=text=>plain(run(`var s=new Chattr(); s.set_param('text',${JSON.stringify(text)});
+    const phones=text=>plain(run(`var s=new Chattr(); s.set_param('voiceMode',0); s.set_param('text',${JSON.stringify(text)});
         Chattr_DSP.schedule(s.params).events.map(e=>e.phone+(e.stress===null?'':e.stress));`));
     assert.deepEqual(phones('phone'),['F','OW1','N']);
     assert.deepEqual(phones('ship'),['SH','IH1','P']);
@@ -193,7 +193,7 @@ test('speech uses English phonemes, silent letters, vowel distinctions and stres
 
 test('articulation and personality keep the same pronunciation',()=>{
     const run=context();
-    const [a,b]=run(`var s=new Chattr(); s.set_param('text','The sheep found a phone.');
+    const [a,b]=run(`var s=new Chattr(); s.set_param('voiceMode',0); s.set_param('text','The sheep found a phone.');
         s.apply_params({articulation:0,seed:0}); var a=Chattr_DSP.schedule(s.params).events.map(e=>e.phone);
         s.apply_params({articulation:1,seed:1}); [a,Chattr_DSP.schedule(s.params).events.map(e=>e.phone)];`);
     assert.ok(a.every(Boolean)); assert.deepEqual(a,b);
@@ -201,7 +201,7 @@ test('articulation and personality keep the same pronunciation',()=>{
 
 test('numbers are spoken and unfamiliar words have deterministic phonemes',()=>{
     const run=context();
-    const [number,words,unknown]=run(`var s=new Chattr();
+    const [number,words,unknown]=run(`var s=new Chattr(); s.set_param('voiceMode',0);
         function phones(text){s.set_param('text',text);return Chattr_DSP.schedule(s.params).events.map(e=>e.phone);}
         [phones('12'),phones('twelve'),phones('flomble')];`);
     assert.deepEqual(number,words); assert.ok(unknown.length>=4 && unknown.every(Boolean));
@@ -221,7 +221,7 @@ test('legacy Chattr links acquire articulation without shifting existing fields'
 
 test('full articulation gives consonants their own excitation and vowels their glides',()=>{
     const run=context();
-    const value=run(`var s=new Chattr(); s.apply_params({text:'sea boy',articulation:1});
+    const value=run(`var s=new Chattr(); s.apply_params({voiceMode:0,text:'sea boy',articulation:1});
         var score=Chattr_DSP.schedule(s.params);
         var hiss=score.events.find(e=>e.phone==='S'), vowel=score.events.find(e=>e.phone==='IY'), diphthong=score.events.find(e=>e.phone==='OY');
         [Chattr_DSP.target(s.params,hiss).voicing,Chattr_DSP.target(s.params,vowel).voicing,
@@ -246,7 +246,7 @@ test('new voice controls start unlocked when loading a pre-articulation lock map
 
 test('number expansion at the slowest speed has a duration budget and reports shortening',()=>{
     const run=context();
-    const result=run(`var s=new Chattr();s.apply_params({text:'9'.repeat(160),speed:0,spacing:1});
+    const result=run(`var s=new Chattr();s.apply_params({voiceMode:0,text:'9'.repeat(160),speed:0,spacing:1});
         var score=Chattr_DSP.schedule(s.params);[score.duration,score.truncated];`);
     assert.ok(result[0]<=60,`Scheduled ${result[0]} seconds`); assert.equal(result[1],true);
 });

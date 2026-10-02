@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const {createContext, plain} = require('./helpers/synth-context');
 const names = ['Breathr', 'Pulser', 'Pluckr'];
 const categoryIds = {
-    Breathr:['tired_runner','deep_breath','held_breath','gasp','sleeping_beast','diver','helmet','ghost_breath'],
+    Breathr:['snore','tired_runner','deep_breath','held_breath','gasp','sleeping_beast','diver','helmet','ghost_breath'],
     Pulser:['heartbeat','panic','giant_heart','android_core','poison','underwater','energy_core','last_life'],
     Pluckr:['harp','kalimba','muted_guitar','metal_string','magic_harp','bass_pluck','broken_string','quest_pluck']
 };
@@ -69,10 +69,10 @@ test('Pluckr materials change loss, excitation and dispersion at identical tunin
     const selector = plain(run("new Pluckr().param_info.find(info=>info.name==='material') || null"));
     assert.ok(selector, 'string materials have a compact selector');
     assert.equal(selector.type, 'BUTTONSELECT');
-    assert.deepEqual(selector.values.map(value => value[0]), ['Nylon', 'Steel', 'Gut', 'Rubber', 'Glass', 'Gravity']);
+    assert.deepEqual(selector.values.map(value => value[0]), ['Nylon', 'Steel', 'Gut', 'Rubber', 'Glass']);
     const sounds = run(`(() => {
         const p={duration:2,pitch:0.45,strings:1,damping:0.12,brightness:0.65,pluck:0.3,coupling:0,strum:0,inharmonic:0,seed:0.51};
-        return [0,1,2,3,4,5].map(material=>Pluckr_DSP.render({...p,material}));
+        return [0,1,2,3,4].map(material=>Pluckr_DSP.render({...p,material}));
     })()`);
     const decay = pcm => energy(pcm, 0.5, 1.2) / energy(pcm, 0, 0.12);
     assert.ok(decay(sounds[3]) < decay(sounds[0]) * 0.25, 'rubber absorbs vibration faster than nylon');
@@ -141,7 +141,7 @@ for (const name of names) {
 
 test('full legacy snapshots restore default sources while partial updates and locks retain choices', () => {
     const {run} = setup();
-    for (const [name, key, selected] of [['Breathr','source',2],['Pluckr','material',5]]) {
+    for (const [name, key, selected] of [['Breathr','source',2],['Pluckr','material',4]]) {
         const result = plain(run(`(() => {
             const synth=new ${name}(),legacy={...synth.params};delete legacy.${key};
             synth.set_param('${key}',${selected});synth.apply_params({seed:0.71});const partial=synth.params.${key};

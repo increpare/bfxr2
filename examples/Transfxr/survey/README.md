@@ -1,54 +1,47 @@
-# Transfxr sound survey
+# Transfxr listening refinement
 
-[Open the listening catalogue](index.html). It includes all 512 sounds, family filters, central and boundary examples, six-exemplar comparisons, a tour of the centers, and links to edit exact sounds in Transfxr. [Families.bcol](Families.bcol) imports the shipped exemplars. [families_showcase.wav](families_showcase.wav) plays one center from each family in the table order; [showcase.json](showcase.json) records timestamps.
+[Audition the revised bank](index.html), [download its editable collection](Families.bcol), or play [the family reel](families_showcase.wav). The reel follows the table order; [showcase.json](showcase.json) gives timestamps. [The original survey archive](archive.html) preserves all 512 discovery sounds and the earlier exploratory labels.
 
-The 16 buttons in Transfxr use 344 complete sound exemplars. Repeated clicks change timbre, timing and trajectory as well as pitch. A compatible partner must share the oscillator and every curve shape; small correlated variations move both endpoints together. Dry exemplars stay dry. Locks protect entire transition rows and scalar controls.
+The user's listening review found that short sound labels admitted long tails, some wavering calls had no wobble, soft pips were rough, sand included pitched outliers, sand/air overlapped, and direction-only groups had no common voice. The revised bank has 15 species and 228 exemplars. Bass Plucks and Rubber Clicks keep their successful surveyed character. Submarine Calls becomes Mournful Calls; Static Flecks becomes Radio Spits. Descending Sweeps and Rising Bloops become concrete Arcade Zaps and Bubble Pops, Falling Thumps is retired, and Reverse Bloops becomes a tightly defined Bubble Swells voice.
 
-| Family | Survey sounds | Shipped exemplars | Character |
-| --- | ---: | ---: | --- |
-| Bright Whistles | 36 | 24 | Clear high voices: whistles, chirps and thin ringing tones. |
-| Grainy Taps | 37 | 24 | Quick textured attacks: part note, part rough little rustle. |
-| Rocket Zips | 22 | 20 | Fast pitch climbs spanning several octaves. |
-| Wavering Calls | 46 | 24 | Round, sustained electronic calls with changing pitch and tone. |
-| Fuzzy Chirps | 16 | 14 | Brief bright fragments with a noisy or grainy coating. |
-| Bass Plucks | 26 | 24 | Low rounded notes with a quick onset and a soft tail. |
-| Soft Pips | 47 | 24 | Small rounded notes with a short, gentle envelope. |
-| Sand Sprays | 32 | 24 | Bright, breathy bursts with little stable pitch. |
-| Air Currents | 24 | 22 | Longer moving washes of filtered air and resonant noise. |
-| Submarine Calls | 48 | 24 | Deep sustained tones with a subdued upper edge. |
-| Descending Sweeps | 54 | 24 | Electronic tails that slide down in pitch or darken through a falling filter. |
-| Rising Bloops | 37 | 24 | Rounded upward sweeps, from small burbles to rising calls. |
-| Rubber Clicks | 34 | 24 | Short low pips, bouncy ticks and cushioned little clicks. |
-| Falling Thumps | 20 | 18 | Low falling notes and resonant groans with a quick attack. |
-| Reverse Bloops | 20 | 18 | Soft notes that swell towards their ending. |
-| Static Flecks | 13 | 12 | Very short airy flicks and fragments of static. |
+| Family | Exemplars | Character |
+| --- | ---: | --- |
+| Bright Whistles | 24 | Clear, bright electronic whistles with a clean ringing voice. |
+| Grainy Taps | 12 | Dry, low gritty taps. A single quick attack, with no long tail. |
+| Rocket Zips | 12 | A short hollow arcade whistle that rockets upwards and cuts off. |
+| Wavering Calls | 12 | A rounded voice with an audible, steady quiver throughout the call. |
+| Fuzzy Chirps | 12 | Tiny bright buzzes with a pitched chirp inside a fuzzy edge. |
+| Bass Plucks | 24 | Low rounded notes with a quick onset and a soft tail. |
+| Soft Pips | 12 | Gentle, clean sine pips with a cushioned onset and almost no pitch motion. |
+| Sand Sprays | 12 | A short bright powdery spray: all grain, with no pitched note. |
+| Air Currents | 12 | A longer, dark breath of air that eases in and out smoothly. |
+| Mournful Calls | 24 | Low, woozy electronic calls with a plaintive, fading voice. |
+| Arcade Zaps | 12 | A sharp sawtooth zap with a quick diving pitch and a bright sting. |
+| Bubble Pops | 12 | Round little water-note pops: a sine voice that curls up and back. |
+| Rubber Clicks | 24 | Short rubbery ticks and cushioned clicks, kept close to the original voice. |
+| Bubble Swells | 12 | A rounded sine bloop that swells to a small peak, then stops. |
+| Radio Spits | 12 | Brief fragments of filtered radio grit, dry and rough around the edges. |
 
-## Method and limits
+## How this pass works
 
-The deterministic seed 20261002 supplies 512 proposals: 75% explore broad parameter combinations and 25% vary neighborhoods of the original eight recipes. Every proposal passes through the editor's parameter validation before rendering at 44.1 kHz. The survey rejects nonfinite/clipped outputs and RMS below 0.004; all 512 normalized proposals were accepted.
+Family profiles are explicit in `tools/preset_survey/family_profiles.json`, authored by `create_profiles.py`. They select central full states from the measured survey and monotonically remap selected controls into the intended voice, retaining their joint ordering. Fixed oscillator/curve choices and bounded intervals preserve the family character. Successful original banks keep their states. Every C-number records its original T-number in [curated.json](curated.json); editorial projections are recorded per family. Exact curated PCM and editable params are rendered from the current synth.
 
-NumPy extracts 25 audio features in four equally weighted groups: envelope/time, spectral timbre, timbre motion and dominant-tone motion. Features use robust scaling and clipping. The tone estimate follows a strong spectral peak and may reflect filter resonance, not the oscillator fundamental; noisier frames are marked unvoiced.
+Runtime generation chooses whole curated states, blends compatible trajectories and nudges controls, then enforces each family's limits. Constraints apply before SynthBase respects user locks. A deliberately locked control may therefore change the resulting voice. Dry short species keep zero echo. The first six catalogue examples are typical members of the revised bank, while all exemplars remain inspectable.
 
-K-means++ compares 8, 10, 12, 14 and 16 groups with 12 seeded restarts each. Selection chooses the finest result with at least 12 members per group and average silhouette within 0.04 of the best eligible score. This run selects 16 groups (silhouette 0.152); ten groups have the highest score. Clusters overlap. Names were authored from aggregate profiles and representative spectrograms, without claiming a human listening review. The catalogue exposes every member so the names can be judged and revised by ear.
-
-Each bank starts with the nearest real example to its center, then uses farthest-first coverage inside the closest 92% of members, capped at 24. Exemplars with RMS below 0.009 are excluded from runtime generation to leave an audibility margin. Excluded candidates remain in the full catalogue. The build checks exact center IDs before assigning labels, preventing names from silently attaching to different clusters.
-
-The separate seed 20261003 produced 512 audible, unclipped fresh samples (minimum RMS 0.0116, maximum peak 0.429). 90.0% were closest to their intended family; 95.9% were within 20% of the nearest-family distance. These are feature-space checks, not listening scores. Per-family results are in [validation.json](validation.json).
+All 228 exemplars and 480 fresh seeded variations passed finite/audible/unclipped and family-trait checks. Checks measure whole rendered durations, spectral separation for sand/air and soft pips, and actual eight-Hz pitch motion for wavering calls. Minimum fresh RMS is 0.0164; maximum peak is 0.388. [Per-family results](curated-validation.json) are tied by SHA-256 to the bank, sampler, renderer and parameter validation sources. Rebuilding rejects stale measurements. These verify traits, not aesthetic quality; this revision incorporates the user's listening notes without claiming another human ear review.
 
 ## Reproduce
 
-Run from the repository root with Node.js and Python 3 plus NumPy. Plotting additionally requires Matplotlib. The application itself needs none of the Python dependencies.
+Use Node.js and Python 3 with NumPy, from the repository root. The saved discovery corpus and analysis are inputs to this editorial pass; they remain unmodified.
 
 ```sh
-node tools/preset_survey/render_corpus.js examples/Transfxr/survey
-python3 tools/preset_survey/analyze.py examples/Transfxr/survey
+python3 tools/preset_survey/create_profiles.py
+node tools/preset_survey/curate_families.js examples/Transfxr/survey
+node tools/preset_survey/validate_families.js /private/tmp/transfxr-listening-validation 32
+python3 tools/preset_survey/measure_curated.py examples/Transfxr/survey /private/tmp/transfxr-listening-validation
 python3 tools/preset_survey/build_bank.py examples/Transfxr/survey
-node tools/preset_survey/validate_families.js /private/tmp/transfxr-family-validation 32
-python3 tools/preset_survey/validate_families.py examples/Transfxr/survey /private/tmp/transfxr-family-validation
-python3 tools/preset_survey/build_bank.py examples/Transfxr/survey
-python3 tools/preset_survey/plot_representatives.py examples/Transfxr/survey
+node --test tests/preset-character.test.js tests/preset-family.test.js tests/preset-survey.test.js
 python3 -m unittest discover -s tools/preset_survey -p 'test_*.py'
-npm test
 ```
 
-WAVs and the listening reel are generated locally and ignored by Git. A fresh checkout must run the renderer and bank builder before catalogue playback; the synth buttons work immediately from the shipped JavaScript bank. Serve the repository root with the normal development server to use the catalogue's editor links. Seeded parameter sampling and clustering are reproducible; use the same NumPy version to avoid differences from numeric tie-breaking. If the center-ID check changes, inspect the new clustering and update its labels before building.
+Curated WAVs and the reel are generated locally and ignored by Git; a fresh checkout runs the commands above before catalogue playback. The runtime JavaScript bank works immediately. To restore archive audio from its saved original states with the current renderer, run `node tools/preset_survey/render_saved_corpus.js examples/Transfxr/survey`. This leaves `corpus.json` and `analysis.json` unchanged. Serve the repository root to use editor links.

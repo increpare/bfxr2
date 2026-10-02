@@ -1,8 +1,8 @@
 # Transfxr examples
 
-Open **Transfxr** in Bfxr, then click one of the 16 family buttons. Each click chooses a complete exemplar from the measured sound survey and makes small changes to its timing, pitch, filter, noise and envelope. Locks keep your favorite controls in place.
+Open **Transfxr** in Bfxr, then click one of the 15 family buttons. Each click varies a complete curated sound state while keeping its family's duration, timbre and trajectory traits. Locks keep your favorite controls in place.
 
-The [listening catalogue](survey/index.html) contains all 512 surveyed sounds, with family filters, six-example comparisons, a tour of the family centers, and links to open each sound in the synth. See [the survey method and reproduction commands](survey/README.md). Open `survey/Families.bcol` with **Open Data** to explore exact family exemplars.
+The [revised listening catalogue](survey/index.html) contains 228 curated exemplars, with family filters, six-example comparisons, a tour of typical voices, and links to open each sound in the synth. The [discovery archive](survey/archive.html) preserves the original 512 sounds and exploratory group labels. See [the listening refinement and reproduction commands](survey/README.md). Open `survey/Families.bcol` with **Open Data** to explore exact revised family exemplars.
 
 The original eight recipes are preserved in `Transfxr.bcol`. Open it with **Open Data** for this exact collection:
 

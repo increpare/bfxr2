@@ -34,6 +34,10 @@ class Jinglr extends PresetSynth {
     ];
 
     recipes = [
+        {name:'Confirm',id:'confirm',tip:'A quick, bright yes.',values:{instrument:[0,1,4,6],scale:0,contour:0,rhythm:0,noteCount:2,tempo:[200,220],octave:[4,5],brightness:[0.35,0.8],decay:[0.04,0.2],echo:0}},
+        {name:'Message',id:'message',tip:'A small, soft arrival.',values:{instrument:[0,1,3,4],scale:2,contour:[0,4],rhythm:1,noteCount:2,tempo:[180,220],octave:[4,5],brightness:[0.15,0.55],decay:[0.06,0.24],echo:0}},
+        {name:'Dismiss',id:'dismiss',tip:'A short downward reply.',values:{instrument:[0,2,4],scale:[0,2],contour:1,rhythm:0,noteCount:2,tempo:[195,220],octave:[3,4],brightness:[0.15,0.6],decay:[0.02,0.14],echo:0}},
+        {name:'Denied',id:'denied',tip:'A compact, low refusal.',values:{instrument:[2,5,6],scale:1,contour:1,rhythm:1,noteCount:2,tempo:[200,220],octave:3,brightness:[0.2,0.6],decay:[0.01,0.12],echo:0}},
         {name:'Discovery',id:'discovery',tip:'An inquisitive rising sparkle.',values:{instrument:[0,1,4],scale:[0,2],key:[0,2,5,7,9],contour:0,rhythm:[0,1],noteCount:[4,7],tempo:[130,185],octave:[4,5],brightness:[0.5,0.9],decay:[0.3,0.65],echo:[0.1,0.3]}},
         {name:'Victory',id:'victory',tip:'A brisk, bright upward fanfare.',values:{instrument:[1,2,5],scale:0,key:[0,2,4,5,7],contour:0,rhythm:[0,1],noteCount:[5,9],tempo:[155,215],octave:[4,5],brightness:[0.7,1],decay:[0.35,0.6],echo:[0.1,0.3]}},
         {name:'Failure',id:'failure',tip:'A drooping little minor-key defeat.',values:{instrument:[0,2,7],scale:1,key:[0,2,5,7,9],contour:1,rhythm:[0,3],noteCount:[3,5],tempo:[80,120],octave:[3,4],brightness:[0.15,0.5],decay:[0.15,0.4],echo:[0,0.12]}},
@@ -83,7 +87,7 @@ class Jinglr extends PresetSynth {
 
     reseed_sound(generate) {
         const locks=this.locked_params, batching=this.batching;
-        const melody=this.params.seed, voice=this.params.instrumentSeed;
+        const melody=this.params.seed, voice=this.params.instrumentSeed, phrase=this.params.phrase;
         // Presets replace the whole cue, including seeds held by the retired lock buttons.
         this.locked_params={...locks,phrase:false,seed:false,instrument:false,instrumentSeed:false};
         this.batching=true;
@@ -92,6 +96,11 @@ class Jinglr extends PresetSynth {
             if (this.params.seed===melody) this.set_param('seed',((Math.round(melody*99999)+1)%100000)/99999);
             if (this.params.instrumentSeed===voice) this.set_param('instrumentSeed',(voice+1)%100000);
             this.generate_phrase();
+            // Short two-note cues have few shapes; avoid immediately repeating one.
+            for(let attempt=0;this.params.phrase===phrase && attempt<32;attempt++) {
+                this.set_param('seed',((Math.round(this.params.seed*99999)+1)%100000)/99999);
+                this.generate_phrase();
+            }
         } finally {
             this.locked_params=locks;
             this.batching=batching;

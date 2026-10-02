@@ -1,0 +1,495 @@
+{
+  "Chattr": {
+    "files": [
+      [
+        "Village mouse",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.65,\"mouth\":0.27,\"speed\":0.78,\"expression\":0.75,\"inflection\":0.1,\"wobble\":0.18,\"breath\":0.12,\"grit\":0.12,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":0,\"voiceSeed\":0.37}",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.65,\"mouth\":0.27,\"speed\":0.78,\"expression\":0.75,\"inflection\":0.1,\"wobble\":0.18,\"breath\":0.12,\"grit\":0.12,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":0,\"voiceSeed\":0.37}"
+      ],
+      [
+        "Plush bear",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.12,\"mouth\":0.9,\"speed\":0.6,\"expression\":0.3,\"inflection\":0.1,\"wobble\":0.18,\"breath\":0.12,\"grit\":0.4,\"spacing\":0.65,\"seed\":0.37,\"voiceMode\":1,\"character\":1,\"voiceSeed\":0.37}",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.12,\"mouth\":0.9,\"speed\":0.6,\"expression\":0.3,\"inflection\":0.1,\"wobble\":0.18,\"breath\":0.12,\"grit\":0.4,\"spacing\":0.65,\"seed\":0.37,\"voiceMode\":1,\"character\":1,\"voiceSeed\":0.37}"
+      ],
+      [
+        "Reedy duck",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.53,\"mouth\":0.6,\"speed\":0.78,\"expression\":1,\"inflection\":0.5,\"wobble\":0.18,\"breath\":0.12,\"grit\":0.48,\"spacing\":0.1,\"seed\":0.37,\"voiceMode\":1,\"character\":2,\"voiceSeed\":0.37}",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.53,\"mouth\":0.6,\"speed\":0.78,\"expression\":1,\"inflection\":0.5,\"wobble\":0.18,\"breath\":0.12,\"grit\":0.48,\"spacing\":0.1,\"seed\":0.37,\"voiceMode\":1,\"character\":2,\"voiceSeed\":0.37}"
+      ],
+      [
+        "Bubbling alien",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":1,\"articulation\":0.8,\"pitch\":0.52,\"mouth\":0.8,\"speed\":0.78,\"expression\":0.9,\"inflection\":0.85,\"wobble\":0.65,\"breath\":0.12,\"grit\":0.12,\"spacing\":0.48,\"seed\":0.37,\"voiceMode\":1,\"character\":3,\"voiceSeed\":0.37}",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":1,\"articulation\":0.8,\"pitch\":0.52,\"mouth\":0.8,\"speed\":0.78,\"expression\":0.9,\"inflection\":0.85,\"wobble\":0.65,\"breath\":0.12,\"grit\":0.12,\"spacing\":0.48,\"seed\":0.37,\"voiceMode\":1,\"character\":3,\"voiceSeed\":0.37}"
+      ],
+      [
+        "Wispy sprite",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":1,\"articulation\":0.8,\"pitch\":0.86,\"mouth\":0.12,\"speed\":0.7,\"expression\":0.8,\"inflection\":0.1,\"wobble\":0.32,\"breath\":0.52,\"grit\":0,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":4,\"voiceSeed\":0.37}",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":1,\"articulation\":0.8,\"pitch\":0.86,\"mouth\":0.12,\"speed\":0.7,\"expression\":0.8,\"inflection\":0.1,\"wobble\":0.32,\"breath\":0.52,\"grit\":0,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":4,\"voiceSeed\":0.37}"
+      ],
+      [
+        "Tinny robot",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":2,\"articulation\":0.8,\"pitch\":0.4,\"mouth\":0.5,\"speed\":0.78,\"expression\":0.18,\"inflection\":0,\"wobble\":0,\"breath\":0,\"grit\":0.12,\"spacing\":0.48,\"seed\":0.37,\"voiceMode\":1,\"character\":5,\"voiceSeed\":0.37}",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":2,\"articulation\":0.8,\"pitch\":0.4,\"mouth\":0.5,\"speed\":0.78,\"expression\":0.18,\"inflection\":0,\"wobble\":0,\"breath\":0,\"grit\":0.12,\"spacing\":0.48,\"seed\":0.37,\"voiceMode\":1,\"character\":5,\"voiceSeed\":0.37}"
+      ],
+      [
+        "Gravel frog",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.26,\"mouth\":0.76,\"speed\":0.7,\"expression\":0.8,\"inflection\":-0.72,\"wobble\":0.8,\"breath\":0.12,\"grit\":0.55,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":6,\"voiceSeed\":0.37}",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.26,\"mouth\":0.76,\"speed\":0.7,\"expression\":0.8,\"inflection\":-0.72,\"wobble\":0.8,\"breath\":0.12,\"grit\":0.55,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":6,\"voiceSeed\":0.37}"
+      ],
+      [
+        "Radio critter",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":2,\"articulation\":0.8,\"pitch\":0.25,\"mouth\":0.25,\"speed\":0.78,\"expression\":0.4,\"inflection\":0.1,\"wobble\":0.1,\"breath\":0.65,\"grit\":0.88,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":7,\"voiceSeed\":0.37}",
+        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":2,\"articulation\":0.8,\"pitch\":0.25,\"mouth\":0.25,\"speed\":0.78,\"expression\":0.4,\"inflection\":0.1,\"wobble\":0.1,\"breath\":0.65,\"grit\":0.88,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":7,\"voiceSeed\":0.37}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "text": true,
+      "waveType": false,
+      "texture": false,
+      "articulation": false,
+      "pitch": false,
+      "mouth": false,
+      "speed": false,
+      "expression": false,
+      "inflection": false,
+      "wobble": false,
+      "breath": false,
+      "grit": false,
+      "spacing": false,
+      "seed": false,
+      "voiceMode": false,
+      "character": false,
+      "voiceSeed": false
+    }
+  },
+  "Fractr": {
+    "files": [
+      [
+        "Glass breaks",
+        "{\"masterVolume\":0.5,\"seed\":0.06104526715353131,\"material\":0,\"duration\":0.85,\"fragments\":33,\"fragmentSize\":0.45277471689507365,\"spread\":0.2,\"decay\":0.32126255473122,\"gravity\":0.3865951769053936,\"bounce\":0.5204774888581596,\"stress\":0.55,\"fracture\":1}",
+        "{\"masterVolume\":0.5,\"seed\":0.06104526715353131,\"material\":0,\"duration\":0.85,\"fragments\":33,\"fragmentSize\":0.45277471689507365,\"spread\":0.2,\"decay\":0.32126255473122,\"gravity\":0.3865951769053936,\"bounce\":0.5204774888581596,\"stress\":0.55,\"fracture\":1}"
+      ],
+      [
+        "Ice splits",
+        "{\"masterVolume\":0.5,\"seed\":0.7361933451611549,\"material\":1,\"duration\":1.1,\"fragments\":29,\"fragmentSize\":0.719803693657741,\"spread\":0.7809657369740307,\"decay\":0.36278949477709826,\"gravity\":0.5664575704373419,\"bounce\":0.4519207988632843,\"stress\":0.7703658303013071,\"fracture\":1}",
+        "{\"masterVolume\":0.5,\"seed\":0.7361933451611549,\"material\":1,\"duration\":1.1,\"fragments\":29,\"fragmentSize\":0.719803693657741,\"spread\":0.7809657369740307,\"decay\":0.36278949477709826,\"gravity\":0.5664575704373419,\"bounce\":0.4519207988632843,\"stress\":0.7703658303013071,\"fracture\":1}"
+      ],
+      [
+        "Dry snap",
+        "{\"masterVolume\":0.5,\"seed\":0.22458369005471468,\"material\":6,\"duration\":0.6,\"fragments\":12,\"fragmentSize\":0.20693030494730918,\"spread\":0.1,\"decay\":0.2984867203235626,\"gravity\":0.4523791530053131,\"bounce\":0.8728104618377983,\"stress\":0.2130070986691862,\"fracture\":1}",
+        "{\"masterVolume\":0.5,\"seed\":0.22458369005471468,\"material\":6,\"duration\":0.6,\"fragments\":12,\"fragmentSize\":0.20693030494730918,\"spread\":0.1,\"decay\":0.2984867203235626,\"gravity\":0.4523791530053131,\"bounce\":0.8728104618377983,\"stress\":0.2130070986691862,\"fracture\":1}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "material": false,
+      "duration": false,
+      "fragments": false,
+      "fragmentSize": false,
+      "spread": false,
+      "decay": false,
+      "gravity": false,
+      "bounce": false,
+      "stress": false,
+      "fracture": false
+    }
+  },
+  "Boomr": {
+    "files": [
+      [
+        "Grenade",
+        "{\"masterVolume\":0.5,\"seed\":0.29008437716402113,\"duration\":1.2,\"size\":0.4156759314937517,\"pressure\":0.7268808982800692,\"blast\":0.5395827001077124,\"debris\":0.8096423041075468,\"spread\":0.5632510357536376,\"tail\":0.3103573102736846,\"muffle\":0.21972745114471764,\"mechanism\":0,\"space\":0.1605694430414587}",
+        "{\"masterVolume\":0.5,\"seed\":0.29008437716402113,\"duration\":1.2,\"size\":0.4156759314937517,\"pressure\":0.7268808982800692,\"blast\":0.5395827001077124,\"debris\":0.8096423041075468,\"spread\":0.5632510357536376,\"tail\":0.3103573102736846,\"muffle\":0.21972745114471764,\"mechanism\":0,\"space\":0.1605694430414587}"
+      ],
+      [
+        "Depth charge",
+        "{\"masterVolume\":0.5,\"seed\":0.3901634314097464,\"duration\":1.6,\"size\":0.880152450548485,\"pressure\":0.9953366629313678,\"blast\":0.7879270573146642,\"debris\":0.04509065165184438,\"spread\":0.4904925593174994,\"tail\":0.7515493421582505,\"muffle\":0.9158825523336418,\"mechanism\":2,\"space\":0.6131285554729402}",
+        "{\"masterVolume\":0.5,\"seed\":0.3901634314097464,\"duration\":1.6,\"size\":0.880152450548485,\"pressure\":0.9953366629313678,\"blast\":0.7879270573146642,\"debris\":0.04509065165184438,\"spread\":0.4904925593174994,\"tail\":0.7515493421582505,\"muffle\":0.9158825523336418,\"mechanism\":2,\"space\":0.6131285554729402}"
+      ],
+      [
+        "Gas fireball",
+        "{\"masterVolume\":0.5,\"seed\":0.7621412558946759,\"duration\":1.3,\"size\":0.6099406186840497,\"pressure\":0.47814818427432326,\"blast\":0.8730453555937856,\"debris\":0.1890610588993877,\"spread\":0.2221245005610399,\"tail\":0.9057571600889787,\"muffle\":0.34874116617720574,\"mechanism\":1,\"space\":0.5007606293074787}",
+        "{\"masterVolume\":0.5,\"seed\":0.7621412558946759,\"duration\":1.3,\"size\":0.6099406186840497,\"pressure\":0.47814818427432326,\"blast\":0.8730453555937856,\"debris\":0.1890610588993877,\"spread\":0.2221245005610399,\"tail\":0.9057571600889787,\"muffle\":0.34874116617720574,\"mechanism\":1,\"space\":0.5007606293074787}"
+      ],
+      [
+        "Structural collapse",
+        "{\"masterVolume\":0.5,\"seed\":0.20799390692263842,\"duration\":1.5,\"size\":0.8494049491593614,\"pressure\":0.7828732774709352,\"blast\":0.40688917688094084,\"debris\":0.8888939784606918,\"spread\":0.9035257247975096,\"tail\":0.8366875678300858,\"muffle\":0.34979655806673693,\"mechanism\":4,\"space\":0.778992285579443}",
+        "{\"masterVolume\":0.5,\"seed\":0.20799390692263842,\"duration\":1.5,\"size\":0.8494049491593614,\"pressure\":0.7828732774709352,\"blast\":0.40688917688094084,\"debris\":0.8888939784606918,\"spread\":0.9035257247975096,\"tail\":0.8366875678300858,\"muffle\":0.34979655806673693,\"mechanism\":4,\"space\":0.778992285579443}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "duration": false,
+      "size": false,
+      "pressure": false,
+      "blast": false,
+      "debris": false,
+      "spread": false,
+      "tail": false,
+      "muffle": false,
+      "mechanism": false,
+      "space": false
+    }
+  },
+  "Pewpr": {
+    "files": [
+      [
+        "Laser pistol",
+        "{\"masterVolume\":0.5,\"seed\":0.4466241258196533,\"kind\":0,\"duration\":1.1,\"pitch\":0.5576306943432427,\"sweep\":-0.3447468243772165,\"charge\":0.021254020966589453,\"punch\":0.8101860349997878,\"body\":0.33966117531526835,\"recoil\":0.18315499876625835,\"grit\":0.012143555972725152,\"shots\":1,\"character\":0.35401964578777556,\"modulation\":0.07103037233464421}",
+        "{\"masterVolume\":0.5,\"seed\":0.4466241258196533,\"kind\":0,\"duration\":1.1,\"pitch\":0.5576306943432427,\"sweep\":-0.3447468243772165,\"charge\":0.021254020966589453,\"punch\":0.8101860349997878,\"body\":0.33966117531526835,\"recoil\":0.18315499876625835,\"grit\":0.012143555972725152,\"shots\":1,\"character\":0.35401964578777556,\"modulation\":0.07103037233464421}"
+      ],
+      [
+        "Coil driver",
+        "{\"masterVolume\":0.5,\"seed\":0.12083723512478173,\"kind\":4,\"duration\":1.1,\"pitch\":0.4621405921061523,\"sweep\":-0.6007821199949831,\"charge\":0.3176578043960035,\"punch\":0.9921353943645954,\"body\":0.21387485498562453,\"recoil\":0.7473262007115409,\"grit\":0.18830865253694354,\"shots\":1,\"character\":0.4594127794727683,\"modulation\":0.518861761270091}",
+        "{\"masterVolume\":0.5,\"seed\":0.12083723512478173,\"kind\":4,\"duration\":1.1,\"pitch\":0.4621405921061523,\"sweep\":-0.6007821199949831,\"charge\":0.3176578043960035,\"punch\":0.9921353943645954,\"body\":0.21387485498562453,\"recoil\":0.7473262007115409,\"grit\":0.18830865253694354,\"shots\":1,\"character\":0.4594127794727683,\"modulation\":0.518861761270091}"
+      ],
+      [
+        "Spore cannon",
+        "{\"masterVolume\":0.5,\"seed\":0.8553172636311501,\"kind\":5,\"duration\":1.1,\"pitch\":0.51262820296688,\"sweep\":0.07079651108942919,\"charge\":0.018716571978293357,\"punch\":0.5967585829668678,\"body\":0.8719902407377959,\"recoil\":0.36989544674288477,\"grit\":0.3203149607172236,\"shots\":1,\"character\":0.5780684028286487,\"modulation\":0.8550758769852109}",
+        "{\"masterVolume\":0.5,\"seed\":0.8553172636311501,\"kind\":5,\"duration\":1.1,\"pitch\":0.51262820296688,\"sweep\":0.07079651108942919,\"charge\":0.018716571978293357,\"punch\":0.5967585829668678,\"body\":0.8719902407377959,\"recoil\":0.36989544674288477,\"grit\":0.3203149607172236,\"shots\":1,\"character\":0.5780684028286487,\"modulation\":0.8550758769852109}"
+      ],
+      [
+        "Prism lance",
+        "{\"masterVolume\":0.5,\"seed\":0.13341571646742523,\"kind\":3,\"duration\":1.1,\"pitch\":0.6733756735688076,\"sweep\":0.5546940764412285,\"charge\":0.008380351555533707,\"punch\":0.37844555798219515,\"body\":0.45978247446473686,\"recoil\":0.13945768382400275,\"grit\":0.06644345653010532,\"shots\":1,\"character\":0.1902510372805409,\"modulation\":0.3284759624861181}",
+        "{\"masterVolume\":0.5,\"seed\":0.13341571646742523,\"kind\":3,\"duration\":1.1,\"pitch\":0.6733756735688076,\"sweep\":0.5546940764412285,\"charge\":0.008380351555533707,\"punch\":0.37844555798219515,\"body\":0.45978247446473686,\"recoil\":0.13945768382400275,\"grit\":0.06644345653010532,\"shots\":1,\"character\":0.1902510372805409,\"modulation\":0.3284759624861181}"
+      ],
+      [
+        "Gravity well",
+        "{\"masterVolume\":0.5,\"seed\":0.3630224377848208,\"kind\":7,\"duration\":1.7,\"pitch\":0.14325234575662762,\"sweep\":-0.16668193228542805,\"charge\":0.7280195586150512,\"punch\":0.9120041511720046,\"body\":0.8833414194290526,\"recoil\":0.7249055259861052,\"grit\":0.057703339157160374,\"shots\":1,\"character\":0.6444529322907329,\"modulation\":0.9160076661384664}",
+        "{\"masterVolume\":0.5,\"seed\":0.3630224377848208,\"kind\":7,\"duration\":1.7,\"pitch\":0.14325234575662762,\"sweep\":-0.16668193228542805,\"charge\":0.7280195586150512,\"punch\":0.9120041511720046,\"body\":0.8833414194290526,\"recoil\":0.7249055259861052,\"grit\":0.057703339157160374,\"shots\":1,\"character\":0.6444529322907329,\"modulation\":0.9160076661384664}"
+      ],
+      [
+        "Ion beam",
+        "{\"masterVolume\":0.5,\"seed\":0.3854520502500236,\"kind\":6,\"duration\":1.1,\"pitch\":0.7937308455817402,\"sweep\":0.13783585857599978,\"charge\":0.2450455670012161,\"punch\":0.26819782903185113,\"body\":0.9347362614236772,\"recoil\":0.3880943394149654,\"grit\":0.0825337734632194,\"shots\":1,\"character\":0.7895039756782353,\"modulation\":0.4799854732467793}",
+        "{\"masterVolume\":0.5,\"seed\":0.3854520502500236,\"kind\":6,\"duration\":1.1,\"pitch\":0.7937308455817402,\"sweep\":0.13783585857599978,\"charge\":0.2450455670012161,\"punch\":0.26819782903185113,\"body\":0.9347362614236772,\"recoil\":0.3880943394149654,\"grit\":0.0825337734632194,\"shots\":1,\"character\":0.7895039756782353,\"modulation\":0.4799854732467793}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "kind": false,
+      "duration": false,
+      "pitch": false,
+      "sweep": false,
+      "charge": false,
+      "punch": false,
+      "body": false,
+      "recoil": false,
+      "grit": false,
+      "shots": false,
+      "character": false,
+      "modulation": false
+    }
+  },
+  "Bouncr": {
+    "files": [
+      [
+        "Steel on concrete",
+        "{\"masterVolume\":0.5,\"seed\":0.8234482447151095,\"material\":2,\"duration\":0.85,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.4086348487995565,\"hardness\":0.962540683732368,\"spin\":0.16264976933598518,\"surface\":0,\"force\":0.7245020057307556,\"tail\":0.5718365868553519}",
+        "{\"masterVolume\":0.5,\"seed\":0.8234482447151095,\"material\":2,\"duration\":0.85,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.4086348487995565,\"hardness\":0.962540683732368,\"spin\":0.16264976933598518,\"surface\":0,\"force\":0.7245020057307556,\"tail\":0.5718365868553519}"
+      ],
+      [
+        "Wood on metal",
+        "{\"masterVolume\":0.5,\"seed\":0.20854306034743786,\"material\":1,\"duration\":1.1,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.3383283774368465,\"hardness\":0.7872721170075238,\"spin\":0.022059115231968462,\"surface\":2,\"force\":0.8324170107720419,\"tail\":0.55060664198827}",
+        "{\"masterVolume\":0.5,\"seed\":0.20854306034743786,\"material\":1,\"duration\":1.1,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.3383283774368465,\"hardness\":0.7872721170075238,\"spin\":0.022059115231968462,\"surface\":2,\"force\":0.8324170107720419,\"tail\":0.55060664198827}"
+      ],
+      [
+        "Coin on glass",
+        "{\"masterVolume\":0.5,\"seed\":0.45835797442123294,\"material\":2,\"duration\":1.2,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.2164857203490101,\"hardness\":0.8002291040262207,\"spin\":0.483913488057442,\"surface\":3,\"force\":0.3515657754614949,\"tail\":0.8302029800252058}",
+        "{\"masterVolume\":0.5,\"seed\":0.45835797442123294,\"material\":2,\"duration\":1.2,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.2164857203490101,\"hardness\":0.8002291040262207,\"spin\":0.483913488057442,\"surface\":3,\"force\":0.3515657754614949,\"tail\":0.8302029800252058}"
+      ],
+      [
+        "Stone into earth",
+        "{\"masterVolume\":0.5,\"seed\":0.48187256418168545,\"material\":4,\"duration\":0.9,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.8251109347329475,\"hardness\":0.5980186837725341,\"spin\":0.7527546782861464,\"surface\":4,\"force\":0.7372997886384838,\"tail\":0.458794666826725}",
+        "{\"masterVolume\":0.5,\"seed\":0.48187256418168545,\"material\":4,\"duration\":0.9,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.8251109347329475,\"hardness\":0.5980186837725341,\"spin\":0.7527546782861464,\"surface\":4,\"force\":0.7372997886384838,\"tail\":0.458794666826725}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "material": false,
+      "duration": false,
+      "count": false,
+      "bounce": false,
+      "gravity": false,
+      "size": false,
+      "hardness": false,
+      "spin": false,
+      "surface": false,
+      "force": false,
+      "tail": false
+    }
+  },
+  "Glitchr": {
+    "files": [
+      [
+        "Buffer underrun",
+        "{\"masterVolume\":0.5,\"seed\":0.2972332800272852,\"duration\":0.8,\"pitch\":0.6439434600062668,\"fragment\":0.2051051080436446,\"repeat\":0.7136192970909178,\"chaos\":0.39658926073461775,\"dropout\":0.45184019936714326,\"crush\":0.39003612394444653,\"rate\":0.07321701501496136,\"mode\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.2972332800272852,\"duration\":0.8,\"pitch\":0.6439434600062668,\"fragment\":0.2051051080436446,\"repeat\":0.7136192970909178,\"chaos\":0.39658926073461775,\"dropout\":0.45184019936714326,\"crush\":0.39003612394444653,\"rate\":0.07321701501496136,\"mode\":0}"
+      ],
+      [
+        "Codec warble",
+        "{\"masterVolume\":0.5,\"seed\":0.5418016493786126,\"duration\":0.8,\"pitch\":0.58199247373268,\"fragment\":0.2862965948297642,\"repeat\":0.4552636379376054,\"chaos\":0.568149373633787,\"dropout\":0.19795118139591067,\"crush\":0.6413487390615047,\"rate\":0.14925853842869402,\"mode\":1}",
+        "{\"masterVolume\":0.5,\"seed\":0.5418016493786126,\"duration\":0.8,\"pitch\":0.58199247373268,\"fragment\":0.2862965948297642,\"repeat\":0.4552636379376054,\"chaos\":0.568149373633787,\"dropout\":0.19795118139591067,\"crush\":0.6413487390615047,\"rate\":0.14925853842869402,\"mode\":1}"
+      ],
+      [
+        "Tape scrub",
+        "{\"masterVolume\":0.5,\"seed\":0.49776467657648027,\"duration\":0.8,\"pitch\":0.4155237407190725,\"fragment\":0.27424391921376806,\"repeat\":0.6620794727932662,\"chaos\":0.5811299874447287,\"dropout\":0.04332620117347687,\"crush\":0.07662914637476206,\"rate\":0.07033530864864589,\"mode\":2}",
+        "{\"masterVolume\":0.5,\"seed\":0.49776467657648027,\"duration\":0.8,\"pitch\":0.4155237407190725,\"fragment\":0.27424391921376806,\"repeat\":0.6620794727932662,\"chaos\":0.5811299874447287,\"dropout\":0.04332620117347687,\"crush\":0.07662914637476206,\"rate\":0.07033530864864589,\"mode\":2}"
+      ],
+      [
+        "Granular tear",
+        "{\"masterVolume\":0.5,\"seed\":0.04875086643733084,\"duration\":0.8,\"pitch\":0.5286760667921044,\"fragment\":0.1888614216563292,\"repeat\":0.2817651733523235,\"chaos\":0.7574614624958486,\"dropout\":0.10796119919978082,\"crush\":0.4070869378745556,\"rate\":0.16915368989575652,\"mode\":5}",
+        "{\"masterVolume\":0.5,\"seed\":0.04875086643733084,\"duration\":0.8,\"pitch\":0.5286760667921044,\"fragment\":0.1888614216563292,\"repeat\":0.2817651733523235,\"chaos\":0.7574614624958486,\"dropout\":0.10796119919978082,\"crush\":0.4070869378745556,\"rate\":0.16915368989575652,\"mode\":5}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "duration": false,
+      "pitch": false,
+      "fragment": false,
+      "repeat": false,
+      "chaos": false,
+      "dropout": false,
+      "crush": false,
+      "rate": false,
+      "mode": false
+    }
+  },
+  "Signlr": {
+    "files": [
+      [
+        "Radar blip",
+        "{\"masterVolume\":0.5,\"seed\":0.2433214175980538,\"encoding\":4,\"duration\":0.5,\"carrier\":0.46948872627690436,\"deviation\":0.14342264847829939,\"symbols\":0.4,\"packets\":1,\"gap\":0.6220930532552302,\"drift\":0,\"corruption\":0,\"interference\":0,\"echo\":0.2781601868616417}",
+        "{\"masterVolume\":0.5,\"seed\":0.2433214175980538,\"encoding\":4,\"duration\":0.5,\"carrier\":0.46948872627690436,\"deviation\":0.14342264847829939,\"symbols\":0.4,\"packets\":1,\"gap\":0.6220930532552302,\"drift\":0,\"corruption\":0,\"interference\":0,\"echo\":0.2781601868616417}"
+      ],
+      [
+        "Target lock",
+        "{\"masterVolume\":0.5,\"seed\":0.9579628508072346,\"encoding\":4,\"duration\":0.6,\"carrier\":0.8063895448227413,\"deviation\":0.18037738264538347,\"symbols\":0.4,\"packets\":2,\"gap\":0.7359671085490845,\"drift\":0.22082264199852944,\"corruption\":0,\"interference\":0,\"echo\":0.09537207006942482}",
+        "{\"masterVolume\":0.5,\"seed\":0.9579628508072346,\"encoding\":4,\"duration\":0.6,\"carrier\":0.8063895448227413,\"deviation\":0.18037738264538347,\"symbols\":0.4,\"packets\":2,\"gap\":0.7359671085490845,\"drift\":0.22082264199852944,\"corruption\":0,\"interference\":0,\"echo\":0.09537207006942482}"
+      ],
+      [
+        "Sonar return",
+        "{\"masterVolume\":0.5,\"seed\":0.659567931201309,\"encoding\":4,\"duration\":1.2,\"carrier\":0.5502214032737538,\"deviation\":0.22033313643187286,\"symbols\":0.05556361328810454,\"packets\":1,\"gap\":0.44187050519511106,\"drift\":-0.0270281239785254,\"corruption\":0.019268269832246006,\"interference\":0.004031522611621767,\"echo\":0.8313664060318843}",
+        "{\"masterVolume\":0.5,\"seed\":0.659567931201309,\"encoding\":4,\"duration\":1.2,\"carrier\":0.5502214032737538,\"deviation\":0.22033313643187286,\"symbols\":0.05556361328810454,\"packets\":1,\"gap\":0.44187050519511106,\"drift\":-0.0270281239785254,\"corruption\":0.019268269832246006,\"interference\":0.004031522611621767,\"echo\":0.8313664060318843}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "encoding": false,
+      "duration": false,
+      "carrier": false,
+      "deviation": false,
+      "symbols": false,
+      "packets": false,
+      "gap": false,
+      "drift": false,
+      "corruption": false,
+      "interference": false,
+      "echo": false
+    }
+  },
+  "Breathr": {
+    "files": [
+      [
+        "Snore",
+        "{\"masterVolume\":0.5,\"seed\":0.8156865499913692,\"source\":2,\"duration\":2.3,\"cycles\":1,\"effort\":0.21557450829539448,\"inhale\":0.518359503056854,\"hold\":0.21839689085260033,\"throat\":0.7318794300593436,\"rasp\":0.8708363814279436,\"flutter\":0.3697615481563844,\"space\":0.07918153282254935}",
+        "{\"masterVolume\":0.5,\"seed\":0.8156865499913692,\"source\":2,\"duration\":2.3,\"cycles\":1,\"effort\":0.21557450829539448,\"inhale\":0.518359503056854,\"hold\":0.21839689085260033,\"throat\":0.7318794300593436,\"rasp\":0.8708363814279436,\"flutter\":0.3697615481563844,\"space\":0.07918153282254935}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "source": false,
+      "duration": false,
+      "cycles": false,
+      "effort": false,
+      "inhale": false,
+      "hold": false,
+      "throat": false,
+      "rasp": false,
+      "flutter": false,
+      "space": false
+    }
+  },
+  "Pluckr": {
+    "files": [
+      [
+        "Steel tremolo",
+        "{\"masterVolume\":0.5,\"seed\":0.39714274113066494,\"material\":1,\"duration\":1.5,\"pitch\":0.692095657158643,\"strings\":1,\"damping\":0.1493972745910287,\"brightness\":0.9163566173054278,\"pluck\":0.1576135388482362,\"coupling\":0.20500602480024102,\"strum\":0.16735703960061074,\"tremolo\":0.75,\"tremoloRate\":5.2,\"inharmonic\":0.29755602893419564}",
+        "{\"masterVolume\":0.5,\"seed\":0.39714274113066494,\"material\":1,\"duration\":1.5,\"pitch\":0.692095657158643,\"strings\":1,\"damping\":0.1493972745910287,\"brightness\":0.9163566173054278,\"pluck\":0.1576135388482362,\"coupling\":0.20500602480024102,\"strum\":0.16735703960061074,\"tremolo\":0.75,\"tremoloRate\":5.2,\"inharmonic\":0.29755602893419564}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "material": false,
+      "duration": false,
+      "pitch": false,
+      "strings": false,
+      "damping": false,
+      "brightness": false,
+      "pluck": false,
+      "coupling": false,
+      "strum": false,
+      "tremolo": false,
+      "tremoloRate": false,
+      "inharmonic": false
+    }
+  },
+  "Rumblr": {
+    "files": [
+      [
+        "Deep pressure",
+        "{\"masterVolume\":0.5,\"seed\":0.48041292489506304,\"duration\":1.8,\"size\":0.9220839063869789,\"weight\":0.9712849464267492,\"roughness\":0.08588571225292982,\"tremor\":0.08838769627036527,\"dust\":0.029996255622245373,\"attack\":0.6845142194768414,\"sweep\":-0.079998116241768,\"depth\":0.95,\"harmonics\":0.25}",
+        "{\"masterVolume\":0.5,\"seed\":0.48041292489506304,\"duration\":1.8,\"size\":0.9220839063869789,\"weight\":0.9712849464267492,\"roughness\":0.08588571225292982,\"tremor\":0.08838769627036527,\"dust\":0.029996255622245373,\"attack\":0.6845142194768414,\"sweep\":-0.079998116241768,\"depth\":0.95,\"harmonics\":0.25}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "duration": false,
+      "size": false,
+      "weight": false,
+      "roughness": false,
+      "tremor": false,
+      "dust": false,
+      "attack": false,
+      "sweep": false,
+      "depth": false,
+      "harmonics": false
+    }
+  },
+  "Jinglr": {
+    "files": [
+      [
+        "Confirm",
+        "{\"masterVolume\":0.5,\"seed\":0.8180981809818099,\"instrumentSeed\":92866,\"phrase\":\"[{\\\"degree\\\":-1,\\\"beats\\\":0.5},{\\\"degree\\\":6,\\\"beats\\\":1}]\",\"instrument\":1,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":2,\"octave\":5,\"tempo\":209.7004684107378,\"swing\":0,\"brightness\":0.6255001386860386,\"decay\":0.047102279998362064,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.8180981809818099,\"instrumentSeed\":92866,\"phrase\":\"[{\\\"degree\\\":-1,\\\"beats\\\":0.5},{\\\"degree\\\":6,\\\"beats\\\":1}]\",\"instrument\":1,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":2,\"octave\":5,\"tempo\":209.7004684107378,\"swing\":0,\"brightness\":0.6255001386860386,\"decay\":0.047102279998362064,\"echo\":0}"
+      ],
+      [
+        "Message",
+        "{\"masterVolume\":0.5,\"seed\":0.6325363253632537,\"instrumentSeed\":36474,\"phrase\":\"[{\\\"degree\\\":1,\\\"beats\\\":0.75},{\\\"degree\\\":9,\\\"beats\\\":1}]\",\"instrument\":1,\"key\":0,\"scale\":2,\"contour\":0,\"rhythm\":1,\"noteCount\":2,\"octave\":5,\"tempo\":215.52375846542418,\"swing\":0,\"brightness\":0.45381897995248444,\"decay\":0.11938456448726356,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.6325363253632537,\"instrumentSeed\":36474,\"phrase\":\"[{\\\"degree\\\":1,\\\"beats\\\":0.75},{\\\"degree\\\":9,\\\"beats\\\":1}]\",\"instrument\":1,\"key\":0,\"scale\":2,\"contour\":0,\"rhythm\":1,\"noteCount\":2,\"octave\":5,\"tempo\":215.52375846542418,\"swing\":0,\"brightness\":0.45381897995248444,\"decay\":0.11938456448726356,\"echo\":0}"
+      ],
+      [
+        "Dismiss",
+        "{\"masterVolume\":0.5,\"seed\":0.32401324013240135,\"instrumentSeed\":75622,\"phrase\":\"[{\\\"degree\\\":5,\\\"beats\\\":0.5},{\\\"degree\\\":0,\\\"beats\\\":1}]\",\"instrument\":4,\"key\":0,\"scale\":2,\"contour\":1,\"rhythm\":0,\"noteCount\":2,\"octave\":3,\"tempo\":200.6729378469754,\"swing\":0,\"brightness\":0.5760117450845428,\"decay\":0.041366991186514504,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.32401324013240135,\"instrumentSeed\":75622,\"phrase\":\"[{\\\"degree\\\":5,\\\"beats\\\":0.5},{\\\"degree\\\":0,\\\"beats\\\":1}]\",\"instrument\":4,\"key\":0,\"scale\":2,\"contour\":1,\"rhythm\":0,\"noteCount\":2,\"octave\":3,\"tempo\":200.6729378469754,\"swing\":0,\"brightness\":0.5760117450845428,\"decay\":0.041366991186514504,\"echo\":0}"
+      ],
+      [
+        "Denied",
+        "{\"masterVolume\":0.5,\"seed\":0.4155941559415594,\"instrumentSeed\":45257,\"phrase\":\"[{\\\"degree\\\":9,\\\"beats\\\":0.75},{\\\"degree\\\":1,\\\"beats\\\":1}]\",\"instrument\":2,\"key\":0,\"scale\":1,\"contour\":1,\"rhythm\":1,\"noteCount\":2,\"octave\":3,\"tempo\":209.547132384032,\"swing\":0,\"brightness\":0.5209421252831816,\"decay\":0.08004441519966349,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.4155941559415594,\"instrumentSeed\":45257,\"phrase\":\"[{\\\"degree\\\":9,\\\"beats\\\":0.75},{\\\"degree\\\":1,\\\"beats\\\":1}]\",\"instrument\":2,\"key\":0,\"scale\":1,\"contour\":1,\"rhythm\":1,\"noteCount\":2,\"octave\":3,\"tempo\":209.547132384032,\"swing\":0,\"brightness\":0.5209421252831816,\"decay\":0.08004441519966349,\"echo\":0}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "instrumentSeed": false,
+      "phrase": false,
+      "instrument": false,
+      "key": false,
+      "scale": false,
+      "contour": false,
+      "rhythm": false,
+      "noteCount": false,
+      "octave": false,
+      "tempo": false,
+      "swing": false,
+      "brightness": false,
+      "decay": false,
+      "echo": false
+    }
+  },
+  "Transfxr": {
+    "files": [
+      [
+        "Whistle into FM",
+        "{\"masterVolume\":0.5,\"waveType\":6,\"duration\":1.1,\"pitch\":{\"start\":0.194751950786449,\"end\":0.5847519507864491,\"curve\":\"Bounce\"},\"tone\":{\"start\":0.8,\"end\":0.7753573259687982,\"curve\":\"Smooth\"},\"noise\":{\"start\":0,\"end\":0.0688402708247304,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0.20000330791808665,\"end\":0.16693876893259585,\"curve\":\"Ease In\"},\"level\":{\"start\":0.8507937512826174,\"end\":0,\"curve\":\"Linear\"},\"attack\":0.005039015306340117,\"release\":0.43671465988281016,\"resonance\":0.10843799086753278,\"echo\":0.15,\"waveTo\":11,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Ease Out\"}}",
+        "{\"masterVolume\":0.5,\"waveType\":6,\"duration\":1.1,\"pitch\":{\"start\":0.194751950786449,\"end\":0.5847519507864491,\"curve\":\"Bounce\"},\"tone\":{\"start\":0.8,\"end\":0.7753573259687982,\"curve\":\"Smooth\"},\"noise\":{\"start\":0,\"end\":0.0688402708247304,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0.20000330791808665,\"end\":0.16693876893259585,\"curve\":\"Ease In\"},\"level\":{\"start\":0.8507937512826174,\"end\":0,\"curve\":\"Linear\"},\"attack\":0.005039015306340117,\"release\":0.43671465988281016,\"resonance\":0.10843799086753278,\"echo\":0.15,\"waveTo\":11,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Ease Out\"}}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "waveType": false,
+      "duration": false,
+      "pitch": false,
+      "tone": false,
+      "noise": false,
+      "vibrato": false,
+      "level": false,
+      "attack": false,
+      "release": false,
+      "resonance": false,
+      "echo": false,
+      "waveTo": false,
+      "morph": false
+    }
+  },
+  "Mixr": {
+    "files": [
+      [
+        "Air and ice",
+        "{\"masterVolume\":0.5,\"seed\":0.8272684714756906,\"balance\":0.5296927297953516,\"sources\":\"[{\\\"synth\\\":\\\"Whooshr\\\",\\\"name\\\":\\\"Sword Swing\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.17693056748248637,\\\"duration\\\":0.2655402878858149,\\\"size\\\":0.3669435653137043,\\\"air\\\":0.657946601207368,\\\"whistle\\\":0.45672038227785383,\\\"movement\\\":0.8754990382352844,\\\"focus\\\":0.6214127779123373,\\\"flutter\\\":0.05114317156840116}},{\\\"synth\\\":\\\"Fractr\\\",\\\"name\\\":\\\"Ice Wall\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.6199892214499414,\\\"material\\\":1,\\\"duration\\\":2.842980657494627,\\\"fragments\\\":35,\\\"fragmentSize\\\":0.6099419226637111,\\\"spread\\\":0.7213274970650673,\\\"decay\\\":0.4463233622722328,\\\"gravity\\\":0.5082702660933136,\\\"bounce\\\":0.41384958690032364,\\\"stress\\\":0.7658597456407733,\\\"fracture\\\":0.9594188849674538}}]\"}",
+        "{\"masterVolume\":0.5,\"seed\":0.8272684714756906,\"balance\":0.5296927297953516,\"sources\":\"[{\\\"synth\\\":\\\"Whooshr\\\",\\\"name\\\":\\\"Sword Swing\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.17693056748248637,\\\"duration\\\":0.2655402878858149,\\\"size\\\":0.3669435653137043,\\\"air\\\":0.657946601207368,\\\"whistle\\\":0.45672038227785383,\\\"movement\\\":0.8754990382352844,\\\"focus\\\":0.6214127779123373,\\\"flutter\\\":0.05114317156840116}},{\\\"synth\\\":\\\"Fractr\\\",\\\"name\\\":\\\"Ice Wall\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.6199892214499414,\\\"material\\\":1,\\\"duration\\\":2.842980657494627,\\\"fragments\\\":35,\\\"fragmentSize\\\":0.6099419226637111,\\\"spread\\\":0.7213274970650673,\\\"decay\\\":0.4463233622722328,\\\"gravity\\\":0.5082702660933136,\\\"bounce\\\":0.41384958690032364,\\\"stress\\\":0.7658597456407733,\\\"fracture\\\":0.9594188849674538}}]\"}"
+      ],
+      [
+        "Steel and electricity",
+        "{\"masterVolume\":0.5,\"seed\":0.16487229522317648,\"balance\":0.48912243195809424,\"sources\":\"[{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"Metal Clang\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.24876506254076958,\\\"material\\\":2,\\\"action\\\":0,\\\"size\\\":0.58774033612106,\\\"hollowness\\\":0.38603759923717007,\\\"hardness\\\":0.7084180913749151,\\\"damping\\\":0.21043563379207625,\\\"duration\\\":1.0006278079003095}},{\\\"synth\\\":\\\"Zappr\\\",\\\"name\\\":\\\"Static Spark\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.09536103601567447,\\\"duration\\\":0.1575498381536454,\\\"voltage\\\":0.8462924517225474,\\\"arcs\\\":2,\\\"branching\\\":0.13952028283383697,\\\"crackle\\\":0.13553995075635614,\\\"hum\\\":0.007173319412395358,\\\"spark\\\":0.9261255546938628,\\\"spread\\\":0.15529878549277784,\\\"decay\\\":0.01814420375972986}}]\"}",
+        "{\"masterVolume\":0.5,\"seed\":0.16487229522317648,\"balance\":0.48912243195809424,\"sources\":\"[{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"Metal Clang\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.24876506254076958,\\\"material\\\":2,\\\"action\\\":0,\\\"size\\\":0.58774033612106,\\\"hollowness\\\":0.38603759923717007,\\\"hardness\\\":0.7084180913749151,\\\"damping\\\":0.21043563379207625,\\\"duration\\\":1.0006278079003095}},{\\\"synth\\\":\\\"Zappr\\\",\\\"name\\\":\\\"Static Spark\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.09536103601567447,\\\"duration\\\":0.1575498381536454,\\\"voltage\\\":0.8462924517225474,\\\"arcs\\\":2,\\\"branching\\\":0.13952028283383697,\\\"crackle\\\":0.13553995075635614,\\\"hum\\\":0.007173319412395358,\\\"spark\\\":0.9261255546938628,\\\"spread\\\":0.15529878549277784,\\\"decay\\\":0.01814420375972986}}]\"}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "balance": false,
+      "sources": false
+    }
+  },
+  "active_tab_name": "Chattr"
+}

@@ -41,9 +41,9 @@ test('new Transfxr families expose substantially more variation and preserve loc
    filters:new Set(values.map(p=>JSON.stringify(p.tone))).size,
    locked:values.every(p=>JSON.stringify(p.pitch)===before&&p.masterVolume===volume)};
  });`);
- assert.equal(result.length,16);
+ assert.equal(result.length,15);
  for(const family of result){assert.ok(family.count>=10);assert.ok(family.durations>16);assert.ok(family.filters>16);assert.ok(family.locked);}
- assert.equal(run(`s.templates.filter(t=>t[2].startsWith('generate_family_')).length`),16);
+ assert.equal(run(`s.templates.filter(t=>t[2].startsWith('generate_family_')).length`),15);
 });
 test('interpolation rejects differing trajectory shapes',()=>{
  const run=load();

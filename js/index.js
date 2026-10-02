@@ -9,31 +9,24 @@ function register_tabs(){
     var chattr_tab = new Tab(new Chattr());
     new Tab(new Clonkr());
     new Tab(new Machinr());
-    new Tab(new Weathr());
     new Tab(new Jinglr());
     new Tab(new Squishr());
-    new Tab(new Stackr());
+    new Tab(new Mixr());
     new Tab(new Crittr());
     new Tab(new Signlr());
     new Tab(new Fractr());
     new Tab(new Riftr());
     new Tab(new Swarmr());
-    new Tab(new Tappr());
     new Tab(new Rustlr());
-    new Tab(new Notifr());
-    new Tab(new Tickr());
-    new Tab(new Holor());
     new Tab(new Boomr());
     new Tab(new Pewpr());
     new Tab(new Zappr());
     new Tab(new Whooshr());
     new Tab(new Bouncr());
-    new Tab(new Rollr());
     new Tab(new Breathr());
     new Tab(new Choirr());
     new Tab(new Pluckr());
     new Tab(new Glitchr());
-    new Tab(new Pulser());
     new Tab(new Rumblr());
     SaveLoad.collection_save_enabled=true;
     set_tab_from_loaded_data();
@@ -44,10 +37,7 @@ function set_tab_from_loaded_data(){
     if (!SaveLoad.loaded_data){
         return;
     }
-    var active_tab_index = SaveLoad.loaded_data.active_tab_index;
-    if (active_tab_index>=0 && tabs[active_tab_index]){
-        tabs[active_tab_index].set_active_tab();
-    }
+    SaveLoad.restore_active_tab(SaveLoad.loaded_data);
 }
 
 function bfxr_draw_visualisation(params){

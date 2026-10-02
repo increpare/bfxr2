@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 'use strict';
-const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'../..');
+function runtimeFingerprint(){
+ return Object.fromEntries(require('./runtime_sources.json').map(file=>[file,
+  crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')]));
+}
 function rng(seed){let a=seed>>>0;return()=>{a+=0x6D2B79F5;let t=Math.imul(a^(a>>>15),1|a);t^=t+Math.imul(t^(t>>>7),61|t);return((t^(t>>>14))>>>0)/4294967296;};}
 function createContext(extra=[]){
  const ctx=vm.createContext({console});
@@ -79,4 +83,4 @@ function renderSurvey(directory,count=512,seed=20261002){
 // Candidate generation uses the application's clamp helper but no other browser state.
 Math.clamp=(v,lo,hi)=>Math.max(lo,Math.min(v,hi));
 if(require.main===module)renderSurvey(process.argv[2]||path.join(root,'examples/Transfxr/survey'),+(process.argv[3]||512));
-module.exports={rng,candidate,createContext,wav,renderSurvey,root};
+module.exports={rng,candidate,createContext,wav,renderSurvey,root,runtimeFingerprint};

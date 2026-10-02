@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // Render fresh seeded samples through the same parameter validation as the UI.
 'use strict';
-const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
-const {createContext,rng,wav}=require('./render_corpus');
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto');
+const {createContext,rng,wav,root,runtimeFingerprint}=require('./render_corpus');
 function validate(directory,count=16,seed=20261003){
  const output=path.resolve(directory),context=createContext(['js/synths/PresetFamily.js','js/synths/TransfxrPresets.js']);
  const families=JSON.parse(vm.runInContext('JSON.stringify(Transfxr.preset_families)',context));
@@ -17,7 +17,8 @@ function validate(directory,count=16,seed=20261003){
   fs.writeFileSync(path.join(output,'audio',id+'.wav'),wav(pcm));
   sounds.push({id,cluster,params,rms,peak,audio:'audio/'+id+'.wav'});
  }
- fs.writeFileSync(path.join(output,'samples.json'),JSON.stringify({seed,count:sounds.length,sounds},null,2)+'\n');
+ const bank_sha256=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'js/synths/TransfxrPresets.js'))).digest('hex');
+ fs.writeFileSync(path.join(output,'samples.json'),JSON.stringify({revision:2,bank_sha256,runtime_sha256:runtimeFingerprint(),seed,count:sounds.length,sounds},null,2)+'\n');
  console.log('Rendered '+sounds.length+' audible fresh family samples');
 }
 if(require.main===module)validate(process.argv[2]||'/private/tmp/transfxr-family-validation',+(process.argv[3]||16));

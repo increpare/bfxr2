@@ -20,11 +20,7 @@ class SpeechEditor {
         this.portrait = new SpeechPortrait(this.face);
         heading.appendChild(this.face);
         const greeting = document.createElement('div');
-        const title = document.createElement('strong');
-        title.textContent = 'Small talk. Big personality.';
-        const subtitle = document.createElement('span');
-        subtitle.textContent = 'Give an imaginary friend a voice.';
-        greeting.append(title,subtitle);
+        greeting.className = 'speech-words';
         heading.appendChild(greeting);
         this.card.appendChild(heading);
 
@@ -32,14 +28,14 @@ class SpeechEditor {
         label.textContent = info.display_name;
         const id = tab.name + '_text_' + info.name;
         label.htmlFor = id;
-        this.card.appendChild(label);
+        greeting.appendChild(label);
         this.input = document.createElement('textarea');
         this.input.id = id;
         this.input.maxLength = info.max_length;
         this.input.rows = 2;
         this.input.placeholder = 'Hello, little world!';
         this.input.spellcheck = false;
-        this.card.appendChild(this.input);
+        greeting.appendChild(this.input);
 
         const meta = document.createElement('div');
         meta.className = 'speech-meta';
@@ -64,12 +60,10 @@ class SpeechEditor {
             else this.refresh_waveform();
         });
         buttons.append(this.say,this.stopButton,surprise);
+        this.voiceMode=this.select('voiceMode','Voice mode');
+        this.character=this.select('character','Character texture');
+        buttons.append(this.voiceMode,this.character);
         this.card.appendChild(buttons);
-        const note = document.createElement('p');
-        note.className = 'speech-note';
-        note.textContent = 'Articulation: chatter ↔ speech. English words; try Clear Speaker.';
-        this.card.appendChild(note);
-
         this.input.addEventListener('input', () => this.save_words());
         this.input.addEventListener('change', () => this.refresh_waveform());
         this.input.addEventListener('keydown', event => {
@@ -85,6 +79,22 @@ class SpeechEditor {
         button.type = 'button'; button.textContent = text; button.title = title;
         button.addEventListener('click',action);
         return button;
+    }
+
+    select(name,label) {
+        const select=document.createElement('select');
+        select.setAttribute('aria-label',label);
+        select.title=label;
+        for(const [text,tip,value] of this.tab.synth.get_param_info(name).values) {
+            const option=document.createElement('option');
+            option.value=String(value);option.textContent=text;option.title=tip;
+            select.appendChild(option);
+        }
+        select.addEventListener('change',()=>{
+            this.stop();
+            this.tab.slider_changed(name,Number(select.value));
+        });
+        return select;
     }
 
     save_words() {
@@ -112,6 +122,9 @@ class SpeechEditor {
         const text = this.tab.synth.params[this.info.name];
         if (this.input.value !== text) this.input.value = text;
         this.counter.textContent = text.length + ' / ' + this.info.max_length;
+        this.voiceMode.value=String(this.tab.synth.params.voiceMode);
+        this.character.value=String(this.tab.synth.params.character);
+        this.character.disabled=this.tab.synth.params.voiceMode!==1;
         this.say.disabled = !Chattr_Pronunciation.tokenize(text).some(token => token.phones && token.phones.length);
         if (this.frame === null) this.status.textContent = this.say.disabled ? 'A little quiet. Add some words.' : 'Ctrl/Cmd + Enter to speak';
         this.preview_params(this.tab.synth.params);

@@ -2,6 +2,25 @@ class SaveLoad {
     static collection_save_enabled=true;
 
     static loaded_data = {};
+    static legacy_tabs = ['Bfxr','Footsteppr','Transfxr','Chattr','Clonkr','Machinr','Weathr','Jinglr','Squishr','Stackr','Crittr','Signlr','Fractr','Riftr','Swarmr','Tappr','Rustlr','Notifr','Tickr','Holor','Boomr','Pewpr','Zappr','Whooshr','Bouncr','Rollr','Breathr','Choirr','Pluckr','Glitchr','Pulser','Rumblr'];
+
+    static tab_for_import(name) {
+        const existing=tabs.find(tab=>tab.synth.name===name);
+        if(existing)return existing;
+        const retired=['Weathr','Stackr','Tappr','Notifr','Tickr','Holor','Rollr','Pulser'];
+        if(!retired.includes(name)||typeof Stackr==='undefined'||typeof Tab==='undefined')return null;
+        const synth=name==='Stackr'?new Stackr():Stackr.source(name);
+        if(!synth)return null;
+        synth.display_name=name+' (legacy)';
+        return new Tab(synth);
+    }
+
+    static restore_active_tab(data) {
+        const previous=data.active_tab_name || SaveLoad.legacy_tabs[data.active_tab_index];
+        const aliases={Stackr:'Mixr',Notifr:'Jinglr',Tappr:'Jinglr',Holor:'Bfxr'};
+        const tab=tabs.find(tab=>tab.synth.name===(aliases[previous]||previous));
+        if(tab)tab.set_active_tab();
+    }
 
     static save_all_collections(){
         if (!SaveLoad.collection_save_enabled){
@@ -31,8 +50,10 @@ class SaveLoad {
             return;
         }
         var synth_dat_str = params.get("sfx");
-        var [synth_name,filename,params] = SaveLoad.shallow_dict_deserialize(synth_dat_str);
-        var tab = tabs.find(tab => tab.synth.name == synth_name);
+        const decoded = SaveLoad.shallow_dict_deserialize(synth_dat_str);
+        if(!decoded)return;
+        var [synth_name,filename,params] = decoded;
+        var tab = SaveLoad.tab_for_import(synth_name);
         if (!tab){
             console.error("No tab found for synth_name: " + synth_name);
             return;
@@ -45,7 +66,11 @@ class SaveLoad {
     }
 
     static shallow_dict_serialize(synth_name,filename,dict){
-        //instead of returning a csv string, returns a csv string (with commas delimited by \)
+        // New specialist links carry names so later controls cannot shift saved values.
+        if(synth_name!=='Bfxr' && synth_name!=='Footsteppr') {
+            return synth_name+'~@2~'+JSON.stringify({filename,params:dict}).replace(/~/g,'\\u007e');
+        }
+        // Preserve the original Bfxr/Footsteppr numeric format.
         var result = synth_name + "~" + filename + "~";
         var keys = Object.keys(dict);
         console.log("exporting keys: " + keys);
@@ -63,8 +88,17 @@ class SaveLoad {
         var entries = str.split("~");
         var synth_name = entries[0];
         var filename = entries[1];
+        if(filename==='@2') {
+            try {
+                const saved=JSON.parse(entries.slice(2).join('~'));
+                if(!saved.params || typeof saved.params!=='object')return;
+                const tab=tabs.find(tab=>tab.synth.name===synth_name);
+                const defaults=tab?tab.synth.default_params():{};
+                return [synth_name,saved.filename,{...defaults,...saved.params}];
+            } catch { return; }
+        }
         //need to find the tab that matches the synth_name
-        var tab = tabs.find(tab => tab.synth.name == synth_name);
+        var tab = SaveLoad.tab_for_import(synth_name);
         if (!tab){
             console.error("No tab found for synth_name: " + synth_name);
             return;
@@ -74,21 +108,27 @@ class SaveLoad {
         // Links from earlier palettes omitted these controls. Their sorted,
         // positional fields must be read against the schema that wrote them.
         const additions = {
-            Chattr:[['waveType'],['waveType','articulation']],
+            Chattr:[['voiceMode','character','voiceSeed'],['voiceMode','character','voiceSeed','waveType'],['voiceMode','character','voiceSeed','waveType','articulation']],
+            Transfxr:[['waveTo','morph']],
             Jinglr:[['instrumentSeed']], Notifr:[['instrumentSeed']],
             Tappr:[['air','sweep']], Rollr:[['surface']],
-            Breathr:[['source']], Pluckr:[['material']]
+            Breathr:[['source']], Pluckr:[['tremolo','tremoloRate'],['tremolo','tremoloRate','material']],
+            Fractr:[['stress','fracture']], Boomr:[['mechanism','space']],
+            Pewpr:[['character','modulation']], Bouncr:[['surface','force','tail']],
+            Glitchr:[['mode']], Rumblr:[['depth','harmonics']]
         };
         const missing = (additions[synth_name] || []).find(fields =>
             entries.length - 2 === keys.length - fields.length) || [];
         keys = keys.filter(key => !missing.includes(key)).sort();
         var dict = {};
         for (const key of missing) dict[key] = default_params[key];
+        if(synth_name==='Chattr' && missing.includes('voiceMode'))dict.voiceMode=0;
         for (var i = 0; i < keys.length; i++){
             const entry = entries[i+2];
             dict[keys[i]] = typeof default_params[keys[i]] !== "number"
                 ? JSON.parse(entry) : parseFloat(entry);
         }
+        if(synth_name==='Pluckr' && dict.material===5 && missing.includes('tremolo')) {dict.tremolo=.35;dict.tremoloRate=1.7;}
         return [synth_name,filename,dict];
     }
 
@@ -101,7 +141,7 @@ class SaveLoad {
         var file_name = data.file_name;
         var params = data.params;
 
-        var tab = tabs.find(tab => tab.synth.name == synth_name);
+        var tab = SaveLoad.tab_for_import(synth_name);
         if (!tab){
             console.error("No tab found for synth_name: " + synth_name);
             return;
@@ -112,7 +152,8 @@ class SaveLoad {
 
     static load_serialized_collection(str){
         var data = JSON.parse(str);
-        var active_tab_index = data.active_tab_index;
+        // Keep records for retired tabs when importing/exporting a collection.
+        SaveLoad.loaded_data={...SaveLoad.loaded_data,...data};
         for (var i = 0; i < tabs.length; i++){
             var tab = tabs[i];
             // Older collections predate Transfxr; partial collections are also useful.
@@ -136,12 +177,12 @@ class SaveLoad {
             }
             tab.update_ui();
         }
-        if (tabs[active_tab_index]) tabs[active_tab_index].set_active_tab();
+        SaveLoad.restore_active_tab(data);
         SaveLoad.save_all_collections();
     }
 
     static serialize_collection(){
-        var save_data = {};
+        var save_data = {...SaveLoad.loaded_data};
         var active_tab_index=-1;
         for (var i = 0; i < tabs.length; i++){
             var tab = tabs[i];
@@ -157,6 +198,7 @@ class SaveLoad {
             save_data[tab.synth.name] = compiled_data;
             if (tab.active){
                 active_tab_index = i;
+                save_data.active_tab_name = tab.synth.name;
             }
         }
         save_data.active_tab_index = active_tab_index;

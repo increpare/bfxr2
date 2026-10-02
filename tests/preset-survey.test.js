@@ -8,7 +8,7 @@ test('survey parameters survive importing into the editor unchanged',()=>{
  const corpus=JSON.parse(fs.readFileSync(path.join(root,'examples/Transfxr/survey/corpus.json'),'utf8'));
  const context=createContext(),apply=vm.runInContext('(p)=>{const s=new Transfxr();s.apply_params(p);return s.params;}',context);
  assert.equal(corpus.sounds.length,512);
- for(const sound of corpus.sounds)assert.deepEqual(JSON.parse(JSON.stringify(apply(sound.params))),sound.params,sound.id);
+ for(const sound of corpus.sounds)assert.deepEqual(JSON.parse(JSON.stringify(apply(sound.params))),{...sound.params,waveTo:-1,morph:{start:0,end:1,curve:'Smooth'}},sound.id);
 });
 test('seeded exploration repeats its sequence and covers voices and textures',()=>{
  const context=createContext();

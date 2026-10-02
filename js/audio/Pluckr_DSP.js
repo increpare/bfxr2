@@ -60,7 +60,8 @@ class Pluckr_DSP {
                 sum+=current;bridgeNext+=current;
             }
             bridge=bridgeNext/count;
-            out[i]=sum*gain;
+            const tremolo=value('tremolo',0),speed=value('tremoloRate',4,0.2,12);
+            out[i]=sum*gain*(1-tremolo*(0.5-0.5*Math.cos(2*PI*speed*i/rate)));
         }
         return SoundDSP.finish(out,volume);
     }

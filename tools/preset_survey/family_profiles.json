@@ -1,0 +1,858 @@
+{
+  "revision": 2,
+  "basis": "User listening feedback on the first six catalogue exemplars, 2026-10-02",
+  "families": [
+    {
+      "id": "bright_whistles",
+      "name": "Bright Whistles",
+      "source_group": "Bright Whistles",
+      "tip": "Clear, bright electronic whistles with a clean ringing voice.",
+      "limits": {
+        "waveTo": -1
+      },
+      "intervals": {},
+      "preserve": true,
+      "variation": {
+        "pitch": 0.035,
+        "tone": 0.06,
+        "noise": 0.025,
+        "vibrato": 0.05,
+        "level": 0.06
+      }
+    },
+    {
+      "id": "grainy_taps",
+      "name": "Grainy Taps",
+      "source_group": "Grainy Taps",
+      "tip": "Dry, low gritty taps. A single quick attack, with no long tail.",
+      "limits": {
+        "waveTo": -1,
+        "waveType": 2,
+        "duration": [
+          0.065,
+          0.17
+        ],
+        "attack": [
+          0.001,
+          0.006
+        ],
+        "release": [
+          0.045,
+          0.14
+        ],
+        "echo": 0,
+        "resonance": [
+          0.12,
+          0.4
+        ],
+        "pitch.start": [
+          0.34,
+          0.48
+        ],
+        "pitch.end": [
+          0.27,
+          0.43
+        ],
+        "pitch.curve": "Ease Out",
+        "tone.start": [
+          0.32,
+          0.52
+        ],
+        "tone.end": [
+          0.28,
+          0.46
+        ],
+        "tone.curve": "Ease Out",
+        "noise.start": [
+          0.72,
+          0.92
+        ],
+        "noise.end": [
+          0.65,
+          0.85
+        ],
+        "noise.curve": "Linear",
+        "vibrato.start": 0,
+        "vibrato.end": 0,
+        "vibrato.curve": "Linear",
+        "level.start": [
+          0.7,
+          0.95
+        ],
+        "level.end": [
+          0.08,
+          0.25
+        ],
+        "level.curve": "Ease Out"
+      },
+      "intervals": {},
+      "preserve": false,
+      "variation": {
+        "pitch": 0.035,
+        "tone": 0.06,
+        "noise": 0.025,
+        "vibrato": 0.05,
+        "level": 0.06
+      }
+    },
+    {
+      "id": "rocket_zips",
+      "name": "Rocket Zips",
+      "source_group": "Rocket Zips",
+      "tip": "A short hollow arcade whistle that rockets upwards and cuts off.",
+      "limits": {
+        "waveTo": -1,
+        "waveType": 3,
+        "duration": [
+          0.22,
+          0.4
+        ],
+        "attack": [
+          0.001,
+          0.008
+        ],
+        "release": [
+          0.1,
+          0.25
+        ],
+        "echo": 0,
+        "resonance": [
+          0.08,
+          0.3
+        ],
+        "pitch.start": [
+          0.14,
+          0.27
+        ],
+        "pitch.end": [
+          0.64,
+          0.8
+        ],
+        "pitch.curve": "Ease Out",
+        "tone.start": [
+          0.65,
+          0.85
+        ],
+        "tone.end": [
+          0.78,
+          0.95
+        ],
+        "tone.curve": "Linear",
+        "noise.start": [
+          0,
+          0.05
+        ],
+        "noise.end": [
+          0,
+          0.05
+        ],
+        "noise.curve": "Linear",
+        "vibrato.start": 0,
+        "vibrato.end": 0,
+        "vibrato.curve": "Linear",
+        "level.start": [
+          0.65,
+          0.85
+        ],
+        "level.end": [
+          0.3,
+          0.6
+        ],
+        "level.curve": "Linear"
+      },
+      "intervals": {},
+      "preserve": false,
+      "variation": {
+        "pitch": 0.035,
+        "tone": 0.06,
+        "noise": 0.025,
+        "vibrato": 0.05,
+        "level": 0.06
+      }
+    },
+    {
+      "id": "wavering_calls",
+      "name": "Wavering Calls",
+      "source_group": "Wavering Calls",
+      "tip": "A rounded voice with an audible, steady quiver throughout the call.",
+      "limits": {
+        "waveTo": -1,
+        "waveType": 1,
+        "duration": [
+          0.7,
+          1.2
+        ],
+        "attack": [
+          0.025,
+          0.08
+        ],
+        "release": [
+          0.18,
+          0.4
+        ],
+        "echo": 0,
+        "resonance": [
+          0.08,
+          0.3
+        ],
+        "pitch.start": [
+          0.38,
+          0.55
+        ],
+        "pitch.end": [
+          0.31,
+          0.62
+        ],
+        "pitch.curve": "Smooth",
+        "tone.start": [
+          0.6,
+          0.78
+        ],
+        "tone.end": [
+          0.58,
+          0.75
+        ],
+        "tone.curve": "Smooth",
+        "noise.start": [
+          0,
+          0.06
+        ],
+        "noise.end": [
+          0,
+          0.06
+        ],
+        "noise.curve": "Linear",
+        "vibrato.start": [
+          0.72,
+          0.9
+        ],
+        "vibrato.end": [
+          0.72,
+          0.9
+        ],
+        "vibrato.curve": "Linear",
+        "level.start": [
+          0.6,
+          0.8
+        ],
+        "level.end": [
+          0.4,
+          0.65
+        ],
+        "level.curve": "Smooth"
+      },
+      "intervals": {
+        "pitch": [
+          -0.07,
+          0.07
+        ]
+      },
+      "preserve": false,
+      "variation": {
+        "pitch": 0.035,
+        "tone": 0.06,
+        "noise": 0.025,
+        "vibrato": 0.05,
+        "level": 0.06
+      }
+    },
+    {
+      "id": "fuzzy_chirps",
+      "name": "Fuzzy Chirps",
+      "source_group": "Fuzzy Chirps",
+      "tip": "Tiny bright buzzes with a pitched chirp inside a fuzzy edge.",
+      "limits": {
+        "waveTo": -1,
+        "waveType": 2,
+        "duration": [
+          0.09,
+          0.25
+        ],
+        "attack": [
+          0.001,
+          0.006
+        ],
+        "release": [
+          0.055,
+          0.16
+        ],
+        "echo": 0,
+        "resonance": [
+          0.12,
+          0.35
+        ],
+        "pitch.start": [
+          0.57,
+          0.7
+        ],
+        "pitch.end": [
+          0.69,
+          0.8
+        ],
+        "pitch.curve": "Pulse",
+        "tone.start": [
+          0.68,
+          0.88
+        ],
+        "tone.end": [
+          0.6,
+          0.8
+        ],
+        "tone.curve": "Ease Out",
+        "noise.start": [
+          0.2,
+          0.38
+        ],
+        "noise.end": [
+          0.2,
+          0.38
+        ],
+        "noise.curve": "Linear",
+        "vibrato.start": [
+          0,
+          0.12
+        ],
+        "vibrato.end": [
+          0,
+          0.12
+        ],
+        "vibrato.curve": "Linear",
+        "level.start": [
+          0.6,
+          0.8
+        ],
+        "level.end": [
+          0.15,
+          0.35
+        ],
+        "level.curve": "Ease Out"
+      },
+      "intervals": {},
+      "preserve": false,
+      "variation": {
+        "pitch": 0.035,
+        "tone": 0.06,
+        "noise": 0.025,
+        "vibrato": 0.05,
+        "level": 0.06
+      }
+    },
+    {
+      "id": "bass_plucks",
+      "name": "Bass Plucks",
+      "source_group": "Bass Plucks",
+      "tip": "Low rounded notes with a quick onset and a soft tail.",
+      "limits": {
+        "waveTo": -1
+      },
+      "intervals": {},
+      "preserve": true,
+      "variation": {
+        "pitch": 0.035,
+        "tone": 0.06,
+        "noise": 0.025,
+        "vibrato": 0.05,
+        "level": 0.06
+      }
+    },
+    {
+      "id": "soft_pips",
+      "name": "Soft Pips",
+      "source_group": "Soft Pips",
+      "tip": "Gentle, clean sine pips with a cushioned onset and almost no pitch motion.",
+      "limits": {
+        "waveTo": -1,
+        "waveType": 0,
+        "duration": [
+          0.1,
+          0.19
+        ],
+        "attack": [
+          0.014,
+          0.028
+        ],
+        "release": [
+          0.06,
+          0.14
+        ],
+        "echo": 0,
+        "resonance": [
+          0,
+          0.1
+        ],
+        "pitch.start": [
+          0.42,
+          0.55
+        ],
+        "pitch.end": [
+          0.395,
+          0.565
+        ],
+        "pitch.curve": "Ease Out",
+        "tone.start": [
+          0.48,
+          0.62
+        ],
+        "tone.end": [
+          0.43,
+          0.58
+        ],
+        "tone.curve": "Smooth",
+        "noise.start": 0,
+        "noise.end": 0,
+        "noise.curve": "Linear",
+        "vibrato.start": 0,
+        "vibrato.end": 0,
+        "vibrato.curve": "Linear",
+        "level.start": [
+          0.38,
+          0.55
+        ],
+        "level.end": [
+          0.18,
+          0.35
+        ],
+        "level.curve": "Smooth"
+      },
+      "intervals": {
+        "pitch": [
+          -0.025,
+          0.015
+        ]
+      },
+      "preserve": false,
+      "variation": {
+        "pitch": 0.035,
+        "tone": 0.06,
+        "noise": 0.025,
+        "vibrato": 0.05,
+        "level": 0.06
+      }
+    },
+    {
+      "id": "sand_sprays",
+      "name": "Sand Sprays",
+      "source_group": "Sand Sprays",
+      "tip": "A short bright powdery spray: all grain, with no pitched note.",
+      "limits": {
+        "waveTo": -1,
+        "waveType": 0,
+        "duration": [
+          0.14,
+          0.42
+        ],
+        "attack": [
+          0.001,
+          0.01
+        ],
+        "release": [
+          0.08,
+          0.2
+        ],
+        "echo": 0,
+        "resonance": [
+          0,
+          0.15
+        ],
+        "pitch.start": [
+          0.3,
+          0.45
+        ],
+        "pitch.end": [
+          0.3,
+          0.45
+        ],
+        "pitch.curve": "Linear",
+        "tone.start": [
+          0.64,
+          0.8
+        ],
+        "tone.end": [
+          0.63,
+          0.79
+        ],
+        "tone.curve": "Linear",
+        "noise.start": 1,
+        "noise.end": 1,
+        "noise.curve": "Linear",
+        "vibrato.start": 0,
+        "vibrato.end": 0,
+        "vibrato.curve": "Linear",
+        "level.start": [
+          0.65,
+          0.9
+        ],
+        "level.end": [
+          0.2,
+          0.45
+        ],
+        "level.curve": "Ease Out"
+      },
+      "intervals": {},
+      "preserve": false,
+      "variation": {
+        "pitch": 0.035,
+        "tone": 0.06,
+        "noise": 0.025,
+        "vibrato": 0.05,
+        "level": 0.06
+      }
+    },
+    {
+      "id": "air_currents",
+      "name": "Air Currents",
+      "source_group": "Air Currents",
+      "tip": "A longer, dark breath of air that eases in and out smoothly.",
+      "limits": {
+        "waveTo": -1,
+        "waveType": 0,
+        "duration": [
+          0.9,
+          1.65
+        ],
+        "attack": [
+          0.2,
+          0.45
+        ],
+        "release": [
+          0.35,
+          0.65
+        ],
+        "echo": 0,
+        "resonance": [
+          0.05,
+          0.22
+        ],
+        "pitch.start": [
+          0.25,
+          0.4
+        ],
+        "pitch.end": [
+          0.25,
+          0.4
+        ],
+        "pitch.curve": "Linear",
+        "tone.start": [
+          0.32,
+          0.47
+        ],
+        "tone.end": [
+          0.31,
+          0.46
+        ],
+        "tone.curve": "Smooth",
+        "noise.start": 1,
+        "noise.end": 1,
+        "noise.curve": "Linear",
+        "vibrato.start": 0,
+        "vibrato.end": 0,
+        "vibrato.curve": "Linear",
+        "level.start": [
+          0.55,
+          0.8
+        ],
+        "level.end": [
+          0.4,
+          0.65
+        ],
+        "level.curve": "Smooth"
+      },
+      "intervals": {},
+      "preserve": false,
+      "variation": {
+        "pitch": 0.035,
+        "tone": 0.06,
+        "noise": 0.025,
+        "vibrato": 0.05,
+        "level": 0.06
+      }
+    },
+    {
+      "id": "submarine_calls",
+      "name": "Mournful Calls",
+      "source_group": "Submarine Calls",
+      "tip": "Low, woozy electronic calls with a plaintive, fading voice.",
+      "limits": {
+        "waveTo": -1
+      },
+      "intervals": {},
+      "preserve": true,
+      "variation": {
+        "pitch": 0.035,
+        "tone": 0.06,
+        "noise": 0.025,
+        "vibrato": 0.05,
+        "level": 0.06
+      }
+    },
+    {
+      "id": "arcade_zaps",
+      "name": "Arcade Zaps",
+      "source_group": "Descending Sweeps",
+      "tip": "A sharp sawtooth zap with a quick diving pitch and a bright sting.",
+      "limits": {
+        "waveTo": -1,
+        "waveType": 2,
+        "duration": [
+          0.12,
+          0.27
+        ],
+        "attack": [
+          0,
+          0.003
+        ],
+        "release": [
+          0.075,
+          0.18
+        ],
+        "echo": 0,
+        "resonance": [
+          0.2,
+          0.45
+        ],
+        "pitch.start": [
+          0.67,
+          0.84
+        ],
+        "pitch.end": [
+          0.18,
+          0.3
+        ],
+        "pitch.curve": "Ease Out",
+        "tone.start": [
+          0.78,
+          0.95
+        ],
+        "tone.end": [
+          0.25,
+          0.45
+        ],
+        "tone.curve": "Ease Out",
+        "noise.start": [
+          0,
+          0.06
+        ],
+        "noise.end": [
+          0,
+          0.06
+        ],
+        "noise.curve": "Linear",
+        "vibrato.start": 0,
+        "vibrato.end": 0,
+        "vibrato.curve": "Linear",
+        "level.start": [
+          0.75,
+          0.95
+        ],
+        "level.end": [
+          0.08,
+          0.25
+        ],
+        "level.curve": "Ease Out"
+      },
+      "intervals": {},
+      "preserve": false,
+      "variation": {
+        "pitch": 0.035,
+        "tone": 0.06,
+        "noise": 0.025,
+        "vibrato": 0.05,
+        "level": 0.06
+      }
+    },
+    {
+      "id": "bubble_pops",
+      "name": "Bubble Pops",
+      "source_group": "Rising Bloops",
+      "tip": "Round little water-note pops: a sine voice that curls up and back.",
+      "limits": {
+        "waveTo": -1,
+        "waveType": 0,
+        "duration": [
+          0.12,
+          0.28
+        ],
+        "attack": [
+          0.001,
+          0.004
+        ],
+        "release": [
+          0.065,
+          0.2
+        ],
+        "echo": 0,
+        "resonance": [
+          0.15,
+          0.4
+        ],
+        "pitch.start": [
+          0.23,
+          0.38
+        ],
+        "pitch.end": [
+          0.43,
+          0.65
+        ],
+        "pitch.curve": "Pulse",
+        "tone.start": [
+          0.55,
+          0.7
+        ],
+        "tone.end": [
+          0.5,
+          0.65
+        ],
+        "tone.curve": "Smooth",
+        "noise.start": 0,
+        "noise.end": 0,
+        "noise.curve": "Linear",
+        "vibrato.start": 0,
+        "vibrato.end": 0,
+        "vibrato.curve": "Linear",
+        "level.start": [
+          0.7,
+          0.9
+        ],
+        "level.end": [
+          0.05,
+          0.2
+        ],
+        "level.curve": "Ease Out"
+      },
+      "intervals": {
+        "pitch": [
+          0.15,
+          0.3
+        ]
+      },
+      "preserve": false,
+      "variation": {
+        "pitch": 0.035,
+        "tone": 0.06,
+        "noise": 0.025,
+        "vibrato": 0.05,
+        "level": 0.06
+      }
+    },
+    {
+      "id": "rubber_clicks",
+      "name": "Rubber Clicks",
+      "source_group": "Rubber Clicks",
+      "tip": "Short rubbery ticks and cushioned clicks, kept close to the original voice.",
+      "limits": {
+        "waveTo": -1,
+        "duration": [
+          0.065,
+          0.25
+        ],
+        "echo": 0
+      },
+      "intervals": {},
+      "preserve": true,
+      "variation": {
+        "pitch": 0.035,
+        "tone": 0.06,
+        "noise": 0.025,
+        "vibrato": 0.05,
+        "level": 0.06
+      }
+    },
+    {
+      "id": "bubble_swells",
+      "name": "Bubble Swells",
+      "source_group": "Reverse Bloops",
+      "tip": "A rounded sine bloop that swells to a small peak, then stops.",
+      "limits": {
+        "waveTo": -1,
+        "waveType": 0,
+        "duration": [
+          0.28,
+          0.5
+        ],
+        "attack": [
+          0.19,
+          0.36
+        ],
+        "release": [
+          0.035,
+          0.065
+        ],
+        "echo": 0,
+        "resonance": [
+          0.08,
+          0.25
+        ],
+        "pitch.start": [
+          0.37,
+          0.5
+        ],
+        "pitch.end": [
+          0.4,
+          0.55
+        ],
+        "pitch.curve": "Smooth",
+        "tone.start": [
+          0.47,
+          0.62
+        ],
+        "tone.end": [
+          0.55,
+          0.7
+        ],
+        "tone.curve": "Smooth",
+        "noise.start": 0,
+        "noise.end": 0,
+        "noise.curve": "Linear",
+        "vibrato.start": 0,
+        "vibrato.end": 0,
+        "vibrato.curve": "Linear",
+        "level.start": [
+          0.35,
+          0.55
+        ],
+        "level.end": [
+          0.65,
+          0.85
+        ],
+        "level.curve": "Ease In"
+      },
+      "intervals": {
+        "pitch": [
+          0,
+          0.055
+        ]
+      },
+      "preserve": false,
+      "variation": {
+        "pitch": 0.035,
+        "tone": 0.06,
+        "noise": 0.025,
+        "vibrato": 0.05,
+        "level": 0.06
+      }
+    },
+    {
+      "id": "static_flecks",
+      "name": "Radio Spits",
+      "source_group": "Static Flecks",
+      "tip": "Brief fragments of filtered radio grit, dry and rough around the edges.",
+      "limits": {
+        "waveTo": -1,
+        "duration": [
+          0.065,
+          0.32
+        ],
+        "echo": 0
+      },
+      "intervals": {},
+      "preserve": true,
+      "variation": {
+        "pitch": 0.035,
+        "tone": 0.06,
+        "noise": 0.025,
+        "vibrato": 0.05,
+        "level": 0.06
+      }
+    }
+  ]
+}

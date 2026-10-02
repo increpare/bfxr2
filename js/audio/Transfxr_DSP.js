@@ -49,9 +49,13 @@ class Transfxr_DSP {
         const release = Math.max(0.006, p.release) * rate;
         const damping = 1 / (0.707 + p.resonance * 5);
         const waveform = BfxrWaveforms.create([2,4,1,0,8,6,7,3,11,9,5,10][p.waveType] ?? 2);
+        const destination=Number.isInteger(p.waveTo)&&p.waveTo>=0 ? BfxrWaveforms.create([2,4,1,0,8,6,7,3,11,9,5,10][p.waveTo]??2) : null;
+        const morph=this.transition(p.morph||{start:0,end:1,curve:'Smooth'});
+        let blend=p.morph?p.morph.start:0;
         let phase = 0, ic1 = 0, ic2 = 0, seed = 0x12345678;
         for (let i = 0; i < count; i++) {
             const t = i / (count - 1);
+            if(destination)blend+=(morph(t)-blend)*.012;
             // Two millisecond smoothing avoids clicks with stepped transitions.
             for (let j = 0; j < controls.length; j++) values[j] += (envelopes[j](t) - values[j]) * 0.012;
             const [pitch, tone, noise, vibrato, level] = values;
@@ -62,7 +66,8 @@ class Transfxr_DSP {
             let sample = 0;
             // Oversample oscillator + topology-preserving state-variable filter.
             for (let sub = 0; sub < 2; sub++) {
-                const osc = waveform(phase, step);
+                const source = waveform(phase, step);
+                const osc = destination ? source*(1-blend)+destination(phase,step)*blend : source;
                 phase = (phase + step) % 1;
                 seed ^= seed << 13; seed ^= seed >>> 17; seed ^= seed << 5;
                 const white = (seed >>> 0) / 2147483648 - 1;

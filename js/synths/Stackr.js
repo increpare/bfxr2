@@ -62,10 +62,13 @@ class Stackr extends PresetSynth {
         // Apply editable scores last: generator controls can otherwise replace saved notes.
         const controls = synth.param_info.map(info => synth.get_param_normalized(info));
         controls.sort((a,b) => Number(a.type === 'TEXT') - Number(b.type === 'TEXT'));
-        for (const info of controls) {
-            const name = info.name;
-            if (params && Object.prototype.hasOwnProperty.call(params, name)) synth.set_param(name, params[name]);
-        }
+        const known={};
+        for(const info of controls)if(params&&Object.prototype.hasOwnProperty.call(params,info.name))known[info.name]=params[info.name];
+        // Run each engine's full-snapshot migrations before validating individual values.
+        synth.apply_params(known);
+        const migrated={...synth.params};
+        synth.params=synth.default_params();
+        for(const info of controls)synth.set_param(info.name,migrated[info.name]);
         return JSON.parse(JSON.stringify(synth.params));
     }
 
