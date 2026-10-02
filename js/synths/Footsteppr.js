@@ -115,6 +115,7 @@ class Footsteppr extends SynthBase {
     /*********************/
     
     generate_sound(){
+        if (this.sound) this.sound.stop();
         var step_heel = this.params.heel;
         var step_roll = this.params.roll;
         var step_ball = this.params.ball;
@@ -142,6 +143,7 @@ class Footsteppr extends SynthBase {
         signal = pd_mul(signal, pd_c(4.0));
     
         this.sound = RealizedSound.from_buffer(signal);
+        this.sound_params = JSON.stringify(this.params);
     }
  
     generate_terrain_texture(envelope_signal){
@@ -156,5 +158,4 @@ class Footsteppr extends SynthBase {
     }
     
 }
-
 

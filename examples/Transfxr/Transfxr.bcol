@@ -1,0 +1,64 @@
+{
+  "Transfxr": {
+    "files": [
+      [
+        "LaserZip",
+        "{\"masterVolume\":0.5,\"waveType\":2,\"duration\":0.22,\"pitch\":{\"start\":0.82,\"end\":0.22,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.95,\"end\":0.25,\"curve\":\"Linear\"},\"noise\":{\"start\":0,\"end\":0,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.9,\"end\":0.25,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.14,\"resonance\":0.32,\"echo\":0.14}",
+        "{\"masterVolume\":0.5,\"waveType\":2,\"duration\":0.22,\"pitch\":{\"start\":0.82,\"end\":0.22,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.95,\"end\":0.25,\"curve\":\"Linear\"},\"noise\":{\"start\":0,\"end\":0,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.9,\"end\":0.25,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.14,\"resonance\":0.32,\"echo\":0.14}"
+      ],
+      [
+        "BubbleDrop",
+        "{\"masterVolume\":0.5,\"waveType\":0,\"duration\":0.38,\"pitch\":{\"start\":0.29,\"end\":0.68,\"curve\":\"Bounce\"},\"tone\":{\"start\":0.9,\"end\":0.65,\"curve\":\"Linear\"},\"noise\":{\"start\":0,\"end\":0,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.95,\"end\":0.1,\"curve\":\"Linear\"},\"attack\":0.003,\"release\":0.26,\"resonance\":0.15,\"echo\":0.18}",
+        "{\"masterVolume\":0.5,\"waveType\":0,\"duration\":0.38,\"pitch\":{\"start\":0.29,\"end\":0.68,\"curve\":\"Bounce\"},\"tone\":{\"start\":0.9,\"end\":0.65,\"curve\":\"Linear\"},\"noise\":{\"start\":0,\"end\":0,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.95,\"end\":0.1,\"curve\":\"Linear\"},\"attack\":0.003,\"release\":0.26,\"resonance\":0.15,\"echo\":0.18}"
+      ],
+      [
+        "PortalBloom",
+        "{\"masterVolume\":0.5,\"waveType\":2,\"duration\":1.9,\"pitch\":{\"start\":0.18,\"end\":0.5,\"curve\":\"Smooth\"},\"tone\":{\"start\":0.1,\"end\":0.85,\"curve\":\"Pulse\"},\"noise\":{\"start\":0.08,\"end\":0.32,\"curve\":\"Pulse\"},\"vibrato\":{\"start\":0.03,\"end\":0.65,\"curve\":\"Ease In\"},\"level\":{\"start\":0.45,\"end\":0.95,\"curve\":\"Pulse\"},\"attack\":0.5,\"release\":0.65,\"resonance\":0.55,\"echo\":0.62}",
+        "{\"masterVolume\":0.5,\"waveType\":2,\"duration\":1.9,\"pitch\":{\"start\":0.18,\"end\":0.5,\"curve\":\"Smooth\"},\"tone\":{\"start\":0.1,\"end\":0.85,\"curve\":\"Pulse\"},\"noise\":{\"start\":0.08,\"end\":0.32,\"curve\":\"Pulse\"},\"vibrato\":{\"start\":0.03,\"end\":0.65,\"curve\":\"Ease In\"},\"level\":{\"start\":0.45,\"end\":0.95,\"curve\":\"Pulse\"},\"attack\":0.5,\"release\":0.65,\"resonance\":0.55,\"echo\":0.62}"
+      ],
+      [
+        "PowerUp",
+        "{\"masterVolume\":0.5,\"waveType\":3,\"duration\":0.72,\"pitch\":{\"start\":0.35,\"end\":0.64,\"curve\":\"Steps\"},\"tone\":{\"start\":0.55,\"end\":0.95,\"curve\":\"Ease In\"},\"noise\":{\"start\":0,\"end\":0,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.7,\"end\":0.9,\"curve\":\"Linear\"},\"attack\":0.01,\"release\":0.16,\"resonance\":0.12,\"echo\":0.38}",
+        "{\"masterVolume\":0.5,\"waveType\":3,\"duration\":0.72,\"pitch\":{\"start\":0.35,\"end\":0.64,\"curve\":\"Steps\"},\"tone\":{\"start\":0.55,\"end\":0.95,\"curve\":\"Ease In\"},\"noise\":{\"start\":0,\"end\":0,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.7,\"end\":0.9,\"curve\":\"Linear\"},\"attack\":0.01,\"release\":0.16,\"resonance\":0.12,\"echo\":0.38}"
+      ],
+      [
+        "SoftLanding",
+        "{\"masterVolume\":0.5,\"waveType\":1,\"duration\":0.58,\"pitch\":{\"start\":0.25,\"end\":0.02,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.6,\"end\":0.08,\"curve\":\"Ease Out\"},\"noise\":{\"start\":0.3,\"end\":0.6,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0,\"curve\":\"Linear\"},\"attack\":0.004,\"release\":0.5,\"resonance\":0.2,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"waveType\":1,\"duration\":0.58,\"pitch\":{\"start\":0.25,\"end\":0.02,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.6,\"end\":0.08,\"curve\":\"Ease Out\"},\"noise\":{\"start\":0.3,\"end\":0.6,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0,\"curve\":\"Linear\"},\"attack\":0.004,\"release\":0.5,\"resonance\":0.2,\"echo\":0}"
+      ],
+      [
+        "ClockworkBird",
+        "{\"masterVolume\":0.5,\"waveType\":1,\"duration\":0.44,\"pitch\":{\"start\":0.62,\"end\":0.85,\"curve\":\"Triangle\"},\"tone\":{\"start\":0.7,\"end\":1,\"curve\":\"Linear\"},\"noise\":{\"start\":0,\"end\":0,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0.05,\"end\":0.8,\"curve\":\"Ease In\"},\"level\":{\"start\":0.8,\"end\":0.55,\"curve\":\"Linear\"},\"attack\":0.012,\"release\":0.12,\"resonance\":0.3,\"echo\":0.32}",
+        "{\"masterVolume\":0.5,\"waveType\":1,\"duration\":0.44,\"pitch\":{\"start\":0.62,\"end\":0.85,\"curve\":\"Triangle\"},\"tone\":{\"start\":0.7,\"end\":1,\"curve\":\"Linear\"},\"noise\":{\"start\":0,\"end\":0,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0.05,\"end\":0.8,\"curve\":\"Ease In\"},\"level\":{\"start\":0.8,\"end\":0.55,\"curve\":\"Linear\"},\"attack\":0.012,\"release\":0.12,\"resonance\":0.3,\"echo\":0.32}"
+      ],
+      [
+        "GhostSignal",
+        "{\"masterVolume\":0.5,\"waveType\":0,\"duration\":1.45,\"pitch\":{\"start\":0.62,\"end\":0.35,\"curve\":\"Smooth\"},\"tone\":{\"start\":0.75,\"end\":0.3,\"curve\":\"Linear\"},\"noise\":{\"start\":0,\"end\":0.4,\"curve\":\"Ease In\"},\"vibrato\":{\"start\":0.9,\"end\":0.05,\"curve\":\"Ease Out\"},\"level\":{\"start\":0.75,\"end\":0.12,\"curve\":\"Linear\"},\"attack\":0.22,\"release\":0.55,\"resonance\":0.65,\"echo\":0.65}",
+        "{\"masterVolume\":0.5,\"waveType\":0,\"duration\":1.45,\"pitch\":{\"start\":0.62,\"end\":0.35,\"curve\":\"Smooth\"},\"tone\":{\"start\":0.75,\"end\":0.3,\"curve\":\"Linear\"},\"noise\":{\"start\":0,\"end\":0.4,\"curve\":\"Ease In\"},\"vibrato\":{\"start\":0.9,\"end\":0.05,\"curve\":\"Ease Out\"},\"level\":{\"start\":0.75,\"end\":0.12,\"curve\":\"Linear\"},\"attack\":0.22,\"release\":0.55,\"resonance\":0.65,\"echo\":0.65}"
+      ],
+      [
+        "Airlock",
+        "{\"masterVolume\":0.5,\"waveType\":2,\"duration\":1.15,\"pitch\":{\"start\":0.1,\"end\":0.04,\"curve\":\"Linear\"},\"tone\":{\"start\":0.12,\"end\":0.85,\"curve\":\"Triangle\"},\"noise\":{\"start\":0.95,\"end\":1,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.7,\"end\":0.95,\"curve\":\"Pulse\"},\"attack\":0.12,\"release\":0.5,\"resonance\":0.75,\"echo\":0.12}",
+        "{\"masterVolume\":0.5,\"waveType\":2,\"duration\":1.15,\"pitch\":{\"start\":0.1,\"end\":0.04,\"curve\":\"Linear\"},\"tone\":{\"start\":0.12,\"end\":0.85,\"curve\":\"Triangle\"},\"noise\":{\"start\":0.95,\"end\":1,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.7,\"end\":0.95,\"curve\":\"Pulse\"},\"attack\":0.12,\"release\":0.5,\"resonance\":0.75,\"echo\":0.12}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "waveType": false,
+      "duration": false,
+      "pitch": false,
+      "tone": false,
+      "noise": false,
+      "vibrato": false,
+      "level": false,
+      "attack": false,
+      "release": false,
+      "resonance": false,
+      "echo": false
+    }
+  },
+  "active_tab_index": 2
+}

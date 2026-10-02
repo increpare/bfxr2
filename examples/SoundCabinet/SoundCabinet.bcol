@@ -1,0 +1,380 @@
+{
+  "Clonkr": {
+    "files": [
+      [
+        "Teacup",
+        "{\"masterVolume\":0.5,\"seed\":0.01650611450895667,\"material\":3,\"action\":0,\"size\":0.24438725168351083,\"hollowness\":0.9453925085486844,\"hardness\":0.7506795993656852,\"damping\":0.3178439648868516,\"duration\":0.6593673858675174}",
+        "{\"masterVolume\":0.5,\"seed\":0.01650611450895667,\"material\":3,\"action\":0,\"size\":0.24438725168351083,\"hollowness\":0.9453925085486844,\"hardness\":0.7506795993656852,\"damping\":0.3178439648868516,\"duration\":0.6593673858675174}"
+      ],
+      [
+        "Glass Ping",
+        "{\"masterVolume\":0.5,\"seed\":0.24550862307660282,\"material\":1,\"action\":0,\"size\":0.15102862073574214,\"hollowness\":0.5663485410623252,\"hardness\":0.9811044543981552,\"damping\":0.06942638361360878,\"duration\":0.7953493769513442}",
+        "{\"masterVolume\":0.5,\"seed\":0.24550862307660282,\"material\":1,\"action\":0,\"size\":0.15102862073574214,\"hollowness\":0.5663485410623252,\"hardness\":0.9811044543981552,\"damping\":0.06942638361360878,\"duration\":0.7953493769513442}"
+      ],
+      [
+        "Wood Knock",
+        "{\"masterVolume\":0.5,\"seed\":0.2529584248550236,\"material\":0,\"action\":0,\"size\":0.6217245264351368,\"hollowness\":0.27093100508209317,\"hardness\":0.3561950127827003,\"damping\":0.6067779316520319,\"duration\":0.36091945953667165}",
+        "{\"masterVolume\":0.5,\"seed\":0.2529584248550236,\"material\":0,\"action\":0,\"size\":0.6217245264351368,\"hollowness\":0.27093100508209317,\"hardness\":0.3561950127827003,\"damping\":0.6067779316520319,\"duration\":0.36091945953667165}"
+      ],
+      [
+        "Dungeon Gate",
+        "{\"masterVolume\":0.5,\"seed\":0.2640867850277573,\"material\":2,\"action\":1,\"size\":0.964167828662321,\"hollowness\":0.8926637922879308,\"hardness\":0.5840837792959064,\"damping\":0.16176907823886721,\"duration\":1.459298206679523}",
+        "{\"masterVolume\":0.5,\"seed\":0.2640867850277573,\"material\":2,\"action\":1,\"size\":0.964167828662321,\"hollowness\":0.8926637922879308,\"hardness\":0.5840837792959064,\"damping\":0.16176907823886721,\"duration\":1.459298206679523}"
+      ],
+      [
+        "Metal Clang",
+        "{\"masterVolume\":0.5,\"seed\":0.9911941438913345,\"material\":2,\"action\":0,\"size\":0.4258036044612527,\"hollowness\":0.14912080013891682,\"hardness\":0.817773052235134,\"damping\":0.1689107595128007,\"duration\":1.0139291048049928}",
+        "{\"masterVolume\":0.5,\"seed\":0.9911941438913345,\"material\":2,\"action\":0,\"size\":0.4258036044612527,\"hollowness\":0.14912080013891682,\"hardness\":0.817773052235134,\"damping\":0.1689107595128007,\"duration\":1.0139291048049928}"
+      ],
+      [
+        "Ceramic Crack",
+        "{\"masterVolume\":0.5,\"seed\":0.7287570578046143,\"material\":3,\"action\":2,\"size\":0.39586126156151297,\"hollowness\":0.08903445560717956,\"hardness\":0.9423358097206801,\"damping\":0.8389098793640732,\"duration\":0.19149832956492902}",
+        "{\"masterVolume\":0.5,\"seed\":0.7287570578046143,\"material\":3,\"action\":2,\"size\":0.39586126156151297,\"hollowness\":0.08903445560717956,\"hardness\":0.9423358097206801,\"damping\":0.8389098793640732,\"duration\":0.19149832956492902}"
+      ],
+      [
+        "Rubber Thud",
+        "{\"masterVolume\":0.5,\"seed\":0.9479855720419437,\"material\":4,\"action\":0,\"size\":0.7359447434544564,\"hollowness\":0.5014931355370209,\"hardness\":0.12189161175629123,\"damping\":0.6072206181474029,\"duration\":0.5440964375506155}",
+        "{\"masterVolume\":0.5,\"seed\":0.9479855720419437,\"material\":4,\"action\":0,\"size\":0.7359447434544564,\"hollowness\":0.5014931355370209,\"hardness\":0.12189161175629123,\"damping\":0.6072206181474029,\"duration\":0.5440964375506155}"
+      ],
+      [
+        "Loose Bolts",
+        "{\"masterVolume\":0.5,\"seed\":0.7716412427835166,\"material\":2,\"action\":2,\"size\":0.35101884624455126,\"hollowness\":0.037874708243180066,\"hardness\":0.7151557521894574,\"damping\":0.5481873708963394,\"duration\":0.6838918898371049}",
+        "{\"masterVolume\":0.5,\"seed\":0.7716412427835166,\"material\":2,\"action\":2,\"size\":0.35101884624455126,\"hollowness\":0.037874708243180066,\"hardness\":0.7151557521894574,\"damping\":0.5481873708963394,\"duration\":0.6838918898371049}"
+      ],
+      [
+        "Dragged Crate",
+        "{\"masterVolume\":0.5,\"seed\":0.008865581592544913,\"material\":0,\"action\":1,\"size\":0.925229584891349,\"hollowness\":0.7679050651378929,\"hardness\":0.6952302385121585,\"damping\":0.8174621805432252,\"duration\":1.002798690961208}",
+        "{\"masterVolume\":0.5,\"seed\":0.008865581592544913,\"material\":0,\"action\":1,\"size\":0.925229584891349,\"hollowness\":0.7679050651378929,\"hardness\":0.6952302385121585,\"damping\":0.8174621805432252,\"duration\":1.002798690961208}"
+      ],
+      [
+        "Coin Drop",
+        "{\"masterVolume\":0.5,\"seed\":0.5208220798522234,\"material\":2,\"action\":2,\"size\":0.13585761402500796,\"hollowness\":0.014855268236715347,\"hardness\":0.982601002138108,\"damping\":0.308724251948297,\"duration\":0.34958948400337253}",
+        "{\"masterVolume\":0.5,\"seed\":0.5208220798522234,\"material\":2,\"action\":2,\"size\":0.13585761402500796,\"hollowness\":0.014855268236715347,\"hardness\":0.982601002138108,\"damping\":0.308724251948297,\"duration\":0.34958948400337253}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "material": false,
+      "action": false,
+      "size": false,
+      "hollowness": false,
+      "hardness": false,
+      "damping": false,
+      "duration": false
+    }
+  },
+  "Machinr": {
+    "files": [
+      [
+        "Tiny Motor",
+        "{\"masterVolume\":0.5,\"seed\":0.9782020093407482,\"mechanism\":0,\"duration\":1.053809675015509,\"speed\":0.7513685740064829,\"load\":0.2378717912477441,\"roughness\":0.04197903785388917,\"looseness\":0.15580036161467434,\"size\":0.23044419676996766,\"startTime\":0.19239622413646432,\"stopTime\":0.2642668912303634}",
+        "{\"masterVolume\":0.5,\"seed\":0.9782020093407482,\"mechanism\":0,\"duration\":1.053809675015509,\"speed\":0.7513685740064829,\"load\":0.2378717912477441,\"roughness\":0.04197903785388917,\"looseness\":0.15580036161467434,\"size\":0.23044419676996766,\"startTime\":0.19239622413646432,\"stopTime\":0.2642668912303634}"
+      ],
+      [
+        "Rusty Winch",
+        "{\"masterVolume\":0.5,\"seed\":0.738931080326438,\"mechanism\":1,\"duration\":2.1958486964227633,\"speed\":0.34725439392961566,\"load\":0.7754908430506475,\"roughness\":0.7702330896863714,\"looseness\":0.7516989188268781,\"size\":0.6454159159911796,\"startTime\":0.14991007189266384,\"stopTime\":0.2919259072979913}",
+        "{\"masterVolume\":0.5,\"seed\":0.738931080326438,\"mechanism\":1,\"duration\":2.1958486964227633,\"speed\":0.34725439392961566,\"load\":0.7754908430506475,\"roughness\":0.7702330896863714,\"looseness\":0.7516989188268781,\"size\":0.6454159159911796,\"startTime\":0.14991007189266384,\"stopTime\":0.2919259072979913}"
+      ],
+      [
+        "Camera Shutter",
+        "{\"masterVolume\":0.5,\"seed\":0.9137043675873429,\"mechanism\":2,\"duration\":0.26099934890866283,\"speed\":0.9337966150138527,\"load\":0.20145860495977103,\"roughness\":0.030450411760248243,\"looseness\":0.3246663269819692,\"size\":0.1374537725932896,\"startTime\":0.003069405108690262,\"stopTime\":0.06460078628035262}",
+        "{\"masterVolume\":0.5,\"seed\":0.9137043675873429,\"mechanism\":2,\"duration\":0.26099934890866283,\"speed\":0.9337966150138527,\"load\":0.20145860495977103,\"roughness\":0.030450411760248243,\"looseness\":0.3246663269819692,\"size\":0.1374537725932896,\"startTime\":0.003069405108690262,\"stopTime\":0.06460078628035262}"
+      ],
+      [
+        "Clockwork",
+        "{\"masterVolume\":0.5,\"seed\":0.4348544334061444,\"mechanism\":3,\"duration\":1.7472984469495714,\"speed\":0.42839096058625725,\"load\":0.2755051698419265,\"roughness\":0.033529435843229295,\"looseness\":0.4216029661591164,\"size\":0.10101679019397125,\"startTime\":0.010918380537070334,\"stopTime\":0.14898234031163154}",
+        "{\"masterVolume\":0.5,\"seed\":0.4348544334061444,\"mechanism\":3,\"duration\":1.7472984469495714,\"speed\":0.42839096058625725,\"load\":0.2755051698419265,\"roughness\":0.033529435843229295,\"looseness\":0.4216029661591164,\"size\":0.10101679019397125,\"startTime\":0.010918380537070334,\"stopTime\":0.14898234031163154}"
+      ],
+      [
+        "Engine Trouble",
+        "{\"masterVolume\":0.5,\"seed\":0.7888092144858092,\"mechanism\":4,\"duration\":2.2845411407761276,\"speed\":0.47922773609170694,\"load\":0.7634433334693312,\"roughness\":0.7402559756301343,\"looseness\":0.8230678131338209,\"size\":0.693560060672462,\"startTime\":0.4973280373727903,\"stopTime\":0.38418172544334084}",
+        "{\"masterVolume\":0.5,\"seed\":0.7888092144858092,\"mechanism\":4,\"duration\":2.2845411407761276,\"speed\":0.47922773609170694,\"load\":0.7634433334693312,\"roughness\":0.7402559756301343,\"looseness\":0.8230678131338209,\"size\":0.693560060672462,\"startTime\":0.4973280373727903,\"stopTime\":0.38418172544334084}"
+      ],
+      [
+        "Servo",
+        "{\"masterVolume\":0.5,\"seed\":0.5748138870112598,\"mechanism\":5,\"duration\":0.6955304864328354,\"speed\":0.772771318256855,\"load\":0.504240649403073,\"roughness\":0.04511861835606396,\"looseness\":0.06127009289106354,\"size\":0.39458900338504466,\"startTime\":0.01018658164795488,\"stopTime\":0.029553247268777342}",
+        "{\"masterVolume\":0.5,\"seed\":0.5748138870112598,\"mechanism\":5,\"duration\":0.6955304864328354,\"speed\":0.772771318256855,\"load\":0.504240649403073,\"roughness\":0.04511861835606396,\"looseness\":0.06127009289106354,\"size\":0.39458900338504466,\"startTime\":0.01018658164795488,\"stopTime\":0.029553247268777342}"
+      ],
+      [
+        "Windup Toy",
+        "{\"masterVolume\":0.5,\"seed\":0.48522627679631114,\"mechanism\":6,\"duration\":1.9991945147514343,\"speed\":0.661767122708261,\"load\":0.3572019627084956,\"roughness\":0.38829735047183933,\"looseness\":0.7546873429091647,\"size\":0.24060492190066723,\"startTime\":0.07247934277635068,\"stopTime\":0.5445132771972567}",
+        "{\"masterVolume\":0.5,\"seed\":0.48522627679631114,\"mechanism\":6,\"duration\":1.9991945147514343,\"speed\":0.661767122708261,\"load\":0.3572019627084956,\"roughness\":0.38829735047183933,\"looseness\":0.7546873429091647,\"size\":0.24060492190066723,\"startTime\":0.07247934277635068,\"stopTime\":0.5445132771972567}"
+      ],
+      [
+        "Heavy Door",
+        "{\"masterVolume\":0.5,\"seed\":0.6175696118734777,\"mechanism\":7,\"duration\":2.0015272730728615,\"speed\":0.4349554209038615,\"load\":0.9621512986137531,\"roughness\":0.7149547661887481,\"looseness\":0.640234059235081,\"size\":0.9242458551889285,\"startTime\":0.1812469304539263,\"stopTime\":0.13239584885537625}",
+        "{\"masterVolume\":0.5,\"seed\":0.6175696118734777,\"mechanism\":7,\"duration\":2.0015272730728615,\"speed\":0.4349554209038615,\"load\":0.9621512986137531,\"roughness\":0.7149547661887481,\"looseness\":0.640234059235081,\"size\":0.9242458551889285,\"startTime\":0.1812469304539263,\"stopTime\":0.13239584885537625}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "mechanism": false,
+      "duration": false,
+      "speed": false,
+      "load": false,
+      "roughness": false,
+      "looseness": false,
+      "size": false,
+      "startTime": false,
+      "stopTime": false
+    }
+  },
+  "Weathr": {
+    "files": [
+      [
+        "Soft Wind",
+        "{\"masterVolume\":0.5,\"seed\":0.393116939580068,\"environment\":0,\"duration\":6.671507676132023,\"density\":0.2777087383670732,\"turbulence\":0.2058041868498549,\"brightness\":0.2783967202762142,\"scale\":0.7941733154817484,\"detail\":0.10706319174496458}",
+        "{\"masterVolume\":0.5,\"seed\":0.393116939580068,\"environment\":0,\"duration\":6.671507676132023,\"density\":0.2777087383670732,\"turbulence\":0.2058041868498549,\"brightness\":0.2783967202762142,\"scale\":0.7941733154817484,\"detail\":0.10706319174496458}"
+      ],
+      [
+        "Rainfall",
+        "{\"masterVolume\":0.5,\"seed\":0.7683042443823069,\"environment\":1,\"duration\":6.548026475124061,\"density\":0.46408888269215826,\"turbulence\":0.28675989541225133,\"brightness\":0.7226564910495654,\"scale\":0.32866383623331785,\"detail\":0.7269721173797734}",
+        "{\"masterVolume\":0.5,\"seed\":0.7683042443823069,\"environment\":1,\"duration\":6.548026475124061,\"density\":0.46408888269215826,\"turbulence\":0.28675989541225133,\"brightness\":0.7226564910495654,\"scale\":0.32866383623331785,\"detail\":0.7269721173797734}"
+      ],
+      [
+        "Campfire",
+        "{\"masterVolume\":0.5,\"seed\":0.8796809790655971,\"environment\":2,\"duration\":6.523023949936032,\"density\":0.37932991777779534,\"turbulence\":0.5262106423848308,\"brightness\":0.5401979553280398,\"scale\":0.6552896949229763,\"detail\":0.8130433061276562}",
+        "{\"masterVolume\":0.5,\"seed\":0.8796809790655971,\"environment\":2,\"duration\":6.523023949936032,\"density\":0.37932991777779534,\"turbulence\":0.5262106423848308,\"brightness\":0.5401979553280398,\"scale\":0.6552896949229763,\"detail\":0.8130433061276562}"
+      ],
+      [
+        "Bubbling Stream",
+        "{\"masterVolume\":0.5,\"seed\":0.3389104320667684,\"environment\":3,\"duration\":6.610209407284856,\"density\":0.38390697075519714,\"turbulence\":0.35354230944067244,\"brightness\":0.6921141091501339,\"scale\":0.31536102532409127,\"detail\":0.8653178050182759}",
+        "{\"masterVolume\":0.5,\"seed\":0.3389104320667684,\"environment\":3,\"duration\":6.610209407284856,\"density\":0.38390697075519714,\"turbulence\":0.35354230944067244,\"brightness\":0.6921141091501339,\"scale\":0.31536102532409127,\"detail\":0.8653178050182759}"
+      ],
+      [
+        "Electric Crackle",
+        "{\"masterVolume\":0.5,\"seed\":0.14154273318126798,\"environment\":4,\"duration\":4.96472789440304,\"density\":0.5295060127042234,\"turbulence\":0.28338493974879386,\"brightness\":0.8578606587601825,\"scale\":0.1284739548107609,\"detail\":0.8236505615874193}",
+        "{\"masterVolume\":0.5,\"seed\":0.14154273318126798,\"environment\":4,\"duration\":4.96472789440304,\"density\":0.5295060127042234,\"turbulence\":0.28338493974879386,\"brightness\":0.8578606587601825,\"scale\":0.1284739548107609,\"detail\":0.8236505615874193}"
+      ],
+      [
+        "Storm Front",
+        "{\"masterVolume\":0.5,\"seed\":0.502292979741469,\"environment\":1,\"duration\":8.520225770538673,\"density\":0.8552516535972244,\"turbulence\":0.9647060809424147,\"brightness\":0.4572420350741595,\"scale\":0.8791232220828533,\"detail\":0.5880664207739755}",
+        "{\"masterVolume\":0.5,\"seed\":0.502292979741469,\"environment\":1,\"duration\":8.520225770538673,\"density\":0.8552516535972244,\"turbulence\":0.9647060809424147,\"brightness\":0.4572420350741595,\"scale\":0.8791232220828533,\"detail\":0.5880664207739755}"
+      ],
+      [
+        "Ocean Surf",
+        "{\"masterVolume\":0.5,\"seed\":0.19790225569158792,\"environment\":3,\"duration\":8.135620289016515,\"density\":0.9282813221216202,\"turbulence\":0.8041902316268534,\"brightness\":0.43052835860289634,\"scale\":0.9520597346010617,\"detail\":0.12156478842953221}",
+        "{\"masterVolume\":0.5,\"seed\":0.19790225569158792,\"environment\":3,\"duration\":8.135620289016515,\"density\":0.9282813221216202,\"turbulence\":0.8041902316268534,\"brightness\":0.43052835860289634,\"scale\":0.9520597346010617,\"detail\":0.12156478842953221}"
+      ],
+      [
+        "Blizzard",
+        "{\"masterVolume\":0.5,\"seed\":0.5695353338960558,\"environment\":0,\"duration\":7.9908109828829765,\"density\":0.9077137656277046,\"turbulence\":0.6919074469013139,\"brightness\":0.7615421697963028,\"scale\":0.5813228975515812,\"detail\":0.8091902717249468}",
+        "{\"masterVolume\":0.5,\"seed\":0.5695353338960558,\"environment\":0,\"duration\":7.9908109828829765,\"density\":0.9077137656277046,\"turbulence\":0.6919074469013139,\"brightness\":0.7615421697963028,\"scale\":0.5813228975515812,\"detail\":0.8091902717249468}"
+      ],
+      [
+        "Waterfall",
+        "{\"masterVolume\":0.5,\"seed\":0.02174530760385096,\"environment\":3,\"duration\":6.5885595781728625,\"density\":0.9812795755802654,\"turbulence\":0.19563846327364448,\"brightness\":0.6941271055489778,\"scale\":0.8308659586706199,\"detail\":0.29991741249104964}",
+        "{\"masterVolume\":0.5,\"seed\":0.02174530760385096,\"environment\":3,\"duration\":6.5885595781728625,\"density\":0.9812795755802654,\"turbulence\":0.19563846327364448,\"brightness\":0.6941271055489778,\"scale\":0.8308659586706199,\"detail\":0.29991741249104964}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "environment": false,
+      "duration": false,
+      "density": false,
+      "turbulence": false,
+      "brightness": false,
+      "scale": false,
+      "detail": false
+    }
+  },
+  "Jinglr": {
+    "files": [
+      [
+        "Discovery",
+        "{\"masterVolume\":0.5,\"seed\":0.4419344193441934,\"instrumentSeed\":56872,\"phrase\":\"[{\\\"degree\\\":1,\\\"beats\\\":0.75},{\\\"degree\\\":4,\\\"beats\\\":0.25},{\\\"degree\\\":4,\\\"beats\\\":0.75},{\\\"degree\\\":7,\\\"beats\\\":0.25},{\\\"degree\\\":9,\\\"beats\\\":1}]\",\"instrument\":1,\"key\":2,\"scale\":0,\"contour\":0,\"rhythm\":1,\"noteCount\":5,\"octave\":5,\"tempo\":140.55968166561797,\"swing\":0,\"brightness\":0.8083595383912325,\"decay\":0.4141894458909519,\"echo\":0.2574744570534676}",
+        "{\"masterVolume\":0.5,\"seed\":0.4419344193441934,\"instrumentSeed\":56872,\"phrase\":\"[{\\\"degree\\\":1,\\\"beats\\\":0.75},{\\\"degree\\\":4,\\\"beats\\\":0.25},{\\\"degree\\\":4,\\\"beats\\\":0.75},{\\\"degree\\\":7,\\\"beats\\\":0.25},{\\\"degree\\\":9,\\\"beats\\\":1}]\",\"instrument\":1,\"key\":2,\"scale\":0,\"contour\":0,\"rhythm\":1,\"noteCount\":5,\"octave\":5,\"tempo\":140.55968166561797,\"swing\":0,\"brightness\":0.8083595383912325,\"decay\":0.4141894458909519,\"echo\":0.2574744570534676}"
+      ],
+      [
+        "Victory",
+        "{\"masterVolume\":0.5,\"seed\":0.9336993369933699,\"instrumentSeed\":82077,\"phrase\":\"[{\\\"degree\\\":1,\\\"beats\\\":0.75},{\\\"degree\\\":2,\\\"beats\\\":0.25},{\\\"degree\\\":2,\\\"beats\\\":0.75},{\\\"degree\\\":4,\\\"beats\\\":0.25},{\\\"degree\\\":4,\\\"beats\\\":0.75},{\\\"degree\\\":5,\\\"beats\\\":1}]\",\"instrument\":2,\"key\":4,\"scale\":0,\"contour\":0,\"rhythm\":1,\"noteCount\":6,\"octave\":5,\"tempo\":186.17282373365015,\"swing\":0,\"brightness\":0.9943931682500988,\"decay\":0.4969996845698915,\"echo\":0.2853324986994267}",
+        "{\"masterVolume\":0.5,\"seed\":0.9336993369933699,\"instrumentSeed\":82077,\"phrase\":\"[{\\\"degree\\\":1,\\\"beats\\\":0.75},{\\\"degree\\\":2,\\\"beats\\\":0.25},{\\\"degree\\\":2,\\\"beats\\\":0.75},{\\\"degree\\\":4,\\\"beats\\\":0.25},{\\\"degree\\\":4,\\\"beats\\\":0.75},{\\\"degree\\\":5,\\\"beats\\\":1}]\",\"instrument\":2,\"key\":4,\"scale\":0,\"contour\":0,\"rhythm\":1,\"noteCount\":6,\"octave\":5,\"tempo\":186.17282373365015,\"swing\":0,\"brightness\":0.9943931682500988,\"decay\":0.4969996845698915,\"echo\":0.2853324986994267}"
+      ],
+      [
+        "Failure",
+        "{\"masterVolume\":0.5,\"seed\":0.34952349523495235,\"instrumentSeed\":47351,\"phrase\":\"[{\\\"degree\\\":5,\\\"beats\\\":1},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":3,\\\"beats\\\":1},{\\\"degree\\\":0,\\\"beats\\\":2}]\",\"instrument\":0,\"key\":9,\"scale\":1,\"contour\":1,\"rhythm\":3,\"noteCount\":4,\"octave\":3,\"tempo\":104.5387976244092,\"swing\":0,\"brightness\":0.26102045045699923,\"decay\":0.26175007978454234,\"echo\":0.005375348590314388}",
+        "{\"masterVolume\":0.5,\"seed\":0.34952349523495235,\"instrumentSeed\":47351,\"phrase\":\"[{\\\"degree\\\":5,\\\"beats\\\":1},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":3,\\\"beats\\\":1},{\\\"degree\\\":0,\\\"beats\\\":2}]\",\"instrument\":0,\"key\":9,\"scale\":1,\"contour\":1,\"rhythm\":3,\"noteCount\":4,\"octave\":3,\"tempo\":104.5387976244092,\"swing\":0,\"brightness\":0.26102045045699923,\"decay\":0.26175007978454234,\"echo\":0.005375348590314388}"
+      ],
+      [
+        "Secret",
+        "{\"masterVolume\":0.5,\"seed\":0.8550485504855049,\"instrumentSeed\":76037,\"phrase\":\"[{\\\"degree\\\":-3,\\\"beats\\\":0.75},{\\\"degree\\\":-2,\\\"beats\\\":0.25},{\\\"degree\\\":0,\\\"beats\\\":0.75},{\\\"degree\\\":-1,\\\"beats\\\":0.25},{\\\"degree\\\":-2,\\\"beats\\\":1}]\",\"instrument\":1,\"key\":8,\"scale\":1,\"contour\":3,\"rhythm\":1,\"noteCount\":5,\"octave\":5,\"tempo\":113.30406144727021,\"swing\":0,\"brightness\":0.6722239690483548,\"decay\":0.832310945331119,\"echo\":0.488686753041111}",
+        "{\"masterVolume\":0.5,\"seed\":0.8550485504855049,\"instrumentSeed\":76037,\"phrase\":\"[{\\\"degree\\\":-3,\\\"beats\\\":0.75},{\\\"degree\\\":-2,\\\"beats\\\":0.25},{\\\"degree\\\":0,\\\"beats\\\":0.75},{\\\"degree\\\":-1,\\\"beats\\\":0.25},{\\\"degree\\\":-2,\\\"beats\\\":1}]\",\"instrument\":1,\"key\":8,\"scale\":1,\"contour\":3,\"rhythm\":1,\"noteCount\":5,\"octave\":5,\"tempo\":113.30406144727021,\"swing\":0,\"brightness\":0.6722239690483548,\"decay\":0.832310945331119,\"echo\":0.488686753041111}"
+      ],
+      [
+        "Warning",
+        "{\"masterVolume\":0.5,\"seed\":0.5640056400564005,\"instrumentSeed\":69948,\"phrase\":\"[{\\\"degree\\\":-1,\\\"beats\\\":0.25},{\\\"degree\\\":3,\\\"beats\\\":0.5},{\\\"degree\\\":-1,\\\"beats\\\":0.25},{\\\"degree\\\":3,\\\"beats\\\":1}]\",\"instrument\":2,\"key\":1,\"scale\":1,\"contour\":4,\"rhythm\":2,\"noteCount\":4,\"octave\":4,\"tempo\":165.19920253194869,\"swing\":0,\"brightness\":0.8442240038421005,\"decay\":0.237853340851143,\"echo\":0.024540637973695992}",
+        "{\"masterVolume\":0.5,\"seed\":0.5640056400564005,\"instrumentSeed\":69948,\"phrase\":\"[{\\\"degree\\\":-1,\\\"beats\\\":0.25},{\\\"degree\\\":3,\\\"beats\\\":0.5},{\\\"degree\\\":-1,\\\"beats\\\":0.25},{\\\"degree\\\":3,\\\"beats\\\":1}]\",\"instrument\":2,\"key\":1,\"scale\":1,\"contour\":4,\"rhythm\":2,\"noteCount\":4,\"octave\":4,\"tempo\":165.19920253194869,\"swing\":0,\"brightness\":0.8442240038421005,\"decay\":0.237853340851143,\"echo\":0.024540637973695992}"
+      ],
+      [
+        "Checkpoint",
+        "{\"masterVolume\":0.5,\"seed\":0.8929489294892949,\"instrumentSeed\":70812,\"phrase\":\"[{\\\"degree\\\":1,\\\"beats\\\":0.5},{\\\"degree\\\":5,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":1,\\\"beats\\\":1}]\",\"instrument\":3,\"key\":2,\"scale\":2,\"contour\":2,\"rhythm\":0,\"noteCount\":4,\"octave\":5,\"tempo\":142.99950962886214,\"swing\":0,\"brightness\":0.5241110993665643,\"decay\":0.4816017888253555,\"echo\":0.1442066207295284}",
+        "{\"masterVolume\":0.5,\"seed\":0.8929489294892949,\"instrumentSeed\":70812,\"phrase\":\"[{\\\"degree\\\":1,\\\"beats\\\":0.5},{\\\"degree\\\":5,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":1,\\\"beats\\\":1}]\",\"instrument\":3,\"key\":2,\"scale\":2,\"contour\":2,\"rhythm\":0,\"noteCount\":4,\"octave\":5,\"tempo\":142.99950962886214,\"swing\":0,\"brightness\":0.5241110993665643,\"decay\":0.4816017888253555,\"echo\":0.1442066207295284}"
+      ],
+      [
+        "Puzzle Solved",
+        "{\"masterVolume\":0.5,\"seed\":0.6125561255612556,\"instrumentSeed\":66911,\"phrase\":\"[{\\\"degree\\\":-1,\\\"beats\\\":0.25},{\\\"degree\\\":1,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.25},{\\\"degree\\\":null,\\\"beats\\\":0.75},{\\\"degree\\\":2,\\\"beats\\\":0.25},{\\\"degree\\\":null,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":1}]\",\"instrument\":0,\"key\":0,\"scale\":2,\"contour\":0,\"rhythm\":2,\"noteCount\":7,\"octave\":5,\"tempo\":123.0244064098224,\"swing\":0,\"brightness\":0.5022728805895895,\"decay\":0.5173042458365671,\"echo\":0.28241564447293055}",
+        "{\"masterVolume\":0.5,\"seed\":0.6125561255612556,\"instrumentSeed\":66911,\"phrase\":\"[{\\\"degree\\\":-1,\\\"beats\\\":0.25},{\\\"degree\\\":1,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.25},{\\\"degree\\\":null,\\\"beats\\\":0.75},{\\\"degree\\\":2,\\\"beats\\\":0.25},{\\\"degree\\\":null,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":1}]\",\"instrument\":0,\"key\":0,\"scale\":2,\"contour\":0,\"rhythm\":2,\"noteCount\":7,\"octave\":5,\"tempo\":123.0244064098224,\"swing\":0,\"brightness\":0.5022728805895895,\"decay\":0.5173042458365671,\"echo\":0.28241564447293055}"
+      ],
+      [
+        "Lullaby",
+        "{\"masterVolume\":0.5,\"seed\":0.45307453074530746,\"instrumentSeed\":64171,\"phrase\":\"[{\\\"degree\\\":-2,\\\"beats\\\":1},{\\\"degree\\\":-4,\\\"beats\\\":0.5},{\\\"degree\\\":-3,\\\"beats\\\":1},{\\\"degree\\\":-3,\\\"beats\\\":1.5},{\\\"degree\\\":-1,\\\"beats\\\":2}]\",\"instrument\":3,\"key\":7,\"scale\":3,\"contour\":3,\"rhythm\":3,\"noteCount\":5,\"octave\":5,\"tempo\":93.78995260223746,\"swing\":0,\"brightness\":0.2782228324795142,\"decay\":0.908120301645249,\"echo\":0.26850159913301463}",
+        "{\"masterVolume\":0.5,\"seed\":0.45307453074530746,\"instrumentSeed\":64171,\"phrase\":\"[{\\\"degree\\\":-2,\\\"beats\\\":1},{\\\"degree\\\":-4,\\\"beats\\\":0.5},{\\\"degree\\\":-3,\\\"beats\\\":1},{\\\"degree\\\":-3,\\\"beats\\\":1.5},{\\\"degree\\\":-1,\\\"beats\\\":2}]\",\"instrument\":3,\"key\":7,\"scale\":3,\"contour\":3,\"rhythm\":3,\"noteCount\":5,\"octave\":5,\"tempo\":93.78995260223746,\"swing\":0,\"brightness\":0.2782228324795142,\"decay\":0.908120301645249,\"echo\":0.26850159913301463}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "instrumentSeed": false,
+      "phrase": false,
+      "instrument": false,
+      "key": false,
+      "scale": false,
+      "contour": false,
+      "rhythm": false,
+      "noteCount": false,
+      "octave": false,
+      "tempo": false,
+      "swing": false,
+      "brightness": false,
+      "decay": false,
+      "echo": false
+    }
+  },
+  "Squishr": {
+    "files": [
+      [
+        "Slime Step",
+        "{\"masterVolume\":0.5,\"seed\":0.24532127263955772,\"texture\":0,\"viscosity\":0.8018478856189176,\"stretch\":0.27554867303697395,\"pressure\":0.5056226484128274,\"wetness\":0.8129514980711974,\"bubbleSize\":0.7497143687913195,\"duration\":0.38620623820461336}",
+        "{\"masterVolume\":0.5,\"seed\":0.24532127263955772,\"texture\":0,\"viscosity\":0.8018478856189176,\"stretch\":0.27554867303697395,\"pressure\":0.5056226484128274,\"wetness\":0.8129514980711974,\"bubbleSize\":0.7497143687913195,\"duration\":0.38620623820461336}"
+      ],
+      [
+        "Bubble Pop",
+        "{\"masterVolume\":0.5,\"seed\":0.937954772496596,\"texture\":1,\"viscosity\":0.28395610144361855,\"stretch\":0.13165514600696043,\"pressure\":0.6613921708427369,\"wetness\":0.9956825335975736,\"bubbleSize\":0.17968677814351394,\"duration\":0.14077455017250032}",
+        "{\"masterVolume\":0.5,\"seed\":0.937954772496596,\"texture\":1,\"viscosity\":0.28395610144361855,\"stretch\":0.13165514600696043,\"pressure\":0.6613921708427369,\"wetness\":0.9956825335975736,\"bubbleSize\":0.17968677814351394,\"duration\":0.14077455017250032}"
+      ],
+      [
+        "Suction Cup",
+        "{\"masterVolume\":0.5,\"seed\":0.3757865990046412,\"texture\":2,\"viscosity\":0.6726300426875241,\"stretch\":0.8365856623277068,\"pressure\":0.5591769100748935,\"wetness\":0.6333288593217731,\"bubbleSize\":0.6969851815840229,\"duration\":0.5046215090667829}",
+        "{\"masterVolume\":0.5,\"seed\":0.3757865990046412,\"texture\":2,\"viscosity\":0.6726300426875241,\"stretch\":0.8365856623277068,\"pressure\":0.5591769100748935,\"wetness\":0.6333288593217731,\"bubbleSize\":0.6969851815840229,\"duration\":0.5046215090667829}"
+      ],
+      [
+        "Wet Splat",
+        "{\"masterVolume\":0.5,\"seed\":0.9992687958292663,\"texture\":3,\"viscosity\":0.24710530736483635,\"stretch\":0.2254619781067595,\"pressure\":0.810427371354308,\"wetness\":0.7847615855862387,\"bubbleSize\":0.5564711429760791,\"duration\":0.2732090003369376}",
+        "{\"masterVolume\":0.5,\"seed\":0.9992687958292663,\"texture\":3,\"viscosity\":0.24710530736483635,\"stretch\":0.2254619781067595,\"pressure\":0.810427371354308,\"wetness\":0.7847615855862387,\"bubbleSize\":0.5564711429760791,\"duration\":0.2732090003369376}"
+      ],
+      [
+        "Gulp",
+        "{\"masterVolume\":0.5,\"seed\":0.8996716933324933,\"texture\":4,\"viscosity\":0.39166040236596017,\"stretch\":0.29560281863668936,\"pressure\":0.35680784685537215,\"wetness\":0.8578658733516932,\"bubbleSize\":0.6662761193234473,\"duration\":0.2976797103066929}",
+        "{\"masterVolume\":0.5,\"seed\":0.8996716933324933,\"texture\":4,\"viscosity\":0.39166040236596017,\"stretch\":0.29560281863668936,\"pressure\":0.35680784685537215,\"wetness\":0.8578658733516932,\"bubbleSize\":0.6662761193234473,\"duration\":0.2976797103066929}"
+      ],
+      [
+        "Springy Goo",
+        "{\"masterVolume\":0.5,\"seed\":0.2672892361879349,\"texture\":5,\"viscosity\":0.6670608379645273,\"stretch\":0.7769649830297567,\"pressure\":0.8358043902553618,\"wetness\":0.44504324560984965,\"bubbleSize\":0.6935175931081176,\"duration\":0.650490155024454}",
+        "{\"masterVolume\":0.5,\"seed\":0.2672892361879349,\"texture\":5,\"viscosity\":0.6670608379645273,\"stretch\":0.7769649830297567,\"pressure\":0.8358043902553618,\"wetness\":0.44504324560984965,\"bubbleSize\":0.6935175931081176,\"duration\":0.650490155024454}"
+      ],
+      [
+        "Bubbling Potion",
+        "{\"masterVolume\":0.5,\"seed\":0.9685665112920105,\"texture\":1,\"viscosity\":0.7173584918375127,\"stretch\":0.5789519939688035,\"pressure\":0.7655096002854407,\"wetness\":0.9904623286332935,\"bubbleSize\":0.4032567123649642,\"duration\":1.9354323259787636}",
+        "{\"masterVolume\":0.5,\"seed\":0.9685665112920105,\"texture\":1,\"viscosity\":0.7173584918375127,\"stretch\":0.5789519939688035,\"pressure\":0.7655096002854407,\"wetness\":0.9904623286332935,\"bubbleSize\":0.4032567123649642,\"duration\":1.9354323259787636}"
+      ],
+      [
+        "Mud Pull",
+        "{\"masterVolume\":0.5,\"seed\":0.41085333260707557,\"texture\":2,\"viscosity\":0.978965676331427,\"stretch\":0.8913431826513261,\"pressure\":0.34942842938471586,\"wetness\":0.4962520078523084,\"bubbleSize\":0.8279106952250004,\"duration\":1.2598829030524938}",
+        "{\"masterVolume\":0.5,\"seed\":0.41085333260707557,\"texture\":2,\"viscosity\":0.978965676331427,\"stretch\":0.8913431826513261,\"pressure\":0.34942842938471586,\"wetness\":0.4962520078523084,\"bubbleSize\":0.8279106952250004,\"duration\":1.2598829030524938}"
+      ],
+      [
+        "Water Drop",
+        "{\"masterVolume\":0.5,\"seed\":0.06035450892522931,\"texture\":1,\"viscosity\":0.13036041838116944,\"stretch\":0.10902950830990449,\"pressure\":0.15658106685150414,\"wetness\":0.941457852453459,\"bubbleSize\":0.09023964277934284,\"duration\":0.12768147656694054}",
+        "{\"masterVolume\":0.5,\"seed\":0.06035450892522931,\"texture\":1,\"viscosity\":0.13036041838116944,\"stretch\":0.10902950830990449,\"pressure\":0.15658106685150414,\"wetness\":0.941457852453459,\"bubbleSize\":0.09023964277934284,\"duration\":0.12768147656694054}"
+      ],
+      [
+        "Jelly Wobble",
+        "{\"masterVolume\":0.5,\"seed\":0.12660813075490296,\"texture\":5,\"viscosity\":0.9668530864873901,\"stretch\":0.8312193866120651,\"pressure\":0.4390307092573494,\"wetness\":0.2008983335806988,\"bubbleSize\":0.8500159165356308,\"duration\":1.1240133067360147}",
+        "{\"masterVolume\":0.5,\"seed\":0.12660813075490296,\"texture\":5,\"viscosity\":0.9668530864873901,\"stretch\":0.8312193866120651,\"pressure\":0.4390307092573494,\"wetness\":0.2008983335806988,\"bubbleSize\":0.8500159165356308,\"duration\":1.1240133067360147}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "texture": false,
+      "viscosity": false,
+      "stretch": false,
+      "pressure": false,
+      "wetness": false,
+      "bubbleSize": false,
+      "duration": false
+    }
+  },
+  "Stackr": {
+    "files": [
+      [
+        "Spell Launch",
+        "{\"masterVolume\":0.5,\"seed\":0.598059292184189,\"spacing\":0.8910021713934839,\"layers\":\"[{\\\"synth\\\":\\\"Transfxr\\\",\\\"name\\\":\\\"portal bloom\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"waveType\\\":2,\\\"duration\\\":1.9,\\\"pitch\\\":{\\\"start\\\":0.1650541420164518,\\\"end\\\":0.4850541420164518,\\\"curve\\\":\\\"Smooth\\\"},\\\"tone\\\":{\\\"start\\\":0.1,\\\"end\\\":0.85,\\\"curve\\\":\\\"Pulse\\\"},\\\"noise\\\":{\\\"start\\\":0.08,\\\"end\\\":0.32,\\\"curve\\\":\\\"Pulse\\\"},\\\"vibrato\\\":{\\\"start\\\":0.03,\\\"end\\\":0.65,\\\"curve\\\":\\\"Ease In\\\"},\\\"level\\\":{\\\"start\\\":0.45,\\\"end\\\":0.95,\\\"curve\\\":\\\"Pulse\\\"},\\\"attack\\\":0.5,\\\"release\\\":0.65,\\\"resonance\\\":0.55,\\\"echo\\\":0.62},\\\"start\\\":0,\\\"gain\\\":0.42872511646477507,\\\"pitch\\\":0.8725790320895612},{\\\"synth\\\":\\\"Transfxr\\\",\\\"name\\\":\\\"laser zip\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"waveType\\\":2,\\\"duration\\\":0.22,\\\"pitch\\\":{\\\"start\\\":0.8386362796428147,\\\"end\\\":0.23863627964281478,\\\"curve\\\":\\\"Ease Out\\\"},\\\"tone\\\":{\\\"start\\\":0.95,\\\"end\\\":0.25,\\\"curve\\\":\\\"Linear\\\"},\\\"noise\\\":{\\\"start\\\":0,\\\"end\\\":0,\\\"curve\\\":\\\"Linear\\\"},\\\"vibrato\\\":{\\\"start\\\":0,\\\"end\\\":0.15,\\\"curve\\\":\\\"Ease In\\\"},\\\"level\\\":{\\\"start\\\":0.9,\\\"end\\\":0.25,\\\"curve\\\":\\\"Linear\\\"},\\\"attack\\\":0,\\\"release\\\":0.14,\\\"resonance\\\":0.32,\\\"echo\\\":0.14},\\\"start\\\":0.7679510450549423,\\\"gain\\\":0.858120846968377,\\\"pitch\\\":0.08301467634737492},{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"glass ping\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.7867072348017246,\\\"material\\\":1,\\\"action\\\":0,\\\"size\\\":0.13894854234065862,\\\"hollowness\\\":0.5504536977037788,\\\"hardness\\\":0.7157526224153116,\\\"damping\\\":0.15571558100171387,\\\"duration\\\":0.8986158737796358},\\\"start\\\":0.8759622354246676,\\\"gain\\\":0.628701781547861,\\\"pitch\\\":0.534770027268678}]\"}",
+        "{\"masterVolume\":0.5,\"seed\":0.598059292184189,\"spacing\":0.8910021713934839,\"layers\":\"[{\\\"synth\\\":\\\"Transfxr\\\",\\\"name\\\":\\\"portal bloom\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"waveType\\\":2,\\\"duration\\\":1.9,\\\"pitch\\\":{\\\"start\\\":0.1650541420164518,\\\"end\\\":0.4850541420164518,\\\"curve\\\":\\\"Smooth\\\"},\\\"tone\\\":{\\\"start\\\":0.1,\\\"end\\\":0.85,\\\"curve\\\":\\\"Pulse\\\"},\\\"noise\\\":{\\\"start\\\":0.08,\\\"end\\\":0.32,\\\"curve\\\":\\\"Pulse\\\"},\\\"vibrato\\\":{\\\"start\\\":0.03,\\\"end\\\":0.65,\\\"curve\\\":\\\"Ease In\\\"},\\\"level\\\":{\\\"start\\\":0.45,\\\"end\\\":0.95,\\\"curve\\\":\\\"Pulse\\\"},\\\"attack\\\":0.5,\\\"release\\\":0.65,\\\"resonance\\\":0.55,\\\"echo\\\":0.62},\\\"start\\\":0,\\\"gain\\\":0.42872511646477507,\\\"pitch\\\":0.8725790320895612},{\\\"synth\\\":\\\"Transfxr\\\",\\\"name\\\":\\\"laser zip\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"waveType\\\":2,\\\"duration\\\":0.22,\\\"pitch\\\":{\\\"start\\\":0.8386362796428147,\\\"end\\\":0.23863627964281478,\\\"curve\\\":\\\"Ease Out\\\"},\\\"tone\\\":{\\\"start\\\":0.95,\\\"end\\\":0.25,\\\"curve\\\":\\\"Linear\\\"},\\\"noise\\\":{\\\"start\\\":0,\\\"end\\\":0,\\\"curve\\\":\\\"Linear\\\"},\\\"vibrato\\\":{\\\"start\\\":0,\\\"end\\\":0.15,\\\"curve\\\":\\\"Ease In\\\"},\\\"level\\\":{\\\"start\\\":0.9,\\\"end\\\":0.25,\\\"curve\\\":\\\"Linear\\\"},\\\"attack\\\":0,\\\"release\\\":0.14,\\\"resonance\\\":0.32,\\\"echo\\\":0.14},\\\"start\\\":0.7679510450549423,\\\"gain\\\":0.858120846968377,\\\"pitch\\\":0.08301467634737492},{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"glass ping\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.7867072348017246,\\\"material\\\":1,\\\"action\\\":0,\\\"size\\\":0.13894854234065862,\\\"hollowness\\\":0.5504536977037788,\\\"hardness\\\":0.7157526224153116,\\\"damping\\\":0.15571558100171387,\\\"duration\\\":0.8986158737796358},\\\"start\\\":0.8759622354246676,\\\"gain\\\":0.628701781547861,\\\"pitch\\\":0.534770027268678}]\"}"
+      ],
+      [
+        "Door Unlock",
+        "{\"masterVolume\":0.5,\"seed\":0.515776494750753,\"spacing\":0.9036666022846475,\"layers\":\"[{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"loose bolts\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.9008359976578504,\\\"material\\\":2,\\\"action\\\":2,\\\"size\\\":0.1863311940198764,\\\"hollowness\\\":0.009627234481740743,\\\"hardness\\\":0.9845857830252498,\\\"damping\\\":0.7585630390048028,\\\"duration\\\":0.5090138279134407},\\\"start\\\":0,\\\"gain\\\":0.5538977002701723,\\\"pitch\\\":0.32404623460024595},{\\\"synth\\\":\\\"Machinr\\\",\\\"name\\\":\\\"heavy door\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.9705665241926908,\\\"mechanism\\\":7,\\\"duration\\\":2.6435493757715447,\\\"speed\\\":0.18119955956935882,\\\"load\\\":0.8961532774264924,\\\"roughness\\\":0.5083497467334382,\\\"looseness\\\":0.6884604789316655,\\\"size\\\":0.821889532613568,\\\"startTime\\\":0.28976577569264916,\\\"stopTime\\\":0.14002569150179625},\\\"start\\\":0.22781069212127478,\\\"gain\\\":0.712698867097497,\\\"pitch\\\":0.9280970133841038},{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"wood knock\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.16427737940102816,\\\"material\\\":0,\\\"action\\\":0,\\\"size\\\":0.6010932971537113,\\\"hollowness\\\":0.35708478365559126,\\\"hardness\\\":0.5934659427846781,\\\"damping\\\":0.48884151328355074,\\\"duration\\\":0.540426361374557},\\\"start\\\":1.3073383427923546,\\\"gain\\\":0.8277661552280188,\\\"pitch\\\":-0.013388910796493292}]\"}",
+        "{\"masterVolume\":0.5,\"seed\":0.515776494750753,\"spacing\":0.9036666022846475,\"layers\":\"[{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"loose bolts\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.9008359976578504,\\\"material\\\":2,\\\"action\\\":2,\\\"size\\\":0.1863311940198764,\\\"hollowness\\\":0.009627234481740743,\\\"hardness\\\":0.9845857830252498,\\\"damping\\\":0.7585630390048028,\\\"duration\\\":0.5090138279134407},\\\"start\\\":0,\\\"gain\\\":0.5538977002701723,\\\"pitch\\\":0.32404623460024595},{\\\"synth\\\":\\\"Machinr\\\",\\\"name\\\":\\\"heavy door\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.9705665241926908,\\\"mechanism\\\":7,\\\"duration\\\":2.6435493757715447,\\\"speed\\\":0.18119955956935882,\\\"load\\\":0.8961532774264924,\\\"roughness\\\":0.5083497467334382,\\\"looseness\\\":0.6884604789316655,\\\"size\\\":0.821889532613568,\\\"startTime\\\":0.28976577569264916,\\\"stopTime\\\":0.14002569150179625},\\\"start\\\":0.22781069212127478,\\\"gain\\\":0.712698867097497,\\\"pitch\\\":0.9280970133841038},{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"wood knock\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.16427737940102816,\\\"material\\\":0,\\\"action\\\":0,\\\"size\\\":0.6010932971537113,\\\"hollowness\\\":0.35708478365559126,\\\"hardness\\\":0.5934659427846781,\\\"damping\\\":0.48884151328355074,\\\"duration\\\":0.540426361374557},\\\"start\\\":1.3073383427923546,\\\"gain\\\":0.8277661552280188,\\\"pitch\\\":-0.013388910796493292}]\"}"
+      ],
+      [
+        "Treasure",
+        "{\"masterVolume\":0.5,\"seed\":0.9869308467023075,\"spacing\":1.0738643434131518,\"layers\":\"[{\\\"synth\\\":\\\"Machinr\\\",\\\"name\\\":\\\"camera shutter\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.9177601041737944,\\\"mechanism\\\":2,\\\"duration\\\":0.2968513523042202,\\\"speed\\\":0.7723546116147191,\\\"load\\\":0.10552305192686617,\\\"roughness\\\":0.10471673573134467,\\\"looseness\\\":0.3763863967033103,\\\"size\\\":0.28648205533623694,\\\"startTime\\\":0.0034923007991164924,\\\"stopTime\\\":0.027294268731493505},\\\"start\\\":0,\\\"gain\\\":0.6174042345560156,\\\"pitch\\\":0.8670043563470244},{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"coin drop\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.6444372327532619,\\\"material\\\":2,\\\"action\\\":2,\\\"size\\\":0.04609816638054326,\\\"hollowness\\\":0.006711140449624509,\\\"hardness\\\":0.809835914708674,\\\"damping\\\":0.4228122058091685,\\\"duration\\\":0.48355181639082734},\\\"start\\\":0.17149997451435775,\\\"gain\\\":0.5871860901761102,\\\"pitch\\\":0.7432980453595519},{\\\"synth\\\":\\\"Jinglr\\\",\\\"name\\\":\\\"discovery\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.15008150081500815,\\\"instrumentSeed\\\":85681,\\\"phrase\\\":\\\"[{\\\\\\\"degree\\\\\\\":-1,\\\\\\\"beats\\\\\\\":0.5},{\\\\\\\"degree\\\\\\\":1,\\\\\\\"beats\\\\\\\":0.5},{\\\\\\\"degree\\\\\\\":1,\\\\\\\"beats\\\\\\\":0.5},{\\\\\\\"degree\\\\\\\":3,\\\\\\\"beats\\\\\\\":0.5},{\\\\\\\"degree\\\\\\\":5,\\\\\\\"beats\\\\\\\":1}]\\\",\\\"instrument\\\":4,\\\"key\\\":9,\\\"scale\\\":0,\\\"contour\\\":0,\\\"rhythm\\\":0,\\\"noteCount\\\":5,\\\"octave\\\":4,\\\"tempo\\\":136.49941207724623,\\\"swing\\\":0,\\\"brightness\\\":0.845469750277698,\\\"decay\\\":0.3616378166596405,\\\"echo\\\":0.12952471994794906},\\\"start\\\":0.37939624827587975,\\\"gain\\\":0.7840011095721274,\\\"pitch\\\":-0.8029662566259503}]\"}",
+        "{\"masterVolume\":0.5,\"seed\":0.9869308467023075,\"spacing\":1.0738643434131518,\"layers\":\"[{\\\"synth\\\":\\\"Machinr\\\",\\\"name\\\":\\\"camera shutter\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.9177601041737944,\\\"mechanism\\\":2,\\\"duration\\\":0.2968513523042202,\\\"speed\\\":0.7723546116147191,\\\"load\\\":0.10552305192686617,\\\"roughness\\\":0.10471673573134467,\\\"looseness\\\":0.3763863967033103,\\\"size\\\":0.28648205533623694,\\\"startTime\\\":0.0034923007991164924,\\\"stopTime\\\":0.027294268731493505},\\\"start\\\":0,\\\"gain\\\":0.6174042345560156,\\\"pitch\\\":0.8670043563470244},{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"coin drop\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.6444372327532619,\\\"material\\\":2,\\\"action\\\":2,\\\"size\\\":0.04609816638054326,\\\"hollowness\\\":0.006711140449624509,\\\"hardness\\\":0.809835914708674,\\\"damping\\\":0.4228122058091685,\\\"duration\\\":0.48355181639082734},\\\"start\\\":0.17149997451435775,\\\"gain\\\":0.5871860901761102,\\\"pitch\\\":0.7432980453595519},{\\\"synth\\\":\\\"Jinglr\\\",\\\"name\\\":\\\"discovery\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.15008150081500815,\\\"instrumentSeed\\\":85681,\\\"phrase\\\":\\\"[{\\\\\\\"degree\\\\\\\":-1,\\\\\\\"beats\\\\\\\":0.5},{\\\\\\\"degree\\\\\\\":1,\\\\\\\"beats\\\\\\\":0.5},{\\\\\\\"degree\\\\\\\":1,\\\\\\\"beats\\\\\\\":0.5},{\\\\\\\"degree\\\\\\\":3,\\\\\\\"beats\\\\\\\":0.5},{\\\\\\\"degree\\\\\\\":5,\\\\\\\"beats\\\\\\\":1}]\\\",\\\"instrument\\\":4,\\\"key\\\":9,\\\"scale\\\":0,\\\"contour\\\":0,\\\"rhythm\\\":0,\\\"noteCount\\\":5,\\\"octave\\\":4,\\\"tempo\\\":136.49941207724623,\\\"swing\\\":0,\\\"brightness\\\":0.845469750277698,\\\"decay\\\":0.3616378166596405,\\\"echo\\\":0.12952471994794906},\\\"start\\\":0.37939624827587975,\\\"gain\\\":0.7840011095721274,\\\"pitch\\\":-0.8029662566259503}]\"}"
+      ],
+      [
+        "Slime Jump",
+        "{\"masterVolume\":0.5,\"seed\":0.012657016981393099,\"spacing\":1.219296764442697,\"layers\":\"[{\\\"synth\\\":\\\"Squishr\\\",\\\"name\\\":\\\"suction cup\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.7266549789346755,\\\"texture\\\":2,\\\"viscosity\\\":0.803968798799906,\\\"stretch\\\":0.8058084334246813,\\\"pressure\\\":0.8876404183916748,\\\"wetness\\\":0.5189018483273685,\\\"bubbleSize\\\":0.6866272372310049,\\\"duration\\\":0.5066968186292797},\\\"start\\\":0,\\\"gain\\\":0.6470723675127374,\\\"pitch\\\":0.9858360071666539},{\\\"synth\\\":\\\"Transfxr\\\",\\\"name\\\":\\\"bubble drop\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"waveType\\\":0,\\\"duration\\\":0.38,\\\"pitch\\\":{\\\"start\\\":0.2710506987175904,\\\"end\\\":0.6610506987175905,\\\"curve\\\":\\\"Bounce\\\"},\\\"tone\\\":{\\\"start\\\":0.9,\\\"end\\\":0.65,\\\"curve\\\":\\\"Linear\\\"},\\\"noise\\\":{\\\"start\\\":0,\\\"end\\\":0,\\\"curve\\\":\\\"Linear\\\"},\\\"vibrato\\\":{\\\"start\\\":0,\\\"end\\\":0.15,\\\"curve\\\":\\\"Ease In\\\"},\\\"level\\\":{\\\"start\\\":0.95,\\\"end\\\":0.1,\\\"curve\\\":\\\"Linear\\\"},\\\"attack\\\":0.003,\\\"release\\\":0.26,\\\"resonance\\\":0.15,\\\"echo\\\":0.18},\\\"start\\\":0.18759247429668904,\\\"gain\\\":0.6128098564845277,\\\"pitch\\\":0.5209753569215536},{\\\"synth\\\":\\\"Squishr\\\",\\\"name\\\":\\\"wet splat\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.5137755288742483,\\\"texture\\\":3,\\\"viscosity\\\":0.32892783170100304,\\\"stretch\\\":0.12193874526303262,\\\"pressure\\\":0.8754544241237454,\\\"wetness\\\":0.9389608553028665,\\\"bubbleSize\\\":0.4288874546298757,\\\"duration\\\":0.3070888436678797},\\\"start\\\":0.7214836328057572,\\\"gain\\\":0.8609160755330231,\\\"pitch\\\":-0.2680035815574229}]\"}",
+        "{\"masterVolume\":0.5,\"seed\":0.012657016981393099,\"spacing\":1.219296764442697,\"layers\":\"[{\\\"synth\\\":\\\"Squishr\\\",\\\"name\\\":\\\"suction cup\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.7266549789346755,\\\"texture\\\":2,\\\"viscosity\\\":0.803968798799906,\\\"stretch\\\":0.8058084334246813,\\\"pressure\\\":0.8876404183916748,\\\"wetness\\\":0.5189018483273685,\\\"bubbleSize\\\":0.6866272372310049,\\\"duration\\\":0.5066968186292797},\\\"start\\\":0,\\\"gain\\\":0.6470723675127374,\\\"pitch\\\":0.9858360071666539},{\\\"synth\\\":\\\"Transfxr\\\",\\\"name\\\":\\\"bubble drop\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"waveType\\\":0,\\\"duration\\\":0.38,\\\"pitch\\\":{\\\"start\\\":0.2710506987175904,\\\"end\\\":0.6610506987175905,\\\"curve\\\":\\\"Bounce\\\"},\\\"tone\\\":{\\\"start\\\":0.9,\\\"end\\\":0.65,\\\"curve\\\":\\\"Linear\\\"},\\\"noise\\\":{\\\"start\\\":0,\\\"end\\\":0,\\\"curve\\\":\\\"Linear\\\"},\\\"vibrato\\\":{\\\"start\\\":0,\\\"end\\\":0.15,\\\"curve\\\":\\\"Ease In\\\"},\\\"level\\\":{\\\"start\\\":0.95,\\\"end\\\":0.1,\\\"curve\\\":\\\"Linear\\\"},\\\"attack\\\":0.003,\\\"release\\\":0.26,\\\"resonance\\\":0.15,\\\"echo\\\":0.18},\\\"start\\\":0.18759247429668904,\\\"gain\\\":0.6128098564845277,\\\"pitch\\\":0.5209753569215536},{\\\"synth\\\":\\\"Squishr\\\",\\\"name\\\":\\\"wet splat\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.5137755288742483,\\\"texture\\\":3,\\\"viscosity\\\":0.32892783170100304,\\\"stretch\\\":0.12193874526303262,\\\"pressure\\\":0.8754544241237454,\\\"wetness\\\":0.9389608553028665,\\\"bubbleSize\\\":0.4288874546298757,\\\"duration\\\":0.3070888436678797},\\\"start\\\":0.7214836328057572,\\\"gain\\\":0.8609160755330231,\\\"pitch\\\":-0.2680035815574229}]\"}"
+      ],
+      [
+        "Robot Boot",
+        "{\"masterVolume\":0.5,\"seed\":0.739516976987943,\"spacing\":1.0911840504966677,\"layers\":\"[{\\\"synth\\\":\\\"Machinr\\\",\\\"name\\\":\\\"servo\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.583211243385449,\\\"mechanism\\\":5,\\\"duration\\\":0.8956993173691444,\\\"speed\\\":0.5744171798462048,\\\"load\\\":0.17293161926791073,\\\"roughness\\\":0.01819828898180276,\\\"looseness\\\":0.16091666679130867,\\\"size\\\":0.38455668804235765,\\\"startTime\\\":0.018245460595935584,\\\"stopTime\\\":0.10970836916007101},\\\"start\\\":0,\\\"gain\\\":0.7150154802110046,\\\"pitch\\\":0.9690163992345333},{\\\"synth\\\":\\\"Machinr\\\",\\\"name\\\":\\\"tiny motor\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.6648381701670587,\\\"mechanism\\\":0,\\\"duration\\\":0.8862861818633974,\\\"speed\\\":0.8504570605233311,\\\"load\\\":0.1486668252153322,\\\"roughness\\\":0.08762386105954648,\\\"looseness\\\":0.0670144464680925,\\\"size\\\":0.07437737124506384,\\\"startTime\\\":0.053796404385939245,\\\"stopTime\\\":0.1843623833521269},\\\"start\\\":0.2755515941837802,\\\"gain\\\":0.44382457436877304,\\\"pitch\\\":0.5566532723605633},{\\\"synth\\\":\\\"Transfxr\\\",\\\"name\\\":\\\"power up\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"waveType\\\":3,\\\"duration\\\":0.72,\\\"pitch\\\":{\\\"start\\\":0.37030927871353925,\\\"end\\\":0.6603092787135393,\\\"curve\\\":\\\"Steps\\\"},\\\"tone\\\":{\\\"start\\\":0.55,\\\"end\\\":0.95,\\\"curve\\\":\\\"Ease In\\\"},\\\"noise\\\":{\\\"start\\\":0,\\\"end\\\":0,\\\"curve\\\":\\\"Linear\\\"},\\\"vibrato\\\":{\\\"start\\\":0,\\\"end\\\":0.15,\\\"curve\\\":\\\"Ease In\\\"},\\\"level\\\":{\\\"start\\\":0.7,\\\"end\\\":0.9,\\\"curve\\\":\\\"Linear\\\"},\\\"attack\\\":0.01,\\\"release\\\":0.16,\\\"resonance\\\":0.12,\\\"echo\\\":0.38},\\\"start\\\":0.6887521049589851,\\\"gain\\\":0.7591312601417304,\\\"pitch\\\":-0.2481949646025896}]\"}",
+        "{\"masterVolume\":0.5,\"seed\":0.739516976987943,\"spacing\":1.0911840504966677,\"layers\":\"[{\\\"synth\\\":\\\"Machinr\\\",\\\"name\\\":\\\"servo\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.583211243385449,\\\"mechanism\\\":5,\\\"duration\\\":0.8956993173691444,\\\"speed\\\":0.5744171798462048,\\\"load\\\":0.17293161926791073,\\\"roughness\\\":0.01819828898180276,\\\"looseness\\\":0.16091666679130867,\\\"size\\\":0.38455668804235765,\\\"startTime\\\":0.018245460595935584,\\\"stopTime\\\":0.10970836916007101},\\\"start\\\":0,\\\"gain\\\":0.7150154802110046,\\\"pitch\\\":0.9690163992345333},{\\\"synth\\\":\\\"Machinr\\\",\\\"name\\\":\\\"tiny motor\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.6648381701670587,\\\"mechanism\\\":0,\\\"duration\\\":0.8862861818633974,\\\"speed\\\":0.8504570605233311,\\\"load\\\":0.1486668252153322,\\\"roughness\\\":0.08762386105954648,\\\"looseness\\\":0.0670144464680925,\\\"size\\\":0.07437737124506384,\\\"startTime\\\":0.053796404385939245,\\\"stopTime\\\":0.1843623833521269},\\\"start\\\":0.2755515941837802,\\\"gain\\\":0.44382457436877304,\\\"pitch\\\":0.5566532723605633},{\\\"synth\\\":\\\"Transfxr\\\",\\\"name\\\":\\\"power up\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"waveType\\\":3,\\\"duration\\\":0.72,\\\"pitch\\\":{\\\"start\\\":0.37030927871353925,\\\"end\\\":0.6603092787135393,\\\"curve\\\":\\\"Steps\\\"},\\\"tone\\\":{\\\"start\\\":0.55,\\\"end\\\":0.95,\\\"curve\\\":\\\"Ease In\\\"},\\\"noise\\\":{\\\"start\\\":0,\\\"end\\\":0,\\\"curve\\\":\\\"Linear\\\"},\\\"vibrato\\\":{\\\"start\\\":0,\\\"end\\\":0.15,\\\"curve\\\":\\\"Ease In\\\"},\\\"level\\\":{\\\"start\\\":0.7,\\\"end\\\":0.9,\\\"curve\\\":\\\"Linear\\\"},\\\"attack\\\":0.01,\\\"release\\\":0.16,\\\"resonance\\\":0.12,\\\"echo\\\":0.38},\\\"start\\\":0.6887521049589851,\\\"gain\\\":0.7591312601417304,\\\"pitch\\\":-0.2481949646025896}]\"}"
+      ],
+      [
+        "Glass Spell",
+        "{\"masterVolume\":0.5,\"seed\":0.6477850915398449,\"spacing\":0.922749072604347,\"layers\":\"[{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"ceramic crack\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.9119752200786024,\\\"material\\\":3,\\\"action\\\":2,\\\"size\\\":0.256932432949543,\\\"hollowness\\\":0.19288983948063104,\\\"hardness\\\":0.9610341580118984,\\\"damping\\\":0.7055265450570732,\\\"duration\\\":0.1263328593969345},\\\"start\\\":0,\\\"gain\\\":0.7926929198799189,\\\"pitch\\\":-0.21312675112858415},{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"glass ping\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.7719524807762355,\\\"material\\\":1,\\\"action\\\":0,\\\"size\\\":0.22636078346055,\\\"hollowness\\\":0.2909420160576701,\\\"hardness\\\":0.9509214299963786,\\\"damping\\\":0.23567832892760637,\\\"duration\\\":1.1153118009096943},\\\"start\\\":0.11427350322157144,\\\"gain\\\":0.6550983325450215,\\\"pitch\\\":-0.8304488463327289},{\\\"synth\\\":\\\"Transfxr\\\",\\\"name\\\":\\\"clockwork bird\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"waveType\\\":1,\\\"duration\\\":0.44,\\\"pitch\\\":{\\\"start\\\":0.6402295359689743,\\\"end\\\":0.8702295359689742,\\\"curve\\\":\\\"Triangle\\\"},\\\"tone\\\":{\\\"start\\\":0.7,\\\"end\\\":1,\\\"curve\\\":\\\"Linear\\\"},\\\"noise\\\":{\\\"start\\\":0,\\\"end\\\":0,\\\"curve\\\":\\\"Linear\\\"},\\\"vibrato\\\":{\\\"start\\\":0.05,\\\"end\\\":0.8,\\\"curve\\\":\\\"Ease In\\\"},\\\"level\\\":{\\\"start\\\":0.8,\\\"end\\\":0.55,\\\"curve\\\":\\\"Linear\\\"},\\\"attack\\\":0.012,\\\"release\\\":0.12,\\\"resonance\\\":0.3,\\\"echo\\\":0.32},\\\"start\\\":0.2539861973724328,\\\"gain\\\":0.6906712202972266,\\\"pitch\\\":0.0859251618385315}]\"}",
+        "{\"masterVolume\":0.5,\"seed\":0.6477850915398449,\"spacing\":0.922749072604347,\"layers\":\"[{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"ceramic crack\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.9119752200786024,\\\"material\\\":3,\\\"action\\\":2,\\\"size\\\":0.256932432949543,\\\"hollowness\\\":0.19288983948063104,\\\"hardness\\\":0.9610341580118984,\\\"damping\\\":0.7055265450570732,\\\"duration\\\":0.1263328593969345},\\\"start\\\":0,\\\"gain\\\":0.7926929198799189,\\\"pitch\\\":-0.21312675112858415},{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"glass ping\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.7719524807762355,\\\"material\\\":1,\\\"action\\\":0,\\\"size\\\":0.22636078346055,\\\"hollowness\\\":0.2909420160576701,\\\"hardness\\\":0.9509214299963786,\\\"damping\\\":0.23567832892760637,\\\"duration\\\":1.1153118009096943},\\\"start\\\":0.11427350322157144,\\\"gain\\\":0.6550983325450215,\\\"pitch\\\":-0.8304488463327289},{\\\"synth\\\":\\\"Transfxr\\\",\\\"name\\\":\\\"clockwork bird\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"waveType\\\":1,\\\"duration\\\":0.44,\\\"pitch\\\":{\\\"start\\\":0.6402295359689743,\\\"end\\\":0.8702295359689742,\\\"curve\\\":\\\"Triangle\\\"},\\\"tone\\\":{\\\"start\\\":0.7,\\\"end\\\":1,\\\"curve\\\":\\\"Linear\\\"},\\\"noise\\\":{\\\"start\\\":0,\\\"end\\\":0,\\\"curve\\\":\\\"Linear\\\"},\\\"vibrato\\\":{\\\"start\\\":0.05,\\\"end\\\":0.8,\\\"curve\\\":\\\"Ease In\\\"},\\\"level\\\":{\\\"start\\\":0.8,\\\"end\\\":0.55,\\\"curve\\\":\\\"Linear\\\"},\\\"attack\\\":0.012,\\\"release\\\":0.12,\\\"resonance\\\":0.3,\\\"echo\\\":0.32},\\\"start\\\":0.2539861973724328,\\\"gain\\\":0.6906712202972266,\\\"pitch\\\":0.0859251618385315}]\"}"
+      ],
+      [
+        "Storm Portal",
+        "{\"masterVolume\":0.5,\"seed\":0.9741143819410354,\"spacing\":0.9552311331033707,\"layers\":\"[{\\\"synth\\\":\\\"Weathr\\\",\\\"name\\\":\\\"wind\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.12487834203056991,\\\"environment\\\":0,\\\"duration\\\":4,\\\"density\\\":0.3349599601235241,\\\"turbulence\\\":0.2070092523819767,\\\"brightness\\\":0.41271710759028796,\\\"scale\\\":0.7327486334950664,\\\"detail\\\":0.052271201100666076},\\\"start\\\":0,\\\"gain\\\":0.30021737697999923,\\\"pitch\\\":0.9439906659536064},{\\\"synth\\\":\\\"Transfxr\\\",\\\"name\\\":\\\"portal bloom\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"waveType\\\":2,\\\"duration\\\":1.9,\\\"pitch\\\":{\\\"start\\\":0.19128477200050836,\\\"end\\\":0.5112847720005084,\\\"curve\\\":\\\"Smooth\\\"},\\\"tone\\\":{\\\"start\\\":0.1,\\\"end\\\":0.85,\\\"curve\\\":\\\"Pulse\\\"},\\\"noise\\\":{\\\"start\\\":0.08,\\\"end\\\":0.32,\\\"curve\\\":\\\"Pulse\\\"},\\\"vibrato\\\":{\\\"start\\\":0.03,\\\"end\\\":0.65,\\\"curve\\\":\\\"Ease In\\\"},\\\"level\\\":{\\\"start\\\":0.45,\\\"end\\\":0.95,\\\"curve\\\":\\\"Pulse\\\"},\\\"attack\\\":0.5,\\\"release\\\":0.65,\\\"resonance\\\":0.55,\\\"echo\\\":0.62},\\\"start\\\":0.21665662922896445,\\\"gain\\\":0.7441620388254524,\\\"pitch\\\":0.6236310340464115},{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"metal clang\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.4299736872781068,\\\"material\\\":2,\\\"action\\\":0,\\\"size\\\":0.5641286737238989,\\\"hollowness\\\":0.2217332653235644,\\\"hardness\\\":0.8304126110393554,\\\"damping\\\":0.057051513704936954,\\\"duration\\\":1.4460878299549222},\\\"start\\\":1.065880521805957,\\\"gain\\\":0.4125865437247558,\\\"pitch\\\":0.3173445085994899}]\"}",
+        "{\"masterVolume\":0.5,\"seed\":0.9741143819410354,\"spacing\":0.9552311331033707,\"layers\":\"[{\\\"synth\\\":\\\"Weathr\\\",\\\"name\\\":\\\"wind\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.12487834203056991,\\\"environment\\\":0,\\\"duration\\\":4,\\\"density\\\":0.3349599601235241,\\\"turbulence\\\":0.2070092523819767,\\\"brightness\\\":0.41271710759028796,\\\"scale\\\":0.7327486334950664,\\\"detail\\\":0.052271201100666076},\\\"start\\\":0,\\\"gain\\\":0.30021737697999923,\\\"pitch\\\":0.9439906659536064},{\\\"synth\\\":\\\"Transfxr\\\",\\\"name\\\":\\\"portal bloom\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"waveType\\\":2,\\\"duration\\\":1.9,\\\"pitch\\\":{\\\"start\\\":0.19128477200050836,\\\"end\\\":0.5112847720005084,\\\"curve\\\":\\\"Smooth\\\"},\\\"tone\\\":{\\\"start\\\":0.1,\\\"end\\\":0.85,\\\"curve\\\":\\\"Pulse\\\"},\\\"noise\\\":{\\\"start\\\":0.08,\\\"end\\\":0.32,\\\"curve\\\":\\\"Pulse\\\"},\\\"vibrato\\\":{\\\"start\\\":0.03,\\\"end\\\":0.65,\\\"curve\\\":\\\"Ease In\\\"},\\\"level\\\":{\\\"start\\\":0.45,\\\"end\\\":0.95,\\\"curve\\\":\\\"Pulse\\\"},\\\"attack\\\":0.5,\\\"release\\\":0.65,\\\"resonance\\\":0.55,\\\"echo\\\":0.62},\\\"start\\\":0.21665662922896445,\\\"gain\\\":0.7441620388254524,\\\"pitch\\\":0.6236310340464115},{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"metal clang\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.4299736872781068,\\\"material\\\":2,\\\"action\\\":0,\\\"size\\\":0.5641286737238989,\\\"hollowness\\\":0.2217332653235644,\\\"hardness\\\":0.8304126110393554,\\\"damping\\\":0.057051513704936954,\\\"duration\\\":1.4460878299549222},\\\"start\\\":1.065880521805957,\\\"gain\\\":0.4125865437247558,\\\"pitch\\\":0.3173445085994899}]\"}"
+      ],
+      [
+        "Cartoon Crash",
+        "{\"masterVolume\":0.5,\"seed\":0.028094288427382708,\"spacing\":0.9928685002494604,\"layers\":\"[{\\\"synth\\\":\\\"Squishr\\\",\\\"name\\\":\\\"springy goo\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.33659880398772657,\\\"texture\\\":5,\\\"viscosity\\\":0.8038181576062925,\\\"stretch\\\":0.8012260394752957,\\\"pressure\\\":0.4872595340013504,\\\"wetness\\\":0.25958327221451327,\\\"bubbleSize\\\":0.4605019994312897,\\\"duration\\\":0.7626129755983129},\\\"start\\\":0,\\\"gain\\\":0.6839995890203864,\\\"pitch\\\":-0.7037569535896182},{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"rubber thud\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.9114397908560932,\\\"material\\\":4,\\\"action\\\":0,\\\"size\\\":0.5558460956439376,\\\"hollowness\\\":0.370718631031923,\\\"hardness\\\":0.25333295259857547,\\\"damping\\\":0.564733646903187,\\\"duration\\\":0.7084328178782016},\\\"start\\\":0.2829944963939488,\\\"gain\\\":0.8346162279602141,\\\"pitch\\\":0.7444739700295031},{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"loose bolts\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.27021780353970826,\\\"material\\\":2,\\\"action\\\":2,\\\"size\\\":0.2875865373155102,\\\"hollowness\\\":0.24438796495087445,\\\"hardness\\\":0.7798070094548165,\\\"damping\\\":0.5744987231492996,\\\"duration\\\":0.9328751982189716},\\\"start\\\":0.4524357764283195,\\\"gain\\\":0.612066848949762,\\\"pitch\\\":-0.8158114533871412}]\"}",
+        "{\"masterVolume\":0.5,\"seed\":0.028094288427382708,\"spacing\":0.9928685002494604,\"layers\":\"[{\\\"synth\\\":\\\"Squishr\\\",\\\"name\\\":\\\"springy goo\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.33659880398772657,\\\"texture\\\":5,\\\"viscosity\\\":0.8038181576062925,\\\"stretch\\\":0.8012260394752957,\\\"pressure\\\":0.4872595340013504,\\\"wetness\\\":0.25958327221451327,\\\"bubbleSize\\\":0.4605019994312897,\\\"duration\\\":0.7626129755983129},\\\"start\\\":0,\\\"gain\\\":0.6839995890203864,\\\"pitch\\\":-0.7037569535896182},{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"rubber thud\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.9114397908560932,\\\"material\\\":4,\\\"action\\\":0,\\\"size\\\":0.5558460956439376,\\\"hollowness\\\":0.370718631031923,\\\"hardness\\\":0.25333295259857547,\\\"damping\\\":0.564733646903187,\\\"duration\\\":0.7084328178782016},\\\"start\\\":0.2829944963939488,\\\"gain\\\":0.8346162279602141,\\\"pitch\\\":0.7444739700295031},{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"loose bolts\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.27021780353970826,\\\"material\\\":2,\\\"action\\\":2,\\\"size\\\":0.2875865373155102,\\\"hollowness\\\":0.24438796495087445,\\\"hardness\\\":0.7798070094548165,\\\"damping\\\":0.5744987231492996,\\\"duration\\\":0.9328751982189716},\\\"start\\\":0.4524357764283195,\\\"gain\\\":0.612066848949762,\\\"pitch\\\":-0.8158114533871412}]\"}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "spacing": false,
+      "layers": false
+    }
+  },
+  "active_tab_index": 4
+}

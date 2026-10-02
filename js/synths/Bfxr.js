@@ -685,9 +685,11 @@ class Bfxr extends SynthBase {
     /*********************/
 
     generate_sound() {
+        if (this.sound) this.sound.stop();
         var dsp = new Bfxr_DSP(this.params, this);
         dsp.generate_sound();
         this.sound = RealizedSound.from_buffer(dsp.buffer);
+        this.sound_params = JSON.stringify(this.params);
     }
 
     /*********************/

@@ -1,0 +1,108 @@
+{
+  "Jinglr": {
+    "files": [
+      [
+        "Pluck A · 1015357721",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":57721,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":0,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":57721,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":0,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ],
+      [
+        "Pluck B · 1015361803",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":61803,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":0,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":61803,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":0,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ],
+      [
+        "Bell A · 1015361803",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":61803,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":1,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":61803,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":1,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ],
+      [
+        "Bell B · 1015399991",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":99991,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":1,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":99991,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":1,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ],
+      [
+        "Chip A · 1015357721",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":57721,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":2,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":57721,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":2,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ],
+      [
+        "Chip B · 1015399991",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":99991,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":2,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":99991,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":2,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ],
+      [
+        "Flute A · 1015310001",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":10001,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":3,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":10001,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":3,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ],
+      [
+        "Flute B · 1015322361",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":22361,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":3,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":22361,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":3,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ],
+      [
+        "Keys A · 1015331415",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":31415,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":4,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":31415,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":4,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ],
+      [
+        "Keys B · 1015312537",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":12537,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":4,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":12537,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":4,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ],
+      [
+        "Reed A · 1015327182",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":27182,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":5,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":27182,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":5,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ],
+      [
+        "Reed B · 1015331415",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":31415,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":5,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":31415,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":5,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ],
+      [
+        "FM A · 1015399991",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":99991,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":6,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":99991,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":6,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ],
+      [
+        "FM B · 1015310001",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":10001,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":6,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":10001,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":6,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ],
+      [
+        "Strings A · 1015327182",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":27182,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":7,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":27182,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":7,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ],
+      [
+        "Strings B · 1015312537",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":12537,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":7,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}",
+        "{\"masterVolume\":0.5,\"seed\":0.1015310153101531,\"instrumentSeed\":12537,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":2,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":7,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":4,\"octave\":4,\"tempo\":126,\"swing\":0,\"brightness\":0.65,\"decay\":0.45,\"echo\":0}"
+      ]
+    ],
+    "selected_file_index": 0,
+    "create_new_sound": true,
+    "play_on_change": true,
+    "locked_params": {
+      "masterVolume": true,
+      "seed": false,
+      "instrumentSeed": false,
+      "phrase": false,
+      "instrument": false,
+      "key": false,
+      "scale": false,
+      "contour": false,
+      "rhythm": false,
+      "noteCount": false,
+      "octave": false,
+      "tempo": false,
+      "swing": false,
+      "brightness": false,
+      "decay": false,
+      "echo": false
+    }
+  },
+  "active_tab_index": 7
+}

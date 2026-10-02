@@ -51,7 +51,8 @@ class SaveLoad {
         console.log("exporting keys: " + keys);
         keys.sort();
         for (var i = 0; i < keys.length; i++){
-            result += dict[keys[i]] + "~";
+            // Escape the field separator inside JSON strings; numeric/transition links stay compatible.
+            result += JSON.stringify(dict[keys[i]]).replace(/~/g, '\\u007e') + "~";
         }
         //trim final ","
         result = result.slice(0, -1);
@@ -70,11 +71,20 @@ class SaveLoad {
         }
         var default_params = tab.synth.default_params();
         var keys = Object.keys(default_params);
+        // Chattr 1.x links predate Articulation. Their positional fields must not shift.
+        const legacyChattr = synth_name === 'Chattr' && entries.length - 2 === keys.length - 1;
+        if (legacyChattr) keys = keys.filter(key => key !== 'articulation');
+        const legacyJinglr = synth_name === 'Jinglr' && entries.length - 2 === keys.length - 1;
+        if (legacyJinglr) keys = keys.filter(key => key !== 'instrumentSeed');
         keys.sort();
         console.log("importing keys: " + keys);
         var dict = {};
+        if (legacyChattr) dict.articulation = default_params.articulation;
+        if (legacyJinglr) dict.instrumentSeed = default_params.instrumentSeed;
         for (var i = 0; i < keys.length; i++){
-            dict[keys[i]] = parseFloat(entries[i+2]);
+            const entry = entries[i+2];
+            dict[keys[i]] = typeof default_params[keys[i]] !== "number"
+                ? JSON.parse(entry) : parseFloat(entry);
         }
         return [synth_name,filename,dict];
     }
@@ -102,6 +112,8 @@ class SaveLoad {
         var active_tab_index = data.active_tab_index;
         for (var i = 0; i < tabs.length; i++){
             var tab = tabs[i];
+            // Older collections predate Transfxr; partial collections are also useful.
+            if (!data[tab.synth.name]) continue;
             var files = data[tab.synth.name].files;
             var selected_file_index = data[tab.synth.name].selected_file_index;
             var create_new_sound = data[tab.synth.name].create_new_sound;
@@ -111,7 +123,8 @@ class SaveLoad {
             tab.selected_file_index = -1;
             tab.create_new_sound = create_new_sound;
             tab.play_on_change = play_on_change;
-            tab.synth.locked_params = locked_params;
+            // Older collections omit newly added controls; keep those in the lock map.
+            tab.synth.locked_params = {...tab.synth.locked_params, ...locked_params};
             tab.update_ui();
             if (files[selected_file_index]!=null && files[selected_file_index].length>0){
                 tab.set_selected_file(files[selected_file_index][0]);
@@ -120,7 +133,8 @@ class SaveLoad {
             }
             tab.update_ui();
         }
-        tabs[active_tab_index].set_active_tab();
+        if (tabs[active_tab_index]) tabs[active_tab_index].set_active_tab();
+        SaveLoad.save_all_collections();
     }
 
     static serialize_collection(){
