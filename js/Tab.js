@@ -248,6 +248,12 @@ class Tab {
             var paste_button = this.add_button("paste", "Paste", this.paste_button_clicked.bind(this), "Paste the current sound [CTRL+V]");
             right_panel_button_list.appendChild(paste_button);
 
+            if (this.name !== 'Stackr' && typeof Stackr !== 'undefined') {
+                this.stack_button = this.add_button(this.name+'_layer_in_stackr','Layer in Stackr',
+                    this.layer_in_stackr.bind(this),'Copy this sound into the current stack and open it.');
+                right_panel_button_list.appendChild(this.stack_button);
+            }
+
             var copy_link_button = this.add_button("copy_link", "Copy Link", this.copy_link_button_clicked.bind(this), "Copy the current sound link");
             right_panel_button_list.appendChild(copy_link_button);
 
@@ -321,7 +327,17 @@ class Tab {
         this.update_locks();
     }
 
+    update_stack_button(){
+        if (this.stack_button) {
+            const stack=tabs.find(tab=>tab.name==='Stackr');
+            this.stack_button.disabled=!!stack && stack.synth.get_layers().length>=6;
+            this.stack_button.title=this.stack_button.disabled ? 'Stack full. Open Stackr and start a new stack or remove a layer.'
+                : 'Copy this sound into the current stack and open it.';
+        }
+    }
+
     update_ablements(){
+        this.update_stack_button();
         if (this.selected_file_index===-1){
             return;
         }
@@ -480,6 +496,7 @@ class Tab {
             if (tab.active && tab !== this && tab.synth.loop_preview && tab.synth.sound) tab.synth.sound.stop();
             tab.active = tab.name == this.name;
         }
+        this.update_stack_button();
         if (this.custom_editor) this.custom_editor.update();
     }
     
@@ -1191,6 +1208,13 @@ class Tab {
         file_input.click();
     }
 
+    layer_in_stackr() {
+        const stack=tabs.find(tab=>tab.name==='Stackr');
+        if(!stack || !stack.synth.add_source(this.synth,this.get_current_file_name()))return;
+        stack.set_active_tab();
+        stack.parameter_changed();
+    }
+
     copy_button_clicked() {
         console.log("Copy button clicked");
         var file_jstor_json_string = this.serialize_params();
@@ -1310,6 +1334,7 @@ class Tab {
             node.classList.remove("unlocked");
         }
         this.synth.locked_params[param_name]=!value;
+        if (this.custom_editor) this.custom_editor.update();
         SaveLoad.save_all_collections();
     }
 

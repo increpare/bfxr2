@@ -16,7 +16,8 @@ class Tappr_DSP {
         const force=new Float32Array(frames), random=SoundDSP.rng(value('seed',0.5));
         const material=this.materials[Math.round(value('material',1,0,5))];
         const size=value('size',0.5), hardness=value('hardness',0.4), body=value('body',0.4);
-        const release=value('release',0.35), gap=value('gap',0.4), electronic=value('electronic',0.08);
+        const release=value('release',0), gap=value('gap',0.4), electronic=value('electronic',0.08);
+        const sweep=value('sweep',0,-1,1),air=value('air',0);
         const damping=value('damping',0.7), sin=Math.sin, cos=Math.cos, exp=Math.exp;
         const pow=Math.pow, min=Math.min, max=Math.max, round=Math.round, tau=Math.PI*2;
         const base=1750*pow(2,-3.3*size)*material.pitch*(0.97+random()*0.06);
@@ -60,7 +61,7 @@ class Tappr_DSP {
                 mode.re=re;
                 sample+=re*mode.gain;
             }
-            out[i]+=sample;
+            out[i]+=sample*1.8;
         }
         const electronicLength=min(round(duration*rate*0.3),round(rate*0.08));
         const electronicPitch=850*pow(2,(1-size)*1.5);
@@ -68,10 +69,19 @@ class Tappr_DSP {
             let phase=0;
             for(let j=0;j<electronicLength && contact.start+j<frames;j++) {
                 const age=j/electronicLength;
-                phase+=tau*electronicPitch*(1+contact.polarity*0.18*(1-age))/rate;
+                phase+=tau*electronicPitch*pow(2,sweep*(age-0.5))*(1+contact.polarity*0.18*(1-age))/rate;
                 out[contact.start+j]+=sin(phase)*sin(Math.PI*age)*exp(-age*4)
                     *electronic*0.25*contact.strength;
             }
+        }
+        // A single smooth air gesture for panels and soft navigation transitions.
+        let airLow=0,airHigh=0;
+        for(let i=onset;i<frames;i++) {
+            const t=(i-onset)/max(1,frames-onset-1);
+            const cutoff=600+4000*(sweep<0?1-t:t);
+            airLow+=(random()*2-1-airLow)*(1-exp(-tau*cutoff/rate));
+            airHigh+=(airLow-airHigh)*0.035;
+            out[i]+=(airLow-airHigh)*pow(sin(Math.PI*t),1.4)*air*0.35;
         }
         return SoundDSP.finish(out,value('masterVolume',0.5));
     }

@@ -8,7 +8,7 @@ const {rng}=require('../tools/preset_survey/render_corpus');
 function load(){
  const math=Object.create(Math);math.random=rng(4002);
  const ctx=vm.createContext({console,Math:math});
- for(const file of ['js/globals.js','js/synths/templates.js','js/synths/SynthBase.js','js/audio/Transfxr_DSP.js',
+ for(const file of ['js/globals.js','js/audio/AKWF.js','js/audio/BfxrWaveforms.js','js/synths/templates.js','js/synths/SynthBase.js','js/audio/Transfxr_DSP.js',
   'js/synths/PresetFamily.js','js/synths/TransfxrPresets.js','js/synths/Transfxr.js']){
   if(fs.existsSync(path.join(root,file)))vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx);
  }

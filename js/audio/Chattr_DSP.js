@@ -131,7 +131,8 @@ class Chattr_DSP {
         const rate = this.sampleRate;
         const output = new Float32Array(Math.ceil(score.duration * rate));
         if (!score.events.length || p.masterVolume === 0) return output;
-        const synth = new ChattrFormants.FormantSynth({sampleRate:rate,schedule:this.acousticScore(p,score)});
+        const source = p.waveType >= 0 ? BfxrWaveforms.create(p.waveType,p.seed) : null;
+        const synth = new ChattrFormants.FormantSynth({sampleRate:rate,schedule:this.acousticScore(p,score),source});
         synth.lfsr = (0x51f15e + Math.round(p.seed * 65534)) | 0;
         synth.process(output);
         for (let i = 0; i < output.length; i++) {

@@ -129,3 +129,13 @@ Other software that can be software for making sounds:
 * Sound Effects Generator - http://www.windowsgames.co.uk/effects.html (windows only. I nicked a couple of things from this. )
 * Freesound - http://www.freesound.org - Okay, not sound software, but a really amazing resource.
 * ChipTone - https://sfbgames.itch.io/chiptone
+
+## Sound quality pass
+
+Transfxr and Chattr offer Bfxr's twelve waveform choices; Chattr also retains its original vocal source. Character buttons vary the speaker as well as the delivery. Notifr has independent instrument reseeding, with different bell constructions sharing the same alert pattern.
+
+Fractr, Boomr, Rustlr and Rollr now emphasize fractures, turbulent pressure and continuous material contact. Tappr presets make single interface gestures; a second contact remains optional. Breathr offers Airflow, Retro and Snore, and Pluckr offers Nylon, Steel, Gut, Rubber, Glass and Gravity strings.
+
+To combine sounds, open Stackr and choose **New empty stack**, then click **Layer in Stackr** from any sound tab. Layers start together; change **Start (s)** to sequence them. Their copied settings remain independent of the originals.
+
+[32 editable examples and a 26.5-second listening reel](examples/Quality/README.md) compare the revised engines, three bell seeds with the same alert pattern, and six string materials at the same tuning. Rebuild with `node tools/render/quality_examples.js`.

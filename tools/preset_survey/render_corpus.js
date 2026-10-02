@@ -5,7 +5,7 @@ const root=path.resolve(__dirname,'../..');
 function rng(seed){let a=seed>>>0;return()=>{a+=0x6D2B79F5;let t=Math.imul(a^(a>>>15),1|a);t^=t+Math.imul(t^(t>>>7),61|t);return((t^(t>>>14))>>>0)/4294967296;};}
 function createContext(extra=[]){
  const ctx=vm.createContext({console});
- for(const file of ['js/globals.js','js/synths/templates.js','js/synths/SynthBase.js','js/audio/Transfxr_DSP.js',
+ for(const file of ['js/globals.js','js/audio/AKWF.js','js/audio/BfxrWaveforms.js','js/synths/templates.js','js/synths/SynthBase.js','js/audio/Transfxr_DSP.js',
   ...extra,'js/synths/Transfxr.js'])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx,{filename:file});
  return ctx;
 }

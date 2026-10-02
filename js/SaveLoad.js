@@ -71,16 +71,19 @@ class SaveLoad {
         }
         var default_params = tab.synth.default_params();
         var keys = Object.keys(default_params);
-        // Chattr 1.x links predate Articulation. Their positional fields must not shift.
-        const legacyChattr = synth_name === 'Chattr' && entries.length - 2 === keys.length - 1;
-        if (legacyChattr) keys = keys.filter(key => key !== 'articulation');
-        const legacyJinglr = synth_name === 'Jinglr' && entries.length - 2 === keys.length - 1;
-        if (legacyJinglr) keys = keys.filter(key => key !== 'instrumentSeed');
-        keys.sort();
-        console.log("importing keys: " + keys);
+        // Links from earlier palettes omitted these controls. Their sorted,
+        // positional fields must be read against the schema that wrote them.
+        const additions = {
+            Chattr:[['waveType'],['waveType','articulation']],
+            Jinglr:[['instrumentSeed']], Notifr:[['instrumentSeed']],
+            Tappr:[['air','sweep']], Rollr:[['surface']],
+            Breathr:[['source']], Pluckr:[['material']]
+        };
+        const missing = (additions[synth_name] || []).find(fields =>
+            entries.length - 2 === keys.length - fields.length) || [];
+        keys = keys.filter(key => !missing.includes(key)).sort();
         var dict = {};
-        if (legacyChattr) dict.articulation = default_params.articulation;
-        if (legacyJinglr) dict.instrumentSeed = default_params.instrumentSeed;
+        for (const key of missing) dict[key] = default_params[key];
         for (var i = 0; i < keys.length; i++){
             const entry = entries[i+2];
             dict[keys[i]] = typeof default_params[keys[i]] !== "number"

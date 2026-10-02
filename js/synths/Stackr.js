@@ -19,6 +19,7 @@ class Stackr extends PresetSynth {
         {id:'cartoon_crash',name:'Cartoon Crash',tip:'A spring, a thud, and loose pieces rolling away.',values:{spacing:[0.8,1.3]},layers:[['Squishr','springy_goo',0,0.8],['Clonkr','rubber_thud',0.28,0.9],['Clonkr','loose_bolts',0.5,0.7]]}
     ];
     constructor() { super(); this.initialize_presets(); }
+    create_random_template() { this.set_param('layers',[]); return ['Stack',this.params]; }
     create_editor(tab, parent) { return new StackEditor(tab, parent); }
 
     static sources() {
@@ -89,11 +90,12 @@ class Stackr extends PresetSynth {
     get_layers() { return JSON.parse(this.params.layers); }
 
     add_source(synth, name) {
-        if (synth.name === 'Stackr') return;
+        if (synth.name === 'Stackr') return false;
         const layers = this.get_layers();
-        if (layers.length >= 6) return;
-        layers.push({synth:synth.name,name:name || synth.name,params:synth.params,start:layers.length * 0.2,gain:0.8,pitch:0});
+        if (layers.length >= 6) return false;
+        layers.push({synth:synth.name,name:name || synth.name,params:synth.params,start:0,gain:0.8,pitch:0});
         this.set_param('layers',layers);
+        return true;
     }
 
     generate_recipe(id) {

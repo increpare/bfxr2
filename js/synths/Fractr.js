@@ -4,15 +4,15 @@ class Fractr extends PresetSynth {
     static DSP = Fractr_DSP;
     param_info = [
         ...PresetSynth.common_params,
-        {type:'BUTTONSELECT', name:'material', display_name:'Material', tooltip:'The resonances carried by each fragment.',
+        {type:'BUTTONSELECT', name:'material', display_name:'Material', tooltip:'The crack, grit and short body of each fragment.',
             default_value:0, columns:4, values:[['Glass','Bright, inharmonic shards.',0],['Ice','Hollow crystalline cracks.',1],
                 ['Crystal','Long, almost harmonic ringing.',2],['Stone','Low, dusty rubble.',3],
                 ['Pixel','Tuned fragments snapped to a time grid.',4],['Armor','Brittle metallic plates.',5],['Bone','Dry, small clattering pieces.',6]]},
         ['Duration','Length of the entire break and its tail, in seconds.','duration',1.8,0.15,6],
         ['Fragments','Number of separately falling pieces.','fragments',32,3,96],
-        ['Fragment Size','Larger pieces resonate lower.','fragmentSize',0.4,0,1],
+        ['Fragment Size','Larger pieces make deeper, longer contacts; small shards spit and crackle.','fragmentSize',0.4,0,1],
         ['Spread','Time between the first and last fractures.','spread',0.6,0,1],
-        ['Decay','How long each fragment rings after contact.','decay',0.4,0,1],
+        ['Decay','Length of the grit after each crack; Crystal and Pixel also sustain their ringing.','decay',0.4,0,1],
         ['Gravity','Stronger gravity speeds the cascade and shortens bounce flights.','gravity',0.5,0,1],
         ['Bounce','Number and strength of each fragment’s returning contacts.','bounce',0.4,0,1]
     ];

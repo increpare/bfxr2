@@ -6,7 +6,7 @@ const vm = require('node:vm');
 const root = path.resolve(__dirname,'../..');
 const output = path.resolve(process.argv[2] || path.join(root,'examples/Chattr'));
 const context = vm.createContext({console});
-for (const file of ['js/globals.js','js/synths/templates.js','js/synths/SynthBase.js',
+for (const file of ['js/globals.js','js/audio/AKWF.js','js/audio/BfxrWaveforms.js','js/synths/templates.js','js/synths/SynthBase.js',
     'js/audio/ChattrLexicon.js','js/audio/ChattrFormants.js','js/audio/Chattr_Pronunciation.js',
     'js/audio/Chattr_DSP.js','js/synths/Chattr.js']) {
     vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),context,{filename:file});

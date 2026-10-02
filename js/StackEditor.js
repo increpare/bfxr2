@@ -4,10 +4,10 @@ class StackEditor {
         this.root = document.createElement('section');
         this.root.className = 'stack-editor';
         const heading = document.createElement('h3');
-        heading.textContent = 'Build a little event';
+        heading.textContent = 'Layers';
         this.root.appendChild(heading);
         const note = document.createElement('p');
-        note.textContent = 'Layer copies of sounds from any other tab. Move them in time, change their level, or shift their pitch.';
+        note.textContent = 'Start = when it plays. Level = how loud. Pitch = semitones.';
         this.root.appendChild(note);
         this.timeline = document.createElement('div');
         this.timeline.className = 'stack-timeline';
@@ -17,6 +17,12 @@ class StackEditor {
         this.root.appendChild(this.rows);
         const actions = document.createElement('div');
         actions.className = 'stack-actions';
+        const fresh=document.createElement('button');fresh.textContent='New empty stack';
+        fresh.addEventListener('click',()=>{
+            const params={...tab.synth.default_params(),masterVolume:tab.synth.params.masterVolume};
+            tab.create_new_sound_from_params('Stack',params,true);this.update();
+        });
+        actions.appendChild(fresh);
         this.source = document.createElement('select');
         this.source.setAttribute('aria-label','Sound to add');
         actions.appendChild(this.source);
@@ -79,7 +85,7 @@ class StackEditor {
             bar.style.backgroundColor=['#987849','#6d8370','#80718f','#9c6558','#647d8e','#8e864e'][index];
             track.appendChild(bar);this.timeline.appendChild(track);
         });
-        if (!layers.length) this.timeline.textContent='Choose a preset, or add a sound below.';
+        if (!layers.length) this.timeline.textContent='Make a sound in another tab, then click “Layer in Stackr”.';
         else {
             const scale=document.createElement('small');scale.textContent='0 s → '+extent.toFixed(2)+' s';this.timeline.appendChild(scale);
         }

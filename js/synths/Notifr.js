@@ -2,8 +2,10 @@ class Notifr extends PresetSynth {
     name='Notifr';
     tooltip='Compact messages, achievements, warnings and other semantic alerts.';
     static DSP=Notifr_DSP;
+    hide_params=['masterVolume','tone'];
     param_info=[
         ...PresetSynth.common_params,
+        ['Instrument Seed','The construction of the voice, independent of the alert pattern.','instrumentSeed',0.5,0,1],
         {type:'BUTTONSELECT',name:'tone',display_name:'Tone',tooltip:'The voice shared by the overlapping alert tones.',
             default_value:0,columns:4,values:[['Soft','Rounded electronic tones.',0],['Bell','Inharmonic bell partials.',1],
                 ['Chime','Bright harmonic chimes.',2],['Buzz','Firm, buzzy alert tones.',3]]},
@@ -29,8 +31,44 @@ class Notifr extends PresetSynth {
         {id:'connected',name:'Connected',tip:'Two soft upward tones settling into place.',values:{tone:0,duration:[0.22,0.48],pitch:[0.4,0.59],interval:[5,9],tension:[0,0.04],pulses:2,spacing:[0.1,0.32],urgency:[0,0.1],softness:[0.72,1],ring:[0.35,0.6],echo:[0.02,0.14]}}
     ];
     constructor(){super();this.initialize_presets();}
+    reseed_instrument(tone=this.params.tone) {
+        this.set_param('tone',tone,true);
+        this.set_param('instrumentSeed',Math.random(),true);
+    }
+    after_recipe() { this.reseed_instrument(); }
+    create_editor(tab,parent) { return new NotifrInstrumentEditor(tab,parent); }
+    apply_params(params,checkLocked=false) {
+        if(params && !Object.prototype.hasOwnProperty.call(params,'instrumentSeed') &&
+            ['tone','duration','pitch','pulses','seed'].every(key=>Object.prototype.hasOwnProperty.call(params,key)))
+            this.set_param('instrumentSeed',0.5,checkLocked);
+        super.apply_params(params,checkLocked);
+    }
     set_param(name,value,checkLocked=false){
         super.set_param(name,value,checkLocked);
         if(name==='pulses'&&!(checkLocked&&this.locked_params[name])) this.params.pulses=Math.round(this.params.pulses);
+    }
+}
+
+class NotifrInstrumentEditor {
+    constructor(tab,parent) {
+        this.tab=tab;this.buttons=[];
+        const root=document.createElement('div');root.className='phrase-editor';
+        const heading=document.createElement('div');heading.className='phrase-section-label';
+        heading.textContent='Reseed instrument';
+        heading.appendChild(tab.generate_lock_button('tone'));root.appendChild(heading);
+        const row=document.createElement('div');row.className='phrase-instruments';root.appendChild(row);
+        for(const [name,tip,tone] of tab.synth.get_param_info('tone').values) {
+            const button=document.createElement('button');button.textContent=name;button.title=tip;
+            button.addEventListener('click',()=>{tab.synth.reseed_instrument(tone);tab.parameter_changed();tab.update_ui_params();this.update();});
+            row.appendChild(button);this.buttons.push({button,tone});
+        }
+        parent.appendChild(root);this.update();
+    }
+    update() {
+        const s=this.tab.synth;
+        for(const {button,tone} of this.buttons){
+            button.setAttribute('aria-pressed',String(s.params.tone===tone));
+            button.disabled=s.locked_param('instrumentSeed')&&(s.locked_param('tone')||s.params.tone===tone);
+        }
     }
 }

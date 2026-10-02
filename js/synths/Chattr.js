@@ -2,12 +2,14 @@ class Chattr extends SynthBase {
     name = 'Chattr';
     version = '2.0.0';
     tooltip = 'Little voices for imaginary friends.';
-    header_properties = ['text', 'texture'];
+    header_properties = ['text', 'waveType'];
     permalocked = ['masterVolume', 'text'];
-    hide_params = ['masterVolume'];
+    hide_params = ['masterVolume', 'texture'];
     param_info = [
         ['Sound Volume', 'Overall volume of this voice.', 'masterVolume', 0.5, 0, 1],
         {type:'TEXT', name:'text', display_name:'Something to say', default_value:'Oh! A tiny visitor. Hello there!', max_length:Chattr_DSP.maxLength, header:true},
+        {type:'BUTTONSELECT', name:'waveType', display_name:'Source', tooltip:'The waveform that speaks through the mouth.',
+            default_value:-1, columns:4, header:true, values:[['Vocal','The original vocal-fold source.',-1],...BfxrWaveforms.choices]},
         {type:'BUTTONSELECT', name:'texture', display_name:'Voice', tooltip:'Three source colors, all shaped by the same speaking mouth.',
             default_value:0, columns:3, header:true, values:[
                 ['Babble','A warm, buzzy little voice.',0],
@@ -56,6 +58,9 @@ class Chattr extends SynthBase {
 
     apply_params(params, check_locked = false) {
         if (!params || typeof params !== 'object') return;
+        if (!Object.prototype.hasOwnProperty.call(params,'waveType') &&
+            ['text','texture','pitch','mouth','speed','seed'].every(name=>Object.prototype.hasOwnProperty.call(params,name)))
+            this.set_param('waveType',-1,check_locked);
         // Complete voices saved before articulation existed always get the same default,
         // independent of whichever voice happens to be selected when they are opened.
         if (!Object.prototype.hasOwnProperty.call(params,'articulation') &&
@@ -73,7 +78,15 @@ class Chattr extends SynthBase {
         const words = this.params.text;
         this.reset_params(true);
         this.apply_params(character.params,true);
-        if (vary) this.set_param('seed',Math.random(),true);
+        if (vary) {
+            // Vary the speaker itself, not just the delivery's random seed.
+            for (const [name,spread] of [['pitch',0.18],['mouth',0.2],['speed',0.24],
+                ['expression',0.25],['inflection',0.25],['spacing',0.18]]) {
+                const base=this.params[name];
+                this.set_param(name,base+(Math.random()-0.5)*spread,true);
+            }
+            this.set_param('seed',Math.random(),true);
+        }
         this.set_param('text',words);
     }
 

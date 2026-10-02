@@ -10,7 +10,7 @@ function createContext(names = []) {
         const AUDIO_CONTEXT={currentTime:0,destination:{},createBuffer(channels,length,rate){
             const pcm=new Float32Array(length); return {getChannelData(){return pcm;},copyToChannel(data){pcm.set(data);}};
         },createBufferSource(){return {connect(){},disconnect(){},start(){},stop(){}};}};`,context);
-    const sources=['js/globals.js','js/audio/riffwave.js','js/audio/RealizedSound.js',
+    const sources=['js/globals.js','js/audio/AKWF.js','js/audio/BfxrWaveforms.js','js/audio/riffwave.js','js/audio/RealizedSound.js',
         'js/synths/templates.js','js/synths/SynthBase.js','js/audio/SoundDSP.js','js/synths/PresetSynth.js',
         'js/synths/PresetFamily.js','js/synths/TransfxrPresets.js'];
     for(const name of names) sources.push(`js/audio/${name}_DSP.js`,`js/synths/${name}.js`);

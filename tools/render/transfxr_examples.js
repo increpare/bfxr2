@@ -6,7 +6,7 @@ const vm = require('node:vm');
 const root = path.resolve(__dirname, '../..');
 const output = path.resolve(process.argv[2] || path.join(root, 'examples/Transfxr'));
 const ctx = vm.createContext({console});
-for (const source of ['js/globals.js','js/synths/templates.js','js/synths/SynthBase.js',
+for (const source of ['js/globals.js','js/audio/AKWF.js','js/audio/BfxrWaveforms.js','js/synths/templates.js','js/synths/SynthBase.js',
     'js/audio/Transfxr_DSP.js','js/synths/Transfxr.js']) {
     vm.runInContext(fs.readFileSync(path.join(root,source),'utf8'),ctx,{filename:source});
 }

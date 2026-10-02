@@ -11,7 +11,7 @@ function context() {
             getChannelData(){return pcm;}, copyToChannel(data){pcm.set(data);}
         }; }
     };`,ctx);
-    for (const file of ['js/globals.js','js/audio/riffwave.js','js/audio/RealizedSound.js',
+    for (const file of ['js/globals.js','js/audio/AKWF.js','js/audio/BfxrWaveforms.js','js/audio/riffwave.js','js/audio/RealizedSound.js',
         'js/synths/templates.js','js/synths/SynthBase.js',
         'js/audio/ChattrLexicon.js','js/audio/ChattrFormants.js','js/audio/Chattr_Pronunciation.js','js/audio/Chattr_DSP.js',
         'js/synths/Chattr.js','js/Tab.js','js/SaveLoad.js']) {
@@ -210,11 +210,12 @@ test('numbers are spoken and unfamiliar words have deterministic phonemes',()=>{
 test('legacy Chattr links acquire articulation without shifting existing fields',()=>{
     const run=context();
     const [old,loaded]=run(`var s=new Chattr(); tabs=[{synth:s}];
-        var old={...s.params}; delete old.articulation; old.text='My old voice?'; old.pitch=0.81;
+        var old={...s.params}; delete old.articulation; delete old.waveType; old.text='My old voice?'; old.pitch=0.81;
         var link=SaveLoad.shallow_dict_serialize('Chattr','Old',old);
         [old,SaveLoad.shallow_dict_deserialize(link)[2]];`);
     assert.equal(loaded.articulation,0.8);
     delete loaded.articulation;
+    assert.equal(loaded.waveType,-1); delete loaded.waveType;
     assert.deepEqual(plain(old),plain(loaded));
 });
 

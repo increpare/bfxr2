@@ -1,14 +1,14 @@
-// Each shard has its own size, fracture time, flight, bounces and three material
-// modes. Rendering particles into a shared buffer produces an actual cascade.
+// A break is a shower of brief fracture bursts, then rough shard contacts.
+// Only the explicitly stylized Crystal and Pixel materials sustain tuned modes.
 class Fractr_DSP {
     static materials = [
-        {pitch:1.35, ring:1.0, noise:0.07, ratios:[1, 2.71, 4.83]}, // Glass
-        {pitch:0.84, ring:0.52, noise:0.15, ratios:[1, 1.91, 3.77]}, // Ice
-        {pitch:1.05, ring:1.75, noise:0.025, ratios:[1, 1.505, 2.014]}, // Crystal
-        {pitch:0.17, ring:0.3, noise:0.27, ratios:[1, 1.63, 2.42]}, // Stone
-        {pitch:1.0, ring:0.6, noise:0.015, ratios:[1, 2, 4]}, // Pixel
-        {pitch:0.55, ring:0.76, noise:0.16, ratios:[1, 2.39, 5.17]}, // Armor
-        {pitch:0.39, ring:0.38, noise:0.18, ratios:[1, 1.82, 3.03]} // Bone
+        {pitch:1.65, ring:0.22, noise:1.7, cutoff:11000, grit:0.28, ratios:[1, 2.71, 4.83]}, // Glass
+        {pitch:0.84, ring:0.15, noise:2.1, cutoff:6500, grit:0.6, ratios:[1, 1.91, 3.77]}, // Ice
+        {pitch:1.05, ring:1.75, noise:0.025, cutoff:10000, grit:0, ratios:[1, 1.505, 2.014]}, // Crystal
+        {pitch:0.17, ring:0.08, noise:3.8, cutoff:1700, grit:1, ratios:[1, 1.63, 2.42]}, // Stone
+        {pitch:1.0, ring:0.6, noise:0.015, cutoff:10000, grit:0, ratios:[1, 2, 4]}, // Pixel
+        {pitch:0.65, ring:0.26, noise:1.8, cutoff:7000, grit:0.42, ratios:[1, 2.39, 5.17]}, // Armor
+        {pitch:0.39, ring:0.1, noise:2.8, cutoff:3800, grit:0.45, ratios:[1, 1.82, 3.03]} // Bone
     ];
 
     static render(p) {
@@ -20,12 +20,12 @@ class Fractr_DSP {
         const output = new Float32Array(round(duration * rate));
         const materialIndex = round(value('material', 0, 0, 6));
         const material = this.materials[materialIndex];
+        const tuned = materialIndex === 2 || materialIndex === 4;
         const fragments = round(value('fragments', 32, 3, 96));
         const size = value('fragmentSize', 0.4), spread = value('spread', 0.6);
         const decay = value('decay', 0.4), gravity = value('gravity', 0.5), bounce = value('bounce', 0.4);
         const cascadeTime = duration * (0.012 + spread * 0.72) * (1 - gravity * 0.6);
         const gain = 1.45 / pow(fragments, 0.3), tau = 2 * PI;
-        const noiseRadius = exp(-1 / (rate * (0.0015 + 0.004 * size)));
         const bounceCount = round(bounce * 4);
 
         for (let shard = 0; shard < fragments; shard++) {
@@ -34,9 +34,15 @@ class Fractr_DSP {
             let time = 0.006 + cascadeTime * pow(progress, 0.75 + 0.7 * gravity);
             if (materialIndex === 4) time = round(time * 48) / 48 + 0.006;
             const start = round(time * rate);
-            let frequency = 2700 * pow(2, -shardSize * 4.5) * material.pitch * (0.8 + 0.4 * random());
+            let frequency = 2700 * pow(2, -shardSize * 4.5) * material.pitch * (0.65 + 0.7 * random());
             if (materialIndex === 4) frequency = 110 * pow(2, round(12 * Math.log2(frequency / 110)) / 12);
             const ringTime = (0.006 + decay * 0.23) * material.ring * (0.8 + random() * 0.4);
+            const contactTime = tuned ? 0.0025 : 0.0018 + (0.004 + decay * 0.025) * (0.4 + shardSize) * (0.7 + material.grit);
+            const noiseRadius = exp(-1 / (rate * contactTime));
+            const crackRadius = exp(-1 / (rate * (0.0003 + shardSize * 0.00065)));
+            const cutoff = material.cutoff * pow(2, -shardSize * 1.6);
+            const dustFilter = 1 - exp(-tau * cutoff / rate);
+            const bodyFilter = 1 - exp(-tau * (130 + 1700 * (1 - shardSize) * material.pitch) / rate);
             const strength = gain * (0.55 + random() * 0.65) * (1 - progress * 0.3);
             const flight = (0.045 + 0.34 * (1 - gravity)) * (0.4 + 0.6 * shardSize);
             const contacts = [{sample:start, strength}];
@@ -47,7 +53,7 @@ class Fractr_DSP {
                 nextStrength *= 0.27 + bounce * 0.42;
                 contacts.push({sample:round(nextTime * rate), strength:nextStrength});
             }
-            const end = min(output.length, contacts[contacts.length - 1].sample + round(ringTime * 7 * rate));
+            const end = min(output.length, contacts[contacts.length - 1].sample + round(max(ringTime, contactTime) * 7 * rate));
             const modes = material.ratios.map((ratio, index) => {
                 const angle = tau * min(11000, frequency * ratio) / rate;
                 const radius = exp(-(1 + index * 0.55) / (ringTime * rate));
@@ -55,12 +61,23 @@ class Fractr_DSP {
             });
             // Unrolled three-mode rotators keep the busiest 96-shard cascades cheap.
             const a = modes[0], b = modes[1], c = modes[2];
-            let ar=0, ai=0, br=0, bi=0, cr=0, ci=0, noiseEnvelope=0, nextContact=0, dust=0;
+            let ar=0, ai=0, br=0, bi=0, cr=0, ci=0, noiseEnvelope=0, nextContact=0, dust=0, body=0;
+            let crackEnvelope=0, crackLeft=0, nextCrack=0, contactStrength=0;
             for (let i = start; i < end; i++) {
                 if (nextContact < contacts.length && i === contacts[nextContact].sample) {
                     const hit = contacts[nextContact++].strength;
-                    ar += hit; br += hit * 0.44; cr += hit * 0.24;
+                    const modeGain = tuned ? 1 : 0.12;
+                    ar += hit * modeGain; br += hit * modeGain * 0.44; cr += hit * modeGain * 0.24;
                     noiseEnvelope += hit * material.noise;
+                    // An initial split has several tiny failures; later contacts scrape once.
+                    contactStrength = hit;
+                    crackLeft = tuned ? 0 : (nextContact === 1 ? 3 + round(shardSize * 4) : 1);
+                    nextCrack = i;
+                }
+                if (crackLeft > 0 && i === nextCrack) {
+                    crackEnvelope += contactStrength * (0.5 + random() * 0.9);
+                    nextCrack += 5 + round(random() * (25 + shardSize * 100));
+                    crackLeft--;
                 }
                 const an = ar * a.c - ai * a.s;
                 ai = ar * a.s + ai * a.c; ar = an;
@@ -69,9 +86,13 @@ class Fractr_DSP {
                 const cn = cr * c.c - ci * c.s;
                 ci = cr * c.s + ci * c.c; cr = cn;
                 const noise = random() * 2 - 1;
-                dust += (noise - dust) * (materialIndex === 3 ? 0.08 : 0.65);
-                output[i] += (ar + br + cr) * 0.52 + dust * noiseEnvelope;
+                dust += (noise - dust) * dustFilter;
+                body += (noise - body) * bodyFilter;
+                const rough = dust + body * material.grit;
+                output[i] += (ar + br + cr) * 0.52 + rough * noiseEnvelope
+                    + (dust - body * 0.5) * crackEnvelope;
                 noiseEnvelope *= noiseRadius;
+                crackEnvelope *= crackRadius;
             }
         }
         return SoundDSP.finish(output, value('masterVolume', 0.5));

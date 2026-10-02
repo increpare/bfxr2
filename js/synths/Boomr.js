@@ -5,10 +5,10 @@ class Boomr extends PresetSynth {
     param_info=[
         ...PresetSynth.common_params,
         ['Duration','Seconds.','duration',1.5,0.12,5],
-        ['Size','Large blasts have lower pressure waves.','size',0.5,0,1],
+        ['Size','Larger blasts have a deeper pressure body and slower, darker fireballs.','size',0.5,0,1],
         ['Pressure','The low shock front of the explosion.','pressure',0.7,0,1],
         ['Blast','Turbulent fire and rushing air.','blast',0.65,0,1],
-        ['Debris','Separate ringing fragments after the blast.','debris',0.35,0,1],
+        ['Debris','Sharp grit and dull rubble contacts after the blast.','debris',0.35,0,1],
         ['Scatter','Spread the fragments through the tail.','spread',0.5,0,1],
         ['Aftermath','Length and weight of the rolling decay.','tail',0.45,0,1],
         ['Muffle','Lose sharp detail behind walls or underwater.','muffle',0.15,0,1]

@@ -3,6 +3,9 @@ class Pluckr extends PresetSynth {
     tooltip='Plucked strings, sympathetic bridges and small magical instruments.';
     static DSP=Pluckr_DSP;
     param_info=[...PresetSynth.common_params,
+        {type:'BUTTONSELECT',name:'material',display_name:'String',tooltip:'String material changes the excitation, loss and wave dispersion.',default_value:0,columns:3,
+            values:[['Nylon','A smooth, flexible string with a rounded ring.',0],['Steel','Bright wire with stiff, persistent upper partials.',1],['Gut','A soft fibre string with warm, uneven loss.',2],
+                ['Rubber','A thick elastic string that rapidly absorbs vibration.',3],['Glass','An impossible rigid filament with dispersing partials.',4],['Gravity','A string whose wave propagation slowly bends and changes.',5]]},
         ['Duration','Total string ring, in seconds.','duration',1.8,0.15,5],
         ['Pitch','Root string tuning.','pitch',0.5,0,1],
         ['Strings','Strings in the open chord.','strings',3,1,8],
@@ -14,15 +17,24 @@ class Pluckr extends PresetSynth {
         ['Loose Tuning','Independent imperfections in string tuning.','inharmonic',0.05,0,1]
     ];
     recipes=[
-        {name:'Harp',id:'harp',tip:'A clear open chord with a long ring.',values:{duration:[2,4],pitch:[0.35,0.65],strings:[3,6],damping:[0.05,0.25],brightness:[0.25,0.55],pluck:[0.2,0.6],coupling:[0.1,0.35],strum:[0.3,0.65],inharmonic:[0.01,0.08]}},
-        {name:'Kalimba',id:'kalimba',tip:'A small bright thumb-piano tine.',values:{duration:[0.7,1.6],pitch:[0.5,0.8],strings:[1,2],damping:[0.25,0.5],brightness:[0.55,0.9],pluck:[0.1,0.4],coupling:[0.05,0.2],strum:[0.05,0.2],inharmonic:[0.02,0.14]}},
-        {name:'Muted Guitar',id:'muted_guitar',tip:'A short palm-muted chord.',values:{duration:[0.4,0.9],pitch:[0.2,0.48],strings:[3,6],damping:[0.7,0.94],brightness:[0.12,0.38],pluck:[0.25,0.65],coupling:[0.15,0.45],strum:[0.08,0.22],inharmonic:[0.03,0.15]}},
-        {name:'Metal String',id:'metal_string',tip:'A hard, bright wire with a persistent ring.',values:{duration:[1.4,3.5],pitch:[0.3,0.7],strings:[1,3],damping:[0.02,0.18],brightness:[0.8,1],pluck:[0.02,0.2],coupling:[0.1,0.4],strum:[0.04,0.2],inharmonic:[0.1,0.3]}},
-        {name:'Magic Harp',id:'magic_harp',tip:'A cascade of high sympathetic strings.',values:{duration:[2,4.5],pitch:[0.5,0.8],strings:[5,8],damping:[0.02,0.16],brightness:[0.35,0.65],pluck:[0.2,0.65],coupling:[0.6,1],strum:[0.65,1],inharmonic:[0.1,0.3]}},
-        {name:'Bass Pluck',id:'bass_pluck',tip:'One thick string with a round body.',values:{duration:[0.8,2.4],pitch:[0.02,0.2],strings:1,damping:[0.15,0.4],brightness:[0.08,0.3],pluck:[0.3,0.6],coupling:[0.05,0.25],strum:0,inharmonic:[0.01,0.12]}},
-        {name:'Broken String',id:'broken_string',tip:'A loose, mismatched chord dying unevenly.',values:{duration:[0.6,1.5],pitch:[0.12,0.5],strings:[2,5],damping:[0.45,0.8],brightness:[0.5,0.95],pluck:[0.02,0.9],coupling:[0.4,0.9],strum:[0.2,0.7],inharmonic:[0.8,1]}},
-        {name:'Quest Pluck',id:'quest_pluck',tip:'A compact upward chord for a discovered clue.',values:{duration:[0.8,1.8],pitch:[0.45,0.7],strings:[3,5],damping:[0.15,0.35],brightness:[0.45,0.8],pluck:[0.2,0.55],coupling:[0.2,0.5],strum:[0.4,0.7],inharmonic:[0.02,0.12]}}
+        {name:'Harp',id:'harp',tip:'A clear open chord with a long ring.',values:{material:[0,2],duration:[2,4],pitch:[0.35,0.65],strings:[3,6],damping:[0.05,0.25],brightness:[0.25,0.55],pluck:[0.2,0.6],coupling:[0.1,0.35],strum:[0.3,0.65],inharmonic:[0.01,0.08]}},
+        {name:'Kalimba',id:'kalimba',tip:'A small bright thumb-piano tine.',values:{material:[1,4],duration:[0.7,1.6],pitch:[0.5,0.8],strings:[1,2],damping:[0.25,0.5],brightness:[0.55,0.9],pluck:[0.1,0.4],coupling:[0.05,0.2],strum:[0.05,0.2],inharmonic:[0.02,0.14]}},
+        {name:'Muted Guitar',id:'muted_guitar',tip:'A short palm-muted chord.',values:{material:[0,2,3],duration:[0.4,0.9],pitch:[0.2,0.48],strings:[3,6],damping:[0.7,0.94],brightness:[0.12,0.38],pluck:[0.25,0.65],coupling:[0.15,0.45],strum:[0.08,0.22],inharmonic:[0.03,0.15]}},
+        {name:'Metal String',id:'metal_string',tip:'A hard, bright wire with a persistent ring.',values:{material:1,duration:[1.4,3.5],pitch:[0.3,0.7],strings:[1,3],damping:[0.02,0.18],brightness:[0.8,1],pluck:[0.02,0.2],coupling:[0.1,0.4],strum:[0.04,0.2],inharmonic:[0.1,0.3]}},
+        {name:'Magic Harp',id:'magic_harp',tip:'A cascade of high sympathetic strings.',values:{material:[4,5],duration:[2,4.5],pitch:[0.5,0.8],strings:[5,8],damping:[0.02,0.16],brightness:[0.35,0.65],pluck:[0.2,0.65],coupling:[0.6,1],strum:[0.65,1],inharmonic:[0.1,0.3]}},
+        {name:'Bass Pluck',id:'bass_pluck',tip:'One thick string with a round body.',values:{material:[0,2,3],duration:[0.8,2.4],pitch:[0.02,0.2],strings:1,damping:[0.15,0.4],brightness:[0.08,0.3],pluck:[0.3,0.6],coupling:[0.05,0.25],strum:0,inharmonic:[0.01,0.12]}},
+        {name:'Broken String',id:'broken_string',tip:'A loose, mismatched chord dying unevenly.',values:{material:[2,3,5],duration:[0.6,1.5],pitch:[0.12,0.5],strings:[2,5],damping:[0.45,0.8],brightness:[0.5,0.95],pluck:[0.02,0.9],coupling:[0.4,0.9],strum:[0.2,0.7],inharmonic:[0.8,1]}},
+        {name:'Quest Pluck',id:'quest_pluck',tip:'A compact upward chord for a discovered clue.',values:{material:[0,1,4],duration:[0.8,1.8],pitch:[0.45,0.7],strings:[3,5],damping:[0.15,0.35],brightness:[0.45,0.8],pluck:[0.2,0.55],coupling:[0.2,0.5],strum:[0.4,0.7],inharmonic:[0.02,0.12]}}
     ];
     constructor(){super();this.initialize_presets();}
+    apply_params(params,checkLocked=false){
+        if(!params||typeof params!=='object')return;
+        const defaults=this.default_params();
+        const legacy=!Object.prototype.hasOwnProperty.call(params,'material')&&
+            Object.keys(defaults).filter(key=>key!=='material').every(key=>Object.prototype.hasOwnProperty.call(params,key));
+        super.apply_params(params,checkLocked);
+        // Complete old saves predate the selector; partial edits retain the current choice.
+        if(legacy)this.set_param('material',defaults.material,checkLocked);
+    }
     set_param(name,value,checkLocked=false){super.set_param(name,value,checkLocked);if(name==='strings'&&!(checkLocked&&this.locked_params[name]))this.params.strings=Math.round(this.params.strings);}
 }

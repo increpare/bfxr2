@@ -1,0 +1,943 @@
+{
+  "sounds": [
+    {
+      "synth": "Fractr",
+      "name": "Glass crack",
+      "file": "fractr-glass-crack.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.9552516213152558,
+        "material": 0,
+        "duration": 0.9,
+        "fragments": 40,
+        "fragmentSize": 0.41848224303685133,
+        "spread": 0.18,
+        "decay": 0.22,
+        "gravity": 0.6355261382297612,
+        "bounce": 0.6702853581169621
+      },
+      "duration": 0.9,
+      "rms": 0.06834127228054475,
+      "peak": 0.45464983582496643,
+      "sha256": "984b00baa893f73b7c14ff21cfb741cd91c68dd6bddd4531405fcdbe1053bd5d"
+    },
+    {
+      "synth": "Fractr",
+      "name": "Stone fracture",
+      "file": "fractr-stone-fracture.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.6661635930649936,
+        "material": 3,
+        "duration": 1.1,
+        "fragments": 45,
+        "fragmentSize": 0.8817049275385216,
+        "spread": 0.35,
+        "decay": 0.46055054116295646,
+        "gravity": 0.5405221961438655,
+        "bounce": 0.48061730451881884
+      },
+      "duration": 1.1,
+      "rms": 0.09939405640688709,
+      "peak": 0.4673030972480774,
+      "sha256": "eebd7b919753e2a5b9ce6bd2e1f372b1721694446e5eddc54dc9ef3beac01fae"
+    },
+    {
+      "synth": "Boomr",
+      "name": "Grenade",
+      "file": "boomr-grenade.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.862397505203262,
+        "duration": 1.1,
+        "size": 0.42577977827750146,
+        "pressure": 0.8432885867427103,
+        "blast": 0.5268808982800692,
+        "debris": 0.6523802286945284,
+        "spread": 0.5596423041075468,
+        "tail": 0.39743827681522814,
+        "muffle": 0.110928694200702
+      },
+      "duration": 1.1,
+      "rms": 0.05521868098748019,
+      "peak": 0.4625033438205719,
+      "sha256": "099c89d32776c7afe159c1f5972f92bd0134b8a5e000772ac5d6c59094380f64"
+    },
+    {
+      "synth": "Boomr",
+      "name": "Deep blast",
+      "file": "boomr-deep-blast.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.3550393779296428,
+        "duration": 1.4,
+        "size": 0.8593170509207995,
+        "pressure": 0.9763335740892216,
+        "blast": 0.5602789856493473,
+        "debris": 0.020180344849359242,
+        "spread": 0.40662366477772593,
+        "tail": 0.6786712455679663,
+        "muffle": 0.8491755360155366
+      },
+      "duration": 1.4,
+      "rms": 0.04356145633285486,
+      "peak": 0.4077722430229187,
+      "sha256": "8e5803fbe2ff456b06c1c4546195b145030b9547904a3949c4044b40051eba12"
+    },
+    {
+      "synth": "Rollr",
+      "name": "Wood over boards",
+      "file": "rollr-wood-over-boards.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.42232090001925826,
+        "material": 0,
+        "surface": 1,
+        "duration": 1.25,
+        "wheels": 3,
+        "speed": 0.2649230028502643,
+        "roughness": 0.6444124975241721,
+        "size": 0.6768083358299919,
+        "hardness": 0.5163882370572537,
+        "slowing": 0.18198517819400878
+      },
+      "duration": 1.25,
+      "rms": 0.09451311085886355,
+      "peak": 0.31756123900413513,
+      "sha256": "8a0ca4bd132b34c6a4ad195622c731b700fdeef3c6dd28a4334bc0a11aee1417"
+    },
+    {
+      "synth": "Rollr",
+      "name": "Skateboard over grit",
+      "file": "rollr-skateboard-over-grit.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.28171868342906237,
+        "material": 0,
+        "surface": 2,
+        "duration": 1.25,
+        "wheels": 4,
+        "speed": 0.7763166701421141,
+        "roughness": 0.41750045293010773,
+        "size": 0.32166559393517674,
+        "hardness": 0.9575117076165043,
+        "slowing": 0.3340228657005355
+      },
+      "duration": 1.25,
+      "rms": 0.05030597049280231,
+      "peak": 0.2317034751176834,
+      "sha256": "d2cc007de398aee697679894753c57a5ea2014bfa1b4d005bdb761eba5f41ec2"
+    },
+    {
+      "synth": "Rustlr",
+      "name": "Paper turn",
+      "file": "rustlr-paper-turn.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.05459434795193374,
+        "material": 0,
+        "gesture": 1,
+        "duration": 0.65,
+        "grain": 0.4645991478767246,
+        "density": 0.826808805167675,
+        "motion": -0.14270187572110443,
+        "pressure": 0.5347023173002525,
+        "folds": 3,
+        "brightness": 0.5356419117748737
+      },
+      "duration": 0.65,
+      "rms": 0.025673447893092144,
+      "peak": 0.18992392718791962,
+      "sha256": "a1a3454f2c9804355effd5e2dd3d08a038082d1587321da9a543d69ecaaf1f79"
+    },
+    {
+      "synth": "Rustlr",
+      "name": "Cloth fold",
+      "file": "rustlr-cloth-fold.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.44389294437132776,
+        "material": 1,
+        "gesture": 1,
+        "duration": 0.6,
+        "grain": 0.9191267774207517,
+        "density": 0.8746037724078632,
+        "motion": 0.05624335795873775,
+        "pressure": 0.793086019991897,
+        "folds": 3,
+        "brightness": 0.37839084591250866
+      },
+      "duration": 0.6,
+      "rms": 0.024384567708295557,
+      "peak": 0.13589675724506378,
+      "sha256": "a7fe177f0bfd9b190770f0a54638f98fda8d6dfdf215a8dad5167086205a6bb3"
+    },
+    {
+      "synth": "Tappr",
+      "name": "Focus",
+      "file": "tappr-focus.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.4251467864960432,
+        "material": 0,
+        "duration": 0.07704184314003215,
+        "size": 0.4946747077512555,
+        "hardness": 0.10444983161985874,
+        "body": 0.12858250156976284,
+        "release": 0,
+        "gap": 0.13455449043540285,
+        "electronic": 0.02699430159758777,
+        "sweep": -0.0769459030777216,
+        "air": 0.02480833844281733,
+        "damping": 0.815032576583326
+      },
+      "duration": 0.07705215419501134,
+      "rms": 0.03388019426697144,
+      "peak": 0.2421535700559616,
+      "sha256": "50b0d513b93f365efd9ba9677b92125ef916ed60cadf827f1bd5f277bd01bedc"
+    },
+    {
+      "synth": "Tappr",
+      "name": "Select",
+      "file": "tappr-select.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.003512707306072116,
+        "material": 2,
+        "duration": 0.16570848317816855,
+        "size": 0.5488964655785822,
+        "hardness": 0.567779557062313,
+        "body": 0.4084330494049937,
+        "release": 0,
+        "gap": 0.19794836411019787,
+        "electronic": 0.12014082932844758,
+        "sweep": 0.3836461224476807,
+        "air": 0.023596880957484245,
+        "damping": 0.8872321842797101
+      },
+      "duration": 0.1657142857142857,
+      "rms": 0.04695021965677112,
+      "peak": 0.42600926756858826,
+      "sha256": "4f6bd251e10e8a92052f6fad8689da5099bacfda35d5ea4775abe98378acc290"
+    },
+    {
+      "synth": "Tappr",
+      "name": "Back",
+      "file": "tappr-back.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.020649530226364732,
+        "material": 0,
+        "duration": 0.11382090465631337,
+        "size": 0.7431875781272538,
+        "hardness": 0.2100479077664204,
+        "body": 0.41640060117933897,
+        "release": 0,
+        "gap": 0.4828385339351371,
+        "electronic": 0.12361131036421284,
+        "sweep": -0.3628935592714697,
+        "air": 0.08752319833263755,
+        "damping": 0.9018681302899494
+      },
+      "duration": 0.11383219954648525,
+      "rms": 0.04495459838527516,
+      "peak": 0.3761787414550781,
+      "sha256": "178dde760b40a1bc84870587ce9ebd3e7505efd6fdd5a8b47784150520ed5047"
+    },
+    {
+      "synth": "Tappr",
+      "name": "Panel open",
+      "file": "tappr-panel-open.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.6590988591779023,
+        "material": 3,
+        "duration": 0.2722773766890168,
+        "size": 0.39993191634304825,
+        "hardness": 0.45719494374934583,
+        "body": 0.5650707092881202,
+        "release": 0,
+        "gap": 0.6650378198712134,
+        "electronic": 0.24801390913082286,
+        "sweep": 0.5428682125173508,
+        "air": 0.6175253772991709,
+        "damping": 0.47864709376357495
+      },
+      "duration": 0.2722675736961451,
+      "rms": 0.05343309627614661,
+      "peak": 0.3401901125907898,
+      "sha256": "32f2c82aa795031febc141c176845b2c18f385f96592e9ccf9229a3148bf001b"
+    },
+    {
+      "synth": "Breathr",
+      "name": "Airflow breath",
+      "file": "breathr-airflow-breath.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.8251548646949232,
+        "source": 0,
+        "duration": 2.8,
+        "cycles": 1,
+        "effort": 0.3163951566675678,
+        "inhale": 0.5637762361764908,
+        "hold": 0.04222834075801074,
+        "throat": 0.5038846641662531,
+        "rasp": 0.06216585570015013,
+        "flutter": 0.09870899098459632,
+        "space": 0.07905551600269974
+      },
+      "duration": 2.8,
+      "rms": 0.1201749854843179,
+      "peak": 0.4436998963356018,
+      "sha256": "375acd0828f4020766e244e79f9e78a63dc75969581c505680f8b60584930c7e"
+    },
+    {
+      "synth": "Breathr",
+      "name": "Retro breath",
+      "file": "breathr-retro-breath.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.47258514491841197,
+        "source": 1,
+        "duration": 1.8,
+        "cycles": 2,
+        "effort": 0.6997224207851105,
+        "inhale": 0.37944467559456824,
+        "hold": 0.050509066488593816,
+        "throat": 0.36442770732101054,
+        "rasp": 0.35859579376410694,
+        "flutter": 0.35271135076181964,
+        "space": 0.09843839524313808
+      },
+      "duration": 1.8,
+      "rms": 0.312477921151085,
+      "peak": 0.4748624265193939,
+      "sha256": "ab56aab70b2df1e82f76ad8da491f53cd39af04456a38a4849abddfa4ce5d519"
+    },
+    {
+      "synth": "Breathr",
+      "name": "Snore",
+      "file": "breathr-snore.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.3578618853352964,
+        "source": 2,
+        "duration": 2.8,
+        "cycles": 1,
+        "effort": 0.302539254585281,
+        "inhale": 0.42851139864884313,
+        "hold": 0.18227136896923185,
+        "throat": 0.9604181907139718,
+        "rasp": 0.7349095725803636,
+        "flutter": 0.24846537404228006,
+        "space": 0.35392163749784233
+      },
+      "duration": 2.8,
+      "rms": 0.050953773274275894,
+      "peak": 0.4282940626144409,
+      "sha256": "39dba85b2369399ea7ac3ab97e9ec6868b7031ab550a3d810929e713578eee8d"
+    },
+    {
+      "synth": "Pluckr",
+      "name": "Nylon string",
+      "file": "pluckr-nylon-string.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.312,
+        "material": 0,
+        "duration": 1.4,
+        "pitch": 0.43,
+        "strings": 2,
+        "damping": 0.12,
+        "brightness": 0.65,
+        "pluck": 0.28,
+        "coupling": 0.2,
+        "strum": 0.12,
+        "inharmonic": 0.05
+      },
+      "duration": 1.4,
+      "rms": 0.0166020886030264,
+      "peak": 0.20770280063152313,
+      "sha256": "da14b822e59168528e63e1b01bf925dbcc40f7ec92635b30e50d43c5ec010e4e"
+    },
+    {
+      "synth": "Pluckr",
+      "name": "Steel string",
+      "file": "pluckr-steel-string.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.312,
+        "material": 1,
+        "duration": 1.4,
+        "pitch": 0.43,
+        "strings": 2,
+        "damping": 0.12,
+        "brightness": 0.65,
+        "pluck": 0.28,
+        "coupling": 0.2,
+        "strum": 0.12,
+        "inharmonic": 0.05
+      },
+      "duration": 1.4,
+      "rms": 0.024326058751761574,
+      "peak": 0.23329973220825195,
+      "sha256": "7c7c4997c510c31dc71a53aae7a8cc9ac174a01a3e39b70d378a6383b1057661"
+    },
+    {
+      "synth": "Pluckr",
+      "name": "Gut string",
+      "file": "pluckr-gut-string.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.312,
+        "material": 2,
+        "duration": 1.4,
+        "pitch": 0.43,
+        "strings": 2,
+        "damping": 0.12,
+        "brightness": 0.65,
+        "pluck": 0.28,
+        "coupling": 0.2,
+        "strum": 0.12,
+        "inharmonic": 0.05
+      },
+      "duration": 1.4,
+      "rms": 0.010648584758571791,
+      "peak": 0.14680463075637817,
+      "sha256": "7c9c9e2411266031ce0cfc6df26bbdc99a1aad13085084a69caad46997c4b33e"
+    },
+    {
+      "synth": "Pluckr",
+      "name": "Rubber string",
+      "file": "pluckr-rubber-string.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.312,
+        "material": 3,
+        "duration": 1.4,
+        "pitch": 0.43,
+        "strings": 2,
+        "damping": 0.12,
+        "brightness": 0.65,
+        "pluck": 0.28,
+        "coupling": 0.2,
+        "strum": 0.12,
+        "inharmonic": 0.05
+      },
+      "duration": 1.4,
+      "rms": 0.0048617944951796725,
+      "peak": 0.0972992330789566,
+      "sha256": "ed376f110b7a8c3ae923f47e8c5c68ea84145a81a9f889d9d4020a48a42e2988"
+    },
+    {
+      "synth": "Pluckr",
+      "name": "Glass string",
+      "file": "pluckr-glass-string.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.312,
+        "material": 4,
+        "duration": 1.4,
+        "pitch": 0.43,
+        "strings": 2,
+        "damping": 0.12,
+        "brightness": 0.65,
+        "pluck": 0.28,
+        "coupling": 0.2,
+        "strum": 0.12,
+        "inharmonic": 0.05
+      },
+      "duration": 1.4,
+      "rms": 0.025348915211209615,
+      "peak": 0.27975988388061523,
+      "sha256": "2c3b0b168a735be1a903aaf7bb472dcb647777bf5d03125ccc20d400a4c6f0ed"
+    },
+    {
+      "synth": "Pluckr",
+      "name": "Gravity string",
+      "file": "pluckr-gravity-string.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.312,
+        "material": 5,
+        "duration": 1.4,
+        "pitch": 0.43,
+        "strings": 2,
+        "damping": 0.12,
+        "brightness": 0.65,
+        "pluck": 0.28,
+        "coupling": 0.2,
+        "strum": 0.12,
+        "inharmonic": 0.05
+      },
+      "duration": 1.4,
+      "rms": 0.01698616598175045,
+      "peak": 0.2004760354757309,
+      "sha256": "0a0a708339b32ba59f3c999a4370617a181276087c7508e2e8becb0f36ee12c2"
+    },
+    {
+      "synth": "Notifr",
+      "name": "Bell 1",
+      "file": "notifr-bell-1.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.312,
+        "instrumentSeed": 0.1,
+        "tone": 1,
+        "duration": 0.45,
+        "pitch": 0.55,
+        "interval": 5,
+        "tension": 0.014607982402667403,
+        "pulses": 2,
+        "spacing": 0.3798701129271649,
+        "urgency": 0.06550466462038457,
+        "softness": 0.18,
+        "ring": 0.7,
+        "echo": 0
+      },
+      "duration": 0.45,
+      "rms": 0.028327987641177665,
+      "peak": 0.15184828639030457,
+      "sha256": "da32cce60f5f4b51fb2b12305f53f18dbc4da3d35758b91b0bb559063ca213e8"
+    },
+    {
+      "synth": "Notifr",
+      "name": "Bell 2",
+      "file": "notifr-bell-2.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.312,
+        "instrumentSeed": 0.5,
+        "tone": 1,
+        "duration": 0.45,
+        "pitch": 0.55,
+        "interval": 5,
+        "tension": 0.01567409940995276,
+        "pulses": 2,
+        "spacing": 0.3342229389818385,
+        "urgency": 0.09428872992284595,
+        "softness": 0.18,
+        "ring": 0.7,
+        "echo": 0
+      },
+      "duration": 0.45,
+      "rms": 0.039934947517023554,
+      "peak": 0.183623805642128,
+      "sha256": "5e49e184714ce015eea2dbc9b3f0b008bac315e449fb25bd980cfb41504f1b50"
+    },
+    {
+      "synth": "Notifr",
+      "name": "Bell 3",
+      "file": "notifr-bell-3.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.312,
+        "instrumentSeed": 0.9,
+        "tone": 1,
+        "duration": 0.45,
+        "pitch": 0.55,
+        "interval": 5,
+        "tension": 0.006591808879747987,
+        "pulses": 2,
+        "spacing": 0.3850971220526844,
+        "urgency": 0.029477615430951117,
+        "softness": 0.18,
+        "ring": 0.7,
+        "echo": 0
+      },
+      "duration": 0.45,
+      "rms": 0.04885905833528003,
+      "peak": 0.19124260544776917,
+      "sha256": "5891e1e1fde026fb8f873b76d2dfcc669262a3da768d88cc685607c322f4215a"
+    },
+    {
+      "synth": "Pulser",
+      "name": "Panic pulse",
+      "file": "pulser-panic-pulse.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.8039752333424985,
+        "duration": 1.1,
+        "beats": 3,
+        "pitch": 0.43277427027001975,
+        "size": 0.34498254468664524,
+        "secondary": 0.7613982100738212,
+        "separation": 0.14013450238853692,
+        "murmur": 0.16677809787448497,
+        "tension": 0.6204380145622417,
+        "irregular": 0.1934842688543722
+      },
+      "duration": 1.1,
+      "rms": 0.05600231943534787,
+      "peak": 0.4217028319835663,
+      "sha256": "9c124c9034702b7557c3ccfe89bba3d002fae29f971ed87af749a4647043aab2"
+    },
+    {
+      "synth": "Transfxr",
+      "name": "Whistle transition",
+      "file": "transfxr-whistle-transition.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 6,
+        "duration": 0.35,
+        "pitch": {
+          "start": 0.82,
+          "end": 0.22,
+          "curve": "Ease Out"
+        },
+        "tone": {
+          "start": 0.95,
+          "end": 0.25,
+          "curve": "Linear"
+        },
+        "noise": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.9,
+          "end": 0.25,
+          "curve": "Linear"
+        },
+        "attack": 0,
+        "release": 0.14,
+        "resonance": 0.32,
+        "echo": 0
+      },
+      "duration": 0.35,
+      "rms": 0.15136946869223805,
+      "peak": 0.28948795795440674,
+      "sha256": "b6f3a4e58eb21433f8b1c3ce5e6611cbd52e537b9578e6ba16c048bd16d7c855"
+    },
+    {
+      "synth": "Transfxr",
+      "name": "Voice transition",
+      "file": "transfxr-voice-transition.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 8,
+        "duration": 0.35,
+        "pitch": {
+          "start": 0.82,
+          "end": 0.22,
+          "curve": "Ease Out"
+        },
+        "tone": {
+          "start": 0.95,
+          "end": 0.25,
+          "curve": "Linear"
+        },
+        "noise": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.9,
+          "end": 0.25,
+          "curve": "Linear"
+        },
+        "attack": 0,
+        "release": 0.14,
+        "resonance": 0.32,
+        "echo": 0
+      },
+      "duration": 0.35,
+      "rms": 0.14689499783714302,
+      "peak": 0.3290463387966156,
+      "sha256": "02a7b5b2862276285906ffbbbd9d9c8c903f7d5bd29d39e0079c7873058302f0"
+    },
+    {
+      "synth": "Transfxr",
+      "name": "FMSyn transition",
+      "file": "transfxr-fmsyn-transition.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 11,
+        "duration": 0.35,
+        "pitch": {
+          "start": 0.82,
+          "end": 0.22,
+          "curve": "Ease Out"
+        },
+        "tone": {
+          "start": 0.95,
+          "end": 0.25,
+          "curve": "Linear"
+        },
+        "noise": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.9,
+          "end": 0.25,
+          "curve": "Linear"
+        },
+        "attack": 0,
+        "release": 0.14,
+        "resonance": 0.32,
+        "echo": 0
+      },
+      "duration": 0.35,
+      "rms": 0.1228082134491219,
+      "peak": 0.33266469836235046,
+      "sha256": "c930ad80fd6caab46aba9d67b6dd94fb4df25867bfca6006a292c6ea232389bc"
+    },
+    {
+      "synth": "Chattr",
+      "name": "Vocal hello",
+      "file": "chattr-vocal-hello.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "text": "Hello!",
+        "waveType": -1,
+        "texture": 0,
+        "articulation": 1,
+        "pitch": 0.35,
+        "mouth": 0.5,
+        "speed": 0.42,
+        "expression": 0.25,
+        "inflection": 0,
+        "wobble": 0,
+        "breath": 0,
+        "grit": 0,
+        "spacing": 0.3,
+        "seed": 0.3
+      },
+      "duration": 0.8497732426303855,
+      "rms": 0.11208279916595043,
+      "peak": 0.3391400873661041,
+      "sha256": "530e069c55fc6ea7c5c5e0eea36037dc210b5d7db2076e0e0a61c5ad62b0d3a9"
+    },
+    {
+      "synth": "Chattr",
+      "name": "Square hello",
+      "file": "chattr-square-hello.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "text": "Hello!",
+        "waveType": 0,
+        "texture": 0,
+        "articulation": 1,
+        "pitch": 0.35,
+        "mouth": 0.5,
+        "speed": 0.42,
+        "expression": 0.25,
+        "inflection": 0,
+        "wobble": 0,
+        "breath": 0,
+        "grit": 0,
+        "spacing": 0.3,
+        "seed": 0.3
+      },
+      "duration": 0.8497732426303855,
+      "rms": 0.09856269741778992,
+      "peak": 0.339808851480484,
+      "sha256": "eb0b6982c68fffbe33f637f3f2c1c485f13c458d18c28761331ce56a346db1bc"
+    },
+    {
+      "synth": "Chattr",
+      "name": "Voice hello",
+      "file": "chattr-voice-hello.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "text": "Hello!",
+        "waveType": 11,
+        "texture": 0,
+        "articulation": 1,
+        "pitch": 0.35,
+        "mouth": 0.5,
+        "speed": 0.42,
+        "expression": 0.25,
+        "inflection": 0,
+        "wobble": 0,
+        "breath": 0,
+        "grit": 0,
+        "spacing": 0.3,
+        "seed": 0.3
+      },
+      "duration": 0.8497732426303855,
+      "rms": 0.10982121915458765,
+      "peak": 0.3371330201625824,
+      "sha256": "b7c88ae132a3fb3f24454d241ed25a7fd4daae3a7f93a640ea897c97cf621f0f"
+    },
+    {
+      "synth": "Stackr",
+      "name": "Whoosh into impact",
+      "file": "stackr-whoosh-into-impact.wav",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "spacing": 1,
+        "layers": "[{\"synth\":\"Whooshr\",\"name\":\"Incoming air\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5537583029363304,\"duration\":0.6,\"size\":0.9160034969449043,\"air\":0.9810383349657059,\"whistle\":0.16080843219533564,\"movement\":0.6004682547412813,\"focus\":0.3537848161999136,\"flutter\":0.2439412580803037},\"start\":0,\"gain\":0.8,\"pitch\":0},{\"synth\":\"Boomr\",\"name\":\"Impact\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5645617616828531,\"duration\":1.1,\"size\":0.44155388902872805,\"pressure\":0.736363418539986,\"blast\":0.6631950421840884,\"debris\":0.7124450628645718,\"spread\":0.5757669750601053,\"tail\":0.22264195526950062,\"muffle\":0.16477025527507067},\"start\":0.38,\"gain\":0.8,\"pitch\":0}]"
+      },
+      "duration": 1.48,
+      "rms": 0.04418971023708494,
+      "peak": 0.3335282504558563,
+      "sha256": "933be6f464db9b5767fc2dc11639254f031adc04e23b9cc00acdbc19bd595efa"
+    }
+  ],
+  "reel": {
+    "duration": 26.508866213151926,
+    "clips": [
+      {
+        "synth": "Fractr",
+        "name": "Glass crack",
+        "start": 0,
+        "end": 0.9,
+        "gain": 1.2437579395810814
+      },
+      {
+        "synth": "Boomr",
+        "name": "Grenade",
+        "start": 1.15,
+        "end": 2.25,
+        "gain": 1.4053952445631774
+      },
+      {
+        "synth": "Rollr",
+        "name": "Wood over boards",
+        "start": 2.5,
+        "end": 3.75,
+        "gain": 0.8993461248665333
+      },
+      {
+        "synth": "Rustlr",
+        "name": "Paper turn",
+        "start": 4,
+        "end": 4.65,
+        "gain": 3
+      },
+      {
+        "synth": "Tappr",
+        "name": "Focus",
+        "start": 4.9,
+        "end": 4.977052154195011,
+        "gain": 2.5088403959614656
+      },
+      {
+        "synth": "Tappr",
+        "name": "Select",
+        "start": 5.227052154195011,
+        "end": 5.392766439909297,
+        "gain": 1.5257884029373818
+      },
+      {
+        "synth": "Tappr",
+        "name": "Back",
+        "start": 5.642766439909297,
+        "end": 5.756598639455782,
+        "gain": 1.7279020007504082
+      },
+      {
+        "synth": "Tappr",
+        "name": "Panel open",
+        "start": 6.006598639455782,
+        "end": 6.278866213151927,
+        "gain": 1.590774368767871
+      },
+      {
+        "synth": "Breathr",
+        "name": "Airflow breath",
+        "start": 6.528866213151927,
+        "end": 9.328866213151928,
+        "gain": 0.7073019369001046
+      },
+      {
+        "synth": "Breathr",
+        "name": "Retro breath",
+        "start": 9.578866213151928,
+        "end": 11.378866213151927,
+        "gain": 0.2720192187879475
+      },
+      {
+        "synth": "Breathr",
+        "name": "Snore",
+        "start": 11.628866213151927,
+        "end": 14.428866213151927,
+        "gain": 1.5176488696392303
+      },
+      {
+        "synth": "Pluckr",
+        "name": "Nylon string",
+        "start": 14.678866213151927,
+        "end": 16.078866213151926,
+        "gain": 3
+      },
+      {
+        "synth": "Pluckr",
+        "name": "Steel string",
+        "start": 16.328866213151926,
+        "end": 17.728866213151928,
+        "gain": 2.7861154997802826
+      },
+      {
+        "synth": "Pluckr",
+        "name": "Rubber string",
+        "start": 17.978866213151928,
+        "end": 19.378866213151927,
+        "gain": 3
+      },
+      {
+        "synth": "Pluckr",
+        "name": "Glass string",
+        "start": 19.628866213151927,
+        "end": 21.02886621315193,
+        "gain": 2.323421038726843
+      },
+      {
+        "synth": "Pluckr",
+        "name": "Gravity string",
+        "start": 21.27886621315193,
+        "end": 22.678866213151927,
+        "gain": 3
+      },
+      {
+        "synth": "Notifr",
+        "name": "Bell 1",
+        "start": 22.928866213151927,
+        "end": 23.378866213151927,
+        "gain": 3
+      },
+      {
+        "synth": "Notifr",
+        "name": "Bell 2",
+        "start": 23.628866213151927,
+        "end": 24.078866213151926,
+        "gain": 2.128461542706824
+      },
+      {
+        "synth": "Notifr",
+        "name": "Bell 3",
+        "start": 24.328866213151926,
+        "end": 24.77886621315193,
+        "gain": 1.7396978758107462
+      },
+      {
+        "synth": "Stackr",
+        "name": "Whoosh into impact",
+        "start": 25.02886621315193,
+        "end": 26.508866213151926,
+        "gain": 1.9235247197585423
+      }
+    ]
+  }
+}

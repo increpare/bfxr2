@@ -14,7 +14,7 @@ class Rustlr extends PresetSynth {
         ['Grain','From tiny surface grains to broad rubbing contacts.','grain',0.45,0,1],
         ['Density','The number and overlap of surface microcontacts.','density',0.5,0,1],
         ['Motion','Emphasize the start or the arrival of the movement.','motion',0,-1,1],
-        ['Pressure','Strength of friction and bending contacts.','pressure',0.5,0,1],
+        ['Pressure','Contact force, elastic loading and friction releases.','pressure',0.5,0,1],
         ['Folds','Number of distinct bends or creases.','folds',3,1,12],
         ['Brightness','Detail in the upper friction frequencies.','brightness',0.5,0,1]
     ];

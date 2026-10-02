@@ -124,11 +124,12 @@ const DEFAULT = {
 };
 
 class FormantSynth {
-  constructor({ sampleRate, initialTarget, schedule } = {}) {
+  constructor({ sampleRate, initialTarget, schedule, source } = {}) {
     if (!sampleRate || sampleRate <= 0) {
       throw new Error('FormantSynth requires a positive sampleRate');
     }
     this.sr = sampleRate;
+    this.source = source;
     const init = initialTarget ?? {};
     this.current = { ...DEFAULT, ...init };
     this.target = { ...this.current };
@@ -233,7 +234,7 @@ class FormantSynth {
       const v = cur.voicing < 0 ? 0 : cur.voicing > 1 ? 1 : cur.voicing;
       this.lfsr = xorshift(this.lfsr);
       const noiseSample = this.lfsr / 2147483648;
-      const pulseVal = glottalPulse(this.glottalPhase, cur.effort);
+      const pulseVal = this.source ? this.source(this.glottalPhase, effF0 / this.sr) * 0.55 : glottalPulse(this.glottalPhase, cur.effort);
       const voicedGain = 1 - cur.aspiration * 0.85;
       const exc = v * pulseVal * voicedGain
                 + (1 - v) * noiseSample * 0.35

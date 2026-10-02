@@ -13,9 +13,21 @@ class Notifr_DSP {
         const pulses=round(value('pulses',2,1,8)),spacing=value('spacing',0.3,0,0.85);
         const urgency=value('urgency',0.15),softness=value('softness',0.65);
         const ring=value('ring',0.3),echo=value('echo',0.1);
+        const instrument=SoundDSP.rng(value('instrumentSeed',0.5));
+        // One construction is shared across every note in this notification.
+        // Bells vary their inharmonic modes, while chimes/buzz retain harmonic families.
+        const partials=Array.from({length:4},(_,i)=>({
+            ratio:tone===1 ? [1.6,2.5,4.1,6.5][i]+instrument()*[0.7,1.1,1.8,2.2][i]
+                : tone===3 ? 2*i+3 : i+2,
+            gain:(0.15+instrument()*0.85)/(1+i*.65),
+            loss:1+instrument()*8+i*0.7
+        }));
+        const color=0.35+instrument()*0.65;
+        const roundedHarmonic=0.03+instrument()*0.2;
+        const fundamentalGain=tone===1 ? 0.3+instrument()*0.4 : 1;
         // Reserve the end for ringing and echoes without extending the requested length.
         const phrase=output.length*(0.97-echo*0.2),slot=phrase/pulses;
-        const brightness=1-softness,groupGain=0.49/(1+0.28*ring*pulses);
+        const brightness=0.35+0.65*(1-softness),groupGain=0.49/(1+0.28*ring*pulses);
         for(let group=0;group<pulses;group++) {
             // An accelerating clock bunches urgent repetitions toward the end.
             const position=group/pulses,next=(group+1)/pulses;
@@ -37,16 +49,18 @@ class Notifr_DSP {
                 const local=i-start,unit=local/active;
                 const envelope=min(1,local/attack,(active-local)/release)*exp(-unit*decay);
                 phase+=step; answerPhase+=secondStep; clashPhase+=clashStep;
-                let body=sin(phase),answer=sin(answerPhase);
-                if(tone===1) {
-                    body+=brightness*(0.42*sin(phase*2.756)*exp(-unit*4)+0.22*sin(phase*5.404)*exp(-unit*7));
-                    answer+=brightness*0.22*sin(answerPhase*2.756)*exp(-unit*5);
-                } else if(tone===2) {
-                    body+=brightness*(0.34*sin(phase*2)*exp(-unit*3)+0.19*sin(phase*4)*exp(-unit*6));
-                    answer+=brightness*0.18*sin(answerPhase*2);
-                } else if(tone===3) {
-                    body+=brightness*(0.32*sin(phase*3)+0.18*sin(phase*5));
-                    answer+=brightness*0.25*sin(answerPhase*3);
+                let body=sin(phase)*fundamentalGain,answer=sin(answerPhase)*fundamentalGain;
+                if(tone===0) {
+                    body+=roundedHarmonic*sin(phase*2)*exp(-unit*3);
+                    answer+=roundedHarmonic*sin(answerPhase*2)*exp(-unit*3);
+                } else {
+                    for(const partial of partials) {
+                        const decayMode=exp(-unit*partial.loss*(tone===3?0.2:1));
+                        if(fundamental*partial.ratio<rate*.45)
+                            body+=brightness*color*partial.gain*sin(phase*partial.ratio)*decayMode;
+                        if(second*partial.ratio<rate*.45)
+                            answer+=brightness*color*partial.gain*sin(answerPhase*partial.ratio)*decayMode;
+                    }
                 }
                 const tremolo=1-urgency*0.22*(0.5+0.5*sin(tau*(12+urgency*19)*local/rate));
                 output[i]+=gain*envelope*tremolo*(body+answer*0.45+sin(clashPhase)*tension*0.35);

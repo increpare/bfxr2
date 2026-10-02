@@ -15,7 +15,7 @@ function context() {
             getChannelData() { return pcm; }, copyToChannel(data) { pcm.set(data); }
         }; }
     };`, ctx);
-    for (const source of ['js/globals.js', 'js/audio/riffwave.js', 'js/audio/RealizedSound.js',
+    for (const source of ['js/globals.js','js/audio/AKWF.js','js/audio/BfxrWaveforms.js', 'js/audio/riffwave.js', 'js/audio/RealizedSound.js',
         'js/synths/templates.js', 'js/synths/SynthBase.js', 'js/audio/Transfxr_DSP.js',
         'js/synths/PresetFamily.js', 'js/synths/TransfxrPresets.js',
         'js/synths/Transfxr.js', 'js/Tab.js', 'js/SaveLoad.js']) {
@@ -176,7 +176,7 @@ test('legacy Bfxr and Footsteppr numeric links keep their exact wire format', ()
 
 test('export preserves an already-rendered Bfxr noise preview', () => {
     const run=context();
-    for(const file of ['js/audio/AKWF.js','js/audio/Bfxr_DSP.js','js/synths/Bfxr.js']) run(fs.readFileSync(path.join(root,file),'utf8'));
+    for(const file of ['js/audio/Bfxr_DSP.js','js/synths/Bfxr.js']) run(fs.readFileSync(path.join(root,file),'utf8'));
     assert.equal(run(`var s=new Bfxr(); s.set_param('waveType',3); s.generate_sound();
         var original=s.sound; s.generate_sound_uri(); s.sound===original;`),true);
 });

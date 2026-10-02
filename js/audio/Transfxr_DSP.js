@@ -48,6 +48,7 @@ class Transfxr_DSP {
         const attack = Math.max(0.003, p.attack) * rate;
         const release = Math.max(0.006, p.release) * rate;
         const damping = 1 / (0.707 + p.resonance * 5);
+        const waveform = BfxrWaveforms.create([2,4,1,0,8,6,7,3,11,9,5,10][p.waveType] ?? 2);
         let phase = 0, ic1 = 0, ic2 = 0, seed = 0x12345678;
         for (let i = 0; i < count; i++) {
             const t = i / (count - 1);
@@ -61,13 +62,7 @@ class Transfxr_DSP {
             let sample = 0;
             // Oversample oscillator + topology-preserving state-variable filter.
             for (let sub = 0; sub < 2; sub++) {
-                let osc;
-                switch (p.waveType) {
-                    case 1: osc = 1 - 4 * Math.abs(phase - 0.5); break;
-                    case 2: osc = 2 * phase - 1 - this.polyBLEP(phase, step); break;
-                    case 3: osc = (phase < 0.5 ? 1 : -1) + this.polyBLEP(phase, step) - this.polyBLEP((phase + 0.5) % 1, step); break;
-                    default: osc = Math.sin(phase * Math.PI * 2);
-                }
+                const osc = waveform(phase, step);
                 phase = (phase + step) % 1;
                 seed ^= seed << 13; seed ^= seed >>> 17; seed ^= seed << 5;
                 const white = (seed >>> 0) / 2147483648 - 1;
