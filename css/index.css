@@ -38,8 +38,7 @@
     --about-dialog-backdrop-color: #ccbda188;
 }
 
-/* Chattr's little desk companion; the rest of the synth keeps the familiar controls. */
-#tab_page_Chattr .centre_panel { width: 410px; }
+/* Chattr's little desk companion inside the shared panel. */
 .speech-card { padding: 10px 11px 9px; text-align: left; }
 .speech-heading { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; }
 .speech-heading strong { display: block; font-size: 18px; color: #49382d; }
@@ -146,7 +145,8 @@ body {
 }
 
 #main_container {
-    width:fit-content;
+    /* Match the original Bfxr panel: 150 + 352 + 5 + 120 + 2 borders. */
+    width: 629px;
     background-color: transparent;
     
     display: flex;
@@ -224,6 +224,7 @@ body {
     height: auto;
     /* max-height: 1200px; */
     width: 100%;
+    box-sizing: border-box;
     background-color: var(--panel-background-color);
     border-style:solid;
     border-color: var(--panel-border-color);
@@ -262,6 +263,7 @@ body {
 .left_panel {
     /* height: 100%; */
     width: 150px;
+    flex: 0 0 150px;
     display: flex;
     flex-direction: column;
     gap: var(--ui-margin);
@@ -292,6 +294,7 @@ body {
 
 .centre_panel {
     width: 350px;
+    flex: 0 0 350px;
     max-height: 600px;
 
     margin-top: var(--ui-margin);
@@ -316,6 +319,7 @@ body {
 
 .right_panel {
     width: 120px;
+    flex: 0 0 120px;
     background-color: transparent;
 }
 
@@ -431,11 +435,17 @@ table.paramtable {
     white-space: nowrap;
 }
 
-/* 3 column grid */
+/* Choice grids use the number of columns requested by each synth. */
+.button_grid_2c {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--ui-margin);
+}
 .button_grid_3c {
     width:100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--ui-margin);
 
 }
@@ -444,7 +454,7 @@ table.paramtable {
 .button_grid_4c {
     width:100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--ui-margin);
 }
 
@@ -452,8 +462,30 @@ table.paramtable {
 .button_grid_5c {
     width:100%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: var(--ui-margin);
+}
+.button_grid_6c {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: var(--ui-margin);
+}
+.button_grid_button { min-width: 0; overflow-wrap: anywhere; }
+
+/* Give each newer synth's controls the space left of its labels. */
+.tab_page:not(#tab_page_Bfxr):not(#tab_page_Transfxr) td.labelcolumn {
+    width: 1%;
+    white-space: nowrap;
+}
+.tab_page:not(#tab_page_Bfxr):not(#tab_page_Transfxr) td.slider_container {
+    width: auto;
+    --sliderwidth: 100%;
+}
+.tab_page:not(#tab_page_Bfxr) .button_grid_button { font-size: 14px; padding: 2px 3px; }
+.tab_page:not(#tab_page_Bfxr) .button_grid_4c,
+.tab_page:not(#tab_page_Bfxr) .button_grid_5c {
+    grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
 }
 
 .button_grid_button.selected {
@@ -889,27 +921,9 @@ img {
 .transition_hint { margin: 8px; font-size: 10px; line-height: 1.4; }
 
 /* A growing cabinet of sound makers, with compact wrapping tabs. */
-#tab_bar { box-sizing: border-box; height: auto; max-width: 770px; padding: 10px 5px 5px; flex-wrap: wrap; gap: 4px; }
+#tab_bar { box-sizing: border-box; height: auto; padding: 10px 5px 5px; flex-wrap: wrap; gap: 4px; }
 #tab_bar .tab_button { margin: 0; padding: 5px 9px; font-size: 19px; border-bottom: 1px solid var(--tab-unselected-border-color); }
 #tab_bar .tab_button.active_tab { padding: 5px 9px; background: #e7d1a7; box-shadow: inset 0 -3px #806747; }
-#tab_page_Clonkr .centre_panel, #tab_page_Machinr .centre_panel, #tab_page_Weathr .centre_panel,
-#tab_page_Squishr .centre_panel, #tab_page_Crittr .centre_panel, #tab_page_Signlr .centre_panel,
-#tab_page_Fractr .centre_panel, #tab_page_Riftr .centre_panel, #tab_page_Swarmr .centre_panel,
-#tab_page_Tappr .centre_panel, #tab_page_Rustlr .centre_panel, #tab_page_Notifr .centre_panel,
-#tab_page_Tickr .centre_panel, #tab_page_Holor .centre_panel,
-#tab_page_Boomr .centre_panel,
-#tab_page_Pewpr .centre_panel,
-#tab_page_Zappr .centre_panel,
-#tab_page_Whooshr .centre_panel,
-#tab_page_Bouncr .centre_panel,
-#tab_page_Rollr .centre_panel,
-#tab_page_Breathr .centre_panel,
-#tab_page_Choirr .centre_panel,
-#tab_page_Pluckr .centre_panel,
-#tab_page_Glitchr .centre_panel,
-#tab_page_Pulser .centre_panel,
-#tab_page_Rumblr .centre_panel { width: 390px; }
-#tab_page_Jinglr .centre_panel, #tab_page_Stackr .centre_panel { width: 460px; }
 #tab_page_Jinglr .centre_header, #tab_page_Stackr .centre_header { max-height: 440px; overflow-y: auto; }
 .special_editor_container { text-align: left; }
 .display_canvas_container { position: relative; }
@@ -943,6 +957,9 @@ img {
 .phrase-instruments { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 5px; }
 .phrase-instruments button { padding: 6px 3px; cursor: pointer; }
 .phrase-instruments button[aria-pressed=true] { background: #d8bc83; border-color: #806747; box-shadow: inset 0 -2px #806747; }
+#tab_page_Jinglr #Jinglr_button_grid_scale,
+#tab_page_Jinglr #Jinglr_button_grid_rhythm { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#tab_page_Jinglr #Jinglr_button_grid_contour { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 #tab_page_Mixr .centre_header { flex-shrink: 0; }
 #tab_page_Mixr .template_list { max-height: 360px; overflow-y: auto; flex-shrink: 0; }

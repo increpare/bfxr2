@@ -3,29 +3,43 @@
 function register_tabs(){
     SaveLoad.load_all_collections();
     SaveLoad.collection_save_enabled=false;
-    var bfxr_tab = new Tab(new Bfxr());   
-    var footsteppr_tab = new Tab(new Footsteppr());
-    var transfxr_tab = new Tab(new Transfxr());
-    new Tab(new Clonkr());
-    new Tab(new Machinr());
-    new Tab(new Jinglr());
-    new Tab(new Squishr());
-    new Tab(new Mixr());
-    new Tab(new Crittr());
-    new Tab(new Birdr());
-    new Tab(new Signlr());
-    new Tab(new Fractr());
-    new Tab(new Riftr());
-    new Tab(new Swarmr());
-    new Tab(new Rustlr());
-    new Tab(new Boomr());
-    new Tab(new Zappr());
-    new Tab(new Whooshr());
-    new Tab(new Bouncr());
-    new Tab(new Breathr());
-    new Tab(new Choirr());
-    new Tab(new Pluckr());
-    new Tab(new Glitchr());
+    // Display names are separate from the engine names used by saved sounds and links.
+    const add_tab = synth => {
+        const label = synth_display_name(synth.name);
+        if (label !== synth.name) synth.display_name = label;
+        return new Tab(synth);
+    };
+    var bfxr_tab = add_tab(new Bfxr());
+    add_tab(new Footsteppr());
+    add_tab(new Mixr());
+    add_tab(new Transfxr());
+
+    // Music and voices.
+    add_tab(new Jinglr());
+    add_tab(new Pluckr());
+    add_tab(new Choirr());
+
+    // Creatures and flocks.
+    add_tab(new Crittr());
+    add_tab(new Birdr());
+    add_tab(new Swarmr());
+
+    // Physical materials and impacts.
+    add_tab(new Clonkr());
+    add_tab(new Bouncr());
+    add_tab(new Fractr());
+    add_tab(new Boomr());
+    add_tab(new Rustlr());
+    add_tab(new Squishr());
+
+    // Motion, machines and electronic effects.
+    add_tab(new Machinr());
+    add_tab(new Breathr());
+    add_tab(new Whooshr());
+    add_tab(new Signlr());
+    add_tab(new Riftr());
+    add_tab(new Zappr());
+    add_tab(new Glitchr());
     SaveLoad.collection_save_enabled=true;
     set_tab_from_loaded_data();
     // New collections have no saved selection. Build only the visible panel.

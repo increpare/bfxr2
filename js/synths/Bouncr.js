@@ -1,7 +1,7 @@
 class Bouncr extends PresetSynth {
-    // Keep the saved engine identity; the tab can display Impactr.
+    // Keep the saved engine identity while showing its friendly name.
     name='Bouncr';
-    display_name='Impactr';
+    display_name='Bonks';
     hide_params=['masterVolume','count','bounce','gravity','spin'];
     tooltip='An object of one material striking a surface of another.';
     static DSP=Bouncr_DSP;

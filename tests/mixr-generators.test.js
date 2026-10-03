@@ -7,7 +7,32 @@ test('Mixr catalog exposes preset generators without generated files or retired 
  const list=plain(run('Mixr.generators()'));
  assert.ok(list.some(g=>g.synth==='Clonkr'&&g.generator==='generate_glass_ping'));
  assert.ok(list.some(g=>g.synth==='Transfxr'&&g.generator==='generate_morph'));
+ assert.ok(list.some(g=>g.synth==='Clonkr'&&g.family==='Tangs'));
+ assert.ok(list.some(g=>g.synth==='Jinglr'&&g.family==='Jingles'));
+ assert.ok(list.some(g=>g.synth==='Transfxr'&&g.family==='Soundbender'));
  assert.ok(list.every(g=>!['Stackr','Mixr','Chattr','Pewpr','Rumblr'].includes(g.synth)));
+ assert.equal(run("new Mixr().recipes.find(recipe=>recipe.id==='haunted').tip"),'Choir × Sonar.');
+ assert.deepEqual(plain(run("new Mixr().recipes.find(recipe=>recipe.id==='phase_step').pair")),['Breathr','Riftr']);
+ assert.equal(run("new Mixr().recipes.find(recipe=>recipe.id==='phase_step').tip"),'Breath × Sonar.');
+ assert.deepEqual(plain(run("new Mixr().recipes.find(recipe=>recipe.id==='reality_error').pair")),['Riftr','Glitchr']);
+ assert.equal(run("new Mixr().recipes.find(recipe=>recipe.id==='reality_error').tip"),'Sonar × Glitches.');
+});
+test('Mixfxr dropdowns and saved source labels use visible synth names',()=>{
+ const {run,load}=setup();load('js/MixEditor.js');
+ const result=plain(run(`(()=>{
+  function element(){return {children:[],appendChild(child){this.children.push(child);},
+   replaceChildren(){this.children=[];},setAttribute(){},addEventListener(){}};}
+  globalThis.document={createElement:element};
+  const mix=new Mixr(),source=new Clonkr();mix.set_source(0,source,'Glass');
+  const editor=new MixEditor({synth:mix},element());
+  return {options:editor.rows[0].select.children.map(option=>option.textContent),
+   title:editor.rows[0].select.title};
+ })()`));
+ assert.ok(result.options.includes('Tangs · Glass (saved sound)'));
+ assert.ok(result.options.includes('Tangs'));
+ assert.ok(result.options.includes('Jingles'));
+ assert.ok(result.options.includes('Soundbender'));
+ assert.equal(result.title,'Tangs · Glass');
 });
 test('Regen keeps the chosen family and the other source unchanged',()=>{
  const {run}=setup();

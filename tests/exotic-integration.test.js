@@ -51,7 +51,21 @@ test('navigation prunes redundant engines while retaining legacy renderers', () 
         previous.forEach(name=>globalThis[name]=class {constructor(){this.name=name;}});`);
     api.load('js/index.js');
     const names = plain(api.run('register_tabs(); tabs.map(tab=>tab.synth.name)'));
-    assert.deepEqual(names, ['Bfxr','Footsteppr','Transfxr','Clonkr','Machinr','Jinglr','Squishr','Mixr', ...families.filter(name=>!['Tappr','Notifr','Tickr','Holor','Pewpr','Rollr','Pulser','Rumblr'].includes(name))]);
+    assert.deepEqual(names, [
+        'Bfxr','Footsteppr','Mixr','Transfxr',
+        'Jinglr','Pluckr','Choirr',
+        'Crittr','Birdr','Swarmr',
+        'Clonkr','Bouncr','Fractr','Boomr','Rustlr','Squishr',
+        'Machinr','Breathr','Whooshr','Signlr','Riftr','Zappr','Glitchr'
+    ]);
+    const labels = plain(api.run('tabs.map(tab=>tab.synth.display_name || tab.synth.name)'));
+    assert.deepEqual(labels, [
+        'Bfxr','Footsteppr','Mixfxr','Soundbender',
+        'Jingles','Plucked','Choir',
+        'Beasts','Bird','Swarms',
+        'Tangs','Bonks','Cracker','Boomer','Rustler','Squishy',
+        'Motors','Breath','Whoosh','Signal','Sonar','Zapper','Glitches'
+    ]);
     const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
     for (const family of families) {
         assert.ok(html.includes(`src="js/audio/${family}_DSP.js"`));

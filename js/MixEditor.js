@@ -36,7 +36,7 @@ class MixEditor {
             const option=(parent,value,text)=>{const o=document.createElement('option');o.value=value;o.textContent=text;parent.appendChild(o);};
             option(select,'empty','Choose a preset…');
             const current=sources[slot];
-            if(current&&!current.generator)option(select,'current',current.synth+' · '+current.name+' (saved sound)');
+            if(current&&!current.generator)option(select,'current',synth_display_name(current.synth)+' · '+current.name+' (saved sound)');
             let name;
             for(const entry of this.catalog){
                 if(name!==entry.synth){
@@ -45,7 +45,7 @@ class MixEditor {
                 }
                 option(select,entry.synth+':'+entry.generator,'  '+entry.family+' · '+entry.name);
             }
-            select.title=current ? current.synth+' · '+current.name : '';
+            select.title=current ? synth_display_name(current.synth)+' · '+current.name : '';
             select.value=current?(current.generator?current.synth+':'+current.generator:'current'):'empty';
             regen.disabled=!current || !current.generator || this.tab.synth.locked_param('sources');
         });

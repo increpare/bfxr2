@@ -20,21 +20,21 @@ class Mixr extends PresetSynth {
         {id:'shockwave',name:'Shockwaves',pair:['Boomr','Whooshr'],balance:[0.38,0.56],tip:'Boomr × Whooshr.'},
         {id:'sacred_treasure',name:'Arcane Reward',pair:['Jinglr','Choirr'],balance:[0.43,0.61],tip:'Jinglr × Choirr.'},
         {id:'enchanted_string',name:'Strange Strings',pair:['Pluckr','Riftr'],balance:[0.11,0.29],tip:'Pluckr × Riftr.'},
-        {id:'phase_step',name:'Phase Shift',pair:['Whooshr','Riftr'],balance:[0.38,0.56],tip:'Whooshr × Riftr.'},
+        {id:'phase_step',name:'Phase Shift',pair:['Breathr','Riftr'],balance:[0.38,0.56],tip:'Breathr × Riftr.'},
         {id:'clockwork_familiar',name:'Clockwork Aviary',pair:['Machinr','Birdr'],balance:[0.31,0.49],tip:'Machinr × Birdr.'},
         {id:'hatchling',name:'Monster Hatchery',pair:['Fractr','Crittr'],balance:[0.21,0.39],tip:'Fractr × Crittr.'},
         {id:'charged_swarm',name:'Electric Hive',pair:['Swarmr','Zappr'],balance:[0.37,0.55],tip:'Swarmr × Zappr.'},
         {id:'liquid_reward',name:'Jelly Beans',pair:['Jinglr','Squishr'],balance:[0.64,0.8],tip:'Jinglr × Squishr.'},
         {id:'alien_beacon',name:'Alien Broadcast',pair:['Signlr','Choirr'],balance:[0.44,0.62],tip:'Signlr × Choirr.'},
         {id:'pocket_rattle',name:'Pocket Rattle',pair:['Rustlr','Clonkr'],balance:[0.12,0.3],tip:'Rustlr × Clonkr.'},
-        {id:'soft_landing',name:'Goo Collision',pair:['Bouncr','Squishr'],balance:[0.33,0.51],tip:'Impactr × Squishr.'},
-        {id:'reality_error',name:'Reality Error',pair:['Transfxr','Glitchr'],balance:[0.37,0.55],tip:'Transfxr × Glitchr.'},
+        {id:'soft_landing',name:'Goo Collision',pair:['Bouncr','Squishr'],balance:[0.33,0.51],tip:'Bonks × Squishy.'},
+        {id:'reality_error',name:'Reality Error',pair:['Riftr','Glitchr'],balance:[0.37,0.55],tip:'Sonar × Glitches.'},
         {id:'arcade_rush',name:'Arcade Rush',pair:['Bfxr','Whooshr'],balance:[0.54,0.72],tip:'Bfxr × Whooshr.'},
         {id:'underbrush',name:'Underbrush',pair:['Swarmr','Rustlr'],balance:[0.45,0.63],tip:'Swarmr × Rustlr.'},
         {id:'song_garden',name:'Song Garden',pair:['Pluckr','Birdr'],balance:[0.11,0.29],tip:'Pluckr × Birdr.'},
         {id:'demolition',name:'Demolition',pair:['Fractr','Boomr'],balance:[0.37,0.55],tip:'Fractr × Boomr.'},
         {id:'haunted_hardware',name:'Scrap Brain',pair:['Clonkr','Glitchr'],balance:[0.5,0.68],tip:'Clonkr × Glitchr.'}
-    ].map(recipe => ({...recipe, values:{balance:recipe.balance}}));
+    ].map(recipe => ({...recipe, tip:recipe.pair.map(synth_display_name).join(' × ')+'.', values:{balance:recipe.balance}}));
     constructor() { super(); this.initialize_presets(); }
     create_editor(tab,parent) { return new MixEditor(tab,parent); }
     create_random_template() { return super.create_random_template(); }
@@ -49,7 +49,7 @@ class Mixr extends PresetSynth {
         return Stackr.sources().flatMap(Constructor => {
             const synth=new Constructor();
             return this.templates_for(synth).map(([name,tip,generator]) =>
-                ({synth:synth.name, family:synth.display_name || synth.name, name, tip, generator}));
+                ({synth:synth.name, family:synth_display_name(synth.name), name, tip, generator}));
         });
     }
     static generated_source(name,generator,previousGenerator) {
