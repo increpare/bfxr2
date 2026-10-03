@@ -54,4 +54,4 @@ for(const verb of verbs){
  }
 }
 console.log(`\n${bad} entries outside their class or inaudible, ${report.unresolved.length} unresolved.`);
-if(args.json)fs.writeFileSync(path.resolve(args.json),JSON.stringify(report,null,1));
+if(args.json)fs.writeFileSync(path.resolve(args.json),JSON.stringify({verbs,report},null,1));

@@ -89,7 +89,7 @@ const GAME_VERBS = [
     {id:'explode', name:'Explode', row:'Fight', tip:'A blast with debris.', duration:[0.08,3.5]},
     {id:'coin', name:'Coin', row:'Reward', tip:'Pick up a small shiny thing.', duration:[0.06,0.9]},
     {id:'powerup', name:'Powerup', row:'Reward', tip:'Gain a power: bright and rising.', duration:[0.08,2]},
-    {id:'unlock', name:'Unlock', row:'Reward', tip:'A secret, a door or a chest opens up.', duration:[0.15,2.8]},
+    {id:'unlock', name:'Unlock', row:'Reward', tip:'A secret, a door or a chest opens up.', duration:[0.1,2.8]},
     {id:'win', name:'Win', row:'Reward', tip:'Success: a level cleared or a goal met.', duration:[0.6,3.8]},
     {id:'lose', name:'Lose', row:'Reward', tip:'Failure, defeat or death.', duration:[0.4,3.5]},
     {id:'break', name:'Break', row:'World', tip:'An object shatters, snaps or crumbles.', duration:[0.1,2]},

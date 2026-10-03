@@ -30,7 +30,7 @@ class Soundboard extends Mixr {
             {mix:['Squishr:splash','Squishr:heal'], balance:[0.25,0.4], align:2, w:1}],
         shoot: [
             {src:'Bfxr:shoot', w:5}, {src:'Transfxr:shoot', w:5}, {src:'Zappr:shoot', w:2}, {src:'Whooshr:shoot', w:1}, {src:'Boomr:shoot', w:1}, {src:'Swarmr:shoot', w:1},
-            {src:'Pewpr:generate_laser_pistol', w:2}, {src:'Pewpr:generate_shotgun', w:1},
+            {src:'Pewpr:generate_laser_pistol', w:2}, {src:'Pewpr:generate_shotgun', w:1}, {src:'Pewpr:generate_railgun', w:1},
             {mix:['Bfxr:shoot','Zappr:shoot'], balance:[0.3,0.45], align:0, w:1},
             {mix:['Boomr:shoot','Whooshr:shoot'], balance:[0.35,0.5], align:0, w:1}],
         swing: [
@@ -42,7 +42,7 @@ class Soundboard extends Mixr {
             {mix:['Boomr:hit','Fractr:hit'], balance:[0.3,0.45], align:0, w:1},
             {mix:['Bfxr:hit','Clonkr:hit'], balance:[0.35,0.5], align:0, w:1}],
         hurt: [
-            {src:'Bfxr:hurt', w:4}, {src:'Transfxr:hurt', w:4}, {src:'Crittr:hurt', w:2}, {src:'Breathr:hurt', w:1}, {src:'Squishr:hurt', w:1}, {src:'Glitchr:hurt', w:1},
+            {src:'Bfxr:hurt', w:4}, {src:'Transfxr:hurt', w:4}, {src:'Crittr:hurt', w:3}, {src:'Crittr:lose', w:1}, {src:'Breathr:hurt', w:1}, {src:'Squishr:hurt', w:1}, {src:'Glitchr:hurt', w:1},
             {mix:['Bfxr:hurt','Breathr:hurt'], balance:[0.4,0.55], align:0, w:1},
             {mix:['Bfxr:hurt','Crittr:hurt'], balance:[0.35,0.5], align:0, w:1}],
         explode: [
@@ -51,7 +51,7 @@ class Soundboard extends Mixr {
             {mix:['Boomr:explode','Breathr:roar'], balance:[0.25,0.4], align:0, w:1},
             {mix:['Bfxr:explode','Boomr:explode'], balance:[0.4,0.6], align:0, w:1}],
         coin: [
-            {src:'Bfxr:coin', w:5}, {src:'Transfxr:coin', w:4}, {src:'Jinglr:coin', w:2}, {src:'Pluckr:coin', w:1}, {src:'Bouncr:coin', w:1}, {src:'Clonkr:coin', w:1},
+            {src:'Bfxr:coin', w:5}, {src:'Bfxr:generate_reference_coin', w:2}, {src:'Transfxr:coin', w:4}, {src:'Jinglr:coin', w:2}, {src:'Pluckr:coin', w:1}, {src:'Bouncr:coin', w:1}, {src:'Clonkr:coin', w:1},
             {mix:['Bfxr:coin','Bouncr:coin'], balance:[0.35,0.5], align:0, w:1},
             {mix:['Jinglr:coin','Clonkr:coin'], balance:[0.4,0.55], align:0, w:1}],
         powerup: [
@@ -59,7 +59,7 @@ class Soundboard extends Mixr {
             {mix:['Bfxr:powerup','Choirr:powerup'], balance:[0.35,0.5], align:0, w:1},
             {mix:['Bfxr:powerup','Zappr:cast'], balance:[0.3,0.45], align:1, w:1}],
         unlock: [
-            {src:'Jinglr:unlock', w:3}, {src:'Transfxr:unlock', w:3}, {src:'Machinr:unlock', w:2}, {src:'Pluckr:unlock', w:1}, {src:'Signlr:unlock', w:1}, {src:'Rustlr:unlock', w:1},
+            {src:'Jinglr:unlock', w:3}, {src:'Transfxr:unlock', w:3}, {src:'Machinr:unlock', w:3}, {src:'Clonkr:blip', w:1}, {src:'Pluckr:unlock', w:1}, {src:'Signlr:unlock', w:1}, {src:'Rustlr:unlock', w:1},
             {mix:['Machinr:unlock','Jinglr:coin'], balance:[0.45,0.6], align:2, w:2},
             {mix:['Jinglr:unlock','Clonkr:coin'], balance:[0.35,0.5], align:0, w:1}],
         win: [
@@ -85,7 +85,7 @@ class Soundboard extends Mixr {
             {src:'Signlr:confirm', w:1}, {src:'Rustlr:confirm', w:1}, {src:'Tappr:generate_panel_open', w:1}, {src:'Notifr:generate_objective_done', w:1}, {src:'Notifr:generate_message', w:1},
             {mix:['Tappr:generate_select','Jinglr:confirm'], balance:[0.45,0.6], align:0, w:1}],
         alert: [
-            {src:'Jinglr:alert', w:3}, {src:'Transfxr:alert', w:4}, {src:'Jinglr:generate_denied', w:2}, {src:'Signlr:alert', w:2}, {src:'Zappr:alert', w:1}, {src:'Birdr:alert', w:1}, {src:'Glitchr:alert', w:1},
+            {src:'Jinglr:alert', w:2}, {src:'Transfxr:alert', w:5}, {src:'Jinglr:generate_denied', w:3}, {src:'Signlr:alert', w:2}, {src:'Zappr:alert', w:1}, {src:'Birdr:alert', w:1}, {src:'Glitchr:alert', w:1},
             {mix:['Signlr:alert','Zappr:alert'], balance:[0.3,0.45], align:0, w:1}],
         cast: [
             {src:'Zappr:cast', w:3}, {src:'Transfxr:cast', w:4}, {src:'Choirr:cast', w:1}, {src:'Riftr:cast', w:1}, {src:'Fractr:cast', w:1}, {src:'Swarmr:cast', w:1}, {src:'Jinglr:cast', w:1},

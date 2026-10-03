@@ -97,6 +97,7 @@ class Transfxr extends SynthBase {
             {id:'shoot_chirp', params:{waveType:3,duration:0.15,attack:0,release:0.05,echo:0,pitch:[0.55,0.76,'Triangle'],tone:[1,0.9],level:[1,0.4]}},
             {id:'shoot_crack', params:{waveType:7,duration:0.2,attack:0,release:0.15,echo:0.05,pitch:[0.5,0.5],tone:[1,0.3,'Ease Out'],level:[1,0],resonance:0.2}},
             {id:'shoot_laser', params:{waveType:3,duration:0.3,attack:0.005,release:0.08,echo:0,pitch:[0.8,0.77],vibrato:[0.45,0.45],tone:[1,0.9],level:[1,0.4]}},
+            {id:'shoot_pistol', params:{waveType:7,duration:0.55,attack:0,release:0.45,echo:0.15,pitch:[0.5,0.5],tone:[0.9,0.1,'Ease Out'],waveTo:0,morph:[0.2,0.6,'Ease In'],level:[1,0],resonance:0.25}},
             {id:'shoot_charge', params:{waveType:2,duration:0.6,attack:0.05,release:0.1,echo:0.1,pitch:[0.3,0.72,'Ease In'],tone:[0.5,1],waveTo:7,morph:[0,0.6,'Ease In'],level:[0.3,1,'Ease In']}}],
         swing: [
             {id:'swing_whoosh', params:{waveType:7,duration:0.3,attack:0.03,release:0.14,echo:0,pitch:[0.5,0.5],tone:[0.25,0.8,'Triangle'],level:[0.4,1,'Triangle'],resonance:0.5}},
@@ -116,6 +117,7 @@ class Transfxr extends SynthBase {
             {id:'hurt_buzz', params:{waveType:2,duration:0.3,attack:0,release:0.1,echo:0,pitch:[0.5,0.3,'Ease Out'],vibrato:[0.5,0.9],waveTo:7,morph:[0,0.4],tone:[0.9,0.5],level:[1,0.3]}},
             {id:'hurt_twovoice', params:{waveType:3,duration:0.3,attack:0,release:0.08,echo:0.3,pitch:[0.66,0.3,'Ease In'],tone:[1,0.7],level:[1,0.3]}},
             {id:'hurt_stutter', params:{waveType:3,duration:0.36,attack:0,release:0.05,echo:0,pitch:[0.6,0.4,'Steps'],vibrato:[1,1],level:[1,0.6,'Pulse'],tone:[0.9,0.9]}},
+            {id:'hurt_grunt', params:{waveType:8,duration:0.6,attack:0.02,release:0.3,echo:0,pitch:[0.36,0.22,'Ease Out'],vibrato:[0.3,0.6],waveTo:10,morph:[0.2,0.6],tone:[0.6,0.3],level:[1,0.2],resonance:0.3}},
             {id:'hurt_zzt', params:{waveType:9,duration:0.2,attack:0,release:0.1,echo:0,pitch:[0.6,0.3],tone:[0.9,0.4],level:[1,0.2]}}],
         explode: [
             {id:'explode_burst', params:{waveType:7,duration:0.4,attack:0,release:0.3,echo:0,pitch:[0.5,0.5],tone:[0.8,0.15,'Ease Out'],level:[1,0],resonance:0.2}},
@@ -140,6 +142,7 @@ class Transfxr extends SynthBase {
             {id:'unlock_clunk', params:{waveType:3,duration:0.3,attack:0,release:0.1,echo:0.1,pitch:[0.3,0.62,'Steps'],waveTo:7,morph:[0.5,0],tone:[0.7,1],level:[1,0.6]}},
             {id:'unlock_shimmer', params:{waveType:11,duration:0.9,attack:0.02,release:0.5,echo:0.4,pitch:[0.6,0.85,'Ease Out'],vibrato:[0,0.4,'Ease In'],tone:[0.9,1],level:[1,0.3]}},
             {id:'unlock_shutter', params:{waveType:3,duration:0.7,attack:0,release:0.05,echo:0,pitch:[0.55,0.35,'Steps'],level:[1,0.8,'Pulse'],waveTo:7,morph:[0.4,0.4],tone:[0.8,0.6]}},
+            {id:'unlock_click', params:{waveType:7,duration:0.2,attack:0,release:0.12,echo:0.05,pitch:[0.5,0.5],tone:[0.9,0.5,'Ease Out'],waveTo:11,morph:[0.3,0.8,'Steps'],level:[1,0.2],resonance:0.4}},
             {id:'unlock_beep', params:{waveType:3,duration:0.3,attack:0,release:0.05,echo:0,pitch:[0.68,0.78,'Steps'],tone:[1,1],level:[0.9,0.9]}}],
         win: [
             {id:'win_sting', params:{waveType:2,duration:1.2,attack:0.01,release:0.7,echo:0.4,pitch:[0.6,0.6],vibrato:[0,0.4,'Ease In'],tone:[1,0.6],level:[1,0.2],resonance:0.2}},
@@ -176,6 +179,7 @@ class Transfxr extends SynthBase {
             {id:'alert_siren', params:{waveType:2,duration:1.2,attack:0.02,release:0.1,echo:0,pitch:[0.5,0.68,'Triangle'],tone:[0.9,0.9],level:[0.9,0.9],resonance:0.2}},
             {id:'alert_stab', params:{waveType:2,duration:0.3,attack:0,release:0.1,echo:0.2,pitch:[0.6,0.7,'Steps'],tone:[1,0.9],level:[1,0.4]}},
             {id:'alert_buzz', params:{waveType:2,duration:0.3,attack:0,release:0.08,echo:0,pitch:[0.26,0.24],tone:[0.6,0.5],level:[1,0.7],resonance:0.3}},
+            {id:'alert_bonk', params:{waveType:3,duration:0.16,attack:0,release:0.06,echo:0,pitch:[0.3,0.26,'Ease Out'],tone:[0.6,0.4],level:[1,0.5]}},
             {id:'alert_countdown', params:{waveType:0,duration:1.2,attack:0,release:0.05,echo:0.1,pitch:[0.32,0.34],level:[1,0.9,'Pulse'],tone:[0.8,0.8]}}],
         cast: [
             {id:'cast_arp', params:{waveType:3,duration:0.7,attack:0,release:0.25,echo:0.25,pitch:[0.5,0.78,'Steps'],vibrato:[0.3,0.6],tone:[0.9,1],level:[0.9,0.5]}},

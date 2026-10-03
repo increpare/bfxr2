@@ -53,7 +53,9 @@ class Mixr extends PresetSynth {
 
     static templates_for(synth, includeRetired = this.includeRetired) {
         if (!synth || (!includeRetired && Mixr.retired.includes(synth.name))) return [];
-        return synth.templates.filter(t => typeof synth[t[2]] === 'function' &&
+        // Hidden generators are ingredients without a button, such as Bfxr's reference templates.
+        const hidden = (synth.hidden_generators || []).map(name => [name.replace(/^generate_/, ''), 'A reference recreation.', name, name.replace(/^generate_/, '')]);
+        return [...synth.templates, ...hidden].filter(t => typeof synth[t[2]] === 'function' &&
             (t[2].startsWith('generate_') || (synth.name === 'Footsteppr' && t[2] === 'randomize_params')));
     }
     // 'Synth:verb' or 'Synth:generate_x' names one generator. Verbs resolve through the engine's verb presets.

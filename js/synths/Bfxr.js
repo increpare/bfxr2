@@ -16,6 +16,11 @@ class Bfxr extends SynthBase {
         powerup:'generate_powerup', hit:'generate_hit_hurt', hurt:'generate_hit_hurt', jump:'generate_jump', blip:'generate_blip_select'};
     verb_generator(verb) { return this.verb_generators[verb] || null; }
     verbs() { return Object.keys(this.verb_generators); }
+    // Reference recreations fitted by tools/match live in templates/Bfxr/reference_*.bcol. They have
+    // no button of their own; the Soundboard draws on them as 'Bfxr:generate_reference_<verb>'.
+    get hidden_generators() {
+        return typeof TEMPLATES_JSON === 'undefined' ? [] : Object.keys(TEMPLATES_JSON.Bfxr || {}).filter(key => key.startsWith('reference_')).map(key => 'generate_' + key);
+    }
 
     permalocked = ["masterVolume"];
     hide_params = ["masterVolume"];
