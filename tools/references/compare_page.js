@@ -11,6 +11,7 @@ const {encodeWav16}=require('../render/wav');
 const [root,matchRoot,outDir]=process.argv.slice(2,5);
 const flag=(name,fallback)=>{const i=process.argv.indexOf(name);return i>0?process.argv[i+1]:fallback;};
 const takesPerVerb=parseInt(flag('--takes','3'),10),round=parseInt(flag('--round','1'),10),maxScore=parseFloat(flag('--max-score','1.5')),noMatches=process.argv.includes('--no-matches');
+const onlyVerbs=flag('--verbs','')?flag('--verbs','').split(','):null;
 // Keep in step with tools/references/measure_tagged.py.
 const TAG_TO_VERB={jump:'jump',double_jump:'jump',fall:'land',footstep:'step',step:'step',clothes:'step',attack:'swing',sword:'swing',draw_weapon:'swing',hit:'hit',shoot:'shoot',laser:'shoot',explode:'explode',collect:'coin',chips:'coin',power_up:'powerup',unlock:'unlock',motiv:'confirm',bell:'confirm',select:'confirm',click:'blip',card:'blip',forbidden:'alert',carbeep:'alert',magic:'cast',monster:'roar',animal:'roar',voice:'hurt',door:'door',dice:'break',slime:'splash',die:'lose'};
 // Matcher runs are named <slug>; this maps them back to their source file.
@@ -41,7 +42,7 @@ if(!noMatches&&matchRoot&&fs.existsSync(matchRoot))for(const name of fs.readdirS
  matches.push({id:'r'+round+'-match-'+slug(name),verb:TAG_TO_VERB[tag],source:refDest,sourceName:source,ours:dest,score:+best.score.toFixed(2),wave:best.wave_type_name});
 }
 for(const verb of verbs){
- const refs=byVerb[verb.id]||[];if(!refs.length)continue;
+ const refs=byVerb[verb.id]||[];if(!refs.length&&!onlyVerbs)continue;if(onlyVerbs&&!onlyVerbs.includes(verb.id))continue;
  const takes=[];const seen=new Set();
  for(let take=0;take<takesPerVerb;take++){
   api.run(`Math.random=SoundDSP.rng(${seedFor('page'+round+verb.id+take)});var s=new Soundboard();s.generate_recipe(${JSON.stringify(verb.id)});`);

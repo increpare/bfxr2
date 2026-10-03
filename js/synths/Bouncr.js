@@ -21,7 +21,7 @@ class Bouncr extends PresetSynth {
     ];
     recipes=[
         {name:'Land',id:'land',verb:'land',tip:'A weighty body arriving on a surface.',values:{material:[0,1,4],surface:[0,1,4,5],duration:[0.3,0.8],count:1,size:[0.5,1],hardness:[0.15,0.5],force:[0.5,1],tail:[0.1,0.45]}},
-        {name:'Hit',id:'hit',verb:'hit',tip:'A hard object striking a hard surface.',values:{material:[1,2,4],surface:[0,2],duration:[0.3,0.8],count:1,size:[0.3,0.7],hardness:[0.6,1],force:[0.5,1],tail:[0.15,0.5]}},
+        {name:'Hit',id:'hit',verb:'hit',tip:'A hard object striking a dead surface.',values:{material:[1,4],surface:[0,4],duration:[0.25,0.5],count:1,size:[0.3,0.7],hardness:[0.6,1],force:[0.6,1],tail:[0.05,0.25]}},
         {name:'Coin',id:'coin',verb:'coin',tip:'A small coin spinning down onto glass.',values:{material:2,surface:[3,2],duration:[0.4,1],count:1,size:[0.03,0.25],hardness:[0.7,1],force:[0.3,0.7],tail:[0.3,0.7],spin:[0.2,0.7]}},
         {name:'Rubber on Wood',id:'rubber_ball',values:{material:0,surface:1,duration:[0.5,1.2],count:1,size:[0.35,0.75],hardness:[0.15,0.45],bounce:[0.5,0.9],force:[0.35,0.8],tail:[0.2,0.55]}},
         {name:'Steel on Concrete',id:'metal_ball',values:{material:2,surface:0,duration:[0.5,1.4],count:1,size:[0.4,0.8],hardness:[0.7,1],force:[0.5,1],tail:[0.2,0.6],spin:[0,0.25]}},

@@ -103,8 +103,7 @@ class Transfxr extends SynthBase {
             {id:'swing_whoosh', params:{waveType:7,duration:0.3,attack:0.03,release:0.14,echo:0,pitch:[0.5,0.5],tone:[0.25,0.8,'Triangle'],level:[0.4,1,'Triangle'],resonance:0.5}},
             {id:'swing_crack', params:{waveType:7,duration:0.09,attack:0,release:0.06,echo:0.05,pitch:[0.5,0.5],tone:[1,0.5,'Ease Out'],level:[1,0]}},
             {id:'swing_shing', params:{waveType:2,duration:0.16,attack:0,release:0.08,echo:0.1,pitch:[0.76,0.56,'Ease Out'],vibrato:[0,0.5,'Ease In'],tone:[1,0.6],level:[1,0.3]}},
-            {id:'swing_whir', params:{waveType:3,duration:0.4,attack:0.02,release:0.12,echo:0,pitch:[0.5,0.7,'Triangle'],vibrato:[0.5,0.5],waveTo:7,morph:[0.3,0.3],tone:[0.8,0.8],level:[0.8,0.6]}},
-            {id:'swing_hum', params:{waveType:2,duration:0.32,attack:0.02,release:0.1,echo:0.05,pitch:[0.4,0.43],vibrato:[0.3,0.3],waveTo:7,morph:[0.1,0.6,'Triangle'],tone:[0.6,0.9,'Triangle'],level:[0.6,1,'Triangle'],resonance:0.5}}],
+            {id:'swing_whir', params:{waveType:3,duration:0.4,attack:0.02,release:0.12,echo:0,pitch:[0.5,0.7,'Triangle'],vibrato:[0.5,0.5],waveTo:7,morph:[0.3,0.3],tone:[0.8,0.8],level:[0.8,0.6]}}],
         hit: [
             {id:'hit_boink', params:{waveType:3,duration:0.15,attack:0,release:0.05,echo:0,pitch:[0.45,0.63,'Triangle'],tone:[0.9,0.9],level:[1,0.5]}},
             {id:'hit_thunk', params:{waveType:3,duration:0.1,attack:0,release:0.05,echo:0,pitch:[0.4,0.24,'Ease Out'],waveTo:7,morph:[0.2,0.6],tone:[0.8,0.4],level:[1,0.2]}},
@@ -161,8 +160,7 @@ class Transfxr extends SynthBase {
             {id:'door_shwip', params:{waveType:3,duration:0.3,attack:0,release:0.1,echo:0,pitch:[0.4,0.66,'Ease Out'],waveTo:7,morph:[0.2,0.6],tone:[0.7,0.9],level:[1,0.4]}},
             {id:'door_hiss_clank', params:{waveType:7,duration:0.6,attack:0.02,release:0.1,echo:0.05,pitch:[0.5,0.5],tone:[0.9,0.3,'Ease Out'],waveTo:1,morph:[0,1,'Steps'],level:[0.8,1,'Steps'],resonance:0.3}},
             {id:'door_motor', params:{waveType:2,duration:1,attack:0.1,release:0.1,echo:0,pitch:[0.2,0.3,'Ease Out'],vibrato:[0.2,0.2],waveTo:7,morph:[0.3,0.8,'Steps'],tone:[0.4,0.6],level:[0.7,1,'Steps'],resonance:0.4}},
-            {id:'door_shutter', params:{waveType:3,duration:0.8,attack:0,release:0.05,echo:0,pitch:[0.5,0.3,'Steps'],level:[1,0.8,'Pulse'],waveTo:7,morph:[0.3,0.3],tone:[0.8,0.5]}},
-            {id:'door_pipe', params:{waveType:3,duration:0.55,attack:0,release:0.1,echo:0,pitch:[0.55,0.3,'Ease In'],vibrato:[0.5,0.5],tone:[0.9,0.7],level:[1,0.6]}}],
+            {id:'door_shutter', params:{waveType:3,duration:0.8,attack:0,release:0.05,echo:0,pitch:[0.5,0.3,'Steps'],level:[1,0.8,'Pulse'],waveTo:7,morph:[0.3,0.3],tone:[0.8,0.5]}}],
         blip: [
             {id:'blip_tick', params:{waveType:3,duration:0.04,attack:0,release:0.02,echo:0,pitch:[0.7,0.7],tone:[1,1],level:[1,0.7]}},
             {id:'blip_pip', params:{waveType:3,duration:0.07,attack:0,release:0.03,echo:0,pitch:[0.75,0.8],tone:[1,1],level:[1,0.5]}},
@@ -179,7 +177,6 @@ class Transfxr extends SynthBase {
             {id:'alert_siren', params:{waveType:2,duration:1.2,attack:0.02,release:0.1,echo:0,pitch:[0.5,0.68,'Triangle'],tone:[0.9,0.9],level:[0.9,0.9],resonance:0.2}},
             {id:'alert_stab', params:{waveType:2,duration:0.3,attack:0,release:0.1,echo:0.2,pitch:[0.6,0.7,'Steps'],tone:[1,0.9],level:[1,0.4]}},
             {id:'alert_buzz', params:{waveType:2,duration:0.3,attack:0,release:0.08,echo:0,pitch:[0.26,0.24],tone:[0.6,0.5],level:[1,0.7],resonance:0.3}},
-            {id:'alert_bonk', params:{waveType:3,duration:0.16,attack:0,release:0.06,echo:0,pitch:[0.3,0.26,'Ease Out'],tone:[0.6,0.4],level:[1,0.5]}},
             {id:'alert_countdown', params:{waveType:0,duration:1.2,attack:0,release:0.05,echo:0.1,pitch:[0.32,0.34],level:[1,0.9,'Pulse'],tone:[0.8,0.8]}}],
         cast: [
             {id:'cast_arp', params:{waveType:3,duration:0.7,attack:0,release:0.25,echo:0.25,pitch:[0.5,0.78,'Steps'],vibrato:[0.3,0.6],tone:[0.9,1],level:[0.9,0.5]}},

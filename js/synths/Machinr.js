@@ -19,11 +19,10 @@ class Machinr extends PresetSynth {
         ['Stop Time','Seconds spent slowing down and stopping.','stopTime',0.16,0,2]
     ];
     recipes = [
-        {name:'Door',id:'door',verb:'door',tip:'A door moving and latching: creaking hinge, quick latch, motor-driven slab or a servo hatch.',values:{},variants:[
+        {name:'Door',id:'door',verb:'door',tip:'A door moving and latching: a creaking hinge, a quick latch, a loose rattling door.',values:{},variants:[
             {mechanism:7,duration:[0.9,1.8],speed:[0.1,0.4],load:[0.6,1],roughness:[0.5,1],looseness:[0.3,0.8],size:[0.6,1],startTime:[0.1,0.4],stopTime:[0.03,0.12]},
             {mechanism:[2,7],duration:[0.3,0.6],speed:[0.6,1],load:[0.1,0.4],roughness:[0.05,0.3],looseness:[0.2,0.6],size:[0.3,0.7],startTime:[0,0.02],stopTime:[0.02,0.08]},
-            {mechanism:[0,1],duration:[0.8,1.6],speed:[0.3,0.6],load:[0.5,0.9],roughness:[0.2,0.5],looseness:[0.1,0.4],size:[0.7,1],startTime:[0.1,0.3],stopTime:[0.02,0.08]},
-            {mechanism:5,duration:[0.4,0.9],speed:[0.4,0.8],load:[0.2,0.6],roughness:[0,0.15],looseness:[0,0.2],size:[0.2,0.5],startTime:[0.01,0.08],stopTime:[0.02,0.1]}]},
+            {mechanism:7,duration:[0.5,1],speed:[0.3,0.6],load:[0.5,0.9],roughness:[0.4,0.9],looseness:[0.4,0.9],size:[0.4,0.8],startTime:[0.05,0.2],stopTime:[0.02,0.08]}]},
         {name:'Whirr',id:'whirr',verb:'whirr',tip:'A machine running for a moment: motor, servo, gears, windup toy or a coughing engine.',values:{},variants:[
             {mechanism:0,duration:[0.5,1.6],speed:[0.4,1],load:[0.05,0.5],roughness:[0.02,0.5],looseness:[0.02,0.4],size:[0.03,0.7],startTime:[0.02,0.3],stopTime:[0.05,0.5]},
             {mechanism:5,duration:[0.3,1],speed:[0.3,1],load:[0.1,0.7],roughness:[0,0.3],looseness:[0,0.3],size:[0.05,0.5],startTime:[0.005,0.08],stopTime:[0.02,0.15]},
