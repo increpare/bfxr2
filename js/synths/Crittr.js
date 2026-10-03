@@ -21,6 +21,7 @@ class Crittr extends PresetSynth {
         ['Flutter','From a steady voice to rapid trills and trembling.','flutter',0.2,0,1]
     ];
     recipes = [
+        {name:'Jump',id:'jump',verb:'jump',tip:'A quick rising yip, the creature leaving the ground.',values:{voice:[1,5,7],duration:[0.14,0.3],pitch:[0.5,0.78],size:[0.1,0.4],morph:[0.3,0.8],calls:1,gap:[0.02,0.1],contour:[0.5,1],growl:[0,0.1],breath:[0,0.1],flutter:[0,0.2]}},
         {name:'Hurt',id:'hurt',verb:'hurt',tip:'A short yelp from a creature.',values:{voice:[0,6,7],duration:[0.2,0.5],pitch:[0.3,0.6],size:[0.3,0.7],morph:[0.5,1],calls:1,gap:[0.05,0.2],contour:[-0.8,-0.3],growl:[0.1,0.5],breath:[0.2,0.5],flutter:[0.05,0.3]}},
         {name:'Roar',id:'roar',verb:'roar',tip:'A big creature announcing itself: growl, screech, pulsed bellow, layered roar or a monster cry.',values:{},variants:[
             {voice:[0,6],duration:[0.6,1.8],pitch:[0.05,0.3],size:[0.65,1],morph:[0.5,1],calls:1,gap:[0.03,0.15],contour:[-0.5,0.2],growl:[0.6,1],breath:[0.2,0.5],flutter:[0.05,0.3]},

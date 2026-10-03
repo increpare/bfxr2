@@ -75,6 +75,8 @@ class Transfxr extends SynthBase {
             {id:'jump_hop', params:{waveType:3,duration:0.18,attack:0,release:0.04,echo:0,pitch:[0.46,0.6,'Steps'],tone:[0.9,0.9],level:[0.9,0.8]}},
             {id:'jump_puff', params:{waveType:7,duration:0.16,attack:0.005,release:0.1,echo:0,pitch:[0.5,0.5],tone:[0.65,0.3,'Ease Out'],level:[1,0.15],resonance:0.1}},
             {id:'jump_flutter', params:{waveType:3,duration:0.36,attack:0,release:0.08,echo:0,pitch:[0.5,0.62],vibrato:[0.9,0.9],tone:[0.9,0.9],level:[0.9,0.6]}},
+            {id:'jump_tri', params:{waveType:1,duration:0.22,attack:0,release:0.08,echo:0,pitch:[0.4,0.62,'Ease Out'],tone:[0.9,0.9],level:[1,0.5]}},
+            {id:'jump_double', params:{waveType:3,duration:0.3,attack:0,release:0.06,echo:0,pitch:[0.45,0.7,'Bounce'],tone:[0.9,0.9],level:[1,0.6]}},
             {id:'jump_chirp', params:{waveType:3,duration:0.13,attack:0,release:0.05,echo:0,pitch:[0.6,0.73,'Ease Out'],vibrato:[0,0.6,'Ease In'],tone:[1,0.95],level:[1,0.6]}}],
         land: [
             {id:'land_tick', params:{waveType:7,duration:0.06,attack:0,release:0.04,echo:0,pitch:[0.5,0.5],tone:[0.8,0.4,'Ease Out'],level:[1,0]}},
@@ -85,6 +87,7 @@ class Transfxr extends SynthBase {
             {id:'dash_whoosh', params:{waveType:7,duration:0.38,attack:0.05,release:0.18,echo:0,pitch:[0.5,0.5],tone:[0.3,0.85,'Triangle'],level:[0.5,1,'Triangle'],resonance:0.45}},
             {id:'dash_zip', params:{waveType:2,duration:0.26,attack:0.01,release:0.1,echo:0,pitch:[0.42,0.76,'Ease In'],tone:[0.7,1],waveTo:7,morph:[0.15,0.7,'Ease In'],level:[0.9,0.5]}},
             {id:'dash_skid', params:{waveType:7,duration:0.4,attack:0.01,release:0.2,echo:0,pitch:[0.5,0.5],tone:[0.9,0.35,'Ease Out'],level:[1,0.15],resonance:0.75}},
+            {id:'dash_double', params:{waveType:7,duration:0.4,attack:0.02,release:0.1,echo:0,pitch:[0.5,0.5],tone:[0.35,0.85,'Pulse'],level:[0.5,1,'Pulse'],resonance:0.5}},
             {id:'dash_boost', params:{waveType:2,duration:0.45,attack:0.05,release:0.18,echo:0.1,pitch:[0.32,0.7,'Ease In'],tone:[0.4,0.95,'Ease In'],waveTo:7,morph:[0.2,0.6],level:[0.5,1]}}],
         splash: [
             {id:'splash_glug', params:{waveType:3,duration:0.4,attack:0.01,release:0.15,echo:0,pitch:[0.46,0.24,'Ease Out'],vibrato:[0.6,0.6],tone:[0.6,0.4],waveTo:7,morph:[0,0.5],level:[0.9,0.4]}},
@@ -102,7 +105,9 @@ class Transfxr extends SynthBase {
             {id:'swing_whoosh', params:{waveType:7,duration:0.3,attack:0.03,release:0.14,echo:0,pitch:[0.5,0.5],tone:[0.25,0.8,'Triangle'],level:[0.4,1,'Triangle'],resonance:0.5}},
             {id:'swing_crack', params:{waveType:7,duration:0.09,attack:0,release:0.06,echo:0.05,pitch:[0.5,0.5],tone:[1,0.5,'Ease Out'],level:[1,0]}},
             {id:'swing_shing', params:{waveType:2,duration:0.16,attack:0,release:0.08,echo:0.1,pitch:[0.76,0.56,'Ease Out'],vibrato:[0,0.5,'Ease In'],tone:[1,0.6],level:[1,0.3]}},
-            {id:'swing_whir', params:{waveType:3,duration:0.4,attack:0.02,release:0.12,echo:0,pitch:[0.5,0.7,'Triangle'],vibrato:[0.5,0.5],waveTo:7,morph:[0.3,0.3],tone:[0.8,0.8],level:[0.8,0.6]}}],
+            {id:'swing_whir', params:{waveType:3,duration:0.4,attack:0.02,release:0.12,echo:0,pitch:[0.5,0.7,'Triangle'],vibrato:[0.5,0.5],waveTo:7,morph:[0.3,0.3],tone:[0.8,0.8],level:[0.8,0.6]}},
+            {id:'swing_heavy', params:{waveType:7,duration:0.5,attack:0.08,release:0.2,echo:0,pitch:[0.5,0.5],tone:[0.15,0.55,'Triangle'],level:[0.4,1,'Triangle'],resonance:0.6}},
+            {id:'swing_double', params:{waveType:7,duration:0.45,attack:0.02,release:0.1,echo:0,pitch:[0.5,0.5],tone:[0.3,0.8,'Pulse'],level:[0.5,1,'Pulse'],resonance:0.5}}],
         hit: [
             {id:'hit_boink', params:{waveType:3,duration:0.15,attack:0,release:0.05,echo:0,pitch:[0.45,0.63,'Triangle'],tone:[0.9,0.9],level:[1,0.5]}},
             {id:'hit_thunk', params:{waveType:3,duration:0.1,attack:0,release:0.05,echo:0,pitch:[0.4,0.24,'Ease Out'],waveTo:7,morph:[0.2,0.6],tone:[0.8,0.4],level:[1,0.2]}},
@@ -129,7 +134,10 @@ class Transfxr extends SynthBase {
             {id:'coin_bell', params:{waveType:11,duration:0.3,attack:0,release:0.26,echo:0,pitch:[0.82,0.82],tone:[1,0.9],level:[1,0]}},
             {id:'coin_pip', params:{waveType:3,duration:0.08,attack:0,release:0.04,echo:0,pitch:[0.75,0.78],tone:[1,1],level:[1,0.5]}},
             {id:'coin_arp', params:{waveType:3,duration:0.22,attack:0,release:0.08,echo:0,pitch:[0.6,0.78,'Steps'],tone:[0.95,0.95],level:[0.9,0.5]}},
-            {id:'coin_waka', params:{waveType:3,duration:0.18,attack:0,release:0.03,echo:0,pitch:[0.5,0.62,'Triangle'],tone:[0.8,0.8],level:[0.9,0.9]}}],
+            {id:'coin_waka', params:{waveType:3,duration:0.18,attack:0,release:0.03,echo:0,pitch:[0.5,0.62,'Triangle'],tone:[0.8,0.8],level:[0.9,0.9]}},
+            {id:'coin_sparkle', params:{waveType:11,duration:0.35,attack:0,release:0.3,echo:0.15,pitch:[0.7,0.86,'Ease Out'],tone:[1,0.9],level:[1,0.1]}},
+            {id:'coin_descend', params:{waveType:3,duration:0.22,attack:0,release:0.1,echo:0,pitch:[0.78,0.7,'Steps'],tone:[0.95,0.9],level:[0.9,0.4]}},
+            {id:'coin_triangle', params:{waveType:1,duration:0.3,attack:0,release:0.2,echo:0.05,pitch:[0.68,0.74,'Steps'],tone:[0.9,0.9],level:[1,0.3]}}],
         powerup: [
             {id:'powerup_ladder', params:{waveType:3,duration:0.65,attack:0,release:0.12,echo:0.1,pitch:[0.42,0.72,'Steps'],tone:[0.8,1],level:[0.8,0.9]}},
             {id:'powerup_slide', params:{waveType:3,duration:0.5,attack:0,release:0.15,echo:0.1,pitch:[0.4,0.75,'Ease In'],tone:[0.8,1],level:[0.9,0.7]}},
@@ -144,16 +152,22 @@ class Transfxr extends SynthBase {
             {id:'unlock_beep', params:{waveType:3,duration:0.3,attack:0,release:0.05,echo:0,pitch:[0.68,0.78,'Steps'],tone:[1,1],level:[0.9,0.9]}}],
         win: [
             {id:'win_rise', params:{waveType:3,duration:1.4,attack:0,release:0.6,echo:0.3,pitch:[0.5,0.72,'Steps'],tone:[0.9,1],level:[0.9,0.5]}},
-            {id:'win_bell', params:{waveType:11,duration:1.3,attack:0,release:0.9,echo:0.45,pitch:[0.7,0.85,'Steps'],tone:[1,0.9],level:[1,0.1]}}],
+            {id:'win_bell', params:{waveType:11,duration:1.3,attack:0,release:0.9,echo:0.45,pitch:[0.7,0.85,'Steps'],tone:[1,0.9],level:[1,0.1]}},
+            {id:'win_fanfare', params:{waveType:2,duration:1.5,attack:0.01,release:0.5,echo:0.3,pitch:[0.5,0.68,'Steps'],tone:[0.8,1,'Ease In'],level:[0.8,1,'Ease In'],resonance:0.2}},
+            {id:'win_chord', params:{waveType:11,duration:1.6,attack:0.05,release:1,echo:0.4,pitch:[0.55,0.56],vibrato:[0,0.3,'Ease In'],waveTo:2,morph:[0,0.4,'Ease In'],tone:[0.7,1,'Ease In'],level:[0.7,1],resonance:0.2}}],
         lose: [
             {id:'lose_spiral', params:{waveType:3,duration:1.4,attack:0,release:0.3,echo:0,pitch:[0.65,0.25,'Ease In'],vibrato:[0.8,1],tone:[0.9,0.5],level:[1,0.4]}},
             {id:'lose_sting', params:{waveType:2,duration:0.8,attack:0,release:0.4,echo:0.2,pitch:[0.5,0.38,'Steps'],tone:[0.8,0.4],level:[1,0.3]}},
             {id:'lose_crash', params:{waveType:3,duration:1,attack:0,release:0.6,echo:0.1,pitch:[0.6,0.2,'Ease Out'],waveTo:7,morph:[0,1,'Ease In'],tone:[0.9,0.2],level:[1,0.1]}},
-            {id:'lose_slide', params:{waveType:3,duration:0.9,attack:0,release:0.2,echo:0.1,pitch:[0.6,0.28,'Linear'],vibrato:[0.2,0.2],tone:[0.9,0.6],level:[1,0.5]}}],
+            {id:'lose_slide', params:{waveType:3,duration:0.9,attack:0,release:0.2,echo:0.1,pitch:[0.6,0.28,'Linear'],vibrato:[0.2,0.2],tone:[0.9,0.6],level:[1,0.5]}},
+            {id:'lose_phrase', params:{waveType:3,duration:1.3,attack:0,release:0.4,echo:0.1,pitch:[0.6,0.42,'Steps'],tone:[0.9,0.7],level:[0.9,0.6]}},
+            {id:'lose_gong', params:{waveType:11,duration:1.8,attack:0.01,release:1.4,echo:0.3,pitch:[0.3,0.26,'Ease Out'],tone:[0.8,0.4,'Ease Out'],level:[1,0],resonance:0.3}}],
         break: [
             {id:'break_crunch', params:{waveType:7,duration:0.35,attack:0,release:0.2,echo:0,pitch:[0.5,0.5],tone:[0.9,0.4,'Ease Out'],level:[1,0.3,'Steps'],resonance:0.2}},
             {id:'break_shatter', params:{waveType:11,duration:0.5,attack:0,release:0.4,echo:0.15,pitch:[0.85,0.7,'Ease Out'],waveTo:7,morph:[0.6,0.2],tone:[1,0.7],level:[1,0]}},
-            {id:'break_pop', params:{waveType:0,duration:0.09,attack:0,release:0.06,echo:0,pitch:[0.6,0.4,'Ease Out'],waveTo:7,morph:[0.5,0.2],tone:[1,0.6],level:[1,0]}}],
+            {id:'break_pop', params:{waveType:0,duration:0.09,attack:0,release:0.06,echo:0,pitch:[0.6,0.4,'Ease Out'],waveTo:7,morph:[0.5,0.2],tone:[1,0.6],level:[1,0]}},
+            {id:'break_crumble', params:{waveType:7,duration:0.9,attack:0.01,release:0.5,echo:0,pitch:[0.5,0.5],tone:[0.6,0.2,'Ease Out'],level:[1,0.3,'Steps'],resonance:0.3}},
+            {id:'break_wood', params:{waveType:7,duration:0.25,attack:0,release:0.15,echo:0,pitch:[0.5,0.5],tone:[0.7,0.35,'Ease Out'],waveTo:1,morph:[0.3,0.1],level:[1,0.2,'Steps'],resonance:0.4}}],
         door: [
             {id:'door_open_rise', params:{waveType:2,duration:0.7,attack:0.12,release:0.25,echo:0.05,pitch:[0.22,0.4,'Smooth'],vibrato:[0.2,0.5,'Ease In'],waveTo:7,morph:[0.35,0.6],tone:[0.35,0.7,'Ease In'],level:[0.6,0.9],resonance:0.45}},
             {id:'door_close_fall', params:{waveType:2,duration:0.6,attack:0.1,release:0.12,echo:0.05,pitch:[0.4,0.2,'Smooth'],vibrato:[0.4,0.2],waveTo:7,morph:[0.4,0.6],tone:[0.65,0.3,'Ease Out'],level:[0.7,1,'Ease In'],resonance:0.45}},
@@ -204,6 +218,7 @@ class Transfxr extends SynthBase {
             {id:'heal_arp', params:{waveType:3,duration:0.8,attack:0,release:0.3,echo:0.3,pitch:[0.55,0.78,'Steps'],tone:[0.7,0.9],level:[0.8,0.4]}},
             {id:'heal_shimmer', params:{waveType:11,duration:1.2,attack:0.05,release:0.7,echo:0.45,pitch:[0.6,0.84,'Ease Out'],vibrato:[0,0.3,'Ease In'],tone:[0.9,1],level:[0.9,0.2]}},
             {id:'heal_ladder', params:{waveType:3,duration:0.9,attack:0,release:0.05,echo:0.05,pitch:[0.6,0.76,'Linear'],level:[1,0.9,'Pulse'],vibrato:[1,1],tone:[0.9,0.9]}},
+            {id:'heal_twinkle', params:{waveType:11,duration:0.9,attack:0,release:0.4,echo:0.35,pitch:[0.7,0.9,'Bounce'],tone:[1,0.9],level:[0.9,0.3]}},
             {id:'heal_swell', params:{waveType:0,duration:1.4,attack:0.4,release:0.6,echo:0.4,pitch:[0.6,0.66,'Smooth'],waveTo:11,morph:[0,0.6,'Ease In'],vibrato:[0,0.3],tone:[0.6,0.95],level:[0.3,1,'Ease In']}}]
     };
     static verbExamples = Object.entries(Transfxr.verbRecipes).flatMap(([verb, archetypes]) => archetypes.map(a => ({...a, verb})));
@@ -253,8 +268,8 @@ class Transfxr extends SynthBase {
     // Single archetypes have no button, but a catalogue can name one: 'Transfxr:generate_door_creak'.
     get hidden_generators() { return Transfxr.verbExamples.map(a => 'generate_' + a.id); }
     generate_archetype(id) {
-        this.generate_example(id, true);
-        this.set_param('duration', this.params.duration * (0.9 + Math.random() * 0.2), true);
+        this.generate_example(id, false);
+        this.vary_archetype();
         this.verb_archetype = id;
     }
     verbs() { return Object.keys(Transfxr.verbRecipes); }
@@ -262,10 +277,32 @@ class Transfxr extends SynthBase {
         const archetypes = Transfxr.verbRecipes[verb];
         if (!archetypes) return;
         const archetype = archetypes[Math.floor(Math.random() * archetypes.length)];
-        this.generate_example(archetype.id, true);
-        // Archetypes vary a little more than examples: timing as well as pitch.
-        this.set_param('duration', this.params.duration * (0.9 + Math.random() * 0.2), true);
-        this.verb_archetype = archetype.id;
+        this.generate_archetype(archetype.id);
+    }
+    // Archetypes vary much more than examples: a press should never sound like the last one.
+    generate_archetype(id) {
+        this.generate_example(id, false);
+        this.vary_archetype();
+        this.verb_archetype = id;
+    }
+    verbs() { return Object.keys(Transfxr.verbRecipes); }
+    generate_verb(verb) {
+        const archetypes = Transfxr.verbRecipes[verb];
+        if (!archetypes) return;
+        const archetype = archetypes[Math.floor(Math.random() * archetypes.length)];
+        this.generate_archetype(archetype.id);
+    }
+    // Archetypes vary much more than examples: a press should never sound like the last one.
+    vary_archetype() {
+        const clamp = (value, low, high) => Math.max(low, Math.min(high, value));
+        const shift = (Math.random() - 0.5) * 0.12;
+        const pitch = this.params.pitch;
+        this.set_param('pitch', {start:clamp(pitch.start + shift, 0, 1), end:clamp(pitch.end + shift, 0, 1), curve:pitch.curve}, true);
+        this.set_param('duration', this.params.duration * (0.8 + Math.random() * 0.45), true);
+        const tone = this.params.tone, toneShift = (Math.random() - 0.5) * 0.16;
+        this.set_param('tone', {start:clamp(tone.start + toneShift, 0, 1), end:clamp(tone.end + toneShift, 0, 1), curve:tone.curve}, true);
+        if (this.params.echo > 0) this.set_param('echo', clamp(this.params.echo + (Math.random() - 0.5) * 0.1, 0, 0.8), true);
+        this.set_param('resonance', clamp(this.params.resonance + (Math.random() - 0.5) * 0.1, 0, 1), true);
     }
 
     generate_example(id, vary = true) {

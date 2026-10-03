@@ -21,7 +21,10 @@ class Rustlr extends PresetSynth {
     recipes=[
         {name:'Step',id:'step',verb:'step',tip:'Cloth and leather shifting with a step.',values:{material:[1,2],gesture:[0,3],duration:[0.12,0.3],grain:[0.4,0.8],density:[0.5,0.9],motion:[-0.3,0.4],pressure:[0.5,0.9],folds:[1,3],brightness:[0.3,0.6]}},
         {name:'Land',id:'land',verb:'land',tip:'A bundle of clothing settling hard.',values:{material:[1,2],gesture:[1,3],duration:[0.15,0.4],grain:[0.6,1],density:[0.6,1],motion:[-0.6,-0.1],pressure:[0.7,1],folds:[2,4],brightness:[0.2,0.5]}},
-        {name:'Swing',id:'swing',verb:'swing',tip:'A sleeve or cape swiping through the air.',values:{material:1,gesture:0,duration:[0.2,0.5],grain:[0.4,0.8],density:[0.5,0.9],motion:[-0.5,0.3],pressure:[0.4,0.8],folds:[1,2],brightness:[0.3,0.6]}},
+        {name:'Swing',id:'swing',verb:'swing',tip:'Cloth, a cape or leather swiping through the air.',values:{},variants:[
+            {material:1,gesture:0,duration:[0.2,0.5],grain:[0.4,0.8],density:[0.5,0.9],motion:[-0.5,0.3],pressure:[0.4,0.8],folds:[1,2],brightness:[0.3,0.6]},
+            {material:1,gesture:1,duration:[0.35,0.7],grain:[0.6,1],density:[0.6,1],motion:[-0.2,0.5],pressure:[0.5,0.9],folds:[2,4],brightness:[0.2,0.5]},
+            {material:2,gesture:[0,2],duration:[0.18,0.4],grain:[0.3,0.6],density:[0.5,0.85],motion:[-0.6,0],pressure:[0.6,1],folds:[1,2],brightness:[0.4,0.7]}]},
         {name:'Confirm',id:'confirm',verb:'confirm',tip:'A card flicked into place.',values:{material:0,gesture:0,duration:[0.12,0.24],grain:[0.12,0.36],density:[0.4,0.7],motion:[-0.4,0.2],pressure:[0.35,0.65],folds:[1,2],brightness:[0.52,0.85]}},
         {name:'Unlock',id:'unlock',verb:'unlock',tip:'A zip or clasp pulled open.',values:{material:[5,2],gesture:[2,1],duration:[0.3,0.7],grain:[0.1,0.4],density:[0.3,0.7],motion:[-0.3,0.6],pressure:[0.5,0.85],folds:[1,3],brightness:[0.4,0.8]}},
         {name:'Card Flick',id:'card_flick',tip:'A small card or inventory tile flicks into place.',values:{material:0,gesture:0,duration:[0.12,0.24],grain:[0.12,0.36],density:[0.4,0.7],motion:[-0.4,0.2],pressure:[0.35,0.65],folds:[1,2],brightness:[0.52,0.85]}},

@@ -12,6 +12,7 @@ const [root,matchRoot,outDir]=process.argv.slice(2,5);
 const flag=(name,fallback)=>{const i=process.argv.indexOf(name);return i>0?process.argv[i+1]:fallback;};
 const takesPerVerb=parseInt(flag('--takes','3'),10),round=parseInt(flag('--round','1'),10),maxScore=parseFloat(flag('--max-score','1.5')),noMatches=process.argv.includes('--no-matches');
 const onlyVerbs=flag('--verbs','')?flag('--verbs','').split(','):null;
+const variety=process.argv.includes('--variety'); // one board, consecutive presses, one rating per verb
 // Keep in step with tools/references/measure_tagged.py.
 const TAG_TO_VERB={jump:'jump',double_jump:'jump',fall:'land',footstep:'step',step:'step',clothes:'step',attack:'swing',sword:'swing',draw_weapon:'swing',hit:'hit',shoot:'shoot',laser:'shoot',explode:'explode',collect:'coin',chips:'coin',power_up:'powerup',unlock:'unlock',motiv:'confirm',bell:'confirm',select:'confirm',click:'blip',card:'blip',forbidden:'alert',carbeep:'alert',magic:'cast',monster:'roar',animal:'roar',voice:'hurt',door:'door',dice:'break',slime:'splash',die:'lose'};
 // Matcher runs are named <slug>; this maps them back to their source file.
@@ -45,9 +46,14 @@ for(const verb of verbs){
  const refs=byVerb[verb.id]||[];if(!refs.length&&!onlyVerbs)continue;if(onlyVerbs&&!onlyVerbs.includes(verb.id))continue;
  const takes=[];const seen=new Set();
  for(let take=0;take<takesPerVerb;take++){
-  api.run(`Math.random=SoundDSP.rng(${seedFor('page'+round+verb.id+take)});var s=new Soundboard();s.generate_recipe(${JSON.stringify(verb.id)});`);
+  if(variety){
+   if(take===0)api.run(`Math.random=SoundDSP.rng(${seedFor('variety'+round+verb.id)});var s=new Soundboard();`);
+   api.run(`s.generate_recipe(${JSON.stringify(verb.id)});`);
+  } else {
+   api.run(`Math.random=SoundDSP.rng(${seedFor('page'+round+verb.id+take)});var s=new Soundboard();s.generate_recipe(${JSON.stringify(verb.id)});`);
+  }
   let label=plain(api.run('s.describe()'));
-  for(let tries=0;seen.has(label)&&tries<6;tries++){api.run(`Math.random=SoundDSP.rng(${seedFor('page'+round+verb.id+take+'-'+tries)});s.generate_recipe(${JSON.stringify(verb.id)});`);label=plain(api.run('s.describe()'));}
+  if(!variety)for(let tries=0;seen.has(label)&&tries<6;tries++){api.run(`Math.random=SoundDSP.rng(${seedFor('page'+round+verb.id+take+'-'+tries)});s.generate_recipe(${JSON.stringify(verb.id)});`);label=plain(api.run('s.describe()'));}
   seen.add(label);
   const pcm=api.run('s.generate_sound();s.sound.getBuffer().slice()');
   const id='r'+round+'-'+verb.id+'-take-'+(take+1);const dest='ours/'+id+'.wav';
@@ -64,20 +70,22 @@ const html=`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="vie
 .row{display:grid;grid-template-columns:1fr 240px auto;gap:10px;align-items:center;padding:6px 8px;border-radius:5px;background:#ede4d2;margin-bottom:5px}.row.ref{background:#e4dac4}.row .name{font-size:13px;overflow-wrap:anywhere}.row small{display:block;opacity:.7}
 audio{width:240px;height:30px}.stars button{width:26px;height:26px;margin-right:2px;border:1px solid #b9a78a;border-radius:4px;background:#f6efe0;cursor:pointer}.stars button.on{background:#593b2a;color:#fff}.note{margin-left:8px;width:170px;padding:4px;border:1px solid #b9a78a;border-radius:4px;background:#fff8ea}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#ede4d2;padding:8px;border-radius:5px;margin-bottom:6px}.pair .half{font-size:13px}.pair .half b{display:block;font-weight:normal;opacity:.75;font-size:12px}
+
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:6px}.cell{background:#ede4d2;border-radius:5px;padding:6px}.cell b{display:block;font-size:11px;opacity:.7}.cell audio{width:100%}.cell small{display:block;font-size:11px;opacity:.75;overflow-wrap:anywhere}
 textarea{width:100%;height:220px;font:12px monospace;margin-top:8px}.bar{display:flex;gap:8px;align-items:center;margin:8px 0}.bar button{padding:6px 12px}p.help{font-size:13px;opacity:.85}</style>
 <h1>Soundboard rating, round ${round}</h1>
-<p class="help">Our takes for each verb, and any matcher fits paired with their source. Rate from 1 (nothing like it) to 5 (would use it); add a note where a number is not enough. Ratings save in this browser; the JSON at the bottom updates as you go. Copy it and paste it back.</p>
+<p class="help">${variety?'Each verb shows eight consecutive presses, exactly as the board would produce them. Listen through the row, then give the verb two ratings: how varied the eight are (1 = same sound every time, 5 = a genuinely different take each press) and how usable the row is overall. Notes welcome.':'Our takes for each verb, and any matcher fits paired with their source. Rate from 1 (nothing like it) to 5 (would use it); add a note where a number is not enough.'} Ratings save in this browser; the JSON at the bottom updates as you go. Copy it and paste it back.</p>
 <div class="bar"><button type="button" id="stop">Stop all</button><span id="progress"></span></div>
 ${sections.map(s=>`<h2>${esc(s.verb.name)} <small style="font-weight:normal;font-size:12px;opacity:.7">${esc(s.verb.tip)}</small></h2>
-<h3>Our takes for ${esc(s.verb.name)} (${s.refs.length} of your references are tagged for it)</h3>
-${s.takes.map(t=>`<div class="row"><div class="name">${esc(t.label)}<small>${t.seconds}s</small></div>${audio(t.file)}<span>${rating(t.id,'take')}</span></div>`).join('')}
+${variety?`<h3>Eight presses in a row</h3><div class="strip">${s.takes.map((t,i)=>`<div class="cell"><b>${i+1}</b>${audio(t.file)}<small>${esc(t.label)}</small></div>`).join('')}</div><div class="row"><div class="name">Variety of the eight</div><span></span><span>${rating('r'+round+'-'+s.verb.id+'-variety','variety')}</span></div><div class="row"><div class="name">Usable overall</div><span></span><span>${rating('r'+round+'-'+s.verb.id+'-overall','overall')}</span></div>`:`<h3>Our takes for ${esc(s.verb.name)} (${s.refs.length} of your references are tagged for it)</h3>
+${s.takes.map(t=>`<div class="row"><div class="name">${esc(t.label)}<small>${t.seconds}s</small></div>${audio(t.file)}<span>${rating(t.id,'take')}</span></div>`).join('')}`}
 ${s.matches.length?`<h3>Matcher fits</h3>${s.matches.map(m=>`<div class="pair"><div class="half"><b>source: ${esc(m.sourceName)}</b>${audio(m.source)}</div><div class="half"><b>fit: Bfxr ${esc(m.wave)}, score ${m.score}</b>${audio(m.ours)}<div>${rating(m.id,'match')}</div></div></div>`).join('')}`:''}`).join('')}
 <h2>Your ratings</h2>
 <div class="bar"><button type="button" id="copy">Copy JSON</button><button type="button" id="clear">Clear ratings</button><span id="count"></span></div>
 <textarea id="json" readonly></textarea>
 <script>
 const KEY='bfxr-reference-ratings-round-${round}';let data={};try{data=JSON.parse(localStorage.getItem(KEY)||'{}')}catch{data={}}
-const labels=${JSON.stringify(Object.fromEntries([...sections.flatMap(s=>s.takes.map(t=>[t.id,{verb:s.verb.id,kind:'take',label:t.label}])),...matches.map(m=>[m.id,{verb:m.verb,kind:'match',label:m.sourceName+' -> Bfxr '+m.wave}])]))};
+const labels=${JSON.stringify(Object.fromEntries(variety?sections.flatMap(s=>[['r'+round+'-'+s.verb.id+'-variety',{verb:s.verb.id,kind:'variety',presses:s.takes.map(t=>t.label)}],['r'+round+'-'+s.verb.id+'-overall',{verb:s.verb.id,kind:'overall'}]]):[...sections.flatMap(s=>s.takes.map(t=>[t.id,{verb:s.verb.id,kind:'take',label:t.label}])),...matches.map(m=>[m.id,{verb:m.verb,kind:'match',label:m.sourceName+' -> Bfxr '+m.wave}])]))};
 function render(){for(const span of document.querySelectorAll('.stars')){const r=data[span.dataset.id]?.rating;for(const b of span.children)b.classList.toggle('on',+b.dataset.n===r);}
  for(const input of document.querySelectorAll('.note'))input.value=data[input.dataset.id]?.note||'';
  const out={};for(const [id,v] of Object.entries(data))out[id]={...labels[id],...v};
