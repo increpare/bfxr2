@@ -166,3 +166,9 @@ strict preferences among distinct rated candidates, grouping each reference's
 pairs together in validation. Neither lower search distance nor successful
 synthetic checks establishes audible improvement. Human ratings are the deciding
 check; the rejected v2 iteration demonstrates why.
+
+The next [Soundboard coverage diagnostic](COVERAGE_V3.md) uses a frozen copy of
+the separately human-refined catalogue, including two-synth compositions. Its
+six-reference gallery compares global retrieval, category-guided alternatives,
+and the best previously rated audio. It collects likeness and usefulness/fun
+separately; both survive immutable schema-2 archival through the same command.
