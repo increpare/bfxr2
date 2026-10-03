@@ -1,6 +1,6 @@
 // A headless context with every engine the Soundboard can draw on, including retired ones and Footsteppr.
 const {createContext,root,plain}=require('./synth-context');
-const ENGINES=['Bfxr','Transfxr','Clonkr','Machinr','Jinglr','Squishr','Crittr','Birdr','Signlr','Fractr','Riftr','Swarmr','Rustlr','Boomr','Zappr','Whooshr','Bouncr','Breathr','Choirr','Pluckr','Glitchr','Tappr','Pewpr','Tickr','Stackr','Mixr'];
+const ENGINES=['Bfxr','Transfxr','Clonkr','Machinr','Jinglr','Squishr','Crittr','Birdr','Signlr','Fractr','Riftr','Swarmr','Rustlr','Boomr','Zappr','Whooshr','Bouncr','Breathr','Choirr','Pluckr','Glitchr','Tappr','Pewpr','Tickr','Pulser','Rollr','Rumblr','Notifr','Stackr','Mixr'];
 function createBoardContext(){
  const api=createContext(ENGINES);
  api.run('var CONVERSION_FACTOR=(2*Math.PI)/44100;');

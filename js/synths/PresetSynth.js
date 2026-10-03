@@ -16,6 +16,8 @@ class PresetSynth extends SynthBase {
         const verbs = typeof GAME_VERBS === 'undefined' ? [] : GAME_VERBS;
         const order = recipe => { const index = verbs.findIndex(verb => verb.id === recipe.verb); return index < 0 ? verbs.length : index; };
         this.recipes = this.recipes.map((recipe, index) => [recipe, index]).sort((a, b) => order(a[0]) - order(b[0]) || a[1] - b[1]).map(([recipe]) => recipe);
+        // A recipe with variants shows its first archetype as its nominal values.
+        for (const recipe of this.recipes) if (Array.isArray(recipe.variants) && recipe.variants.length && !Object.keys(recipe.values || {}).length) recipe.values = recipe.variants[0];
         this.templates = this.recipes.map(recipe => {
             const method = 'generate_' + recipe.id;
             this[method] = () => this.generate_recipe(recipe.id);
@@ -46,7 +48,10 @@ class PresetSynth extends SynthBase {
         const recipe = this.recipes.find(entry => entry.id === id);
         if (!recipe) return;
         this.reset_params(true);
-        for (const [name, range] of Object.entries(recipe.values)) {
+        // A recipe may hold several archetypes behind one button; one is drawn per press.
+        const variants = Array.isArray(recipe.variants) && recipe.variants.length ? recipe.variants : null;
+        const values = variants ? variants[Math.floor(Math.random() * variants.length)] : recipe.values;
+        for (const [name, range] of Object.entries(values)) {
             const info = this.get_param_info(name);
             let value = range;
             if (Array.isArray(range)) {

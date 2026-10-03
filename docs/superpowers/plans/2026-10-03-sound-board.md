@@ -157,3 +157,11 @@ Shipped on this branch: the 25-verb vocabulary (`GAME_VERBS`), verb presets lead
 Measured: every ingredient renders finite, audible audio inside its verb's duration class across seeded takes. Not measured: whether it sounds good. The three listening rounds in §8 are still yours; the gallery at `examples/Soundboard/index.html` is round one's pack, bases and mixes together because the board is already live. Grade by ingredient name and I will reweight the catalogue.
 
 Known gaps: no `tune` for tonal pairs yet, so Win and Heal avoid jingle × choir mixes; retired engines (Tappr, Pewpr) appear only as hidden ingredients and open in a legacy tab; the Style toggle (Retro / Foley / Any) is not built.
+
+## 11. Second pass (morning feedback, 2026-10-03)
+
+- UI: intro text, row headings, the recipe card and the mix controls are gone from the board; verb buttons are plain preset buttons in a 5×5 grid with key hints. Space repeats the last verb.
+- Your failed-sounds collection: Bouncr, Pluckr and Whooshr Jump, Riftr Powerup and Pluckr Lose are removed as presets; the Whoosh swing × Tangs hit mix and the door mixes you flagged are gone; Machinr and Clonkr Door were rebuilt as variant presets.
+- Roar and Whirr: variant presets (five archetypes each in Beasts and Motors), Transfxr archetypes, and retired engines as hidden ingredients (Pulser cores, Rollr minecart and roller, Rumblr engine room, Signal broken radio).
+- Research: `docs/research/retro-sound-references.md`, 25 verbs × 20 or more real retro game sounds with acoustic descriptions, written from memory, no audio included. Each verb ends with the archetypes carried into the synths.
+- Recreations: Transfxr gained one verb preset per verb (24 verbs, 113 archetypes; Step stays with the physical engines), each press drawing one archetype with pitch and timing variation. PresetSynth recipes gained `variants`.

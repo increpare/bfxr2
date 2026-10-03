@@ -18,9 +18,8 @@ class Riftr extends PresetSynth {
         ['Reverse','Blend the finished field with time running backwards.','reverse',0,0,1]
     ];
     recipes = [
-        {name:'Warp',id:'warp',verb:'warp',tip:'A field tearing open or snapping shut.',values:{excitation:[0,3],duration:[0.5,1.6],pitch:[0.4,0.9],bend:[-0.7,0.9],space:[0.2,0.7],feedback:[0.5,0.9],dispersion:[0.3,0.9],motion:[0.2,0.8],field:[0.5,0.9],reverse:[0,1]}},
+        {name:'Warp',id:'warp',verb:'warp',tip:'A field tearing open or snapping shut.',values:{excitation:[0,3],duration:[0.5,1.6],pitch:[0.4,0.85],bend:[-0.7,0.9],space:[0.2,0.6],feedback:[0.6,0.9],dispersion:[0.3,0.8],motion:[0.2,0.7],field:[0.5,0.85],reverse:[0,0.6]}},
         {name:'Cast',id:'cast',verb:'cast',tip:'A rising arc of energy leaving the hand.',values:{excitation:[1,4],duration:[0.5,1.5],pitch:[0.4,0.9],bend:[0.2,0.9],space:[0.1,0.5],feedback:[0.4,0.8],dispersion:[0.3,0.8],motion:[0.3,0.9],field:[0.5,0.9],reverse:[0,0.3]}},
-        {name:'Powerup',id:'powerup',verb:'powerup',tip:'A reversed field gathering into a bright arrival.',values:{excitation:0,duration:[0.5,1.2],pitch:[0.5,0.9],bend:[0.3,0.9],space:[0.15,0.5],feedback:[0.5,0.85],dispersion:[0.3,0.7],motion:[0.1,0.5],field:[0.4,0.8],reverse:[0.7,1]}},
         {name:'Lose',id:'lose',verb:'lose',tip:'A tone sinking into a tightening field.',values:{excitation:0,duration:[0.8,1.8],pitch:[0.3,0.6],bend:[-0.9,-0.4],space:[0.3,0.7],feedback:[0.6,0.9],dispersion:[0.5,0.9],motion:[0.1,0.4],field:[0.6,0.9],reverse:[0,0.3]}},
         {name:'Gravity Well',id:'gravity_well',tip:'A descending tone trapped in a tightening field.',values:{excitation:1,duration:[1.5,3],pitch:[0.35,0.6],bend:[-1,-0.55],space:[0.45,0.8],feedback:[0.65,0.9],dispersion:[0.4,0.8],motion:[0.15,0.5],field:[0.6,0.9],reverse:[0,0.12]}},
         {name:'Time Rewind',id:'time_rewind',tip:'A dispersed impact pulling itself back together.',values:{excitation:0,duration:[1,2.6],pitch:[0.45,0.8],bend:[-0.65,0.3],space:[0.35,0.75],feedback:[0.72,0.95],dispersion:[0.6,1],motion:[0.1,0.5],field:[0.7,1],reverse:[0.93,1]}},

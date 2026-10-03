@@ -10,16 +10,16 @@
    "params": {
     "masterVolume": 0.5,
     "seed": 0.12834863387979567,
-    "balance": 0.42241083245025945,
+    "balance": 0.3031761187361553,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Bouncr\",\"name\":\"Jump\",\"params\":{\"masterVolume\":0.5,\"material\":0,\"surface\":0,\"force\":0.519424362317659,\"duration\":0.353214667737484,\"size\":0.5032314944081008,\"hardness\":0.41476173542905603,\"tail\":0.1690095052821562,\"seed\":0.82508002105169,\"count\":1,\"bounce\":0.9908874165266752,\"gravity\":0.5,\"spin\":0},\"generator\":\"generate_jump\",\"renderSeed\":0.9617781217675656},{\"synth\":\"Squishr\",\"name\":\"Jump\",\"params\":{\"masterVolume\":0.5,\"seed\":0.22316781478002667,\"texture\":5,\"viscosity\":0.7738775456324221,\"stretch\":0.527731967717409,\"pressure\":0.5260257193818688,\"wetness\":0.23211574212182315,\"bubbleSize\":0.5144501268630848,\"duration\":0.15529353122692555},\"generator\":\"generate_jump\",\"renderSeed\":0.17447392572648823}]"
+    "sources": "[{\"synth\":\"Bfxr\",\"name\":\"Jump\",\"params\":{\"masterVolume\":0.5,\"waveType\":10,\"attackTime\":0,\"sustainTime\":0.39316556239500644,\"sustainPunch\":0,\"decayTime\":0.1477697449270636,\"compressionAmount\":0,\"frequency_start\":0.4524236208060756,\"frequency_slide\":0.24317449028603733,\"frequency_acceleration\":0,\"min_frequency_relative_to_starting_frequency\":0,\"vibratoDepth\":0,\"vibratoSpeed\":0,\"pitch_jump_repeat_speed\":0,\"pitch_jump_amount\":0,\"pitch_jump_onset_percent\":0,\"pitch_jump_2_amount\":0,\"pitch_jump_onset2_percent\":0,\"overtones\":0,\"overtoneFalloff\":0,\"squareDuty\":0.3064293354749679,\"dutySweep\":0,\"repeatSpeed\":0,\"flangerOffset\":0,\"flangerSweep\":0,\"lpFilterCutoff\":1,\"lpFilterCutoffSweep\":0,\"lpFilterResonance\":0,\"hpFilterCutoff\":0.24752400631550697,\"hpFilterCutoffSweep\":0,\"bitCrush\":0,\"bitCrushSweep\":0},\"generator\":\"generate_jump\",\"renderSeed\":0.9346938640810549},{\"synth\":\"Transfxr\",\"name\":\"Jump\",\"params\":{\"masterVolume\":0.5,\"waveType\":7,\"duration\":0.1580923458263278,\"pitch\":{\"start\":0.4804278934304602,\"end\":0.4804278934304602,\"curve\":\"Linear\"},\"tone\":{\"start\":0.65,\"end\":0.3,\"curve\":\"Ease Out\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0.15,\"curve\":\"Linear\"},\"attack\":0.005,\"release\":0.1,\"resonance\":0.1,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_jump\",\"renderSeed\":0.7148337562102824}]"
    },
-   "ingredients": "Bonks · Jump × Squishy · Jump (start-aligned)",
-   "duration": 0.29024943310657597,
-   "peak": 0.11203284561634064,
-   "rms": 0.024161657883646034,
-   "sha256": "501a159d2be655af2a7db227a1b14846f60c1e906e7a8f8b0a6d57e9564a7f5c"
+   "ingredients": "Bfxr · Jump × Transfxr · Jump (start-aligned)",
+   "duration": 0.4005442176870748,
+   "peak": 0.2642159163951874,
+   "rms": 0.0663612144731682,
+   "sha256": "67a33d6b079ac3e26810b13caeab2cc0c8a3c7b51f31fc517fef2dac76443fa1"
   },
   {
    "verb": "jump",
@@ -33,13 +33,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Pluckr\",\"name\":\"Jump\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5506094754673541,\"material\":0,\"duration\":0.2550509533379227,\"pitch\":0.20229046462336553,\"strings\":1,\"damping\":0.5988983663963154,\"brightness\":0.26720305448397996,\"pluck\":0.394712502323091,\"coupling\":0,\"strum\":0,\"tremolo\":0,\"vibrato\":0,\"tremoloRate\":4,\"inharmonic\":0.008305285312235356},\"generator\":\"generate_jump\",\"renderSeed\":0.37428566231392324}]"
+    "sources": "[{\"synth\":\"Squishr\",\"name\":\"Jump\",\"params\":{\"masterVolume\":0.5,\"seed\":0.08305285312235355,\"texture\":5,\"viscosity\":0.4681615355424583,\"stretch\":0.46808152534067626,\"pressure\":0.6636647433973849,\"wetness\":0.1847700283396989,\"bubbleSize\":0.36720305448397994,\"duration\":0.22892708526924252},\"generator\":\"generate_jump\",\"renderSeed\":0.5506094754673541}]"
    },
-   "ingredients": "Plucked · Jump",
-   "duration": 0.25541950113378686,
-   "peak": 0.19082839787006378,
-   "rms": 0.03891888044509268,
-   "sha256": "33ed65cbfa8d37cabbd39b5b1525c8bec6bc796f3850df0811f559b8ca5f1842"
+   "ingredients": "Squishy · Jump",
+   "duration": 0.301859410430839,
+   "peak": 0.20564988255500793,
+   "rms": 0.05060858001944592,
+   "sha256": "f00a8fab670934a82d4f8b0926b0789bd58cb25134f37457ba76175cf7eb61c6"
   },
   {
    "verb": "jump",
@@ -53,13 +53,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Bouncr\",\"name\":\"Jump\",\"params\":{\"masterVolume\":0.5,\"material\":0,\"surface\":0,\"force\":0.7908756815362722,\"duration\":0.4791954525513574,\"size\":0.6627637847326695,\"hardness\":0.24587372795213014,\"tail\":0.21601064279675486,\"seed\":0.930315728764981,\"count\":1,\"bounce\":0.7637802213430405,\"gravity\":0.5,\"spin\":0},\"generator\":\"generate_jump\",\"renderSeed\":0.5322350449860096}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Jump\",\"params\":{\"masterVolume\":0.5,\"waveType\":3,\"duration\":0.3892974812518805,\"pitch\":{\"start\":0.5193793178827036,\"end\":0.6393793178827036,\"curve\":\"Linear\"},\"tone\":{\"start\":0.9,\"end\":0.9,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0.9,\"end\":0.9,\"curve\":\"Linear\"},\"level\":{\"start\":0.9,\"end\":0.6,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.08,\"resonance\":0.15,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_jump\",\"renderSeed\":0.15291242650710046}]"
    },
-   "ingredients": "Bonks · Jump",
-   "duration": 0.1509297052154195,
-   "peak": 0.2567511200904846,
-   "rms": 0.032833971350969215,
-   "sha256": "c07ec3e4510ea4114cb6b4d3af80b882d5f8227735ff74d604fb64162538241a"
+   "ingredients": "Transfxr · Jump",
+   "duration": 0.38893424036281177,
+   "peak": 0.3345659077167511,
+   "rms": 0.25916232127014543,
+   "sha256": "af749239d2a19c358a162f5237bb416d04198137c7fa288f91614b8a76e8e702"
   },
   {
    "verb": "jump",
@@ -70,16 +70,16 @@
    "params": {
     "masterVolume": 0.5,
     "seed": 0.05463224067352712,
-    "balance": 0.31550076096318663,
+    "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Bfxr\",\"name\":\"Jump\",\"params\":{\"masterVolume\":0.5,\"waveType\":0,\"attackTime\":0,\"sustainTime\":0.39973401790484786,\"sustainPunch\":0,\"decayTime\":0.294010229408741,\"compressionAmount\":0,\"frequency_start\":0.48094175797887145,\"frequency_slide\":0.16725687179714444,\"frequency_acceleration\":0,\"min_frequency_relative_to_starting_frequency\":0,\"vibratoDepth\":0,\"vibratoSpeed\":0,\"pitch_jump_repeat_speed\":0,\"pitch_jump_amount\":0,\"pitch_jump_onset_percent\":0,\"pitch_jump_2_amount\":0,\"pitch_jump_onset2_percent\":0,\"overtones\":0,\"overtoneFalloff\":0,\"squareDuty\":0.2808136055711657,\"dutySweep\":0,\"repeatSpeed\":0,\"flangerOffset\":0,\"flangerSweep\":0,\"lpFilterCutoff\":0.709481006488204,\"lpFilterCutoffSweep\":0,\"lpFilterResonance\":0,\"hpFilterCutoff\":0,\"hpFilterCutoffSweep\":0,\"bitCrush\":0,\"bitCrushSweep\":0},\"generator\":\"generate_jump\",\"renderSeed\":0.6987039174418896},{\"synth\":\"Whooshr\",\"name\":\"Jump\",\"params\":{\"masterVolume\":0.5,\"seed\":0.27709838515147567,\"duration\":0.29639318950939925,\"size\":0.39892809062730517,\"air\":0.9534272666554897,\"whistle\":0.21859329936560246,\"movement\":0.14283804674632847,\"focus\":0.6857238775235601,\"flutter\":0.09449100401252508},\"generator\":\"generate_jump\",\"renderSeed\":0.9457646356895566}]"
+    "sources": "[{\"synth\":\"Birdr\",\"name\":\"Jump\",\"params\":{\"masterVolume\":0.5,\"seed\":0.32976030209101737,\"voice\":0,\"duration\":0.185523174633272,\"pitch\":0.7007847983157263,\"syllables\":1,\"gap\":0.19986700895242393,\"sweep\":0.8850255735218525,\"arch\":0.33104586647823453,\"trill\":0.0721447960473597,\"trill_rate\":0.4,\"duet\":0.048419832251966,\"rasp\":0.03493519587209448,\"breath\":0.04344255264149979,\"rhythm\":0.12,\"variation\":0.25},\"generator\":\"generate_jump\",\"renderSeed\":0.8447575555182993}]"
    },
-   "ingredients": "Bfxr · Jump × Whoosh · Jump (start-aligned)",
-   "duration": 0.5514739229024943,
-   "peak": 0.2250821888446808,
-   "rms": 0.07472063606942281,
-   "sha256": "6e2ab6487329855bf19630c4e4662ffcd1af565ac6beb2b311df2003caaafa5b"
+   "ingredients": "Bird · Jump",
+   "duration": 0.1509297052154195,
+   "peak": 0.2716180384159088,
+   "rms": 0.1511403277603985,
+   "sha256": "34ca116199fea490eea4c4a83eaa9983a37b7569b6e84f243a78b262315ddbd8"
   },
   {
    "verb": "land",
@@ -253,13 +253,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.16392100602388382,\"duration\":0.4770236022071913,\"size\":0.4945839073508978,\"air\":0.9076559690292925,\"whistle\":0.10093132995534689,\"movement\":0.8888068004511297,\"focus\":0.5202534743002616,\"flutter\":0.11788713918067516},\"generator\":\"generate_dash\",\"renderSeed\":0.4450708676595241}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"waveType\":7,\"duration\":0.40306238761171703,\"pitch\":{\"start\":0.488140689576976,\"end\":0.488140689576976,\"curve\":\"Linear\"},\"tone\":{\"start\":0.9,\"end\":0.35,\"curve\":\"Ease Out\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0.15,\"curve\":\"Linear\"},\"attack\":0.01,\"release\":0.2,\"resonance\":0.75,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_dash\",\"renderSeed\":0.20372531982138753}]"
    },
-   "ingredients": "Whoosh · Dash",
-   "duration": 0.3308843537414966,
-   "peak": 0.4219799041748047,
-   "rms": 0.1040286957119001,
-   "sha256": "3b5360d2ed3ec6e7050b50d3e71ee5260ce6814e4afce3aedeadf6cff23f44b0"
+   "ingredients": "Transfxr · Dash",
+   "duration": 0.3657142857142857,
+   "peak": 0.3559286594390869,
+   "rms": 0.16581427780885016,
+   "sha256": "684691dc5313f9cc2120d2bfc73c920e70bf3a97873d194e1ee1fbef729afeed"
   },
   {
    "verb": "dash",
@@ -270,16 +270,16 @@
    "params": {
     "masterVolume": 0.5,
     "seed": 0.4609403172507882,
-    "balance": 0.38177255959017203,
+    "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5227019924204797,\"duration\":0.4674956683069468,\"size\":0.4962423314340413,\"air\":0.9691338542848825,\"whistle\":0.05639699265593663,\"movement\":0.7242033626884222,\"focus\":0.37146080696256834,\"flutter\":0.07081659514224158},\"generator\":\"generate_dash\",\"renderSeed\":0.6204147576354444},{\"synth\":\"Zappr\",\"name\":\"Shoot\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8532789980527014,\"duration\":0.15881094620563088,\"voltage\":0.7735800118185581,\"arcs\":1,\"branching\":0.16863715052604675,\"crackle\":0.15449086967855694,\"hum\":0.027682212390936912,\"spark\":0.7985491601284593,\"spread\":0.02042199792340398,\"decay\":0.2402864304720424},\"generator\":\"generate_shoot\",\"renderSeed\":0.8332478271331638}]"
+    "sources": "[{\"synth\":\"Breathr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5227019924204797,\"source\":0,\"mode\":0,\"duration\":0.27218174857553096,\"direction\":0.9057093352079392,\"cycles\":1,\"effort\":0.938267708569765,\"inhale\":0.42,\"hold\":0.04,\"throat\":0.3102351882494986,\"rasp\":0.19012710168026387,\"flutter\":0.10104343354469165,\"space\":0.013877730094827713},\"generator\":\"generate_dash\",\"renderSeed\":0.6204147576354444}]"
    },
-   "ingredients": "Whoosh · Dash × Zapper · Shoot (start-aligned)",
-   "duration": 0.4121541950113379,
-   "peak": 0.2668786346912384,
-   "rms": 0.07365944473807615,
-   "sha256": "30c5c3afe2fd59db8f2f195f51570551bcdd23e309249d014f8702cbeaf3517a"
+   "ingredients": "Breath · Dash",
+   "duration": 0.2728344671201814,
+   "peak": 0.4647895395755768,
+   "rms": 0.1756630314596267,
+   "sha256": "bbaff09c592ce4459db82418952ffef108df3103633d5063dbbb0c36465008b9"
   },
   {
    "verb": "dash",
@@ -289,17 +289,17 @@
    "file": "soundboard-dash-3.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.3027128654066473,
-    "balance": 0.46769399088807406,
-    "align": 1,
+    "seed": 0.5650375972036272,
+    "balance": 0.38222520090639595,
+    "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.621731188846752,\"duration\":0.30309103153413164,\"size\":0.5328057086095215,\"air\":0.8151681340299547,\"whistle\":0.18062221446307375,\"movement\":0.5212483940646052,\"focus\":0.3527199897216633,\"flutter\":0.1724751720670611},\"generator\":\"generate_dash\",\"renderSeed\":0.3353200068231672},{\"synth\":\"Riftr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.533899862319231,\"excitation\":1,\"duration\":0.39652738012373445,\"pitch\":0.5715907387435437,\"bend\":0.5432359643280505,\"space\":0.24261789777781814,\"feedback\":0.4089735916233621,\"dispersion\":0.18582981560612097,\"motion\":0.8446999904350379,\"field\":0.5304698040825314,\"reverse\":0.061836690385825926},\"generator\":\"generate_phase_dash\",\"renderSeed\":0.06405955576337874}]"
+    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.2938958473969251,\"duration\":0.32367182737216355,\"size\":0.7109422797337175,\"air\":0.9262094538658857,\"whistle\":0.25520676288288086,\"movement\":0.7760837193578483,\"focus\":0.5806298694573343,\"flutter\":0.13047671747626738},\"generator\":\"generate_dash\",\"renderSeed\":0.5119006915483624},{\"synth\":\"Zappr\",\"name\":\"Shoot\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9040759489871562,\"duration\":0.2716125304531306,\"voltage\":0.5135892141610384,\"arcs\":2,\"branching\":0.1979943064972758,\"crackle\":0.02641029073856771,\"hum\":0.010195874166674912,\"spark\":0.8274900034302846,\"spread\":0.15824262965470554,\"decay\":0.058495230635162446},\"generator\":\"generate_shoot\",\"renderSeed\":0.5289888512343168}]"
    },
-   "ingredients": "Whoosh · Dash × Sonar · Dash (peak-aligned)",
+   "ingredients": "Whoosh · Dash × Zapper · Shoot (start-aligned)",
    "duration": 0.26702947845804986,
-   "peak": 0.3857969045639038,
-   "rms": 0.06602623313913808,
-   "sha256": "f19805dcefeaecf4a6e4e56be020ec24e8c627f06a7e8309a083fb3ae5a4d211"
+   "peak": 0.24550895392894745,
+   "rms": 0.054575089196328745,
+   "sha256": "a0fb2c8092a6faad3121f717bb0fc11b990bc987589859a61c6048d4b131fba1"
   },
   {
    "verb": "dash",
@@ -349,17 +349,17 @@
    "file": "soundboard-splash-2.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.41293805558234453,
-    "balance": 0.3364667146233842,
-    "align": 2,
+    "seed": 0.6305106019135565,
+    "balance": 0.5,
+    "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Squishr\",\"name\":\"Splash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8984812456183136,\"texture\":3,\"viscosity\":0.26879010354168714,\"stretch\":0.10941195032559335,\"pressure\":0.650114705786109,\"wetness\":0.901420676894486,\"bubbleSize\":0.42914440724998715,\"duration\":0.48639909118413927},\"generator\":\"generate_splash\",\"renderSeed\":0.17772008362226188},{\"synth\":\"Squishr\",\"name\":\"Heal\",\"params\":{\"masterVolume\":0.5,\"seed\":0.22084713680669665,\"texture\":1,\"viscosity\":0.39572822449263184,\"stretch\":0.395343407895416,\"pressure\":0.8475340348668396,\"wetness\":0.9510374961886555,\"bubbleSize\":0.33464818873908375,\"duration\":0.8846289739012718},\"generator\":\"generate_heal\",\"renderSeed\":0.3032961878925562}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Splash\",\"params\":{\"masterVolume\":0.5,\"waveType\":0,\"duration\":0.15253419329971077,\"pitch\":{\"start\":0.4319409029034432,\"end\":0.7019409029034431,\"curve\":\"Ease In\"},\"tone\":{\"start\":0.9,\"end\":0.9,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0.3,\"curve\":\"Linear\"},\"attack\":0.003,\"release\":0.08,\"resonance\":0.15,\"echo\":0.1,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_splash\",\"renderSeed\":0.1994563825428486}]"
    },
-   "ingredients": "Squishy · Splash × Squishy · Heal (tail-aligned)",
-   "duration": 0.8068934240362812,
-   "peak": 0.2627773582935333,
-   "rms": 0.03302766306698296,
-   "sha256": "aff82223e3127e11c60248d4db4e75503393369150ce0d384f92f637acb275dd"
+   "ingredients": "Transfxr · Splash",
+   "duration": 0.17414965986394557,
+   "peak": 0.33471155166625977,
+   "rms": 0.10618452040900807,
+   "sha256": "fa70d3ac234d6775d13bb33a116dc8ff8a69b9081d4c59683a43babdb1aa4781"
   },
   {
    "verb": "splash",
@@ -369,17 +369,17 @@
    "file": "soundboard-splash-3.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.24767969083040953,
-    "balance": 0.5,
-    "align": 0,
+    "seed": 0.8071700243744999,
+    "balance": 0.25927065944997596,
+    "align": 2,
     "offset": 0,
-    "sources": "[{\"synth\":\"Squishr\",\"name\":\"Wet Splat\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8730466086417437,\"texture\":3,\"viscosity\":0.15844836407341065,\"stretch\":0.0450163884786889,\"pressure\":0.8085277140489779,\"wetness\":0.9783779780846089,\"bubbleSize\":0.5982110714772717,\"duration\":0.2850898590357974},\"generator\":\"generate_wet_splat\",\"renderSeed\":0.08400554186664522}]"
+    "sources": "[{\"synth\":\"Squishr\",\"name\":\"Splash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.3142924280837178,\"texture\":3,\"viscosity\":0.07731962165562437,\"stretch\":0.1119267932884395,\"pressure\":0.9238416600972414,\"wetness\":0.8119029046036303,\"bubbleSize\":0.556845269817859,\"duration\":0.260040192976594},\"generator\":\"generate_splash\",\"renderSeed\":0.8669618258718401},{\"synth\":\"Squishr\",\"name\":\"Heal\",\"params\":{\"masterVolume\":0.5,\"seed\":0.4699694646988064,\"texture\":1,\"viscosity\":0.5325151474680752,\"stretch\":0.4612254941835999,\"pressure\":0.5870706320740282,\"wetness\":0.9088765889871866,\"bubbleSize\":0.326778677594848,\"duration\":0.7435987500939518},\"generator\":\"generate_heal\",\"renderSeed\":0.016180345322936773}]"
    },
-   "ingredients": "Squishy · Wet Splat",
-   "duration": 0.19156462585034015,
-   "peak": 0.3419264853000641,
-   "rms": 0.05624278977005539,
-   "sha256": "4680d7b6611b5f80429c939580ad4c5e170e963622f5969563c31e5419d26ace"
+   "ingredients": "Squishy · Splash × Squishy · Heal (tail-aligned)",
+   "duration": 0.7024036281179138,
+   "peak": 0.24579568207263947,
+   "rms": 0.027644480626957454,
+   "sha256": "2357794a918084b57292a468274b5bf451a70809cb9ff6c489fc4aa33bfded90"
   },
   {
    "verb": "splash",
@@ -390,16 +390,16 @@
    "params": {
     "masterVolume": 0.5,
     "seed": 0.26264802808873355,
-    "balance": 0.5549301908933557,
+    "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Squishr\",\"name\":\"Splash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8083952832967043,\"texture\":3,\"viscosity\":0.3804934727610089,\"stretch\":0.1324066958017647,\"pressure\":0.7002076085656881,\"wetness\":0.9597684351727367,\"bubbleSize\":0.538430236838758,\"duration\":0.27504115499556064},\"generator\":\"generate_splash\",\"renderSeed\":0.3773125947918743},{\"synth\":\"Bouncr\",\"name\":\"Land\",\"params\":{\"masterVolume\":0.5,\"material\":4,\"surface\":4,\"force\":0.7423083272296935,\"duration\":0.5793883652193472,\"size\":0.5797021359903738,\"hardness\":0.3417362348758616,\"tail\":0.16737574600847438,\"seed\":0.7023940263316035,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"spin\":0},\"generator\":\"generate_land\",\"renderSeed\":0.36032019066624343}]"
+    "sources": "[{\"synth\":\"Squishr\",\"name\":\"Wet Splat\",\"params\":{\"masterVolume\":0.5,\"seed\":0.297003609361127,\"texture\":3,\"viscosity\":0.17169922671746463,\"stretch\":0.2371814249572344,\"pressure\":0.8503631212515756,\"wetness\":0.8126297553535551,\"bubbleSize\":0.5795947615522892,\"duration\":0.3386366302613169},\"generator\":\"generate_wet_splat\",\"renderSeed\":0.8083952832967043}]"
    },
-   "ingredients": "Squishy · Splash × Bonks · Land (start-aligned)",
-   "duration": 0.17414965986394557,
-   "peak": 0.16435815393924713,
-   "rms": 0.02406552605121802,
-   "sha256": "7a4a826183ec5e0dc48c5a431fec0ca2ad1f47132ee2672ae2032d18c610b285"
+   "ingredients": "Squishy · Wet Splat",
+   "duration": 0.22058956916099773,
+   "peak": 0.35819482803344727,
+   "rms": 0.059653269374281136,
+   "sha256": "7dc01a95beb83d2cde63fbc5f027e972f735a2ad632c2416734a623f6ad1aac0"
   },
   {
    "verb": "shoot",
@@ -413,13 +413,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Pewpr\",\"name\":\"Laser Pistol\",\"params\":{\"masterVolume\":0.5,\"seed\":0.36476383241824806,\"kind\":0,\"duration\":0.4207621346926317,\"pitch\":0.6115538439713418,\"sweep\":-0.8897618957096711,\"charge\":0.04775319086387753,\"punch\":0.8136907608131878,\"body\":0.39495853737462316,\"recoil\":0.15847066156566142,\"grit\":0.0026700104027986525,\"shots\":1,\"character\":0.1069425292313099,\"modulation\":0.07685271416557954},\"generator\":\"generate_laser_pistol\",\"renderSeed\":0.8851949912495911}]"
+    "sources": "[{\"synth\":\"Swarmr\",\"name\":\"Shoot\",\"params\":{\"masterVolume\":0.5,\"seed\":0.008678161539137363,\"kind\":5,\"duration\":0.5452912607695908,\"count\":3,\"speed\":0.6629932024516165,\"cohesion\":0.5984574428992346,\"agitation\":0.7520413042511791,\"size\":0.6082642289577052,\"movement\":0.8867765292525291,\"scatter\":0.013350052013993264},\"generator\":\"generate_shoot\",\"renderSeed\":0.059672698145732284}]"
    },
-   "ingredients": "Pewpr · Laser Pistol",
-   "duration": 0.25541950113378686,
-   "peak": 0.2433049976825714,
-   "rms": 0.03729398792491525,
-   "sha256": "b42e88c86860fb1f4eb79cc6dcedbee5493e66387f5a34562e77c763c926ce31"
+   "ingredients": "Swarms · Shoot",
+   "duration": 0.45859410430839004,
+   "peak": 0.18720471858978271,
+   "rms": 0.02788792937407137,
+   "sha256": "54391a6ecc79a420e702f0678766a0ba387af2c444b798aaf877d7f50727edec"
   },
   {
    "verb": "shoot",
@@ -433,13 +433,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Zappr\",\"name\":\"Shoot\",\"params\":{\"masterVolume\":0.5,\"seed\":0.42873913957737386,\"duration\":0.19883429900975896,\"voltage\":0.5763293170370162,\"arcs\":1,\"branching\":0.11194784729741514,\"crackle\":0.031139910127967598,\"hum\":0.04248476206557825,\"spark\":0.9202163951704279,\"spread\":0.16044249841943384,\"decay\":0.25682080631377174},\"generator\":\"generate_shoot\",\"renderSeed\":0.2700847040396184}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Shoot\",\"params\":{\"masterVolume\":0.5,\"waveType\":3,\"duration\":0.1362288064090535,\"pitch\":{\"start\":0.5360870481666644,\"end\":0.7460870481666644,\"curve\":\"Triangle\"},\"tone\":{\"start\":1,\"end\":0.9,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0.4,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.05,\"resonance\":0.15,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_shoot\",\"renderSeed\":0.3731594909913838}]"
    },
-   "ingredients": "Zapper · Shoot",
-   "duration": 0.1799546485260771,
-   "peak": 0.2589268982410431,
-   "rms": 0.03292638385604731,
-   "sha256": "f00198d21e2edc9fabfd1dcf6b651c4dbc8b5284f6342ccd597cd10579ea2e50"
+   "ingredients": "Transfxr · Shoot",
+   "duration": 0.13351473922902493,
+   "peak": 0.3536281883716583,
+   "rms": 0.24119985827935767,
+   "sha256": "5858ae5cb5fd1669bb15b6fc14698da4e916d8f5c736351c6d314b70cc9b4aa9"
   },
   {
    "verb": "shoot",
@@ -470,16 +470,16 @@
    "params": {
     "masterVolume": 0.5,
     "seed": 0.826159258140251,
-    "balance": 0.40215527279069646,
+    "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Bfxr\",\"name\":\"Laser/Shoot\",\"params\":{\"masterVolume\":0.5,\"waveType\":1,\"attackTime\":0,\"sustainTime\":0.10135465580970049,\"sustainPunch\":0,\"decayTime\":0.03,\"compressionAmount\":0,\"frequency_start\":0.692200017743744,\"frequency_slide\":-0.1785851764958352,\"frequency_acceleration\":0,\"min_frequency_relative_to_starting_frequency\":0.3326388885034248,\"vibratoDepth\":0,\"vibratoSpeed\":0,\"pitch_jump_repeat_speed\":0,\"pitch_jump_amount\":0,\"pitch_jump_onset_percent\":0,\"pitch_jump_2_amount\":0,\"pitch_jump_onset2_percent\":0,\"overtones\":0,\"overtoneFalloff\":0,\"squareDuty\":0.15485670417547226,\"dutySweep\":0.19454629402607682,\"repeatSpeed\":0,\"flangerOffset\":0,\"flangerSweep\":0,\"lpFilterCutoff\":1,\"lpFilterCutoffSweep\":0,\"lpFilterResonance\":0,\"hpFilterCutoff\":0.1035851777298376,\"hpFilterCutoffSweep\":0,\"bitCrush\":0,\"bitCrushSweep\":0},\"generator\":\"generate_laser_shoot\",\"renderSeed\":0.21530448854900897},{\"synth\":\"Zappr\",\"name\":\"Shoot\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9499860531650484,\"duration\":0.196872850661166,\"voltage\":0.8092257158830762,\"arcs\":2,\"branching\":0.011035486869513987,\"crackle\":0.1907020586077124,\"hum\":0.03948330751154572,\"spark\":0.878506337525323,\"spread\":0.08429436841979623,\"decay\":0.22755650513572617},\"generator\":\"generate_shoot\",\"renderSeed\":0.24883323744870722}]"
+    "sources": "[{\"synth\":\"Pewpr\",\"name\":\"Scatter Cannon\",\"params\":{\"masterVolume\":0.5,\"seed\":0.006773279048502445,\"kind\":2,\"duration\":0.7990062783937901,\"pitch\":0.18441902522463352,\"sweep\":-0.3333495512371883,\"charge\":0.021759776743128897,\"punch\":0.8768800070974976,\"body\":0.27978056462015954,\"recoil\":0.6571703529916704,\"grit\":0.6338763942476362,\"shots\":1,\"character\":0.3632563970983028,\"modulation\":0.7322754555847496},\"generator\":\"generate_shotgun\",\"renderSeed\":0.07214425969868898}]"
    },
-   "ingredients": "Bfxr · Laser/Shoot × Zapper · Shoot (start-aligned)",
+   "ingredients": "Pewpr · Scatter Cannon",
    "duration": 0.16834467120181407,
-   "peak": 0.2832736372947693,
-   "rms": 0.04422602487454958,
-   "sha256": "2917b0527d4ab0553e19eddf50b70dd3988fd912fc95cb2171affc98beac3021"
+   "peak": 0.33065393567085266,
+   "rms": 0.017810566121461816,
+   "sha256": "f1f110a103f39c434edc63e20f32dd4f4267d2ef9f9dbf3b2be5d57df961b57d"
   },
   {
    "verb": "swing",
@@ -529,17 +529,17 @@
    "file": "soundboard-swing-3.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.026781406020745635,
-    "balance": 0.4277838195557706,
-    "align": 2,
+    "seed": 0.07070838497020304,
+    "balance": 0.5,
+    "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Swing\",\"params\":{\"masterVolume\":0.5,\"seed\":0.15269700856879354,\"duration\":0.5017526146676391,\"size\":0.8595644203713164,\"air\":0.6814590999856591,\"whistle\":0.3810479605104775,\"movement\":0.9927962215617299,\"focus\":0.5877522893249989,\"flutter\":0.05864809469785541},\"generator\":\"generate_swing\",\"renderSeed\":0.7911447801161557},{\"synth\":\"Clonkr\",\"name\":\"Hit\",\"params\":{\"masterVolume\":0.5,\"seed\":0.35616270964965224,\"material\":3,\"action\":0,\"size\":0.26474108891561626,\"hollowness\":0.34374155941186474,\"hardness\":0.7230577818118036,\"damping\":0.45886210388271137,\"duration\":0.287862911329139},\"generator\":\"generate_hit\",\"renderSeed\":0.33370448113419116}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Swing\",\"params\":{\"masterVolume\":0.5,\"waveType\":7,\"duration\":0.09874003906175494,\"pitch\":{\"start\":0.4817810524138622,\"end\":0.4817810524138622,\"curve\":\"Linear\"},\"tone\":{\"start\":1,\"end\":0.5,\"curve\":\"Ease Out\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.06,\"resonance\":0.15,\"echo\":0.05,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_swing\",\"renderSeed\":0.9423106575850397}]"
    },
-   "ingredients": "Whoosh · Swing × Tangs · Hit (tail-aligned)",
-   "duration": 0.5108390022675737,
-   "peak": 0.1803707331418991,
-   "rms": 0.030456612592489114,
-   "sha256": "852cebd9237b6f2f4491c22f7dbbb4a6ec7791fb70636b0ce9256d03ef04518b"
+   "ingredients": "Transfxr · Swing",
+   "duration": 0.10448979591836735,
+   "peak": 0.349120169878006,
+   "rms": 0.07767292513093658,
+   "sha256": "ec539a1c65a25116a94953b8047dcb4769e743ec8887688b44764c31ac868d29"
   },
   {
    "verb": "swing",
@@ -549,17 +549,17 @@
    "file": "soundboard-swing-4.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.884805582696572,
+    "seed": 0.820414503570646,
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Rustlr\",\"name\":\"Swing\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5819310478400439,\"material\":1,\"gesture\":0,\"duration\":0.25825108669232577,\"grain\":0.6648800797760487,\"density\":0.789926331769675,\"motion\":-0.1969294989481568,\"pressure\":0.7849789271131158,\"folds\":2,\"brightness\":0.4494229747680947},\"generator\":\"generate_swing\",\"renderSeed\":0.9559780445415527}]"
+    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Heavy Swing\",\"params\":{\"masterVolume\":0.5,\"seed\":0.09160000644624233,\"duration\":0.7088990794494748,\"size\":0.9787032666616142,\"air\":0.9731297782156616,\"whistle\":0.10655989788938315,\"movement\":0.6914956483407877,\"focus\":0.590568127320148,\"flutter\":0.24850157746113838},\"generator\":\"generate_heavy_swing\",\"renderSeed\":0.9925953710917383}]"
    },
-   "ingredients": "Rustler · Swing",
-   "duration": 0.22058956916099773,
-   "peak": 0.09506604075431824,
-   "rms": 0.015329173632045388,
-   "sha256": "3298a7505f8b9572214af9f95ce8ffbad53f0c720eedf7bcf6ea8bdd6f939af3"
+   "ingredients": "Whoosh · Heavy Swing",
+   "duration": 0.46439909297052157,
+   "peak": 0.28762131929397583,
+   "rms": 0.04286324097445788,
+   "sha256": "f8f2c5c7e0c43d123a13a9e7d6d180b7b2acb0a45c3cce6bc7364c5322a3d91f"
   },
   {
    "verb": "hit",
@@ -593,13 +593,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Clonkr\",\"name\":\"Hit\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8229527282528579,\"material\":0,\"action\":0,\"size\":0.3798410727642476,\"hollowness\":0.3528222652035765,\"hardness\":0.690244356263429,\"damping\":0.6619231180520728,\"duration\":0.33451015390455724},\"generator\":\"generate_hit\",\"renderSeed\":0.3185333115980029}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Hit\",\"params\":{\"masterVolume\":0.5,\"waveType\":3,\"duration\":0.10345876734238119,\"pitch\":{\"start\":0.3977321206859779,\"end\":0.23773212068597785,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.8,\"end\":0.4,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0.2,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.05,\"resonance\":0.15,\"echo\":0,\"waveTo\":7,\"morph\":{\"start\":0.2,\"end\":0.6,\"curve\":\"Linear\"}},\"generator\":\"generate_verb_hit\",\"renderSeed\":0.22561089065857232}]"
    },
-   "ingredients": "Tangs · Hit",
-   "duration": 0.13931972789115646,
-   "peak": 0.34769487380981445,
-   "rms": 0.06485540165960858,
-   "sha256": "48a2e303268a4f25aa79d86c4a8937bb10debfae2f9646ea3b8e86a08e2038d4"
+   "ingredients": "Transfxr · Hit",
+   "duration": 0.09868480725623582,
+   "peak": 0.34385946393013,
+   "rms": 0.18691193492265804,
+   "sha256": "d4692ac1f2ccb9a5fa39c4e31cbeaecbd08e98e552f059cd00dc92c72c908159"
   },
   {
    "verb": "hit",
@@ -613,13 +613,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Bouncr\",\"name\":\"Hit\",\"params\":{\"masterVolume\":0.5,\"material\":1,\"surface\":2,\"force\":0.5002960925921798,\"duration\":0.3429482462350279,\"size\":0.45540725681930777,\"hardness\":0.7243611839599907,\"tail\":0.4365841145510785,\"seed\":0.6866901100147516,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"spin\":0},\"generator\":\"generate_hit\",\"renderSeed\":0.21833537495695055}]"
+    "sources": "[{\"synth\":\"Clonkr\",\"name\":\"Hit\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8188117558602244,\"material\":0,\"action\":0,\"size\":0.4829976575449109,\"hollowness\":0.08865342161152512,\"hardness\":0.7554072568193078,\"damping\":0.48990633195498956,\"duration\":0.12019542111083864},\"generator\":\"generate_hit\",\"renderSeed\":0.6866901100147516}]"
    },
-   "ingredients": "Bonks · Hit",
-   "duration": 0.3308843537414966,
-   "peak": 0.23978565633296967,
-   "rms": 0.0493941520736186,
-   "sha256": "861d8852cf219a1f471b54c6bcaca7ec835a6238f29ac05dcd30972bb4bc35b5"
+   "ingredients": "Tangs · Hit",
+   "duration": 0.11609977324263039,
+   "peak": 0.3670315742492676,
+   "rms": 0.05820432672904307,
+   "sha256": "1adbcbcfc0fd558f903e85857b75ea09516f2b4af051be4f0cb6a2a9c1ccdc16"
   },
   {
    "verb": "hit",
@@ -629,17 +629,17 @@
    "file": "soundboard-hit-4.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.5043213067110628,
+    "seed": 0.518562426790595,
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Fractr\",\"name\":\"Hit\",\"params\":{\"masterVolume\":0.5,\"seed\":0.05940100597217679,\"material\":6,\"duration\":0.3370117694488727,\"fragments\":5,\"fragmentSize\":0.38985048718750476,\"spread\":0.054544698970858015,\"decay\":0.11170334490481763,\"gravity\":0.8569839550182223,\"bounce\":0.01428464471362531,\"stress\":0.1464225232019089,\"shards\":0.08414727983996272,\"fracture\":0.8916864124010316},\"generator\":\"generate_hit\",\"renderSeed\":0.30107712536118925}]"
+    "sources": "[{\"synth\":\"Bouncr\",\"name\":\"Hit\",\"params\":{\"masterVolume\":0.5,\"material\":2,\"surface\":2,\"force\":0.8368145106360316,\"duration\":0.4431639860384166,\"size\":0.6375832357443869,\"hardness\":0.6030093382112681,\"tail\":0.44933780722785743,\"seed\":0.7098028887994587,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"spin\":0},\"generator\":\"generate_hit\",\"renderSeed\":0.911361767211929}]"
    },
-   "ingredients": "Cracker · Hit",
-   "duration": 0.3250793650793651,
-   "peak": 0.4749999940395355,
-   "rms": 0.10412185211783832,
-   "sha256": "7b34e11b4ee9b8ef1169b6a5256edaccbef9e71b6ae67fb526c4f4690d3d2d14"
+   "ingredients": "Bonks · Hit",
+   "duration": 0.4295691609977324,
+   "peak": 0.36107152700424194,
+   "rms": 0.11199083492851478,
+   "sha256": "87c7dd3b7d7a24e7fd2cca8e556fc8a7845c7104808d015f02d6a9eca2394686"
   },
   {
    "verb": "hurt",
@@ -653,13 +653,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Crittr\",\"name\":\"Hurt\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6303855597507209,\"voice\":0,\"duration\":0.24936729499604554,\"pitch\":0.3854689039522782,\"size\":0.32339590042829514,\"morph\":0.8501677885651588,\"calls\":1,\"gap\":0.08271132725058125,\"contour\":-0.5467285349266604,\"growl\":0.2511111729778349,\"breath\":0.4056035844841972,\"flutter\":0.27845358779886736},\"generator\":\"generate_hurt\",\"renderSeed\":0.25490780221298337}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Hurt\",\"params\":{\"masterVolume\":0.5,\"waveType\":3,\"duration\":0.38279170772060755,\"pitch\":{\"start\":0.5449050942494069,\"end\":0.2849050942494068,\"curve\":\"Linear\"},\"tone\":{\"start\":0.9,\"end\":0.7,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0.85,\"end\":0.85,\"curve\":\"Linear\"},\"level\":{\"start\":1,\"end\":0.4,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.1,\"resonance\":0.15,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_hurt\",\"renderSeed\":0.05848975107073784}]"
    },
-   "ingredients": "Beasts · Hurt",
-   "duration": 0.22058956916099773,
-   "peak": 0.30513784289360046,
-   "rms": 0.0660741009247114,
-   "sha256": "973eec4c5d8ca6e5e62200b6d23665f2f14371189b33114abd532c38d67b62ab"
+   "ingredients": "Transfxr · Hurt",
+   "duration": 0.37732426303854877,
+   "peak": 0.3562503159046173,
+   "rms": 0.24931896955261584,
+   "sha256": "0ccdb85524da816efa33cb04da37a0afb70cc342fb17e41d40fd1cf0aff1ac37"
   },
   {
    "verb": "hurt",
@@ -693,13 +693,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Breathr\",\"name\":\"Hurt\",\"params\":{\"masterVolume\":0.5,\"seed\":0.015385494334623218,\"source\":1,\"mode\":0,\"duration\":0.15787056202534586,\"direction\":-0.7349231936968863,\"cycles\":1,\"effort\":0.7055352066410705,\"inhale\":0.2944684628304094,\"hold\":0.2679890465317294,\"throat\":0.34491957348072905,\"rasp\":0.46013089036569,\"flutter\":0.388869793061167,\"space\":0.14652917829807846},\"generator\":\"generate_hurt\",\"renderSeed\":0.929538810160011}]"
+    "sources": "[{\"synth\":\"Crittr\",\"name\":\"Hurt\",\"params\":{\"masterVolume\":0.5,\"seed\":0.015385494334623218,\"voice\":7,\"duration\":0.4650768063031137,\"pitch\":0.309444674430415,\"size\":0.3073802755214274,\"morph\":0.980244510108605,\"calls\":1,\"gap\":0.1899908721097745,\"contour\":-0.3786863235989586,\"growl\":0.36013089036569,\"breath\":0.34165234479587525,\"flutter\":0.2942152971634641},\"generator\":\"generate_hurt\",\"renderSeed\":0.929538810160011}]"
    },
-   "ingredients": "Breath · Hurt",
-   "duration": 0.156734693877551,
-   "peak": 0.47483983635902405,
-   "rms": 0.3282436241698052,
-   "sha256": "d7d0a51c14b39a9da4b34314ee989600da47cf486b60bcf79bfd5c0b4343f877"
+   "ingredients": "Beasts · Hurt",
+   "duration": 0.3657142857142857,
+   "peak": 0.21492406725883484,
+   "rms": 0.04100618979827064,
+   "sha256": "033c1a6a8fdd84d98faed3358ed78fce53cc44be34e996d869aa5c467be7cd48"
   },
   {
    "verb": "hurt",
@@ -750,16 +750,16 @@
    "params": {
     "masterVolume": 0.5,
     "seed": 0.03894268861040473,
-    "balance": 0.41728928801603615,
-    "align": 1,
+    "balance": 0.5,
+    "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Boomr\",\"name\":\"Explode\",\"params\":{\"masterVolume\":0.5,\"seed\":0.589417785173282,\"duration\":1.6900865611620248,\"size\":0.5475281688384712,\"pressure\":0.7755960515700281,\"blast\":0.5201649735681713,\"debris\":0.3814421466551721,\"gas\":0.143460861814674,\"aftershock\":0.26314031559741125,\"rubbleSize\":0.14443984909448773,\"spread\":0.6810998034663498,\"tail\":0.5911043785512446,\"muffle\":0.018783309054560958,\"mechanism\":0,\"space\":0.11385010434314609},\"generator\":\"generate_explode\",\"renderSeed\":0.14173400797881186},{\"synth\":\"Fractr\",\"name\":\"Break\",\"params\":{\"masterVolume\":0.5,\"seed\":0.2963554635643959,\"material\":5,\"duration\":0.8981049089692532,\"fragments\":13,\"fragmentSize\":0.6640342263737693,\"spread\":0.06956787084927783,\"decay\":0.3366417988203466,\"gravity\":0.5613812167430297,\"bounce\":0.4516745133325458,\"stress\":0.49251419195206836,\"shards\":0.6852882305858656,\"fracture\":0.8158842382021249},\"generator\":\"generate_break\",\"renderSeed\":0.13672075024805963}]"
+    "sources": "[{\"synth\":\"Boomr\",\"name\":\"Barrel\",\"params\":{\"masterVolume\":0.5,\"seed\":0.034625260857865214,\"duration\":1.0403299471363425,\"size\":0.4407210733275861,\"pressure\":0.5726917814114131,\"blast\":0.8420935437316075,\"debris\":0.6811078943661414,\"gas\":0.7130569685949013,\"aftershock\":0.2816810935270041,\"rubbleSize\":0.3985169013030827,\"spread\":0.5348798427730799,\"tail\":0.7047163312323392,\"muffle\":0.11565275754546747,\"mechanism\":1,\"space\":0.3816970386775211},\"generator\":\"generate_barrel\",\"renderSeed\":0.589417785173282}]"
    },
-   "ingredients": "Boomer · Explode × Cracker · Break (peak-aligned)",
-   "duration": 0.9810430839002268,
-   "peak": 0.369893878698349,
-   "rms": 0.023811383251482986,
-   "sha256": "4ac5f8ad1b597051f33d6ca919012e5c69a4acd6dc3a425d2bb9a98e90363e74"
+   "ingredients": "Boomer · Barrel",
+   "duration": 1.0332879818594105,
+   "peak": 0.38909846544265747,
+   "rms": 0.07488696014333869,
+   "sha256": "402a29bd391c760390d8f223b15ec67503c4a1cc5ec2055d62fd4b177395d5c8"
   },
   {
    "verb": "explode",
@@ -773,13 +773,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Boomr\",\"name\":\"Explode\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5675014755688608,\"duration\":1.7794978064484894,\"size\":0.309931307984516,\"pressure\":0.8953347407281398,\"blast\":0.9650285275420174,\"debris\":0.3478948967065662,\"gas\":0.38458913057111205,\"aftershock\":0.3459132933407091,\"rubbleSize\":0.228323208889924,\"spread\":0.6179787188768386,\"tail\":0.5178838753141463,\"muffle\":0.023122713505290448,\"mechanism\":0,\"space\":0.41607885407283907},\"generator\":\"generate_explode\",\"renderSeed\":0.279228750616312}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Explode\",\"params\":{\"masterVolume\":0.5,\"waveType\":1,\"duration\":0.5423835139162838,\"pitch\":{\"start\":0.22173116774181836,\"end\":0.07173116774181836,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.7,\"end\":0.1,\"curve\":\"Ease Out\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.45,\"resonance\":0.15,\"echo\":0,\"waveTo\":7,\"morph\":{\"start\":0.5,\"end\":0.9,\"curve\":\"Linear\"}},\"generator\":\"generate_verb_explode\",\"renderSeed\":0.7383368518203497}]"
    },
-   "ingredients": "Boomer · Explode",
-   "duration": 1.7647165532879818,
-   "peak": 0.3353208303451538,
-   "rms": 0.04992546653496731,
-   "sha256": "42f69d3950af605304a0632e8db1c321989f32df8dd731afb389ead13b55191e"
+   "ingredients": "Transfxr · Explode",
+   "duration": 0.4527891156462585,
+   "peak": 0.3455291986465454,
+   "rms": 0.10640336873290872,
+   "sha256": "fb5da04a4164d118b04ffbba8acbf56734f078ee1789d2b83881a07bf4aeafa0"
   },
   {
    "verb": "explode",
@@ -789,17 +789,17 @@
    "file": "soundboard-explode-4.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.46681685745716095,
-    "balance": 0.5,
-    "align": 0,
+    "seed": 0.18410427519120276,
+    "balance": 0.4495698226382956,
+    "align": 1,
     "offset": 0,
-    "sources": "[{\"synth\":\"Boomr\",\"name\":\"Explode\",\"params\":{\"masterVolume\":0.5,\"seed\":0.175918324617669,\"duration\":1.2496984200552106,\"size\":0.781778665794991,\"pressure\":0.6946978284046054,\"blast\":0.5098116176668555,\"debris\":0.5119088170118631,\"gas\":0.2077398910536431,\"aftershock\":0.2806261777412146,\"rubbleSize\":0.5099295663181692,\"spread\":0.20779861432965846,\"tail\":0.377281283121556,\"muffle\":0.011794579890556633,\"mechanism\":1,\"space\":0.1686502411030233},\"generator\":\"generate_explode\",\"renderSeed\":0.5455229342915118}]"
+    "sources": "[{\"synth\":\"Boomr\",\"name\":\"Explode\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9041844545863569,\"duration\":0.7046764598228037,\"size\":0.764255771948956,\"pressure\":0.99682851228863,\"blast\":0.7226061397232115,\"debris\":0.7646933691110462,\"gas\":0.33743322886293753,\"aftershock\":0.31996739517198874,\"rubbleSize\":0.49669801434502003,\"spread\":0.6842610002961009,\"tail\":0.42291421545669433,\"muffle\":0.07237752825021744,\"mechanism\":1,\"space\":0.2961391869001091},\"generator\":\"generate_explode\",\"renderSeed\":0.49723196448758245},{\"synth\":\"Fractr\",\"name\":\"Break\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8024349231272936,\"material\":1,\"duration\":0.9238809851696714,\"fragments\":21,\"fragmentSize\":0.5725758960936218,\"spread\":0.38901161050889643,\"decay\":0.19492628192529082,\"gravity\":0.6846164379967377,\"bounce\":0.41356865949928767,\"stress\":0.059477507183328275,\"shards\":0.5161644936772063,\"fracture\":0.9607652402482927},\"generator\":\"generate_break\",\"renderSeed\":0.8661317410878837}]"
    },
-   "ingredients": "Boomer · Explode",
-   "duration": 1.1087528344671203,
-   "peak": 0.24116767942905426,
-   "rms": 0.03393828918289738,
-   "sha256": "a8ec0decd9e245167fe0d5a1dc6ad70ddb2752c7c27d4247ed5228188d53bef4"
+   "ingredients": "Boomer · Explode × Cracker · Break (peak-aligned)",
+   "duration": 0.6791836734693878,
+   "peak": 0.3640221357345581,
+   "rms": 0.03914060688254282,
+   "sha256": "f795fde27f474ec30154c264196cc88093c90173e27553494c6cfd963055a356"
   },
   {
    "verb": "coin",
@@ -833,13 +833,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Bouncr\",\"name\":\"Coin\",\"params\":{\"masterVolume\":0.5,\"material\":2,\"surface\":2,\"force\":0.4669504049234092,\"duration\":0.4392191407736391,\"size\":0.11021217363886535,\"hardness\":0.7224356077611446,\"tail\":0.5323196725919842,\"seed\":0.6671582621056587,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"spin\":0.33630010362248863},\"generator\":\"generate_coin\",\"renderSeed\":0.2756639770232141}]"
+    "sources": "[{\"synth\":\"Jinglr\",\"name\":\"Coin\",\"params\":{\"masterVolume\":0.5,\"seed\":0.27260272602726027,\"instrumentSeed\":9447,\"phrase\":\"[{\\\"degree\\\":1,\\\"beats\\\":0.5},{\\\"degree\\\":8,\\\"beats\\\":1}]\",\"instrument\":2,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":2,\"octave\":5,\"tempo\":207.2920157853514,\"swing\":0,\"brightness\":0.6669504049234092,\"decay\":0.13711987722199412,\"echo\":0},\"generator\":\"generate_coin\",\"renderSeed\":0.2756639770232141}]"
    },
-   "ingredients": "Bonks · Coin",
-   "duration": 0.4295691609977324,
-   "peak": 0.17012383043766022,
-   "rms": 0.046247662910251675,
-   "sha256": "0f618152c407430a6abe6549fe338cf75701c317c08fa34499084fc141b131d3"
+   "ingredients": "Jingles · Coin",
+   "duration": 0.35410430839002266,
+   "peak": 0.3673245906829834,
+   "rms": 0.12103190614334054,
+   "sha256": "3b27a1c4373fc4feb997e0059cf93e6bc1b9873cb457c67e89f2d3b5548c6beb"
   },
   {
    "verb": "coin",
@@ -853,13 +853,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Jinglr\",\"name\":\"Coin\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9359793597935979,\"instrumentSeed\":73301,\"phrase\":\"[{\\\"degree\\\":1,\\\"beats\\\":0.5},{\\\"degree\\\":9,\\\"beats\\\":1}]\",\"instrument\":4,\"key\":0,\"scale\":2,\"contour\":0,\"rhythm\":0,\"noteCount\":2,\"octave\":5,\"tempo\":207.24706896580756,\"swing\":0,\"brightness\":0.5350516422651708,\"decay\":0.07587703524623067,\"echo\":0},\"generator\":\"generate_coin\",\"renderSeed\":0.7729633888229728}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Coin\",\"params\":{\"masterVolume\":0.5,\"waveType\":3,\"duration\":0.1750447241384536,\"pitch\":{\"start\":0.5204428155696951,\"end\":0.6404428155696951,\"curve\":\"Triangle\"},\"tone\":{\"start\":0.8,\"end\":0.8,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.9,\"end\":0.9,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.03,\"resonance\":0.15,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_coin\",\"renderSeed\":0.4690919832792133}]"
    },
-   "ingredients": "Jingles · Coin",
-   "duration": 0.3250793650793651,
-   "peak": 0.3602091670036316,
-   "rms": 0.14297628728531447,
-   "sha256": "121e58ed81f090fc94e3661474fa760acb5c5fd4ed669c4897dfb28e09b8b922"
+   "ingredients": "Transfxr · Coin",
+   "duration": 0.17414965986394557,
+   "peak": 0.3357052803039551,
+   "rms": 0.29158591104501524,
+   "sha256": "80748faca28bd6e66a13163d24708e429808118be4621a077dcc6b4338e4a5d9"
   },
   {
    "verb": "coin",
@@ -870,16 +870,16 @@
    "params": {
     "masterVolume": 0.5,
     "seed": 0.02922116848640144,
-    "balance": 0.46206669063540173,
+    "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Bfxr\",\"name\":\"Pickup/Coin\",\"params\":{\"masterVolume\":0.5,\"waveType\":4,\"attackTime\":0,\"sustainTime\":0.05159748855506218,\"sustainPunch\":0.3814434777003899,\"decayTime\":0.2787734186578803,\"compressionAmount\":0,\"frequency_start\":0.4193488548975438,\"frequency_slide\":0.022820315366149882,\"frequency_acceleration\":0.03635814809001284,\"min_frequency_relative_to_starting_frequency\":0,\"vibratoDepth\":0,\"vibratoSpeed\":0,\"pitch_jump_repeat_speed\":0,\"pitch_jump_amount\":0.3610643341448903,\"pitch_jump_onset_percent\":0.31752764757265806,\"pitch_jump_2_amount\":0,\"pitch_jump_onset2_percent\":0,\"overtones\":0,\"overtoneFalloff\":0,\"squareDuty\":0,\"dutySweep\":0,\"repeatSpeed\":0,\"flangerOffset\":0,\"flangerSweep\":0,\"lpFilterCutoff\":1,\"lpFilterCutoffSweep\":0,\"lpFilterResonance\":0,\"hpFilterCutoff\":0,\"hpFilterCutoffSweep\":0,\"bitCrush\":0,\"bitCrushSweep\":0},\"generator\":\"generate_pickup_coin\",\"renderSeed\":0.07492008153349161},{\"synth\":\"Bouncr\",\"name\":\"Coin\",\"params\":{\"masterVolume\":0.5,\"material\":2,\"surface\":2,\"force\":0.37972983065992594,\"duration\":0.47543059359304607,\"size\":0.08985656950622797,\"hardness\":0.8619362513767554,\"tail\":0.3647198917344212,\"seed\":0.8133892538025975,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"spin\":0.5649319557007402},\"generator\":\"generate_coin\",\"renderSeed\":0.7787159669678658}]"
+    "sources": "[{\"synth\":\"Clonkr\",\"name\":\"Coin\",\"params\":{\"masterVolume\":0.5,\"seed\":0.33993642241694033,\"material\":2,\"action\":0,\"size\":0.17813228567130865,\"hollowness\":0.08096172313671558,\"hardness\":0.8161333139054477,\"damping\":0.37048859207425267,\"duration\":0.26509456475032495},\"generator\":\"generate_coin\",\"renderSeed\":0.8557609114795923}]"
    },
-   "ingredients": "Bfxr · Pickup/Coin × Bonks · Coin (start-aligned)",
-   "duration": 0.47600907029478456,
-   "peak": 0.2216111719608307,
-   "rms": 0.0357394437079303,
-   "sha256": "873c10b228542addb2a9ee707f7c169b347fb3ff735f99863354189835e73842"
+   "ingredients": "Tangs · Coin",
+   "duration": 0.5166439909297053,
+   "peak": 0.31670939922332764,
+   "rms": 0.044763830203260434,
+   "sha256": "311edc623ccdeb283100776bc5dcf3c9f0bf201a3676f93ca031aaa2953873e8"
   },
   {
    "verb": "powerup",
@@ -913,13 +913,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Jinglr\",\"name\":\"Powerup\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9270592705927059,\"instrumentSeed\":86252,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.75},{\\\"degree\\\":2,\\\"beats\\\":0.25},{\\\"degree\\\":4,\\\"beats\\\":0.75},{\\\"degree\\\":5,\\\"beats\\\":1}]\",\"instrument\":4,\"key\":7,\"scale\":0,\"contour\":0,\"rhythm\":1,\"noteCount\":4,\"octave\":4,\"tempo\":158.11390446848236,\"swing\":0,\"brightness\":0.5347314267419279,\"decay\":0.5459867029683665,\"echo\":0.10846335589885713},\"generator\":\"generate_discovery\",\"renderSeed\":0.47364712273702025}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Powerup\",\"params\":{\"masterVolume\":0.5,\"waveType\":0,\"duration\":0.9373835906479508,\"pitch\":{\"start\":0.18076545932563023,\"end\":0.4807654593256302,\"curve\":\"Ease In\"},\"tone\":{\"start\":0.4,\"end\":0.95,\"curve\":\"Ease In\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.5,\"end\":1,\"curve\":\"Linear\"},\"attack\":0.1,\"release\":0.3,\"resonance\":0.15,\"echo\":0.2,\"waveTo\":2,\"morph\":{\"start\":0,\"end\":0.7,\"curve\":\"Ease In\"}},\"generator\":\"generate_verb_powerup\",\"renderSeed\":0.6388653644826263}]"
    },
-   "ingredients": "Jingles · Powerup",
-   "duration": 1.0797278911564625,
-   "peak": 0.4492127001285553,
-   "rms": 0.09160837192412896,
-   "sha256": "98c224dbc81dc9c8330d2e9b2e57d48f34ef0fa0d086d75733ecdbb90b9f441c"
+   "ingredients": "Transfxr · Powerup",
+   "duration": 1.0448979591836736,
+   "peak": 0.2745344936847687,
+   "rms": 0.10373705664029519,
+   "sha256": "4c9efdaf2b97903a42f1b298ea51442aff8ea47c8ce287f2530ae0cf41b1082f"
   },
   {
    "verb": "powerup",
@@ -933,13 +933,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Riftr\",\"name\":\"Powerup\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6171085599344224,\"excitation\":0,\"duration\":0.7033455749740825,\"pitch\":0.5783162575215102,\"bend\":0.7254561216104776,\"space\":0.42815465606981884,\"feedback\":0.7231050250586122,\"dispersion\":0.647855666000396,\"motion\":0.21133770123124124,\"field\":0.5170269570313395,\"reverse\":0.8421247333521023},\"generator\":\"generate_powerup\",\"renderSeed\":0.6714238084387034}]"
+    "sources": "[{\"synth\":\"Choirr\",\"name\":\"Powerup\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6171085599344224,\"harmony\":1,\"duration\":0.6370534506626427,\"pitch\":0.6272733840043656,\"voices\":11,\"vowel\":0.49123287862166765,\"detune\":0.27392783300019796,\"swell\":0.11958606326952577,\"breath\":0.029256739257834855,\"motion\":0.24212473335210236},\"generator\":\"generate_powerup\",\"renderSeed\":0.6714238084387034}]"
    },
-   "ingredients": "Sonar · Powerup",
-   "duration": 0.7024036281179138,
-   "peak": 0.44999998807907104,
-   "rms": 0.0618577010434692,
-   "sha256": "ee4f7dc4d375f930c2abae4b7b32bb3c0723dcaf3b797c0b27d87be68bd50450"
+   "ingredients": "Choir · Powerup",
+   "duration": 0.626938775510204,
+   "peak": 0.3810940086841583,
+   "rms": 0.1263141288748604,
+   "sha256": "670e1fa273c83ae39026b09fa5d29ace63d16ba24613f57aed113b14fe2c545b"
   },
   {
    "verb": "powerup",
@@ -950,16 +950,16 @@
    "params": {
     "masterVolume": 0.5,
     "seed": 0.09384763496927917,
-    "balance": 0.3677586641279049,
-    "align": 1,
+    "balance": 0.4177586641279049,
+    "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Bfxr\",\"name\":\"Powerup\",\"params\":{\"masterVolume\":0.5,\"waveType\":0,\"attackTime\":0,\"sustainTime\":0.22508534463122487,\"sustainPunch\":0,\"decayTime\":0.4941452983766794,\"compressionAmount\":0,\"frequency_start\":0.48833829681389035,\"frequency_slide\":0.1660569821950048,\"frequency_acceleration\":0,\"min_frequency_relative_to_starting_frequency\":0,\"vibratoDepth\":0,\"vibratoSpeed\":0,\"pitch_jump_repeat_speed\":0,\"pitch_jump_amount\":0,\"pitch_jump_onset_percent\":0,\"pitch_jump_2_amount\":0,\"pitch_jump_onset2_percent\":0,\"overtones\":0,\"overtoneFalloff\":0,\"squareDuty\":0.2981728173326701,\"dutySweep\":0,\"repeatSpeed\":0,\"flangerOffset\":0,\"flangerSweep\":0,\"lpFilterCutoff\":1,\"lpFilterCutoffSweep\":0,\"lpFilterResonance\":0,\"hpFilterCutoff\":0,\"hpFilterCutoffSweep\":0,\"bitCrush\":0,\"bitCrushSweep\":0},\"generator\":\"generate_powerup\",\"renderSeed\":0.11590449744835496},{\"synth\":\"Zappr\",\"name\":\"Cast\",\"params\":{\"masterVolume\":0.5,\"seed\":0.2282809354364872,\"duration\":0.652712221071124,\"voltage\":0.9030390956788323,\"arcs\":8,\"branching\":0.7299975120462477,\"crackle\":0.13464409431908278,\"hum\":0.04575770990923047,\"spark\":0.17307823044247928,\"spread\":0.7568767921999098,\"decay\":0.5072773324558512},\"generator\":\"generate_cast\",\"renderSeed\":0.9295589476823807}]"
+    "sources": "[{\"synth\":\"Bfxr\",\"name\":\"Powerup\",\"params\":{\"masterVolume\":0.5,\"waveType\":0,\"attackTime\":0,\"sustainTime\":0.22508534463122487,\"sustainPunch\":0,\"decayTime\":0.4941452983766794,\"compressionAmount\":0,\"frequency_start\":0.48833829681389035,\"frequency_slide\":0.1660569821950048,\"frequency_acceleration\":0,\"min_frequency_relative_to_starting_frequency\":0,\"vibratoDepth\":0,\"vibratoSpeed\":0,\"pitch_jump_repeat_speed\":0,\"pitch_jump_amount\":0,\"pitch_jump_onset_percent\":0,\"pitch_jump_2_amount\":0,\"pitch_jump_onset2_percent\":0,\"overtones\":0,\"overtoneFalloff\":0,\"squareDuty\":0.2981728173326701,\"dutySweep\":0,\"repeatSpeed\":0,\"flangerOffset\":0,\"flangerSweep\":0,\"lpFilterCutoff\":1,\"lpFilterCutoffSweep\":0,\"lpFilterResonance\":0,\"hpFilterCutoff\":0,\"hpFilterCutoffSweep\":0,\"bitCrush\":0,\"bitCrushSweep\":0},\"generator\":\"generate_powerup\",\"renderSeed\":0.11590449744835496},{\"synth\":\"Choirr\",\"name\":\"Powerup\",\"params\":{\"masterVolume\":0.5,\"seed\":0.2282809354364872,\"harmony\":1,\"duration\":1.1060781913576647,\"pitch\":0.6901260444312356,\"voices\":8,\"vowel\":0.5692881886381655,\"detune\":0.21439427477307615,\"swell\":0.26634778805309905,\"breath\":0.08921919804997742,\"motion\":0.14909485639072956},\"generator\":\"generate_powerup\",\"renderSeed\":0.9295589476823807}]"
    },
-   "ingredients": "Bfxr · Powerup × Zapper · Cast (peak-aligned)",
-   "duration": 0.8243083900226758,
-   "peak": 0.23065024614334106,
-   "rms": 0.05599473248585757,
-   "sha256": "03d60891711ffec9df1a7daaccff9ab8c2e0b3a1392710ef3904101e11bbb83a"
+   "ingredients": "Bfxr · Powerup × Choir · Powerup (start-aligned)",
+   "duration": 1.0971428571428572,
+   "peak": 0.17499957978725433,
+   "rms": 0.056686558700057656,
+   "sha256": "1dcfa797eb3f16802d4b2244d6f2e09737eee3d1eb16fb43b349fc8282d621da"
   },
   {
    "verb": "unlock",
@@ -973,13 +973,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Rustlr\",\"name\":\"Unlock\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9811110151931643,\"material\":2,\"gesture\":1,\"duration\":0.3445725442841649,\"grain\":0.17449630266055466,\"density\":0.4752007406204939,\"motion\":0.21334820589981968,\"pressure\":0.7262459546793252,\"folds\":1,\"brightness\":0.4387569203041494},\"generator\":\"generate_unlock\",\"renderSeed\":0.35071512986905873}]"
+    "sources": "[{\"synth\":\"Signlr\",\"name\":\"Unlock\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9811110151931643,\"encoding\":1,\"duration\":0.7380874423310161,\"carrier\":0.5334294082131237,\"deviation\":0.5241605044342578,\"symbols\":0.6190009257756174,\"packets\":3,\"gap\":0.22928340267390013,\"drift\":0.12388993222266437,\"corruption\":0,\"interference\":0,\"echo\":0.0693784601520747},\"generator\":\"generate_unlock\",\"renderSeed\":0.35071512986905873}]"
    },
-   "ingredients": "Rustler · Unlock",
-   "duration": 0.3250793650793651,
-   "peak": 0.12572814524173737,
-   "rms": 0.02082320991552227,
-   "sha256": "054ed76b24a08144b6beb778c9cf5ba918594373d89d826bf7b63634cc6a7d9d"
+   "ingredients": "Signal · Unlock",
+   "duration": 0.7314285714285714,
+   "peak": 0.23307673633098602,
+   "rms": 0.14028019806149794,
+   "sha256": "eb59be01677ce09e9d5bba9b115a129caaa0c93fb4fc9230910d4e740559d837"
   },
   {
    "verb": "unlock",
@@ -1033,13 +1033,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Machinr\",\"name\":\"Unlock\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9446680727414787,\"mechanism\":2,\"duration\":0.4015494994819164,\"speed\":0.6661553186131641,\"load\":0.09505288538057358,\"roughness\":0.18584968298673632,\"looseness\":0.23095949441194535,\"size\":0.11526027608197183,\"startTime\":0.003241348285228014,\"stopTime\":0.07546027777716517},\"generator\":\"generate_unlock\",\"renderSeed\":0.8896185364574194}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Unlock\",\"params\":{\"masterVolume\":0.5,\"waveType\":11,\"duration\":0.8698159147007392,\"pitch\":{\"start\":0.5851162124611438,\"end\":0.8351162124611438,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.9,\"end\":1,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.4,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0.3,\"curve\":\"Linear\"},\"attack\":0.02,\"release\":0.5,\"resonance\":0.15,\"echo\":0.4,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_unlock\",\"renderSeed\":0.1501762846019119}]"
    },
-   "ingredients": "Motors · Unlock",
-   "duration": 0.13931972789115646,
-   "peak": 0.4134126603603363,
-   "rms": 0.056298423066919984,
-   "sha256": "bdca33e2322158705c1fca8ec6e9601206830fb10fd2ac7b8615ed8c1f7ec2fc"
+   "ingredients": "Transfxr · Unlock",
+   "duration": 0.9984580498866213,
+   "peak": 0.3598812222480774,
+   "rms": 0.08088880348445301,
+   "sha256": "cd820d4fa47494b083e0880e7da99525a50be5e4c281eb82deaeeb7ca293c7e4"
   },
   {
    "verb": "win",
@@ -1073,13 +1073,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Choirr\",\"name\":\"Win\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8060668662656099,\"harmony\":1,\"duration\":1.8202753126621247,\"pitch\":0.5692579711275174,\"voices\":9,\"vowel\":0.4694363639689982,\"detune\":0.21979581981897356,\"swell\":0.2689447027863935,\"breath\":0.06665521455928683,\"motion\":0.3553497757879086},\"generator\":\"generate_victory_chord\",\"renderSeed\":0.5241190509404987}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Win\",\"params\":{\"masterVolume\":0.5,\"waveType\":11,\"duration\":1.2656357517233119,\"pitch\":{\"start\":0.7223482213669922,\"end\":0.8723482213669922,\"curve\":\"Steps\"},\"tone\":{\"start\":1,\"end\":0.9,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0.1,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.9,\"resonance\":0.15,\"echo\":0.45,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_win\",\"renderSeed\":0.3857575776055455}]"
    },
-   "ingredients": "Choir · Win",
-   "duration": 1.7705215419501135,
-   "peak": 0.41269418597221375,
-   "rms": 0.10962017139828015,
-   "sha256": "c7deec66feb41ef6416091f0ce878b50cd1d5b432e2d7026c981b7133ea3ce62"
+   "ingredients": "Transfxr · Win",
+   "duration": 1.3235374149659864,
+   "peak": 0.3672920763492584,
+   "rms": 0.07534252408828011,
+   "sha256": "0685b020f7e713fdc821a03dffe74e791e0969442557c0890336ea174d8adb43"
   },
   {
    "verb": "win",
@@ -1089,17 +1089,17 @@
    "file": "soundboard-win-3.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.6878358956892043,
-    "balance": 0.30706495204940437,
+    "seed": 0.26147018535993993,
+    "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Jinglr\",\"name\":\"Win\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6003960039600396,\"instrumentSeed\":99639,\"phrase\":\"[{\\\"degree\\\":1,\\\"beats\\\":0.5},{\\\"degree\\\":3,\\\"beats\\\":0.5},{\\\"degree\\\":3,\\\"beats\\\":0.5},{\\\"degree\\\":3,\\\"beats\\\":0.5},{\\\"degree\\\":3,\\\"beats\\\":0.5},{\\\"degree\\\":6,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":1}]\",\"instrument\":2,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":8,\"octave\":4,\"tempo\":200.95640842802823,\"swing\":0,\"brightness\":0.7658862797776237,\"decay\":0.3870401569525711,\"echo\":0.14584696078673004},\"generator\":\"generate_victory\",\"renderSeed\":0.30697509669698775},{\"synth\":\"Swarmr\",\"name\":\"Cast\",\"params\":{\"masterVolume\":0.5,\"seed\":0.30613830825313926,\"kind\":1,\"duration\":0.9231510508339852,\"count\":11,\"speed\":0.4047334777191281,\"cohesion\":0.6878651093691588,\"agitation\":0.24098247652873397,\"size\":0.05189488582545892,\"movement\":0.525420327251777,\"scatter\":0.2614950341172516},\"generator\":\"generate_cast\",\"renderSeed\":0.25797196570783854}]"
+    "sources": "[{\"synth\":\"Choirr\",\"name\":\"Win\",\"params\":{\"masterVolume\":0.5,\"seed\":0.7774851080030203,\"harmony\":1,\"duration\":1.8528298744000495,\"pitch\":0.3748701911000535,\"voices\":11,\"vowel\":0.40823200117331,\"detune\":0.21090133039280773,\"swell\":0.31867813031421977,\"breath\":0.0430747389420867,\"motion\":0.3386993056978099},\"generator\":\"generate_victory_chord\",\"renderSeed\":0.11306267837062478}]"
    },
-   "ingredients": "Jingles · Win × Swarms · Cast (start-aligned)",
-   "duration": 1.486077097505669,
-   "peak": 0.29740267992019653,
-   "rms": 0.0983157318243333,
-   "sha256": "1f8f9ce95ba459917f0d6489304f1991c36623b13976d021f558c8b16e65ff70"
+   "ingredients": "Choir · Win",
+   "duration": 1.7705215419501135,
+   "peak": 0.3782688081264496,
+   "rms": 0.09245999103393363,
+   "sha256": "bed6f527c79c539e6155deb4d93e97286d6b36cc3b8a9f4ee6a6f7f6b58cd129"
   },
   {
    "verb": "win",
@@ -1109,17 +1109,17 @@
    "file": "soundboard-win-4.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.7634675723966211,
-    "balance": 0.5,
+    "seed": 0.06726185278967023,
+    "balance": 0.30300223862286657,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Jinglr\",\"name\":\"Checkpoint\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5972659726597266,\"instrumentSeed\":36016,\"phrase\":\"[{\\\"degree\\\":-1,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":7,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":-1,\\\"beats\\\":1}]\",\"instrument\":4,\"key\":2,\"scale\":0,\"contour\":2,\"rhythm\":0,\"noteCount\":5,\"octave\":4,\"tempo\":123.56520504690707,\"swing\":0,\"brightness\":0.5543459192966111,\"decay\":0.4444385607726872,\"echo\":0.16062154090031983},\"generator\":\"generate_checkpoint\",\"renderSeed\":0.25343877519480884}]"
+    "sources": "[{\"synth\":\"Jinglr\",\"name\":\"Win\",\"params\":{\"masterVolume\":0.5,\"seed\":0.2989929899298993,\"instrumentSeed\":75391,\"phrase\":\"[{\\\"degree\\\":-1,\\\"beats\\\":0.5},{\\\"degree\\\":-1,\\\"beats\\\":0.5},{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":4,\\\"beats\\\":0.5},{\\\"degree\\\":5,\\\"beats\\\":0.5},{\\\"degree\\\":5,\\\"beats\\\":0.5},{\\\"degree\\\":6,\\\"beats\\\":1}]\",\"instrument\":1,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":7,\"octave\":5,\"tempo\":212.19267386943102,\"swing\":0,\"brightness\":0.7966693756636232,\"decay\":0.5473566536908038,\"echo\":0.17674839277751744},\"generator\":\"generate_victory\",\"renderSeed\":0.27871375577524304},{\"synth\":\"Swarmr\",\"name\":\"Cast\",\"params\":{\"masterVolume\":0.5,\"seed\":0.28608928876928985,\"kind\":1,\"duration\":0.9721857266500592,\"count\":12,\"speed\":0.694342170190066,\"cohesion\":0.6077275764662773,\"agitation\":0.1862886065617204,\"size\":0.19262037384323777,\"movement\":0.20596131884958596,\"scatter\":0.48033539615571497},\"generator\":\"generate_cast\",\"renderSeed\":0.9977747686207294}]"
    },
-   "ingredients": "Jingles · Checkpoint",
-   "duration": 1.5209070294784581,
-   "peak": 0.37889811396598816,
-   "rms": 0.08871621523283865,
-   "sha256": "368a45977c592e04b3bf1d77a0ca5d10d1fc2cf40a09668b1e28b41aba5787fa"
+   "ingredients": "Jingles · Win × Swarms · Cast (start-aligned)",
+   "duration": 1.2712925170068028,
+   "peak": 0.31183943152427673,
+   "rms": 0.08524456325946794,
+   "sha256": "854cecd428af1b68dfee8e9b9bff9698917f6718f5e95054021d54fbbaaf4cd1"
   },
   {
    "verb": "lose",
@@ -1133,13 +1133,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Choirr\",\"name\":\"Lose\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6688341591507196,\"harmony\":4,\"duration\":1.4895715110003949,\"pitch\":0.16739079643739385,\"voices\":7,\"vowel\":0.13536552439909427,\"detune\":0.6176764247007668,\"swell\":0.49676761333830655,\"breath\":0.162580609228462,\"motion\":0.22041148932185026},\"generator\":\"generate_lose\",\"renderSeed\":0.7214367606211454}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Lose\",\"params\":{\"masterVolume\":0.5,\"waveType\":3,\"duration\":0.8585213734349236,\"pitch\":{\"start\":0.6085307179950178,\"end\":0.2885307179950178,\"curve\":\"Linear\"},\"tone\":{\"start\":0.9,\"end\":0.6,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0.2,\"end\":0.2,\"curve\":\"Linear\"},\"level\":{\"start\":1,\"end\":0.5,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.2,\"resonance\":0.15,\"echo\":0.1,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_lose\",\"renderSeed\":0.5612711133435369}]"
    },
-   "ingredients": "Choir · Lose",
-   "duration": 1.364172335600907,
-   "peak": 0.32499614357948303,
-   "rms": 0.07368118879966658,
-   "sha256": "3ac76d39ae7b436af57355af6e312a5440e0dd7a36d782adef6a8b555e294310"
+   "ingredients": "Transfxr · Lose",
+   "duration": 0.9287981859410431,
+   "peak": 0.3567088544368744,
+   "rms": 0.1883293369115184,
+   "sha256": "7c43584c07dbb31eb9901b7c054004e8d323603a9b6bbd92805ee37d24d64e41"
   },
   {
    "verb": "lose",
@@ -1169,17 +1169,17 @@
    "file": "soundboard-lose-3.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.06562637654133141,
+    "seed": 0.8049771834630519,
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Riftr\",\"name\":\"Lose\",\"params\":{\"masterVolume\":0.5,\"seed\":0.27985598845407367,\"excitation\":0,\"duration\":1.744440875435248,\"pitch\":0.3895063893869519,\"bend\":-0.7322164488490671,\"space\":0.4868875213898718,\"feedback\":0.8115774963749572,\"dispersion\":0.5936656351201236,\"motion\":0.29488140428438786,\"field\":0.8892789766425266,\"reverse\":0.06455511173699051},\"generator\":\"generate_lose\",\"renderSeed\":0.47508484311401844}]"
+    "sources": "[{\"synth\":\"Glitchr\",\"name\":\"Lose\",\"params\":{\"masterVolume\":0.5,\"seed\":0.841157364891842,\"duration\":1.1158273151144384,\"pitch\":0.4364203101955354,\"fragment\":0.3621330029331148,\"repeat\":0.3150138164870441,\"chaos\":0.7769589367089793,\"dropout\":0.2618075088365004,\"crush\":0.4997862326912582,\"rate\":0.3720014188904315,\"mode\":5},\"generator\":\"generate_lose\",\"renderSeed\":0.1640145001001656}]"
    },
-   "ingredients": "Sonar · Lose",
-   "duration": 1.7066666666666668,
-   "peak": 0.44999998807907104,
-   "rms": 0.053316821383669534,
-   "sha256": "64aa19dc08bc3a538cb402be316c71f5e5cecd0e0ac3eaa7d11aa228440ce99c"
+   "ingredients": "Glitches · Lose",
+   "duration": 1.1087528344671203,
+   "peak": 0.2549280524253845,
+   "rms": 0.051666290396933434,
+   "sha256": "e0eba5d4e04d446649b543616f79fd6b4632ab9265ade7d354d4dbe05b931939"
   },
   {
    "verb": "lose",
@@ -1193,13 +1193,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Pluckr\",\"name\":\"Lose\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9169472057837993,\"material\":3,\"duration\":0.7863592902198433,\"pitch\":0.21857420066371563,\"strings\":3,\"damping\":0.215516302944161,\"brightness\":0.6003953190520406,\"pluck\":0.6763910562498495,\"coupling\":0.7846651543863118,\"strum\":0.32976115606725215,\"tremolo\":0,\"vibrato\":0,\"tremoloRate\":4,\"inharmonic\":0.8255250098183751},\"generator\":\"generate_lose\",\"renderSeed\":0.80304897390306}]"
+    "sources": "[{\"synth\":\"Breathr\",\"name\":\"Lose\",\"params\":{\"masterVolume\":0.5,\"seed\":0.7693303087726235,\"source\":0,\"mode\":0,\"duration\":0.6986963316798209,\"direction\":0.9883908381685614,\"cycles\":1,\"effort\":0.34881183388642967,\"inhale\":0.42,\"hold\":0.04,\"throat\":0.552889646764379,\"rasp\":0.13765434659086168,\"flutter\":0.2602767233364284,\"space\":0.12351236919639631},\"generator\":\"generate_lose\",\"renderSeed\":0.0744028901681304}]"
    },
-   "ingredients": "Plucked · Lose",
-   "duration": 0.23219954648526078,
-   "peak": 0.09198537468910217,
-   "rms": 0.00891628592430944,
-   "sha256": "77203c56ba9331ea6e0c935854d205de78ae56ebf84e8c6d71af18383010c11a"
+   "ingredients": "Breath · Lose",
+   "duration": 0.6965986394557823,
+   "peak": 0.4163709580898285,
+   "rms": 0.12047441937847969,
+   "sha256": "028ae6a8f23e301cfbf5fdd6f28d2cea7aaeeabc59fd51045889a2e2b7069215"
   },
   {
    "verb": "break",
@@ -1213,13 +1213,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Clonkr\",\"name\":\"Break\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5996773445513099,\"material\":3,\"action\":2,\"size\":0.30331909918924793,\"hollowness\":0.19811822866322476,\"hardness\":0.9853742229752243,\"damping\":0.7095750905573368,\"duration\":0.16515152561478316},\"generator\":\"generate_break\",\"renderSeed\":0.02606971887871623}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Break\",\"params\":{\"masterVolume\":0.5,\"waveType\":0,\"duration\":0.08861750890268012,\"pitch\":{\"start\":0.6046604309824761,\"end\":0.4046604309824761,\"curve\":\"Ease Out\"},\"tone\":{\"start\":1,\"end\":0.6,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.06,\"resonance\":0.15,\"echo\":0,\"waveTo\":7,\"morph\":{\"start\":0.5,\"end\":0.2,\"curve\":\"Linear\"}},\"generator\":\"generate_verb_break\",\"renderSeed\":0.941496891900897}]"
    },
-   "ingredients": "Tangs · Break",
-   "duration": 0.2438095238095238,
-   "peak": 0.43110403418540955,
-   "rms": 0.08793808261853991,
-   "sha256": "38027181c54c1f3960d5cb1c11c18354cf6d014672ef1e5decfa1a83e78dbc5b"
+   "ingredients": "Transfxr · Break",
+   "duration": 0.08126984126984127,
+   "peak": 0.34150204062461853,
+   "rms": 0.11522803992625312,
+   "sha256": "f7e9d8ff8282853276c131b690a3b7844fdb748ba0a0113e9beebf08f6d470ac"
   },
   {
    "verb": "break",
@@ -1249,17 +1249,17 @@
    "file": "soundboard-break-3.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.0023166262544691563,
+    "seed": 0.8480996855068952,
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Rustlr\",\"name\":\"Wrapper\",\"params\":{\"masterVolume\":0.5,\"seed\":0.10318692796863616,\"material\":4,\"gesture\":3,\"duration\":0.7725613697106019,\"grain\":0.1878984432388097,\"density\":0.47311995609197766,\"motion\":0.09762268750928343,\"pressure\":0.6451589089399203,\"folds\":5,\"brightness\":0.6569349884684198},\"generator\":\"generate_wrapper\",\"renderSeed\":0.9837087432388216}]"
+    "sources": "[{\"synth\":\"Clonkr\",\"name\":\"Break\",\"params\":{\"masterVolume\":0.5,\"seed\":0.242423627525568,\"material\":1,\"action\":2,\"size\":0.12502085425890982,\"hollowness\":0.22814924583071844,\"hardness\":0.9655799411702901,\"damping\":0.8378803004510701,\"duration\":0.4028699470683933},\"generator\":\"generate_break\",\"renderSeed\":0.6369838491082191}]"
    },
-   "ingredients": "Rustler · Wrapper",
-   "duration": 0.7256235827664399,
-   "peak": 0.3127041757106781,
-   "rms": 0.024918133559474035,
-   "sha256": "0f40a3a305c8f5c73d1d3bf743ca6e45559ac0a847eb2f22cf5af2e46196d4d6"
+   "ingredients": "Tangs · Break",
+   "duration": 0.5224489795918368,
+   "peak": 0.3401409089565277,
+   "rms": 0.07306535436442427,
+   "sha256": "ab13a3f78fea8c51dbbc93ce83e384cc7c3f11381072f3bdeb1b46c049633262"
   },
   {
    "verb": "break",
@@ -1290,16 +1290,16 @@
    "params": {
     "masterVolume": 0.5,
     "seed": 0.01089720195159316,
-    "balance": 0.48862640064908197,
-    "align": 0,
+    "balance": 0.5171933742822148,
+    "align": 2,
     "offset": 0,
-    "sources": "[{\"synth\":\"Clonkr\",\"name\":\"Door\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8445942148100585,\"material\":0,\"action\":1,\"size\":0.8659868195652962,\"hollowness\":0.5870501544908621,\"hardness\":0.496144956536591,\"damping\":0.5633347116876393,\"duration\":0.4328197849914432},\"generator\":\"generate_door\",\"renderSeed\":0.4151731366291642},{\"synth\":\"Boomr\",\"name\":\"Land\",\"params\":{\"masterVolume\":0.5,\"seed\":0.04136829171329737,\"duration\":0.33193228342570363,\"size\":0.6434967449866236,\"pressure\":0.898236051411368,\"blast\":0.15105274920351802,\"debris\":0.33628893774002794,\"gas\":0,\"aftershock\":0.046575931226834656,\"rubbleSize\":0.9050370002165437,\"spread\":0.39821130465716126,\"tail\":0.29532229047035796,\"muffle\":0.3194111054763198,\"mechanism\":3,\"space\":0.06579703339375556},\"generator\":\"generate_land\",\"renderSeed\":0.21186660276725888}]"
+    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Door\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8445942148100585,\"duration\":0.5013223023852333,\"size\":0.8397531621158123,\"air\":0.9106578797101975,\"whistle\":0.02901671816362068,\"movement\":0.2471087174024433,\"focus\":0.46333471168763934,\"flutter\":0.06367491041310132},\"generator\":\"generate_door\",\"renderSeed\":0.4151731366291642},{\"synth\":\"Clonkr\",\"name\":\"Hit\",\"params\":{\"masterVolume\":0.5,\"seed\":0.7625925005413592,\"material\":0,\"action\":0,\"size\":0.3434967449866235,\"hollowness\":0.3473540771170519,\"hardness\":0.7616843987256289,\"damping\":0.704433406610042,\"duration\":0.19685028652427716},\"generator\":\"generate_hit\",\"renderSeed\":0.9940376821905375}]"
    },
-   "ingredients": "Tangs · Door × Boomer · Land (start-aligned)",
-   "duration": 0.49342403628117915,
-   "peak": 0.3642135262489319,
-   "rms": 0.07164009142977212,
-   "sha256": "98f9f6096eb2fb142c4c0e413edb19c3f5b4a9b1bb90303804834579282dec53"
+   "ingredients": "Whoosh · Door × Tangs · Hit (tail-aligned)",
+   "duration": 0.37151927437641724,
+   "peak": 0.21123459935188293,
+   "rms": 0.039264398712710084,
+   "sha256": "1ee0506001c089cf1586eafd897e35d95071d97f2dd4967f2b06d51592f788a8"
   },
   {
    "verb": "door",
@@ -1309,17 +1309,17 @@
    "file": "soundboard-door-2.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.24936476768925786,
-    "balance": 0.4681319907307625,
-    "align": 2,
+    "seed": 0.7610102156177163,
+    "balance": 0.5,
+    "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Machinr\",\"name\":\"Door\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6482398901134729,\"mechanism\":7,\"duration\":1.148734953138046,\"speed\":0.4564264169894159,\"load\":0.5001468185568229,\"roughness\":0.5423480390571058,\"looseness\":0.33547890156041826,\"size\":0.5907664330443367,\"startTime\":0.19245188486529513,\"stopTime\":0.06429351872764527},\"generator\":\"generate_door\",\"renderSeed\":0.07746375375427306},{\"synth\":\"Clonkr\",\"name\":\"Hit\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6285949901212007,\"material\":0,\"action\":0,\"size\":0.4724185787141323,\"hollowness\":0.06229786588810385,\"hardness\":0.8418993229046464,\"damping\":0.6894793567829766,\"duration\":0.35692694791825486},\"generator\":\"generate_hit\",\"renderSeed\":0.5819329388905317}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Door\",\"params\":{\"masterVolume\":0.5,\"waveType\":7,\"duration\":0.551189537756145,\"pitch\":{\"start\":0.47816309859394096,\"end\":0.47816309859394096,\"curve\":\"Linear\"},\"tone\":{\"start\":0.9,\"end\":0.3,\"curve\":\"Ease Out\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.8,\"end\":1,\"curve\":\"Steps\"},\"attack\":0.02,\"release\":0.1,\"resonance\":0.3,\"echo\":0.05,\"waveTo\":1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Steps\"}},\"generator\":\"generate_verb_door\",\"renderSeed\":0.7127575227059424}]"
    },
-   "ingredients": "Motors · Door × Tangs · Hit (tail-aligned)",
-   "duration": 1.1377777777777778,
-   "peak": 0.23753604292869568,
-   "rms": 0.04186850685420482,
-   "sha256": "e111f81ad4615a2551a01ee29a6f9bc737e66496b195c1e705fe6799321aab13"
+   "ingredients": "Transfxr · Door",
+   "duration": 0.603718820861678,
+   "peak": 0.3547656238079071,
+   "rms": 0.15993651303605214,
+   "sha256": "b4b638aafb2a8816f968b465fdc13a3d5aa93b2ec5f56de058e54ba9ec230d35"
   },
   {
    "verb": "door",
@@ -1333,13 +1333,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Clonkr\",\"name\":\"Door\",\"params\":{\"masterVolume\":0.5,\"seed\":0.32638565404340625,\"material\":2,\"action\":0,\"size\":0.7960613577859476,\"hollowness\":0.5256274376064539,\"hardness\":0.31369742015376684,\"damping\":0.49630445132497697,\"duration\":0.752638799790293},\"generator\":\"generate_door\",\"renderSeed\":0.32005181489512324}]"
+    "sources": "[{\"synth\":\"Clonkr\",\"name\":\"Door\",\"params\":{\"masterVolume\":0.5,\"seed\":0.32638565404340625,\"material\":4,\"action\":1,\"size\":0.8980306788929738,\"hollowness\":0.6227799445390702,\"hardness\":0.11027306511532516,\"damping\":0.696304451324977,\"duration\":0.7938656664919108},\"generator\":\"generate_door\",\"renderSeed\":0.32005181489512324}]"
    },
    "ingredients": "Tangs · Door",
-   "duration": 1.1319727891156464,
-   "peak": 0.3862472176551819,
-   "rms": 0.07538307396782497,
-   "sha256": "43ebb770ba96c02daeef4e4b96012911c22b4ec9b66daf9c4051cf4290a5abd2"
+   "duration": 0.8649433106575963,
+   "peak": 0.4053432047367096,
+   "rms": 0.10797551690586464,
+   "sha256": "9f83cccdfca4a88ec99e5c911509c113bdbd79ad1755c1c1aba7261b8220dc50"
   },
   {
    "verb": "door",
@@ -1353,13 +1353,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Riftr\",\"name\":\"Warp\",\"params\":{\"masterVolume\":0.5,\"seed\":0.44292525853961706,\"excitation\":3,\"duration\":1.3902851096121593,\"pitch\":0.4899001746438444,\"bend\":-0.1847783025354146,\"space\":0.555433203279972,\"feedback\":0.6117156624794007,\"dispersion\":0.5320646190550178,\"motion\":0.37770101944915957,\"field\":0.803658162523061,\"reverse\":0.342544307699427},\"generator\":\"generate_warp\",\"renderSeed\":0.34542545839212835}]"
+    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Door\",\"params\":{\"masterVolume\":0.5,\"seed\":0.29616836574859917,\"duration\":0.892061018140521,\"size\":0.8237400398589672,\"air\":0.8359600698575378,\"whistle\":0.04830203413730487,\"movement\":0.31325992196798325,\"focus\":0.28378674685955046,\"flutter\":0.14669359127292408},\"generator\":\"generate_door\",\"renderSeed\":0.7591454063076526}]"
    },
-   "ingredients": "Sonar · Warp",
-   "duration": 1.3873922902494331,
-   "peak": 0.44999998807907104,
-   "rms": 0.05585655275218123,
-   "sha256": "8236e85ce3732f6cdf1e4053f309b3f115f31ae955a9768dc5710b8bb53a3919"
+   "ingredients": "Whoosh · Door",
+   "duration": 0.7314285714285714,
+   "peak": 0.36368417739868164,
+   "rms": 0.07497136981991943,
+   "sha256": "87f4780e2bfa882c1cc315258e4e70eebe2ff3ee4034ea42303f5225b11d32cd"
   },
   {
    "verb": "blip",
@@ -1393,13 +1393,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Tappr\",\"name\":\"Focus\",\"params\":{\"masterVolume\":0.5,\"seed\":0.7687258357182145,\"material\":1,\"duration\":0.09281141817802563,\"size\":0.469037940481212,\"hardness\":0.2742010419396683,\"body\":0.1312400579173118,\"release\":0,\"gap\":0.1618500567274168,\"electronic\":0.05485852889716626,\"sweep\":0.048733507916331284,\"air\":0.011000521557871252,\"damping\":0.9386894553899765},\"generator\":\"generate_focus\",\"renderSeed\":0.6672824954148382}]"
+    "sources": "[{\"synth\":\"Tappr\",\"name\":\"Select\",\"params\":{\"masterVolume\":0.5,\"seed\":0.7687258357182145,\"material\":2,\"duration\":0.1572202989831567,\"size\":0.319037940481212,\"hardness\":0.5848196026450023,\"body\":0.3268600868759677,\"release\":0,\"gap\":0.25308342787902804,\"electronic\":0.1097799338400364,\"sweep\":0.35114610611926766,\"air\":0.01466736207716167,\"damping\":0.8141652375459671},\"generator\":\"generate_select\",\"renderSeed\":0.6672824954148382}]"
    },
-   "ingredients": "Tappr · Focus",
-   "duration": 0.017414965986394557,
-   "peak": 0.19428952038288116,
-   "rms": 0.020835651873806347,
-   "sha256": "d88e393537258b6438e480e484c2562f6937689498841755bdd4c7d03104f12f"
+   "ingredients": "Tappr · Select",
+   "duration": 0.034829931972789115,
+   "peak": 0.34876054525375366,
+   "rms": 0.04378795715999936,
+   "sha256": "62d7777292040b0215c126ba7fb695e354895bff2cc1abcb4275c611e4d94116"
   },
   {
    "verb": "blip",
@@ -1409,17 +1409,17 @@
    "file": "soundboard-blip-3.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.09828600194305182,
+    "seed": 0.09575299033895135,
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Pluckr\",\"name\":\"Blip\",\"params\":{\"masterVolume\":0.5,\"seed\":0.23222152306698263,\"material\":1,\"duration\":0.15,\"pitch\":0.765413545561023,\"strings\":1,\"damping\":0.8979436899418942,\"brightness\":0.4608947233296931,\"pluck\":0.3871499132597819,\"coupling\":0,\"strum\":0,\"tremolo\":0,\"vibrato\":0,\"tremoloRate\":4,\"inharmonic\":0.046831944165751344},\"generator\":\"generate_blip\",\"renderSeed\":0.9956697919405997}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Blip\",\"params\":{\"masterVolume\":0.5,\"waveType\":11,\"duration\":0.12006299330480395,\"pitch\":{\"start\":0.8396915032353718,\"end\":0.8396915032353718,\"curve\":\"Linear\"},\"tone\":{\"start\":1,\"end\":0.9,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.1,\"resonance\":0.15,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_blip\",\"renderSeed\":0.1944254490081221}]"
    },
-   "ingredients": "Plucked · Blip",
-   "duration": 0.14512471655328799,
-   "peak": 0.17262448370456696,
-   "rms": 0.02573521641891308,
-   "sha256": "a08a30cb3ccb01216f0f80b660fd46df57c76ec946ac801d7b1678186a6ebd6a"
+   "ingredients": "Transfxr · Blip",
+   "duration": 0.10448979591836735,
+   "peak": 0.34458044171333313,
+   "rms": 0.10494059273917594,
+   "sha256": "cc998fdcaaf08493df623f9f1d8c8796bbce9ae1ef79567f154c9317e6de203c"
   },
   {
    "verb": "blip",
@@ -1433,13 +1433,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Clonkr\",\"name\":\"Blip\",\"params\":{\"masterVolume\":0.5,\"seed\":0.20631381659768522,\"material\":1,\"action\":0,\"size\":0.05836220304248854,\"hollowness\":0.17048855137545615,\"hardness\":0.9350704704644158,\"damping\":0.6300721624051221,\"duration\":0.14487025782000273},\"generator\":\"generate_blip\",\"renderSeed\":0.9588880406226963}]"
+    "sources": "[{\"synth\":\"Glitchr\",\"name\":\"Blip\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9563469551503658,\"duration\":0.10950938695576042,\"pitch\":0.6273180685006082,\"fragment\":0.19178411744069307,\"repeat\":0.6343681856058537,\"chaos\":0.1346107734600082,\"dropout\":0,\"crush\":0.061894144979305565,\"rate\":0.19177760812453926,\"mode\":6},\"generator\":\"generate_blip\",\"renderSeed\":0.7708466402254999}]"
    },
-   "ingredients": "Tangs · Blip",
-   "duration": 0.18575963718820862,
-   "peak": 0.28443142771720886,
-   "rms": 0.04216577666495323,
-   "sha256": "944c4238b916ca06e73cddaab474912f753f3901d7a2b4273b2b7b4f894d71b2"
+   "ingredients": "Glitches · Blip",
+   "duration": 0.11029478458049886,
+   "peak": 0.22135232388973236,
+   "rms": 0.08282678766674852,
+   "sha256": "daa62fdd44bada03fea9d871c7560fa4b983c7d3e466cbf23132e0ed4ed236bc"
   },
   {
    "verb": "confirm",
@@ -1453,13 +1453,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Machinr\",\"name\":\"Confirm\",\"params\":{\"masterVolume\":0.5,\"seed\":0.7033306523226202,\"mechanism\":2,\"duration\":0.22440725237131118,\"speed\":0.9743485574610531,\"load\":0.10139594967477024,\"roughness\":0.047275038063526155,\"looseness\":0.10572496540844441,\"size\":0.2723434528103098,\"startTime\":0.0021992384986951946,\"stopTime\":0.04099618054926395},\"generator\":\"generate_confirm\",\"renderSeed\":0.5572635310236365}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Confirm\",\"params\":{\"masterVolume\":0.5,\"waveType\":3,\"duration\":0.13175634636357428,\"pitch\":{\"start\":0.568652283619158,\"end\":0.798652283619158,\"curve\":\"Ease Out\"},\"tone\":{\"start\":1,\"end\":1,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0.5,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.05,\"resonance\":0.15,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_confirm\",\"renderSeed\":0.47275038063526154}]"
    },
-   "ingredients": "Motors · Confirm",
-   "duration": 0.09287981859410431,
-   "peak": 0.45389312505722046,
-   "rms": 0.08267484665661298,
-   "sha256": "44f1917bb8b1b6b556403750f71a22d3c108ea201dbf7dc80145c1fb40a7ad17"
+   "ingredients": "Transfxr · Confirm",
+   "duration": 0.12770975056689343,
+   "peak": 0.35241907835006714,
+   "rms": 0.24839075908404903,
+   "sha256": "f0a6a846457c48f41115cbf2be5ce55592a199727097284b282df1671151b1b4"
   },
   {
    "verb": "confirm",
@@ -1493,13 +1493,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Rustlr\",\"name\":\"Confirm\",\"params\":{\"masterVolume\":0.5,\"seed\":0.2734423130750656,\"material\":0,\"gesture\":0,\"duration\":0.15153244799003004,\"grain\":0.3159319999068975,\"density\":0.5809610074386,\"motion\":-0.032258634967729405,\"pressure\":0.4282827912364155,\"folds\":2,\"brightness\":0.7486474036192521},\"generator\":\"generate_confirm\",\"renderSeed\":0.5126236921641976}]"
+    "sources": "[{\"synth\":\"Tappr\",\"name\":\"Panel Open\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6542731369845569,\"material\":3,\"duration\":0.34258045501075685,\"size\":0.40784508573822675,\"hardness\":0.4678714237874374,\"body\":0.6217186944186688,\"release\":0,\"gap\":0.6402359633147717,\"electronic\":0.23790344919776543,\"sweep\":0.4051081599667668,\"air\":0.6357341665308922,\"damping\":0.6551447278354317},\"generator\":\"generate_panel_open\",\"renderSeed\":0.8170379407238215}]"
    },
-   "ingredients": "Rustler · Confirm",
-   "duration": 0.12770975056689343,
-   "peak": 0.1197756752371788,
-   "rms": 0.01564201538165768,
-   "sha256": "8879996866932053d7218a66e7f59bad0855b0611e61e895afcf1ed9f466566f"
+   "ingredients": "Tappr · Panel Open",
+   "duration": 0.3076643990929705,
+   "peak": 0.35311082005500793,
+   "rms": 0.049280871551180536,
+   "sha256": "ad484ac1246bf5335e7f8e5d6131a7f3edfbdaddc46134a96c531dc3bea666e0"
   },
   {
    "verb": "confirm",
@@ -1509,17 +1509,17 @@
    "file": "soundboard-confirm-4.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.731048277579248,
+    "seed": 0.6072789123281837,
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Jinglr\",\"name\":\"Confirm\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5739457394573946,\"instrumentSeed\":15737,\"phrase\":\"[{\\\"degree\\\":-1,\\\"beats\\\":0.5},{\\\"degree\\\":3,\\\"beats\\\":1}]\",\"instrument\":1,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":2,\"octave\":5,\"tempo\":219.86884215846658,\"swing\":0,\"brightness\":0.724308221694082,\"decay\":0.15719698276370764,\"echo\":0},\"generator\":\"generate_confirm\",\"renderSeed\":0.6785398651845753}]"
+    "sources": "[{\"synth\":\"Jinglr\",\"name\":\"Confirm\",\"params\":{\"masterVolume\":0.5,\"seed\":0.0969709697096971,\"instrumentSeed\":8228,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":5,\\\"beats\\\":1}]\",\"instrument\":6,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":2,\"octave\":4,\"tempo\":202.70819021388888,\"swing\":0,\"brightness\":0.3720145791769027,\"decay\":0.14863245587795973,\"echo\":0},\"generator\":\"generate_confirm\",\"renderSeed\":0.294960719300434}]"
    },
    "ingredients": "Jingles · Confirm",
-   "duration": 0.34249433106575966,
-   "peak": 0.41045597195625305,
-   "rms": 0.1335069663156278,
-   "sha256": "2b4707bf3244d0629cf2795130de5883a2e70fbe6667fd8d88d73ab3adaad6ef"
+   "duration": 0.3076643990929705,
+   "peak": 0.30831947922706604,
+   "rms": 0.11021827787368034,
+   "sha256": "a83cf71bf28ccfc939580dd659e9e7d9d68e50fdcde990c6d633da92be423861"
   },
   {
    "verb": "alert",
@@ -1533,13 +1533,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Signlr\",\"name\":\"Alert\",\"params\":{\"masterVolume\":0.5,\"seed\":0.789589223684743,\"encoding\":4,\"duration\":0.8854113085195422,\"carrier\":0.505551201000344,\"deviation\":0.1818700117524713,\"symbols\":0.11950848829001189,\"packets\":2,\"gap\":0.5453441851772367,\"drift\":0.09904380866792052,\"corruption\":0,\"interference\":0.05750890003982931,\"echo\":0.05664167879149318},\"generator\":\"generate_alert\",\"renderSeed\":0.9203501571901143}]"
+    "sources": "[{\"synth\":\"Jinglr\",\"name\":\"Denied\",\"params\":{\"masterVolume\":0.5,\"seed\":0.34754347543475433,\"instrumentSeed\":62064,\"phrase\":\"[{\\\"degree\\\":8,\\\"beats\\\":0.75},{\\\"degree\\\":0,\\\"beats\\\":1}]\",\"instrument\":6,\"key\":0,\"scale\":1,\"contour\":1,\"rhythm\":1,\"noteCount\":2,\"octave\":3,\"tempo\":216.1803769506514,\"swing\":0,\"brightness\":0.2088819216005504,\"decay\":0.04602280517108739,\"echo\":0},\"generator\":\"generate_denied\",\"renderSeed\":0.8178139505907893}]"
    },
-   "ingredients": "Signal · Alert",
-   "duration": 0.8881632653061224,
-   "peak": 0.2994653880596161,
-   "rms": 0.10484411088215675,
-   "sha256": "f4415b52846a29d22360af50a205c7ba0c053ded0bc97870296455feb830fef2"
+   "ingredients": "Jingles · Denied",
+   "duration": 0.37151927437641724,
+   "peak": 0.29465386271476746,
+   "rms": 0.11088144166988845,
+   "sha256": "38b4c3cd3991829678432015dc8c5622689ebc23407a7639ef67b534b0e44acf"
   },
   {
    "verb": "alert",
@@ -1553,13 +1553,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Zappr\",\"name\":\"Alert\",\"params\":{\"masterVolume\":0.5,\"seed\":0.1139983250759542,\"duration\":0.6929124232381583,\"voltage\":0.4395369708538055,\"arcs\":9,\"branching\":0.48315578568726775,\"crackle\":0.8482232271693647,\"hum\":0.4947049786802381,\"spark\":0.8518227877095341,\"spread\":0.5337217490654439,\"decay\":0.2432546115014702},\"generator\":\"generate_alert\",\"renderSeed\":0.299160493304953}]"
+    "sources": "[{\"synth\":\"Signlr\",\"name\":\"Alert\",\"params\":{\"masterVolume\":0.5,\"seed\":0.299160493304953,\"encoding\":4,\"duration\":0.6093054562807083,\"carrier\":0.6987901898683049,\"deviation\":0.21447236605454234,\"symbols\":0.17411161358468236,\"packets\":4,\"gap\":0.4888670907821506,\"drift\":0.08023304943926632,\"corruption\":0,\"interference\":0.14494095862610265,\"echo\":0.022799665015190842},\"generator\":\"generate_alert\",\"renderSeed\":0.18855489674024284}]"
    },
-   "ingredients": "Zapper · Alert",
-   "duration": 0.6907936507936508,
-   "peak": 0.4012826383113861,
-   "rms": 0.07914440387198197,
-   "sha256": "8743cb4351dc0c5f6d1d761a45a76fff65456f71a9d772dac18cd47992c57f32"
+   "ingredients": "Signal · Alert",
+   "duration": 0.6095238095238096,
+   "peak": 0.4016067385673523,
+   "rms": 0.16342925374642678,
+   "sha256": "4bddfe315a4892a93a472f324352cc7d6c44e2c6c56e414171a0c7e039ae3654"
   },
   {
    "verb": "alert",
@@ -1589,17 +1589,17 @@
    "file": "soundboard-alert-4.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.555435316869989,
+    "seed": 0.3310940540395677,
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Birdr\",\"name\":\"Alert\",\"params\":{\"masterVolume\":0.5,\"seed\":0.015351518522948027,\"voice\":3,\"duration\":0.404450817592442,\"pitch\":0.5084934061276727,\"syllables\":3,\"gap\":0.25905393040739,\"sweep\":-0.49251595730893316,\"arch\":0.6036274076439441,\"trill\":0.14814093532040717,\"trill_rate\":0.4,\"duet\":0.11843475431669503,\"rasp\":0.4313161572325043,\"breath\":0.19859606189420448,\"rhythm\":0.12,\"variation\":0.25},\"generator\":\"generate_alert\",\"renderSeed\":0.8900471145752817}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Alert\",\"params\":{\"masterVolume\":0.5,\"waveType\":3,\"duration\":0.8446911431383342,\"pitch\":{\"start\":0.7855502872145735,\"end\":0.7855502872145735,\"curve\":\"Linear\"},\"tone\":{\"start\":1,\"end\":1,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":1,\"curve\":\"Pulse\"},\"attack\":0,\"release\":0.02,\"resonance\":0.15,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_alert\",\"renderSeed\":0.4797118071001023}]"
    },
-   "ingredients": "Bird · Alert",
-   "duration": 0.37151927437641724,
-   "peak": 0.4099687337875366,
-   "rms": 0.15699427330328947,
-   "sha256": "0eef5039edf2be56a598c8265e117b222c455faedb21d00bc13b344f28c97113"
+   "ingredients": "Transfxr · Alert",
+   "duration": 0.8475283446712019,
+   "peak": 0.355475515127182,
+   "rms": 0.327019408325596,
+   "sha256": "aeefa7ee50263a159000cfb048c07d3cab360f648c56e71ac6733581cf8bab74"
   },
   {
    "verb": "cast",
@@ -1613,13 +1613,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Riftr\",\"name\":\"Cast\",\"params\":{\"masterVolume\":0.5,\"seed\":0.18807862023822963,\"excitation\":4,\"duration\":1.1994808372110128,\"pitch\":0.6941252810414881,\"bend\":0.4127834810176864,\"space\":0.2968606503680349,\"feedback\":0.6657458106987179,\"dispersion\":0.5928792941384018,\"motion\":0.5881983813364059,\"field\":0.7152473088353872,\"reverse\":0.0430558102671057},\"generator\":\"generate_cast\",\"renderSeed\":0.5045549580827355}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Cast\",\"params\":{\"masterVolume\":0.5,\"waveType\":2,\"duration\":1.0176501124165953,\"pitch\":{\"start\":0.4089766376744956,\"end\":0.6689766376744956,\"curve\":\"Pulse\"},\"tone\":{\"start\":0.5,\"end\":0.95,\"curve\":\"Pulse\"},\"vibrato\":{\"start\":0.6,\"end\":0.6,\"curve\":\"Linear\"},\"level\":{\"start\":0.6,\"end\":0.9,\"curve\":\"Linear\"},\"attack\":0.15,\"release\":0.4,\"resonance\":0.6,\"echo\":0.3,\"waveTo\":7,\"morph\":{\"start\":0.3,\"end\":0.7,\"curve\":\"Pulse\"}},\"generator\":\"generate_verb_cast\",\"renderSeed\":0.30397640145383775}]"
    },
-   "ingredients": "Sonar · Cast",
-   "duration": 1.1609977324263039,
-   "peak": 0.44999998807907104,
-   "rms": 0.0891464588012095,
-   "sha256": "93470a49179270c9c4e31fc0d510b60f1eba18e917877b535e4c65625ca8702b"
+   "ingredients": "Transfxr · Cast",
+   "duration": 1.2132426303854875,
+   "peak": 0.3389052450656891,
+   "rms": 0.09637272428941973,
+   "sha256": "92ed1df90569863128ae38fb43b069b0be8b83ca32c99d8f8651e394489d4c60"
   },
   {
    "verb": "cast",
@@ -1633,13 +1633,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Fractr\",\"name\":\"Cast\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8750376938842237,\"material\":2,\"duration\":0.9588873455533757,\"fragments\":15,\"fragmentSize\":0.13350099246017635,\"spread\":0.17524210233241322,\"decay\":0.6387517337687313,\"gravity\":0.3127536217682064,\"bounce\":0.4834047322859988,\"stress\":0.21143193580210212,\"shards\":0.6681519224308431,\"fracture\":0.5692341868765652},\"generator\":\"generate_cast\",\"renderSeed\":0.01757825375534594}]"
+    "sources": "[{\"synth\":\"Choirr\",\"name\":\"Cast\",\"params\":{\"masterVolume\":0.5,\"seed\":0.42308546719141304,\"harmony\":3,\"duration\":1.3940362189896405,\"pitch\":0.6335009924601763,\"voices\":6,\"vowel\":0.5387517337687313,\"detune\":0.5836714956909418,\"swell\":0.5778729763813317,\"breath\":0.1710739518515766,\"motion\":0.5681519224308431},\"generator\":\"generate_cast\",\"renderSeed\":0.8750376938842237}]"
    },
-   "ingredients": "Cracker · Cast",
-   "duration": 0.9520181405895691,
-   "peak": 0.3970358073711395,
-   "rms": 0.09172407185422236,
-   "sha256": "4a870e3ea4a5d9a73a18449d627e4100372f1cde4259150dfcd6e97b989aabcf"
+   "ingredients": "Choir · Cast",
+   "duration": 1.2190476190476192,
+   "peak": 0.35702893137931824,
+   "rms": 0.09757508185888145,
+   "sha256": "a9ce8b45451bfcb186a9c87ec7aeff8b76c0292ed4533caf36dd39d90c722e46"
   },
   {
    "verb": "cast",
@@ -1669,17 +1669,17 @@
    "file": "soundboard-cast-4.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.8632326018996537,
+    "seed": 0.35708564845845103,
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Zappr\",\"name\":\"Cast\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6973986504599452,\"duration\":0.640656795236282,\"voltage\":0.6489066001027822,\"arcs\":7,\"branching\":0.7445852344855666,\"crackle\":0.04491568029625341,\"hum\":0.03824033096432686,\"spark\":0.16204748512245715,\"spread\":0.5536109703592956,\"decay\":0.5125391742447392},\"generator\":\"generate_cast\",\"renderSeed\":0.5475194223690778}]"
+    "sources": "[{\"synth\":\"Riftr\",\"name\":\"Cast\",\"params\":{\"masterVolume\":0.5,\"seed\":0.7280806107446551,\"excitation\":4,\"duration\":0.9200552175752819,\"pitch\":0.8446436405414716,\"bend\":0.28135604979470374,\"space\":0.2763785529881716,\"feedback\":0.4150298675522208,\"dispersion\":0.5356752343475819,\"motion\":0.4869593996554613,\"field\":0.7807233231142163,\"reverse\":0.1669472934678197},\"generator\":\"generate_cast\",\"renderSeed\":0.5935063324868679}]"
    },
-   "ingredients": "Zapper · Cast",
-   "duration": 0.6385487528344671,
-   "peak": 0.40513691306114197,
-   "rms": 0.0891551566919736,
-   "sha256": "22a88502cdc1b026027191d023e65fb1fc9a859aa9daab470c959fdf931a11e1"
+   "ingredients": "Sonar · Cast",
+   "duration": 0.9171882086167801,
+   "peak": 0.44999998807907104,
+   "rms": 0.08180664751806074,
+   "sha256": "f30d47c487c07159bd5bd4576f325545d7bf02a98145a808e93c4fca5078eba3"
   },
   {
    "verb": "warp",
@@ -1693,13 +1693,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Signlr\",\"name\":\"Warp\",\"params\":{\"masterVolume\":0.5,\"seed\":0.594351032981649,\"encoding\":2,\"duration\":0.9310583040583879,\"carrier\":0.4185847320244648,\"deviation\":0.7468691955786199,\"symbols\":0.280888254288584,\"packets\":3,\"gap\":0.37477537717204545,\"drift\":0.5484377126209438,\"corruption\":0.08954822106752545,\"interference\":0,\"echo\":0.3184928555972874},\"generator\":\"generate_warp\",\"renderSeed\":0.9439424078445882}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Warp\",\"params\":{\"masterVolume\":0.5,\"waveType\":2,\"duration\":1.3503719817008824,\"pitch\":{\"start\":0.4298894655460026,\"end\":0.6798894655460026,\"curve\":\"Smooth\"},\"tone\":{\"start\":0.2,\"end\":1,\"curve\":\"Ease In\"},\"vibrato\":{\"start\":0.1,\"end\":0.5,\"curve\":\"Linear\"},\"level\":{\"start\":0.4,\"end\":1,\"curve\":\"Linear\"},\"attack\":0.3,\"release\":0.5,\"resonance\":0.7,\"echo\":0.45,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_warp\",\"renderSeed\":0.90444127144292}]"
    },
-   "ingredients": "Signal · Warp",
-   "duration": 0.9113832199546485,
-   "peak": 0.20186252892017365,
-   "rms": 0.028465827873350762,
-   "sha256": "82bc2e31ddd3584ac73bb83c717249825a6177b701bed6db8e3d4f80a3e9a15e"
+   "ingredients": "Transfxr · Warp",
+   "duration": 1.689251700680272,
+   "peak": 0.3629169166088104,
+   "rms": 0.11898874610857824,
+   "sha256": "0d56a539cff8d182d4f6d3c3e2b643757b548c5baf53210e4602122146fdc1de"
   },
   {
    "verb": "warp",
@@ -1713,13 +1713,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Riftr\",\"name\":\"Warp\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6074558300897479,\"excitation\":0,\"duration\":1.1809256443521008,\"pitch\":0.5423827443504706,\"bend\":-0.2643081672489642,\"space\":0.319616708252579,\"feedback\":0.7141241663135588,\"dispersion\":0.40609767255373297,\"motion\":0.6361829106695951,\"field\":0.7262458082288503,\"reverse\":0.4506213213317096},\"generator\":\"generate_warp\",\"renderSeed\":0.013738791458308697}]"
+    "sources": "[{\"synth\":\"Riftr\",\"name\":\"Warp\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6074558300897479,\"excitation\":0,\"duration\":1.1809256443521008,\"pitch\":0.5281444699154235,\"bend\":-0.2643081672489642,\"space\":0.2956933666020632,\"feedback\":0.7605931247351692,\"dispersion\":0.3884147271281108,\"motion\":0.5634857588913291,\"field\":0.6979650822002441,\"reverse\":0.27037279279902576},\"generator\":\"generate_warp\",\"renderSeed\":0.013738791458308697}]"
    },
    "ingredients": "Sonar · Warp",
-   "duration": 1.18421768707483,
+   "duration": 1.1784126984126984,
    "peak": 0.44999998807907104,
-   "rms": 0.06410225026885107,
-   "sha256": "4e7009da367fa04f3ebfa462bbfabefa59307912ab719d760fa59c8d6ba71851"
+   "rms": 0.03801715130973655,
+   "sha256": "2b8d67d6d601508c5d9f4f4fc6fc4ee0841b0b30da5233e5b889cfb71995d8a5"
   },
   {
    "verb": "warp",
@@ -1733,13 +1733,13 @@
     "balance": 0.5898733770707623,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Riftr\",\"name\":\"Warp\",\"params\":{\"masterVolume\":0.5,\"seed\":0.4132000827230513,\"excitation\":0,\"duration\":1.3135227461811154,\"pitch\":0.7580738159362227,\"bend\":-0.33999137431383125,\"space\":0.5410281470278278,\"feedback\":0.6010358183644712,\"dispersion\":0.7947034577373415,\"motion\":0.5778019095771015,\"field\":0.5675988842733204,\"reverse\":0.7897570307832211},\"generator\":\"generate_warp\",\"renderSeed\":0.9315890993457288},{\"synth\":\"Whooshr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.06838584900833666,\"duration\":0.24151343741687015,\"size\":0.5154297661036253,\"air\":0.9351975458208471,\"whistle\":0.2389473281917162,\"movement\":0.8561528109014034,\"focus\":0.6359464380075224,\"flutter\":0.1400701044709422},\"generator\":\"generate_dash\",\"renderSeed\":0.34958508890122175}]"
+    "sources": "[{\"synth\":\"Riftr\",\"name\":\"Warp\",\"params\":{\"masterVolume\":0.5,\"seed\":0.4132000827230513,\"excitation\":0,\"duration\":1.3135227461811154,\"pitch\":0.7222664343426004,\"bend\":-0.33999137431383125,\"space\":0.47282251762226224,\"feedback\":0.6757768637733534,\"dispersion\":0.7122528814477846,\"motion\":0.5148349246475845,\"field\":0.5591490237391554,\"reverse\":0.47385421846993264},\"generator\":\"generate_warp\",\"renderSeed\":0.9315890993457288},{\"synth\":\"Whooshr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.06838584900833666,\"duration\":0.24151343741687015,\"size\":0.5154297661036253,\"air\":0.9351975458208471,\"whistle\":0.2389473281917162,\"movement\":0.8561528109014034,\"focus\":0.6359464380075224,\"flutter\":0.1400701044709422},\"generator\":\"generate_dash\",\"renderSeed\":0.34958508890122175}]"
    },
    "ingredients": "Sonar · Warp × Whoosh · Dash (start-aligned)",
-   "duration": 1.3177324263038548,
-   "peak": 0.28976044058799744,
-   "rms": 0.03377393648343723,
-   "sha256": "9ac725f7b1f9bb0092ddf23c20f53d990bf25ee7159e294e425442dda39b8f07"
+   "duration": 1.3119274376417234,
+   "peak": 0.2851036489009857,
+   "rms": 0.03297302366204291,
+   "sha256": "636a256346f6258400dc4c1535e2a34a2a35bfb9080e3ada4fec793eb4b0b0e6"
   },
   {
    "verb": "warp",
@@ -1753,13 +1753,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Riftr\",\"name\":\"Teleport Arrive\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6840638117864728,\"excitation\":0,\"duration\":1.0968305247835815,\"pitch\":0.6272812233888544,\"bend\":-0.34011633642949163,\"space\":0.39808518179925156,\"feedback\":0.5976875472115353,\"dispersion\":0.7250674915965647,\"motion\":0.37642646338790653,\"field\":0.5498556663049385,\"reverse\":0.9606440125545487},\"generator\":\"generate_teleport_arrive\",\"renderSeed\":0.01524447207339108}]"
+    "sources": "[{\"synth\":\"Signlr\",\"name\":\"Warp\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6840638117864728,\"encoding\":2,\"duration\":1.2761966297402978,\"carrier\":0.42728122338885444,\"deviation\":0.6999030529754237,\"symbols\":0.24176296102814376,\"packets\":1,\"gap\":0.3550404949579389,\"drift\":0.06342351213097575,\"corruption\":0.028530190372839572,\"interference\":0,\"echo\":0.6284436591900885},\"generator\":\"generate_warp\",\"renderSeed\":0.01524447207339108}]"
    },
-   "ingredients": "Sonar · Teleport Arrive",
-   "duration": 1.0971428571428572,
-   "peak": 0.44999998807907104,
-   "rms": 0.04091777930316281,
-   "sha256": "6fa4d0063e2a6aa7f16fecebd86309385c887e21a98b472f3b1aac3247e2bc2b"
+   "ingredients": "Signal · Warp",
+   "duration": 1.062312925170068,
+   "peak": 0.21122629940509796,
+   "rms": 0.032057817381551196,
+   "sha256": "262d651cea22be893d7a9b3d0301da12512e433afd7459345bec0d5d6446f3b2"
   },
   {
    "verb": "roar",
@@ -1770,16 +1770,16 @@
    "params": {
     "masterVolume": 0.5,
     "seed": 0.1667915426660329,
-    "balance": 0.36415563544724133,
+    "balance": 0.35026745472569015,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Crittr\",\"name\":\"Roar\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5769714487250894,\"voice\":0,\"duration\":0.7241763073951006,\"pitch\":0.10328655295306817,\"size\":0.7075761617976241,\"morph\":0.7700171923497692,\"calls\":1,\"gap\":0.11524088311940431,\"contour\":-0.020765012851916287,\"growl\":0.9053083762526513,\"breath\":0.4648837535409257,\"flutter\":0.12038764288881794},\"generator\":\"generate_roar\",\"renderSeed\":0.4935050194617361},{\"synth\":\"Breathr\",\"name\":\"Roar\",\"params\":{\"masterVolume\":0.5,\"seed\":0.10578260151669383,\"source\":2,\"mode\":0,\"duration\":1.2070987452520057,\"direction\":0.6696052603656426,\"cycles\":1,\"effort\":0.7462167748017237,\"inhale\":0.42,\"hold\":0.04,\"throat\":0.8424666939303279,\"rasp\":0.5018690219148993,\"flutter\":0.2750239566434175,\"space\":0.326712175202556},\"generator\":\"generate_roar\",\"renderSeed\":0.9861931323539466}]"
+    "sources": "[{\"synth\":\"Crittr\",\"name\":\"Roar\",\"params\":{\"masterVolume\":0.5,\"seed\":0.4935050194617361,\"voice\":0,\"duration\":0.8557754541747272,\"pitch\":0.09112582985544578,\"size\":0.8390120346448384,\"morph\":0.8551703463308513,\"calls\":1,\"gap\":0.11215456922538578,\"contour\":0.0342896584421396,\"growl\":0.9531783380545675,\"breath\":0.2844651714665815,\"flutter\":0.19424286218127235},\"generator\":\"generate_roar\",\"renderSeed\":0.6728442143648863},{\"synth\":\"Boomr\",\"name\":\"Land\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5408405009657145,\"duration\":0.3687236822559498,\"size\":0.8142661090008915,\"pressure\":0.7462167748017237,\"blast\":0.10308336741290987,\"debris\":0.10112141314893962,\"gas\":0,\"aftershock\":0.11668263776227833,\"rubbleSize\":0.9022829002700746,\"spread\":0.13173478045500817,\"tail\":0.3465482830884866,\"muffle\":0.3377483611926436,\"mechanism\":3,\"space\":0.16903793872334064},\"generator\":\"generate_land\",\"renderSeed\":0.29334813077002764}]"
    },
-   "ingredients": "Beasts · Roar × Breath · Roar (start-aligned)",
-   "duration": 1.195827664399093,
-   "peak": 0.2661846876144409,
-   "rms": 0.04872845302587745,
-   "sha256": "7cb340295c56feb2484a2f8782544047c92c09ba57738fe6aac4650bf6d588de"
+   "ingredients": "Beasts · Roar × Boomer · Land (start-aligned)",
+   "duration": 0.7546485260770975,
+   "peak": 0.29699063301086426,
+   "rms": 0.07681715481926515,
+   "sha256": "6076c16c0c6fb1091fff18a29e97c5369185c6abe2e49e936be8bda03f5c7ef7"
   },
   {
    "verb": "roar",
@@ -1793,13 +1793,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Breathr\",\"name\":\"Roar\",\"params\":{\"masterVolume\":0.5,\"seed\":0.7216214453801513,\"source\":0,\"mode\":0,\"duration\":0.9636495328508317,\"direction\":0.5892746226163581,\"cycles\":1,\"effort\":0.8386648556916043,\"inhale\":0.42,\"hold\":0.04,\"throat\":0.8753761193249375,\"rasp\":0.7816517916508019,\"flutter\":0.15768455720972271,\"space\":0.1523060581414029},\"generator\":\"generate_roar\",\"renderSeed\":0.04617477930150926}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Roar\",\"params\":{\"masterVolume\":0.5,\"waveType\":2,\"duration\":0.702123260665685,\"pitch\":{\"start\":0.5855347160354722,\"end\":0.7355347160354723,\"curve\":\"Triangle\"},\"tone\":{\"start\":0.9,\"end\":0.8,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0.7,\"end\":1,\"curve\":\"Linear\"},\"level\":{\"start\":0.9,\"end\":0.5,\"curve\":\"Linear\"},\"attack\":0.03,\"release\":0.2,\"resonance\":0.5,\"echo\":0.1,\"waveTo\":10,\"morph\":{\"start\":0.2,\"end\":0.6,\"curve\":\"Linear\"}},\"generator\":\"generate_verb_roar\",\"renderSeed\":0.46221618563868105}]"
    },
-   "ingredients": "Breath · Roar",
-   "duration": 0.9578231292517007,
-   "peak": 0.4583333432674408,
-   "rms": 0.15120827344657015,
-   "sha256": "c9751fc2e3329bc42519a4b1c068f4018f51cc95ab1d5bef5ea9c97621d7cb0d"
+   "ingredients": "Transfxr · Roar",
+   "duration": 0.737233560090703,
+   "peak": 0.3296223282814026,
+   "rms": 0.11063356077671298,
+   "sha256": "1fed6d5c89394d1252754c455dd44623a927fb8d493b67a934654c042c4cb0ef"
   },
   {
    "verb": "roar",
@@ -1809,17 +1809,17 @@
    "file": "soundboard-roar-3.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.7433146496769041,
+    "seed": 0.8080641240812838,
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Crittr\",\"name\":\"Roar\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9520191908814013,\"voice\":0,\"duration\":1.11941473223269,\"pitch\":0.2443948582629673,\"size\":0.8098086216370575,\"morph\":0.5530225802212954,\"calls\":1,\"gap\":0.038625536235049364,\"contour\":0.1260562945855781,\"growl\":0.9836536452174187,\"breath\":0.4178683173377067,\"flutter\":0.18818828616058453},\"generator\":\"generate_roar\",\"renderSeed\":0.828370307572186}]"
+    "sources": "[{\"synth\":\"Breathr\",\"name\":\"Roar\",\"params\":{\"masterVolume\":0.5,\"seed\":0.3848733720369637,\"source\":2,\"mode\":0,\"duration\":1.330909251444973,\"direction\":0.6494683336932212,\"cycles\":1,\"effort\":0.9328738872660324,\"inhale\":0.42,\"hold\":0.04,\"throat\":0.9495983604807406,\"rasp\":0.9804117721505463,\"flutter\":0.100973822013475,\"space\":0.2124915724154562},\"generator\":\"generate_roar\",\"renderSeed\":0.04640062199905515}]"
    },
-   "ingredients": "Beasts · Roar",
-   "duration": 1.0681179138321995,
-   "peak": 0.45171216130256653,
-   "rms": 0.1695015340959714,
-   "sha256": "74cb27087d7d33fec4972cf5323c203338f7bb5ace09a633dafd2656e9cd300e"
+   "ingredients": "Breath · Roar",
+   "duration": 1.3061224489795917,
+   "peak": 0.46169835329055786,
+   "rms": 0.09441060838531179,
+   "sha256": "ff00974d626b0dc0199673eede2faa7a94289bf9e301320da4169486b4f434d1"
   },
   {
    "verb": "roar",
@@ -1829,17 +1829,17 @@
    "file": "soundboard-roar-4.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.332918701460585,
-    "balance": 0.48685522308805956,
+    "seed": 0.9597373500000685,
+    "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Crittr\",\"name\":\"Roar\",\"params\":{\"masterVolume\":0.5,\"seed\":0.24376022443175316,\"voice\":0,\"duration\":1.1508004250004888,\"pitch\":0.06354177441680804,\"size\":0.7332673410885036,\"morph\":0.9375930103706196,\"calls\":1,\"gap\":0.036906855460256335,\"contour\":0.1045102317351847,\"growl\":0.9220099855214358,\"breath\":0.3758029884658754,\"flutter\":0.22327061778632923},\"generator\":\"generate_roar\",\"renderSeed\":0.42083644424565136},{\"synth\":\"Boomr\",\"name\":\"Land\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6511246520094573,\"duration\":0.4604290099116042,\"size\":0.8788884342648089,\"pressure\":0.9375133067136631,\"blast\":0.0925737071200274,\"debris\":0.1789314558263868,\"gas\":0,\"aftershock\":0.004859409993514419,\"rubbleSize\":0.7858532947488129,\"spread\":0.2991411939263344,\"tail\":0.16001133582321928,\"muffle\":0.5693569976836443,\"mechanism\":3,\"space\":0.12845194996334613},\"generator\":\"generate_land\",\"renderSeed\":0.5578726637177169}]"
+    "sources": "[{\"synth\":\"Crittr\",\"name\":\"Roar\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8670386672019958,\"voice\":0,\"duration\":0.8282093574292958,\"pitch\":0.09585612404160203,\"size\":0.9231645915657282,\"morph\":0.24349259063601494,\"calls\":4,\"gap\":0.30801873017335313,\"contour\":-0.1294564107432961,\"growl\":0.9457897819112986,\"breath\":0.2036296592094004,\"flutter\":0.8646136183291674},\"generator\":\"generate_roar\",\"renderSeed\":0.5321000793483108}]"
    },
-   "ingredients": "Beasts · Roar × Boomer · Land (start-aligned)",
-   "duration": 1.0855328798185941,
-   "peak": 0.2498081922531128,
-   "rms": 0.05377686472591976,
-   "sha256": "76964113f1e77e3163b8b1067e19b820ba6be679a60a590c34e4885007734533"
+   "ingredients": "Beasts · Roar",
+   "duration": 0.7662585034013606,
+   "peak": 0.45472973585128784,
+   "rms": 0.1250020531196826,
+   "sha256": "0b50daa30d4574062247d5f951e7b72db01a404dd05e73d510a96d63bc860811"
   },
   {
    "verb": "whirr",
@@ -1850,16 +1850,16 @@
    "params": {
     "masterVolume": 0.5,
     "seed": 0.9123164401389658,
-    "balance": 0.43024559655459593,
+    "balance": 0.48806561233941465,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Machinr\",\"name\":\"Whirr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.24137113196775317,\"mechanism\":5,\"duration\":0.40631875218823554,\"speed\":0.9218099587596953,\"load\":0.3930880552856252,\"roughness\":0.14427142843604085,\"looseness\":0.17020176177378743,\"size\":0.15761287674307825,\"startTime\":0.04577975514344872,\"stopTime\":0.3475391501327977},\"generator\":\"generate_whirr\",\"renderSeed\":0.07096411590464413},{\"synth\":\"Zappr\",\"name\":\"Whirr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5752786812372506,\"duration\":1.3221210944466293,\"voltage\":0.3999241471290589,\"arcs\":7,\"branching\":0.3765630058944225,\"crackle\":0.23516911575570704,\"hum\":0.8007298724260181,\"spark\":0.3387668720213697,\"spread\":0.8902931578224524,\"decay\":0.6484479599632323},\"generator\":\"generate_whirr\",\"renderSeed\":0.36434271559119225}]"
+    "sources": "[{\"synth\":\"Machinr\",\"name\":\"Whirr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.07096411590464413,\"mechanism\":1,\"duration\":1.7810678845271468,\"speed\":0.6881509519182145,\"load\":0.455061224102974,\"roughness\":0.41621423531323676,\"looseness\":0.4430721461772919,\"size\":0.2145766895264387,\"startTime\":0.2550335572566837,\"stopTime\":0.09517020563129336},\"generator\":\"generate_whirr\",\"renderSeed\":0.8221210944466293},{\"synth\":\"Zappr\",\"name\":\"Whirr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.36434271559119225,\"duration\":1.4997471570968628,\"voltage\":0.21719309051986785,\"arcs\":8,\"branching\":0.23516911575570704,\"crackle\":0.33430649656802414,\"hum\":0.9387668720213697,\"spark\":0.2902931578224525,\"spread\":0.8863359699724243,\"decay\":0.6301114724949003},\"generator\":\"generate_whirr\",\"renderSeed\":0.5349706436973065}]"
    },
    "ingredients": "Motors · Whirr × Zapper · Whirr (start-aligned)",
-   "duration": 1.3177324263038548,
-   "peak": 0.17393499612808228,
-   "rms": 0.037087306359076276,
-   "sha256": "dc3dc09622a182436fada2f0ec4da0267ed9c8d32beee236d7a990943a404d25"
+   "duration": 1.7705215419501135,
+   "peak": 0.21413177251815796,
+   "rms": 0.0460252666521508,
+   "sha256": "f17f48fabcb583729b8d09efae5342210b4d5be7655872e8da390cd30c38cff3"
   },
   {
    "verb": "whirr",
@@ -1873,13 +1873,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Machinr\",\"name\":\"Servo\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9611730880569667,\"mechanism\":5,\"duration\":0.43866993599804116,\"speed\":0.8169780879281461,\"load\":0.22450380934169517,\"roughness\":0.12667794559150933,\"looseness\":0.07852500478038564,\"size\":0.2390634277602658,\"startTime\":0.053732870037667455,\"stopTime\":0.04114981547696516},\"generator\":\"generate_servo\",\"renderSeed\":0.3496366373728961}]"
+    "sources": "[{\"synth\":\"Rumblr\",\"name\":\"Engine Room\",\"params\":{\"masterVolume\":0.5,\"seed\":0.19827208993956447,\"duration\":1.6866735494695604,\"size\":0.633489043964073,\"weight\":0.6330025395611302,\"roughness\":0.3083534742705524,\"tremor\":0.80819737596903,\"dust\":0.05562537110410631,\"attack\":0.46986956748878583,\"sweep\":-0.05280031077563763,\"depth\":0.68835192641709,\"harmonics\":0.5223728230805136},\"generator\":\"generate_engine_room\",\"renderSeed\":0.6949757884722203}]"
    },
-   "ingredients": "Motors · Servo",
-   "duration": 0.43537414965986393,
-   "peak": 0.15678182244300842,
-   "rms": 0.057887614557482266,
-   "sha256": "9b54ea8d875730fddded319986535c0e4c378e54d2f9917e1e97de5a6687c2b4"
+   "ingredients": "Rumblr · Engine Room",
+   "duration": 1.6428117913832199,
+   "peak": 0.22795188426971436,
+   "rms": 0.09093678396515696,
+   "sha256": "d6415e119ba61d4edd299180246b4ced7c7bd16df0dde7c6f442022ee3c8fc23"
   },
   {
    "verb": "whirr",
@@ -1893,13 +1893,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Machinr\",\"name\":\"Whirr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.7267699744552374,\"mechanism\":5,\"duration\":1.0570584289729597,\"speed\":0.7123177993344143,\"load\":0.21755904520396147,\"roughness\":0.11899388816207647,\"looseness\":0.06921075418125838,\"size\":0.42790351234842094,\"startTime\":0.19820573506411165,\"stopTime\":0.3435209984425456},\"generator\":\"generate_whirr\",\"renderSeed\":0.12326356885023415}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Whirr\",\"params\":{\"masterVolume\":0.5,\"waveType\":3,\"duration\":0.9849271197337658,\"pitch\":{\"start\":0.452139691086486,\"end\":0.452139691086486,\"curve\":\"Linear\"},\"tone\":{\"start\":0.7,\"end\":0.7,\"curve\":\"Linear\"},\"vibrato\":{\"start\":1,\"end\":1,\"curve\":\"Linear\"},\"level\":{\"start\":1,\"end\":1,\"curve\":\"Pulse\"},\"attack\":0,\"release\":0.05,\"resonance\":0.15,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_whirr\",\"renderSeed\":0.4787401291541755}]"
    },
-   "ingredients": "Motors · Whirr",
-   "duration": 1.039092970521542,
-   "peak": 0.15724411606788635,
-   "rms": 0.04478262550277492,
-   "sha256": "c000e85f5e289d13cf62093929c79ecdf2f8ae424cb3c767132f6f8c2ebb7f05"
+   "ingredients": "Transfxr · Whirr",
+   "duration": 0.9868480725623583,
+   "peak": 0.3575476408004761,
+   "rms": 0.3275826641934767,
+   "sha256": "1a8629c1b45b2b5ba7eed11f0cd930fced071e1035078dc9428fc9176c367e08"
   },
   {
    "verb": "whirr",
@@ -1909,17 +1909,17 @@
    "file": "soundboard-whirr-4.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.0995185358915478,
+    "seed": 0.9468852465506643,
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Machinr\",\"name\":\"Whirr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.20122337457723916,\"mechanism\":6,\"duration\":0.9719679089263082,\"speed\":0.6044112826930359,\"load\":0.3335921873804182,\"roughness\":0.2595676395855844,\"looseness\":0.32122271104715766,\"size\":0.24089933910872788,\"startTime\":0.19554034014698118,\"stopTime\":0.07385447401320562},\"generator\":\"generate_whirr\",\"renderSeed\":0.6501700745429844}]"
+    "sources": "[{\"synth\":\"Machinr\",\"name\":\"Whirr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6817806223407388,\"mechanism\":3,\"duration\":1.062505189795047,\"speed\":0.6884008777793497,\"load\":0.5073066368699074,\"roughness\":0.6239454567432403,\"looseness\":0.8447662554681301,\"size\":0.24343099277466537,\"startTime\":0.2351546793244779,\"stopTime\":0.18322367189917715},\"generator\":\"generate_whirr\",\"renderSeed\":0.24403929547406733}]"
    },
    "ingredients": "Motors · Whirr",
-   "duration": 0.9520181405895691,
-   "peak": 0.12961678206920624,
-   "rms": 0.0478711213389411,
-   "sha256": "c88fc50e44c4a972c684f707cca5bfda9cead15f7f0285e91625c48ce709e24f"
+   "duration": 1.039092970521542,
+   "peak": 0.24080276489257812,
+   "rms": 0.047110061358265246,
+   "sha256": "a60dcc221f5005061bbb32fda2f6b71248c304fe15024fc0ffcb92b97c5011e3"
   },
   {
    "verb": "heal",
@@ -1953,13 +1953,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Squishr\",\"name\":\"Heal\",\"params\":{\"masterVolume\":0.5,\"seed\":0.05155120440758765,\"texture\":1,\"viscosity\":0.4588586782570928,\"stretch\":0.2783433351665735,\"pressure\":0.8400673961266876,\"wetness\":0.89886538926512,\"bubbleSize\":0.32214309014379977,\"duration\":0.5942821198841557},\"generator\":\"generate_heal\",\"renderSeed\":0.21856269566342235}]"
+    "sources": "[{\"synth\":\"Jinglr\",\"name\":\"Heal\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9111791117911179,\"instrumentSeed\":31848,\"phrase\":\"[{\\\"degree\\\":1,\\\"beats\\\":0.5},{\\\"degree\\\":9,\\\"beats\\\":0.5},{\\\"degree\\\":1,\\\"beats\\\":1}]\",\"instrument\":3,\"key\":0,\"scale\":0,\"contour\":2,\"rhythm\":0,\"noteCount\":3,\"octave\":4,\"tempo\":126.73443713458255,\"swing\":0,\"brightness\":0.2655688086990267,\"decay\":0.45071348326746374,\"echo\":0.19222984765656292},\"generator\":\"generate_heal\",\"renderSeed\":0.7110061796847731}]"
    },
-   "ingredients": "Squishy · Heal",
-   "duration": 0.4992290249433107,
-   "peak": 0.3192909359931946,
-   "rms": 0.06969213675404229,
-   "sha256": "d9528855c8027be43d147c472359d7e3c4cd7ac228561719048b5c3b7a6475c5"
+   "ingredients": "Jingles · Heal",
+   "duration": 1.18421768707483,
+   "peak": 0.32764679193496704,
+   "rms": 0.11194308580188445,
+   "sha256": "7488d3b5bb4721b19424fff4e389732dcb840ca8886f04d53effd9a4171463df"
   },
   {
    "verb": "heal",
@@ -1973,13 +1973,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Pluckr\",\"name\":\"Heal\",\"params\":{\"masterVolume\":0.5,\"seed\":0.33718095044605434,\"material\":2,\"duration\":1.6630238063633442,\"pitch\":0.5571310376748443,\"strings\":5,\"damping\":0.15470024300739169,\"brightness\":0.2400851918384433,\"pluck\":0.4994135107845068,\"coupling\":0.38395732957869777,\"strum\":0.5157313381321729,\"tremolo\":0,\"vibrato\":0,\"tremoloRate\":4,\"inharmonic\":0.00498229667544365},\"generator\":\"generate_heal\",\"renderSeed\":0.6736391028389335}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Heal\",\"params\":{\"masterVolume\":0.5,\"waveType\":3,\"duration\":0.9042786226049065,\"pitch\":{\"start\":0.6163360712863505,\"end\":0.7763360712863505,\"curve\":\"Linear\"},\"tone\":{\"start\":0.9,\"end\":0.9,\"curve\":\"Linear\"},\"vibrato\":{\"start\":1,\"end\":1,\"curve\":\"Linear\"},\"level\":{\"start\":1,\"end\":0.9,\"curve\":\"Pulse\"},\"attack\":0,\"release\":0.05,\"resonance\":0.15,\"echo\":0.05,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_heal\",\"renderSeed\":0.9411957361735404}]"
    },
-   "ingredients": "Plucked · Heal",
-   "duration": 0.5746938775510204,
-   "peak": 0.080880306661129,
-   "rms": 0.006547269481010605,
-   "sha256": "c9db032c754b377bb8201d868c581172f197fd66137583f3414d8aa2d7edfb2a"
+   "ingredients": "Transfxr · Heal",
+   "duration": 1.073922902494331,
+   "peak": 0.3618069291114807,
+   "rms": 0.2413339608085476,
+   "sha256": "f96512bf3ce4ef16cb1c715a6079b1b7706eab4059fdc53fc2636a5dab1e97b7"
   },
   {
    "verb": "heal",
@@ -1993,13 +1993,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Jinglr\",\"name\":\"Heal\",\"params\":{\"masterVolume\":0.5,\"seed\":0.7722577225772258,\"instrumentSeed\":2729,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":1},{\\\"degree\\\":3,\\\"beats\\\":0.5},{\\\"degree\\\":8,\\\"beats\\\":2}]\",\"instrument\":0,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":3,\"noteCount\":3,\"octave\":4,\"tempo\":131.86630465090275,\"swing\":0,\"brightness\":0.22827673193532974,\"decay\":0.5523439654149115,\"echo\":0.13804930574260652},\"generator\":\"generate_heal\",\"renderSeed\":0.8467394269537181}]"
+    "sources": "[{\"synth\":\"Pluckr\",\"name\":\"Heal\",\"params\":{\"masterVolume\":0.5,\"seed\":0.7722553748171777,\"material\":0,\"duration\":0.9842186809517444,\"pitch\":0.4037533962633461,\"strings\":4,\"damping\":0.16525011751800775,\"brightness\":0.27119782790541647,\"pluck\":0.3050808927975595,\"coupling\":0.12827673193532974,\"strum\":0.4523439654149115,\"tremolo\":0,\"vibrato\":0,\"tremoloRate\":4,\"inharmonic\":0.015219722297042609},\"generator\":\"generate_heal\",\"renderSeed\":0.5999790341593325}]"
    },
-   "ingredients": "Jingles · Heal",
-   "duration": 1.1087528344671203,
-   "peak": 0.33584120869636536,
-   "rms": 0.06001648626784637,
-   "sha256": "e2f325fb3104268de77aa298c8f4a10af021f9142cc262eb6158433fcef606f7"
+   "ingredients": "Plucked · Heal",
+   "duration": 0.9810430839002268,
+   "peak": 0.12502934038639069,
+   "rms": 0.019832052435441283,
+   "sha256": "b2e185e066ed811459e16a2366720cff03e765ee96a5a5d0ecc296e48afbe4cc"
   }
  ]
 }

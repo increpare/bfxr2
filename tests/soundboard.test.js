@@ -147,7 +147,7 @@ test('Mixr alignment places B at the start, peak or tail of A and legacy records
  assert.ok(result.lengths.every(n=>n<=44100*12));
 });
 
-test('the board editor builds a 5×5 grid, regenerates the same verb, and pins ingredients',()=>{
+test('the board editor is a bare 5×5 grid of plain verb buttons with keyboard rows',()=>{
  const {run,load}=createBoardContext();load('js/BoardEditor.js');
  const result=plain(run(`(()=>{
   function element(tag){return {tag,children:[],classList:{set:new Set(),add(c){this.set.add(c);},toggle(c,on){on?this.set.add(c):this.set.delete(c);},contains(c){return this.set.has(c);}},dataset:{},
@@ -155,31 +155,38 @@ test('the board editor builds a 5×5 grid, regenerates the same verb, and pins i
   globalThis.document={createElement:element,getElementById(){return null;},addEventListener(){},activeElement:null};
   Math.random=SoundDSP.rng(0.5);
   const board=new Soundboard();const created=[];
-  const tab={name:'Soundboard',synth:board,active:true,template_clicked(method){board[method]();created.push(method);editor.update();},
-   create_new_sound_from_params(name,params){created.push('new:'+name);editor.update();},get_current_file_name(){return 'Sfx';}};
+  const tab={name:'Soundboard',synth:board,active:true,template_clicked(method){board[method]();created.push(method);},get_current_file_name(){return 'Sfx';}};
   const editor=new BoardEditor(tab,element('div'));
-  const verbButtons=editor.grid.children.filter(c=>c.tag==='button');
-  const labels=editor.grid.children.filter(c=>c.tag==='div').map(c=>c.textContent);
-  verbButtons[0].click();const firstVerb=board.verb(),firstSources=board.get_sources().map(s=>s.generator).join('+');
-  editor.again.click();const againVerb=board.verb();
-  editor.pin.click();const pinnedGenerators=board.get_sources().map(s=>s.generator).join('+');const pinnedSeeds=board.get_sources().map(s=>s.renderSeed).join('+');
-  editor.again.click();
-  const afterPin={generators:board.get_sources().map(s=>s.generator).join('+'),seeds:board.get_sources().map(s=>s.renderSeed).join('+'),verb:board.verb()};
+  const children=editor.grid.children;
   editor.on_key_down({key:'q',preventDefault(){}});const keyVerb=board.verb();
-  return {buttons:verbButtons.length,labels,firstVerb,againVerb,pinnedGenerators,afterPin,pinnedSeeds,keyVerb,opens:editor.opens.children.map(b=>b.textContent),
-   description:editor.description.textContent,active:verbButtons.filter(b=>b.classList.contains('board-active')).map(b=>b.dataset.verb),created:created.length};
+  editor.on_key_down({key:' ',preventDefault(){}});const spaceVerb=board.verb();
+  return {count:children.length,allButtons:children.every(c=>c.tag==='button'),verbs:children.map(c=>c.dataset.verb),rootChildren:editor.root.children.length,
+   keyVerb,spaceVerb,created,hints:children.every(c=>c.children.length===1&&c.children[0].className==='board-key'),styled:children.some(c=>c.classList.contains('board-active'))};
  })()`));
- assert.equal(result.buttons,25);
- assert.deepEqual(result.labels,['Move','Fight','Reward','World','Fantasy']);
- assert.equal(result.firstVerb,'jump');assert.equal(result.againVerb,'jump');
- assert.equal(result.afterPin.verb,'jump');
- assert.equal(result.afterPin.generators,result.pinnedGenerators,'pinned ingredients keep their generators');
- assert.notEqual(result.afterPin.seeds,result.pinnedSeeds,'pinned Again still re-rolls the take');
- assert.equal(result.keyVerb,'shoot');
- assert.ok(result.opens.length>=2&&result.opens.at(-1)==='Open in Mixfxr',JSON.stringify(result.opens));
- assert.deepEqual(result.active,['shoot']);
- assert.ok(result.description.includes('·'));
- assert.ok(result.created>=4);
+ assert.equal(result.count,25);assert.equal(result.allButtons,true);
+ assert.deepEqual(result.verbs.slice(0,5),['jump','land','step','dash','splash']);
+ assert.equal(result.rootChildren,1,'only the grid, no intro or card');
+ assert.equal(result.keyVerb,'shoot');assert.equal(result.spaceVerb,'shoot');
+ assert.deepEqual(result.created,['generate_shoot','generate_shoot']);
+ assert.equal(result.hints,true);assert.equal(result.styled,false);
+ assert.deepEqual(plain(run('new Soundboard().hide_params')),['masterVolume','seed','sources','balance','align','offset']);
+});
+
+test('verb presets can hold several archetypes, and Transfxr recreates retro archetypes per verb',()=>{
+ const {run}=createBoardContext();
+ const roar=plain(run(`(()=>{Math.random=SoundDSP.rng(0.21);const s=new Crittr();const voices=new Set();for(let i=0;i<24;i++){s.generate_roar();voices.add(s.params.voice);}return [...voices];})()`));
+ assert.ok(roar.length>=3,'roar draws several anatomies: '+roar);
+ const whirr=plain(run(`(()=>{Math.random=SoundDSP.rng(0.33);const s=new Machinr();const m=new Set();for(let i=0;i<24;i++){s.generate_whirr();m.add(s.params.mechanism);}return [...m];})()`));
+ assert.ok(whirr.length>=4,'whirr draws several mechanisms: '+whirr);
+ const verbs=plain(run('new Transfxr().verbs()'));
+ assert.ok(verbs.length>=20&&verbs.includes('jump')&&verbs.includes('roar'));
+ assert.equal(run("new Transfxr().verb_generator('jump')"),'generate_verb_jump');
+ assert.equal(run("new Transfxr().verb_generator('step')"),null);
+ assert.deepEqual(plain(run('new Transfxr().templates.slice(0,2).map(t=>t[0])')),['Jump','Land']);
+ const archetypes=plain(run(`(()=>{Math.random=SoundDSP.rng(0.41);const s=new Transfxr();const seen=new Set();for(let i=0;i<30;i++){s.generate_verb_jump();seen.add(s.verb_archetype);}return [...seen];})()`));
+ assert.ok(archetypes.length>=4,'jump archetypes: '+archetypes);
+ for(const id of plain(run('Transfxr.verbExamples.map(a=>a.id)')))assert.ok(/^[a-z]+_[a-z_]+$/.test(id));
+ assert.equal(new Set(plain(run('Transfxr.verbExamples.map(a=>a.id)'))).size,plain(run('Transfxr.verbExamples.length')));
 });
 
 test('the Soundboard is wired in as the first tab and the bundle includes its scripts and styles',()=>{

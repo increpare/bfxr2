@@ -22,6 +22,7 @@ class Birdr extends PresetSynth {
         ['Phrase','Pitch and articulation changes across the phrase.','variation',0.25,0,1]
     ];
     recipes = [
+        {name:'Jump',id:'jump',verb:'jump',tip:'A single quick upward chirp, Yoshi-style.',values:{voice:[0,1],duration:[0.12,0.26],pitch:[0.55,0.8],syllables:[1,2],gap:[0.05,0.2],sweep:[0.4,0.9],arch:[0,0.4],trill:[0,0.15],duet:[0,0.1],rasp:[0,0.05],breath:[0,0.05]}},
         {name:'Confirm',id:'confirm',verb:'confirm',tip:'One bright rising chirp.',values:{voice:0,duration:[0.15,0.3],pitch:[0.6,0.8],syllables:1,gap:[0.08,0.2],sweep:[0.2,0.7],arch:[0.2,0.7],trill:[0,0.1],duet:[0,0.05],rasp:[0,0.03],breath:[0,0.05]}},
         {name:'Alert',id:'alert',verb:'alert',tip:'A harsh squawk of warning.',values:{voice:[2,3],duration:[0.3,0.7],pitch:[0.3,0.55],syllables:[2,3],gap:[0.2,0.4],sweep:[-0.5,0.2],arch:[0.3,0.8],trill:[0.1,0.4],duet:[0.1,0.4],rasp:[0.35,0.7],breath:[0.1,0.25]}},
         {name:'Chirp',id:'chirp',tip:'One quick, bright call.',values:{voice:0,duration:[0.15,0.32],pitch:[0.57,0.78],syllables:1,gap:[0.08,0.2],sweep:[-0.75,0.65],arch:[0.25,0.9],trill:[0,0.1],duet:[0,0.08],rasp:[0,0.05],breath:[0.01,0.06]}},

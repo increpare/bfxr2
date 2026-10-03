@@ -5,17 +5,11 @@
 'use strict';
 const path=require('node:path');
 const fs=require('node:fs');
-const {createContext,root,plain}=require('../../tests/helpers/synth-context');
+const {createBoardContext,plain}=require('../../tests/helpers/board-context');
 const args={takes:4};
 for(let i=2;i<process.argv.length;i+=2)args[process.argv[i].replace(/^--/,'')]=process.argv[i+1];
 const takes=parseInt(args.takes,10);
-const ENGINES=['Bfxr','Transfxr','Clonkr','Machinr','Jinglr','Squishr','Crittr','Birdr','Signlr','Fractr','Riftr','Swarmr','Rustlr','Boomr','Zappr','Whooshr','Bouncr','Breathr','Choirr','Pluckr','Glitchr','Tappr','Pewpr','Tickr','Stackr','Mixr'];
-function boardContext(){
- const api=createContext(ENGINES);
- api.run('var CONVERSION_FACTOR=(2*Math.PI)/44100;');
- for(const file of ['js/audio/puredata.js','js/audio/puredata_modules.js','js/audio/puredata_parser.js','js/synths/Footsteppr.js','js/synths/Soundboard.js'])api.load(file);
- return api;
-}
+const boardContext=createBoardContext;
 const rate=44100;
 function measure(pcm){
  const hop=256;let peak=0;const env=[];

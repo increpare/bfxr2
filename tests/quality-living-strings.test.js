@@ -5,7 +5,7 @@ const names = ['Breathr', 'Pulser', 'Pluckr'];
 const categoryIds = {
     Breathr:['dash','hurt','lose','roar','inhale','exhale','sigh','snore','tired_runner','deep_breath','held_breath','gasp','sleeping_beast','diver','helmet','ghost_breath'],
     Pulser:['heartbeat','panic','giant_heart','android_core','poison','underwater','energy_core','last_life'],
-    Pluckr:['jump','coin','unlock','lose','blip','confirm','heal','harp','kalimba','muted_guitar','metal_string','magic_harp','bass_pluck','broken_string','quest_pluck']
+    Pluckr:['coin','unlock','blip','confirm','heal','harp','kalimba','muted_guitar','metal_string','magic_harp','bass_pluck','broken_string','quest_pluck']
 };
 function setup() {
     const api = createContext(names);

@@ -7,7 +7,7 @@ function rms(pcm){return Math.sqrt(pcm.reduce((n,v)=>n+v*v,0)/pcm.length);}
 function safe(pcm,duration){assert.equal(pcm.length,Math.round(duration*44100));assert.ok(pcm.every(v=>Number.isFinite(v)&&Math.abs(v)<1));assert.ok(pcm[0]===0&&pcm.at(-1)===0);assert.ok(rms(pcm)>0.0005);}
 for(const name of names){
  test(name+' has eight fresh, audible, repeatable preset categories',()=>{
-  const {run}=setup(name), recipes=plain(run('s.recipes'));assert.equal(recipes.length,{Whooshr:12,Bouncr:13,Rollr:8}[name]);
+  const {run}=setup(name), recipes=plain(run('s.recipes'));assert.equal(recipes.length,{Whooshr:12,Bouncr:12,Rollr:8}[name]);
   for(const recipe of recipes){
    const a=plain(run(`s.generate_recipe('${recipe.id}');s.params`));
    const b=plain(run(`s.generate_recipe('${recipe.id}');s.params`));
