@@ -22,6 +22,7 @@ class Tab {
     text_controls = {};
 
     synth = null;
+    ui_initialized = false;
 
     constructor(synth_specification) {
 
@@ -64,7 +65,7 @@ class Tab {
         tab_button.id = "tab_button_" + tab_name;
         tab_button.classList.add("tab_button");
         tab_bar.appendChild(tab_button);
-        tab_button.addEventListener("click", this.set_active_tab.bind(this));
+        tab_button.addEventListener("click", () => this.set_active_tab(true));
 
         var tab_page = document.createElement("div");
         tab_page.classList.add("tab_page");
@@ -76,6 +77,26 @@ class Tab {
             tab_page.classList.add("active_tab_page");
             this.active = true;
         }
+
+        tabs.push(this);
+
+        // Keep every collection ready to save/export, without rendering hidden tabs.
+        if (this.files.length === 0) {
+            const [template_name, params] = this.synth.create_random_template();
+            this.synth.apply_params(params);
+            this.current_params = this.synth.params;
+            const state = JSON.stringify(this.synth.params);
+            this.files.push([this.find_unique_filename(template_name), state, state]);
+            this.selected_file_index = 0;
+        }
+    }
+
+    initialize_ui() {
+        if (this.ui_initialized) return;
+        this.ui_initialized = true;
+        const synth_specification = this.synth;
+        const tab_name = this.name;
+        const tab_page = document.getElementById("tab_page_" + tab_name);
 
         var left_panel = document.createElement("div");
         left_panel.classList.add("left_panel");
@@ -268,8 +289,6 @@ class Tab {
 
         this.template_list = template_list;
 
-        tabs.push(this);
-
         this.load_params(synth_specification);
         this.load_templates(synth_specification);
 
@@ -281,19 +300,6 @@ class Tab {
             this.custom_editor = this.synth.create_editor(this, editor_container);
         }
 
-        // Prepare every tab without starting several sounds (or a weather loop) on load.
-        const initial_play_on_change = this.play_on_change;
-        this.play_on_change = false;
-        if (this.files.length == 0){
-            this.create_random_template();
-        } else {
-            this.update_ui();
-            if (this.selected_file_index >= 0) {
-                this.synth.generate_sound();
-                this.redraw_waveform();
-            }
-        }
-        this.play_on_change = initial_play_on_change;
         this.update_ui();
     }
 
@@ -319,6 +325,7 @@ class Tab {
     }
 
     update_ui(){
+        if (this.ui_initialized === false) return;
         document.getElementById(this.name + "_checkbox_create_new_sound").checked = this.create_new_sound;
         document.getElementById(this.name + "_checkbox_loop").checked = this.play_on_change;
         this.update_ui_file_list();
@@ -476,7 +483,8 @@ class Tab {
             }
         }
     }
-    set_active_tab() {
+    set_active_tab(play_on_switch = false) {
+        const preview = play_on_switch && !this.active && this.selected_file_index >= 0;
         var tab_page = document.getElementById("tab_page_" + this.name);
         tab_page.classList.add("active_tab");
         var tab_buttons = document.getElementsByClassName("tab_button");
@@ -500,8 +508,20 @@ class Tab {
 
         for (var i = 0; i < tabs.length; i++){
             var tab = tabs[i];
-            if (tab.active && tab !== this && tab.synth.loop_preview && tab.synth.sound) tab.synth.sound.stop();
+            if (tab.active && tab !== this && tab.synth.sound && (preview || tab.synth.loop_preview)) tab.synth.sound.stop();
             tab.active = tab.name == this.name;
+        }
+        if (this.ui_initialized === false) this.initialize_ui();
+        if (this.ui_initialized) this.update_ui();
+        if (this.selected_file_index >= 0) {
+            if (!this.synth.sound || this.synth.sound_params !== JSON.stringify(this.synth.params)) {
+                this.synth.generate_sound();
+            }
+            this.redraw_waveform();
+            if (preview) {
+                this.synth.sound.play(this.synth.loop_preview === true);
+                for (const editor of Object.values(this.text_controls)) editor.play();
+            }
         }
         this.update_stack_button();
         if (this.custom_editor) this.custom_editor.update();
@@ -885,6 +905,12 @@ class Tab {
             }
         }
         
+        //update the current params
+        var params = JSON.parse(this.files[this.selected_file_index][1]);
+        this.synth.apply_params(params);
+
+        if (this.ui_initialized === false) return true;
+
         var file_list = document.getElementById(this.name + "_file_list");
         for (var i = 0; i < file_list.children.length; i++) {
             var file_item = file_list.children[i];
@@ -898,9 +924,6 @@ class Tab {
         file_name_span.contentEditable = true;
         file_name_span.focus();
 
-        //update the current params
-        var params = JSON.parse(this.files[this.selected_file_index][1]);
-        this.synth.apply_params(params);
 
         this.update_ui_params();
         this.update_ablements();

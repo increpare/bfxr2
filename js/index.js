@@ -28,6 +28,8 @@ function register_tabs(){
     new Tab(new Glitchr());
     SaveLoad.collection_save_enabled=true;
     set_tab_from_loaded_data();
+    // New collections have no saved selection. Build only the visible panel.
+    (tabs.find(tab => tab.active) || bfxr_tab).set_active_tab();
     SaveLoad.save_all_collections();
 }
 
@@ -46,11 +48,11 @@ function bfxr_generate_sound(params){
 
 }
 
-window.onload = function(){
+document.addEventListener('DOMContentLoaded', function(){
     register_tabs();
     SaveLoad.check_url_for_sfxr_params();
     register_drop_handlers();
-}
+});
 
 function showDropZone() {
     const dropZone = document.getElementById('dropzone');

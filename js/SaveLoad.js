@@ -174,8 +174,10 @@ class SaveLoad {
             tab.update_ui();
             if (files[selected_file_index]!=null && files[selected_file_index].length>0){
                 tab.set_selected_file(files[selected_file_index][0]);
-                tab.synth.generate_sound();
-                tab.redraw_waveform();            
+                if (tab.ui_initialized !== false) {
+                    tab.synth.generate_sound();
+                    tab.redraw_waveform();
+                }
             }
             tab.update_ui();
         }
