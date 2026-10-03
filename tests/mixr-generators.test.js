@@ -40,11 +40,11 @@ test('Legacy snapshots remain playable and are not silently regenerated as anoth
  s.regenerate_source(0);return s.params.sources===before;})()`),true);
 });
 test('curated Mixr pairs invoke only listed generators and create fresh playable snapshots',()=>{
- const names=['Clonkr','Machinr','Jinglr','Squishr','Crittr','Birdr','Signlr','Fractr','Riftr','Swarmr','Boomr','Zappr','Whooshr','Breathr','Choirr','Pluckr','Stackr','Mixr'];
+ const names=['Bfxr','Transfxr','Clonkr','Machinr','Jinglr','Squishr','Crittr','Birdr','Signlr','Fractr','Riftr','Swarmr','Rustlr','Boomr','Zappr','Whooshr','Bouncr','Breathr','Choirr','Pluckr','Glitchr','Stackr','Mixr'];
  const {run}=createContext(names);
  const result=plain(run(`(()=>{Math.random=SoundDSP.rng(.613);const mix=new Mixr();return mix.recipes.map(recipe=>{
  mix.generate_recipe(recipe.id);const first=mix.params.sources;mix.generate_recipe(recipe.id);const sources=mix.get_sources();mix.generate_sound();const pcm=mix.sound.getBuffer();
- return {id:recipe.id,fresh:first!==mix.params.sources,valid:sources.every((s,i)=>s.synth===recipe.pair[i][0]&&s.generator==='generate_'+recipe.pair[i][1]),
+ return {id:recipe.id,fresh:first!==mix.params.sources,valid:sources.every((s,i)=>s.synth===recipe.pair[i]&&s.generator==='*'&&Mixr.templates_for(Stackr.source(s.synth)).some(t=>t[2]===s.selectedGenerator)),
  audible:pcm.some(v=>Math.abs(v)>.025),finite:pcm.every(v=>Number.isFinite(v)&&Math.abs(v)<=1)};});})()`));
  for(const entry of result)assert.deepEqual({...entry,id:undefined},{id:undefined,fresh:true,valid:true,audible:true,finite:true});
 });
@@ -87,4 +87,16 @@ test('synth-wide selection rejects retired or missing synths and supports a sing
  assert.equal(run(`(()=>{const mix=new Mixr();if(mix.set_generator(0,'Rumblr','*')!==false||mix.set_generator(0,'Missing','*')!==false)return false;
  if(!mix.set_generator(0,'Footsteppr','*'))return false;const before=mix.params.sources;mix.regenerate_source(0);
  const source=mix.get_sources()[0];return source.generator==='*'&&source.selectedGenerator==='randomize_params'&&mix.params.sources!==before;})()`),true);
+});
+
+test('curated buttons select whole instruments and Regen Both explores each instrument',()=>{
+ const names=['Bfxr','Transfxr','Clonkr','Machinr','Jinglr','Squishr','Crittr','Birdr','Signlr','Fractr','Riftr','Swarmr','Rustlr','Boomr','Zappr','Whooshr','Bouncr','Breathr','Choirr','Pluckr','Glitchr','Stackr','Mixr'];
+ const {run}=createContext(names);
+ assert.equal(run(`(()=>{Math.random=SoundDSP.rng(.153);const mix=new Mixr();return mix.recipes.every(recipe=>{
+ mix.generate_recipe(recipe.id);const balance=mix.params.balance,seen=[new Set(),new Set()];
+ for(let j=0;j<12;j++){
+  const before=mix.get_sources();before.forEach((source,i)=>seen[i].add(source.selectedGenerator));mix.regenerate_both();
+  if(!mix.get_sources().every((source,i)=>source.synth===recipe.pair[i]&&source.generator==='*'&&source.selectedGenerator!==before[i].selectedGenerator))return false;
+ }
+ return seen.every(choices=>choices.size>=3)&&mix.params.balance===balance;});})()`),true);
 });
