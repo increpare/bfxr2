@@ -274,7 +274,12 @@ body {
     flex-direction: column;
     gap: var(--ui-margin);
     margin: var(--ui-margin);
+    max-height: 360px;
+    overflow-y: auto;
+    flex-shrink: 0;
 }
+
+.template_list button { flex-shrink: 0; }
 
 .right_panel_button_list{
     display: flex;
@@ -347,8 +352,6 @@ body {
 
     /* min-height: 100px;
     max-height: 200px; */
-    scrollbar-gutter: stable;
-    padding-right:13px;
 }
 
 .file_item {
@@ -963,8 +966,6 @@ img {
 #tab_page_Jinglr #Jinglr_button_grid_contour { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 #tab_page_Mixr .centre_header { flex-shrink: 0; }
-#tab_page_Mixr .template_list { max-height: 360px; overflow-y: auto; flex-shrink: 0; }
-#tab_page_Mixr .template_list button { flex-shrink: 0; }
 .mix-editor { padding: 14px 9px; font-size: 12px; }
 .mix-slot { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
 .mix-slot label { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; font-weight: bold; }
