@@ -9,8 +9,9 @@
         return {schemaVersion:1, experimentId:model.experimentId, provenance:model.provenance,
             ratingScale:{min:1,max:5,meaning:'Audible likeness to reference: 1 = far off, 5 = very close'},
             targets:model.targets.map(target => ({...target,selected:rated(target.selected),bfxr:rated(target.bfxr),
+                ...(target.previous ? {previous:rated(target.previous)} : {}),
                 note:typeof notes[target.id] === 'string' ? notes[target.id] : ''}))
-                .filter(target => target.selected.rating !== null || target.bfxr?.rating != null || target.note.trim())};
+                .filter(target => target.selected.rating !== null || target.bfxr?.rating != null || target.previous?.rating != null || target.note.trim())};
     }
     if (typeof module !== 'undefined') module.exports = {feedbackPayload};
     if (typeof document === 'undefined') return;

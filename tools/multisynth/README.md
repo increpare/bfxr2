@@ -145,8 +145,18 @@ ratings for a shared candidate. Re-importing identical data verifies the archive
 The user's target is **large-scale gesture and feel**, robust to modest
 quantitative differences: impact, build-up, rebound, flutter, rattle, rise/fall,
 and decay character. See the [updated design](../../docs/superpowers/specs/2026-10-03-multisynth-approximation-design.md)
-for the next model's acceptance criteria. The current distance has not yet been
-replaced or calibrated to those criteria. The next listening set is recorded in
-[evaluations/tagged-v2-targets.json](evaluations/tagged-v2-targets.json); it is a
-target manifest, not a claim of new model results. The benchmark command above
-reproduces its selection against the unchanged corpus.
+for the acceptance criteria. [GESTURE_V2.md](GESTURE_V2.md) documents the next
+implemented representation, fitting attempt and 18-tag comparison gallery.
+The fitted weights did not improve held-out preference prediction, so this
+listening iteration uses the fixed gesture prior with a larger library/search.
+The old auditory-v1 metric remains the CLI default; opt in with
+`--gesture-model multisynth/models/gesture-v2-prior.json`, or use
+`multisynth.iterate` to generate old/new/Bfxr comparisons together.
+
+The new gallery retains a separately rated **Previous model** card as well as
+Bfxr. Feedback export and archival support all three approximation roles while
+keeping earlier feedback identities unchanged. The fitting utility uses all
+strict preferences among distinct rated candidates, grouping each reference's
+pairs together in validation. Neither lower search distance nor successful
+synthetic checks establishes audible improvement; that is what the next human
+ratings will test.

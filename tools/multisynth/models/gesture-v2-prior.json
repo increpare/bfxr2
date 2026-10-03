@@ -1,0 +1,30 @@
+{
+  "objectiveVersion": "gesture-v2",
+  "baseFeatureVersion": "auditory-v1",
+  "components": [
+    "envelope_shape",
+    "attack_release",
+    "pulse_structure",
+    "spectral_motion",
+    "timbre",
+    "texture",
+    "pitch_motion",
+    "pitch_register",
+    "duration"
+  ],
+  "weights": [
+    0.21,
+    0.11,
+    0.12,
+    0.13,
+    0.22,
+    0.09,
+    0.07,
+    0.025,
+    0.025
+  ],
+  "training": {
+    "selection": "Use fixed gesture prior: fitted weights did not improve grouped CV (14/19 vs 15/19).",
+    "fittedExperiment": "gesture-v2.json"
+  }
+}

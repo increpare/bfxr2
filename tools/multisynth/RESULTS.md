@@ -135,7 +135,8 @@ Focus on the curated `tags/` directory, now preferred by the benchmark CLI.
 The next target selection is frozen in
 [evaluations/tagged-v2-targets.json](evaluations/tagged-v2-targets.json).
 Treat reused rated references as development data, and check related takes
-before calling the rest held out. No new model benchmark has been run yet.
+before calling the rest held out. The subsequent 18-tag gesture iteration is
+documented in [GESTURE_V2.md](GESTURE_V2.md).
 
 Prioritize large-scale gesture and feel over exact contour fit: impacts,
 build-up/release, rise/fall, pulse structure, weight and texture. Probe whether

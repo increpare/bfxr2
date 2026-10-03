@@ -31,7 +31,8 @@ def retain_feedback(feedback_path, report, output):
         raise ValueError('Feedback experiment/provenance does not match this report')
     expected = {t['id']: (t, r) for t, r in zip(model['targets'], results['results'])}
     targets, candidates, audio_sources = [], {}, {}
-    selected_ratings, bfxr_ratings, comparisons = [], [], Counter()
+    selected_ratings, bfxr_ratings, previous_ratings, comparisons = [], [], [], Counter()
+    previous_comparisons = Counter()
     seen_targets = set()
 
     def audio(path):
@@ -61,7 +62,8 @@ def retain_feedback(feedback_path, report, output):
             raise ValueError('Note must be text')
         retained = {'id': tid, 'source': record['source'], 'note': target.get('note', ''),
                     'referenceAudio': audio(report/record['folder']/'target.wav')}
-        for role in ('selected', 'bfxr'):
+        roles = ('selected', 'bfxr', 'previous') if 'previous' in original else ('selected', 'bfxr')
+        for role in roles:
             observation, identity = target.get(role), original[role]
             if observation is None and identity is None:
                 retained[role] = None
@@ -74,7 +76,8 @@ def retain_feedback(feedback_path, report, output):
                 raise ValueError('Ratings must be integers from 1 to 5 or null')
             cid = identity['id']
             retained[role] = cid
-            candidate = next(c for c in record['candidates'] if c['file'] == identity['file'])
+            candidate = (record['previous'] if role == 'previous' else
+                         next(c for c in record['candidates'] if c['file'] == identity['file']))
             if cid in candidates:
                 if candidates[cid]['rating'] != rating:
                     raise ValueError('Shared candidate has contradictory ratings')
@@ -82,11 +85,16 @@ def retain_feedback(feedback_path, report, output):
                 candidates[cid] = {**candidate, 'id': cid, 'targetId': tid, 'rating': rating,
                                    'audio': audio(report/record['folder']/candidate['file'])}
             if rating is not None:
-                (selected_ratings if role == 'selected' else bfxr_ratings).append(rating)
+                {'selected':selected_ratings, 'bfxr':bfxr_ratings,
+                 'previous':previous_ratings}[role].append(rating)
         a, b = (target.get(role) or {} for role in ('selected', 'bfxr'))
         if a.get('rating') is not None and b.get('rating') is not None:
             comparisons['win' if a['rating'] > b['rating'] else
                         'loss' if a['rating'] < b['rating'] else 'tie'] += 1
+        old = target.get('previous') or {}
+        if a.get('rating') is not None and old.get('rating') is not None:
+            previous_comparisons['win' if a['rating'] > old['rating'] else
+                                 'loss' if a['rating'] < old['rating'] else 'tie'] += 1
         targets.append(retained)
     summary = {'targets': len(targets),
                'uniqueRatedCandidates': sum(c['rating'] is not None for c in candidates.values()),
@@ -94,6 +102,10 @@ def retain_feedback(feedback_path, report, output):
                'meanBfxrRating': float(np.mean(bfxr_ratings)) if bfxr_ratings else None,
                'selectedRatingCounts': dict(sorted(Counter(map(str, selected_ratings)).items())),
                'selectedVersusBfxr': dict(comparisons)}
+    if any('previous' in t for t in model['targets']):
+        summary.update(meanPreviousRating=float(np.mean(previous_ratings)) if previous_ratings else None,
+                       previousRatingCounts=dict(sorted(Counter(map(str, previous_ratings)).items())),
+                       selectedVersusPrevious=dict(previous_comparisons))
     manifest = {'schemaVersion': 1, 'experimentId': model['experimentId'],
                 'feedbackSha256': digest(raw), 'provenance': model['provenance'],
                 'ratingMeaning': 'Human likeness to reference; not a rating of fun or preset quality',

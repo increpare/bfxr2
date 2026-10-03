@@ -1,0 +1,576 @@
+{
+  "objectiveVersion": "gesture-v2",
+  "baseFeatureVersion": "auditory-v1",
+  "components": [
+    "envelope_shape",
+    "attack_release",
+    "pulse_structure",
+    "spectral_motion",
+    "timbre",
+    "texture",
+    "pitch_motion",
+    "pitch_register",
+    "duration"
+  ],
+  "weights": [
+    0.2607813309167672,
+    0.11696614239381133,
+    0.07103665184555925,
+    0.07793789987821799,
+    0.21723228014139562,
+    0.10294385872690973,
+    0.08845147590035117,
+    0.01982633172166654,
+    0.044824028475321194
+  ],
+  "training": {
+    "feedbackExperimentId": "51ebabd537188b5b7555a8d74e847674121e8d3f903fc1d00551fc604b526d34",
+    "feedbackSha256": "dcf72a32f2fbea1f707454655a76b3e475af2028706f51c1f576dedd462aa7c4",
+    "archiveManifestSha256": "c28456efac1be70c3b65b76900aa0aa49bb1021526cd49543e999f25d2504c6a",
+    "trainingMethod": "Nonnegative pairwise logistic distance with KL shrinkage to gesture prior",
+    "strictPreferencePairs": 19,
+    "ratedCandidatesInArchive": 73,
+    "validation": "Five folds grouped by exact reference audition PCM; related takes may remain",
+    "legacyCorrect": 15,
+    "gesturePriorCorrect": 15,
+    "heldOutFitCorrect": 14,
+    "trainingFitCorrect": 15,
+    "folds": [
+      {
+        "trainReferences": 15,
+        "testReferences": 4,
+        "trainPairs": 15,
+        "testPairs": 4,
+        "testGroups": [
+          "0dac834de9c46a22216912c9807d6aeb80ba596824c8cd7b942e1753bc6c4d75",
+          "1eb7d4a06268acf2ec67009867e6963edc14e2e73f038c59516ba398a5354959",
+          "bf414abc51c7b062bfae8d7b57def6882bf61fc10608a1e75df6c22b4ec454a2",
+          "d2004564ec8aa554a9a1255b08f90718c98d5bc35bcbb560caf3710dfcf03a30"
+        ],
+        "weights": [
+          0.38773198555951016,
+          0.13449858803974477,
+          0.04519668313320301,
+          0.04102065514031937,
+          0.19526956997819575,
+          0.0992769400606276,
+          0.06776168550935815,
+          0.004766884862534381,
+          0.024477007716506845
+        ]
+      },
+      {
+        "trainReferences": 15,
+        "testReferences": 4,
+        "trainPairs": 15,
+        "testPairs": 4,
+        "testGroups": [
+          "6aacbf2538610f64a8b38ef23dcd7549819f966674a8c57dd5aaaf281d19da49",
+          "ae19aca4c5537fd49aac7af04ad2520a434eeef209785fd1debfb37070526656",
+          "df9c1455ed38b111491856e17cabe9c2cec92c120f6bbcb5f6fe52df64ea2ee8",
+          "ee508ff3d7fd76bddf4c8cddbed6fd0d7ccb38649a4e7ce27ee701dd3ff8b5dd"
+        ],
+        "weights": [
+          0.28334548774397617,
+          0.10104730143515621,
+          0.05715718575061695,
+          0.0644904858908507,
+          0.1918682254120741,
+          0.10046116156546138,
+          0.10185931895818916,
+          0.027085727633741067,
+          0.07268510560993441
+        ]
+      },
+      {
+        "trainReferences": 15,
+        "testReferences": 4,
+        "trainPairs": 15,
+        "testPairs": 4,
+        "testGroups": [
+          "136718d52c87ddba84252c3ad7bde922455a6278de6d67bebcdbd2de5a0084db",
+          "ada7b738033568d48db79e1bf513816b7117b0665090ab6bf857d43a5f0640c6",
+          "ae889d637ca7da47541e0d7afda558df1c9396e75c982baa4d061e143cf0a02f",
+          "b16c487b18b4cf55a6ea8c4cf96b4d7f339b80893d41f42caa7322ac650e6154"
+        ],
+        "weights": [
+          0.2529331561837388,
+          0.095942512247725,
+          0.10137822478083988,
+          0.09554872862131579,
+          0.18835860657916828,
+          0.08981534911639959,
+          0.08951320397800212,
+          0.029826362472494178,
+          0.05668385602031651
+        ]
+      },
+      {
+        "trainReferences": 15,
+        "testReferences": 4,
+        "trainPairs": 15,
+        "testPairs": 4,
+        "testGroups": [
+          "5596ab379b5c67daa51e0a1786ed789e27e359fde7d8b0e8256eea0d126600eb",
+          "56325aad3e4044d39dec4dfd7eeabbd42874c42945d310a106c6a5470fd3e08e",
+          "5cb3f3dc6ee87cd95b24b46511dba8a7c94ea363760079b51f6e33ef42af1baf",
+          "eda284e27f7257854fb7e67fa6405c51f794b193b83ca3db76509adadf848596"
+        ],
+        "weights": [
+          0.12033226528576427,
+          0.10812589468065897,
+          0.08200309376767224,
+          0.09044633244729576,
+          0.28728745601466765,
+          0.12396651698502514,
+          0.08093122971975505,
+          0.04629823201253817,
+          0.06060897908662265
+        ]
+      },
+      {
+        "trainReferences": 16,
+        "testReferences": 3,
+        "trainPairs": 16,
+        "testPairs": 3,
+        "testGroups": [
+          "273219f413680d8344916f299c11743b8a227047fe8a2bc4eeea1faf7bc8300f",
+          "af9e658a99bf152b4b2d9cdbcddaa9ab716862c20e4c4e556b05f4e3eb04ed89",
+          "ee95687a40f48e2a55c65860f6c4fa51ac114c8940526bb42e1c87121ec8222f"
+        ],
+        "weights": [
+          0.24773870283352503,
+          0.13415446988516794,
+          0.07211891038929039,
+          0.10630986140838412,
+          0.2229610252851907,
+          0.09442256267162459,
+          0.08999820321132451,
+          0.010079411750007846,
+          0.022216852565484876
+        ]
+      }
+    ],
+    "pairs": [
+      {
+        "target": "Sonniss.com-GDC2026-GameAudioBundle3of5/InMotionAudio - Christmas Cracker/OBJMisc_CrackerHatMovement16_InMotionAudio_ChristmasCracker.wav",
+        "candidateA": "5bb1125ef4eb1b2ff01570724926ed07bdb175e2d28937649d982f917bdf2e42",
+        "candidateB": "6eeb18b01d0c33884b0de9ada0d0112dd96c99bde610f49634d3d71faf4c7da6",
+        "ratingA": 3,
+        "ratingB": 2,
+        "componentDifference": [
+          -0.016155093908309937,
+          -0.0564516129032258,
+          0.05579654003183046,
+          -0.07009519399812614,
+          0.022763296961784363,
+          -0.02277102693915367,
+          -0.00846991315484047,
+          -0.3870870769023895,
+          -0.004584193229675293
+        ],
+        "legacyDifference": -0.10248416662216187,
+        "priorDifference": -0.019445180323108394,
+        "heldOutDifference": -0.016843806931341913,
+        "fittedDifference": -0.01834373670377629
+      },
+      {
+        "target": "Street Fighter Sound Pack/blanka.wav",
+        "candidateA": "2957cdf897db9b802827ae278d44b11d7d2c771edb90d57abd75544c673b1f02",
+        "candidateB": "8d146fc75518146dc941fa5bbd32231ef6d5fa39016eafc3d4323876784b5474",
+        "ratingA": 2,
+        "ratingB": 1,
+        "componentDifference": [
+          -0.1503794640302658,
+          -0.1370967741935484,
+          0.012921171262860298,
+          -0.05139177855545635,
+          -0.06208525598049164,
+          -0.015440359711647034,
+          -0.040568090975284576,
+          -0.23950614035129547,
+          -0.013396959751844406
+        ],
+        "legacyDifference": -0.2746444344520569,
+        "priorDifference": -0.07600145582891704,
+        "heldOutDifference": -0.0794052967976652,
+        "fittedDifference": -0.0823530814748564
+      },
+      {
+        "target": "kenney_impact-sounds/Audio/impactPunch_heavy_002.ogg",
+        "candidateA": "bbe03452b8b0a721b5ccd4551456081cad5057fcef9c16fcf88a1c64ee54e3cd",
+        "candidateB": "3610bc9b53a8453b9092940dc645c515257ec16a3c69d32d5cac4896f78ee701",
+        "ratingA": 4,
+        "ratingB": 2,
+        "componentDifference": [
+          -0.02470003440976143,
+          0.0,
+          -0.0005699542040626185,
+          -0.050129452411908804,
+          -0.055392131209373474,
+          0.03548615425825119,
+          -0.02622696105390787,
+          -0.47570040076971054,
+          -0.24906876683235168
+        ],
+        "legacyDifference": -0.6890016794204712,
+        "priorDifference": -0.04071986199073022,
+        "heldOutDifference": -0.02909378749058808,
+        "fittedDifference": -0.04168412989843515
+      },
+      {
+        "target": "kenney_rpg-audio/Audio/drawKnife1.ogg",
+        "candidateA": "7f653216e8e2352b854f8cae949cac875a0f542de3824d8e2bb599399798a1f6",
+        "candidateB": "d167bf6ef66c38e5c100c3bf168052b569b043e89a3f535ed9eac36b44624a4a",
+        "ratingA": 3,
+        "ratingB": 2,
+        "componentDifference": [
+          -0.09714282304048538,
+          -0.048387096774193554,
+          -0.038676892717679344,
+          0.007387494362893904,
+          -0.13342826813459396,
+          0.010941259562969208,
+          0.0012538675218820572,
+          0.42977964878082275,
+          0.02362692356109619
+        ],
+        "legacyDifference": -0.31499338150024414,
+        "priorDifference": -0.04634999693647225,
+        "heldOutDifference": -0.042307552683060634,
+        "fittedDifference": -0.05133207513139082
+      },
+      {
+        "target": "kenney_sci-fi-sounds/Audio/laserLarge_001.ogg",
+        "candidateA": "755d67ca636d7d76e72e17fef62b9086d28a9b1867a9fa3fb26cecc73b306e7e",
+        "candidateB": "7e0db003280cc826425b2d55b0cb7341674d8de49c61f326db7d06e19fda1831",
+        "ratingA": 2,
+        "ratingB": 1,
+        "componentDifference": [
+          -0.09747761860489845,
+          -0.08064516129032259,
+          0.05147456998626391,
+          -0.009860635016204045,
+          -0.15829726308584213,
+          -0.07210707664489746,
+          0.09029124677181244,
+          0.04747569561004639,
+          0.04663383215665817
+        ],
+        "legacyDifference": -0.3713090419769287,
+        "priorDifference": -0.05708811111145058,
+        "heldOutDifference": -0.0572062668479891,
+        "fittedDifference": -0.06275730957424062
+      },
+      {
+        "target": "kenney_ui-audio/Audio/switch10.ogg",
+        "candidateA": "9b3138aae0f137d5366a40b99b66dfbff6d6e6fb2a7e2e8ab5d37e512c0ed51e",
+        "candidateB": "7aba5a9d0bd4d648d81f38f0e3c2fc0153a8a44fdb54d3689f984d4dd9a1ad11",
+        "ratingA": 4,
+        "ratingB": 1,
+        "componentDifference": [
+          -0.28236692771315575,
+          -0.12096774193548385,
+          -0.05941265821456909,
+          -0.01554921193517458,
+          0.04399418085813522,
+          -0.1128537654876709,
+          -0.05603353679180145,
+          -0.06472218036651611,
+          0.016641616821289062
+        ],
+        "legacyDifference": -0.46706080436706543,
+        "priorDifference": -0.08735690373914431,
+        "heldOutDifference": -0.06120985444547056,
+        "fittedDifference": -0.100771656594967
+      },
+      {
+        "target": "kenney_voiceover-pack/Male/go.ogg",
+        "candidateA": "663a4d21c1af8407f93e73e264160a1e3d2dd82b023dff00254dfe2c3dfe8a22",
+        "candidateB": "f158b3613d31a127f21334ca6a6e6377976745ab80944742057011f3029fd24f",
+        "ratingA": 2,
+        "ratingB": 1,
+        "componentDifference": [
+          0.08725772798061371,
+          0.07258064516129033,
+          -0.027655278642972306,
+          -0.19936820446047102,
+          -0.04685356840491295,
+          -0.028488874435424805,
+          -0.10962134599685669,
+          0.01703299582004547,
+          -0.019527122378349304
+        ],
+        "legacyDifference": -0.19546687602996826,
+        "priorDifference": -0.02353613730535374,
+        "heldOutDifference": 0.014364202389796615,
+        "fittedDifference": -0.009602827516585569
+      },
+      {
+        "target": "mario_nes_snes_sounds/mario 3 - tail.wav",
+        "candidateA": "4b280a94d3c493bdb113c081c58c5ac6ce41755890bea34d504c65fc311f7f83",
+        "candidateB": "6f7ec45fe2cb32704f1d111caf48576f01f1f21f8208fd2a99a8e418544e3365",
+        "ratingA": 2,
+        "ratingB": 3,
+        "componentDifference": [
+          -0.03011997789144516,
+          0.048387096774193554,
+          0.09842671795437732,
+          0.04863595027707931,
+          0.005491107702255249,
+          0.01462344080209732,
+          0.017190951853990555,
+          -0.1223856508731842,
+          0.0002308487892150879
+        ],
+        "legacyDifference": -0.11656337976455688,
+        "priorDifference": 0.017804914922868422,
+        "heldOutDifference": 0.006092966443224806,
+        "fittedDifference": 0.01039010584323205
+      },
+      {
+        "target": "tags/carbeep/VEHHorn_Kawasaki Ninja ZX 10R Horn Single 03_SNDBTS_MCK.wav",
+        "candidateA": "5e76ef147e20aaf3300fa92a9036c334ecf63129e90193dd011eaffe081a3855",
+        "candidateB": "2e56f117cb26aee187fbaa43e453eb1431fcdb981691a8b7142680425462cbf2",
+        "ratingA": 2,
+        "ratingB": 3,
+        "componentDifference": [
+          -0.23379781004041433,
+          -0.10483870967741934,
+          -0.018467362970113754,
+          -0.030511867099766582,
+          -0.04307855665683746,
+          0.001965682953596115,
+          0.008053846657276154,
+          0.026395469903945923,
+          -0.013200700283050537
+        ],
+        "legacyDifference": -0.40242335200309753,
+        "priorDifference": -0.07521915694453532,
+        "heldOutDifference": -0.11470615935774511,
+        "fittedDifference": -0.08543428068830365
+      },
+      {
+        "target": "RAREVGSFX 1+2/RAREVGSFX/NINTENDO/PAPER MARIO (N64)/BANK_0F_INSTR_0004_SND_0000.wav",
+        "candidateA": "4a6a42e27f0fb12b42fc117d991d3bd96349351051998125803f513217e5bb45",
+        "candidateB": "038d9eadafa5949c235ae7038ae50114438a6215392700271cc400a10b03b8d7",
+        "ratingA": 3,
+        "ratingB": 2,
+        "componentDifference": [
+          -0.10287682712078094,
+          0.10483870967741937,
+          -0.061800705268979086,
+          0.015548740146651271,
+          -0.05914821848273277,
+          0.00373951718211174,
+          -0.009780873078852892,
+          0.05798834562301636,
+          -0.3631570339202881
+        ],
+        "legacyDifference": -0.8368219137191772,
+        "priorDifference": -0.03645655388682334,
+        "heldOutDifference": -0.0354246368101723,
+        "fittedDifference": -0.04620159523512477
+      },
+      {
+        "target": "Sonniss.com-GDC2026-GameAudioBundle1of5/344 Audio - Bass Drops & Downers Vol. 2/DSGNBass_Bass Drop & Downer Fast 12_344 Audio_Bass Drops & Downers Vol 2.wav",
+        "candidateA": "d9fc19a3cc99f7ba7d07ed5aea6e9e32ebf304eec7843a1fed8131b944060c7b",
+        "candidateB": "343c5f3c0307f5c793fe96473d7ba3cf347a013d02a4faac7347820af0e92393",
+        "ratingA": 2,
+        "ratingB": 3,
+        "componentDifference": [
+          -0.04994136095046997,
+          -0.1209677419354839,
+          -0.14209891793628535,
+          -0.034945256127688715,
+          -0.026559961028397083,
+          -0.0721832737326622,
+          -0.013359470292925835,
+          -0.4076023995876312,
+          -0.035740941762924194
+        ],
+        "legacyDifference": -0.2444397211074829,
+        "priorDifference": -0.06974732337791134,
+        "heldOutDifference": -0.07259986704483556,
+        "fittedDifference": -0.06405617980810123
+      },
+      {
+        "target": "Sonniss.com-GDC2026-GameAudioBundle2of5/Cinematic Sound Design - Paper Foley/Encyclopedia Glossy Page Turn Muted.wav",
+        "candidateA": "e78dc432e911711bcd439e06fbb5f28673b41242de8aa34fed5f105e44eec63b",
+        "candidateB": "0377af001b0c1fc8d06c7daa0ee15e3ae5ed9dd34aa17d772b28deddf59f0582",
+        "ratingA": 2,
+        "ratingB": 1,
+        "componentDifference": [
+          -0.05728355050086975,
+          -0.008064516129032279,
+          -0.01838286345203717,
+          0.01168728268209622,
+          -0.053248777985572815,
+          -0.18285010755062103,
+          -0.14072151482105255,
+          0.08434547483921051,
+          -0.008983522653579712
+        ],
+        "legacyDifference": -0.2485533356666565,
+        "priorDifference": -0.04974093731416297,
+        "heldOutDifference": -0.05305210375340951,
+        "fittedDifference": -0.05784482176972605
+      },
+      {
+        "target": "Sonniss.com-GDC2026-GameAudioBundle3of5/InMotionAudio - Medical Thermometer/BEEPMed_Thermometer_Beep11_InMotionAudio_MedicalThermometer.wav",
+        "candidateA": "fc866c8f2f62cb3267d80311942878af181a9d770e3ee73bce94eb4fbacc4e79",
+        "candidateB": "8f6968b29bf4faec6a254033d1dbb074a4094a2b9cdd8140fe8a0947f47ad686",
+        "ratingA": 3,
+        "ratingB": 2,
+        "componentDifference": [
+          -0.012138783931732178,
+          -0.07258064516129034,
+          -0.007482166712482773,
+          0.05825331898197461,
+          -0.03837715834379196,
+          0.02885396219789982,
+          -0.02911469340324402,
+          -0.010729789733886719,
+          0.006777167320251465
+        ],
+        "legacyDifference": -0.1589752435684204,
+        "priorDifference": -0.011840906467638138,
+        "heldOutDifference": -0.01454394836356337,
+        "fittedDifference": -0.015497022471495479
+      },
+      {
+        "target": "chronotrigger_sounds/loseMusic.wav",
+        "candidateA": "28f86477e8747c8054f2731b57494be5a9ea267bcef7310893172c3cd41ef6c8",
+        "candidateB": "2f8360c625a3248602cd89e559d7cf1995162cdc42e3cc749fd91732ced806b5",
+        "ratingA": 2,
+        "ratingB": 1,
+        "componentDifference": [
+          0.012550711631774902,
+          -0.12096774193548387,
+          0.11209463234990838,
+          0.03514369837789158,
+          -0.01649794727563858,
+          -0.0845436304807663,
+          -0.021861344575881958,
+          -0.1369219422340393,
+          -0.07091549038887024
+        ],
+        "legacyDifference": -0.3172551989555359,
+        "priorDifference": -0.010615470578909518,
+        "heldOutDifference": -0.01447093939272617,
+        "fittedDifference": -0.02028846568442748
+      },
+      {
+        "target": "kenney_impact-sounds/Audio/impactGlass_light_002.ogg",
+        "candidateA": "42a4d9ec5a9475e0602ae29375347d638abe14945832f4085fddbf7ef255ae66",
+        "candidateB": "50f4f53fdfa0fab73648bd0a589233d5dec6be7da3dced5845fea21426505c3c",
+        "ratingA": 4,
+        "ratingB": 2,
+        "componentDifference": [
+          -0.24055570736527443,
+          -0.0967741935483871,
+          -0.08184511897464593,
+          -0.07466695045723594,
+          -0.03431478142738342,
+          -0.04859020560979843,
+          -0.09338419139385223,
+          -0.03316211700439453,
+          0.016736984252929688
+        ],
+        "legacyDifference": -0.352607786655426,
+        "priorDifference": -0.09955986980869089,
+        "heldOutDifference": -0.10809157537453176,
+        "fittedDifference": -0.10630870526173108
+      },
+      {
+        "target": "kenney_sci-fi-sounds/Audio/doorOpen_001.ogg",
+        "candidateA": "4ead8a01efea7d400084afb4234a88f4b5dfa2147bdd05bca5ecf855193ee33f",
+        "candidateB": "338bf7b576bb46df2b5f527f03fd3a514dc37e2b83f16b1bac20150e7c9cc2c8",
+        "ratingA": 1,
+        "ratingB": 2,
+        "componentDifference": [
+          0.021946601569652557,
+          0.09677419354838712,
+          0.08143690725167592,
+          -0.020419673984409192,
+          -0.024918824434280396,
+          0.035764457657933235,
+          -0.049365490674972534,
+          -0.20941680669784546,
+          -0.06507700681686401
+        ],
+        "legacyDifference": -0.17224758863449097,
+        "priorDifference": 0.009790549000734025,
+        "heldOutDifference": 0.017116894211236692,
+        "fittedDifference": 0.008069233823537816
+      },
+      {
+        "target": "mario_nes_snes_sounds/Mario 2 - Select character.wav",
+        "candidateA": "fdd91ba562ec6bf6e2c1992a5118800c763023770cb178b0ff05ae9a0c1ff8d0",
+        "candidateB": "e29dfa29ff61fd447d6cf573fbb60de4f844ede8ad2d3d9b962defa5325a4c75",
+        "ratingA": 3,
+        "ratingB": 1,
+        "componentDifference": [
+          0.07704157382249832,
+          2.7755575615628914e-17,
+          -0.009471865991751344,
+          -0.013716480353991464,
+          -0.014972001314163208,
+          -0.020223552361130714,
+          -0.022702917456626892,
+          -0.009174823760986328,
+          0.0032148361206054688
+        ],
+        "legacyDifference": -0.07184982299804688,
+        "priorDifference": 0.0064068002231045225,
+        "heldOutDifference": 0.013171741955438972,
+        "fittedDifference": 0.010968920587240447
+      },
+      {
+        "target": "tags/footstep/footstep_grass_004.ogg",
+        "candidateA": "9fa9cc3ea8a6b72d01a6e9132d72cda231adb42f70137e3c7492eddd239caf40",
+        "candidateB": "46b5cbef7380bd192b23d9e0d285107a6efd0d407a14dd4cec9898d63da12c3a",
+        "ratingA": 2,
+        "ratingB": 1,
+        "componentDifference": [
+          -0.4612805210053921,
+          -0.16935483870967744,
+          -0.18859313071394962,
+          0.030287434992776918,
+          -0.004431232810020447,
+          0.13959908485412598,
+          -0.0013653747737407684,
+          0.0007883906364440918,
+          -0.0028445273637771606
+        ],
+        "legacyDifference": -0.2207554578781128,
+        "priorDifference": -0.12274968403948815,
+        "heldOutDifference": -0.07075823579000488,
+        "fittedDifference": -0.13796299589701072
+      },
+      {
+        "target": "Sonniss.com-GDC2026-GameAudioBundle2of5/Cinematic Sound Design - Hybrid Game & UI Elements/Foley Coin Flip Single Fast.wav",
+        "candidateA": "82687dd20c8e4732a12b9f9f0e84be6b4d90d3364d0cefe41e05c08843a6b91c",
+        "candidateB": "141b615885d9bd7c7c6002a115382d8a1fc2e5bdf20596c5ed7df2505bca7b99",
+        "ratingA": 2,
+        "ratingB": 1,
+        "componentDifference": [
+          0.05432094633579254,
+          0.04032258064516128,
+          0.05912947282195091,
+          0.1926768289090174,
+          0.05367215350270271,
+          0.005661189556121826,
+          0.02673923969268799,
+          0.005534499883651733,
+          -0.0378500297665596
+        ],
+        "legacyDifference": -0.3081529140472412,
+        "priorDifference": 0.061367646460351574,
+        "heldOutDifference": 0.05773735724220842,
+        "fittedDifference": 0.051119824783775115
+      }
+    ],
+    "limitations": "Preferences among saved finalists do not establish quality of newly generated candidates. Ties and absolute ratings are retained but not used as strict preference labels."
+  }
+}

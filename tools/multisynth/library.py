@@ -34,8 +34,8 @@ class Library:
             descriptors = archive['descriptors']
         return cls(data['rows'], descriptors, meta)
 
-    def retrieve(self, target, per_synth=3, synths=None):
-        scores = distances(target, self.descriptors)
+    def retrieve(self, target, per_synth=3, synths=None, metric=None):
+        scores = (metric.distances if metric else distances)(target, self.descriptors)
         counts, selected = {}, []
         for i in np.argsort(scores, kind='stable'):
             row = self.rows[i]

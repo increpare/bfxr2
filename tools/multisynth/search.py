@@ -41,17 +41,32 @@ class ControlSpace:
         return result
 
 
-def approximate(renderer, library, target, *, experts=5, budget=96, seed=1234, synths=None):
+def approximate(renderer, library, target, *, experts=5, budget=96, seed=1234, synths=None,
+                metric=None, seed_candidates=()):
     if experts < 1 or budget < 0:
         raise ValueError('experts must be positive and budget nonnegative')
     target = prepare(target)
+    score_distance = metric.distances if metric else distances
+    score_components = metric.components if metric else components
     descriptor = describe(target)
     eligible = [name for name,spec in renderer.specs.items() if spec.get('collectionCompatible', False)]
     if synths is not None:
         if set(synths)-set(eligible):
             raise ValueError('Requested synths cannot be loaded through normal collection import')
         eligible = synths
-    retrieved = library.retrieve(descriptor, per_synth=4, synths=eligible)
+    retrieved = library.retrieve(descriptor, per_synth=4, synths=eligible, metric=metric)
+    # Carry earlier finalists forward so a representation change does not erase
+    # promising parameter regions. Re-render and re-score under this objective.
+    for candidate in seed_candidates:
+        if candidate['synth'] not in eligible:
+            raise ValueError('Seed candidate synth is not eligible')
+        params, wave = renderer.render(candidate['synth'],candidate['params'],candidate['seed'])
+        retrieved.append({'synth':candidate['synth'],'params':params,'seed':candidate['seed'],
+                          'preset':candidate.get('preset','previous finalist'),
+                          'score':float(score_distance(descriptor,describe(wave)[None])[0]),
+                          'library_index':None})
+    if seed_candidates:
+        retrieved.sort(key=lambda r:r['score'])
     if not retrieved:
         raise ValueError('No eligible synths in library')
     names = list(dict.fromkeys(row['synth'] for row in retrieved))[:experts]
@@ -63,7 +78,7 @@ def approximate(renderer, library, target, *, experts=5, budget=96, seed=1234, s
         # Seed separately, so Bfxr gets identical search in baseline/multi runs.
         synth_seed = sum((i+1)*ord(c) for i,c in enumerate(name))
         rng = np.random.default_rng(seed+synth_seed)
-        elites = [deepcopy(r) for r in retrieved if r['synth']==name]
+        elites = [deepcopy(r) for r in retrieved if r['synth']==name][:4]
         initial = elites[0]['score']
         space = ControlSpace(renderer.specs[name])
         failures, trace = 0, [initial]
@@ -77,7 +92,7 @@ def approximate(renderer, library, target, *, experts=5, budget=96, seed=1234, s
             try:
                 params, wave = renderer.render(name, params, parent['seed'])
                 candidate_descriptor = describe(wave)
-                score = float(distances(descriptor, candidate_descriptor[None])[0])
+                score = float(score_distance(descriptor, candidate_descriptor[None])[0])
             except (ValueError, RuntimeError):
                 failures += 1
                 trace.append(elites[0]['score'])
@@ -93,15 +108,16 @@ def approximate(renderer, library, target, *, experts=5, budget=96, seed=1234, s
         # Export audio is an additional deterministic replay, outside search budget.
         params, wave = renderer.render(name, best['params'], best['seed'])
         replay_descriptor = describe(wave)
-        replay_score = float(distances(descriptor, replay_descriptor[None])[0])
+        replay_score = float(score_distance(descriptor, replay_descriptor[None])[0])
         if abs(replay_score-best['score']) > 1e-5:
             raise ValueError(f'{name} replay changed its score; stale library or nondeterministic DSP')
         best.update(params=params, wave=wave,
-                    components={k:float(v[0]) for k,v in components(descriptor,replay_descriptor[None]).items()})
+                    components={k:float(v[0]) for k,v in score_components(descriptor,replay_descriptor[None]).items()})
         results.append(best)
         print(f'  {name}: {initial:.3f} → {best["score"]:.3f} ({budget} evaluations)', flush=True)
     results.sort(key=lambda r:r['score'])
     return {'candidates':results, 'seconds':time.monotonic()-started,
+            'seed_renders':len(seed_candidates),
             'search_evaluations':len(names)*budget, 'export_renders':len(names),
             'seed':seed, 'experts_requested':experts, 'budget_per_expert':budget,
             'retrieval_best':retrieved[0]['score']}

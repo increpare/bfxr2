@@ -81,6 +81,7 @@ def main():
         p.add_argument('--budget',type=int,default=96,help='Additional evaluations per expert; Bfxr is always retained')
         p.add_argument('--seed',type=int,default=1234)
         p.add_argument('--synths',help='Restrict matching to these comma-separated names')
+        p.add_argument('--gesture-model',type=Path,help='Optional versioned gesture distance checkpoint')
         if name=='benchmark':
             p.add_argument('--count',type=int,default=40)
             p.add_argument('--max-seconds',type=float,default=4)
@@ -101,9 +102,15 @@ def main():
             print(f'Saved {len(library.rows)} exemplars to {args.output}',flush=True)
             return
         library = Library.load(args.library, renderer.inventory['sourceHash'])
+        metric = None
+        if args.gesture_model:
+            from .gesture import GestureMetric, model_hash
+            metric = GestureMetric.load(args.gesture_model)
         if args.command=='match':
             target = prepare(load_audio(args.target))
-            result = approximate(renderer,library,target,experts=args.experts,budget=args.budget,seed=args.seed,synths=synths)
+            result = approximate(renderer,library,target,experts=args.experts,budget=args.budget,seed=args.seed,synths=synths,metric=metric)
+            if metric:
+                result.update(objectiveVersion=metric.version,modelHash=model_hash(args.gesture_model))
             export_match(args.output,target,result,source_info(args.target))
         else:
             root = benchmark_root(args.target,args.all_collections)
@@ -119,12 +126,14 @@ def main():
                         'synths':synths, 'maxSeconds':args.max_seconds,'selectionRejected':rejected,
                         'targetRoot':str(root.resolve()), 'allCollections':args.all_collections,
                         'targets':[source_info(p,args.target) for p in paths]}
+            if metric:
+                metadata.update(objectiveVersion=metric.version,modelHash=model_hash(args.gesture_model))
             (args.output/'manifest.json').write_text(json.dumps(metadata,indent=2)+'\n')
             records, started = [], time.monotonic()
             for i,path in enumerate(paths):
                 print(f'[{i+1}/{len(paths)}] {path.relative_to(args.target)}',flush=True)
                 target = prepare(load_audio(path))
-                result = approximate(renderer,library,target,experts=args.experts,budget=args.budget,seed=args.seed,synths=synths)
+                result = approximate(renderer,library,target,experts=args.experts,budget=args.budget,seed=args.seed,synths=synths,metric=metric)
                 folder = f'{i+1:03d}'
                 report = export_match(args.output/folder,target,result,metadata['targets'][i])
                 records.append(report | {'folder':folder})

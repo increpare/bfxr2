@@ -13,6 +13,7 @@ STYLE += """
 .comparison{margin:34px 0;padding-top:14px;border-top:1px solid #475463}
 .comparison h2{overflow-wrap:anywhere;font-size:18px;line-height:1.5;margin-bottom:8px}
 .comparison-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0}
+.comparison-grid.four-way{grid-template-columns:repeat(4,minmax(0,1fr))}
 .comparison-grid article{min-width:0}.rating{border:0;padding:0;margin:18px 0 0;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .rating legend{font-size:13px;margin-bottom:8px;color:#bfcbd8}.rating label{position:relative;cursor:pointer}
 .rating input{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
@@ -24,6 +25,8 @@ button:hover{background:#384d64}textarea{box-sizing:border-box;width:100%;margin
 .note-label{display:block;color:#bfcbd8;font-size:14px}.feedback-export{margin:44px 0}.feedback-export textarea{font:12px ui-monospace,monospace}
 .same-result{font-size:14px}.rating-guide{padding:14px 18px;background:#232c37;border-radius:8px}
 @media(max-width:1000px){.comparison-grid{grid-template-columns:1fr}.comparison-grid article{padding:16px}}
+@media(max-width:1100px){.comparison-grid.four-way{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.comparison-grid.four-way{grid-template-columns:1fr}}
 """
 
 
@@ -87,6 +90,11 @@ def export_benchmark(output, records, metadata):
     if (output/'audit.json').exists():
         audit = json.loads((output/'audit.json').read_text())['summary']
         extras += f'<p>Independent metric check: {audit["legacy_metric_wins"]} wins, {audit["legacy_metric_ties"]} ties, {audit["legacy_metric_losses"]} losses versus Bfxr. <a href="audit.json">Audit details</a>. Human listening has not been scored.</p>'
-    body = f'<h1>Multi-synth approximation lab</h1><p>{len(records)} reference sounds and automatic recreations. Compare the reference, model selection and Bfxr approximation. Rate each approximation for audible likeness; notes can capture useful surprises.</p><p><a href="winners.bcol" download>Editable winners</a> · <a href="results.json">Full experiment data</a></p>{extras}<p class="rating-guide">Rate likeness: <strong>1 = far off · 3 = recognizably similar · 5 = very close</strong>. Ratings save in this browser. <a href="#feedback">Jump to feedback JSON</a>.</p><details><summary>How to read the scores</summary><p>Lower is closer under a heuristic audio metric. Bfxr gets the same per-preset sample count and per-expert refinement budget. Multi-synth search uses more total renders; this is not an equal-compute comparison with the old neural matcher. Scores are not percentages of audible likeness.</p></details>{feedback_gallery(records,metadata)}'
+    has_previous = any(record.get('previous') is not None for record in records)
+    comparison = 'new model, previous model and Bfxr approximation' if has_previous else 'model selection and Bfxr approximation'
+    hypothesis = '<p class="rating-guide"><strong>Iteration 2 · gesture and feel.</strong> Listen for movement, rhythm, weight and texture. Your ratings will tell us which changes help.</p>' if has_previous else ''
+    if has_previous and metadata.get('comparisonLimits'):
+        hypothesis += '<details><summary>What changed in this batch</summary><p>'+html.escape(metadata['comparisonLimits'])+'</p><p>This is a new model hypothesis, with listening ratings pending. Old and new distance values use different objectives and cannot be compared directly.</p></details>'
+    body = f'<h1>Multi-synth approximation lab</h1>{hypothesis}<p>{len(records)} reference sounds and automatic recreations. Compare the reference, {comparison}. Rate each approximation for audible likeness; notes can capture useful surprises.</p><p><a href="winners.bcol" download>Editable winners</a> · <a href="results.json">Full experiment data</a></p>{extras}<p class="rating-guide">Rate likeness: <strong>1 = far off · 3 = recognizably similar · 5 = very close</strong>. Ratings save in this browser. <a href="#feedback">Jump to feedback JSON</a>.</p><details><summary>How to read the scores</summary><p>Lower is closer under a heuristic audio metric. Bfxr gets the same per-preset sample count and per-expert refinement budget. Multi-synth search uses more total renders; this is not an equal-compute comparison with the old neural matcher. Scores are not percentages of audible likeness.</p></details>{feedback_gallery(records,metadata)}'
     (output/'index.html').write_text(_page('Multi-synth approximation lab',body))
     return stats
