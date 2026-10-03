@@ -1,0 +1,631 @@
+{
+  "schemaVersion": 2,
+  "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+  "provenance": {
+    "experiment": "soundboard-coverage-v3",
+    "evaluationType": "development / previously rated references",
+    "featureVersion": "auditory-v1",
+    "objectiveVersion": "auditory-v1",
+    "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+    "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+    "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+    "descriptorFileHash": "b598ba7d93ccda75bed050fb82edc4679fe5518ca7812c9f121f0d6658d14ce5",
+    "libraryRows": 2304,
+    "catalogueEntries": 192,
+    "takesPerEntry": 12,
+    "excludedEntries": [
+      {
+        "verb": "coin",
+        "index": 1,
+        "weight": 3,
+        "composite": false,
+        "references": [
+          "Bfxr:generate_reference_coin"
+        ],
+        "signature": "Bfxr:generate_reference_coin",
+        "entry": {
+          "src": "Bfxr:generate_reference_coin",
+          "w": 3
+        }
+      }
+    ],
+    "priorExperimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+    "priorManifestHash": "c24ef8d61d352257d76f9a53b55a015a971c5368404e37b6eaf7fd192aa93bed",
+    "selection": "Fixed six reviewed references: coin, punch, jump, step, door, magic; no score filtering",
+    "automatic": "Global auditory-v1 retrieval across all verbs, no reference tags or human ratings",
+    "guided": "Known tag filters candidates; choose next distinct recipe signature, then a second distinct recipe",
+    "baseline": "Highest existing human likeness rating, ties prefer previous auditory-v1 result; exact archived PCM",
+    "branchEvidence": "Pinned curated recipes and commit notes; no raw target-likeness ratings imported from other branch",
+    "collectionUrl": "soundboard-choices.bcol"
+  },
+  "ratingScales": {
+    "likeness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Likeness to reference: 1 = far off, 5 = very close"
+    },
+    "usefulness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Useful/fun game sound: 1 = not useful, 5 = very useful or fun"
+    }
+  },
+  "targets": [
+    {
+      "id": "9eb52ebeac1504e7482672908ec3e09290c802d34cd6f5c7c1fb2b4960190fc6",
+      "name": "collect/coin (snes).WAV",
+      "sha256": "4283ba7f88dbc2bc2470d58bedad8e866e394d7f8e5799c38c04c98238fe04a8",
+      "folder": "001",
+      "referenceAudioSha256": "e3331eda0b8fe0ab01cfb974771eb0b199f095c3b029b9818fd2efa1f5e8c293",
+      "candidates": [
+        {
+          "id": "e6beccde6b3599ec5733bacaaade78bc573d01c5df20f1970c9e72fe2a367b5b",
+          "synth": "Soundboard",
+          "paramsSha256": "8a6f1be7977793836ce455b6f345a7ee931640a11767b4d2fb34d2e9281dc62b",
+          "seed": 2191701501,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "1a3f5e8aa6654b902ef17116d6636a790c1ae9c0453b7341f928f800bc804577",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 951,
+            "verb": "blip",
+            "entry": 7,
+            "signature": "Clonkr:blip",
+            "composite": false
+          },
+          "file": "01-automatic.wav",
+          "role": "automatic",
+          "label": "Automatic match",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        {
+          "id": "0db32f0f2fdc0feca50cf99b88e4a113a1fe144c457b0fca25c2c73e21ce63b7",
+          "synth": "Soundboard",
+          "paramsSha256": "d02efc0ea28835207ab2785c5b1c7668d27143347c5579eea4b3a5bb679748cb",
+          "seed": 373371647,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "4b5805622f4ee658d2807c44de03f565492a143eba6766d70ec54da7ec0c3557",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 221,
+            "verb": "coin",
+            "entry": 3,
+            "signature": "Jinglr:coin",
+            "composite": false
+          },
+          "file": "02-guided.wav",
+          "role": "guided",
+          "label": "Category-guided diagnostic",
+          "likeness": 3,
+          "usefulness": 3
+        },
+        {
+          "id": "36b2f3a3519b0dd37dab1546fb7950ce24f2278885100bcb14cc626cc82c8614",
+          "synth": "Soundboard",
+          "paramsSha256": "ec9704a26b059e37b8010bb87549ede9a144332a972d67dcb47e1f2c56437fd2",
+          "seed": 4013414672,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "7cf7c10b2bd3b604a50618fcac66fecb5e446804ff1312065ce21c1aaef59df9",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 1366,
+            "verb": "coin",
+            "entry": 0,
+            "signature": "Bfxr:coin",
+            "composite": false
+          },
+          "file": "03-diverse.wav",
+          "role": "diverse",
+          "label": "Different ingredients",
+          "likeness": 3,
+          "usefulness": 3
+        },
+        {
+          "id": "21b18a304a08ae442b2abb1638e513ad112f934d6a66e5a0a04f697f4f3b8af7",
+          "synth": "Bfxr",
+          "paramsSha256": "cc97604a09add6caa099ddf274bf84f2a5fab53cda8d3db1a7152a7c36add673",
+          "seed": 1359613458,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "48e0b2fdaa930c3028a97dafc91a801c81c99d75a2c9e5cca51a766d95963288",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "a46c64c34897c71cf0443b7a691288848e3594c4159909f57dc78119e6e54c7c",
+            "originalRole": "previous",
+            "previousLikenessRating": 3,
+            "archivedPcmSha256": "62d8566a0d20e61bb64c57d2efb289f395c72b56407e9d876582fd7dea6844f3"
+          },
+          "file": "04-baseline.wav",
+          "role": "baseline",
+          "label": "Best previously rated",
+          "likeness": 4,
+          "usefulness": 3
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "2ad387720639bb575001b759df6f4f78f5442d58d6f768e55c0fb144cceac601",
+      "name": "hit/PUNCH7.WAV",
+      "sha256": "08e24c35923307421abe87b93b25a8cf70bca7af9788d5aa3eefdedbf3d83dfc",
+      "folder": "002",
+      "referenceAudioSha256": "f8ab5fa3e3f8e55bf11ac48aca86b448958e5b64f1defd607809298679a1e0e1",
+      "candidates": [
+        {
+          "id": "0a441410235a022362cda316b255c0434b2aefee65823ba5888f25c8e9b6c004",
+          "synth": "Soundboard",
+          "paramsSha256": "84fe01b0921a1e6a74eafb169c3eaff8e77c4dff5c72c281cc7ad15ff5f44d23",
+          "seed": 623774089,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "3d3480f07bec2bd34be72e57814be029b565cd9748b8ce2a947f36e17140b442",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 655,
+            "verb": "splash",
+            "entry": 1,
+            "signature": "Transfxr:splash",
+            "composite": false
+          },
+          "file": "01-automatic.wav",
+          "role": "automatic",
+          "label": "Automatic match",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "8343bac1523bc7b9df9eb46d8455d0ac931a7f69951ea4f8f92c94019259241c",
+          "synth": "Soundboard",
+          "paramsSha256": "2418a23aed38ab8af10c94773d26a361a086c24f13bfccda16459d683843ea54",
+          "seed": 2116179540,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "66d4f8ea1cd18c37173740e3773a59bb5a9a426991ae46872acd65bf85de9560",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 1301,
+            "verb": "hit",
+            "entry": 5,
+            "signature": "Boomr:hit",
+            "composite": false
+          },
+          "file": "02-guided.wav",
+          "role": "guided",
+          "label": "Category-guided diagnostic",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "187781d92be8b459bdfdac189678f209f400d9dd1a22f23ccd6552fa1f421390",
+          "synth": "Soundboard",
+          "paramsSha256": "64d64f745181cb9fff32bc472579085c956740fd70eb9c5cb193db2ff1500827",
+          "seed": 3551076280,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "436f50b810ba9025e11115642707794db9eb1537798c8ffa6b5a36db5f17d264",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 1308,
+            "verb": "hit",
+            "entry": 9,
+            "signature": "Bfxr:hit+Clonkr:hit",
+            "composite": true
+          },
+          "file": "03-diverse.wav",
+          "role": "diverse",
+          "label": "Different ingredients",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        {
+          "id": "b8d89b73db972c15c57992de65a57c111393ac93832b56776cf64583ed4e092f",
+          "synth": "Boomr",
+          "paramsSha256": "ad135af882133d0b1994b46d9192351761db2a5bd7ad37b4f3b1a0e1a55a78fe",
+          "seed": 1470428505,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "f3a6f6a4d0337b5035c9872e9bd9322d1ad6a03e26bb5439ba64b46fa350eefa",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "e4be7b9adfc0a85aea2bb09e0f2bcbbb8b90d269ad2bac7504edff14228cd0df",
+            "originalRole": "previous",
+            "previousLikenessRating": 3,
+            "archivedPcmSha256": "c79f50c528c74450b40b5801b29f4fd54e780e823f1da7d63fb7b31fd92884d8"
+          },
+          "file": "04-baseline.wav",
+          "role": "baseline",
+          "label": "Best previously rated",
+          "likeness": 2,
+          "usefulness": 3
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "fa0b3b3527bc8f89e1560295c986e80a85a8bc84bb82904e9764fc841c40141a",
+      "name": "jump/Jump Kopie 4.wav",
+      "sha256": "18b55df7af255bc15b779081db03297a4456ba82d46dddd5451ce6252e5b315d",
+      "folder": "003",
+      "referenceAudioSha256": "d63800e0d9fcee7256053b417c96bad317a82bcbd045430d301afad1722b275e",
+      "candidates": [
+        {
+          "id": "ed092dc82053117c9b08b2fa39445ba1e9ce799569061656a5176a6c2526d6b7",
+          "synth": "Soundboard",
+          "paramsSha256": "0e72a60111dc6d4d1575ae8c34511510b2a8d5e4c237c89ab29b8f2f9333267e",
+          "seed": 406262098,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "0830f3ccff560de647d44dd4d1338eac18083968cda51bc970ed804ddb56699c",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 744,
+            "verb": "hurt",
+            "entry": 2,
+            "signature": "Crittr:hurt",
+            "composite": false
+          },
+          "file": "01-automatic.wav",
+          "role": "automatic",
+          "label": "Automatic match",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        {
+          "id": "1a85711268dc94146eca39af9e6159eb31964a8ff512d890df35bd4be71c2380",
+          "synth": "Soundboard",
+          "paramsSha256": "2a8f15db352dea4dfec5d186d76792aa7aee1e7efbf0abbb5ad6f3f9e1ffcd54",
+          "seed": 226006000,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "4c96d9378fd2c6fd9356ce71c3685d4a103bb8c1a46062053902ad9b607b0d9e",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 1735,
+            "verb": "jump",
+            "entry": 3,
+            "signature": "Bfxr:jump+Transfxr:jump",
+            "composite": true
+          },
+          "file": "02-guided.wav",
+          "role": "guided",
+          "label": "Category-guided diagnostic",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "6255a7aa7c0eeb39d762ac994275fec8e6d7086e3c096243d8f579e3f3ea5d79",
+          "synth": "Soundboard",
+          "paramsSha256": "ca74a44a755fbbc06e46d442123bcd65675a5356d7150b96690f64e79378e5d3",
+          "seed": 3365245930,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "5c0547dc4d977af94964e0af306c9de13083e328764a57d512da7bf60d09056d",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 580,
+            "verb": "jump",
+            "entry": 1,
+            "signature": "Transfxr:jump",
+            "composite": false
+          },
+          "file": "03-diverse.wav",
+          "role": "diverse",
+          "label": "Different ingredients",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "2f89ba2d087c92b9d24ac02144145fbf01c5c2162576da714879060d1659b137",
+          "synth": "Bfxr",
+          "paramsSha256": "b53d388cff73b5e8f1f0b1db378a71ac6d2b72fa9c44b60c9d38ec8f6a7c4bde",
+          "seed": 7345224,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "fb9e87576b959c746dd63c922cc0ae1734f4ff5fb2cb0934dfb6ee5646028012",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "1f4a5c6c9ae5deed31d42874d639c71c1d8f9c72bef749fcfbb3f548c5146115",
+            "originalRole": "previous",
+            "previousLikenessRating": 2,
+            "archivedPcmSha256": "4def17b55559ec8b046127d535b078cec4029758a5997cd33fd918614a1bb854"
+          },
+          "file": "04-baseline.wav",
+          "role": "baseline",
+          "label": "Best previously rated",
+          "likeness": 2,
+          "usefulness": 3
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "24cc924c1069d06b1c7a1d14a71bbff2f9b5547b5f58d58e72197acaf019208c",
+      "name": "step/step2.wav",
+      "sha256": "73bfc925afff23db9c552f3003017c2926106ab446c9646ed2251b8506350091",
+      "folder": "004",
+      "referenceAudioSha256": "731b56d3b9edc1082cdd8c5f3462c469d8a035a3efa282a900997723f7cedf8a",
+      "candidates": [
+        {
+          "id": "bec4ae9e99667ab141a571be6e2d2045e0e20460267d59d18b1a988b6fe82125",
+          "synth": "Soundboard",
+          "paramsSha256": "e811466a44ba2b1fcfe23e9a72ce73ad727f50ddd943ee10d70b3c4ccb7026f4",
+          "seed": 1677740700,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "c5eea08ad0f0749c6504c99381448a26666801db61c947509f79db98fda11725",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 1556,
+            "verb": "confirm",
+            "entry": 7,
+            "signature": "Tappr:generate_panel_open",
+            "composite": false
+          },
+          "file": "01-automatic.wav",
+          "role": "automatic",
+          "label": "Automatic match",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "0f0bc5b51912065f2c84cd0f4c580e3ed13cac59bdfb6923c5e11a01fd920857",
+          "synth": "Soundboard",
+          "paramsSha256": "e5593c9799ba7da838779fcb4e92976e59de25a4d317d4b4103278d4355c149c",
+          "seed": 878369480,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "787aeeb92317e287e329367eeceb0d1d338bfb24738be7f0f7c8a5b777cf7a56",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 1774,
+            "verb": "step",
+            "entry": 2,
+            "signature": "Rustlr:step",
+            "composite": false
+          },
+          "file": "02-guided.wav",
+          "role": "guided",
+          "label": "Category-guided diagnostic",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        {
+          "id": "48c4dc9ffefec9089d5a15d69aada336a75d4c5e72800ce2ca9750265437ce6a",
+          "synth": "Soundboard",
+          "paramsSha256": "61ebb29a332c08b7c492366c06666a5259266b9009f0cea13b44bc254527a19f",
+          "seed": 858630335,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "8d6233aba192980b7a905da35cc6af79cd7f805113100c5a5245b8c7b630a672",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 634,
+            "verb": "step",
+            "entry": 4,
+            "signature": "Footsteppr:step+Rustlr:step",
+            "composite": true
+          },
+          "file": "03-diverse.wav",
+          "role": "diverse",
+          "label": "Different ingredients",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "e0a72f8361a8c8bb50f0ce6f98cb41ce49db8b3f5ed2fd71b35d3f0fed96bced",
+          "synth": "Boomr",
+          "paramsSha256": "9d4a70fc227b59fd5f83a3c4bab050339ba4fca2e870844f36dfbad5d7fd44bc",
+          "seed": 213862135,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "5addb6d8e389addfa73dfd7fcec11ebf58e359ec4af818eb05e1877d01778eaa",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "a0e6874a6020361764b12d1ec1bc0ad509dbdcbdd914e8bf653ef4ed06cda2c2",
+            "originalRole": "previous",
+            "previousLikenessRating": 3,
+            "archivedPcmSha256": "78247211ac76289748ab0f800889729d46afcaee80b042c0f6b0d96a19c8db08"
+          },
+          "file": "04-baseline.wav",
+          "role": "baseline",
+          "label": "Best previously rated",
+          "likeness": 3,
+          "usefulness": 3
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "d6aa7be9b35e6f85fc0f44e5b4082944b6df41cd7eff2040606e031b5c20fcd1",
+      "name": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+      "sha256": "e1fa457aad41930050a8b5723fd468f8c1a33ce46ea5944031c3585a9b2bd8d8",
+      "folder": "005",
+      "referenceAudioSha256": "6727c9bfd7df5fe7f175ee5e80e4043f5f078ccc3c4aa09bd1e57b7eedfcab5b",
+      "candidates": [
+        {
+          "id": "68f9ca7554ce77b2beb8c85fd19911d4c16a5bff91145b7e5ff9c52405f9ab21",
+          "synth": "Soundboard",
+          "paramsSha256": "fe233cab5bcc7240b3bdfd28a4d92408b258002acf56d27202150f510e37644c",
+          "seed": 369058596,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "b8f59eb199bf689cbd22f2501f4c8a18058057b54356b78fc75c5a196ddca359",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 1478,
+            "verb": "door",
+            "entry": 2,
+            "signature": "Clonkr:door",
+            "composite": false
+          },
+          "file": "01-automatic.wav",
+          "role": "automatic",
+          "label": "Automatic match",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "a2449d1bd0cb92e8eb755ea7df741d2064c4b28c2cfe25f7f0648f646e2c901b",
+          "synth": "Soundboard",
+          "paramsSha256": "d703b07a7dee6278cdd199a902f789d204ecb33b906782eeee372d99140c357c",
+          "seed": 1273029800,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "75114ab0bc355c462a7ceffb7f2d132cbbedc856acf2811f0fd4e945d86bb21b",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 346,
+            "verb": "door",
+            "entry": 4,
+            "signature": "Rumblr:generate_stone_door",
+            "composite": false
+          },
+          "file": "02-guided.wav",
+          "role": "guided",
+          "label": "Category-guided diagnostic",
+          "likeness": 1,
+          "usefulness": 2
+        },
+        {
+          "id": "3839be91462ddb7b8e5408a7b5c2059a8025fe19b3106b1244eba4668d7e9547",
+          "synth": "Soundboard",
+          "paramsSha256": "baa7cf0dd3474bacb2ad373bb8c38b2942cb4a541b82b8559a64cacb3f720000",
+          "seed": 1200526765,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "b9f4e5dc2f03fe56e5f1bf11225bbb60d7c13328986a256d9fc8d1372c65e5f9",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 915,
+            "verb": "door",
+            "entry": 5,
+            "signature": "Machinr:generate_heavy_door",
+            "composite": false
+          },
+          "file": "03-diverse.wav",
+          "role": "diverse",
+          "label": "Different ingredients",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        {
+          "id": "bce747157fd10e4ea60a99b421f95031642ba3451faff1d352a4cd0f215711d0",
+          "synth": "Riftr",
+          "paramsSha256": "8e6d726a719d2b9b12dcce3e570e034661bcb2ced9aa14186876752d3f6aeb52",
+          "seed": 1036211338,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "2c9a7232bb57bf000978fbcb91d27e0cee311130cad144d3b3272ad2fdd3c739",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "b527be558c7afccf3e0bc15516a07f997b6b70873ac2463a5c76d85e666835bb",
+            "originalRole": "previous",
+            "previousLikenessRating": 1,
+            "archivedPcmSha256": "70b3e35fee9f42161d3321e7a7e5031f4a12bb243b2981eb49fd0f25d59c6e52"
+          },
+          "file": "04-baseline.wav",
+          "role": "baseline",
+          "label": "Best previously rated",
+          "likeness": 2,
+          "usefulness": 2
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "470f7cc06f1452e1f63c740dc51acc3cd37fbc31b528a737996a0a89d55c5bba",
+      "name": "magic/cureMagic.wav",
+      "sha256": "4422a2d1c23013ac655ff35f67477017f24b0ce330c8e896440252c1d4057994",
+      "folder": "006",
+      "referenceAudioSha256": "d42fb5cb82986e5a0b56d8c9b6445fb46295592b642acbeab3d1307aee99e4ce",
+      "candidates": [
+        {
+          "id": "529443dca1ff85f9488614e89d060443d0e7b1c5cf21d57d2026620fada36459",
+          "synth": "Soundboard",
+          "paramsSha256": "bf66810de23865681cb6293cdf4236763de00095744357e52ac6beb0cdb2a0f6",
+          "seed": 3156912000,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "102a794aac3bd595767970407581b42bc3797a22e28cce0a7fc0f14b1940b0c6",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 1420,
+            "verb": "win",
+            "entry": 0,
+            "signature": "Jinglr:win",
+            "composite": false
+          },
+          "file": "01-automatic.wav",
+          "role": "automatic",
+          "label": "Automatic match",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "9c7a55e988b9481460e3bf8c29189705fc2d139748882cc233eddedeec6c0bb1",
+          "synth": "Soundboard",
+          "paramsSha256": "f20c50057ffb63fada7a301ced4ba0686f522aae7bf2f8c9b17434853e552fbe",
+          "seed": 2511822822,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "09bf2ffc711aef50bb4b1d69cac8580a22cc2eb9c5727e6fcd44bbccee375b27",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 2173,
+            "verb": "cast",
+            "entry": 5,
+            "signature": "Swarmr:cast",
+            "composite": false
+          },
+          "file": "02-guided.wav",
+          "role": "guided",
+          "label": "Category-guided diagnostic",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "ae88d284aad2c5e12af345b2c044aaf60bc87d51e8c03a8ba16c2186c453e965",
+          "synth": "Soundboard",
+          "paramsSha256": "4f41f917f8b6ba2e1e518f5b91b653211d4c3f344a4274fcc2d723007556e358",
+          "seed": 3679072247,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "0d56627408ba693cc7c63abea37505d262d013295da6eabae994b2b981709a49",
+          "provenance": {
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+            "libraryIndex": 1614,
+            "verb": "cast",
+            "entry": 8,
+            "signature": "Riftr:cast+Fractr:cast",
+            "composite": true
+          },
+          "file": "03-diverse.wav",
+          "role": "diverse",
+          "label": "Different ingredients",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        {
+          "id": "c6d3c9ee32088934d5f35aa0ad0103d0e1c8795fba16c4f31462bc079a1d4f61",
+          "synth": "Birdr",
+          "paramsSha256": "8c45b1df77dad303409748e8a0aa8531de7eaab338f769016653868befa6d5e3",
+          "seed": 2101241938,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "a2298cf8e14d7575d061ec5c98883bc07fef4d0fb62afb277161e6c34fad8e99",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "a35df305546bb445718df146c80572804dafaf111c6b3a1e337c96a3e215ee7c",
+            "originalRole": "selected",
+            "previousLikenessRating": 3,
+            "archivedPcmSha256": "a77dff3fd0ac0ec3f545cb29b469a213791d041e088ff61de78afb43bf632e34"
+          },
+          "file": "04-baseline.wav",
+          "role": "baseline",
+          "label": "Best previously rated",
+          "likeness": 3,
+          "usefulness": 2
+        }
+      ],
+      "note": ""
+    }
+  ]
+}

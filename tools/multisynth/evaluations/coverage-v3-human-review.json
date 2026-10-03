@@ -1,0 +1,1044 @@
+{
+  "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+  "feedbackSha256": "d56f5685f08adf0882f02ea4aca4635c2b28a296f87ce48100537f018fcb8f9a",
+  "archiveManifestSha256": "72403c7fb0088b036f4a785bf74cb43b6ccd82febc97dc5282f6b29ef106a9f6",
+  "decision": "Do not promote Soundboard-only or category-guided retrieval as a likeness improvement. Retain useful candidates separately; preserve the earlier matcher as baseline.",
+  "targets": 6,
+  "uniqueRatedCandidates": 24,
+  "roleRatings": {
+    "automatic": {
+      "likeness": {
+        "mean": 1.6666666666666667,
+        "count": 6,
+        "distribution": {
+          "2": 2,
+          "3": 1,
+          "1": 3
+        }
+      },
+      "usefulness": {
+        "mean": 3.5,
+        "count": 6,
+        "distribution": {
+          "4": 3,
+          "3": 3
+        }
+      }
+    },
+    "guided": {
+      "likeness": {
+        "mean": 1.8333333333333333,
+        "count": 6,
+        "distribution": {
+          "3": 2,
+          "1": 3,
+          "2": 1
+        }
+      },
+      "usefulness": {
+        "mean": 3.1666666666666665,
+        "count": 6,
+        "distribution": {
+          "3": 3,
+          "4": 2,
+          "2": 1
+        }
+      }
+    },
+    "diverse": {
+      "likeness": {
+        "mean": 1.8333333333333333,
+        "count": 6,
+        "distribution": {
+          "3": 1,
+          "2": 3,
+          "1": 2
+        }
+      },
+      "usefulness": {
+        "mean": 3.3333333333333335,
+        "count": 6,
+        "distribution": {
+          "3": 4,
+          "4": 2
+        }
+      }
+    },
+    "baseline": {
+      "likeness": {
+        "mean": 2.6666666666666665,
+        "count": 6,
+        "distribution": {
+          "4": 1,
+          "2": 3,
+          "3": 2
+        }
+      },
+      "usefulness": {
+        "mean": 2.6666666666666665,
+        "count": 6,
+        "distribution": {
+          "3": 4,
+          "2": 2
+        }
+      }
+    }
+  },
+  "likenessVersusReratedBaseline": {
+    "automatic": {
+      "loss": 4,
+      "win": 1,
+      "tie": 1
+    },
+    "guided": {
+      "loss": 5,
+      "tie": 1
+    },
+    "diverse": {
+      "loss": 4,
+      "tie": 2
+    }
+  },
+  "bestAmongThreeNewCandidates": {
+    "meanLikeness": 2.5,
+    "versusBaseline": {
+      "loss": 2,
+      "win": 1,
+      "tie": 3
+    },
+    "meaning": "Human-selected upper bound among these three candidates only, not an automatic model and not an upper bound for the full library"
+  },
+  "newLikenessAtLeast4": 0,
+  "newUsefulnessAtLeast4": 7,
+  "baselineRepeatChanges": [
+    {
+      "source": "collect/coin (snes).WAV",
+      "prior": 3,
+      "current": 4
+    },
+    {
+      "source": "hit/PUNCH7.WAV",
+      "prior": 3,
+      "current": 2
+    },
+    {
+      "source": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+      "prior": 1,
+      "current": 2
+    }
+  ],
+  "frozenMetricPreferenceCheck": {
+    "metrics": {
+      "auditoryV1": {
+        "strictPairs": 28,
+        "correct": 18,
+        "tiedPredictions": 0,
+        "newOnlyPairs": 14,
+        "newOnlyCorrect": 6
+      },
+      "gesturePrior": {
+        "strictPairs": 28,
+        "correct": 22,
+        "tiedPredictions": 0,
+        "newOnlyPairs": 14,
+        "newOnlyCorrect": 9
+      },
+      "gestureFitFromFirstBatch": {
+        "strictPairs": 28,
+        "correct": 23,
+        "tiedPredictions": 0,
+        "newOnlyPairs": 14,
+        "newOnlyCorrect": 10
+      }
+    },
+    "note": "Within this development batch; six correlated reference groups, not unseen evaluation. Frozen metrics re-scored exact audition audio; usefulness never used as a likeness label."
+  },
+  "usefulPresetCollection": {
+    "file": "presets/coverage-v3-useful.bcol",
+    "selection": "All seven new candidates rated at least 4/5 for usefulness; none filtered by likeness. Human-reviewed instances, not a quality claim for the recipe family. Requires the pinned Soundboard DSP for exact replay.",
+    "candidates": [
+      {
+        "id": "e6beccde6b3599ec5733bacaaade78bc573d01c5df20f1970c9e72fe2a367b5b",
+        "targetId": "9eb52ebeac1504e7482672908ec3e09290c802d34cd6f5c7c1fb2b4960190fc6",
+        "role": "automatic",
+        "synth": "Soundboard",
+        "seed": 2191701501,
+        "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+        "provenance": {
+          "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+          "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+          "libraryIndex": 951,
+          "verb": "blip",
+          "entry": 7,
+          "signature": "Clonkr:blip",
+          "composite": false
+        },
+        "likeness": 2,
+        "usefulness": 4,
+        "audio": {
+          "file": "audio/37d0779cb62c8aed5412bb3e7571524a6a2d5f85223dfdb106ef6c93cf9fcfe7.flac",
+          "pcmSha256": "37d0779cb62c8aed5412bb3e7571524a6a2d5f85223dfdb106ef6c93cf9fcfe7",
+          "sampleRate": 44100,
+          "frames": 13404,
+          "channels": 1,
+          "auditionWavSha256": "1a3f5e8aa6654b902ef17116d6636a790c1ae9c0453b7341f928f800bc804577"
+        },
+        "ingredients": "Tangs \u00b7 Blip"
+      },
+      {
+        "id": "0a441410235a022362cda316b255c0434b2aefee65823ba5888f25c8e9b6c004",
+        "targetId": "2ad387720639bb575001b759df6f4f78f5442d58d6f768e55c0fb144cceac601",
+        "role": "automatic",
+        "synth": "Soundboard",
+        "seed": 623774089,
+        "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+        "provenance": {
+          "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+          "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+          "libraryIndex": 655,
+          "verb": "splash",
+          "entry": 1,
+          "signature": "Transfxr:splash",
+          "composite": false
+        },
+        "likeness": 3,
+        "usefulness": 4,
+        "audio": {
+          "file": "audio/7ffa496328b4514c598107655abd177daf45c39dd12ba6d3e825026d0a02b2b2.flac",
+          "pcmSha256": "7ffa496328b4514c598107655abd177daf45c39dd12ba6d3e825026d0a02b2b2",
+          "sampleRate": 44100,
+          "frames": 14097,
+          "channels": 1,
+          "auditionWavSha256": "3d3480f07bec2bd34be72e57814be029b565cd9748b8ce2a947f36e17140b442"
+        },
+        "ingredients": "Transfxr \u00b7 Splash"
+      },
+      {
+        "id": "187781d92be8b459bdfdac189678f209f400d9dd1a22f23ccd6552fa1f421390",
+        "targetId": "2ad387720639bb575001b759df6f4f78f5442d58d6f768e55c0fb144cceac601",
+        "role": "diverse",
+        "synth": "Soundboard",
+        "seed": 3551076280,
+        "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+        "provenance": {
+          "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+          "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+          "libraryIndex": 1308,
+          "verb": "hit",
+          "entry": 9,
+          "signature": "Bfxr:hit+Clonkr:hit",
+          "composite": true
+        },
+        "likeness": 2,
+        "usefulness": 4,
+        "audio": {
+          "file": "audio/924524c0e5a3231555c33eb302a3618ff8fcf07762fb241c77dea7f61e70a58e.flac",
+          "pcmSha256": "924524c0e5a3231555c33eb302a3618ff8fcf07762fb241c77dea7f61e70a58e",
+          "sampleRate": 44100,
+          "frames": 7459,
+          "channels": 1,
+          "auditionWavSha256": "436f50b810ba9025e11115642707794db9eb1537798c8ffa6b5a36db5f17d264"
+        },
+        "ingredients": "Bfxr \u00b7 Hit/Hurt \u00d7 Tangs \u00b7 Hit (start-aligned)"
+      },
+      {
+        "id": "0f0bc5b51912065f2c84cd0f4c580e3ed13cac59bdfb6923c5e11a01fd920857",
+        "targetId": "24cc924c1069d06b1c7a1d14a71bbff2f9b5547b5f58d58e72197acaf019208c",
+        "role": "guided",
+        "synth": "Soundboard",
+        "seed": 878369480,
+        "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+        "provenance": {
+          "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+          "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+          "libraryIndex": 1774,
+          "verb": "step",
+          "entry": 2,
+          "signature": "Rustlr:step",
+          "composite": false
+        },
+        "likeness": 2,
+        "usefulness": 4,
+        "audio": {
+          "file": "audio/f87783375acaf8812ad15a926ffbeab2af876c0f408e21eed16c79f19fbfbbfa.flac",
+          "pcmSha256": "f87783375acaf8812ad15a926ffbeab2af876c0f408e21eed16c79f19fbfbbfa",
+          "sampleRate": 44100,
+          "frames": 12945,
+          "channels": 1,
+          "auditionWavSha256": "787aeeb92317e287e329367eeceb0d1d338bfb24738be7f0f7c8a5b777cf7a56"
+        },
+        "ingredients": "Rustler \u00b7 Step"
+      },
+      {
+        "id": "48c4dc9ffefec9089d5a15d69aada336a75d4c5e72800ce2ca9750265437ce6a",
+        "targetId": "24cc924c1069d06b1c7a1d14a71bbff2f9b5547b5f58d58e72197acaf019208c",
+        "role": "diverse",
+        "synth": "Soundboard",
+        "seed": 858630335,
+        "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+        "provenance": {
+          "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+          "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+          "libraryIndex": 634,
+          "verb": "step",
+          "entry": 4,
+          "signature": "Footsteppr:step+Rustlr:step",
+          "composite": true
+        },
+        "likeness": 1,
+        "usefulness": 4,
+        "audio": {
+          "file": "audio/5dbb3a4f4a28c822b81e381cd2fde22fa7d8dbd93e7fcc118734c70147f2ebd5.flac",
+          "pcmSha256": "5dbb3a4f4a28c822b81e381cd2fde22fa7d8dbd93e7fcc118734c70147f2ebd5",
+          "sampleRate": 44100,
+          "frames": 12109,
+          "channels": 1,
+          "auditionWavSha256": "8d6233aba192980b7a905da35cc6af79cd7f805113100c5a5245b8c7b630a672"
+        },
+        "ingredients": "Footsteppr \u00b7 Randomize \u00d7 Rustler \u00b7 Step (start-aligned)"
+      },
+      {
+        "id": "529443dca1ff85f9488614e89d060443d0e7b1c5cf21d57d2026620fada36459",
+        "targetId": "470f7cc06f1452e1f63c740dc51acc3cd37fbc31b528a737996a0a89d55c5bba",
+        "role": "automatic",
+        "synth": "Soundboard",
+        "seed": 3156912000,
+        "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+        "provenance": {
+          "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+          "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+          "libraryIndex": 1420,
+          "verb": "win",
+          "entry": 0,
+          "signature": "Jinglr:win",
+          "composite": false
+        },
+        "likeness": 1,
+        "usefulness": 4,
+        "audio": {
+          "file": "audio/3449811b99abe9268865d2eaf7c49ca69eee046d49feebcb988f5f5b617264ac.flac",
+          "pcmSha256": "3449811b99abe9268865d2eaf7c49ca69eee046d49feebcb988f5f5b617264ac",
+          "sampleRate": 44100,
+          "frames": 88815,
+          "channels": 1,
+          "auditionWavSha256": "102a794aac3bd595767970407581b42bc3797a22e28cce0a7fc0f14b1940b0c6"
+        },
+        "ingredients": "Jingles \u00b7 Win"
+      },
+      {
+        "id": "9c7a55e988b9481460e3bf8c29189705fc2d139748882cc233eddedeec6c0bb1",
+        "targetId": "470f7cc06f1452e1f63c740dc51acc3cd37fbc31b528a737996a0a89d55c5bba",
+        "role": "guided",
+        "synth": "Soundboard",
+        "seed": 2511822822,
+        "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+        "provenance": {
+          "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+          "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+          "libraryIndex": 2173,
+          "verb": "cast",
+          "entry": 5,
+          "signature": "Swarmr:cast",
+          "composite": false
+        },
+        "likeness": 3,
+        "usefulness": 4,
+        "audio": {
+          "file": "audio/4073da8b5bc8272924c784e9b67668ac252827fa9e79bdba678263b538c7a825.flac",
+          "pcmSha256": "4073da8b5bc8272924c784e9b67668ac252827fa9e79bdba678263b538c7a825",
+          "sampleRate": 44100,
+          "frames": 49717,
+          "channels": 1,
+          "auditionWavSha256": "09bf2ffc711aef50bb4b1d69cac8580a22cc2eb9c5727e6fcd44bbccee375b27"
+        },
+        "ingredients": "Swarms \u00b7 Cast"
+      }
+    ],
+    "sha256": "e9163d864b1ca9f3524f9ac49c5874c563c82894a7d13e7407525d295ce81e02"
+  },
+  "rows": [
+    {
+      "source": "collect/coin (snes).WAV",
+      "referencePcmSha256": "5f0c44ecda4835db1a5e0c8cde4306547c95b53ce4be9ad8ce14bc1417e32415",
+      "ratings": {
+        "automatic": {
+          "likeness": 2,
+          "usefulness": 4
+        },
+        "guided": {
+          "likeness": 3,
+          "usefulness": 3
+        },
+        "diverse": {
+          "likeness": 3,
+          "usefulness": 3
+        },
+        "baseline": {
+          "likeness": 4,
+          "usefulness": 3
+        }
+      },
+      "bestNewLikeness": 3,
+      "bestNewRoles": [
+        "guided",
+        "diverse"
+      ],
+      "baselineRepeat": {
+        "prior": 3,
+        "current": 4
+      },
+      "frozenMetricScores": {
+        "auditoryV1": {
+          "automatic": 0.6153644919395447,
+          "guided": 0.7197656631469727,
+          "diverse": 0.7153654098510742,
+          "baseline": 0.3805442154407501
+        },
+        "gesturePrior": {
+          "automatic": 0.11308384083610645,
+          "guided": 0.13450008128193144,
+          "diverse": 0.07472850861823174,
+          "baseline": 0.06011569353342572
+        },
+        "gestureFitFromFirstBatch": {
+          "automatic": 0.12553315543323895,
+          "guided": 0.13460010188683585,
+          "diverse": 0.07789223194044062,
+          "baseline": 0.061477737553592184
+        }
+      },
+      "note": ""
+    },
+    {
+      "source": "hit/PUNCH7.WAV",
+      "referencePcmSha256": "041839601c0de5ad9d168f5617d0becccd03c9aa5783420b46e6ab425a2067a9",
+      "ratings": {
+        "automatic": {
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "guided": {
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "diverse": {
+          "likeness": 2,
+          "usefulness": 4
+        },
+        "baseline": {
+          "likeness": 2,
+          "usefulness": 3
+        }
+      },
+      "bestNewLikeness": 3,
+      "bestNewRoles": [
+        "automatic"
+      ],
+      "baselineRepeat": {
+        "prior": 3,
+        "current": 2
+      },
+      "frozenMetricScores": {
+        "auditoryV1": {
+          "automatic": 0.7670756578445435,
+          "guided": 0.9997246265411377,
+          "diverse": 1.0341790914535522,
+          "baseline": 0.6017728447914124
+        },
+        "gesturePrior": {
+          "automatic": 0.11186762787711334,
+          "guided": 0.17917668193959996,
+          "diverse": 0.09654720160392477,
+          "baseline": 0.09564283237927569
+        },
+        "gestureFitFromFirstBatch": {
+          "automatic": 0.10761274963910852,
+          "guided": 0.19272531611945867,
+          "diverse": 0.1085082420834631,
+          "baseline": 0.10053337836078452
+        }
+      },
+      "note": ""
+    },
+    {
+      "source": "jump/Jump Kopie 4.wav",
+      "referencePcmSha256": "0f986e8b4b79d52fdcf379eae49d89a32b4e05119f914028b2cfefb8b1561278",
+      "ratings": {
+        "automatic": {
+          "likeness": 2,
+          "usefulness": 3
+        },
+        "guided": {
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "diverse": {
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "baseline": {
+          "likeness": 2,
+          "usefulness": 3
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestNewRoles": [
+        "automatic"
+      ],
+      "baselineRepeat": {
+        "prior": 2,
+        "current": 2
+      },
+      "frozenMetricScores": {
+        "auditoryV1": {
+          "automatic": 0.880946159362793,
+          "guided": 1.3467493057250977,
+          "diverse": 1.3556277751922607,
+          "baseline": 0.6837396621704102
+        },
+        "gesturePrior": {
+          "automatic": 0.0916620853725795,
+          "guided": 0.10383819265030614,
+          "diverse": 0.11788742431233101,
+          "baseline": 0.06196098077013315
+        },
+        "gestureFitFromFirstBatch": {
+          "automatic": 0.09891960715124679,
+          "guided": 0.11440565316660736,
+          "diverse": 0.1318520645665467,
+          "baseline": 0.07024773011732607
+        }
+      },
+      "note": ""
+    },
+    {
+      "source": "step/step2.wav",
+      "referencePcmSha256": "187483de38825becf2770c204ed5b5d1579ec15e2c04e8b37b2bfdd39f914c18",
+      "ratings": {
+        "automatic": {
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "guided": {
+          "likeness": 2,
+          "usefulness": 4
+        },
+        "diverse": {
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "baseline": {
+          "likeness": 3,
+          "usefulness": 3
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestNewRoles": [
+        "guided"
+      ],
+      "baselineRepeat": {
+        "prior": 3,
+        "current": 3
+      },
+      "frozenMetricScores": {
+        "auditoryV1": {
+          "automatic": 0.7522432804107666,
+          "guided": 1.0997331142425537,
+          "diverse": 1.145606517791748,
+          "baseline": 0.7664399147033691
+        },
+        "gesturePrior": {
+          "automatic": 0.09984531516712059,
+          "guided": 0.11824351288027285,
+          "diverse": 0.18353406905993708,
+          "baseline": 0.0859214460713389
+        },
+        "gestureFitFromFirstBatch": {
+          "automatic": 0.09752297613899266,
+          "guided": 0.11280241527311552,
+          "diverse": 0.18420339485194615,
+          "baseline": 0.08821637136457239
+        }
+      },
+      "note": ""
+    },
+    {
+      "source": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+      "referencePcmSha256": "2ee31491b38034303cb35d2878a8bdd567c9db94886bf04b3c0bf6beb6729ef3",
+      "ratings": {
+        "automatic": {
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "guided": {
+          "likeness": 1,
+          "usefulness": 2
+        },
+        "diverse": {
+          "likeness": 2,
+          "usefulness": 3
+        },
+        "baseline": {
+          "likeness": 2,
+          "usefulness": 2
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestNewRoles": [
+        "diverse"
+      ],
+      "baselineRepeat": {
+        "prior": 1,
+        "current": 2
+      },
+      "frozenMetricScores": {
+        "auditoryV1": {
+          "automatic": 0.7834084033966064,
+          "guided": 1.4972444772720337,
+          "diverse": 1.6195191144943237,
+          "baseline": 0.6119250655174255
+        },
+        "gesturePrior": {
+          "automatic": 0.18763740985510735,
+          "guided": 0.2287786877982976,
+          "diverse": 0.22123206178873492,
+          "baseline": 0.13860308042916913
+        },
+        "gestureFitFromFirstBatch": {
+          "automatic": 0.19318841125824732,
+          "guided": 0.2427926493794291,
+          "diverse": 0.2402543270608173,
+          "baseline": 0.14059448460469864
+        }
+      },
+      "note": ""
+    },
+    {
+      "source": "magic/cureMagic.wav",
+      "referencePcmSha256": "5859e94857fb9da2bb209d06d80e011138eb139d78c610ff60125bd78d4bead1",
+      "ratings": {
+        "automatic": {
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "guided": {
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "diverse": {
+          "likeness": 2,
+          "usefulness": 3
+        },
+        "baseline": {
+          "likeness": 3,
+          "usefulness": 2
+        }
+      },
+      "bestNewLikeness": 3,
+      "bestNewRoles": [
+        "guided"
+      ],
+      "baselineRepeat": {
+        "prior": 3,
+        "current": 3
+      },
+      "frozenMetricScores": {
+        "auditoryV1": {
+          "automatic": 1.2824050188064575,
+          "guided": 1.4654024839401245,
+          "diverse": 1.4715561866760254,
+          "baseline": 0.8471726179122925
+        },
+        "gesturePrior": {
+          "automatic": 0.18750493458994777,
+          "guided": 0.14807849744564106,
+          "diverse": 0.1916512544764822,
+          "baseline": 0.059514807243272835
+        },
+        "gestureFitFromFirstBatch": {
+          "automatic": 0.18957860796069775,
+          "guided": 0.1616757430255913,
+          "diverse": 0.19982078144410736,
+          "baseline": 0.06172481852467218
+        }
+      },
+      "note": ""
+    }
+  ],
+  "strictPairs": [
+    {
+      "source": "collect/coin (snes).WAV",
+      "candidateA": "e6beccde6b3599ec5733bacaaade78bc573d01c5df20f1970c9e72fe2a367b5b",
+      "candidateB": "0db32f0f2fdc0feca50cf99b88e4a113a1fe144c457b0fca25c2c73e21ce63b7",
+      "roleA": "automatic",
+      "roleB": "guided",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": false,
+        "gesturePrior": false,
+        "gestureFitFromFirstBatch": false
+      }
+    },
+    {
+      "source": "collect/coin (snes).WAV",
+      "candidateA": "e6beccde6b3599ec5733bacaaade78bc573d01c5df20f1970c9e72fe2a367b5b",
+      "candidateB": "36b2f3a3519b0dd37dab1546fb7950ce24f2278885100bcb14cc626cc82c8614",
+      "roleA": "automatic",
+      "roleB": "diverse",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": false,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "collect/coin (snes).WAV",
+      "candidateA": "e6beccde6b3599ec5733bacaaade78bc573d01c5df20f1970c9e72fe2a367b5b",
+      "candidateB": "21b18a304a08ae442b2abb1638e513ad112f934d6a66e5a0a04f697f4f3b8af7",
+      "roleA": "automatic",
+      "roleB": "baseline",
+      "likenessDifference": -2,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "collect/coin (snes).WAV",
+      "candidateA": "0db32f0f2fdc0feca50cf99b88e4a113a1fe144c457b0fca25c2c73e21ce63b7",
+      "candidateB": "21b18a304a08ae442b2abb1638e513ad112f934d6a66e5a0a04f697f4f3b8af7",
+      "roleA": "guided",
+      "roleB": "baseline",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "collect/coin (snes).WAV",
+      "candidateA": "36b2f3a3519b0dd37dab1546fb7950ce24f2278885100bcb14cc626cc82c8614",
+      "candidateB": "21b18a304a08ae442b2abb1638e513ad112f934d6a66e5a0a04f697f4f3b8af7",
+      "roleA": "diverse",
+      "roleB": "baseline",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "hit/PUNCH7.WAV",
+      "candidateA": "0a441410235a022362cda316b255c0434b2aefee65823ba5888f25c8e9b6c004",
+      "candidateB": "8343bac1523bc7b9df9eb46d8455d0ac931a7f69951ea4f8f92c94019259241c",
+      "roleA": "automatic",
+      "roleB": "guided",
+      "likenessDifference": 2,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "hit/PUNCH7.WAV",
+      "candidateA": "0a441410235a022362cda316b255c0434b2aefee65823ba5888f25c8e9b6c004",
+      "candidateB": "187781d92be8b459bdfdac189678f209f400d9dd1a22f23ccd6552fa1f421390",
+      "roleA": "automatic",
+      "roleB": "diverse",
+      "likenessDifference": 1,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": false,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "hit/PUNCH7.WAV",
+      "candidateA": "0a441410235a022362cda316b255c0434b2aefee65823ba5888f25c8e9b6c004",
+      "candidateB": "b8d89b73db972c15c57992de65a57c111393ac93832b56776cf64583ed4e092f",
+      "roleA": "automatic",
+      "roleB": "baseline",
+      "likenessDifference": 1,
+      "correct": {
+        "auditoryV1": false,
+        "gesturePrior": false,
+        "gestureFitFromFirstBatch": false
+      }
+    },
+    {
+      "source": "hit/PUNCH7.WAV",
+      "candidateA": "8343bac1523bc7b9df9eb46d8455d0ac931a7f69951ea4f8f92c94019259241c",
+      "candidateB": "187781d92be8b459bdfdac189678f209f400d9dd1a22f23ccd6552fa1f421390",
+      "roleA": "guided",
+      "roleB": "diverse",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": false,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "hit/PUNCH7.WAV",
+      "candidateA": "8343bac1523bc7b9df9eb46d8455d0ac931a7f69951ea4f8f92c94019259241c",
+      "candidateB": "b8d89b73db972c15c57992de65a57c111393ac93832b56776cf64583ed4e092f",
+      "roleA": "guided",
+      "roleB": "baseline",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "jump/Jump Kopie 4.wav",
+      "candidateA": "ed092dc82053117c9b08b2fa39445ba1e9ce799569061656a5176a6c2526d6b7",
+      "candidateB": "1a85711268dc94146eca39af9e6159eb31964a8ff512d890df35bd4be71c2380",
+      "roleA": "automatic",
+      "roleB": "guided",
+      "likenessDifference": 1,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "jump/Jump Kopie 4.wav",
+      "candidateA": "ed092dc82053117c9b08b2fa39445ba1e9ce799569061656a5176a6c2526d6b7",
+      "candidateB": "6255a7aa7c0eeb39d762ac994275fec8e6d7086e3c096243d8f579e3f3ea5d79",
+      "roleA": "automatic",
+      "roleB": "diverse",
+      "likenessDifference": 1,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "jump/Jump Kopie 4.wav",
+      "candidateA": "1a85711268dc94146eca39af9e6159eb31964a8ff512d890df35bd4be71c2380",
+      "candidateB": "2f89ba2d087c92b9d24ac02144145fbf01c5c2162576da714879060d1659b137",
+      "roleA": "guided",
+      "roleB": "baseline",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "jump/Jump Kopie 4.wav",
+      "candidateA": "6255a7aa7c0eeb39d762ac994275fec8e6d7086e3c096243d8f579e3f3ea5d79",
+      "candidateB": "2f89ba2d087c92b9d24ac02144145fbf01c5c2162576da714879060d1659b137",
+      "roleA": "diverse",
+      "roleB": "baseline",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "step/step2.wav",
+      "candidateA": "bec4ae9e99667ab141a571be6e2d2045e0e20460267d59d18b1a988b6fe82125",
+      "candidateB": "0f0bc5b51912065f2c84cd0f4c580e3ed13cac59bdfb6923c5e11a01fd920857",
+      "roleA": "automatic",
+      "roleB": "guided",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": false,
+        "gesturePrior": false,
+        "gestureFitFromFirstBatch": false
+      }
+    },
+    {
+      "source": "step/step2.wav",
+      "candidateA": "bec4ae9e99667ab141a571be6e2d2045e0e20460267d59d18b1a988b6fe82125",
+      "candidateB": "e0a72f8361a8c8bb50f0ce6f98cb41ce49db8b3f5ed2fd71b35d3f0fed96bced",
+      "roleA": "automatic",
+      "roleB": "baseline",
+      "likenessDifference": -2,
+      "correct": {
+        "auditoryV1": false,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "step/step2.wav",
+      "candidateA": "0f0bc5b51912065f2c84cd0f4c580e3ed13cac59bdfb6923c5e11a01fd920857",
+      "candidateB": "48c4dc9ffefec9089d5a15d69aada336a75d4c5e72800ce2ca9750265437ce6a",
+      "roleA": "guided",
+      "roleB": "diverse",
+      "likenessDifference": 1,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "step/step2.wav",
+      "candidateA": "0f0bc5b51912065f2c84cd0f4c580e3ed13cac59bdfb6923c5e11a01fd920857",
+      "candidateB": "e0a72f8361a8c8bb50f0ce6f98cb41ce49db8b3f5ed2fd71b35d3f0fed96bced",
+      "roleA": "guided",
+      "roleB": "baseline",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "step/step2.wav",
+      "candidateA": "48c4dc9ffefec9089d5a15d69aada336a75d4c5e72800ce2ca9750265437ce6a",
+      "candidateB": "e0a72f8361a8c8bb50f0ce6f98cb41ce49db8b3f5ed2fd71b35d3f0fed96bced",
+      "roleA": "diverse",
+      "roleB": "baseline",
+      "likenessDifference": -2,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+      "candidateA": "68f9ca7554ce77b2beb8c85fd19911d4c16a5bff91145b7e5ff9c52405f9ab21",
+      "candidateB": "3839be91462ddb7b8e5408a7b5c2059a8025fe19b3106b1244eba4668d7e9547",
+      "roleA": "automatic",
+      "roleB": "diverse",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": false,
+        "gesturePrior": false,
+        "gestureFitFromFirstBatch": false
+      }
+    },
+    {
+      "source": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+      "candidateA": "68f9ca7554ce77b2beb8c85fd19911d4c16a5bff91145b7e5ff9c52405f9ab21",
+      "candidateB": "bce747157fd10e4ea60a99b421f95031642ba3451faff1d352a4cd0f215711d0",
+      "roleA": "automatic",
+      "roleB": "baseline",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+      "candidateA": "a2449d1bd0cb92e8eb755ea7df741d2064c4b28c2cfe25f7f0648f646e2c901b",
+      "candidateB": "3839be91462ddb7b8e5408a7b5c2059a8025fe19b3106b1244eba4668d7e9547",
+      "roleA": "guided",
+      "roleB": "diverse",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": false,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+      "candidateA": "a2449d1bd0cb92e8eb755ea7df741d2064c4b28c2cfe25f7f0648f646e2c901b",
+      "candidateB": "bce747157fd10e4ea60a99b421f95031642ba3451faff1d352a4cd0f215711d0",
+      "roleA": "guided",
+      "roleB": "baseline",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "magic/cureMagic.wav",
+      "candidateA": "529443dca1ff85f9488614e89d060443d0e7b1c5cf21d57d2026620fada36459",
+      "candidateB": "9c7a55e988b9481460e3bf8c29189705fc2d139748882cc233eddedeec6c0bb1",
+      "roleA": "automatic",
+      "roleB": "guided",
+      "likenessDifference": -2,
+      "correct": {
+        "auditoryV1": false,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "magic/cureMagic.wav",
+      "candidateA": "529443dca1ff85f9488614e89d060443d0e7b1c5cf21d57d2026620fada36459",
+      "candidateB": "ae88d284aad2c5e12af345b2c044aaf60bc87d51e8c03a8ba16c2186c453e965",
+      "roleA": "automatic",
+      "roleB": "diverse",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": false,
+        "gesturePrior": false,
+        "gestureFitFromFirstBatch": false
+      }
+    },
+    {
+      "source": "magic/cureMagic.wav",
+      "candidateA": "529443dca1ff85f9488614e89d060443d0e7b1c5cf21d57d2026620fada36459",
+      "candidateB": "c6d3c9ee32088934d5f35aa0ad0103d0e1c8795fba16c4f31462bc079a1d4f61",
+      "roleA": "automatic",
+      "roleB": "baseline",
+      "likenessDifference": -2,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "magic/cureMagic.wav",
+      "candidateA": "9c7a55e988b9481460e3bf8c29189705fc2d139748882cc233eddedeec6c0bb1",
+      "candidateB": "ae88d284aad2c5e12af345b2c044aaf60bc87d51e8c03a8ba16c2186c453e965",
+      "roleA": "guided",
+      "roleB": "diverse",
+      "likenessDifference": 1,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    },
+    {
+      "source": "magic/cureMagic.wav",
+      "candidateA": "ae88d284aad2c5e12af345b2c044aaf60bc87d51e8c03a8ba16c2186c453e965",
+      "candidateB": "c6d3c9ee32088934d5f35aa0ad0103d0e1c8795fba16c4f31462bc079a1d4f61",
+      "roleA": "diverse",
+      "roleB": "baseline",
+      "likenessDifference": -1,
+      "correct": {
+        "auditoryV1": true,
+        "gesturePrior": true,
+        "gestureFitFromFirstBatch": true
+      }
+    }
+  ],
+  "nextResearchDecision": "Avoid hard category filtering and further random recipe expansion as the sole fix. Start subsequent target-specific refinement from human-preferred saved gestures, retain those incumbents, and judge changes against the same audio. Learn likeness and usefulness separately; do not infer missing qualitative failure labels from filenames.",
+  "allSessionsRetained": {
+    "referenceJudgments": 64,
+    "uniqueReferencePcm": 57,
+    "uniqueReferenceCandidatePcmPairs": 138
+  },
+  "verification": {
+    "allSevenCollectionPresetsReplayedExactly": true,
+    "archiveReimportVerified": true
+  }
+}

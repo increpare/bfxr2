@@ -1,0 +1,1403 @@
+{
+  "schemaVersion": 2,
+  "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+  "feedbackSha256": "d56f5685f08adf0882f02ea4aca4635c2b28a296f87ce48100537f018fcb8f9a",
+  "provenance": {
+    "experiment": "soundboard-coverage-v3",
+    "evaluationType": "development / previously rated references",
+    "featureVersion": "auditory-v1",
+    "objectiveVersion": "auditory-v1",
+    "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+    "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+    "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+    "descriptorFileHash": "b598ba7d93ccda75bed050fb82edc4679fe5518ca7812c9f121f0d6658d14ce5",
+    "libraryRows": 2304,
+    "catalogueEntries": 192,
+    "takesPerEntry": 12,
+    "excludedEntries": [
+      {
+        "verb": "coin",
+        "index": 1,
+        "weight": 3,
+        "composite": false,
+        "references": [
+          "Bfxr:generate_reference_coin"
+        ],
+        "signature": "Bfxr:generate_reference_coin",
+        "entry": {
+          "src": "Bfxr:generate_reference_coin",
+          "w": 3
+        }
+      }
+    ],
+    "priorExperimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+    "priorManifestHash": "c24ef8d61d352257d76f9a53b55a015a971c5368404e37b6eaf7fd192aa93bed",
+    "selection": "Fixed six reviewed references: coin, punch, jump, step, door, magic; no score filtering",
+    "automatic": "Global auditory-v1 retrieval across all verbs, no reference tags or human ratings",
+    "guided": "Known tag filters candidates; choose next distinct recipe signature, then a second distinct recipe",
+    "baseline": "Highest existing human likeness rating, ties prefer previous auditory-v1 result; exact archived PCM",
+    "branchEvidence": "Pinned curated recipes and commit notes; no raw target-likeness ratings imported from other branch",
+    "collectionUrl": "soundboard-choices.bcol"
+  },
+  "summary": {
+    "targets": 6,
+    "uniqueRatedCandidates": 24,
+    "likenessRatings": 24,
+    "usefulnessRatings": 24
+  },
+  "targets": [
+    {
+      "id": "9eb52ebeac1504e7482672908ec3e09290c802d34cd6f5c7c1fb2b4960190fc6",
+      "source": {
+        "name": "collect/coin (snes).WAV",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/coin (snes).WAV",
+        "sha256": "4283ba7f88dbc2bc2470d58bedad8e866e394d7f8e5799c38c04c98238fe04a8",
+        "tag": "collect",
+        "durationSeconds": 0.364875283446712,
+        "normalizedPcmSha256": "e7f05a00945ff209213093bce951969ea2227f00a4be89cfbd3ff34ddcbdab11",
+        "previouslyRatedReference": false
+      },
+      "note": "",
+      "referenceAudio": {
+        "file": "audio/5f0c44ecda4835db1a5e0c8cde4306547c95b53ce4be9ad8ce14bc1417e32415.flac",
+        "pcmSha256": "5f0c44ecda4835db1a5e0c8cde4306547c95b53ce4be9ad8ce14bc1417e32415",
+        "sampleRate": 44100,
+        "frames": 16091,
+        "channels": 1,
+        "auditionWavSha256": "e3331eda0b8fe0ab01cfb974771eb0b199f095c3b029b9818fd2efa1f5e8c293"
+      },
+      "candidates": [
+        {
+          "id": "e6beccde6b3599ec5733bacaaade78bc573d01c5df20f1970c9e72fe2a367b5b",
+          "role": "automatic",
+          "label": "Automatic match",
+          "file": "01-automatic.wav"
+        },
+        {
+          "id": "0db32f0f2fdc0feca50cf99b88e4a113a1fe144c457b0fca25c2c73e21ce63b7",
+          "role": "guided",
+          "label": "Category-guided diagnostic",
+          "file": "02-guided.wav"
+        },
+        {
+          "id": "36b2f3a3519b0dd37dab1546fb7950ce24f2278885100bcb14cc626cc82c8614",
+          "role": "diverse",
+          "label": "Different ingredients",
+          "file": "03-diverse.wav"
+        },
+        {
+          "id": "21b18a304a08ae442b2abb1638e513ad112f934d6a66e5a0a04f697f4f3b8af7",
+          "role": "baseline",
+          "label": "Best previously rated",
+          "file": "04-baseline.wav"
+        }
+      ]
+    },
+    {
+      "id": "2ad387720639bb575001b759df6f4f78f5442d58d6f768e55c0fb144cceac601",
+      "source": {
+        "name": "hit/PUNCH7.WAV",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/PUNCH7.WAV",
+        "sha256": "08e24c35923307421abe87b93b25a8cf70bca7af9788d5aa3eefdedbf3d83dfc",
+        "tag": "hit",
+        "durationSeconds": 0.3225396825396825,
+        "normalizedPcmSha256": "08ca30e7da2b94e0e1aef152f730b7c77db9f68d0ce84ab60ad49a37aaa7df44",
+        "previouslyRatedReference": false
+      },
+      "note": "",
+      "referenceAudio": {
+        "file": "audio/041839601c0de5ad9d168f5617d0becccd03c9aa5783420b46e6ab425a2067a9.flac",
+        "pcmSha256": "041839601c0de5ad9d168f5617d0becccd03c9aa5783420b46e6ab425a2067a9",
+        "sampleRate": 44100,
+        "frames": 14159,
+        "channels": 1,
+        "auditionWavSha256": "f8ab5fa3e3f8e55bf11ac48aca86b448958e5b64f1defd607809298679a1e0e1"
+      },
+      "candidates": [
+        {
+          "id": "0a441410235a022362cda316b255c0434b2aefee65823ba5888f25c8e9b6c004",
+          "role": "automatic",
+          "label": "Automatic match",
+          "file": "01-automatic.wav"
+        },
+        {
+          "id": "8343bac1523bc7b9df9eb46d8455d0ac931a7f69951ea4f8f92c94019259241c",
+          "role": "guided",
+          "label": "Category-guided diagnostic",
+          "file": "02-guided.wav"
+        },
+        {
+          "id": "187781d92be8b459bdfdac189678f209f400d9dd1a22f23ccd6552fa1f421390",
+          "role": "diverse",
+          "label": "Different ingredients",
+          "file": "03-diverse.wav"
+        },
+        {
+          "id": "b8d89b73db972c15c57992de65a57c111393ac93832b56776cf64583ed4e092f",
+          "role": "baseline",
+          "label": "Best previously rated",
+          "file": "04-baseline.wav"
+        }
+      ]
+    },
+    {
+      "id": "fa0b3b3527bc8f89e1560295c986e80a85a8bc84bb82904e9764fc841c40141a",
+      "source": {
+        "name": "jump/Jump Kopie 4.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/jump/Jump Kopie 4.wav",
+        "sha256": "18b55df7af255bc15b779081db03297a4456ba82d46dddd5451ce6252e5b315d",
+        "tag": "jump",
+        "durationSeconds": 0.3653968253968254,
+        "normalizedPcmSha256": "eb6d27c75a5dd4f3c9cb9ff592e711af5b6a024ff14513acef3402fa5f16fd63",
+        "previouslyRatedReference": false
+      },
+      "note": "",
+      "referenceAudio": {
+        "file": "audio/0f986e8b4b79d52fdcf379eae49d89a32b4e05119f914028b2cfefb8b1561278.flac",
+        "pcmSha256": "0f986e8b4b79d52fdcf379eae49d89a32b4e05119f914028b2cfefb8b1561278",
+        "sampleRate": 44100,
+        "frames": 16114,
+        "channels": 1,
+        "auditionWavSha256": "d63800e0d9fcee7256053b417c96bad317a82bcbd045430d301afad1722b275e"
+      },
+      "candidates": [
+        {
+          "id": "ed092dc82053117c9b08b2fa39445ba1e9ce799569061656a5176a6c2526d6b7",
+          "role": "automatic",
+          "label": "Automatic match",
+          "file": "01-automatic.wav"
+        },
+        {
+          "id": "1a85711268dc94146eca39af9e6159eb31964a8ff512d890df35bd4be71c2380",
+          "role": "guided",
+          "label": "Category-guided diagnostic",
+          "file": "02-guided.wav"
+        },
+        {
+          "id": "6255a7aa7c0eeb39d762ac994275fec8e6d7086e3c096243d8f579e3f3ea5d79",
+          "role": "diverse",
+          "label": "Different ingredients",
+          "file": "03-diverse.wav"
+        },
+        {
+          "id": "2f89ba2d087c92b9d24ac02144145fbf01c5c2162576da714879060d1659b137",
+          "role": "baseline",
+          "label": "Best previously rated",
+          "file": "04-baseline.wav"
+        }
+      ]
+    },
+    {
+      "id": "24cc924c1069d06b1c7a1d14a71bbff2f9b5547b5f58d58e72197acaf019208c",
+      "source": {
+        "name": "step/step2.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/step/step2.wav",
+        "sha256": "73bfc925afff23db9c552f3003017c2926106ab446c9646ed2251b8506350091",
+        "tag": "step",
+        "durationSeconds": 0.252,
+        "normalizedPcmSha256": "053f8f2aa8622e5857b86ed59a002fa4c52c55b10effeda02ae528d7384fdc00",
+        "previouslyRatedReference": false
+      },
+      "note": "",
+      "referenceAudio": {
+        "file": "audio/187483de38825becf2770c204ed5b5d1579ec15e2c04e8b37b2bfdd39f914c18.flac",
+        "pcmSha256": "187483de38825becf2770c204ed5b5d1579ec15e2c04e8b37b2bfdd39f914c18",
+        "sampleRate": 44100,
+        "frames": 11105,
+        "channels": 1,
+        "auditionWavSha256": "731b56d3b9edc1082cdd8c5f3462c469d8a035a3efa282a900997723f7cedf8a"
+      },
+      "candidates": [
+        {
+          "id": "bec4ae9e99667ab141a571be6e2d2045e0e20460267d59d18b1a988b6fe82125",
+          "role": "automatic",
+          "label": "Automatic match",
+          "file": "01-automatic.wav"
+        },
+        {
+          "id": "0f0bc5b51912065f2c84cd0f4c580e3ed13cac59bdfb6923c5e11a01fd920857",
+          "role": "guided",
+          "label": "Category-guided diagnostic",
+          "file": "02-guided.wav"
+        },
+        {
+          "id": "48c4dc9ffefec9089d5a15d69aada336a75d4c5e72800ce2ca9750265437ce6a",
+          "role": "diverse",
+          "label": "Different ingredients",
+          "file": "03-diverse.wav"
+        },
+        {
+          "id": "e0a72f8361a8c8bb50f0ce6f98cb41ce49db8b3f5ed2fd71b35d3f0fed96bced",
+          "role": "baseline",
+          "label": "Best previously rated",
+          "file": "04-baseline.wav"
+        }
+      ]
+    },
+    {
+      "id": "d6aa7be9b35e6f85fc0f44e5b4082944b6df41cd7eff2040606e031b5c20fcd1",
+      "source": {
+        "name": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+        "sha256": "e1fa457aad41930050a8b5723fd468f8c1a33ce46ea5944031c3585a9b2bd8d8",
+        "tag": "door",
+        "durationSeconds": 2.951135416666667,
+        "normalizedPcmSha256": "b99579507b8bee25d60fb5d63f3722abba76bed3c3ed5ee522f2ff86181854d8",
+        "previouslyRatedReference": false
+      },
+      "note": "",
+      "referenceAudio": {
+        "file": "audio/2ee31491b38034303cb35d2878a8bdd567c9db94886bf04b3c0bf6beb6729ef3.flac",
+        "pcmSha256": "2ee31491b38034303cb35d2878a8bdd567c9db94886bf04b3c0bf6beb6729ef3",
+        "sampleRate": 44100,
+        "frames": 117296,
+        "channels": 1,
+        "auditionWavSha256": "6727c9bfd7df5fe7f175ee5e80e4043f5f078ccc3c4aa09bd1e57b7eedfcab5b"
+      },
+      "candidates": [
+        {
+          "id": "68f9ca7554ce77b2beb8c85fd19911d4c16a5bff91145b7e5ff9c52405f9ab21",
+          "role": "automatic",
+          "label": "Automatic match",
+          "file": "01-automatic.wav"
+        },
+        {
+          "id": "a2449d1bd0cb92e8eb755ea7df741d2064c4b28c2cfe25f7f0648f646e2c901b",
+          "role": "guided",
+          "label": "Category-guided diagnostic",
+          "file": "02-guided.wav"
+        },
+        {
+          "id": "3839be91462ddb7b8e5408a7b5c2059a8025fe19b3106b1244eba4668d7e9547",
+          "role": "diverse",
+          "label": "Different ingredients",
+          "file": "03-diverse.wav"
+        },
+        {
+          "id": "bce747157fd10e4ea60a99b421f95031642ba3451faff1d352a4cd0f215711d0",
+          "role": "baseline",
+          "label": "Best previously rated",
+          "file": "04-baseline.wav"
+        }
+      ]
+    },
+    {
+      "id": "470f7cc06f1452e1f63c740dc51acc3cd37fbc31b528a737996a0a89d55c5bba",
+      "source": {
+        "name": "magic/cureMagic.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/magic/cureMagic.wav",
+        "sha256": "4422a2d1c23013ac655ff35f67477017f24b0ce330c8e896440252c1d4057994",
+        "tag": "magic",
+        "durationSeconds": 2.069115646258503,
+        "normalizedPcmSha256": "be75a3be2603f5fc9cca33fdf6023eb391bfe9b0f9fd612633320b4ca15d5a45",
+        "previouslyRatedReference": false
+      },
+      "note": "",
+      "referenceAudio": {
+        "file": "audio/5859e94857fb9da2bb209d06d80e011138eb139d78c610ff60125bd78d4bead1.flac",
+        "pcmSha256": "5859e94857fb9da2bb209d06d80e011138eb139d78c610ff60125bd78d4bead1",
+        "sampleRate": 44100,
+        "frames": 91248,
+        "channels": 1,
+        "auditionWavSha256": "d42fb5cb82986e5a0b56d8c9b6445fb46295592b642acbeab3d1307aee99e4ce"
+      },
+      "candidates": [
+        {
+          "id": "529443dca1ff85f9488614e89d060443d0e7b1c5cf21d57d2026620fada36459",
+          "role": "automatic",
+          "label": "Automatic match",
+          "file": "01-automatic.wav"
+        },
+        {
+          "id": "9c7a55e988b9481460e3bf8c29189705fc2d139748882cc233eddedeec6c0bb1",
+          "role": "guided",
+          "label": "Category-guided diagnostic",
+          "file": "02-guided.wav"
+        },
+        {
+          "id": "ae88d284aad2c5e12af345b2c044aaf60bc87d51e8c03a8ba16c2186c453e965",
+          "role": "diverse",
+          "label": "Different ingredients",
+          "file": "03-diverse.wav"
+        },
+        {
+          "id": "c6d3c9ee32088934d5f35aa0ad0103d0e1c8795fba16c4f31462bc079a1d4f61",
+          "role": "baseline",
+          "label": "Best previously rated",
+          "file": "04-baseline.wav"
+        }
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "label": "Automatic match",
+      "role": "automatic",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.5,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Clonkr\",\"name\":\"Blip\",\"params\":{\"masterVolume\":0.5,\"seed\":0.42749729892238975,\"material\":1,\"action\":0,\"size\":0.036670130055863406,\"hollowness\":0.24496513421181587,\"hardness\":0.8739033715915866,\"damping\":0.6076398221543059,\"duration\":0.10510565834119917},\"generator\":\"generate_blip\",\"renderSeed\":0.620249543339014}]"
+      },
+      "seed": 2191701501,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "01-automatic.wav",
+      "score": 0.6153413653373718,
+      "ingredients": "Tangs \u00b7 Blip",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22collect%2Fcoin%20%28snes%29.WAV%20%5Cu00b7%20Automatic%20match%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.5%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Clonkr%5C%22%2C%5C%22name%5C%22%3A%5C%22Blip%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22seed%5C%22%3A0.42749729892238975%2C%5C%22material%5C%22%3A1%2C%5C%22action%5C%22%3A0%2C%5C%22size%5C%22%3A0.036670130055863406%2C%5C%22hollowness%5C%22%3A0.24496513421181587%2C%5C%22hardness%5C%22%3A0.8739033715915866%2C%5C%22damping%5C%22%3A0.6076398221543059%2C%5C%22duration%5C%22%3A0.10510565834119917%7D%2C%5C%22generator%5C%22%3A%5C%22generate_blip%5C%22%2C%5C%22renderSeed%5C%22%3A0.620249543339014%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 951,
+        "verb": "blip",
+        "entry": 7,
+        "signature": "Clonkr:blip",
+        "composite": false
+      },
+      "id": "e6beccde6b3599ec5733bacaaade78bc573d01c5df20f1970c9e72fe2a367b5b",
+      "paramsSha256": "8a6f1be7977793836ce455b6f345a7ee931640a11767b4d2fb34d2e9281dc62b",
+      "audioSha256": "1a3f5e8aa6654b902ef17116d6636a790c1ae9c0453b7341f928f800bc804577",
+      "targetId": "9eb52ebeac1504e7482672908ec3e09290c802d34cd6f5c7c1fb2b4960190fc6",
+      "likeness": 2,
+      "usefulness": 4,
+      "audio": {
+        "file": "audio/37d0779cb62c8aed5412bb3e7571524a6a2d5f85223dfdb106ef6c93cf9fcfe7.flac",
+        "pcmSha256": "37d0779cb62c8aed5412bb3e7571524a6a2d5f85223dfdb106ef6c93cf9fcfe7",
+        "sampleRate": 44100,
+        "frames": 13404,
+        "channels": 1,
+        "auditionWavSha256": "1a3f5e8aa6654b902ef17116d6636a790c1ae9c0453b7341f928f800bc804577"
+      }
+    },
+    {
+      "label": "Category-guided diagnostic",
+      "role": "guided",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.5,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Jinglr\",\"name\":\"Coin\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9099590995909959,\"instrumentSeed\":75717,\"phrase\":\"[{\\\"degree\\\":1,\\\"beats\\\":0.5},{\\\"degree\\\":9,\\\"beats\\\":1}]\",\"instrument\":1,\"key\":0,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":2,\"octave\":6,\"tempo\":219.9542271438986,\"swing\":0,\"brightness\":0.5891404135152698,\"decay\":0.13533830181695522,\"echo\":0},\"generator\":\"generate_coin\",\"renderSeed\":0.13557510543614626}]"
+      },
+      "seed": 373371647,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "02-guided.wav",
+      "score": 0.7147913575172424,
+      "ingredients": "Jingles \u00b7 Coin",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22collect%2Fcoin%20%28snes%29.WAV%20%5Cu00b7%20Category-guided%20diagnostic%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.5%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Jinglr%5C%22%2C%5C%22name%5C%22%3A%5C%22Coin%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22seed%5C%22%3A0.9099590995909959%2C%5C%22instrumentSeed%5C%22%3A75717%2C%5C%22phrase%5C%22%3A%5C%22%5B%7B%5C%5C%5C%22degree%5C%5C%5C%22%3A1%2C%5C%5C%5C%22beats%5C%5C%5C%22%3A0.5%7D%2C%7B%5C%5C%5C%22degree%5C%5C%5C%22%3A9%2C%5C%5C%5C%22beats%5C%5C%5C%22%3A1%7D%5D%5C%22%2C%5C%22instrument%5C%22%3A1%2C%5C%22key%5C%22%3A0%2C%5C%22scale%5C%22%3A0%2C%5C%22contour%5C%22%3A0%2C%5C%22rhythm%5C%22%3A0%2C%5C%22noteCount%5C%22%3A2%2C%5C%22octave%5C%22%3A6%2C%5C%22tempo%5C%22%3A219.9542271438986%2C%5C%22swing%5C%22%3A0%2C%5C%22brightness%5C%22%3A0.5891404135152698%2C%5C%22decay%5C%22%3A0.13533830181695522%2C%5C%22echo%5C%22%3A0%7D%2C%5C%22generator%5C%22%3A%5C%22generate_coin%5C%22%2C%5C%22renderSeed%5C%22%3A0.13557510543614626%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 221,
+        "verb": "coin",
+        "entry": 3,
+        "signature": "Jinglr:coin",
+        "composite": false
+      },
+      "id": "0db32f0f2fdc0feca50cf99b88e4a113a1fe144c457b0fca25c2c73e21ce63b7",
+      "paramsSha256": "d02efc0ea28835207ab2785c5b1c7668d27143347c5579eea4b3a5bb679748cb",
+      "audioSha256": "4b5805622f4ee658d2807c44de03f565492a143eba6766d70ec54da7ec0c3557",
+      "targetId": "9eb52ebeac1504e7482672908ec3e09290c802d34cd6f5c7c1fb2b4960190fc6",
+      "likeness": 3,
+      "usefulness": 3,
+      "audio": {
+        "file": "audio/8e37bfbc3eec21a6a561cece94edc75b2fbb0d4cc0950a048a6b3deadd9e8245.flac",
+        "pcmSha256": "8e37bfbc3eec21a6a561cece94edc75b2fbb0d4cc0950a048a6b3deadd9e8245",
+        "sampleRate": 44100,
+        "frames": 13108,
+        "channels": 1,
+        "auditionWavSha256": "4b5805622f4ee658d2807c44de03f565492a143eba6766d70ec54da7ec0c3557"
+      }
+    },
+    {
+      "label": "Different ingredients",
+      "role": "diverse",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.5,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Bfxr\",\"name\":\"Pickup/Coin\",\"params\":{\"masterVolume\":0.5,\"waveType\":0,\"attackTime\":0,\"sustainTime\":0.09676552812535683,\"sustainPunch\":0.35204689800638705,\"decayTime\":0.35826294320607194,\"compressionAmount\":0,\"frequency_start\":0.8185941185569391,\"frequency_slide\":0.03810168734369101,\"frequency_acceleration\":0.0045441765375877725,\"min_frequency_relative_to_starting_frequency\":0,\"vibratoDepth\":0,\"vibratoSpeed\":0,\"pitch_jump_repeat_speed\":0,\"pitch_jump_amount\":0.37944068133465947,\"pitch_jump_onset_percent\":0.3119417193075642,\"pitch_jump_2_amount\":0,\"pitch_jump_onset2_percent\":0,\"overtones\":0,\"overtoneFalloff\":0,\"squareDuty\":0,\"dutySweep\":0,\"repeatSpeed\":0,\"flangerOffset\":0,\"flangerSweep\":0,\"lpFilterCutoff\":1,\"lpFilterCutoffSweep\":0,\"lpFilterResonance\":0,\"hpFilterCutoff\":0,\"hpFilterCutoffSweep\":0,\"bitCrush\":0,\"bitCrushSweep\":0},\"generator\":\"generate_pickup_coin\",\"renderSeed\":0.9952142599504441}]"
+      },
+      "seed": 4013414672,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "03-diverse.wav",
+      "score": 0.7153576016426086,
+      "ingredients": "Bfxr \u00b7 Pickup/Coin",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22collect%2Fcoin%20%28snes%29.WAV%20%5Cu00b7%20Different%20ingredients%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.5%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Bfxr%5C%22%2C%5C%22name%5C%22%3A%5C%22Pickup%2FCoin%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22waveType%5C%22%3A0%2C%5C%22attackTime%5C%22%3A0%2C%5C%22sustainTime%5C%22%3A0.09676552812535683%2C%5C%22sustainPunch%5C%22%3A0.35204689800638705%2C%5C%22decayTime%5C%22%3A0.35826294320607194%2C%5C%22compressionAmount%5C%22%3A0%2C%5C%22frequency_start%5C%22%3A0.8185941185569391%2C%5C%22frequency_slide%5C%22%3A0.03810168734369101%2C%5C%22frequency_acceleration%5C%22%3A0.0045441765375877725%2C%5C%22min_frequency_relative_to_starting_frequency%5C%22%3A0%2C%5C%22vibratoDepth%5C%22%3A0%2C%5C%22vibratoSpeed%5C%22%3A0%2C%5C%22pitch_jump_repeat_speed%5C%22%3A0%2C%5C%22pitch_jump_amount%5C%22%3A0.37944068133465947%2C%5C%22pitch_jump_onset_percent%5C%22%3A0.3119417193075642%2C%5C%22pitch_jump_2_amount%5C%22%3A0%2C%5C%22pitch_jump_onset2_percent%5C%22%3A0%2C%5C%22overtones%5C%22%3A0%2C%5C%22overtoneFalloff%5C%22%3A0%2C%5C%22squareDuty%5C%22%3A0%2C%5C%22dutySweep%5C%22%3A0%2C%5C%22repeatSpeed%5C%22%3A0%2C%5C%22flangerOffset%5C%22%3A0%2C%5C%22flangerSweep%5C%22%3A0%2C%5C%22lpFilterCutoff%5C%22%3A1%2C%5C%22lpFilterCutoffSweep%5C%22%3A0%2C%5C%22lpFilterResonance%5C%22%3A0%2C%5C%22hpFilterCutoff%5C%22%3A0%2C%5C%22hpFilterCutoffSweep%5C%22%3A0%2C%5C%22bitCrush%5C%22%3A0%2C%5C%22bitCrushSweep%5C%22%3A0%7D%2C%5C%22generator%5C%22%3A%5C%22generate_pickup_coin%5C%22%2C%5C%22renderSeed%5C%22%3A0.9952142599504441%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 1366,
+        "verb": "coin",
+        "entry": 0,
+        "signature": "Bfxr:coin",
+        "composite": false
+      },
+      "id": "36b2f3a3519b0dd37dab1546fb7950ce24f2278885100bcb14cc626cc82c8614",
+      "paramsSha256": "ec9704a26b059e37b8010bb87549ede9a144332a972d67dcb47e1f2c56437fd2",
+      "audioSha256": "7cf7c10b2bd3b604a50618fcac66fecb5e446804ff1312065ce21c1aaef59df9",
+      "targetId": "9eb52ebeac1504e7482672908ec3e09290c802d34cd6f5c7c1fb2b4960190fc6",
+      "likeness": 3,
+      "usefulness": 3,
+      "audio": {
+        "file": "audio/1fd7dff7783ab3823ba349461eab384632e243aeac995054cc0e2333be1df007.flac",
+        "pcmSha256": "1fd7dff7783ab3823ba349461eab384632e243aeac995054cc0e2333be1df007",
+        "sampleRate": 44100,
+        "frames": 13562,
+        "channels": 1,
+        "auditionWavSha256": "7cf7c10b2bd3b604a50618fcac66fecb5e446804ff1312065ce21c1aaef59df9"
+      }
+    },
+    {
+      "label": "Best previously rated",
+      "role": "baseline",
+      "synth": "Bfxr",
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 2,
+        "attackTime": 0,
+        "sustainTime": 0.16619973044061295,
+        "sustainPunch": 0.6032594217490899,
+        "decayTime": 0.38886202634158007,
+        "compressionAmount": 0,
+        "frequency_start": 0.7567567790159956,
+        "frequency_slide": 0.01629973774907412,
+        "frequency_acceleration": 0.07010103552750545,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0,
+        "vibratoSpeed": 0,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0.49190985546366,
+        "pitch_jump_onset_percent": 0.30246708191927985,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0,
+        "overtones": 0,
+        "overtoneFalloff": 0.05512871587554052,
+        "squareDuty": 0,
+        "dutySweep": 0,
+        "repeatSpeed": 0.01580136053157387,
+        "flangerOffset": 0,
+        "flangerSweep": 0,
+        "lpFilterCutoff": 1,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0.00013228706680879418,
+        "hpFilterCutoff": 0,
+        "hpFilterCutoffSweep": 0,
+        "bitCrush": 0,
+        "bitCrushSweep": 0
+      },
+      "seed": 1359613458,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "file": "04-baseline.wav",
+      "provenance": {
+        "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+        "candidateId": "a46c64c34897c71cf0443b7a691288848e3594c4159909f57dc78119e6e54c7c",
+        "originalRole": "previous",
+        "previousLikenessRating": 3,
+        "archivedPcmSha256": "62d8566a0d20e61bb64c57d2efb289f395c72b56407e9d876582fd7dea6844f3"
+      },
+      "id": "21b18a304a08ae442b2abb1638e513ad112f934d6a66e5a0a04f697f4f3b8af7",
+      "paramsSha256": "cc97604a09add6caa099ddf274bf84f2a5fab53cda8d3db1a7152a7c36add673",
+      "audioSha256": "48e0b2fdaa930c3028a97dafc91a801c81c99d75a2c9e5cca51a766d95963288",
+      "targetId": "9eb52ebeac1504e7482672908ec3e09290c802d34cd6f5c7c1fb2b4960190fc6",
+      "likeness": 4,
+      "usefulness": 3,
+      "audio": {
+        "file": "audio/62d8566a0d20e61bb64c57d2efb289f395c72b56407e9d876582fd7dea6844f3.flac",
+        "pcmSha256": "62d8566a0d20e61bb64c57d2efb289f395c72b56407e9d876582fd7dea6844f3",
+        "sampleRate": 44100,
+        "frames": 17764,
+        "channels": 1,
+        "auditionWavSha256": "48e0b2fdaa930c3028a97dafc91a801c81c99d75a2c9e5cca51a766d95963288"
+      }
+    },
+    {
+      "label": "Automatic match",
+      "role": "automatic",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.5,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Splash\",\"params\":{\"masterVolume\":0.5,\"waveType\":7,\"duration\":0.32256449535489085,\"pitch\":{\"start\":0.48541449920739976,\"end\":0.48541449920739976,\"curve\":\"Linear\"},\"tone\":{\"start\":0.9,\"end\":0.2,\"curve\":\"Ease Out\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0.1,\"curve\":\"Linear\"},\"attack\":0.003,\"release\":0.2,\"resonance\":0.3,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_splash\",\"renderSeed\":0.30447119660675526}]"
+      },
+      "seed": 623774089,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "01-automatic.wav",
+      "score": 0.7669915556907654,
+      "ingredients": "Transfxr \u00b7 Splash",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22hit%2FPUNCH7.WAV%20%5Cu00b7%20Automatic%20match%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.5%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Transfxr%5C%22%2C%5C%22name%5C%22%3A%5C%22Splash%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22waveType%5C%22%3A7%2C%5C%22duration%5C%22%3A0.32256449535489085%2C%5C%22pitch%5C%22%3A%7B%5C%22start%5C%22%3A0.48541449920739976%2C%5C%22end%5C%22%3A0.48541449920739976%2C%5C%22curve%5C%22%3A%5C%22Linear%5C%22%7D%2C%5C%22tone%5C%22%3A%7B%5C%22start%5C%22%3A0.9%2C%5C%22end%5C%22%3A0.2%2C%5C%22curve%5C%22%3A%5C%22Ease%20Out%5C%22%7D%2C%5C%22vibrato%5C%22%3A%7B%5C%22start%5C%22%3A0%2C%5C%22end%5C%22%3A0.15%2C%5C%22curve%5C%22%3A%5C%22Ease%20In%5C%22%7D%2C%5C%22level%5C%22%3A%7B%5C%22start%5C%22%3A1%2C%5C%22end%5C%22%3A0.1%2C%5C%22curve%5C%22%3A%5C%22Linear%5C%22%7D%2C%5C%22attack%5C%22%3A0.003%2C%5C%22release%5C%22%3A0.2%2C%5C%22resonance%5C%22%3A0.3%2C%5C%22echo%5C%22%3A0%2C%5C%22waveTo%5C%22%3A-1%2C%5C%22morph%5C%22%3A%7B%5C%22start%5C%22%3A0%2C%5C%22end%5C%22%3A1%2C%5C%22curve%5C%22%3A%5C%22Smooth%5C%22%7D%7D%2C%5C%22generator%5C%22%3A%5C%22generate_verb_splash%5C%22%2C%5C%22renderSeed%5C%22%3A0.30447119660675526%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 655,
+        "verb": "splash",
+        "entry": 1,
+        "signature": "Transfxr:splash",
+        "composite": false
+      },
+      "id": "0a441410235a022362cda316b255c0434b2aefee65823ba5888f25c8e9b6c004",
+      "paramsSha256": "84fe01b0921a1e6a74eafb169c3eaff8e77c4dff5c72c281cc7ad15ff5f44d23",
+      "audioSha256": "3d3480f07bec2bd34be72e57814be029b565cd9748b8ce2a947f36e17140b442",
+      "targetId": "2ad387720639bb575001b759df6f4f78f5442d58d6f768e55c0fb144cceac601",
+      "likeness": 3,
+      "usefulness": 4,
+      "audio": {
+        "file": "audio/7ffa496328b4514c598107655abd177daf45c39dd12ba6d3e825026d0a02b2b2.flac",
+        "pcmSha256": "7ffa496328b4514c598107655abd177daf45c39dd12ba6d3e825026d0a02b2b2",
+        "sampleRate": 44100,
+        "frames": 14097,
+        "channels": 1,
+        "auditionWavSha256": "3d3480f07bec2bd34be72e57814be029b565cd9748b8ce2a947f36e17140b442"
+      }
+    },
+    {
+      "label": "Category-guided diagnostic",
+      "role": "guided",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.5,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Boomr\",\"name\":\"Hit\",\"params\":{\"masterVolume\":0.5,\"seed\":0.3941769562661648,\"duration\":0.27530664540827277,\"size\":0.12443099529482424,\"pressure\":0.6129852954298257,\"blast\":0.2621800813591108,\"debris\":0.09504043537890539,\"gas\":0,\"aftershock\":0,\"rubbleSize\":0.09709658757783472,\"spread\":0.008085216861218214,\"tail\":0.10899704358307645,\"muffle\":0.014640982937999071,\"mechanism\":5,\"space\":0.012685403786599637},\"generator\":\"generate_hit\",\"renderSeed\":0.3159088750835508}]"
+      },
+      "seed": 2116179540,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "02-guided.wav",
+      "score": 0.9393036365509033,
+      "ingredients": "Boomer \u00b7 Hit",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22hit%2FPUNCH7.WAV%20%5Cu00b7%20Category-guided%20diagnostic%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.5%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Boomr%5C%22%2C%5C%22name%5C%22%3A%5C%22Hit%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22seed%5C%22%3A0.3941769562661648%2C%5C%22duration%5C%22%3A0.27530664540827277%2C%5C%22size%5C%22%3A0.12443099529482424%2C%5C%22pressure%5C%22%3A0.6129852954298257%2C%5C%22blast%5C%22%3A0.2621800813591108%2C%5C%22debris%5C%22%3A0.09504043537890539%2C%5C%22gas%5C%22%3A0%2C%5C%22aftershock%5C%22%3A0%2C%5C%22rubbleSize%5C%22%3A0.09709658757783472%2C%5C%22spread%5C%22%3A0.008085216861218214%2C%5C%22tail%5C%22%3A0.10899704358307645%2C%5C%22muffle%5C%22%3A0.014640982937999071%2C%5C%22mechanism%5C%22%3A5%2C%5C%22space%5C%22%3A0.012685403786599637%7D%2C%5C%22generator%5C%22%3A%5C%22generate_hit%5C%22%2C%5C%22renderSeed%5C%22%3A0.3159088750835508%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 1301,
+        "verb": "hit",
+        "entry": 5,
+        "signature": "Boomr:hit",
+        "composite": false
+      },
+      "id": "8343bac1523bc7b9df9eb46d8455d0ac931a7f69951ea4f8f92c94019259241c",
+      "paramsSha256": "2418a23aed38ab8af10c94773d26a361a086c24f13bfccda16459d683843ea54",
+      "audioSha256": "66d4f8ea1cd18c37173740e3773a59bb5a9a426991ae46872acd65bf85de9560",
+      "targetId": "2ad387720639bb575001b759df6f4f78f5442d58d6f768e55c0fb144cceac601",
+      "likeness": 1,
+      "usefulness": 3,
+      "audio": {
+        "file": "audio/16568ee0fd451b62e16857c678017e9153e2999ca664c5c9c30a79a995dcdae0.flac",
+        "pcmSha256": "16568ee0fd451b62e16857c678017e9153e2999ca664c5c9c30a79a995dcdae0",
+        "sampleRate": 44100,
+        "frames": 11614,
+        "channels": 1,
+        "auditionWavSha256": "66d4f8ea1cd18c37173740e3773a59bb5a9a426991ae46872acd65bf85de9560"
+      }
+    },
+    {
+      "label": "Different ingredients",
+      "role": "diverse",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.4536940869060345,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Bfxr\",\"name\":\"Hit/Hurt\",\"params\":{\"masterVolume\":0.5,\"waveType\":3,\"attackTime\":0,\"sustainTime\":0.005586157646030188,\"sustainPunch\":0,\"decayTime\":0.26920743570663036,\"compressionAmount\":0,\"frequency_start\":0.32253931891173127,\"frequency_slide\":-0.5,\"frequency_acceleration\":0,\"min_frequency_relative_to_starting_frequency\":0,\"vibratoDepth\":0,\"vibratoSpeed\":0,\"pitch_jump_repeat_speed\":0,\"pitch_jump_amount\":0,\"pitch_jump_onset_percent\":0,\"pitch_jump_2_amount\":0,\"pitch_jump_onset2_percent\":0,\"overtones\":0,\"overtoneFalloff\":0,\"squareDuty\":0,\"dutySweep\":0,\"repeatSpeed\":0,\"flangerOffset\":0,\"flangerSweep\":0,\"lpFilterCutoff\":1,\"lpFilterCutoffSweep\":0,\"lpFilterResonance\":0,\"hpFilterCutoff\":0,\"hpFilterCutoffSweep\":0,\"bitCrush\":0,\"bitCrushSweep\":0},\"generator\":\"generate_hit_hurt\",\"renderSeed\":0.01829202543012798},{\"synth\":\"Clonkr\",\"name\":\"Hit\",\"params\":{\"masterVolume\":0.5,\"seed\":0.7052470413036644,\"material\":0,\"action\":0,\"size\":0.48100257788319145,\"hollowness\":0.15803001448512077,\"hardness\":0.9856649918248876,\"damping\":0.8087374243768863,\"duration\":0.2747839122079313},\"generator\":\"generate_hit\",\"renderSeed\":0.527875286526978}]"
+      },
+      "seed": 3551076280,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "03-diverse.wav",
+      "score": 1.034170150756836,
+      "ingredients": "Bfxr \u00b7 Hit/Hurt \u00d7 Tangs \u00b7 Hit (start-aligned)",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22hit%2FPUNCH7.WAV%20%5Cu00b7%20Different%20ingredients%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.4536940869060345%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Bfxr%5C%22%2C%5C%22name%5C%22%3A%5C%22Hit%2FHurt%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22waveType%5C%22%3A3%2C%5C%22attackTime%5C%22%3A0%2C%5C%22sustainTime%5C%22%3A0.005586157646030188%2C%5C%22sustainPunch%5C%22%3A0%2C%5C%22decayTime%5C%22%3A0.26920743570663036%2C%5C%22compressionAmount%5C%22%3A0%2C%5C%22frequency_start%5C%22%3A0.32253931891173127%2C%5C%22frequency_slide%5C%22%3A-0.5%2C%5C%22frequency_acceleration%5C%22%3A0%2C%5C%22min_frequency_relative_to_starting_frequency%5C%22%3A0%2C%5C%22vibratoDepth%5C%22%3A0%2C%5C%22vibratoSpeed%5C%22%3A0%2C%5C%22pitch_jump_repeat_speed%5C%22%3A0%2C%5C%22pitch_jump_amount%5C%22%3A0%2C%5C%22pitch_jump_onset_percent%5C%22%3A0%2C%5C%22pitch_jump_2_amount%5C%22%3A0%2C%5C%22pitch_jump_onset2_percent%5C%22%3A0%2C%5C%22overtones%5C%22%3A0%2C%5C%22overtoneFalloff%5C%22%3A0%2C%5C%22squareDuty%5C%22%3A0%2C%5C%22dutySweep%5C%22%3A0%2C%5C%22repeatSpeed%5C%22%3A0%2C%5C%22flangerOffset%5C%22%3A0%2C%5C%22flangerSweep%5C%22%3A0%2C%5C%22lpFilterCutoff%5C%22%3A1%2C%5C%22lpFilterCutoffSweep%5C%22%3A0%2C%5C%22lpFilterResonance%5C%22%3A0%2C%5C%22hpFilterCutoff%5C%22%3A0%2C%5C%22hpFilterCutoffSweep%5C%22%3A0%2C%5C%22bitCrush%5C%22%3A0%2C%5C%22bitCrushSweep%5C%22%3A0%7D%2C%5C%22generator%5C%22%3A%5C%22generate_hit_hurt%5C%22%2C%5C%22renderSeed%5C%22%3A0.01829202543012798%7D%2C%7B%5C%22synth%5C%22%3A%5C%22Clonkr%5C%22%2C%5C%22name%5C%22%3A%5C%22Hit%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22seed%5C%22%3A0.7052470413036644%2C%5C%22material%5C%22%3A0%2C%5C%22action%5C%22%3A0%2C%5C%22size%5C%22%3A0.48100257788319145%2C%5C%22hollowness%5C%22%3A0.15803001448512077%2C%5C%22hardness%5C%22%3A0.9856649918248876%2C%5C%22damping%5C%22%3A0.8087374243768863%2C%5C%22duration%5C%22%3A0.2747839122079313%7D%2C%5C%22generator%5C%22%3A%5C%22generate_hit%5C%22%2C%5C%22renderSeed%5C%22%3A0.527875286526978%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 1308,
+        "verb": "hit",
+        "entry": 9,
+        "signature": "Bfxr:hit+Clonkr:hit",
+        "composite": true
+      },
+      "id": "187781d92be8b459bdfdac189678f209f400d9dd1a22f23ccd6552fa1f421390",
+      "paramsSha256": "64d64f745181cb9fff32bc472579085c956740fd70eb9c5cb193db2ff1500827",
+      "audioSha256": "436f50b810ba9025e11115642707794db9eb1537798c8ffa6b5a36db5f17d264",
+      "targetId": "2ad387720639bb575001b759df6f4f78f5442d58d6f768e55c0fb144cceac601",
+      "likeness": 2,
+      "usefulness": 4,
+      "audio": {
+        "file": "audio/924524c0e5a3231555c33eb302a3618ff8fcf07762fb241c77dea7f61e70a58e.flac",
+        "pcmSha256": "924524c0e5a3231555c33eb302a3618ff8fcf07762fb241c77dea7f61e70a58e",
+        "sampleRate": 44100,
+        "frames": 7459,
+        "channels": 1,
+        "auditionWavSha256": "436f50b810ba9025e11115642707794db9eb1537798c8ffa6b5a36db5f17d264"
+      }
+    },
+    {
+      "label": "Best previously rated",
+      "role": "baseline",
+      "synth": "Boomr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.7022664772812277,
+        "duration": 0.3210657596371882,
+        "size": 0.11020111257704934,
+        "pressure": 0.7851766267501854,
+        "blast": 0.4750791522887274,
+        "debris": 0,
+        "gas": 0.03822021112671645,
+        "aftershock": 0.06823566803232597,
+        "rubbleSize": 0.0711087033615872,
+        "spread": 0.1232501127896053,
+        "tail": 0.4223461327853716,
+        "muffle": 0.5482110676293698,
+        "mechanism": 0,
+        "space": 0.31172149926207454
+      },
+      "seed": 1470428505,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "file": "04-baseline.wav",
+      "provenance": {
+        "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+        "candidateId": "e4be7b9adfc0a85aea2bb09e0f2bcbbb8b90d269ad2bac7504edff14228cd0df",
+        "originalRole": "previous",
+        "previousLikenessRating": 3,
+        "archivedPcmSha256": "c79f50c528c74450b40b5801b29f4fd54e780e823f1da7d63fb7b31fd92884d8"
+      },
+      "id": "b8d89b73db972c15c57992de65a57c111393ac93832b56776cf64583ed4e092f",
+      "paramsSha256": "ad135af882133d0b1994b46d9192351761db2a5bd7ad37b4f3b1a0e1a55a78fe",
+      "audioSha256": "f3a6f6a4d0337b5035c9872e9bd9322d1ad6a03e26bb5439ba64b46fa350eefa",
+      "targetId": "2ad387720639bb575001b759df6f4f78f5442d58d6f768e55c0fb144cceac601",
+      "likeness": 2,
+      "usefulness": 3,
+      "audio": {
+        "file": "audio/c79f50c528c74450b40b5801b29f4fd54e780e823f1da7d63fb7b31fd92884d8.flac",
+        "pcmSha256": "c79f50c528c74450b40b5801b29f4fd54e780e823f1da7d63fb7b31fd92884d8",
+        "sampleRate": 44100,
+        "frames": 14086,
+        "channels": 1,
+        "auditionWavSha256": "f3a6f6a4d0337b5035c9872e9bd9322d1ad6a03e26bb5439ba64b46fa350eefa"
+      }
+    },
+    {
+      "label": "Automatic match",
+      "role": "automatic",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.5,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Crittr\",\"name\":\"Hurt\",\"params\":{\"masterVolume\":0.5,\"seed\":0.853066406911239,\"voice\":0,\"duration\":0.3735855407547206,\"pitch\":0.48178154791239647,\"size\":0.3094955278560519,\"morph\":0.8148915938800201,\"calls\":1,\"gap\":0.06462345513282344,\"contour\":-0.7513866329798475,\"growl\":0.30194439394399525,\"breath\":0.4495010880753398,\"flutter\":0.21557671513874083},\"generator\":\"generate_hurt\",\"renderSeed\":0.6110910887364298}]"
+      },
+      "seed": 406262098,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "01-automatic.wav",
+      "score": 0.8809396028518677,
+      "ingredients": "Beasts \u00b7 Hurt",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22jump%2FJump%20Kopie%204.wav%20%5Cu00b7%20Automatic%20match%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.5%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Crittr%5C%22%2C%5C%22name%5C%22%3A%5C%22Hurt%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22seed%5C%22%3A0.853066406911239%2C%5C%22voice%5C%22%3A0%2C%5C%22duration%5C%22%3A0.3735855407547206%2C%5C%22pitch%5C%22%3A0.48178154791239647%2C%5C%22size%5C%22%3A0.3094955278560519%2C%5C%22morph%5C%22%3A0.8148915938800201%2C%5C%22calls%5C%22%3A1%2C%5C%22gap%5C%22%3A0.06462345513282344%2C%5C%22contour%5C%22%3A-0.7513866329798475%2C%5C%22growl%5C%22%3A0.30194439394399525%2C%5C%22breath%5C%22%3A0.4495010880753398%2C%5C%22flutter%5C%22%3A0.21557671513874083%7D%2C%5C%22generator%5C%22%3A%5C%22generate_hurt%5C%22%2C%5C%22renderSeed%5C%22%3A0.6110910887364298%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 744,
+        "verb": "hurt",
+        "entry": 2,
+        "signature": "Crittr:hurt",
+        "composite": false
+      },
+      "id": "ed092dc82053117c9b08b2fa39445ba1e9ce799569061656a5176a6c2526d6b7",
+      "paramsSha256": "0e72a60111dc6d4d1575ae8c34511510b2a8d5e4c237c89ab29b8f2f9333267e",
+      "audioSha256": "0830f3ccff560de647d44dd4d1338eac18083968cda51bc970ed804ddb56699c",
+      "targetId": "fa0b3b3527bc8f89e1560295c986e80a85a8bc84bb82904e9764fc841c40141a",
+      "likeness": 2,
+      "usefulness": 3,
+      "audio": {
+        "file": "audio/6df1466bf50d75125fd1ce67293dd717b7a08ce14e7e2ff14a3748bc002a4021.flac",
+        "pcmSha256": "6df1466bf50d75125fd1ce67293dd717b7a08ce14e7e2ff14a3748bc002a4021",
+        "sampleRate": 44100,
+        "frames": 15337,
+        "channels": 1,
+        "auditionWavSha256": "0830f3ccff560de647d44dd4d1338eac18083968cda51bc970ed804ddb56699c"
+      }
+    },
+    {
+      "label": "Category-guided diagnostic",
+      "role": "guided",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.36334555903449656,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Bfxr\",\"name\":\"Jump\",\"params\":{\"masterVolume\":0.5,\"waveType\":0,\"attackTime\":0,\"sustainTime\":0.17874513743445278,\"sustainPunch\":0,\"decayTime\":0.23457344546914102,\"compressionAmount\":0,\"frequency_start\":0.47157551657874136,\"frequency_slide\":0.24462184221483768,\"frequency_acceleration\":0,\"min_frequency_relative_to_starting_frequency\":0,\"vibratoDepth\":0,\"vibratoSpeed\":0,\"pitch_jump_repeat_speed\":0,\"pitch_jump_amount\":0,\"pitch_jump_onset_percent\":0,\"pitch_jump_2_amount\":0,\"pitch_jump_onset2_percent\":0,\"overtones\":0,\"overtoneFalloff\":0,\"squareDuty\":0.024909268179908396,\"dutySweep\":0,\"repeatSpeed\":0,\"flangerOffset\":0,\"flangerSweep\":0,\"lpFilterCutoff\":0.8909755812957882,\"lpFilterCutoffSweep\":0,\"lpFilterResonance\":0,\"hpFilterCutoff\":0,\"hpFilterCutoffSweep\":0,\"bitCrush\":0,\"bitCrushSweep\":0},\"generator\":\"generate_jump\",\"renderSeed\":0.1448661177419126},{\"synth\":\"Transfxr\",\"name\":\"Jump\",\"params\":{\"masterVolume\":0.5,\"waveType\":3,\"duration\":0.32670959715731446,\"pitch\":{\"start\":0.35898553872015326,\"end\":0.5589855387201533,\"curve\":\"Triangle\"},\"tone\":{\"start\":0.9,\"end\":0.8,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0.5,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.1,\"resonance\":0.15,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_jump\",\"renderSeed\":0.5028561959043145}]"
+      },
+      "seed": 226006000,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "02-guided.wav",
+      "score": 1.3467475175857544,
+      "ingredients": "Bfxr \u00b7 Jump \u00d7 Transfxr \u00b7 Jump (start-aligned)",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22jump%2FJump%20Kopie%204.wav%20%5Cu00b7%20Category-guided%20diagnostic%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.36334555903449656%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Bfxr%5C%22%2C%5C%22name%5C%22%3A%5C%22Jump%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22waveType%5C%22%3A0%2C%5C%22attackTime%5C%22%3A0%2C%5C%22sustainTime%5C%22%3A0.17874513743445278%2C%5C%22sustainPunch%5C%22%3A0%2C%5C%22decayTime%5C%22%3A0.23457344546914102%2C%5C%22compressionAmount%5C%22%3A0%2C%5C%22frequency_start%5C%22%3A0.47157551657874136%2C%5C%22frequency_slide%5C%22%3A0.24462184221483768%2C%5C%22frequency_acceleration%5C%22%3A0%2C%5C%22min_frequency_relative_to_starting_frequency%5C%22%3A0%2C%5C%22vibratoDepth%5C%22%3A0%2C%5C%22vibratoSpeed%5C%22%3A0%2C%5C%22pitch_jump_repeat_speed%5C%22%3A0%2C%5C%22pitch_jump_amount%5C%22%3A0%2C%5C%22pitch_jump_onset_percent%5C%22%3A0%2C%5C%22pitch_jump_2_amount%5C%22%3A0%2C%5C%22pitch_jump_onset2_percent%5C%22%3A0%2C%5C%22overtones%5C%22%3A0%2C%5C%22overtoneFalloff%5C%22%3A0%2C%5C%22squareDuty%5C%22%3A0.024909268179908396%2C%5C%22dutySweep%5C%22%3A0%2C%5C%22repeatSpeed%5C%22%3A0%2C%5C%22flangerOffset%5C%22%3A0%2C%5C%22flangerSweep%5C%22%3A0%2C%5C%22lpFilterCutoff%5C%22%3A0.8909755812957882%2C%5C%22lpFilterCutoffSweep%5C%22%3A0%2C%5C%22lpFilterResonance%5C%22%3A0%2C%5C%22hpFilterCutoff%5C%22%3A0%2C%5C%22hpFilterCutoffSweep%5C%22%3A0%2C%5C%22bitCrush%5C%22%3A0%2C%5C%22bitCrushSweep%5C%22%3A0%7D%2C%5C%22generator%5C%22%3A%5C%22generate_jump%5C%22%2C%5C%22renderSeed%5C%22%3A0.1448661177419126%7D%2C%7B%5C%22synth%5C%22%3A%5C%22Transfxr%5C%22%2C%5C%22name%5C%22%3A%5C%22Jump%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22waveType%5C%22%3A3%2C%5C%22duration%5C%22%3A0.32670959715731446%2C%5C%22pitch%5C%22%3A%7B%5C%22start%5C%22%3A0.35898553872015326%2C%5C%22end%5C%22%3A0.5589855387201533%2C%5C%22curve%5C%22%3A%5C%22Triangle%5C%22%7D%2C%5C%22tone%5C%22%3A%7B%5C%22start%5C%22%3A0.9%2C%5C%22end%5C%22%3A0.8%2C%5C%22curve%5C%22%3A%5C%22Linear%5C%22%7D%2C%5C%22vibrato%5C%22%3A%7B%5C%22start%5C%22%3A0%2C%5C%22end%5C%22%3A0.15%2C%5C%22curve%5C%22%3A%5C%22Ease%20In%5C%22%7D%2C%5C%22level%5C%22%3A%7B%5C%22start%5C%22%3A1%2C%5C%22end%5C%22%3A0.5%2C%5C%22curve%5C%22%3A%5C%22Linear%5C%22%7D%2C%5C%22attack%5C%22%3A0%2C%5C%22release%5C%22%3A0.1%2C%5C%22resonance%5C%22%3A0.15%2C%5C%22echo%5C%22%3A0%2C%5C%22waveTo%5C%22%3A-1%2C%5C%22morph%5C%22%3A%7B%5C%22start%5C%22%3A0%2C%5C%22end%5C%22%3A1%2C%5C%22curve%5C%22%3A%5C%22Smooth%5C%22%7D%7D%2C%5C%22generator%5C%22%3A%5C%22generate_verb_jump%5C%22%2C%5C%22renderSeed%5C%22%3A0.5028561959043145%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 1735,
+        "verb": "jump",
+        "entry": 3,
+        "signature": "Bfxr:jump+Transfxr:jump",
+        "composite": true
+      },
+      "id": "1a85711268dc94146eca39af9e6159eb31964a8ff512d890df35bd4be71c2380",
+      "paramsSha256": "2a8f15db352dea4dfec5d186d76792aa7aee1e7efbf0abbb5ad6f3f9e1ffcd54",
+      "audioSha256": "4c96d9378fd2c6fd9356ce71c3685d4a103bb8c1a46062053902ad9b607b0d9e",
+      "targetId": "fa0b3b3527bc8f89e1560295c986e80a85a8bc84bb82904e9764fc841c40141a",
+      "likeness": 1,
+      "usefulness": 3,
+      "audio": {
+        "file": "audio/bc906bd7ea56150a19f082c861875b0360c6a5eef36afebce5bcc800de8254e7.flac",
+        "pcmSha256": "bc906bd7ea56150a19f082c861875b0360c6a5eef36afebce5bcc800de8254e7",
+        "sampleRate": 44100,
+        "frames": 14368,
+        "channels": 1,
+        "auditionWavSha256": "4c96d9378fd2c6fd9356ce71c3685d4a103bb8c1a46062053902ad9b607b0d9e"
+      }
+    },
+    {
+      "label": "Different ingredients",
+      "role": "diverse",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.5,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Jump\",\"params\":{\"masterVolume\":0.5,\"waveType\":3,\"duration\":0.3098136313213036,\"pitch\":{\"start\":0.3433077375171706,\"end\":0.5433077375171707,\"curve\":\"Triangle\"},\"tone\":{\"start\":0.9,\"end\":0.8,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0.5,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.1,\"resonance\":0.15,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}},\"generator\":\"generate_verb_jump\",\"renderSeed\":0.8993685222230852}]"
+      },
+      "seed": 3365245930,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "03-diverse.wav",
+      "score": 1.3556294441223145,
+      "ingredients": "Transfxr \u00b7 Jump",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22jump%2FJump%20Kopie%204.wav%20%5Cu00b7%20Different%20ingredients%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.5%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Transfxr%5C%22%2C%5C%22name%5C%22%3A%5C%22Jump%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22waveType%5C%22%3A3%2C%5C%22duration%5C%22%3A0.3098136313213036%2C%5C%22pitch%5C%22%3A%7B%5C%22start%5C%22%3A0.3433077375171706%2C%5C%22end%5C%22%3A0.5433077375171707%2C%5C%22curve%5C%22%3A%5C%22Triangle%5C%22%7D%2C%5C%22tone%5C%22%3A%7B%5C%22start%5C%22%3A0.9%2C%5C%22end%5C%22%3A0.8%2C%5C%22curve%5C%22%3A%5C%22Linear%5C%22%7D%2C%5C%22vibrato%5C%22%3A%7B%5C%22start%5C%22%3A0%2C%5C%22end%5C%22%3A0.15%2C%5C%22curve%5C%22%3A%5C%22Ease%20In%5C%22%7D%2C%5C%22level%5C%22%3A%7B%5C%22start%5C%22%3A1%2C%5C%22end%5C%22%3A0.5%2C%5C%22curve%5C%22%3A%5C%22Linear%5C%22%7D%2C%5C%22attack%5C%22%3A0%2C%5C%22release%5C%22%3A0.1%2C%5C%22resonance%5C%22%3A0.15%2C%5C%22echo%5C%22%3A0%2C%5C%22waveTo%5C%22%3A-1%2C%5C%22morph%5C%22%3A%7B%5C%22start%5C%22%3A0%2C%5C%22end%5C%22%3A1%2C%5C%22curve%5C%22%3A%5C%22Smooth%5C%22%7D%7D%2C%5C%22generator%5C%22%3A%5C%22generate_verb_jump%5C%22%2C%5C%22renderSeed%5C%22%3A0.8993685222230852%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 580,
+        "verb": "jump",
+        "entry": 1,
+        "signature": "Transfxr:jump",
+        "composite": false
+      },
+      "id": "6255a7aa7c0eeb39d762ac994275fec8e6d7086e3c096243d8f579e3f3ea5d79",
+      "paramsSha256": "ca74a44a755fbbc06e46d442123bcd65675a5356d7150b96690f64e79378e5d3",
+      "audioSha256": "5c0547dc4d977af94964e0af306c9de13083e328764a57d512da7bf60d09056d",
+      "targetId": "fa0b3b3527bc8f89e1560295c986e80a85a8bc84bb82904e9764fc841c40141a",
+      "likeness": 1,
+      "usefulness": 3,
+      "audio": {
+        "file": "audio/eb2d562741f1cedc84d44590168b890121bfc7c36bb0109d3f69e5f5ffc03338.flac",
+        "pcmSha256": "eb2d562741f1cedc84d44590168b890121bfc7c36bb0109d3f69e5f5ffc03338",
+        "sampleRate": 44100,
+        "frames": 13631,
+        "channels": 1,
+        "auditionWavSha256": "5c0547dc4d977af94964e0af306c9de13083e328764a57d512da7bf60d09056d"
+      }
+    },
+    {
+      "label": "Best previously rated",
+      "role": "baseline",
+      "synth": "Bfxr",
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 1,
+        "attackTime": 0,
+        "sustainTime": 0.19866144293919208,
+        "sustainPunch": 0.041600741043477524,
+        "decayTime": 0.3444218239746988,
+        "compressionAmount": 0,
+        "frequency_start": 0.22733102715574205,
+        "frequency_slide": 0.0939350310298726,
+        "frequency_acceleration": 0,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0.6126570099639886,
+        "vibratoSpeed": 0.0764599336311221,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0.12328451876707452,
+        "pitch_jump_onset_percent": 0,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0.03613655204360683,
+        "overtones": 0,
+        "overtoneFalloff": 0,
+        "squareDuty": 0,
+        "dutySweep": -0.08684975780707536,
+        "repeatSpeed": 0.2575651405906981,
+        "flangerOffset": -0.5141448805516918,
+        "flangerSweep": -0.08815441690116677,
+        "lpFilterCutoff": 1,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0,
+        "hpFilterCutoff": 0.08885818918775434,
+        "hpFilterCutoffSweep": 0.1876472235366444,
+        "bitCrush": 0,
+        "bitCrushSweep": 0.17783004163557867
+      },
+      "seed": 7345224,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "file": "04-baseline.wav",
+      "provenance": {
+        "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+        "candidateId": "1f4a5c6c9ae5deed31d42874d639c71c1d8f9c72bef749fcfbb3f548c5146115",
+        "originalRole": "previous",
+        "previousLikenessRating": 2,
+        "archivedPcmSha256": "4def17b55559ec8b046127d535b078cec4029758a5997cd33fd918614a1bb854"
+      },
+      "id": "2f89ba2d087c92b9d24ac02144145fbf01c5c2162576da714879060d1659b137",
+      "paramsSha256": "b53d388cff73b5e8f1f0b1db378a71ac6d2b72fa9c44b60c9d38ec8f6a7c4bde",
+      "audioSha256": "fb9e87576b959c746dd63c922cc0ae1734f4ff5fb2cb0934dfb6ee5646028012",
+      "targetId": "fa0b3b3527bc8f89e1560295c986e80a85a8bc84bb82904e9764fc841c40141a",
+      "likeness": 2,
+      "usefulness": 3,
+      "audio": {
+        "file": "audio/4def17b55559ec8b046127d535b078cec4029758a5997cd33fd918614a1bb854.flac",
+        "pcmSha256": "4def17b55559ec8b046127d535b078cec4029758a5997cd33fd918614a1bb854",
+        "sampleRate": 44100,
+        "frames": 15710,
+        "channels": 1,
+        "auditionWavSha256": "fb9e87576b959c746dd63c922cc0ae1734f4ff5fb2cb0934dfb6ee5646028012"
+      }
+    },
+    {
+      "label": "Automatic match",
+      "role": "automatic",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.5,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Tappr\",\"name\":\"Panel Open\",\"params\":{\"masterVolume\":0.5,\"seed\":0.29314616275951266,\"material\":3,\"duration\":0.24517520384863017,\"size\":0.4550647476222366,\"hardness\":0.39647987815551455,\"body\":0.7101711975783109,\"release\":0,\"gap\":0.7345358561724424,\"electronic\":0.17146206706762313,\"sweep\":0.4660158414393663,\"air\":0.40545200532069425,\"damping\":0.599131957339123},\"generator\":\"generate_panel_open\",\"renderSeed\":0.3965369965881109}]"
+      },
+      "seed": 1677740700,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "01-automatic.wav",
+      "score": 0.75227952003479,
+      "ingredients": "Tappr \u00b7 Panel Open",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22step%2Fstep2.wav%20%5Cu00b7%20Automatic%20match%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.5%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Tappr%5C%22%2C%5C%22name%5C%22%3A%5C%22Panel%20Open%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22seed%5C%22%3A0.29314616275951266%2C%5C%22material%5C%22%3A3%2C%5C%22duration%5C%22%3A0.24517520384863017%2C%5C%22size%5C%22%3A0.4550647476222366%2C%5C%22hardness%5C%22%3A0.39647987815551455%2C%5C%22body%5C%22%3A0.7101711975783109%2C%5C%22release%5C%22%3A0%2C%5C%22gap%5C%22%3A0.7345358561724424%2C%5C%22electronic%5C%22%3A0.17146206706762313%2C%5C%22sweep%5C%22%3A0.4660158414393663%2C%5C%22air%5C%22%3A0.40545200532069425%2C%5C%22damping%5C%22%3A0.599131957339123%7D%2C%5C%22generator%5C%22%3A%5C%22generate_panel_open%5C%22%2C%5C%22renderSeed%5C%22%3A0.3965369965881109%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 1556,
+        "verb": "confirm",
+        "entry": 7,
+        "signature": "Tappr:generate_panel_open",
+        "composite": false
+      },
+      "id": "bec4ae9e99667ab141a571be6e2d2045e0e20460267d59d18b1a988b6fe82125",
+      "paramsSha256": "e811466a44ba2b1fcfe23e9a72ce73ad727f50ddd943ee10d70b3c4ccb7026f4",
+      "audioSha256": "c5eea08ad0f0749c6504c99381448a26666801db61c947509f79db98fda11725",
+      "targetId": "24cc924c1069d06b1c7a1d14a71bbff2f9b5547b5f58d58e72197acaf019208c",
+      "likeness": 1,
+      "usefulness": 3,
+      "audio": {
+        "file": "audio/ee625136b680d1885a5aefd12892c07a01ca4697e3aa23bedae33468d392bc50.flac",
+        "pcmSha256": "ee625136b680d1885a5aefd12892c07a01ca4697e3aa23bedae33468d392bc50",
+        "sampleRate": 44100,
+        "frames": 10426,
+        "channels": 1,
+        "auditionWavSha256": "c5eea08ad0f0749c6504c99381448a26666801db61c947509f79db98fda11725"
+      }
+    },
+    {
+      "label": "Category-guided diagnostic",
+      "role": "guided",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.5,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Rustlr\",\"name\":\"Step\",\"params\":{\"masterVolume\":0.5,\"seed\":0.1685392544604838,\"material\":1,\"gesture\":0,\"duration\":0.2965182159282267,\"grain\":0.6362060928717256,\"density\":0.5370890366844833,\"motion\":0.20038850656710566,\"pressure\":0.6605613516643644,\"folds\":2,\"brightness\":0.4022106670774519},\"generator\":\"generate_step\",\"renderSeed\":0.5718809745740145}]"
+      },
+      "seed": 878369480,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "02-guided.wav",
+      "score": 1.0997735261917114,
+      "ingredients": "Rustler \u00b7 Step",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22step%2Fstep2.wav%20%5Cu00b7%20Category-guided%20diagnostic%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.5%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Rustlr%5C%22%2C%5C%22name%5C%22%3A%5C%22Step%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22seed%5C%22%3A0.1685392544604838%2C%5C%22material%5C%22%3A1%2C%5C%22gesture%5C%22%3A0%2C%5C%22duration%5C%22%3A0.2965182159282267%2C%5C%22grain%5C%22%3A0.6362060928717256%2C%5C%22density%5C%22%3A0.5370890366844833%2C%5C%22motion%5C%22%3A0.20038850656710566%2C%5C%22pressure%5C%22%3A0.6605613516643644%2C%5C%22folds%5C%22%3A2%2C%5C%22brightness%5C%22%3A0.4022106670774519%7D%2C%5C%22generator%5C%22%3A%5C%22generate_step%5C%22%2C%5C%22renderSeed%5C%22%3A0.5718809745740145%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 1774,
+        "verb": "step",
+        "entry": 2,
+        "signature": "Rustlr:step",
+        "composite": false
+      },
+      "id": "0f0bc5b51912065f2c84cd0f4c580e3ed13cac59bdfb6923c5e11a01fd920857",
+      "paramsSha256": "e5593c9799ba7da838779fcb4e92976e59de25a4d317d4b4103278d4355c149c",
+      "audioSha256": "787aeeb92317e287e329367eeceb0d1d338bfb24738be7f0f7c8a5b777cf7a56",
+      "targetId": "24cc924c1069d06b1c7a1d14a71bbff2f9b5547b5f58d58e72197acaf019208c",
+      "likeness": 2,
+      "usefulness": 4,
+      "audio": {
+        "file": "audio/f87783375acaf8812ad15a926ffbeab2af876c0f408e21eed16c79f19fbfbbfa.flac",
+        "pcmSha256": "f87783375acaf8812ad15a926ffbeab2af876c0f408e21eed16c79f19fbfbbfa",
+        "sampleRate": 44100,
+        "frames": 12945,
+        "channels": 1,
+        "auditionWavSha256": "787aeeb92317e287e329367eeceb0d1d338bfb24738be7f0f7c8a5b777cf7a56"
+      }
+    },
+    {
+      "label": "Different ingredients",
+      "role": "diverse",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.33970600211760027,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Footsteppr\",\"name\":\"Randomize\",\"params\":{\"masterVolume\":0.5,\"terrain\":3,\"heel\":0.9663515619467944,\"roll\":0.9378804245498031,\"ball\":0.7931956527754664,\"swiftness\":0.7464226256124675},\"generator\":\"randomize_params\",\"renderSeed\":0.5240840169135481},{\"synth\":\"Rustlr\",\"name\":\"Step\",\"params\":{\"masterVolume\":0.5,\"seed\":0.39475031034089625,\"material\":2,\"gesture\":3,\"duration\":0.14813429209403695,\"grain\":0.4876470127142966,\"density\":0.7003657170571387,\"motion\":0.20144070454407487,\"pressure\":0.6568711518310011,\"folds\":2,\"brightness\":0.3696572567336261},\"generator\":\"generate_step\",\"renderSeed\":0.3428564115893096}]"
+      },
+      "seed": 858630335,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "03-diverse.wav",
+      "score": 1.1456130743026733,
+      "ingredients": "Footsteppr \u00b7 Randomize \u00d7 Rustler \u00b7 Step (start-aligned)",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22step%2Fstep2.wav%20%5Cu00b7%20Different%20ingredients%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.33970600211760027%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Footsteppr%5C%22%2C%5C%22name%5C%22%3A%5C%22Randomize%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22terrain%5C%22%3A3%2C%5C%22heel%5C%22%3A0.9663515619467944%2C%5C%22roll%5C%22%3A0.9378804245498031%2C%5C%22ball%5C%22%3A0.7931956527754664%2C%5C%22swiftness%5C%22%3A0.7464226256124675%7D%2C%5C%22generator%5C%22%3A%5C%22randomize_params%5C%22%2C%5C%22renderSeed%5C%22%3A0.5240840169135481%7D%2C%7B%5C%22synth%5C%22%3A%5C%22Rustlr%5C%22%2C%5C%22name%5C%22%3A%5C%22Step%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22seed%5C%22%3A0.39475031034089625%2C%5C%22material%5C%22%3A2%2C%5C%22gesture%5C%22%3A3%2C%5C%22duration%5C%22%3A0.14813429209403695%2C%5C%22grain%5C%22%3A0.4876470127142966%2C%5C%22density%5C%22%3A0.7003657170571387%2C%5C%22motion%5C%22%3A0.20144070454407487%2C%5C%22pressure%5C%22%3A0.6568711518310011%2C%5C%22folds%5C%22%3A2%2C%5C%22brightness%5C%22%3A0.3696572567336261%7D%2C%5C%22generator%5C%22%3A%5C%22generate_step%5C%22%2C%5C%22renderSeed%5C%22%3A0.3428564115893096%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 634,
+        "verb": "step",
+        "entry": 4,
+        "signature": "Footsteppr:step+Rustlr:step",
+        "composite": true
+      },
+      "id": "48c4dc9ffefec9089d5a15d69aada336a75d4c5e72800ce2ca9750265437ce6a",
+      "paramsSha256": "61ebb29a332c08b7c492366c06666a5259266b9009f0cea13b44bc254527a19f",
+      "audioSha256": "8d6233aba192980b7a905da35cc6af79cd7f805113100c5a5245b8c7b630a672",
+      "targetId": "24cc924c1069d06b1c7a1d14a71bbff2f9b5547b5f58d58e72197acaf019208c",
+      "likeness": 1,
+      "usefulness": 4,
+      "audio": {
+        "file": "audio/5dbb3a4f4a28c822b81e381cd2fde22fa7d8dbd93e7fcc118734c70147f2ebd5.flac",
+        "pcmSha256": "5dbb3a4f4a28c822b81e381cd2fde22fa7d8dbd93e7fcc118734c70147f2ebd5",
+        "sampleRate": 44100,
+        "frames": 12109,
+        "channels": 1,
+        "auditionWavSha256": "8d6233aba192980b7a905da35cc6af79cd7f805113100c5a5245b8c7b630a672"
+      }
+    },
+    {
+      "label": "Best previously rated",
+      "role": "baseline",
+      "synth": "Boomr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5246346206404269,
+        "duration": 0.2518140589569161,
+        "size": 0.16793344909643837,
+        "pressure": 0.9995460933430471,
+        "blast": 0.9615229896827524,
+        "debris": 0.6832086383246255,
+        "gas": 0.14598697911947967,
+        "aftershock": 0.10364928981568655,
+        "rubbleSize": 0.11005666200071573,
+        "spread": 0.6059969642970731,
+        "tail": 0.31653722370159165,
+        "muffle": 0.06932641425100348,
+        "mechanism": 0,
+        "space": 0.31359978978787584
+      },
+      "seed": 213862135,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "file": "04-baseline.wav",
+      "provenance": {
+        "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+        "candidateId": "a0e6874a6020361764b12d1ec1bc0ad509dbdcbdd914e8bf653ef4ed06cda2c2",
+        "originalRole": "previous",
+        "previousLikenessRating": 3,
+        "archivedPcmSha256": "78247211ac76289748ab0f800889729d46afcaee80b042c0f6b0d96a19c8db08"
+      },
+      "id": "e0a72f8361a8c8bb50f0ce6f98cb41ce49db8b3f5ed2fd71b35d3f0fed96bced",
+      "paramsSha256": "9d4a70fc227b59fd5f83a3c4bab050339ba4fca2e870844f36dfbad5d7fd44bc",
+      "audioSha256": "5addb6d8e389addfa73dfd7fcec11ebf58e359ec4af818eb05e1877d01778eaa",
+      "targetId": "24cc924c1069d06b1c7a1d14a71bbff2f9b5547b5f58d58e72197acaf019208c",
+      "likeness": 3,
+      "usefulness": 3,
+      "audio": {
+        "file": "audio/78247211ac76289748ab0f800889729d46afcaee80b042c0f6b0d96a19c8db08.flac",
+        "pcmSha256": "78247211ac76289748ab0f800889729d46afcaee80b042c0f6b0d96a19c8db08",
+        "sampleRate": 44100,
+        "frames": 11065,
+        "channels": 1,
+        "auditionWavSha256": "5addb6d8e389addfa73dfd7fcec11ebf58e359ec4af818eb05e1877d01778eaa"
+      }
+    },
+    {
+      "label": "Automatic match",
+      "role": "automatic",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.5,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Clonkr\",\"name\":\"Door\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5679202051833272,\"material\":2,\"action\":1,\"size\":0.890487048146315,\"hollowness\":0.6005757413804531,\"hardness\":0.4554003628436476,\"damping\":0.362437444133684,\"duration\":0.7584925260744058},\"generator\":\"generate_door\",\"renderSeed\":0.7549894549883902}]"
+      },
+      "seed": 369058596,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "01-automatic.wav",
+      "score": 0.783409059047699,
+      "ingredients": "Tangs \u00b7 Door",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22door%2FVEHDoor_Car%20Foley%20Car%20Door%20Open%20and%20Close%20Exterior%2004%20Perspective%20A_SNDBTS_CRS-MMM.wav%20%5Cu00b7%20Automatic%20match%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.5%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Clonkr%5C%22%2C%5C%22name%5C%22%3A%5C%22Door%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22seed%5C%22%3A0.5679202051833272%2C%5C%22material%5C%22%3A2%2C%5C%22action%5C%22%3A1%2C%5C%22size%5C%22%3A0.890487048146315%2C%5C%22hollowness%5C%22%3A0.6005757413804531%2C%5C%22hardness%5C%22%3A0.4554003628436476%2C%5C%22damping%5C%22%3A0.362437444133684%2C%5C%22duration%5C%22%3A0.7584925260744058%7D%2C%5C%22generator%5C%22%3A%5C%22generate_door%5C%22%2C%5C%22renderSeed%5C%22%3A0.7549894549883902%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 1478,
+        "verb": "door",
+        "entry": 2,
+        "signature": "Clonkr:door",
+        "composite": false
+      },
+      "id": "68f9ca7554ce77b2beb8c85fd19911d4c16a5bff91145b7e5ff9c52405f9ab21",
+      "paramsSha256": "fe233cab5bcc7240b3bdfd28a4d92408b258002acf56d27202150f510e37644c",
+      "audioSha256": "b8f59eb199bf689cbd22f2501f4c8a18058057b54356b78fc75c5a196ddca359",
+      "targetId": "d6aa7be9b35e6f85fc0f44e5b4082944b6df41cd7eff2040606e031b5c20fcd1",
+      "likeness": 1,
+      "usefulness": 3,
+      "audio": {
+        "file": "audio/24b5d1201a11c4d080a23b7e31db2f27f63d555a94bdac870ac6380f8a52d768.flac",
+        "pcmSha256": "24b5d1201a11c4d080a23b7e31db2f27f63d555a94bdac870ac6380f8a52d768",
+        "sampleRate": 44100,
+        "frames": 131661,
+        "channels": 1,
+        "auditionWavSha256": "b8f59eb199bf689cbd22f2501f4c8a18058057b54356b78fc75c5a196ddca359"
+      }
+    },
+    {
+      "label": "Category-guided diagnostic",
+      "role": "guided",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.5,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Rumblr\",\"name\":\"Stone Door\",\"params\":{\"masterVolume\":0.5,\"seed\":0.32154205348342657,\"duration\":1.9126687756739558,\"size\":0.5561158234602772,\"weight\":0.73339913636446,\"roughness\":0.6501330760889686,\"tremor\":0.6782846303889527,\"dust\":0.8923599899746477,\"attack\":0.2803940834943205,\"sweep\":-0.16249658514279874,\"depth\":0.6966630813898519,\"harmonics\":0.562312053097412},\"generator\":\"generate_stone_door\",\"renderSeed\":0.8542859975714236}]"
+      },
+      "seed": 1273029800,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "02-guided.wav",
+      "score": 1.4973387718200684,
+      "ingredients": "Rumblr \u00b7 Stone Door",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22door%2FVEHDoor_Car%20Foley%20Car%20Door%20Open%20and%20Close%20Exterior%2004%20Perspective%20A_SNDBTS_CRS-MMM.wav%20%5Cu00b7%20Category-guided%20diagnostic%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.5%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Rumblr%5C%22%2C%5C%22name%5C%22%3A%5C%22Stone%20Door%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22seed%5C%22%3A0.32154205348342657%2C%5C%22duration%5C%22%3A1.9126687756739558%2C%5C%22size%5C%22%3A0.5561158234602772%2C%5C%22weight%5C%22%3A0.73339913636446%2C%5C%22roughness%5C%22%3A0.6501330760889686%2C%5C%22tremor%5C%22%3A0.6782846303889527%2C%5C%22dust%5C%22%3A0.8923599899746477%2C%5C%22attack%5C%22%3A0.2803940834943205%2C%5C%22sweep%5C%22%3A-0.16249658514279874%2C%5C%22depth%5C%22%3A0.6966630813898519%2C%5C%22harmonics%5C%22%3A0.562312053097412%7D%2C%5C%22generator%5C%22%3A%5C%22generate_stone_door%5C%22%2C%5C%22renderSeed%5C%22%3A0.8542859975714236%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 346,
+        "verb": "door",
+        "entry": 4,
+        "signature": "Rumblr:generate_stone_door",
+        "composite": false
+      },
+      "id": "a2449d1bd0cb92e8eb755ea7df741d2064c4b28c2cfe25f7f0648f646e2c901b",
+      "paramsSha256": "d703b07a7dee6278cdd199a902f789d204ecb33b906782eeee372d99140c357c",
+      "audioSha256": "75114ab0bc355c462a7ceffb7f2d132cbbedc856acf2811f0fd4e945d86bb21b",
+      "targetId": "d6aa7be9b35e6f85fc0f44e5b4082944b6df41cd7eff2040606e031b5c20fcd1",
+      "likeness": 1,
+      "usefulness": 2,
+      "audio": {
+        "file": "audio/117f4a1401e4952b594a939c2dc64efcd3d0685517e24d9d452c6d4673025022.flac",
+        "pcmSha256": "117f4a1401e4952b594a939c2dc64efcd3d0685517e24d9d452c6d4673025022",
+        "sampleRate": 44100,
+        "frames": 84150,
+        "channels": 1,
+        "auditionWavSha256": "75114ab0bc355c462a7ceffb7f2d132cbbedc856acf2811f0fd4e945d86bb21b"
+      }
+    },
+    {
+      "label": "Different ingredients",
+      "role": "diverse",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.5,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Machinr\",\"name\":\"Heavy Door\",\"params\":{\"masterVolume\":0.5,\"seed\":0.945132760796696,\"mechanism\":7,\"duration\":2.6353032373590395,\"speed\":0.4466405634302646,\"load\":0.9980492786853574,\"roughness\":0.8860314084799028,\"looseness\":0.7822661587968469,\"size\":0.9119157218956389,\"startTime\":0.43673978860024365,\"stopTime\":0.1822754653915763},\"generator\":\"generate_heavy_door\",\"renderSeed\":0.9985729409381747}]"
+      },
+      "seed": 1200526765,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "03-diverse.wav",
+      "score": 1.6195260286331177,
+      "ingredients": "Motors \u00b7 Heavy Door",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22door%2FVEHDoor_Car%20Foley%20Car%20Door%20Open%20and%20Close%20Exterior%2004%20Perspective%20A_SNDBTS_CRS-MMM.wav%20%5Cu00b7%20Different%20ingredients%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.5%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Machinr%5C%22%2C%5C%22name%5C%22%3A%5C%22Heavy%20Door%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22seed%5C%22%3A0.945132760796696%2C%5C%22mechanism%5C%22%3A7%2C%5C%22duration%5C%22%3A2.6353032373590395%2C%5C%22speed%5C%22%3A0.4466405634302646%2C%5C%22load%5C%22%3A0.9980492786853574%2C%5C%22roughness%5C%22%3A0.8860314084799028%2C%5C%22looseness%5C%22%3A0.7822661587968469%2C%5C%22size%5C%22%3A0.9119157218956389%2C%5C%22startTime%5C%22%3A0.43673978860024365%2C%5C%22stopTime%5C%22%3A0.1822754653915763%7D%2C%5C%22generator%5C%22%3A%5C%22generate_heavy_door%5C%22%2C%5C%22renderSeed%5C%22%3A0.9985729409381747%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 915,
+        "verb": "door",
+        "entry": 5,
+        "signature": "Machinr:generate_heavy_door",
+        "composite": false
+      },
+      "id": "3839be91462ddb7b8e5408a7b5c2059a8025fe19b3106b1244eba4668d7e9547",
+      "paramsSha256": "baa7cf0dd3474bacb2ad373bb8c38b2942cb4a541b82b8559a64cacb3f720000",
+      "audioSha256": "b9f4e5dc2f03fe56e5f1bf11225bbb60d7c13328986a256d9fc8d1372c65e5f9",
+      "targetId": "d6aa7be9b35e6f85fc0f44e5b4082944b6df41cd7eff2040606e031b5c20fcd1",
+      "likeness": 2,
+      "usefulness": 3,
+      "audio": {
+        "file": "audio/4dbd02cf8631079c8a725e6347c827a8c7df0ecce7035cf808e6c1250f17672b.flac",
+        "pcmSha256": "4dbd02cf8631079c8a725e6347c827a8c7df0ecce7035cf808e6c1250f17672b",
+        "sampleRate": 44100,
+        "frames": 116086,
+        "channels": 1,
+        "auditionWavSha256": "b9f4e5dc2f03fe56e5f1bf11225bbb60d7c13328986a256d9fc8d1372c65e5f9"
+      }
+    },
+    {
+      "label": "Best previously rated",
+      "role": "baseline",
+      "synth": "Riftr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.3510747270192951,
+        "excitation": 0,
+        "duration": 2.709577866469044,
+        "pitch": 0.22357424713250582,
+        "bend": -0.3835928451119063,
+        "space": 0.24722213673342164,
+        "feedback": 0.9634075136855245,
+        "dispersion": 0.02346095453112801,
+        "motion": 0.13793077428429,
+        "field": 0.2275226797300696,
+        "reverse": 0.1830251105508157
+      },
+      "seed": 1036211338,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "file": "04-baseline.wav",
+      "provenance": {
+        "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+        "candidateId": "b527be558c7afccf3e0bc15516a07f997b6b70873ac2463a5c76d85e666835bb",
+        "originalRole": "previous",
+        "previousLikenessRating": 1,
+        "archivedPcmSha256": "70b3e35fee9f42161d3321e7a7e5031f4a12bb243b2981eb49fd0f25d59c6e52"
+      },
+      "id": "bce747157fd10e4ea60a99b421f95031642ba3451faff1d352a4cd0f215711d0",
+      "paramsSha256": "8e6d726a719d2b9b12dcce3e570e034661bcb2ced9aa14186876752d3f6aeb52",
+      "audioSha256": "2c9a7232bb57bf000978fbcb91d27e0cee311130cad144d3b3272ad2fdd3c739",
+      "targetId": "d6aa7be9b35e6f85fc0f44e5b4082944b6df41cd7eff2040606e031b5c20fcd1",
+      "likeness": 2,
+      "usefulness": 2,
+      "audio": {
+        "file": "audio/70b3e35fee9f42161d3321e7a7e5031f4a12bb243b2981eb49fd0f25d59c6e52.flac",
+        "pcmSha256": "70b3e35fee9f42161d3321e7a7e5031f4a12bb243b2981eb49fd0f25d59c6e52",
+        "sampleRate": 44100,
+        "frames": 119489,
+        "channels": 1,
+        "auditionWavSha256": "2c9a7232bb57bf000978fbcb91d27e0cee311130cad144d3b3272ad2fdd3c739"
+      }
+    },
+    {
+      "label": "Automatic match",
+      "role": "automatic",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.5,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Jinglr\",\"name\":\"Win\",\"params\":{\"masterVolume\":0.5,\"seed\":0.957249572495725,\"instrumentSeed\":72903,\"phrase\":\"[{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":1,\\\"beats\\\":0.5},{\\\"degree\\\":0,\\\"beats\\\":0.5},{\\\"degree\\\":3,\\\"beats\\\":0.5},{\\\"degree\\\":3,\\\"beats\\\":0.5},{\\\"degree\\\":3,\\\"beats\\\":0.5},{\\\"degree\\\":3,\\\"beats\\\":0.5},{\\\"degree\\\":5,\\\"beats\\\":1}]\",\"instrument\":5,\"key\":7,\"scale\":0,\"contour\":0,\"rhythm\":0,\"noteCount\":8,\"octave\":5,\"tempo\":195.3132480988279,\"swing\":0,\"brightness\":0.8066485234769061,\"decay\":0.3949165954487398,\"echo\":0.20044762953184544},\"generator\":\"generate_victory\",\"renderSeed\":0.19858989655040205}]"
+      },
+      "seed": 3156912000,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "01-automatic.wav",
+      "score": 1.282457709312439,
+      "ingredients": "Jingles \u00b7 Win",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22magic%2FcureMagic.wav%20%5Cu00b7%20Automatic%20match%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.5%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Jinglr%5C%22%2C%5C%22name%5C%22%3A%5C%22Win%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22seed%5C%22%3A0.957249572495725%2C%5C%22instrumentSeed%5C%22%3A72903%2C%5C%22phrase%5C%22%3A%5C%22%5B%7B%5C%5C%5C%22degree%5C%5C%5C%22%3A0%2C%5C%5C%5C%22beats%5C%5C%5C%22%3A0.5%7D%2C%7B%5C%5C%5C%22degree%5C%5C%5C%22%3A1%2C%5C%5C%5C%22beats%5C%5C%5C%22%3A0.5%7D%2C%7B%5C%5C%5C%22degree%5C%5C%5C%22%3A0%2C%5C%5C%5C%22beats%5C%5C%5C%22%3A0.5%7D%2C%7B%5C%5C%5C%22degree%5C%5C%5C%22%3A3%2C%5C%5C%5C%22beats%5C%5C%5C%22%3A0.5%7D%2C%7B%5C%5C%5C%22degree%5C%5C%5C%22%3A3%2C%5C%5C%5C%22beats%5C%5C%5C%22%3A0.5%7D%2C%7B%5C%5C%5C%22degree%5C%5C%5C%22%3A3%2C%5C%5C%5C%22beats%5C%5C%5C%22%3A0.5%7D%2C%7B%5C%5C%5C%22degree%5C%5C%5C%22%3A3%2C%5C%5C%5C%22beats%5C%5C%5C%22%3A0.5%7D%2C%7B%5C%5C%5C%22degree%5C%5C%5C%22%3A5%2C%5C%5C%5C%22beats%5C%5C%5C%22%3A1%7D%5D%5C%22%2C%5C%22instrument%5C%22%3A5%2C%5C%22key%5C%22%3A7%2C%5C%22scale%5C%22%3A0%2C%5C%22contour%5C%22%3A0%2C%5C%22rhythm%5C%22%3A0%2C%5C%22noteCount%5C%22%3A8%2C%5C%22octave%5C%22%3A5%2C%5C%22tempo%5C%22%3A195.3132480988279%2C%5C%22swing%5C%22%3A0%2C%5C%22brightness%5C%22%3A0.8066485234769061%2C%5C%22decay%5C%22%3A0.3949165954487398%2C%5C%22echo%5C%22%3A0.20044762953184544%7D%2C%5C%22generator%5C%22%3A%5C%22generate_victory%5C%22%2C%5C%22renderSeed%5C%22%3A0.19858989655040205%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 1420,
+        "verb": "win",
+        "entry": 0,
+        "signature": "Jinglr:win",
+        "composite": false
+      },
+      "id": "529443dca1ff85f9488614e89d060443d0e7b1c5cf21d57d2026620fada36459",
+      "paramsSha256": "bf66810de23865681cb6293cdf4236763de00095744357e52ac6beb0cdb2a0f6",
+      "audioSha256": "102a794aac3bd595767970407581b42bc3797a22e28cce0a7fc0f14b1940b0c6",
+      "targetId": "470f7cc06f1452e1f63c740dc51acc3cd37fbc31b528a737996a0a89d55c5bba",
+      "likeness": 1,
+      "usefulness": 4,
+      "audio": {
+        "file": "audio/3449811b99abe9268865d2eaf7c49ca69eee046d49feebcb988f5f5b617264ac.flac",
+        "pcmSha256": "3449811b99abe9268865d2eaf7c49ca69eee046d49feebcb988f5f5b617264ac",
+        "sampleRate": 44100,
+        "frames": 88815,
+        "channels": 1,
+        "auditionWavSha256": "102a794aac3bd595767970407581b42bc3797a22e28cce0a7fc0f14b1940b0c6"
+      }
+    },
+    {
+      "label": "Category-guided diagnostic",
+      "role": "guided",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.5,
+        "align": 0,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Swarmr\",\"name\":\"Cast\",\"params\":{\"masterVolume\":0.5,\"seed\":0.35136479954235256,\"kind\":1,\"duration\":1.1351940069813282,\"count\":12,\"speed\":0.6162911054678262,\"cohesion\":0.5904851161874831,\"agitation\":0.4708224314264954,\"size\":0.2543434533523396,\"movement\":0.2893770798575133,\"scatter\":0.38971615619957445},\"generator\":\"generate_cast\",\"renderSeed\":0.11605795449577272}]"
+      },
+      "seed": 2511822822,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "02-guided.wav",
+      "score": 1.4655542373657227,
+      "ingredients": "Swarms \u00b7 Cast",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22magic%2FcureMagic.wav%20%5Cu00b7%20Category-guided%20diagnostic%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.5%2C%22align%22%3A0%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Swarmr%5C%22%2C%5C%22name%5C%22%3A%5C%22Cast%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22seed%5C%22%3A0.35136479954235256%2C%5C%22kind%5C%22%3A1%2C%5C%22duration%5C%22%3A1.1351940069813282%2C%5C%22count%5C%22%3A12%2C%5C%22speed%5C%22%3A0.6162911054678262%2C%5C%22cohesion%5C%22%3A0.5904851161874831%2C%5C%22agitation%5C%22%3A0.4708224314264954%2C%5C%22size%5C%22%3A0.2543434533523396%2C%5C%22movement%5C%22%3A0.2893770798575133%2C%5C%22scatter%5C%22%3A0.38971615619957445%7D%2C%5C%22generator%5C%22%3A%5C%22generate_cast%5C%22%2C%5C%22renderSeed%5C%22%3A0.11605795449577272%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 2173,
+        "verb": "cast",
+        "entry": 5,
+        "signature": "Swarmr:cast",
+        "composite": false
+      },
+      "id": "9c7a55e988b9481460e3bf8c29189705fc2d139748882cc233eddedeec6c0bb1",
+      "paramsSha256": "f20c50057ffb63fada7a301ced4ba0686f522aae7bf2f8c9b17434853e552fbe",
+      "audioSha256": "09bf2ffc711aef50bb4b1d69cac8580a22cc2eb9c5727e6fcd44bbccee375b27",
+      "targetId": "470f7cc06f1452e1f63c740dc51acc3cd37fbc31b528a737996a0a89d55c5bba",
+      "likeness": 3,
+      "usefulness": 4,
+      "audio": {
+        "file": "audio/4073da8b5bc8272924c784e9b67668ac252827fa9e79bdba678263b538c7a825.flac",
+        "pcmSha256": "4073da8b5bc8272924c784e9b67668ac252827fa9e79bdba678263b538c7a825",
+        "sampleRate": 44100,
+        "frames": 49717,
+        "channels": 1,
+        "auditionWavSha256": "09bf2ffc711aef50bb4b1d69cac8580a22cc2eb9c5727e6fcd44bbccee375b27"
+      }
+    },
+    {
+      "label": "Different ingredients",
+      "role": "diverse",
+      "synth": "Soundboard",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.3881812324747443,
+        "align": 1,
+        "offset": 0,
+        "sources": "[{\"synth\":\"Riftr\",\"name\":\"Cast\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6542775738053024,\"excitation\":4,\"duration\":1.4708044377621263,\"pitch\":0.772596898698248,\"bend\":0.5724568871315568,\"space\":0.33170413561165335,\"feedback\":0.6085562003776431,\"dispersion\":0.47821532464586197,\"motion\":0.8510312042199075,\"field\":0.8736503057181835,\"reverse\":0.2387719189049676},\"generator\":\"generate_cast\",\"renderSeed\":0.931840097066015},{\"synth\":\"Fractr\",\"name\":\"Cast\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5548978808801621,\"material\":2,\"duration\":1.0316642017802224,\"fragments\":5,\"fragmentSize\":0.2931159078143537,\"spread\":0.17882366469129923,\"decay\":0.758289645332843,\"gravity\":0.12155579500831665,\"bounce\":0.33719373466447,\"stress\":0.1043826514389366,\"shards\":0.7854087425395846,\"fracture\":0.7084019829519094},\"generator\":\"generate_cast\",\"renderSeed\":0.052793517243117094}]"
+      },
+      "seed": 3679072247,
+      "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+      "file": "03-diverse.wav",
+      "score": 1.4715545177459717,
+      "ingredients": "Sonar \u00b7 Cast \u00d7 Cracker \u00b7 Cast (peak-aligned)",
+      "editUrl": "../soundboard-db9f5f8/?sfx=Soundboard~%402~%7B%22filename%22%3A%22magic%2FcureMagic.wav%20%5Cu00b7%20Different%20ingredients%22%2C%22params%22%3A%7B%22masterVolume%22%3A0.5%2C%22seed%22%3A0.5%2C%22balance%22%3A0.3881812324747443%2C%22align%22%3A1%2C%22offset%22%3A0%2C%22sources%22%3A%22%5B%7B%5C%22synth%5C%22%3A%5C%22Riftr%5C%22%2C%5C%22name%5C%22%3A%5C%22Cast%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22seed%5C%22%3A0.6542775738053024%2C%5C%22excitation%5C%22%3A4%2C%5C%22duration%5C%22%3A1.4708044377621263%2C%5C%22pitch%5C%22%3A0.772596898698248%2C%5C%22bend%5C%22%3A0.5724568871315568%2C%5C%22space%5C%22%3A0.33170413561165335%2C%5C%22feedback%5C%22%3A0.6085562003776431%2C%5C%22dispersion%5C%22%3A0.47821532464586197%2C%5C%22motion%5C%22%3A0.8510312042199075%2C%5C%22field%5C%22%3A0.8736503057181835%2C%5C%22reverse%5C%22%3A0.2387719189049676%7D%2C%5C%22generator%5C%22%3A%5C%22generate_cast%5C%22%2C%5C%22renderSeed%5C%22%3A0.931840097066015%7D%2C%7B%5C%22synth%5C%22%3A%5C%22Fractr%5C%22%2C%5C%22name%5C%22%3A%5C%22Cast%5C%22%2C%5C%22params%5C%22%3A%7B%5C%22masterVolume%5C%22%3A0.5%2C%5C%22seed%5C%22%3A0.5548978808801621%2C%5C%22material%5C%22%3A2%2C%5C%22duration%5C%22%3A1.0316642017802224%2C%5C%22fragments%5C%22%3A5%2C%5C%22fragmentSize%5C%22%3A0.2931159078143537%2C%5C%22spread%5C%22%3A0.17882366469129923%2C%5C%22decay%5C%22%3A0.758289645332843%2C%5C%22gravity%5C%22%3A0.12155579500831665%2C%5C%22bounce%5C%22%3A0.33719373466447%2C%5C%22stress%5C%22%3A0.1043826514389366%2C%5C%22shards%5C%22%3A0.7854087425395846%2C%5C%22fracture%5C%22%3A0.7084019829519094%7D%2C%5C%22generator%5C%22%3A%5C%22generate_cast%5C%22%2C%5C%22renderSeed%5C%22%3A0.052793517243117094%7D%5D%22%7D%7D",
+      "provenance": {
+        "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+        "libraryManifestHash": "a5b59d1ad0b4a1fb9e62dc1568b0acd997f7725a1f0753217e6ab125612f35f2",
+        "libraryIndex": 1614,
+        "verb": "cast",
+        "entry": 8,
+        "signature": "Riftr:cast+Fractr:cast",
+        "composite": true
+      },
+      "id": "ae88d284aad2c5e12af345b2c044aaf60bc87d51e8c03a8ba16c2186c453e965",
+      "paramsSha256": "4f41f917f8b6ba2e1e518f5b91b653211d4c3f344a4274fcc2d723007556e358",
+      "audioSha256": "0d56627408ba693cc7c63abea37505d262d013295da6eabae994b2b981709a49",
+      "targetId": "470f7cc06f1452e1f63c740dc51acc3cd37fbc31b528a737996a0a89d55c5bba",
+      "likeness": 2,
+      "usefulness": 3,
+      "audio": {
+        "file": "audio/7922ea2977d43bc66c6be1105330e4b92384e3c3f4c49db4698825e882d41865.flac",
+        "pcmSha256": "7922ea2977d43bc66c6be1105330e4b92384e3c3f4c49db4698825e882d41865",
+        "sampleRate": 44100,
+        "frames": 64832,
+        "channels": 1,
+        "auditionWavSha256": "0d56627408ba693cc7c63abea37505d262d013295da6eabae994b2b981709a49"
+      }
+    },
+    {
+      "label": "Best previously rated",
+      "role": "baseline",
+      "synth": "Birdr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.9755223821848631,
+        "voice": 0,
+        "duration": 2.2026463755031647,
+        "pitch": 0.7427186747041399,
+        "syllables": 1,
+        "gap": 0.18196936073503797,
+        "sweep": -0.444153570380974,
+        "arch": 0.1838406768935861,
+        "trill": 0.8489187511633608,
+        "trill_rate": 0.8090337450573016,
+        "duet": 0.5730129502641395,
+        "rasp": 0.09183134426143522,
+        "breath": 0,
+        "rhythm": 0,
+        "variation": 0.4061241435319621
+      },
+      "seed": 2101241938,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "file": "04-baseline.wav",
+      "provenance": {
+        "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+        "candidateId": "a35df305546bb445718df146c80572804dafaf111c6b3a1e337c96a3e215ee7c",
+        "originalRole": "selected",
+        "previousLikenessRating": 3,
+        "archivedPcmSha256": "a77dff3fd0ac0ec3f545cb29b469a213791d041e088ff61de78afb43bf632e34"
+      },
+      "id": "c6d3c9ee32088934d5f35aa0ad0103d0e1c8795fba16c4f31462bc079a1d4f61",
+      "paramsSha256": "8c45b1df77dad303409748e8a0aa8531de7eaab338f769016653868befa6d5e3",
+      "audioSha256": "a2298cf8e14d7575d061ec5c98883bc07fef4d0fb62afb277161e6c34fad8e99",
+      "targetId": "470f7cc06f1452e1f63c740dc51acc3cd37fbc31b528a737996a0a89d55c5bba",
+      "likeness": 3,
+      "usefulness": 2,
+      "audio": {
+        "file": "audio/a77dff3fd0ac0ec3f545cb29b469a213791d041e088ff61de78afb43bf632e34.flac",
+        "pcmSha256": "a77dff3fd0ac0ec3f545cb29b469a213791d041e088ff61de78afb43bf632e34",
+        "sampleRate": 44100,
+        "frames": 79400,
+        "channels": 1,
+        "auditionWavSha256": "a2298cf8e14d7575d061ec5c98883bc07fef4d0fb62afb277161e6c34fad8e99"
+      }
+    }
+  ],
+  "ratingMeaning": {
+    "likeness": "Human likeness to reference",
+    "usefulness": "Useful/fun game sound"
+  },
+  "audioMeaning": "Exact decoded PCM from audition WAVs, losslessly stored as PCM16 FLAC"
+}

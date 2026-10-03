@@ -6,8 +6,9 @@
 | --- | ---: | ---: |
 | `2026-10-03-real-v1/` | 40 | 73 |
 | `2026-10-03-tagged-v2/` | 18 | 48 |
+| `2026-10-03-coverage-v3/` | 6 | 24 |
 
-Together these contain 58 reference judgments, **57 exact unique reference
+The first two sessions contain 58 reference judgments, **57 exact unique reference
 audios** and **120 exact unique reference/candidate audio pairs**. The repeated
 horn/Clonkr pair has consistent ratings. Preserve both sessions and group by
 audio identity when learning or splitting data; folder-based candidate IDs
@@ -18,6 +19,22 @@ It rejects gesture-v2 as an improvement: on the same 18 references it scored
 1.83/5 against the previous model's 2.06/5, with 1 win, 13 ties and 4 losses.
 See [the human review](../evaluations/tagged-v2-human-review.json) for the
 comparison, frozen-model preference check and named regressions.
+
+The third session retains **both likeness and usefulness** for all 24 candidates,
+using schema 2. It contains six already-reviewed references, 18 new candidates,
+and six exact previous audio baselines. See
+[the coverage review](../evaluations/coverage-v3-human-review.json) for combined
+audio-identity counts and same-session comparisons. Automatic matches scored
+1.67/5 likeness and 3.50/5 usefulness; previous baselines scored 2.67/5 for both.
+Seven new sounds rated usefulness 4 are exported in
+`../presets/coverage-v3-useful.bcol`. Their low likeness scores are preserved too.
+The same-session reference/candidate mapping is authoritative; repeated ratings
+remain separate observations, including three one-point baseline changes.
+
+Schema 2 stores each target's role aliases in a `candidates` array and candidate
+labels in `likeness` and `usefulness`. Schema 1 instead uses named roles and a
+single `rating` field for likeness. Future consumers must explicitly support
+the schema and dimension; never silently substitute usefulness for likeness.
 
 ## First session format
 
@@ -41,8 +58,9 @@ changes. Source paths are provenance, not playback dependencies.
 
 ## Interpretation and reuse
 
-These are one listener's ordinal **likeness-to-reference** ratings (1–5), not
-labels of fun, production quality, or whether a preset is worth keeping. Preserve
+The first two sessions are one listener's ordinal **likeness-to-reference**
+ratings (1–5), not labels of fun or production quality. The third session adds
+separate usefulness labels; likeness keeps its original meaning. Preserve
 them indefinitely as versioned evidence; never rewrite them with a new model's
 score or attach them to a changed render. A later opinion is a new session.
 

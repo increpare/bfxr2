@@ -102,3 +102,55 @@ PCM16. The entire prior archive's PCM hashes and raw-feedback checksum verified.
 Browser checks confirmed separate candidate/dimension ratings survive reload,
 test ratings clear to an empty export, and a generated preset opens in the
 pinned Soundboard editor. Listening quality remains for the human pass.
+
+## Human verdict, 2026-10-03
+
+The completed pass is retained in `listening_data/2026-10-03-coverage-v3/`:
+six references, 24 candidates, 24 likeness and 24 usefulness ratings. Raw export
+bytes and every audition clip are preserved. No qualitative notes were supplied.
+The full analysis is `evaluations/coverage-v3-human-review.json`.
+
+| Choice | Mean likeness | Mean usefulness | Likeness vs rerated baseline: win / tie / loss |
+| --- | ---: | ---: | --- |
+| Automatic | 1.67 | 3.50 | 1 / 1 / 4 |
+| Category-guided | 1.83 | 3.17 | 0 / 1 / 5 |
+| Different ingredients | 1.83 | 3.33 | 0 / 2 / 4 |
+| Previous baseline | 2.67 | 2.67 | — |
+
+Even choosing the highest human likeness score among the three new candidates
+for each reference gives 2.50/5, with one win, three ties and two losses against
+the rerated baseline. This is an upper bound for these three sampled candidates,
+not for the entire library. None of the 18 new sounds reached likeness 4 or 5.
+The automatic Transfxr splash for the punch was the sole new likeness win (3
+versus 2); semantic category mismatch is not necessarily audible mismatch.
+
+Seven new candidates received usefulness 4. All seven are retained, without
+likeness filtering, in `presets/coverage-v3-useful.bcol`: Clonkr blip, Transfxr
+splash, Bfxr/Clonkr hit, Rustlr step, Footsteppr/Rustlr step, Jinglr win, and
+Swarmr cast. Their IDs, scores and source provenance are in the analysis JSON;
+full parameters and exact audio remain in the listening archive. Every exported
+preset was replayed and compared sample-for-sample with its rated audio using
+the pinned DSP. These are promising individual presets, not proof that all
+draws from those recipe families will be useful.
+
+Frozen-metric rescoring of exact audition audio agrees with 18/28 strict
+likeness preferences for auditory-v1, 22/28 for the gesture prior, and 23/28 for
+the first-batch gesture fit. Among new candidates only, agreement is 6/14, 9/14,
+and 10/14 respectively. These correlated comparisons from six development
+references do not reverse the previous rejection of gesture-v2 generation:
+rescoring a fixed candidate set and optimizing new sounds are different tests.
+This also cautions against assuming a single metric is reliably best across
+candidate pools. No metric has been promoted or retrained on this batch.
+
+Three repeat likeness judgments differ by one point (coin 3→4, punch 3→2,
+door 1→2). Preserve both sessions rather than overwriting either; comparisons
+above use the judgments from this same listening pass. All means describe
+ordinal ratings, not calibrated perceptual distances.
+
+**Decision:** reject Soundboard-only retrieval and hard category filtering as
+standalone fixes for likeness. Keep the seven useful sounds separately. The
+next development experiment should refine human-preferred saved gestures with
+controlled changes, retain the original candidates, and compare likeness and
+usefulness independently. Do not present target-specific human-selected seeds
+as an automatic result on unseen references, or infer qualitative failure
+labels from filenames when the listener supplied no notes.

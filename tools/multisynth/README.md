@@ -172,3 +172,7 @@ the separately human-refined catalogue, including two-synth compositions. Its
 six-reference gallery compares global retrieval, category-guided alternatives,
 and the best previously rated audio. It collects likeness and usefulness/fun
 separately; both survive immutable schema-2 archival through the same command.
+Its completed human pass found useful game sounds but no likeness improvement:
+automatic selections scored 1.67/5 against rerated baselines at 2.67/5. All 48
+ratings and exact audio are retained. Seven usefulness-4 presets are saved in
+`presets/coverage-v3-useful.bcol`; see the verdict in `COVERAGE_V3.md`.
