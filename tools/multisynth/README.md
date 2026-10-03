@@ -112,3 +112,11 @@ uv run python -m multisynth.audit multisynth/runs/real-v1
 The audit verifies reference SHA-256 hashes, feature version and DSP source
 fingerprint before re-scoring. It reports disagreement with the previous
 contour metric rather than concealing it.
+
+The benchmark gallery provides reference/model/Bfxr audio for each target, with
+independent 1–5 likeness ratings and optional notes. Ratings persist in browser
+local storage, scoped to the experiment and candidate identities. When the
+model selected Bfxr itself, both controls share a rating. The bottom-of-page
+JSON includes only rated/noted targets, with provenance for matching feedback
+back to saved results. Use **Copy feedback JSON** to share it in chat; nothing
+is submitted automatically.

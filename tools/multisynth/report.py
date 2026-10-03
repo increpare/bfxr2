@@ -4,8 +4,27 @@ import json
 from pathlib import Path
 import soundfile as sf
 from .features import prepare
+from .feedback import feedback_gallery
 
 STYLE = '''body{font:16px system-ui;background:#181d25;color:#edf0f4;max-width:1180px;margin:40px auto;padding:0 24px}a{color:#a9d4ff}h1{font-size:30px}h2{font-size:21px}p{line-height:1.6;color:#bfcbd8}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}article{padding:18px;border:1px solid #475463;border-radius:10px;background:#232c37}audio{width:100%;margin-top:12px}small{display:block;margin-top:10px;color:#bac6d4}table{width:100%;border-collapse:collapse;table-layout:fixed}td{overflow-wrap:anywhere}audio{min-width:0}th:nth-child(1){width:40%}th:nth-child(2){width:32%}@media(max-width:760px){thead{display:none}table,tbody,tr,td{display:block;width:auto}tr{margin:18px 0;border:1px solid #475463;border-radius:10px;padding:8px}td{border:0!important}td:nth-child(3)::before{content:"Winner distance: "}td:nth-child(4)::before{content:"Bfxr distance: "}}td,th{text-align:left;padding:12px;border-bottom:1px solid #475463}summary{cursor:pointer}pre{white-space:pre-wrap;font-size:12px}'''
+
+
+STYLE += """
+.comparison{margin:34px 0;padding-top:14px;border-top:1px solid #475463}
+.comparison h2{overflow-wrap:anywhere;font-size:18px;line-height:1.5;margin-bottom:8px}
+.comparison-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0}
+.comparison-grid article{min-width:0}.rating{border:0;padding:0;margin:18px 0 0;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.rating legend{font-size:13px;margin-bottom:8px;color:#bfcbd8}.rating label{position:relative;cursor:pointer}
+.rating input{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
+.rating span{display:block;min-width:32px;line-height:34px;text-align:center;border:1px solid #6d8095;border-radius:6px}
+.rating input:checked+span{background:#a9d4ff;color:#152333;border-color:#a9d4ff}
+.rating input:focus-visible+span{outline:3px solid #fff;outline-offset:2px}
+button{font:inherit;font-size:13px;padding:8px 12px;border:1px solid #6d8095;border-radius:6px;background:#293747;color:#edf0f4;cursor:pointer}
+button:hover{background:#384d64}textarea{box-sizing:border-box;width:100%;margin:8px 0;padding:12px;background:#101820;color:#edf0f4;border:1px solid #53667b;border-radius:6px;font:inherit}
+.note-label{display:block;color:#bfcbd8;font-size:14px}.feedback-export{margin:44px 0}.feedback-export textarea{font:12px ui-monospace,monospace}
+.same-result{font-size:14px}.rating-guide{padding:14px 18px;background:#232c37;border-radius:8px}
+@media(max-width:1000px){.comparison-grid{grid-template-columns:1fr}.comparison-grid article{padding:16px}}
+"""
 
 
 def _page(title, body):
@@ -45,7 +64,7 @@ def export_match(output, target, result, source):
 
 def export_benchmark(output, records, metadata):
     output = Path(output)
-    winners, rows = {}, []
+    winners = {}
     gains, synth_counts = [], {}
     for record in records:
         candidates = record['candidates']
@@ -55,10 +74,6 @@ def export_benchmark(output, records, metadata):
             gains.append((baseline['score']-best['score'])/max(baseline['score'],1e-9))
         synth_counts[best['synth']] = synth_counts.get(best['synth'],0)+1
         add_preset(winners, best, record['source']['name'])
-        folder = record['folder']
-        name = html.escape(record['source']['name'])
-        score = baseline['score'] if baseline else float('nan')
-        rows.append(f'<tr><td><a href="{folder}/index.html">{name}</a><audio controls preload="none" src="{folder}/target.wav"></audio></td><td>{best["synth"]}<audio controls preload="none" src="{folder}/{best["file"]}"></audio></td><td>{best["score"]:.3f}</td><td>{score:.3f}</td></tr>')
     import numpy as np
     stats = {'targets':len(records),'winner_counts':synth_counts,
              'mean_relative_distance_reduction':float(np.mean(gains)) if gains else None,
@@ -72,6 +87,6 @@ def export_benchmark(output, records, metadata):
     if (output/'audit.json').exists():
         audit = json.loads((output/'audit.json').read_text())['summary']
         extras += f'<p>Independent metric check: {audit["legacy_metric_wins"]} wins, {audit["legacy_metric_ties"]} ties, {audit["legacy_metric_losses"]} losses versus Bfxr. <a href="audit.json">Audit details</a>. Human listening has not been scored.</p>'
-    body = f'<h1>Multi-synth approximation lab</h1><p>{len(records)} reference sounds and automatic recreations. Listen for likeness and useful surprises; open any row for alternative synths.</p><p><a href="winners.bcol" download>Editable winners</a> · <a href="results.json">Full experiment data</a></p>{extras}<details><summary>How to read the scores</summary><p>Lower is closer under a heuristic audio metric. Bfxr gets the same per-preset sample count and per-expert refinement budget. Multi-synth search uses more total renders; this is not an equal-compute comparison with the old neural matcher. Scores are not percentages of audible likeness.</p></details><table><thead><tr><th>Reference / alternatives</th><th>Selected recreation</th><th>Distance</th><th>Bfxr distance</th></tr></thead><tbody>{"".join(rows)}</tbody></table>'
+    body = f'<h1>Multi-synth approximation lab</h1><p>{len(records)} reference sounds and automatic recreations. Compare the reference, model selection and Bfxr approximation. Rate each approximation for audible likeness; notes can capture useful surprises.</p><p><a href="winners.bcol" download>Editable winners</a> · <a href="results.json">Full experiment data</a></p>{extras}<p class="rating-guide">Rate likeness: <strong>1 = far off · 3 = recognizably similar · 5 = very close</strong>. Ratings save in this browser. <a href="#feedback">Jump to feedback JSON</a>.</p><details><summary>How to read the scores</summary><p>Lower is closer under a heuristic audio metric. Bfxr gets the same per-preset sample count and per-expert refinement budget. Multi-synth search uses more total renders; this is not an equal-compute comparison with the old neural matcher. Scores are not percentages of audible likeness.</p></details>{feedback_gallery(records,metadata)}'
     (output/'index.html').write_text(_page('Multi-synth approximation lab',body))
     return stats
