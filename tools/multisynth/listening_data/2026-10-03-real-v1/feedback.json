@@ -1,0 +1,939 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "51ebabd537188b5b7555a8d74e847674121e8d3f903fc1d00551fc604b526d34",
+  "provenance": {
+    "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+    "featureVersion": "auditory-v1",
+    "libraryManifestHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+    "seed": 1234,
+    "budgetPerExpert": 64,
+    "experts": 5
+  },
+  "ratingScale": {
+    "min": 1,
+    "max": 5,
+    "meaning": "Audible likeness to reference: 1 = far off, 5 = very close"
+  },
+  "targets": [
+    {
+      "id": "3215b49c7a4fef3933729ee6b85166473c3bfa462dccc3f22b70d4992b573cd4",
+      "name": "RAREVGSFX 1+2/RAREVGSFX 2/PLAYSTATION/UNDERWORLD THE ETERNAL WAR (PS2)/WEAPONCLICK.WAV",
+      "sha256": "dd2870fc9850ecc2b41b9704dea2a878b6d27d2cf2639ba8428f0e86dec228cb",
+      "folder": "001",
+      "selected": {
+        "id": "97aec86e9eba3cacd681afa27d5a4d6c0fb2db96709045d15302913c9dc2f334",
+        "synth": "Transfxr",
+        "file": "01-Transfxr.wav",
+        "seed": 697433055,
+        "distance": 0.9285942912101746,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "155ebf68460c9d5e6af03bf2042fba1c61ec871ed7a5a9978f6a7c322e94b4cf",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 2041673269,
+        "distance": 1.2131142616271973,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "5ace16e6977216be576a8f3dc1d243aa8f4a1be860d4a3f2b3e2b83fe20cefc0",
+      "name": "Sonniss.com-GDC2026-GameAudioBundle1of5/344 Audio - Antique Small Metals/METLMvmt_  Antique Measuring Tape_344 Audio_Antique Small Metals.wav",
+      "sha256": "2443580b380f6d5565bda7054f958b6610028e83d1555d13d6260281326d5991",
+      "folder": "002",
+      "selected": {
+        "id": "62608b30231735d7c6ead7af314170281e90f64a2f7c92395bd8a3e9ee253de9",
+        "synth": "Machinr",
+        "file": "01-Machinr.wav",
+        "seed": 1927281072,
+        "distance": 0.9378659129142761,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "8696a57a27cc48b485c08d35074f77ff2f4cabcb75cffa2fc436b13c61b09077",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 1252624775,
+        "distance": 1.3493715524673462,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "4e112a0a36e9681a7a01c810e513c27290f64115ce1566116fec2a57280285d8",
+      "name": "Sonniss.com-GDC2026-GameAudioBundle2of5/Epic Stock Media - Synthesized Nature Loops and Sounds/ANMLAmph_Animal Frog Echo Short Squished Frequency Formant 03_ESM_SNLS.wav",
+      "sha256": "b2acdb0ac15b552509159bc918bff26896b51aa5a659a5622ad208ecfbe30dec",
+      "folder": "003",
+      "selected": {
+        "id": "8f19c93e9736aea9242375ebde05656c17d3c5b4bd989982900613ef85a2a8f2",
+        "synth": "Transfxr",
+        "file": "01-Transfxr.wav",
+        "seed": 1741316577,
+        "distance": 0.7778575420379639,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "699c15cb125b4b9933897c4a0e58572e54c87af1ecc0e8545ee365a20a8a1c34",
+        "synth": "Bfxr",
+        "file": "03-Bfxr.wav",
+        "seed": 1940968791,
+        "distance": 0.8762385845184326,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "3c1ef5165b60d71bfcfe3b63aedd49187bcac725f1ec4ac1c36cbe058f614be4",
+      "name": "Sonniss.com-GDC2026-GameAudioBundle3of5/InMotionAudio - Christmas Cracker/OBJMisc_CrackerHatMovement16_InMotionAudio_ChristmasCracker.wav",
+      "sha256": "a0c720386c2e3830f9ae501d50ee513a4fc96a19212cac667442f0f4eaff5cdf",
+      "folder": "004",
+      "selected": {
+        "id": "5bb1125ef4eb1b2ff01570724926ed07bdb175e2d28937649d982f917bdf2e42",
+        "synth": "Whooshr",
+        "file": "01-Whooshr.wav",
+        "seed": 579957109,
+        "distance": 0.8044615387916565,
+        "rating": 3
+      },
+      "bfxr": {
+        "id": "6eeb18b01d0c33884b0de9ada0d0112dd96c99bde610f49634d3d71faf4c7da6",
+        "synth": "Bfxr",
+        "file": "04-Bfxr.wav",
+        "seed": 190767817,
+        "distance": 0.9072517156600952,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "49262af1fd4bf6d0f9e9d84d0fb8fe25ce68c3bb23066049eaf85f3facbfc836",
+      "name": "Sonniss.com-GDC2026-GameAudioBundle5of5/SoundBits - Cars - Mad Mustang Mercury/VEHMech_Car Foey Gas and Brakes Pedals 08 B_SNDBTS_CRS-MMM.wav",
+      "sha256": "36d96c94468800167fc11da934ab187021a0033db3a9555150d3edf3b609bccc",
+      "folder": "005",
+      "selected": {
+        "id": "be80a68b94c06152ac389bfaee28cc06dff395eb24ed9c225dce90c989114c56",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 1154002741,
+        "distance": 0.8799401521682739,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "be80a68b94c06152ac389bfaee28cc06dff395eb24ed9c225dce90c989114c56",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 1154002741,
+        "distance": 0.8799401521682739,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "4a9819f494f09487dc6dc19f48001cbcc0c20489eaefd141494d08c24a74ed67",
+      "name": "Street Fighter Sound Pack/blanka.wav",
+      "sha256": "9bf11e2481877fb6681548fe983a3f474eaf9017b074b9e54b2e0843475419cf",
+      "folder": "006",
+      "selected": {
+        "id": "2957cdf897db9b802827ae278d44b11d7d2c771edb90d57abd75544c673b1f02",
+        "synth": "Clonkr",
+        "file": "01-Clonkr.wav",
+        "seed": 2045421865,
+        "distance": 0.7563473582267761,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "8d146fc75518146dc941fa5bbd32231ef6d5fa39016eafc3d4323876784b5474",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 620139937,
+        "distance": 1.0212512016296387,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "a92633830724ff652052911f7628a41983cf2fdb8bd5cad0a683546da20cdc7f",
+      "name": "chronotrigger_sounds/bats.wav",
+      "sha256": "841c548872731d1efe6a9ddcb3940198d778b3b1dd68a3ff6411f107705c3d56",
+      "folder": "007",
+      "selected": {
+        "id": "42f4f899471ce28ed1532dae36e3b717b4d0d13f5b4ff9ed274446f5e01baf82",
+        "synth": "Crittr",
+        "file": "01-Crittr.wav",
+        "seed": 316022018,
+        "distance": 0.9828939437866211,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "d1f83b43acadfac1a8716e0221dfcaab1d2b91cead72adacb0f7057d55ac99fa",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 1145572186,
+        "distance": 1.2534257173538208,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "4ee8cb66d4a21e0d2a014f4be3c40e034326824c1cc99d1c3ee53cdd65f9cb15",
+      "name": "kenney_digital-audio/Audio/spaceTrash3.ogg",
+      "sha256": "03fd29fd857c67b4401e7ffbc321568229844a10051ae455af497b2335f37d6c",
+      "folder": "008",
+      "selected": {
+        "id": "eda015b413057e739b8c0b43d0bd8a5b06a6671b1f88e173f15c1a8de86cecd5",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 620139937,
+        "distance": 0.9866235852241516,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "eda015b413057e739b8c0b43d0bd8a5b06a6671b1f88e173f15c1a8de86cecd5",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 620139937,
+        "distance": 0.9866235852241516,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "af867441be1b6692e884337671b2effe603bd8cbdc783738ee4c003a294bd0d4",
+      "name": "kenney_impact-sounds/Audio/impactPunch_heavy_002.ogg",
+      "sha256": "7993dd4c156b9979ad69f17be5ebe31850b16039a3857f8477141be54dfee1b3",
+      "folder": "009",
+      "selected": {
+        "id": "bbe03452b8b0a721b5ccd4551456081cad5057fcef9c16fcf88a1c64ee54e3cd",
+        "synth": "Bouncr",
+        "file": "01-Bouncr.wav",
+        "seed": 726680030,
+        "distance": 0.2211350053548813,
+        "rating": 4
+      },
+      "bfxr": {
+        "id": "3610bc9b53a8453b9092940dc645c515257ec16a3c69d32d5cac4896f78ee701",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 620139937,
+        "distance": 0.9112730622291565,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "6582b580bac1b137408d407ee7587ed423afa9d01266a69eb0b7c2ed6627962b",
+      "name": "kenney_interface-sounds/Audio/maximize_003.ogg",
+      "sha256": "df16f25d45189f5d44d6a482ab20d5067350ca8525a9affa1f8ce599e31a20a5",
+      "folder": "010",
+      "selected": {
+        "id": "a35fec57bfe868f01180f705bc840348fef9b9b6d138026c187103bcab934769",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 54903036,
+        "distance": 1.0309160947799683,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "a35fec57bfe868f01180f705bc840348fef9b9b6d138026c187103bcab934769",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 54903036,
+        "distance": 1.0309160947799683,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "03fe3abb39a2ed1d2ee0eca20f16e83ff7de79ad8b620bf9daae9afa0bd3a40b",
+      "name": "kenney_rpg-audio/Audio/drawKnife1.ogg",
+      "sha256": "276403e72c3b71c47bc24db3083970c23f8e5551ffa78f436f83483c56f3f0bb",
+      "folder": "011",
+      "selected": {
+        "id": "7f653216e8e2352b854f8cae949cac875a0f542de3824d8e2bb599399798a1f6",
+        "synth": "Whooshr",
+        "file": "01-Whooshr.wav",
+        "seed": 1608444891,
+        "distance": 0.6245294809341431,
+        "rating": 3
+      },
+      "bfxr": {
+        "id": "d167bf6ef66c38e5c100c3bf168052b569b043e89a3f535ed9eac36b44624a4a",
+        "synth": "Bfxr",
+        "file": "05-Bfxr.wav",
+        "seed": 1857355614,
+        "distance": 0.9699516296386719,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "1f663877b6459defe74a2ad3a5b9231f88728f362bf92a9e8509bd24ca1852f8",
+      "name": "kenney_sci-fi-sounds/Audio/laserLarge_001.ogg",
+      "sha256": "e678aca631495b7dfef4ac625f0349875ccac81a60f538d530e072241af3e4bd",
+      "folder": "012",
+      "selected": {
+        "id": "755d67ca636d7d76e72e17fef62b9086d28a9b1867a9fa3fb26cecc73b306e7e",
+        "synth": "Squishr",
+        "file": "01-Squishr.wav",
+        "seed": 1645359458,
+        "distance": 0.738410472869873,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "7e0db003280cc826425b2d55b0cb7341674d8de49c61f326db7d06e19fda1831",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 1359613458,
+        "distance": 1.1097246408462524,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "4537b09371ccd899a578702fcdad50a8c55d28db6813974f2da7bdcf4f6d7d41",
+      "name": "kenney_ui-audio/Audio/switch10.ogg",
+      "sha256": "bf61b3f3af39b2c680e70ee2f791786edd2bca2016ea683947059f079849bbf3",
+      "folder": "013",
+      "selected": {
+        "id": "9b3138aae0f137d5366a40b99b66dfbff6d6e6fb2a7e2e8ab5d37e512c0ed51e",
+        "synth": "Bouncr",
+        "file": "01-Bouncr.wav",
+        "seed": 1713917192,
+        "distance": 0.7139893174171448,
+        "rating": 4
+      },
+      "bfxr": {
+        "id": "7aba5a9d0bd4d648d81f38f0e3c2fc0153a8a44fdb54d3689f984d4dd9a1ad11",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 2037532785,
+        "distance": 1.1808648109436035,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "b4c4647a7181b785702d43fbe9708c569471b26e93ab7bf0bb8b60d94e8f019d",
+      "name": "kenney_voiceover-pack/Male/go.ogg",
+      "sha256": "35c7b85d74935a2718e067ba26cdddbb114ccea23fa7253ad2586a9065f1bec1",
+      "folder": "014",
+      "selected": {
+        "id": "663a4d21c1af8407f93e73e264160a1e3d2dd82b023dff00254dfe2c3dfe8a22",
+        "synth": "Crittr",
+        "file": "01-Crittr.wav",
+        "seed": 1780462923,
+        "distance": 0.8272165656089783,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "f158b3613d31a127f21334ca6a6e6377976745ab80944742057011f3029fd24f",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 1252624775,
+        "distance": 1.0226426124572754,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "f1fae7baa94315160d552ae6c98af4961b3b2fe055315cc7a0ffc00713ed91b3",
+      "name": "kenney_voiceover-pack-fighter/Audio/championship_mode.ogg",
+      "sha256": "194b6c9b4109776c5e038ada1557de284425e718aef7a1c67799826e1b4d7891",
+      "folder": "015",
+      "selected": {
+        "id": "b77d09784c2a2d0bed484589297649f92f947da5990493a1843dbec66cdcc68f",
+        "synth": "Machinr",
+        "file": "01-Machinr.wav",
+        "seed": 982729997,
+        "distance": 1.194648027420044,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "cadf62a9b4672f301b0c38efcbdcfda2cf2ba9fec016e6aef6b25ca74fc02c74",
+        "synth": "Bfxr",
+        "file": "03-Bfxr.wav",
+        "seed": 1544470379,
+        "distance": 1.2858667373657227,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "86a075851e817b24c2f758927b480caac1f963643a691591e07b218706de7102",
+      "name": "mario_nes_snes_sounds/mario 3 - tail.wav",
+      "sha256": "abcad85361939b26627a47c9472972c8f27962bc57feb1c6c6d5d7952a59f32f",
+      "folder": "016",
+      "selected": {
+        "id": "4b280a94d3c493bdb113c081c58c5ac6ce41755890bea34d504c65fc311f7f83",
+        "synth": "Crittr",
+        "file": "01-Crittr.wav",
+        "seed": 627847717,
+        "distance": 0.6492484211921692,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "6f7ec45fe2cb32704f1d111caf48576f01f1f21f8208fd2a99a8e418544e3365",
+        "synth": "Bfxr",
+        "file": "05-Bfxr.wav",
+        "seed": 103599485,
+        "distance": 0.765824019908905,
+        "rating": 3
+      },
+      "note": ""
+    },
+    {
+      "id": "179469f49e99446bcdcbf2b8924b01049bab5bfdff9ada62dafdb6bbfa2cbc33",
+      "name": "mega man Sound Samples/dwr/atomic-fire-charge-b.wav",
+      "sha256": "eb8267588e9f5ddd8e07a21c9b181993f3a090f5ba24db8cd41066a658cdfb32",
+      "folder": "017",
+      "selected": {
+        "id": "b6c2b984b7152f5c98aa06c6140a5c05239d76312b973e56fec54aec9a96e0ee",
+        "synth": "Machinr",
+        "file": "01-Machinr.wav",
+        "seed": 1113459338,
+        "distance": 0.6660201549530029,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "50f11fc278e8c371ea723fd872ac04b0b355ddc909cb791fbb753626f792efcc",
+        "synth": "Bfxr",
+        "file": "03-Bfxr.wav",
+        "seed": 129712007,
+        "distance": 0.8770862221717834,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "1091202a3ebb02595945613981f8a3fd93163a59e2de192344fc8b81cc816c12",
+      "name": "minecraft_legends_units/2282.animal_marmot_eat_07.ogg",
+      "sha256": "4bdd1448624bce7eb77a4655a6cace968b362b686171775586a66fa0d137dff6",
+      "folder": "018",
+      "selected": {
+        "id": "f27551d12c04dd14e7649535dd90110e53ebf1da3c392deace702355ad26e218",
+        "synth": "Riftr",
+        "file": "01-Riftr.wav",
+        "seed": 131908073,
+        "distance": 0.7618771195411682,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "d2c3bbacab99ba94295607aceb6ceda98a483cbd29a59b479926c1179ef934bc",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 1252624775,
+        "distance": 1.3790589570999146,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "1c431a1be85afd1c8399f0c0acc35424b8310f755b849bc4da747770985061f4",
+      "name": "tags/carbeep/VEHHorn_Kawasaki Ninja ZX 10R Horn Single 03_SNDBTS_MCK.wav",
+      "sha256": "ce444bf64841f7434a7a04876f9ae0487c893a250508fbcdf23431c5e813764e",
+      "folder": "019",
+      "selected": {
+        "id": "5e76ef147e20aaf3300fa92a9036c334ecf63129e90193dd011eaffe081a3855",
+        "synth": "Clonkr",
+        "file": "01-Clonkr.wav",
+        "seed": 249578769,
+        "distance": 0.38671165704727173,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "2e56f117cb26aee187fbaa43e453eb1431fcdb981691a8b7142680425462cbf2",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 611484608,
+        "distance": 0.7942065000534058,
+        "rating": 3
+      },
+      "note": ""
+    },
+    {
+      "id": "afccce8a7bcde702af719e4f3ce59d22e620eb10889b8388f3ba6e59a5d110f2",
+      "name": "RAREVGSFX 1+2/RAREVGSFX/NINTENDO/PAPER MARIO (N64)/BANK_0F_INSTR_0004_SND_0000.wav",
+      "sha256": "d3f4cd630ef6d61be1bdae2f107c052f90873d5a2a4a30839fe41c992d2d95b4",
+      "folder": "020",
+      "selected": {
+        "id": "4a6a42e27f0fb12b42fc117d991d3bd96349351051998125803f513217e5bb45",
+        "synth": "Choirr",
+        "file": "01-Choirr.wav",
+        "seed": 328961432,
+        "distance": 0.4877701699733734,
+        "rating": 3
+      },
+      "bfxr": {
+        "id": "038d9eadafa5949c235ae7038ae50114438a6215392700271cc400a10b03b8d7",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 7345224,
+        "distance": 1.3245888948440552,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "153e36dfe88fa8c5b91d513e1e0844e59ae229a3df4a955a874d7e578e2f602a",
+      "name": "Sonniss.com-GDC2026-GameAudioBundle1of5/344 Audio - Bass Drops & Downers Vol. 2/DSGNBass_Bass Drop & Downer Fast 12_344 Audio_Bass Drops & Downers Vol 2.wav",
+      "sha256": "a9475a36470118ea99c151203c9b3457d2b3b6ec31c231f65172084e4572b390",
+      "folder": "021",
+      "selected": {
+        "id": "d9fc19a3cc99f7ba7d07ed5aea6e9e32ebf304eec7843a1fed8131b944060c7b",
+        "synth": "Clonkr",
+        "file": "01-Clonkr.wav",
+        "seed": 1609949973,
+        "distance": 0.16076844930648804,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "343c5f3c0307f5c793fe96473d7ba3cf347a013d02a4faac7347820af0e92393",
+        "synth": "Bfxr",
+        "file": "04-Bfxr.wav",
+        "seed": 1154002741,
+        "distance": 0.3803043067455292,
+        "rating": 3
+      },
+      "note": ""
+    },
+    {
+      "id": "cd9a076e548ada5c7e3ac400d4b8034d24ead9572af3a2797ffc8ae70c24e721",
+      "name": "Sonniss.com-GDC2026-GameAudioBundle2of5/Cinematic Sound Design - Paper Foley/Encyclopedia Glossy Page Turn Muted.wav",
+      "sha256": "0746668350526caa62127530fa43dead246ab423a0996f4cc87774d1fed3f61d",
+      "folder": "022",
+      "selected": {
+        "id": "e78dc432e911711bcd439e06fbb5f28673b41242de8aa34fed5f105e44eec63b",
+        "synth": "Squishr",
+        "file": "01-Squishr.wav",
+        "seed": 513041800,
+        "distance": 0.81741863489151,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "0377af001b0c1fc8d06c7daa0ee15e3ae5ed9dd34aa17d772b28deddf59f0582",
+        "synth": "Bfxr",
+        "file": "05-Bfxr.wav",
+        "seed": 1038445547,
+        "distance": 1.038620948791504,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "96657258be19f90773211b6adb8e8fd462d60a44882e0d8aeabdf96f56d43259",
+      "name": "Sonniss.com-GDC2026-GameAudioBundle3of5/InMotionAudio - Medical Thermometer/BEEPMed_Thermometer_Beep11_InMotionAudio_MedicalThermometer.wav",
+      "sha256": "a7763b1ade61facc164d0cc548f2468c2b03c83555bdca7e98c91c3a63b308e8",
+      "folder": "023",
+      "selected": {
+        "id": "fc866c8f2f62cb3267d80311942878af181a9d770e3ee73bce94eb4fbacc4e79",
+        "synth": "Transfxr",
+        "file": "01-Transfxr.wav",
+        "seed": 511838886,
+        "distance": 0.5411677360534668,
+        "rating": 3
+      },
+      "bfxr": {
+        "id": "8f6968b29bf4faec6a254033d1dbb074a4094a2b9cdd8140fe8a0947f47ad686",
+        "synth": "Bfxr",
+        "file": "02-Bfxr.wav",
+        "seed": 1363843642,
+        "distance": 0.6994044184684753,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "58235a87f5499e9aee640c5f79ce515affa21fb778c07700261664e73e824e40",
+      "name": "Street Fighter Sound Pack/youwin.wav",
+      "sha256": "e221426062715d297eded314405fcf0804b8ac7d36ec2a1efb8b037e9964ac5a",
+      "folder": "024",
+      "selected": {
+        "id": "2c39a3083efe170805a3933236be19a1b7a039cfdae27ce1b0a75fa80b041ba1",
+        "synth": "Riftr",
+        "file": "01-Riftr.wav",
+        "seed": 802572829,
+        "distance": 0.7457486987113953,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "3fb961c61169f313e6eeb6b82bc8835740e4b843bdd2f3cef6d4755a181700ee",
+        "synth": "Bfxr",
+        "file": "05-Bfxr.wav",
+        "seed": 1154002741,
+        "distance": 1.0604581832885742,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "d58245bc6f885fc2fbd5f736ad44baeec56a4d0ec7f221f70aaed10f86fe66bc",
+      "name": "chronotrigger_sounds/loseMusic.wav",
+      "sha256": "1d327ae1f0cc9e3fa532b457d49e33322bf76d01d915347adfedb828bcaeb9c8",
+      "folder": "025",
+      "selected": {
+        "id": "28f86477e8747c8054f2731b57494be5a9ea267bcef7310893172c3cd41ef6c8",
+        "synth": "Riftr",
+        "file": "01-Riftr.wav",
+        "seed": 879996067,
+        "distance": 0.9699283838272095,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "2f8360c625a3248602cd89e559d7cf1995162cdc42e3cc749fd91732ced806b5",
+        "synth": "Bfxr",
+        "file": "04-Bfxr.wav",
+        "seed": 190767817,
+        "distance": 1.2872157096862793,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "c3c46dd048cd173d44ab9eca47ea7ca665140861c6a3fa4b7caa08fad451b002",
+      "name": "kenney_digital-audio/Audio/powerUp6.ogg",
+      "sha256": "d1007bc67852cc767fad077a6b7ee016c0eb3d52a2032f1496726d7ab590e22d",
+      "folder": "026",
+      "selected": {
+        "id": "8a045afa10bbd264dc738b4aa7ff102b6f01629cc325615b455c4ee0e9b5e6de",
+        "synth": "Signlr",
+        "file": "01-Signlr.wav",
+        "seed": 132940257,
+        "distance": 0.6602007150650024,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "5499356c7bb976773bd5dd82a3bf4f0488b32db73977253d73f488dfaa4c42ed",
+        "synth": "Bfxr",
+        "file": "03-Bfxr.wav",
+        "seed": 1359613458,
+        "distance": 0.755606472492218,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "7bd4b9640ff7ceeabb92f3bf2129a17e6687c01f60cb821e1d016176ae331575",
+      "name": "kenney_impact-sounds/Audio/impactGlass_light_002.ogg",
+      "sha256": "710db7451bb7857b9140dfe6afe4621ea2188ad65eda3919c569d1bb285b933d",
+      "folder": "027",
+      "selected": {
+        "id": "42a4d9ec5a9475e0602ae29375347d638abe14945832f4085fddbf7ef255ae66",
+        "synth": "Clonkr",
+        "file": "01-Clonkr.wav",
+        "seed": 92033694,
+        "distance": 0.27080482244491577,
+        "rating": 4
+      },
+      "bfxr": {
+        "id": "50f4f53fdfa0fab73648bd0a589233d5dec6be7da3dced5845fea21426505c3c",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 1363843642,
+        "distance": 0.6230828166007996,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "c3d1390d81e9e731a0c3e20d36e0c98bf595492e2b128f3ec2ff334bd94b3adc",
+      "name": "kenney_interface-sounds/Audio/switch_005.ogg",
+      "sha256": "e94dfab6fd6558068ab3ea97e22e4b4f16b83ee440e6abf33ec4c4e9fbe8a70e",
+      "folder": "028",
+      "selected": {
+        "id": "a444da489cc1f92dee81d6b397777d5cc1b152d36157669cc5da1b896315918f",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 1765873938,
+        "distance": 0.561890721321106,
+        "rating": 3
+      },
+      "bfxr": {
+        "id": "a444da489cc1f92dee81d6b397777d5cc1b152d36157669cc5da1b896315918f",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 1765873938,
+        "distance": 0.561890721321106,
+        "rating": 3
+      },
+      "note": ""
+    },
+    {
+      "id": "16a400b8d849305e09000d47c7d7ee8d0a8dead4040a0685b47a56bdaeefd7ab",
+      "name": "kenney_rpg-audio/Audio/chop.ogg",
+      "sha256": "d00c2b3c9fff07e376145c8c8c45c90e5084ec192f6ce0387db233f7b86f1486",
+      "folder": "029",
+      "selected": {
+        "id": "ef9d9cedf99fe6e3cb753b5be7a8dae076144a95fd7e14b4a926f6c0507d7e15",
+        "synth": "Transfxr",
+        "file": "01-Transfxr.wav",
+        "seed": 1117921850,
+        "distance": 0.6412376761436462,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "11674181172e0f032a683d181694c584fc455b58f3c9556039c6fa5be4ae2dff",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 2041673269,
+        "distance": 1.166521430015564,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "6420c3e7a1c8b7091eab7ee8e3e675b60c4228472439a3c5aa1d99063e49390c",
+      "name": "kenney_sci-fi-sounds/Audio/doorOpen_001.ogg",
+      "sha256": "8c204ca94eb722d3af95f29221f4551938ca3c217fda32c14dabe2cf6a9c782b",
+      "folder": "030",
+      "selected": {
+        "id": "4ead8a01efea7d400084afb4234a88f4b5dfa2147bdd05bca5ecf855193ee33f",
+        "synth": "Machinr",
+        "file": "01-Machinr.wav",
+        "seed": 1889140643,
+        "distance": 0.7306811809539795,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "338bf7b576bb46df2b5f527f03fd3a514dc37e2b83f16b1bac20150e7c9cc2c8",
+        "synth": "Bfxr",
+        "file": "05-Bfxr.wav",
+        "seed": 1252624775,
+        "distance": 0.9029111266136169,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "bfcb46404b6e817c4139ff3ddce75ff03039f726b9d765b694c12a0150ff7a7e",
+      "name": "kenney_ui-audio/Audio/switch25.ogg",
+      "sha256": "ba31fc9a780a6908809154e0108e8d2728b5b9a6e769c8f56d61d920fba100ae",
+      "folder": "031",
+      "selected": {
+        "id": "281ea28339bcfda559cd21bb17d1cf73952d65ffae6d69cc39bac748f155f382",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 642324359,
+        "distance": 0.9220609068870544,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "281ea28339bcfda559cd21bb17d1cf73952d65ffae6d69cc39bac748f155f382",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 642324359,
+        "distance": 0.9220609068870544,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "d67a9d2b111c518096eaed3b74603d1f109cf9964995df10febe523e7b00c017",
+      "name": "kenney_voiceover-pack/Male/you_lose.ogg",
+      "sha256": "6544b106f384eea4dd4c3e885b708c0b2781311381db317527d47118ed15a0c0",
+      "folder": "032",
+      "selected": {
+        "id": "fb79dcd6c2ad8a7e141ec3ae4fbe60407b747045e4c76937b39a5b75300c1611",
+        "synth": "Clonkr",
+        "file": "01-Clonkr.wav",
+        "seed": 1787856022,
+        "distance": 0.8186153173446655,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "a9252408fa5510de5a9a2b73f5b51eac3df73fed01de36fdf839138fbebcab59",
+        "synth": "Bfxr",
+        "file": "05-Bfxr.wav",
+        "seed": 1145572186,
+        "distance": 0.9866835474967957,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "0745c98e4cfa57e67c246bd0df401f11936c25eb036b4c6e6176d851f6ca4f54",
+      "name": "kenney_voiceover-pack-fighter/Audio/combo_breaker.ogg",
+      "sha256": "134c92578245fa89a69dac489d64e2def2a74af1b0e7209a8ccd31bfafebceff",
+      "folder": "033",
+      "selected": {
+        "id": "74693170cf8bcb890a94b8c558cd4b8797e70be59ce2e2c08d9fae754ee9c338",
+        "synth": "Clonkr",
+        "file": "01-Clonkr.wav",
+        "seed": 19454066,
+        "distance": 0.9943147897720337,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "5924e1f82ad8a3fa069bb9be0ee2a6dff23917716220a93d65d5459583659867",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 1361358373,
+        "distance": 1.5509015321731567,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "3110b6b6bc404aee47ad9d3e2bf0c7294a510b68611a7585021fb0c420d3cd24",
+      "name": "mario_nes_snes_sounds/Mario 2 - Select character.wav",
+      "sha256": "8b2862084a74f9955eab5ca937ac24af8db95261afdfc0a5dc9317c72714ac38",
+      "folder": "034",
+      "selected": {
+        "id": "fdd91ba562ec6bf6e2c1992a5118800c763023770cb178b0ff05ae9a0c1ff8d0",
+        "synth": "Clonkr",
+        "file": "01-Clonkr.wav",
+        "seed": 1796864620,
+        "distance": 0.5230120420455933,
+        "rating": 3
+      },
+      "bfxr": {
+        "id": "e29dfa29ff61fd447d6cf573fbb60de4f844ede8ad2d3d9b962defa5325a4c75",
+        "synth": "Bfxr",
+        "file": "03-Bfxr.wav",
+        "seed": 1359613458,
+        "distance": 0.5948525667190552,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "086caac5a274dbe68129e0ec1935d178cb8e436f6cb2c30cc416e3d845ce4ad6",
+      "name": "mega man Sound Samples/iii-iv-v/one-up.wav",
+      "sha256": "27ac055152fd9dc04c5c2b4d4a7e650467222c2b7214e03d731ca67dc897b97f",
+      "folder": "035",
+      "selected": {
+        "id": "2296a05a4b44a0446e9d8d2ab75e4b5261e4006b5410525af0b51e131da6c11a",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 540792910,
+        "distance": 0.7317084670066833,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "2296a05a4b44a0446e9d8d2ab75e4b5261e4006b5410525af0b51e131da6c11a",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 540792910,
+        "distance": 0.7317084670066833,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "43dabab07334cd4fc0458322eacba334428e06df6cf0aade25097231d5ee11db",
+      "name": "minecraft_legends_units/17754.hero_mount_beetle_walk_nether_05.ogg",
+      "sha256": "e895446c1254e4c157043d410739727a07b58162f411f73154806ee8698bb99a",
+      "folder": "036",
+      "selected": {
+        "id": "465225e6c2dba2f7fbc710c22699252e152eebb700cf2d3f3eb2056681c86336",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 1423153851,
+        "distance": 0.8524073362350464,
+        "rating": 3
+      },
+      "bfxr": {
+        "id": "465225e6c2dba2f7fbc710c22699252e152eebb700cf2d3f3eb2056681c86336",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 1423153851,
+        "distance": 0.8524073362350464,
+        "rating": 3
+      },
+      "note": ""
+    },
+    {
+      "id": "e090003bfb4fa57229bfb42769c341c4b51801d351e811c2d4461196b71d842c",
+      "name": "tags/footstep/footstep_grass_004.ogg",
+      "sha256": "086fd4ab3546a507ea5f5c759a9a10e535c95ade13705c238bc0eeffd7d4e8ba",
+      "folder": "037",
+      "selected": {
+        "id": "9fa9cc3ea8a6b72d01a6e9132d72cda231adb42f70137e3c7492eddd239caf40",
+        "synth": "Zappr",
+        "file": "01-Zappr.wav",
+        "seed": 1156734080,
+        "distance": 0.34577810764312744,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "46b5cbef7380bd192b23d9e0d285107a6efd0d407a14dd4cec9898d63da12c3a",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 705720943,
+        "distance": 0.9702749252319336,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "93d6f6e2775bf64b407cbbe19a7fcc6834607dc4aba821862332925fdf88aae2",
+      "name": "RAREVGSFX 1+2/RAREVGSFX/PLAYSTATION/SLY 3 (PS2)/Sly 3 Sound Effects/SLY3.WAD_14434.wav",
+      "sha256": "146e9e94c5abb9493b739c871763504465f4280f62b24c2ca7a4b9f6b1de46d5",
+      "folder": "038",
+      "selected": {
+        "id": "833229508d25c73787b6035dcf089fd7650da287c7fd10bd3cc6c3e3694514fc",
+        "synth": "Transfxr",
+        "file": "01-Transfxr.wav",
+        "seed": 1512498571,
+        "distance": 0.8987981081008911,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "fb1f3317f49c3045de816479ba3ec7e8d4b18426181f14c8db3295bb3fa15a69",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 1913509686,
+        "distance": 1.1954764127731323,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "7a3e701f8694fb773f644d6dfd10a29f30302db5f84c1773aed7ebdc2276fa95",
+      "name": "Sonniss.com-GDC2026-GameAudioBundle1of5/344 Audio - Dinosaurs Vol. 2/ANMLRept_Dinosaur Egg Hatching 02_344 Audio_Dinosaurs Vol 2.wav",
+      "sha256": "3005faacb28dfa44bf073d77354f5c1d47aa8ba4c8e56a4a2263da40d6b3b06d",
+      "folder": "039",
+      "selected": {
+        "id": "2228b6992e160e210fe869be9e6ff716b5a8c9967ba25ad232824710bfd1e114",
+        "synth": "Boomr",
+        "file": "01-Boomr.wav",
+        "seed": 1689966667,
+        "distance": 1.059962511062622,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "c7f906a164ad709d20d7e0b752d65041dd09f7811b27bf28f3a4f3aeda772ac2",
+        "synth": "Bfxr",
+        "file": "03-Bfxr.wav",
+        "seed": 190767817,
+        "distance": 1.1419466733932495,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "e7c3dd890bb105558716619ee6a37e087b0108452ddfb909462fe3f7fa2f247d",
+      "name": "Sonniss.com-GDC2026-GameAudioBundle2of5/Cinematic Sound Design - Hybrid Game & UI Elements/Foley Coin Flip Single Fast.wav",
+      "sha256": "f6f56101e8711c22dfbb81583f4dfc78fa9c7a1b6003f82e0d3881e93774ad85",
+      "folder": "040",
+      "selected": {
+        "id": "82687dd20c8e4732a12b9f9f0e84be6b4d90d3364d0cefe41e05c08843a6b91c",
+        "synth": "Fractr",
+        "file": "01-Fractr.wav",
+        "seed": 1644794976,
+        "distance": 0.7750773429870605,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "141b615885d9bd7c7c6002a115382d8a1fc2e5bdf20596c5ed7df2505bca7b99",
+        "synth": "Bfxr",
+        "file": "06-Bfxr.wav",
+        "seed": 1940968791,
+        "distance": 1.0844767093658447,
+        "rating": 1
+      },
+      "note": ""
+    }
+  ]
+}

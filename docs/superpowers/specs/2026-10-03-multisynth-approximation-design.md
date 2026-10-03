@@ -17,3 +17,43 @@ A nonparametric inverse model (audio descriptor → nearest rendered preset para
 ## Success criteria
 
 Renderer determinism and app-loadable round trips; tested metric orderings on controlled sounds; retrieval and optimization with a strict evaluation budget; automatic cross-synth selection; fixed-library Bfxr comparison and per-target results on held-out real game sounds. Publish honest limitations, timings and examples. A low score is not a certificate of perceptual quality. Leave subjective judgment available through playback and alternatives.
+
+## Human correction and next model requirements — 2026-10-03
+
+The first human pass rated 30/40 selections 1–2 out of 5. Metric gains did not
+establish satisfactory likeness. Preserve that feedback and the exact audition
+clips in `tools/multisynth/listening_data/`; unlike scratch runs this evidence
+must survive cleanup. Focus current research on `targets_non_bfxr_big/tags`.
+
+The user's explicit requirement is that similarity depends on **large-scale
+gestural qualities and feel as much as curve matching**. A useful recreation
+preserves the kind of event and its expressive movement; exact quantities may
+differ. Game-SFX usefulness and fun matter, but the collected ratings assess
+likeness only. Do not reinterpret them as a fun score.
+
+Next-model hypotheses and acceptance checks:
+
+1. Represent event structure at several scales: impulsive vs sustained attack,
+   build-up/release, single vs repeated events, accelerating/decelerating rhythm,
+   coarse pitch motion, roughness, resonance and decay character. Permit local
+   timing variation while preserving event order and gesture direction.
+2. Test controlled positive/negative pairs. A modest pitch shift or time stretch
+   of a rising charge should usually stay closer than a falling or static sound;
+   an impact with different tuning should usually beat a slow swell with similar
+   average spectrum. A rattle should retain its repeated-event character.
+   These are test hypotheses requiring listening, not universal invariances:
+   timing, pitch intervals and event count can define the sound's identity.
+3. Avoid collapse into broad semantic classes: two tagged 'hit' sounds can have
+   different weight, material and gesture. Tags balance evaluation and may aid
+   diagnostics; a category label alone is not evidence of audible similarity.
+4. Diagnose candidate coverage before selector fitting. Compare diverse synth
+   finalists on a small tagged development set: if none evoke the target, improve
+   retrieval/search representations instead of only reweighting winner scores.
+5. Use retained judgments as durable regression evidence. Tune only on declared
+   development references; reserve separate audio families for subsequent blind
+   listening. Compare both likeness and separately collected usefulness, retain
+   Bfxr, and report ties/failures. Synthetic ordering checks alone do not validate
+   human closeness.
+
+The existing auditory-v1 model remains a reproducible baseline. No gesture-aware
+model improvement is claimed until implemented and tested against listening.

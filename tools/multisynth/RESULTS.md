@@ -25,7 +25,7 @@ Reproduce from `tools/`:
 uv run python -m multisynth.cli build -o multisynth/runs/library-v1 --per-preset 16 --jobs 4
 uv run python -m multisynth.cli benchmark /path/to/targets_non_bfxr_big \
   --library multisynth/runs/library-v1 -o multisynth/runs/real-v1 \
-  --count 40 --max-seconds 4 --budget 64 --experts 5 --seed 1234
+  --count 40 --max-seconds 4 --budget 64 --experts 5 --seed 1234 --all-collections
 uv run python -m multisynth.audit multisynth/runs/real-v1
 ```
 
@@ -56,8 +56,8 @@ Re-scoring the saved winners with the pre-existing contour objective (which was
 not used by this run) produces **18 wins / 7 ties / 15 losses** against Bfxr.
 Median contour distance is **8.514** for multi-synth winners versus **9.003** for
 Bfxr. This mixed agreement limits the result: it does not establish consistent
-perceptual improvement. Both metrics can be wrong; no human listening judgment
-was collected in this experiment.
+perceptual improvement. Both metrics can be wrong. The subsequent human pass
+below found poor likeness despite these metric gains.
 
 The Bfxr noise-seed audit repeats each chosen Bfxr candidate with the search seed
 and two held-out seeds. The largest distance range is **0.122**, on a Minecraft
@@ -88,7 +88,8 @@ mix are the useful measurements.
 - `manifest.json`, `results.json`, `audit.json`: target hashes, model identity,
   budgets, traces, objective measurements and noise-seed checks.
 
-Generated artifacts and reference audio remain ignored and local. No synth or
+Scratch generated artifacts remain ignored and local; the subsequent listening
+archive retains versioned copies of judged audio. No synth or
 preset source on the parallel `claude/determined-sagan-khz12h` branch was edited.
 After integrating newer DSP changes, rebuild the library; stale source hashes
 are rejected.
@@ -107,11 +108,38 @@ The full app suite at this branch point has an existing Mixr catalog assertion
 expecting Breathr where the recipe uses Whooshr. It also fails in a pristine
 archive of `d7fc918`; this work leaves it unchanged.
 
+## Human listening follow-up — 2026-10-03
+
+The user rated all 40 reference/model/Bfxr triples in the labeled gallery.
+This was not blinded. There are **73 unique rated candidates** after accounting
+for seven shared Bfxr/model selections. The raw JSON, parameters, provenance,
+and exact audition audio are retained in
+[listening_data/2026-10-03-real-v1/manifest.json](listening_data/2026-10-03-real-v1/manifest.json).
+
+| Measure | Result |
+| --- | ---: |
+| Mean selected likeness (1–5) | 2.0 |
+| Mean Bfxr likeness (1–5) | 1.6 |
+| Selected ratings 1 / 2 / 3 / 4 / 5 | 13 / 17 / 7 / 3 / 0 |
+| Selected wins / ties / losses against Bfxr | 15 / 21 / 4 |
+
+**30/40 selected matches scored only 1–2/5.** Relative improvement over Bfxr
+does not make this a successful perceptual model. The four human-preferred Bfxr
+results include Mario's tail sound, a tagged motorcycle horn, a bass drop and
+a sci-fi door opening. Do not promote the earlier illustrative shortlist as
+listener-approved: even the bass drop lost to Bfxr in this feedback.
+
 ## Next experiment
 
-The useful next step is to listen blind to reference/Bfxr/multi-synth triples,
-including metric disagreements, and retain evocative presets even when they
-lose on fidelity. Those judgments can train a small pairwise selector over the
-existing finalists. Larger libraries, neural seeding, editable note-sequence
-search and two-source composition should be evaluated against this saved
-baseline rather than assumed improvements.
+Focus on the curated `tags/` directory, now preferred by the benchmark CLI.
+The next target selection is frozen in
+[evaluations/tagged-v2-targets.json](evaluations/tagged-v2-targets.json).
+Treat reused rated references as development data, and check related takes
+before calling the rest held out. No new model benchmark has been run yet.
+
+Prioritize large-scale gesture and feel over exact contour fit: impacts,
+build-up/release, rise/fall, pulse structure, weight and texture. Probe whether
+plausible candidates exist before fitting a selector; a reranker cannot recover
+a recreation absent from its candidate pool. Use these ratings for regression
+and model development, with independent listening for validation. Collect fun
+or game usefulness separately rather than infer it from likeness scores.

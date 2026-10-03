@@ -24,9 +24,9 @@ uv run python -m multisynth.cli match path/to/sound.wav \
   --library multisynth/runs/library-v1 \
   -o multisynth/runs/my-sound --budget 128 --experts 5
 
-uv run python -m multisynth.cli benchmark /path/to/targets_non_bfxr_big \
+uv run python -m multisynth.cli benchmark /path/to/targets_non_bfxr_big/tags \
   --library multisynth/runs/library-v1 \
-  -o multisynth/runs/real-v1 --count 40 --max-seconds 4 --budget 64
+  -o multisynth/runs/tagged-v2 --count 36 --max-seconds 4 --budget 64
 ```
 
 Open the output `index.html` to compare references, winners and alternatives.
@@ -71,8 +71,11 @@ synthetic tests did not translate into a listening win.
 
 ## Evaluation and limitations
 
-The benchmark shuffles files deterministically inside source collections and
-round-robins those collections. It rejects silence, invalid audio, exact
+The benchmark now prefers the supplied corpus's `tags/` subtree when present;
+passing the tagged directory directly also works. `--all-collections` restores
+the original broad-corpus behavior. It shuffles files deterministically inside
+tags and round-robins them (or source collections for a broad run).
+It rejects silence, invalid audio, exact
 normalized duplicates and files longer than the configured limit. It does not
 silently truncate recordings. Filenames are used for display and source
 balancing only; the model sees audio, not tags. Manifests include source paths,
@@ -120,3 +123,30 @@ model selected Bfxr itself, both controls share a rating. The bottom-of-page
 JSON includes only rated/noted targets, with provenance for matching feedback
 back to saved results. Use **Copy feedback JSON** to share it in chat; nothing
 is submitted automatically.
+
+## Retained human feedback and current research direction
+
+The first listening pass averaged **2/5**, with **30/40** model selections rated
+1–2. This baseline is not perceptually successful. See [RESULTS.md](RESULTS.md)
+and [listening_data/README.md](listening_data/README.md) for the preserved data
+and its use restrictions. Archive future exported feedback with:
+
+```sh
+uv run python -m multisynth.listening /path/to/feedback.json \
+  --report multisynth/runs/real-v1 \
+  --output multisynth/listening_data/NEW-LISTENING-SESSION
+```
+
+Unlike disposable `runs/`, these archives are versioned: raw JSON, verified
+candidate identities, replay parameters, notes, and lossless audition clips.
+The importer rejects mismatched experiments, invalid ratings and conflicting
+ratings for a shared candidate. Re-importing identical data verifies the archive.
+
+The user's target is **large-scale gesture and feel**, robust to modest
+quantitative differences: impact, build-up, rebound, flutter, rattle, rise/fall,
+and decay character. See the [updated design](../../docs/superpowers/specs/2026-10-03-multisynth-approximation-design.md)
+for the next model's acceptance criteria. The current distance has not yet been
+replaced or calibrated to those criteria. The next listening set is recorded in
+[evaluations/tagged-v2-targets.json](evaluations/tagged-v2-targets.json); it is a
+target manifest, not a claim of new model results. The benchmark command above
+reproduces its selection against the unchanged corpus.

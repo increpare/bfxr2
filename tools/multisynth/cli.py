@@ -18,6 +18,11 @@ from .report import export_match, export_benchmark
 AUDIO_SUFFIXES = {'.wav','.ogg','.flac','.aiff','.aif','.mp3'}
 
 
+def benchmark_root(root, all_collections=False):
+    """Prefer the curated tags subtree; also accept a directly supplied audio folder."""
+    return root/'tags' if not all_collections and (root/'tags').is_dir() else root
+
+
 def source_info(path, root=None):
     return {'name':str(path.relative_to(root)) if root else path.name,
             'path':str(path.resolve()), 'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
@@ -79,6 +84,8 @@ def main():
         if name=='benchmark':
             p.add_argument('--count',type=int,default=40)
             p.add_argument('--max-seconds',type=float,default=4)
+            p.add_argument('--all-collections',action='store_true',
+                           help='Use the entire supplied corpus instead of preferring its tags/ directory')
     args = parser.parse_args()
     torch.set_num_threads(1)
     if args.seed < 0 or args.seed > 2**31-1:
@@ -99,7 +106,9 @@ def main():
             result = approximate(renderer,library,target,experts=args.experts,budget=args.budget,seed=args.seed,synths=synths)
             export_match(args.output,target,result,source_info(args.target))
         else:
-            paths, rejected = select_targets(args.target,args.count,args.seed,args.max_seconds)
+            root = benchmark_root(args.target,args.all_collections)
+            print(f'Target directory: {root.resolve()}',flush=True)
+            paths, rejected = select_targets(root,args.count,args.seed,args.max_seconds)
             if not paths:
                 parser.error('No usable targets')
             args.output.mkdir(parents=True,exist_ok=True)
@@ -108,6 +117,7 @@ def main():
                         'libraryManifestHash':hashlib.sha256((args.library/'library.json').read_bytes()).hexdigest(),
                         'seed':args.seed,'budgetPerExpert':args.budget,'experts':args.experts,
                         'synths':synths, 'maxSeconds':args.max_seconds,'selectionRejected':rejected,
+                        'targetRoot':str(root.resolve()), 'allCollections':args.all_collections,
                         'targets':[source_info(p,args.target) for p in paths]}
             (args.output/'manifest.json').write_text(json.dumps(metadata,indent=2)+'\n')
             records, started = [], time.monotonic()

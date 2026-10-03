@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Frozen tagged listening set for the next gesture-aware model; no new matching results yet",
+  "root": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags",
+  "selection": {
+    "seed": 1234,
+    "count": 36,
+    "maxSeconds": 4,
+    "strategy": "Round-robin over tags; normalized PCM duplicates excluded"
+  },
+  "priorFeedbackExperimentId": "51ebabd537188b5b7555a8d74e847674121e8d3f903fc1d00551fc604b526d34",
+  "priorRatingOverlap": 1,
+  "targets": [
+    {
+      "name": "animal/grunt.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/animal/grunt.wav",
+      "sha256": "a6f379d5d603e861eca095182848d89fc33025c187863fb526b1683febfc9173",
+      "tag": "animal",
+      "durationSeconds": 0.8300072568940493,
+      "normalizedPcmSha256": "0d6612c8795ed7a48612871d33b1744c2889324cb8c92bd99df7d4308a2c8699",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "attack/spinout.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/attack/spinout.wav",
+      "sha256": "63f22019f9cb29641090eaa86c67b1beb58f40462d53554a4bb5e9c526634b73",
+      "tag": "attack",
+      "durationSeconds": 0.7280478955007257,
+      "normalizedPcmSha256": "0414bc92428d6819db3cd800f9c5ced5e6df3ad23816e38ae7f4bf2f84f75b55",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "bell/impactBell_heavy_000.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/impactBell_heavy_000.ogg",
+      "sha256": "94b8bb5f2d43ab65e4bcc32b28562416e9bc2c51d9fd4be1e333660ee52f977f",
+      "tag": "bell",
+      "durationSeconds": 1.4801814058956917,
+      "normalizedPcmSha256": "3e919875f2bf8d1fea0cd24d2d892ae176e8b6cee7c6df07c6af263ab58ee6d1",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "bird/Bird Sounds.WAV",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bird/Bird Sounds.WAV",
+      "sha256": "b7e6a6985e2182452977e32c60e7fc705cf80a36151c6d49f4f1139bffb34370",
+      "tag": "bird",
+      "durationSeconds": 0.35616780045351476,
+      "normalizedPcmSha256": "6e5cad723b223d8a4a8aaed6d05c73341c7259e243cfd83b49f2ee1ecd9adba6",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "carbeep/VEHHorn_Kawasaki Ninja ZX 10R Horn Single 03_SNDBTS_MCK.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/carbeep/VEHHorn_Kawasaki Ninja ZX 10R Horn Single 03_SNDBTS_MCK.wav",
+      "sha256": "ce444bf64841f7434a7a04876f9ae0487c893a250508fbcdf23431c5e813764e",
+      "tag": "carbeep",
+      "durationSeconds": 0.39209375,
+      "normalizedPcmSha256": "013de9d97945343a33911e42dd41988dda66ec4802ae709cb62a347667307199",
+      "previouslyRatedReference": true
+    },
+    {
+      "name": "card/bookClose.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/card/bookClose.ogg",
+      "sha256": "81e976532565f4372abd14e83d2684195fa548d0a28d345de221e56052454f32",
+      "tag": "card",
+      "durationSeconds": 0.23060416666666667,
+      "normalizedPcmSha256": "54483bc18aff6f55613053dfd531b9e5104a9556dd295625d18bd1a1c28945a1",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "chains/beltHandle1.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/chains/beltHandle1.ogg",
+      "sha256": "2ef665bd8b65dbe669f4560be38a6d8f04a162e618b15a49e3e71b58e558aab0",
+      "tag": "chains",
+      "durationSeconds": 0.27670833333333333,
+      "normalizedPcmSha256": "2a8a514dcb58609c50c8fb6dea98cb5ffedf213977fb0b358e46fdc18f72bd30",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "chips/chips-stack-6.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/chips/chips-stack-6.ogg",
+      "sha256": "5ec35171aa65bf5edd977e293523a649227accf36e682bf1ac9a84286f04c682",
+      "tag": "chips",
+      "durationSeconds": 0.18687074829931974,
+      "normalizedPcmSha256": "ca972f54ea31a40d227031a03fd39aeaf617f43a09a6feff41fd71b7ffc264a0",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "click/MECHClik_USALightSwitch_On05_InMotionAudio_USAHotel.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/click/MECHClik_USALightSwitch_On05_InMotionAudio_USAHotel.wav",
+      "sha256": "3d51ab42afb54d024ded5128a84aa102075398b270b67df8f71ecb0cfe9bd0a8",
+      "tag": "click",
+      "durationSeconds": 0.2573020833333333,
+      "normalizedPcmSha256": "3004f66db40242940d403a55afdc4b2bbb01aca33360c1d7d97e0a1701db34cc",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "clothes/cloth2.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/clothes/cloth2.ogg",
+      "sha256": "8a7451193c38bc05483aec25dd193e163a15d44cf7fff04ac7912573231b0201",
+      "tag": "clothes",
+      "durationSeconds": 0.4150625,
+      "normalizedPcmSha256": "7872f0578053f0a98772f72c8d47fe3a172e630320df015ec9ed9032d258315c",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "collect/coin (snes).WAV",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/coin (snes).WAV",
+      "sha256": "4283ba7f88dbc2bc2470d58bedad8e866e394d7f8e5799c38c04c98238fe04a8",
+      "tag": "collect",
+      "durationSeconds": 0.364875283446712,
+      "normalizedPcmSha256": "e7f05a00945ff209213093bce951969ea2227f00a4be89cfbd3ff34ddcbdab11",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "computer/robo_talk.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/computer/robo_talk.wav",
+      "sha256": "405f8bbc7adcdae6815b249b1551423407f5b157947c386340faf161b94e6391",
+      "tag": "computer",
+      "durationSeconds": 0.893061224489796,
+      "normalizedPcmSha256": "91f233628e88e2ad7998725f2ecdfb0bcb77f01a62816059331038c39c74a256",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "dice/dice-throw-2.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/dice/dice-throw-2.ogg",
+      "sha256": "e0b8c370503b2c5c2a72d311cccae30fe63a6afd48f2be32e771fcf1a98585d6",
+      "tag": "dice",
+      "durationSeconds": 0.4024716553287982,
+      "normalizedPcmSha256": "22de2c6f09411cb91158a5b5c8c22c5d3aac329d1c44767f3f48c93458fc0130",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "die/charm2.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/die/charm2.wav",
+      "sha256": "d161711f9e872a84d289f26097f57028ef444959afd79c0233b74aef9f3ae24e",
+      "tag": "die",
+      "durationSeconds": 2.113968253968254,
+      "normalizedPcmSha256": "98971f210ae3659c11256c8d53e180be3165b73f6b227d62d3686d2f7ff514ce",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+      "sha256": "e1fa457aad41930050a8b5723fd468f8c1a33ce46ea5944031c3585a9b2bd8d8",
+      "tag": "door",
+      "durationSeconds": 2.951135416666667,
+      "normalizedPcmSha256": "b99579507b8bee25d60fb5d63f3722abba76bed3c3ed5ee522f2ff86181854d8",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "double_jump/flap_once.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/double_jump/flap_once.wav",
+      "sha256": "76573984a769f834c55195ae517d102685efb84f9a075f94195a1fc3234cd0d6",
+      "tag": "double_jump",
+      "durationSeconds": 0.16984126984126985,
+      "normalizedPcmSha256": "6a4efbd6b81723609560493f0a5cf7a1cd61c89d83aa9dd7a77109f6b31605c9",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "draw_weapon/knifeSlice.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/draw_weapon/knifeSlice.ogg",
+      "sha256": "4cd96dc630bed9840c15f1dd2306da2cc56a4da26a5d3f1a03c5a7265ac5e54f",
+      "tag": "draw_weapon",
+      "durationSeconds": 0.5995416666666666,
+      "normalizedPcmSha256": "4a36d2e3d3b6ad3bedcef46ef8669af7eab9933e589820a5777ce96b29af6284",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "explode/Bifun Jump.WAV",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/explode/Bifun Jump.WAV",
+      "sha256": "3711654774a0443a5decda6740d2584bcad6c7b7ec5147a6ffaf99d5ac2287e8",
+      "tag": "explode",
+      "durationSeconds": 0.8182766439909297,
+      "normalizedPcmSha256": "daf9eb9c0a5b24e7b25e3762b6169f37711a970af4556713e18dac3f7ec4a22e",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "fall/Fall Kopie 2.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/fall/Fall Kopie 2.wav",
+      "sha256": "fa94b3c3ef006c7292dcfc030bc197e7c4e1ae5ab175008c4e655be877086b16",
+      "tag": "fall",
+      "durationSeconds": 0.6281632653061224,
+      "normalizedPcmSha256": "fce61e0825d2acff3de3b10698fadcee25d427aa328f8824241feea3a54341ad",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "footstep/footstep03.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep03.ogg",
+      "sha256": "a86756b9af9f370455ab47844239bb07fd1bee7a113068c91f0fcd9b72703fae",
+      "tag": "footstep",
+      "durationSeconds": 0.2690208333333333,
+      "normalizedPcmSha256": "f75ccc86211a7cadc2e545a033af9cfc198182985d8b79bb649ace3288d24f57",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "forbidden/error_008.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/forbidden/error_008.ogg",
+      "sha256": "eba17ecb2a426bfd4a8a6acff5f8a86202b6424a77af0fd842e37809a1ab6d81",
+      "tag": "forbidden",
+      "durationSeconds": 0.13931972789115646,
+      "normalizedPcmSha256": "d8204a562cac51ac88e168f0ed645afa23cd1431771e8d3a2c310d3bc122c1a8",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "hit/PUNCH7.WAV",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/PUNCH7.WAV",
+      "sha256": "08e24c35923307421abe87b93b25a8cf70bca7af9788d5aa3eefdedbf3d83dfc",
+      "tag": "hit",
+      "durationSeconds": 0.3225396825396825,
+      "normalizedPcmSha256": "08ca30e7da2b94e0e1aef152f730b7c77db9f68d0ce84ab60ad49a37aaa7df44",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "jump/Jump Kopie 4.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/jump/Jump Kopie 4.wav",
+      "sha256": "18b55df7af255bc15b779081db03297a4456ba82d46dddd5451ce6252e5b315d",
+      "tag": "jump",
+      "durationSeconds": 0.3653968253968254,
+      "normalizedPcmSha256": "eb6d27c75a5dd4f3c9cb9ff592e711af5b6a024ff14513acef3402fa5f16fd63",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "laser/laserRetro_000.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/laserRetro_000.ogg",
+      "sha256": "2a203a007d24cc7e607eb8bec1d86bedba7f551911217ce2c4c1f31393aed32c",
+      "tag": "laser",
+      "durationSeconds": 0.23541950113378685,
+      "normalizedPcmSha256": "801645ab38cb08e543f707ddec146213fa35c7150cc2c76d7925a413c73adefb",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "magic/cureMagic.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/magic/cureMagic.wav",
+      "sha256": "4422a2d1c23013ac655ff35f67477017f24b0ce330c8e896440252c1d4057994",
+      "tag": "magic",
+      "durationSeconds": 2.069115646258503,
+      "normalizedPcmSha256": "be75a3be2603f5fc9cca33fdf6023eb391bfe9b0f9fd612633320b4ca15d5a45",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "misc/exhaust.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/misc/exhaust.wav",
+      "sha256": "e87be0849ff537c726033271de80d6bdcdee87951b539120eaeaff019073c8bc",
+      "tag": "misc",
+      "durationSeconds": 1.57275,
+      "normalizedPcmSha256": "1fdfa9513c832b0459c2061ab897b33a81982f51711b37fb2f1d756ad172a7bd",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "monster/SNDB2DIE.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/monster/SNDB2DIE.wav",
+      "sha256": "5895b006474523624e2571396270f3343cc117f39912e234c2328b550f2726c3",
+      "tag": "monster",
+      "durationSeconds": 1.395827664399093,
+      "normalizedPcmSha256": "94176da268b5659a32537d8ed717a8446b385e07d5726a98160e061a9a22041a",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "motiv/UIMisc_Kalimba 3 Up_CB Sounddesign_APPlicable Sounds.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/motiv/UIMisc_Kalimba 3 Up_CB Sounddesign_APPlicable Sounds.wav",
+      "sha256": "0298f3405836720e064d1ff486f58fa032b03009d6f9e55e668b84e759dca360",
+      "tag": "motiv",
+      "durationSeconds": 0.5529791666666667,
+      "normalizedPcmSha256": "5904dfb6947f36f67505a0c4752623e8ce726fd5230de8dddee08eb7a6595709",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "power_up/1up.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/power_up/1up.wav",
+      "sha256": "58d302fd480f4311c9528c69b580b0ec2025c662aa6246c60dcd7feafe921779",
+      "tag": "power_up",
+      "durationSeconds": 0.7782312925170068,
+      "normalizedPcmSha256": "69c879adcc15198837c3daef892ff6fd5ee00342a41a9bb849ee020326614bcd",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "select/savePoint.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/select/savePoint.wav",
+      "sha256": "2d12f6c922226d5213879739c2a09f67f27068463f41b29665f44d0cde761e1f",
+      "tag": "select",
+      "durationSeconds": 0.6696598639455782,
+      "normalizedPcmSha256": "48a9b9dfcfa28043470032bc411d5aaf152ec4eda4c50d1458126185b5997cff",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "shoot/Shooting.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/shoot/Shooting.wav",
+      "sha256": "2218abe9327a3866cf6da4419add2b46d86ab957fc6fecb7518ce0ccccc204a5",
+      "tag": "shoot",
+      "durationSeconds": 1.3884271699056427,
+      "normalizedPcmSha256": "bdb5bdf3b3d38ef1aef419c11e771238a01123b36557cad772ef9e43c7668efb",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "slime/slime_000.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/slime/slime_000.ogg",
+      "sha256": "480ee82b690136ea9db6966a3c3033356b8274752795c4e37afd6b6defcfacff",
+      "tag": "slime",
+      "durationSeconds": 0.5,
+      "normalizedPcmSha256": "edb87b79ec86ddb8a1b97f71dc3694a8390dab669803afdfb5f74ac5b46e124b",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "step/step2.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/step/step2.wav",
+      "sha256": "73bfc925afff23db9c552f3003017c2926106ab446c9646ed2251b8506350091",
+      "tag": "step",
+      "durationSeconds": 0.252,
+      "normalizedPcmSha256": "053f8f2aa8622e5857b86ed59a002fa4c52c55b10effeda02ae528d7384fdc00",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "sword/ma_sword3.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/sword/ma_sword3.wav",
+      "sha256": "7e9d6131b1748ccfdc059a9f6a37cd46c98230b1cecc256cd5ec038cd43e4e94",
+      "tag": "sword",
+      "durationSeconds": 0.26607709750566894,
+      "normalizedPcmSha256": "9ab762387d57ceee3c7ad4748026b73c5286d3d97cab462d986c108c8ed43c67",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "unlock/metalLatch.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/unlock/metalLatch.ogg",
+      "sha256": "ba9ba60b172b3ebc131a940f25793cd2e207aca7af73dc80d637277f060f1708",
+      "tag": "unlock",
+      "durationSeconds": 0.2613333333333333,
+      "normalizedPcmSha256": "fa10e1b164856f30220239210909c46ed745a63647227d27340ba2ba3206c491",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "voice/ozzie.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/voice/ozzie.wav",
+      "sha256": "6efecb192b226ff495083b6094aa0b8503e23bfe3f9d6c63af0d23b1090923ea",
+      "tag": "voice",
+      "durationSeconds": 1.959542815674891,
+      "normalizedPcmSha256": "448b971c9f9b5bb3c3b2e1f68ec0d2c6c71ef05adedcf121d3b160695cef93b8",
+      "previouslyRatedReference": false
+    }
+  ],
+  "rejected": []
+}
