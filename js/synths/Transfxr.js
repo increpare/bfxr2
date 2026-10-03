@@ -84,9 +84,8 @@ class Transfxr extends SynthBase {
         dash: [
             {id:'dash_whoosh', params:{waveType:7,duration:0.38,attack:0.05,release:0.18,echo:0,pitch:[0.5,0.5],tone:[0.3,0.85,'Triangle'],level:[0.5,1,'Triangle'],resonance:0.45}},
             {id:'dash_zip', params:{waveType:2,duration:0.26,attack:0.01,release:0.1,echo:0,pitch:[0.42,0.76,'Ease In'],tone:[0.7,1],waveTo:7,morph:[0.15,0.7,'Ease In'],level:[0.9,0.5]}},
-            {id:'dash_rev', params:{waveType:3,duration:0.5,attack:0.02,release:0.12,echo:0,pitch:[0.3,0.56],vibrato:[0.8,0.8],tone:[0.6,0.95],level:[0.5,1]}},
             {id:'dash_skid', params:{waveType:7,duration:0.4,attack:0.01,release:0.2,echo:0,pitch:[0.5,0.5],tone:[0.9,0.35,'Ease Out'],level:[1,0.15],resonance:0.75}},
-            {id:'dash_boost', params:{waveType:2,duration:0.7,attack:0.08,release:0.25,echo:0.2,pitch:[0.32,0.7,'Ease In'],tone:[0.4,0.95,'Ease In'],level:[0.5,1]}}],
+            {id:'dash_boost', params:{waveType:2,duration:0.45,attack:0.05,release:0.18,echo:0.1,pitch:[0.32,0.7,'Ease In'],tone:[0.4,0.95,'Ease In'],waveTo:7,morph:[0.2,0.6],level:[0.5,1]}}],
         splash: [
             {id:'splash_glug', params:{waveType:3,duration:0.4,attack:0.01,release:0.15,echo:0,pitch:[0.46,0.24,'Ease Out'],vibrato:[0.6,0.6],tone:[0.6,0.4],waveTo:7,morph:[0,0.5],level:[0.9,0.4]}},
             {id:'splash_bubble', params:{waveType:0,duration:0.16,attack:0.003,release:0.08,echo:0.1,pitch:[0.45,0.72,'Ease In'],tone:[0.9,0.9],level:[1,0.3]}},
@@ -144,7 +143,6 @@ class Transfxr extends SynthBase {
             {id:'unlock_click', params:{waveType:7,duration:0.2,attack:0,release:0.12,echo:0.05,pitch:[0.5,0.5],tone:[0.9,0.5,'Ease Out'],waveTo:11,morph:[0.3,0.8,'Steps'],level:[1,0.2],resonance:0.4}},
             {id:'unlock_beep', params:{waveType:3,duration:0.3,attack:0,release:0.05,echo:0,pitch:[0.68,0.78,'Steps'],tone:[1,1],level:[0.9,0.9]}}],
         win: [
-            {id:'win_sting', params:{waveType:2,duration:1.2,attack:0.01,release:0.7,echo:0.4,pitch:[0.6,0.6],vibrato:[0,0.4,'Ease In'],tone:[1,0.6],level:[1,0.2],resonance:0.2}},
             {id:'win_rise', params:{waveType:3,duration:1.4,attack:0,release:0.6,echo:0.3,pitch:[0.5,0.72,'Steps'],tone:[0.9,1],level:[0.9,0.5]}},
             {id:'win_bell', params:{waveType:11,duration:1.3,attack:0,release:0.9,echo:0.45,pitch:[0.7,0.85,'Steps'],tone:[1,0.9],level:[1,0.1]}}],
         lose: [

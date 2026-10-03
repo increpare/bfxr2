@@ -23,7 +23,7 @@ class Clonkr extends PresetSynth {
 
     recipes = [
         {name:'Hit',id:'hit',verb:'hit',tip:'A hard, dry strike on wood or ceramic.',values:{material:[0,3],action:0,size:[0.2,0.55],hollowness:[0,0.25],hardness:[0.7,1],damping:[0.6,0.95],duration:[0.1,0.3]}},
-        {name:'Land',id:'land',verb:'land',tip:'A padded thud with a little body.',values:{material:[0,4],action:0,size:[0.5,0.9],hollowness:[0.3,0.8],hardness:[0.1,0.45],damping:[0.4,0.8],duration:[0.15,0.5]}},
+        {name:'Land',id:'land',verb:'land',tip:'A padded thud with a little body.',values:{material:[0,4],action:0,size:[0.55,0.95],hollowness:[0.3,0.8],hardness:[0.02,0.25],damping:[0.45,0.8],duration:[0.15,0.45]}},
         {name:'Coin',id:'coin',verb:'coin',tip:'A tiny bright ping of glass or metal.',values:{material:[1,2],action:0,size:[0.03,0.2],hollowness:[0,0.3],hardness:[0.8,1],damping:[0.25,0.55],duration:[0.2,0.45]}},
         {name:'Break',id:'break',verb:'break',tip:'A dry snap of wood or pottery into a few pieces.',values:{material:[0,3],action:2,size:[0.1,0.4],hollowness:[0,0.2],hardness:[0.8,1],damping:[0.75,1],duration:[0.12,0.3]}},
         {name:'Door',id:'door',verb:'door',tip:'A door: a wooden slam, an iron gate scrape, a hollow knock or a stone slab.',values:{},variants:[
