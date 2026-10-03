@@ -51,6 +51,17 @@ def test_gallery_audio_and_source_provenance_identity(tmp_path):
     assert not (tmp_path/'changed').exists()
 
 
+def test_gallery_can_explain_a_new_experiment_without_raw_html(tmp_path):
+    _,report,_,records,_=fixture(tmp_path)
+    export_coverage(report,records,{'galleryTitle':'Large run <v4>',
+                                  'galleryIntro':['Rate the gesture & feel.','<script>not code</script>']})
+    page=(report/'index.html').read_text()
+    assert '<h1>Large run &lt;v4&gt;</h1>' in page
+    assert '<p>Rate the gesture &amp; feel.</p>' in page
+    assert '<p>&lt;script&gt;not code&lt;/script&gt;</p>' in page
+    assert 'A small development diagnostic' not in page
+
+
 def test_archives_exact_pcm_raw_feedback_full_parameters_and_idempotency(tmp_path):
     raw,report,wave,_,model = fixture(tmp_path)
     out=tmp_path/'archive'

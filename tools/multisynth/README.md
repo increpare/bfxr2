@@ -176,3 +176,12 @@ Its completed human pass found useful game sounds but no likeness improvement:
 automatic selections scored 1.67/5 against rerated baselines at 2.67/5. All 48
 ratings and exact audio are retained. Seven usefulness-4 presets are saved in
 `presets/coverage-v3-useful.bcol`; see the verdict in `COVERAGE_V3.md`.
+
+## Large reproduction iteration (v4)
+
+[BIG_V4.md](BIG_V4.md) documents retraining on all three retained sessions and
+a 36-reference listening experiment over 25,728 candidate examples, including
+the frozen Soundboard catalogue. The learned metric has not beaten auditory-v1
+on grouped validation; both select from the expanded shared search pool.
+[PERCEPTUAL_RESEARCH.md](PERCEPTUAL_RESEARCH.md) records the psychoacoustic
+literature, its limits, and concrete next feature benchmarks.

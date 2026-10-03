@@ -1,0 +1,876 @@
+{
+  "verifiedTargets": 36,
+  "verifiedCandidates": 103,
+  "rejectedProposals": 3,
+  "rejections": [
+    {
+      "folder": "021",
+      "failures": 2
+    },
+    {
+      "folder": "021",
+      "failures": 1
+    }
+  ],
+  "checks": [
+    {
+      "folder": "001",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "8ab1461680c0ba4bae214cc842aaa3d8d1428f1c02168fad88a6a238856b70c4",
+      "exactReplay": true
+    },
+    {
+      "folder": "001",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Riftr",
+      "sha256": "8bc6c7eb8ee2bc1202fa6ad25dd2e26879cba850d4a695e6f1fa347f8ed999ea",
+      "exactReplay": true
+    },
+    {
+      "folder": "002",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Riftr",
+      "sha256": "0a82c0264af66b4f58a9b013dde3a4da15c2e22b1898825b505388f23c25a30c",
+      "exactReplay": true
+    },
+    {
+      "folder": "002",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Soundboard",
+      "sha256": "0eb8575564f729f4887713a82d1e70b306ecabab66f6d17ac330af92a3d6f603",
+      "exactReplay": true
+    },
+    {
+      "folder": "002",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Riftr",
+      "sha256": "1740d5cc3b3dcfb899d5fefe5a5020d67594d443d4c9a9e692122cc3f11ff66c",
+      "exactReplay": true
+    },
+    {
+      "folder": "003",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Clonkr",
+      "sha256": "eec270dec2edec7222700570659980765b455a378eb40eef34001d3308226421",
+      "exactReplay": true
+    },
+    {
+      "folder": "003",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Clonkr",
+      "sha256": "b8fdd0f1c8004f5bd0494389449c8d4480bc6c610596970133214141f952bb82",
+      "exactReplay": true
+    },
+    {
+      "folder": "003",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Bouncr",
+      "sha256": "2af3ad5e7015a82ed1255ffa960a08461b72fd3d0b6ab6d13d5ca4e27ca7dc1e",
+      "exactReplay": true
+    },
+    {
+      "folder": "004",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "b186e1e6435161dfb5642b3f73159f49557399ca64adb2aed41a7e23ec1879a9",
+      "exactReplay": true
+    },
+    {
+      "folder": "004",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Soundboard",
+      "sha256": "aac17a44d7e6cf9bac70e3a65a37401cb159512ab392389be83da69f7f729d60",
+      "exactReplay": true
+    },
+    {
+      "folder": "004",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Signlr",
+      "sha256": "3f4202669df5eeca17354ee7af61811344a86ff6d160a8648b54be21fdccd0d4",
+      "exactReplay": true
+    },
+    {
+      "folder": "005",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "8f534888d503d3ce90c793b63b25133e76dcfde12ac741ca152fd5f19074d9aa",
+      "exactReplay": true
+    },
+    {
+      "folder": "005",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Soundboard",
+      "sha256": "47fffb224f7e15a0240aa6c17c9b35756faaf5bb586366716548d734939ab32b",
+      "exactReplay": true
+    },
+    {
+      "folder": "005",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Bfxr",
+      "sha256": "6fda5575fae489a6b1f99f72faf233c5331e4a008f2d86d6f1a0151a78a9efb0",
+      "exactReplay": true
+    },
+    {
+      "folder": "006",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Transfxr",
+      "sha256": "c2a2bba3f69479dba3ce61b0df56afe04d7bdb7872626dff1cecb5c448f35efa",
+      "exactReplay": true
+    },
+    {
+      "folder": "006",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Boomr",
+      "sha256": "e4281407e5d868bc6513a2ff4dd46a53021addd5ea769f5184d6711984721828",
+      "exactReplay": true
+    },
+    {
+      "folder": "007",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Swarmr",
+      "sha256": "a398aca497b03fccc282e2fdadf80f4693e038bc30354a985240cb4f9c6d2dd9",
+      "exactReplay": true
+    },
+    {
+      "folder": "007",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Swarmr",
+      "sha256": "47914a0acaaf41f1815d15f955146e20cf8d2f4a268643352c4be2fb8010f91c",
+      "exactReplay": true
+    },
+    {
+      "folder": "007",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Swarmr",
+      "sha256": "8e3fe37b29dcb626b42384a08017ff9be07495f06a6f936317852eb23539f748",
+      "exactReplay": true
+    },
+    {
+      "folder": "008",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "086ce40c0c2662b5c7ca2ebc13b45b2eb737111ee63869fc4a8e3dc45ab97711",
+      "exactReplay": true
+    },
+    {
+      "folder": "008",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Soundboard",
+      "sha256": "54f256637080d79dcfdee592a96d8078a0c40fbac5cc56b272ce65bcfa688e27",
+      "exactReplay": true
+    },
+    {
+      "folder": "008",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Squishr",
+      "sha256": "626f299aad7c6e6511db9e0bcb026b911663308d4680b602a52e1467255fdf08",
+      "exactReplay": true
+    },
+    {
+      "folder": "009",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Transfxr",
+      "sha256": "571bdb12d51a307dd929a983673e9f672fb3f840d30e82709cdb98dbe99397d0",
+      "exactReplay": true
+    },
+    {
+      "folder": "009",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Transfxr",
+      "sha256": "7763ea9664643aa8ff93c0ee268d40ae3b8a87b76b6638cc8c08c9ffa9d5923e",
+      "exactReplay": true
+    },
+    {
+      "folder": "009",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Transfxr",
+      "sha256": "5ce260f0e25d3dda6a57e435e313914d22f6bfe4278fe26f504cd94f0ff202cd",
+      "exactReplay": true
+    },
+    {
+      "folder": "010",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Bfxr",
+      "sha256": "885562eb1ecab9109687666103aaa3326c7070ba765476209938c8f09e9d18cf",
+      "exactReplay": true
+    },
+    {
+      "folder": "010",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Transfxr",
+      "sha256": "e5008f9602c69ac7300a55297dc27ea7c5f70833839a96c05e0e3e229e8ac765",
+      "exactReplay": true
+    },
+    {
+      "folder": "011",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Bfxr",
+      "sha256": "23d983fc36ac196a516c96a7e3dc3e44a656d38817508664caff0d3961d1f990",
+      "exactReplay": true
+    },
+    {
+      "folder": "011",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Bfxr",
+      "sha256": "bde5ad9452939c810ad6898fceb962096b2354e4386a6a4fd1c31bd94e878280",
+      "exactReplay": true
+    },
+    {
+      "folder": "011",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Bfxr",
+      "sha256": "48e0b2fdaa930c3028a97dafc91a801c81c99d75a2c9e5cca51a766d95963288",
+      "exactReplay": true
+    },
+    {
+      "folder": "012",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "df9ad6d5cf4b8d64fdeaea90b6f1075b2ef52c04043162141515daa2ec1a31d0",
+      "exactReplay": true
+    },
+    {
+      "folder": "012",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Soundboard",
+      "sha256": "69b3f01f070e1342b677258c2013d2bd9e1530291db2d07b0e284888692c7166",
+      "exactReplay": true
+    },
+    {
+      "folder": "012",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Fractr",
+      "sha256": "f41d5bb7aa8eafe6fcb53f75b3dd270652de2cb2e19519655960d67779dc7a53",
+      "exactReplay": true
+    },
+    {
+      "folder": "013",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "3b90430557c0156d657b4dc459882517ea032c2e11ca87308eee8549e9b1de0a",
+      "exactReplay": true
+    },
+    {
+      "folder": "013",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Soundboard",
+      "sha256": "d547eb5d719de62e56ab3d38efc11df10da12a0c5ca9a1bbf916b3433c6d2f80",
+      "exactReplay": true
+    },
+    {
+      "folder": "013",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Squishr",
+      "sha256": "d384329f19ea1b501e66f21519f1908feee6623c798a9b2199a2603b6b4a0551",
+      "exactReplay": true
+    },
+    {
+      "folder": "014",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Jinglr",
+      "sha256": "4c19505746c54a3ccd819a97db9e8b076e8f429cc9b9c1ceec3d39f6f3abe715",
+      "exactReplay": true
+    },
+    {
+      "folder": "014",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Clonkr",
+      "sha256": "f70a890b6521dea291511c8060745314a94e347c3402093875088c1b07c93fa2",
+      "exactReplay": true
+    },
+    {
+      "folder": "014",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Bouncr",
+      "sha256": "c418d1d3492491a27781862827b2d52135392ab28f38df084c4105d25764c358",
+      "exactReplay": true
+    },
+    {
+      "folder": "015",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Riftr",
+      "sha256": "41d50f2571e788f1d9e3b538f478e375e22ed01ddcc047d450cb0f80377a9cf5",
+      "exactReplay": true
+    },
+    {
+      "folder": "015",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Riftr",
+      "sha256": "be90c74561542fb0d473e332a680d8610e9cede29bef672099b4720f0772ca61",
+      "exactReplay": true
+    },
+    {
+      "folder": "015",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Riftr",
+      "sha256": "2c9a7232bb57bf000978fbcb91d27e0cee311130cad144d3b3272ad2fdd3c739",
+      "exactReplay": true
+    },
+    {
+      "folder": "016",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Rustlr",
+      "sha256": "0490ea2c4ca8322783eff74cd7e08b78acc91f9e51602fd3c1c4c6313c9a2b65",
+      "exactReplay": true
+    },
+    {
+      "folder": "016",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Rustlr",
+      "sha256": "653946bd42a6c8098f16b1cf4c3fa7c6789068d1a569858fcc3d86cbdec49995",
+      "exactReplay": true
+    },
+    {
+      "folder": "016",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Rustlr",
+      "sha256": "762b0841fb9d5798e70787b624957bb148b8a071dcf83f3a605f2bbfb3bdf792",
+      "exactReplay": true
+    },
+    {
+      "folder": "017",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "30b68bc62ae272d07941a4c38ca221a7333e659de7ffd1f75d58fb7873f35f6c",
+      "exactReplay": true
+    },
+    {
+      "folder": "017",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Soundboard",
+      "sha256": "21812fac04895154d841ccb17530268a935f20b2654a29cdb69089f0682f28b1",
+      "exactReplay": true
+    },
+    {
+      "folder": "017",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Whooshr",
+      "sha256": "4daf9a9549117dd42de1d9e7ee3a6eeb855b641654b5382270909448e619b0e6",
+      "exactReplay": true
+    },
+    {
+      "folder": "018",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "0a1e9695c8fc29c409a80ec4e8258ee62ca903afb7ad51c2f630e8ef278f5b0c",
+      "exactReplay": true
+    },
+    {
+      "folder": "018",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Soundboard",
+      "sha256": "f74c8bcecc28c35af81c1e83456aac7843ff118a0aca6a958b6e6bc857f64779",
+      "exactReplay": true
+    },
+    {
+      "folder": "018",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Transfxr",
+      "sha256": "0baba01a144d906794d85e36d634639a5daa8dc1eaf58a0f97a2a6f7ba36ddb3",
+      "exactReplay": true
+    },
+    {
+      "folder": "019",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "2685e0fa74e40d90d7e5742ff252da4f982b614a32e6c4c2e814b0b5f8af0fc9",
+      "exactReplay": true
+    },
+    {
+      "folder": "019",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Signlr",
+      "sha256": "9fc922881ccb8c5a3504f29d2f0c5148d56682e6fbc9d54804e215d210009f06",
+      "exactReplay": true
+    },
+    {
+      "folder": "019",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Machinr",
+      "sha256": "308ff31906466e4172f82047f8cc4858e57ef5b13ca9b04911d20e43c64b08e7",
+      "exactReplay": true
+    },
+    {
+      "folder": "020",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "0f7415f0f344ea3409bd3edd9a08c6b92649635612e4ecde701595202de7e774",
+      "exactReplay": true
+    },
+    {
+      "folder": "020",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Pluckr",
+      "sha256": "3ddcd5acba24addaec9d8be090f523bdcc565f72f0234d5b50968021b2dc21f3",
+      "exactReplay": true
+    },
+    {
+      "folder": "020",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Transfxr",
+      "sha256": "26948a9f227f578f5c4e599d535db21aa879a4899df5fdab1c525550606ae2a8",
+      "exactReplay": true
+    },
+    {
+      "folder": "021",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "911901b980de6d95c9180833a5aa23f1865cb35f2139f7aebeb8c808deded73c",
+      "exactReplay": true
+    },
+    {
+      "folder": "021",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Soundboard",
+      "sha256": "d1c2f6a7c908acc3134f5db752e19b8b11d0b49febffa5057e084bbe81f9dfbd",
+      "exactReplay": true
+    },
+    {
+      "folder": "021",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Boomr",
+      "sha256": "73268e48b40c9200f3aa291a9b8e25f80fde79d8a2e5efa08bbbf68b15bbf205",
+      "exactReplay": true
+    },
+    {
+      "folder": "022",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "0249c910765a6332f78cd848878208a0c08f2cbf5285caf1ce63c31dab663f7c",
+      "exactReplay": true
+    },
+    {
+      "folder": "022",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Boomr",
+      "sha256": "05c438721c585beeb28d6f0b66336b0501464b48c2e17999e248f23fc658dba8",
+      "exactReplay": true
+    },
+    {
+      "folder": "022",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Soundboard",
+      "sha256": "3d3480f07bec2bd34be72e57814be029b565cd9748b8ce2a947f36e17140b442",
+      "exactReplay": true
+    },
+    {
+      "folder": "023",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Bfxr",
+      "sha256": "04e70daaf28beaaf3aaba6ef9b67038609a4399cc04edca7901d608112b094f5",
+      "exactReplay": true
+    },
+    {
+      "folder": "023",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Bfxr",
+      "sha256": "8304ad83a57d46da345a3f2182b6e66e6936d07c189092d56b0758440303100c",
+      "exactReplay": true
+    },
+    {
+      "folder": "023",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Bfxr",
+      "sha256": "fb9e87576b959c746dd63c922cc0ae1734f4ff5fb2cb0934dfb6ee5646028012",
+      "exactReplay": true
+    },
+    {
+      "folder": "024",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "c531a38ea62da77ef1a4ba0346e1948f6324f35c323c718eebc267e9691c1171",
+      "exactReplay": true
+    },
+    {
+      "folder": "024",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Soundboard",
+      "sha256": "cdb0793f475f20e451c9b235375e229bc18ef3f0ca785a68d1da71d882a0cfc5",
+      "exactReplay": true
+    },
+    {
+      "folder": "024",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Bfxr",
+      "sha256": "c89c35f934e18d9795ae5c2721f319bbe540724f1b24eed8e8d953f95ce11b5a",
+      "exactReplay": true
+    },
+    {
+      "folder": "025",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Birdr",
+      "sha256": "60898589135708b72e18d8302e99b0c07512b9d1567a8296f28a1eb07eecc46d",
+      "exactReplay": true
+    },
+    {
+      "folder": "025",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Birdr",
+      "sha256": "1f92f8c881c3d5098247760751d4f789a742672e43c277807703f1d81c861c5e",
+      "exactReplay": true
+    },
+    {
+      "folder": "025",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Birdr",
+      "sha256": "a2298cf8e14d7575d061ec5c98883bc07fef4d0fb62afb277161e6c34fad8e99",
+      "exactReplay": true
+    },
+    {
+      "folder": "026",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Riftr",
+      "sha256": "bb5da7431f2c98f73b37b69b6971d82d0afd6b2e842c8001e5a2e4f87caea1be",
+      "exactReplay": true
+    },
+    {
+      "folder": "026",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Riftr",
+      "sha256": "264e6924d937a4ebd97e8957015aeee9aff6bd868748ae573c9f7df5a70922cf",
+      "exactReplay": true
+    },
+    {
+      "folder": "026",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Signlr",
+      "sha256": "af05ab9e5272c3484ab3d06eddf2678422b1cafcfac93ab3965dc88adfd806b9",
+      "exactReplay": true
+    },
+    {
+      "folder": "027",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "d186d5fb2e0e5ac1b122d60034587f314b42ab75ad8269843f8e51d522513bfe",
+      "exactReplay": true
+    },
+    {
+      "folder": "027",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Soundboard",
+      "sha256": "7c2656a817d804f7300157c138bab86dd539ce37ce2403516bad6a84792cc1c8",
+      "exactReplay": true
+    },
+    {
+      "folder": "027",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Transfxr",
+      "sha256": "fd8a66708c93f7ea67148dcf106c18881c99affdd6492c3a214a43bb0a025b69",
+      "exactReplay": true
+    },
+    {
+      "folder": "028",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "82498f5cde5fda0c3a21bfe23bf58b7f98a72ade04a2e576f201a4a84de93ae2",
+      "exactReplay": true
+    },
+    {
+      "folder": "028",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Clonkr",
+      "sha256": "e29f2d5f68a07231aef7df309d0828a4230a5aad77c01769028874da9cf91793",
+      "exactReplay": true
+    },
+    {
+      "folder": "028",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Clonkr",
+      "sha256": "57321f3c56e84bb21e26d9e7adffd115173df004604f0a0bb38ce3bd484f5cc0",
+      "exactReplay": true
+    },
+    {
+      "folder": "029",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "23c1981c4960260c26f614add0113c1a2772a0d8f366a3cd522369a7358ca22d",
+      "exactReplay": true
+    },
+    {
+      "folder": "029",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Signlr",
+      "sha256": "485a4c3f90960e157b07a91de233eddb33c281fd5b26b022ffd64b3226a54c4e",
+      "exactReplay": true
+    },
+    {
+      "folder": "029",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Bfxr",
+      "sha256": "575071fc0e8ce82576fd3678b873933a7b15b353244bdfd12e533406fb21a089",
+      "exactReplay": true
+    },
+    {
+      "folder": "030",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "bc1d57654d76455ec61a30917f22fd041e1f248060a3aedddc28b9c85551e903",
+      "exactReplay": true
+    },
+    {
+      "folder": "030",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Transfxr",
+      "sha256": "eda96e01d35ca537bca63fa44ab7b477fd7f16024213d50f758021ab0e734af0",
+      "exactReplay": true
+    },
+    {
+      "folder": "031",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Boomr",
+      "sha256": "83925675941ccdf1a45fc4ad620f4a35a078fd112d7e82344621ed75a6b3b678",
+      "exactReplay": true
+    },
+    {
+      "folder": "031",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Boomr",
+      "sha256": "73b7d40272415e54a0c79656df738d71ac2d1e5051de49eaea258cc6b75326a6",
+      "exactReplay": true
+    },
+    {
+      "folder": "031",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Boomr",
+      "sha256": "88f1c39b6ddabdf13d9dc27804b3864b883a7585f12b3e120a2ede1dd531eae6",
+      "exactReplay": true
+    },
+    {
+      "folder": "032",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Signlr",
+      "sha256": "e82f00bcd678bb7bbd619c34f305957a7f1196bd9ab0fb51fe5a3141f1ce1aab",
+      "exactReplay": true
+    },
+    {
+      "folder": "032",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Signlr",
+      "sha256": "03d1e733672877dbcac568b5018bfd7292edaffe0d8ffa355b5a85817c023171",
+      "exactReplay": true
+    },
+    {
+      "folder": "032",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Bfxr",
+      "sha256": "76ed2e5c372ee24855f233b91956e0835f619ca5755e53f3f8178251c30f5280",
+      "exactReplay": true
+    },
+    {
+      "folder": "033",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Boomr",
+      "sha256": "31d3a498903a32bae125c700bb6012945a19d1e6397e96ba54f0438c29171944",
+      "exactReplay": true
+    },
+    {
+      "folder": "033",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Soundboard",
+      "sha256": "58aef3d81e6df3925b9653840b5d32e0e6867d565f2c5c23c90e9805dff80a6f",
+      "exactReplay": true
+    },
+    {
+      "folder": "033",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Boomr",
+      "sha256": "5addb6d8e389addfa73dfd7fcec11ebf58e359ec4af818eb05e1877d01778eaa",
+      "exactReplay": true
+    },
+    {
+      "folder": "034",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Transfxr",
+      "sha256": "2c38202f1af23da4559e300f8ad16a32f00079a56372dfff3448011577da1482",
+      "exactReplay": true
+    },
+    {
+      "folder": "034",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Bfxr",
+      "sha256": "a291072bb26c6ebbfa84134d9d9840809e51e9a843611e11805ca19ee9ad8f76",
+      "exactReplay": true
+    },
+    {
+      "folder": "035",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Soundboard",
+      "sha256": "f29532e284a215eb1591685f9b660263545d2896a9b53ae8c0006b4a4e4b1fe0",
+      "exactReplay": true
+    },
+    {
+      "folder": "035",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Soundboard",
+      "sha256": "ee069b50001fe22617d77f4d4531b36498e867ebfaa55654eac9d945d16dc7b9",
+      "exactReplay": true
+    },
+    {
+      "folder": "035",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Squishr",
+      "sha256": "63b35841725193114b20f7abc4deaf62934e36f8c7bf16b6ecd0c10739e6d73b",
+      "exactReplay": true
+    },
+    {
+      "folder": "036",
+      "role": "learned",
+      "file": "learned.wav",
+      "synth": "Riftr",
+      "sha256": "636fdda4357d7471d3f9611e31704a98e740afd46d87c167ead740e79230ceb7",
+      "exactReplay": true
+    },
+    {
+      "folder": "036",
+      "role": "auditory",
+      "file": "auditory.wav",
+      "synth": "Boomr",
+      "sha256": "e9eac461c49ed2393fcd493fa9c5a64f1f1b9c080cc95294ed0d7f3688266a11",
+      "exactReplay": true
+    },
+    {
+      "folder": "036",
+      "role": "baseline",
+      "file": "baseline.wav",
+      "synth": "Boomr",
+      "sha256": "121c8afe0f93549427c7b4dbfdf73e334213a4cc48022793c7ff14ecece0353a",
+      "exactReplay": true
+    }
+  ],
+  "experimentId": "140d89d3331adb085c93a93a2bd2e72943145c89329088d0ebcf14b3827ee8f2",
+  "resultsSha256": "a3f17c3842107fdd4f561a1dc0190c6f4d1fce1c70ebe9ae688d10b3e48708bd",
+  "pythonTestsPassed": 56,
+  "javascriptTestsPassed": 12,
+  "browserChecks": {
+    "independentRatings": true,
+    "reloadPersistence": true,
+    "exportJsonRoundTrip": true,
+    "copyButtonReportedSuccess": true,
+    "testRatingsCleared": true,
+    "referencePlaybackReadyState": 4
+  },
+  "modelAndSearchFingerprintsVerified": true,
+  "dependencyHashes": {
+    "tools/match/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tools/match/alt_metrics.py": "3fb79bb4832a126909cf9b260ce75229fa9d9352dca006c892ae684a73f64942",
+    "tools/match/audio.py": "90bd5aa0dd1e885f0cdd1057e2a0d9c06c25bcf7584e8e7ab92fd5edeb14fa52",
+    "tools/match/batch.py": "3ea21d7ee8145197f5b7183fd911eb41aa2a6c09ab4ebd62206dc14d324fc829",
+    "tools/match/bfxr_io.py": "80777afd6d211dc5862e7827b536acd91733e9145fe4ab2cef4133c6c4c34f8e",
+    "tools/match/features.py": "dc8d2c049f9940215387d2f2500cfa0dbdd2a5b27e07eced41f16fc69cba6859",
+    "tools/match/headroom.py": "42756fb86e95559b70b61da5693c28f241ad75fbe24915e9aecda987cdabd910",
+    "tools/match/length_report.py": "f295404ba1054b50fa1c87ef9ea62b1a7d7476cb4fd30bb78276d7d223454b20",
+    "tools/match/listen_compare.py": "e45f0f0651902ec1d8df2ab9ffd13cbeaacc300140019ef46d456a327d649909",
+    "tools/match/listen_refine_compare.py": "e2cd3d3a4bc833e61dbe886317482d9c35c453fc48d6ebe5ce5ae06c8745d558",
+    "tools/match/match.py": "dfbd46019a6bf9dee378de53d0117a4164cc427a6db64cb20e3e6b38f064fc34",
+    "tools/match/metric_bakeoff.py": "5c97c728c9cc41241b8b657b9e0db1e4138fc1a5f21ec5ac218e111790c92de1",
+    "tools/match/notes.py": "78a7e09b0a5e07f09432a5302646d18344fcb1ad39ebc66d8de01b0f0c4ccf89",
+    "tools/match/objective.py": "ea3768c5ff641f68e398a7a39f902345f5f3a1a69277b66f8df556f7eeb2278e",
+    "tools/match/optimizer.py": "427c729e7605da863bfdda41b338edf19b3b6ee14e53e846d6a61156c81b8972",
+    "tools/match/refine.py": "9141097014c65adebd12971a75e4f23423f95e53197a57dd2381bd2d8283978f",
+    "tools/match/renderer.py": "c389dba1354cdccac284ee1b34831b5e17e03b4225474aebdde10041bfb37609",
+    "tools/match/report.py": "95f6353b5844a9eadf6707dca3b7e869c78d27b58b76191a0cb55304ad8fcfa2",
+    "tools/match/structure.py": "1fef062dcd488b6a2f52c0fcdb03921296770972235253fe7a2b876e183d5aa2",
+    "tools/match/structure_probes.py": "79c397de858075ce69c9150589443cf8885ef491a495ce3f75ea16ac929a51df"
+  }
+}

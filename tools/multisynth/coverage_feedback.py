@@ -106,6 +106,12 @@ def export_coverage(output, records, metadata):
 <p>A small development diagnostic on references already reviewed, not an unseen test or evidence of a quality win.</p>
 <p><b>Automatic match</b> searches the whole candidate library using global audio matching, without category tags. <b>Category-guided diagnostic</b> explicitly uses the reference category to explore coverage. <b>Best previously rated reference</b> replays a prior candidate chosen using existing human likeness ratings. A structurally different alternative may also be included.</p>
 <p>Rate each sound independently: <b>Likeness to reference</b> (1 = far off, 5 = very close) and <b>Useful/fun game sound</b> (1 = not useful, 5 = very useful or fun). Either rating may be left blank. A useful sound can be a poor recreation.</p></header>'''
+    if metadata.get('galleryIntro'):
+        title = esc(metadata.get('galleryTitle','Which recreations work?'))
+        intro = ''.join('<p>'+esc(paragraph)+'</p>' for paragraph in metadata['galleryIntro'])
+        header_start = page.index('<header>')
+        page = page[:header_start]+'<header><h1>'+title+'</h1>'+intro+'</header>'
+        page = page.replace('<title>Which recreations work?</title>','<title>'+title+'</title>')
     if metadata.get('collectionUrl'):
         page += '<p>'+_local_link(metadata['collectionUrl'], 'Download new Soundboard choices')+'</p>'
     page += ''.join(sections)
