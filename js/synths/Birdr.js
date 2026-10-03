@@ -22,6 +22,8 @@ class Birdr extends PresetSynth {
         ['Phrase','Pitch and articulation changes across the phrase.','variation',0.25,0,1]
     ];
     recipes = [
+        {name:'Confirm',id:'confirm',verb:'confirm',tip:'One bright rising chirp.',values:{voice:0,duration:[0.15,0.3],pitch:[0.6,0.8],syllables:1,gap:[0.08,0.2],sweep:[0.2,0.7],arch:[0.2,0.7],trill:[0,0.1],duet:[0,0.05],rasp:[0,0.03],breath:[0,0.05]}},
+        {name:'Alert',id:'alert',verb:'alert',tip:'A harsh squawk of warning.',values:{voice:[2,3],duration:[0.3,0.7],pitch:[0.3,0.55],syllables:[2,3],gap:[0.2,0.4],sweep:[-0.5,0.2],arch:[0.3,0.8],trill:[0.1,0.4],duet:[0.1,0.4],rasp:[0.35,0.7],breath:[0.1,0.25]}},
         {name:'Chirp',id:'chirp',tip:'One quick, bright call.',values:{voice:0,duration:[0.15,0.32],pitch:[0.57,0.78],syllables:1,gap:[0.08,0.2],sweep:[-0.75,0.65],arch:[0.25,0.9],trill:[0,0.1],duet:[0,0.08],rasp:[0,0.05],breath:[0.01,0.06]}},
         {name:'Sparrow',id:'sparrow',tip:'A handful of short, chattering chirps.',values:{voice:1,duration:[0.45,1],pitch:[0.6,0.77],syllables:[3,6],gap:[0.35,0.58],sweep:[-0.6,-0.1],arch:[0.3,0.8],trill:[0.05,0.2],duet:[0.1,0.3],rasp:[0.08,0.25],rhythm:[0.25,0.6],variation:[0.1,0.35]}},
         {name:'Songbird',id:'songbird',tip:'A lilting phrase with a repeated contour.',values:{voice:0,duration:[0.7,1.5],pitch:[0.45,0.67],syllables:[3,6],gap:[0.2,0.4],sweep:[-0.2,0.45],arch:[0.35,0.8],trill:[0.1,0.35],trill_rate:[0.15,0.5],duet:[0.02,0.17],variation:[0.4,0.8],rhythm:[0.15,0.45]}},

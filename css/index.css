@@ -995,3 +995,20 @@ img {
 .speech-words { flex: 1; min-width: 0; }
 
 .morph-curve { width: 100%; padding: 0 5px 8px; }
+
+/* Soundboard */
+#tab_page_Soundboard .centre_header { flex-shrink: 0; max-height: none; }
+.board-editor { padding: 10px 12px 12px; font-size: 13px; }
+.board-intro { margin: 0 0 10px; font-size: 12px; opacity: 0.85; }
+.board-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; align-items: stretch; }
+.board-row-label { grid-column: 1 / -1; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; padding: 6px 2px 0; }
+.board-row-label:first-child { padding-top: 0; }
+.board-grid button.board-verb { position: relative; padding: 12px 2px 15px; font-size: 13px; font-weight: bold; min-width: 0; overflow: hidden; }
+.board-grid button.board-verb .board-key { position: absolute; right: 5px; bottom: 3px; font-size: 9px; font-weight: normal; opacity: 0.55; }
+.board-grid button.board-verb.board-active { outline: 2px solid var(--panel-border-color); background-color: var(--button-pressed-background-color); }
+.board-card { margin-top: 12px; padding: 10px 12px; border: var(--panel-border-thickness) solid var(--panel-border-color); border-radius: var(--ui-margin); }
+.board-description { font-weight: bold; margin-bottom: 8px; min-height: 1.3em; }
+.board-actions, .board-opens { display: flex; flex-wrap: wrap; gap: 6px; }
+.board-opens { margin-top: 8px; }
+.board-card button { padding: 6px 10px; }
+.board-card button.board-pinned { background-color: var(--button-pressed-background-color); }

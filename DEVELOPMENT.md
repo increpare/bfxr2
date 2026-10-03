@@ -29,3 +29,7 @@ So ok once you've save the .bcol files in the folder, you need to run ```node in
 If you wish to weight a variety so it appears more often than others, just put a number at the start (multiple digits allowed, e.g. "22coin" will appear ten times more often than "2coin").
 
 (There are some hard-coded tempaltes, i.e. Randomize and Mutate - but any ones defined in ./templates  will overwrite existing ones - e.g. pickup_coin.bcol will override any existing generate_pickup_coin method in Bfxr.js)
+
+## Game verbs and the Soundboard
+
+`GAME_VERBS` in `js/globals.js` is the shared vocabulary. A `PresetSynth` recipe with a `verb` field becomes a verb preset: it is sorted before the engine's character presets, its button reads as the verb's name, and `synth.verb_generator('jump')` finds it. `Mixr.resolve_reference('Whooshr:jump')` (or `'Whooshr:generate_dodge'`) turns a reference into a generator, which is how the Soundboard catalogue in `js/synths/Soundboard.js` names its ingredients. Each catalogue entry is a solo `src` or a `mix` of base and sweetener with `balance`, `align` (0 start, 1 peak, 2 tail) and a weight `w`. Run `node tools/render/verb_inventory.js` after changing presets or the catalogue; `tests/soundboard.test.js` enforces that every ingredient resolves and renders inside its verb's duration class.

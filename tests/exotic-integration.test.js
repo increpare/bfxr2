@@ -47,12 +47,12 @@ test('navigation prunes redundant engines while retaining legacy renderers', () 
     api.load('js/SaveLoad.js');
     api.run(`var window={}; var document={addEventListener(){}}; var tabs=[];
         class Tab {constructor(synth){this.synth=synth; tabs.push(this);} set_active_tab(){}}
-        var previous=['Mixr','Bfxr','Footsteppr','Transfxr','Chattr','Clonkr','Machinr','Weathr','Jinglr','Squishr','Stackr'];
+        var previous=['Soundboard','Mixr','Bfxr','Footsteppr','Transfxr','Chattr','Clonkr','Machinr','Weathr','Jinglr','Squishr','Stackr'];
         previous.forEach(name=>globalThis[name]=class {constructor(){this.name=name;}});`);
     api.load('js/index.js');
     const names = plain(api.run('register_tabs(); tabs.map(tab=>tab.synth.name)'));
     assert.deepEqual(names, [
-        'Bfxr','Footsteppr','Mixr','Transfxr',
+        'Soundboard','Bfxr','Footsteppr','Mixr','Transfxr',
         'Jinglr','Pluckr','Choirr',
         'Crittr','Birdr','Swarmr',
         'Clonkr','Bouncr','Fractr','Boomr','Rustlr','Squishr',
@@ -60,7 +60,7 @@ test('navigation prunes redundant engines while retaining legacy renderers', () 
     ]);
     const labels = plain(api.run('tabs.map(tab=>tab.synth.display_name || tab.synth.name)'));
     assert.deepEqual(labels, [
-        'Bfxr','Footsteppr','Mixfxr','Transfxr',
+        'Soundboard','Bfxr','Footsteppr','Mixfxr','Transfxr',
         'Jingles','Plucked','Choir',
         'Beasts','Bird','Swarms',
         'Tangs','Bonks','Cracker','Boomer','Rustler','Squishy',

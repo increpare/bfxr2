@@ -19,6 +19,11 @@ class Signlr extends PresetSynth {
         ['Echo','Delayed copies bouncing back from the channel.','echo',0.15,0,1]
     ];
     recipes = [
+        {name:'Blip',id:'blip',verb:'blip',tip:'One tiny radar return.',values:{encoding:4,duration:[.1,.3],carrier:[.5,.8],deviation:[.05,.3],packets:1,gap:[.5,.8],drift:0,interference:0,corruption:0,echo:[0,.15]}},
+        {name:'Alert',id:'alert',verb:'alert',tip:'Urgent repeated markers.',values:{encoding:[0,4],duration:[.4,1],carrier:[.5,.75],deviation:[.1,.35],symbols:[.05,.25],packets:[2,4],gap:[.3,.6],drift:[0,.3],corruption:0,interference:[0,.15],echo:[0,.2]}},
+        {name:'Confirm',id:'confirm',verb:'confirm',tip:'A friendly terminal accepting input.',values:{encoding:0,duration:[.2,.5],carrier:[.5,.7],deviation:[.15,.4],symbols:[.2,.45],packets:[1,3],gap:[.1,.3],drift:[.15,.5],corruption:0,interference:0,echo:[0,.15]}},
+        {name:'Unlock',id:'unlock',verb:'unlock',tip:'A dense packet decoding into the clear.',values:{encoding:[0,1],duration:[.4,1],carrier:[.5,.8],deviation:[.4,.9],symbols:[.4,.9],packets:[2,4],gap:[.1,.3],drift:[.1,.4],corruption:0,interference:0,echo:[.05,.25]}},
+        {name:'Warp',id:'warp',verb:'warp',tip:'Swept sonar pulses sliding out of tune.',values:{encoding:2,duration:[.5,1.4],carrier:[.4,.75],deviation:[.4,.9],symbols:[.1,.3],packets:[1,3],gap:[.1,.4],drift:[-.6,.6],corruption:[0,.1],interference:0,echo:[.3,.7]}},
         {name:'Radar Blip',id:'radar_blip',tip:'One clear return on the scanner.',values:{encoding:4,duration:[.3,.8],carrier:[.45,.7],deviation:[.04,.3],packets:1,gap:[.5,.8],drift:0,interference:0,corruption:0,echo:[.08,.3]}},
         {name:'Target Lock',id:'target_lock',tip:'A bright pair of markers, closing in.',values:{encoding:4,duration:[.5,.9],carrier:[.6,.85],deviation:[.15,.45],packets:2,gap:[.65,.82],drift:[.2,.6],interference:0,corruption:0,echo:[.05,.2]}},
         {name:'Derelict Beacon',id:'derelict_beacon',tip:'A tired navigation beacon still repeating its code.',values:{encoding:0,duration:[1.4,3.2],carrier:[0.22,0.45],deviation:[0.06,0.2],symbols:[0.02,0.15],packets:[2,4],gap:[0.4,0.7],drift:[-0.22,-0.04],corruption:[0.05,0.18],interference:[0.04,0.2],echo:[0.35,0.65]}},

@@ -19,6 +19,10 @@ class Machinr extends PresetSynth {
         ['Stop Time','Seconds spent slowing down and stopping.','stopTime',0.16,0,2]
     ];
     recipes = [
+        {name:'Door',id:'door',verb:'door',tip:'A hinge, a sliding body and a latch.',values:{mechanism:7,duration:[0.5,1.6],speed:[0.2,0.6],load:[0.4,0.9],roughness:[0.3,0.8],looseness:[0.2,0.7],size:[0.5,1],startTime:[0.05,0.3],stopTime:[0.03,0.15]}},
+        {name:'Whirr',id:'whirr',verb:'whirr',tip:'A little motor, servo or toy running briefly.',values:{mechanism:[0,5,6],duration:[0.4,1.6],speed:[0.5,1],load:[0.05,0.4],roughness:[0.02,0.3],looseness:[0.02,0.4],size:[0.03,0.45],startTime:[0.02,0.2],stopTime:[0.05,0.4]}},
+        {name:'Unlock',id:'unlock',verb:'unlock',tip:'A quick latch and clockwork release.',values:{mechanism:[2,3],duration:[0.3,0.9],speed:[0.5,1],load:[0.05,0.35],roughness:[0,0.2],looseness:[0.1,0.5],size:[0.1,0.45],startTime:[0,0.01],stopTime:[0.02,0.1]}},
+        {name:'Confirm',id:'confirm',verb:'confirm',tip:'A crisp shutter click.',values:{mechanism:2,duration:[0.12,0.3],speed:[0.7,1],load:[0.05,0.3],roughness:[0,0.1],looseness:[0.05,0.3],size:[0.1,0.35],startTime:[0,0.004],stopTime:[0.02,0.06]}},
         {name:'Tiny Motor',id:'tiny_motor',tip:'A fresh little electric motor spinning up.',values:{mechanism:0,duration:[0.6,1.8],speed:[0.65,0.95],load:[0.05,0.3],roughness:[0.02,0.2],looseness:[0.02,0.2],size:[0.03,0.25],startTime:[0.03,0.2],stopTime:[0.08,0.35]}},
         {name:'Rusty Winch',id:'rusty_winch',tip:'Slow, strained gears with a different creak each time.',values:{mechanism:1,duration:[1.4,3.7],speed:[0.12,0.4],load:[0.65,1],roughness:[0.6,0.95],looseness:[0.55,0.95],size:[0.55,0.9],startTime:[0.12,0.4],stopTime:[0.1,0.4]}},
         {name:'Camera Shutter',id:'camera_shutter',tip:'A quick spring release, double click and winding tail.',values:{mechanism:2,duration:[0.16,0.42],speed:[0.65,1],load:[0.05,0.35],roughness:[0.02,0.15],looseness:[0.1,0.4],size:[0.12,0.4],startTime:[0,0.004],stopTime:[0.02,0.07]}},

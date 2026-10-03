@@ -11,6 +11,12 @@ class Bfxr extends SynthBase {
 
     header_properties = ["waveType"];
 
+    // Bfxr's classic presets already are game verbs.
+    verb_generators = {coin:'generate_pickup_coin', shoot:'generate_laser_shoot', explode:'generate_explosion',
+        powerup:'generate_powerup', hit:'generate_hit_hurt', hurt:'generate_hit_hurt', jump:'generate_jump', blip:'generate_blip_select'};
+    verb_generator(verb) { return this.verb_generators[verb] || null; }
+    verbs() { return Object.keys(this.verb_generators); }
+
     permalocked = ["masterVolume"];
     hide_params = ["masterVolume"];
 

@@ -10,7 +10,7 @@ test('swarm snapshots render identical finite audio and retain their stored vari
  assert.notDeepEqual(a,run('s.set_param("seed",0.17);s.generate_sound();s.sound.getBuffer()'));
 });
 test('eight swarm categories vary multiple controls and render distinct audible events',()=>{
- const {run}=setup();const recipes=plain(run('s.recipes'));assert.equal(recipes.length,8);
+ const {run}=setup();const recipes=plain(run('s.recipes'));assert.equal(recipes.length,12);
  const signatures=new Set();
  for(const recipe of recipes){
   const a=plain(run(`s.generate_recipe('${recipe.id}');s.params`));
@@ -19,7 +19,7 @@ test('eight swarm categories vary multiple controls and render distinct audible 
   const pcm=run('s.generate_sound();s.sound.getBuffer()');safe(pcm);
   signatures.add(pcm.length+':'+rms(pcm));
  }
- assert.equal(signatures.size,8);
+ assert.equal(signatures.size,12);
 });
 test('cohesion aligns otherwise scattered chirps into collective pulses',()=>{
  const {run}=setup();const buffers=run(`s.apply_params({kind:1,count:32,duration:3,speed:0.5,agitation:0,movement:0,scatter:0,cohesion:0});

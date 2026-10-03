@@ -15,6 +15,11 @@ class Zappr extends PresetSynth {
         ['Decay','Length of each electrical discharge.','decay',0.4,0,1]
     ];
     recipes=[
+        {name:'Shoot',id:'shoot',verb:'shoot',tip:'A sharp electric bolt.',values:{duration:[0.12,0.35],voltage:[0.5,0.9],arcs:[1,3],branching:[0,0.3],crackle:[0,0.2],hum:[0,0.05],spark:[0.5,1],spread:[0,0.2],decay:[0.05,0.3]}},
+        {name:'Cast',id:'cast',verb:'cast',tip:'A bright ringing cluster of impossible energy.',values:{duration:[0.35,1],voltage:[0.6,0.95],arcs:[3,8],branching:[0.6,1],crackle:[0,0.15],hum:[0,0.08],spark:[0,0.2],spread:[0.4,0.8],decay:[0.45,0.8]}},
+        {name:'Hit',id:'hit',verb:'hit',tip:'A crackling contact shock.',values:{duration:[0.1,0.3],voltage:[0.5,0.85],arcs:[2,6],branching:[0.2,0.6],crackle:[0.5,1],hum:[0.05,0.3],spark:[0.6,1],spread:[0.3,0.8],decay:[0.03,0.15]}},
+        {name:'Alert',id:'alert',verb:'alert',tip:'A failing connection spitting sparks.',values:{duration:[0.3,0.8],voltage:[0.3,0.7],arcs:[4,10],branching:[0.3,0.7],crackle:[0.6,1],hum:[0.2,0.5],spark:[0.6,1],spread:[0.4,0.9],decay:[0.05,0.25]}},
+        {name:'Whirr',id:'whirr',verb:'whirr',tip:'A humming field with small internal discharges.',values:{duration:[0.5,1.5],voltage:[0.1,0.4],arcs:[4,12],branching:[0.2,0.6],crackle:[0.2,0.6],hum:[0.7,1],spark:[0.1,0.4],spread:[0.7,1],decay:[0.4,0.8]}},
         {name:'Static Spark',id:'static_spark',tip:'A little sharp discharge from a fingertip.',values:{duration:[0.12,0.3],voltage:[0.55,0.9],arcs:[1,3],branching:[0,0.15],crackle:[0,0.2],hum:[0,0.02],spark:[0.8,1],spread:[0,0.2],decay:[0,0.12]}},
         {name:'Tesla Coil',id:'tesla_coil',tip:'A buzzing field throws branching arcs.',values:{duration:[1.3,2.8],voltage:[0.7,1],arcs:[14,24],branching:[0.65,1],crackle:[0.45,0.8],hum:[0.45,0.8],spark:[0.25,0.6],spread:[0.7,1],decay:[0.25,0.6]}},
         {name:'Power Short',id:'power_short',tip:'A failing connection spits and buzzes.',values:{duration:[0.5,1.5],voltage:[0.25,0.6],arcs:[5,12],branching:[0.2,0.6],crackle:[0.8,1],hum:[0.3,0.65],spark:[0.65,1],spread:[0.35,0.8],decay:[0.05,0.3]}},

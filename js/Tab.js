@@ -269,7 +269,7 @@ class Tab {
             var paste_button = this.add_button("paste", "Paste", this.paste_button_clicked.bind(this), "Paste the current sound [CTRL+V]");
             right_panel_button_list.appendChild(paste_button);
 
-            if (this.name !== 'Mixr' && this.name !== 'Stackr' && typeof Mixr !== 'undefined') {
+            if (!['Mixr','Stackr','Soundboard'].includes(this.name) && typeof Mixr !== 'undefined') {
                 this.stack_button = this.add_button(this.name+'_mix_sound','Mix this sound',
                     this.mix_sound.bind(this),'Copy this sound into Mixr.');
                 right_panel_button_list.appendChild(this.stack_button);

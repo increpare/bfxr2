@@ -22,6 +22,13 @@ class Clonkr extends PresetSynth {
     ];
 
     recipes = [
+        {name:'Hit',id:'hit',verb:'hit',tip:'A hard strike on wood, metal or ceramic.',values:{material:[0,2,3],action:0,size:[0.2,0.6],hollowness:[0.05,0.5],hardness:[0.6,1],damping:[0.35,0.8],duration:[0.12,0.45]}},
+        {name:'Land',id:'land',verb:'land',tip:'A padded thud with a little body.',values:{material:[0,4],action:0,size:[0.5,0.9],hollowness:[0.3,0.8],hardness:[0.1,0.45],damping:[0.4,0.8],duration:[0.15,0.5]}},
+        {name:'Step',id:'step',verb:'step',tip:'A short knock of a boot on boards.',values:{material:[0,4],action:0,size:[0.3,0.6],hollowness:[0.2,0.6],hardness:[0.2,0.5],damping:[0.6,0.95],duration:[0.1,0.3]}},
+        {name:'Coin',id:'coin',verb:'coin',tip:'A tiny bright ping of glass or metal.',values:{material:[1,2],action:0,size:[0.03,0.2],hollowness:[0,0.3],hardness:[0.8,1],damping:[0.25,0.55],duration:[0.2,0.45]}},
+        {name:'Break',id:'break',verb:'break',tip:'Brittle shards rattling apart.',values:{material:[1,3],action:2,size:[0.08,0.45],hollowness:[0.05,0.4],hardness:[0.75,1],damping:[0.5,0.9],duration:[0.15,0.45]}},
+        {name:'Door',id:'door',verb:'door',tip:'A heavy door or gate moving and settling.',values:{material:[0,2],action:[0,1],size:[0.7,1],hollowness:[0.5,0.95],hardness:[0.3,0.7],damping:[0.3,0.6],duration:[0.4,1]}},
+        {name:'Blip',id:'blip',verb:'blip',tip:'A minute glass tick.',values:{material:[1,3],action:0,size:[0.02,0.15],hollowness:[0,0.3],hardness:[0.85,1],damping:[0.6,0.95],duration:[0.1,0.2]}},
         {name:'Teacup', id:'teacup', tip:'Tap a small hollow china cup.',
             values:{material:3,action:0,size:[0.18,0.32],hollowness:[0.65,0.95],hardness:[0.55,0.8],damping:[0.1,0.32],duration:[0.45,0.9]}},
         {name:'Glass Ping', id:'glass_ping', tip:'A bright, delicate piece of glass.',

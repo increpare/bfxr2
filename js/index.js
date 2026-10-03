@@ -9,6 +9,8 @@ function register_tabs(){
         if (label !== synth.name) synth.display_name = label;
         return new Tab(synth);
     };
+    // The board of game verbs comes first: this is a game sound tool.
+    var board_tab = add_tab(new Soundboard());
     var bfxr_tab = add_tab(new Bfxr());
     add_tab(new Footsteppr());
     add_tab(new Mixr());
@@ -43,7 +45,7 @@ function register_tabs(){
     SaveLoad.collection_save_enabled=true;
     set_tab_from_loaded_data();
     // New collections have no saved selection. Build only the visible panel.
-    (tabs.find(tab => tab.active) || bfxr_tab).set_active_tab();
+    (tabs.find(tab => tab.active) || board_tab).set_active_tab();
     SaveLoad.save_all_collections();
 }
 

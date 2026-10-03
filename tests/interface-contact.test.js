@@ -96,8 +96,9 @@ test('all sixteen contact families are fresh, audible, seeded and replay saved p
                     controls:Object.entries(recipe.values).filter(([key, value]) => key !== 'seed' && Array.isArray(value) && value[0] !== value[1]).length};
             });
         })()`);
-        assert.equal(results.length, 8);
-        assert.equal(new Set(results.map(result => result.id)).size, 8);
+        const expected = name === 'Rustlr' ? 13 : 8;
+        assert.equal(results.length, expected);
+        assert.equal(new Set(results.map(result => result.id)).size, expected);
         for (const result of results) {
             assert.ok(result.controls >= 3, result.id + ' varies multiple controls');
             const a = plain(result.firstParams), b = plain(result.secondParams);
@@ -109,7 +110,7 @@ test('all sixteen contact families are fresh, audible, seeded and replay saved p
             assert.deepEqual(result.first, result.replay, result.id + ' replays exactly');
             assert.notDeepEqual(result.first, result.reseeded, result.id + ' has seeded detail');
         }
-        assert.equal(new Set(results.map(result => Buffer.from(result.first.buffer).toString('base64'))).size, 8);
+        assert.equal(new Set(results.map(result => Buffer.from(result.first.buffer).toString('base64'))).size, expected);
     }
 });
 

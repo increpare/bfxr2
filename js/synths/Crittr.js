@@ -21,6 +21,10 @@ class Crittr extends PresetSynth {
         ['Flutter','From a steady voice to rapid trills and trembling.','flutter',0.2,0,1]
     ];
     recipes = [
+        {name:'Hurt',id:'hurt',verb:'hurt',tip:'A short yelp from a creature.',values:{voice:[0,6,7],duration:[0.2,0.5],pitch:[0.3,0.6],size:[0.3,0.7],morph:[0.5,1],calls:1,gap:[0.05,0.2],contour:[-0.8,-0.3],growl:[0.1,0.5],breath:[0.2,0.5],flutter:[0.05,0.3]}},
+        {name:'Roar',id:'roar',verb:'roar',tip:'A big throat announcing itself.',values:{voice:[0,6],duration:[0.6,1.8],pitch:[0.05,0.3],size:[0.65,1],morph:[0.5,1],calls:1,gap:[0.03,0.15],contour:[-0.5,0.2],growl:[0.6,1],breath:[0.2,0.5],flutter:[0.05,0.3]}},
+        {name:'Confirm',id:'confirm',verb:'confirm',tip:'An eager little rising chirp.',values:{voice:[1,5],duration:[0.2,0.45],pitch:[0.5,0.8],size:[0.1,0.4],morph:[0.3,0.7],calls:[1,2],gap:[0.1,0.3],contour:[0.3,0.9],growl:[0,0.1],breath:[0,0.1],flutter:[0.05,0.3]}},
+        {name:'Lose',id:'lose',verb:'lose',tip:'A drooping whimper.',values:{voice:[0,7],duration:[0.5,1.2],pitch:[0.35,0.6],size:[0.25,0.55],morph:[0.4,0.8],calls:[1,2],gap:[0.1,0.3],contour:[-0.9,-0.5],growl:[0,0.15],breath:[0.1,0.3],flutter:[0.2,0.5]}},
         {name:'Woof',id:'woof',tip:'A short bark, from a small yap to a chesty woof.',values:{voice:6,duration:[0.23,0.65],pitch:[0.18,0.43],size:[0.4,0.85],morph:[0.45,0.85],calls:1,gap:[0.06,0.18],contour:[-0.7,-0.25],growl:[0.18,0.5],breath:[0.14,0.35],flutter:[0.01,0.13]}},
         {name:'Meow',id:'meow',tip:'A rising, nasal meow relaxing into a rounded vowel.',values:{voice:7,duration:[0.35,0.95],pitch:[0.48,0.66],size:[0.24,0.52],morph:[0.65,1],calls:1,gap:[0.03,0.14],contour:[-0.35,0.1],growl:[0.01,0.12],breath:[0.01,0.09],flutter:[0.02,0.13]}},
         {name:'Tiny Dragon',id:'tiny_dragon',tip:'A little chirrup with a smoky throat.',values:{voice:1,duration:[0.45,1.2],pitch:[0.53,0.76],size:[0.1,0.35],morph:[0.45,0.95],calls:[1,3],gap:[0.16,0.36],contour:[-0.75,0.5],growl:[0.1,0.35],breath:[0.08,0.3],flutter:[0.04,0.2]}},

@@ -17,6 +17,10 @@ class Swarmr extends PresetSynth {
         ['Scatter','Spread the agents’ arrivals over time.','scatter',0.2,0,1]
     ];
     recipes=[
+        {name:'Whirr',id:'whirr',verb:'whirr',tip:'A tight cluster of little rotors and ticks.',values:{kind:[2,3],duration:[0.5,1.5],count:[8,24],speed:[0.5,1],cohesion:[0.3,0.8],agitation:[0.2,0.7],size:[0.1,0.5],movement:[0.1,0.5],scatter:[0,0.3]}},
+        {name:'Cast',id:'cast',verb:'cast',tip:'A cloud of wisps rushing outward.',values:{kind:[4,1],duration:[0.6,1.6],count:[6,16],speed:[0.3,0.7],cohesion:[0.3,0.8],agitation:[0.1,0.5],size:[0.05,0.4],movement:[0.2,0.7],scatter:[0.1,0.5]}},
+        {name:'Heal',id:'heal',verb:'heal',tip:'Slow glowing points drifting up.',values:{kind:[4,1],duration:[0.6,1.5],count:[4,12],speed:[0.05,0.3],cohesion:[0.2,0.6],agitation:[0,0.2],size:[0.05,0.35],movement:[0.05,0.3],scatter:[0.1,0.6]}},
+        {name:'Shoot',id:'shoot',verb:'shoot',tip:'A few tiny rockets rushing away.',values:{kind:5,duration:[0.3,0.8],count:[1,4],speed:[0.6,1],cohesion:[0.3,0.8],agitation:[0.3,0.9],size:[0.2,0.7],movement:[0.8,1],scatter:[0,0.4]}},
         {name:'Nanobots',id:'nanobots',tip:'A cloud of busy microscopic machines.',values:{kind:3,duration:[0.6,1.6],count:[16,32],speed:[0.65,1],cohesion:[0.1,0.4],agitation:[0.5,1],size:[0,0.25],movement:[0.1,0.5],scatter:[0.1,0.5]}},
         {name:'Cave Bats',id:'cave_bats',tip:'A startled flock leaving its roost.',values:{kind:0,duration:[1.2,2.6],count:[8,19],speed:[0.3,0.65],cohesion:[0.05,0.3],agitation:[0.55,0.95],size:[0.5,0.8],movement:[0.6,1],scatter:[0.25,0.8]}},
         {name:'Fireflies',id:'fireflies',tip:'Little overlapping points of sound.',values:{kind:1,duration:[1.3,3],count:[4,12],speed:[0.05,0.28],cohesion:[0.05,0.3],agitation:[0,0.2],size:[0.05,0.3],movement:[0.05,0.3],scatter:[0.1,0.65]}},

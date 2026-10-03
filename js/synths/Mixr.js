@@ -7,9 +7,14 @@ class Mixr extends PresetSynth {
     param_info = [
         ...PresetSynth.common_params,
         ['Balance', 'Balance between the two sounds.', 'balance', 0.5, 0, 1],
+        {type:'BUTTONSELECT', name:'align', display_name:'Align', tooltip:'Where B sits in time relative to A.', default_value:0, columns:3,
+            values:[['Start','Both sounds begin together.',0],['Peak','The loudest moments of A and B coincide.',1],['Tail','B begins as A has mostly decayed.',2]]},
+        ['Offset', 'Extra delay for B, in seconds. Negative values move B earlier.', 'offset', 0, -1, 1],
         {type:'TEXT', name:'sources', default_value:'[]', max_length:60000}
     ];
     static retired = ['Chattr','Weathr','Tappr','Notifr','Tickr','Holor','Pewpr','Rollr','Pulser','Rumblr'];
+    // Subclasses that may use retired engines as hidden ingredients set this to true.
+    static includeRetired = false;
     recipes = [
 
         //GOOD
@@ -46,10 +51,23 @@ class Mixr extends PresetSynth {
     create_random_template() { return super.create_random_template(); }
     get_sources() { return JSON.parse(this.params.sources); }
 
-    static templates_for(synth) {
-        if (!synth || this.retired.includes(synth.name)) return [];
+    static templates_for(synth, includeRetired = this.includeRetired) {
+        if (!synth || (!includeRetired && Mixr.retired.includes(synth.name))) return [];
         return synth.templates.filter(t => typeof synth[t[2]] === 'function' &&
             (t[2].startsWith('generate_') || (synth.name === 'Footsteppr' && t[2] === 'randomize_params')));
+    }
+    // 'Synth:verb' or 'Synth:generate_x' names one generator. Verbs resolve through the engine's verb presets.
+    static resolve_reference(reference) {
+        const [name, what] = String(reference).split(':');
+        const synth = Stackr.source(name);
+        if (!synth || !what) return null;
+        const generator = what.startsWith('generate_') || what === 'randomize_params' ? what
+            : typeof synth.verb_generator === 'function' ? synth.verb_generator(what) : null;
+        return generator ? {synth:name, generator} : null;
+    }
+    static verb_source(reference) {
+        const resolved = this.resolve_reference(reference);
+        return resolved ? this.generated_source(resolved.synth, resolved.generator) : null;
     }
     static generators() {
         return Stackr.sources().flatMap(Constructor => {
@@ -60,7 +78,7 @@ class Mixr extends PresetSynth {
     }
     static generated_source(name,generator,previousGenerator) {
         const synth=Stackr.source(name);
-        const templates=this.templates_for(synth);
+        const templates=this.templates_for(synth, this.includeRetired);
         let template;
         if(generator==='*'){
             const candidates=templates.length>1 ? templates.filter(t=>t[2]!==previousGenerator) : templates;
@@ -82,7 +100,7 @@ class Mixr extends PresetSynth {
             if (!synth) return null;
             const entry={synth:synth.name, name:typeof source.name === 'string' ? source.name.slice(0,60) : synth.name,
                 params:Stackr.sanitize_source(synth,source.params)};
-            const templates=Mixr.templates_for(synth);
+            const templates=this.constructor.templates_for(synth);
             if(source.generator==='*' && templates.length){
                 entry.generator='*';
                 if(templates.some(t=>t[2]===source.selectedGenerator))entry.selectedGenerator=source.selectedGenerator;
@@ -95,7 +113,7 @@ class Mixr extends PresetSynth {
     }
     set_source(slot,synth,name) {
         if (slot!==0 && slot!==1) return false;
-        if (synth && (synth.name === 'Mixr' || synth.name === 'Stackr')) return false;
+        if (synth && ['Mixr','Stackr','Soundboard'].includes(synth.name)) return false;
         const sources=this.get_sources();
         while(sources.length<=slot)sources.push(null);
         sources[slot]=synth ? {synth:synth.name,name:name||synth.name,params:synth.params} : null;
@@ -107,7 +125,7 @@ class Mixr extends PresetSynth {
         const sources=this.get_sources();
         const current=sources[slot];
         const previous=current && current.synth===name ? current.selectedGenerator || current.generator : undefined;
-        const next=Mixr.generated_source(name,generator,previous);
+        const next=this.constructor.generated_source(name,generator,previous);
         if(!next)return false;
         while(sources.length<=slot)sources.push(null);
         sources[slot]=next;
@@ -122,7 +140,7 @@ class Mixr extends PresetSynth {
     regenerate_both() {
         if(this.locked_param('sources'))return;
         const sources=this.get_sources().map(current=>current && current.generator
-            ? Mixr.generated_source(current.synth,current.generator,current.selectedGenerator) || current : current);
+            ? this.constructor.generated_source(current.synth,current.generator,current.selectedGenerator) || current : current);
         this.set_param('sources',sources);
     }
     // Older integrations can still reseed a copied character snapshot.
@@ -139,7 +157,7 @@ class Mixr extends PresetSynth {
     after_recipe(recipe) {
         if(this.locked_param('sources'))return;
         const sources=recipe.pair.map(name=>{
-            const source=Mixr.generated_source(name,'*');
+            const source=this.constructor.generated_source(name,'*');
             if(!source)throw new Error('Unknown Mixr instrument: '+name);
             return source;
         });

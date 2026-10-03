@@ -7,7 +7,7 @@ function rms(pcm){return Math.sqrt(pcm.reduce((sum,v)=>sum+v*v,0)/pcm.length);}
 function safe(pcm,duration,audible=true){assert.equal(pcm.length,Math.round(duration*44100));assert.ok(pcm.every(v=>Number.isFinite(v)&&Math.abs(v)<1));assert.equal(Math.abs(pcm[0]),0);assert.equal(Math.abs(pcm.at(-1)),0);if(audible)assert.ok(rms(pcm)>0.001);}
 for(const name of names){
  test(`${name}: preset categories produce fresh multi-control variations and repeatable audio`,()=>{
-  const {run}=setup(name),recipes=plain(run('s.recipes'));assert.equal(recipes.length,name==='Boomr'?11:8);const signatures=new Set();
+  const {run}=setup(name),recipes=plain(run('s.recipes'));assert.equal(recipes.length,{Boomr:15,Pewpr:8,Zappr:13}[name]);const signatures=new Set();
   for(const recipe of recipes){
    const a=plain(run(`s.generate_recipe('${recipe.id}');s.params`));
    const b=plain(run(`s.generate_recipe('${recipe.id}');s.params`));

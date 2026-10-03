@@ -78,6 +78,10 @@ class Footsteppr extends SynthBase {
         ], 		
     ];
 
+    verb_generators = {step:'randomize_params', land:'randomize_params'};
+    verb_generator(verb) { return this.verb_generators[verb] || null; }
+    verbs() { return Object.keys(this.verb_generators); }
+
     templates = [        
         [   
             "Randomize",

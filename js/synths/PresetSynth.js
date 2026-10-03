@@ -12,14 +12,27 @@ class PresetSynth extends SynthBase {
 
     initialize_presets() {
         this.post_initialize();
+        // Game-verb presets come first: a recipe with a verb is labelled by the shared vocabulary.
+        const verbs = typeof GAME_VERBS === 'undefined' ? [] : GAME_VERBS;
+        const order = recipe => { const index = verbs.findIndex(verb => verb.id === recipe.verb); return index < 0 ? verbs.length : index; };
+        this.recipes = this.recipes.map((recipe, index) => [recipe, index]).sort((a, b) => order(a[0]) - order(b[0]) || a[1] - b[1]).map(([recipe]) => recipe);
         this.templates = this.recipes.map(recipe => {
             const method = 'generate_' + recipe.id;
             this[method] = () => this.generate_recipe(recipe.id);
-            return [recipe.name, recipe.tip || 'Generate another ' + recipe.name.toLowerCase() + '.', method, recipe.name.replace(/[^a-zA-Z0-9]/g, '')];
+            const verb = verbs.find(entry => entry.id === recipe.verb);
+            const label = verb ? verb.name : recipe.name;
+            return [label, recipe.tip || 'Generate another ' + recipe.name.toLowerCase() + '.', method, recipe.name.replace(/[^a-zA-Z0-9]/g, '')];
         });
         this.templates.push(['Randomize','Explore all unlocked controls.','randomize_params','Random'],
             ['Mutate','Nudge the unlocked controls of this sound.','mutate_params','Mutant']);
     }
+
+    // The generator method for a game verb, or null when this engine has no preset for it.
+    verb_generator(verb) {
+        const recipe = this.recipes.find(entry => entry.verb === verb);
+        return recipe ? 'generate_' + recipe.id : null;
+    }
+    verbs() { return this.recipes.filter(recipe => recipe.verb).map(recipe => recipe.verb); }
 
     apply_params(params, check_locked = false) {
         if (!params || typeof params !== 'object') return;

@@ -7,6 +7,14 @@ It's currently BETA, and new things should be coming to it, but the main additio
 
 ![image](https://github.com/user-attachments/assets/1f338401-d2e4-4100-ad4d-471ad6e56f6f)
 
+## Soundboard
+
+The first tab is a board of game verbs: **Jump, Land, Step, Dash, Splash · Shoot, Swing, Hit, Hurt, Explode · Coin, Powerup, Unlock, Win, Lose · Break, Door, Blip, Confirm, Alert · Cast, Warp, Roar, Whirr, Heal**. Press a verb and you get a fresh take on it; press again and you get a different one. Each verb draws from a weighted catalogue of 168 ingredients across the whole suite: Bfxr's classic presets, game-verb presets inside every engine, Jinglr cues, and Mixfxr pairs built as a base plus a sweetener (a Whoosh swing that connects with a Tangs hit, a hurt blip followed by a losing jingle). Number and letter keys trigger the rows, Space is **Again**, **Pin ingredients** keeps the current recipe while re-rolling its details, and **Open in …** hands any ingredient to its own engine, or the whole mix to Mixfxr. Board sounds save, share and export like any other sound.
+
+Every engine now leads with its game-verb presets (Whoosh: Jump, Dash, Shoot, Swing; Tangs: Hit, Land, Step, Coin, Break, Door, Blip; and so on), named from one shared vocabulary in `js/globals.js`, followed by its character presets. Mixfxr gained **Align** (Start, Peak or Tail) and **Offset**, so a slow-developing sound such as Sonar can sit under a short one instead of starting after it has gone.
+
+Try the [100-take listening gallery and reel](examples/Soundboard/index.html). Rebuild with `node tools/render/soundboard_examples.js`; `node tools/render/verb_inventory.js` measures every ingredient against its verb's duration class.
+
 ## Transfxr
 
 Transfxr moves a sound between two states, with independent curves for pitch, filter, wobble and level. A waveform morph can carry the sound into noise. Its 15 preset families use 228 curated states from a 512-sound survey, refined by listening feedback. Taps and chirps stay short, wavering voices sustain a quiver, soft pips use a gentle sine voice, and sand and air have distinct textures. Each family varies complete sound states while respecting locks. See [the revised listening catalogue](examples/Transfxr/survey/index.html) and [the example collection and controls](examples/Transfxr/README.md).

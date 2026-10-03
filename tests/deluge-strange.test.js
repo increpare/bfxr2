@@ -4,7 +4,7 @@ const names=['Glitchr','Pulser','Rumblr'];
 function rms(a){return Math.sqrt(a.reduce((s,v)=>s+v*v,0)/a.length);}
 for(const name of names)test(name+' recipes are fresh, audible, repeatable and locked correctly',()=>{
  const {run}=createContext([name]);run(`var s=new ${name}();Math.random=SoundDSP.rng(0.326);`);
- const recipes=plain(run('s.recipes'));assert.equal(recipes.length,8);
+ const recipes=plain(run('s.recipes'));assert.equal(recipes.length,{Glitchr:13,Pulser:8,Rumblr:8}[name]);
  for(const recipe of recipes){
   const a=plain(run(`s.generate_recipe('${recipe.id}');s.params`)),b=plain(run(`s.generate_recipe('${recipe.id}');s.params`));
   assert.ok(Object.keys(a).filter(k=>k!=='seed'&&a[k]!==b[k]).length>=3);

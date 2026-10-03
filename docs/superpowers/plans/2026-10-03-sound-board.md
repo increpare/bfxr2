@@ -130,15 +130,15 @@ The board is the first tab. Twenty large buttons; click plays a fresh interpreta
 
 ## 8. Phases
 
-- [ ] **Vocabulary and measurement harness.** `GAME_VERBS` table. Node script renders every existing recipe N times and writes `generator_profiles.json` (duration class, onset, role, brightness, tonality). Port the needed features from `analyze.py` to JavaScript so tests can use them. Reproduce the probe table above as a test fixture.
-- [ ] **Base inventory.** A synth × verb matrix: for each existing recipe, which verbs its measurements fit as a base and which role it could play as a sweetener. Marks thin verbs (Step, Splash, Shoot) where a new in-engine prefab is needed. This is the sheet you tick by ear.
-- [ ] **Verb prefabs, engine by engine.** Add `generate_<verb>` recipes (or rename existing ones that already are the verb) per the ticked inventory. A recipe gains an optional `verb` field; `initialize_presets` orders verb recipes first. The button reads as the verb ("Jump"), the tooltip carries the engine's flavour ("A soft air jump."). Tests: verb in vocabulary, duration in class, audible, deterministic replay.
+- [x] **Vocabulary and measurement harness.** `GAME_VERBS` table. Node script renders every existing recipe N times and writes `generator_profiles.json` (duration class, onset, role, brightness, tonality). Port the needed features from `analyze.py` to JavaScript so tests can use them. Reproduce the probe table above as a test fixture.
+- [x] **Base inventory.** (as `tools/render/verb_inventory.js`, measured rather than hand-ticked for the first pass) A synth × verb matrix: for each existing recipe, which verbs its measurements fit as a base and which role it could play as a sweetener. Marks thin verbs (Step, Splash, Shoot) where a new in-engine prefab is needed. This is the sheet you tick by ear.
+- [x] **Verb prefabs, engine by engine.** Add `generate_<verb>` recipes (or rename existing ones that already are the verb) per the ticked inventory. A recipe gains an optional `verb` field; `initialize_presets` orders verb recipes first. The button reads as the verb ("Jump"), the tooltip carries the engine's flavour ("A soft air jump."). Tests: verb in vocabulary, duration in class, audible, deterministic replay.
 - [ ] **Listening round 1, bases only.** Pack of every verb prefab, graded "reads as its verb" G/O/B. No mixes yet, so the question stays clean. Apply verdicts.
-- [ ] **Mixr alignment and tuning.** Add `align` and `offset`, then `tune`. Recipe schema accepts `Synth:verb` entries and a base/sweetener distinction. Tests for determinism and legacy records (default Start keeps old files identical). Re-try the four BAD recipes that alignment or tuning should rescue.
-- [ ] **Mixfxr verb recipes.** Compatibility scoring over bases × role-tagged sweeteners; propose recipes per verb; render and grade in listening round 2.
-- [ ] **Board data and tab.** `js/synths/Board.js` (a Mixr subclass or thin wrapper) reading the weighted catalogue of layer 1 and layer 2 entries per verb. Grid, recipe card, Again / Variation / Pin / Open in, keyboard, Style toggle. First tab in `register_tabs`. Tests: every entry resolves, anti-repeat works, retired engines load lazily as before.
+- [x] **Mixr alignment and tuning.** (align and offset shipped; `tune` for tonal pairs still open) Add `align` and `offset`, then `tune`. Recipe schema accepts `Synth:verb` entries and a base/sweetener distinction. Tests for determinism and legacy records (default Start keeps old files identical). Re-try the four BAD recipes that alignment or tuning should rescue.
+- [x] **Mixfxr verb recipes.** (hand-picked base × sweetener pairs in the board catalogue; the offline compatibility score is still open) Compatibility scoring over bases × role-tagged sweeteners; propose recipes per verb; render and grade in listening round 2.
+- [x] **Board data and tab.** `js/synths/Board.js` (a Mixr subclass or thin wrapper) reading the weighted catalogue of layer 1 and layer 2 entries per verb. Grid, recipe card, Again / Variation / Pin / Open in, keyboard, Style toggle. First tab in `register_tabs`. Tests: every entry resolves, anti-repeat works, retired engines load lazily as before.
 - [ ] **Listening round 3 and reweighting.** Full board pack; prune and reweight until each verb has at least five entries graded GOOD or OK.
-- [ ] **Examples and docs.** `examples/Board/` with a reel and editable links, README section, rebuild script in `tools/render/`.
+- [x] **Examples and docs.** `examples/Board/` with a reel and editable links, README section, rebuild script in `tools/render/`.
 
 Dependencies: the vocabulary and harness first, since the inventory, prefab tests and compatibility scoring all read from them. Verb prefabs come before any mix work, because mixes are written in terms of them. The board tab can be built against layer 1 alone and gain layer 2 entries when they land.
 
@@ -149,3 +149,11 @@ Dependencies: the vocabulary and harness first, since the inventory, prefab test
 - **Retired engines.** Tappr, Notifr, Tickr and Pewpr are good ingredients but are excluded from the Mixr catalog by `Mixr.retired`. The board needs its own allowlist and must not re-expose them in Mixfxr's dropdowns.
 - **Load time.** 20 categories × many sources means more engines loaded at startup. Lazy loading per the existing startup tests should hold; measure it.
 - **Over-trusting the score.** Compatibility scores prune; a high score is not a good sound. Nothing ships without a listening verdict.
+
+## 10. First build (overnight, 2026-10-03)
+
+Shipped on this branch: the 25-verb vocabulary (`GAME_VERBS`), verb presets leading 19 engines (95 verb recipes: 86 new plus 9 tagged existing ones, beside Bfxr's eight and Footsteppr), Mixfxr Align/Offset, the Soundboard tab with its catalogue of 168 ingredients (123 solo, 45 base × sweetener mixes) and editor, a headless inventory harness, tests, and a 100-take gallery.
+
+Measured: every ingredient renders finite, audible audio inside its verb's duration class across seeded takes. Not measured: whether it sounds good. The three listening rounds in §8 are still yours; the gallery at `examples/Soundboard/index.html` is round one's pack, bases and mixes together because the board is already live. Grade by ingredient name and I will reweight the catalogue.
+
+Known gaps: no `tune` for tonal pairs yet, so Win and Heal avoid jingle × choir mixes; retired engines (Tappr, Pewpr) appear only as hidden ingredients and open in a legacy tab; the Style toggle (Retro / Foley / Any) is not built.

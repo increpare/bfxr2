@@ -12,6 +12,10 @@ class Whooshr extends PresetSynth {
         ['Flutter','Uneven folds, feathers and trailing edges.','flutter',0.1,0,1]
     ];
     recipes=[
+        {name:'Jump',id:'jump',verb:'jump',tip:'A quick puff of air leaving the ground.',values:{duration:[0.14,0.32],size:[0.3,0.6],air:[0.7,1],whistle:[0.15,0.45],movement:[0.1,0.45],focus:[0.5,0.85],flutter:[0,0.1]}},
+        {name:'Dash',id:'dash',verb:'dash',tip:'A rush of air as something darts past.',values:{duration:[0.2,0.55],size:[0.4,0.8],air:[0.8,1],whistle:[0.05,0.3],movement:[0.5,0.9],focus:[0.3,0.65],flutter:[0.05,0.2]}},
+        {name:'Swing',id:'swing',verb:'swing',tip:'A blade or club cutting the air.',values:{duration:[0.18,0.6],size:[0.25,0.9],air:[0.6,1],whistle:[0.1,0.55],movement:[0.6,1],focus:[0.45,0.85],flutter:[0,0.15]}},
+        {name:'Shoot',id:'shoot',verb:'shoot',tip:'A whistling projectile.',values:{duration:[0.1,0.3],size:[0,0.25],air:[0.6,1],whistle:[0.4,0.8],movement:[0.9,1],focus:[0.7,1],flutter:[0,0.08]}},
         {name:'Sword Swing',id:'sword_swing',values:{duration:[0.18,0.42],size:[0.25,0.5],air:[0.6,0.9],whistle:[0.25,0.55],movement:[0.65,1],focus:[0.5,0.85],flutter:[0,0.1]}},
         {name:'Dodge',id:'dodge',values:{duration:[0.25,0.55],size:[0.5,0.8],air:[0.75,1],whistle:[0,0.1],movement:[0.2,0.6],focus:[0.3,0.65],flutter:[0.1,0.3]}},
         {name:'Arrow Pass',id:'arrow_pass',values:{duration:[0.16,0.4],size:[0.05,0.3],air:[0.3,0.65],whistle:[0.5,0.9],movement:[0.8,1],focus:[0.65,1],flutter:[0,0.1]}},

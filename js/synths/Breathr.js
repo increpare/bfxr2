@@ -19,6 +19,10 @@ class Breathr extends PresetSynth {
         ['Enclosure','Short reflections around a mask, helmet or cave.','space',0.1,0,1]
     ];
     recipes=[
+        {name:'Hurt',id:'hurt',verb:'hurt',tip:'A sharp, shaky intake of pain.',values:{mode:0,source:[0,1],direction:[-1,-0.7],duration:[0.15,0.4],cycles:1,effort:[0.7,1],inhale:[0.16,0.3],hold:[0.1,0.28],throat:[0.05,0.4],rasp:[0.2,0.6],flutter:[0.2,0.6],space:[0,0.15]}},
+        {name:'Dash',id:'dash',verb:'dash',tip:'A forceful exhale of effort.',values:{mode:0,source:0,direction:[0.6,1],duration:[0.2,0.5],effort:[0.6,1],throat:[0.3,0.7],rasp:[0.05,0.3],flutter:[0.05,0.3],space:[0,0.1]}},
+        {name:'Lose',id:'lose',verb:'lose',tip:'A weary, fading sigh.',values:{mode:0,source:0,direction:[0.8,1],duration:[0.6,1.4],effort:[0.25,0.5],throat:[0.45,0.8],rasp:[0.08,0.3],flutter:[0.12,0.4],space:[0,0.15]}},
+        {name:'Roar',id:'roar',verb:'roar',tip:'A huge rough throat pushing air.',values:{mode:0,source:[0,2],direction:[0.5,1],duration:[0.5,1.4],effort:[0.7,1],throat:[0.8,1],rasp:[0.5,1],flutter:[0.1,0.4],space:[0.1,0.4]}},
         {name:'Inhale',id:'inhale',tip:'One short intake of air.',values:{mode:0,source:0,direction:[-1,-0.7],duration:[0.3,0.8],effort:[0.25,0.65],throat:[0.25,0.65],rasp:[0,0.16],flutter:[0.03,0.2],space:[0,0.12]}},
         {name:'Exhale',id:'exhale',tip:'One soft outward breath.',values:{mode:0,source:0,direction:[0.7,1],duration:[0.35,0.95],effort:[0.2,0.6],throat:[0.35,0.75],rasp:[0,0.15],flutter:[0.02,0.18],space:[0,0.12]}},
         {name:'Sigh',id:'sigh',tip:'A weary, gently fading release.',values:{mode:0,source:0,direction:[0.8,1],duration:[0.65,1.6],effort:[0.25,0.5],throat:[0.45,0.8],rasp:[0.08,0.3],flutter:[0.12,0.4],space:[0,0.15]}},
