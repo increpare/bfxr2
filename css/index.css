@@ -504,7 +504,8 @@ table.paramtable {
 .slider_container {
     position: relative;
     width: var(--sliderwidth);
-    padding-right: var(--ui-margin);
+    /* The slider frame extends 4.5px past its width; leave a visible inset. */
+    padding-right: calc(var(--ui-margin) + 7px);
     padding-left: var(--ui-margin);
 }
 
