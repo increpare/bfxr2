@@ -32,7 +32,7 @@ class Transfxr extends SynthBase {
         ['Resonance', 'Emphasize the moving filter frequency.', 'resonance', 0.15, 0, 1],
         ['Echo', 'Repeating, fading reflections after the voice.', 'echo', 0.15, 0, 0.8],
         {type:'BUTTONSELECT',name:'waveTo',display_name:'Morph to',default_value:-1,columns:4,
-            values:[['Same waveform','Keep the starting waveform.',-1],...BfxrWaveforms.choices.map(([label,tip,id])=>[label,tip,({2:0,4:1,1:2,0:3,8:4,6:5,7:6,3:7,11:8,9:9,5:10,10:11})[id]])]},
+            values:[["Don't morph waveform",'Keep the starting waveform.',-1],...BfxrWaveforms.choices.map(([label,tip,id])=>[label,tip,({2:0,4:1,1:2,0:3,8:4,6:5,7:6,3:7,11:8,9:9,5:10,10:11})[id]])]},
         Transfxr.transitionParam('morph','Morph','Blend from the starting waveform into the chosen destination.',0,1,'Smooth')
     ];
 
@@ -170,7 +170,15 @@ class MorphEditor {
         }
         this.select.addEventListener('change',()=>{tab.synth.set_param('waveTo',+this.select.value);tab.parameter_changed();});
         this.select.addEventListener('keydown',event=>event.stopPropagation());
-        row.appendChild(this.select);parent.appendChild(row);this.update();
+        row.appendChild(this.select);parent.appendChild(row);
+        // Keep the curve with its destination, without changing the saved parameter schema.
+        this.curveRow=document.getElementById(tab.name+'_graph_morph').closest('tr');
+        const table=document.createElement('table');table.className='morph-curve';
+        table.appendChild(this.curveRow);parent.appendChild(table);
+        this.update();
     }
-    update(){this.select.value=this.tab.synth.params.waveTo;}
+    update(){
+        this.select.value=this.tab.synth.params.waveTo;
+        this.curveRow.hidden=this.tab.synth.params.waveTo===-1;
+    }
 }

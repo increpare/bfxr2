@@ -28,7 +28,7 @@ test('mode-specific controls are disabled when their mechanism does not use them
 });
 test('retired Gravity share links keep their modulation when migrated to explicit tremolo',()=>{
  const {run,load}=createContext(['Pluckr']);load('js/SaveLoad.js');
- assert.equal(run(`(()=>{const s=new Pluckr(),old={...s.params,material:5};delete old.tremolo;delete old.tremoloRate;tabs=[{synth:s}];
+ assert.equal(run(`(()=>{const s=new Pluckr(),old={...s.params,material:5};delete old.tremolo;delete old.tremoloRate;delete old.vibrato;tabs=[{synth:s}];
  const link='Pluckr~Gravity~'+Object.keys(old).sort().map(k=>JSON.stringify(old[k])).join('~');s.apply_params(SaveLoad.shallow_dict_deserialize(link)[2]);
  return s.params.material===4&&s.params.tremolo===.35&&s.params.tremoloRate===1.7;})()`),true);
 });

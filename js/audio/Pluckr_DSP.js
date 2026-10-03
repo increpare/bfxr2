@@ -9,6 +9,7 @@ class Pluckr_DSP {
         const random=SoundDSP.rng(value('seed',0.5)),count=round(value('strings',3,1,8)),material=round(value('material',0,0,5));
         const pitch=55*pow(2,value('pitch',0.5)*4),damping=value('damping',0.25),brightness=value('brightness',0.6);
         const coupling=value('coupling',0.15),strum=value('strum',0.2),pluck=value('pluck',0.3),inharmonic=value('inharmonic',0.05);
+        const tremolo=value('tremolo',0),vibrato=value('vibrato',0),speed=value('tremoloRate',4,0.2,12);
         // Flexible fibres lose high frequencies; rigid filaments disperse travelling waves.
         const matter=[
             {life:1,average:0.5,filter:0.18,bright:0.8,excite:1,dispersion:0,stages:0},
@@ -60,8 +61,18 @@ class Pluckr_DSP {
                 sum+=current;bridgeNext+=current;
             }
             bridge=bridgeNext/count;
-            const tremolo=value('tremolo',0),speed=value('tremoloRate',4,0.2,12);
-            out[i]=sum*gain*(1-tremolo*(0.5-0.5*Math.cos(2*PI*speed*i/rate)));
+            // Preserve the exact legacy render when pitch motion is disabled.
+            out[i]=sum*gain*(vibrato>0?1:1-tremolo*(0.5-0.5*Math.cos(2*PI*speed*i/rate)));
+        }
+        // A smooth varying delay bends pitch without changing the string's decay or material.
+        // Keep tremolo after this stage so its depth always means volume alone.
+        if(vibrato>0){
+            const dry=out.slice(),depth=(pow(2,vibrato*0.75/12)-1)*rate/(2*PI*speed);
+            for(let i=0;i<out.length;i++){
+                const motion=0.5-0.5*Math.cos(2*PI*speed*i/rate);
+                const position=max(0,i-depth*2*motion),index=floor(position),fraction=position-index;
+                out[i]=(dry[index]*(1-fraction)+dry[min(index+1,dry.length-1)]*fraction)*(1-tremolo*motion);
+            }
         }
         return SoundDSP.finish(out,volume);
     }

@@ -6,8 +6,8 @@ function setup(name){const api=createContext([name]);api.run(`var s=new ${name}(
 function rms(pcm){return Math.sqrt(pcm.reduce((sum,v)=>sum+v*v,0)/pcm.length);}
 function safe(pcm,duration,audible=true){assert.equal(pcm.length,Math.round(duration*44100));assert.ok(pcm.every(v=>Number.isFinite(v)&&Math.abs(v)<1));assert.equal(Math.abs(pcm[0]),0);assert.equal(Math.abs(pcm.at(-1)),0);if(audible)assert.ok(rms(pcm)>0.001);}
 for(const name of names){
- test(`${name}: eight categories produce fresh multi-control variations and repeatable audio`,()=>{
-  const {run}=setup(name),recipes=plain(run('s.recipes'));assert.equal(recipes.length,8);const signatures=new Set();
+ test(`${name}: preset categories produce fresh multi-control variations and repeatable audio`,()=>{
+  const {run}=setup(name),recipes=plain(run('s.recipes'));assert.equal(recipes.length,name==='Boomr'?11:8);const signatures=new Set();
   for(const recipe of recipes){
    const a=plain(run(`s.generate_recipe('${recipe.id}');s.params`));
    const b=plain(run(`s.generate_recipe('${recipe.id}');s.params`));
@@ -16,7 +16,7 @@ for(const name of names){
    assert.deepEqual(pcm,run('s.generate_sound();s.sound.getBuffer()'));
    signatures.add(pcm.length+':'+rms(pcm));assert.equal(b.masterVolume,0.5);
   }
-  assert.equal(signatures.size,8);
+  assert.equal(signatures.size,recipes.length);
  });
  test(`${name}: category generation, randomize and mutate preserve every lock`,()=>{
   const {run}=setup(name);assert.equal(run(`s.generate_recipe(s.recipes[0].id);Object.keys(s.params).forEach(k=>s.set_locked_param(k,true));var before=JSON.stringify(s.params);s.recipes.forEach(r=>s.generate_recipe(r.id));s.randomize_params();s.mutate_params();before===JSON.stringify(s.params)`),true);

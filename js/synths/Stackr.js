@@ -33,6 +33,7 @@ class Stackr extends PresetSynth {
             typeof Jinglr === 'undefined' ? null : Jinglr,
             typeof Squishr === 'undefined' ? null : Squishr,
             typeof Crittr === 'undefined' ? null : Crittr,
+            typeof Birdr === 'undefined' ? null : Birdr,
             typeof Signlr === 'undefined' ? null : Signlr,
             typeof Fractr === 'undefined' ? null : Fractr,
             typeof Riftr === 'undefined' ? null : Riftr,

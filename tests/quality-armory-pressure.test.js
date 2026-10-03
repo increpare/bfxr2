@@ -48,7 +48,7 @@ test('Boomr explosion mechanisms change the event itself at otherwise identical 
 test('Boomr space produces an actual later pressure field',()=>{
     const {run}=setup('Boomr');
     const [dry,space]=run(`[0,1].map(space=>Boomr_DSP.render({...s.params,
-        duration:2,pressure:1,blast:0,debris:0,tail:0,space,seed:0.3}))`);
+        duration:2,pressure:1,blast:0,debris:0,gas:0,aftershock:0,tail:0,space,seed:0.3}))`);
     assert.ok(energy(space,18000)>energy(dry,18000)*3,'reflections extend pressure into the tail');
 });
 

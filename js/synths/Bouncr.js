@@ -5,18 +5,19 @@ class Bouncr extends PresetSynth {
     hide_params=['masterVolume','count','bounce','gravity','spin'];
     tooltip='An object of one material striking a surface of another.';
     static DSP=Bouncr_DSP;
-    param_info=[...PresetSynth.common_params,
+    param_info=[PresetSynth.common_params[0],
         {type:'BUTTONSELECT',name:'material',display_name:'Object',tooltip:'The material of the object arriving at the surface.',default_value:0,columns:3,header:true,values:[['Rubber','Soft elastic body.',0],['Wood','Dry, hollow knock.',1],['Metal','Dense ringing body.',2],['Glass','Bright, brittle resonances.',3],['Stone','Heavy, granular body.',4]]},
+        {type:'BUTTONSELECT',name:'surface',display_name:'Surface',tooltip:'The receiving surface has its own resonance and absorbs the object differently.',default_value:0,columns:3,header:true,values:[['Concrete','Dense, short clack.',0],['Wood','Hollow board resonance.',1],['Metal','Long ringing panel.',2],['Glass','Thin bright pane.',3],['Earth','Loose, grainy absorption.',4],['Fabric','Soft, muffled landing.',5]]},
+        ['Force','Strike velocity changes contact compression and transferred energy.','force',0.65,0,1],
         ['Duration','Length of the rendered sound in seconds.','duration',2,0.2,5],
+        ['Mass / Size','Larger, heavier objects excite lower body and surface modes.','size',0.5,0,1],
+        ['Hardness','Contact stiffness: a soft thud through to a sharp strike.','hardness',0.6,0,1],
+        ['Tail','Damping and resonant decay after the impact.','tail',0.4,0,1],
+        PresetSynth.common_params[1],
         ['Contacts','One impact, or optional diminishing rebounds.','count',1,1,20],
         ['Elasticity','Body resilience and energy retained by optional rebounds.','bounce',0.65,0,1],
         ['Gravity','Stronger gravity shortens the gap between optional rebounds.','gravity',0.5,0,1],
-        ['Mass / Size','Larger, heavier objects excite lower body and surface modes.','size',0.5,0,1],
-        ['Hardness','Contact stiffness: a soft thud through to a sharp strike.','hardness',0.6,0,1],
-        ['Spin','An angled collision adds rubbing and a settling rattle.','spin',0,0,1],
-        {type:'BUTTONSELECT',name:'surface',display_name:'Surface',tooltip:'The receiving surface has its own resonance and absorbs the object differently.',default_value:0,columns:3,values:[['Concrete','Dense, short clack.',0],['Wood','Hollow board resonance.',1],['Metal','Long ringing panel.',2],['Glass','Thin bright pane.',3],['Earth','Loose, grainy absorption.',4],['Fabric','Soft, muffled landing.',5]]},
-        ['Force','Strike velocity changes contact compression and transferred energy.','force',0.65,0,1],
-        ['Tail','Damping and resonant decay after the impact.','tail',0.4,0,1]
+        ['Spin','An angled collision adds rubbing and a settling rattle.','spin',0,0,1]
     ];
     recipes=[
         {name:'Rubber on Wood',id:'rubber_ball',values:{material:0,surface:1,duration:[0.5,1.2],count:1,size:[0.35,0.75],hardness:[0.15,0.45],bounce:[0.5,0.9],force:[0.35,0.8],tail:[0.2,0.55]}},

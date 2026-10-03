@@ -95,7 +95,8 @@ for (const name of ['Fractr', 'Riftr']) {
             cases.push(${name}_DSP.render({...synth.params, masterVolume:0}));
             return cases;
         })()`);
-        buffers.forEach((pcm, i) => safe(pcm, name + ' extreme ' + i, i !== 4));
+        buffers.forEach((pcm, i) => safe(pcm, name + ' extreme ' + i, i !== 4 && !(name==='Fractr' && i===0)));
+        if(name==='Fractr')assert.ok(buffers[0].every(v=>v===0),'all source amounts at zero is silent');
         assert.equal(buffers[0].length, Math.round(0.15 * 44100));
         assert.equal(buffers[1].length, 6 * 44100);
         assert.notEqual(hash(buffers[2]), hash(buffers[3]), 'variation changes sound');
@@ -124,7 +125,7 @@ test('Fractr stores whole fragment counts for imports, recipes, randomization an
 test('Fractr spreads independent fractures over time and fragment count fills the cascade', () => {
     const {run} = setup('Fractr');
     const [burst, cascade, sparse, dense] = run(`(() => {
-        const p = {...synth.params, duration:2, seed:0.32, material:0, fragments:24, decay:0, bounce:0, gravity:0.4};
+        const p = {...synth.params, duration:2, seed:0.32, material:0, fracture:0, stress:0, shards:1, fragments:24, decay:0, bounce:0, gravity:0.4};
         return [{spread:0}, {spread:1}, {spread:1,fragments:3}, {spread:1,fragments:60}]
             .map(change => Fractr_DSP.render({...p,...change}));
     })()`);

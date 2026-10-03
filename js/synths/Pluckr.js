@@ -14,8 +14,9 @@ class Pluckr extends PresetSynth {
         ['Pluck Point','Where along the string the finger pulls.','pluck',0.3,0,1],
         ['Coupling','Energy exchanged through a common bridge.','coupling',0.15,0,1],
         ['Strum','Delay between successive string releases.','strum',0.2,0,1],
-        ['Tremolo','Depth of the pulsing string volume.','tremolo',0,0,1],
-        ['Tremolo Speed','Pulses per second.','tremoloRate',4,0.2,12],
+        ['Tremolo Volume','Depth of the pulsing string volume; does not change pitch.','tremolo',0,0,1],
+        ['Vibrato Pitch','Depth of the gentle pitch wobble, up to about three quarters of a semitone.','vibrato',0,0,1],
+        ['Motion Speed','Pulses per second for both tremolo and vibrato.','tremoloRate',4,0.2,12],
         ['Loose Tuning','Independent imperfections in string tuning.','inharmonic',0.05,0,1]
     ];
     recipes=[
@@ -33,7 +34,7 @@ class Pluckr extends PresetSynth {
         if(!params||typeof params!=='object')return;
         const defaults=this.default_params();
         const complete=['duration','pitch','strings','damping','brightness','pluck','coupling','strum','inharmonic','seed','masterVolume'].every(key=>Object.prototype.hasOwnProperty.call(params,key));
-        if(complete)for(const key of ['material','tremolo','tremoloRate']) {
+        if(complete)for(const key of ['material','tremolo','tremoloRate','vibrato']) {
             if(!Object.prototype.hasOwnProperty.call(params,key))this.set_param(key,defaults[key],checkLocked);
         }
         // Retired Gravity snapshots become glass strings with explicit modulation.

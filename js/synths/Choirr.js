@@ -2,7 +2,8 @@ class Choirr extends PresetSynth {
     name='Choirr';
     tooltip='Sustained vowel ensembles, spectral choirs and wordless chords.';
     static DSP=Choirr_DSP;
-    param_info=[...PresetSynth.common_params,
+    param_info=[PresetSynth.common_params[0],
+        ['Ensemble Seed','Changes each singer’s tuning, vocal colour, vibrato timing, entrance and breath noise. Keeps the chord and root pitch.','seed',0.5,0,1],
         {type:'BUTTONSELECT',name:'harmony',display_name:'Harmony',tooltip:'Notes shared across the singers.',default_value:1,columns:3,values:[['Unison','Every singer holds the same note.',0],['Major','A bright major chord.',1],['Minor','A dark minor chord.',2],['Fifths','Open fifths and octaves.',3],['Cluster','Close and dissonant intervals.',4]]},
         ['Duration','Complete ensemble swell, in seconds.','duration',2.5,0.15,5],
         ['Pitch','Root note of the ensemble.','pitch',0.5,0,1],

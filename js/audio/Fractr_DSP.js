@@ -8,7 +8,8 @@ class Fractr_DSP {
         {pitch:0.17, ring:0.08, noise:3.8, cutoff:1700, grit:1, ratios:[1, 1.63, 2.42]}, // Stone
         {pitch:1.0, ring:0.6, noise:0.015, cutoff:10000, grit:0, ratios:[1, 2, 4]}, // Pixel
         {pitch:0.65, ring:0.26, noise:1.8, cutoff:7000, grit:0.42, ratios:[1, 2.39, 5.17]}, // Armor
-        {pitch:0.39, ring:0.1, noise:2.8, cutoff:3800, grit:0.45, ratios:[1, 1.82, 3.03]} // Bone
+        {pitch:0.39, ring:0.1, noise:2.8, cutoff:3800, grit:0.45, ratios:[1, 1.82, 3.03]}, // Bone
+        {pitch:0.55, ring:0.015, noise:2.8, cutoff:5100, grit:0.65, ratios:[1, 1.77, 3.11]} // Biscuit
     ];
 
     static render(p) {
@@ -18,7 +19,7 @@ class Fractr_DSP {
         const rate = SoundDSP.rate, random = SoundDSP.rng(value('seed', 0.5));
         const duration = value('duration', 1.8, 0.15, 6);
         const output = new Float32Array(round(duration * rate));
-        const materialIndex = round(value('material', 0, 0, 6));
+        const materialIndex = round(value('material', 0, 0, 7));
         const material = this.materials[materialIndex];
         const tuned = materialIndex === 2 || materialIndex === 4;
         const fragments = round(value('fragments', 32, 3, 96));
@@ -26,7 +27,7 @@ class Fractr_DSP {
         const stress = value('stress', 0.4), fracture = value('fracture', 0.75);
         const decay = value('decay', 0.4), gravity = value('gravity', 0.5), bounce = value('bounce', 0.4);
         const cascadeTime = duration * (0.012 + spread * 0.72) * (1 - gravity * 0.6);
-        const gain = 1.45 / pow(fragments, 0.3), tau = 2 * PI;
+        const gain = 1.45 * value('shards',0.35) / pow(fragments, 0.3), tau = 2 * PI;
         const bounceCount = round(bounce * 4);
 
         for (let shard = 0; shard < fragments; shard++) {
@@ -101,19 +102,20 @@ class Fractr_DSP {
         // Their clusters branch in time, with a slower mass response underneath.
         const structuralRandom = SoundDSP.rng(value('seed', 0.5) * 0.79 + 0.137);
         const splitTime = 0.011 + stress * 0.029;
-        const widths = [0.00016, 0.00048, 0.0002, 0.0015, 0.00015, 0.00023, 0.00065];
-        const mass = [0.12, 0.55, 0.08, 1, 0.02, 0.35, 0.32][materialIndex];
+        const widths = [0.00012, 0.00065, 0.0002, 0.0022, 0.00015, 0.00023, 0.0011, 0.00022];
+        const mass = [0.06, 0.9, 0.08, 1, 0.02, 0.35, 1.3, 0.15][materialIndex];
         const width = widths[materialIndex] * (0.7 + size * 0.8);
-        const splitGain = fracture * (tuned ? 0.25 : 1.65);
-        const branches = 7 + round(size * 9);
+        const splitGain = fracture * (tuned ? 0.25 : materialIndex===7 ? 2.2 : 3.4);
+        const branches = materialIndex===7 ? 34 + round(size*28) : materialIndex===6 ? 5 : 7 + round(size * 9);
         for (let branch = 0; branch < branches; branch++) {
             const u = branch / branches;
-            const delay = branch === 0 ? 0 : 0.001 + pow(u, 1.6) * (0.022 + stress * 0.035);
+            const branchSpan = materialIndex===7 ? 0.065 + stress*0.07 : materialIndex===6 ? 0.017 : materialIndex===1 ? 0.045 + stress*0.025 : 0.022 + stress*0.035;
+            const delay = branch === 0 ? 0 : 0.001 + pow(u, 1.6) * branchSpan * (0.75+structuralRandom()*0.5);
             const start = round((splitTime + delay) * rate);
             const release = width * (0.7 + structuralRandom() * 0.9);
-            const weight = splitGain * (branch === 0 ? 1 : 0.25 + 0.4 * (1 - u));
+            const weight = splitGain * (branch === 0 ? 1 : 0.25 + 0.4 * (1 - u)) * (0.75 + structuralRandom()*0.5);
             const length = min(output.length - start, round((release * 9 + 0.009 * mass) * rate));
-            let gritLow = 0;
+            let gritLow = 0, massGrit = 0;
             const gritRate = 1 - exp(-tau * material.cutoff * 0.55 / rate);
             for (let j = 0; j < length; j++) {
                 const t = j / rate, q = t / release;
@@ -121,7 +123,8 @@ class Fractr_DSP {
                 const tensile = (1 - q) * exp(-q);
                 const tearing = gritLow * exp(-t / (release * 3)) * 0.55;
                 const bodyQ = t / (0.002 + mass * 0.004);
-                const body = (1 - bodyQ) * exp(-bodyQ) * mass * 0.55;
+                massGrit += 0.12 * (structuralRandom()*2-1-massGrit);
+                const body = ((1 - bodyQ) + massGrit*(materialIndex===3 || materialIndex===6 ? 6 : 1.2)) * exp(-bodyQ) * mass * 0.95;
                 output[start + j] += weight * (tensile + tearing + body);
             }
         }

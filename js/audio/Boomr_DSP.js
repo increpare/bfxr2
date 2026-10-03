@@ -6,7 +6,7 @@ class Boomr_DSP {
         const rate=SoundDSP.rate,duration=value('duration',1.5,0.12,5),frames=Math.round(rate*duration);
         const out=new Float32Array(frames),size=value('size',0.5),pressure=value('pressure',0.7),blast=value('blast',0.65);
         const debris=value('debris',0.35),spread=value('spread',0.5),tail=value('tail',0.45),muffle=value('muffle',0.15);
-        const mechanism=Math.round(value('mechanism',0,0,5)),space=value('space',0.25);
+        const mechanism=Math.round(value('mechanism',0,0,7)),space=value('space',0.25);
         const random=SoundDSP.rng(value('seed',0.5)),exp=Math.exp,min=Math.min,pow=Math.pow,sin=Math.sin;
         const tau=2*Math.PI,coefficient=hz=>1-exp(-tau*hz/rate);
         const types=[
@@ -15,10 +15,13 @@ class Boomr_DSP {
             {front:1.5,gas:0.2,body:1.6,decay:1.5,brightness:0.08},
             {front:1.1,gas:0.65,body:1.8,decay:1.45,brightness:0.4},
             {front:0.7,gas:0.65,body:1.5,decay:0.8,brightness:0.5},
-            {front:0.6,gas:0.5,body:0.22,decay:0.2,brightness:1.5}
+            {front:0.6,gas:0.5,body:0.22,decay:0.2,brightness:1.5},
+            {front:0.35,gas:1.6,body:0.3,decay:2,brightness:2.5},
+            {front:0.9,gas:0.15,body:2.2,decay:0.55,brightness:0.15}
         ];
         const type=types[mechanism];
-        const events=[{time:0.007,gain:1}];
+        const gas=value('gas',0.25),aftershock=value('aftershock',0.25),rubbleSize=value('rubbleSize',0.5);
+        const events=[{time:mechanism===7 ? 0.08+size*0.07 : 0.007,gain:1}];
         if(mechanism===4) for(let j=0;j<5;j++) events.push({time:duration*(0.12+j*0.12)*(0.8+random()*0.3),gain:0.75-j*0.09});
         if(mechanism===2) for(let j=0;j<3;j++) events.push({time:0.06+(0.1+size*0.18)*pow(1.42,j),gain:0.44*pow(0.63,j)});
         const pressureDecay=(0.024+size*0.18)*type.decay;
@@ -59,17 +62,58 @@ class Boomr_DSP {
                     +blast*type.gas*plume+tail*type.body*roll)*0.8;
             }
         }
+        // A gas jet has an audible opening and several uneven billows, rather
+        // than sharing the detonation's instantaneous noise envelope.
+        const gasRandom=SoundDSP.rng(value('seed',0.5)*0.71+0.193);
+        const jetDelay=mechanism===6 ? 0.015 : mechanism===1 ? 0.045 : 0.07+size*0.045;
+        const jetLife=(0.1+duration*(0.12+tail*0.3))*(mechanism===6?1.5:mechanism===2?0.35:mechanism===5?0.12:1);
+        const gasLowRate=coefficient(50+80*(1-size));
+        const gasHighRate=coefficient(mechanism===2 ? 170 : 700+4700*pow(1-size,0.65));
+        let jetLow=0,jetHigh=0,jetMotion=0;
+        for(let i=0;i<frames;i++) {
+            const t=i/rate-jetDelay;
+            const n=gasRandom()*2-1;
+            jetLow+=gasLowRate*(n-jetLow);jetHigh+=gasHighRate*(n-jetHigh);
+            jetMotion+=coefficient(13)*(gasRandom()*2-1-jetMotion);
+            if(t>=0 && gas>0) {
+                const opening=(1-exp(-t/(0.02+size*0.035)));
+                const envelope=opening*exp(-t/jetLife);
+                const billow=0.48+Math.abs(jetMotion)*9+0.25*pow(sin(t*(11+size*9)),2);
+                out[i]+=gas*(mechanism===5?0.2:1)*envelope*billow*((jetHigh-jetLow)*1.9+jetLow*2.2);
+            }
+            if(mechanism===7 && t+jetDelay<events[0].time) {
+                const u=(t+jetDelay)/events[0].time;
+                out[i]+=(jetHigh-jetLow)*blast*pow(u,3)*0.65;
+            }
+        }
+        // Secondary fronts travel through heavy material. Separate random streams
+        // keep their placement stable when the user changes gas or debris level.
+        const shockRandom=SoundDSP.rng(value('seed',0.5)*0.61+0.317);
+        const shockCount=2+Math.round(aftershock*4);
+        for(let event=0;event<shockCount && aftershock>0;event++) {
+            const arrival=0.12+duration*(0.04+event*0.115)*(0.8+shockRandom()*0.4);
+            const start=Math.round(arrival*rate),life=(0.025+size*0.1)*(0.7+shockRandom()*0.6);
+            const strength=aftershock*pow(0.7,event)*(0.75+size*0.8)*(mechanism===5?0.06:1);
+            let low=0,dc=0;
+            const lp=coefficient(55+90*(1-size));
+            for(let i=start;i<Math.min(frames,start+Math.ceil(life*8*rate));i++) {
+                const t=(i-start)/rate,q=t/(0.006+size*0.016);
+                low+=lp*(shockRandom()*2-1-low);dc+=coefficient(12)*(low-dc);
+                out[i]+=strength*((1-q)*exp(-q)*0.8+(low-dc)*7*(1-exp(-t/0.009))*exp(-t/life));
+            }
+        }
         const pieces=Math.round(debris*48);
         for(let piece=0;piece<pieces;piece++) {
-            const start=Math.floor((0.014+random()*duration*(0.04+spread*0.8))*rate);
-            const chunk=random(),life=(0.002+chunk*0.021)*(0.45+size),gain=debris*(0.1+random()*0.3);
+            const start=Math.floor((0.018+rubbleSize*0.055+random()*duration*(0.04+spread*0.8))*rate);
+            const chunk=random(),life=(0.002+chunk*0.025)*(0.25+rubbleSize*2.5),gain=debris*(0.1+random()*0.3)*(0.7+rubbleSize);
             const length=min(frames-start,Math.ceil(life*rate*7)),damping=exp(-1/(life*rate));
-            const dustRate=coefficient((600+random()*5000)*(1-size*0.72)),bodyRate=coefficient(80+random()*500*(1-size*0.6));
+            const dustRate=coefficient((1200+random()*8500)*pow(1-rubbleSize*0.94,2)),bodyRate=coefficient(45+random()*600*pow(1-rubbleSize*0.85,2));
             let dust=0,body=0,envelope=1;
             for(let j=0;j<length;j++) {
                 const noise=random()*2-1;
                 dust+=dustRate*(noise-dust);body+=bodyRate*(noise-body);
-                out[start+j]+=(dust*0.6+body*2.2)*envelope*gain;envelope*=damping;
+                const q=(j/rate)/(0.0004+rubbleSize*0.009);
+                out[start+j]+=(dust*(1-rubbleSize*0.7)+body*(0.5+rubbleSize*5)+(1-q)*exp(-q)*rubbleSize)*envelope*gain;envelope*=damping;
             }
         }
         if(space>0) {

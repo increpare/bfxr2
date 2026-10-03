@@ -7,7 +7,8 @@ class Crittr extends PresetSynth {
         {type:'BUTTONSELECT',name:'voice',display_name:'Anatomy',tooltip:'The source and throat shape of the creature.',
             default_value:0,columns:3,values:[['Throat','A warm, pulsing throat.',0],['Beak','A sharp, ringing chirp.',1],
                 ['Gills','A hollow, bubbling voice.',2],['Chitin','A thin, buzzing stridulation.',3],
-                ['Spirit','A soft, airy singing call.',4],['Clockwork','A metallic artificial throat.',5]]},
+                ['Spirit','A soft, airy singing call.',4],['Clockwork','A metallic artificial throat.',5],['Dog','A chesty bark with a fast breath attack.',6],
+                ['Cat','A voiced meow with a closing mouth.',7]]},
         ['Duration','Length of the complete call, in seconds.','duration',1.2,0.15,5],
         ['Pitch','The vibration rate of the creature\'s voice.','pitch',0.45,0,1],
         ['Throat Size','Small throats ring high; large throats resonate deeply.','size',0.45,0,1],
@@ -20,6 +21,8 @@ class Crittr extends PresetSynth {
         ['Flutter','From a steady voice to rapid trills and trembling.','flutter',0.2,0,1]
     ];
     recipes = [
+        {name:'Woof',id:'woof',tip:'A short bark, from a small yap to a chesty woof.',values:{voice:6,duration:[0.23,0.65],pitch:[0.18,0.43],size:[0.4,0.85],morph:[0.45,0.85],calls:1,gap:[0.06,0.18],contour:[-0.7,-0.25],growl:[0.18,0.5],breath:[0.14,0.35],flutter:[0.01,0.13]}},
+        {name:'Meow',id:'meow',tip:'A rising, nasal meow relaxing into a rounded vowel.',values:{voice:7,duration:[0.35,0.95],pitch:[0.48,0.66],size:[0.24,0.52],morph:[0.65,1],calls:1,gap:[0.03,0.14],contour:[-0.35,0.1],growl:[0.01,0.12],breath:[0.01,0.09],flutter:[0.02,0.13]}},
         {name:'Tiny Dragon',id:'tiny_dragon',tip:'A little chirrup with a smoky throat.',values:{voice:1,duration:[0.45,1.2],pitch:[0.53,0.76],size:[0.1,0.35],morph:[0.45,0.95],calls:[1,3],gap:[0.16,0.36],contour:[-0.75,0.5],growl:[0.1,0.35],breath:[0.08,0.3],flutter:[0.04,0.2]}},
         {name:'Cave Beast',id:'cave_beast',tip:'A huge, uneven rumble from the dark.',values:{voice:0,duration:[1.1,2.9],pitch:[0.04,0.26],size:[0.7,1],morph:[0.5,1],calls:[1,2],gap:[0.05,0.25],contour:[-0.55,0.1],growl:[0.65,1],breath:[0.18,0.5],flutter:[0.08,0.3]}},
         {name:'Alien Purr',id:'alien_purr',tip:'A small contented creature with too many vocal folds.',values:{voice:2,duration:[1,2.4],pitch:[0.26,0.49],size:[0.25,0.65],morph:[0.2,0.55],calls:[1,3],gap:[0.02,0.16],contour:[-0.15,0.15],growl:[0.4,0.8],breath:[0.02,0.16],flutter:[0.65,0.95]}},
@@ -30,6 +33,11 @@ class Crittr extends PresetSynth {
         {name:'Angry Blob',id:'angry_blob',tip:'An indignant, rubbery bubbling protest.',values:{voice:2,duration:[0.45,1.4],pitch:[0.14,0.38],size:[0.45,0.85],morph:[0.65,1],calls:[2,5],gap:[0.15,0.35],contour:[-0.85,-0.3],growl:[0.5,0.9],breath:[0.03,0.18],flutter:[0.15,0.5]}}
     ];
     constructor() { super(); this.initialize_presets(); }
+    randomize_params() {
+        this.create_random_template();
+        // Randomize is a one-shot explorer; longer recipe buttons and manual edits remain available.
+        if (this.params.duration>1.5) this.set_param('duration',0.55+Math.random()*0.85,true);
+    }
     set_param(name,value,checkLocked=false) {
         super.set_param(name,value,checkLocked);
         if (name==='calls' && !(checkLocked && this.locked_params[name])) {

@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const {createContext, root, plain} = require('./helpers/synth-context');
-const families = ['Crittr', 'Signlr', 'Fractr', 'Riftr', 'Swarmr', 'Tappr', 'Rustlr', 'Notifr', 'Tickr', 'Holor', 'Boomr', 'Pewpr', 'Zappr', 'Whooshr', 'Bouncr', 'Rollr', 'Breathr', 'Choirr', 'Pluckr', 'Glitchr', 'Pulser', 'Rumblr'];
+const families = ['Crittr', 'Birdr', 'Signlr', 'Fractr', 'Riftr', 'Swarmr', 'Tappr', 'Rustlr', 'Notifr', 'Tickr', 'Holor', 'Boomr', 'Pewpr', 'Zappr', 'Whooshr', 'Bouncr', 'Rollr', 'Breathr', 'Choirr', 'Pluckr', 'Glitchr', 'Pulser', 'Rumblr'];
 
 for (const family of families) {
     test(`${family} survives sound files, share links, collections and Stackr copies`, () => {
@@ -51,7 +51,7 @@ test('navigation prunes redundant engines while retaining legacy renderers', () 
         previous.forEach(name=>globalThis[name]=class {constructor(){this.name=name;}});`);
     api.load('js/index.js');
     const names = plain(api.run('register_tabs(); tabs.map(tab=>tab.synth.name)'));
-    assert.deepEqual(names, ['Bfxr','Footsteppr','Transfxr','Chattr','Clonkr','Machinr','Jinglr','Squishr','Mixr', ...families.filter(name=>!['Tappr','Notifr','Tickr','Holor','Rollr','Pulser'].includes(name))]);
+    assert.deepEqual(names, ['Bfxr','Footsteppr','Transfxr','Clonkr','Machinr','Jinglr','Squishr','Mixr', ...families.filter(name=>!['Tappr','Notifr','Tickr','Holor','Pewpr','Rollr','Pulser','Rumblr'].includes(name))]);
     const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
     for (const family of families) {
         assert.ok(html.includes(`src="js/audio/${family}_DSP.js"`));

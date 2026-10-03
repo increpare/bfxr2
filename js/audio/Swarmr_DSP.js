@@ -18,13 +18,15 @@ class Swarmr_DSP {
             const driftRate=0.4+random()*2, center=0.4+random()*0.2;
             const voiceGain=gain*(0.8+random()*0.4);
             const pulseSpeed=pulseRate*(1+(random()-0.5)*(1-cohesion)*0.3);
-            let phase=initialPhase, filteredNoise=0;
+            let phase=initialPhase, filteredNoise=0, wingNoise=0;
             for(let i=start;i<frames;i++) {
                 const t=i/rate, age=(i-start)/(frames-start);
                 const travel=1+movement*0.55*(1-2*age);
                 const jitter=1+agitation*0.12*sin(tau*driftRate*t+driftPhase);
                 const beat=(t*pulseSpeed+pulseOffset)%1;
                 const wing=sin(tau*beat), positive=max(0,wing);
+                // Opposite strokes have different force; an individual wing never holds a pure note.
+                const stroke=pow(positive,3)+0.32*pow(max(0,-wing),5);
                 let frequency=base*detune*travel*jitter, envelope=1, signal;
                 if(kind===1) { frequency*=1.3+2.2*(1-beat);envelope=pow(positive,6); }
                 else if(kind===2) frequency*=0.32;
@@ -35,6 +37,8 @@ class Swarmr_DSP {
                     const arrivalBeat=(i-start)*pulseSpeed/rate;
                     envelope=max(beat<0.2?pow(1-beat/0.2,5):0,
                         arrivalBeat<0.2?pow(1-arrivalBeat/0.2,5):0);
+                    const paired=beat-0.24-agitation*0.035*sin(tau*driftRate*t+driftPhase);
+                    if(paired>=0 && paired<0.16) envelope+=0.62*pow(1-paired/0.16,4);
                 }
                 else if(kind===4) frequency*=0.75;
                 else if(kind===5) frequency*=0.28;
@@ -43,10 +47,22 @@ class Swarmr_DSP {
                 if(phase>tau)phase-=tau;
                 const noise=random()*2-1;
                 filteredNoise+=0.08*(noise-filteredNoise);
+                wingNoise+=(noise-wingNoise)*(0.16+0.32*(1-size));
+                const turbulence=wingNoise-filteredNoise;
+                const airflow=1+agitation*0.4*sin(tau*(driftRate*1.73)*t+initialPhase);
                 switch(kind) {
-                    case 0: signal=(sin(phase)+0.3*sin(phase*2))*(0.2+0.8*positive*positive)+filteredNoise*0.2;break;
+                    case 0:
+                        signal=(sin(phase)+0.22*sin(phase*2)+0.12*sin(phase*3))*(0.08+0.4*stroke);
+                        signal+=(turbulence*3.4+filteredNoise*0.6)*(0.12+1.4*stroke)*airflow;
+                        break;
                     case 1: signal=(sin(phase)+0.2*sin(phase*2))*envelope;break;
-                    case 2: signal=(sin(phase)+0.35*sin(phase*3))*(0.7+0.3*wing)+noise*0.03;break;
+                    case 2: {
+                        // The motor turns below the blade-pass tone; narrow blade wakes carry broadband air.
+                        const blade=pow(0.5+0.5*sin(phase*3),5);
+                        signal=(0.62*sin(phase)+0.28*sin(phase*3)+0.15*sin(phase*6))*(0.75+0.25*wing);
+                        signal+=(turbulence*2.1+noise*0.12)*(0.25+blade)*airflow;
+                        break;
+                    }
                     case 3: signal=(noise*0.65+sin(phase)*0.5)*envelope;break;
                     case 4: signal=sin(phase)*(0.75+0.25*wing)+0.12*sin(phase*2);break;
                     default: signal=(filteredNoise*2.5+sin(phase)*0.25+noise*0.07)*(0.7+0.3*wing);

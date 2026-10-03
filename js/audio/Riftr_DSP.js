@@ -8,6 +8,8 @@ class Riftr_DSP {
         const rate = SoundDSP.rate, random = SoundDSP.rng(value('seed', 0.5));
         const duration = value('duration', 1.8, 0.15, 6), count = round(duration * rate);
         const output = new Float32Array(count), excitation = round(value('excitation', 0, 0, 4));
+        const volume = value('masterVolume', 0.5);
+        if (volume === 0) return SoundDSP.finish(output, 0);
         const pitch = value('pitch', 0.45), bend = value('bend', -0.2, -1, 1), space = value('space', 0.5);
         const feedback = value('feedback', 0.65) * 0.955;
         const dispersion = value('dispersion', 0.55), motion = value('motion', 0.3);
@@ -103,6 +105,16 @@ class Riftr_DSP {
                 output[opposite] = b * (1 - reverse) + a * reverse;
             }
         }
-        return SoundDSP.finish(output, value('masterVolume', 0.5));
+        const rendered = SoundDSP.finish(output, volume);
+        let peak = 0;
+        for (const sample of rendered) peak = max(peak, Math.abs(sample));
+        // Some fields cancel much of their excitation. Restore presence with one
+        // bounded gain for the whole sound, preserving every transient and tail.
+        // Apply it after finish so its tanh cannot flatten the stronger waveform.
+        if (peak > volume * 0.00001) {
+            const gain = min(4, max(1, volume * 0.9 / peak));
+            if (gain > 1) for (let i = 0; i < rendered.length; i++) rendered[i] *= gain;
+        }
+        return rendered;
     }
 }

@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const {createContext, plain} = require('./helpers/synth-context');
 const names = ['Breathr', 'Pulser', 'Pluckr'];
 const categoryIds = {
-    Breathr:['snore','tired_runner','deep_breath','held_breath','gasp','sleeping_beast','diver','helmet','ghost_breath'],
+    Breathr:['inhale','exhale','sigh','snore','tired_runner','deep_breath','held_breath','gasp','sleeping_beast','diver','helmet','ghost_breath'],
     Pulser:['heartbeat','panic','giant_heart','android_core','poison','underwater','energy_core','last_life'],
     Pluckr:['harp','kalimba','muted_guitar','metal_string','magic_harp','bass_pluck','broken_string','quest_pluck']
 };

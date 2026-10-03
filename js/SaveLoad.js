@@ -7,7 +7,7 @@ class SaveLoad {
     static tab_for_import(name) {
         const existing=tabs.find(tab=>tab.synth.name===name);
         if(existing)return existing;
-        const retired=['Weathr','Stackr','Tappr','Notifr','Tickr','Holor','Rollr','Pulser'];
+        const retired=['Chattr','Pewpr','Rumblr','Weathr','Stackr','Tappr','Notifr','Tickr','Holor','Rollr','Pulser'];
         if(!retired.includes(name)||typeof Stackr==='undefined'||typeof Tab==='undefined')return null;
         const synth=name==='Stackr'?new Stackr():Stackr.source(name);
         if(!synth)return null;
@@ -93,8 +93,9 @@ class SaveLoad {
                 const saved=JSON.parse(entries.slice(2).join('~'));
                 if(!saved.params || typeof saved.params!=='object')return;
                 const tab=tabs.find(tab=>tab.synth.name===synth_name);
-                const defaults=tab?tab.synth.default_params():{};
-                return [synth_name,saved.filename,{...defaults,...saved.params}];
+                const synth=tab ? new tab.synth.constructor() : (typeof Stackr==='undefined' ? null : Stackr.source(synth_name));
+                if(synth){synth.apply_params(saved.params);return [synth_name,saved.filename,{...synth.params}];}
+                return [synth_name,saved.filename,saved.params];
             } catch { return; }
         }
         //need to find the tab that matches the synth_name
@@ -112,8 +113,8 @@ class SaveLoad {
             Transfxr:[['waveTo','morph']],
             Jinglr:[['instrumentSeed']], Notifr:[['instrumentSeed']],
             Tappr:[['air','sweep']], Rollr:[['surface']],
-            Breathr:[['source']], Pluckr:[['tremolo','tremoloRate'],['tremolo','tremoloRate','material']],
-            Fractr:[['stress','fracture']], Boomr:[['mechanism','space']],
+            Breathr:[['mode','direction'],['mode','direction','source']], Pluckr:[['vibrato'],['vibrato','tremolo','tremoloRate'],['vibrato','tremolo','tremoloRate','material']],
+            Fractr:[['shards'],['shards','stress','fracture']], Boomr:[['gas','aftershock','rubbleSize'],['gas','aftershock','rubbleSize','mechanism','space']],
             Pewpr:[['character','modulation']], Bouncr:[['surface','force','tail']],
             Glitchr:[['mode']], Rumblr:[['depth','harmonics']]
         };
@@ -123,6 +124,7 @@ class SaveLoad {
         var dict = {};
         for (const key of missing) dict[key] = default_params[key];
         if(synth_name==='Chattr' && missing.includes('voiceMode'))dict.voiceMode=0;
+        if(synth_name==='Breathr' && missing.includes('mode'))dict.mode=1;
         for (var i = 0; i < keys.length; i++){
             const entry = entries[i+2];
             dict[keys[i]] = typeof default_params[keys[i]] !== "number"

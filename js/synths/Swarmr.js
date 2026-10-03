@@ -5,8 +5,8 @@ class Swarmr extends PresetSynth {
     param_info=[
         ...PresetSynth.common_params,
         {type:'BUTTONSELECT',name:'kind',display_name:'Agents',tooltip:'The individual sound inside the swarm.',default_value:0,columns:3,header:true,
-            values:[['Wings','Fluttering wings.',0],['Chirps','Brief calls.',1],['Rotors','Small spinning motors.',2],
-                ['Ticks','Dry joint clicks.',3],['Wisps','Soft hovering tones.',4],['Jets','Tiny rushing exhausts.',5]]},
+            values:[['Wings','Independent wing strokes and rushing air.',0],['Chirps','Brief calls.',1],['Rotors','Small motors with rough blade wakes.',2],
+                ['Ticks','Paired skittering feet and joint clicks.',3],['Wisps','Soft hovering tones.',4],['Jets','Tiny rushing exhausts.',5]]},
         ['Duration','Seconds.','duration',1.8,0.25,5],
         ['Population','Number of independent emitters.','count',14,3,32],
         ['Speed','Wingbeats, chirps and repeated activity.','speed',0.5,0,1],

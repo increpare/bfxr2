@@ -1,6 +1,6 @@
 // Two independently saved sounds, played together at a constant total gain.
 class Mixr_DSP {
-    static render(p, renderSource = source => Stackr.render_source(source, p.seed)) {
+    static render(p, renderSource = source => Stackr.render_source(source, Number.isFinite(source.renderSeed) ? source.renderSeed : p.seed)) {
         let sources;
         try { sources = JSON.parse(p.sources); } catch { sources = []; }
         if (!Array.isArray(sources)) sources = [];

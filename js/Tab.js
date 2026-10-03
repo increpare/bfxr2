@@ -418,7 +418,9 @@ class Tab {
                 var param_name = param[2];
                 //it's a slider
                 var slider = this.sliders[param_name];
-                if (slider) slider.setValue(value);
+                if (slider) {
+                    slider.setValue(value);
+                }
             } else {
                 switch (param.type) {
                     case "TEXT":
@@ -443,8 +445,10 @@ class Tab {
                                 child.classList.remove("selected");
                             }
                         }
-                        button_grid.children[index].classList.add("selected");
-                        button_grid.children[index].disabled = true;
+                        if(index>=0){
+                            button_grid.children[index].classList.add("selected");
+                            button_grid.children[index].disabled = true;
+                        }
                         break;
                     case "KNOB_TRANSITION":
                         this.update_transition_control(param.name);
@@ -454,6 +458,7 @@ class Tab {
                 }
             }
         }
+        this.update_param_visibility();
         if (this.custom_editor) this.custom_editor.update();
     }
     
@@ -1059,7 +1064,16 @@ class Tab {
         this.parameter_changed();
     }
 
+    update_param_visibility() {
+        if(!this.synth.param_is_hidden)return;
+        for(const [name,slider] of Object.entries(this.sliders)){
+            const row=slider.sliderElem.closest('tr');
+            if(row)row.hidden=this.synth.param_is_hidden(name);
+        }
+    }
+
     parameter_changed() {
+        this.update_param_visibility();
         for (const editor of Object.values(this.text_controls || {})) editor.update();
         if (this.selected_file_index < 0) {
             this.create_new_sound_from_params("Sfx", this.synth.params, true);

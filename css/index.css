@@ -960,3 +960,5 @@ img {
 .morph-target select { flex: 1; padding: 4px; }
 
 .speech-words { flex: 1; min-width: 0; }
+
+.morph-curve { width: 100%; padding: 0 5px 8px; }
