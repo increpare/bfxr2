@@ -2,6 +2,20 @@ Math.clamp = function(value, min, max){
     return Math.max(min, Math.min(value, max));
 }
 
+const SYNTH_DISPLAY_NAMES = {
+    Transfxr:'Transfxr', Clonkr:'Tangs', Machinr:'Motors',
+    Jinglr:'Jingles', Squishr:'Squishy', Mixr:'Mixfxr',
+    Crittr:'Beasts', Birdr:'Bird', Signlr:'Signal',
+    Fractr:'Cracker', Riftr:'Sonar', Swarmr:'Swarms',
+    Rustlr:'Rustler', Boomr:'Boomer', Zappr:'Zapper',
+    Whooshr:'Whoosh', Bouncr:'Bonks', Breathr:'Breath',
+    Choirr:'Choir', Pluckr:'Plucked', Glitchr:'Glitches'
+};
+
+function synth_display_name(name) {
+    return SYNTH_DISPLAY_NAMES[name] || name;
+}
+
 // shallow copy
 function copy_obj(obj){
     return Object.assign({}, obj);

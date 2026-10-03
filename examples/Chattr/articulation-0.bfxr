@@ -1,0 +1,21 @@
+{
+  "synth_type": "Chattr",
+  "version": "2.0.0",
+  "file_name": "articulation-0",
+  "params": {
+    "masterVolume": 0.5,
+    "text": "The sheep found a phone. Hello, little world!",
+    "texture": 0,
+    "articulation": 0,
+    "pitch": 0.35,
+    "mouth": 0.5,
+    "speed": 0.42,
+    "expression": 0.25,
+    "inflection": 0,
+    "wobble": 0,
+    "breath": 0,
+    "grit": 0,
+    "spacing": 0.3,
+    "seed": 0.37
+  }
+}

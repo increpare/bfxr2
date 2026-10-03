@@ -332,7 +332,7 @@ class Bfxr extends SynthBase {
         this.set_param("sustainPunch", 0.3 + Math.random() * 0.3, true);
 
         if (Math.random() < 0.5) {
-            this.set_param("pitch_jump_Speed", 0.5 + Math.random() * 0.2, true);
+            this.set_param("pitch_jump_onset_percent", 0.5 + Math.random() * 0.2, true);
             var cnum = Math.floor(Math.random() * 7) + 1;
             var cden = Math.floor(Math.random() * 7) + cnum + 2;
 
@@ -425,7 +425,7 @@ class Bfxr extends SynthBase {
         }
 
         if (Math.random() < 0.33) {
-            this.set_param("pitch_jump_Speed", 0.6 + Math.random() * 0.3, true);
+            this.set_param("pitch_jump_onset_percent", 0.6 + Math.random() * 0.3, true);
             this.set_param("pitch_jump_amount", 0.8 - Math.random() * 1.6, true);
         }
     }
@@ -685,9 +685,11 @@ class Bfxr extends SynthBase {
     /*********************/
 
     generate_sound() {
+        if (this.sound) this.sound.stop();
         var dsp = new Bfxr_DSP(this.params, this);
         dsp.generate_sound();
         this.sound = RealizedSound.from_buffer(dsp.buffer);
+        this.sound_params = JSON.stringify(this.params);
     }
 
     /*********************/

@@ -1,0 +1,7 @@
+# Audio-derived preset families
+
+The existing Transfxr buttons vary almost only in transposition. Build a deterministic survey of 512 audible sounds from broad parameter exploration and substantial variations around the original examples. Cluster rendered PCM rather than raw knob positions or source recipe labels. Use measured duration, attack/decay, pitch trajectory, spectral brightness/flatness, tonal concentration and time-varying band energy. Inspect cluster summaries and representative spectrograms before assigning descriptive names.
+
+Each shipped preset is a family of multiple measured exemplars. Sample complete exemplars and interpolate compatible pairs locally, preserving correlated controls; do not use independent min/max ranges that mix incompatible sounds. Respect parameter locks, keep original exact example IDs working, and make every audible survey item inspectable in a searchable listening catalogue with cluster membership, feature summaries, nearest/farthest examples, audio playback and import links.
+
+The tools, seed, selection criteria, feature specification, clustering scores and final bank are reproducible and stored locally. Category names are interpretations of measured sound profiles, not claims of a human listening review. The catalogue makes those judgments easy for the user to audition and revise. No runtime analysis dependency, model/API calls or new synthesis engine.

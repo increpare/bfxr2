@@ -15,11 +15,12 @@ class SynthBase {
                 result[param_name] = param_default_value;
             } else {
                 switch (param.type) {
+                    case "TEXT":
                     case "BUTTONSELECT":
                         result[param.name] = param.default_value;
                         break;
                     case "KNOB_TRANSITION":
-                        result[param.name] = param.default_value_l;
+                        result[param.name] = {start: param.default_value_l, end: param.default_value_r, curve: param.default_tween};
                         break;
                     default:
                         console.error("Unknown param type: " + param.type);
@@ -44,9 +45,15 @@ class SynthBase {
     apply_params(other_params,check_locked = false) {
         for (var key in other_params) {
             if ( !check_locked || !this.locked_param(key) ) {
-                this.params[key] = other_params[key];
+                const info = this.param_info.find(p => p.name === key && p.type === "KNOB_TRANSITION");
+                if (info) {
+                    this.set_param(key, other_params[key]);
+                } else {
+                    this.params[key] = other_params[key];
+                }
             }
         }
+        this.sound_params = null;
     }
 
     param_is_disabled(param_name){
@@ -109,6 +116,11 @@ class SynthBase {
             result.type = "RANGE";
         } else {
             switch (param.type) {
+                case "TEXT":
+                    result.name = param.name;
+                    result.default_value = param.default_value;
+                    result.type = "TEXT";
+                    break;
                 case "BUTTONSELECT":
                     result.name = param.name;
                     result.default_value = param.default_value;
@@ -118,7 +130,7 @@ class SynthBase {
                     break;
                 case "KNOB_TRANSITION":
                     result.name = param.name;
-                    result.default_value = param.default_value_l;
+                    result.default_value = {start: param.default_value_l, end: param.default_value_r, curve: param.default_tween};
                     result.min_value = param.min;
                     result.max_value = param.max;
                     result.type = "KNOB_TRANSITION";
@@ -178,7 +190,24 @@ class SynthBase {
         }
         var min_val = this.param_min(param_name);
         var max_val = this.param_max(param_name);
-        this.params[param_name] = Math.clamp(value, min_val, max_val);
+        const info = this.get_param_info(param_name);
+        if (info.type === "TEXT") {
+            this.params[param_name] = typeof value === "string"
+                ? value.slice(0, info.max_length).replace(/[\uD800-\uDBFF]$/, '') : info.default_value;
+        } else if (info.type === "KNOB_TRANSITION") {
+            const input = value && typeof value === "object" ? value : {start: value};
+            const endpoint = (v, fallback) => Number.isFinite(v) ? Math.clamp(v, min_val, max_val) : fallback;
+            this.params[param_name] = {
+                start: endpoint(input.start, info.default_value_l),
+                end: endpoint(input.end, info.default_value_r),
+                curve: (info.curves || [info.default_tween]).includes(input.curve) ? input.curve : info.default_tween
+            };
+        } else if (info.type === "BUTTONSELECT") {
+            this.params[param_name] = info.values.some(option => option[2] === value) ? value : info.default_value;
+        } else {
+            this.params[param_name] = Number.isFinite(value) ? Math.clamp(value, min_val, max_val) : this.param_default(param_name);
+        }
+        this.sound_params = null;
     }
 
     get_param(param_name) {
@@ -215,10 +244,15 @@ class SynthBase {
         for (var i = 0; i < this.param_info.length; i++) {
             var param = this.param_info[i];
             var param_normalized = this.get_param_normalized(param);
+            if (param_normalized.type === "TEXT") continue;
             
             var min_val = param_normalized.min_value;
             var max_val = param_normalized.max_value;
             var random_val = Math.random() * (max_val - min_val) + min_val;
+            if (param_normalized.type === "KNOB_TRANSITION") {
+                random_val = {start: random_val, end: Math.random() * (max_val - min_val) + min_val,
+                    curve: param.curves[Math.floor(Math.random() * param.curves.length)]};
+            }
             if (param_normalized.type === "BUTTONSELECT") {
                 random_val = Math.floor(random_val);
                 if (random_val >= max_val) {
@@ -238,6 +272,12 @@ class SynthBase {
             }
             var param = this.param_info[i];
             var param_normalized = this.get_param_normalized(param);
+            if (param_normalized.type === "KNOB_TRANSITION") {
+                const value = this.params[param.name];
+                const delta = () => (Math.random() - 0.5) * 0.1 * (param.max - param.min);
+                this.set_param(param.name, {start: value.start + delta(), end: value.end + delta(), curve: value.curve}, true);
+                continue;
+            }
             if (param_normalized.type !== "RANGE") {
                 continue;
             }
@@ -261,8 +301,9 @@ class SynthBase {
     }
 
     generate_sound_uri(){
-        if (!this.sound){
+        if (!this.sound || this.sound_params !== JSON.stringify(this.params)){
             this.generate_sound();
+            this.sound_params = JSON.stringify(this.params);
         }
         return this.sound.getDataUri();
     }
@@ -441,6 +482,15 @@ class SynthBase {
                 var param_info = this.get_param_info(param_name);                
                 var param_info_normalized = this.get_param_normalized(param_info);
                 switch (param_info_normalized.type) {
+                    case "KNOB_TRANSITION": {
+                        const sample = field => {
+                            const values = possible_values.map(value => value[field]);
+                            return Math.min(...values) + Math.random() * (Math.max(...values) - Math.min(...values));
+                        };
+                        const curve = possible_values[Math.floor(Math.random() * possible_values.length)].curve;
+                        this.set_param(param_name, {start: sample("start"), end: sample("end"), curve}, true);
+                        break;
+                    }
                     case "BUTTONSELECT":
                         var random_value = possible_values[Math.floor(Math.random() * possible_values.length)];
                         this.set_param(param_name, random_value,true);

@@ -12,7 +12,7 @@ class RealizedSound {
 
 
     source = null;
-    play() {
+    play(loop = false) {
         ULBS();
 
         if (this.source!=null){
@@ -21,6 +21,7 @@ class RealizedSound {
         this.source = AUDIO_CONTEXT.createBufferSource();
 
         this.source.buffer = this._buffer;
+        this.source.loop = loop;
         this.source.connect(AUDIO_CONTEXT.destination);
 
         var t = AUDIO_CONTEXT.currentTime;

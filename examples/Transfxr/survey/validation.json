@@ -1,0 +1,106 @@
+{
+  "seed": 20261003,
+  "count": 512,
+  "minimum_rms": 0.011625740425945899,
+  "maximum_peak": 0.429334819316864,
+  "families": [
+    {
+      "name": "Bright Whistles",
+      "count": 32,
+      "closest_family_fraction": 0.90625,
+      "within_20_percent_of_closest": 0.96875
+    },
+    {
+      "name": "Grainy Taps",
+      "count": 32,
+      "closest_family_fraction": 0.84375,
+      "within_20_percent_of_closest": 0.90625
+    },
+    {
+      "name": "Rocket Zips",
+      "count": 32,
+      "closest_family_fraction": 0.96875,
+      "within_20_percent_of_closest": 0.96875
+    },
+    {
+      "name": "Wavering Calls",
+      "count": 32,
+      "closest_family_fraction": 0.9375,
+      "within_20_percent_of_closest": 1.0
+    },
+    {
+      "name": "Fuzzy Chirps",
+      "count": 32,
+      "closest_family_fraction": 0.84375,
+      "within_20_percent_of_closest": 0.90625
+    },
+    {
+      "name": "Bass Plucks",
+      "count": 32,
+      "closest_family_fraction": 0.9375,
+      "within_20_percent_of_closest": 1.0
+    },
+    {
+      "name": "Soft Pips",
+      "count": 32,
+      "closest_family_fraction": 0.875,
+      "within_20_percent_of_closest": 1.0
+    },
+    {
+      "name": "Sand Sprays",
+      "count": 32,
+      "closest_family_fraction": 0.90625,
+      "within_20_percent_of_closest": 0.90625
+    },
+    {
+      "name": "Air Currents",
+      "count": 32,
+      "closest_family_fraction": 0.875,
+      "within_20_percent_of_closest": 0.9375
+    },
+    {
+      "name": "Submarine Calls",
+      "count": 32,
+      "closest_family_fraction": 0.875,
+      "within_20_percent_of_closest": 0.9375
+    },
+    {
+      "name": "Descending Sweeps",
+      "count": 32,
+      "closest_family_fraction": 0.96875,
+      "within_20_percent_of_closest": 1.0
+    },
+    {
+      "name": "Rising Bloops",
+      "count": 32,
+      "closest_family_fraction": 0.9375,
+      "within_20_percent_of_closest": 1.0
+    },
+    {
+      "name": "Rubber Clicks",
+      "count": 32,
+      "closest_family_fraction": 0.84375,
+      "within_20_percent_of_closest": 0.90625
+    },
+    {
+      "name": "Falling Thumps",
+      "count": 32,
+      "closest_family_fraction": 0.9375,
+      "within_20_percent_of_closest": 1.0
+    },
+    {
+      "name": "Reverse Bloops",
+      "count": 32,
+      "closest_family_fraction": 0.9375,
+      "within_20_percent_of_closest": 1.0
+    },
+    {
+      "name": "Static Flecks",
+      "count": 32,
+      "closest_family_fraction": 0.8125,
+      "within_20_percent_of_closest": 0.90625
+    }
+  ],
+  "closest_family_fraction": 0.900390625,
+  "within_20_percent_of_closest": 0.958984375
+}

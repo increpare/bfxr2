@@ -1,0 +1,11 @@
+[
+  "js/globals.js",
+  "js/audio/AKWF.js",
+  "js/audio/BfxrWaveforms.js",
+  "js/synths/templates.js",
+  "js/synths/SynthBase.js",
+  "js/audio/Transfxr_DSP.js",
+  "js/synths/PresetFamily.js",
+  "js/synths/TransfxrPresets.js",
+  "js/synths/Transfxr.js"
+]

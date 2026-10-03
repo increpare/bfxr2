@@ -18,8 +18,11 @@ class Tab {
     /* keeping track of frequently used dom elements */
     sliders = {};
     lock_buttons = {};
+    transition_controls = {};
+    text_controls = {};
 
     synth = null;
+    ui_initialized = false;
 
     constructor(synth_specification) {
 
@@ -47,7 +50,7 @@ class Tab {
                 this.play_on_change = saved_info.play_on_change;
             }
             if (saved_info.locked_params !== undefined){
-                this.synth.locked_params = saved_info.locked_params;
+                this.synth.locked_params = {...this.synth.locked_params,...saved_info.locked_params};
             }
         }        
 
@@ -58,11 +61,11 @@ class Tab {
         var first_tab = tab_bar.children.length == 0;
 
         var tab_button = document.createElement("div");
-        tab_button.innerText = tab_name;
+        tab_button.innerText = synth_specification.display_name || tab_name;
         tab_button.id = "tab_button_" + tab_name;
         tab_button.classList.add("tab_button");
         tab_bar.appendChild(tab_button);
-        tab_button.addEventListener("click", this.set_active_tab.bind(this));
+        tab_button.addEventListener("click", () => this.set_active_tab(true));
 
         var tab_page = document.createElement("div");
         tab_page.classList.add("tab_page");
@@ -74,6 +77,26 @@ class Tab {
             tab_page.classList.add("active_tab_page");
             this.active = true;
         }
+
+        tabs.push(this);
+
+        // Keep every collection ready to save/export, without rendering hidden tabs.
+        if (this.files.length === 0) {
+            const [template_name, params] = this.synth.create_random_template();
+            this.synth.apply_params(params);
+            this.current_params = this.synth.params;
+            const state = JSON.stringify(this.synth.params);
+            this.files.push([this.find_unique_filename(template_name), state, state]);
+            this.selected_file_index = 0;
+        }
+    }
+
+    initialize_ui() {
+        if (this.ui_initialized) return;
+        this.ui_initialized = true;
+        const synth_specification = this.synth;
+        const tab_name = this.name;
+        const tab_page = document.getElementById("tab_page_" + tab_name);
 
         var left_panel = document.createElement("div");
         left_panel.classList.add("left_panel");
@@ -163,7 +186,9 @@ class Tab {
         {
             var display_canvas_container = document.createElement("div");
             display_canvas_container.classList.add("display_canvas_container");
+            display_canvas_container.dataset.synth = this.synth.display_name || this.name;
             if (this.synth.canvas_bg_logo) {
+                display_canvas_container.classList.add("has_logo");
                 display_canvas_container.style.backgroundImage = `url(${this.synth.canvas_bg_logo})`;
             }
             right_panel.appendChild(display_canvas_container);
@@ -199,6 +224,13 @@ class Tab {
 
             var play_button = this.add_button("play", "Play", this.play_button_clicked.bind(this), "Play the current sound");
             right_panel_button_list.appendChild(play_button);
+            if (this.synth.loop_preview) {
+                play_button.textContent = "Play loop";
+                const stop_button = this.add_button(this.name + "_stop", "Stop", () => {
+                    if (this.synth.sound) this.synth.sound.stop();
+                }, "Stop the looping preview. Export WAV saves one seamless cycle.");
+                right_panel_button_list.appendChild(stop_button);
+            }
 
             var master_volume_container_div = document.createElement("div");
             right_panel_button_list.appendChild(master_volume_container_div);
@@ -237,6 +269,12 @@ class Tab {
             var paste_button = this.add_button("paste", "Paste", this.paste_button_clicked.bind(this), "Paste the current sound [CTRL+V]");
             right_panel_button_list.appendChild(paste_button);
 
+            if (this.name !== 'Mixr' && this.name !== 'Stackr' && typeof Mixr !== 'undefined') {
+                this.stack_button = this.add_button(this.name+'_mix_sound','Mix this sound',
+                    this.mix_sound.bind(this),'Copy this sound into Mixr.');
+                right_panel_button_list.appendChild(this.stack_button);
+            }
+
             var copy_link_button = this.add_button("copy_link", "Copy Link", this.copy_link_button_clicked.bind(this), "Copy the current sound link");
             right_panel_button_list.appendChild(copy_link_button);
 
@@ -251,16 +289,18 @@ class Tab {
 
         this.template_list = template_list;
 
-        tabs.push(this);
-
         this.load_params(synth_specification);
         this.load_templates(synth_specification);
 
-        if (this.files.length == 0){
-            this.create_random_template();
-        } else {
-            this.update_ui();
+        if (this.synth.create_editor) {
+            const editor_container = document.createElement("div");
+            editor_container.className = "special_editor_container";
+            this.centre_header.appendChild(editor_container);
+            this.centre_header.style.display = "block";
+            this.custom_editor = this.synth.create_editor(this, editor_container);
         }
+
+        this.update_ui();
     }
 
     /*********************/
@@ -280,17 +320,33 @@ class Tab {
             this.synth.set_locked_param(param_name,true);
         }
         this.update_locks();
+        if (this.custom_editor) this.custom_editor.update();
         SaveLoad.save_all_collections();
     }
 
     update_ui(){
+        if (this.ui_initialized === false) return;
+        document.getElementById(this.name + "_checkbox_create_new_sound").checked = this.create_new_sound;
+        document.getElementById(this.name + "_checkbox_loop").checked = this.play_on_change;
         this.update_ui_file_list();
         this.update_ui_params();
         this.update_ablements();
         this.update_locks();
     }
 
+    update_stack_button(){
+        if (this.stack_button) {
+            const mix=tabs.find(tab=>tab.name==='Mixr');
+            if(mix){this.stack_button.disabled=false;this.stack_button.title='Copy this sound into Mixr.';return;}
+            const stack=tabs.find(tab=>tab.name==='Stackr');
+            this.stack_button.disabled=!!stack && stack.synth.get_layers().length>=6;
+            this.stack_button.title=this.stack_button.disabled ? 'Stack full. Open Stackr and start a new stack or remove a layer.'
+                : 'Copy this sound into the current stack and open it.';
+        }
+    }
+
     update_ablements(){
+        this.update_stack_button();
         if (this.selected_file_index===-1){
             return;
         }
@@ -324,6 +380,7 @@ class Tab {
                 var param_name = param[2];
                 var param_disabled = this.synth.param_is_disabled(param_name);
                 var slider = this.sliders[param_name];
+                if (!slider) continue;
                 if (param_disabled){
                     slider.disable();
                 } else {
@@ -368,9 +425,14 @@ class Tab {
                 var param_name = param[2];
                 //it's a slider
                 var slider = this.sliders[param_name];
-                slider.setValue(value);
+                if (slider) {
+                    slider.setValue(value);
+                }
             } else {
                 switch (param.type) {
+                    case "TEXT":
+                        if (this.text_controls[param.name]) this.text_controls[param.name].update();
+                        break;
                     case "BUTTONSELECT":
                         var value = this.synth.params[param.name];
                         var index=-1;
@@ -382,6 +444,7 @@ class Tab {
                             }
                         }
                         var button_grid = document.getElementById(this.name + "_button_grid_" + param.name);
+                        if (!button_grid) break;
                         for (var j = 0; j < button_grid.children.length; j++) {
                             var child = button_grid.children[j];
                             child.disabled = false;
@@ -389,17 +452,21 @@ class Tab {
                                 child.classList.remove("selected");
                             }
                         }
-                        button_grid.children[index].classList.add("selected");
-                        button_grid.children[index].disabled = true;
+                        if(index>=0){
+                            button_grid.children[index].classList.add("selected");
+                            button_grid.children[index].disabled = true;
+                        }
                         break;
                     case "KNOB_TRANSITION":
-                        console.error("Knob transition not implemented");
+                        this.update_transition_control(param.name);
                         break;  
                     default:
                         console.error("Unknown param type: " + param.type); 
                 }
             }
         }
+        this.update_param_visibility();
+        if (this.custom_editor) this.custom_editor.update();
     }
     
     update_locks(){
@@ -416,7 +483,8 @@ class Tab {
             }
         }
     }
-    set_active_tab() {
+    set_active_tab(play_on_switch = false) {
+        const preview = play_on_switch && !this.active && this.selected_file_index >= 0;
         var tab_page = document.getElementById("tab_page_" + this.name);
         tab_page.classList.add("active_tab");
         var tab_buttons = document.getElementsByClassName("tab_button");
@@ -440,8 +508,23 @@ class Tab {
 
         for (var i = 0; i < tabs.length; i++){
             var tab = tabs[i];
+            if (tab.active && tab !== this && tab.synth.sound && (preview || tab.synth.loop_preview)) tab.synth.sound.stop();
             tab.active = tab.name == this.name;
         }
+        if (this.ui_initialized === false) this.initialize_ui();
+        if (this.ui_initialized) this.update_ui();
+        if (this.selected_file_index >= 0) {
+            if (!this.synth.sound || this.synth.sound_params !== JSON.stringify(this.synth.params)) {
+                this.synth.generate_sound();
+            }
+            this.redraw_waveform();
+            if (preview) {
+                this.synth.sound.play(this.synth.loop_preview === true);
+                for (const editor of Object.values(this.text_controls)) editor.play();
+            }
+        }
+        this.update_stack_button();
+        if (this.custom_editor) this.custom_editor.update();
     }
     
     load_params(synth_specification) {
@@ -452,7 +535,7 @@ class Tab {
             var param_normalized = synth_specification.get_param_normalized(param);
             
             if (!(param_normalized.name in synth_specification.locked_params)){
-                var do_lock = !synth_specification.permalocked.includes(param_normalized.name);
+                var do_lock = synth_specification.permalocked.includes(param_normalized.name);
                 this.synth.set_locked_param(param_normalized.name,do_lock);
             }
 
@@ -479,6 +562,10 @@ class Tab {
             this.add_slider(param_name, display_name, tooltip, min_value, max_value, default_value, header);
         } else {            
             switch (param.type) {
+                case "TEXT":
+                    this.text_controls[param.name] = new SpeechEditor(this, param, this.centre_header);
+                    this.centre_header.style.display = "block";
+                    break;
                 case "BUTTONSELECT":
                     this.add_button_grid(param.name, param.display_name, param.tooltip, param.columns, param.default_value, param.values, param.header === true ? true : false);
                     param_name = param.name;
@@ -538,6 +625,12 @@ class Tab {
         }
 
         slider.on("slideStop", handler_fn);
+        // A visual preview while dragging; audio and saved parameters commit on release.
+        slider.on("slide", value => {
+            for (const editor of Object.values(this.text_controls || {})) {
+                if (editor.preview_params) editor.preview_params({...this.synth.params, [slider_id]:value});
+            }
+        });
 
         this.sliders[slider_id] = slider;        
     }
@@ -564,113 +657,29 @@ class Tab {
         return parameter_name_span;
     }
 
-    add_knob_transition(
-        parameter_name,
-        display_name,
-        tooltip,
-        default_value_l,
-        default_value_r,
-        min,
-        max,
-        default_tween,
-        header = false
-    ) {
-        /* should look something like this:
-            <td class="slider_container">
-                <input type="range" class="input-knob" data-width="32" data-height="32" data-bgcolor="#b7a480" data-fgcolor="#3c3831"/>	
-                <input type="range" class="input-knob" data-width="32" data-height="32" data-bgcolor="#c7b490" data-fgcolor="#3c3831" />	
-            </td>
-        */
-        var parent_container = header ? this.centre_header : this.centre_params;
-        parent_container.style.display = "block";
-
-        var table = parent_container.children[0];
-
-        var new_row = table.insertRow();
-
-        var lock_cell = new_row.insertCell();
-        lock_cell.classList.add("lockcolumn");
-        var lock_button = this.generate_lock_button(parameter_name);
-        lock_cell.appendChild(lock_button);
-
-        var rowspan = 1;
-        if (display_name !== "") {
-            var label_cell = new_row.insertCell();
-            label_cell.classList.add("labelcolumn");
-            var label = this.create_param_label(display_name, tooltip);
-            label_cell.appendChild(label);
-        } else {
-            rowspan = 2;
+    add_knob_transition(parameter_name, display_name, tooltip, start, end, min, max, curve, header = false) {
+        const parent = header ? this.centre_header : this.centre_params;
+        parent.style.display = "block";
+        const table = parent.children[0];
+        if (!Object.keys(this.transition_controls).length) {
+            const hint = document.createElement("p");
+            hint.className = "transition_hint";
+            hint.textContent = "Drag A / B to set the endpoints. Drag the middle to move both. Triangle and Pulse return to A.";
+            parent.appendChild(hint);
         }
-
-        var parameter_cell = new_row.insertCell();
-        parameter_cell.classList.add("transition_container");
-
-        var knob_l = this.new_knob(parameter_name + "_l", default_value_l, min, max, 0.01);
-        parameter_cell.appendChild(knob_l);
-
-        var dropdown_uid = this.name + "_dropdown_content_" + parameter_name;
-
-
-        var default_tween_img = Transfxr.tweenfunctions[0][2];
-        var tween_container = document.createElement("img");
-        tween_container.src = default_tween_img.src;
-        tween_container.classList.add("tween_select_canvas");
-        tween_container.classList.add("dropdown");
-        tween_container.id = parameter_name + "_tween_select_canvas";
-        parameter_cell.appendChild(tween_container);
-        tween_container.addEventListener("click", () => {
-            document.getElementById(dropdown_uid).classList.toggle("show");
-        });
-
-        /*add dropdown for tween selection
-     looks like:
-  
-     <div class="dropdown">
-      <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-          <div id="myDropdown" class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-          </div>
-      </div>
-      */
-
-        var dropdown_content_div = document.createElement("div");
-        dropdown_content_div.classList.add("dropdown-content");
-        dropdown_content_div.id = dropdown_uid;
-        parameter_cell.appendChild(dropdown_content_div);
-
-        for (var i = 0; i < Transfxr.tweenfunctions.length; i++) {
-            var tween_img = Transfxr.tweenfunctions[i][2];
-            var tween_button = document.createElement("img");
-            tween_button.src = tween_img.src;
-            tween_button.classList.add("tween_select_canvas");
-            dropdown_content_div.appendChild(tween_button);
-        }
-
-        var knob_r = this.new_knob(parameter_name + "_r", default_value_r, min, max, 0.01);
-        parameter_cell.appendChild(knob_r);
+        const row = table.insertRow();
+        row.className = "transition_row";
+        const lock = row.insertCell();
+        lock.className = "lockcolumn";
+        lock.appendChild(this.generate_lock_button(parameter_name));
+        const cell = row.insertCell();
+        cell.colSpan = 2;
+        cell.className = "transition_container";
+        this.transition_controls[parameter_name] = new TransitionEditor(this, this.synth.get_param_info(parameter_name), cell);
     }
 
-    new_knob(id, default_value, min, max, step) {
-        var knob = document.createElement("input");
-        var uid = this.name + "_knob_" + id;
-        knob.id = uid;
-        knob.type = "range";
-        knob.classList.add("input-knob");
-        knob.dataset.width = "32";
-        knob.dataset.height = "32";
-        knob.dataset.bgcolor = "#b7a480";
-        knob.dataset.fgcolor = "#3c3831";
-        knob.value = default_value;
-        knob.min = min;
-        knob.max = max;
-        knob.step = step;
-        knob.addEventListener("input", () => {
-            this.knob_transition_changed(parameter_name, knob_l.value, knob_r.value);
-        });
-        return knob;
+    update_transition_control(name) {
+        this.transition_controls[name].update();
     }
 
     add_button_grid(
@@ -857,11 +866,12 @@ class Tab {
                 break;
             }
         }
-        if (this.selected_file_index >= deleted_file_index){
+        if (deleted_file_index === -1) return;
+
+        if (this.selected_file_index === deleted_file_index){
             this.selected_file_index--;
             if (this.selected_file_index < 0 && this.files.length > 0){
                 this.selected_file_index = 0;
-                this.set_selected_file(this.files[0][0]);
             }
             if (this.selected_file_index>=0){
                 var file_dat = this.files[this.selected_file_index];
@@ -872,6 +882,9 @@ class Tab {
                     this.play_sound();
                 }
             }
+        } else if (this.selected_file_index > deleted_file_index){
+            // The selected sound is unchanged; only its position in the list moved.
+            this.selected_file_index--;
         }
         this.update_ui();
         SaveLoad.save_all_collections();
@@ -896,6 +909,12 @@ class Tab {
             }
         }
         
+        //update the current params
+        var params = JSON.parse(this.files[this.selected_file_index][1]);
+        this.synth.apply_params(params);
+
+        if (this.ui_initialized === false) return true;
+
         var file_list = document.getElementById(this.name + "_file_list");
         for (var i = 0; i < file_list.children.length; i++) {
             var file_item = file_list.children[i];
@@ -909,9 +928,6 @@ class Tab {
         file_name_span.contentEditable = true;
         file_name_span.focus();
 
-        //update the current params
-        var params = JSON.parse(this.files[this.selected_file_index][1]);
-        this.synth.apply_params(params);
 
         this.update_ui_params();
         this.update_ablements();
@@ -950,7 +966,8 @@ class Tab {
         
         var delete_button = document.createElement("button");
         delete_button.classList.add("delete_button");
-        delete_button.innerHTML = "<img src='./img/delete.png' alt='Delete'>";
+        delete_button.setAttribute("aria-label", "Delete file");
+        delete_button.innerHTML = "<svg viewBox='0 0 16 16' aria-hidden='true' focusable='false'><path d='M3 3l10 10M13 3L3 13'/></svg>";
         delete_button.addEventListener("click", (event) => {
             this.delete_file(file_name);
         });
@@ -981,15 +998,18 @@ class Tab {
             var filename = this.find_unique_filename(template_name);        
             this.files.push([filename,JSON.stringify(params), JSON.stringify(params)]);
             this.selected_file_index = this.files.length - 1;
-            SaveLoad.save_all_collections();
         } else {
             this.current_params = params;
             this.files[this.selected_file_index][1] = JSON.stringify(params);
         }
         if (this.play_on_change){
             this.play_sound();
+        } else {
+            this.synth.generate_sound();
+            this.redraw_waveform();
         }
         this.update_ui();
+        SaveLoad.save_all_collections();
     }
 
     add_generator(generator) {
@@ -1051,12 +1071,14 @@ class Tab {
 
     create_new_sound_clicked(event) {
         this.create_new_sound = event.target.checked;
+        SaveLoad.save_all_collections();
         console.log("Create new sound: " + this.create_new_sound);
     }
 
     play_on_change_clicked(event) {
         console.log("Play on change clicked");
         this.play_on_change = event.target.checked;
+        SaveLoad.save_all_collections();
     }
 
     play_button_clicked() {
@@ -1067,11 +1089,34 @@ class Tab {
     slider_changed(param_name, value) {
         console.log("Slider changed " + param_name + " to " + value);
         this.synth.set_param(param_name, value);
-        this.files[this.selected_file_index][1] = JSON.stringify(this.synth.params);
-        this.update_ablements();
-        if (this.play_on_change){
-            this.play_sound();
+        this.parameter_changed();
+    }
+
+    update_param_visibility() {
+        if(!this.synth.param_is_hidden)return;
+        for(const [name,slider] of Object.entries(this.sliders)){
+            const row=slider.sliderElem.closest('tr');
+            if(row)row.hidden=this.synth.param_is_hidden(name);
         }
+    }
+
+    parameter_changed() {
+        this.update_param_visibility();
+        for (const editor of Object.values(this.text_controls || {})) editor.update();
+        if (this.selected_file_index < 0) {
+            this.create_new_sound_from_params("Sfx", this.synth.params, true);
+            return;
+        } else {
+            this.files[this.selected_file_index][1] = JSON.stringify(this.synth.params);
+            this.update_ablements();
+        }
+        if (this.play_on_change) this.play_sound();
+        else {
+            this.synth.generate_sound();
+            this.redraw_waveform();
+        }
+        if (this.custom_editor) this.custom_editor.update();
+        SaveLoad.save_all_collections();
     }
 
     volume_slider_changed(value) {
@@ -1207,6 +1252,27 @@ class Tab {
         file_input.click();
     }
 
+    mix_sound() {
+        const mix=tabs.find(tab=>tab.name==='Mixr');
+        if(!mix)return;
+        const sources=mix.synth.get_sources();
+        const slot=!sources[0]?0:!sources[1]?1:-1;
+        mix.set_active_tab();
+        if(slot<0){
+            const params={...mix.synth.default_params(),masterVolume:mix.synth.params.masterVolume};
+            mix.create_new_sound_from_params('Mix',params,true);
+        }
+        mix.synth.set_source(slot<0?0:slot,this.synth,this.get_current_file_name());
+        mix.parameter_changed();
+    }
+
+    layer_in_stackr() {
+        const stack=tabs.find(tab=>tab.name==='Stackr');
+        if(!stack || !stack.synth.add_source(this.synth,this.get_current_file_name()))return;
+        stack.set_active_tab();
+        stack.parameter_changed();
+    }
+
     copy_button_clicked() {
         console.log("Copy button clicked");
         var file_jstor_json_string = this.serialize_params();
@@ -1326,6 +1392,7 @@ class Tab {
             node.classList.remove("unlocked");
         }
         this.synth.locked_params[param_name]=!value;
+        if (this.custom_editor) this.custom_editor.update();
         SaveLoad.save_all_collections();
     }
 
@@ -1344,18 +1411,19 @@ class Tab {
             }
         }
         this.synth.set_param(param_name, value);
-        this.files[this.selected_file_index][1] = JSON.stringify(this.synth.params);
-        this.update_ablements();
-        if (this.play_on_change){
-            this.play_sound();
-        }
+        this.parameter_changed();
     }
 
     file_item_click(file_name,target) {
         console.log("File item clicked: " + file_name);
         var file_changed = this.set_selected_file(file_name);
-        if (file_changed && this.play_on_change){
-            this.play_sound();
+        if (file_changed) {
+            if (this.play_on_change) this.play_sound();
+            else {
+                this.synth.generate_sound();
+                this.redraw_waveform();
+            }
+            SaveLoad.save_all_collections();
         }
     }
 
@@ -1377,6 +1445,7 @@ class Tab {
     play_sound(){
         this.synth.play();
         this.redraw_waveform();
+        for (const editor of Object.values(this.text_controls || {})) editor.play();
     }
 
     redraw_waveform(){
@@ -1394,7 +1463,8 @@ class Tab {
         //check if the tab is focused
         if (this.active){
             //ignore if currently typing in the filename (into a file_item_name contenteditable has focus)
-            if (document.activeElement.classList.contains("file_item_name")){
+            if (document.activeElement.isContentEditable || document.activeElement.classList.contains("file_item_name") ||
+                ["SELECT", "TEXTAREA", "INPUT"].includes(document.activeElement.tagName)){
                 return;
             }
             var key_upper_case = event.key.toUpperCase();

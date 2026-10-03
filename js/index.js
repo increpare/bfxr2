@@ -3,11 +3,47 @@
 function register_tabs(){
     SaveLoad.load_all_collections();
     SaveLoad.collection_save_enabled=false;
-    var bfxr_tab = new Tab(new Bfxr());   
-    var footsteppr_tab = new Tab(new Footsteppr());
-    // var transfxr_tab = new Tab(new Transfxr());
+    // Display names are separate from the engine names used by saved sounds and links.
+    const add_tab = synth => {
+        const label = synth_display_name(synth.name);
+        if (label !== synth.name) synth.display_name = label;
+        return new Tab(synth);
+    };
+    var bfxr_tab = add_tab(new Bfxr());
+    add_tab(new Footsteppr());
+    add_tab(new Mixr());
+    add_tab(new Transfxr());
+
+    // Music and voices.
+    add_tab(new Jinglr());
+    add_tab(new Pluckr());
+    add_tab(new Choirr());
+
+    // Creatures and flocks.
+    add_tab(new Crittr());
+    add_tab(new Birdr());
+    add_tab(new Swarmr());
+
+    // Physical materials and impacts.
+    add_tab(new Clonkr());
+    add_tab(new Bouncr());
+    add_tab(new Fractr());
+    add_tab(new Boomr());
+    add_tab(new Rustlr());
+    add_tab(new Squishr());
+
+    // Motion, machines and electronic effects.
+    add_tab(new Machinr());
+    add_tab(new Breathr());
+    add_tab(new Whooshr());
+    add_tab(new Signlr());
+    add_tab(new Riftr());
+    add_tab(new Zappr());
+    add_tab(new Glitchr());
     SaveLoad.collection_save_enabled=true;
     set_tab_from_loaded_data();
+    // New collections have no saved selection. Build only the visible panel.
+    (tabs.find(tab => tab.active) || bfxr_tab).set_active_tab();
     SaveLoad.save_all_collections();
 }
 
@@ -15,10 +51,7 @@ function set_tab_from_loaded_data(){
     if (!SaveLoad.loaded_data){
         return;
     }
-    var active_tab_index = SaveLoad.loaded_data.active_tab_index;
-    if (active_tab_index>=0){
-        tabs[active_tab_index].set_active_tab();
-    }
+    SaveLoad.restore_active_tab(SaveLoad.loaded_data);
 }
 
 function bfxr_draw_visualisation(params){
@@ -29,10 +62,39 @@ function bfxr_generate_sound(params){
 
 }
 
-window.onload = function(){
+document.addEventListener('DOMContentLoaded', function(){
     register_tabs();
     SaveLoad.check_url_for_sfxr_params();
     register_drop_handlers();
+    register_background_fade();
+});
+
+function register_background_fade(){
+    const panel = document.getElementById('main_container');
+    const fadeStartDistance = 50;
+    const fadeEndDistance = 300;
+    const update = () => {
+        const bounds = panel.getBoundingClientRect();
+        const width = document.documentElement.clientWidth;
+        const height = document.documentElement.clientHeight;
+        const stops = {
+            '--fade-left-solid': Math.max(0, bounds.left - fadeEndDistance),
+            '--fade-left-end': Math.max(1, bounds.left - fadeStartDistance),
+            '--fade-right-start': Math.min(width - 1, bounds.right + fadeStartDistance),
+            '--fade-right-solid': Math.min(width, bounds.right + fadeEndDistance),
+            '--fade-top-solid': Math.max(0, bounds.top - fadeEndDistance),
+            '--fade-top-end': Math.max(1, bounds.top - fadeStartDistance),
+            '--fade-bottom-start': Math.min(height - 1, bounds.bottom + fadeStartDistance),
+            '--fade-bottom-solid': Math.min(height, bounds.bottom + fadeEndDistance)
+        };
+        for (const [name, position] of Object.entries(stops)) {
+            document.documentElement.style.setProperty(name, `${position}px`);
+        }
+    };
+    update();
+    window.addEventListener('resize', update);
+    window.addEventListener('scroll', update, {passive: true});
+    new ResizeObserver(update).observe(panel);
 }
 
 function showDropZone() {

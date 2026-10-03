@@ -1,0 +1,113 @@
+{
+  "revision": 2,
+  "bank_sha256": "425b812c0258243d21f7b23f8f917556012fb24929dec9c9e987f8b044b7a6f2",
+  "runtime_sha256": {
+    "js/globals.js": "b2e19940febf18b499468e4dbf508e235a9a6d40dd7a7ebd426ff5ad409e0498",
+    "js/audio/AKWF.js": "f44813f4eeefd01a557b23f99ec8afddf07caf274e084be3fe18bbba029e955f",
+    "js/audio/BfxrWaveforms.js": "f6ff28c975145d9d49d6d9120c1a28591a3e64e31e335accd669901fa04f2166",
+    "js/synths/templates.js": "2553fdbad62410d80ecfffac6f8365cf240772255966119088d2c65547651468",
+    "js/synths/SynthBase.js": "d508c442c85fc8de0380134314bfb0c9d69abc3d195e4fdd9288d4725b99ce29",
+    "js/audio/Transfxr_DSP.js": "a4b0ad153d66b1298ac1833d15a94bd08d5d93bb635cab07f405e14b4881c6de",
+    "js/synths/PresetFamily.js": "a2b577438d6e391918a2bd1dc9e3dabe09d5e1e68404f91d5a322ba81a4aab96",
+    "js/synths/TransfxrPresets.js": "425b812c0258243d21f7b23f8f917556012fb24929dec9c9e987f8b044b7a6f2",
+    "js/synths/Transfxr.js": "beaa9964b28975e763a0ae9a1f80cb79fff3ac55e97689f28ecd4edce0ecf341"
+  },
+  "exemplar_count": 228,
+  "count": 480,
+  "failures": [],
+  "families": [
+    {
+      "name": "Bright Whistles",
+      "count": 32,
+      "max_rendered_duration": 4.245215419501133,
+      "median_centroid_hz": 1750.3353081611529
+    },
+    {
+      "name": "Grainy Taps",
+      "count": 32,
+      "max_rendered_duration": 0.1573922902494331,
+      "median_centroid_hz": 515.6166830669154
+    },
+    {
+      "name": "Rocket Zips",
+      "count": 32,
+      "max_rendered_duration": 0.4,
+      "median_centroid_hz": 1178.5994653288292
+    },
+    {
+      "name": "Wavering Calls",
+      "count": 32,
+      "max_rendered_duration": 1.2,
+      "median_centroid_hz": 437.9840268647169
+    },
+    {
+      "name": "Fuzzy Chirps",
+      "count": 32,
+      "max_rendered_duration": 0.25,
+      "median_centroid_hz": 2186.360669302197
+    },
+    {
+      "name": "Bass Plucks",
+      "count": 32,
+      "max_rendered_duration": 3.496077097505669,
+      "median_centroid_hz": 142.73568795601065
+    },
+    {
+      "name": "Soft Pips",
+      "count": 32,
+      "max_rendered_duration": 0.19,
+      "median_centroid_hz": 423.5188817997746
+    },
+    {
+      "name": "Sand Sprays",
+      "count": 32,
+      "max_rendered_duration": 0.42,
+      "median_centroid_hz": 2771.230097575031
+    },
+    {
+      "name": "Air Currents",
+      "count": 32,
+      "max_rendered_duration": 1.65,
+      "median_centroid_hz": 551.6209782360403
+    },
+    {
+      "name": "Mournful Calls",
+      "count": 32,
+      "max_rendered_duration": 4.443786848072563,
+      "median_centroid_hz": 268.2517369600141
+    },
+    {
+      "name": "Arcade Zaps",
+      "count": 32,
+      "max_rendered_duration": 0.27,
+      "median_centroid_hz": 502.2142838197475
+    },
+    {
+      "name": "Bubble Pops",
+      "count": 32,
+      "max_rendered_duration": 0.28,
+      "median_centroid_hz": 402.2303086514613
+    },
+    {
+      "name": "Rubber Clicks",
+      "count": 32,
+      "max_rendered_duration": 0.25,
+      "median_centroid_hz": 451.3618298706116
+    },
+    {
+      "name": "Bubble Swells",
+      "count": 32,
+      "max_rendered_duration": 0.5,
+      "median_centroid_hz": 379.7958842476597
+    },
+    {
+      "name": "Radio Spits",
+      "count": 32,
+      "max_rendered_duration": 0.32,
+      "median_centroid_hz": 2057.8268712467807
+    }
+  ],
+  "seed": 20261003,
+  "minimum_rms": 0.016351466943881465,
+  "maximum_peak": 0.38816818594932556
+}
