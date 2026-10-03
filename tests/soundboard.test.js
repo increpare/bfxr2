@@ -103,6 +103,19 @@ test('verb presses draw varied ingredients, avoid immediate repeats and respect 
  assert.ok(result.describe.length>3);
 });
 
+test('eight consecutive presses of a verb draw at least six different ingredients',()=>{
+ const {run}=createBoardContext();
+ const result=plain(run(`(()=>{Math.random=SoundDSP.rng(0.91);const board=new Soundboard();const out={};
+  for(const verb of GAME_VERBS){const labels=[];for(let i=0;i<8;i++){board.generate_recipe(verb.id);labels.push(board.get_sources().map(s=>s.synth+':'+s.generator).join('+'));}
+   out[verb.id]={entries:Soundboard.entries(verb.id).length,distinct:new Set(labels).size,repeat:labels.some((l,i)=>i&&l===labels[i-1])};}
+  return out;})()`));
+ for(const [verb,r] of Object.entries(result)){
+  assert.ok(r.entries>=7,verb+' has at least seven ingredients: '+r.entries);
+  assert.ok(r.distinct>=6,verb+' eight presses give '+r.distinct+' distinct ingredients');
+  assert.equal(r.repeat,false,verb+' never repeats back to back');
+ }
+});
+
 test('engine verb presets come first, read as their verb, and use ids from the vocabulary',()=>{
  const {run}=createBoardContext();
  const verbs=plain(run('GAME_VERBS.map(v=>v.id)'));

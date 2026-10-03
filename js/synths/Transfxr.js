@@ -90,7 +90,6 @@ class Transfxr extends SynthBase {
             {id:'dash_double', params:{waveType:7,duration:0.4,attack:0.02,release:0.1,echo:0,pitch:[0.5,0.5],tone:[0.35,0.85,'Pulse'],level:[0.5,1,'Pulse'],resonance:0.5}},
             {id:'dash_boost', params:{waveType:2,duration:0.45,attack:0.05,release:0.18,echo:0.1,pitch:[0.32,0.7,'Ease In'],tone:[0.4,0.95,'Ease In'],waveTo:7,morph:[0.2,0.6],level:[0.5,1]}}],
         splash: [
-            {id:'splash_glug', params:{waveType:3,duration:0.4,attack:0.01,release:0.15,echo:0,pitch:[0.46,0.24,'Ease Out'],vibrato:[0.6,0.6],tone:[0.6,0.4],waveTo:7,morph:[0,0.5],level:[0.9,0.4]}},
             {id:'splash_bubble', params:{waveType:0,duration:0.16,attack:0.003,release:0.08,echo:0.1,pitch:[0.45,0.72,'Ease In'],tone:[0.9,0.9],level:[1,0.3]}},
             {id:'splash_burst', params:{waveType:7,duration:0.32,attack:0.003,release:0.2,echo:0,pitch:[0.5,0.5],tone:[0.9,0.2,'Ease Out'],level:[1,0.1],resonance:0.3}}],
         shoot: [
@@ -293,12 +292,18 @@ class Transfxr extends SynthBase {
         this.generate_archetype(archetype.id);
     }
     // Archetypes vary much more than examples: a press should never sound like the last one.
+    // Square-based archetypes may also come out as triangle, saw or sine; the identity is in the motion.
+    static tonalWaves = [3, 3, 1, 2, 0, 11];
     vary_archetype() {
         const clamp = (value, low, high) => Math.max(low, Math.min(high, value));
-        const shift = (Math.random() - 0.5) * 0.12;
+        if (this.params.waveType === 3 && Math.random() < 0.5) this.set_param('waveType', Transfxr.tonalWaves[Math.floor(Math.random() * Transfxr.tonalWaves.length)], true);
+        const shift = (Math.random() - 0.5) * (this.params.duration < 0.2 ? 0.3 : 0.16);
         const pitch = this.params.pitch;
         this.set_param('pitch', {start:clamp(pitch.start + shift, 0, 1), end:clamp(pitch.end + shift, 0, 1), curve:pitch.curve}, true);
-        this.set_param('duration', this.params.duration * (0.8 + Math.random() * 0.45), true);
+        this.set_param('duration', this.params.duration * (0.75 + Math.random() * 0.6), true);
+        const level = this.params.level;
+        this.set_param('level', {start:clamp(level.start + (Math.random() - 0.5) * 0.2, 0.1, 1), end:clamp(level.end + (Math.random() - 0.5) * 0.2, 0, 1), curve:level.curve}, true);
+        if (this.params.vibrato.end > 0 || Math.random() < 0.25) this.set_param('vibrato', {start:clamp(this.params.vibrato.start + (Math.random() - 0.5) * 0.2, 0, 1), end:clamp(this.params.vibrato.end + (Math.random() - 0.4) * 0.3, 0, 1), curve:this.params.vibrato.curve}, true);
         const tone = this.params.tone, toneShift = (Math.random() - 0.5) * 0.16;
         this.set_param('tone', {start:clamp(tone.start + toneShift, 0, 1), end:clamp(tone.end + toneShift, 0, 1), curve:tone.curve}, true);
         if (this.params.echo > 0) this.set_param('echo', clamp(this.params.echo + (Math.random() - 0.5) * 0.1, 0, 0.8), true);

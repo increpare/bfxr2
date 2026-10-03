@@ -165,3 +165,11 @@ Known gaps: no `tune` for tonal pairs yet, so Win and Heal avoid jingle × choir
 - Roar and Whirr: variant presets (five archetypes each in Beasts and Motors), Transfxr archetypes, and retired engines as hidden ingredients (Pulser cores, Rollr minecart and roller, Rumblr engine room, Signal broken radio).
 - Research: `docs/research/retro-sound-references.md`, 25 verbs × 20 or more real retro game sounds with acoustic descriptions, written from memory, no audio included. Each verb ends with the archetypes carried into the synths.
 - Recreations: Transfxr gained one verb preset per verb (24 verbs, 113 archetypes; Step stays with the physical engines), each press drawing one archetype with pitch and timing variation. PresetSynth recipes gained `variants`.
+
+## 12. Listening loop (2026-10-03, rounds one to six)
+
+Six rounds, about 270 ratings, through `tools/references/compare_page.js`. Rounds one to five rated single takes; round six rated eight consecutive presses per verb for variety and overall use.
+
+- Per-take quality converged: by round four every verb but Door averaged 4 or better, and Door was rebuilt from the author's brief (wind, creaking hinge, rising tone to open, falling to close, a shut at the end or a hand-turn at the start).
+- Variety did not: round six scored most verbs 3 and six verbs 2. The press lists showed ingredients returning within eight presses. The draw now excludes the last six ingredients of a verb outright (bounded by the catalogue size), weights are capped, Transfxr archetypes vary waveform, pitch, length, filter, level and vibrato on every press, and the thin verbs gained ingredients. `tools/render/verb_variety.js` reports distinct ingredients per eight presses and a feature spread; a test guards at least six distinct ingredients in any eight presses and at least seven ingredients per verb.
+- The listener reported fatigue after round six. Further rounds wait for them to ask.

@@ -20,7 +20,11 @@ class Boomr extends PresetSynth {
         ['Space','Diffuse pressure reflections and a spacious rolling tail.','space',0.25,0,1]
     ];
     recipes=[
-        {name:'Explode',id:'explode',verb:'explode',tip:'A blast with a fireball and loose debris.',values:{mechanism:[0,1,3],duration:[0.6,1.8],size:[0.3,0.8],pressure:[0.6,1],blast:[0.5,1],debris:[0.3,0.9],gas:[0.05,0.5],aftershock:[0.05,0.5],rubbleSize:[0.1,0.6],spread:[0.2,0.7],tail:[0.3,0.7],muffle:[0,0.3],space:[0.1,0.5]}},
+        {name:'Explode',id:'explode',verb:'explode',tip:'A blast: detonation, fuel bloom, impact, collapse, gas rupture or a deep muffled charge.',values:{},variants:[
+            {mechanism:[0,1,3],duration:[0.6,1.8],size:[0.3,0.8],pressure:[0.6,1],blast:[0.5,1],debris:[0.3,0.9],gas:[0.05,0.5],aftershock:[0.05,0.5],rubbleSize:[0.1,0.6],spread:[0.2,0.7],tail:[0.3,0.7],muffle:[0,0.3],space:[0.1,0.5]},
+            {mechanism:[4,6],duration:[1,2.4],size:[0.4,0.9],pressure:[0.5,0.9],blast:[0.3,0.7],debris:[0.5,1],gas:[0.3,0.9],aftershock:[0.2,0.7],rubbleSize:[0.4,1],spread:[0.4,0.9],tail:[0.4,0.8],muffle:[0.05,0.35],space:[0.2,0.6]},
+            {mechanism:[0,2],duration:[1.2,2.6],size:[0.7,1],pressure:[0.8,1],blast:[0.1,0.4],debris:[0.05,0.3],gas:[0,0.15],aftershock:[0.5,1],rubbleSize:[0.7,1],spread:[0.4,0.9],tail:[0.6,1],muffle:[0.4,0.9],space:[0.5,1]},
+            {mechanism:[5,0],duration:[0.3,0.7],size:[0.05,0.35],pressure:[0.6,1],blast:[0.3,0.7],debris:[0.1,0.5],gas:[0,0.1],aftershock:[0,0.1],rubbleSize:[0,0.3],spread:[0.1,0.4],tail:[0.05,0.3],muffle:[0,0.15],space:[0,0.2]}]},
         {name:'Hit',id:'hit',verb:'hit',tip:'A dry little pressure pop.',values:{mechanism:5,duration:[0.1,0.3],size:[0,0.3],pressure:[0.6,1],blast:[0.1,0.4],debris:[0,0.15],gas:0,aftershock:0,rubbleSize:[0,0.3],spread:[0,0.2],tail:[0,0.15],muffle:[0,0.1],space:[0,0.1]}},
         {name:'Land',id:'land',verb:'land',tip:'A ground thud with a little dust.',values:{mechanism:3,duration:[0.2,0.45],size:[0.4,0.8],pressure:[0.6,0.9],blast:[0,0.1],debris:[0.05,0.25],gas:0,aftershock:[0,0.2],rubbleSize:[0.6,1],spread:[0.1,0.4],tail:[0.1,0.35],muffle:[0.3,0.7],space:[0,0.2]}},
         {name:'Shoot',id:'shoot',verb:'shoot',tip:'A short gunpowder report.',values:{mechanism:[0,5],duration:[0.15,0.45],size:[0.1,0.4],pressure:[0.7,1],blast:[0.3,0.7],debris:[0,0.2],gas:[0,0.1],aftershock:0,rubbleSize:[0,0.3],spread:[0,0.2],tail:[0.05,0.25],muffle:[0,0.2],space:[0,0.2]}},

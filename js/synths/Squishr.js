@@ -20,7 +20,11 @@ class Squishr extends PresetSynth {
     ];
 
     recipes = [
-        {name:'Splash',id:'splash',verb:'splash',tip:'A wet impact and scattered droplets.',values:{texture:[3,1],viscosity:[0.05,0.4],stretch:[0.02,0.3],pressure:[0.6,1],wetness:[0.8,1],bubbleSize:[0.25,0.65],duration:[0.18,0.5]}},
+        {name:'Splash',id:'splash',verb:'splash',tip:'Hitting liquid: a thin splash, a heavy plunge, a thick gloop or a spray of droplets.',values:{},variants:[
+            {texture:[3,1],viscosity:[0.05,0.4],stretch:[0.02,0.3],pressure:[0.6,1],wetness:[0.8,1],bubbleSize:[0.25,0.65],duration:[0.18,0.5]},
+            {texture:3,viscosity:[0.2,0.5],stretch:[0.1,0.4],pressure:[0.8,1],wetness:[0.7,1],bubbleSize:[0.7,1],duration:[0.5,1]},
+            {texture:[0,3],viscosity:[0.7,1],stretch:[0.3,0.6],pressure:[0.5,0.9],wetness:[0.6,0.9],bubbleSize:[0.5,0.9],duration:[0.3,0.7]},
+            {texture:1,viscosity:[0.05,0.3],stretch:[0.02,0.2],pressure:[0.6,1],wetness:[0.9,1],bubbleSize:[0.05,0.3],duration:[0.2,0.45]}]},
         {name:'Land',id:'land',verb:'land',tip:'A heavy splat.',values:{texture:3,viscosity:[0.4,0.8],stretch:[0.05,0.3],pressure:[0.7,1],wetness:[0.5,0.9],bubbleSize:[0.5,0.9],duration:[0.2,0.45]}},
         {name:'Step',id:'step',verb:'step',tip:'A sticky step through goo.',values:{texture:0,viscosity:[0.6,0.95],stretch:[0.2,0.5],pressure:[0.5,0.85],wetness:[0.6,1],bubbleSize:[0.5,0.85],duration:[0.15,0.35]}},
         {name:'Hurt',id:'hurt',verb:'hurt',tip:'A wet, fleshy hit.',values:{texture:[3,0],viscosity:[0.3,0.7],stretch:[0.05,0.3],pressure:[0.6,1],wetness:[0.6,1],bubbleSize:[0.3,0.7],duration:[0.15,0.4]}},

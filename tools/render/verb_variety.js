@@ -42,10 +42,11 @@ for(const verb of verbs){
  let sum=0,count=0;for(let i=0;i<takes.length;i++)for(let j=i+1;j<takes.length;j++){sum+=distance(takes[i].f,takes[j].f);count++;}
  const ingredients=new Set(takes.map(t=>t.label)).size,entries=plain(api.run(`Soundboard.entries(${JSON.stringify(verb.id)}).length`));
  const repeats=takes.filter((t,i)=>i&&t.label===takes[i-1].label).length;
+ let minDistinct8=8;for(let i=0;i+8<=takes.length;i++)minDistinct8=Math.min(minDistinct8,new Set(takes.slice(i,i+8).map(t=>t.label)).size);
  const durations=takes.map(t=>2**t.f.duration);
- report[verb.id]={entries,ingredients,repeats,spread:+(sum/count).toFixed(3),durationRange:[+Math.min(...durations).toFixed(2),+Math.max(...durations).toFixed(2)],
+ report[verb.id]={entries,ingredients,repeats,minDistinct8,spread:+(sum/count).toFixed(3),durationRange:[+Math.min(...durations).toFixed(2),+Math.max(...durations).toFixed(2)],
   tonalShare:+(takes.filter(t=>t.f.tonal>0.5).length/takes.length).toFixed(2),brightnessOctaves:+((Math.max(...takes.map(t=>t.f.brightness))-Math.min(...takes.map(t=>t.f.brightness)))).toFixed(2)};
 }
-console.log('verb      entries drawn repeats spread  duration range   tonal  brightness span');
-for(const [id,r] of Object.entries(report))console.log(`${id.padEnd(9)} ${String(r.entries).padStart(7)} ${String(r.ingredients).padStart(5)} ${String(r.repeats).padStart(7)} ${r.spread.toFixed(3).padStart(7)}  ${(r.durationRange[0]+'–'+r.durationRange[1]+' s').padEnd(16)} ${r.tonalShare.toFixed(2).padStart(5)}  ${r.brightnessOctaves.toFixed(2).padStart(5)} oct`);
+console.log('verb      entries drawn  in8 spread  duration range   tonal  brightness span');
+for(const [id,r] of Object.entries(report))console.log(`${id.padEnd(9)} ${String(r.entries).padStart(7)} ${String(r.ingredients).padStart(5)} ${String(r.minDistinct8).padStart(4)} ${r.spread.toFixed(3).padStart(7)}  ${(r.durationRange[0]+'–'+r.durationRange[1]+' s').padEnd(16)} ${r.tonalShare.toFixed(2).padStart(5)}  ${r.brightnessOctaves.toFixed(2).padStart(5)} oct`);
 if(args.json)fs.writeFileSync(path.resolve(args.json),JSON.stringify(report,null,1));

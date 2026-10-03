@@ -24,7 +24,8 @@ class Soundboard extends Mixr {
             {src:'Footsteppr:step', w:5}, {src:'Fractr:step', w:2}, {src:'Rustlr:step', w:1}, {src:'Squishr:step', w:1},
             {mix:['Footsteppr:step','Rustlr:step'], balance:[0.3,0.45], align:0, w:2},
             {mix:['Fractr:step','Rustlr:step'], balance:[0.3,0.45], align:0, w:1},
-            {mix:['Footsteppr:step','Fractr:step'], balance:[0.35,0.5], align:0, w:1}],
+            {mix:['Footsteppr:step','Fractr:step'], balance:[0.35,0.5], align:0, w:1},
+            {mix:['Footsteppr:step','Squishr:step'], balance:[0.35,0.5], align:0, w:1}],
         dash: [
             {src:'Whooshr:dash', w:3}, {src:'Transfxr:dash', w:3}, {src:'Riftr:dash', w:2}, {src:'Breathr:dash', w:1}, {src:'Whooshr:generate_air_dash', w:1}, {src:'Whooshr:generate_dodge', w:1},
             {mix:['Whooshr:dash','Breathr:dash'], balance:[0.25,0.4], align:0, w:1},
@@ -32,7 +33,9 @@ class Soundboard extends Mixr {
             {mix:['Whooshr:dash','Zappr:shoot'], balance:[0.25,0.4], align:0, w:2},
             {mix:['Whooshr:dash','Riftr:dash'], balance:[0.35,0.5], align:1, w:2}],
         splash: [
-            {src:'Squishr:splash', w:5}, {src:'Transfxr:splash', w:4}, {src:'Squishr:generate_wet_splat', w:1},
+            {src:'Squishr:splash', w:4}, {src:'Transfxr:splash', w:2}, {src:'Squishr:generate_wet_splat', w:1},
+            {mix:['Squishr:splash','Transfxr:generate_splash_bubble'], balance:[0.3,0.45], align:2, w:1},
+            {mix:['Bouncr:land','Squishr:splash'], balance:[0.5,0.65], align:0, w:1, level:1.3},
             {mix:['Squishr:splash','Bouncr:land'], balance:[0.45,0.6], align:0, w:1},
             {mix:['Squishr:splash','Squishr:heal'], balance:[0.25,0.4], align:2, w:1}],
         shoot: [
@@ -51,7 +54,9 @@ class Soundboard extends Mixr {
             {mix:['Boomr:hit','Fractr:hit'], balance:[0.3,0.45], align:0, w:2},
             {mix:['Bfxr:hit','Clonkr:hit'], balance:[0.35,0.5], align:0, w:3}],
         hurt: [
-            {src:'Bfxr:hurt', w:4}, {src:'Transfxr:hurt', w:4}, {src:'Crittr:hurt', w:3}, {src:'Crittr:lose', w:1}, {src:'Squishr:hurt', w:1},
+            {src:'Bfxr:hurt', w:4}, {src:'Transfxr:hurt', w:4}, {src:'Crittr:hurt', w:3}, {src:'Crittr:lose', w:1},
+            {mix:['Transfxr:hurt','Breathr:hurt'], balance:[0.3,0.45], align:0, w:1},
+            {mix:['Boomr:hit','Crittr:hurt'], balance:[0.4,0.55], align:0, w:1},
             {mix:['Bfxr:hurt','Breathr:hurt'], balance:[0.4,0.55], align:0, w:1},
             {mix:['Bfxr:hurt','Crittr:hurt'], balance:[0.35,0.5], align:0, w:1}],
         explode: [
@@ -64,7 +69,9 @@ class Soundboard extends Mixr {
             {mix:['Bfxr:coin','Transfxr:generate_coin_sparkle'], balance:[0.3,0.45], align:2, w:1},
                         {mix:['Jinglr:coin','Clonkr:coin'], balance:[0.4,0.55], align:0, w:2}],
         powerup: [
-            {src:'Bfxr:powerup', w:5}, {src:'Transfxr:powerup', w:4}, {src:'Jinglr:powerup', w:1}, {src:'Choirr:powerup', w:1},
+            {src:'Bfxr:powerup', w:4}, {src:'Transfxr:powerup', w:4}, {src:'Jinglr:powerup', w:1}, {src:'Choirr:powerup', w:1}, {src:'Pluckr:unlock', w:1}, {src:'Zappr:cast', w:1},
+            {mix:['Transfxr:powerup','Swarmr:cast'], balance:[0.3,0.45], align:0, w:1},
+            {mix:['Bfxr:powerup','Jinglr:coin'], balance:[0.3,0.45], align:2, w:1},
             {mix:['Bfxr:powerup','Choirr:powerup'], balance:[0.35,0.5], align:0, w:1},
             {mix:['Bfxr:powerup','Zappr:cast'], balance:[0.3,0.45], align:2, w:2}],
         unlock: [
@@ -109,7 +116,8 @@ class Soundboard extends Mixr {
             {mix:['Zappr:cast','Choirr:cast'], balance:[0.35,0.5], align:0, w:1},
             {mix:['Riftr:cast','Fractr:cast'], balance:[0.35,0.5], align:1, w:3}],
         warp: [
-            {src:'Riftr:warp', w:4}, {src:'Transfxr:warp', w:5}, {src:'Signlr:warp', w:1}, {src:'Glitchr:warp', w:1}, {src:'Riftr:generate_teleport_arrive', w:1},
+            {src:'Riftr:warp', w:4}, {src:'Transfxr:warp', w:4}, {src:'Signlr:warp', w:1}, {src:'Glitchr:warp', w:1}, {src:'Riftr:generate_teleport_arrive', w:1}, {src:'Transfxr:generate_warp_bwip', w:1}, {src:'Transfxr:generate_warp_whoomp', w:1},
+            {mix:['Riftr:warp','Zappr:cast'], balance:[0.3,0.45], align:0, w:1},
             {mix:['Riftr:warp','Glitchr:warp'], balance:[0.35,0.5], align:0, w:1},
             {mix:['Riftr:warp','Whooshr:dash'], balance:[0.45,0.6], align:0, w:1}],
         roar: [
@@ -141,18 +149,19 @@ class Soundboard extends Mixr {
         return Object.values(this.catalogue).flatMap(entries => entries.flatMap(entry => this.entry_references(entry)));
     }
     // Weighted draw that avoids the previous entry when there is a choice.
-    static recentMemory = 3;
+    static recentMemory = 6;
+    // How many of the most recent draws are excluded: most of the catalogue must have a turn
+    // before an ingredient comes back, so eight presses in a row are eight different takes.
+    static exclusion(count) { return Math.max(0, Math.min(this.recentMemory, count - 2)); }
     pick_entry(verb) {
         const entries = Soundboard.entries(verb);
         if (!entries.length) return null;
-        const recent = this.recent_entries[verb] || [];
-        const previous = recent[recent.length - 1];
-        // Never the same entry twice running; the few before that are strongly discouraged.
-        const weight = entry => entry === previous && entries.length > 1 ? 0 : (entry.w || 1) * (recent.includes(entry) ? 0.2 : 1);
+        const recent = (this.recent_entries[verb] || []).slice(-Soundboard.exclusion(entries.length));
+        const weight = entry => recent.includes(entry) ? 0 : Math.min(entry.w || 1, 4);
         const total = entries.reduce((sum, entry) => sum + weight(entry), 0);
         let roll = Math.random() * total;
         for (const entry of entries) { roll -= weight(entry); if (roll < 0) return entry; }
-        return entries[entries.length - 1];
+        return entries.find(entry => weight(entry) > 0) || entries[entries.length - 1];
     }
     apply_entry(entry) {
         const sources = Soundboard.entry_references(entry).map(reference => {
