@@ -11,25 +11,25 @@ class Soundboard extends Mixr {
     // and a sweetener. Weights bias the draw; align 0 = start, 1 = peak, 2 = tail.
     static catalogue = {
         jump: [
-            {src:'Bfxr:jump', w:4}, {src:'Transfxr:jump', w:4}, {src:'Squishr:jump', w:1}, {src:'Birdr:jump', w:1},
+            {src:'Bfxr:jump', w:5}, {src:'Transfxr:jump', w:4}, {src:'Birdr:jump', w:1},
             {mix:['Bfxr:jump','Transfxr:jump'], balance:[0.3,0.45], align:0, w:1}],
         land: [
-            {src:'Footsteppr:land', w:2}, {src:'Bouncr:land', w:3}, {src:'Clonkr:land', w:1}, {src:'Boomr:land', w:2}, {src:'Squishr:land', w:1}, {src:'Rustlr:land', w:1}, {src:'Transfxr:land', w:3},
-            {mix:['Bouncr:land','Rustlr:land'], balance:[0.35,0.5], align:0, w:2},
+            {src:'Footsteppr:land', w:1, level:1.5}, {src:'Bouncr:land', w:3, level:1.6}, {src:'Clonkr:land', w:1, level:1.3}, {src:'Boomr:land', w:1}, {src:'Squishr:land', w:1}, {src:'Rustlr:land', w:1, level:1.4}, {src:'Transfxr:land', w:3},
+            {mix:['Bouncr:land','Rustlr:land'], balance:[0.35,0.5], align:0, w:2, level:1.5},
             {mix:['Boomr:land','Fractr:step'], balance:[0.3,0.45], align:0, w:1}],
         step: [
-            {src:'Footsteppr:step', w:5}, {src:'Clonkr:step', w:1}, {src:'Bouncr:step', w:1}, {src:'Fractr:step', w:1}, {src:'Rustlr:step', w:1}, {src:'Squishr:step', w:1},
+            {src:'Footsteppr:step', w:6}, {src:'Fractr:step', w:1}, {src:'Rustlr:step', w:1}, {src:'Squishr:step', w:1},
             {mix:['Footsteppr:step','Rustlr:step'], balance:[0.3,0.45], align:0, w:2}],
         dash: [
             {src:'Whooshr:dash', w:4}, {src:'Transfxr:dash', w:4}, {src:'Riftr:dash', w:2}, {src:'Breathr:dash', w:1},
             {mix:['Whooshr:dash','Zappr:shoot'], balance:[0.25,0.4], align:0, w:1},
             {mix:['Whooshr:dash','Riftr:dash'], balance:[0.35,0.5], align:1, w:1}],
         splash: [
-            {src:'Squishr:splash', w:5}, {src:'Transfxr:splash', w:3}, {src:'Squishr:generate_wet_splat', w:1}, {src:'Squishr:generate_gulp', w:1},
+            {src:'Squishr:splash', w:5}, {src:'Transfxr:splash', w:4}, {src:'Squishr:generate_wet_splat', w:1},
             {mix:['Squishr:splash','Bouncr:land'], balance:[0.45,0.6], align:0, w:1},
             {mix:['Squishr:splash','Squishr:heal'], balance:[0.25,0.4], align:2, w:1}],
         shoot: [
-            {src:'Bfxr:shoot', w:5}, {src:'Transfxr:shoot', w:5}, {src:'Zappr:shoot', w:2}, {src:'Whooshr:shoot', w:1}, {src:'Boomr:shoot', w:1}, {src:'Swarmr:shoot', w:1},
+            {src:'Bfxr:shoot', w:5}, {src:'Transfxr:shoot', w:3}, {src:'Zappr:shoot', w:2}, {src:'Whooshr:shoot', w:2}, {src:'Boomr:shoot', w:1}, {src:'Swarmr:shoot', w:1},
             {src:'Pewpr:generate_laser_pistol', w:2}, {src:'Pewpr:generate_shotgun', w:1}, {src:'Pewpr:generate_railgun', w:1},
             {mix:['Bfxr:shoot','Zappr:shoot'], balance:[0.3,0.45], align:0, w:1},
             {mix:['Boomr:shoot','Whooshr:shoot'], balance:[0.35,0.5], align:0, w:1}],
@@ -37,9 +37,9 @@ class Soundboard extends Mixr {
             {src:'Whooshr:swing', w:5}, {src:'Transfxr:swing', w:4}, {src:'Whooshr:generate_heavy_swing', w:1}, {src:'Rustlr:swing', w:1},
             {mix:['Whooshr:swing','Breathr:dash'], balance:[0.25,0.4], align:0, w:1}],
         hit: [
-            {src:'Bfxr:hit', w:4}, {src:'Transfxr:hit', w:4}, {src:'Clonkr:hit', w:2}, {src:'Bouncr:hit', w:1}, {src:'Fractr:hit', w:1}, {src:'Boomr:hit', w:1}, {src:'Zappr:hit', w:1},
+            {src:'Bfxr:hit', w:4}, {src:'Transfxr:hit', w:4}, {src:'Clonkr:hit', w:1}, {src:'Bouncr:hit', w:1}, {src:'Fractr:hit', w:1}, {src:'Boomr:hit', w:1}, {src:'Zappr:hit', w:1},
             {mix:['Clonkr:hit','Zappr:hit'], balance:[0.35,0.5], align:0, w:1},
-            {mix:['Boomr:hit','Fractr:hit'], balance:[0.3,0.45], align:0, w:1},
+            {mix:['Boomr:hit','Fractr:hit'], balance:[0.3,0.45], align:0, w:2},
             {mix:['Bfxr:hit','Clonkr:hit'], balance:[0.35,0.5], align:0, w:1}],
         hurt: [
             {src:'Bfxr:hurt', w:4}, {src:'Transfxr:hurt', w:4}, {src:'Crittr:hurt', w:3}, {src:'Crittr:lose', w:1}, {src:'Breathr:hurt', w:1}, {src:'Squishr:hurt', w:1}, {src:'Glitchr:hurt', w:1},
@@ -51,7 +51,7 @@ class Soundboard extends Mixr {
             {mix:['Boomr:explode','Breathr:roar'], balance:[0.25,0.4], align:0, w:1},
             {mix:['Bfxr:explode','Boomr:explode'], balance:[0.4,0.6], align:0, w:1}],
         coin: [
-            {src:'Bfxr:coin', w:5}, {src:'Bfxr:generate_reference_coin', w:2}, {src:'Transfxr:coin', w:4}, {src:'Jinglr:coin', w:2}, {src:'Pluckr:coin', w:1}, {src:'Bouncr:coin', w:1}, {src:'Clonkr:coin', w:1},
+            {src:'Bfxr:coin', w:5}, {src:'Bfxr:generate_reference_coin', w:3}, {src:'Transfxr:coin', w:3}, {src:'Jinglr:coin', w:2}, {src:'Bouncr:coin', w:1}, {src:'Clonkr:coin', w:1},
             {mix:['Bfxr:coin','Bouncr:coin'], balance:[0.35,0.5], align:0, w:1},
             {mix:['Jinglr:coin','Clonkr:coin'], balance:[0.4,0.55], align:0, w:1}],
         powerup: [
@@ -74,23 +74,23 @@ class Soundboard extends Mixr {
             {mix:['Fractr:break','Boomr:hit'], balance:[0.35,0.5], align:0, w:1},
             {mix:['Clonkr:break','Fractr:break'], balance:[0.35,0.5], align:0, w:1}],
         door: [
-            {src:'Machinr:door', w:3}, {src:'Transfxr:door', w:4}, {src:'Clonkr:door', w:2}, {src:'Whooshr:door', w:1}, {src:'Rumblr:generate_stone_door', w:1}, {src:'Machinr:generate_heavy_door', w:1},
-            {mix:['Whooshr:door','Clonkr:hit'], balance:[0.4,0.55], align:2, w:2},
+            {src:'Machinr:door', w:3}, {src:'Transfxr:door', w:4}, {src:'Clonkr:door', w:1}, {src:'Whooshr:door', w:2}, {src:'Rumblr:generate_stone_door', w:1}, {src:'Machinr:generate_heavy_door', w:1},
+            {mix:['Whooshr:door','Clonkr:hit'], balance:[0.4,0.55], align:2, w:3},
             {mix:['Transfxr:door','Clonkr:hit'], balance:[0.35,0.5], align:2, w:1}],
         blip: [
             {src:'Bfxr:blip', w:5}, {src:'Transfxr:blip', w:4}, {src:'Tappr:generate_select', w:1}, {src:'Tappr:generate_focus', w:1}, {src:'Signlr:blip', w:1}, {src:'Pluckr:blip', w:1},
             {src:'Glitchr:blip', w:1}, {src:'Clonkr:blip', w:1}, {src:'Squishr:blip', w:1}],
         confirm: [
-            {src:'Jinglr:confirm', w:4}, {src:'Transfxr:confirm', w:4}, {src:'Machinr:confirm', w:1}, {src:'Birdr:confirm', w:1}, {src:'Crittr:confirm', w:1}, {src:'Pluckr:confirm', w:1},
+            {src:'Jinglr:confirm', w:5}, {src:'Transfxr:confirm', w:5}, {src:'Machinr:confirm', w:1}, {src:'Birdr:confirm', w:1}, {src:'Crittr:confirm', w:1}, {src:'Pluckr:confirm', w:1},
             {src:'Signlr:confirm', w:1}, {src:'Rustlr:confirm', w:1}, {src:'Tappr:generate_panel_open', w:1}, {src:'Notifr:generate_objective_done', w:1}, {src:'Notifr:generate_message', w:1},
             {mix:['Tappr:generate_select','Jinglr:confirm'], balance:[0.45,0.6], align:0, w:1}],
         alert: [
-            {src:'Jinglr:alert', w:2}, {src:'Transfxr:alert', w:5}, {src:'Jinglr:generate_denied', w:3}, {src:'Signlr:alert', w:2}, {src:'Zappr:alert', w:1}, {src:'Birdr:alert', w:1}, {src:'Glitchr:alert', w:1},
-            {mix:['Signlr:alert','Zappr:alert'], balance:[0.3,0.45], align:0, w:1}],
+            {src:'Jinglr:alert', w:2}, {src:'Transfxr:alert', w:3}, {src:'Jinglr:generate_denied', w:5}, {src:'Signlr:alert', w:2}, {src:'Zappr:alert', w:1}, {src:'Birdr:alert', w:1}, {src:'Glitchr:alert', w:1},
+            {mix:['Signlr:alert','Zappr:alert'], balance:[0.3,0.45], align:0, w:2}],
         cast: [
-            {src:'Zappr:cast', w:3}, {src:'Transfxr:cast', w:4}, {src:'Choirr:cast', w:1}, {src:'Riftr:cast', w:1}, {src:'Fractr:cast', w:1}, {src:'Swarmr:cast', w:1}, {src:'Jinglr:cast', w:1},
+            {src:'Zappr:cast', w:2}, {src:'Transfxr:cast', w:3}, {src:'Choirr:cast', w:1}, {src:'Riftr:cast', w:1}, {src:'Fractr:cast', w:1}, {src:'Swarmr:cast', w:1}, {src:'Jinglr:cast', w:1},
             {mix:['Zappr:cast','Choirr:cast'], balance:[0.35,0.5], align:0, w:1},
-            {mix:['Riftr:cast','Fractr:cast'], balance:[0.35,0.5], align:1, w:1}],
+            {mix:['Riftr:cast','Fractr:cast'], balance:[0.35,0.5], align:1, w:3}],
         warp: [
             {src:'Riftr:warp', w:4}, {src:'Transfxr:warp', w:4}, {src:'Signlr:warp', w:1}, {src:'Glitchr:warp', w:1}, {src:'Riftr:generate_teleport_arrive', w:1},
             {mix:['Riftr:warp','Glitchr:warp'], balance:[0.35,0.5], align:0, w:1},
@@ -98,7 +98,7 @@ class Soundboard extends Mixr {
         roar: [
             {src:'Crittr:roar', w:5}, {src:'Transfxr:roar', w:4}, {src:'Breathr:roar', w:1}, {src:'Crittr:generate_cave_beast', w:1}, {src:'Crittr:generate_angry_blob', w:1},
             {src:'Birdr:generate_crow', w:1},
-            {mix:['Crittr:roar','Boomr:land'], balance:[0.35,0.5], align:0, w:1},
+            {mix:['Crittr:roar','Boomr:land'], balance:[0.35,0.5], align:0, w:2},
             {mix:['Transfxr:roar','Breathr:roar'], balance:[0.4,0.55], align:0, w:1}],
         whirr: [
             {src:'Machinr:whirr', w:4}, {src:'Transfxr:whirr', w:4}, {src:'Swarmr:whirr', w:1}, {src:'Zappr:whirr', w:1}, {src:'Zappr:generate_tesla_coil', w:1},
@@ -138,6 +138,8 @@ class Soundboard extends Mixr {
             if (!source) throw new Error('Unknown Soundboard ingredient: ' + reference);
             return source;
         });
+        // Quiet ingredients can be lifted: level scales each source's own volume.
+        if (Number.isFinite(entry.level) && entry.level !== 1) for (const source of sources) source.params.masterVolume = SoundDSP.clamp(0.5 * entry.level, 0, 1);
         this.set_param('sources', sources);
         const balance = Array.isArray(entry.balance) ? entry.balance[0] + Math.random() * (entry.balance[1] - entry.balance[0]) : Number.isFinite(entry.balance) ? entry.balance : 0.5;
         this.set_param('balance', balance, true);
