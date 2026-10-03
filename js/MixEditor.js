@@ -1,19 +1,17 @@
 class MixEditor {
     constructor(tab,parent) {
         this.tab=tab;
-        this.catalog=Mixr.generators();
+        this.catalog=Mixr.generators().filter((entry,index,entries)=>
+            index===0 || entry.synth!==entries[index-1].synth);
         this.root=document.createElement('section');this.root.className='mix-editor';
         parent.appendChild(this.root);
         this.rows=[0,1].map(slot=>{
             const row=document.createElement('div');row.className='mix-slot';
             const label=document.createElement('label');label.textContent=slot===0?'A':'B';
-            const select=document.createElement('select');select.setAttribute('aria-label','Preset '+label.textContent);
+            const select=document.createElement('select');select.setAttribute('aria-label','Synth '+label.textContent);
             select.addEventListener('change',()=>{
                 if(select.value==='empty')tab.synth.set_source(slot,null);
-                else if(select.value!=='current'){
-                    const [name,generator]=select.value.split(':');
-                    tab.synth.set_generator(slot,name,generator);
-                }
+                else tab.synth.set_generator(slot,select.value,'*');
                 tab.parameter_changed();
             });
             label.appendChild(select);row.appendChild(label);
@@ -34,19 +32,13 @@ class MixEditor {
         this.rows.forEach(({select,regen},slot)=>{
             select.replaceChildren();
             const option=(parent,value,text)=>{const o=document.createElement('option');o.value=value;o.textContent=text;parent.appendChild(o);};
-            option(select,'empty','Choose a preset…');
+            option(select,'empty','Choose a synth…');
             const current=sources[slot];
-            if(current&&!current.generator)option(select,'current',synth_display_name(current.synth)+' · '+current.name+' (saved sound)');
-            let name;
-            for(const entry of this.catalog){
-                if(name!==entry.synth){
-                    option(select,entry.synth+':*',entry.family);
-                    name=entry.synth;
-                }
-                option(select,entry.synth+':'+entry.generator,'  '+entry.family+' · '+entry.name);
-            }
+            if(current&&!this.catalog.some(entry=>entry.synth===current.synth))
+                option(select,current.synth,synth_display_name(current.synth));
+            for(const entry of this.catalog)option(select,entry.synth,entry.family);
             select.title=current ? synth_display_name(current.synth)+' · '+current.name : '';
-            select.value=current?(current.generator?current.synth+':'+current.generator:'current'):'empty';
+            select.value=current?current.synth:'empty';
             regen.disabled=!current || !current.generator || this.tab.synth.locked_param('sources');
         });
         this.both.disabled=this.rows.every(row=>row.regen.disabled);

@@ -5,35 +5,40 @@ class Mixr extends PresetSynth {
     hide_params = ['masterVolume', 'seed', 'sources'];
     param_info = [
         ...PresetSynth.common_params,
-        ['A ↔ B', 'Balance between the two sounds.', 'balance', 0.5, 0, 1],
+        ['Balance', 'Balance between the two sounds.', 'balance', 0.5, 0, 1],
         {type:'TEXT', name:'sources', default_value:'[]', max_length:60000}
     ];
     static retired = ['Chattr','Weathr','Tappr','Notifr','Tickr','Holor','Pewpr','Rollr','Pulser','Rumblr'];
     recipes = [
-        {id:'haunted',name:'Otherworld',pair:['Choirr','Riftr'],balance:[0.5,0.68],tip:'Choirr × Riftr.'},
-        {id:'crystal_prize',name:'Treasure Box',pair:['Jinglr','Clonkr'],balance:[0.5,0.68],tip:'Jinglr × Clonkr.'},
-        {id:'spell_hit',name:'Shatterstorm',pair:['Whooshr','Fractr'],balance:[0.57,0.75],tip:'Whooshr × Fractr.'},
-        {id:'spark_impact',name:'Live Wire',pair:['Clonkr','Zappr'],balance:[0.52,0.7],tip:'Clonkr × Zappr.'},
-        {id:'heavy_magic',name:'Thunderworks',pair:['Boomr','Zappr'],balance:[0.26,0.44],tip:'Boomr × Zappr.'},
-        {id:'monster',name:'Beast Within',pair:['Crittr','Breathr'],balance:[0.3,0.48],tip:'Crittr × Breathr.'},
-        {id:'goo_machine',name:'Wetware',pair:['Squishr','Machinr'],balance:[0.44,0.62],tip:'Squishr × Machinr.'},
-        {id:'shockwave',name:'Shockwaves',pair:['Boomr','Whooshr'],balance:[0.38,0.56],tip:'Boomr × Whooshr.'},
-        {id:'sacred_treasure',name:'Arcane Reward',pair:['Jinglr','Choirr'],balance:[0.43,0.61],tip:'Jinglr × Choirr.'},
-        {id:'enchanted_string',name:'Strange Strings',pair:['Pluckr','Riftr'],balance:[0.11,0.29],tip:'Pluckr × Riftr.'},
-        {id:'phase_step',name:'Phase Shift',pair:['Breathr','Riftr'],balance:[0.38,0.56],tip:'Breathr × Riftr.'},
+
+        //GOOD
         {id:'clockwork_familiar',name:'Clockwork Aviary',pair:['Machinr','Birdr'],balance:[0.31,0.49],tip:'Machinr × Birdr.'},
-        {id:'hatchling',name:'Monster Hatchery',pair:['Fractr','Crittr'],balance:[0.21,0.39],tip:'Fractr × Crittr.'},
-        {id:'charged_swarm',name:'Electric Hive',pair:['Swarmr','Zappr'],balance:[0.37,0.55],tip:'Swarmr × Zappr.'},
-        {id:'liquid_reward',name:'Jelly Beans',pair:['Jinglr','Squishr'],balance:[0.64,0.8],tip:'Jinglr × Squishr.'},
+
+        //OK
+        {id:'crystal_prize',name:'Treasure Box',pair:['Jinglr','Clonkr'],balance:[0.5,0.68],tip:'Jinglr × Clonkr.'},
+        {id:'cyber_bird',name:'Cyber Bird',pair:['Birdr','Bfxr'],balance:[0.37,0.55],tip:'Birdr × Bfxr.'},
+        {id:'goo_machine',name:'Wetware',pair:['Squishr','Machinr'],balance:[0.44,0.62],tip:'Squishr × Machinr.'},
         {id:'alien_beacon',name:'Alien Broadcast',pair:['Signlr','Choirr'],balance:[0.44,0.62],tip:'Signlr × Choirr.'},
-        {id:'pocket_rattle',name:'Pocket Rattle',pair:['Rustlr','Clonkr'],balance:[0.12,0.3],tip:'Rustlr × Clonkr.'},
-        {id:'soft_landing',name:'Goo Collision',pair:['Bouncr','Squishr'],balance:[0.33,0.51],tip:'Bonks × Squishy.'},
+
+        {id:'garden_lute',name:'Garden Lute',pair:['Pluckr','Crittr'],balance:[0.11,0.29],tip:'Pluckr × Crittr.'},
         {id:'reality_error',name:'Reality Error',pair:['Riftr','Glitchr'],balance:[0.37,0.55],tip:'Sonar × Glitches.'},
-        {id:'arcade_rush',name:'Arcade Rush',pair:['Bfxr','Whooshr'],balance:[0.54,0.72],tip:'Bfxr × Whooshr.'},
-        {id:'underbrush',name:'Underbrush',pair:['Swarmr','Rustlr'],balance:[0.45,0.63],tip:'Swarmr × Rustlr.'},
-        {id:'song_garden',name:'Song Garden',pair:['Pluckr','Birdr'],balance:[0.11,0.29],tip:'Pluckr × Birdr.'},
-        {id:'demolition',name:'Demolition',pair:['Fractr','Boomr'],balance:[0.37,0.55],tip:'Fractr × Boomr.'},
-        {id:'haunted_hardware',name:'Scrap Brain',pair:['Clonkr','Glitchr'],balance:[0.5,0.68],tip:'Clonkr × Glitchr.'}
+        {id:'soft_landing',name:'Goo Collision',pair:['Bouncr','Squishr'],balance:[0.33,0.51],tip:'Bonks × Squishy.'},
+
+        {id:'spark_impact',name:'Live Wire',pair:['Clonkr','Zappr'],balance:[0.52,0.7],tip:'Clonkr × Zappr.'},
+        {id:'shockwave',name:'Shockwaves',pair:['Boomr','Breathr'],balance:[0.2,0.5],tip:'Boomr × Breathr.'},
+        {id:'haunted_hardware',name:'Scrap Brain',pair:['Clonkr','Glitchr'],balance:[0.5,0.68],tip:'Clonkr × Glitchr.'},
+
+
+        //BAD
+
+        {id:'haunted',name:'Otherworld',pair:['Choirr','Riftr'],balance:[0.5,0.68],tip:'Choirr × Riftr.'},
+        {id:'spell_hit',name:'Shatterstorm',pair:['Whooshr','Fractr'],balance:[0.57,0.75],tip:'Whooshr × Fractr.'},
+        {id:'heavy_magic',name:'Thunderworks',pair:['Boomr','Zappr'],balance:[0.26,0.44],tip:'Boomr × Zappr.'},
+        {id:'phase_step',name:'Phase Shift',pair:['Whooshr','Riftr'],balance:[0.38,0.56],tip:'Whooshr × Riftr.'},
+        {id:'hatchling',name:'Monster Hatchery',pair:['Fractr','Crittr'],balance:[0.21,0.39],tip:'Fractr × Crittr.'},
+        {id:'sacred_treasure',name:'Arcane Reward',pair:['Jinglr','Choirr'],balance:[0.43,0.61],tip:'Jinglr × Choirr.'},
+        {id:'pocket_rattle',name:'Pocket Rattle',pair:['Rustlr','Clonkr'],balance:[0.12,0.3],tip:'Rustlr × Clonkr.'},
+        {id:'demolition',name:'Demolition',pair:['Fractr','Boomr'],balance:[0.37,0.55],tip:'Fractr × Boomr.'}
     ].map(recipe => ({...recipe, tip:recipe.pair.map(synth_display_name).join(' × ')+'.', values:{balance:recipe.balance}}));
     constructor() { super(); this.initialize_presets(); }
     create_editor(tab,parent) { return new MixEditor(tab,parent); }

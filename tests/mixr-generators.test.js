@@ -17,22 +17,29 @@ test('Mixr catalog exposes preset generators without generated files or retired 
  assert.deepEqual(plain(run("new Mixr().recipes.find(recipe=>recipe.id==='reality_error').pair")),['Riftr','Glitchr']);
  assert.equal(run("new Mixr().recipes.find(recipe=>recipe.id==='reality_error').tip"),'Sonar × Glitches.');
 });
-test('Mixfxr dropdowns and saved source labels use visible synth names',()=>{
+test('Mixfxr dropdowns select synths without listing their presets',()=>{
  const {run,load}=setup();load('js/MixEditor.js');
  const result=plain(run(`(()=>{
   function element(){return {children:[],appendChild(child){this.children.push(child);},
-   replaceChildren(){this.children=[];},setAttribute(){},addEventListener(){}};}
+   replaceChildren(){this.children=[];},setAttribute(name,value){this[name]=value;},
+   addEventListener(name,listener){this[name]=listener;}};}
   globalThis.document={createElement:element};
   const mix=new Mixr(),source=new Clonkr();mix.set_source(0,source,'Glass');
-  const editor=new MixEditor({synth:mix},element());
-  return {options:editor.rows[0].select.children.map(option=>option.textContent),
-   title:editor.rows[0].select.title};
+  const editor=new MixEditor({synth:mix,parameter_changed(){editor.update();}},element());
+  const selectA=editor.rows[0].select,selectB=editor.rows[1].select;
+  const before={options:selectA.children.map(option=>[option.value,option.textContent]),
+   value:selectA.value,title:selectA.title,empty:selectB.value};
+  selectA.value='Jinglr';selectA.change();
+  selectB.value='Clonkr';selectB.change();
+  return {before,sources:mix.get_sources().map(source=>[source.synth,source.generator]),
+   selected:[selectA.value,selectB.value]};
  })()`));
- assert.ok(result.options.includes('Tangs · Glass (saved sound)'));
- assert.ok(result.options.includes('Tangs'));
- assert.ok(result.options.includes('Jingles'));
- assert.ok(result.options.includes('Soundbender'));
- assert.equal(result.title,'Tangs · Glass');
+ assert.deepEqual(result.before.options,[['empty','Choose a synth…'],['Transfxr','Soundbender'],['Clonkr','Tangs'],['Jinglr','Jingles']]);
+ assert.equal(result.before.value,'Clonkr');
+ assert.equal(result.before.title,'Tangs · Glass');
+ assert.equal(result.before.empty,'empty');
+ assert.deepEqual(result.sources,[['Jinglr','*'],['Clonkr','*']]);
+ assert.deepEqual(result.selected,['Jinglr','Clonkr']);
 });
 test('Regen keeps the chosen family and the other source unchanged',()=>{
  const {run}=setup();
