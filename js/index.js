@@ -66,7 +66,31 @@ document.addEventListener('DOMContentLoaded', function(){
     register_tabs();
     SaveLoad.check_url_for_sfxr_params();
     register_drop_handlers();
+    register_background_fade();
 });
+
+function register_background_fade(){
+    const panel = document.getElementById('main_container');
+    const fadeStartDistance = 50;
+    const update = () => {
+        const bounds = panel.getBoundingClientRect();
+        const width = document.documentElement.clientWidth;
+        const height = document.documentElement.clientHeight;
+        const stops = {
+            '--fade-left-end': Math.max(1, bounds.left - fadeStartDistance),
+            '--fade-right-start': Math.min(width - 1, bounds.right + fadeStartDistance),
+            '--fade-top-end': Math.max(1, bounds.top - fadeStartDistance),
+            '--fade-bottom-start': Math.min(height - 1, bounds.bottom + fadeStartDistance)
+        };
+        for (const [name, position] of Object.entries(stops)) {
+            document.documentElement.style.setProperty(name, `${position}px`);
+        }
+    };
+    update();
+    window.addEventListener('resize', update);
+    window.addEventListener('scroll', update, {passive: true});
+    new ResizeObserver(update).observe(panel);
+}
 
 function showDropZone() {
     const dropZone = document.getElementById('dropzone');

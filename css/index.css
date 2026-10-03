@@ -1,7 +1,7 @@
 /*the structure of the page is HEADER, CONTENT, FOOTER */
 
 :root {
-    --page-background-color: #ccbda1;
+    --page-background-color: #e7d1a7;
     --panel-background-color: #ccbda1;
     --panel-border-color: #5c574c;
     --panel-text-color: #black;
@@ -36,6 +36,13 @@
 
     --about-dialog-width: 300px;
     --about-dialog-backdrop-color: #ccbda188;
+
+    background-color: var(--page-background-color);
+    background-image:
+        linear-gradient(to right, var(--page-background-color), transparent var(--fade-left-end), transparent var(--fade-right-start), var(--page-background-color)),
+        linear-gradient(to bottom, var(--page-background-color), transparent var(--fade-top-end), transparent var(--fade-bottom-start), var(--page-background-color)),
+        url("../img/bg.png");
+    background-attachment: fixed;
 }
 
 /* Chattr's little desk companion inside the shared panel. */
@@ -133,8 +140,6 @@ body {
     height:100%;
     margin:0;
     padding:0;
-    background-color: var(--page-background-color);
-    background-image: url("../img/bg.png") ;
     font-size: var(--font-size);
     /* min-height: 1000px; */
     overflow-y:auto;
@@ -395,6 +400,8 @@ body {
 
 .delete_button {
     display:flex;
+    align-items: center;
+    justify-content: center;
     /* float:right; */
     font-size: var(--font-size);
     padding:0;
@@ -406,9 +413,14 @@ body {
     text-align: center;
 }
 
-.delete_button img {
+.delete_button svg {
     width:10px;
     height:10px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    text-align: center;
 }
 table.paramtable {
     width:100%;    

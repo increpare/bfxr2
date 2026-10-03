@@ -9,7 +9,7 @@ test('Mixr catalog exposes preset generators without generated files or retired 
  assert.ok(list.some(g=>g.synth==='Transfxr'&&g.generator==='generate_morph'));
  assert.ok(list.some(g=>g.synth==='Clonkr'&&g.family==='Tangs'));
  assert.ok(list.some(g=>g.synth==='Jinglr'&&g.family==='Jingles'));
- assert.ok(list.some(g=>g.synth==='Transfxr'&&g.family==='Soundbender'));
+ assert.ok(list.some(g=>g.synth==='Transfxr'&&g.family==='Transfxr'));
  assert.ok(list.every(g=>!['Stackr','Mixr','Chattr','Pewpr','Rumblr'].includes(g.synth)));
  assert.equal(run("new Mixr().recipes.find(recipe=>recipe.id==='haunted').tip"),'Choir × Sonar.');
  assert.deepEqual(plain(run("new Mixr().recipes.find(recipe=>recipe.id==='phase_step').pair")),['Breathr','Riftr']);
@@ -34,7 +34,7 @@ test('Mixfxr dropdowns select synths without listing their presets',()=>{
   return {before,sources:mix.get_sources().map(source=>[source.synth,source.generator]),
    selected:[selectA.value,selectB.value]};
  })()`));
- assert.deepEqual(result.before.options,[['empty','Choose a synth…'],['Transfxr','Soundbender'],['Clonkr','Tangs'],['Jinglr','Jingles']]);
+ assert.deepEqual(result.before.options,[['empty','Choose a synth…'],['Transfxr','Transfxr'],['Clonkr','Tangs'],['Jinglr','Jingles']]);
  assert.equal(result.before.value,'Clonkr');
  assert.equal(result.before.title,'Tangs · Glass');
  assert.equal(result.before.empty,'empty');

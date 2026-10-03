@@ -962,7 +962,8 @@ class Tab {
         
         var delete_button = document.createElement("button");
         delete_button.classList.add("delete_button");
-        delete_button.innerHTML = "<img src='./img/delete.png' alt='Delete'>";
+        delete_button.setAttribute("aria-label", "Delete file");
+        delete_button.innerHTML = "<svg viewBox='0 0 16 16' aria-hidden='true' focusable='false'><path d='M3 3l10 10M13 3L3 13'/></svg>";
         delete_button.addEventListener("click", (event) => {
             this.delete_file(file_name);
         });

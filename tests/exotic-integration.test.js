@@ -60,7 +60,7 @@ test('navigation prunes redundant engines while retaining legacy renderers', () 
     ]);
     const labels = plain(api.run('tabs.map(tab=>tab.synth.display_name || tab.synth.name)'));
     assert.deepEqual(labels, [
-        'Bfxr','Footsteppr','Mixfxr','Soundbender',
+        'Bfxr','Footsteppr','Mixfxr','Transfxr',
         'Jingles','Plucked','Choir',
         'Beasts','Bird','Swarms',
         'Tangs','Bonks','Cracker','Boomer','Rustler','Squishy',
