@@ -14,16 +14,16 @@ class Soundboard extends Mixr {
             {src:'Bfxr:jump', w:5}, {src:'Transfxr:jump', w:4}, {src:'Birdr:jump', w:1},
             {mix:['Bfxr:jump','Transfxr:jump'], balance:[0.3,0.45], align:0, w:1}],
         land: [
-            {src:'Footsteppr:land', w:1, level:1.6}, {src:'Bouncr:land', w:3, level:2}, {src:'Clonkr:land', w:2, level:1.4}, {src:'Boomr:land', w:1}, {src:'Squishr:land', w:1}, {src:'Rustlr:land', w:2, level:1.5}, {src:'Transfxr:land', w:3},
+            {src:'Footsteppr:land', w:1, level:1.6}, {src:'Bouncr:land', w:3, level:2}, {src:'Boomr:land', w:1}, {src:'Squishr:land', w:1}, {src:'Rustlr:land', w:2, level:1.5}, {src:'Transfxr:land', w:3},
             {mix:['Bouncr:land','Rustlr:land'], balance:[0.35,0.5], align:0, w:3, level:1.8},
-            {mix:['Boomr:land','Fractr:step'], balance:[0.3,0.45], align:0, w:1}],
+            {mix:['Boomr:land','Fractr:step'], balance:[0.3,0.45], align:0, w:3}],
         step: [
             {src:'Footsteppr:step', w:6}, {src:'Fractr:step', w:1}, {src:'Rustlr:step', w:1}, {src:'Squishr:step', w:1},
             {mix:['Footsteppr:step','Rustlr:step'], balance:[0.3,0.45], align:0, w:2}],
         dash: [
-            {src:'Whooshr:dash', w:4}, {src:'Transfxr:dash', w:2}, {src:'Riftr:dash', w:2}, {src:'Breathr:dash', w:2},
-            {mix:['Whooshr:dash','Zappr:shoot'], balance:[0.25,0.4], align:0, w:1},
-            {mix:['Whooshr:dash','Riftr:dash'], balance:[0.35,0.5], align:1, w:1}],
+            {src:'Whooshr:dash', w:4}, {src:'Transfxr:dash', w:2}, {src:'Riftr:dash', w:2}, {src:'Breathr:dash', w:1},
+            {mix:['Whooshr:dash','Zappr:shoot'], balance:[0.25,0.4], align:0, w:2},
+            {mix:['Whooshr:dash','Riftr:dash'], balance:[0.35,0.5], align:1, w:2}],
         splash: [
             {src:'Squishr:splash', w:5}, {src:'Transfxr:splash', w:4}, {src:'Squishr:generate_wet_splat', w:1},
             {mix:['Squishr:splash','Bouncr:land'], balance:[0.45,0.6], align:0, w:1},
@@ -73,11 +73,13 @@ class Soundboard extends Mixr {
             {mix:['Fractr:break','Boomr:hit'], balance:[0.35,0.5], align:0, w:1},
             {mix:['Clonkr:break','Fractr:break'], balance:[0.35,0.5], align:0, w:1}],
         door: [
-            {src:'Machinr:door', w:2}, {src:'Transfxr:door', w:3}, {src:'Clonkr:door', w:1}, {src:'Whooshr:door', w:3}, {src:'Rumblr:generate_stone_door', w:1}, {src:'Machinr:generate_heavy_door', w:1},
+            {src:'Transfxr:door', w:3}, {src:'Whooshr:door', w:2}, {src:'Machinr:door', w:1}, {src:'Clonkr:door', w:1}, {src:'Rumblr:generate_stone_door', w:1}, {src:'Machinr:generate_heavy_door', w:1},
+            {mix:['Transfxr:generate_door_open_rise','Machinr:unlock'], balance:[0.3,0.45], align:0, w:3},
+            {mix:['Transfxr:generate_door_close_fall','Bouncr:land'], balance:[0.4,0.55], align:2, w:3, level:1.4},
+            {mix:['Whooshr:door','Transfxr:generate_door_creak'], balance:[0.4,0.55], align:0, w:2},
+            {mix:['Transfxr:generate_door_creak','Bouncr:land'], balance:[0.35,0.5], align:2, w:2, level:1.4},
             {mix:['Whooshr:door','Clonkr:hit'], balance:[0.4,0.55], align:2, w:3},
-            {mix:['Transfxr:door','Clonkr:hit'], balance:[0.35,0.5], align:2, w:1},
-            {mix:['Whooshr:door','Machinr:unlock'], balance:[0.4,0.55], align:2, w:1},
-            {mix:['Machinr:door','Bouncr:land'], balance:[0.45,0.6], align:2, w:2, level:1.5}],
+            {mix:['Transfxr:generate_door_wind','Machinr:unlock'], balance:[0.35,0.5], align:2, w:1}],
         blip: [
             {src:'Bfxr:blip', w:5}, {src:'Transfxr:blip', w:4}, {src:'Tappr:generate_select', w:1}, {src:'Tappr:generate_focus', w:1}, {src:'Signlr:blip', w:1}, {src:'Pluckr:blip', w:1},
             {src:'Glitchr:blip', w:1}, {src:'Clonkr:blip', w:1}, {src:'Squishr:blip', w:1}],

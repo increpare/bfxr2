@@ -155,10 +155,11 @@ class Transfxr extends SynthBase {
             {id:'break_shatter', params:{waveType:11,duration:0.5,attack:0,release:0.4,echo:0.15,pitch:[0.85,0.7,'Ease Out'],waveTo:7,morph:[0.6,0.2],tone:[1,0.7],level:[1,0]}},
             {id:'break_pop', params:{waveType:0,duration:0.09,attack:0,release:0.06,echo:0,pitch:[0.6,0.4,'Ease Out'],waveTo:7,morph:[0.5,0.2],tone:[1,0.6],level:[1,0]}}],
         door: [
-            {id:'door_shwip', params:{waveType:3,duration:0.3,attack:0,release:0.1,echo:0,pitch:[0.4,0.66,'Ease Out'],waveTo:7,morph:[0.2,0.6],tone:[0.7,0.9],level:[1,0.4]}},
-            {id:'door_hiss_clank', params:{waveType:7,duration:0.6,attack:0.02,release:0.1,echo:0.05,pitch:[0.5,0.5],tone:[0.9,0.3,'Ease Out'],waveTo:1,morph:[0,1,'Steps'],level:[0.8,1,'Steps'],resonance:0.3}},
-            {id:'door_motor', params:{waveType:2,duration:1,attack:0.1,release:0.1,echo:0,pitch:[0.2,0.3,'Ease Out'],vibrato:[0.2,0.2],waveTo:7,morph:[0.3,0.8,'Steps'],tone:[0.4,0.6],level:[0.7,1,'Steps'],resonance:0.4}},
-            {id:'door_shutter', params:{waveType:3,duration:0.8,attack:0,release:0.05,echo:0,pitch:[0.5,0.3,'Steps'],level:[1,0.8,'Pulse'],waveTo:7,morph:[0.3,0.3],tone:[0.8,0.5]}}],
+            {id:'door_open_rise', params:{waveType:2,duration:0.7,attack:0.12,release:0.25,echo:0.05,pitch:[0.22,0.4,'Smooth'],vibrato:[0.2,0.5,'Ease In'],waveTo:7,morph:[0.35,0.6],tone:[0.35,0.7,'Ease In'],level:[0.6,0.9],resonance:0.45}},
+            {id:'door_close_fall', params:{waveType:2,duration:0.6,attack:0.1,release:0.12,echo:0.05,pitch:[0.4,0.2,'Smooth'],vibrato:[0.4,0.2],waveTo:7,morph:[0.4,0.6],tone:[0.65,0.3,'Ease Out'],level:[0.7,1,'Ease In'],resonance:0.45}},
+            {id:'door_creak', params:{waveType:2,duration:0.8,attack:0.08,release:0.2,echo:0,pitch:[0.27,0.33,'Pulse'],vibrato:[0.7,1],waveTo:10,morph:[0.3,0.7],tone:[0.45,0.6],level:[0.6,0.85,'Pulse'],resonance:0.6}},
+            {id:'door_wind', params:{waveType:7,duration:0.7,attack:0.15,release:0.3,echo:0,pitch:[0.5,0.5],tone:[0.2,0.6,'Triangle'],level:[0.4,1,'Triangle'],resonance:0.5}},
+            {id:'door_shwip', params:{waveType:3,duration:0.3,attack:0.02,release:0.1,echo:0,pitch:[0.4,0.66,'Ease Out'],waveTo:7,morph:[0.2,0.6],tone:[0.7,0.9],level:[0.9,0.4]}}],
         blip: [
             {id:'blip_tick', params:{waveType:3,duration:0.04,attack:0,release:0.02,echo:0,pitch:[0.7,0.7],tone:[1,1],level:[1,0.7]}},
             {id:'blip_pip', params:{waveType:3,duration:0.07,attack:0,release:0.03,echo:0,pitch:[0.75,0.8],tone:[1,1],level:[1,0.5]}},
@@ -225,6 +226,7 @@ class Transfxr extends SynthBase {
         this.post_initialize();
         for (const example of Transfxr.examples) this['generate_'+example.id] = () => this.generate_example(example.id);
         for (const verb of Object.keys(Transfxr.verbRecipes)) this['generate_verb_'+verb] = () => this.generate_verb(verb);
+        for (const archetype of Transfxr.verbExamples) this['generate_'+archetype.id] = () => this.generate_archetype(archetype.id);
         for (const family of Transfxr.preset_families) this['generate_family_'+family.id] = () => this.generate_family(family.id);
     }
 
@@ -248,6 +250,13 @@ class Transfxr extends SynthBase {
     }
 
     verb_generator(verb) { return Transfxr.verbRecipes[verb] ? 'generate_verb_' + verb : null; }
+    // Single archetypes have no button, but a catalogue can name one: 'Transfxr:generate_door_creak'.
+    get hidden_generators() { return Transfxr.verbExamples.map(a => 'generate_' + a.id); }
+    generate_archetype(id) {
+        this.generate_example(id, true);
+        this.set_param('duration', this.params.duration * (0.9 + Math.random() * 0.2), true);
+        this.verb_archetype = id;
+    }
     verbs() { return Object.keys(Transfxr.verbRecipes); }
     generate_verb(verb) {
         const archetypes = Transfxr.verbRecipes[verb];

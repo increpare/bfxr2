@@ -149,17 +149,17 @@
    "file": "soundboard-land-4.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.5489470013417304,
-    "balance": 0.46515573365613816,
+    "seed": 0.1524869417771697,
+    "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Bouncr\",\"name\":\"Land\",\"params\":{\"masterVolume\":0.9,\"material\":1,\"surface\":4,\"force\":0.5441981654148549,\"duration\":0.5735113687813282,\"size\":0.9741666534682736,\"hardness\":0.3462435484165326,\"tail\":0.4298757328884676,\"seed\":0.2129371534101665,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"spin\":0},\"generator\":\"generate_land\",\"renderSeed\":0.31539969937875867},{\"synth\":\"Rustlr\",\"name\":\"Land\",\"params\":{\"masterVolume\":0.9,\"seed\":0.8523107371293008,\"material\":2,\"gesture\":1,\"duration\":0.24551013313466682,\"grain\":0.8657867591828108,\"density\":0.7268435697071254,\"motion\":-0.35153173191938547,\"pressure\":0.9854136288864538,\"folds\":3,\"brightness\":0.21700975799467415},\"generator\":\"generate_land\",\"renderSeed\":0.6187705853953958}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"Land\",\"params\":{\"masterVolume\":0.5,\"waveType\":0,\"duration\":0.43443158938083803,\"pitch\":{\"start\":0.1961289513448719,\"end\":0.036128951344871894,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.5,\"end\":0.15,\"curve\":\"Ease Out\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":1,\"end\":0,\"curve\":\"Linear\"},\"attack\":0.002,\"release\":0.35,\"resonance\":0.15,\"echo\":0.05,\"waveTo\":7,\"morph\":{\"start\":0.25,\"end\":0.6,\"curve\":\"Linear\"}},\"generator\":\"generate_verb_land\",\"renderSeed\":0.9080274810548872}]"
    },
-   "ingredients": "Bonks · Land × Rustler · Land (start-aligned)",
-   "duration": 0.22639455782312926,
-   "peak": 0.12560707330703735,
-   "rms": 0.018069325742517673,
-   "sha256": "d761c42ea86f335af032223510bf66fd2897b11a124e7150b6298e5dfbd0f399"
+   "ingredients": "Transfxr · Land",
+   "duration": 0.3657142857142857,
+   "peak": 0.33801379799842834,
+   "rms": 0.0970986898947587,
+   "sha256": "30c2358579dac67b7338d6c36cb467f677c26425f37bb7f98ab8b75d85781309"
   },
   {
    "verb": "step",
@@ -269,17 +269,17 @@
    "file": "soundboard-dash-2.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.025463070953264832,
-    "balance": 0.5,
+    "seed": 0.4609403172507882,
+    "balance": 0.38177255959017203,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.16970411455258727,\"duration\":0.3987086272914894,\"size\":0.6431406881660223,\"air\":0.9601847139187157,\"whistle\":0.07020776231074706,\"movement\":0.6224688819609583,\"focus\":0.47513961968943474,\"flutter\":0.11212381569202991},\"generator\":\"generate_dash\",\"renderSeed\":0.791109569137916}]"
+    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5227019924204797,\"duration\":0.4674956683069468,\"size\":0.4962423314340413,\"air\":0.9691338542848825,\"whistle\":0.05639699265593663,\"movement\":0.7242033626884222,\"focus\":0.37146080696256834,\"flutter\":0.07081659514224158},\"generator\":\"generate_dash\",\"renderSeed\":0.6204147576354444},{\"synth\":\"Zappr\",\"name\":\"Shoot\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8532789980527014,\"duration\":0.15881094620563088,\"voltage\":0.7735800118185581,\"arcs\":1,\"branching\":0.16863715052604675,\"crackle\":0.15449086967855694,\"hum\":0.027682212390936912,\"spark\":0.7985491601284593,\"spread\":0.02042199792340398,\"decay\":0.2402864304720424},\"generator\":\"generate_shoot\",\"renderSeed\":0.8332478271331638}]"
    },
-   "ingredients": "Whoosh · Dash",
-   "duration": 0.29024943310657597,
-   "peak": 0.421526163816452,
-   "rms": 0.0979518297807821,
-   "sha256": "15acef440bc531c4d1aa591fd33e60af8c0f9cecaefa2eccc7535afa5ef203e6"
+   "ingredients": "Whoosh · Dash × Zapper · Shoot (start-aligned)",
+   "duration": 0.4121541950113379,
+   "peak": 0.2668786346912384,
+   "rms": 0.07365944473807615,
+   "sha256": "30c5c3afe2fd59db8f2f195f51570551bcdd23e309249d014f8702cbeaf3517a"
   },
   {
    "verb": "dash",
@@ -290,16 +290,16 @@
    "params": {
     "masterVolume": 0.5,
     "seed": 0.5650375972036272,
-    "balance": 0.38222520090639595,
-    "align": 0,
+    "balance": 0.4822252009063959,
+    "align": 1,
     "offset": 0,
-    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.2938958473969251,\"duration\":0.32367182737216355,\"size\":0.7109422797337175,\"air\":0.9262094538658857,\"whistle\":0.25520676288288086,\"movement\":0.7760837193578483,\"focus\":0.5806298694573343,\"flutter\":0.13047671747626738},\"generator\":\"generate_dash\",\"renderSeed\":0.5119006915483624},{\"synth\":\"Zappr\",\"name\":\"Shoot\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9040759489871562,\"duration\":0.2716125304531306,\"voltage\":0.5135892141610384,\"arcs\":2,\"branching\":0.1979943064972758,\"crackle\":0.02641029073856771,\"hum\":0.010195874166674912,\"spark\":0.8274900034302846,\"spread\":0.15824262965470554,\"decay\":0.058495230635162446},\"generator\":\"generate_shoot\",\"renderSeed\":0.5289888512343168}]"
+    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.2938958473969251,\"duration\":0.32367182737216355,\"size\":0.7109422797337175,\"air\":0.9262094538658857,\"whistle\":0.25520676288288086,\"movement\":0.7760837193578483,\"focus\":0.5806298694573343,\"flutter\":0.13047671747626738},\"generator\":\"generate_dash\",\"renderSeed\":0.5119006915483624},{\"synth\":\"Riftr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.9040759489871562,\"excitation\":1,\"duration\":0.39093917280435564,\"pitch\":0.2635892141610384,\"bend\":0.7905688616447151,\"space\":0.17519582476466894,\"feedback\":0.1962180087924935,\"dispersion\":0.22137111916672436,\"motion\":0.8447410030872562,\"field\":0.6269246018957346,\"reverse\":0.005097138381097465},\"generator\":\"generate_phase_dash\",\"renderSeed\":0.5289888512343168}]"
    },
-   "ingredients": "Whoosh · Dash × Zapper · Shoot (start-aligned)",
-   "duration": 0.26702947845804986,
-   "peak": 0.24550895392894745,
-   "rms": 0.054575089196328745,
-   "sha256": "a0fb2c8092a6faad3121f717bb0fc11b990bc987589859a61c6048d4b131fba1"
+   "ingredients": "Whoosh · Dash × Sonar · Dash (peak-aligned)",
+   "duration": 0.2612244897959184,
+   "peak": 0.3680450916290283,
+   "rms": 0.06813873441986858,
+   "sha256": "5df27bd6f061b6011d4f50cfca6e7fcec810d5505f246765beabae077d1e21f4"
   },
   {
    "verb": "dash",
@@ -313,13 +313,13 @@
     "balance": 0.5,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Riftr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.3058769991621375,\"excitation\":1,\"duration\":0.29970908783376216,\"pitch\":0.29943588823080064,\"bend\":0.4275215588044375,\"space\":0.05817453266587108,\"feedback\":0.45202885417966165,\"dispersion\":0.4617356974631548,\"motion\":0.8271122511825524,\"field\":0.4172497430932708,\"reverse\":0.0944396199658513},\"generator\":\"generate_phase_dash\",\"renderSeed\":0.6848612851463258}]"
+    "sources": "[{\"synth\":\"Breathr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.19214212312363088,\"source\":0,\"mode\":0,\"duration\":0.17101025249809026,\"direction\":0.7496363597922027,\"cycles\":1,\"effort\":0.8258405196014792,\"inhale\":0.42,\"hold\":0.04,\"throat\":0.3512264230288565,\"rasp\":0.2657348958426155,\"flutter\":0.27266835533082484,\"space\":0.06158050026278943},\"generator\":\"generate_dash\",\"renderSeed\":0.6295974664390087}]"
    },
-   "ingredients": "Sonar · Dash",
-   "duration": 0.2438095238095238,
-   "peak": 0.44999998807907104,
-   "rms": 0.11642280900814211,
-   "sha256": "83d24e8173c69ee4b9eb8832ff61039794a33d0fb1c95a2a827657609e230861"
+   "ingredients": "Breath · Dash",
+   "duration": 0.16834467120181407,
+   "peak": 0.4472530484199524,
+   "rms": 0.15585901423031695,
+   "sha256": "80429e0eab487500bf39a268b11311204b9cc21f93fce1ddc57693fb740d3ead"
   },
   {
    "verb": "splash",
@@ -513,13 +513,13 @@
     "balance": 0.28635941883549093,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Swing\",\"params\":{\"masterVolume\":0.5,\"seed\":0.23507550498470664,\"duration\":0.5975965873897076,\"size\":0.8433001574012451,\"air\":0.8752522549591959,\"whistle\":0.36813227334059784,\"movement\":0.9478413932956755,\"focus\":0.7226724935695529,\"flutter\":0.09167795609682798},\"generator\":\"generate_swing\",\"renderSeed\":0.08366585429757833},{\"synth\":\"Breathr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8972804790828377,\"source\":0,\"mode\":0,\"duration\":0.43322392308618873,\"direction\":0.7924182798713446,\"cycles\":1,\"effort\":0.778756256122142,\"inhale\":0.42,\"hold\":0.04,\"throat\":0.4718025993555784,\"rasp\":0.15392924485495313,\"flutter\":0.14886638418538495,\"space\":0.0677299625473097},\"generator\":\"generate_dash\",\"renderSeed\":0.5111028938554227}]"
+    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Swing\",\"params\":{\"masterVolume\":0.5,\"seed\":0.23507550498470664,\"duration\":0.5975965873897076,\"size\":0.8433001574012451,\"air\":0.8752522549591959,\"whistle\":0.36813227334059784,\"movement\":0.9478413932956755,\"focus\":0.7226724935695529,\"flutter\":0.09167795609682798},\"generator\":\"generate_swing\",\"renderSeed\":0.08366585429757833},{\"synth\":\"Breathr\",\"name\":\"Dash\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8972804790828377,\"source\":0,\"mode\":0,\"duration\":0.2821602230821736,\"direction\":0.7924182798713446,\"cycles\":1,\"effort\":0.8893781280610711,\"inhale\":0.42,\"hold\":0.04,\"throat\":0.4718025993555784,\"rasp\":0.15392924485495313,\"flutter\":0.14886638418538495,\"space\":0.0677299625473097},\"generator\":\"generate_dash\",\"renderSeed\":0.5111028938554227}]"
    },
    "ingredients": "Whoosh · Swing × Breath · Dash (start-aligned)",
-   "duration": 0.47020408163265304,
-   "peak": 0.3566693365573883,
-   "rms": 0.06256918660494526,
-   "sha256": "a14b7f0dfc778085a8b50ba30fb25b4eff9f1b513adf5946591208ac7e89f5b9"
+   "duration": 0.4818140589569161,
+   "peak": 0.271288126707077,
+   "rms": 0.05906327589198245,
+   "sha256": "b442c7c568f037c00636f8ec807ae8c4e83c125862367c4685ca3bee7499d991"
   },
   {
    "verb": "swing",
@@ -1290,16 +1290,16 @@
    "params": {
     "masterVolume": 0.5,
     "seed": 0.01089720195159316,
-    "balance": 0.4562052437569946,
+    "balance": 0.5171933742822148,
     "align": 2,
     "offset": 0,
-    "sources": "[{\"synth\":\"Machinr\",\"name\":\"Door\",\"params\":{\"masterVolume\":0.75,\"seed\":0.23409223835915327,\"mechanism\":7,\"duration\":1.6644446147605776,\"speed\":0.26598681956529624,\"load\":0.6773779151029885,\"roughness\":0.7451811956707388,\"looseness\":0.7388911861460656,\"size\":0.6218798566609621,\"startTime\":0.35337826444301756,\"stopTime\":0.06736558229662479},\"generator\":\"generate_door\",\"renderSeed\":0.3587418624665588},{\"synth\":\"Bouncr\",\"name\":\"Land\",\"params\":{\"masterVolume\":0.75,\"material\":1,\"surface\":1,\"force\":0.9970188410952687,\"duration\":0.6938148962333799,\"size\":0.6164398280670866,\"hardness\":0.41690737518947574,\"tail\":0.3734512066585012,\"seed\":0.048527763690799475,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"spin\":0},\"generator\":\"generate_land\",\"renderSeed\":0.3289851669687778}]"
+    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Door\",\"params\":{\"masterVolume\":0.5,\"seed\":0.8445942148100585,\"duration\":0.5013223023852333,\"size\":0.8397531621158123,\"air\":0.9106578797101975,\"whistle\":0.02901671816362068,\"movement\":0.2471087174024433,\"focus\":0.46333471168763934,\"flutter\":0.06367491041310132},\"generator\":\"generate_door\",\"renderSeed\":0.4151731366291642},{\"synth\":\"Clonkr\",\"name\":\"Hit\",\"params\":{\"masterVolume\":0.5,\"seed\":0.7625925005413592,\"material\":0,\"action\":0,\"size\":0.3255596518632956,\"hollowness\":0.1651967095094733,\"hardness\":0.8212632990442216,\"damping\":0.8756704273633659,\"duration\":0.14657593122683465},\"generator\":\"generate_hit\",\"renderSeed\":0.9940376821905375}]"
    },
-   "ingredients": "Motors · Door × Bonks · Land (tail-aligned)",
-   "duration": 1.822766439909297,
-   "peak": 0.37650009989738464,
-   "rms": 0.06458358501602976,
-   "sha256": "68312ad453211b5c483c656089234d860bd81acbd73073c720218d07a4dab6c7"
+   "ingredients": "Whoosh · Door × Tangs · Hit (tail-aligned)",
+   "duration": 0.34829931972789113,
+   "peak": 0.21709813177585602,
+   "rms": 0.0387395019192412,
+   "sha256": "de85588a81117dcd675946b8923bc24508cea38c64894e94955248e33b7c1b75"
   },
   {
    "verb": "door",
@@ -1309,17 +1309,17 @@
    "file": "soundboard-door-2.wav",
    "params": {
     "masterVolume": 0.5,
-    "seed": 0.24936476768925786,
-    "balance": 0.5368192812078633,
-    "align": 2,
+    "seed": 0.7610102156177163,
+    "balance": 0.5,
+    "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Door\",\"params\":{\"masterVolume\":0.5,\"seed\":0.2857793227303773,\"duration\":0.674367476569023,\"size\":0.7564264169894159,\"air\":0.8400587274227291,\"whistle\":0.07270441171713173,\"movement\":0.18128734093625098,\"focus\":0.2544598598266021,\"flutter\":0.19245188486529513},\"generator\":\"generate_door\",\"renderSeed\":0.6482398901134729},{\"synth\":\"Machinr\",\"name\":\"Unlock\",\"params\":{\"masterVolume\":0.5,\"seed\":0.7875466048717499,\"mechanism\":2,\"duration\":0.4180020685773343,\"speed\":0.8405232233926654,\"load\":0.058198577258735895,\"roughness\":0.1209496614523232,\"looseness\":0.40175942825153477,\"size\":0.3512861568829976,\"startTime\":0.006285949901212007,\"stopTime\":0.06655463511124253},\"generator\":\"generate_unlock\",\"renderSeed\":0.4604130240622908}]"
+    "sources": "[{\"synth\":\"Clonkr\",\"name\":\"Door\",\"params\":{\"masterVolume\":0.5,\"seed\":0.30014445167034864,\"material\":2,\"action\":1,\"size\":0.7044206572929397,\"hollowness\":0.53729845918715,\"hardness\":0.5138272568117828,\"damping\":0.5423062198795379,\"duration\":0.6931091844569892},\"generator\":\"generate_door\",\"renderSeed\":0.6690210977103561}]"
    },
-   "ingredients": "Whoosh · Door × Motors · Unlock (tail-aligned)",
-   "duration": 0.5804988662131519,
-   "peak": 0.2808930575847626,
-   "rms": 0.048784600480674,
-   "sha256": "0ead8a3b45c272023938d06597ae11839dc0d5cbf6fe913aa9d96f22e11222ee"
+   "ingredients": "Tangs · Door",
+   "duration": 1.5325170068027212,
+   "peak": 0.4351649284362793,
+   "rms": 0.11652088470829151,
+   "sha256": "db1e1ab43f55bdf2987c627fb0a00ecb8458db9de2d4d91abc4ed43827cefee0"
   },
   {
    "verb": "door",
@@ -1330,16 +1330,16 @@
    "params": {
     "masterVolume": 0.5,
     "seed": 0.27397211943753064,
-    "balance": 0.5,
+    "balance": 0.3135206976905465,
     "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Door\",\"params\":{\"masterVolume\":0.5,\"seed\":0.32638565404340625,\"duration\":0.8279743755934761,\"size\":0.6196937932632863,\"air\":0.8640409051906318,\"whistle\":0.008542479202151298,\"movement\":0.11027306511532516,\"focus\":0.396304451324977,\"flutter\":0.1969328332459554},\"generator\":\"generate_door\",\"renderSeed\":0.32005181489512324}]"
+    "sources": "[{\"synth\":\"Transfxr\",\"name\":\"door_open_rise\",\"params\":{\"masterVolume\":0.5,\"waveType\":2,\"duration\":0.6718928276421502,\"pitch\":{\"start\":0.23660699436673893,\"end\":0.416606994366739,\"curve\":\"Smooth\"},\"tone\":{\"start\":0.35,\"end\":0.7,\"curve\":\"Ease In\"},\"vibrato\":{\"start\":0.2,\"end\":0.5,\"curve\":\"Ease In\"},\"level\":{\"start\":0.6,\"end\":0.9,\"curve\":\"Linear\"},\"attack\":0.12,\"release\":0.25,\"resonance\":0.45,\"echo\":0.05,\"waveTo\":7,\"morph\":{\"start\":0.35,\"end\":0.6,\"curve\":\"Linear\"}},\"generator\":\"generate_door_open_rise\",\"renderSeed\":0.32020452595315874},{\"synth\":\"Machinr\",\"name\":\"Unlock\",\"params\":{\"masterVolume\":0.5,\"seed\":0.756577990250662,\"mechanism\":2,\"duration\":0.3205461302306503,\"speed\":0.8271740855416283,\"load\":0.2263193998951465,\"roughness\":0.06527713080868125,\"looseness\":0.22802072595804931,\"size\":0.12110968889901415,\"startTime\":0.0081606475263834,\"stopTime\":0.07578831676393748},\"generator\":\"generate_unlock\",\"renderSeed\":0.21535413130186498}]"
    },
-   "ingredients": "Whoosh · Door",
-   "duration": 0.626938775510204,
-   "peak": 0.404562771320343,
-   "rms": 0.0946514090924402,
-   "sha256": "c5eead8d08a1122b0697e4ad61841b012a339e99d12fe8bdaba4b095de98509d"
+   "ingredients": "Transfxr · door_open_rise × Motors · Unlock (start-aligned)",
+   "duration": 0.6617687074829932,
+   "peak": 0.21958279609680176,
+   "rms": 0.0692651458431601,
+   "sha256": "51deda71fe693bff34707de5ce063a55c58ef58ffa26b576664d9b65a8fabcad"
   },
   {
    "verb": "door",
@@ -1350,16 +1350,16 @@
    "params": {
     "masterVolume": 0.5,
     "seed": 0.6308022537268698,
-    "balance": 0.4530951888998971,
-    "align": 2,
+    "balance": 0.5341377550736071,
+    "align": 0,
     "offset": 0,
-    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Door\",\"params\":{\"masterVolume\":0.5,\"seed\":0.29616836574859917,\"duration\":0.892061018140521,\"size\":0.8237400398589672,\"air\":0.8359600698575378,\"whistle\":0.04830203413730487,\"movement\":0.31325992196798325,\"focus\":0.28378674685955046,\"flutter\":0.14669359127292408},\"generator\":\"generate_door\",\"renderSeed\":0.7591454063076526},{\"synth\":\"Clonkr\",\"name\":\"Hit\",\"params\":{\"masterVolume\":0.5,\"seed\":0.33096917788498104,\"material\":0,\"action\":0,\"size\":0.35502384048886604,\"hollowness\":0.08635636459803209,\"hardness\":0.9682755101472139,\"damping\":0.7528157733380794,\"duration\":0.14029404898174108},\"generator\":\"generate_hit\",\"renderSeed\":0.8030227408744395}]"
+    "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Door\",\"params\":{\"masterVolume\":0.5,\"seed\":0.29616836574859917,\"duration\":0.892061018140521,\"size\":0.8237400398589672,\"air\":0.8359600698575378,\"whistle\":0.04830203413730487,\"movement\":0.31325992196798325,\"focus\":0.28378674685955046,\"flutter\":0.14669359127292408},\"generator\":\"generate_door\",\"renderSeed\":0.7591454063076526},{\"synth\":\"Transfxr\",\"name\":\"door_creak\",\"params\":{\"masterVolume\":0.5,\"waveType\":2,\"duration\":0.7908680413663388,\"pitch\":{\"start\":0.26291449384647425,\"end\":0.32291449384647425,\"curve\":\"Pulse\"},\"tone\":{\"start\":0.45,\"end\":0.6,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0.7,\"end\":1,\"curve\":\"Linear\"},\"level\":{\"start\":0.6,\"end\":0.85,\"curve\":\"Pulse\"},\"attack\":0.08,\"release\":0.2,\"resonance\":0.6,\"echo\":0,\"waveTo\":10,\"morph\":{\"start\":0.3,\"end\":0.7,\"curve\":\"Linear\"}},\"generator\":\"generate_door_creak\",\"renderSeed\":0.34542545839212835}]"
    },
-   "ingredients": "Whoosh · Door × Tangs · Hit (tail-aligned)",
-   "duration": 0.7314285714285714,
-   "peak": 0.2468593716621399,
-   "rms": 0.042603412049885464,
-   "sha256": "e95a72109e0c1c3f4356c72c0ea173e4a227c9c19d0152456971f5e262fe01b8"
+   "ingredients": "Whoosh · Door × Transfxr · door_creak (start-aligned)",
+   "duration": 0.7778684807256235,
+   "peak": 0.3061240017414093,
+   "rms": 0.08364098961331665,
+   "sha256": "afa7a27403cd9473ae6fb83e8ed2a97c78df23bf472c1465aaefa8c262c8b78c"
   },
   {
    "verb": "blip",
