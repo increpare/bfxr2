@@ -27,6 +27,7 @@ function curate(directory){
  const output=path.resolve(directory),report=JSON.parse(fs.readFileSync(path.join(output,'analysis.json'),'utf8'));
  const profiles=JSON.parse(fs.readFileSync(path.join(__dirname,'family_profiles.json'),'utf8'));
  const byId=new Map(report.sounds.map(s=>[s.id,s])),context=createContext(['js/synths/PresetFamily.js']);
+ const migrate=vm.runInContext('(p)=>{const s=new Transfxr();s.apply_params(p);return s.params;}',context);
  const normalize=vm.runInContext('(p,f)=>{const s=new Transfxr();s.apply_params(PresetFamily.constrain(p,f));return s.params;}',context);
  const render=vm.runInContext('(p)=>Transfxr_DSP.render(p)',context),sounds=[],groups=[],bank=[];
  fs.mkdirSync(path.join(output,'curated','audio'),{recursive:true});
@@ -34,7 +35,8 @@ function curate(directory){
   const original=report.groups.find(g=>g.name===profile.source_group);
   if(!original)throw Error('Missing survey group '+profile.source_group);
   const pool=(profile.preserve?original.exemplars:original.members.slice().sort((a,b)=>byId.get(a).distance-byId.get(b).distance))
-   .map(id=>byId.get(id)).filter(s=>s.rms>=.009).slice(0,profile.preserve?24:12);
+   .map(id=>byId.get(id)).filter(s=>s.rms>=.009).slice(0,profile.preserve?24:12)
+   .map(s=>({...s,params:plain(migrate(s.params))}));
   const exemplars=[],ids=[];
   for(const source of pool){
    const params=plain(normalize(project(source,profile,pool),profile)),pcm=render(params);

@@ -32,7 +32,7 @@ function candidate(index,random,defaults,examples){
   const example=examples[Math.floor(index/4)%examples.length];
   for(const [key,value]of Object.entries(example.params))p[key]=Array.isArray(value)?{start:value[0],end:value[1],curve:value[2]||'Linear'}:value;
   const shift=uniform(-0.18,0.18),factor=log(0.5,2);
-  for(const name of ['pitch','tone','noise','vibrato','level']){
+  for(const name of ['pitch','tone','morph','vibrato','level']){
    p[name].start=Math.clamp(p[name].start+(name==='pitch'?shift:uniform(-0.25,0.25)),0,1);
    p[name].end=Math.clamp(p[name].end+(name==='pitch'?shift:uniform(-0.25,0.25)),0,1);
    if(random()<0.35)p[name].curve=pick(curves);
@@ -49,7 +49,8 @@ function candidate(index,random,defaults,examples){
   p.pitch={start:uniform(0.03,0.9),end:uniform(0.03,0.95),curve:curves[Math.floor(index/4)%curves.length]};
   p.tone={start:uniform(0.05,1),end:uniform(0.05,1),curve:pick(curves)};
   const regime=Math.floor(index/32)%4;
-  p.noise={start:regime===0?0:uniform(regime===3?0.7:0,regime===1?0.22:1),
+  p.waveTo=regime===0?-1:7;
+  p.morph={start:regime===0?0:uniform(regime===3?0.7:0,regime===1?0.22:1),
    end:regime===0?0:uniform(regime===3?0.7:0,regime===1?0.22:1),curve:pick(curves)};
   p.vibrato={start:random()<0.55?0:uniform(0,1),end:random()<0.55?0:uniform(0,1),curve:pick(curves)};
   p.level={start:uniform(0.35,1),end:uniform(0.08,1),curve:pick(curves)};

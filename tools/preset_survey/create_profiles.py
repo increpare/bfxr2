@@ -7,10 +7,15 @@ def row(name,start,end,curve):
     return {name+'.start':start,name+'.end':end,name+'.curve':curve}
 
 def profiles():
-    base={'waveTo':-1}
     def profile(id,name,source,tip,limits,intervals=None,preserve=False):
-        return dict(id=id,name=name,source_group=source,tip=tip,limits={**base,**limits},
-            intervals=intervals or {},preserve=preserve,variation={'pitch':.035,'tone':.06,'noise':.025,'vibrato':.05,'level':.06})
+        limits=dict(limits)
+        noise={key[6:]:limits.pop(key) for key in list(limits) if key.startswith('noise.')}
+        if noise:
+            audible=any((max(value) if isinstance(value,list) else value)>0 for side,value in noise.items() if side!='curve')
+            limits['waveTo']=7 if audible else -1
+            if audible:limits.update({'morph.'+side:value for side,value in noise.items()})
+        return dict(id=id,name=name,source_group=source,tip=tip,limits=limits,
+            intervals=intervals or {},preserve=preserve,variation={'pitch':.035,'tone':.06,'morph':.025,'vibrato':.05,'level':.06})
     clean={'echo':0,'resonance':[.08,.3]}
     return [
         profile('bright_whistles','Bright Whistles','Bright Whistles','Clear, bright electronic whistles with a clean ringing voice.',{},preserve=True),

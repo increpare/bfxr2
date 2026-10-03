@@ -866,11 +866,12 @@ class Tab {
                 break;
             }
         }
-        if (this.selected_file_index >= deleted_file_index){
+        if (deleted_file_index === -1) return;
+
+        if (this.selected_file_index === deleted_file_index){
             this.selected_file_index--;
             if (this.selected_file_index < 0 && this.files.length > 0){
                 this.selected_file_index = 0;
-                this.set_selected_file(this.files[0][0]);
             }
             if (this.selected_file_index>=0){
                 var file_dat = this.files[this.selected_file_index];
@@ -881,6 +882,9 @@ class Tab {
                     this.play_sound();
                 }
             }
+        } else if (this.selected_file_index > deleted_file_index){
+            // The selected sound is unchanged; only its position in the list moved.
+            this.selected_file_index--;
         }
         this.update_ui();
         SaveLoad.save_all_collections();

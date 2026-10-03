@@ -36,16 +36,16 @@ def traits(sound,family):
         require(p['vibrato']['start']>=.65 and p['vibrato']['end']>=.65,'wobble absent')
         require(6.4<=f['wobble_hz']<=9.7 and f['wobble_rms_octaves']>=.035,'weak or irregular measured wobble')
     if id=='soft_pips':
-        require(p['waveType']==0 and p['noise']['start']<=.03 and p['noise']['end']<=.03,'rough pip voice')
+        require(p['waveType']==0 and p['waveTo']==-1,'rough pip voice')
         require(p['attack']>=.012 and sound['peak']<=.22,'hard or loud pip onset')
         require(f['centroid_hz']<800,'bright pip spectrum')
-    if id=='fuzzy_chirps':require(min(p['noise']['start'],p['noise']['end'])>=.18,'chirp has no fuzzy edge')
+    if id=='fuzzy_chirps':require(p['waveTo']==7 and min(p['morph']['start'],p['morph']['end'])>=.18,'chirp has no fuzzy edge')
     if id=='sand_sprays':
-        require(min(p['noise']['start'],p['noise']['end'])>=.9,'pitched sand outlier')
+        require(p['waveTo']==7 and min(p['morph']['start'],p['morph']['end'])>=.9,'pitched sand outlier')
         require(f['centroid_hz']>1000,'sand is too dark')
     if id=='air_currents':
         require(p['duration']>=.85 and p['attack']>=.18,'short or abrupt air')
-        require(min(p['noise']['start'],p['noise']['end'])>=.9,'air lost its breath')
+        require(p['waveTo']==7 and min(p['morph']['start'],p['morph']['end'])>=.9,'air lost its breath')
         require(f['centroid_hz']<1000,'air too close to bright sand')
     if id=='bubble_swells':require(f['peak_time']>.6,'swell does not peak late')
     return errors

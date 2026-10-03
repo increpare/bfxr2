@@ -19,7 +19,7 @@ For each transition, drag the orange **A** and **B** handles up or down to set t
 
 The lock at the left protects the whole row during example generation, Randomize and Mutate. You can still edit a locked row directly.
 
-**Duration** sets the travel time. **Attack** and **Release** fade the voice within that time; overlapping fades soften short sounds. **Echo** can extend beyond the duration. Pitch and filter readouts show Hz; the other endpoint values are percentages. Drag knobs up/down, use the mouse wheel, or focus them and use arrow keys.
+**Duration** sets the travel time. **Attack** and **Release** fade the voice within that time; overlapping fades soften short sounds. **Echo** can extend beyond the duration. To add air or grit, choose **White** under **Morph to** and shape the **Morph** curve. Pitch and filter readouts show Hz; the other endpoint values are percentages. Drag knobs up/down, use the mouse wheel, or focus them and use arrow keys.
 
 Render exact 44.1 kHz mono WAVs and the combined `transfxr_showcase.wav` demo reel:
 

@@ -1,6 +1,7 @@
 class Mixr extends PresetSynth {
     name = 'Mixr';
     tooltip = 'Two sounds together.';
+    canvas_bg_logo = "img/logo_mixr.png";
     static DSP = Mixr_DSP;
     hide_params = ['masterVolume', 'seed', 'sources'];
     param_info = [
@@ -26,7 +27,7 @@ class Mixr extends PresetSynth {
 
         {id:'spark_impact',name:'Live Wire',pair:['Clonkr','Zappr'],balance:[0.52,0.7],tip:'Clonkr × Zappr.'},
         {id:'shockwave',name:'Shockwaves',pair:['Boomr','Breathr'],balance:[0.2,0.5],tip:'Boomr × Breathr.'},
-        {id:'haunted_hardware',name:'Scrap Brain',pair:['Clonkr','Glitchr'],balance:[0.5,0.68],tip:'Clonkr × Glitchr.'},
+        {id:'haunted_hardware',name:'Brain Zaps',pair:['Clonkr','Glitchr'],balance:[0.5,0.68],tip:'Clonkr × Glitchr.'},
 
 
         //BAD

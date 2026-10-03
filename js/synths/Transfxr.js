@@ -24,7 +24,6 @@ class Transfxr extends SynthBase {
         ['Duration', 'Time to travel along the curves, in seconds. Echo can ring out afterwards.', 'duration', 0.65, 0.05, 4],
         Transfxr.transitionParam('pitch', 'Pitch', 'Start and destination pitch, from 40 Hz to 5120 Hz. Equal spacing is equal musical intervals.', 0.48, 0.25, 'Ease Out'),
         Transfxr.transitionParam('tone', 'Filter', 'Low-pass cutoff: dark and muffled to bright and open.', 0.9, 0.45),
-        Transfxr.transitionParam('noise', 'Noise', 'Blend a pitched voice into airy noise.', 0, 0),
         Transfxr.transitionParam('vibrato', 'Wobble', 'Depth of an eight-cycle-per-second pitch wobble.', 0, 0.15, 'Ease In'),
         Transfxr.transitionParam('level', 'Level', 'Volume along the journey, before the attack and release fades.', 0.85, 0.45),
         ['Attack', 'Fade-in time in seconds, within the duration.', 'attack', 0.008, 0, 1],
@@ -46,24 +45,24 @@ class Transfxr extends SynthBase {
                 pitch:[0.29,0.68,'Bounce'],tone:[0.9,0.65],level:[0.95,0.1]}},
         {name:'Portal Bloom', id:'portal_bloom', tip:'A slow shimmering opening into somewhere else.',
             params:{waveType:2,duration:1.9,attack:0.5,release:0.65,resonance:0.55,echo:0.62,
-                pitch:[0.18,0.5,'Smooth'],tone:[0.1,0.85,'Pulse'],noise:[0.08,0.32,'Pulse'],
+                pitch:[0.18,0.5,'Smooth'],tone:[0.1,0.85,'Pulse'],waveTo:7,morph:[0.08,0.32,'Pulse'],
                 vibrato:[0.03,0.65,'Ease In'],level:[0.45,0.95,'Pulse']}},
         {name:'Power Up', id:'power_up', tip:'Five rising steps, ready for the next level.',
             params:{waveType:3,duration:0.72,attack:0.01,release:0.16,resonance:0.12,echo:0.38,
                 pitch:[0.35,0.64,'Steps'],tone:[0.55,0.95,'Ease In'],level:[0.7,0.9]}},
         {name:'Soft Landing', id:'soft_landing', tip:'A low, cushioned thump dissolving into dust.',
             params:{waveType:1,duration:0.58,attack:0.004,release:0.5,resonance:0.2,echo:0,
-                pitch:[0.25,0.02,'Ease Out'],tone:[0.6,0.08,'Ease Out'],noise:[0.3,0.6],level:[1,0]}},
+                pitch:[0.25,0.02,'Ease Out'],tone:[0.6,0.08,'Ease Out'],waveTo:7,morph:[0.3,0.6],level:[1,0]}},
         {name:'Clockwork Bird', id:'clockwork_bird', tip:'A tiny brass bird trying out its voice.',
             params:{waveType:1,duration:0.44,attack:0.012,release:0.12,resonance:0.3,echo:0.32,
                 pitch:[0.62,0.85,'Triangle'],tone:[0.7,1],vibrato:[0.05,0.8,'Ease In'],level:[0.8,0.55]}},
         {name:'Ghost Signal', id:'ghost_signal', tip:'A distant transmission losing its shape.',
             params:{duration:1.45,attack:0.22,release:0.55,resonance:0.65,echo:0.65,
-                pitch:[0.62,0.35,'Smooth'],tone:[0.75,0.3],noise:[0,0.4,'Ease In'],
+                pitch:[0.62,0.35,'Smooth'],tone:[0.75,0.3],waveTo:7,morph:[0,0.4,'Ease In'],
                 vibrato:[0.9,0.05,'Ease Out'],level:[0.75,0.12]}},
         {name:'Airlock', id:'airlock', tip:'A resonant rush of air settling into silence.',
             params:{waveType:2,duration:1.15,attack:0.12,release:0.5,resonance:0.75,echo:0.12,
-                pitch:[0.1,0.04],tone:[0.12,0.85,'Triangle'],noise:[0.95,1],level:[0.7,0.95,'Pulse']}}
+                pitch:[0.1,0.04],tone:[0.12,0.85,'Triangle'],waveTo:7,morph:[0.95,1],level:[0.7,0.95,'Pulse']}}
     ];
 
     templates = [
@@ -84,7 +83,13 @@ class Transfxr extends SynthBase {
 
     apply_params(params, check_locked = false) {
         if(!params||typeof params!=='object')return;
-        if(['waveType','duration','pitch','tone','noise','vibrato','level'].every(key=>Object.prototype.hasOwnProperty.call(params,key))) {
+        if(params.noise && typeof params.noise==='object' &&
+            (params.waveTo===undefined || params.waveTo===-1) &&
+            (params.noise.start>0 || params.noise.end>0)) {
+            // Saved sounds from before waveform morphing used a separate white-noise blend.
+            params={...params,waveTo:7,morph:params.noise};
+        }
+        if(['waveType','duration','pitch','tone','vibrato','level'].every(key=>Object.prototype.hasOwnProperty.call(params,key))) {
             const defaults=this.default_params();
             for(const key of ['waveTo','morph'])if(!Object.prototype.hasOwnProperty.call(params,key))this.set_param(key,defaults[key],check_locked);
         }
@@ -113,7 +118,6 @@ class Transfxr extends SynthBase {
         this.create_random_template();
         this.set_param('waveTo',(this.params.waveType+1+Math.floor(Math.random()*11))%12,true);
         this.set_param('morph',{start:0,end:1,curve:['Smooth','Ease In','Ease Out','Pulse'][Math.floor(Math.random()*4)]},true);
-        this.set_param('noise',{start:0,end:Math.random()*.08,curve:'Linear'},true);
         this.set_param('tone',{start:.8,end:.75+Math.random()*.25,curve:'Smooth'},true);
         this.set_param('duration',.5+Math.random()*1.2,true);
     }

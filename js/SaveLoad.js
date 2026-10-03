@@ -106,6 +106,14 @@ class SaveLoad {
         }
         var default_params = tab.synth.default_params();
         var keys = Object.keys(default_params);
+        if(synth_name==='Transfxr' && [keys.length+1,keys.length-1].includes(entries.length-2)) {
+            // The former schema had a Noise curve alongside Morph.
+            const oldKeys=(entries.length-2===keys.length+1 ? [...keys,'noise'] :
+                [...keys.filter(key=>key!=='waveTo'&&key!=='morph'),'noise']).sort(),old={};
+            for(let i=0;i<oldKeys.length;i++)old[oldKeys[i]]=JSON.parse(entries[i+2]);
+            const synth=new tab.synth.constructor();synth.apply_params(old);
+            return [synth_name,filename,{...synth.params}];
+        }
         // Links from earlier palettes omitted these controls. Their sorted,
         // positional fields must be read against the schema that wrote them.
         const additions = {

@@ -33,6 +33,24 @@ test('transition defaults contain independent start, end and curve values', () =
     assert.deepEqual(plain(result.pitch), {start:0.2, end:0.8, curve:'Linear'});
 });
 
+test('Transfxr exposes no noise control and migrates old noise curves to White morphing', () => {
+    const run=context();
+    const result=run(`var s=new Transfxr();var names=s.param_info.map(info=>s.get_param_normalized(info).name);
+        s.apply_params({noise:{start:0.25,end:0.8,curve:'Ease In'},waveTo:-1});
+        [names.includes('noise'), 'noise' in s.params,s.params.waveTo,s.params.morph];`);
+    assert.deepEqual(plain(result),[false,false,7,{start:0.25,end:0.8,curve:'Ease In'}]);
+});
+
+test('old positional Transfxr links migrate their noise texture', () => {
+    const run=context();
+    const result=run(`var s=new Transfxr();tabs=[{synth:s}];
+        var old={...s.params,noise:{start:0.2,end:0.6,curve:'Linear'}};
+        var link='Transfxr~Old~'+Object.keys(old).sort().map(k=>JSON.stringify(old[k])).join('~');
+        var restored=SaveLoad.shallow_dict_deserialize(link)[2];
+        [restored.waveTo,restored.morph,'noise' in restored];`);
+    assert.deepEqual(plain(result),[7,{start:0.2,end:0.6,curve:'Linear'},false]);
+});
+
 test('transition edits clamp endpoints, copy input and respect locks', () => {
     const run = context();
     const result = run(`var s = new Transfxr(); var p = {start:-1, end:2, curve:'Linear'};
@@ -69,7 +87,7 @@ test('pitch transition raises measured oscillator frequency', () => {
     const run = context();
     const pcm = run(`var s = new Transfxr(); s.apply_params({duration:1,attack:0,release:0,echo:0,waveType:0,
         pitch:{start:0.3,end:0.7,curve:'Linear'}, tone:{start:1,end:1,curve:'Linear'},
-        noise:{start:0,end:0,curve:'Linear'}, vibrato:{start:0,end:0,curve:'Linear'},
+        vibrato:{start:0,end:0,curve:'Linear'},
         level:{start:0.8,end:0.8,curve:'Linear'}}); s.generate_sound(); s.sound.getBuffer();`);
     function crossings(from,to) {
         let count=0; for(let i=Math.floor(from*44100); i<to*44100; i++) if(pcm[i]<=0&&pcm[i+1]>0) count++;

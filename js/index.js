@@ -72,15 +72,20 @@ document.addEventListener('DOMContentLoaded', function(){
 function register_background_fade(){
     const panel = document.getElementById('main_container');
     const fadeStartDistance = 50;
+    const fadeEndDistance = 300;
     const update = () => {
         const bounds = panel.getBoundingClientRect();
         const width = document.documentElement.clientWidth;
         const height = document.documentElement.clientHeight;
         const stops = {
+            '--fade-left-solid': Math.max(0, bounds.left - fadeEndDistance),
             '--fade-left-end': Math.max(1, bounds.left - fadeStartDistance),
             '--fade-right-start': Math.min(width - 1, bounds.right + fadeStartDistance),
+            '--fade-right-solid': Math.min(width, bounds.right + fadeEndDistance),
+            '--fade-top-solid': Math.max(0, bounds.top - fadeEndDistance),
             '--fade-top-end': Math.max(1, bounds.top - fadeStartDistance),
-            '--fade-bottom-start': Math.min(height - 1, bounds.bottom + fadeStartDistance)
+            '--fade-bottom-start': Math.min(height - 1, bounds.bottom + fadeStartDistance),
+            '--fade-bottom-solid': Math.min(height, bounds.bottom + fadeEndDistance)
         };
         for (const [name, position] of Object.entries(stops)) {
             document.documentElement.style.setProperty(name, `${position}px`);

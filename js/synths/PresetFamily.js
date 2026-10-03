@@ -20,7 +20,8 @@ class PresetFamily {
 
     static compatible(a, b) {
         if (a.waveType !== b.waveType) return false;
-        return ['pitch','tone','noise','vibrato','level'].every(name =>
+        if (a.waveTo !== b.waveTo) return false;
+        return ['pitch','tone','vibrato','level','morph'].every(name =>
             !a[name] || !b[name] || a[name].curve === b[name].curve);
     }
 
@@ -47,7 +48,7 @@ class PresetFamily {
         const time = 0.85 + random() * 0.3;
         if (p.duration !== undefined) p.duration *= time;
         for (const name of ['attack','release']) if (p[name] !== undefined) p[name] *= time;
-        for (const [name, standardExtent] of [['pitch',0.07],['tone',0.1],['noise',0.06],['vibrato',0.1],['level',0.1]]) {
+        for (const [name, standardExtent] of [['pitch',0.07],['tone',0.1],['vibrato',0.1],['level',0.1],['morph',0.06]]) {
             if (!p[name]) continue;
             const extent = family.variation?.[name] ?? standardExtent;
             const shift = offset(extent);

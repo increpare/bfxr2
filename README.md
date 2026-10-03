@@ -9,7 +9,7 @@ It's currently BETA, and new things should be coming to it, but the main additio
 
 ## Transfxr
 
-Transfxr moves a sound between two states, with independent curves for pitch, filter, noise, wobble and level. Its 15 preset families use 228 curated states from a 512-sound survey, refined by listening feedback. Taps and chirps stay short, wavering voices sustain a quiver, soft pips use a gentle sine voice, and sand and air have distinct textures. Each family varies complete sound states while respecting locks. See [the revised listening catalogue](examples/Transfxr/survey/index.html) and [the example collection and controls](examples/Transfxr/README.md).
+Transfxr moves a sound between two states, with independent curves for pitch, filter, wobble and level. A waveform morph can carry the sound into noise. Its 15 preset families use 228 curated states from a 512-sound survey, refined by listening feedback. Taps and chirps stay short, wavering voices sustain a quiver, soft pips use a gentle sine voice, and sand and air have distinct textures. Each family varies complete sound states while respecting locks. See [the revised listening catalogue](examples/Transfxr/survey/index.html) and [the example collection and controls](examples/Transfxr/README.md).
 
 ## Chattr
 
