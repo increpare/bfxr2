@@ -6,3 +6,5 @@ node_modules
 *.wav
 /tools/bfxr_native/testdata
 .worktrees/
+
+/tools/multisynth/runs/

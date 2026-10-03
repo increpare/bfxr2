@@ -152,3 +152,12 @@ uv run pytest -m slow      # round-trip: render known params -> re-find them
 - **Speed**: renders fan out over multiple worker processes (native C++ when
   built, otherwise Node); candidate envelope parameters are capped/projected
   so nothing renders much longer than the target.
+
+## Multi-synth approximation
+
+The offline [multi-synth inverse model](multisynth/README.md) retrieves and
+refines editable presets across 22 active synths, selects a winner automatically,
+and exports an A/B listening gallery plus `.bcol` collections. See its
+[initial 40-target results](multisynth/RESULTS.md) for measured gains, metric
+disagreements and comparison limits. This leaves the original Bfxr pipeline
+unchanged.
