@@ -4,7 +4,7 @@
 
 **Architecture:** Three layers sharing one vocabulary of game verbs.
 
-1. **Verb prefabs per synth.** Each engine gets game-verb preset buttons drawn from the standard vocabulary (Whooshr: Jump, Dash, Swing; Clonkr: Hit, Land, Door…). A synth only gets a verb it can carry as a clear base on its own. These live in the engine's tab beside its character presets, so they are developed, locked, mutated and listened to with the tooling that already exists.
+1. **Verb prefabs per synth.** Each engine gets game-verb preset buttons drawn from the standard vocabulary (Whooshr: Jump, Dash, Swing; Clonkr: Hit, Land, Door…). A synth only gets a verb it can carry as a clear base on its own. They are ordinary preset buttons in the engine's tab, listed first because this is a game sound tool, with the engine's character presets after them and Randomize / Mutate last. They are developed, locked, mutated and listened to with the tooling that already exists.
 2. **Mixfxr verb recipes.** A mix is no longer "synth × synth, any generator". It names two verb prefabs, generated separately: `Whooshr:swing` as the base plus `Clonkr:hit` as the sweetener, with balance biased to the base and an alignment mode. The engine already addresses a specific generator (`Mixr.generated_source(synth, generator)`); only the recipe schema and the `*` wildcard change.
 3. **The board.** One button per verb, selecting from a weighted catalogue of layer 1 and layer 2 entries for that verb. Board sounds are stored as Mixr records (a Mixr with one source renders that source alone), so save, load, share links, WAV export and Stackr layering already work.
 
@@ -132,7 +132,7 @@ The board is the first tab. Twenty large buttons; click plays a fresh interpreta
 
 - [ ] **Vocabulary and measurement harness.** `GAME_VERBS` table. Node script renders every existing recipe N times and writes `generator_profiles.json` (duration class, onset, role, brightness, tonality). Port the needed features from `analyze.py` to JavaScript so tests can use them. Reproduce the probe table above as a test fixture.
 - [ ] **Base inventory.** A synth × verb matrix: for each existing recipe, which verbs its measurements fit as a base and which role it could play as a sweetener. Marks thin verbs (Step, Splash, Shoot) where a new in-engine prefab is needed. This is the sheet you tick by ear.
-- [ ] **Verb prefabs, engine by engine.** Add `generate_<verb>` recipes (or aliases onto existing ones) per the ticked inventory, shown in each tab as a game-verb strip. Tests: id in vocabulary, duration in class, audible, deterministic replay.
+- [ ] **Verb prefabs, engine by engine.** Add `generate_<verb>` recipes (or rename existing ones that already are the verb) per the ticked inventory. A recipe gains an optional `verb` field; `initialize_presets` orders verb recipes first. The button reads as the verb ("Jump"), the tooltip carries the engine's flavour ("A soft air jump."). Tests: verb in vocabulary, duration in class, audible, deterministic replay.
 - [ ] **Listening round 1, bases only.** Pack of every verb prefab, graded "reads as its verb" G/O/B. No mixes yet, so the question stays clean. Apply verdicts.
 - [ ] **Mixr alignment and tuning.** Add `align` and `offset`, then `tune`. Recipe schema accepts `Synth:verb` entries and a base/sweetener distinction. Tests for determinism and legacy records (default Start keeps old files identical). Re-try the four BAD recipes that alignment or tuning should rescue.
 - [ ] **Mixfxr verb recipes.** Compatibility scoring over bases × role-tagged sweeteners; propose recipes per verb; render and grade in listening round 2.
@@ -145,7 +145,7 @@ Dependencies: the vocabulary and harness first, since the inventory, prefab test
 ## 9. Risks
 
 - **Interpretation drift.** A verb whose prefabs differ too much across engines stops being one button. The shared vocabulary table, the duration class and the bases-only listening round are the guard.
-- **Tab clutter.** Adding a game-verb strip to every tab roughly doubles its preset buttons. Keep the strip visually separate and collapsible, and alias rather than duplicate where a character preset already is the verb.
+- **Character presets with no verb.** Once verb prefabs lead each tab, some engine-flavoured presets ("Codec Warble", "Derelict Beacon") will have no board role. Whether they stay as colour, get renamed to a verb, or go is a per-engine call made during the inventory, not up front.
 - **Retired engines.** Tappr, Notifr, Tickr and Pewpr are good ingredients but are excluded from the Mixr catalog by `Mixr.retired`. The board needs its own allowlist and must not re-expose them in Mixfxr's dropdowns.
 - **Load time.** 20 categories × many sources means more engines loaded at startup. Lazy loading per the existing startup tests should hold; measure it.
 - **Over-trusting the score.** Compatibility scores prune; a high score is not a good sound. Nothing ships without a listening verdict.
