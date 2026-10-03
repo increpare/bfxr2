@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+  "provenance": {
+    "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+    "featureVersion": "auditory-v1",
+    "libraryManifestHash": "e292b5c993687e4ad8a105de6b9c84127ba7fc817ed81cc000294b64c9bc3759",
+    "seed": 1234,
+    "budgetPerExpert": 96,
+    "experts": 8,
+    "objectiveVersion": "gesture-v2",
+    "modelHash": "dfa47f6f72b49e5f025cd648f5c2ab8ed1f02788a70301d696427e16b5b042a3"
+  },
+  "ratingScale": {
+    "min": 1,
+    "max": 5,
+    "meaning": "Audible likeness to reference: 1 = far off, 5 = very close"
+  },
+  "targets": [
+    {
+      "id": "cf49a963ec7f8263d7a9dd01044286b75969f92dbc0dcce33d9975e9fd7a6a7b",
+      "name": "attack/spinout.wav",
+      "sha256": "63f22019f9cb29641090eaa86c67b1beb58f40462d53554a4bb5e9c526634b73",
+      "folder": "001",
+      "selected": {
+        "id": "86c2137195196ae9588b7bf994937f272bc8e325a7be8eaafeff732552bfb602",
+        "synth": "Riftr",
+        "file": "01-Riftr.wav",
+        "seed": 999390029,
+        "distance": 0.06442259887180547,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "e785dede96311299a38a87f5babf7d0a6629251d2c16299d72d26569e903fd50",
+        "synth": "Bfxr",
+        "file": "02-Bfxr.wav",
+        "seed": 986769429,
+        "distance": 0.06757662397349747,
+        "rating": 1
+      },
+      "previous": {
+        "id": "867ed97dcd7f18569880ff71da5b31aa2625f5f088beb0207f772db75d49e2fd",
+        "synth": "Riftr",
+        "file": "previous-01-Riftr.wav",
+        "seed": 999390029,
+        "distance": 0.7935911417007446,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "bf7549fabdf21fc0396025489d0cdd9930c1631bcb47651e8c62ca0f813fc929",
+      "name": "bell/impactBell_heavy_000.ogg",
+      "sha256": "94b8bb5f2d43ab65e4bcc32b28562416e9bc2c51d9fd4be1e333660ee52f977f",
+      "folder": "002",
+      "selected": {
+        "id": "8f9d9f2dc8cf0729757eb762757f7a2dd827f27648cd74620f362c792d3f867b",
+        "synth": "Bouncr",
+        "file": "01-Bouncr.wav",
+        "seed": 1399198792,
+        "distance": 0.060892653476365174,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "1f1d042053db5cb263450aa2749d8c8005517ae0b984d7efc33315b570ace387",
+        "synth": "Bfxr",
+        "file": "09-Bfxr.wav",
+        "seed": 620139937,
+        "distance": 0.10900095934673434,
+        "rating": 1
+      },
+      "previous": {
+        "id": "48fce35f38e20ee8a955def60748e7d73184d82de1b909340478ee5339da16f8",
+        "synth": "Clonkr",
+        "file": "previous-01-Clonkr.wav",
+        "seed": 1956515403,
+        "distance": 0.5359482169151306,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "c662f434e196cffc4aa0f7160a0348e921bad8e5ffd0dc081e03d49e5627f65a",
+      "name": "carbeep/VEHHorn_Kawasaki Ninja ZX 10R Horn Single 03_SNDBTS_MCK.wav",
+      "sha256": "ce444bf64841f7434a7a04876f9ae0487c893a250508fbcdf23431c5e813764e",
+      "folder": "003",
+      "selected": {
+        "id": "d8bdec34df5e413d152ec6bf150fd26ecac1943bf41e94230cb75ac9ac35546e",
+        "synth": "Clonkr",
+        "file": "01-Clonkr.wav",
+        "seed": 249578769,
+        "distance": 0.03971008727483267,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "a0d0d4472991e391eb6f816e8c34911a3d8c5307ea872c46706c2ced1fb879ab",
+        "synth": "Bfxr",
+        "file": "09-Bfxr.wav",
+        "seed": 611484608,
+        "distance": 0.09827107687499542,
+        "rating": 3
+      },
+      "previous": {
+        "id": "d8bdec34df5e413d152ec6bf150fd26ecac1943bf41e94230cb75ac9ac35546e",
+        "synth": "Clonkr",
+        "file": "previous-01-Clonkr.wav",
+        "seed": 249578769,
+        "distance": 0.38671165704727173,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "9c1fb23e9151ba862e71d2bc33e0cccd8ea06c722ac4ffc575f54db43a8aa9ef",
+      "name": "card/bookClose.ogg",
+      "sha256": "81e976532565f4372abd14e83d2684195fa548d0a28d345de221e56052454f32",
+      "folder": "004",
+      "selected": {
+        "id": "4081f58134cd4afd875e52776a18760e4a2df7fb1243a19651ce0515894bd5c9",
+        "synth": "Boomr",
+        "file": "01-Boomr.wav",
+        "seed": 258210836,
+        "distance": 0.07964165347217708,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "ee7ad2048973cd9521abd7b68908992f7e6c65a12e7c645cd8adcfe1a7af1c32",
+        "synth": "Bfxr",
+        "file": "05-Bfxr.wav",
+        "seed": 2041673269,
+        "distance": 0.09427258197523582,
+        "rating": 1
+      },
+      "previous": {
+        "id": "2445a7c8b94db67d8492edff5c0535f51b28af220e179d9cb2e95e9f811cdf20",
+        "synth": "Transfxr",
+        "file": "previous-01-Transfxr.wav",
+        "seed": 1631401900,
+        "distance": 0.8026916980743408,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "bb03ada4727834514946c7787b829da5e764cb3ff9ea83d93c6b7e04ec6fec9f",
+      "name": "chains/beltHandle1.ogg",
+      "sha256": "2ef665bd8b65dbe669f4560be38a6d8f04a162e618b15a49e3e71b58e558aab0",
+      "folder": "005",
+      "selected": {
+        "id": "6d2588b70592a5c3559034a5895a1958e68321d4d561e1b5bcb803255f9de95d",
+        "synth": "Swarmr",
+        "file": "01-Swarmr.wav",
+        "seed": 1570011950,
+        "distance": 0.11664774012919461,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "527cbe1fbb74ecdf6e1cf4fa96d4168c2be894b6def1b8da7dc07358757c3930",
+        "synth": "Bfxr",
+        "file": "03-Bfxr.wav",
+        "seed": 1020378308,
+        "distance": 0.13684280174363844,
+        "rating": 1
+      },
+      "previous": {
+        "id": "aeff3050499beb75fff90ab831f92fb08d448658fb8a0c4a99d9afdcf3a56333",
+        "synth": "Transfxr",
+        "file": "previous-01-Transfxr.wav",
+        "seed": 1585985425,
+        "distance": 1.1031570434570312,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "43fd8905721362a68c5316b1bf9821b5e2ca89ee2493aee045e12dd3f70c19e4",
+      "name": "click/MECHClik_USALightSwitch_On05_InMotionAudio_USAHotel.wav",
+      "sha256": "3d51ab42afb54d024ded5128a84aa102075398b270b67df8f71ecb0cfe9bd0a8",
+      "folder": "006",
+      "selected": {
+        "id": "e31bff49e9b5fa050e0bb72df32fea85c09c67cd06f93c035066b392941665ab",
+        "synth": "Transfxr",
+        "file": "01-Transfxr.wav",
+        "seed": 697433055,
+        "distance": 0.04654615137971166,
+        "rating": 3
+      },
+      "bfxr": {
+        "id": "b3a6510fe72e1ed8a62d0c25266190bfbd1c9a21dcddc3e5ef87a9e408d3684d",
+        "synth": "Bfxr",
+        "file": "07-Bfxr.wav",
+        "seed": 57326932,
+        "distance": 0.07905835231553723,
+        "rating": 3
+      },
+      "previous": {
+        "id": "e07086044fa2ad61c58610e610bdaff04d0fae42a348d1c013d88dee48aa8006",
+        "synth": "Transfxr",
+        "file": "previous-01-Transfxr.wav",
+        "seed": 697433055,
+        "distance": 0.5135064125061035,
+        "rating": 3
+      },
+      "note": ""
+    },
+    {
+      "id": "115c613d653cbb708537a7ea1dd0df4343ba4bf7a36b9521cc0c18d7a777c02b",
+      "name": "collect/coin (snes).WAV",
+      "sha256": "4283ba7f88dbc2bc2470d58bedad8e866e394d7f8e5799c38c04c98238fe04a8",
+      "folder": "007",
+      "selected": {
+        "id": "04367fd7ecfd38fa4d1ae0d45cc0f8b3f11b9e5a379ff86ee21c5061525d91be",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 1359613458,
+        "distance": 0.045649541754071266,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "04367fd7ecfd38fa4d1ae0d45cc0f8b3f11b9e5a379ff86ee21c5061525d91be",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 1359613458,
+        "distance": 0.045649541754071266,
+        "rating": 2
+      },
+      "previous": {
+        "id": "a46c64c34897c71cf0443b7a691288848e3594c4159909f57dc78119e6e54c7c",
+        "synth": "Bfxr",
+        "file": "previous-01-Bfxr.wav",
+        "seed": 1359613458,
+        "distance": 0.3805623948574066,
+        "rating": 3
+      },
+      "note": ""
+    },
+    {
+      "id": "4bce8a4ef52d041bd7fdd4eacb7a5c08608cf599e49fd381518b2eb4f46c0310",
+      "name": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+      "sha256": "e1fa457aad41930050a8b5723fd468f8c1a33ce46ea5944031c3585a9b2bd8d8",
+      "folder": "008",
+      "selected": {
+        "id": "dd625e4f14c54c2d7485145447c70a0ffcc5b793a4778d27bd857e9ffe7066aa",
+        "synth": "Signlr",
+        "file": "01-Signlr.wav",
+        "seed": 682637868,
+        "distance": 0.08447886437164294,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "bf4e785b50587bf2023433df97a4e69e85a2ee2f8699f4daba8a5d96effd8661",
+        "synth": "Bfxr",
+        "file": "02-Bfxr.wav",
+        "seed": 490291021,
+        "distance": 0.08823821417065172,
+        "rating": 1
+      },
+      "previous": {
+        "id": "b527be558c7afccf3e0bc15516a07f997b6b70873ac2463a5c76d85e666835bb",
+        "synth": "Riftr",
+        "file": "previous-01-Riftr.wav",
+        "seed": 1036211338,
+        "distance": 0.48533007502555847,
+        "rating": 1
+      },
+      "note": ""
+    },
+    {
+      "id": "bf61513c7e9dd47dbecda9e8a5610289ecba86688b728386c43d9aa4afaa39ef",
+      "name": "explode/Bifun Jump.WAV",
+      "sha256": "3711654774a0443a5decda6740d2584bcad6c7b7ec5147a6ffaf99d5ac2287e8",
+      "folder": "009",
+      "selected": {
+        "id": "a0e66b0f16bd032415ee480e34a7d0c1b994b988ea8b0c34859bbcb444f22765",
+        "synth": "Transfxr",
+        "file": "01-Transfxr.wav",
+        "seed": 2069031875,
+        "distance": 0.039030669434039836,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "a9c299d05dc18bb148ab8c705ca3fc07ce74a2c883487beaa0c0eee0b7c91a6d",
+        "synth": "Bfxr",
+        "file": "02-Bfxr.wav",
+        "seed": 966840667,
+        "distance": 0.03947523395913239,
+        "rating": 1
+      },
+      "previous": {
+        "id": "c7043ccdd0eb99f8ef32261416aae8a341d1b5489bb95755df4ace5cf910845e",
+        "synth": "Transfxr",
+        "file": "previous-01-Transfxr.wav",
+        "seed": 2069031875,
+        "distance": 0.5990598797798157,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "6362c474991f1993eb91c1212ca8f49421735a00a32a40a53078fb0bb1b21071",
+      "name": "hit/PUNCH7.WAV",
+      "sha256": "08e24c35923307421abe87b93b25a8cf70bca7af9788d5aa3eefdedbf3d83dfc",
+      "folder": "010",
+      "selected": {
+        "id": "2f0fd1e6fc790e4a77e818c2fac4768dc50140df31608fcd54f2c15f40090fd7",
+        "synth": "Pluckr",
+        "file": "01-Pluckr.wav",
+        "seed": 1096207221,
+        "distance": 0.054700785235800006,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "659e6bd3fdec27e8e69466c4b5cb91aa0f4ddbfd87bb0cc50e56917f7b191c86",
+        "synth": "Bfxr",
+        "file": "03-Bfxr.wav",
+        "seed": 725749515,
+        "distance": 0.06673457240597304,
+        "rating": 1
+      },
+      "previous": {
+        "id": "e4be7b9adfc0a85aea2bb09e0f2bcbbb8b90d269ad2bac7504edff14228cd0df",
+        "synth": "Boomr",
+        "file": "previous-01-Boomr.wav",
+        "seed": 1470428505,
+        "distance": 0.601710855960846,
+        "rating": 3
+      },
+      "note": ""
+    },
+    {
+      "id": "02757e87dfff878e1e7ff568d58a10cb5f847f67f7f1f07cba4f1db140170095",
+      "name": "jump/Jump Kopie 4.wav",
+      "sha256": "18b55df7af255bc15b779081db03297a4456ba82d46dddd5451ce6252e5b315d",
+      "folder": "011",
+      "selected": {
+        "id": "af9838ff92c7fc6275d98ab081eb48131f48ee6d4d8f8b84a41f3ae94ffde702",
+        "synth": "Riftr",
+        "file": "01-Riftr.wav",
+        "seed": 1046988549,
+        "distance": 0.05361576016896152,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "2201fe65633cedeaa33e0604865e390fad6abd856399b6c58b451ac34fc6c77f",
+        "synth": "Bfxr",
+        "file": "04-Bfxr.wav",
+        "seed": 7345224,
+        "distance": 0.05934465937670745,
+        "rating": 2
+      },
+      "previous": {
+        "id": "1f4a5c6c9ae5deed31d42874d639c71c1d8f9c72bef749fcfbb3f548c5146115",
+        "synth": "Bfxr",
+        "file": "previous-01-Bfxr.wav",
+        "seed": 7345224,
+        "distance": 0.6835145354270935,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "e2b31136178843d717887d20328bb783bce64b4cc6c30b7a2f46ed0dd91ee0ff",
+      "name": "laser/laserRetro_000.ogg",
+      "sha256": "2a203a007d24cc7e607eb8bec1d86bedba7f551911217ce2c4c1f31393aed32c",
+      "folder": "012",
+      "selected": {
+        "id": "79029ed9c4f859b559f88175bd2886626e0a6684d21d27000a12314b5f5b2fca",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 611484608,
+        "distance": 0.0319190629709389,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "79029ed9c4f859b559f88175bd2886626e0a6684d21d27000a12314b5f5b2fca",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 611484608,
+        "distance": 0.0319190629709389,
+        "rating": 2
+      },
+      "previous": {
+        "id": "6a812a980d2c1a9b804755c9a2de6c9f5c4028b5ed3fdf6ffd4759244f36d1f8",
+        "synth": "Bfxr",
+        "file": "previous-01-Bfxr.wav",
+        "seed": 611484608,
+        "distance": 0.45812153816223145,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "03e700cd655706138d61ea6c0b6db98fb5d1754efa7e18872d6100a77bb2c14a",
+      "name": "magic/cureMagic.wav",
+      "sha256": "4422a2d1c23013ac655ff35f67477017f24b0ce330c8e896440252c1d4057994",
+      "folder": "013",
+      "selected": {
+        "id": "a35df305546bb445718df146c80572804dafaf111c6b3a1e337c96a3e215ee7c",
+        "synth": "Birdr",
+        "file": "01-Birdr.wav",
+        "seed": 2101241938,
+        "distance": 0.05952249960440298,
+        "rating": 3
+      },
+      "bfxr": {
+        "id": "d7333156a4113d658e1d7cf1b0f0ddc32f0893354319ee71522e7ed310d5b89d",
+        "synth": "Bfxr",
+        "file": "07-Bfxr.wav",
+        "seed": 1328077459,
+        "distance": 0.0944978153069419,
+        "rating": 1
+      },
+      "previous": {
+        "id": "64f5f050e2a143f421eb7c9ad4f55e06406e26ec90bebd717eee4ceb67e6deb6",
+        "synth": "Swarmr",
+        "file": "previous-01-Swarmr.wav",
+        "seed": 1822654741,
+        "distance": 0.8931466341018677,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "8206c1925c728a91fffb6e6a398765aa6d85e03fe90537edd1f9e0273d2f0b0d",
+      "name": "power_up/1up.wav",
+      "sha256": "58d302fd480f4311c9528c69b580b0ec2025c662aa6246c60dcd7feafe921779",
+      "folder": "014",
+      "selected": {
+        "id": "eaa2ee89fca2288dac232f70ff1cdf0bcde39b3240489685cc2ffca7ea252ff2",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 772210727,
+        "distance": 0.05086857123618073,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "eaa2ee89fca2288dac232f70ff1cdf0bcde39b3240489685cc2ffca7ea252ff2",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 772210727,
+        "distance": 0.05086857123618073,
+        "rating": 2
+      },
+      "previous": {
+        "id": "20723dee9a6be87f3557f32899aa3dcd8dd755ecdb410fe5ff64ef46e072ee81",
+        "synth": "Signlr",
+        "file": "previous-01-Signlr.wav",
+        "seed": 710830590,
+        "distance": 0.690295934677124,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "b09113795a630cad009ef3d52134443d87409e70e5f71974a18d9e4bb580c6aa",
+      "name": "shoot/Shooting.wav",
+      "sha256": "2218abe9327a3866cf6da4419add2b46d86ab957fc6fecb7518ce0ccccc204a5",
+      "folder": "015",
+      "selected": {
+        "id": "eb5269faea5cbe8e52d3840b77e853c4b0dff6773b839fd0db9c1efe826088bb",
+        "synth": "Boomr",
+        "file": "01-Boomr.wav",
+        "seed": 687413261,
+        "distance": 0.06610803139322696,
+        "rating": 3
+      },
+      "bfxr": {
+        "id": "ce892ebbc3534297d2bd0c70b66281bfd20cd18eccfef8761385878c882378ee",
+        "synth": "Bfxr",
+        "file": "03-Bfxr.wav",
+        "seed": 620139937,
+        "distance": 0.08570411102876865,
+        "rating": 1
+      },
+      "previous": {
+        "id": "21c39dbb159425c0166d4b4439c3644a1dd9c57f8f83cd5787386f7236205b41",
+        "synth": "Boomr",
+        "file": "previous-01-Boomr.wav",
+        "seed": 687413261,
+        "distance": 0.701129138469696,
+        "rating": 3
+      },
+      "note": ""
+    },
+    {
+      "id": "d8a0c42411f8b6a93c9c98cd0e17887c09c7474a41ecee354a5bdd8bc387849d",
+      "name": "slime/slime_000.ogg",
+      "sha256": "480ee82b690136ea9db6966a3c3033356b8274752795c4e37afd6b6defcfacff",
+      "folder": "016",
+      "selected": {
+        "id": "fe7ffd5c328556c3adfad9fdb8b6573e1ff243e188059a8e91e44599a3ecc555",
+        "synth": "Signlr",
+        "file": "01-Signlr.wav",
+        "seed": 1258643452,
+        "distance": 0.09296812704524132,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "a9bf5288be0a17477f22241f013feffa599ee36db85861b5e7cdd147bf6f05c3",
+        "synth": "Bfxr",
+        "file": "09-Bfxr.wav",
+        "seed": 1098980134,
+        "distance": 0.13593693410147956,
+        "rating": 3
+      },
+      "previous": {
+        "id": "d5114fa763bdc3149214d97267d515e05fae0010918159ace386fd8441f1300c",
+        "synth": "Signlr",
+        "file": "previous-01-Signlr.wav",
+        "seed": 1258643452,
+        "distance": 1.2491168975830078,
+        "rating": 2
+      },
+      "note": ""
+    },
+    {
+      "id": "46c503cb69fce58042511af9d0ae7855cdcc17fb877a79c6d4585252b9f24dd5",
+      "name": "step/step2.wav",
+      "sha256": "73bfc925afff23db9c552f3003017c2926106ab446c9646ed2251b8506350091",
+      "folder": "017",
+      "selected": {
+        "id": "512199bee2a78cbf283910d15807fb785ab35ba900d99f84c71e0480ed6e390d",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 2072315122,
+        "distance": 0.0496114225917567,
+        "rating": 2
+      },
+      "bfxr": {
+        "id": "512199bee2a78cbf283910d15807fb785ab35ba900d99f84c71e0480ed6e390d",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 2072315122,
+        "distance": 0.0496114225917567,
+        "rating": 2
+      },
+      "previous": {
+        "id": "a0e6874a6020361764b12d1ec1bc0ad509dbdcbdd914e8bf653ef4ed06cda2c2",
+        "synth": "Boomr",
+        "file": "previous-01-Boomr.wav",
+        "seed": 213862135,
+        "distance": 0.7664722800254822,
+        "rating": 3
+      },
+      "note": ""
+    },
+    {
+      "id": "d6a695a218bf2ffc6297aed02d769f48c32d8a400a250a486faa377977f20731",
+      "name": "sword/ma_sword3.wav",
+      "sha256": "7e9d6131b1748ccfdc059a9f6a37cd46c98230b1cecc256cd5ec038cd43e4e94",
+      "folder": "018",
+      "selected": {
+        "id": "2432e673d3b7b2ec7e6c1f433034457b9bf09c1375cc2eb51f207ae4a61bc297",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 1179116962,
+        "distance": 0.03930914230248492,
+        "rating": 1
+      },
+      "bfxr": {
+        "id": "2432e673d3b7b2ec7e6c1f433034457b9bf09c1375cc2eb51f207ae4a61bc297",
+        "synth": "Bfxr",
+        "file": "01-Bfxr.wav",
+        "seed": 1179116962,
+        "distance": 0.03930914230248492,
+        "rating": 1
+      },
+      "previous": {
+        "id": "fcd6b5916e90d7bdcc165debc0ebd3eced53e668c196abe68cb674bc0ac9b509",
+        "synth": "Transfxr",
+        "file": "previous-01-Transfxr.wav",
+        "seed": 2016817510,
+        "distance": 0.4267548620700836,
+        "rating": 1
+      },
+      "note": ""
+    }
+  ]
+}

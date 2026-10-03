@@ -1,8 +1,9 @@
 # Second listening iteration: gesture and feel
 
-The first ratings showed poor absolute likeness (mean 2/5). This iteration
-changes the representation and candidate search; audible improvement still
-requires the next listening pass.
+**Outcome: rejected as an improvement.** The completed listening pass preferred
+the previous model on four sounds and this iteration on only one (13 ties).
+The original auditory-v1 metric remains the default baseline. The experiment,
+checkpoints and rated gallery remain unchanged for reproducibility.
 
 ## Model
 
@@ -115,3 +116,51 @@ also passed an idempotent import/PCM verification with the updated importer.
 The next ratings can train preferences across new, previous and Bfxr candidates.
 The fitter deduplicates shared candidates and keeps every pair from a reference
 in the same validation fold.
+
+## Human verdict — 2026-10-03
+
+The user supplied all 18 sets of ratings, covering **48 distinct candidates**
+after shared roles are deduplicated. Raw feedback, replay parameters and exact
+audition PCM are retained in
+[listening_data/2026-10-03-tagged-v2/manifest.json](listening_data/2026-10-03-tagged-v2/manifest.json).
+The comparison below uses the **same 18 references**, not the broad first batch.
+
+| Result | Likeness |
+| --- | ---: |
+| New gesture model mean | 1.83/5 |
+| Previous model mean | 2.06/5 |
+| New run's Bfxr mean | 1.61/5 |
+| New versus previous: wins / ties / losses | 1 / 13 / 4 |
+| New versus Bfxr: wins / ties / losses | 5 / 10 / 3 |
+| New ratings 1 / 2 / 3 / 4 / 5 | 6 / 9 / 3 / 0 / 0 |
+
+The only improvement was `magic/cureMagic.wav`, 2 to 3. Regressions were the
+coin (3 to 2), punch (3 to 1), jump (2 to 1), and step (3 to 2). No free-text
+notes were supplied, so the ratings do not identify the audible cause of each
+failure; do not infer it from names or feature scores alone.
+
+Choosing the highest-rated of the three heard approximations for each target
+would average **2.22/5**. Ten targets would still score below 3, and none had a
+4 or 5. This limits what reranking the *rated pool* could accomplish; it does
+not prove that every unplayed synth alternative is poor.
+
+### Prospective check of the frozen metrics
+
+Before fitting anything to these new labels, compare frozen scores on the
+newly rated candidates. Exclude every exact reference PCM present in the first
+listening archive. This leaves **19 strict preferences from ten references**;
+pairs within a reference are correlated. The original auditory-v1 metric gets
+**17/19** right. The gesture prior gets **8/19**, and the weights fitted only
+to the first batch also get **8/19**. See the per-pair predictions and checkpoint
+hash in [evaluations/tagged-v2-human-review.json](evaluations/tagged-v2-human-review.json).
+
+This is evidence against this specific gesture representation, not against the
+user's requirement to preserve gesture and feel. Synthetic ordering tests were
+insufficient. Do not promote another version solely because those tests pass,
+or treat this now-inspected batch as unseen validation after tuning on it.
+
+Keep auditory-v1 as the stronger measured ranking baseline. The next useful
+diagnostic is candidate coverage: examine varied unplayed alternatives on a
+small set of weak references before spending more listening effort on another
+large batch. Preserve full temporal/timbral evidence while investigating gesture
+features; do not assume that removing pitch/detail automatically improves feel.

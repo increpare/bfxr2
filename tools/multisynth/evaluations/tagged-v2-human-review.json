@@ -1,0 +1,560 @@
+{
+  "summary": {
+    "decision": "Reject gesture-v2 as an improvement; retain auditory-v1 as baseline. Do not overwrite the rated gallery.",
+    "ratings": {
+      "targets": 18,
+      "uniqueRatedCandidates": 48,
+      "meanSelectedRating": 1.8333333333333333,
+      "meanBfxrRating": 1.6111111111111112,
+      "selectedRatingCounts": {
+        "1": 6,
+        "2": 9,
+        "3": 3
+      },
+      "selectedVersusBfxr": {
+        "win": 5,
+        "loss": 3,
+        "tie": 10
+      },
+      "meanPreviousRating": 2.0555555555555554,
+      "previousRatingCounts": {
+        "1": 4,
+        "2": 9,
+        "3": 5
+      },
+      "selectedVersusPrevious": {
+        "tie": 13,
+        "loss": 4,
+        "win": 1
+      }
+    },
+    "prospectivePreferenceCheck": {
+      "excludedReferences": "Exact reference PCM previously present in real-v1, including ties",
+      "strictPairs": 19,
+      "referenceGroups": 10,
+      "note": "Frozen pre-feedback scores on newly rated candidates. Multiple pairs per reference are correlated; exact-PCM exclusion cannot identify related takes.",
+      "correct": {
+        "auditoryV1": 17,
+        "gesturePrior": 8,
+        "gestureFitFromFirstBatch": 8
+      },
+      "firstBatchFittedCheckpointSha256": "79e4c2399d5296271005ccd91abbf2feeacebb7e0904c26f91274c4046d9cd53"
+    },
+    "wins": [
+      {
+        "source": "magic/cureMagic.wav",
+        "ratings": {
+          "selected": 3,
+          "previous": 2,
+          "bfxr": 1
+        }
+      }
+    ],
+    "losses": [
+      {
+        "source": "collect/coin (snes).WAV",
+        "ratings": {
+          "selected": 2,
+          "previous": 3,
+          "bfxr": 2
+        }
+      },
+      {
+        "source": "hit/PUNCH7.WAV",
+        "ratings": {
+          "selected": 1,
+          "previous": 3,
+          "bfxr": 1
+        }
+      },
+      {
+        "source": "jump/Jump Kopie 4.wav",
+        "ratings": {
+          "selected": 1,
+          "previous": 2,
+          "bfxr": 2
+        }
+      },
+      {
+        "source": "step/step2.wav",
+        "ratings": {
+          "selected": 2,
+          "previous": 3,
+          "bfxr": 2
+        }
+      }
+    ],
+    "bestOfRatedThreeMean": 2.2222222222222223,
+    "bestOfRatedThreeBelow3": 10,
+    "targetsWithAnyRatingAtLeast4": 0,
+    "combinedArchive": {
+      "sessions": 2,
+      "referenceJudgments": 58,
+      "exactUniqueReferenceAudio": 57,
+      "exactUniqueReferenceCandidateAudioPairs": 120,
+      "repeatedAudioWithConflictingRatings": 0
+    }
+  },
+  "frozenModelPairPredictions": [
+    {
+      "target": "attack/spinout.wav",
+      "candidateA": "86c2137195196ae9588b7bf994937f272bc8e325a7be8eaafeff732552bfb602",
+      "candidateB": "e785dede96311299a38a87f5babf7d0a6629251d2c16299d72d26569e903fd50",
+      "ratingA": 2,
+      "ratingB": 1,
+      "componentDifference": [
+        -0.010107845067977905,
+        -0.008064516129032251,
+        0.02729960282643636,
+        0.024661460685698453,
+        -0.010447382926940918,
+        -0.010103270411491394,
+        0.05207604914903641,
+        -0.22492504119873047,
+        -0.05761192739009857
+      ],
+      "referencePcmSha256": "65846b1877c418e7f6cc6f8a1a588979162674aa1d905bb930fd97588c20d69f",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": -0.36377161741256714,
+      "gesturePrior": -0.0031536213654051507,
+      "gestureFitFromFirstBatch": -0.005463089999663117
+    },
+    {
+      "target": "attack/spinout.wav",
+      "candidateA": "e785dede96311299a38a87f5babf7d0a6629251d2c16299d72d26569e903fd50",
+      "candidateB": "867ed97dcd7f18569880ff71da5b31aa2625f5f088beb0207f772db75d49e2fd",
+      "ratingA": 1,
+      "ratingB": 2,
+      "componentDifference": [
+        -0.051924873143434525,
+        -0.008064516129032251,
+        -0.11751812075575192,
+        0.008260660371235927,
+        -0.06336547434329987,
+        0.0015294402837753296,
+        -0.020468004047870636,
+        0.19235432147979736,
+        0.06509393453598022
+      ],
+      "referencePcmSha256": "65846b1877c418e7f6cc6f8a1a588979162674aa1d905bb930fd97588c20d69f",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": 0.33964502811431885,
+      "gesturePrior": -0.03361891738968705,
+      "gestureFitFromFirstBatch": -0.03087514037177854
+    },
+    {
+      "target": "bell/impactBell_heavy_000.ogg",
+      "candidateA": "8f9d9f2dc8cf0729757eb762757f7a2dd827f27648cd74620f362c792d3f867b",
+      "candidateB": "1f1d042053db5cb263450aa2749d8c8005517ae0b984d7efc33315b570ace387",
+      "ratingA": 2,
+      "ratingB": 1,
+      "componentDifference": [
+        -0.011920493096113205,
+        -0.03225806451612903,
+        -0.004250888712704182,
+        -0.05263435025562649,
+        -0.12640631198883057,
+        0.10323694348335266,
+        -0.04513928294181824,
+        -0.335721030831337,
+        -0.18028610944747925
+      ],
+      "referencePcmSha256": "facbb1d17dbc145c627c460e9832e0e99bc52e50c31e54c687702a6eae38f4ae",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": -0.6825063824653625,
+      "gesturePrior": -0.047982254862652576,
+      "gestureFitFromFirstBatch": -0.04684774752054555
+    },
+    {
+      "target": "bell/impactBell_heavy_000.ogg",
+      "candidateA": "1f1d042053db5cb263450aa2749d8c8005517ae0b984d7efc33315b570ace387",
+      "candidateB": "48fce35f38e20ee8a955def60748e7d73184d82de1b909340478ee5339da16f8",
+      "ratingA": 1,
+      "ratingB": 2,
+      "componentDifference": [
+        -0.010865602642297745,
+        -0.008064516129032258,
+        -0.001692003570497036,
+        0.035705429969651925,
+        0.13318022340536118,
+        -0.13366049528121948,
+        0.09070762991905212,
+        0.45295748114585876,
+        0.2567055821418762
+      ],
+      "referencePcmSha256": "facbb1d17dbc145c627c460e9832e0e99bc52e50c31e54c687702a6eae38f4ae",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": 0.7857930660247803,
+      "gesturePrior": 0.04263110738891576,
+      "gestureFitFromFirstBatch": 0.042567594096329014
+    },
+    {
+      "target": "carbeep/VEHHorn_Kawasaki Ninja ZX 10R Horn Single 03_SNDBTS_MCK.wav",
+      "candidateA": "d8bdec34df5e413d152ec6bf150fd26ecac1943bf41e94230cb75ac9ac35546e",
+      "candidateB": "a0d0d4472991e391eb6f816e8c34911a3d8c5307ea872c46706c2ced1fb879ab",
+      "ratingA": 2,
+      "ratingB": 3,
+      "componentDifference": [
+        -0.20351660903543234,
+        -0.10483870967741934,
+        -0.016450547923644386,
+        -0.03345541013178974,
+        -0.006262265145778656,
+        0.021363332867622375,
+        0.005816109478473663,
+        0.025992989540100098,
+        0.010011851787567139
+      ],
+      "referencePcmSha256": "bf414abc51c7b062bfae8d7b57def6882bf61fc10608a1e75df6c22b4ec454a2",
+      "excludedAsPreviouslySeen": true,
+      "auditoryV1": -0.446002334356308,
+      "gesturePrior": -0.05874176470722736,
+      "gestureFitFromFirstBatch": -0.06679452944895822
+    },
+    {
+      "target": "collect/coin (snes).WAV",
+      "candidateA": "04367fd7ecfd38fa4d1ae0d45cc0f8b3f11b9e5a379ff86ee21c5061525d91be",
+      "candidateB": "a46c64c34897c71cf0443b7a691288848e3594c4159909f57dc78119e6e54c7c",
+      "ratingA": 2,
+      "ratingB": 3,
+      "componentDifference": [
+        -0.04884291812777519,
+        -0.04032258064516129,
+        -0.016359416147073112,
+        -0.009795615973241897,
+        0.01180829107761383,
+        0.0011834260076284409,
+        0.015197817236185074,
+        0.00715404748916626,
+        -0.019856780767440796
+      ],
+      "referencePcmSha256": "5f0c44ecda4835db1a5e0c8cde4306547c95b53ce4be9ad8ce14bc1417e32415",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": 0.0633266270160675,
+      "gesturePrior": -0.014478445439633059,
+      "gestureFitFromFirstBatch": -0.016096250378616478
+    },
+    {
+      "target": "explode/Bifun Jump.WAV",
+      "candidateA": "a0e66b0f16bd032415ee480e34a7d0c1b994b988ea8b0c34859bbcb444f22765",
+      "candidateB": "a9c299d05dc18bb148ab8c705ca3fc07ce74a2c883487beaa0c0eee0b7c91a6d",
+      "ratingA": 2,
+      "ratingB": 1,
+      "componentDifference": [
+        0.0014830753207206726,
+        0.024193548387096767,
+        -0.016087837517261505,
+        0.002947200896236471,
+        0.0003428906202316284,
+        0.06293115019798279,
+        -0.000383622944355011,
+        0.018262147903442383,
+        -0.32158512622117996
+      ],
+      "referencePcmSha256": "c4d28cc799bfbd022baeea21c1465248db099af594fdab11c218cac6dec127b1",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": -0.11314910650253296,
+      "gesturePrior": -0.000445356855407535,
+      "gestureFitFromFirstBatch": -0.005230282204182179
+    },
+    {
+      "target": "explode/Bifun Jump.WAV",
+      "candidateA": "a9c299d05dc18bb148ab8c705ca3fc07ce74a2c883487beaa0c0eee0b7c91a6d",
+      "candidateB": "c7043ccdd0eb99f8ef32261416aae8a341d1b5489bb95755df4ace5cf910845e",
+      "ratingA": 1,
+      "ratingB": 2,
+      "componentDifference": [
+        -0.01659059152007103,
+        -0.03225806451612903,
+        0.009643821666638054,
+        -0.009575120045846968,
+        -0.027178045362234116,
+        -0.06315916031599045,
+        0.004159614443778992,
+        -0.008068829774856567,
+        0.32221000641584396
+      ],
+      "referencePcmSha256": "c4d28cc799bfbd022baeea21c1465248db099af594fdab11c218cac6dec127b1",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": 0.07903748750686646,
+      "gesturePrior": -0.01063871030299408,
+      "gestureFitFromFirstBatch": -0.00591591504718441
+    },
+    {
+      "target": "hit/PUNCH7.WAV",
+      "candidateA": "2f0fd1e6fc790e4a77e818c2fac4768dc50140df31608fcd54f2c15f40090fd7",
+      "candidateB": "e4be7b9adfc0a85aea2bb09e0f2bcbbb8b90d269ad2bac7504edff14228cd0df",
+      "ratingA": 1,
+      "ratingB": 3,
+      "componentDifference": [
+        -0.07168042659759521,
+        -0.040322580645161255,
+        -0.02621057194968065,
+        -0.01981072721601936,
+        -0.025586435571312904,
+        -0.02403445541858673,
+        -0.027080044150352478,
+        -0.24104204773902893,
+        -0.0007505416870117188
+      ],
+      "referencePcmSha256": "041839601c0de5ad9d168f5617d0becccd03c9aa5783420b46e6ab425a2067a9",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": 0.23267877101898193,
+      "gesturePrior": -0.040941571268044256,
+      "gestureFitFromFirstBatch": -0.04205550260164571
+    },
+    {
+      "target": "hit/PUNCH7.WAV",
+      "candidateA": "659e6bd3fdec27e8e69466c4b5cb91aa0f4ddbfd87bb0cc50e56917f7b191c86",
+      "candidateB": "e4be7b9adfc0a85aea2bb09e0f2bcbbb8b90d269ad2bac7504edff14228cd0df",
+      "ratingA": 1,
+      "ratingB": 3,
+      "componentDifference": [
+        -0.004776261746883392,
+        -0.008064516129032251,
+        -0.02129883381227652,
+        -0.0027482534790670143,
+        -0.0016642659902572632,
+        -0.16163307428359985,
+        -0.06754422187805176,
+        -0.2595619261264801,
+        0.08260983228683472
+      ],
+      "referencePcmSha256": "041839601c0de5ad9d168f5617d0becccd03c9aa5783420b46e6ab425a2067a9",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": 0.38991039991378784,
+      "gesturePrior": -0.028868257831626297,
+      "gestureFitFromFirstBatch": -0.028334332332833827
+    },
+    {
+      "target": "jump/Jump Kopie 4.wav",
+      "candidateA": "af9838ff92c7fc6275d98ab081eb48131f48ee6d4d8f8b84a41f3ae94ffde702",
+      "candidateB": "2201fe65633cedeaa33e0604865e390fad6abd856399b6c58b451ac34fc6c77f",
+      "ratingA": 1,
+      "ratingB": 2,
+      "componentDifference": [
+        0.0023023635149002075,
+        0.016129032258064516,
+        0.02953353275855382,
+        0.0075858700043885206,
+        0.006810111925005913,
+        -0.17192396521568298,
+        -0.025815248489379883,
+        -0.03342558443546295,
+        0.1639615297317505
+      ],
+      "referencePcmSha256": "0f986e8b4b79d52fdcf379eae49d89a32b4e05119f914028b2cfefb8b1561278",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": 0.4975370168685913,
+      "gesturePrior": -0.005730724089646462,
+      "gestureFitFromFirstBatch": -0.006639673355850036
+    },
+    {
+      "target": "jump/Jump Kopie 4.wav",
+      "candidateA": "af9838ff92c7fc6275d98ab081eb48131f48ee6d4d8f8b84a41f3ae94ffde702",
+      "candidateB": "1f4a5c6c9ae5deed31d42874d639c71c1d8f9c72bef749fcfbb3f548c5146115",
+      "ratingA": 1,
+      "ratingB": 2,
+      "componentDifference": [
+        -0.004817735403776169,
+        0.016129032258064516,
+        0.024572700262069702,
+        0.008305046438950256,
+        0.0077676922082901,
+        -0.20239153504371643,
+        -0.0005233883857727051,
+        -0.027519553899765015,
+        0.16371670365333557
+      ],
+      "referencePcmSha256": "0f986e8b4b79d52fdcf379eae49d89a32b4e05119f914028b2cfefb8b1561278",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": 0.5129754543304443,
+      "gesturePrior": -0.008347205129169482,
+      "gestureFitFromFirstBatch": -0.009378020729981864
+    },
+    {
+      "target": "magic/cureMagic.wav",
+      "candidateA": "a35df305546bb445718df146c80572804dafaf111c6b3a1e337c96a3e215ee7c",
+      "candidateB": "d7333156a4113d658e1d7cf1b0f0ddc32f0893354319ee71522e7ed310d5b89d",
+      "ratingA": 3,
+      "ratingB": 1,
+      "componentDifference": [
+        0.05122419074177742,
+        0.06451612903225809,
+        -0.13757115850845975,
+        0.009099623060121822,
+        -0.06323682516813278,
+        -0.028963524848222733,
+        4.735589027404785e-05,
+        0.0325162410736084,
+        -0.8723594844341278
+      ],
+      "referencePcmSha256": "5859e94857fb9da2bb209d06d80e011138eb139d78c610ff60125bd78d4bead1",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": -1.3004041910171509,
+      "gesturePrior": -0.034983318718900744,
+      "gestureFitFromFirstBatch": -0.04333137022922931
+    },
+    {
+      "target": "magic/cureMagic.wav",
+      "candidateA": "a35df305546bb445718df146c80572804dafaf111c6b3a1e337c96a3e215ee7c",
+      "candidateB": "64f5f050e2a143f421eb7c9ad4f55e06406e26ec90bebd717eee4ceb67e6deb6",
+      "ratingA": 3,
+      "ratingB": 2,
+      "componentDifference": [
+        -0.06642688065767288,
+        -0.008064516129032251,
+        -0.11343319031099479,
+        -0.051998478872912646,
+        -0.03965529799461365,
+        -0.006382782012224197,
+        -0.025233730673789978,
+        -0.007408738136291504,
+        0.05584961175918579
+      ],
+      "referencePcmSha256": "5859e94857fb9da2bb209d06d80e011138eb139d78c610ff60125bd78d4bead1",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": -0.045976459980010986,
+      "gesturePrior": -0.045062482049611,
+      "gestureFitFromFirstBatch": -0.03952365522198856
+    },
+    {
+      "target": "magic/cureMagic.wav",
+      "candidateA": "d7333156a4113d658e1d7cf1b0f0ddc32f0893354319ee71522e7ed310d5b89d",
+      "candidateB": "64f5f050e2a143f421eb7c9ad4f55e06406e26ec90bebd717eee4ceb67e6deb6",
+      "ratingA": 1,
+      "ratingB": 2,
+      "componentDifference": [
+        -0.1176510713994503,
+        -0.07258064516129034,
+        0.024137968197464943,
+        -0.06109810193303447,
+        0.023581527173519135,
+        0.022580742835998535,
+        -0.025281086564064026,
+        -0.0399249792098999,
+        0.9282090961933136
+      ],
+      "referencePcmSha256": "5859e94857fb9da2bb209d06d80e011138eb139d78c610ff60125bd78d4bead1",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": 1.2544276714324951,
+      "gesturePrior": -0.010079163330710244,
+      "gestureFitFromFirstBatch": 0.0038077150072407424
+    },
+    {
+      "target": "shoot/Shooting.wav",
+      "candidateA": "eb5269faea5cbe8e52d3840b77e853c4b0dff6773b839fd0db9c1efe826088bb",
+      "candidateB": "ce892ebbc3534297d2bd0c70b66281bfd20cd18eccfef8761385878c882378ee",
+      "ratingA": 3,
+      "ratingB": 1,
+      "componentDifference": [
+        -0.012169022113084793,
+        -0.024193548387096774,
+        0.03389490523841232,
+        -0.11969829452879917,
+        -0.06878415495157242,
+        0.09274223446846008,
+        0.056033968925476074,
+        0.02411794662475586,
+        -0.018502160906791687
+      ],
+      "referencePcmSha256": "02c47a87078e67e1292a9b01e11e4859f21ecb4ecaf92c0f60f9eac7a0b24cb9",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": -0.2305329442024231,
+      "gesturePrior": -0.01943311514591496,
+      "gestureFitFromFirstBatch": -0.013714311979772652
+    },
+    {
+      "target": "shoot/Shooting.wav",
+      "candidateA": "ce892ebbc3534297d2bd0c70b66281bfd20cd18eccfef8761385878c882378ee",
+      "candidateB": "21c39dbb159425c0166d4b4439c3644a1dd9c57f8f83cd5787386f7236205b41",
+      "ratingA": 1,
+      "ratingB": 3,
+      "componentDifference": [
+        0.009500764310359955,
+        0.01612903225806451,
+        -0.004509942955337465,
+        0.08019569321800467,
+        0.0721994899213314,
+        -0.04730890691280365,
+        -0.23033231496810913,
+        -0.018152058124542236,
+        -0.020821690559387207
+      ],
+      "referencePcmSha256": "02c47a87078e67e1292a9b01e11e4859f21ecb4ecaf92c0f60f9eac7a0b24cb9",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": 0.4334357976913452,
+      "gesturePrior": 0.008182081412937504,
+      "gestureFitFromFirstBatch": -0.0005584502854390615
+    },
+    {
+      "target": "slime/slime_000.ogg",
+      "candidateA": "fe7ffd5c328556c3adfad9fdb8b6573e1ff243e188059a8e91e44599a3ecc555",
+      "candidateB": "a9bf5288be0a17477f22241f013feffa599ee36db85861b5e7cdd147bf6f05c3",
+      "ratingA": 2,
+      "ratingB": 3,
+      "componentDifference": [
+        -0.05164423584938049,
+        -0.07258064516129029,
+        -0.010232569339374706,
+        0.008368015780411547,
+        -0.023449622094631195,
+        -0.06518176198005676,
+        0.027194086462259293,
+        -0.006635189056396484,
+        -0.6034037470817566
+      ],
+      "referencePcmSha256": "c7008a680b98d34967db9368a9be4d815c99fe270abe7ee7b7f5cff0a1abc738",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": -0.6411172151565552,
+      "gesturePrior": -0.043341889555502944,
+      "gestureFitFromFirstBatch": -0.05860929061566915
+    },
+    {
+      "target": "slime/slime_000.ogg",
+      "candidateA": "a9bf5288be0a17477f22241f013feffa599ee36db85861b5e7cdd147bf6f05c3",
+      "candidateB": "d5114fa763bdc3149214d97267d515e05fae0010918159ace386fd8441f1300c",
+      "ratingA": 3,
+      "ratingB": 2,
+      "componentDifference": [
+        0.03133474290370941,
+        0.040322580645161275,
+        -0.02274533454328774,
+        -0.01335532657254003,
+        0.0008797794580459595,
+        -0.0661550760269165,
+        -0.027549579739570618,
+        -0.06423693895339966,
+        0.6032945811748505
+      ],
+      "referencePcmSha256": "c7008a680b98d34967db9368a9be4d815c99fe270abe7ee7b7f5cff0a1abc738",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": 0.8030723333358765,
+      "gesturePrior": 0.01233771239323594,
+      "gestureFitFromFirstBatch": 0.02694382148530262
+    },
+    {
+      "target": "step/step2.wav",
+      "candidateA": "512199bee2a78cbf283910d15807fb785ab35ba900d99f84c71e0480ed6e390d",
+      "candidateB": "a0e6874a6020361764b12d1ec1bc0ad509dbdcbdd914e8bf653ef4ed06cda2c2",
+      "ratingA": 2,
+      "ratingB": 3,
+      "componentDifference": [
+        -0.10943450219929218,
+        -0.03225806451612905,
+        -0.01068450758854548,
+        -0.03302076444779714,
+        -0.009280506521463394,
+        -0.12742574140429497,
+        0.009819211438298225,
+        0.0703849196434021,
+        0.2742440402507782
+      ],
+      "referencePcmSha256": "187483de38825becf2770c204ed5b5d1579ec15e2c04e8b37b2bfdd39f914c18",
+      "excludedAsPreviouslySeen": false,
+      "auditoryV1": 0.1572476625442505,
+      "gesturePrior": -0.03631143221053775,
+      "gestureFitFromFirstBatch": -0.036221139113915
+    }
+  ]
+}

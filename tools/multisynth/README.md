@@ -149,6 +149,12 @@ for the acceptance criteria. [GESTURE_V2.md](GESTURE_V2.md) documents the next
 implemented representation, fitting attempt and 18-tag comparison gallery.
 The fitted weights did not improve held-out preference prediction, so this
 listening iteration uses the fixed gesture prior with a larger library/search.
+**The subsequent human pass rejected that iteration:** 1 win / 13 ties / 4
+losses against the previous model on the same references, with mean likeness
+1.83 versus 2.06. Its frozen metric also predicts fewer new strict preferences
+correctly (8/19 versus auditory-v1's 17/19 after exact-reference overlap is
+excluded). The gesture checkpoints are retained as experimental failures, not
+recommended replacements. See the human verdict in `GESTURE_V2.md`.
 The old auditory-v1 metric remains the CLI default; opt in with
 `--gesture-model multisynth/models/gesture-v2-prior.json`, or use
 `multisynth.iterate` to generate old/new/Bfxr comparisons together.
@@ -158,5 +164,5 @@ Bfxr. Feedback export and archival support all three approximation roles while
 keeping earlier feedback identities unchanged. The fitting utility uses all
 strict preferences among distinct rated candidates, grouping each reference's
 pairs together in validation. Neither lower search distance nor successful
-synthetic checks establishes audible improvement; that is what the next human
-ratings will test.
+synthetic checks establishes audible improvement. Human ratings are the deciding
+check; the rejected v2 iteration demonstrates why.

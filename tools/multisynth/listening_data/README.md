@@ -1,5 +1,26 @@
 # Persistent listening evidence
 
+## Retained sessions
+
+| Archive | References judged | Distinct rated candidate identities |
+| --- | ---: | ---: |
+| `2026-10-03-real-v1/` | 40 | 73 |
+| `2026-10-03-tagged-v2/` | 18 | 48 |
+
+Together these contain 58 reference judgments, **57 exact unique reference
+audios** and **120 exact unique reference/candidate audio pairs**. The repeated
+horn/Clonkr pair has consistent ratings. Preserve both sessions and group by
+audio identity when learning or splitting data; folder-based candidate IDs
+alone do not identify repetition across experiments.
+
+The second archive also retains previous-model ratings and their exact clips.
+It rejects gesture-v2 as an improvement: on the same 18 references it scored
+1.83/5 against the previous model's 2.06/5, with 1 win, 13 ties and 4 losses.
+See [the human review](../evaluations/tagged-v2-human-review.json) for the
+comparison, frozen-model preference check and named regressions.
+
+## First session format
+
 `2026-10-03-real-v1/` retains the user's first exported listening session:
 40 reference judgments and 73 distinct rated candidates. Seven targets selected
 Bfxr itself; the two UI roles share one candidate and one judgment.
