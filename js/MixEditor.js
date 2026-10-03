@@ -37,11 +37,15 @@ class MixEditor {
             option(select,'empty','Choose a preset…');
             const current=sources[slot];
             if(current&&!current.generator)option(select,'current',current.synth+' · '+current.name+' (saved sound)');
-            let group,name;
+            let name;
             for(const entry of this.catalog){
-                if(name!==entry.synth){group=document.createElement('optgroup');group.label=entry.family;name=entry.synth;select.appendChild(group);}
-                option(group,entry.synth+':'+entry.generator,entry.family+' · '+entry.name);
+                if(name!==entry.synth){
+                    option(select,entry.synth+':*',entry.family);
+                    name=entry.synth;
+                }
+                option(select,entry.synth+':'+entry.generator,'  '+entry.family+' · '+entry.name);
             }
+            select.title=current ? current.synth+' · '+current.name : '';
             select.value=current?(current.generator?current.synth+':'+current.generator:'current'):'empty';
             regen.disabled=!current || !current.generator || this.tab.synth.locked_param('sources');
         });

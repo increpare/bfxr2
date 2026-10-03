@@ -44,12 +44,19 @@ class Mixr extends PresetSynth {
                 ({synth:synth.name, family:synth.display_name || synth.name, name, tip, generator}));
         });
     }
-    static generated_source(name,generator) {
+    static generated_source(name,generator,previousGenerator) {
         const synth=Stackr.source(name);
-        const template=this.templates_for(synth).find(t=>t[2]===generator);
+        const templates=this.templates_for(synth);
+        let template;
+        if(generator==='*'){
+            const candidates=templates.length>1 ? templates.filter(t=>t[2]!==previousGenerator) : templates;
+            template=candidates[Math.floor(Math.random()*candidates.length)];
+        } else template=templates.find(t=>t[2]===generator);
         if(!template)return null;
-        synth[generator]();
-        return {synth:synth.name,name:template[0],generator,params:synth.params,renderSeed:Math.random()};
+        synth[template[2]]();
+        const source={synth:synth.name,name:template[0],generator,params:synth.params,renderSeed:Math.random()};
+        if(generator==='*')source.selectedGenerator=template[2];
+        return source;
     }
     set_param(name,value,checkLocked=false) {
         if (name !== 'sources') return super.set_param(name,value,checkLocked);
@@ -61,7 +68,11 @@ class Mixr extends PresetSynth {
             if (!synth) return null;
             const entry={synth:synth.name, name:typeof source.name === 'string' ? source.name.slice(0,60) : synth.name,
                 params:Stackr.sanitize_source(synth,source.params)};
-            if(Mixr.templates_for(synth).some(t=>t[2]===source.generator))entry.generator=source.generator;
+            const templates=Mixr.templates_for(synth);
+            if(source.generator==='*' && templates.length){
+                entry.generator='*';
+                if(templates.some(t=>t[2]===source.selectedGenerator))entry.selectedGenerator=source.selectedGenerator;
+            } else if(templates.some(t=>t[2]===source.generator))entry.generator=source.generator;
             if(Number.isFinite(source.renderSeed))entry.renderSeed=SoundDSP.clamp(source.renderSeed,0,1);
             return entry;
         });
@@ -79,9 +90,11 @@ class Mixr extends PresetSynth {
     }
     set_generator(slot,name,generator) {
         if(slot!==0 && slot!==1)return false;
-        const next=Mixr.generated_source(name,generator);
-        if(!next)return false;
         const sources=this.get_sources();
+        const current=sources[slot];
+        const previous=current && current.synth===name ? current.selectedGenerator || current.generator : undefined;
+        const next=Mixr.generated_source(name,generator,previous);
+        if(!next)return false;
         while(sources.length<=slot)sources.push(null);
         sources[slot]=next;
         this.set_param('sources',sources);
@@ -95,7 +108,7 @@ class Mixr extends PresetSynth {
     regenerate_both() {
         if(this.locked_param('sources'))return;
         const sources=this.get_sources().map(current=>current && current.generator
-            ? Mixr.generated_source(current.synth,current.generator) || current : current);
+            ? Mixr.generated_source(current.synth,current.generator,current.selectedGenerator) || current : current);
         this.set_param('sources',sources);
     }
     // Older integrations can still reseed a copied character snapshot.

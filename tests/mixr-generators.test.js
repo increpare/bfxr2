@@ -61,3 +61,30 @@ test('classic coin and explosion generators set valid pitch jump timing',()=>{
  return {errors,onsets:[coin.params.pitch_jump_onset_percent,boom.params.pitch_jump_onset_percent]};})()`));
  assert.deepEqual(result.errors,[]);assert.ok(result.onsets.every(x=>x>=0&&x<1));assert.ok(result.onsets[1]>0);
 });
+
+test('synth-wide Regen chooses a different preset while preserving the other slot',()=>{
+ const {run}=setup();
+ assert.equal(run(`(()=>{Math.random=SoundDSP.rng(.482);const mix=new Mixr();mix.set_generator(1,'Jinglr','generate_discovery');
+ const other=JSON.stringify(mix.get_sources()[1]);mix.set_generator(0,'Clonkr','*');let previous;
+ for(let i=0;i<20;i++){
+  const source=mix.get_sources()[0];
+  if(source.generator!=='*'||source.synth!=='Clonkr'||!source.selectedGenerator||source.selectedGenerator===previous)return false;
+  if(!Mixr.templates_for(new Clonkr()).some(t=>t[2]===source.selectedGenerator))return false;
+  previous=source.selectedGenerator;mix.regenerate_source(0);
+ }
+ return JSON.stringify(mix.get_sources()[1])===other;})()`),true);
+});
+test('synth-wide choices survive saved links and Regen Both retains both synth selections',()=>{
+ const {run,load}=setup();load('js/SaveLoad.js');
+ assert.equal(run(`(()=>{Math.random=SoundDSP.rng(.481);const mix=new Mixr();if(!mix.set_generator(0,'Clonkr','*')||!mix.set_generator(1,'Jinglr','*'))return false;mix.set_param('balance',.6);
+ tabs=[{synth:mix}];const saved=SaveLoad.shallow_dict_deserialize(SaveLoad.shallow_dict_serialize('Mixr','Any presets',mix.params));
+ const copy=new Mixr();copy.apply_params(saved[2]);const sources=copy.get_sources();
+ mix.generate_sound();copy.generate_sound();if(!mix.sound.getBuffer().every((v,i)=>v===copy.sound.getBuffer()[i]))return false;
+ copy.regenerate_both();return copy.params.balance===.6&&copy.get_sources().every((s,i)=>s.generator==='*'&&s.synth===sources[i].synth&&s.selectedGenerator!==sources[i].selectedGenerator);})()`),true);
+});
+test('synth-wide selection rejects retired or missing synths and supports a single available preset',()=>{
+ const {run,load}=createContext(['Rumblr','Stackr','Mixr']);load('js/synths/Footsteppr.js');
+ assert.equal(run(`(()=>{const mix=new Mixr();if(mix.set_generator(0,'Rumblr','*')!==false||mix.set_generator(0,'Missing','*')!==false)return false;
+ if(!mix.set_generator(0,'Footsteppr','*'))return false;const before=mix.params.sources;mix.regenerate_source(0);
+ const source=mix.get_sources()[0];return source.generator==='*'&&source.selectedGenerator==='randomize_params'&&mix.params.sources!==before;})()`),true);
+});
