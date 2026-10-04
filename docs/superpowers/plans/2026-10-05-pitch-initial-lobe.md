@@ -44,3 +44,21 @@ and their hashes. Do not change data distribution or architectures in this arm.
   Audit real DSP/PCM and browser UX. Archive code/results/limitations; request
   best/tie/none with optional adequacy comments. Human ears remain essential
   even if metrics agree.
+
+### Evaluation implementation detail
+
+Use new pitch_v5_eval.py and pitch_v5_gallery.py; do not edit frozen v4 modules.
+The probe runner takes explicit v3, v4 and v5 expert roots, renders four proposals
+per each of three synths in every arm, and saves all actual FLOAT audio plus
+missing/failure accounting. Source-engine and unrestricted selection stay separate.
+The unchanged objective chooses outputs. Retain old pitch diagnostics as legacy;
+compute v5 diagnostic medians AND voiced relative-time contours, span and active
+frame tolerance for all three arms, with limitations clearly labelled. A steady
+median and matching direction alone cannot certify gesture accuracy. Test a same-
+direction but wrong-excursion case and the octave false-pass regression.
+
+Gallery uses the same fixed five target manifest and exact archived human anchors,
+384 frozen guarded refinement trials per available engine and original seeds.
+No v4 partial-gallery candidates are human-labelled or inserted as prior winners.
+Strict checkpoint/data and DSP/PCM verification, <=3 distinct quick options,
+recorded trial accounting and existing cached-WebAudio UX all remain required.
