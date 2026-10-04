@@ -54,3 +54,11 @@ human listening round of an unvalidated candidate generator.
 
 User authorization permits proceeding without a design approval interruption.
 The isolated branch and frozen v2 data are reused; no DSP/features/old model edits.
+
+Before any actual probe execution, add supplemental pitch safeguards reflecting
+the user's main complaint: a reliable static case within one semitone before
+refinement must remain within one semitone afterward; a reliable moving case
+whose direction previously matched must retain that match. Record these
+separately from the original 15/20 descriptor gate. Failure blocks promotion
+even if the original gate passes. These safeguards are declared before seeing
+any actual probe after-audio, and do not establish human likeness themselves.

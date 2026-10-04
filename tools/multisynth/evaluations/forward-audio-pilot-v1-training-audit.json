@@ -1,0 +1,235 @@
+{
+  "complete": true,
+  "codeCommit": "5148063",
+  "forwardCodeSha256": "efcf56c0a2f5fb37b53702a3e1d7f9e2719c85b427d226b889168d389b4776db",
+  "testCodeSha256": "f4988a4b211e0ebe045910fdb1ef977f9121a8deb86a2ef9faf4304c2030790f",
+  "trainingPath": "tools/multisynth/runs/forward-audio-pilot-v1/model",
+  "aggregateTrainingSha256": "22a72de6d341b1a82aadd374fd1c2035a6c32792c60090a001c75f76fb432260",
+  "trainingDataManifestSha256": "2701d7907e824f9e34872c1bc4b99ccc1e3d85941040a42ff4029eb658564657",
+  "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+  "trainingRecipe": {
+    "epochs": 40,
+    "batchSize": 128,
+    "hidden": 256,
+    "seed": 20261007,
+    "threads": 1,
+    "learningRate": 0.001,
+    "optimizer": {
+      "name": "AdamW",
+      "weightDecay": 0.0001,
+      "scheduler": "cosine",
+      "minimumLearningRate": 0.0001
+    }
+  },
+  "device": "mps",
+  "perEngine": {
+    "Bfxr": {
+      "checkpointSha256": "bd04b120258c42cab53c62cf8c279a664f86dec72323ad99da421cabda9cf0f5",
+      "trainingReportSha256": "95e62d6c1748fdb850f67002dae504b1363bbe5a43c57dd38310bf5e3eb08416",
+      "bestEpoch": 39,
+      "epochs": 40,
+      "trainRows": 3482,
+      "validationRows": 614,
+      "validation": {
+        "total": 0.5085524320602417,
+        "groups": {
+          "relativeSpectrum": 0.5033299922943115,
+          "absoluteSpectrum": 0.5621768832206726,
+          "relativeEnvelope": 0.5323327779769897,
+          "absoluteEnvelope": 0.34238559007644653,
+          "relativePitch": 0.6793866157531738,
+          "absolutePitch": 0.8103620409965515,
+          "combinedVoicing": 0.58999103307724,
+          "duration": 0.2576199173927307,
+          "rms": 0.29938751459121704
+        }
+      },
+      "trainingMeanBaseline": {
+        "total": 0.978638231754303,
+        "groups": {
+          "relativeSpectrum": 0.9509601593017578,
+          "absoluteSpectrum": 0.8592534065246582,
+          "relativeEnvelope": 1.0076231956481934,
+          "absoluteEnvelope": 0.661953330039978,
+          "relativePitch": 1.0213069915771484,
+          "absolutePitch": 1.1830626726150513,
+          "combinedVoicing": 1.0183185338974,
+          "duration": 1.029454231262207,
+          "rms": 1.0758112668991089
+        }
+      },
+      "totalBaselineRatio": 0.5196531420488373,
+      "predictiveGate": {
+        "passed": true,
+        "totalPassed": true,
+        "groupPassed": {
+          "relativeEnvelope": true,
+          "absoluteEnvelope": true,
+          "relativePitch": true,
+          "absolutePitch": true,
+          "combinedVoicing": true
+        },
+        "policy": {
+          "totalBaselineRatio": 0.8,
+          "groupsAtMostBaseline": [
+            "relativeEnvelope",
+            "absoluteEnvelope",
+            "relativePitch",
+            "absolutePitch",
+            "combinedVoicing"
+          ],
+          "absoluteTolerance": 1e-08,
+          "meaning": "held-out descriptor prediction only; no waveform or perceptual likeness claim"
+        }
+      },
+      "normalizationHash": "9e71a272114636f36c861a7aac25687cdea1ef2b7fd8b08f8a34b28d02f88f34",
+      "recipeHash": "77fc89712df148a7590d74a095e2eb7791e7589574ebbf5fad1b79c1107d0261",
+      "parameters": 1126131,
+      "seconds": 12.361904958961532
+    },
+    "Transfxr": {
+      "checkpointSha256": "7dff5015ff103a97e8e61fb26a501aff8284f361b655b0423afc2aa03f23b291",
+      "trainingReportSha256": "4a8b6d0d83f087d91e102a9a6df27b628b7f91a5caa34aab6ea7d287450be621",
+      "bestEpoch": 40,
+      "epochs": 40,
+      "trainRows": 3482,
+      "validationRows": 614,
+      "validation": {
+        "total": 0.22208687663078308,
+        "groups": {
+          "relativeSpectrum": 0.3902464210987091,
+          "absoluteSpectrum": 0.24599525332450867,
+          "relativeEnvelope": 0.22228173911571503,
+          "absoluteEnvelope": 0.17178259789943695,
+          "relativePitch": 0.4046074450016022,
+          "absolutePitch": 0.29261839389801025,
+          "combinedVoicing": 0.20204932987689972,
+          "duration": 0.01252053678035736,
+          "rms": 0.056680064648389816
+        }
+      },
+      "trainingMeanBaseline": {
+        "total": 0.8425029516220093,
+        "groups": {
+          "relativeSpectrum": 0.9524174928665161,
+          "absoluteSpectrum": 0.5768930912017822,
+          "relativeEnvelope": 1.049473524093628,
+          "absoluteEnvelope": 0.5968586206436157,
+          "relativePitch": 0.9646410942077637,
+          "absolutePitch": 0.7059272527694702,
+          "combinedVoicing": 0.8264212012290955,
+          "duration": 0.9026974439620972,
+          "rms": 1.0071970224380493
+        }
+      },
+      "totalBaselineRatio": 0.2636036778307013,
+      "predictiveGate": {
+        "passed": true,
+        "totalPassed": true,
+        "groupPassed": {
+          "relativeEnvelope": true,
+          "absoluteEnvelope": true,
+          "relativePitch": true,
+          "absolutePitch": true,
+          "combinedVoicing": true
+        },
+        "policy": {
+          "totalBaselineRatio": 0.8,
+          "groupsAtMostBaseline": [
+            "relativeEnvelope",
+            "absoluteEnvelope",
+            "relativePitch",
+            "absolutePitch",
+            "combinedVoicing"
+          ],
+          "absoluteTolerance": 1e-08,
+          "meaning": "held-out descriptor prediction only; no waveform or perceptual likeness claim"
+        }
+      },
+      "normalizationHash": "3aa32ffb125a2c1093e39f828c30099912d017e120f3a80b2329fdb598dd33c3",
+      "recipeHash": "77fc89712df148a7590d74a095e2eb7791e7589574ebbf5fad1b79c1107d0261",
+      "parameters": 1135859,
+      "seconds": 21.874024499906227
+    },
+    "Pluckr": {
+      "checkpointSha256": "a6f34644f0143ed630d8803c217b4ec0b46bce4469c2e4eec2201151ac5e9556",
+      "trainingReportSha256": "822031de02640680a27bc83aafb333fb2f732886899da8ae9799cd24ec466323",
+      "bestEpoch": 39,
+      "epochs": 40,
+      "trainRows": 3482,
+      "validationRows": 614,
+      "validation": {
+        "total": 0.3467763662338257,
+        "groups": {
+          "relativeSpectrum": 0.3478679955005646,
+          "absoluteSpectrum": 0.2742418944835663,
+          "relativeEnvelope": 0.25099101662635803,
+          "absoluteEnvelope": 0.11960244178771973,
+          "relativePitch": 0.3882943093776703,
+          "absolutePitch": 1.0351568460464478,
+          "combinedVoicing": 0.43335601687431335,
+          "duration": 0.04260588809847832,
+          "rms": 0.22887052595615387
+        }
+      },
+      "trainingMeanBaseline": {
+        "total": 0.9232459664344788,
+        "groups": {
+          "relativeSpectrum": 0.9480568170547485,
+          "absoluteSpectrum": 0.5070924758911133,
+          "relativeEnvelope": 0.9790927767753601,
+          "absoluteEnvelope": 0.31802427768707275,
+          "relativePitch": 1.0028191804885864,
+          "absolutePitch": 1.4179822206497192,
+          "combinedVoicing": 1.014690637588501,
+          "duration": 0.992440402507782,
+          "rms": 1.1290146112442017
+        }
+      },
+      "totalBaselineRatio": 0.37560561198339754,
+      "predictiveGate": {
+        "passed": true,
+        "totalPassed": true,
+        "groupPassed": {
+          "relativeEnvelope": true,
+          "absoluteEnvelope": true,
+          "relativePitch": true,
+          "absolutePitch": true,
+          "combinedVoicing": true
+        },
+        "policy": {
+          "totalBaselineRatio": 0.8,
+          "groupsAtMostBaseline": [
+            "relativeEnvelope",
+            "absoluteEnvelope",
+            "relativePitch",
+            "absolutePitch",
+            "combinedVoicing"
+          ],
+          "absoluteTolerance": 1e-08,
+          "meaning": "held-out descriptor prediction only; no waveform or perceptual likeness claim"
+        }
+      },
+      "normalizationHash": "05f1752d54bea5b274945204455e4bb2eec38066c48de01a3c9b99d12cf0478b",
+      "recipeHash": "77fc89712df148a7590d74a095e2eb7791e7589574ebbf5fad1b79c1107d0261",
+      "parameters": 1119731,
+      "seconds": 18.954272458096966
+    }
+  },
+  "verification": {
+    "all40epochsComplete": true,
+    "all614ValidationRowsReplayedOnCPU": true,
+    "trainOnlyNormalizationExact": true,
+    "MpsReportedLossesMatchCpuWithin2eMinus6Relative": true,
+    "bestEpochIsMinValidation": true,
+    "allPredictiveGatesPassed": true,
+    "rootTests": {
+      "command": "python -m pytest -q tools/tests/test_neural_forward.py tools/tests/test_neural_invert.py",
+      "passed": 51,
+      "seconds": 23.47
+    },
+    "specReview": "approved including recipe fixes",
+    "qualityReview": "approved including recipe fixes"
+  },
+  "meaning": "Successful descriptor prediction prerequisite only. Actual-DSP gradient usefulness and real-SFX likeness remain unestablished. No checkpoint promoted."
+}

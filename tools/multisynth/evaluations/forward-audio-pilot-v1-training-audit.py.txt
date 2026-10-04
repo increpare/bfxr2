@@ -1,0 +1,33 @@
+import json,hashlib
+from pathlib import Path
+import numpy as np
+import torch
+from neural_invert.forward import load_forward,feature_loss,_gate
+from neural_invert.data import file_hash
+
+torch.set_num_threads(1)
+data=Path('tools/multisynth/runs/neural-v2/data');root=Path('tools/multisynth/runs/forward-audio-pilot-v1/model')
+report=json.loads((root/'training.json').read_text());audit={};checks=[]
+assert report['predictiveGatePassed'] and report['dataManifestHash']==file_hash(data/'manifest.json')
+for engine in report['engines']:
+ model,meta=load_forward(root/engine)
+ saved=report['perEngine'][engine];rows=json.loads((data/(engine+'.json')).read_text())
+ with np.load(data/(engine+'.npz')) as shard:
+  features=shard['features'].astype(np.float32);unit=torch.from_numpy(shard['continuous'].astype(np.float32));cats=torch.from_numpy(shard['categorical'].astype(np.int64))
+ train=features[rows['train']].astype(np.float64);mean=train.mean(0).astype(np.float32);std=np.maximum(train.std(0),.025).astype(np.float32)
+ assert np.array_equal(mean,np.array(meta['normalization']['mean'],dtype=np.float32))
+ assert np.array_equal(std,np.array(meta['normalization']['std'],dtype=np.float32))
+ assert len(saved['history'])==40 and all(h['trainRows']==3482 and h['validationRows']==614 for h in saved['history'])
+ assert saved['bestEpoch']==min(saved['history'],key=lambda h:h['validation']['total'])['epoch']
+ target=torch.from_numpy((features[rows['val']]-mean)/std)
+ with torch.no_grad():pred=model(unit[rows['val']],cats[rows['val']]);total,groups=feature_loss(pred,target);baseline,bgroups=feature_loss(torch.zeros_like(target),target)
+ actual={'total':float(total),'groups':{k:float(v) for k,v in groups.items()}}
+ base={'total':float(baseline),'groups':{k:float(v) for k,v in bgroups.items()}}
+ assert np.isclose(actual['total'],saved['bestValidation']['total'],rtol=2e-6,atol=2e-7)
+ assert np.isclose(base['total'],saved['baseline']['total'],rtol=2e-6,atol=2e-7)
+ for group in groups:assert np.isclose(actual['groups'][group],saved['bestValidation']['groups'][group],rtol=2e-6,atol=2e-7)
+ assert _gate(actual,base)['passed']
+ audit[engine]={'checkpointSha256':file_hash(root/engine/'best.pt'),'trainingReportSha256':file_hash(root/engine/'training.json'),'bestEpoch':saved['bestEpoch'],'epochs':len(saved['history']),'trainRows':len(rows['train']),'validationRows':len(rows['val']),'validation':actual,'trainingMeanBaseline':base,'totalBaselineRatio':actual['total']/base['total'],'predictiveGate':_gate(actual,base),'normalizationHash':meta['normalizationHash'],'recipeHash':meta['trainingRecipeHash'],'parameters':saved['parameters'],'seconds':saved['history'][-1]['elapsedSeconds']}
+ print(engine,'CPU replay and train-only normalization verified',audit[engine]['totalBaselineRatio'],flush=True)
+output={'complete':True,'codeCommit':'5148063','forwardCodeSha256':file_hash('tools/neural_invert/forward.py'),'testCodeSha256':file_hash('tools/tests/test_neural_forward.py'),'trainingPath':str(root),'aggregateTrainingSha256':file_hash(root/'training.json'),'trainingDataManifestSha256':file_hash(data/'manifest.json'),'sourceHash':meta['sourceHash'],'trainingRecipe':report['trainingRecipe'],'device':report['device'],'perEngine':audit,'verification':{'all40epochsComplete':True,'all614ValidationRowsReplayedOnCPU':True,'trainOnlyNormalizationExact':True,'MpsReportedLossesMatchCpuWithin2eMinus6Relative':True,'bestEpochIsMinValidation':True,'allPredictiveGatesPassed':True,'rootTests':{'command':'python -m pytest -q tools/tests/test_neural_forward.py tools/tests/test_neural_invert.py','passed':51,'seconds':23.47},'specReview':'approved including recipe fixes','qualityReview':'approved including recipe fixes'},'meaning':'Successful descriptor prediction prerequisite only. Actual-DSP gradient usefulness and real-SFX likeness remain unestablished. No checkpoint promoted.'}
+Path('tools/multisynth/evaluations/forward-audio-pilot-v1-training-audit.json').write_text(json.dumps(output,indent=2)+'\n')

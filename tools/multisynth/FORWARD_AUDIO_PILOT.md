@@ -1,0 +1,53 @@
+# Forward-audio pilot after neural v2's listening rejection
+
+The user's current assessment rejects v2 as an audible improvement. Only charm2
+was actually close, and its winning audio was the previous Transfxr clip. The
+older Bfxr model remains the standard to beat; inverse-control regression alone
+has not reproduced its complete audio-training loop.
+
+The recovered old real-audio manifest contains 5,186 existing reference paths:
+4,669 train and 517 holdout, including 445 tagged sounds. These path memberships
+are provenance, not proof of audio-family separation. The new v2 experts have
+no equivalent unlabeled real-audio fine-tuning stage.
+
+## Prediction prerequisite
+
+Three independent models learn controls to the frozen 4,083-feature descriptor,
+with two 256-wide GELU hidden layers, AdamW and 40 epochs on MPS. Each engine has
+3,482 training and 614 validation rows. Normalization uses training rows only;
+nine descriptor groups get equal weight and peak gain is excluded. Random render
+anchors are unobserved, and this is not waveform synthesis.
+
+| Engine | Best epoch | Validation / training-mean baseline |
+| --- | ---: | ---: |
+| Bfxr | 39 | 0.520 |
+| Transfxr | 40 | 0.264 |
+| Pluckr | 39 | 0.376 |
+
+All three pass the predeclared prediction gate: total loss at most .8 of the
+training-mean baseline and envelope/pitch/voicing groups at most their baselines.
+CPU replay independently verifies every validation row, all reported group
+losses, exact train-only normalization, complete epoch counts and selected epochs.
+See the [training audit](evaluations/forward-audio-pilot-v1-training-audit.json).
+
+The checkpoints and adjacent strict-load reports are in the ignored run path
+`runs/forward-audio-pilot-v1/model/<engine>/`. No existing model, DSP source,
+feature extractor or listening gallery changes. Fifty-one forward/existing
+inverse tests passed before full training; both spec and quality reviews approved.
+
+## Actual-DSP prerequisite
+
+Next, a frozen 20-case source-engine probe uses three native sounds, nine tones
+and eight moving sounds from the completed paired benchmark. It starts at v2's
+known-source raw controls, optimizes only continuous controls through the frozen
+surrogate, and keeps categories and randomness fixed. Selection of the best
+state uses surrogate loss only. Exact actual-DSP before/after audio must then
+improve at least 15/20 actual feature losses and their mean, without losing
+previously reliable pitch. This gate is still not perceptual validation. Before executing the probe,
+supplemental safeguards are declared: retain any static pitch previously within
+one semitone and retain any previously correct moving-pitch direction. Report
+these separately; their failure also prevents promotion.
+
+No new listening round or checkpoint promotion is justified by prediction error
+alone. The purpose is to establish a trustworthy prerequisite for audio-loss
+inverse training and subsequent real-reference fine-tuning.

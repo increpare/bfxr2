@@ -33,10 +33,10 @@ validation gate, then actual-DSP before/after checks on fixed fresh controls.
   coverage, constant baseline, unsupported TEXT rejection, output overwrite
   prevention and checkpoint load mismatch. Test tiny actual-format shard data
   through one-epoch training/reload without writing old artifacts.
-- [ ] Spec review then quality review; fix findings before full training. Root
+- [x] Spec review then quality review; fix findings before full training. Root
   trains40epochs in existing venv on MPS with approved escalation if necessary.
   Preserve failure/non-passing gates and summaries without claim of likeness.
-- [ ] Root: only for predictive-gate-passing models, implement a separate
+- [ ] Root, with an isolated implementer: only for predictive-gate-passing models, implement a separate
   `forward_probe.py` with regression tests for fixed categorical/RNG anchors,
   frozen weights/gradient-through-unit, fresh output and actual-DSP score binding.
   Evaluate the20 frozen source-engine targets with100gradient steps,.01lr; save
