@@ -1,0 +1,250 @@
+{
+  "originalManifestSha256": "c91a5abfc61b172f055368ef0bcde42c8dc51f2c1ae21597cca40c4f5dba348d",
+  "reconciliation": "Feature code digest and persisted-byte/file bindings added after generation and before training. During generation the only features.py change added the code-digest constant; the extraction algorithm was unchanged. Replayed raw descriptors verify this.",
+  "engines": {
+    "Bfxr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Footsteppr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Transfxr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Birdr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Boomr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Bouncr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Breathr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Choirr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Clonkr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Crittr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Fractr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Glitchr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Jinglr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Machinr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Pluckr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Riftr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Rustlr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Signlr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Squishr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Swarmr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Whooshr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    },
+    "Zappr": {
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "uniqueParameters": 2048,
+      "replayedRows": [
+        0,
+        1024,
+        2047
+      ]
+    }
+  },
+  "replayed": 66,
+  "finalManifestSha256": "a12d9252905e499ccdd01401a277a2f4d5a90a6de2fd39c626483d17c9d4c23f"
+}

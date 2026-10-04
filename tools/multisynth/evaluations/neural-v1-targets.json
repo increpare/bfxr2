@@ -1,0 +1,113 @@
+{
+  "selection": "Twelve fixed tagged development references spanning tonal gestures, events, and textures; chosen before training results.",
+  "targets": [
+    {
+      "name": "attack/spinout.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/attack/spinout.wav",
+      "sha256": "63f22019f9cb29641090eaa86c67b1beb58f40462d53554a4bb5e9c526634b73",
+      "tag": "attack",
+      "durationSeconds": 0.7280478955007257,
+      "normalizedPcmSha256": "0414bc92428d6819db3cd800f9c5ced5e6df3ad23816e38ae7f4bf2f84f75b55",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "bird/Bird Sounds.WAV",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bird/Bird Sounds.WAV",
+      "sha256": "b7e6a6985e2182452977e32c60e7fc705cf80a36151c6d49f4f1139bffb34370",
+      "tag": "bird",
+      "durationSeconds": 0.35616780045351476,
+      "normalizedPcmSha256": "6e5cad723b223d8a4a8aaed6d05c73341c7259e243cfd83b49f2ee1ecd9adba6",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "card/bookClose.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/card/bookClose.ogg",
+      "sha256": "81e976532565f4372abd14e83d2684195fa548d0a28d345de221e56052454f32",
+      "tag": "card",
+      "durationSeconds": 0.23060416666666667,
+      "normalizedPcmSha256": "54483bc18aff6f55613053dfd531b9e5104a9556dd295625d18bd1a1c28945a1",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "computer/robo_talk.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/computer/robo_talk.wav",
+      "sha256": "405f8bbc7adcdae6815b249b1551423407f5b157947c386340faf161b94e6391",
+      "tag": "computer",
+      "durationSeconds": 0.893061224489796,
+      "normalizedPcmSha256": "91f233628e88e2ad7998725f2ecdfb0bcb77f01a62816059331038c39c74a256",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "die/charm2.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/die/charm2.wav",
+      "sha256": "d161711f9e872a84d289f26097f57028ef444959afd79c0233b74aef9f3ae24e",
+      "tag": "die",
+      "durationSeconds": 2.113968253968254,
+      "normalizedPcmSha256": "98971f210ae3659c11256c8d53e180be3165b73f6b227d62d3686d2f7ff514ce",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "explode/Bifun Jump.WAV",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/explode/Bifun Jump.WAV",
+      "sha256": "3711654774a0443a5decda6740d2584bcad6c7b7ec5147a6ffaf99d5ac2287e8",
+      "tag": "explode",
+      "durationSeconds": 0.8182766439909297,
+      "normalizedPcmSha256": "daf9eb9c0a5b24e7b25e3762b6169f37711a970af4556713e18dac3f7ec4a22e",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "footstep/footstep03.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep03.ogg",
+      "sha256": "a86756b9af9f370455ab47844239bb07fd1bee7a113068c91f0fcd9b72703fae",
+      "tag": "footstep",
+      "durationSeconds": 0.2690208333333333,
+      "normalizedPcmSha256": "f75ccc86211a7cadc2e545a033af9cfc198182985d8b79bb649ace3288d24f57",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "hit/PUNCH7.WAV",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/PUNCH7.WAV",
+      "sha256": "08e24c35923307421abe87b93b25a8cf70bca7af9788d5aa3eefdedbf3d83dfc",
+      "tag": "hit",
+      "durationSeconds": 0.3225396825396825,
+      "normalizedPcmSha256": "08ca30e7da2b94e0e1aef152f730b7c77db9f68d0ce84ab60ad49a37aaa7df44",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "laser/laserRetro_000.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/laserRetro_000.ogg",
+      "sha256": "2a203a007d24cc7e607eb8bec1d86bedba7f551911217ce2c4c1f31393aed32c",
+      "tag": "laser",
+      "durationSeconds": 0.23541950113378685,
+      "normalizedPcmSha256": "801645ab38cb08e543f707ddec146213fa35c7150cc2c76d7925a413c73adefb",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "motiv/UIMisc_Kalimba 3 Up_CB Sounddesign_APPlicable Sounds.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/motiv/UIMisc_Kalimba 3 Up_CB Sounddesign_APPlicable Sounds.wav",
+      "sha256": "0298f3405836720e064d1ff486f58fa032b03009d6f9e55e668b84e759dca360",
+      "tag": "motiv",
+      "durationSeconds": 0.5529791666666667,
+      "normalizedPcmSha256": "5904dfb6947f36f67505a0c4752623e8ce726fd5230de8dddee08eb7a6595709",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "select/savePoint.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/select/savePoint.wav",
+      "sha256": "2d12f6c922226d5213879739c2a09f67f27068463f41b29665f44d0cde761e1f",
+      "tag": "select",
+      "durationSeconds": 0.6696598639455782,
+      "normalizedPcmSha256": "48a9b9dfcfa28043470032bc411d5aaf152ec4eda4c50d1458126185b5997cff",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "sword/ma_sword3.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/sword/ma_sword3.wav",
+      "sha256": "7e9d6131b1748ccfdc059a9f6a37cd46c98230b1cecc256cd5ec038cd43e4e94",
+      "tag": "sword",
+      "durationSeconds": 0.26607709750566894,
+      "normalizedPcmSha256": "9ab762387d57ceee3c7ad4748026b73c5286d3d97cab462d986c108c8ed43c67",
+      "previouslyRatedReference": false
+    }
+  ]
+}
