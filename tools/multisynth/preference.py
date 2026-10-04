@@ -147,19 +147,23 @@ class TrainingData:
 
 
 def _raw_candidates(target,schema):
-    if schema == 2:
+    if schema >= 2:
         return target.get('candidates',[])
     return [target[role] for role in ('selected','bfxr','previous') if target.get(role)]
 
 
 def training_pairs(archives):
     """Validate archive bytes/PCM and preserve exact session-local label provenance."""
+    from .quick_feedback import validate_choice, choice_counts
+
     metric = PreferenceMetric()
     waves,descriptors,validated = {},{},set()
     rows,labels,groups,observations,provenance = [],[],[],[],[]
     summary = {'targets':0,'likenessRatings':0,'usefulnessRatings':0,'duplicateAudioAliases':0,
-               'conflictingAudioRatingGroups':0,'tiedPairs':0,'duplicateSessionPairs':0}
+               'conflictingAudioRatingGroups':0,'tiedPairs':0,'duplicateSessionPairs':0,
+               'directChoicePairs':0, **choice_counts([])}
     seen_pairs = set()
+    scalar_pairs = []
     def read_audio(root,audio):
         path = (root/audio['file']).resolve()
         if not path.is_relative_to(root.resolve()):
@@ -177,6 +181,28 @@ def training_pairs(archives):
         if pcm not in descriptors:
             descriptors[pcm] = features.describe(waves[pcm])
         return descriptors[pcm]
+    def add_pair(root, manifest, target, ref, a, b, value, source, choice=None):
+        key = (manifest['experimentId'],ref,*sorted((a[0],b[0])))
+        if key in seen_pairs:
+            summary['duplicateSessionPairs'] += 1
+            return
+        seen_pairs.add(key)
+        values = metric.raw_components(descriptor(ref),[descriptor(a[0]),descriptor(b[0])])
+        rows.append(values[0]-values[1]);labels.append(value);groups.append(ref)
+        observation = {'archive':root.name,'experimentId':manifest['experimentId'],
+                       'target':target['source']['name'],'referencePcmSha256':ref,
+                       'candidateA':a[1]['id'],'candidateB':b[1]['id'],
+                       'candidateAliasesA':a[3],'candidateAliasesB':b[3],
+                       'candidatePcmSha256A':a[0],'candidatePcmSha256B':b[0],
+                       'likenessA':a[2],'likenessB':b[2],
+                       'labelSource':source,'preferenceSign':int(np.sign(value)),
+                       'componentDifference':rows[-1].tolist()}
+        if choice is not None:
+            observation.update(choice=choice, usefulnessA=a[1].get('usefulness'),
+                               usefulnessB=b[1].get('usefulness'))
+            summary['directChoicePairs'] += 1
+        observations.append(observation)
+
     for archive in archives:
         root = Path(archive)
         manifest_bytes = (root/'manifest.json').read_bytes()
@@ -187,9 +213,10 @@ def training_pairs(archives):
             raise ValueError('Archived feedback checksum mismatch')
         raw = json.loads(raw_bytes)
         schema = raw.get('schemaVersion',1)
-        if schema not in (1,2) or raw['experimentId'] != manifest['experimentId']:
+        if (schema not in (1,2,3) or raw['experimentId'] != manifest['experimentId']
+                or manifest.get('schemaVersion',1) != schema):
             raise ValueError('Archived feedback schema/experiment mismatch')
-        label = 'likeness' if schema == 2 else 'rating'
+        label = 'likeness' if schema >= 2 else 'rating'
         raw_targets = {t['id']:t for t in raw['targets']}
         candidates = {c['id']:c for c in manifest['candidates']}
         if len(candidates) != len(manifest['candidates']):
@@ -212,7 +239,18 @@ def training_pairs(archives):
                 raw_by_id[c['id']] = c
             ids = ([c['id'] for c in target['candidates']] if 'candidates' in target else
                    [target[role] for role in ('selected','bfxr','previous') if target.get(role)])
-            audio_groups = {}
+            if schema == 3:
+                choice = validate_choice(raw_target.get('choice'), raw_by_id)
+                if (('choice' in raw_target) != ('choice' in target)
+                        or target.get('choice') != choice):
+                    raise ValueError('Archived choice differs from raw feedback')
+                validate_choice(choice, ids)
+                if choice is not None:
+                    summary['choices'] += 1
+                    summary['choiceKinds'][choice['kind']] += 1
+            else:
+                choice = None
+            audio_groups, by_id, pcm_aliases = {}, {}, {}
             for cid in dict.fromkeys(ids):
                 c = candidates[cid]
                 value = c.get(label)
@@ -220,12 +258,33 @@ def training_pairs(archives):
                     raise ValueError('Archived likeness differs from raw feedback')
                 if value is not None and (type(value) is not int or not 1 <= value <= 5):
                     raise ValueError('Invalid likeness rating')
+                if schema == 3:
+                    usefulness = c.get('usefulness')
+                    if raw_by_id[cid].get('usefulness') != usefulness:
+                        raise ValueError('Archived usefulness differs from raw feedback')
+                    if usefulness is not None and (type(usefulness) is not int or not 1 <= usefulness <= 5):
+                        raise ValueError('Invalid usefulness rating')
                 pcm = read_audio(root,c['audio'])
+                by_id[cid] = (pcm,c,value)
+                pcm_aliases.setdefault(pcm,[]).append(cid)
                 summary['usefulnessRatings'] += c.get('usefulness') is not None
                 if value is None:
                     continue
                 summary['likenessRatings'] += 1
                 audio_groups.setdefault(pcm,[]).append((c,value))
+            if choice is not None and choice['kind'] == 'best':
+                winner = choice['preferredCandidateIds'][0]
+                heard = choice['auditionedCandidateIds']
+                if winner in heard:
+                    a = by_id[winner]
+                    emitted = {a[0]}
+                    for cid in heard:
+                        b = by_id[cid]
+                        if b[0] in emitted:
+                            continue
+                        emitted.add(b[0])
+                        add_pair(root,manifest,target,ref,(*a,pcm_aliases[a[0]]),
+                                 (*b,pcm_aliases[b[0]]),1,'direct-choice',choice)
             rated = []
             for pcm,aliases in audio_groups.items():
                 summary['duplicateAudioAliases'] += len(aliases)-1
@@ -238,20 +297,10 @@ def training_pairs(archives):
                 if a[2] == b[2]:
                     summary['tiedPairs'] += 1
                     continue
-                key = (manifest['experimentId'],ref,*sorted((a[0],b[0])))
-                if key in seen_pairs:
-                    summary['duplicateSessionPairs'] += 1
-                    continue
-                seen_pairs.add(key)
-                values = metric.raw_components(descriptor(ref),[descriptor(a[0]),descriptor(b[0])])
-                rows.append(values[0]-values[1]);labels.append(a[2]-b[2]);groups.append(ref)
-                observations.append({'archive':root.name,'experimentId':manifest['experimentId'],
-                                     'target':target['source']['name'],'referencePcmSha256':ref,
-                                     'candidateA':a[1]['id'],'candidateB':b[1]['id'],
-                                     'candidateAliasesA':a[3],'candidateAliasesB':b[3],
-                                     'candidatePcmSha256A':a[0],'candidatePcmSha256B':b[0],
-                                     'likenessA':a[2],'likenessB':b[2],
-                                     'componentDifference':rows[-1].tolist()})
+                scalar_pairs.append((root,manifest,target,ref,a,b,a[2]-b[2]))
+    # Explicit heard choices reserve their session/PCM pairs before scalar labels.
+    for args in scalar_pairs:
+        add_pair(*args,'scalar-rating')
     summary['validatedAudioFiles'] = len(validated)
     summary['uniqueAudioPcm'] = len(waves)
     return TrainingData(np.asarray(rows).reshape(-1,len(NAMES)),np.asarray(labels),np.asarray(groups),

@@ -62,6 +62,20 @@ def test_gallery_can_explain_a_new_experiment_without_raw_html(tmp_path):
     assert 'A small development diagnostic' not in page
 
 
+def test_html_only_refresh_preserves_frozen_results_audio_and_experiment(tmp_path):
+    _, report, _, records, model = fixture(tmp_path)
+    results_path = report/'results.json'
+    results = json.loads(results_path.read_text())
+    # Formatting is part of the frozen artifact too: refreshing UI must not rewrite it.
+    results_path.write_text(json.dumps(results, separators=(',', ':')))
+    before = {p.relative_to(report):p.read_bytes() for p in report.rglob('*')
+              if p.is_file() and p.suffix in ('.json', '.wav')}
+    refreshed = export_coverage(report, records, results['metadata'], html_only=True)
+    assert refreshed == model
+    assert before == {p.relative_to(report):p.read_bytes() for p in report.rglob('*')
+                      if p.is_file() and p.suffix in ('.json', '.wav')}
+
+
 def test_archives_exact_pcm_raw_feedback_full_parameters_and_idempotency(tmp_path):
     raw,report,wave,_,model = fixture(tmp_path)
     out=tmp_path/'archive'

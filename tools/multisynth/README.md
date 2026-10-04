@@ -134,6 +134,11 @@ is submitted automatically.
 
 ## Retained human feedback and current research direction
 
+The current neural listening gallery has a [quick comparison mode](QUICK_LISTENING.md):
+one best-match choice per reference, automatic sequential playback, cached audio
+that restarts at zero, and optional detailed ratings. Schema-3 choices are
+preserved alongside older ratings and feed heard-only ordinal training pairs.
+
 The first listening pass averaged **2/5**, with **30/40** model selections rated
 1–2. This baseline is not perceptually successful. See [RESULTS.md](RESULTS.md)
 and [listening_data/README.md](listening_data/README.md) for the preserved data

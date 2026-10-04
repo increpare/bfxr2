@@ -47,7 +47,7 @@ def history(archives):
         candidates={c['id']:c for c in data['candidates']}
         for target in data['targets']:
             verify_archived_audio(archive,target['referenceAudio'])
-            if data.get('schemaVersion',1)==2:
+            if data.get('schemaVersion',1)>=2:
                 ids=[c['id'] for c in target['candidates']]
                 dimension='likeness'
             else:

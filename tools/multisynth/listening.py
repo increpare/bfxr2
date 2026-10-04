@@ -22,7 +22,7 @@ def retain_feedback(feedback_path, report, output):
     feedback_path, report, output = map(Path, (feedback_path, report, output))
     raw = feedback_path.read_bytes()
     feedback = json.loads(raw)
-    if feedback.get('schemaVersion') == 2:
+    if feedback.get('schemaVersion') in (2, 3):
         from .coverage_feedback import retain_coverage_feedback
         return retain_coverage_feedback(feedback_path, report, output)
     results = json.loads((report/'results.json').read_text())

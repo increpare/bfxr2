@@ -75,8 +75,8 @@ def _local_link(url, label):
     return f'<a href="{html.escape(url, quote=True)}">{html.escape(label)}</a>'
 
 
-def export_coverage(output, records, metadata):
-    """Write results.json and a standalone gallery beside existing audition WAVs."""
+def export_coverage(output, records, metadata, *, html_only=False):
+    """Write a standalone gallery; html_only preserves the frozen results file."""
     output = Path(output)
     model = coverage_model(output, records, metadata)
     esc = html.escape
@@ -98,9 +98,10 @@ def export_coverage(output, records, metadata):
             cards.append(f'<article><strong>{esc(candidate["label"])}</strong><p>{esc(candidate["synth"])}</p>{player(candidate["file"],candidate["label"])}{ingredients}{"".join(ratings)}{editor}</article>')
         shared = '<p>Exact audio aliases with the same render provenance share both ratings.</p>' if len({c['id'] for c in target['candidates']}) < len(target['candidates']) else ''
         note = f'<p>{esc(record["note"])}</p>' if record.get('note') else ''
-        sections.append(f'<section><h2>{name}</h2>{note}{shared}<div class="cards">{"".join(cards)}</div><label class="notes">Notes (optional)<textarea data-note="{tid}" rows="2" placeholder="What resembles the reference? What would work well in a game?"></textarea></label></section>')
+        sections.append(f'<section data-target="{tid}"><h2>{name}</h2>{note}{shared}<div class="cards">{"".join(cards)}</div><label class="notes">Notes (optional)<textarea data-note="{tid}" rows="2" placeholder="What resembles the reference? What would work well in a game?"></textarea></label></section>')
     encoded = json.dumps(model, allow_nan=False).replace('<', '\\u003c')
     script = Path(__file__).with_suffix('.js').read_text()
+    assets = Path(__file__).parent
     page = '''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Which recreations work?</title>
 <style>body{font:16px/1.5 system-ui,sans-serif;background:#111722;color:#edf0f8;margin:0;padding:28px}main{max-width:1600px;margin:auto}h1{margin-bottom:8px}header p{max-width:1000px;color:#c7d0df}section{margin:34px 0;border-top:1px solid #42506a;padding-top:20px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:14px}article{background:#1c2535;padding:18px;border:1px solid #42506a;border-radius:10px;min-width:0}article.reference{background:#263449}article strong{font-size:18px}article p{font-size:14px;color:#c7d0df;margin:6px 0 12px}audio{width:100%;margin:8px 0}fieldset{border:0;padding:10px 0;margin:0}legend{font-size:14px;font-weight:600}fieldset label{display:inline-block;margin:2px}input{accent-color:#8bc7ff}button{cursor:pointer;background:#d5e8ff;border:0;border-radius:5px;padding:7px 10px;color:#132033}fieldset button{margin-left:6px}textarea{box-sizing:border-box;width:100%;background:#0d1320;color:#edf0f8;border:1px solid #596880;border-radius:6px;padding:10px;font:inherit}.notes{display:block;margin-top:18px}#feedback-json{margin-top:15px;font:12px/1.4 ui-monospace,monospace}a{color:#a6d4ff}:focus-visible{outline:3px solid #ffdb85;outline-offset:2px}</style><main><header><h1>Which recreations work?</h1>
 <p>A small development diagnostic on references already reviewed, not an unseen test or evidence of a quality win.</p>
@@ -115,21 +116,30 @@ def export_coverage(output, records, metadata):
     if metadata.get('collectionUrl'):
         page += '<p>'+_local_link(metadata['collectionUrl'], 'Download new Soundboard choices')+'</p>'
     page += ''.join(sections)
-    page += '<section><h2>Your feedback JSON</h2><p>Only references with ratings or notes are submitted. Unrated dimensions remain null. Nothing is sent automatically.</p><p id="feedback-status" role="status"></p><button type="button" id="copy-feedback">Copy feedback JSON</button> <button type="button" id="select-feedback">Select JSON</button><textarea id="feedback-json" readonly rows="14" aria-label="Feedback JSON" spellcheck="false"></textarea></section>'
-    page += f'<script type="application/json" id="feedback-data">{encoded}</script><script>{script}</script></main></html>'
-    (output/'results.json').write_text(json.dumps({'metadata':metadata,'results':records}, indent=2, allow_nan=False)+'\n')
+    page += '<section><h2>Your feedback JSON</h2><p>Only references with choices, ratings or notes are submitted. Unrated dimensions remain null. Nothing is sent automatically.</p><p id="feedback-status" role="status"></p><button type="button" id="copy-feedback">Copy feedback JSON</button> <button type="button" id="select-feedback">Select JSON</button><textarea id="feedback-json" readonly rows="14" aria-label="Feedback JSON" spellcheck="false"></textarea></section>'
+    page = page.replace('<main>', '<main id="detailed-listening"><button type="button" id="back-to-quick">← Quick listening</button>', 1)
+    page += '</main>'+ (assets/'quick_listening.html').read_text()
+    page += '<style>'+(assets/'quick_listening.css').read_text()+'</style>'
+    page += f'<script type="application/json" id="feedback-data">{encoded}</script>'
+    for source in ['quick_choice.js', 'coverage_feedback.js', 'quick_audio.js', 'quick_listening.js']:
+        page += '<script>'+(script if source == 'coverage_feedback.js' else (assets/source).read_text())+'</script>'
+    page += '</html>'
+    if not html_only:
+        (output/'results.json').write_text(json.dumps({'metadata':metadata,'results':records}, indent=2, allow_nan=False)+'\n')
     (output/'index.html').write_text(page)
     return model
 
 
 def retain_coverage_feedback(feedback_path, report, output):
     """Validate every submitted identity before atomically retaining PCM16 audio."""
+    from .quick_feedback import validate_choice, choice_counts
+
     feedback_path, report, output = map(Path, (feedback_path, report, output))
     raw = feedback_path.read_bytes()
     feedback = json.loads(raw)
     results = json.loads((report/'results.json').read_text())
     model = coverage_model(report, results['results'], results['metadata'])
-    if (feedback.get('schemaVersion') != 2 or feedback.get('experimentId') != model['experimentId'] or
+    if (feedback.get('schemaVersion') not in (2, 3) or feedback.get('experimentId') != model['experimentId'] or
             feedback.get('provenance') != model['provenance']):
         raise ValueError('Feedback experiment/provenance does not match this report')
     if not isinstance(feedback.get('targets'), list):
@@ -161,6 +171,9 @@ def retain_coverage_feedback(feedback_path, report, output):
         observations = target.get('candidates')
         if not isinstance(observations, list) or len(observations) != len(original['candidates']):
             raise ValueError('Candidate identities differ from report')
+        choice = validate_choice(target.get('choice'), [c['id'] for c in original['candidates']])
+        if feedback['schemaVersion'] == 2 and choice is not None:
+            raise ValueError('Listening choices require schema 3')
         retained = {'id':tid,'source':record['source'],'note':target.get('note',''),
                     'referenceAudio':audio(_audio_path(report,record['folder'],'target.wav')),'candidates':[]}
         for observation, identity, candidate in zip(observations,original['candidates'],record['candidates']):
@@ -178,12 +191,16 @@ def retain_coverage_feedback(feedback_path, report, output):
             else:
                 candidates[cid] = {**candidate, **identity, 'targetId':tid, **ratings,
                                    'audio':audio(_audio_path(report,record['folder'],candidate['file']))}
+        if feedback['schemaVersion'] == 3 and 'choice' in target:
+            retained['choice'] = choice
         targets.append(retained)
     summary = {'targets':len(targets),'uniqueRatedCandidates':sum(
         c['likeness'] is not None or c['usefulness'] is not None for c in candidates.values()),
         'likenessRatings':sum(c['likeness'] is not None for c in candidates.values()),
         'usefulnessRatings':sum(c['usefulness'] is not None for c in candidates.values())}
-    manifest = {'schemaVersion':2,'experimentId':model['experimentId'],'feedbackSha256':_digest(raw),
+    if feedback['schemaVersion'] == 3:
+        summary.update(choice_counts(t.get('choice') for t in targets))
+    manifest = {'schemaVersion':feedback['schemaVersion'],'experimentId':model['experimentId'],'feedbackSha256':_digest(raw),
                 'provenance':model['provenance'],'summary':summary,'targets':targets,'candidates':list(candidates.values()),
                 'ratingMeaning':{'likeness':'Human likeness to reference','usefulness':'Useful/fun game sound'},
                 'audioMeaning':'Exact decoded PCM from audition WAVs, losslessly stored as PCM16 FLAC'}
