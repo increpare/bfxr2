@@ -113,7 +113,7 @@ def approximate(model,metadata,wave,renderer,original,starts=4,budget=128,bfxr_b
     baseline=original.approximate(wave,objective,budget=bfxr_budget,seed=seed)
     if not candidates:
         return {'raw':None,'neural':None,'selected':baseline,'original':baseline,
-                'allRaw':[],'failures':failures,
+                'allRaw':[],'allRefined':[],'failures':failures,
                 'evaluations':len(proposals)+baseline['provenance']['evaluations']}
     raw = min(candidates,key=lambda r:r['score'])
     # Each engine supplies a prediction; choose distinct engines for refinement.
@@ -127,7 +127,7 @@ def approximate(model,metadata,wave,renderer,original,starts=4,budget=128,bfxr_b
              for i,row in enumerate(initial)]
     choices=rank_candidates(refined+[baseline])
     return {'raw':raw,'neural':min(refined,key=lambda r:r['score']),**choices,
-            'allRaw':candidates,'failures':failures,
+            'allRaw':candidates,'allRefined':refined,'failures':failures,
             'evaluations':len(proposals)+len(initial)*budget+baseline['provenance']['evaluations']}
 
 

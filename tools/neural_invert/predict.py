@@ -26,11 +26,26 @@ def load_model(path):
             raise ValueError('Checkpoint feature normalization is invalid')
     if set(metadata['engines']) != set(metadata['specs']):
         raise ValueError('Checkpoint engine schemas disagree')
-    model = MultiSynthModel(metadata['specs'], DIM, metadata.get('hidden', 256))
+    model = MultiSynthModel(metadata['specs'], DIM, metadata.get('hidden', 256),head_mode=metadata.get('headMode','generator'))
     model.load_state_dict(checkpoint['model'], strict=True); model.eval()
     metadata = dict(metadata, checkpointHash=hashlib.sha256(path.read_bytes()).hexdigest(),
                     checkpointEpoch=checkpoint.get('epoch'))
     return model, metadata
+
+
+def categorical_proposals(logits,controls,count):
+    """Most likely categorical vector plus plausible audible discrete alternatives."""
+    if count<1:raise ValueError('At least one categorical proposal required')
+    base=[int(logit[0].argmax()) for logit in logits];rows=[base]
+    alternatives=[]
+    primary=[i for i,c in enumerate(controls) if not c['name'].endswith('.curve')]
+    for i in primary or range(len(controls)):
+        values=logits[i][0].log_softmax(-1);ranks=values.argsort(descending=True).tolist()
+        for rank in ranks[1:count]:
+            row=base.copy();row[i]=rank
+            alternatives.append((float(values[base[i]]-values[rank]),row))
+    rows.extend(row for _,row in sorted(alternatives,key=lambda v:v[0])[:count-1])
+    return rows
 
 
 def predict(model, metadata, wave, renderer, per_synth=2):
@@ -53,17 +68,21 @@ def predict(model, metadata, wave, renderer, per_synth=2):
             spec = metadata['specs'][name]; schema = ControlSchema(spec); head = model.heads[name]
             probabilities = head.generator(embedding).softmax(-1)[0]
             ranks = probabilities.argsort(descending=True)[:min(per_synth, len(spec['presets']))].tolist()
-            for rank, generator_index in enumerate(ranks):
+            acoustic=metadata.get('headMode','generator')=='acoustic'
+            acoustic_prediction=head(embedding) if acoustic else None
+            proposals=categorical_proposals(acoustic_prediction['categorical'],schema.categorical,per_synth) if acoustic else None
+            for rank, generator_index in enumerate(([ranks[0]]*len(proposals)) if acoustic else ranks):
                 generator = spec['presets'][generator_index]
-                prediction = head(embedding, torch.tensor([generator_index], device=device))
+                prediction = acoustic_prediction if acoustic else head(embedding, torch.tensor([generator_index], device=device))
                 unit = prediction['continuous'][0].cpu().numpy()
-                categorical = [int(logits[0].argmax()) for logits in prediction['categorical']]
+                categorical = proposals[rank] if acoustic else [int(logits[0].argmax()) for logits in prediction['categorical']]
                 # Anchors contribute TEXT and randomness only: all mutable controls
                 # are overwritten by neural predictions with global decoding.
                 seed = 20261004+generator_index
                 anchor = renderer.sample(name, generator, seed)
                 params = schema.decode(unit, categorical, anchor)
                 provenance = {'method': 'neural-global-controls', 'neuralRaw': True, 'generator': generator,
+                              'headMode':metadata.get('headMode','generator'),'categoricalProposal':categorical,
                               'generatorProbability': float(probabilities[generator_index]), 'proposalRank': rank,
                               'checkpointHash': metadata.get('checkpointHash'), 'anchorSeed': seed,
                               'fixedText': schema.fixed_text, 'fixedRandomness': schema.fixed_randomness,

@@ -1,0 +1,51 @@
+import hashlib,json
+from pathlib import Path
+import numpy as np
+import soundfile as sf
+import torch
+from match.objective import MatchObjective
+from match.renderer import BfxrRenderer
+from multisynth.renderer import Renderer
+from neural_invert.experiment import audition_pcm
+from neural_invert.evaluate import pitch_summary,digest
+
+torch.set_num_threads(1)
+root=Path('tools/multisynth/runs/neural-v2/cli-final-smoke')
+report=json.loads((root/'result.json').read_text())
+target,rate=sf.read(root/'target.wav',dtype='float32')
+assert rate==44100
+objective=MatchObjective(target)
+checks=[]
+with Renderer() as renderer,BfxrRenderer(jobs=1) as bfxr:
+ assert renderer.inventory['sourceHash']==report['metadata']['sourceHash']
+ for role in ('raw','neural','selected','original'):
+  row=report[role]
+  if row is None:continue
+  if row.get('expert')=='original-bfxr':wave=bfxr.render(row['params'],seed=row['seed'])
+  else:
+   params,wave=renderer.render(row['synth'],row['params'],row['seed'])
+   assert params==row['params']
+  expected=audition_pcm(wave)
+  saved,rate=sf.read(root/(role+'.wav'),dtype='float32')
+  assert rate==44100 and np.array_equal(expected,saved),(role,'PCM')
+  provenance=row['provenance']
+  assert digest(root/(role+'.wav'))==provenance['auditionWavSha256']
+  score=float(objective.score_batch([saved])[0])
+  assert abs(score-provenance['auditionMatchObjectiveScore'])<1e-8
+  assert pitch_summary(saved)==provenance['auditionPitchDiagnostic']
+  rank=provenance.get('selectorRanking')
+  if rank:
+   chosen=[r for r in rank if r['chosen']]
+   assert len(chosen)==1 and chosen[0]['eligible']
+   assert chosen[0]['synth']==row['synth'] and chosen[0]['seed']==row['seed']
+  checks.append({'role':role,'synth':row['synth'],'exactEditableControlReplay':True,
+                 'auditionWavSha256':digest(root/(role+'.wav')),'auditionScore':score,
+                 'searchScoreRetained':row['score']})
+for key,path in [('modelSha256','tools/multisynth/runs/neural-v2/acoustic-model/best.pt'),
+                 ('selectorModelSha256','tools/multisynth/models/preference-neural-v2.json')]:
+ assert digest(path)==report['metadata'][key]
+out={'complete':True,'scope':'Current single-sound CLI, actual DSP controls -> one PCM16 audition transform -> exact exported audio and scores; reduced smoke budgets are not quality evaluation.',
+     'runMetadata':report['metadata'],'resultJsonSha256':digest(root/'result.json'),
+     'auditCodeSha256':digest(__file__),'checks':checks}
+Path('tools/multisynth/evaluations/neural-v2-cli-verification.json').write_text(json.dumps(out,indent=2)+'\n')
+print(json.dumps({'complete':True,'exactRoles':len(checks)}))

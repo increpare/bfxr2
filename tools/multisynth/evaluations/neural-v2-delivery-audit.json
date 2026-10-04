@@ -1,0 +1,1152 @@
+{
+  "audit": "neural-v2-five-reference-delivery",
+  "createdUtc": "2026-10-04T16:56:02.010170+00:00",
+  "artifact": "tools/multisynth/runs/neural-v2-quick",
+  "resultsSha256": "ad7cf3033c5820afaf4a5c8101507917cc3e0cd1c826a738b7eab0a6b98982e6",
+  "manifestSha256": "4dc5d40ad6c8cf26a56fef5ae5fb23dc3b64bfea465bfe6bd9a9ee8fc523cf19",
+  "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+  "selectorModelSha256": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+  "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+  "checksPassed": 199,
+  "checksTotal": 199,
+  "complete": true,
+  "errors": [],
+  "checks": [
+    {
+      "check": "manifest/results metadata identical",
+      "passed": true
+    },
+    {
+      "check": "complete five-reference artifact",
+      "passed": true
+    },
+    {
+      "check": "neural checkpoint hash",
+      "passed": true
+    },
+    {
+      "check": "selector checkpoint hash",
+      "passed": true
+    },
+    {
+      "check": "frozen target manifest hash",
+      "passed": true
+    },
+    {
+      "check": "original checkpoint hash",
+      "passed": true
+    },
+    {
+      "check": "selector policy matches executing code",
+      "passed": true
+    },
+    {
+      "check": "current DSP hash matches generated artifact",
+      "passed": true
+    },
+    {
+      "check": "001 report/results identical",
+      "passed": true
+    },
+    {
+      "check": "001 frozen original source hash",
+      "passed": true
+    },
+    {
+      "check": "001 reference canonical format",
+      "passed": true
+    },
+    {
+      "check": "001 exact archived heard reference PCM",
+      "passed": true
+    },
+    {
+      "check": "001 raw canonical export format",
+      "passed": true
+    },
+    {
+      "check": "001 raw actual audition WAV hash",
+      "passed": true
+    },
+    {
+      "check": "001 raw recomputed actual audition score",
+      "passed": true
+    },
+    {
+      "check": "001 raw recomputed actual audition pitch",
+      "passed": true
+    },
+    {
+      "check": "001 raw saved controls canonical",
+      "passed": true
+    },
+    {
+      "check": "001 raw preset replay matches exact saved PCM",
+      "passed": true
+    },
+    {
+      "check": "001 raw replayed DSP search score",
+      "passed": true
+    },
+    {
+      "check": "001 selected canonical export format",
+      "passed": true
+    },
+    {
+      "check": "001 selected actual audition WAV hash",
+      "passed": true
+    },
+    {
+      "check": "001 selected recomputed actual audition score",
+      "passed": true
+    },
+    {
+      "check": "001 selected recomputed actual audition pitch",
+      "passed": true
+    },
+    {
+      "check": "001 selected saved controls canonical",
+      "passed": true
+    },
+    {
+      "check": "001 selected preset replay matches exact saved PCM",
+      "passed": true
+    },
+    {
+      "check": "001 selected replayed DSP search score",
+      "passed": true
+    },
+    {
+      "check": "001 selected exactly one eligible chosen ranking row",
+      "passed": true
+    },
+    {
+      "check": "001 selected chosen ranking identity matches export",
+      "passed": true
+    },
+    {
+      "check": "001 selected actual PCM selector score",
+      "passed": true
+    },
+    {
+      "check": "001 selected actual PCM coarse pitch penalty",
+      "passed": true
+    },
+    {
+      "check": "001 selected selected aggregate score",
+      "passed": true
+    },
+    {
+      "check": "001 selected minimum eligible complete-pool ranking",
+      "passed": true
+    },
+    {
+      "check": "001 selected complete pool ranking size",
+      "passed": true
+    },
+    {
+      "check": "001 selected eligibility count follows matching-register policy",
+      "passed": true
+    },
+    {
+      "check": "001 original canonical export format",
+      "passed": true
+    },
+    {
+      "check": "001 original actual audition WAV hash",
+      "passed": true
+    },
+    {
+      "check": "001 original recomputed actual audition score",
+      "passed": true
+    },
+    {
+      "check": "001 original recomputed actual audition pitch",
+      "passed": true
+    },
+    {
+      "check": "001 original preset replay matches exact saved PCM",
+      "passed": true
+    },
+    {
+      "check": "001 original replayed DSP search score",
+      "passed": true
+    },
+    {
+      "check": "001 previous canonical export format",
+      "passed": true
+    },
+    {
+      "check": "001 previous correct historical winner ID",
+      "passed": true
+    },
+    {
+      "check": "001 previous correct historical experiment",
+      "passed": true
+    },
+    {
+      "check": "001 previous exact archived winner PCM",
+      "passed": true
+    },
+    {
+      "check": "001 previous archived samples equal",
+      "passed": true
+    },
+    {
+      "check": "001 previous unchanged archived controls/seed",
+      "passed": true
+    },
+    {
+      "check": "002 report/results identical",
+      "passed": true
+    },
+    {
+      "check": "002 frozen original source hash",
+      "passed": true
+    },
+    {
+      "check": "002 reference canonical format",
+      "passed": true
+    },
+    {
+      "check": "002 exact archived heard reference PCM",
+      "passed": true
+    },
+    {
+      "check": "002 raw canonical export format",
+      "passed": true
+    },
+    {
+      "check": "002 raw actual audition WAV hash",
+      "passed": true
+    },
+    {
+      "check": "002 raw recomputed actual audition score",
+      "passed": true
+    },
+    {
+      "check": "002 raw recomputed actual audition pitch",
+      "passed": true
+    },
+    {
+      "check": "002 raw saved controls canonical",
+      "passed": true
+    },
+    {
+      "check": "002 raw preset replay matches exact saved PCM",
+      "passed": true
+    },
+    {
+      "check": "002 raw replayed DSP search score",
+      "passed": true
+    },
+    {
+      "check": "002 selected canonical export format",
+      "passed": true
+    },
+    {
+      "check": "002 selected actual audition WAV hash",
+      "passed": true
+    },
+    {
+      "check": "002 selected recomputed actual audition score",
+      "passed": true
+    },
+    {
+      "check": "002 selected recomputed actual audition pitch",
+      "passed": true
+    },
+    {
+      "check": "002 selected preset replay matches exact saved PCM",
+      "passed": true
+    },
+    {
+      "check": "002 selected replayed DSP search score",
+      "passed": true
+    },
+    {
+      "check": "002 selected exactly one eligible chosen ranking row",
+      "passed": true
+    },
+    {
+      "check": "002 selected chosen ranking identity matches export",
+      "passed": true
+    },
+    {
+      "check": "002 selected actual PCM selector score",
+      "passed": true
+    },
+    {
+      "check": "002 selected actual PCM coarse pitch penalty",
+      "passed": true
+    },
+    {
+      "check": "002 selected selected aggregate score",
+      "passed": true
+    },
+    {
+      "check": "002 selected minimum eligible complete-pool ranking",
+      "passed": true
+    },
+    {
+      "check": "002 selected complete pool ranking size",
+      "passed": true
+    },
+    {
+      "check": "002 selected eligibility count follows matching-register policy",
+      "passed": true
+    },
+    {
+      "check": "002 original canonical export format",
+      "passed": true
+    },
+    {
+      "check": "002 original actual audition WAV hash",
+      "passed": true
+    },
+    {
+      "check": "002 original recomputed actual audition score",
+      "passed": true
+    },
+    {
+      "check": "002 original recomputed actual audition pitch",
+      "passed": true
+    },
+    {
+      "check": "002 original preset replay matches exact saved PCM",
+      "passed": true
+    },
+    {
+      "check": "002 original replayed DSP search score",
+      "passed": true
+    },
+    {
+      "check": "002 previous canonical export format",
+      "passed": true
+    },
+    {
+      "check": "002 previous correct historical winner ID",
+      "passed": true
+    },
+    {
+      "check": "002 previous correct historical experiment",
+      "passed": true
+    },
+    {
+      "check": "002 previous exact archived winner PCM",
+      "passed": true
+    },
+    {
+      "check": "002 previous archived samples equal",
+      "passed": true
+    },
+    {
+      "check": "002 previous unchanged archived controls/seed",
+      "passed": true
+    },
+    {
+      "check": "003 report/results identical",
+      "passed": true
+    },
+    {
+      "check": "003 frozen original source hash",
+      "passed": true
+    },
+    {
+      "check": "003 reference canonical format",
+      "passed": true
+    },
+    {
+      "check": "003 exact archived heard reference PCM",
+      "passed": true
+    },
+    {
+      "check": "003 raw canonical export format",
+      "passed": true
+    },
+    {
+      "check": "003 raw actual audition WAV hash",
+      "passed": true
+    },
+    {
+      "check": "003 raw recomputed actual audition score",
+      "passed": true
+    },
+    {
+      "check": "003 raw recomputed actual audition pitch",
+      "passed": true
+    },
+    {
+      "check": "003 raw saved controls canonical",
+      "passed": true
+    },
+    {
+      "check": "003 raw preset replay matches exact saved PCM",
+      "passed": true
+    },
+    {
+      "check": "003 raw replayed DSP search score",
+      "passed": true
+    },
+    {
+      "check": "003 selected canonical export format",
+      "passed": true
+    },
+    {
+      "check": "003 selected actual audition WAV hash",
+      "passed": true
+    },
+    {
+      "check": "003 selected recomputed actual audition score",
+      "passed": true
+    },
+    {
+      "check": "003 selected recomputed actual audition pitch",
+      "passed": true
+    },
+    {
+      "check": "003 selected saved controls canonical",
+      "passed": true
+    },
+    {
+      "check": "003 selected preset replay matches exact saved PCM",
+      "passed": true
+    },
+    {
+      "check": "003 selected replayed DSP search score",
+      "passed": true
+    },
+    {
+      "check": "003 selected exactly one eligible chosen ranking row",
+      "passed": true
+    },
+    {
+      "check": "003 selected chosen ranking identity matches export",
+      "passed": true
+    },
+    {
+      "check": "003 selected actual PCM selector score",
+      "passed": true
+    },
+    {
+      "check": "003 selected actual PCM coarse pitch penalty",
+      "passed": true
+    },
+    {
+      "check": "003 selected selected aggregate score",
+      "passed": true
+    },
+    {
+      "check": "003 selected minimum eligible complete-pool ranking",
+      "passed": true
+    },
+    {
+      "check": "003 selected complete pool ranking size",
+      "passed": true
+    },
+    {
+      "check": "003 selected eligibility count follows matching-register policy",
+      "passed": true
+    },
+    {
+      "check": "003 original canonical export format",
+      "passed": true
+    },
+    {
+      "check": "003 original actual audition WAV hash",
+      "passed": true
+    },
+    {
+      "check": "003 original recomputed actual audition score",
+      "passed": true
+    },
+    {
+      "check": "003 original recomputed actual audition pitch",
+      "passed": true
+    },
+    {
+      "check": "003 original preset replay matches exact saved PCM",
+      "passed": true
+    },
+    {
+      "check": "003 original replayed DSP search score",
+      "passed": true
+    },
+    {
+      "check": "003 previous canonical export format",
+      "passed": true
+    },
+    {
+      "check": "003 previous correct historical winner ID",
+      "passed": true
+    },
+    {
+      "check": "003 previous correct historical experiment",
+      "passed": true
+    },
+    {
+      "check": "003 previous exact archived winner PCM",
+      "passed": true
+    },
+    {
+      "check": "003 previous archived samples equal",
+      "passed": true
+    },
+    {
+      "check": "003 previous unchanged archived controls/seed",
+      "passed": true
+    },
+    {
+      "check": "004 report/results identical",
+      "passed": true
+    },
+    {
+      "check": "004 frozen original source hash",
+      "passed": true
+    },
+    {
+      "check": "004 reference canonical format",
+      "passed": true
+    },
+    {
+      "check": "004 exact archived heard reference PCM",
+      "passed": true
+    },
+    {
+      "check": "004 raw canonical export format",
+      "passed": true
+    },
+    {
+      "check": "004 raw actual audition WAV hash",
+      "passed": true
+    },
+    {
+      "check": "004 raw recomputed actual audition score",
+      "passed": true
+    },
+    {
+      "check": "004 raw recomputed actual audition pitch",
+      "passed": true
+    },
+    {
+      "check": "004 raw saved controls canonical",
+      "passed": true
+    },
+    {
+      "check": "004 raw preset replay matches exact saved PCM",
+      "passed": true
+    },
+    {
+      "check": "004 raw replayed DSP search score",
+      "passed": true
+    },
+    {
+      "check": "004 selected canonical export format",
+      "passed": true
+    },
+    {
+      "check": "004 selected actual audition WAV hash",
+      "passed": true
+    },
+    {
+      "check": "004 selected recomputed actual audition score",
+      "passed": true
+    },
+    {
+      "check": "004 selected recomputed actual audition pitch",
+      "passed": true
+    },
+    {
+      "check": "004 selected saved controls canonical",
+      "passed": true
+    },
+    {
+      "check": "004 selected preset replay matches exact saved PCM",
+      "passed": true
+    },
+    {
+      "check": "004 selected replayed DSP search score",
+      "passed": true
+    },
+    {
+      "check": "004 selected exactly one eligible chosen ranking row",
+      "passed": true
+    },
+    {
+      "check": "004 selected chosen ranking identity matches export",
+      "passed": true
+    },
+    {
+      "check": "004 selected actual PCM selector score",
+      "passed": true
+    },
+    {
+      "check": "004 selected actual PCM coarse pitch penalty",
+      "passed": true
+    },
+    {
+      "check": "004 selected selected aggregate score",
+      "passed": true
+    },
+    {
+      "check": "004 selected minimum eligible complete-pool ranking",
+      "passed": true
+    },
+    {
+      "check": "004 selected complete pool ranking size",
+      "passed": true
+    },
+    {
+      "check": "004 selected eligibility count follows matching-register policy",
+      "passed": true
+    },
+    {
+      "check": "004 original canonical export format",
+      "passed": true
+    },
+    {
+      "check": "004 original actual audition WAV hash",
+      "passed": true
+    },
+    {
+      "check": "004 original recomputed actual audition score",
+      "passed": true
+    },
+    {
+      "check": "004 original recomputed actual audition pitch",
+      "passed": true
+    },
+    {
+      "check": "004 original preset replay matches exact saved PCM",
+      "passed": true
+    },
+    {
+      "check": "004 original replayed DSP search score",
+      "passed": true
+    },
+    {
+      "check": "004 previous canonical export format",
+      "passed": true
+    },
+    {
+      "check": "004 previous correct historical winner ID",
+      "passed": true
+    },
+    {
+      "check": "004 previous correct historical experiment",
+      "passed": true
+    },
+    {
+      "check": "004 previous exact archived winner PCM",
+      "passed": true
+    },
+    {
+      "check": "004 previous archived samples equal",
+      "passed": true
+    },
+    {
+      "check": "004 previous unchanged archived controls/seed",
+      "passed": true
+    },
+    {
+      "check": "005 report/results identical",
+      "passed": true
+    },
+    {
+      "check": "005 frozen original source hash",
+      "passed": true
+    },
+    {
+      "check": "005 reference canonical format",
+      "passed": true
+    },
+    {
+      "check": "005 exact archived heard reference PCM",
+      "passed": true
+    },
+    {
+      "check": "005 raw canonical export format",
+      "passed": true
+    },
+    {
+      "check": "005 raw actual audition WAV hash",
+      "passed": true
+    },
+    {
+      "check": "005 raw recomputed actual audition score",
+      "passed": true
+    },
+    {
+      "check": "005 raw recomputed actual audition pitch",
+      "passed": true
+    },
+    {
+      "check": "005 raw saved controls canonical",
+      "passed": true
+    },
+    {
+      "check": "005 raw preset replay matches exact saved PCM",
+      "passed": true
+    },
+    {
+      "check": "005 raw replayed DSP search score",
+      "passed": true
+    },
+    {
+      "check": "005 selected canonical export format",
+      "passed": true
+    },
+    {
+      "check": "005 selected actual audition WAV hash",
+      "passed": true
+    },
+    {
+      "check": "005 selected recomputed actual audition score",
+      "passed": true
+    },
+    {
+      "check": "005 selected recomputed actual audition pitch",
+      "passed": true
+    },
+    {
+      "check": "005 selected saved controls canonical",
+      "passed": true
+    },
+    {
+      "check": "005 selected preset replay matches exact saved PCM",
+      "passed": true
+    },
+    {
+      "check": "005 selected replayed DSP search score",
+      "passed": true
+    },
+    {
+      "check": "005 selected exactly one eligible chosen ranking row",
+      "passed": true
+    },
+    {
+      "check": "005 selected chosen ranking identity matches export",
+      "passed": true
+    },
+    {
+      "check": "005 selected actual PCM selector score",
+      "passed": true
+    },
+    {
+      "check": "005 selected actual PCM coarse pitch penalty",
+      "passed": true
+    },
+    {
+      "check": "005 selected selected aggregate score",
+      "passed": true
+    },
+    {
+      "check": "005 selected minimum eligible complete-pool ranking",
+      "passed": true
+    },
+    {
+      "check": "005 selected complete pool ranking size",
+      "passed": true
+    },
+    {
+      "check": "005 selected eligibility count follows matching-register policy",
+      "passed": true
+    },
+    {
+      "check": "005 original canonical export format",
+      "passed": true
+    },
+    {
+      "check": "005 original actual audition WAV hash",
+      "passed": true
+    },
+    {
+      "check": "005 original recomputed actual audition score",
+      "passed": true
+    },
+    {
+      "check": "005 original recomputed actual audition pitch",
+      "passed": true
+    },
+    {
+      "check": "005 original preset replay matches exact saved PCM",
+      "passed": true
+    },
+    {
+      "check": "005 original replayed DSP search score",
+      "passed": true
+    },
+    {
+      "check": "005 previous canonical export format",
+      "passed": true
+    },
+    {
+      "check": "005 previous correct historical winner ID",
+      "passed": true
+    },
+    {
+      "check": "005 previous correct historical experiment",
+      "passed": true
+    },
+    {
+      "check": "005 previous exact archived winner PCM",
+      "passed": true
+    },
+    {
+      "check": "005 previous archived samples equal",
+      "passed": true
+    },
+    {
+      "check": "005 previous unchanged archived controls/seed",
+      "passed": true
+    },
+    {
+      "check": "source annotations copied verbatim from hash-bound frozen parent manifest",
+      "passed": true
+    },
+    {
+      "check": "HTML feedback data matches actual saved gallery identities and audio bytes",
+      "passed": true
+    }
+  ],
+  "results": [
+    {
+      "folder": "001",
+      "name": "attack/spinout.wav",
+      "sourcePreviouslyRatedFlag": false,
+      "referencePcmSha256": "65846b1877c418e7f6cc6f8a1a588979162674aa1d905bb930fd97588c20d69f",
+      "sourceNormalizedPcmSha256": "0414bc92428d6819db3cd800f9c5ced5e6df3ad23816e38ae7f4bf2f84f75b55",
+      "candidates": [
+        {
+          "role": "raw",
+          "synth": "Rustlr",
+          "frames": 56626,
+          "replayedPcmEqual": true,
+          "auditionScore": 5.264901614656214,
+          "searchScore": 5.264697143818526
+        },
+        {
+          "role": "selected",
+          "synth": "Fractr",
+          "frames": 89340,
+          "replayedPcmEqual": true,
+          "auditionScore": 9.518058634408458,
+          "searchScore": 9.488688702440365,
+          "preferenceScore": 2.302132780392967,
+          "coarsePitchPenalty": 0.24771071965136582,
+          "referencePitch": {
+            "activeFrames": 59,
+            "voicedFrames": 52,
+            "voicedFraction": 0.8813559412956238,
+            "medianHz": 1948.54638671875
+          },
+          "selectedPitch": {
+            "activeFrames": 171,
+            "voicedFrames": 117,
+            "voicedFraction": 0.6842105388641357,
+            "medianHz": 3266.667724609375
+          },
+          "matchingRegisterCandidates": 1,
+          "poolSize": 47
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "frames": 19507,
+          "replayedPcmEqual": true,
+          "auditionScore": 4.860266111074427,
+          "searchScore": 4.860288967518382
+        },
+        {
+          "role": "previous",
+          "synth": "Bfxr",
+          "exactArchivedPcm": true,
+          "labelSource": "direct-choice"
+        }
+      ],
+      "referenceAuditionWavSha256": "b78c895f0183d907588cb962d8e1c9dd27b21665d64d2ecf2a0b8bfdd843714d",
+      "previousProvenance": {
+        "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+        "candidateId": "c8ecab452dbb90190bd3fc74c70434ff6c22dbdfda96717cf423913115e13ae5",
+        "archivedPcmSha256": "7637f86b0bbf76f5eceab8555ef9971b93b8e6075d7390a3452d3f667765a4b4",
+        "previousLikeness": null,
+        "previousLabelSource": "direct-choice"
+      }
+    },
+    {
+      "folder": "002",
+      "name": "bird/Bird Sounds.WAV",
+      "sourcePreviouslyRatedFlag": false,
+      "referencePcmSha256": "e0f588c7d2e53ab658bdd324ebaf51df4522d234ee9fb9e03b1b8fbfeca02fac",
+      "sourceNormalizedPcmSha256": "6e5cad723b223d8a4a8aaed6d05c73341c7259e243cfd83b49f2ee1ecd9adba6",
+      "candidates": [
+        {
+          "role": "raw",
+          "synth": "Footsteppr",
+          "frames": 10699,
+          "replayedPcmEqual": true,
+          "auditionScore": 6.677843619211047,
+          "searchScore": 6.677854156807423
+        },
+        {
+          "role": "selected",
+          "synth": "Bfxr",
+          "frames": 13278,
+          "replayedPcmEqual": true,
+          "auditionScore": 4.969183725706304,
+          "searchScore": 4.96915732111877,
+          "preferenceScore": 1.7049804956647736,
+          "coarsePitchPenalty": 0.0,
+          "referencePitch": {
+            "activeFrames": 27,
+            "voicedFrames": 26,
+            "voicedFraction": 0.9629629850387573,
+            "medianHz": 2476.68017578125
+          },
+          "selectedPitch": {
+            "activeFrames": 22,
+            "voicedFrames": 21,
+            "voicedFraction": 0.9545454382896423,
+            "medianHz": 2401.58740234375
+          },
+          "matchingRegisterCandidates": 6,
+          "poolSize": 47
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "frames": 13278,
+          "replayedPcmEqual": true,
+          "auditionScore": 4.969183725706304,
+          "searchScore": 4.96915732111877
+        },
+        {
+          "role": "previous",
+          "synth": "Soundboard",
+          "exactArchivedPcm": true,
+          "labelSource": "direct-choice"
+        }
+      ],
+      "referenceAuditionWavSha256": "090801d95c5bfe35ac1a7aa4d54f7cbc54859e45a03b6225d6104ae72e8a52b3",
+      "previousProvenance": {
+        "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+        "candidateId": "63e03437aedc36a73a8cbd72fbf0ff1c6e1399f37eb6c27d00b9928cc749872d",
+        "archivedPcmSha256": "8526c7a0969c29289e0f23011d12722d502ac69aae9dd32527419a7956c60620",
+        "previousLikeness": null,
+        "previousLabelSource": "direct-choice"
+      }
+    },
+    {
+      "folder": "003",
+      "name": "card/bookClose.ogg",
+      "sourcePreviouslyRatedFlag": false,
+      "referencePcmSha256": "3a34c99cee7fe4fc5679083fb569033b765ec88a07d4ddac08d76d2245d778be",
+      "sourceNormalizedPcmSha256": "54483bc18aff6f55613053dfd531b9e5104a9556dd295625d18bd1a1c28945a1",
+      "candidates": [
+        {
+          "role": "raw",
+          "synth": "Footsteppr",
+          "frames": 11411,
+          "replayedPcmEqual": true,
+          "auditionScore": 3.367908058722258,
+          "searchScore": 3.368160125865377
+        },
+        {
+          "role": "selected",
+          "synth": "Bfxr",
+          "frames": 9971,
+          "replayedPcmEqual": true,
+          "auditionScore": 1.8417122807355297,
+          "searchScore": 1.8416403915747155,
+          "preferenceScore": 1.2538507070563991,
+          "coarsePitchPenalty": 0.0,
+          "referencePitch": {
+            "activeFrames": 16,
+            "voicedFrames": 2,
+            "voicedFraction": 0.125,
+            "medianHz": 4200.00048828125
+          },
+          "selectedPitch": {
+            "activeFrames": 16,
+            "voicedFrames": 0,
+            "voicedFraction": 0.0,
+            "medianHz": null
+          },
+          "matchingRegisterCandidates": 0,
+          "poolSize": 47
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "frames": 16276,
+          "replayedPcmEqual": true,
+          "auditionScore": 1.7247223866693047,
+          "searchScore": 1.6820900942030788
+        },
+        {
+          "role": "previous",
+          "synth": "Transfxr",
+          "exactArchivedPcm": true,
+          "labelSource": "direct-choice"
+        }
+      ],
+      "referenceAuditionWavSha256": "1694d1c771a06481c05b4dfc5ce9015168e50c0b4149958af6302cd500f9deb4",
+      "previousProvenance": {
+        "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+        "candidateId": "6db0e238c392d3d35da5f7ce771b0622dd81b1a53e2d7608afb47e16b757d070",
+        "archivedPcmSha256": "3c4dcda97ff8b9ff66458cfd759af533f31431f731987c309b433ceed608056a",
+        "previousLikeness": null,
+        "previousLabelSource": "direct-choice"
+      }
+    },
+    {
+      "folder": "004",
+      "name": "computer/robo_talk.wav",
+      "sourcePreviouslyRatedFlag": false,
+      "referencePcmSha256": "f42dbf000892e3acf1a7503e1fd6e7c392a2405b1f2724901c666a6bce1630f9",
+      "sourceNormalizedPcmSha256": "91f233628e88e2ad7998725f2ecdfb0bcb77f01a62816059331038c39c74a256",
+      "candidates": [
+        {
+          "role": "raw",
+          "synth": "Rustlr",
+          "frames": 44203,
+          "replayedPcmEqual": true,
+          "auditionScore": 2.7530883201451206,
+          "searchScore": 2.753035664092458
+        },
+        {
+          "role": "selected",
+          "synth": "Breathr",
+          "frames": 39253,
+          "replayedPcmEqual": true,
+          "auditionScore": 2.5087352088032313,
+          "searchScore": 2.508739482518737,
+          "preferenceScore": 1.7721434340761442,
+          "coarsePitchPenalty": 0.0,
+          "referencePitch": {
+            "activeFrames": 73,
+            "voicedFrames": 38,
+            "voicedFraction": 0.5205479264259338,
+            "medianHz": 142.1762237548828
+          },
+          "selectedPitch": {
+            "activeFrames": 73,
+            "voicedFrames": 0,
+            "voicedFraction": 0.0,
+            "medianHz": null
+          },
+          "matchingRegisterCandidates": 0,
+          "poolSize": 47
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "frames": 38459,
+          "replayedPcmEqual": true,
+          "auditionScore": 2.790477065214852,
+          "searchScore": 2.7904859401959423
+        },
+        {
+          "role": "previous",
+          "synth": "Soundboard",
+          "exactArchivedPcm": true,
+          "labelSource": "scalar-likeness"
+        }
+      ],
+      "referenceAuditionWavSha256": "035aa65fecb30c29dc07b580a4ef6a5d10e035a0f194d6a2d5e098bc6e65215e",
+      "previousProvenance": {
+        "experimentId": "140d89d3331adb085c93a93a2bd2e72943145c89329088d0ebcf14b3827ee8f2",
+        "candidateId": "506efcb7a6223f0e86595495cbd5a2d4fca4b36f8497e142408a88dbfd66985c",
+        "archivedPcmSha256": "83f2098479910aa84a0cc40272b93ce1562acc689ca99304df0f29ee0329405a",
+        "previousLikeness": 1,
+        "previousLabelSource": "scalar-likeness"
+      }
+    },
+    {
+      "folder": "005",
+      "name": "die/charm2.wav",
+      "sourcePreviouslyRatedFlag": false,
+      "referencePcmSha256": "999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850",
+      "sourceNormalizedPcmSha256": "98971f210ae3659c11256c8d53e180be3165b73f6b227d62d3686d2f7ff514ce",
+      "candidates": [
+        {
+          "role": "raw",
+          "synth": "Bfxr",
+          "frames": 84164,
+          "replayedPcmEqual": true,
+          "auditionScore": 5.330208944332433,
+          "searchScore": 5.330198202743815
+        },
+        {
+          "role": "selected",
+          "synth": "Pluckr",
+          "frames": 61049,
+          "replayedPcmEqual": true,
+          "auditionScore": 8.845416688031701,
+          "searchScore": 8.846265076851186,
+          "preferenceScore": 0.8132119423453378,
+          "coarsePitchPenalty": 0.0,
+          "referencePitch": {
+            "activeFrames": 177,
+            "voicedFrames": 176,
+            "voicedFraction": 0.994350254535675,
+            "medianHz": 636.6155395507812
+          },
+          "selectedPitch": {
+            "activeFrames": 116,
+            "voicedFrames": 116,
+            "voicedFraction": 1.0,
+            "medianHz": 583.7628173828125
+          },
+          "matchingRegisterCandidates": 27,
+          "poolSize": 47
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "frames": 445,
+          "replayedPcmEqual": true,
+          "auditionScore": 5.81735043986529,
+          "searchScore": 5.817345134459152
+        },
+        {
+          "role": "previous",
+          "synth": "Transfxr",
+          "exactArchivedPcm": true,
+          "labelSource": "direct-choice"
+        }
+      ],
+      "referenceAuditionWavSha256": "4b56fe1ef7f5e2a79c97e750337f46df12f2b6753743859af10ff498624f7a24",
+      "previousProvenance": {
+        "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+        "candidateId": "ef85202d1e09ebe15f1fdd52cca3128484216dad3e4fd0086a6d451e4fc4df6d",
+        "archivedPcmSha256": "3ad58753fc408535c051a3d39c494465e6d8e50a3509d39ecbd7c40bb3a1bd0f",
+        "previousLikeness": null,
+        "previousLabelSource": "direct-choice"
+      }
+    }
+  ],
+  "limits": [
+    "No prospective listening quality judgment.",
+    "Full paired benchmark still in progress and excluded from this audit.",
+    "Replayed saved raw/selected/original controls only; archived previous winners verified by exact PCM instead of regeneration.",
+    "Every selected row score and eligible-pool minimum verified; unselected refined controls are not exported in the gallery and were not replayed."
+  ],
+  "sourceAnnotationSemantics": {
+    "frozenParentManifest": "tools/multisynth/evaluations/neural-v1-targets.json",
+    "frozenParentManifestSha256": "c0b4cd97d863cd32cb21376c0abbbe8049b658d2a98aab6b31d8ebeef466b82d",
+    "targetSourceObjectsCopiedVerbatim": true,
+    "previouslyRatedReference": "Inherited snapshot annotation from the v1 target-selection manifest, before later scalar and quick-choice sessions. It is false for all five; it does not describe current historical availability. Current history is established by each previous candidate provenance and the exact archived-PCM checks.",
+    "normalizedPcmSha256": "Inherited parent source-normalization annotation. It is not the current archived-reference PCM identity. Exact current heard PCM hashes are provided per reference, and the gallery binds each reference WAV byte hash."
+  },
+  "experimentId": "9a2d8dc4fb2ac668b9addee042ed8a857a19e0ccc197cec681b1534f7457c30e",
+  "galleryFeedbackDataMatchesActualArtifact": true,
+  "auditedCodeSha256": {
+    "run": "3fab1a9089d23a0a4c42e369b089e9149745bd64c4aeb1a9cfbde37fdad0a018",
+    "experiment": "07bb2ead5eff152991c28e3725efd54764cfb8a9f306cc3a94ec4c2740af4d36",
+    "evaluate": "b5e174c099028b4d39ec807bd29a67cb280d278a376d23744527f6fc4b441c83",
+    "predict": "953a5a79b089d42c1be2d8a9c92d02e8a39d25f4ba019899b840502769db51d4",
+    "selection": "9b2477c7a407c93dbb49f54cdf6a38ed2448bce59de5670be9c78fc4316f711a"
+  },
+  "auditScriptSha256": "1ab543eadb1ad0b70440b1adbe57d00817fe8b405685e640329aecaabcb99bc6"
+}

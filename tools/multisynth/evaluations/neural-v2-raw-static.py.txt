@@ -1,0 +1,38 @@
+import json,hashlib
+from pathlib import Path
+import numpy as np
+import soundfile as sf
+import torch
+from multisynth.renderer import Renderer
+from match.objective import MatchObjective
+from neural_invert.predict import load_model,predict
+from neural_invert.evaluate import rendered_candidates,serializable
+from neural_invert.benchmark import pitch_diagnostic,compare_pitch
+
+torch.set_num_threads(1)
+root=Path('tools/multisynth/runs/neural-v2/paired-fresh')
+manifest=json.loads((root/'target-manifest.json').read_text())
+models={name:load_model(path) for name,path in manifest['metadata']['models'].items()}
+records=[]
+with Renderer() as renderer:
+ for target in manifest['targets']:
+  if target['family']!='static':continue
+  wave,rate=sf.read(target['waveFile'],dtype='float32');assert rate==44100
+  row={'targetId':target['id'],'sourceSynth':target['sourceSynth'],'expectedHz':target['expectedHz'],'targetPitch':target['targetPitch'],'arms':{}}
+  for name,(model,info) in models.items():
+   proposals=predict(model,{**info,'engines':[target['sourceSynth']]},wave,renderer,2)
+   candidates,failures=rendered_candidates(proposals,renderer,MatchObjective(wave))
+   best=min(candidates,key=lambda c:c['score']) if candidates else None
+   row['arms'][name]=None if best is None else {**serializable(best),'pitch':pitch_diagnostic(best['wave']),'failures':failures}
+   if best:row['arms'][name]['comparison']=compare_pitch(target['targetPitch'],row['arms'][name]['pitch'],'static')
+  records.append(row);print(json.dumps({'target':target['id'],'errors':{name:r['comparison']['absolutePitchErrorSemitones'] if r else None for name,r in row['arms'].items()}}),flush=True)
+summary={}
+for arm in models:
+ errors=[r['arms'][arm]['comparison']['absolutePitchErrorSemitones'] if r['arms'][arm] else None for r in records]
+ valid=[e for e in errors if e is not None]
+ summary[arm]={'total':len(errors),'withinOneSemitone':sum(e<=1 for e in valid),'unreliableOrMissing':len(errors)-len(valid),'medianAbsoluteSemitones':float(np.median(valid)) if valid else None}
+report={'scope':'Fresh calibrated static known-source head predictions only; same targets as paired benchmark; no refinement, no original Bfxr, no unrestricted selection and no human likeness claim.',
+        'targetManifestSha256':hashlib.sha256((root/'target-manifest.json').read_bytes()).hexdigest(),'modelHashes':manifest['metadata']['modelHashes'],
+        'scriptSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'summary':summary,'results':records}
+Path('tools/multisynth/evaluations/neural-v2-raw-static.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps(summary,indent=2))

@@ -1,0 +1,233 @@
+{
+  "objectiveVersion": "preference-v4",
+  "baseFeatureVersion": "auditory-v1",
+  "components": [
+    "auditory_spectrum",
+    "auditory_envelope",
+    "auditory_absolute_envelope",
+    "auditory_pitch",
+    "auditory_voicing",
+    "auditory_noisiness",
+    "auditory_duration",
+    "auditory_motion",
+    "gesture_envelope_shape",
+    "gesture_attack_release",
+    "gesture_pulse_structure",
+    "gesture_spectral_motion",
+    "gesture_timbre",
+    "gesture_texture",
+    "gesture_pitch_motion",
+    "gesture_pitch_register",
+    "gesture_duration",
+    "spectrum_pool_4",
+    "spectrum_pool_8",
+    "spectrum_pool_16"
+  ],
+  "weights": [
+    0.036747688745248315,
+    0.038022499264696044,
+    0.01768134526838765,
+    0.09183158243905369,
+    0.10919455340541943,
+    0.04315219827766221,
+    0.05369279603367713,
+    0.13242477656299362,
+    0.035828630576013466,
+    0.08182460773195468,
+    0.016045742640033406,
+    0.006499614882947184,
+    0.1437774674558979,
+    0.017533905011785558,
+    0.012021479114710893,
+    0.02326905178958545,
+    0.0381815462901838,
+    0.03157642982442342,
+    0.03907916705782561,
+    0.03161491762750056
+  ],
+  "scales": [
+    0.16590841471080198,
+    0.08255513106104975,
+    0.031925170783928154,
+    0.08271090639232599,
+    0.07179887340973497,
+    0.06764909383199351,
+    0.3292400064936688,
+    0.01,
+    0.12019285171407824,
+    0.08356365346592509,
+    0.07423841356923919,
+    0.06757266838664797,
+    0.05882948712309023,
+    0.14648755471888886,
+    0.0665565583761119,
+    0.2137353757444964,
+    0.3135619353600157,
+    0.05352396567469118,
+    0.05444881672255234,
+    0.054785045032076464
+  ],
+  "training": {
+    "objectiveVersion": "preference-v4",
+    "archives": [
+      {
+        "archive": "2026-10-03-real-v1",
+        "experimentId": "51ebabd537188b5b7555a8d74e847674121e8d3f903fc1d00551fc604b526d34",
+        "schemaVersion": 1,
+        "feedbackSha256": "dcf72a32f2fbea1f707454655a76b3e475af2028706f51c1f576dedd462aa7c4",
+        "manifestSha256": "c28456efac1be70c3b65b76900aa0aa49bb1021526cd49543e999f25d2504c6a"
+      },
+      {
+        "archive": "2026-10-03-tagged-v2",
+        "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+        "schemaVersion": 1,
+        "feedbackSha256": "3dc851cdb94ea0ba8a5d6efae67cdd73fb926b888c8221765b5075ae0969f89b",
+        "manifestSha256": "c24ef8d61d352257d76f9a53b55a015a971c5368404e37b6eaf7fd192aa93bed"
+      },
+      {
+        "archive": "2026-10-03-coverage-v3",
+        "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+        "schemaVersion": 2,
+        "feedbackSha256": "d56f5685f08adf0882f02ea4aca4635c2b28a296f87ce48100537f018fcb8f9a",
+        "manifestSha256": "72403c7fb0088b036f4a785bf74cb43b6ccd82febc97dc5282f6b29ef106a9f6"
+      },
+      {
+        "archive": "2026-10-04-big-v4",
+        "experimentId": "140d89d3331adb085c93a93a2bd2e72943145c89329088d0ebcf14b3827ee8f2",
+        "schemaVersion": 2,
+        "feedbackSha256": "fbbbb715cc6797bf2e317558d099f20367a881c8d3a1b8c03e592b780ed62d7e",
+        "manifestSha256": "66698fa235ffb20f4ecf3526d223f6bb15f051f68822ca30f2647862d9111bcd"
+      },
+      {
+        "archive": "2026-10-04-neural-v1-quick-01",
+        "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+        "schemaVersion": 3,
+        "feedbackSha256": "c89f746a0db386f83d9ab5dd94b33d233e60c991aafd2ca7a018cb248549e24c",
+        "manifestSha256": "eaa4cc29a8f452c52d2a71124b9eba63e9fcf5b2517ed3e4413b358a5e9221ea"
+      }
+    ],
+    "archiveSummary": {
+      "targets": 105,
+      "likenessRatings": 248,
+      "usefulnessRatings": 127,
+      "duplicateAudioAliases": 0,
+      "conflictingAudioRatingGroups": 0,
+      "tiedPairs": 106,
+      "duplicateSessionPairs": 0,
+      "directChoicePairs": 7,
+      "choices": 5,
+      "choiceKinds": {
+        "best": 4,
+        "tie": 0,
+        "none": 1,
+        "skip": 0
+      },
+      "validatedAudioFiles": 372,
+      "uniqueAudioPcm": 312
+    },
+    "strictPreferencePairs": 110,
+    "referencePcmGroups": 45,
+    "components": [
+      "auditory_spectrum",
+      "auditory_envelope",
+      "auditory_absolute_envelope",
+      "auditory_pitch",
+      "auditory_voicing",
+      "auditory_noisiness",
+      "auditory_duration",
+      "auditory_motion",
+      "gesture_envelope_shape",
+      "gesture_attack_release",
+      "gesture_pulse_structure",
+      "gesture_spectral_motion",
+      "gesture_timbre",
+      "gesture_texture",
+      "gesture_pitch_motion",
+      "gesture_pitch_register",
+      "gesture_duration",
+      "spectrum_pool_4",
+      "spectrum_pool_8",
+      "spectrum_pool_16"
+    ],
+    "hyperparameters": {
+      "temperature": 4.0,
+      "klRegularization": 0.08,
+      "scaleFloor": 0.01,
+      "prior": [
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.044444444444444446,
+        0.044444444444444446,
+        0.044444444444444446,
+        0.044444444444444446,
+        0.044444444444444446,
+        0.044444444444444446,
+        0.044444444444444446,
+        0.044444444444444446,
+        0.044444444444444446,
+        0.03333333333333333,
+        0.03333333333333333,
+        0.03333333333333333
+      ],
+      "optimizer": "Adam",
+      "learningRate": 0.03,
+      "steps": 800,
+      "foldSeed": 1729,
+      "folds": 5,
+      "fixedBeforeEvaluation": true
+    },
+    "method": "Nonnegative simplex distance; reference-balanced strict pair logistic loss; KL to fixed family prior; reference-balanced RMS pair-difference scale learned on training fold only",
+    "labelPolicy": "Strict same-session likeness only; rating gap magnitude ignored; equal total weight per exact reference PCM; candidate audio aliases deduplicated; conflicting audio labels excluded; ties retained in archives but not strict training pairs; usefulness unused",
+    "validation": "Five folds grouped across every archive by exact reference audition PCM; no pair or scale fitting on held-out reference groups",
+    "scores": {
+      "auditory-v1": {
+        "correct": 71,
+        "pairs": 110,
+        "predictionTies": 0,
+        "pairAccuracy": 0.6454545454545455,
+        "referenceBalancedAccuracy": 0.6796296296296296
+      },
+      "gesture-prior": {
+        "correct": 73,
+        "pairs": 110,
+        "predictionTies": 0,
+        "pairAccuracy": 0.6636363636363637,
+        "referenceBalancedAccuracy": 0.7327160493827161
+      },
+      "gesture-v2-frozen": {
+        "correct": 74,
+        "pairs": 110,
+        "predictionTies": 0,
+        "pairAccuracy": 0.6727272727272727,
+        "referenceBalancedAccuracy": 0.7268518518518519
+      },
+      "preference-v4-held-out": {
+        "correct": 79,
+        "pairs": 110,
+        "predictionTies": 0,
+        "pairAccuracy": 0.7181818181818181,
+        "referenceBalancedAccuracy": 0.7564814814814814
+      },
+      "preference-v4-full-fit-diagnostic": {
+        "correct": 82,
+        "pairs": 110,
+        "predictionTies": 0,
+        "pairAccuracy": 0.7454545454545455,
+        "referenceBalancedAccuracy": 0.7651234567901235
+      }
+    },
+    "frozenGestureModelSha256": "79e4c2399d5296271005ccd91abbf2feeacebb7e0904c26f91274c4046d9cd53",
+    "limitations": [
+      "Saved-finalist ranking is not a prospective test of newly generated sound likeness.",
+      "Exact PCM grouping does not rule out related takes or differently normalized copies.",
+      "Frozen gesture-v2 previously trained on part of these archives; its result is a historical comparator, not independent validation.",
+      "Only one fixed model configuration evaluated; small grouped sample gives uncertain generalization."
+    ]
+  }
+}

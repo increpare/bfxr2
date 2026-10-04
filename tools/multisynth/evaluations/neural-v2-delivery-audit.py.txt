@@ -1,0 +1,98 @@
+import hashlib, json, sys
+from pathlib import Path
+from datetime import datetime, timezone
+import numpy as np
+import soundfile as sf
+import torch
+from neural_invert.evaluate import digest, pitch_summary
+from neural_invert.experiment import audition_pcm, listening_history, previous_best
+from neural_invert.selection import coarse_pitch_penalty, PITCH_POLICY
+from multisynth.renderer import Renderer
+from multisynth.preference import PreferenceMetric
+from multisynth.features import describe
+from match.renderer import BfxrRenderer
+from match.objective import MatchObjective
+
+torch.set_num_threads(1)
+base=Path('tools/multisynth')
+root=base/'runs/neural-v2-quick'
+payload=json.loads((root/'results.json').read_text())
+metadata=payload['metadata']
+refit=json.loads((base/'evaluations/neural-v2-preference-refit.json').read_text())
+archives=[base/'listening_data'/a['archive'] for a in refit['archives']]
+old=listening_history(archives)
+selector=base/'models/preference-neural-v2.json'
+metric=PreferenceMetric.load(selector)
+errors=[];checks=[];records=[]
+def check(ok,label):
+ checks.append({'check':label,'passed':bool(ok)})
+ if not ok:errors.append(label)
+def pcm_digest(path):
+ w,r=sf.read(path,dtype='int16',always_2d=True)
+ return hashlib.sha256(str((r,w.shape)).encode()+w.astype('<i2').tobytes()).hexdigest()
+def same_pcm(a,b):
+ wa,ra=sf.read(a,dtype='int16',always_2d=True);wb,rb=sf.read(b,dtype='int16',always_2d=True)
+ return ra==rb and np.array_equal(wa,wb)
+check(json.loads((root/'manifest.json').read_text())==metadata,'manifest/results metadata identical')
+check(metadata['complete'] and metadata['targetCount']==len(payload['results'])==5,'complete five-reference artifact')
+check(digest(base/'runs/neural-v2/acoustic-model/best.pt')==metadata['modelSha256'],'neural checkpoint hash')
+check(digest(selector)==metadata['selectorModelSha256'],'selector checkpoint hash')
+check(digest(base/'evaluations/neural-v2-targets.json')==metadata['targetManifestSha256'],'frozen target manifest hash')
+check(digest(Path('/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt'))==metadata['bfxrCheckpointSha256'],'original checkpoint hash')
+check(metadata['coarsePitchPolicy']==PITCH_POLICY,'selector policy matches executing code')
+with Renderer() as renderer, BfxrRenderer(jobs=1) as original:
+ check(renderer.inventory['sourceHash']==metadata['sourceHash'],'current DSP hash matches generated artifact')
+ for record in payload['results']:
+  folder=root/record['folder'];source=record['source'];ref,rate=sf.read(folder/'target.wav',dtype='float32')
+  check(json.loads((folder/'report.json').read_text())==record,record['folder']+' report/results identical')
+  check(digest(source['path'])==source['sha256'],record['folder']+' frozen original source hash')
+  check(rate==44100 and sf.info(folder/'target.wav').subtype=='PCM_16',record['folder']+' reference canonical format')
+  previous=previous_best(old[source['sha256']])
+  check(same_pcm(folder/'target.wav',previous['archive']/previous['target']['referenceAudio']['file']),record['folder']+' exact archived heard reference PCM')
+  objective=MatchObjective(ref);target_description=describe(ref);items=[]
+  for c in record['candidates']:
+   p=folder/c['file'];played,rate=sf.read(p,dtype='float32');prov=c['provenance'];tag=record['folder']+' '+c['role']
+   check(rate==44100 and sf.info(p).subtype=='PCM_16',tag+' canonical export format')
+   if c['role']=='previous':
+    check(prov['candidateId']==previous['candidate']['id'],tag+' correct historical winner ID')
+    check(prov['experimentId']==previous['experimentId'],tag+' correct historical experiment')
+    check(pcm_digest(p)==prov['archivedPcmSha256']==previous['candidate']['audio']['pcmSha256'],tag+' exact archived winner PCM')
+    check(same_pcm(p,previous['archive']/previous['candidate']['audio']['file']),tag+' archived samples equal')
+    check(c['params']==previous['candidate']['params'] and c['seed']==previous['candidate']['seed'],tag+' unchanged archived controls/seed')
+    items.append({'role':c['role'],'synth':c['synth'],'exactArchivedPcm':True,'labelSource':prov['previousLabelSource']})
+    continue
+   check(digest(p)==prov['auditionWavSha256'],tag+' actual audition WAV hash')
+   score=float(objective.score_batch([played])[0])
+   check(abs(score-prov['auditionMatchObjectiveScore'])<1e-9,tag+' recomputed actual audition score')
+   check(pitch_summary(played)==prov['auditionPitchDiagnostic'],tag+' recomputed actual audition pitch')
+   if c.get('expert')=='original-bfxr':
+    replay=original.render(c['params'],seed=c['seed'])
+   else:
+    params,replay=renderer.render(c['synth'],c['params'],c['seed'])
+    check(params==c['params'],tag+' saved controls canonical')
+   check(np.array_equal(played,audition_pcm(replay)),tag+' preset replay matches exact saved PCM')
+   search_score=float(objective.score_batch([replay])[0])
+   check(abs(search_score-c['score'])<1e-9,tag+' replayed DSP search score')
+   item={'role':c['role'],'synth':c['synth'],'frames':len(played),'replayedPcmEqual':bool(np.array_equal(played,audition_pcm(replay))), 'auditionScore':score,'searchScore':search_score}
+   if c['role']=='selected':
+    pref=float(metric.distances(target_description,np.stack([describe(played)]))[0]);pitch=pitch_summary(played);penalty=coarse_pitch_penalty(pitch_summary(ref),pitch)
+    ranking=prov['selectorRanking'];chosen=[r for r in ranking if r['chosen']]
+    check(len(chosen)==1 and chosen[0]['eligible'],tag+' exactly one eligible chosen ranking row')
+    chosen=chosen[0]
+    check(chosen['synth']==c['synth'] and chosen['seed']==c['seed'],tag+' chosen ranking identity matches export')
+    check(abs(pref-prov['preferenceScore'])<1e-9 and abs(pref-chosen['preferenceScore'])<1e-9,tag+' actual PCM selector score')
+    check(penalty==prov['coarsePitchPenalty']==chosen['coarsePitchPenalty'],tag+' actual PCM coarse pitch penalty')
+    check(abs(pref+penalty-prov['selectionScore'])<1e-9,tag+' selected aggregate score')
+    lowest=min(r['preferenceScore']+r['coarsePitchPenalty'] for r in ranking if r['eligible'])
+    check(abs(lowest-prov['selectionScore'])<1e-9,tag+' minimum eligible complete-pool ranking')
+    check(len(ranking)==prov['poolSize'],tag+' complete pool ranking size')
+    matches=prov['matchingRegisterCandidates'];n_eligible=sum(r['eligible'] for r in ranking)
+    check(n_eligible==(matches if matches else len(ranking)),tag+' eligibility count follows matching-register policy')
+    item.update(preferenceScore=pref,coarsePitchPenalty=penalty,referencePitch=pitch_summary(ref),selectedPitch=pitch,matchingRegisterCandidates=matches,poolSize=len(ranking))
+   items.append(item)
+  records.append({'folder':record['folder'],'name':source['name'],'sourcePreviouslyRatedFlag':source.get('previouslyRatedReference'),'referencePcmSha256':pcm_digest(folder/'target.wav'),'sourceNormalizedPcmSha256':source.get('normalizedPcmSha256'),'candidates':items})
+  print(record['folder'],source['name'],'checks completed',flush=True)
+report={'audit':'neural-v2-five-reference-delivery','createdUtc':datetime.now(timezone.utc).isoformat(),'artifact':str(root),'resultsSha256':digest(root/'results.json'),'manifestSha256':digest(root/'manifest.json'),'modelSha256':metadata['modelSha256'],'selectorModelSha256':metadata['selectorModelSha256'],'sourceHash':metadata['sourceHash'],'checksPassed':sum(c['passed'] for c in checks),'checksTotal':len(checks),'complete':not errors,'errors':errors,'checks':checks,'results':records,'limits':['No prospective listening quality judgment.','Full paired benchmark still in progress and excluded from this audit.','Replayed saved raw/selected/original controls only; archived previous winners verified by exact PCM instead of regeneration.','Every selected row score and eligible-pool minimum verified; unselected refined controls are not exported in the gallery and were not replayed.']}
+path=base/'evaluations/neural-v2-delivery-audit.json';path.write_text(json.dumps(report,indent=2,allow_nan=False)+'\n')
+print(json.dumps({'path':str(path),'passed':report['checksPassed'],'total':report['checksTotal'],'errors':errors},indent=2))
+sys.exit(bool(errors))

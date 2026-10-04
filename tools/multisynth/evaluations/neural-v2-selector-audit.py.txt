@@ -1,0 +1,41 @@
+import hashlib,json
+from pathlib import Path
+import numpy as np
+import soundfile as sf
+import torch
+from match.objective import MatchObjective
+from multisynth.preference import score_summary
+
+torch.set_num_threads(1)
+path=Path('tools/multisynth/evaluations/neural-v2-preference-refit.json')
+report=json.loads(path.read_text());cache={};objects={};scores={};diffs=[];new=[]
+def wave(root,audio):
+    key=audio['pcmSha256']
+    if key not in cache:
+        samples,rate=sf.read(root/audio['file'],dtype='float32')
+        assert rate==44100
+        cache[key]=samples
+    return cache[key]
+for pair in report['pairs']:
+    root=Path('tools/multisynth/listening_data')/pair['archive']
+    if root not in objects:
+        manifest=json.loads((root/'manifest.json').read_text())
+        objects[root]=({c['id']:c for c in manifest['candidates']}, {t['referenceAudio']['pcmSha256']:t for t in manifest['targets']})
+    candidates,targets=objects[root];ref=pair['referencePcmSha256'];target=targets[ref]
+    objective=MatchObjective(wave(root,target['referenceAudio']))
+    values=[]
+    for cid in (pair['candidateA'],pair['candidateB']):
+        c=candidates[cid];key=(ref,c['audio']['pcmSha256'])
+        if key not in scores:scores[key]=float(objective.score_batch([wave(root,c['audio'])])[0])
+        values.append(scores[key])
+    difference=values[0]-values[1];diffs.append(difference)
+    if pair['labelSource']=='direct-choice':
+        new.append({k:pair[k] for k in ('target','referencePcmSha256','candidateA','candidateB','preferenceSign','labelSource','heldOutDifference')})
+        new[-1].update(matchObjectiveDifference=difference,matchObjectiveAgrees=bool(difference*pair['preferenceSign']<0),groupedPreferenceAgrees=bool(pair['heldOutDifference']*pair['preferenceSign']<0))
+y=np.array([p['preferenceSign'] for p in report['pairs']]);groups=np.array([p['referencePcmSha256'] for p in report['pairs']])
+result={'refitReportSha256':hashlib.sha256(path.read_bytes()).hexdigest(),'auditScriptSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'scope':'Same-session archived strict human preferences, exact PCM; grouped validation of fixed preference refit. MatchObjective ranking audit uses actual archived audition PCM, no parameter refitting.',
+        'matchObjective':score_summary(np.array(diffs),y,groups),'groupedPreference':report['scores']['preference-v4-held-out'],
+        'quickChoices':new,'selectionDecision':'Keep MatchObjective as inference/search default for this model ablation; preference refit retained as experimental ranking comparator. No prospective new-candidate listening evidence yet.',
+        'limitations':['45 exact reference PCM groups can include related takes/different normalization.','Seven newest comparisons are four references, not seven independent cases.','Grouped preference accuracy does not establish improved inverse generation or new sound quality.']}
+Path('tools/multisynth/evaluations/neural-v2-selector-audit.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result,indent=2))

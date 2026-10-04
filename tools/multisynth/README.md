@@ -2,9 +2,11 @@
 
 The current learned implementation lives in `../neural_invert/`: a shared
 whole-sound encoder and separate audio-to-control experts for 22 individual
-synths, trained on 45,056 actual DSP renders. It preserves the original Bfxr
+synths. The acoustic v2 model uses 51,200 actual DSP training examples and
+learns controls directly from audio, with pitch-aware supervised loss. It preserves the original Bfxr
 neural model and optimizer as an independent candidate. See
-[NEURAL_V1.md](NEURAL_V1.md) for training, reconstruction checks and the listening
+[NEURAL_V2.md](NEURAL_V2.md) for the current model and single-sound CLI;
+[NEURAL_V1.md](NEURAL_V1.md) retains the first run's training and listening
 comparison. Mixr composition and arbitrary phrase transcription remain separate
 work; model capacity and parameter validation do not establish audible likeness.
 

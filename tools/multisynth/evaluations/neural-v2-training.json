@@ -1,0 +1,1929 @@
+{
+  "complete": true,
+  "scope": "Training summaries; losses across different objectives are not comparable. Checkpoints and arrays retained locally in ignored immutable run directories.",
+  "models": {
+    "v1": {
+      "checkpoint": "tools/multisynth/runs/neural-v1/model/best.pt",
+      "checkpointSha256": "8152b85d04767204d22d6f03a80f7feff60e1ac01d589105c0d5501bac9c14f9",
+      "training": {
+        "device": "mps",
+        "threads": 4,
+        "epochs": 50,
+        "batchSize": 128,
+        "learningRate": 0.001,
+        "parameters": 2024702,
+        "history": [
+          {
+            "epoch": 1,
+            "trainLoss": 1.9770505219444297,
+            "validationLoss": 1.4727148807610073,
+            "elapsedSeconds": 17.048114750068635,
+            "learningRate": 0.001
+          },
+          {
+            "epoch": 2,
+            "trainLoss": 1.2401691337853933,
+            "validationLoss": 1.1483041113885084,
+            "elapsedSeconds": 21.486676292028278,
+            "learningRate": 0.0009991120277927223
+          },
+          {
+            "epoch": 3,
+            "trainLoss": 0.9664070550582844,
+            "validationLoss": 1.0410873928135727,
+            "elapsedSeconds": 25.897836541989818,
+            "learningRate": 0.000996451615591515
+          },
+          {
+            "epoch": 4,
+            "trainLoss": 0.8488047635917545,
+            "validationLoss": 0.9309944091885973,
+            "elapsedSeconds": 30.256770458072424,
+            "learningRate": 0.0009920292628279098
+          },
+          {
+            "epoch": 5,
+            "trainLoss": 0.7662274677511245,
+            "validationLoss": 0.9048881453145069,
+            "elapsedSeconds": 34.69513391703367,
+            "learningRate": 0.0009858624225078836
+          },
+          {
+            "epoch": 6,
+            "trainLoss": 0.7188649687323332,
+            "validationLoss": 0.8866491555011516,
+            "elapsedSeconds": 38.98517100000754,
+            "learningRate": 0.0009779754323328187
+          },
+          {
+            "epoch": 7,
+            "trainLoss": 0.6825392880652519,
+            "validationLoss": 0.8686461493500881,
+            "elapsedSeconds": 43.326690833084285,
+            "learningRate": 0.0009683994186497127
+          },
+          {
+            "epoch": 8,
+            "trainLoss": 0.6482867352012044,
+            "validationLoss": 1.0485675989134198,
+            "elapsedSeconds": 47.695745249977335,
+            "learningRate": 0.0009571721736097084
+          },
+          {
+            "epoch": 9,
+            "trainLoss": 0.6378420260931567,
+            "validationLoss": 0.8292039394453675,
+            "elapsedSeconds": 51.93741049990058,
+            "learningRate": 0.0009443380060197381
+          },
+          {
+            "epoch": 10,
+            "trainLoss": 0.5970712107702569,
+            "validationLoss": 0.8477441507673207,
+            "elapsedSeconds": 56.23492749989964,
+            "learningRate": 0.0009299475664759063
+          },
+          {
+            "epoch": 11,
+            "trainLoss": 0.5773508641862022,
+            "validationLoss": 0.8352606307394165,
+            "elapsedSeconds": 60.51042583305389,
+            "learningRate": 0.0009140576474687258
+          },
+          {
+            "epoch": 12,
+            "trainLoss": 0.5403348966000516,
+            "validationLoss": 0.7858078857348239,
+            "elapsedSeconds": 64.81515241693705,
+            "learningRate": 0.0008967309592491046
+          },
+          {
+            "epoch": 13,
+            "trainLoss": 0.5280119290319686,
+            "validationLoss": 0.854472049533756,
+            "elapsedSeconds": 69.3219966669567,
+            "learningRate": 0.0008780358823396346
+          },
+          {
+            "epoch": 14,
+            "trainLoss": 0.5175345560059113,
+            "validationLoss": 0.8266742181342878,
+            "elapsedSeconds": 73.65927625005133,
+            "learningRate": 0.0008580461976679094
+          },
+          {
+            "epoch": 15,
+            "trainLoss": 0.49362470641748557,
+            "validationLoss": 0.8037398711160192,
+            "elapsedSeconds": 77.9731063330546,
+            "learningRate": 0.0008368407953869098
+          },
+          {
+            "epoch": 16,
+            "trainLoss": 0.4759574141893167,
+            "validationLoss": 0.8760720304317435,
+            "elapsedSeconds": 82.21957183303311,
+            "learningRate": 0.0008145033635316125
+          },
+          {
+            "epoch": 17,
+            "trainLoss": 0.45576749221179064,
+            "validationLoss": 0.8012834880517579,
+            "elapsedSeconds": 86.60583929205313,
+            "learningRate": 0.000791122057740548
+          },
+          {
+            "epoch": 18,
+            "trainLoss": 0.4359946739935986,
+            "validationLoss": 0.799493447755846,
+            "elapsedSeconds": 90.9290227079764,
+            "learningRate": 0.0007667891533457714
+          },
+          {
+            "epoch": 19,
+            "trainLoss": 0.42613238092346745,
+            "validationLoss": 0.8027743275569923,
+            "elapsedSeconds": 95.2295882080216,
+            "learningRate": 0.0007416006812042822
+          },
+          {
+            "epoch": 20,
+            "trainLoss": 0.40329469442577637,
+            "validationLoss": 0.7921194455213789,
+            "elapsedSeconds": 99.52715254202485,
+            "learningRate": 0.0007156560487081047
+          },
+          {
+            "epoch": 21,
+            "trainLoss": 0.3917393174265005,
+            "validationLoss": 0.8557505070686623,
+            "elapsedSeconds": 103.76039191707969,
+            "learningRate": 0.0006890576474687259
+          },
+          {
+            "epoch": 22,
+            "trainLoss": 0.3859710555536667,
+            "validationLoss": 0.8140554059785535,
+            "elapsedSeconds": 108.15676629194058,
+            "learningRate": 0.0006619104492241841
+          },
+          {
+            "epoch": 23,
+            "trainLoss": 0.3719522391005002,
+            "validationLoss": 0.8089531046758398,
+            "elapsedSeconds": 112.73310916707851,
+            "learningRate": 0.0006343215915635758
+          },
+          {
+            "epoch": 24,
+            "trainLoss": 0.3588967391506517,
+            "validationLoss": 0.8474589497190733,
+            "elapsedSeconds": 117.10934316692874,
+            "learningRate": 0.0006063999551039367
+          },
+          {
+            "epoch": 25,
+            "trainLoss": 0.34962351127901087,
+            "validationLoss": 0.8222137557765701,
+            "elapsedSeconds": 121.36754562496208,
+            "learningRate": 0.0005782557337881908
+          },
+          {
+            "epoch": 26,
+            "trainLoss": 0.33362426272005546,
+            "validationLoss": 0.8209972309799706,
+            "elapsedSeconds": 125.71926287491806,
+            "learningRate": 0.0005499999999999997
+          },
+          {
+            "epoch": 27,
+            "trainLoss": 0.3203586011449635,
+            "validationLoss": 0.8181849581790387,
+            "elapsedSeconds": 130.06853754189797,
+            "learningRate": 0.0005217442662118088
+          },
+          {
+            "epoch": 28,
+            "trainLoss": 0.30966808481495856,
+            "validationLoss": 0.8331732927521799,
+            "elapsedSeconds": 134.3849082919769,
+            "learningRate": 0.000493600044896063
+          },
+          {
+            "epoch": 29,
+            "trainLoss": 0.29867479905760774,
+            "validationLoss": 0.8265823240808068,
+            "elapsedSeconds": 138.84337787493132,
+            "learningRate": 0.0004656784084364238
+          },
+          {
+            "epoch": 30,
+            "trainLoss": 0.2869830115385438,
+            "validationLoss": 0.8298649953637985,
+            "elapsedSeconds": 143.1373291669879,
+            "learningRate": 0.0004380895507758152
+          },
+          {
+            "epoch": 31,
+            "trainLoss": 0.27928909256530676,
+            "validationLoss": 0.8310624091652394,
+            "elapsedSeconds": 147.47949179192074,
+            "learningRate": 0.00041094235253127373
+          },
+          {
+            "epoch": 32,
+            "trainLoss": 0.27671054245468457,
+            "validationLoss": 0.832161595107784,
+            "elapsedSeconds": 151.75759349996224,
+            "learningRate": 0.00038434395129189496
+          },
+          {
+            "epoch": 33,
+            "trainLoss": 0.26323615682191387,
+            "validationLoss": 0.8446973379450964,
+            "elapsedSeconds": 156.1104407920502,
+            "learningRate": 0.0003583993187957172
+          },
+          {
+            "epoch": 34,
+            "trainLoss": 0.2574614109841518,
+            "validationLoss": 0.8507853819441789,
+            "elapsedSeconds": 160.3690357080195,
+            "learningRate": 0.00033321084665422797
+          },
+          {
+            "epoch": 35,
+            "trainLoss": 0.24993915961004226,
+            "validationLoss": 0.8466003694551423,
+            "elapsedSeconds": 164.69799883291125,
+            "learningRate": 0.00030887794225945134
+          },
+          {
+            "epoch": 36,
+            "trainLoss": 0.2430467606569266,
+            "validationLoss": 0.8593853078749465,
+            "elapsedSeconds": 169.0275597081054,
+            "learningRate": 0.0002854966364683871
+          },
+          {
+            "epoch": 37,
+            "trainLoss": 0.23750374467367386,
+            "validationLoss": 0.854467114492664,
+            "elapsedSeconds": 173.4300367499236,
+            "learningRate": 0.0002631592046130896
+          },
+          {
+            "epoch": 38,
+            "trainLoss": 0.23199893579526573,
+            "validationLoss": 0.863132767980493,
+            "elapsedSeconds": 177.72218845807947,
+            "learningRate": 0.00024195380233209008
+          },
+          {
+            "epoch": 39,
+            "trainLoss": 0.22870415684261164,
+            "validationLoss": 0.8668401826935334,
+            "elapsedSeconds": 181.9614021249581,
+            "learningRate": 0.0002219641176603649
+          },
+          {
+            "epoch": 40,
+            "trainLoss": 0.2213308952830864,
+            "validationLoss": 0.8628066153808003,
+            "elapsedSeconds": 186.25383362499997,
+            "learningRate": 0.0002032690407508949
+          },
+          {
+            "epoch": 41,
+            "trainLoss": 0.21687294592664894,
+            "validationLoss": 0.8708808138031101,
+            "elapsedSeconds": 190.7100876669865,
+            "learningRate": 0.0001859423525312737
+          },
+          {
+            "epoch": 42,
+            "trainLoss": 0.21249008643618453,
+            "validationLoss": 0.8717922749831227,
+            "elapsedSeconds": 195.01289804209955,
+            "learningRate": 0.00017005243352409332
+          },
+          {
+            "epoch": 43,
+            "trainLoss": 0.20910501186316005,
+            "validationLoss": 0.8774274219812587,
+            "elapsedSeconds": 199.33063358301297,
+            "learningRate": 0.0001556619939802614
+          },
+          {
+            "epoch": 44,
+            "trainLoss": 0.20590911707610107,
+            "validationLoss": 0.8764946835580524,
+            "elapsedSeconds": 203.60301587497815,
+            "learningRate": 0.00014282782639029131
+          },
+          {
+            "epoch": 45,
+            "trainLoss": 0.20272073042849623,
+            "validationLoss": 0.8791231157460578,
+            "elapsedSeconds": 207.93906008289196,
+            "learningRate": 0.00013160058135028692
+          },
+          {
+            "epoch": 46,
+            "trainLoss": 0.20014077962389454,
+            "validationLoss": 0.8827494366145766,
+            "elapsedSeconds": 212.289030832937,
+            "learningRate": 0.00012202456766718093
+          },
+          {
+            "epoch": 47,
+            "trainLoss": 0.1978299767735994,
+            "validationLoss": 0.887966959048057,
+            "elapsedSeconds": 216.5754753749352,
+            "learningRate": 0.00011413757749211608
+          },
+          {
+            "epoch": 48,
+            "trainLoss": 0.19535440074019342,
+            "validationLoss": 0.8884985807478905,
+            "elapsedSeconds": 220.92810045811348,
+            "learningRate": 0.00010797073717209009
+          },
+          {
+            "epoch": 49,
+            "trainLoss": 0.19371438576283484,
+            "validationLoss": 0.8879024219435279,
+            "elapsedSeconds": 225.22338654194027,
+            "learningRate": 0.00010354838440848502
+          },
+          {
+            "epoch": 50,
+            "trainLoss": 0.19181488264605157,
+            "validationLoss": 0.8909177162682018,
+            "elapsedSeconds": 229.52493654191494,
+            "learningRate": 0.0001008879722072778
+          }
+        ],
+        "bestValidationLoss": 0.7858078857348239,
+        "limitations": [
+          "Validation excludes exact saved-control duplicates; generator-family holdout is separate.",
+          "Numeric loss measures control errors; rendered audio reconstruction is assessed separately.",
+          "TEXT source structures and randomness codes are generator anchors."
+        ],
+        "checkpointHash": "8152b85d04767204d22d6f03a80f7feff60e1ac01d589105c0d5501bac9c14f9",
+        "bestEpochDetails": {
+          "epoch": 12,
+          "trainLoss": 0.5403348966000516,
+          "validationLoss": 0.7858078857348239,
+          "perEngine": {
+            "Bfxr": {
+              "loss": 1.6967471352617594,
+              "unitMSE": 0.03756415600060252,
+              "generatorAccuracy": 0.6351791530944625,
+              "categoricalAccuracy": 0.5244299674267101,
+              "validationRows": 307
+            },
+            "Footsteppr": {
+              "loss": 0.25580504099786866,
+              "unitMSE": 0.03140506026386632,
+              "generatorAccuracy": 1.0,
+              "categoricalAccuracy": 1.0,
+              "validationRows": 307
+            },
+            "Transfxr": {
+              "loss": 1.32236940930643,
+              "unitMSE": 0.03593298826815639,
+              "generatorAccuracy": 0.7296416938110749,
+              "categoricalAccuracy": 0.6863657515123314,
+              "validationRows": 307
+            },
+            "Birdr": {
+              "loss": 0.674545075683718,
+              "unitMSE": 0.02147144621620349,
+              "generatorAccuracy": 0.7817589576547231,
+              "categoricalAccuracy": 0.9055374592833876,
+              "validationRows": 307
+            },
+            "Boomr": {
+              "loss": 0.9398987887348337,
+              "unitMSE": 0.030409842717433987,
+              "generatorAccuracy": 0.7166123778501629,
+              "categoricalAccuracy": 0.8501628664495114,
+              "validationRows": 307
+            },
+            "Bouncr": {
+              "loss": 0.7335568942153881,
+              "unitMSE": 0.021270725554528764,
+              "generatorAccuracy": 0.8273615635179153,
+              "categoricalAccuracy": 0.8208469055374593,
+              "validationRows": 307
+            },
+            "Breathr": {
+              "loss": 0.6841833003180812,
+              "unitMSE": 0.03289213099483558,
+              "generatorAccuracy": 0.7035830618892508,
+              "categoricalAccuracy": 0.9820846905537459,
+              "validationRows": 307
+            },
+            "Choirr": {
+              "loss": 0.8812140140937283,
+              "unitMSE": 0.02104165813967537,
+              "generatorAccuracy": 0.7850162866449512,
+              "categoricalAccuracy": 0.7817589576547231,
+              "validationRows": 307
+            },
+            "Clonkr": {
+              "loss": 0.6282536556355728,
+              "unitMSE": 0.018861718618398964,
+              "generatorAccuracy": 0.752442996742671,
+              "categoricalAccuracy": 0.9234527687296417,
+              "validationRows": 307
+            },
+            "Crittr": {
+              "loss": 0.8723148231785927,
+              "unitMSE": 0.019684829673326364,
+              "generatorAccuracy": 0.758957654723127,
+              "categoricalAccuracy": 0.8338762214983714,
+              "validationRows": 307
+            },
+            "Fractr": {
+              "loss": 0.7301102364102093,
+              "unitMSE": 0.024734522055239943,
+              "generatorAccuracy": 0.749185667752443,
+              "categoricalAccuracy": 0.9022801302931596,
+              "validationRows": 307
+            },
+            "Glitchr": {
+              "loss": 0.9788103596783616,
+              "unitMSE": 0.027472152638610102,
+              "generatorAccuracy": 0.762214983713355,
+              "categoricalAccuracy": 0.8045602605863192,
+              "validationRows": 307
+            },
+            "Jinglr": {
+              "loss": 1.1763546602733748,
+              "unitMSE": 0.028694919307476533,
+              "generatorAccuracy": 0.749185667752443,
+              "categoricalAccuracy": 0.6156351791530945,
+              "validationRows": 307
+            },
+            "Machinr": {
+              "loss": 0.5642298603679148,
+              "unitMSE": 0.0236179037474654,
+              "generatorAccuracy": 0.8013029315960912,
+              "categoricalAccuracy": 0.9185667752442996,
+              "validationRows": 307
+            },
+            "Pluckr": {
+              "loss": 0.9317730412809391,
+              "unitMSE": 0.03319750780828224,
+              "generatorAccuracy": 0.758957654723127,
+              "categoricalAccuracy": 0.7980456026058632,
+              "validationRows": 307
+            },
+            "Riftr": {
+              "loss": 0.5336036892783759,
+              "unitMSE": 0.028337570149997545,
+              "generatorAccuracy": 0.7719869706840391,
+              "categoricalAccuracy": 0.9804560260586319,
+              "validationRows": 307
+            },
+            "Rustlr": {
+              "loss": 0.971722541492226,
+              "unitMSE": 0.02583787941558936,
+              "generatorAccuracy": 0.6840390879478827,
+              "categoricalAccuracy": 0.7833876221498371,
+              "validationRows": 307
+            },
+            "Signlr": {
+              "loss": 0.7325554554159556,
+              "unitMSE": 0.023266754158642083,
+              "generatorAccuracy": 0.8110749185667753,
+              "categoricalAccuracy": 0.8566775244299675,
+              "validationRows": 307
+            },
+            "Squishr": {
+              "loss": 0.4570214924090072,
+              "unitMSE": 0.020689530753157426,
+              "generatorAccuracy": 0.7687296416938111,
+              "categoricalAccuracy": 1.0,
+              "validationRows": 307
+            },
+            "Swarmr": {
+              "loss": 0.6448580539187702,
+              "unitMSE": 0.03159720179433737,
+              "generatorAccuracy": 0.7752442996742671,
+              "categoricalAccuracy": 0.9543973941368078,
+              "validationRows": 307
+            },
+            "Whooshr": {
+              "loss": 0.6034825945133495,
+              "unitMSE": 0.0253015264128532,
+              "generatorAccuracy": 0.6319218241042345,
+              "categoricalAccuracy": null,
+              "validationRows": 307
+            },
+            "Zappr": {
+              "loss": 0.27436336370166814,
+              "unitMSE": 0.014385499721483997,
+              "generatorAccuracy": 0.8501628664495114,
+              "categoricalAccuracy": null,
+              "validationRows": 307
+            }
+          },
+          "elapsedSeconds": 64.81515241693705,
+          "learningRate": 0.0008967309592491046
+        }
+      },
+      "trainingJsonSha256": "54defca6c435dad2c09b6019395f91abe8fcff07e96a421f7cc0f132710d65a9",
+      "metadataKeys": [
+        "version",
+        "specs",
+        "engines",
+        "sourceHash",
+        "featureVersion",
+        "featureHash",
+        "featureCodeHash",
+        "ignorePeakGain",
+        "featureDim",
+        "hidden",
+        "normalization",
+        "seed",
+        "fixedStructureScope",
+        "fixedControls",
+        "dataManifestHash"
+      ],
+      "metadataSha256": "bb33a434f14a76d5ba0e24d44aeafd85cf885b1b6104883592ec5d882f4b4c68",
+      "metadataSummary": {
+        "version": 1,
+        "engines": [
+          "Bfxr",
+          "Footsteppr",
+          "Transfxr",
+          "Birdr",
+          "Boomr",
+          "Bouncr",
+          "Breathr",
+          "Choirr",
+          "Clonkr",
+          "Crittr",
+          "Fractr",
+          "Glitchr",
+          "Jinglr",
+          "Machinr",
+          "Pluckr",
+          "Riftr",
+          "Rustlr",
+          "Signlr",
+          "Squishr",
+          "Swarmr",
+          "Whooshr",
+          "Zappr"
+        ],
+        "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+        "featureVersion": "neural-fullsound-v1",
+        "featureHash": "fa36498127a6b820ef7b576f708ac0aaa8826b82d2df6acc726511a0a0fff3b1",
+        "featureCodeHash": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+        "ignorePeakGain": true,
+        "featureDim": 4083,
+        "hidden": 256,
+        "seed": 20261004,
+        "fixedStructureScope": "TEXT phrase comes from the predicted generator; random seed controls are held at generator anchors.",
+        "fixedControls": {
+          "Bfxr": {
+            "text": [],
+            "randomness": []
+          },
+          "Footsteppr": {
+            "text": [],
+            "randomness": []
+          },
+          "Transfxr": {
+            "text": [],
+            "randomness": []
+          },
+          "Birdr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Boomr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Bouncr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Breathr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Choirr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Clonkr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Crittr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Fractr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Glitchr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Jinglr": {
+            "text": [
+              "phrase"
+            ],
+            "randomness": [
+              "seed",
+              "instrumentSeed"
+            ]
+          },
+          "Machinr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Pluckr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Riftr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Rustlr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Signlr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Squishr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Swarmr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Whooshr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Zappr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          }
+        },
+        "dataManifestHash": "a12d9252905e499ccdd01401a277a2f4d5a90a6de2fd39c626483d17c9d4c23f"
+      },
+      "summaryPolicy": "Full epoch scalar history and best-epoch engine diagnostics. Original complete training.json remains beside its checkpoint and is hash-bound here."
+    },
+    "data-only": {
+      "checkpoint": "tools/multisynth/runs/neural-v2/data-only-model/best.pt",
+      "checkpointSha256": "d7cb0f4555edc1d303451fccca7ae067af662bf6064186fc159f7ae80536cd86",
+      "training": {
+        "device": "mps",
+        "threads": 1,
+        "epochs": 30,
+        "batchSize": 128,
+        "learningRate": 0.001,
+        "parameters": 2024702,
+        "history": [
+          {
+            "epoch": 1,
+            "trainLoss": 1.8606843018298995,
+            "validationLoss": 1.3696684460065265,
+            "elapsedSeconds": 10.197353665949777,
+            "learningRate": 0.001
+          },
+          {
+            "epoch": 2,
+            "trainLoss": 1.1508939665710016,
+            "validationLoss": 1.090296189412232,
+            "elapsedSeconds": 16.9902281248942,
+            "learningRate": 0.0009975348529157229
+          },
+          {
+            "epoch": 3,
+            "trainLoss": 0.909544631281781,
+            "validationLoss": 0.983481019506237,
+            "elapsedSeconds": 23.568453499814495,
+            "learningRate": 0.0009901664203302123
+          },
+          {
+            "epoch": 4,
+            "trainLoss": 0.8120038464300801,
+            "validationLoss": 0.9070200038849336,
+            "elapsedSeconds": 30.643973165890202,
+            "learningRate": 0.000977975432332819
+          },
+          {
+            "epoch": 5,
+            "trainLoss": 0.7410638754467798,
+            "validationLoss": 0.9126110684871673,
+            "elapsedSeconds": 37.625969249987975,
+            "learningRate": 0.0009610954559391701
+          },
+          {
+            "epoch": 6,
+            "trainLoss": 0.6805964497223043,
+            "validationLoss": 0.851397354839679,
+            "elapsedSeconds": 44.329662499949336,
+            "learningRate": 0.0009397114317029973
+          },
+          {
+            "epoch": 7,
+            "trainLoss": 0.6399809467443305,
+            "validationLoss": 0.8131042246632156,
+            "elapsedSeconds": 52.20108212484047,
+            "learningRate": 0.0009140576474687262
+          },
+          {
+            "epoch": 8,
+            "trainLoss": 0.6270141943161136,
+            "validationLoss": 0.7888964151870156,
+            "elapsedSeconds": 59.261862749932334,
+            "learningRate": 0.0008844151714648272
+          },
+          {
+            "epoch": 9,
+            "trainLoss": 0.5948658506775094,
+            "validationLoss": 0.8120273072168183,
+            "elapsedSeconds": 65.93038583290763,
+            "learningRate": 0.000851108772861486
+          },
+          {
+            "epoch": 10,
+            "trainLoss": 0.5503391960997611,
+            "validationLoss": 0.7797573093249666,
+            "elapsedSeconds": 72.52307350002229,
+            "learningRate": 0.0008145033635316127
+          },
+          {
+            "epoch": 11,
+            "trainLoss": 0.5321265433698739,
+            "validationLoss": 0.7678810776192513,
+            "elapsedSeconds": 82.24954120791517,
+            "learningRate": 0.0007749999999999999
+          },
+          {
+            "epoch": 12,
+            "trainLoss": 0.5127570858863083,
+            "validationLoss": 0.7527237600029874,
+            "elapsedSeconds": 89.76433570799418,
+            "learningRate": 0.00073303148938411
+          },
+          {
+            "epoch": 13,
+            "trainLoss": 0.4940735753495963,
+            "validationLoss": 0.7466506519030283,
+            "elapsedSeconds": 96.89864100003615,
+            "learningRate": 0.0006890576474687263
+          },
+          {
+            "epoch": 14,
+            "trainLoss": 0.46825857252618625,
+            "validationLoss": 0.7531673591707739,
+            "elapsedSeconds": 104.68893620790914,
+            "learningRate": 0.0006435602608679915
+          },
+          {
+            "epoch": 15,
+            "trainLoss": 0.45413823493214467,
+            "validationLoss": 0.7640595079050778,
+            "elapsedSeconds": 112.32231187494472,
+            "learningRate": 0.000597037808470444
+          },
+          {
+            "epoch": 16,
+            "trainLoss": 0.43331802122932545,
+            "validationLoss": 0.7418594518973696,
+            "elapsedSeconds": 118.73243691585958,
+            "learningRate": 0.00055
+          },
+          {
+            "epoch": 17,
+            "trainLoss": 0.4170417640395441,
+            "validationLoss": 0.7406216132970896,
+            "elapsedSeconds": 125.42162974993698,
+            "learningRate": 0.000502962191529556
+          },
+          {
+            "epoch": 18,
+            "trainLoss": 0.40369670726080725,
+            "validationLoss": 0.7577828736025658,
+            "elapsedSeconds": 132.50335429096594,
+            "learningRate": 0.00045643973913200826
+          },
+          {
+            "epoch": 19,
+            "trainLoss": 0.39149071657335804,
+            "validationLoss": 0.7358879752772639,
+            "elapsedSeconds": 139.1026689580176,
+            "learningRate": 0.0004109423525312737
+          },
+          {
+            "epoch": 20,
+            "trainLoss": 0.37951571224784797,
+            "validationLoss": 0.7463471514064248,
+            "elapsedSeconds": 145.7603998328559,
+            "learningRate": 0.00036696851061588997
+          },
+          {
+            "epoch": 21,
+            "trainLoss": 0.36182211187706126,
+            "validationLoss": 0.7316713700873068,
+            "elapsedSeconds": 152.46018820791505,
+            "learningRate": 0.0003250000000000001
+          },
+          {
+            "epoch": 22,
+            "trainLoss": 0.35110755640258057,
+            "validationLoss": 0.728465300487773,
+            "elapsedSeconds": 159.07251704088412,
+            "learningRate": 0.00028549663646838715
+          },
+          {
+            "epoch": 23,
+            "trainLoss": 0.3401055752741476,
+            "validationLoss": 0.7281803279260859,
+            "elapsedSeconds": 165.58219541586004,
+            "learningRate": 0.000248891227138514
+          },
+          {
+            "epoch": 24,
+            "trainLoss": 0.3313713661099836,
+            "validationLoss": 0.7297148948014753,
+            "elapsedSeconds": 172.07653145794757,
+            "learningRate": 0.00021558482853517276
+          },
+          {
+            "epoch": 25,
+            "trainLoss": 0.32408085569097417,
+            "validationLoss": 0.7330848532643303,
+            "elapsedSeconds": 180.97622487484477,
+            "learningRate": 0.00018594235253127376
+          },
+          {
+            "epoch": 26,
+            "trainLoss": 0.3183015392355231,
+            "validationLoss": 0.734076699932934,
+            "elapsedSeconds": 188.4207371249795,
+            "learningRate": 0.00016028856829700263
+          },
+          {
+            "epoch": 27,
+            "trainLoss": 0.31187656221514387,
+            "validationLoss": 0.7326418920137984,
+            "elapsedSeconds": 194.8932988329325,
+            "learningRate": 0.0001389045440608296
+          },
+          {
+            "epoch": 28,
+            "trainLoss": 0.30699702750671054,
+            "validationLoss": 0.7332114422787285,
+            "elapsedSeconds": 201.5290073750075,
+            "learningRate": 0.00012202456766718093
+          },
+          {
+            "epoch": 29,
+            "trainLoss": 0.30219262473306596,
+            "validationLoss": 0.7316305274586724,
+            "elapsedSeconds": 208.2859694159124,
+            "learningRate": 0.00010983357966978745
+          },
+          {
+            "epoch": 30,
+            "trainLoss": 0.29912635442633384,
+            "validationLoss": 0.7377212745028909,
+            "elapsedSeconds": 217.01441212487407,
+            "learningRate": 0.00010246514708427697
+          }
+        ],
+        "bestValidationLoss": 0.7281803279260859,
+        "limitations": [
+          "Validation excludes exact saved-control duplicates; generator-family holdout is separate.",
+          "Numeric loss measures control errors; rendered audio reconstruction is assessed separately.",
+          "TEXT source structures and randomness codes are generator anchors."
+        ],
+        "checkpointHash": "d7cb0f4555edc1d303451fccca7ae067af662bf6064186fc159f7ae80536cd86",
+        "bestEpochDetails": {
+          "epoch": 23,
+          "trainLoss": 0.3401055752741476,
+          "validationLoss": 0.7281803279260859,
+          "perEngine": {
+            "Bfxr": {
+              "loss": 1.0995779139405353,
+              "unitMSE": 0.02385797099959627,
+              "generatorAccuracy": 0.7687296416938111,
+              "categoricalAccuracy": 0.750814332247557,
+              "validationRows": 614
+            },
+            "Footsteppr": {
+              "loss": 0.16924124359113774,
+              "unitMSE": 0.020635631026439248,
+              "generatorAccuracy": 1.0,
+              "categoricalAccuracy": 1.0,
+              "validationRows": 307
+            },
+            "Transfxr": {
+              "loss": 0.7827385161132688,
+              "unitMSE": 0.01963698603394851,
+              "generatorAccuracy": 0.8648208469055375,
+              "categoricalAccuracy": 0.7912982782689623,
+              "validationRows": 614
+            },
+            "Birdr": {
+              "loss": 0.772957239554837,
+              "unitMSE": 0.020412342531867446,
+              "generatorAccuracy": 0.758957654723127,
+              "categoricalAccuracy": 0.9055374592833876,
+              "validationRows": 307
+            },
+            "Boomr": {
+              "loss": 0.8816528042675229,
+              "unitMSE": 0.027927824966488133,
+              "generatorAccuracy": 0.7296416938110749,
+              "categoricalAccuracy": 0.8794788273615635,
+              "validationRows": 307
+            },
+            "Bouncr": {
+              "loss": 0.6152684164357884,
+              "unitMSE": 0.019278339004138004,
+              "generatorAccuracy": 0.8403908794788274,
+              "categoricalAccuracy": 0.8762214983713354,
+              "validationRows": 307
+            },
+            "Breathr": {
+              "loss": 0.6986294423718405,
+              "unitMSE": 0.0334242889323918,
+              "generatorAccuracy": 0.6905537459283387,
+              "categoricalAccuracy": 0.9820846905537459,
+              "validationRows": 307
+            },
+            "Choirr": {
+              "loss": 0.7630248984218808,
+              "unitMSE": 0.01897639872852094,
+              "generatorAccuracy": 0.7915309446254072,
+              "categoricalAccuracy": 0.8045602605863192,
+              "validationRows": 307
+            },
+            "Clonkr": {
+              "loss": 0.5822246439682156,
+              "unitMSE": 0.017107576265300135,
+              "generatorAccuracy": 0.7915309446254072,
+              "categoricalAccuracy": 0.9153094462540716,
+              "validationRows": 307
+            },
+            "Crittr": {
+              "loss": 0.9493036541954314,
+              "unitMSE": 0.018541414120783636,
+              "generatorAccuracy": 0.7133550488599348,
+              "categoricalAccuracy": 0.8143322475570033,
+              "validationRows": 307
+            },
+            "Fractr": {
+              "loss": 0.7112103867608484,
+              "unitMSE": 0.024381899071632844,
+              "generatorAccuracy": 0.752442996742671,
+              "categoricalAccuracy": 0.8990228013029316,
+              "validationRows": 307
+            },
+            "Glitchr": {
+              "loss": 1.1289262472612462,
+              "unitMSE": 0.03238319665654669,
+              "generatorAccuracy": 0.7198697068403909,
+              "categoricalAccuracy": 0.8013029315960912,
+              "validationRows": 307
+            },
+            "Jinglr": {
+              "loss": 1.106296705889003,
+              "unitMSE": 0.025632420123982508,
+              "generatorAccuracy": 0.7882736156351792,
+              "categoricalAccuracy": 0.6469055374592834,
+              "validationRows": 307
+            },
+            "Machinr": {
+              "loss": 0.5677721115975892,
+              "unitMSE": 0.019249347090138674,
+              "generatorAccuracy": 0.8338762214983714,
+              "categoricalAccuracy": 0.8794788273615635,
+              "validationRows": 307
+            },
+            "Pluckr": {
+              "loss": 0.7998863848878817,
+              "unitMSE": 0.02695683851012966,
+              "generatorAccuracy": 0.8257328990228013,
+              "categoricalAccuracy": 0.8110749185667753,
+              "validationRows": 614
+            },
+            "Riftr": {
+              "loss": 0.5491981417037765,
+              "unitMSE": 0.025879618860417158,
+              "generatorAccuracy": 0.7687296416938111,
+              "categoricalAccuracy": 0.9739413680781759,
+              "validationRows": 307
+            },
+            "Rustlr": {
+              "loss": 0.9152728451191409,
+              "unitMSE": 0.02582493652544115,
+              "generatorAccuracy": 0.7166123778501629,
+              "categoricalAccuracy": 0.8143322475570033,
+              "validationRows": 307
+            },
+            "Signlr": {
+              "loss": 0.7364722742708187,
+              "unitMSE": 0.022733187685183672,
+              "generatorAccuracy": 0.8208469055374593,
+              "categoricalAccuracy": 0.8566775244299675,
+              "validationRows": 307
+            },
+            "Squishr": {
+              "loss": 0.4062146916257442,
+              "unitMSE": 0.017615440814279577,
+              "generatorAccuracy": 0.8045602605863192,
+              "categoricalAccuracy": 0.990228013029316,
+              "validationRows": 307
+            },
+            "Swarmr": {
+              "loss": 0.5128319294522562,
+              "unitMSE": 0.028680908593807238,
+              "generatorAccuracy": 0.8045602605863192,
+              "categoricalAccuracy": 0.9869706840390879,
+              "validationRows": 307
+            },
+            "Whooshr": {
+              "loss": 0.44418797042548464,
+              "unitMSE": 0.018602757019988876,
+              "generatorAccuracy": 0.7328990228013029,
+              "categoricalAccuracy": null,
+              "validationRows": 307
+            },
+            "Zappr": {
+              "loss": 0.3294169213562136,
+              "unitMSE": 0.015983292217144944,
+              "generatorAccuracy": 0.8306188925081434,
+              "categoricalAccuracy": null,
+              "validationRows": 307
+            }
+          },
+          "elapsedSeconds": 165.58219541586004,
+          "learningRate": 0.000248891227138514
+        }
+      },
+      "trainingJsonSha256": "e42a9de24ddab9f725d455eb752e586b594200567b6ee6b6d685e41b4ffb7ccc",
+      "metadataKeys": [
+        "version",
+        "headMode",
+        "lossPolicy",
+        "trainingCodeHash",
+        "modelCodeHash",
+        "lossCodeHash",
+        "specs",
+        "engines",
+        "sourceHash",
+        "featureVersion",
+        "featureHash",
+        "featureCodeHash",
+        "ignorePeakGain",
+        "featureDim",
+        "hidden",
+        "normalization",
+        "seed",
+        "fixedStructureScope",
+        "fixedControls",
+        "dataManifestHash"
+      ],
+      "metadataSha256": "b5d52d0875599becbc7f1a1223fbf56a000071d05ee63eb80fee36c853c3294a",
+      "metadataSummary": {
+        "version": 1,
+        "headMode": "generator",
+        "lossPolicy": {
+          "version": "legacy-controls-v1"
+        },
+        "trainingCodeHash": "31676020def7cadcaa844651f429ee4cc970272c301aa7a89bcd8fbb3c25354d",
+        "modelCodeHash": "1e7c07e7981582082aa832879db5b4a15b788a58ed10c4c3c4c92f7e3a2629cc",
+        "lossCodeHash": null,
+        "engines": [
+          "Bfxr",
+          "Footsteppr",
+          "Transfxr",
+          "Birdr",
+          "Boomr",
+          "Bouncr",
+          "Breathr",
+          "Choirr",
+          "Clonkr",
+          "Crittr",
+          "Fractr",
+          "Glitchr",
+          "Jinglr",
+          "Machinr",
+          "Pluckr",
+          "Riftr",
+          "Rustlr",
+          "Signlr",
+          "Squishr",
+          "Swarmr",
+          "Whooshr",
+          "Zappr"
+        ],
+        "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+        "featureVersion": "neural-fullsound-v1",
+        "featureHash": "fa36498127a6b820ef7b576f708ac0aaa8826b82d2df6acc726511a0a0fff3b1",
+        "featureCodeHash": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+        "ignorePeakGain": true,
+        "featureDim": 4083,
+        "hidden": 256,
+        "seed": 20261005,
+        "fixedStructureScope": "TEXT phrase comes from the predicted generator; random seed controls are held at generator anchors.",
+        "fixedControls": {
+          "Bfxr": {
+            "text": [],
+            "randomness": []
+          },
+          "Footsteppr": {
+            "text": [],
+            "randomness": []
+          },
+          "Transfxr": {
+            "text": [],
+            "randomness": []
+          },
+          "Birdr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Boomr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Bouncr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Breathr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Choirr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Clonkr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Crittr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Fractr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Glitchr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Jinglr": {
+            "text": [
+              "phrase"
+            ],
+            "randomness": [
+              "seed",
+              "instrumentSeed"
+            ]
+          },
+          "Machinr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Pluckr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Riftr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Rustlr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Signlr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Squishr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Swarmr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Whooshr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Zappr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          }
+        },
+        "dataManifestHash": "2701d7907e824f9e34872c1bc4b99ccc1e3d85941040a42ff4029eb658564657"
+      },
+      "summaryPolicy": "Full epoch scalar history and best-epoch engine diagnostics. Original complete training.json remains beside its checkpoint and is hash-bound here."
+    },
+    "acoustic": {
+      "checkpoint": "tools/multisynth/runs/neural-v2/acoustic-model/best.pt",
+      "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+      "training": {
+        "device": "mps",
+        "threads": 1,
+        "epochs": 30,
+        "batchSize": 128,
+        "learningRate": 0.001,
+        "parameters": 1951646,
+        "history": [
+          {
+            "epoch": 1,
+            "trainLoss": 1.002136352007448,
+            "validationLoss": 0.7780620403592672,
+            "elapsedSeconds": 12.708129500038922,
+            "learningRate": 0.001
+          },
+          {
+            "epoch": 2,
+            "trainLoss": 0.6802843480751064,
+            "validationLoss": 0.6311571458884869,
+            "elapsedSeconds": 21.765062666963786,
+            "learningRate": 0.0009975348529157229
+          },
+          {
+            "epoch": 3,
+            "trainLoss": 0.5687149562813782,
+            "validationLoss": 0.5604733517193251,
+            "elapsedSeconds": 30.73337912512943,
+            "learningRate": 0.0009901664203302123
+          },
+          {
+            "epoch": 4,
+            "trainLoss": 0.5068424797941391,
+            "validationLoss": 0.5382340378559374,
+            "elapsedSeconds": 39.052571709034964,
+            "learningRate": 0.000977975432332819
+          },
+          {
+            "epoch": 5,
+            "trainLoss": 0.4685563323245796,
+            "validationLoss": 0.4947570946375788,
+            "elapsedSeconds": 47.70794962509535,
+            "learningRate": 0.0009610954559391701
+          },
+          {
+            "epoch": 6,
+            "trainLoss": 0.431889826120966,
+            "validationLoss": 0.4629769164382052,
+            "elapsedSeconds": 56.6596947920043,
+            "learningRate": 0.0009397114317029973
+          },
+          {
+            "epoch": 7,
+            "trainLoss": 0.40247680496443694,
+            "validationLoss": 0.4588471786381756,
+            "elapsedSeconds": 65.74526333413087,
+            "learningRate": 0.0009140576474687262
+          },
+          {
+            "epoch": 8,
+            "trainLoss": 0.3966436939876974,
+            "validationLoss": 0.4360155757727763,
+            "elapsedSeconds": 75.306679709116,
+            "learningRate": 0.0008844151714648272
+          },
+          {
+            "epoch": 9,
+            "trainLoss": 0.36665529438882366,
+            "validationLoss": 0.4339350028243826,
+            "elapsedSeconds": 84.66057354211807,
+            "learningRate": 0.000851108772861486
+          },
+          {
+            "epoch": 10,
+            "trainLoss": 0.35304207614685595,
+            "validationLoss": 0.4365811638684537,
+            "elapsedSeconds": 92.9965152090881,
+            "learningRate": 0.0008145033635316127
+          },
+          {
+            "epoch": 11,
+            "trainLoss": 0.3341586226834298,
+            "validationLoss": 0.4037975146968512,
+            "elapsedSeconds": 101.45350020914339,
+            "learningRate": 0.0007749999999999999
+          },
+          {
+            "epoch": 12,
+            "trainLoss": 0.3232262074156509,
+            "validationLoss": 0.40653515053106054,
+            "elapsedSeconds": 110.10078687500209,
+            "learningRate": 0.00073303148938411
+          },
+          {
+            "epoch": 13,
+            "trainLoss": 0.310444057900833,
+            "validationLoss": 0.40149804729980443,
+            "elapsedSeconds": 118.59677875018679,
+            "learningRate": 0.0006890576474687263
+          },
+          {
+            "epoch": 14,
+            "trainLoss": 0.2989897009663579,
+            "validationLoss": 0.396338856835707,
+            "elapsedSeconds": 127.31834320910275,
+            "learningRate": 0.0006435602608679915
+          },
+          {
+            "epoch": 15,
+            "trainLoss": 0.29178144110988297,
+            "validationLoss": 0.39018912691246804,
+            "elapsedSeconds": 137.57159125013277,
+            "learningRate": 0.000597037808470444
+          },
+          {
+            "epoch": 16,
+            "trainLoss": 0.27757935439081866,
+            "validationLoss": 0.3828532509335866,
+            "elapsedSeconds": 146.1701975001488,
+            "learningRate": 0.00055
+          },
+          {
+            "epoch": 17,
+            "trainLoss": 0.27113778074228645,
+            "validationLoss": 0.3739675730272691,
+            "elapsedSeconds": 154.8534522501286,
+            "learningRate": 0.000502962191529556
+          },
+          {
+            "epoch": 18,
+            "trainLoss": 0.2641533318245842,
+            "validationLoss": 0.3757718959664289,
+            "elapsedSeconds": 163.71586200012825,
+            "learningRate": 0.00045643973913200826
+          },
+          {
+            "epoch": 19,
+            "trainLoss": 0.25553542775336796,
+            "validationLoss": 0.36582413597390395,
+            "elapsedSeconds": 173.64722887496464,
+            "learningRate": 0.0004109423525312737
+          },
+          {
+            "epoch": 20,
+            "trainLoss": 0.24943902522342634,
+            "validationLoss": 0.36077198345420414,
+            "elapsedSeconds": 183.77992683416232,
+            "learningRate": 0.00036696851061588997
+          },
+          {
+            "epoch": 21,
+            "trainLoss": 0.24234873118190364,
+            "validationLoss": 0.36054826452988364,
+            "elapsedSeconds": 193.36894670897163,
+            "learningRate": 0.0003250000000000001
+          },
+          {
+            "epoch": 22,
+            "trainLoss": 0.23708471223480876,
+            "validationLoss": 0.3540834360373137,
+            "elapsedSeconds": 205.17788675008342,
+            "learningRate": 0.00028549663646838715
+          },
+          {
+            "epoch": 23,
+            "trainLoss": 0.23111656515095716,
+            "validationLoss": 0.35633245877120706,
+            "elapsedSeconds": 214.21154729207046,
+            "learningRate": 0.000248891227138514
+          },
+          {
+            "epoch": 24,
+            "trainLoss": 0.2263219518811452,
+            "validationLoss": 0.35480856034868313,
+            "elapsedSeconds": 223.42484787502326,
+            "learningRate": 0.00021558482853517276
+          },
+          {
+            "epoch": 25,
+            "trainLoss": 0.22255323435916496,
+            "validationLoss": 0.35312393437476425,
+            "elapsedSeconds": 232.58066358417273,
+            "learningRate": 0.00018594235253127376
+          },
+          {
+            "epoch": 26,
+            "trainLoss": 0.2194446371749925,
+            "validationLoss": 0.35139136342932425,
+            "elapsedSeconds": 241.19442979199812,
+            "learningRate": 0.00016028856829700263
+          },
+          {
+            "epoch": 27,
+            "trainLoss": 0.21641488314736237,
+            "validationLoss": 0.3507227477635157,
+            "elapsedSeconds": 249.7367367921397,
+            "learningRate": 0.0001389045440608296
+          },
+          {
+            "epoch": 28,
+            "trainLoss": 0.21366283481043005,
+            "validationLoss": 0.3519546713755263,
+            "elapsedSeconds": 258.38828112510964,
+            "learningRate": 0.00012202456766718093
+          },
+          {
+            "epoch": 29,
+            "trainLoss": 0.21147882653234473,
+            "validationLoss": 0.35083732225801734,
+            "elapsedSeconds": 266.9146748750936,
+            "learningRate": 0.00010983357966978745
+          },
+          {
+            "epoch": 30,
+            "trainLoss": 0.20968185680050194,
+            "validationLoss": 0.3513937930825867,
+            "elapsedSeconds": 275.35617133416235,
+            "learningRate": 0.00010246514708427697
+          }
+        ],
+        "bestValidationLoss": 0.3507227477635157,
+        "limitations": [
+          "Validation excludes exact saved-control duplicates; generator-family holdout is separate.",
+          "Numeric loss measures control errors; rendered audio reconstruction is assessed separately.",
+          "TEXT source structures and randomness codes are generator anchors."
+        ],
+        "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+        "bestEpochDetails": {
+          "epoch": 27,
+          "trainLoss": 0.21641488314736237,
+          "validationLoss": 0.3507227477635157,
+          "perEngine": {
+            "Bfxr": {
+              "loss": 1.1060593069230695,
+              "unitMSE": 0.030052005019075317,
+              "generatorAccuracy": 0.752442996742671,
+              "categoricalAccuracy": 0.7231270358306189,
+              "validationRows": 614
+            },
+            "Footsteppr": {
+              "loss": 0.16490795965691732,
+              "unitMSE": 0.020372771794516412,
+              "generatorAccuracy": 1.0,
+              "categoricalAccuracy": 1.0,
+              "validationRows": 307
+            },
+            "Transfxr": {
+              "loss": 0.5954318471762567,
+              "unitMSE": 0.025569322940678083,
+              "generatorAccuracy": 0.8615635179153095,
+              "categoricalAccuracy": 0.5632852489530014,
+              "validationRows": 614
+            },
+            "Birdr": {
+              "loss": 0.23423735443077956,
+              "unitMSE": 0.01981181505133158,
+              "generatorAccuracy": 0.742671009771987,
+              "categoricalAccuracy": 0.8697068403908795,
+              "validationRows": 307
+            },
+            "Boomr": {
+              "loss": 0.3052525568862691,
+              "unitMSE": 0.026000947002867533,
+              "generatorAccuracy": 0.749185667752443,
+              "categoricalAccuracy": 0.8859934853420195,
+              "validationRows": 307
+            },
+            "Bouncr": {
+              "loss": 0.24601091099872652,
+              "unitMSE": 0.018203025337927503,
+              "generatorAccuracy": 0.8110749185667753,
+              "categoricalAccuracy": 0.8680781758957655,
+              "validationRows": 307
+            },
+            "Breathr": {
+              "loss": 0.2858848658174956,
+              "unitMSE": 0.03064117927698825,
+              "generatorAccuracy": 0.7166123778501629,
+              "categoricalAccuracy": 0.9771986970684039,
+              "validationRows": 307
+            },
+            "Choirr": {
+              "loss": 0.24436341391130068,
+              "unitMSE": 0.017492917175207543,
+              "generatorAccuracy": 0.7850162866449512,
+              "categoricalAccuracy": 0.7882736156351792,
+              "validationRows": 307
+            },
+            "Clonkr": {
+              "loss": 0.20865908313651815,
+              "unitMSE": 0.01633535543341396,
+              "generatorAccuracy": 0.7752442996742671,
+              "categoricalAccuracy": 0.9039087947882736,
+              "validationRows": 307
+            },
+            "Crittr": {
+              "loss": 0.2587123415175012,
+              "unitMSE": 0.017658931054538935,
+              "generatorAccuracy": 0.7361563517915309,
+              "categoricalAccuracy": 0.8338762214983714,
+              "validationRows": 307
+            },
+            "Fractr": {
+              "loss": 0.26272402417387947,
+              "unitMSE": 0.023213801426200213,
+              "generatorAccuracy": 0.739413680781759,
+              "categoricalAccuracy": 0.9218241042345277,
+              "validationRows": 307
+            },
+            "Glitchr": {
+              "loss": 0.37196038522627145,
+              "unitMSE": 0.030353354969659536,
+              "generatorAccuracy": 0.7263843648208469,
+              "categoricalAccuracy": 0.8241042345276873,
+              "validationRows": 307
+            },
+            "Jinglr": {
+              "loss": 0.44754067393389896,
+              "unitMSE": 0.023680043603970097,
+              "generatorAccuracy": 0.755700325732899,
+              "categoricalAccuracy": 0.6091205211726385,
+              "validationRows": 307
+            },
+            "Machinr": {
+              "loss": 0.20351237408113013,
+              "unitMSE": 0.01763542623832482,
+              "generatorAccuracy": 0.8566775244299675,
+              "categoricalAccuracy": 0.9153094462540716,
+              "validationRows": 307
+            },
+            "Pluckr": {
+              "loss": 0.3377398588370034,
+              "unitMSE": 0.026845080729464756,
+              "generatorAccuracy": 0.8045602605863192,
+              "categoricalAccuracy": 0.8159609120521173,
+              "validationRows": 614
+            },
+            "Riftr": {
+              "loss": 0.1896648046830578,
+              "unitMSE": 0.024330354996438135,
+              "generatorAccuracy": 0.7817589576547231,
+              "categoricalAccuracy": 0.9804560260586319,
+              "validationRows": 307
+            },
+            "Rustlr": {
+              "loss": 0.3253743632996898,
+              "unitMSE": 0.024764740463431183,
+              "generatorAccuracy": 0.6677524429967426,
+              "categoricalAccuracy": 0.8078175895765473,
+              "validationRows": 307
+            },
+            "Signlr": {
+              "loss": 0.25631467401010594,
+              "unitMSE": 0.021048662989894808,
+              "generatorAccuracy": 0.8143322475570033,
+              "categoricalAccuracy": 0.8827361563517915,
+              "validationRows": 307
+            },
+            "Squishr": {
+              "loss": 0.15509263394515754,
+              "unitMSE": 0.016543269864244065,
+              "generatorAccuracy": 0.7947882736156352,
+              "categoricalAccuracy": 0.990228013029316,
+              "validationRows": 307
+            },
+            "Swarmr": {
+              "loss": 0.22520797503111029,
+              "unitMSE": 0.026458237702421335,
+              "generatorAccuracy": 0.8143322475570033,
+              "categoricalAccuracy": 0.996742671009772,
+              "validationRows": 307
+            },
+            "Whooshr": {
+              "loss": 0.1612400959097213,
+              "unitMSE": 0.017248915993769317,
+              "generatorAccuracy": 0.6938110749185668,
+              "categoricalAccuracy": null,
+              "validationRows": 307
+            },
+            "Zappr": {
+              "loss": 0.14294617756570202,
+              "unitMSE": 0.016010154988192,
+              "generatorAccuracy": 0.8241042345276873,
+              "categoricalAccuracy": null,
+              "validationRows": 307
+            }
+          },
+          "elapsedSeconds": 249.7367367921397,
+          "learningRate": 0.0001389045440608296
+        }
+      },
+      "trainingJsonSha256": "22b2ab9b1e544ffba7ec042535ea446a8b38858424ff736a5bcd994c174e567d",
+      "metadataKeys": [
+        "version",
+        "headMode",
+        "lossPolicy",
+        "trainingCodeHash",
+        "modelCodeHash",
+        "lossCodeHash",
+        "specs",
+        "engines",
+        "sourceHash",
+        "featureVersion",
+        "featureHash",
+        "featureCodeHash",
+        "ignorePeakGain",
+        "featureDim",
+        "hidden",
+        "normalization",
+        "seed",
+        "fixedStructureScope",
+        "fixedControls",
+        "dataManifestHash"
+      ],
+      "metadataSha256": "03b9953390c08c0f3bee64e8aac47465669618205a6de9c7291f36b47c1558e7",
+      "metadataSummary": {
+        "version": 2,
+        "headMode": "acoustic",
+        "lossPolicy": {
+          "version": "acoustic-controls-v2",
+          "numericWeight": 8.0,
+          "octaveWeight": 1.0,
+          "categoricalWeight": 0.2,
+          "generatorWeight": 0.05,
+          "pitchControlWeight": 4.0,
+          "temporalControlWeight": 2.0,
+          "otherControlWeight": 1.0,
+          "pitchMappings": {
+            "Bfxr": "log2(3528*(frequency_start^2+.001))",
+            "Transfxr": "log2(40)+7*pitch",
+            "Pluckr": "log2(55)+4*pitch"
+          },
+          "masks": "Bfxr square-only, zero-depth vibrato rate, zero-amount jump onset/repeat; Pluckr motion rate when both tremolo/vibrato are zero and one-string strum; equal-endpoint transition curves; Transfxr disabled morph."
+        },
+        "trainingCodeHash": "31676020def7cadcaa844651f429ee4cc970272c301aa7a89bcd8fbb3c25354d",
+        "modelCodeHash": "1e7c07e7981582082aa832879db5b4a15b788a58ed10c4c3c4c92f7e3a2629cc",
+        "lossCodeHash": "29d02dfa7cd34d3166759d81444e5cee51c6bb12711e99a1f7e9ee230ea9946f",
+        "engines": [
+          "Bfxr",
+          "Footsteppr",
+          "Transfxr",
+          "Birdr",
+          "Boomr",
+          "Bouncr",
+          "Breathr",
+          "Choirr",
+          "Clonkr",
+          "Crittr",
+          "Fractr",
+          "Glitchr",
+          "Jinglr",
+          "Machinr",
+          "Pluckr",
+          "Riftr",
+          "Rustlr",
+          "Signlr",
+          "Squishr",
+          "Swarmr",
+          "Whooshr",
+          "Zappr"
+        ],
+        "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+        "featureVersion": "neural-fullsound-v1",
+        "featureHash": "fa36498127a6b820ef7b576f708ac0aaa8826b82d2df6acc726511a0a0fff3b1",
+        "featureCodeHash": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+        "ignorePeakGain": true,
+        "featureDim": 4083,
+        "hidden": 256,
+        "seed": 20261005,
+        "fixedStructureScope": "TEXT phrase comes from the predicted generator; random seed controls are held at generator anchors.",
+        "fixedControls": {
+          "Bfxr": {
+            "text": [],
+            "randomness": []
+          },
+          "Footsteppr": {
+            "text": [],
+            "randomness": []
+          },
+          "Transfxr": {
+            "text": [],
+            "randomness": []
+          },
+          "Birdr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Boomr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Bouncr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Breathr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Choirr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Clonkr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Crittr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Fractr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Glitchr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Jinglr": {
+            "text": [
+              "phrase"
+            ],
+            "randomness": [
+              "seed",
+              "instrumentSeed"
+            ]
+          },
+          "Machinr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Pluckr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Riftr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Rustlr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Signlr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Squishr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Swarmr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Whooshr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          },
+          "Zappr": {
+            "text": [],
+            "randomness": [
+              "seed"
+            ]
+          }
+        },
+        "dataManifestHash": "2701d7907e824f9e34872c1bc4b99ccc1e3d85941040a42ff4029eb658564657"
+      },
+      "summaryPolicy": "Full epoch scalar history and best-epoch engine diagnostics. Original complete training.json remains beside its checkpoint and is hash-bound here."
+    }
+  }
+}

@@ -51,17 +51,25 @@ def _load_dataset(path):
     return manifest, specs, shards, mean.astype(np.float32), std.astype(np.float32)
 
 
-def train_model(data, output, epochs=30, device=None, hidden=256, batch_size=128, seed=20261004, threads=4, learning_rate=.001):
+def train_model(data, output, epochs=30, device=None, hidden=256, batch_size=128, seed=20261004, threads=4, learning_rate=.001, head_mode='generator', loss_mode='legacy'):
     if epochs < 1:
         raise ValueError('At least one training epoch required')
     torch.set_num_threads(threads); torch.manual_seed(seed); np.random.seed(seed)
     dataset_path, output = Path(data), Path(output); output.mkdir(parents=True, exist_ok=True)
     manifest, specs, shards, mean, std = _load_dataset(dataset_path)
     device = choose_device(device)
-    model = MultiSynthModel(specs, DIM, hidden).to(device)
+    if loss_mode not in ('legacy','acoustic'):raise ValueError('Unknown supervised loss mode')
+    if loss_mode=='acoustic':
+        from .acoustic import acoustic_loss,POLICY
+    model = MultiSynthModel(specs, DIM, hidden,head_mode=head_mode).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=.0001)
     schedule = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, epochs, eta_min=learning_rate*.1)
-    metadata = {'version': 1, 'specs': specs, 'engines': manifest['engines'], 'sourceHash': manifest['sourceHash'],
+    metadata = {'version': 2 if head_mode=='acoustic' else 1, 'headMode':head_mode,
+                'lossPolicy':POLICY if loss_mode=='acoustic' else {'version':'legacy-controls-v1'},
+                'trainingCodeHash':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+                'modelCodeHash':hashlib.sha256(Path(__file__).with_name('model.py').read_bytes()).hexdigest(),
+                'lossCodeHash':hashlib.sha256(Path(__file__).with_name('acoustic.py').read_bytes()).hexdigest() if loss_mode=='acoustic' else None,
+                'specs': specs, 'engines': manifest['engines'], 'sourceHash': manifest['sourceHash'],
                 'featureVersion': VERSION, 'featureHash': FEATURE_HASH, 'featureCodeHash': manifest['featureCodeHash'], 'ignorePeakGain': True, 'featureDim': DIM, 'hidden': hidden,
                 'normalization': {'mean': mean.tolist(), 'std': std.tolist()},
                 'seed': seed, 'fixedStructureScope': manifest['fixedStructureScope'],
@@ -75,7 +83,7 @@ def train_model(data, output, epochs=30, device=None, hidden=256, batch_size=128
         for name, shard in shards.items():
             order = shard['train'][torch.randperm(len(shard['train']))]
             tasks.extend((name, ids) for ids in order.split(batch_size))
-        # Round-robin randomization gives every synth equal data weight.
+        # Shuffle all engine batches; rows retain their actual per-engine counts.
         permutation = np.random.permutation(len(tasks)); train_sum, train_count = 0., 0
         for task in permutation:
             name, ids = tasks[task]; shard = shards[name]
@@ -83,7 +91,8 @@ def train_model(data, output, epochs=30, device=None, hidden=256, batch_size=128
             x[:, -2] = 0
             labels = {key: shard[key][ids].to(device) for key in ('continuous','categorical','generator')}
             optimizer.zero_grad(set_to_none=True)
-            loss = supervised_loss(model(x, name, labels['generator']), labels)
+            prediction=model(x,name,labels['generator'])
+            loss = acoustic_loss(prediction,labels,specs[name]) if loss_mode=='acoustic' else supervised_loss(prediction, labels)
             loss.backward(); torch.nn.utils.clip_grad_norm_(model.parameters(), 5.)
             optimizer.step(); train_sum += float(loss.detach())*len(ids); train_count += len(ids)
         model.eval(); val_sum, val_count, per_engine = 0., 0, {}
@@ -96,7 +105,7 @@ def train_model(data, output, epochs=30, device=None, hidden=256, batch_size=128
                     labels = {key: shard[key][ids].to(device) for key in ('continuous','categorical','generator')}
                     # Validate using inferred generator, as during deployment.
                     prediction = model(x, name)
-                    loss = supervised_loss(prediction, labels)
+                    loss = acoustic_loss(prediction,labels,specs[name]) if loss_mode=='acoustic' else supervised_loss(prediction, labels)
                     total += float(loss)*len(ids); n += len(ids)
                     squared_error += float(torch.mean((prediction['continuous']-labels['continuous'])**2))*len(ids)
                     correct_gen += int((prediction['generator'].argmax(1)==labels['generator']).sum())
@@ -132,7 +141,10 @@ def main():
     parser.add_argument('--epochs', type=int, default=30); parser.add_argument('--device')
     parser.add_argument('--hidden', type=int, default=256); parser.add_argument('--batch-size', type=int, default=128)
     parser.add_argument('--threads', type=int, default=4); parser.add_argument('--seed', type=int, default=20261004)
-    args = parser.parse_args(); train_model(args.data, args.output, args.epochs, args.device, args.hidden, args.batch_size, args.seed, args.threads)
+    parser.add_argument('--head-mode',choices=['generator','acoustic'],default='generator')
+    parser.add_argument('--loss-mode',choices=['legacy','acoustic'],default='legacy')
+    args = parser.parse_args(); train_model(args.data, args.output, args.epochs, args.device, args.hidden, args.batch_size, args.seed, args.threads,
+                                           head_mode=args.head_mode,loss_mode=args.loss_mode)
 
 
 if __name__ == '__main__':

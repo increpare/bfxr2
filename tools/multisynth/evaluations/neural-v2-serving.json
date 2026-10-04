@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "matchingFileCountPerHost": {
+    "127.0.0.1": 28,
+    "192.168.178.131": 28
+  },
+  "hostsTestedFromServerMachine": true,
+  "externalClientReachabilityNotVerified": true
+}

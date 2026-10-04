@@ -1,0 +1,51 @@
+{
+  "selection": "First five previously judged tagged development references, fixed before v2 reconstruction results; exact last-round winners replayed where available. No filtering by new scores.",
+  "parentManifestSha256": "c0b4cd97d863cd32cb21376c0abbbe8049b658d2a98aab6b31d8ebeef466b82d",
+  "targets": [
+    {
+      "name": "attack/spinout.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/attack/spinout.wav",
+      "sha256": "63f22019f9cb29641090eaa86c67b1beb58f40462d53554a4bb5e9c526634b73",
+      "tag": "attack",
+      "durationSeconds": 0.7280478955007257,
+      "normalizedPcmSha256": "0414bc92428d6819db3cd800f9c5ced5e6df3ad23816e38ae7f4bf2f84f75b55",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "bird/Bird Sounds.WAV",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bird/Bird Sounds.WAV",
+      "sha256": "b7e6a6985e2182452977e32c60e7fc705cf80a36151c6d49f4f1139bffb34370",
+      "tag": "bird",
+      "durationSeconds": 0.35616780045351476,
+      "normalizedPcmSha256": "6e5cad723b223d8a4a8aaed6d05c73341c7259e243cfd83b49f2ee1ecd9adba6",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "card/bookClose.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/card/bookClose.ogg",
+      "sha256": "81e976532565f4372abd14e83d2684195fa548d0a28d345de221e56052454f32",
+      "tag": "card",
+      "durationSeconds": 0.23060416666666667,
+      "normalizedPcmSha256": "54483bc18aff6f55613053dfd531b9e5104a9556dd295625d18bd1a1c28945a1",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "computer/robo_talk.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/computer/robo_talk.wav",
+      "sha256": "405f8bbc7adcdae6815b249b1551423407f5b157947c386340faf161b94e6391",
+      "tag": "computer",
+      "durationSeconds": 0.893061224489796,
+      "normalizedPcmSha256": "91f233628e88e2ad7998725f2ecdfb0bcb77f01a62816059331038c39c74a256",
+      "previouslyRatedReference": false
+    },
+    {
+      "name": "die/charm2.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/die/charm2.wav",
+      "sha256": "d161711f9e872a84d289f26097f57028ef444959afd79c0233b74aef9f3ae24e",
+      "tag": "die",
+      "durationSeconds": 2.113968253968254,
+      "normalizedPcmSha256": "98971f210ae3659c11256c8d53e180be3165b73f6b227d62d3686d2f7ff514ce",
+      "previouslyRatedReference": false
+    }
+  ]
+}

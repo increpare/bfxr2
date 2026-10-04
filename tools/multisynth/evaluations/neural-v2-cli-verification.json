@@ -1,0 +1,80 @@
+{
+  "complete": true,
+  "scope": "Current single-sound CLI, actual DSP controls -> one PCM16 audition transform -> exact exported audio and scores; reduced smoke budgets are not quality evaluation.",
+  "runMetadata": {
+    "complete": true,
+    "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+    "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+    "modelHeadMode": "acoustic",
+    "trainedEngines": [
+      "Bfxr",
+      "Footsteppr",
+      "Transfxr",
+      "Birdr",
+      "Boomr",
+      "Bouncr",
+      "Breathr",
+      "Choirr",
+      "Clonkr",
+      "Crittr",
+      "Fractr",
+      "Glitchr",
+      "Jinglr",
+      "Machinr",
+      "Pluckr",
+      "Riftr",
+      "Rustlr",
+      "Signlr",
+      "Squishr",
+      "Swarmr",
+      "Whooshr",
+      "Zappr"
+    ],
+    "targetSha256": "b78c895f0183d907588cb962d8e1c9dd27b21665d64d2ecf2a0b8bfdd843714d",
+    "targetPath": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/neural-v2-quick/001/target.wav",
+    "bfxrCheckpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+    "seed": 20261006,
+    "starts": 2,
+    "budgetPerStart": 32,
+    "bfxrBudget": 512,
+    "selectorModelSha256": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+    "runCodeSha256": "3fab1a9089d23a0a4c42e369b089e9149745bd64c4aeb1a9cfbde37fdad0a018",
+    "seconds": 26.91364008304663
+  },
+  "resultJsonSha256": "91d546ff8ada0c517f870157e46d268a176e189e76f05bd040e2569dd37511db",
+  "auditCodeSha256": "5edab29ad08338c7ddedc8c95f50d4fbece40efe205eece9334f885b8000c864",
+  "checks": [
+    {
+      "role": "raw",
+      "synth": "Rustlr",
+      "exactEditableControlReplay": true,
+      "auditionWavSha256": "b138e10e9d1929377c4be94f154de6e22ecdc77b458465d775604606dd048461",
+      "auditionScore": 5.264901614656214,
+      "searchScoreRetained": 5.264697143818526
+    },
+    {
+      "role": "neural",
+      "synth": "Rustlr",
+      "exactEditableControlReplay": true,
+      "auditionWavSha256": "38d05f7eed68f0d99de1dae8468173d8cc7a9c0e04821b6b19a31fde2ed1f227",
+      "auditionScore": 3.4231223721556487,
+      "searchScoreRetained": 3.4229210003983166
+    },
+    {
+      "role": "selected",
+      "synth": "Bfxr",
+      "exactEditableControlReplay": true,
+      "auditionWavSha256": "c31fe7bffac4a5f75e30d6b7e521f87e68f640b50ce3f421def0753ebb007083",
+      "auditionScore": 5.179886741698534,
+      "searchScoreRetained": 5.1795242593374295
+    },
+    {
+      "role": "original",
+      "synth": "Bfxr",
+      "exactEditableControlReplay": true,
+      "auditionWavSha256": "c31fe7bffac4a5f75e30d6b7e521f87e68f640b50ce3f421def0753ebb007083",
+      "auditionScore": 5.179886741698534,
+      "searchScoreRetained": 5.1795242593374295
+    }
+  ]
+}

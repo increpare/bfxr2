@@ -1,5 +1,6 @@
 """Independent reconstruction checks and tagged listening with original Bfxr."""
 import argparse
+import io
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import json
 from pathlib import Path
@@ -15,12 +16,67 @@ from match.renderer import BfxrRenderer
 from multisynth.renderer import Renderer
 from multisynth.coverage_feedback import export_coverage
 from multisynth.big_run import history, latest_best
-from multisynth.coverage import copy_archived_audio
+from multisynth.coverage import copy_archived_audio, verify_archived_audio
 from .evaluate import OriginalBfxr, approximate, digest, serializable, pitch_summary
 
 
-def _write_wave(path,wave):
-    sf.write(path,normalize_peak(np.asarray(wave,dtype=np.float32)),44100,subtype='PCM_16')
+def _write_wave(path,wave,canonical=False):
+    sf.write(path,np.asarray(wave,dtype=np.float32) if canonical else audition_pcm(wave),44100,subtype='PCM_16')
+
+
+def audition_pcm(wave):
+    """Canonical listening PCM; selection can use the exact exported samples."""
+    buffer=io.BytesIO()
+    sf.write(buffer,normalize_peak(np.asarray(wave,dtype=np.float32)),44100,format='WAV',subtype='PCM_16')
+    buffer.seek(0)
+    samples,rate=sf.read(buffer,dtype='float32')
+    if rate!=44100:raise ValueError('Audition sample rate differs')
+    return samples
+
+
+def audition_details(path,objective):
+    samples,rate=sf.read(path,dtype='float32')
+    if rate!=44100:raise ValueError('Audition sample rate differs')
+    return {'auditionMatchObjectiveScore':float(objective.score_batch([samples])[0]),
+            'auditionWavSha256':digest(path),'auditionPitchDiagnostic':pitch_summary(samples),
+            'auditionTransform':'peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio'}
+
+
+def listening_history(archives):
+    """Keep explicit heard winners separately from older scalar ratings."""
+    from multisynth.quick_feedback import validate_choice
+    result=history(archives)  # Validates archived feedback and scalar audio.
+    for session,archive in enumerate(archives):
+        data=json.loads((archive/'manifest.json').read_text())
+        candidates={c['id']:c for c in data['candidates']}
+        for target in data['targets']:
+            ids=[c['id'] for c in target.get('candidates',[])]
+            choice=validate_choice(target.get('choice'),ids)
+            if choice is None or choice['kind']!='best':continue
+            cid=choice['preferredCandidateIds'][0]
+            if cid not in choice['auditionedCandidateIds']:continue
+            candidate=candidates[cid]
+            verify_archived_audio(archive,candidate['audio'])
+            observation={'candidate':candidate,'rating':None,'session':session,
+                'labelSource':'direct-choice','archive':archive,'target':target,
+                'experimentId':data['experimentId'],
+                'sourceHash':candidate.get('sourceHash',data['provenance'].get('sourceHash'))}
+            for key in (target['source']['sha256'],'pcm:'+target['referenceAudio']['pcmSha256']):
+                result.setdefault(key,[]).append(observation)
+    return result
+
+
+def previous_best(observations):
+    """Latest direct winner, or scalar history after a newer scalar session.
+
+    Scalar history retains its strongest distinct audio; a later rating of the
+    same exact audio replaces its earlier score, as in the existing matcher.
+    """
+    choices=[r for r in observations if r.get('labelSource')=='direct-choice']
+    scalar=[r for r in observations if r.get('rating') is not None]
+    if choices and (not scalar or max(r['session'] for r in choices)>=max(r['session'] for r in scalar)):
+        return max(choices,key=lambda r:r['session'])
+    return latest_best(scalar)
 
 
 _WORKER = None
@@ -40,7 +96,7 @@ def _tagged_one(item):
     index,source=item; started=time.monotonic();folder=f'{index+1:03d}'
     if digest(source['path']) != source['sha256']:raise ValueError('Frozen source changed')
     dest=args.output/folder;dest.mkdir()
-    previous=latest_best(old[source['sha256']]) if old.get(source['sha256']) else None
+    previous=previous_best(old[source['sha256']]) if old.get(source['sha256']) else None
     if previous:
         copy_archived_audio(previous['archive']/previous['target']['referenceAudio']['file'],dest/'target.wav')
         wave,rate=sf.read(dest/'target.wav',dtype='float32')
@@ -54,16 +110,26 @@ def _tagged_one(item):
         original=OriginalBfxr(args.bfxr_checkpoint,original_renderer)
         result=approximate(model,metadata,wave,renderer,original,starts=args.starts,
                    budget=args.budget,bfxr_budget=args.bfxr_budget,seed=args.seed+index*1009)
+        matcher_selected=result['selected']
+        audition_objective=MatchObjective(wave)
+        if getattr(args,'selector_model',None):
+            from multisynth.preference import PreferenceMetric
+            from multisynth.features import describe
+            from .selection import select_preferred
+            pool=[{**c,'wave':audition_pcm(c['wave'])} for c in result['allRaw']+result['allRefined']+[result['original']]]
+            result['selected']=select_preferred(wave,pool,PreferenceMetric.load(args.selector_model),describe,
+                                               digest(args.selector_model))
         cards=[]
         for role,label in [('raw','Raw neural prediction'),('selected','Automatic expert choice'),('original','Original Bfxr')]:
             c=result[role]
             if c is None:continue
-            filename=role+'.wav';_write_wave(dest/filename,c['wave'])
+            filename=role+'.wav';_write_wave(dest/filename,c['wave'],canonical=role=='selected' and bool(getattr(args,'selector_model',None)))
             card={**serializable(c),'role':role,'label':label,'file':filename,
                 'sourceHash':metadata['sourceHash'],
                 'provenance':{**c['provenance'],'matchObjectiveScore':c['score'],
                     'modelSha256':provenance['modelSha256'],'backend':'original-bfxr' if c.get('expert') else 'neural',
-                    'pitchDiagnostic':pitch_summary(c['wave'])}}
+                    'pitchDiagnostic':pitch_summary(c['wave']),
+                    **audition_details(dest/filename,audition_objective)}}
             cards.append(card)
         if previous:
             c=previous['candidate'];filename='previous.wav'
@@ -71,11 +137,14 @@ def _tagged_one(item):
             cards.append({'role':'previous','label':'Previous best','synth':c['synth'],'params':c['params'],
                 'seed':c['seed'],'sourceHash':previous['sourceHash'],'file':filename,
                 'provenance':{'experimentId':previous['experimentId'],'candidateId':c['id'],
-                    'archivedPcmSha256':c['audio']['pcmSha256'],'previousLikeness':previous['rating']}})
+                    'archivedPcmSha256':c['audio']['pcmSha256'],'previousLikeness':previous['rating'],
+                    'previousLabelSource':previous.get('labelSource','scalar-likeness')}})
     record={'folder':folder,'source':source,'candidates':cards,
         'note':'Previously reviewed development reference. No target category is given to inference.',
         'diagnostics':{'referencePitch':pitch_summary(wave),
+            'matcherSelected':serializable(matcher_selected),
             'neuralBest':serializable(result['neural']),
+            'allRefined':[serializable(r) for r in result['allRefined']],
             'allRaw':[{**serializable(r),'pitchDiagnostic':pitch_summary(r['wave'])} for r in result['allRaw']],
             'failures':result['failures'],'evaluations':result['evaluations'],
             'seconds':time.monotonic()-started}}
@@ -116,20 +185,28 @@ def tagged(args):
     model,metadata=load_model(args.model)
     sources=json.loads(args.targets.read_text())['targets']
     if args.limit:sources=sources[:args.limit]
-    old=history(args.archives)
+    old=listening_history(args.archives)
     args.output.mkdir(parents=True)
-    provenance={'experiment':'neural-multisynth-v1','modelSha256':digest(args.model),
+    version=metadata.get('version',1)
+    provenance={'experiment':f'neural-multisynth-v{version}','modelSha256':digest(args.model),
+        'modelHeadMode':metadata.get('headMode','generator'),'modelLossPolicy':metadata.get('lossPolicy'),
         'targetCount':len(sources),
         'bfxrCheckpointSha256':digest(args.bfxr_checkpoint),'targetManifestSha256':digest(args.targets),
         'trainedEngines':metadata['engines'],'complete':False,
-        'galleryTitle':'Learned multisynth inversion · first training run',
+        'galleryTitle':f'Learned multisynth inversion · training v{version}',
         'galleryIntro':[
           'These candidates come from trained audio-to-control experts for every listed instrument. The original Bfxr neural model and optimizer are restored as a separate baseline.',
           'Raw neural prediction shows the best rendered prediction before refinement. Automatic expert choice compares refined learned predictions with Original Bfxr. Previous best is the exact audio from your earlier ratings.',
-          'Rate likeness independently from useful/fun. These are familiar tagged development references; this first trained model has not yet established a human quality improvement. Ratings save here and can be copied as JSON.'],
+          'Choose the closest gesture and feel. These are familiar tagged development references; measured reconstruction changes still need your ears. Choices save here and can be copied as JSON.'],
         'sourceHash':metadata['sourceHash'],'starts':args.starts,'refinementBudgetPerStart':args.budget,
+        'selectorModelSha256':digest(args.selector_model) if getattr(args,'selector_model',None) else None,
+        'selectionObjective':'experimental-human-preference-rerank' if getattr(args,'selector_model',None) else 'MatchObjective',
         'originalBfxrBudget':args.bfxr_budget,
         'scope':'Individual numeric engines; Jinglr editable phrase structure comes from predicted generator, not note transcription.'}
+    if getattr(args,'selector_model',None):
+        from .selection import PITCH_POLICY
+        provenance['coarsePitchPolicy']=PITCH_POLICY.copy()
+        provenance['galleryIntro'][1]='Automatic expert choice uses the experimental scorer fitted to your saved preferences, with a coarse pitch/voicing safeguard. Original Bfxr and your exact previous winner remain separate comparisons. Raw model output is available in details.'
     (args.output/'manifest.json').write_text(json.dumps(provenance,indent=2)+'\n')
 
 
@@ -216,6 +293,7 @@ def main():
     for name in ('model','bfxr-checkpoint','output'):
         parser.add_argument('--'+name,type=Path,required=True)
     parser.add_argument('--data',type=Path);parser.add_argument('--targets',type=Path)
+    parser.add_argument('--selector-model',type=Path,help='Experimental preference rerank of the final candidate pool (tagged only)')
     parser.add_argument('--archives',type=Path,nargs='+',default=[])
     parser.add_argument('--limit',type=int,default=0);parser.add_argument('--per-synth',type=int,default=2)
     parser.add_argument('--jobs',type=int,default=4);parser.add_argument('--starts',type=int,default=4)

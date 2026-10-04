@@ -1,0 +1,1811 @@
+{
+  "version": 1,
+  "complete": true,
+  "allChecksPassed": true,
+  "purpose": "Both neural-v2 comparison models trained on the original immutable manifest. The certified derivative repairs provenance only and contains byte-identical training examples, labels, rows and splits; no retraining required.",
+  "trainingData": "tools/multisynth/runs/neural-v2/data",
+  "certifiedData": "tools/multisynth/runs/neural-v2/data-certified-v2",
+  "trainingManifestSha256": "2701d7907e824f9e34872c1bc4b99ccc1e3d85941040a42ff4029eb658564657",
+  "certifiedManifestSha256": "8c32761f1ec0e7207df59525959f02311db282dd1713ef568243603c51406bdd",
+  "baseManifestSha256": "a12d9252905e499ccdd01401a277a2f4d5a90a6de2fd39c626483d17c9d4c23f",
+  "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+  "featureVersion": "neural-fullsound-v1",
+  "featureHash": "fa36498127a6b820ef7b576f708ac0aaa8826b82d2df6acc726511a0a0fff3b1",
+  "featureCodeHash": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+  "featureDim": 4083,
+  "augmentationVersion": "physical-gestures-v2",
+  "augmentationConfigHash": "5405239f29d0d31c45398a88b69938729112c826ec271617934808b55e1f5ac4",
+  "augmentationCodeHash": "cca7a5440c692a50dcb7cf9a2373b3e7da068e538c57716a84cae88635580305",
+  "augmentationCodeFiles": {
+    "neural_invert/structured.py": "d4c8ce1b9ca235103aefc19193a564a91dc00c03bbadcec3efb483ae65df15ee",
+    "neural_invert/schema.py": "164371d97f58e7db447f794c618eedc146949d9d70d15689f44bbec65c75871e",
+    "neural_invert/data.py": "15b3683eb8690a9cc37612e676f6582e59cd9167de5d4098f308bcfe6fa7136c",
+    "match/optimizer.py": "427c729e7605da863bfdda41b338edf19b3b6ee14e53e846d6a61156c81b8972",
+    "match/audio.py": "90bd5aa0dd1e885f0cdd1057e2a0d9c06c25bcf7584e8e7ab92fd5edeb14fa52",
+    "multisynth/renderer.py": "a64863bbd4d104ef1ee36d49d5973de9dc2a8998298ae4f4d12b2d11c1ad28b0",
+    "render/multisynth_worker.js": "a6919fc43294cae2b92732b98cd1e95efd72d1326a93f8b8a0271651c424be3b"
+  },
+  "sourceBindingScope": "sourceHash binds multisynth_context.js, audio_globals.js, js/index.js and loaded synth/DSP scripts; augmentationCodeFiles separately binds the request/PCM worker and directly executed Python generation helpers.",
+  "trainingArraysBundleSha256": "0dcb3d4be3b52cea2b7f8331970c3b8eef46f0c841eb0e0b913da56e1658b383",
+  "certifiedArraysBundleSha256": "0dcb3d4be3b52cea2b7f8331970c3b8eef46f0c841eb0e0b913da56e1658b383",
+  "trainingDataUnchanged": true,
+  "baseDataUnchanged": true,
+  "completeResumeImmutable": true,
+  "allNpzFilesByteIdentical": true,
+  "allRowsAndSplitsIdentical": true,
+  "counts": {
+    "base": 45056,
+    "structured": 6144,
+    "total": 51200,
+    "train": 43525,
+    "val": 7675,
+    "structuredTrain": 5234,
+    "structuredVal": 910,
+    "packedFeatureHashesChecked": 51200,
+    "parameterHashesChecked": 51200,
+    "actualReplays": 24
+  },
+  "invalidStructuredDraws": 0,
+  "engines": {
+    "Bfxr": {
+      "trainingNpzSha256": "c8f7c8e3dd603275d9193f3bccc4775757f0843a9b13fdebd4f05d37a9fc68d9",
+      "certifiedNpzSha256": "c8f7c8e3dd603275d9193f3bccc4775757f0843a9b13fdebd4f05d37a9fc68d9",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            4096,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "b8f8147b5d6b1194300dc4fd0ea8e0ce8faaa883bdf10752dbfd1accc58eca01"
+        },
+        "continuous": {
+          "shape": [
+            4096,
+            30
+          ],
+          "dtype": "float32",
+          "sha256": "107683eec433743959d472955828697980a81e8c8d935c4e9d93f796ac967516"
+        },
+        "categorical": {
+          "shape": [
+            4096,
+            1
+          ],
+          "dtype": "int16",
+          "sha256": "5c447a42d8ca41350a44afed7617ce32a30e9d8ba41c624774d82785675ce103"
+        },
+        "generator": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int16",
+          "sha256": "4676c634f7617fcc8eca46337d5f8afb26d3ac0bb08c95e7e6315945260fc779"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "8a025ccff0d9fba202c46a8710a555eb44d343f49ef1df639acce993646314e0",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 2048,
+      "totalRows": 4096,
+      "trainRows": 3482,
+      "validationRows": 614,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1728,
+          "structured": 1754,
+          "gestures": {
+            "stationary": 866,
+            "rise": 226,
+            "fall": 221,
+            "jump": 218,
+            "vibrato": 223
+          }
+        },
+        "val": {
+          "base": 320,
+          "structured": 294,
+          "gestures": {
+            "stationary": 158,
+            "rise": 30,
+            "jump": 38,
+            "vibrato": 33,
+            "fall": 35
+          }
+        }
+      },
+      "actualReplays": [
+        {
+          "row": 2048,
+          "structuredIndex": 0,
+          "gesture": "stationary",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 2052,
+          "structuredIndex": 4,
+          "gesture": "rise",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 2053,
+          "structuredIndex": 5,
+          "gesture": "fall",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 2054,
+          "structuredIndex": 6,
+          "gesture": "jump",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 2055,
+          "structuredIndex": 7,
+          "gesture": "vibrato",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 2304,
+          "structuredIndex": 256,
+          "gesture": "stationary",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 3072,
+          "structuredIndex": 1024,
+          "gesture": "stationary",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 4095,
+          "structuredIndex": 2047,
+          "gesture": "vibrato",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        }
+      ]
+    },
+    "Footsteppr": {
+      "trainingNpzSha256": "75870b6a04004cc39662d11c838e6810b22637c6761023f63207aafa4b2f3f0b",
+      "certifiedNpzSha256": "75870b6a04004cc39662d11c838e6810b22637c6761023f63207aafa4b2f3f0b",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "273681d5df404b9b839a42424befe4f500a6f5d096a07f9a1148e56872c4dac7"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            4
+          ],
+          "dtype": "float32",
+          "sha256": "f692118c2d6d279a8728961f5c7b9a18bf7f6d31d4aa5a95ae7389d420c6addb"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            1
+          ],
+          "dtype": "int16",
+          "sha256": "419524bd56125e4ae8308d16b3f71e275bfc10f33a0e7967b77c5411f5e78549"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "b9d587a0525b45ac10760480c4ba4b35a04466563e16bd14e439eb0051084dc6",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Transfxr": {
+      "trainingNpzSha256": "ac32af231e33df054601c3c836ae08e5ee243c57fa9c99b68056bcf103bd0abe",
+      "certifiedNpzSha256": "ac32af231e33df054601c3c836ae08e5ee243c57fa9c99b68056bcf103bd0abe",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            4096,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "0537c85594ce07e64d390b79875e08a4ac9a990bf5b9b4f05fe0770cc014ee83"
+        },
+        "continuous": {
+          "shape": [
+            4096,
+            15
+          ],
+          "dtype": "float32",
+          "sha256": "a006397f3461c44aead8e1f960bb217e465dbf7491704d1873e82a61290c19da"
+        },
+        "categorical": {
+          "shape": [
+            4096,
+            7
+          ],
+          "dtype": "int16",
+          "sha256": "3f55bb478a347596dbbcbaa30a637229a823e0ce95fd6ac8d6f1157120a4b658"
+        },
+        "generator": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int16",
+          "sha256": "4ffd8fed401dd1bee2a1fd0b651e9c07886bb934d0a5f8afc9850900e0754af3"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "d522efc85136992d04a5e0c111c997a65111b87adfd111bbfa8e716bd2b1762a",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 2048,
+      "totalRows": 4096,
+      "trainRows": 3482,
+      "validationRows": 614,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1746,
+          "structured": 1736,
+          "gestures": {
+            "stationary": 860,
+            "jump": 231,
+            "vibrato": 222,
+            "rise": 212,
+            "fall": 211
+          }
+        },
+        "val": {
+          "base": 302,
+          "structured": 312,
+          "gestures": {
+            "rise": 44,
+            "fall": 45,
+            "vibrato": 34,
+            "jump": 25,
+            "stationary": 164
+          }
+        }
+      },
+      "actualReplays": [
+        {
+          "row": 2048,
+          "structuredIndex": 0,
+          "gesture": "stationary",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 2052,
+          "structuredIndex": 4,
+          "gesture": "rise",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 2053,
+          "structuredIndex": 5,
+          "gesture": "fall",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 2054,
+          "structuredIndex": 6,
+          "gesture": "jump",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 2055,
+          "structuredIndex": 7,
+          "gesture": "vibrato",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 2304,
+          "structuredIndex": 256,
+          "gesture": "stationary",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 3072,
+          "structuredIndex": 1024,
+          "gesture": "stationary",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 4095,
+          "structuredIndex": 2047,
+          "gesture": "vibrato",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        }
+      ]
+    },
+    "Birdr": {
+      "trainingNpzSha256": "0e3a8fd5d83965c885f00bf3da27fd6f3fe176ad2a6d6708f4d597cdb9c1a7ad",
+      "certifiedNpzSha256": "0e3a8fd5d83965c885f00bf3da27fd6f3fe176ad2a6d6708f4d597cdb9c1a7ad",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "a8236f7d34bdd35176bbbf0c689672807579fb4c2caf895df9ed56982b6c413d"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            13
+          ],
+          "dtype": "float32",
+          "sha256": "ce90e51977bc2fa55901ca454f7446922cb95191323da34b3dc084b5175175e9"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            1
+          ],
+          "dtype": "int16",
+          "sha256": "374bf6400a94ab661daa558e64367acf3f179eedf48696efaa7bf7c440e7f8be"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "a03ac35d5cca3b08c636c8e2038994fea036585346abb73b0d404f6e0109c8b6"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "bdde98dc960c41a37cc06fd7e52b869522ed98de40998f9e0329ebb4f1fa4490",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Boomr": {
+      "trainingNpzSha256": "3c6a85ed9c3dba81be38d66dfcc73dc4da7053763bf120af0334b7167e2f5a8f",
+      "certifiedNpzSha256": "3c6a85ed9c3dba81be38d66dfcc73dc4da7053763bf120af0334b7167e2f5a8f",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "3615166777087c185d70b56b6a5aea40e3517cc68bc597784d3a8dda9431c312"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            12
+          ],
+          "dtype": "float32",
+          "sha256": "038ac161ba2ca46c9722a18722d6c58276041ad5953d5b5127010935f2012934"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            1
+          ],
+          "dtype": "int16",
+          "sha256": "06ad6787ea63400997c68266ff74235b5eea88808e85e2b8fd9745dba8626b8f"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "43fad72382eaed16291aa5fde7bd59546b2cc3961844576fa4d3a54da48c18b8"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "8a3f06bfc1190a1d418f8efab42c575fd243c4cc9524e443417c4f96c0cd88e4",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Bouncr": {
+      "trainingNpzSha256": "2fb625f2f0b6d4992bfd75e6b406474da0589f562bb002bee986ee453387fd0b",
+      "certifiedNpzSha256": "2fb625f2f0b6d4992bfd75e6b406474da0589f562bb002bee986ee453387fd0b",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "a499125a081a4a2c8aff695eb9fc8b13e2e80e751b4109131ed0c0470d9d5068"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            9
+          ],
+          "dtype": "float32",
+          "sha256": "2ed26baf4667ef3fb181a9d3362e2dcc5eb87d13620218611950cd672c2b6de0"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            2
+          ],
+          "dtype": "int16",
+          "sha256": "da7cff3b3c0c924917353c009b247d94d08d68d6235b9d906a07f86c7df8e5ba"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "dfe32efdebb9c3b286e98a398cf48b2b3c98896c2c9c313b0856af2594116c5d"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "5e0f775089fc5b12912b3d7353e2c1593db4df048721e8af7dcd0fe234ed669d",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Breathr": {
+      "trainingNpzSha256": "c5bbcb131b6eb720008c8b7f4ca54c3a27834b63dee2e4d18a6ed1a83358f114",
+      "certifiedNpzSha256": "c5bbcb131b6eb720008c8b7f4ca54c3a27834b63dee2e4d18a6ed1a83358f114",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "d7b494e884742fb4c58d111b756c9c6402483b08b2d15ad0255b60656876dd82"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            10
+          ],
+          "dtype": "float32",
+          "sha256": "46b32c74c695d9b5f5c239366853d5765b21689fd39d3e316e3e1e29cd91a9f5"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            2
+          ],
+          "dtype": "int16",
+          "sha256": "6646f95c019549afeed75b821bf5cfe9bb3d90cb52f7e59a84492b8b968ea49b"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "616a962c91c7ebdf407c82ef9ee96d4e390b424e0d8c3dbdf59779dd126b68a8"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "38104fb8d58d1bbfe8ca4644ab746d286403cce920004419b0bd92ad26b59378",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Choirr": {
+      "trainingNpzSha256": "ed07fb405c687bae359a9c360c9b13f6fed488e753adf623e803019c1c4df381",
+      "certifiedNpzSha256": "ed07fb405c687bae359a9c360c9b13f6fed488e753adf623e803019c1c4df381",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "4c202651bfd80b6bb9177168cf504c0a316fec88e145e9b39359e73bd26492d0"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            8
+          ],
+          "dtype": "float32",
+          "sha256": "a2bd186cabd06c36e99b24873ef1cc56b7af0cf4d6b3098875c09566369a2ddd"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            1
+          ],
+          "dtype": "int16",
+          "sha256": "f7142e32e7af8bf0f18529f2e0b1994896cc6838120d841b88173f47b09706d0"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "dfe32efdebb9c3b286e98a398cf48b2b3c98896c2c9c313b0856af2594116c5d"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "7147016818a1332a71317909626110827ff01dbd698b3a33c617317599ab0629",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Clonkr": {
+      "trainingNpzSha256": "2a0ce90e56178acb2d25867fa22f9f9a88ddc1e3bb276a5cdc950075ea05f17b",
+      "certifiedNpzSha256": "2a0ce90e56178acb2d25867fa22f9f9a88ddc1e3bb276a5cdc950075ea05f17b",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "fb673aa779a20e31e1d75e935e66401c7a38fd64717d99a39addac26850ff308"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            5
+          ],
+          "dtype": "float32",
+          "sha256": "92f7a8304a446295b81dad25e4b4b447d5ba1239c688ac3a39cc7f5d62808ae5"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            2
+          ],
+          "dtype": "int16",
+          "sha256": "f266142948102194574a94ea60aa17787cbbd24646217c088d2846145533ad58"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "a03ac35d5cca3b08c636c8e2038994fea036585346abb73b0d404f6e0109c8b6"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "cc278378145dcc3909333dff9a216b79770a697735bbede4968b09f896a06ac9",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Crittr": {
+      "trainingNpzSha256": "ff54bceafd4fe798d251ff776f83e4437dfc5a6652e2567bd6fcdffb3bce3fbb",
+      "certifiedNpzSha256": "ff54bceafd4fe798d251ff776f83e4437dfc5a6652e2567bd6fcdffb3bce3fbb",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "caa9a7d6c077429783db413d084ab7c62218751d54c06db68bfb43a37f086286"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            10
+          ],
+          "dtype": "float32",
+          "sha256": "e277fbc679c814786eee6aa0ffb4d8c4199f261ee337002de713017c04555657"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            1
+          ],
+          "dtype": "int16",
+          "sha256": "a78c42f12382c0e9f27b5739f4ff738a076ab23e51f98fbd2d4cc5c76de61e17"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "a03ac35d5cca3b08c636c8e2038994fea036585346abb73b0d404f6e0109c8b6"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "c6dd3e5be2402079129936685a826f32c16be949644bbb10fb4e150f82fd8842",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Fractr": {
+      "trainingNpzSha256": "4aeeb9132d36cbb45594355f86805b93bcaad1b44bbcea707bc37bed4bbe6150",
+      "certifiedNpzSha256": "4aeeb9132d36cbb45594355f86805b93bcaad1b44bbcea707bc37bed4bbe6150",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "1e04decdd57c163ad6f37d1eef2a8920f21fbe6c103e111922e419467e45a93b"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            10
+          ],
+          "dtype": "float32",
+          "sha256": "5f528f8667f480e3e150cc183276cdfe29907b5af1b12e51bb1638df27b4175c"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            1
+          ],
+          "dtype": "int16",
+          "sha256": "cc0c933a78fb56e729d56077b18e91700d70b5eb429435885ecbcad30f4e3ace"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "a03ac35d5cca3b08c636c8e2038994fea036585346abb73b0d404f6e0109c8b6"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "61acd3855ab7845c5385627b480c4aca27cc96e372f309d17a494502d81813c4",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Glitchr": {
+      "trainingNpzSha256": "1903f42760e3bd3618d0f64a4ee70920e6c72fd37888301c0fdb7bef3a58e32b",
+      "certifiedNpzSha256": "1903f42760e3bd3618d0f64a4ee70920e6c72fd37888301c0fdb7bef3a58e32b",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "e84e88ce84270e5ecef2099d24ff2f29c83f91c6948e3d6f159f64cb67ce312a"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            8
+          ],
+          "dtype": "float32",
+          "sha256": "2eede483c1b8c769e9b581efdf9cc14fe8a78a9a899d176848bfb06c80606cc2"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            1
+          ],
+          "dtype": "int16",
+          "sha256": "2844166e0d117f15333ff494a6ff415d41abe7207c6c1d41e0315ed3d6e7b3e4"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "dfe32efdebb9c3b286e98a398cf48b2b3c98896c2c9c313b0856af2594116c5d"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "4ee0de6c8474f4a7930b67036440ba32fb374da84bc3403118f68fd7fc69ff4b",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Jinglr": {
+      "trainingNpzSha256": "084ccfa15597235fd8e831da86ad8d1b1cadf08d9b26f7a891dd3b9393479a49",
+      "certifiedNpzSha256": "084ccfa15597235fd8e831da86ad8d1b1cadf08d9b26f7a891dd3b9393479a49",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "afa2f9211444ca5ac29d43b913c007b6efc9075eb679893f34a888b77b501008"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            7
+          ],
+          "dtype": "float32",
+          "sha256": "97f4b47ca6fa524c095a5f6faaed109d9ad0ebaf5cb52688c70ecc48b4a7eab5"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            5
+          ],
+          "dtype": "int16",
+          "sha256": "cb3315e98d3e72097c21be7b8e3e24edff2d91346ea0c3724b9da69d7eec6e5b"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "616a962c91c7ebdf407c82ef9ee96d4e390b424e0d8c3dbdf59779dd126b68a8"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "d62b7e9be037c864bd1810d3bcb678e28abef4bb75568ae98e172d8c60b27cc8",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Machinr": {
+      "trainingNpzSha256": "4d012ae5038cfbd8b1849f0b221de28129b280e6d579580dd943d27bdbad9056",
+      "certifiedNpzSha256": "4d012ae5038cfbd8b1849f0b221de28129b280e6d579580dd943d27bdbad9056",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "947ea21eb0d7e103c94daa372f2b0414d1fa7a568955b3871becde68a408a5d1"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            8
+          ],
+          "dtype": "float32",
+          "sha256": "ef4293b13a36bb4c2e442589286756058bd6a1cca72418fd4a3a008db4772747"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            1
+          ],
+          "dtype": "int16",
+          "sha256": "e7ddc86c825c3e311ab5c0968719ed3bd54ca9fea252e3fc89e88f1b788e7aa4"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "dfe32efdebb9c3b286e98a398cf48b2b3c98896c2c9c313b0856af2594116c5d"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "175da4a57c4c2659f894ac4138d92302cbe84ca96fc469dec2eb3ea02f33abf5",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Pluckr": {
+      "trainingNpzSha256": "231024689cb95c36777d67621bdcf2ee37bdf995adeffbae925a722a3e0516bc",
+      "certifiedNpzSha256": "231024689cb95c36777d67621bdcf2ee37bdf995adeffbae925a722a3e0516bc",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            4096,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "ea29706789d676992239831929aa830d66a179e216748934a4861bc7590417d6"
+        },
+        "continuous": {
+          "shape": [
+            4096,
+            12
+          ],
+          "dtype": "float32",
+          "sha256": "139c8a6cb1d97242987bde5f8bca86ef504329300d94063d2616836b06ede75d"
+        },
+        "categorical": {
+          "shape": [
+            4096,
+            1
+          ],
+          "dtype": "int16",
+          "sha256": "454e539c46b1fe3222baf433506988a49f4b2667e21119a8486837bfdfd8b590"
+        },
+        "generator": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int16",
+          "sha256": "e46702ddb02edfa315ef5e53d8ce91d5acb9b4af9ca06e6726bb6feee755062a"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "60550f97464c5615bd5f1711559509e02c7b84cf0fc1f0e96505d2db540f00c8",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 2048,
+      "totalRows": 4096,
+      "trainRows": 3482,
+      "validationRows": 614,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1738,
+          "structured": 1744,
+          "gestures": {
+            "stationary": 1533,
+            "vibrato": 211
+          }
+        },
+        "val": {
+          "base": 310,
+          "structured": 304,
+          "gestures": {
+            "stationary": 259,
+            "vibrato": 45
+          }
+        }
+      },
+      "actualReplays": [
+        {
+          "row": 2048,
+          "structuredIndex": 0,
+          "gesture": "stationary",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 2052,
+          "structuredIndex": 4,
+          "gesture": "stationary",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 2053,
+          "structuredIndex": 5,
+          "gesture": "stationary",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 2054,
+          "structuredIndex": 6,
+          "gesture": "stationary",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 2055,
+          "structuredIndex": 7,
+          "gesture": "vibrato",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 2304,
+          "structuredIndex": 256,
+          "gesture": "stationary",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 3072,
+          "structuredIndex": 1024,
+          "gesture": "stationary",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        },
+        {
+          "row": 4095,
+          "structuredIndex": 2047,
+          "gesture": "vibrato",
+          "canonicalControlsMatch": true,
+          "audioHashMatch": true,
+          "rawFeatureHashMatch": true,
+          "packedFeaturesMatch": true,
+          "labelsMatch": true
+        }
+      ]
+    },
+    "Riftr": {
+      "trainingNpzSha256": "133d2850c0a5a5bcaa0d65affd60185b8e06a382f8922c7859c0562ae915d19b",
+      "certifiedNpzSha256": "133d2850c0a5a5bcaa0d65affd60185b8e06a382f8922c7859c0562ae915d19b",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "052da6aea5f997b3b8b0ff1943cc276fb7383c85e19167393cabaaee0e9bee88"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            9
+          ],
+          "dtype": "float32",
+          "sha256": "bdd9e7a672afe9dd07499f8d546af03ffef1e03403d18da8f804805ef0817899"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            1
+          ],
+          "dtype": "int16",
+          "sha256": "91a9e2b492536b8a9f19937b8298e0ab68cec57e5dd52bf68f6e1eed6c619852"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "dfe32efdebb9c3b286e98a398cf48b2b3c98896c2c9c313b0856af2594116c5d"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "495fe734c78778f18c2fe62e35c7411f0884f5dfc193784633674bd9e05de596",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Rustlr": {
+      "trainingNpzSha256": "5d76c407af0c315b1b99f7b77d680a5fe1d56a3de2ab3b6230684f8b9f341fa4",
+      "certifiedNpzSha256": "5d76c407af0c315b1b99f7b77d680a5fe1d56a3de2ab3b6230684f8b9f341fa4",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "fd615d4b02d5a4fa96fb5c3da5cee289915e8f668e72c25e7cd04c847ea54f0c"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            7
+          ],
+          "dtype": "float32",
+          "sha256": "64fd7022f557cd76f8cc0cc4cc1390ec61a0d68cb7b51b8edc0469f4d4f1aaca"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            2
+          ],
+          "dtype": "int16",
+          "sha256": "bd1196207005a59a9cbdc335ae6df79870664f328d69ad495602ae9359534d96"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "dfe32efdebb9c3b286e98a398cf48b2b3c98896c2c9c313b0856af2594116c5d"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "184b8e40900b550659a5da715e9bcd0d5b905c471690ee8d365731775a889c74",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Signlr": {
+      "trainingNpzSha256": "0d96fef8a4c58944424fc4f16ec74fe7f79e99a5f20a0341174627b3c663df6b",
+      "certifiedNpzSha256": "0d96fef8a4c58944424fc4f16ec74fe7f79e99a5f20a0341174627b3c663df6b",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "0f689433d109a79387fe130b96204877fbd3e2d5e8de8aeaa9eadfe4468e941e"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            10
+          ],
+          "dtype": "float32",
+          "sha256": "d4e3376cc37d7ec8da27bbf4d6423dd63b36a1b4f9fe21f30718fd67bfa924aa"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            1
+          ],
+          "dtype": "int16",
+          "sha256": "1ca2afdd8c91777f82a07e8f14bc7ea25ce6e91442b7389d2c3984ceb290a92a"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "a03ac35d5cca3b08c636c8e2038994fea036585346abb73b0d404f6e0109c8b6"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "19de5fe7881f7214f648dce7384eab10154a51317cdc0e17ee8b21969cb33af3",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Squishr": {
+      "trainingNpzSha256": "2ccc44fe9ab5ddbc3724fdb24b127ee42561ee45efc45c55f85763ba2f25feb1",
+      "certifiedNpzSha256": "2ccc44fe9ab5ddbc3724fdb24b127ee42561ee45efc45c55f85763ba2f25feb1",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "13ca56a9653a110c8bdadbfa094fbf65baa7c539a67dd35d5df28fb2e93c6f1d"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            6
+          ],
+          "dtype": "float32",
+          "sha256": "1ae1c1c94852f7a175b8b013ab32b1277f02fd272915569ce6775a41baec64ac"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            1
+          ],
+          "dtype": "int16",
+          "sha256": "ec3edd05d71e0e264272a858e964bfb6d20d735bc12cb3c187eb4950d95c44b9"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "a03ac35d5cca3b08c636c8e2038994fea036585346abb73b0d404f6e0109c8b6"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "6ad67948046660909c41dcff3cc0c542b33b36bbe7a5941932dc6dcc7d9b32c7",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Swarmr": {
+      "trainingNpzSha256": "04acef65b2aec814d557dd696fa61667ee589bc9dd8c5000b707da8d2061a562",
+      "certifiedNpzSha256": "04acef65b2aec814d557dd696fa61667ee589bc9dd8c5000b707da8d2061a562",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "79ad1c746bda5a8dba4aea4be688d38a85888df4140d2d2c8d96865a1c83a54a"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            8
+          ],
+          "dtype": "float32",
+          "sha256": "bea9e7ef51cbaeed164373a62b8e6639bcec427b959b5716fab4096703e0760d"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            1
+          ],
+          "dtype": "int16",
+          "sha256": "3a0522ef360e138547c769d13fd0c2f83c22c30285679b52c44fb6f1f0506c12"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "dfe32efdebb9c3b286e98a398cf48b2b3c98896c2c9c313b0856af2594116c5d"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "6ba23132b5a995892e6a9c0374804f0555693509eea71fa7fcb4350f838dbb66",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Whooshr": {
+      "trainingNpzSha256": "310f319595d74aa997b1c9cd7baa343ab60266ba3f626146fe5c536e59a5e115",
+      "certifiedNpzSha256": "310f319595d74aa997b1c9cd7baa343ab60266ba3f626146fe5c536e59a5e115",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "e7520d0218af1c1531f13be45d9d7e584438dfc6168cd3f70ca87ccd2a981484"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            7
+          ],
+          "dtype": "float32",
+          "sha256": "835dee4b120fbb040e9dea20fa7d0d82d0f8aeb4a80135c2a6dd52f4a64b8522"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            0
+          ],
+          "dtype": "int16",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "dfe32efdebb9c3b286e98a398cf48b2b3c98896c2c9c313b0856af2594116c5d"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "d0242bdf7bdc7b0d95cfa87ce308452c2d5913e998e0836a064580a2aeb97f75",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    },
+    "Zappr": {
+      "trainingNpzSha256": "d05b96df7179e995c680412956e800e1796232981683de3be22b74166b3ab2de",
+      "certifiedNpzSha256": "d05b96df7179e995c680412956e800e1796232981683de3be22b74166b3ab2de",
+      "npzByteIdentical": true,
+      "arrays": {
+        "features": {
+          "shape": [
+            2048,
+            4083
+          ],
+          "dtype": "float16",
+          "sha256": "81b050a47c5c7afa8203d0d6da42557e9e6697a663bbd74f54a387b2a13377d7"
+        },
+        "continuous": {
+          "shape": [
+            2048,
+            9
+          ],
+          "dtype": "float32",
+          "sha256": "5dfc73ab01f09a6592bfe4f76168961ad9a2072c61c50892fdc8608b9a53bfab"
+        },
+        "categorical": {
+          "shape": [
+            2048,
+            0
+          ],
+          "dtype": "int16",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "generator": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int16",
+          "sha256": "dfe32efdebb9c3b286e98a398cf48b2b3c98896c2c9c313b0856af2594116c5d"
+        }
+      },
+      "allArraysByteIdentical": true,
+      "nativeArraysPreserved": true,
+      "rowsSha256": "19ad123053e9bd3732228e4a7d1f82a22cbd95ba5eeee28af033dea3464b3bbf",
+      "allRowsIdentical": true,
+      "nativeRowsPreserved": true,
+      "baseRows": 2048,
+      "structuredRows": 0,
+      "totalRows": 2048,
+      "trainRows": 1741,
+      "validationRows": 307,
+      "splitsIdentical": true,
+      "noDuplicateParameterGroupLeakage": true,
+      "parameterHashesMatch": true,
+      "packedFeatureHashesMatch": true,
+      "splitComposition": {
+        "train": {
+          "base": 1741,
+          "structured": 0,
+          "gestures": {}
+        },
+        "val": {
+          "base": 307,
+          "structured": 0,
+          "gestures": {}
+        }
+      },
+      "actualReplays": []
+    }
+  },
+  "generationCodeSnapshots": {
+    "neural_invert/structured.py": {
+      "path": "tools/multisynth/evaluations/neural-v2-data-certification/generation-code/neural_invert/structured.py",
+      "sha256": "d4c8ce1b9ca235103aefc19193a564a91dc00c03bbadcec3efb483ae65df15ee"
+    },
+    "neural_invert/schema.py": {
+      "path": "tools/multisynth/evaluations/neural-v2-data-certification/generation-code/neural_invert/schema.py",
+      "sha256": "164371d97f58e7db447f794c618eedc146949d9d70d15689f44bbec65c75871e"
+    },
+    "neural_invert/data.py": {
+      "path": "tools/multisynth/evaluations/neural-v2-data-certification/generation-code/neural_invert/data.py",
+      "sha256": "15b3683eb8690a9cc37612e676f6582e59cd9167de5d4098f308bcfe6fa7136c"
+    },
+    "match/optimizer.py": {
+      "path": "tools/multisynth/evaluations/neural-v2-data-certification/generation-code/match/optimizer.py",
+      "sha256": "427c729e7605da863bfdda41b338edf19b3b6ee14e53e846d6a61156c81b8972"
+    },
+    "match/audio.py": {
+      "path": "tools/multisynth/evaluations/neural-v2-data-certification/generation-code/match/audio.py",
+      "sha256": "90bd5aa0dd1e885f0cdd1057e2a0d9c06c25bcf7584e8e7ab92fd5edeb14fa52"
+    },
+    "multisynth/renderer.py": {
+      "path": "tools/multisynth/evaluations/neural-v2-data-certification/generation-code/multisynth/renderer.py",
+      "sha256": "a64863bbd4d104ef1ee36d49d5973de9dc2a8998298ae4f4d12b2d11c1ad28b0"
+    },
+    "render/multisynth_worker.js": {
+      "path": "tools/multisynth/evaluations/neural-v2-data-certification/generation-code/render/multisynth_worker.js",
+      "sha256": "a6919fc43294cae2b92732b98cd1e95efd72d1326a93f8b8a0271651c424be3b"
+    }
+  },
+  "recoveryRevision": {
+    "status": "verified",
+    "scope": "Publication/recovery only; no sampler, canonical render, labels or sampling configuration changes.",
+    "samplerDrawsUnchanged": true,
+    "unchangedFunctionAsts": [
+      "generation_code_binding",
+      "_transition",
+      "structured_params",
+      "_composition",
+      "_build_shard",
+      "main"
+    ],
+    "generationConfigurationAstUnchanged": true,
+    "generationStructuredSourceSha256": "d4c8ce1b9ca235103aefc19193a564a91dc00c03bbadcec3efb483ae65df15ee",
+    "currentStructuredSourceSha256": "241e6567d9ac81725e3aecbe2004976d42042be753cfdc075f5f953eea1140fd",
+    "currentWriterCodeHash": "9a9ddd405fc4aeabdfd9e2cecd4ef756ab3101c9b8c551aec1b58c8ee23e7c6a",
+    "generationManifestRemainsBoundToExactSnapshot": true,
+    "currentWriterRejectsOlderGenerationCodeDigest": true,
+    "certifiedDatasetUnchanged": true,
+    "trainingDatasetUnchanged": true,
+    "tests": {
+      "file": "tools/tests/test_neural_structured.py",
+      "passed": 17
+    },
+    "recoveryBehavior": "After configuration/source/base and existing file bindings verify, discard recognized unbound NPZ/JSON/final/temp paths and regenerate; never accept unbound bytes as completed and never overwrite verified bound shards or complete datasets."
+  },
+  "completeResumeScope": "Complete resume was verified immutable with the exact generation code before the recovery revision; current writer deliberately rejects that older generation digest without changing any dataset files."
+}
