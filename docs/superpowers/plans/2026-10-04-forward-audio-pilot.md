@@ -12,11 +12,11 @@ validation gate, then actual-DSP before/after checks on fixed fresh controls.
 
 **Stack:** Existing Python tools venv, PyTorch/MPS, NumPy, shipped DSP renderer.
 
-- [ ] Root: retain exact sixth feedback archive and qualitative statement. Write
+- [x] Root: retain exact sixth feedback archive and qualitative statement. Write
   human-review JSON, with relative winners, heard-only pairs and no scalar scores.
   Audit the saved v2 selected/reference boundaries, documenting the unsupported
   absolute-quality interpretation and the experimental pitch gate's forced choice.
-- [ ] Implementer owns `tools/neural_invert/forward.py` and
+- [x] Implementer owns `tools/neural_invert/forward.py` and
   `tools/tests/test_neural_forward.py`. API `ForwardModel(spec, hidden=256)`;
   `encode_controls(unit, categories, spec)` supports hard integer categories and
   a list of differentiable soft logits; `feature_loss(prediction,target)` returns
@@ -28,7 +28,7 @@ validation gate, then actual-DSP before/after checks on fixed fresh controls.
   Transfxr Pluckr --epochs40 --device mps`. Require finite inputs, canonical
   dimensions/category bounds, train-only normalization, ignored peak gain,
   complete metadata, deterministic no-drop train/val, and baseline/group gate.
-- [ ] TDD: tests fail before implementing imports/API; test hard/soft category
+- [x] TDD: tests fail before implementing imports/API; test hard/soft category
   equivalence and finite nonzero gradients, gain independence, nine groups full
   coverage, constant baseline, unsupported TEXT rejection, output overwrite
   prevention and checkpoint load mismatch. Test tiny actual-format shard data

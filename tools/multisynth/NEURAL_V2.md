@@ -45,7 +45,12 @@ The older original Bfxr checkpoint is a different, more developed pipeline:
 a temporal convolutional encoder, synthetic knob training with forward-surrogate
 feature loss, then five epochs of unlabeled real-audio spectral finetuning. Its
 retained `v7_real_ft/run.sh` and checkpoint metadata bind that last stage. V2
-does not yet replicate this complete training loop across synths. The measured
+does not yet replicate this complete training loop across synths. The recovered
+real-audio manifest contains 5,186 paths (4,669 train and 517 holdout), including
+445 tagged sounds. All paths currently exist. Four quick-round references are
+old real-training paths and bird is an old holdout path; this repeated round is
+development evidence, not a held-out generalization test. See the
+[original training audit](evaluations/original-bfxr-real-training-audit.json). The measured
 raw pitch improvement is a starting-point repair, not a replacement claim for
 that Bfxr pipeline; the original checkpoint stays in the candidate pool.
 

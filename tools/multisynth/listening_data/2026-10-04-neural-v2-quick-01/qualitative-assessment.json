@@ -7,5 +7,6 @@
   "acceptedReferenceWinningRole": "previous",
   "acceptedReferenceWinningSynth": "Transfxr",
   "newV2AudibleSuccessDemonstrated": false,
-  "interpretation": "The user reports only one successful reference approximation; its chosen clip is the retained previous Transfxr render. Bird/card relative best choices do not establish adequate approximation."
+  "interpretation": "The user reports only one successful reference approximation; its chosen clip is the retained previous Transfxr render. Bird/card relative best choices do not establish adequate approximation.",
+  "followupUserVerbatim": "the old bfxr model could get uncannily close sometimes, we really haven't achieved anything near that yet with the moe powerful synth setup..."
 }

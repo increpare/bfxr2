@@ -1,0 +1,135 @@
+{
+  "reportSha256": "ad7cf3033c5820afaf4a5c8101507917cc3e0cd1c826a738b7eab0a6b98982e6",
+  "feedbackArchive": "tools/multisynth/listening_data/2026-10-04-neural-v2-quick-01",
+  "findings": {
+    "audibleImprovementDemonstrated": false,
+    "acceptedCharmClip": "Previous Transfxr, not new Pluckr",
+    "relativeBestIsNotAbsoluteQuality": true,
+    "candidateAvailability": "Human judgment rejects all displayed new clips as adequate approximations; availability of good unheard alternatives is not established.",
+    "selectionFailure": "For spinout, the experimental register gate leaves a single eligible candidate. Register eligibility did not ensure audible likeness.",
+    "trainingGap": "V2 is supervised inverse-control training; older original Bfxr also used forward-surrogate audio loss and unlabeled real-audio finetuning. This is an architectural hypothesis to test, not proof of the whole failure cause.",
+    "nextStep": "Validate forward prediction and actual-DSP gradients before training through it or requesting more ratings."
+  },
+  "rows": [
+    {
+      "reference": "attack/spinout.wav",
+      "experimentalSelection": {
+        "synth": "Fractr",
+        "matchObjective": 9.488688702440365,
+        "preferenceScore": 2.302132780392967,
+        "selectionScore": 2.5498435000443327,
+        "coarsePitchPenalty": 0.24771071965136582,
+        "matchingRegisterCandidates": 1,
+        "poolSize": 47,
+        "hardEligibleCount": 1
+      },
+      "originalBfxrMatchObjective": 4.860288967518382,
+      "matcherSelected": {
+        "synth": "Rustlr",
+        "matchObjective": 3.4761140534540553
+      },
+      "referencePitch": {
+        "activeFrames": 59,
+        "voicedFrames": 52,
+        "voicedFraction": 0.8813559412956238,
+        "medianHz": 1948.54638671875
+      }
+    },
+    {
+      "reference": "bird/Bird Sounds.WAV",
+      "experimentalSelection": {
+        "synth": "Bfxr",
+        "matchObjective": 4.96915732111877,
+        "preferenceScore": 1.7049804956647736,
+        "selectionScore": 1.7049804956647736,
+        "coarsePitchPenalty": 0.0,
+        "matchingRegisterCandidates": 6,
+        "poolSize": 47,
+        "hardEligibleCount": 6
+      },
+      "originalBfxrMatchObjective": 4.96915732111877,
+      "matcherSelected": {
+        "synth": "Crittr",
+        "matchObjective": 4.356217055243826
+      },
+      "referencePitch": {
+        "activeFrames": 27,
+        "voicedFrames": 26,
+        "voicedFraction": 0.9629629850387573,
+        "medianHz": 2476.68017578125
+      }
+    },
+    {
+      "reference": "card/bookClose.ogg",
+      "experimentalSelection": {
+        "synth": "Bfxr",
+        "matchObjective": 1.8416403915747155,
+        "preferenceScore": 1.2538507070563991,
+        "selectionScore": 1.2538507070563991,
+        "coarsePitchPenalty": 0.0,
+        "matchingRegisterCandidates": 0,
+        "poolSize": 47,
+        "hardEligibleCount": 47
+      },
+      "originalBfxrMatchObjective": 1.6820900942030788,
+      "matcherSelected": {
+        "synth": "Bfxr",
+        "matchObjective": 1.6820900942030788
+      },
+      "referencePitch": {
+        "activeFrames": 16,
+        "voicedFrames": 2,
+        "voicedFraction": 0.125,
+        "medianHz": 4200.00048828125
+      }
+    },
+    {
+      "reference": "computer/robo_talk.wav",
+      "experimentalSelection": {
+        "synth": "Breathr",
+        "matchObjective": 2.508739482518737,
+        "preferenceScore": 1.7721434340761442,
+        "selectionScore": 1.7721434340761442,
+        "coarsePitchPenalty": 0.0,
+        "matchingRegisterCandidates": 0,
+        "poolSize": 47,
+        "hardEligibleCount": 47
+      },
+      "originalBfxrMatchObjective": 2.7904859401959423,
+      "matcherSelected": {
+        "synth": "Rustlr",
+        "matchObjective": 2.3314014520334356
+      },
+      "referencePitch": {
+        "activeFrames": 73,
+        "voicedFrames": 38,
+        "voicedFraction": 0.5205479264259338,
+        "medianHz": 142.1762237548828
+      }
+    },
+    {
+      "reference": "die/charm2.wav",
+      "experimentalSelection": {
+        "synth": "Pluckr",
+        "matchObjective": 8.846265076851186,
+        "preferenceScore": 0.8132119423453377,
+        "selectionScore": 0.8132119423453377,
+        "coarsePitchPenalty": 0.0,
+        "matchingRegisterCandidates": 27,
+        "poolSize": 47,
+        "hardEligibleCount": 27
+      },
+      "originalBfxrMatchObjective": 5.817345134459152,
+      "matcherSelected": {
+        "synth": "Bfxr",
+        "matchObjective": 4.164188950151625
+      },
+      "referencePitch": {
+        "activeFrames": 177,
+        "voicedFrames": 176,
+        "voicedFraction": 0.994350254535675,
+        "medianHz": 636.6155395507812
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "manifestPath": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/manifest.json",
+  "manifestSha256": "c222380bbe7dd6dfb34aa2223b3fdb91f82d79d0e37b1ee811933955bbaa48ef",
+  "references": 5186,
+  "splitCounts": {
+    "train": 4669,
+    "holdout": 517
+  },
+  "packCounts": {
+    "RAREVGSFX 1+2": 2000,
+    "Sonniss.com-GDC2026-GameAudioBundle1of5": 21,
+    "Sonniss.com-GDC2026-GameAudioBundle2of5": 29,
+    "Sonniss.com-GDC2026-GameAudioBundle3of5": 11,
+    "Sonniss.com-GDC2026-GameAudioBundle5of5": 1,
+    "Street Fighter Sound Pack": 24,
+    "chronotrigger_sounds": 12,
+    "kenney_digital-audio": 62,
+    "kenney_impact-sounds": 100,
+    "kenney_interface-sounds": 86,
+    "kenney_rpg-audio": 13,
+    "kenney_sci-fi-sounds": 34,
+    "kenney_ui-audio": 46,
+    "kenney_voiceover-pack": 92,
+    "kenney_voiceover-pack-fighter": 46,
+    "mario_nes_snes_sounds": 37,
+    "mega man Sound Samples": 127,
+    "minecraft_legends_units": 2000,
+    "tags": 445
+  },
+  "availablePaths": 5186,
+  "quickReferencePathMembership": [
+    {
+      "reference": "attack/spinout.wav",
+      "oldRealFinetuningSplit": "train"
+    },
+    {
+      "reference": "bird/Bird Sounds.WAV",
+      "oldRealFinetuningSplit": "holdout"
+    },
+    {
+      "reference": "card/bookClose.ogg",
+      "oldRealFinetuningSplit": "train"
+    },
+    {
+      "reference": "computer/robo_talk.wav",
+      "oldRealFinetuningSplit": "train"
+    },
+    {
+      "reference": "die/charm2.wav",
+      "oldRealFinetuningSplit": "train"
+    }
+  ],
+  "membershipMeaning": "Exact resolved source path only; no claim of audio-family separation. Quick references are repeated development judgments, not a held-out generalization test.",
+  "oldPipeline": "v7_finetune_200k initialization -> frozen surrogate feature loss -> five real-audio finetuning epochs. Actual preceding synthetic sample count is not inferred from the directory name.",
+  "newPipelineGap": "V2 has synthetic control supervision without forward audio loss or real-audio finetuning; this pilot tests one prerequisite, not all differences."
+}
