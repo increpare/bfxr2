@@ -1,0 +1,2090 @@
+{
+  "experimentId": "140d89d3331adb085c93a93a2bd2e72943145c89329088d0ebcf14b3827ee8f2",
+  "feedbackSha256": "fbbbb715cc6797bf2e317558d099f20367a881c8d3a1b8c03e592b780ed62d7e",
+  "archiveManifestSha256": "66698fa235ffb20f4ecf3526d223f6bb15f051f68822ca30f2647862d9111bcd",
+  "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+  "summary": {
+    "targets": 36,
+    "uniqueRatedCandidates": 103,
+    "likenessRatings": 103,
+    "usefulnessRatings": 103
+  },
+  "all": {
+    "targets": 36,
+    "ratings": {
+      "learned": {
+        "likeness": {
+          "mean": 1.9444444444444444,
+          "count": 36,
+          "distribution": {
+            "1": 11,
+            "2": 16,
+            "3": 9
+          }
+        },
+        "usefulness": {
+          "mean": 3.611111111111111,
+          "count": 36,
+          "distribution": {
+            "2": 2,
+            "3": 11,
+            "4": 22,
+            "5": 1
+          }
+        }
+      },
+      "auditory": {
+        "likeness": {
+          "mean": 1.75,
+          "count": 36,
+          "distribution": {
+            "1": 17,
+            "2": 11,
+            "3": 8
+          }
+        },
+        "usefulness": {
+          "mean": 3.5833333333333335,
+          "count": 36,
+          "distribution": {
+            "2": 2,
+            "3": 12,
+            "4": 21,
+            "5": 1
+          }
+        }
+      },
+      "baseline": {
+        "likeness": {
+          "mean": 1.6944444444444444,
+          "count": 36,
+          "distribution": {
+            "1": 16,
+            "2": 15,
+            "3": 5
+          }
+        },
+        "usefulness": {
+          "mean": 3.6666666666666665,
+          "count": 36,
+          "distribution": {
+            "2": 3,
+            "3": 7,
+            "4": 25,
+            "5": 1
+          }
+        }
+      }
+    },
+    "comparisons": {
+      "learnedVersusBaseline": {
+        "win": 13,
+        "tie": 18,
+        "loss": 5
+      },
+      "auditoryVersusBaseline": {
+        "win": 8,
+        "loss": 7,
+        "tie": 21
+      },
+      "learnedVersusAuditory": {
+        "tie": 30,
+        "win": 6,
+        "loss": 0
+      }
+    },
+    "bestDisplayedLikeness": {
+      "mean": 2.0833333333333335,
+      "count": 36,
+      "distribution": {
+        "1": 6,
+        "2": 21,
+        "3": 9
+      }
+    },
+    "bestNewLikeness": {
+      "mean": 1.9444444444444444,
+      "count": 36,
+      "distribution": {
+        "1": 11,
+        "2": 16,
+        "3": 9
+      }
+    }
+  },
+  "newReferences": {
+    "targets": 18,
+    "ratings": {
+      "learned": {
+        "likeness": {
+          "mean": 1.7222222222222223,
+          "count": 18,
+          "distribution": {
+            "1": 7,
+            "2": 9,
+            "3": 2
+          }
+        },
+        "usefulness": {
+          "mean": 3.6666666666666665,
+          "count": 18,
+          "distribution": {
+            "2": 1,
+            "3": 5,
+            "4": 11,
+            "5": 1
+          }
+        }
+      },
+      "auditory": {
+        "likeness": {
+          "mean": 1.5,
+          "count": 18,
+          "distribution": {
+            "1": 11,
+            "2": 5,
+            "3": 2
+          }
+        },
+        "usefulness": {
+          "mean": 3.6666666666666665,
+          "count": 18,
+          "distribution": {
+            "2": 1,
+            "3": 5,
+            "4": 11,
+            "5": 1
+          }
+        }
+      },
+      "baseline": {
+        "likeness": {
+          "mean": 1.4444444444444444,
+          "count": 18,
+          "distribution": {
+            "1": 11,
+            "2": 6,
+            "3": 1
+          }
+        },
+        "usefulness": {
+          "mean": 3.7222222222222223,
+          "count": 18,
+          "distribution": {
+            "2": 2,
+            "3": 2,
+            "4": 13,
+            "5": 1
+          }
+        }
+      }
+    },
+    "comparisons": {
+      "learnedVersusBaseline": {
+        "win": 8,
+        "tie": 7,
+        "loss": 3
+      },
+      "auditoryVersusBaseline": {
+        "win": 4,
+        "tie": 11,
+        "loss": 3
+      },
+      "learnedVersusAuditory": {
+        "tie": 14,
+        "win": 4,
+        "loss": 0
+      }
+    },
+    "bestDisplayedLikeness": {
+      "mean": 1.8888888888888888,
+      "count": 18,
+      "distribution": {
+        "1": 4,
+        "2": 12,
+        "3": 2
+      }
+    },
+    "bestNewLikeness": {
+      "mean": 1.7222222222222223,
+      "count": 18,
+      "distribution": {
+        "1": 7,
+        "2": 9,
+        "3": 2
+      }
+    }
+  },
+  "developmentReferences": {
+    "targets": 18,
+    "ratings": {
+      "learned": {
+        "likeness": {
+          "mean": 2.1666666666666665,
+          "count": 18,
+          "distribution": {
+            "1": 4,
+            "2": 7,
+            "3": 7
+          }
+        },
+        "usefulness": {
+          "mean": 3.5555555555555554,
+          "count": 18,
+          "distribution": {
+            "2": 1,
+            "3": 6,
+            "4": 11
+          }
+        }
+      },
+      "auditory": {
+        "likeness": {
+          "mean": 2.0,
+          "count": 18,
+          "distribution": {
+            "1": 6,
+            "2": 6,
+            "3": 6
+          }
+        },
+        "usefulness": {
+          "mean": 3.5,
+          "count": 18,
+          "distribution": {
+            "2": 1,
+            "3": 7,
+            "4": 10
+          }
+        }
+      },
+      "baseline": {
+        "likeness": {
+          "mean": 1.9444444444444444,
+          "count": 18,
+          "distribution": {
+            "1": 5,
+            "2": 9,
+            "3": 4
+          }
+        },
+        "usefulness": {
+          "mean": 3.611111111111111,
+          "count": 18,
+          "distribution": {
+            "2": 1,
+            "3": 5,
+            "4": 12
+          }
+        }
+      }
+    },
+    "comparisons": {
+      "learnedVersusBaseline": {
+        "tie": 11,
+        "win": 5,
+        "loss": 2
+      },
+      "auditoryVersusBaseline": {
+        "loss": 4,
+        "tie": 10,
+        "win": 4
+      },
+      "learnedVersusAuditory": {
+        "win": 2,
+        "tie": 16,
+        "loss": 0
+      }
+    },
+    "bestDisplayedLikeness": {
+      "mean": 2.2777777777777777,
+      "count": 18,
+      "distribution": {
+        "1": 2,
+        "2": 9,
+        "3": 7
+      }
+    },
+    "bestNewLikeness": {
+      "mean": 2.1666666666666665,
+      "count": 18,
+      "distribution": {
+        "1": 4,
+        "2": 7,
+        "3": 7
+      }
+    }
+  },
+  "notes": [
+    {
+      "source": "bird/Bird Sounds.WAV",
+      "note": "not ab ig fan of the clicks in the generated sounds"
+    }
+  ],
+  "baselineRepeatRatings": [
+    {
+      "source": "attack/spinout.wav",
+      "previous": {
+        "session": "2026-10-03-tagged-v2",
+        "likeness": 2
+      },
+      "current": 2,
+      "change": 0
+    },
+    {
+      "source": "bell/impactBell_heavy_000.ogg",
+      "previous": {
+        "session": "2026-10-03-tagged-v2",
+        "likeness": 2
+      },
+      "current": 3,
+      "change": 1
+    },
+    {
+      "source": "carbeep/VEHHorn_Kawasaki Ninja ZX 10R Horn Single 03_SNDBTS_MCK.wav",
+      "previous": {
+        "session": "2026-10-03-tagged-v2",
+        "likeness": 3
+      },
+      "current": 1,
+      "change": -2
+    },
+    {
+      "source": "card/bookClose.ogg",
+      "previous": {
+        "session": "2026-10-03-tagged-v2",
+        "likeness": 1
+      },
+      "current": 2,
+      "change": 1
+    },
+    {
+      "source": "chains/beltHandle1.ogg",
+      "previous": {
+        "session": "2026-10-03-tagged-v2",
+        "likeness": 1
+      },
+      "current": 1,
+      "change": 0
+    },
+    {
+      "source": "click/MECHClik_USALightSwitch_On05_InMotionAudio_USAHotel.wav",
+      "previous": {
+        "session": "2026-10-03-tagged-v2",
+        "likeness": 3
+      },
+      "current": 1,
+      "change": -2
+    },
+    {
+      "source": "collect/coin (snes).WAV",
+      "previous": {
+        "session": "2026-10-03-coverage-v3",
+        "likeness": 4
+      },
+      "current": 3,
+      "change": -1
+    },
+    {
+      "source": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+      "previous": {
+        "session": "2026-10-03-coverage-v3",
+        "likeness": 2
+      },
+      "current": 2,
+      "change": 0
+    },
+    {
+      "source": "explode/Bifun Jump.WAV",
+      "previous": {
+        "session": "2026-10-03-tagged-v2",
+        "likeness": 2
+      },
+      "current": 2,
+      "change": 0
+    },
+    {
+      "source": "hit/PUNCH7.WAV",
+      "previous": {
+        "session": "2026-10-03-coverage-v3",
+        "likeness": 3
+      },
+      "current": 1,
+      "change": -2
+    },
+    {
+      "source": "jump/Jump Kopie 4.wav",
+      "previous": {
+        "session": "2026-10-03-coverage-v3",
+        "likeness": 2
+      },
+      "current": 2,
+      "change": 0
+    },
+    {
+      "source": "laser/laserRetro_000.ogg",
+      "previous": {
+        "session": "2026-10-03-tagged-v2",
+        "likeness": 2
+      },
+      "current": 3,
+      "change": 1
+    },
+    {
+      "source": "magic/cureMagic.wav",
+      "previous": {
+        "session": "2026-10-03-coverage-v3",
+        "likeness": 3
+      },
+      "current": 2,
+      "change": -1
+    },
+    {
+      "source": "power_up/1up.wav",
+      "previous": {
+        "session": "2026-10-03-tagged-v2",
+        "likeness": 2
+      },
+      "current": 1,
+      "change": -1
+    },
+    {
+      "source": "shoot/Shooting.wav",
+      "previous": {
+        "session": "2026-10-03-tagged-v2",
+        "likeness": 3
+      },
+      "current": 3,
+      "change": 0
+    },
+    {
+      "source": "slime/slime_000.ogg",
+      "previous": {
+        "session": "2026-10-03-tagged-v2",
+        "likeness": 3
+      },
+      "current": 2,
+      "change": -1
+    },
+    {
+      "source": "step/step2.wav",
+      "previous": {
+        "session": "2026-10-03-coverage-v3",
+        "likeness": 3
+      },
+      "current": 2,
+      "change": -1
+    },
+    {
+      "source": "sword/ma_sword3.wav",
+      "previous": {
+        "session": "2026-10-03-tagged-v2",
+        "likeness": 1
+      },
+      "current": 2,
+      "change": 1
+    }
+  ],
+  "frozenMetricPreferenceCheck": {
+    "all": {
+      "strictPairs": 36,
+      "referenceGroups": 19,
+      "learned": {
+        "correct": 27,
+        "accuracy": 0.75,
+        "referenceBalancedAccuracy": 0.7631578947368421,
+        "tiedPredictions": 0
+      },
+      "auditory": {
+        "correct": 16,
+        "accuracy": 0.4444444444444444,
+        "referenceBalancedAccuracy": 0.4385964912280701,
+        "tiedPredictions": 0
+      }
+    },
+    "newReferences": {
+      "strictPairs": 20,
+      "referenceGroups": 11,
+      "learned": {
+        "correct": 16,
+        "accuracy": 0.8,
+        "referenceBalancedAccuracy": 0.8181818181818182,
+        "tiedPredictions": 0
+      },
+      "auditory": {
+        "correct": 8,
+        "accuracy": 0.4,
+        "referenceBalancedAccuracy": 0.36363636363636365,
+        "tiedPredictions": 0
+      }
+    },
+    "tiedHumanPairsExcluded": 62,
+    "caveat": "Frozen checkpoint evaluated before any fit to v4 feedback. Pair scores recomputed on exact archived audition audio. Same-reference comparisons are correlated, and candidate selection used these metrics. New references are disjoint only by exact PCM, not necessarily sound family."
+  },
+  "allSessionsRetained": {
+    "referenceJudgments": 100,
+    "uniqueReferencePcm": 75,
+    "uniqueReferenceCandidatePcmPairs": 223
+  },
+  "targets": [
+    {
+      "source": "animal/grunt.wav",
+      "targetId": "1d11efeb154e3a00ca6001279c8bfcbdfc9c4fb94515790e247ed59ddf5ff97b",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "9e1506e723cfbaaade70f34bc3c93662a33b57257edd0e9bec19d70bb31aefdc",
+          "synth": "Soundboard",
+          "likeness": 2,
+          "usefulness": 5
+        },
+        "auditory": {
+          "id": "9e1506e723cfbaaade70f34bc3c93662a33b57257edd0e9bec19d70bb31aefdc",
+          "synth": "Soundboard",
+          "likeness": 2,
+          "usefulness": 5
+        },
+        "baseline": {
+          "id": "d91ced134e9c24a4d10f7abc8bea9c6ff3b10cb4180775723fce4a6607c59bab",
+          "synth": "Riftr",
+          "likeness": 1,
+          "usefulness": 5
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "attack/spinout.wav",
+      "targetId": "751139deb5cc7265fa41737634495580611c0727051cfd9a5d6fb52b8a3cdc54",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "8b44d912839b3bfc4888ae5657d07b51ce7b4964bcc363efc22fd22a72886e02",
+          "synth": "Riftr",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        "auditory": {
+          "id": "27a26dcc0fdfe4b985375dd3f4c8fd4a1901f8f548c392935329aaf5238a81b8",
+          "synth": "Soundboard",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "baseline": {
+          "id": "889e8c79d6d2acbc88aff1eef4436adb42a0873239c0ea2457f12402ff0af6e5",
+          "synth": "Riftr",
+          "likeness": 2,
+          "usefulness": 3
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "bell/impactBell_heavy_000.ogg",
+      "targetId": "798d7d4d07bcb92d9b455d4772a49ca62338d1f76d53caed664221a19a82f0c1",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "d133635d96f3034de96ae0671338f97ed446ccebf32d09cfb01d695a4a631c33",
+          "synth": "Clonkr",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "7c9b0e429f32de404d3ba53d16dad38a968046ef6294ff9a69e32876fd119090",
+          "synth": "Clonkr",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "bd44804fe9b4dac3a0b8d58b953461b8d05e368c8be8e1bd2e2ce10a63424b2f",
+          "synth": "Bouncr",
+          "likeness": 3,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 3,
+      "bestDisplayedLikeness": 3
+    },
+    {
+      "source": "bird/Bird Sounds.WAV",
+      "targetId": "471285b1af95caa683ab58254302064606e91561ef79c134228bcbbade7986b6",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "d5059962766d9f3795b33c4db7e80ac605a2b13d8e8737d6e37628b44645bff6",
+          "synth": "Soundboard",
+          "likeness": 2,
+          "usefulness": 2
+        },
+        "auditory": {
+          "id": "f368c24c86637670a7d48510a6dfdb84a701233b9741c8df6e739b4f91f6bbcb",
+          "synth": "Soundboard",
+          "likeness": 2,
+          "usefulness": 2
+        },
+        "baseline": {
+          "id": "a7da50e6a35b4bb7126decf79efb210f83423fe9518828750f5b45baa205efdb",
+          "synth": "Signlr",
+          "likeness": 2,
+          "usefulness": 2
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "carbeep/VEHHorn_Kawasaki Ninja ZX 10R Horn Single 03_SNDBTS_MCK.wav",
+      "targetId": "d40864cfec0c4ab753ac9822f5290323e0fd6a891fe3a7e13327b28160d25713",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "a4f5b678ed9f04d3019a93e41ee71fb7b7f37475698130a9cba4ccd6a0c3e8c5",
+          "synth": "Soundboard",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "b47d144e24e416aff68624011844628f3263e6be3599e5fe5a4c2baff128dfae",
+          "synth": "Soundboard",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "4174959815ee8920fa3ea004d672b95a233f64cb7dd4fa12bb5bed389c408d29",
+          "synth": "Bfxr",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 3,
+      "bestDisplayedLikeness": 3
+    },
+    {
+      "source": "card/bookClose.ogg",
+      "targetId": "1457877080231374f17e7846cea132691d8a2eda878ec81a32a6dc4225ddc584",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "944385e485e9f2e6921339c3bec737d7ba06c5f2a2317dea51fb57d871550ef5",
+          "synth": "Transfxr",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "944385e485e9f2e6921339c3bec737d7ba06c5f2a2317dea51fb57d871550ef5",
+          "synth": "Transfxr",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "e7261f6160ead43761665fdf737c223769848d1df8ba1b45e8f3398b786e31f2",
+          "synth": "Boomr",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 3,
+      "bestDisplayedLikeness": 3
+    },
+    {
+      "source": "chains/beltHandle1.ogg",
+      "targetId": "50a7393be1761a50a303968825fb78fbc4b006c130d477f3e97ec32d83f1c424",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "45bdd8d6b838c9fdc04aa6ad6a5f11a66515c1f175297a3e7df13de16cfabe35",
+          "synth": "Swarmr",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "auditory": {
+          "id": "6f4be9f04a78c463369d187c9819b104ac537b46cf802730f6741b7b9a4650cb",
+          "synth": "Swarmr",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "baseline": {
+          "id": "bf775fcae2b3204130036d7b03e3dbd73cc57cd2d8ed3266426aef260c3a5200",
+          "synth": "Swarmr",
+          "likeness": 1,
+          "usefulness": 3
+        }
+      },
+      "bestNewLikeness": 1,
+      "bestDisplayedLikeness": 1
+    },
+    {
+      "source": "chips/chips-stack-6.ogg",
+      "targetId": "9f0a24f384c92a87c0f55e7b578850b76cdca875edfe2258c4466799159e40c1",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "a38b963eeb50db4d317bcbc6488c2e121832c05926c3dbcb47f902de7192003d",
+          "synth": "Soundboard",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "ddea1d42432befdf7dd3bffab990070a0dc5ace3ddb1e56adb9eb694930767c6",
+          "synth": "Soundboard",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "f577cacdf8688696a8392cedac0fd6b6e733a41e3a29d5b6eb86ab172a415721",
+          "synth": "Squishr",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "click/MECHClik_USALightSwitch_On05_InMotionAudio_USAHotel.wav",
+      "targetId": "402fce2a825b91f69f9d5d10e424ee041eec6eb7776729392fb66f0f38cc5c40",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "d186bbab694e605574f592e9bdae9cf8f92ecf41d69d2ca3bb884e28c98483d6",
+          "synth": "Transfxr",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "a1dd83a44c4c6a1888e2fa161adb70711c8c99e36d336c73b44bd94156df6257",
+          "synth": "Transfxr",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "24d93dd89858678008c1a500d0c6089f5c19fde375064a6ea890d6a943949920",
+          "synth": "Transfxr",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 1,
+      "bestDisplayedLikeness": 1
+    },
+    {
+      "source": "clothes/cloth2.ogg",
+      "targetId": "ab410bd06221ed0f7b9610a72e2f5f9cc1c6aaf1c974f56dcc7d212b541eebc1",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "f5d7a00c8055d2bbe1597726171696e4aa019cdd0a9b2c88d67231c5934609fe",
+          "synth": "Bfxr",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        "auditory": {
+          "id": "f5d7a00c8055d2bbe1597726171696e4aa019cdd0a9b2c88d67231c5934609fe",
+          "synth": "Bfxr",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        "baseline": {
+          "id": "f3718fbfaea7e3b7f7e9759b1c16dece4a02ffcb2a02ce53d34727233eab6853",
+          "synth": "Transfxr",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "collect/coin (snes).WAV",
+      "targetId": "7a7de462b5ee236ba17a80a491bd792ac14f2fe9ddd392bb1a60438db16d7d5d",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "308a73fa4f1a581ad9960f19e66cd46e85d89b89310cf7ea1fb220d53514ff72",
+          "synth": "Bfxr",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "9bd0163f2a7950a9f5fe0c87d4d6a255a9983112ffd1facc9763b96a936242ba",
+          "synth": "Bfxr",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "4898d9d5f3a21a4ebc2013496990a8733d6590de0da5d704022a2a83fbff8205",
+          "synth": "Bfxr",
+          "likeness": 3,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 3,
+      "bestDisplayedLikeness": 3
+    },
+    {
+      "source": "computer/robo_talk.wav",
+      "targetId": "642dc432d015b4f27be0292ffaf45d5f2454c5ebfd300b887fb9bbf24925a292",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "506efcb7a6223f0e86595495cbd5a2d4fca4b36f8497e142408a88dbfd66985c",
+          "synth": "Soundboard",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "auditory": {
+          "id": "7aa166399535335fbdabcbafa57bedc10d15a3008ff636516d0cc69af8708813",
+          "synth": "Soundboard",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "baseline": {
+          "id": "c89cd00631789c169e408044e0aaf4ad0fe55f7d560e7e3ee12779b07aea939a",
+          "synth": "Fractr",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 1,
+      "bestDisplayedLikeness": 1
+    },
+    {
+      "source": "dice/dice-throw-2.ogg",
+      "targetId": "b220427a81630ec3e70b253fb6e1bd105b3c8e6909f3a4ed495b6ec34a283b19",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "25fa67de8dc6ccf749360bcb6ae88fe7f0592a569a8ce74d6f7fe751f5d10b7a",
+          "synth": "Soundboard",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "9631d2286f492c6375af63a7bf08a368212abda5f06318207a678ead5c4848e7",
+          "synth": "Soundboard",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "75fb9cb529c3ebd159fa360922705cdb96499c79f89dd63fe3683d5f4cedeec4",
+          "synth": "Squishr",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 1,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "die/charm2.wav",
+      "targetId": "cd763ce03b88b5857a01801fa259b764f9678ace98247aab0d13c3ea7209aab1",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "c1cf7b0a9c597698457b4280acaa447b02624fc79152df53c8d2f9ba80cef447",
+          "synth": "Jinglr",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "f0cacc3cd8802963c80d4683260e184f0db7750c983e00dadc409bc095f2a888",
+          "synth": "Clonkr",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "cdb1dbdc44c7635a94e41bee0fc6b45867c28667a6689503c1de648d35c4d509",
+          "synth": "Bouncr",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 1,
+      "bestDisplayedLikeness": 1
+    },
+    {
+      "source": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+      "targetId": "c5a35cf9bb3b4d2b8e675dbef9685cc4fbb063f42c21979c063581055141bc1d",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "549a9fd5a1d36d8b17395dd57b54f4036fa52c9d7a5b59701d0d17417554c40b",
+          "synth": "Riftr",
+          "likeness": 1,
+          "usefulness": 2
+        },
+        "auditory": {
+          "id": "7318969c8d05669dbbc8ba427a2bfc6ad3102d2f6b9ecf93385f9de4e38fe1b0",
+          "synth": "Riftr",
+          "likeness": 1,
+          "usefulness": 2
+        },
+        "baseline": {
+          "id": "6b6b1be9d4a3ea03d468012fdb171d43443675697c1c576abafd7518b2cb1f2f",
+          "synth": "Riftr",
+          "likeness": 2,
+          "usefulness": 2
+        }
+      },
+      "bestNewLikeness": 1,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "double_jump/flap_once.wav",
+      "targetId": "8ff4fed3f7af921aa9cb69aaa0c695b85a8fa9aafca84db08ebae04bad8d9d66",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "0702e9ed199a5092ba003213c65c3b9a151e6b3495e7e632016c2f140de4f5cd",
+          "synth": "Rustlr",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "f1deaca291317c5aa95b72e9c302f8652e7a7446691d5baa82285ec37f77ce07",
+          "synth": "Rustlr",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "bab12638da66877ab7db67fb70de143773449e0527d9b63d92357945a3a616bf",
+          "synth": "Rustlr",
+          "likeness": 3,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 3,
+      "bestDisplayedLikeness": 3
+    },
+    {
+      "source": "draw_weapon/knifeSlice.ogg",
+      "targetId": "b399877eea022af5b4cc19c501fe2c9497ace5a1fabc0553a11bc6e4aca8e6c7",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "fe8e30471416b81dd2e3fa133b34b4dbd528f6ecf7577c76a1a42bcc3e5197b7",
+          "synth": "Soundboard",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "2ad55efe31f7a0f48fef55ed13f21eeed177c3e8703bd55a99bac576d1c05019",
+          "synth": "Soundboard",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "7ca8bb9ab9b45f50d21d1ebb5bd52d74133154d84a8d7afc028a1597de0132ef",
+          "synth": "Whooshr",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "explode/Bifun Jump.WAV",
+      "targetId": "bda2dda22ff06c06de78b48f9e57b2fc93183ea6a555fd85f0724bf2abb9d60b",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "151335698046be01020df891ed147620ab33d5b1ecc05451522330a54fb17f51",
+          "synth": "Soundboard",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "47612f7f47d102cab8b5523cd27c82f065e8116c1f25a90fc42076d1e10457cb",
+          "synth": "Soundboard",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "1cb650e6cbb968699f58679f6c83ee374fd1bff7cc3f962a2977fb6fbcbfa752",
+          "synth": "Transfxr",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "fall/Fall Kopie 2.wav",
+      "targetId": "12310d5be5e619bd7f8e97b22a0e0a382e17b45357e01df61dbf3409a6e16d80",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "8c1974eeeae1fd54921f1905af4fe58ea91f6f014660991af743246666eeff13",
+          "synth": "Soundboard",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "8ca5ef84b052980438f7adf5bbb2c82eaba26e1fb00187acecc5652f33a9ebe5",
+          "synth": "Signlr",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "94efc847f3370e7cab2245cafa77f329eb5cf26ce09c588baa883f6fde1c02fa",
+          "synth": "Machinr",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "footstep/footstep03.ogg",
+      "targetId": "5295406c1722ca888ed427a637f763d13c3576e26438b0a877cd811778c1c2ff",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "728b1030c0d5f3da4eddaeeccf29c9eecc498ab08f7650ff5ad90fa308dd3f0d",
+          "synth": "Soundboard",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "3db6e505dc3fe9def9ed2345b709b755af4439cf6fa90a2bbe379e6abdb2b3aa",
+          "synth": "Pluckr",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "22400fa5dd3942c7a13a93c952cf6dc940c1f4a938154da1a8286cbaef6b47dd",
+          "synth": "Transfxr",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 3,
+      "bestDisplayedLikeness": 3
+    },
+    {
+      "source": "forbidden/error_008.ogg",
+      "targetId": "d5ecb2890adf41b0b439ec3ead1b6df8428ee13df8bf180028467698d914391f",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "c9a405f826367f5adb70ae5015e3a12a4dd1a40e6c1b5aca11d730bc131d383f",
+          "synth": "Soundboard",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "8edffe4f19bd141f8f93053201e97e57064fe547687ee16a30bbd01bd89e3ed2",
+          "synth": "Soundboard",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "6c494f515ef46ef9c3f4e4af8c3fc9fca962f8aaa98f5897f20e2f8f61e43fca",
+          "synth": "Boomr",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 1,
+      "bestDisplayedLikeness": 1
+    },
+    {
+      "source": "hit/PUNCH7.WAV",
+      "targetId": "ba921db6cdda87fe232d80427a2a7d175aa34e36f195c980bcc9425bf524f5c6",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "05e8fa8a92d3ab91973958cb965ea398412138f5650ed43176c39d34101cec6c",
+          "synth": "Soundboard",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "01c90d5231bdf61e11c7d7b067181250315c0cc6358f8f9ff5d9978bb410c038",
+          "synth": "Boomr",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "d9d4c20e1b2be0ede52ae0fa8d886b8e10795b1cb828eb7dd8cf69a7318e6566",
+          "synth": "Soundboard",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "jump/Jump Kopie 4.wav",
+      "targetId": "338f700f6e05eeeb91f7c8373de1b8ab3ccb5c9fcf4c78a387ff5ad6ee65d95c",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "c3b5e5d2eb5e35223f22359dc4667688e1ca4d843db36b73b2dfadd175292d73",
+          "synth": "Bfxr",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        "auditory": {
+          "id": "92af5c3a5051aaf4eee795fa307286d4826d2d9b5727581eba94fc3056c086b0",
+          "synth": "Bfxr",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        "baseline": {
+          "id": "79e26572bebbc666991320fab92f89762603cc72cbd0896dd5d3760b2d5e8ff1",
+          "synth": "Bfxr",
+          "likeness": 2,
+          "usefulness": 3
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "laser/laserRetro_000.ogg",
+      "targetId": "6db6a83f29dd9cb5d9d741fb513ddf9302ccf5052263f3f6b5b5629608c53043",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "8bc7b0f9e95301e7cbd2e31d3d110076ff0d3ded01ab2a6ecf624edf3642631e",
+          "synth": "Soundboard",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "1cc7f0e250705d872641cd3972a018663686472b2165c71db8d28f5005a64654",
+          "synth": "Soundboard",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "323dee6abce140cbaabef5494f955be39f3252da9fa225ad4e7b0ebe7dad4bfb",
+          "synth": "Bfxr",
+          "likeness": 3,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 3,
+      "bestDisplayedLikeness": 3
+    },
+    {
+      "source": "magic/cureMagic.wav",
+      "targetId": "9c1d1afc2497e775dbbc273d4fc16c67bcf48126fc540d3b2005b06493ab6e56",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "e8306db7dd9f69a906ef18174a531ba718612698c3b0745cd11cd0808005cab3",
+          "synth": "Birdr",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        "auditory": {
+          "id": "594d2e2f8e9bce34c3f4707b5ad4c539af8d8276a03cd86136762ff0064d2433",
+          "synth": "Birdr",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        "baseline": {
+          "id": "93541cf682223622dae5e1ceec35c646c18d5af6b0134548bd74c8d16dc88818",
+          "synth": "Birdr",
+          "likeness": 2,
+          "usefulness": 3
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "misc/exhaust.wav",
+      "targetId": "9fa87e7e1b3dac0576b8ab0f2d776d002a2a88953ed85460023f4cb5eb08f994",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "e55e50de7f6ff848cf3b24a96629c7d3dab3e167dea839ce5d4fefb4971148a0",
+          "synth": "Riftr",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "auditory": {
+          "id": "57e79cf8c5c3387baf01c8de325a8259cc8d1a31ed7a7aee2d9f3fcb6f7fb600",
+          "synth": "Riftr",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "baseline": {
+          "id": "8b578f1b31bd32c93ebade59d886cee4875b0b6a8cb18cb7f0fdcd8ac3cb194e",
+          "synth": "Signlr",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 1,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "monster/SNDB2DIE.wav",
+      "targetId": "25cdc6b6e82a3524ea71dd6514077c9e24f676ac6b925e210fcc9f677abf6bd0",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "522f08a5a7b0ba2d0e26934b6f0ab1f63e3fe55538f1b334eeb626b9a3928a32",
+          "synth": "Soundboard",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "902cc92562c17faaf5a8e17ca2e39afca0b560789318815da0679ead1dbf71c9",
+          "synth": "Soundboard",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "0b1fd2328072d2252cea42d2a6c6ac30ef99507cab2f424d0b6605651272e8a2",
+          "synth": "Transfxr",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 1,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "motiv/UIMisc_Kalimba 3 Up_CB Sounddesign_APPlicable Sounds.wav",
+      "targetId": "98354799e0d63112af794856f101da379f5254cd32072e070e6d3580382d0994",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "99ccd40cdb09420d3062cd1427858b8159d6f86ee08c457fbfac344b96489715",
+          "synth": "Soundboard",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "c78c1cc3e09c68bd181915b95f93296d1d67f357b2d843bdd79ca39f41090436",
+          "synth": "Clonkr",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "cdeac0c6bad2a4fa417246c913e6cb5736b536595919e43d57dda06485c62106",
+          "synth": "Clonkr",
+          "likeness": 1,
+          "usefulness": 3
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "power_up/1up.wav",
+      "targetId": "268f1e7afdd0c06966cf86bcd78d009162bb47c1c95b6e015288a7d05343f810",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "000c7a1210e42c0e2edec07e85b42d49e5124c1fc09d40c6fac22ab08bfc3c94",
+          "synth": "Soundboard",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "86d3503c842fe96a8d5751d90bb5270716e8369c6a4981d6ab13daccfde532d1",
+          "synth": "Signlr",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        "baseline": {
+          "id": "0e87de3d9fcb7b28ef1cb7965d1d5aadbfa9f1745d88cc8216c89b7a4381da92",
+          "synth": "Bfxr",
+          "likeness": 1,
+          "usefulness": 3
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "select/savePoint.wav",
+      "targetId": "a7b9bd029cd258641912b2ce3f6da0431cddb9b98f99f9fc30a9e47fe8f199c8",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "f405574bc504a27bd23f8ee8555dccf064143d2f2e557a19d3f1f3abf727d4b7",
+          "synth": "Soundboard",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "auditory": {
+          "id": "f405574bc504a27bd23f8ee8555dccf064143d2f2e557a19d3f1f3abf727d4b7",
+          "synth": "Soundboard",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "baseline": {
+          "id": "538bb0ec9f8c228bb7387df6a26dd463e3ddfd2d131fb3d59ad8683c795aaecf",
+          "synth": "Transfxr",
+          "likeness": 1,
+          "usefulness": 3
+        }
+      },
+      "bestNewLikeness": 1,
+      "bestDisplayedLikeness": 1
+    },
+    {
+      "source": "shoot/Shooting.wav",
+      "targetId": "66e4141edfb80785d3083e5c430790d2325ffef74947fd24486cf602bed55d8b",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "adccb7c65352cb06ec7843ec7b8908558934c93491b04ccea16d9195958be0f8",
+          "synth": "Boomr",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "0ec3fcacb5a47b326eef8434973eef767d1de052c82e638834696231dd7d922f",
+          "synth": "Boomr",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "74595e99bd6642260827c83494457863976caa7fe2550f00d6967e2358add511",
+          "synth": "Boomr",
+          "likeness": 3,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 3,
+      "bestDisplayedLikeness": 3
+    },
+    {
+      "source": "slime/slime_000.ogg",
+      "targetId": "53690592c9bbe1c339ee9f7821c26a6f04e680beaad4edcd2686ae64f01f85b2",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "173c4c245527a7dd3eb40323c02a7226ec955948a03074d0687ecc1b5c681347",
+          "synth": "Signlr",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "auditory": {
+          "id": "de7ddd901669a10c56640a26bbabd5b765a11127ec6f073fd1faf924518b695f",
+          "synth": "Signlr",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "baseline": {
+          "id": "6fb286dbf5b849a19b09e5a97704f482a55765a73ec792206f9dfebdecec5f37",
+          "synth": "Bfxr",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 1,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "step/step2.wav",
+      "targetId": "348b7cdc8edcc3df995e3ec5f2adf05d02cad8df359c514f6cb6b5df3898fef1",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "7360f440ce7893148301b86df2da9e05a024fc83b8c7adf024370bc410aca15c",
+          "synth": "Boomr",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "094c322e2001f2ab585007e0d82888d14a97994452d445306f234d415bf122f4",
+          "synth": "Soundboard",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "82377a890ef3dbf9ecdcd13dbdde69d4b8b7c4403397136cdd670f5c45f55500",
+          "synth": "Boomr",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 3,
+      "bestDisplayedLikeness": 3
+    },
+    {
+      "source": "sword/ma_sword3.wav",
+      "targetId": "19541e1f0d3376844ec5a212195f07062a80d41f90ce5e97077b797eae33488f",
+      "newReference": false,
+      "roles": {
+        "learned": {
+          "id": "555d4ab3db8c169f4615000fc1d62412e7bb8b61fd214b274cb9d80031ea9dbd",
+          "synth": "Transfxr",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        "auditory": {
+          "id": "555d4ab3db8c169f4615000fc1d62412e7bb8b61fd214b274cb9d80031ea9dbd",
+          "synth": "Transfxr",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        "baseline": {
+          "id": "31f13e472cbc56a6dbf13ad2ebe9e4075d5239ee94cd90ee52fc8b746e8289b1",
+          "synth": "Bfxr",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "unlock/metalLatch.ogg",
+      "targetId": "9c92e9c2b5882e323936cd58bd440851dcce61d9e45e05230660975ccbb85af6",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "6fac52011d82b7d4b5a7a868edb04879ca73ddd4f366319c5233606b6ff35797",
+          "synth": "Soundboard",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        "auditory": {
+          "id": "d4b7151cdd26f7b645c58e4eb8fbec39cf940b23396c88f4bded8197f0bba014",
+          "synth": "Soundboard",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        "baseline": {
+          "id": "131c750835c12a899e0212b75a6cdc3abaacc60994f4f14481e21791c4783a7c",
+          "synth": "Squishr",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    },
+    {
+      "source": "voice/ozzie.wav",
+      "targetId": "f1534fc003c77b96dd60ac49bb972ecef413f034487b8243d031c3ffe9558606",
+      "newReference": true,
+      "roles": {
+        "learned": {
+          "id": "7e92638963a83d17c166a5d681bf9df39efa2cf82602629790996cecf90d3007",
+          "synth": "Riftr",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        "auditory": {
+          "id": "6e24e933ce44be5b60e3dc88331712f3fb1b0f1f56333b4609858cbdc4bfd8a6",
+          "synth": "Boomr",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        "baseline": {
+          "id": "0bcb453db3a3b392208ef43885bd8b2240d968dbbfc9bfe58a8425ee7e52aed5",
+          "synth": "Boomr",
+          "likeness": 1,
+          "usefulness": 2
+        }
+      },
+      "bestNewLikeness": 2,
+      "bestDisplayedLikeness": 2
+    }
+  ],
+  "strictPairs": [
+    {
+      "source": "animal/grunt.wav",
+      "referencePcm": "f47816c2254379c1f623c74325dfbe5df5c42838a4e8c75c0cc981919e2a70df",
+      "newReference": true,
+      "candidateA": "9e1506e723cfbaaade70f34bc3c93662a33b57257edd0e9bec19d70bb31aefdc",
+      "candidateB": "d91ced134e9c24a4d10f7abc8bea9c6ff3b10cb4180775723fce4a6607c59bab",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "attack/spinout.wav",
+      "referencePcm": "65846b1877c418e7f6cc6f8a1a588979162674aa1d905bb930fd97588c20d69f",
+      "newReference": false,
+      "candidateA": "8b44d912839b3bfc4888ae5657d07b51ce7b4964bcc363efc22fd22a72886e02",
+      "candidateB": "27a26dcc0fdfe4b985375dd3f4c8fd4a1901f8f548c392935329aaf5238a81b8",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "attack/spinout.wav",
+      "referencePcm": "65846b1877c418e7f6cc6f8a1a588979162674aa1d905bb930fd97588c20d69f",
+      "newReference": false,
+      "candidateA": "27a26dcc0fdfe4b985375dd3f4c8fd4a1901f8f548c392935329aaf5238a81b8",
+      "candidateB": "889e8c79d6d2acbc88aff1eef4436adb42a0873239c0ea2457f12402ff0af6e5",
+      "likenessDifference": -1,
+      "correct": {
+        "learned": true,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "carbeep/VEHHorn_Kawasaki Ninja ZX 10R Horn Single 03_SNDBTS_MCK.wav",
+      "referencePcm": "bf414abc51c7b062bfae8d7b57def6882bf61fc10608a1e75df6c22b4ec454a2",
+      "newReference": false,
+      "candidateA": "a4f5b678ed9f04d3019a93e41ee71fb7b7f37475698130a9cba4ccd6a0c3e8c5",
+      "candidateB": "4174959815ee8920fa3ea004d672b95a233f64cb7dd4fa12bb5bed389c408d29",
+      "likenessDifference": 2,
+      "correct": {
+        "learned": true,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "carbeep/VEHHorn_Kawasaki Ninja ZX 10R Horn Single 03_SNDBTS_MCK.wav",
+      "referencePcm": "bf414abc51c7b062bfae8d7b57def6882bf61fc10608a1e75df6c22b4ec454a2",
+      "newReference": false,
+      "candidateA": "b47d144e24e416aff68624011844628f3263e6be3599e5fe5a4c2baff128dfae",
+      "candidateB": "4174959815ee8920fa3ea004d672b95a233f64cb7dd4fa12bb5bed389c408d29",
+      "likenessDifference": 2,
+      "correct": {
+        "learned": true,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "card/bookClose.ogg",
+      "referencePcm": "3a34c99cee7fe4fc5679083fb569033b765ec88a07d4ddac08d76d2245d778be",
+      "newReference": false,
+      "candidateA": "944385e485e9f2e6921339c3bec737d7ba06c5f2a2317dea51fb57d871550ef5",
+      "candidateB": "e7261f6160ead43761665fdf737c223769848d1df8ba1b45e8f3398b786e31f2",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "chips/chips-stack-6.ogg",
+      "referencePcm": "518fad2c62f26a3b8ae5cb37af7de61c735ddebe811f4e4fa82d84c0a3a58505",
+      "newReference": true,
+      "candidateA": "a38b963eeb50db4d317bcbc6488c2e121832c05926c3dbcb47f902de7192003d",
+      "candidateB": "ddea1d42432befdf7dd3bffab990070a0dc5ace3ddb1e56adb9eb694930767c6",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "chips/chips-stack-6.ogg",
+      "referencePcm": "518fad2c62f26a3b8ae5cb37af7de61c735ddebe811f4e4fa82d84c0a3a58505",
+      "newReference": true,
+      "candidateA": "a38b963eeb50db4d317bcbc6488c2e121832c05926c3dbcb47f902de7192003d",
+      "candidateB": "f577cacdf8688696a8392cedac0fd6b6e733a41e3a29d5b6eb86ab172a415721",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "clothes/cloth2.ogg",
+      "referencePcm": "c38282c538ab68ea258f8fbd94d623018df6358e658f939018b01394d8bdd2be",
+      "newReference": true,
+      "candidateA": "f5d7a00c8055d2bbe1597726171696e4aa019cdd0a9b2c88d67231c5934609fe",
+      "candidateB": "f3718fbfaea7e3b7f7e9759b1c16dece4a02ffcb2a02ce53d34727233eab6853",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "dice/dice-throw-2.ogg",
+      "referencePcm": "429323674292b7c6ad3e9c83481dd2741e4aa680b7fd496eae3c54dfd435b44d",
+      "newReference": true,
+      "candidateA": "25fa67de8dc6ccf749360bcb6ae88fe7f0592a569a8ce74d6f7fe751f5d10b7a",
+      "candidateB": "75fb9cb529c3ebd159fa360922705cdb96499c79f89dd63fe3683d5f4cedeec4",
+      "likenessDifference": -1,
+      "correct": {
+        "learned": false,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "dice/dice-throw-2.ogg",
+      "referencePcm": "429323674292b7c6ad3e9c83481dd2741e4aa680b7fd496eae3c54dfd435b44d",
+      "newReference": true,
+      "candidateA": "9631d2286f492c6375af63a7bf08a368212abda5f06318207a678ead5c4848e7",
+      "candidateB": "75fb9cb529c3ebd159fa360922705cdb96499c79f89dd63fe3683d5f4cedeec4",
+      "likenessDifference": -1,
+      "correct": {
+        "learned": false,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+      "referencePcm": "2ee31491b38034303cb35d2878a8bdd567c9db94886bf04b3c0bf6beb6729ef3",
+      "newReference": false,
+      "candidateA": "549a9fd5a1d36d8b17395dd57b54f4036fa52c9d7a5b59701d0d17417554c40b",
+      "candidateB": "6b6b1be9d4a3ea03d468012fdb171d43443675697c1c576abafd7518b2cb1f2f",
+      "likenessDifference": -1,
+      "correct": {
+        "learned": false,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+      "referencePcm": "2ee31491b38034303cb35d2878a8bdd567c9db94886bf04b3c0bf6beb6729ef3",
+      "newReference": false,
+      "candidateA": "7318969c8d05669dbbc8ba427a2bfc6ad3102d2f6b9ecf93385f9de4e38fe1b0",
+      "candidateB": "6b6b1be9d4a3ea03d468012fdb171d43443675697c1c576abafd7518b2cb1f2f",
+      "likenessDifference": -1,
+      "correct": {
+        "learned": false,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "fall/Fall Kopie 2.wav",
+      "referencePcm": "82669a50d82fcdad4d4de884a62a139648add050a9b4ec03d6d068b5e9ef8af1",
+      "newReference": true,
+      "candidateA": "8c1974eeeae1fd54921f1905af4fe58ea91f6f014660991af743246666eeff13",
+      "candidateB": "8ca5ef84b052980438f7adf5bbb2c82eaba26e1fb00187acecc5652f33a9ebe5",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "fall/Fall Kopie 2.wav",
+      "referencePcm": "82669a50d82fcdad4d4de884a62a139648add050a9b4ec03d6d068b5e9ef8af1",
+      "newReference": true,
+      "candidateA": "8c1974eeeae1fd54921f1905af4fe58ea91f6f014660991af743246666eeff13",
+      "candidateB": "94efc847f3370e7cab2245cafa77f329eb5cf26ce09c588baa883f6fde1c02fa",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "footstep/footstep03.ogg",
+      "referencePcm": "dee55583717f394a868d1156347348b2cb17b7c8b8463fef17f757242ec2bccc",
+      "newReference": true,
+      "candidateA": "728b1030c0d5f3da4eddaeeccf29c9eecc498ab08f7650ff5ad90fa308dd3f0d",
+      "candidateB": "22400fa5dd3942c7a13a93c952cf6dc940c1f4a938154da1a8286cbaef6b47dd",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "footstep/footstep03.ogg",
+      "referencePcm": "dee55583717f394a868d1156347348b2cb17b7c8b8463fef17f757242ec2bccc",
+      "newReference": true,
+      "candidateA": "3db6e505dc3fe9def9ed2345b709b755af4439cf6fa90a2bbe379e6abdb2b3aa",
+      "candidateB": "22400fa5dd3942c7a13a93c952cf6dc940c1f4a938154da1a8286cbaef6b47dd",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "hit/PUNCH7.WAV",
+      "referencePcm": "041839601c0de5ad9d168f5617d0becccd03c9aa5783420b46e6ab425a2067a9",
+      "newReference": false,
+      "candidateA": "05e8fa8a92d3ab91973958cb965ea398412138f5650ed43176c39d34101cec6c",
+      "candidateB": "d9d4c20e1b2be0ede52ae0fa8d886b8e10795b1cb828eb7dd8cf69a7318e6566",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "hit/PUNCH7.WAV",
+      "referencePcm": "041839601c0de5ad9d168f5617d0becccd03c9aa5783420b46e6ab425a2067a9",
+      "newReference": false,
+      "candidateA": "01c90d5231bdf61e11c7d7b067181250315c0cc6358f8f9ff5d9978bb410c038",
+      "candidateB": "d9d4c20e1b2be0ede52ae0fa8d886b8e10795b1cb828eb7dd8cf69a7318e6566",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "misc/exhaust.wav",
+      "referencePcm": "33eadad69d1529a7a5611f8435bdddde044bbbe7f19ff2657ce59252a97269a0",
+      "newReference": true,
+      "candidateA": "e55e50de7f6ff848cf3b24a96629c7d3dab3e167dea839ce5d4fefb4971148a0",
+      "candidateB": "8b578f1b31bd32c93ebade59d886cee4875b0b6a8cb18cb7f0fdcd8ac3cb194e",
+      "likenessDifference": -1,
+      "correct": {
+        "learned": false,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "misc/exhaust.wav",
+      "referencePcm": "33eadad69d1529a7a5611f8435bdddde044bbbe7f19ff2657ce59252a97269a0",
+      "newReference": true,
+      "candidateA": "57e79cf8c5c3387baf01c8de325a8259cc8d1a31ed7a7aee2d9f3fcb6f7fb600",
+      "candidateB": "8b578f1b31bd32c93ebade59d886cee4875b0b6a8cb18cb7f0fdcd8ac3cb194e",
+      "likenessDifference": -1,
+      "correct": {
+        "learned": false,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "monster/SNDB2DIE.wav",
+      "referencePcm": "c0d7c253eb58e7ad372e658a74f0e61952a28a5f1e2d884d74b87eb1e99e913b",
+      "newReference": true,
+      "candidateA": "522f08a5a7b0ba2d0e26934b6f0ab1f63e3fe55538f1b334eeb626b9a3928a32",
+      "candidateB": "0b1fd2328072d2252cea42d2a6c6ac30ef99507cab2f424d0b6605651272e8a2",
+      "likenessDifference": -1,
+      "correct": {
+        "learned": true,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "monster/SNDB2DIE.wav",
+      "referencePcm": "c0d7c253eb58e7ad372e658a74f0e61952a28a5f1e2d884d74b87eb1e99e913b",
+      "newReference": true,
+      "candidateA": "902cc92562c17faaf5a8e17ca2e39afca0b560789318815da0679ead1dbf71c9",
+      "candidateB": "0b1fd2328072d2252cea42d2a6c6ac30ef99507cab2f424d0b6605651272e8a2",
+      "likenessDifference": -1,
+      "correct": {
+        "learned": true,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "motiv/UIMisc_Kalimba 3 Up_CB Sounddesign_APPlicable Sounds.wav",
+      "referencePcm": "655967d18d4fa1e48ee549c072ba2fe4509322c55a988fecb84d1e29da516e24",
+      "newReference": true,
+      "candidateA": "99ccd40cdb09420d3062cd1427858b8159d6f86ee08c457fbfac344b96489715",
+      "candidateB": "c78c1cc3e09c68bd181915b95f93296d1d67f357b2d843bdd79ca39f41090436",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "motiv/UIMisc_Kalimba 3 Up_CB Sounddesign_APPlicable Sounds.wav",
+      "referencePcm": "655967d18d4fa1e48ee549c072ba2fe4509322c55a988fecb84d1e29da516e24",
+      "newReference": true,
+      "candidateA": "99ccd40cdb09420d3062cd1427858b8159d6f86ee08c457fbfac344b96489715",
+      "candidateB": "cdeac0c6bad2a4fa417246c913e6cb5736b536595919e43d57dda06485c62106",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "power_up/1up.wav",
+      "referencePcm": "373219b3317083b5106aa84a3ffbcf1aa5702ea7431910b8ec3b251c2cdc48e6",
+      "newReference": false,
+      "candidateA": "000c7a1210e42c0e2edec07e85b42d49e5124c1fc09d40c6fac22ab08bfc3c94",
+      "candidateB": "0e87de3d9fcb7b28ef1cb7965d1d5aadbfa9f1745d88cc8216c89b7a4381da92",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "power_up/1up.wav",
+      "referencePcm": "373219b3317083b5106aa84a3ffbcf1aa5702ea7431910b8ec3b251c2cdc48e6",
+      "newReference": false,
+      "candidateA": "86d3503c842fe96a8d5751d90bb5270716e8369c6a4981d6ab13daccfde532d1",
+      "candidateB": "0e87de3d9fcb7b28ef1cb7965d1d5aadbfa9f1745d88cc8216c89b7a4381da92",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": false,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "slime/slime_000.ogg",
+      "referencePcm": "c7008a680b98d34967db9368a9be4d815c99fe270abe7ee7b7f5cff0a1abc738",
+      "newReference": false,
+      "candidateA": "173c4c245527a7dd3eb40323c02a7226ec955948a03074d0687ecc1b5c681347",
+      "candidateB": "6fb286dbf5b849a19b09e5a97704f482a55765a73ec792206f9dfebdecec5f37",
+      "likenessDifference": -1,
+      "correct": {
+        "learned": false,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "slime/slime_000.ogg",
+      "referencePcm": "c7008a680b98d34967db9368a9be4d815c99fe270abe7ee7b7f5cff0a1abc738",
+      "newReference": false,
+      "candidateA": "de7ddd901669a10c56640a26bbabd5b765a11127ec6f073fd1faf924518b695f",
+      "candidateB": "6fb286dbf5b849a19b09e5a97704f482a55765a73ec792206f9dfebdecec5f37",
+      "likenessDifference": -1,
+      "correct": {
+        "learned": false,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "step/step2.wav",
+      "referencePcm": "187483de38825becf2770c204ed5b5d1579ec15e2c04e8b37b2bfdd39f914c18",
+      "newReference": false,
+      "candidateA": "7360f440ce7893148301b86df2da9e05a024fc83b8c7adf024370bc410aca15c",
+      "candidateB": "094c322e2001f2ab585007e0d82888d14a97994452d445306f234d415bf122f4",
+      "likenessDifference": 2,
+      "correct": {
+        "learned": true,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "step/step2.wav",
+      "referencePcm": "187483de38825becf2770c204ed5b5d1579ec15e2c04e8b37b2bfdd39f914c18",
+      "newReference": false,
+      "candidateA": "7360f440ce7893148301b86df2da9e05a024fc83b8c7adf024370bc410aca15c",
+      "candidateB": "82377a890ef3dbf9ecdcd13dbdde69d4b8b7c4403397136cdd670f5c45f55500",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "step/step2.wav",
+      "referencePcm": "187483de38825becf2770c204ed5b5d1579ec15e2c04e8b37b2bfdd39f914c18",
+      "newReference": false,
+      "candidateA": "094c322e2001f2ab585007e0d82888d14a97994452d445306f234d415bf122f4",
+      "candidateB": "82377a890ef3dbf9ecdcd13dbdde69d4b8b7c4403397136cdd670f5c45f55500",
+      "likenessDifference": -1,
+      "correct": {
+        "learned": true,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "unlock/metalLatch.ogg",
+      "referencePcm": "3c62eed151fb3f669874c30b8300ebb4bde98cf7274dfb94ef67f2983b6a68d9",
+      "newReference": true,
+      "candidateA": "6fac52011d82b7d4b5a7a868edb04879ca73ddd4f366319c5233606b6ff35797",
+      "candidateB": "131c750835c12a899e0212b75a6cdc3abaacc60994f4f14481e21791c4783a7c",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "unlock/metalLatch.ogg",
+      "referencePcm": "3c62eed151fb3f669874c30b8300ebb4bde98cf7274dfb94ef67f2983b6a68d9",
+      "newReference": true,
+      "candidateA": "d4b7151cdd26f7b645c58e4eb8fbec39cf940b23396c88f4bded8197f0bba014",
+      "candidateB": "131c750835c12a899e0212b75a6cdc3abaacc60994f4f14481e21791c4783a7c",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "voice/ozzie.wav",
+      "referencePcm": "34147bfadbb3e9bb4a3d3528391248d98b4667622dc72a786e72f035ad2d68f4",
+      "newReference": true,
+      "candidateA": "7e92638963a83d17c166a5d681bf9df39efa2cf82602629790996cecf90d3007",
+      "candidateB": "6e24e933ce44be5b60e3dc88331712f3fb1b0f1f56333b4609858cbdc4bfd8a6",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": false
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    },
+    {
+      "source": "voice/ozzie.wav",
+      "referencePcm": "34147bfadbb3e9bb4a3d3528391248d98b4667622dc72a786e72f035ad2d68f4",
+      "newReference": true,
+      "candidateA": "7e92638963a83d17c166a5d681bf9df39efa2cf82602629790996cecf90d3007",
+      "candidateB": "0bcb453db3a3b392208ef43885bd8b2240d968dbbfc9bfe58a8425ee7e52aed5",
+      "likenessDifference": 1,
+      "correct": {
+        "learned": true,
+        "auditory": true
+      },
+      "tiedPrediction": {
+        "learned": false,
+        "auditory": false
+      }
+    }
+  ],
+  "decision": "Retain preference-v4 as a promising experimental selector relative to auditory-v1 on this shared search pool; reproduction quality remains poor and it is not promoted to the CLI default. All displayed candidates remain below 4/5 likeness. Preserve all labels; usefulness is not likeness. Prioritize event structure, texture and unwanted-click diagnostics over further brute-force expansion alone.",
+  "verification": {
+    "rawAttachmentPreservedExactly": true,
+    "losslessAudioVerifiedOnImportAndReimport": true,
+    "roleResultsIndependentlyRecomputedFromRawFeedback": true,
+    "sharedSelectorAudioExpandedForMethodComparisonsOnly": true,
+    "noTrainingOnThisFeedbackBeforeFrozenEvaluation": true
+  },
+  "nextExperiment": "Use preference-v4 as the incumbent experimental comparator. Test event-order/gap and texture-modulation representations separately, plus reference-aware unwanted-click diagnostics. Validate on grouped reference families where possible; retain ties and repeated-session judgments. Do not apply a blanket transient penalty to impacts or clicks."
+}

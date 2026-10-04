@@ -7,6 +7,7 @@
 | `2026-10-03-real-v1/` | 40 | 73 |
 | `2026-10-03-tagged-v2/` | 18 | 48 |
 | `2026-10-03-coverage-v3/` | 6 | 24 |
+| `2026-10-04-big-v4/` | 36 | 103 |
 
 The first two sessions contain 58 reference judgments, **57 exact unique reference
 audios** and **120 exact unique reference/candidate audio pairs**. The repeated
@@ -30,6 +31,26 @@ Seven new sounds rated usefulness 4 are exported in
 `../presets/coverage-v3-useful.bcol`. Their low likeness scores are preserved too.
 The same-session reference/candidate mapping is authoritative; repeated ratings
 remain separate observations, including three one-point baseline changes.
+
+The fourth session preserves all 103 likeness and 103 usefulness ratings from
+big-v4, plus the note about unwanted clicks in `bird/Bird Sounds.WAV`. The learned
+selector scored 1.94/5 likeness versus 1.75 for expanded auditory-v1 and 1.69 for
+the historical baselines. Its same-pool comparison has 6 wins, 30 ties, 0 losses;
+against historical baselines it has 13 wins, 18 ties, 5 losses. Five exact audio
+agreements count for both selectors when comparing methods, but remain one
+judgment each when training. No displayed candidate scored above 3/5 likeness.
+See [the v4 human review](../evaluations/big-v4-human-review.json).
+
+All four sessions retain **100 reference judgments, 75 exact unique reference
+audios and 223 unique reference/candidate PCM pairs**. Twelve of the eighteen
+replayed historical candidates received a different likeness rating from their
+latest earlier rating of the same PCM pair. Preserve both observations and use
+within-session comparisons; this is not a reason to overwrite earlier ratings.
+The v4 checkpoint was evaluated against these labels before any retraining on
+them. Its 27/36 strict pair predictions (16/20 on new exact-reference groups)
+beat auditory-v1's 16/36 (8/20), but pairs are correlated and the evaluated
+candidates were selected by these same metrics. This supports further study,
+not a claim of generally good reproduction.
 
 Schema 2 stores each target's role aliases in a `candidates` array and candidate
 labels in `likeness` and `usefulness`. Schema 1 instead uses named roles and a

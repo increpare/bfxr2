@@ -1,0 +1,2807 @@
+{
+  "schemaVersion": 2,
+  "experimentId": "140d89d3331adb085c93a93a2bd2e72943145c89329088d0ebcf14b3827ee8f2",
+  "provenance": {
+    "experiment": "multisynth-big-v4",
+    "featureVersion": "auditory-v1",
+    "objectiveVersion": "preference-v4",
+    "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+    "sourceHashes": {
+      "legacy": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "board": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1"
+    },
+    "boardRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+    "libraryRows": 25728,
+    "legacyLibraryHash": "e292b5c993687e4ad8a105de6b9c84127ba7fc817ed81cc000294b64c9bc3759",
+    "boardLibraryHash": "55c5e58981a7516957bf5ec397f624b08fb2c8251b458598b511bd236897c512",
+    "baselineLibraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+    "descriptorFileHashes": {
+      "legacy": "3008de8b2537b6fbcd691351dcd6533439c5e4d46d1577ae58e482c5299391a9",
+      "board": "23112d227f94e3ad37f464bc69438fe572a33efa3a8258897bbc7497c6bdf43b",
+      "baseline": "03e3d401c43b3419be18b7ffa916a895b4c3aa82c03973bbaa087d2a365059aa"
+    },
+    "targetManifestHash": "520f9331bef78a154d869ccc3a2aa167e1fdc3d6583d23bcd4ac473922aff199",
+    "targetCount": 36,
+    "searchCodeHash": "c3dae13c3ca1fb48a4bdbe42771313ad2eac7afa641ead6a48390c4eb2658c92",
+    "metricCodeHash": "0483d1198c92b4553f8343b3ed15649fc56de72fa707f052d1f48ab79e44429b",
+    "trainingArchives": [
+      {
+        "path": "tools/multisynth/listening_data/2026-10-03-real-v1",
+        "manifestHash": "c28456efac1be70c3b65b76900aa0aa49bb1021526cd49543e999f25d2504c6a"
+      },
+      {
+        "path": "tools/multisynth/listening_data/2026-10-03-tagged-v2",
+        "manifestHash": "c24ef8d61d352257d76f9a53b55a015a971c5368404e37b6eaf7fd192aa93bed"
+      },
+      {
+        "path": "tools/multisynth/listening_data/2026-10-03-coverage-v3",
+        "manifestHash": "72403c7fb0088b036f4a785bf74cb43b6ccd82febc97dc5282f6b29ef106a9f6"
+      }
+    ],
+    "budgetPerStart": 64,
+    "learnedStarts": 8,
+    "auditoryStarts": 8,
+    "seed": 9182,
+    "selection": "All frozen tagged references, no filtering by new scores; no tag-based retrieval",
+    "refinement": "Fixed recipe, phrase, random seed, categorical choices and alignment; bounded continuous controls",
+    "historicalSeeds": "Up to two previously rated candidates per known reference; supervised development, not unseen generalization",
+    "galleryTitle": "Multi-synth reproduction · large listening run",
+    "galleryIntro": [
+      "Please rate how closely each new sound recreates the reference: its gesture, movement, texture and overall feel. 1 = far off, 3 = recognizably similar, 5 = very close. Usefulness/fun is optional.",
+      "Retrained match uses all your saved likeness ratings; it remains experimental, with no validated quality win yet. Expanded original model uses the original audio distance on the same generated candidate pool. Previous best replays your strongest earlier choice; on new references, Original matcher supplies the baseline.",
+      "Some references are new to these listening rounds; others are development examples used in training. Each row says which. If two methods produce the same audio, they share one card. There is no need to finish everything at once: ratings save in this browser; copy the JSON whenever you stop."
+    ],
+    "complete": true,
+    "elapsedSeconds": 1074.4464767500758,
+    "previouslyRatedReferences": 18,
+    "newReferences": 18,
+    "refinementRenders": 41472
+  },
+  "ratingScales": {
+    "likeness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Likeness to reference: 1 = far off, 5 = very close"
+    },
+    "usefulness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Useful/fun game sound: 1 = not useful, 5 = very useful or fun"
+    }
+  },
+  "targets": [
+    {
+      "id": "1d11efeb154e3a00ca6001279c8bfcbdfc9c4fb94515790e247ed59ddf5ff97b",
+      "name": "animal/grunt.wav",
+      "sha256": "a6f379d5d603e861eca095182848d89fc33025c187863fb526b1683febfc9173",
+      "folder": "001",
+      "referenceAudioSha256": "35814576412ebeafc9ff7b5f2dd0838be8bf914f6a403c689370c2adf6e959aa",
+      "candidates": [
+        {
+          "id": "9e1506e723cfbaaade70f34bc3c93662a33b57257edd0e9bec19d70bb31aefdc",
+          "synth": "Soundboard",
+          "paramsSha256": "093fe2bd78e1c656562f08103549257cfabff6b1e548c2f669ea76c28324422c",
+          "seed": 3876400127,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "8ab1461680c0ba4bae214cc842aaa3d8d1428f1c02168fad88a6a238856b70c4",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned",
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.9604612708048135,
+            "auditoryScore": 0.7674953937530518,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Both new selectors agree",
+          "likeness": 2,
+          "usefulness": 5
+        },
+        {
+          "id": "d91ced134e9c24a4d10f7abc8bea9c6ff3b10cb4180775723fce4a6607c59bab",
+          "synth": "Riftr",
+          "paramsSha256": "cc75e26bc201c506a513a2d3b5cbc094dd58d5595ffe984f6eec85e50d6856bd",
+          "seed": 1450083377,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "8bc6c7eb8ee2bc1202fa6ad25dd2e26879cba850d4a695e6f1fa347f8ed999ea",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 1,
+          "usefulness": 5
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "751139deb5cc7265fa41737634495580611c0727051cfd9a5d6fb52b8a3cdc54",
+      "name": "attack/spinout.wav",
+      "sha256": "63f22019f9cb29641090eaa86c67b1beb58f40462d53554a4bb5e9c526634b73",
+      "folder": "002",
+      "referenceAudioSha256": "b78c895f0183d907588cb962d8e1c9dd27b21665d64d2ecf2a0b8bfdd843714d",
+      "candidates": [
+        {
+          "id": "8b44d912839b3bfc4888ae5657d07b51ce7b4964bcc363efc22fd22a72886e02",
+          "synth": "Riftr",
+          "paramsSha256": "6e9c3df2dc6f9edda47717553be69297522352d6d3b394f6d27271be047620d7",
+          "seed": 999390029,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "0a82c0264af66b4f58a9b013dde3a4da15c2e22b1898825b505388f23c25a30c",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.043002588909112,
+            "auditoryScore": 0.7513877153396606,
+            "humanSeed": {
+              "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+              "candidateId": "86c2137195196ae9588b7bf994937f272bc8e325a7be8eaafeff732552bfb602",
+              "likeness": 2
+            }
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        {
+          "id": "27a26dcc0fdfe4b985375dd3f4c8fd4a1901f8f548c392935329aaf5238a81b8",
+          "synth": "Soundboard",
+          "paramsSha256": "8cbf6fc6e3305f9dc6ba5b45286cc8ac1674f413cd7d036c13ce1442e1420fa9",
+          "seed": 951931537,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "0eb8575564f729f4887713a82d1e70b306ecabab66f6d17ac330af92a3d6f603",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.178201960818904,
+            "auditoryScore": 0.7058888077735901,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "889e8c79d6d2acbc88aff1eef4436adb42a0873239c0ea2457f12402ff0af6e5",
+          "synth": "Riftr",
+          "paramsSha256": "f0b867b99b8e7d267dadd5d1a006ff4738e1b62842854267213c245da982528b",
+          "seed": 999390029,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "1740d5cc3b3dcfb899d5fefe5a5020d67594d443d4c9a9e692122cc3f11ff66c",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "86c2137195196ae9588b7bf994937f272bc8e325a7be8eaafeff732552bfb602",
+            "archivedPcmSha256": "08a78c9b0da506596f8b7e3ee67b80e977bc80a20a38d7d8e996cf9fabe660da",
+            "previousLikeness": 2
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 2,
+          "usefulness": 3
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "798d7d4d07bcb92d9b455d4772a49ca62338d1f76d53caed664221a19a82f0c1",
+      "name": "bell/impactBell_heavy_000.ogg",
+      "sha256": "94b8bb5f2d43ab65e4bcc32b28562416e9bc2c51d9fd4be1e333660ee52f977f",
+      "folder": "003",
+      "referenceAudioSha256": "c87bf09eea133cb5b3a6d69968d79803589c13f9c8907a2521abe402fc9a32d3",
+      "candidates": [
+        {
+          "id": "d133635d96f3034de96ae0671338f97ed446ccebf32d09cfb01d695a4a631c33",
+          "synth": "Clonkr",
+          "paramsSha256": "8f40b7cb0199dea8dc419783db567016cdc09b6b09778aafadbb51ccf2c94412",
+          "seed": 235131691,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "eec270dec2edec7222700570659980765b455a378eb40eef34001d3308226421",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.8172847566534336,
+            "auditoryScore": 0.5133442878723145,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "7c9b0e429f32de404d3ba53d16dad38a968046ef6294ff9a69e32876fd119090",
+          "synth": "Clonkr",
+          "paramsSha256": "1fe48ea4c2cfb421eea854984b7c6f3dc4eb0f3e0872da0c84391b959ab9e54f",
+          "seed": 1956515403,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "b8fdd0f1c8004f5bd0494389449c8d4480bc6c610596970133214141f952bb82",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.8949963363199906,
+            "auditoryScore": 0.5044267773628235,
+            "humanSeed": {
+              "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+              "candidateId": "48fce35f38e20ee8a955def60748e7d73184d82de1b909340478ee5339da16f8",
+              "likeness": 2
+            }
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "bd44804fe9b4dac3a0b8d58b953461b8d05e368c8be8e1bd2e2ce10a63424b2f",
+          "synth": "Bouncr",
+          "paramsSha256": "e10decb8a322f2d49dd0a42e2455b7bf95b79a8d39bc0739ed166d7bb4109002",
+          "seed": 1399198792,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "2af3ad5e7015a82ed1255ffa960a08461b72fd3d0b6ab6d13d5ca4e27ca7dc1e",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "8f9d9f2dc8cf0729757eb762757f7a2dd827f27648cd74620f362c792d3f867b",
+            "archivedPcmSha256": "d18245ddc2fa3900ab05ce6bf76c522b90497fe4c70b28bbeb68c5d900e74ea0",
+            "previousLikeness": 2
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 3,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "471285b1af95caa683ab58254302064606e91561ef79c134228bcbbade7986b6",
+      "name": "bird/Bird Sounds.WAV",
+      "sha256": "b7e6a6985e2182452977e32c60e7fc705cf80a36151c6d49f4f1139bffb34370",
+      "folder": "004",
+      "referenceAudioSha256": "090801d95c5bfe35ac1a7aa4d54f7cbc54859e45a03b6225d6104ae72e8a52b3",
+      "candidates": [
+        {
+          "id": "d5059962766d9f3795b33c4db7e80ac605a2b13d8e8737d6e37628b44645bff6",
+          "synth": "Soundboard",
+          "paramsSha256": "d30ee78ce3de6368e749ccc59ff35b1156f3cbd2e50975654db3c6662cfda3c5",
+          "seed": 626554359,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "b186e1e6435161dfb5642b3f73159f49557399ca64adb2aed41a7e23ec1879a9",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.4191255014870683,
+            "auditoryScore": 1.1436177492141724,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 2,
+          "usefulness": 2
+        },
+        {
+          "id": "f368c24c86637670a7d48510a6dfdb84a701233b9741c8df6e739b4f91f6bbcb",
+          "synth": "Soundboard",
+          "paramsSha256": "8738245486a0cc5bd16dfea6eb4a751a00b67dffdf69f65316a91a4ad2a75840",
+          "seed": 626554359,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "aac17a44d7e6cf9bac70e3a65a37401cb159512ab392389be83da69f7f729d60",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.4306575542190005,
+            "auditoryScore": 0.9629483819007874,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 2,
+          "usefulness": 2
+        },
+        {
+          "id": "a7da50e6a35b4bb7126decf79efb210f83423fe9518828750f5b45baa205efdb",
+          "synth": "Signlr",
+          "paramsSha256": "6feeaa6a7119446ff77b3cf0704ec5a1e751af4ec3a434b2443a4099f4f4b4db",
+          "seed": 652886857,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "3f4202669df5eeca17354ee7af61811344a86ff6d160a8648b54be21fdccd0d4",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 2,
+          "usefulness": 2
+        }
+      ],
+      "note": "not ab ig fan of the clicks in the generated sounds"
+    },
+    {
+      "id": "d40864cfec0c4ab753ac9822f5290323e0fd6a891fe3a7e13327b28160d25713",
+      "name": "carbeep/VEHHorn_Kawasaki Ninja ZX 10R Horn Single 03_SNDBTS_MCK.wav",
+      "sha256": "ce444bf64841f7434a7a04876f9ae0487c893a250508fbcdf23431c5e813764e",
+      "folder": "005",
+      "referenceAudioSha256": "26b9b9936e1c2c87f118dab4f5da16118c04cb8ad2ecdc46b4c9be223e177be4",
+      "candidates": [
+        {
+          "id": "a4f5b678ed9f04d3019a93e41ee71fb7b7f37475698130a9cba4ccd6a0c3e8c5",
+          "synth": "Soundboard",
+          "paramsSha256": "d38274bfd26e31b08cf21b6ee2567167ac626c72278e0084bb535a102a88f122",
+          "seed": 1486605794,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "8f534888d503d3ce90c793b63b25133e76dcfde12ac741ca152fd5f19074d9aa",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.6502829568160005,
+            "auditoryScore": 0.47563838958740234,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "b47d144e24e416aff68624011844628f3263e6be3599e5fe5a4c2baff128dfae",
+          "synth": "Soundboard",
+          "paramsSha256": "9dc3b306c21600c8a83c1e2b1b335093ef2b2a936f761a1e9cebdca95c5b27ad",
+          "seed": 1486605794,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "47fffb224f7e15a0240aa6c17c9b35756faaf5bb586366716548d734939ab32b",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.7373031091988947,
+            "auditoryScore": 0.44750604033470154,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "4174959815ee8920fa3ea004d672b95a233f64cb7dd4fa12bb5bed389c408d29",
+          "synth": "Bfxr",
+          "paramsSha256": "7b27a3770bbe94408092c05398524490ce619d39f995078ed71de9e998d778da",
+          "seed": 611484608,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "6fda5575fae489a6b1f99f72faf233c5331e4a008f2d86d6f1a0151a78a9efb0",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "a0d0d4472991e391eb6f816e8c34911a3d8c5307ea872c46706c2ced1fb879ab",
+            "archivedPcmSha256": "2598c5339b7d11486cab80fbf9fd95806512c0304704b713724970037509657a",
+            "previousLikeness": 3
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "1457877080231374f17e7846cea132691d8a2eda878ec81a32a6dc4225ddc584",
+      "name": "card/bookClose.ogg",
+      "sha256": "81e976532565f4372abd14e83d2684195fa548d0a28d345de221e56052454f32",
+      "folder": "006",
+      "referenceAudioSha256": "1694d1c771a06481c05b4dfc5ce9015168e50c0b4149958af6302cd500f9deb4",
+      "candidates": [
+        {
+          "id": "944385e485e9f2e6921339c3bec737d7ba06c5f2a2317dea51fb57d871550ef5",
+          "synth": "Transfxr",
+          "paramsSha256": "9708a81dadac9e5219b8442a10eb0ce4821f89cebea0f26e6b6a1be716fa44e1",
+          "seed": 1733427261,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "c2a2bba3f69479dba3ce61b0df56afe04d7bdb7872626dff1cecb5c448f35efa",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned",
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.0958551376865693,
+            "auditoryScore": 0.7279648184776306,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Both new selectors agree",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "e7261f6160ead43761665fdf737c223769848d1df8ba1b45e8f3398b786e31f2",
+          "synth": "Boomr",
+          "paramsSha256": "53e6107b752dd4b3fe995298ef3319ec83e446dbc49c5b732f655fbbeb51e04b",
+          "seed": 258210836,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "e4281407e5d868bc6513a2ff4dd46a53021addd5ea769f5184d6711984721828",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "4081f58134cd4afd875e52776a18760e4a2df7fb1243a19651ce0515894bd5c9",
+            "archivedPcmSha256": "c3565476032bee8042bef6740d3cef2a1e412b0cfff369a0ab404a94399619c5",
+            "previousLikeness": 1
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "50a7393be1761a50a303968825fb78fbc4b006c130d477f3e97ec32d83f1c424",
+      "name": "chains/beltHandle1.ogg",
+      "sha256": "2ef665bd8b65dbe669f4560be38a6d8f04a162e618b15a49e3e71b58e558aab0",
+      "folder": "007",
+      "referenceAudioSha256": "943f45d3ae53bf8c3faffff397bfc0ca879424f4673536175db43ce64bfd5108",
+      "candidates": [
+        {
+          "id": "45bdd8d6b838c9fdc04aa6ad6a5f11a66515c1f175297a3e7df13de16cfabe35",
+          "synth": "Swarmr",
+          "paramsSha256": "1dd13138fbfa32fdedb4b869a0286a83464a19821c58a14001b4a187d2db41d9",
+          "seed": 1570011950,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "a398aca497b03fccc282e2fdadf80f4693e038bc30354a985240cb4f9c6d2dd9",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.4592065472705222,
+            "auditoryScore": 1.0021119117736816,
+            "humanSeed": {
+              "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+              "candidateId": "6d2588b70592a5c3559034a5895a1958e68321d4d561e1b5bcb803255f9de95d",
+              "likeness": 1
+            }
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "6f4be9f04a78c463369d187c9819b104ac537b46cf802730f6741b7b9a4650cb",
+          "synth": "Swarmr",
+          "paramsSha256": "9b8c0e5b35208a44c127f22497762b110dfee0e412bb175965e3955d027fc42b",
+          "seed": 1570011950,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "47914a0acaaf41f1815d15f955146e20cf8d2f4a268643352c4be2fb8010f91c",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.4797540561437352,
+            "auditoryScore": 0.9569263458251953,
+            "humanSeed": {
+              "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+              "candidateId": "6d2588b70592a5c3559034a5895a1958e68321d4d561e1b5bcb803255f9de95d",
+              "likeness": 1
+            }
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "bf775fcae2b3204130036d7b03e3dbd73cc57cd2d8ed3266426aef260c3a5200",
+          "synth": "Swarmr",
+          "paramsSha256": "c8fe11f60b44cb5b9dbeee7760cd69a27f3f9e628509d2bffdbb3a11d5b36386",
+          "seed": 1570011950,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "8e3fe37b29dcb626b42384a08017ff9be07495f06a6f936317852eb23539f748",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "6d2588b70592a5c3559034a5895a1958e68321d4d561e1b5bcb803255f9de95d",
+            "archivedPcmSha256": "57fbea21a26db90a9ccf26f7e6ab880fc4fedef59421a0861080420f9bc34005",
+            "previousLikeness": 1
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 1,
+          "usefulness": 3
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "9f0a24f384c92a87c0f55e7b578850b76cdca875edfe2258c4466799159e40c1",
+      "name": "chips/chips-stack-6.ogg",
+      "sha256": "5ec35171aa65bf5edd977e293523a649227accf36e682bf1ac9a84286f04c682",
+      "folder": "008",
+      "referenceAudioSha256": "7ab0ccc5bd9e3f92b4ce116b565d0e33b66e4f30748d1466a1424ebeee795900",
+      "candidates": [
+        {
+          "id": "a38b963eeb50db4d317bcbc6488c2e121832c05926c3dbcb47f902de7192003d",
+          "synth": "Soundboard",
+          "paramsSha256": "17e77e1420003cec346b840ca9dec91acde2d1b1010a193ae2512caabab1441a",
+          "seed": 3094814781,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "086ce40c0c2662b5c7ca2ebc13b45b2eb737111ee63869fc4a8e3dc45ab97711",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.32748909519121,
+            "auditoryScore": 0.8975146412849426,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        {
+          "id": "ddea1d42432befdf7dd3bffab990070a0dc5ace3ddb1e56adb9eb694930767c6",
+          "synth": "Soundboard",
+          "paramsSha256": "4437388c27c09a40d3da232d755ea55e24a83479d26d6c2dc9676558cf175235",
+          "seed": 3889928239,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "54f256637080d79dcfdee592a96d8078a0c40fbac5cc56b272ce65bcfa688e27",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.4143280371750682,
+            "auditoryScore": 0.8180345296859741,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "f577cacdf8688696a8392cedac0fd6b6e733a41e3a29d5b6eb86ab172a415721",
+          "synth": "Squishr",
+          "paramsSha256": "a889bcfae8d9656eadf26c71d72bc1baeae8d71e12eb4bce9dca662aa0887a7d",
+          "seed": 922802848,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "626f299aad7c6e6511db9e0bcb026b911663308d4680b602a52e1467255fdf08",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "402fce2a825b91f69f9d5d10e424ee041eec6eb7776729392fb66f0f38cc5c40",
+      "name": "click/MECHClik_USALightSwitch_On05_InMotionAudio_USAHotel.wav",
+      "sha256": "3d51ab42afb54d024ded5128a84aa102075398b270b67df8f71ecb0cfe9bd0a8",
+      "folder": "009",
+      "referenceAudioSha256": "f5efe64944e53443f290b1eca0fe341b7efcaf90fe4918a80cdfdd6a28e705ea",
+      "candidates": [
+        {
+          "id": "d186bbab694e605574f592e9bdae9cf8f92ecf41d69d2ca3bb884e28c98483d6",
+          "synth": "Transfxr",
+          "paramsSha256": "4c5d4eb44ceeb796d25802111ce44144d59c45a8602816327d31fdc614750cac",
+          "seed": 697433055,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "571bdb12d51a307dd929a983673e9f672fb3f840d30e82709cdb98dbe99397d0",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.6745878189121958,
+            "auditoryScore": 0.44714754819869995,
+            "humanSeed": {
+              "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+              "candidateId": "e31bff49e9b5fa050e0bb72df32fea85c09c67cd06f93c035066b392941665ab",
+              "likeness": 3
+            }
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "a1dd83a44c4c6a1888e2fa161adb70711c8c99e36d336c73b44bd94156df6257",
+          "synth": "Transfxr",
+          "paramsSha256": "f5c7c5b74764a7dd0ae04fb7661530fd155fcc5e020fd73b9c6d84f87084cb06",
+          "seed": 697433055,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "7763ea9664643aa8ff93c0ee268d40ae3b8a87b76b6638cc8c08c9ffa9d5923e",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.67466061627022,
+            "auditoryScore": 0.4459333121776581,
+            "humanSeed": {
+              "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+              "candidateId": "e31bff49e9b5fa050e0bb72df32fea85c09c67cd06f93c035066b392941665ab",
+              "likeness": 3
+            }
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "24d93dd89858678008c1a500d0c6089f5c19fde375064a6ea890d6a943949920",
+          "synth": "Transfxr",
+          "paramsSha256": "11b52ac12b388aa45ad89fa2cd58c1057db11c1cb3924403bde2a0435f4e4bbd",
+          "seed": 697433055,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "5ce260f0e25d3dda6a57e435e313914d22f6bfe4278fe26f504cd94f0ff202cd",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "e31bff49e9b5fa050e0bb72df32fea85c09c67cd06f93c035066b392941665ab",
+            "archivedPcmSha256": "48764a98a622fec6fbc1cd72abfcb555f2ab8189571947f851361f7b2393b205",
+            "previousLikeness": 3
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "ab410bd06221ed0f7b9610a72e2f5f9cc1c6aaf1c974f56dcc7d212b541eebc1",
+      "name": "clothes/cloth2.ogg",
+      "sha256": "8a7451193c38bc05483aec25dd193e163a15d44cf7fff04ac7912573231b0201",
+      "folder": "010",
+      "referenceAudioSha256": "10977bb329484197e6c9a80306dd600e2ec888a2e7e47f969fcf586790eb73e5",
+      "candidates": [
+        {
+          "id": "f5d7a00c8055d2bbe1597726171696e4aa019cdd0a9b2c88d67231c5934609fe",
+          "synth": "Bfxr",
+          "paramsSha256": "59fb9038c5ea5e9a77d75a61b26827b18d851b2bd9549f147bba6d90e67843c0",
+          "seed": 1971536114,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "885562eb1ecab9109687666103aaa3326c7070ba765476209938c8f09e9d18cf",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned",
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.8888197916105001,
+            "auditoryScore": 0.7165344953536987,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Both new selectors agree",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        {
+          "id": "f3718fbfaea7e3b7f7e9759b1c16dece4a02ffcb2a02ce53d34727233eab6853",
+          "synth": "Transfxr",
+          "paramsSha256": "f05f9721c44ace77a0e577a8a99703fd8345e48c2e6652cc0792233081b2866f",
+          "seed": 2026306238,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "e5008f9602c69ac7300a55297dc27ea7c5f70833839a96c05e0e3e229e8ac765",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "7a7de462b5ee236ba17a80a491bd792ac14f2fe9ddd392bb1a60438db16d7d5d",
+      "name": "collect/coin (snes).WAV",
+      "sha256": "4283ba7f88dbc2bc2470d58bedad8e866e394d7f8e5799c38c04c98238fe04a8",
+      "folder": "011",
+      "referenceAudioSha256": "e3331eda0b8fe0ab01cfb974771eb0b199f095c3b029b9818fd2efa1f5e8c293",
+      "candidates": [
+        {
+          "id": "308a73fa4f1a581ad9960f19e66cd46e85d89b89310cf7ea1fb220d53514ff72",
+          "synth": "Bfxr",
+          "paramsSha256": "791e232c320db4a4586f7fc5706b92e1570275cf90ee8a37de5d5d613d622198",
+          "seed": 1359613458,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "23d983fc36ac196a516c96a7e3dc3e44a656d38817508664caff0d3961d1f990",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.4569307662001805,
+            "auditoryScore": 0.35562649369239807,
+            "humanSeed": {
+              "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+              "candidateId": "21b18a304a08ae442b2abb1638e513ad112f934d6a66e5a0a04f697f4f3b8af7",
+              "likeness": 4
+            }
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "9bd0163f2a7950a9f5fe0c87d4d6a255a9983112ffd1facc9763b96a936242ba",
+          "synth": "Bfxr",
+          "paramsSha256": "21a753fb02cf173a840ed0879d6477d167577a94a335db46c0ed5ca5436cc872",
+          "seed": 1359613458,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "bde5ad9452939c810ad6898fceb962096b2354e4386a6a4fd1c31bd94e878280",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.48171190821104193,
+            "auditoryScore": 0.3263392150402069,
+            "humanSeed": {
+              "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+              "candidateId": "21b18a304a08ae442b2abb1638e513ad112f934d6a66e5a0a04f697f4f3b8af7",
+              "likeness": 4
+            }
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "4898d9d5f3a21a4ebc2013496990a8733d6590de0da5d704022a2a83fbff8205",
+          "synth": "Bfxr",
+          "paramsSha256": "cc97604a09add6caa099ddf274bf84f2a5fab53cda8d3db1a7152a7c36add673",
+          "seed": 1359613458,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "48e0b2fdaa930c3028a97dafc91a801c81c99d75a2c9e5cca51a766d95963288",
+          "provenance": {
+            "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+            "candidateId": "21b18a304a08ae442b2abb1638e513ad112f934d6a66e5a0a04f697f4f3b8af7",
+            "archivedPcmSha256": "62d8566a0d20e61bb64c57d2efb289f395c72b56407e9d876582fd7dea6844f3",
+            "previousLikeness": 4
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 3,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "642dc432d015b4f27be0292ffaf45d5f2454c5ebfd300b887fb9bbf24925a292",
+      "name": "computer/robo_talk.wav",
+      "sha256": "405f8bbc7adcdae6815b249b1551423407f5b157947c386340faf161b94e6391",
+      "folder": "012",
+      "referenceAudioSha256": "035aa65fecb30c29dc07b580a4ef6a5d10e035a0f194d6a2d5e098bc6e65215e",
+      "candidates": [
+        {
+          "id": "506efcb7a6223f0e86595495cbd5a2d4fca4b36f8497e142408a88dbfd66985c",
+          "synth": "Soundboard",
+          "paramsSha256": "bce9c2d2a245e110ca556621eeda21dcfba9dea761d4de3f14b88275ee2ac154",
+          "seed": 2060021392,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "df9ad6d5cf4b8d64fdeaea90b6f1075b2ef52c04043162141515daa2ec1a31d0",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.424750699009056,
+            "auditoryScore": 0.9594887495040894,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "7aa166399535335fbdabcbafa57bedc10d15a3008ff636516d0cc69af8708813",
+          "synth": "Soundboard",
+          "paramsSha256": "bc60ac5f6fd53973b3a99130d5c18ec91c1703c5e9bded09aee973e27daae870",
+          "seed": 2060021392,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "69b3f01f070e1342b677258c2013d2bd9e1530291db2d07b0e284888692c7166",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.4298572681543693,
+            "auditoryScore": 0.9401860237121582,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "c89cd00631789c169e408044e0aaf4ad0fe55f7d560e7e3ee12779b07aea939a",
+          "synth": "Fractr",
+          "paramsSha256": "ab7b9c74a05accbf756fe306c50fdc3322780b501d2f6512f77cc7c5a4fee707",
+          "seed": 86755176,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "f41d5bb7aa8eafe6fcb53f75b3dd270652de2cb2e19519655960d67779dc7a53",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b220427a81630ec3e70b253fb6e1bd105b3c8e6909f3a4ed495b6ec34a283b19",
+      "name": "dice/dice-throw-2.ogg",
+      "sha256": "e0b8c370503b2c5c2a72d311cccae30fe63a6afd48f2be32e771fcf1a98585d6",
+      "folder": "013",
+      "referenceAudioSha256": "f60b2b358e65569396c248df5f3e155793c912e3e8c5f04754dc33fb2109c49c",
+      "candidates": [
+        {
+          "id": "25fa67de8dc6ccf749360bcb6ae88fe7f0592a569a8ce74d6f7fe751f5d10b7a",
+          "synth": "Soundboard",
+          "paramsSha256": "7ccca06d26e4d656e7491a3e03cfe20c9b7174729509b19ed4eb3e8cad3ff68e",
+          "seed": 3475548614,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "3b90430557c0156d657b4dc459882517ea032c2e11ca87308eee8549e9b1de0a",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.8719750998319986,
+            "auditoryScore": 0.6039661765098572,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "9631d2286f492c6375af63a7bf08a368212abda5f06318207a678ead5c4848e7",
+          "synth": "Soundboard",
+          "paramsSha256": "a61fcfe32bb19ee6fa16e2abffb552ec81202c2498a14b0d5d56dba139befbce",
+          "seed": 3475548614,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "d547eb5d719de62e56ab3d38efc11df10da12a0c5ca9a1bbf916b3433c6d2f80",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.9256433198999713,
+            "auditoryScore": 0.5914289951324463,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "75fb9cb529c3ebd159fa360922705cdb96499c79f89dd63fe3683d5f4cedeec4",
+          "synth": "Squishr",
+          "paramsSha256": "7c1aba2536fd699a8338cc488a6e4c153b57003f5ac8cf7c0672df9edb0a66fa",
+          "seed": 36031544,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "d384329f19ea1b501e66f21519f1908feee6623c798a9b2199a2603b6b4a0551",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "cd763ce03b88b5857a01801fa259b764f9678ace98247aab0d13c3ea7209aab1",
+      "name": "die/charm2.wav",
+      "sha256": "d161711f9e872a84d289f26097f57028ef444959afd79c0233b74aef9f3ae24e",
+      "folder": "014",
+      "referenceAudioSha256": "4b56fe1ef7f5e2a79c97e750337f46df12f2b6753743859af10ff498624f7a24",
+      "candidates": [
+        {
+          "id": "c1cf7b0a9c597698457b4280acaa447b02624fc79152df53c8d2f9ba80cef447",
+          "synth": "Jinglr",
+          "paramsSha256": "ae205635d074a270d73933fe3fc22a8bfe4479b4be4dfd7e394bbe6aa2a49895",
+          "seed": 1431317343,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "4c19505746c54a3ccd819a97db9e8b076e8f429cc9b9c1ceec3d39f6f3abe715",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.6967677753446839,
+            "auditoryScore": 0.47609561681747437,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "f0cacc3cd8802963c80d4683260e184f0db7750c983e00dadc409bc095f2a888",
+          "synth": "Clonkr",
+          "paramsSha256": "300ea6915fbf24cf280204cae58cc11508292c884bbca46b7239f5021782bda3",
+          "seed": 1787606507,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "f70a890b6521dea291511c8060745314a94e347c3402093875088c1b07c93fa2",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.887572521442558,
+            "auditoryScore": 0.4186060130596161,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "cdb1dbdc44c7635a94e41bee0fc6b45867c28667a6689503c1de648d35c4d509",
+          "synth": "Bouncr",
+          "paramsSha256": "7f63c4ff1bf5a0854d742ddbb0d87319f3ca7a4b4087f01a12c52084cc24f2b7",
+          "seed": 1771601301,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "c418d1d3492491a27781862827b2d52135392ab28f38df084c4105d25764c358",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "c5a35cf9bb3b4d2b8e675dbef9685cc4fbb063f42c21979c063581055141bc1d",
+      "name": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+      "sha256": "e1fa457aad41930050a8b5723fd468f8c1a33ce46ea5944031c3585a9b2bd8d8",
+      "folder": "015",
+      "referenceAudioSha256": "6727c9bfd7df5fe7f175ee5e80e4043f5f078ccc3c4aa09bd1e57b7eedfcab5b",
+      "candidates": [
+        {
+          "id": "549a9fd5a1d36d8b17395dd57b54f4036fa52c9d7a5b59701d0d17417554c40b",
+          "synth": "Riftr",
+          "paramsSha256": "ebfee67b7bcfae2a16b78e26a5b5f04e019ab9c8ba6b1935668b5714339643c1",
+          "seed": 919201076,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "41d50f2571e788f1d9e3b538f478e375e22ed01ddcc047d450cb0f80377a9cf5",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.8953723460300009,
+            "auditoryScore": 0.5114503502845764,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 1,
+          "usefulness": 2
+        },
+        {
+          "id": "7318969c8d05669dbbc8ba427a2bfc6ad3102d2f6b9ecf93385f9de4e38fe1b0",
+          "synth": "Riftr",
+          "paramsSha256": "42e0b73c2ec250ac9ca192ae0cec0b8c7f737a95732cab97eed132828c223e05",
+          "seed": 919201076,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "be90c74561542fb0d473e332a680d8610e9cede29bef672099b4720f0772ca61",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.0046616111988118,
+            "auditoryScore": 0.4738841950893402,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 2
+        },
+        {
+          "id": "6b6b1be9d4a3ea03d468012fdb171d43443675697c1c576abafd7518b2cb1f2f",
+          "synth": "Riftr",
+          "paramsSha256": "8e6d726a719d2b9b12dcce3e570e034661bcb2ced9aa14186876752d3f6aeb52",
+          "seed": 1036211338,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "2c9a7232bb57bf000978fbcb91d27e0cee311130cad144d3b3272ad2fdd3c739",
+          "provenance": {
+            "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+            "candidateId": "bce747157fd10e4ea60a99b421f95031642ba3451faff1d352a4cd0f215711d0",
+            "archivedPcmSha256": "70b3e35fee9f42161d3321e7a7e5031f4a12bb243b2981eb49fd0f25d59c6e52",
+            "previousLikeness": 2
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 2,
+          "usefulness": 2
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "8ff4fed3f7af921aa9cb69aaa0c695b85a8fa9aafca84db08ebae04bad8d9d66",
+      "name": "double_jump/flap_once.wav",
+      "sha256": "76573984a769f834c55195ae517d102685efb84f9a075f94195a1fc3234cd0d6",
+      "folder": "016",
+      "referenceAudioSha256": "ac8a7db93aecaec9fa3575e318514c4ecfaead88ebd1703bc9cb8541181e251c",
+      "candidates": [
+        {
+          "id": "0702e9ed199a5092ba003213c65c3b9a151e6b3495e7e632016c2f140de4f5cd",
+          "synth": "Rustlr",
+          "paramsSha256": "fed54fa55b1d7af164ed837386cc9b630bbca4aa5e6e8cf6b8f1e76b2c7a6d25",
+          "seed": 559879060,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "0490ea2c4ca8322783eff74cd7e08b78acc91f9e51602fd3c1c4c6313c9a2b65",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.42069651229674876,
+            "auditoryScore": 0.30522283911705017,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "f1deaca291317c5aa95b72e9c302f8652e7a7446691d5baa82285ec37f77ce07",
+          "synth": "Rustlr",
+          "paramsSha256": "755650429857a64ad218b009cf28dd0a493e37cf5840fd31881de68477913e7c",
+          "seed": 559879060,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "653946bd42a6c8098f16b1cf4c3fa7c6789068d1a569858fcc3d86cbdec49995",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.45471856118257503,
+            "auditoryScore": 0.29102498292922974,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "bab12638da66877ab7db67fb70de143773449e0527d9b63d92357945a3a616bf",
+          "synth": "Rustlr",
+          "paramsSha256": "c500561c048ec59fdca327b3e14aaeb8b4977537596aad53061c5791b14b4ffc",
+          "seed": 908089704,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "762b0841fb9d5798e70787b624957bb148b8a071dcf83f3a605f2bbfb3bdf792",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 3,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "b399877eea022af5b4cc19c501fe2c9497ace5a1fabc0553a11bc6e4aca8e6c7",
+      "name": "draw_weapon/knifeSlice.ogg",
+      "sha256": "4cd96dc630bed9840c15f1dd2306da2cc56a4da26a5d3f1a03c5a7265ac5e54f",
+      "folder": "017",
+      "referenceAudioSha256": "32434f329073004e1810ad496492ccadc9b70c0a8187d480876f65d0936d31e6",
+      "candidates": [
+        {
+          "id": "fe8e30471416b81dd2e3fa133b34b4dbd528f6ecf7577c76a1a42bcc3e5197b7",
+          "synth": "Soundboard",
+          "paramsSha256": "1d24561bcff24320bcb009daaf91b6c6017bc76756257347cea1abbf2340e2fc",
+          "seed": 687595682,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "30b68bc62ae272d07941a4c38ca221a7333e659de7ffd1f75d58fb7873f35f6c",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.0918722340226137,
+            "auditoryScore": 0.7856504321098328,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        {
+          "id": "2ad55efe31f7a0f48fef55ed13f21eeed177c3e8703bd55a99bac576d1c05019",
+          "synth": "Soundboard",
+          "paramsSha256": "92600c12d462443b0306a7f2db0a804ab53ee6c1d3780bc9341d35517ac96ce7",
+          "seed": 229128427,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "21812fac04895154d841ccb17530268a935f20b2654a29cdb69089f0682f28b1",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.1409074773689347,
+            "auditoryScore": 0.7761838436126709,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        {
+          "id": "7ca8bb9ab9b45f50d21d1ebb5bd52d74133154d84a8d7afc028a1597de0132ef",
+          "synth": "Whooshr",
+          "paramsSha256": "d8ca5c8701b2db6086ac5588dd85991ade3797661ba621116da45e54e4632fce",
+          "seed": 1539594637,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "4daf9a9549117dd42de1d9e7ee3a6eeb855b641654b5382270909448e619b0e6",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "bda2dda22ff06c06de78b48f9e57b2fc93183ea6a555fd85f0724bf2abb9d60b",
+      "name": "explode/Bifun Jump.WAV",
+      "sha256": "3711654774a0443a5decda6740d2584bcad6c7b7ec5147a6ffaf99d5ac2287e8",
+      "folder": "018",
+      "referenceAudioSha256": "cab25071bde65c2fa570a6b524734d37bb65ad3084e32f5afa717b4068208e80",
+      "candidates": [
+        {
+          "id": "151335698046be01020df891ed147620ab33d5b1ecc05451522330a54fb17f51",
+          "synth": "Soundboard",
+          "paramsSha256": "52fee89072f20c833c357a4b086f1729f56efb42b1e55d46a6dbd6b316712ec1",
+          "seed": 1892000679,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "0a1e9695c8fc29c409a80ec4e8258ee62ca903afb7ad51c2f630e8ef278f5b0c",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.4572727065381538,
+            "auditoryScore": 0.3895093500614166,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        {
+          "id": "47612f7f47d102cab8b5523cd27c82f065e8116c1f25a90fc42076d1e10457cb",
+          "synth": "Soundboard",
+          "paramsSha256": "f81f1a5a31cdfb5d8cbc80eb813662350639a5b7812b24c70d0333334e5dc8fc",
+          "seed": 1892000679,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "f74c8bcecc28c35af81c1e83456aac7843ff118a0aca6a958b6e6bc857f64779",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.47948964289315,
+            "auditoryScore": 0.37392285466194153,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        {
+          "id": "1cb650e6cbb968699f58679f6c83ee374fd1bff7cc3f962a2977fb6fbcbfa752",
+          "synth": "Transfxr",
+          "paramsSha256": "64e498a8e09c17ba7bf0bd72e77473913cba7929d059830810e32cac84a8c602",
+          "seed": 2069031875,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "0baba01a144d906794d85e36d634639a5daa8dc1eaf58a0f97a2a6f7ba36ddb3",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "a0e66b0f16bd032415ee480e34a7d0c1b994b988ea8b0c34859bbcb444f22765",
+            "archivedPcmSha256": "e56cc01f81dba78c563363a5ac5eb5053ff5c54c0bc75657324e8b5b288f6259",
+            "previousLikeness": 2
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "12310d5be5e619bd7f8e97b22a0e0a382e17b45357e01df61dbf3409a6e16d80",
+      "name": "fall/Fall Kopie 2.wav",
+      "sha256": "fa94b3c3ef006c7292dcfc030bc197e7c4e1ae5ab175008c4e655be877086b16",
+      "folder": "019",
+      "referenceAudioSha256": "c8df088a3813eb0f3b6ba66190ce6d47623d44e82aca8a6b14144b09a069ccad",
+      "candidates": [
+        {
+          "id": "8c1974eeeae1fd54921f1905af4fe58ea91f6f014660991af743246666eeff13",
+          "synth": "Soundboard",
+          "paramsSha256": "cf0104efea086546577ac51ed6afebf9c35c63dcc1258d62a67d53753992fdab",
+          "seed": 3648155090,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "2685e0fa74e40d90d7e5742ff252da4f982b614a32e6c4c2e814b0b5f8af0fc9",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.7726972241238445,
+            "auditoryScore": 0.8714051246643066,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        {
+          "id": "8ca5ef84b052980438f7adf5bbb2c82eaba26e1fb00187acecc5652f33a9ebe5",
+          "synth": "Signlr",
+          "paramsSha256": "f82ba6abe9a6790febf3491a7a21f2fc6bd14f218285cc9e1eabdfb1d0c4e16f",
+          "seed": 1128386940,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "9fc922881ccb8c5a3504f29d2f0c5148d56682e6fbc9d54804e215d210009f06",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.0510705965599652,
+            "auditoryScore": 0.6697117686271667,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "94efc847f3370e7cab2245cafa77f329eb5cf26ce09c588baa883f6fde1c02fa",
+          "synth": "Machinr",
+          "paramsSha256": "708d7f3da0b11661b10e8797a96b83e879e4c14a49909551f887857d27e8f566",
+          "seed": 1461583514,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "308ff31906466e4172f82047f8cc4858e57ef5b13ca9b04911d20e43c64b08e7",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "5295406c1722ca888ed427a637f763d13c3576e26438b0a877cd811778c1c2ff",
+      "name": "footstep/footstep03.ogg",
+      "sha256": "a86756b9af9f370455ab47844239bb07fd1bee7a113068c91f0fcd9b72703fae",
+      "folder": "020",
+      "referenceAudioSha256": "8ef0b1169657a3c0cf075c02a79c6530eeaa40ffadd54ae5ca2b8ef64b3b2fcd",
+      "candidates": [
+        {
+          "id": "728b1030c0d5f3da4eddaeeccf29c9eecc498ab08f7650ff5ad90fa308dd3f0d",
+          "synth": "Soundboard",
+          "paramsSha256": "f4d5d4261097ea2304dfda67aebc0d21f8fccbb54157bfbf895671328b8a903a",
+          "seed": 751263350,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "0f7415f0f344ea3409bd3edd9a08c6b92649635612e4ecde701595202de7e774",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.904757691833657,
+            "auditoryScore": 0.7259527444839478,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "3db6e505dc3fe9def9ed2345b709b755af4439cf6fa90a2bbe379e6abdb2b3aa",
+          "synth": "Pluckr",
+          "paramsSha256": "f0460da77511614609423056a132032e3ea715abedc1a61ee83d5e42092d232d",
+          "seed": 1137827310,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "3ddcd5acba24addaec9d8be090f523bdcc565f72f0234d5b50968021b2dc21f3",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.07099806367637,
+            "auditoryScore": 0.6769543290138245,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "22400fa5dd3942c7a13a93c952cf6dc940c1f4a938154da1a8286cbaef6b47dd",
+          "synth": "Transfxr",
+          "paramsSha256": "fd6e81e5b6baa7136227efd302c262d6f05a05d2d2f676cb3ba5cf05b4a17ed0",
+          "seed": 2098329119,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "26948a9f227f578f5c4e599d535db21aa879a4899df5fdab1c525550606ae2a8",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "d5ecb2890adf41b0b439ec3ead1b6df8428ee13df8bf180028467698d914391f",
+      "name": "forbidden/error_008.ogg",
+      "sha256": "eba17ecb2a426bfd4a8a6acff5f8a86202b6424a77af0fd842e37809a1ab6d81",
+      "folder": "021",
+      "referenceAudioSha256": "6a8b780e0624d562b9b24ef7b96706a16c8f5f069841fb36910352d6e55d2eec",
+      "candidates": [
+        {
+          "id": "c9a405f826367f5adb70ae5015e3a12a4dd1a40e6c1b5aca11d730bc131d383f",
+          "synth": "Soundboard",
+          "paramsSha256": "596fba85d193684b6979d8bed89f806f435e8aa856db0d0df27abcb7a3d907de",
+          "seed": 2181424850,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "911901b980de6d95c9180833a5aa23f1865cb35f2139f7aebeb8c808deded73c",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.2921006716993225,
+            "auditoryScore": 0.26856353878974915,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "8edffe4f19bd141f8f93053201e97e57064fe547687ee16a30bbd01bd89e3ed2",
+          "synth": "Soundboard",
+          "paramsSha256": "678dbcd248a4d0b1baae7d678b5d3cdeb3e1a986b30b1f092b6310fdfa681001",
+          "seed": 2181424850,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "d1c2f6a7c908acc3134f5db752e19b8b11d0b49febffa5057e084bbe81f9dfbd",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.29213745684251147,
+            "auditoryScore": 0.2684578597545624,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "6c494f515ef46ef9c3f4e4af8c3fc9fca962f8aaa98f5897f20e2f8f61e43fca",
+          "synth": "Boomr",
+          "paramsSha256": "8596c26bfff45179012f77694cbc4e902638350bb71e52f8dc0358212e1474e3",
+          "seed": 583647496,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "73268e48b40c9200f3aa291a9b8e25f80fde79d8a2e5efa08bbbf68b15bbf205",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "ba921db6cdda87fe232d80427a2a7d175aa34e36f195c980bcc9425bf524f5c6",
+      "name": "hit/PUNCH7.WAV",
+      "sha256": "08e24c35923307421abe87b93b25a8cf70bca7af9788d5aa3eefdedbf3d83dfc",
+      "folder": "022",
+      "referenceAudioSha256": "f8ab5fa3e3f8e55bf11ac48aca86b448958e5b64f1defd607809298679a1e0e1",
+      "candidates": [
+        {
+          "id": "05e8fa8a92d3ab91973958cb965ea398412138f5650ed43176c39d34101cec6c",
+          "synth": "Soundboard",
+          "paramsSha256": "72685a99a515de5b3128efa19ce10e110f42b2b05495dddd11cc205674a7852b",
+          "seed": 274849232,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "0249c910765a6332f78cd848878208a0c08f2cbf5285caf1ce63c31dab663f7c",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.896274696772681,
+            "auditoryScore": 0.7011001706123352,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        {
+          "id": "01c90d5231bdf61e11c7d7b067181250315c0cc6358f8f9ff5d9978bb410c038",
+          "synth": "Boomr",
+          "paramsSha256": "e12e18c72be65f9d550f9f2e0290d0e13bf1789568a513d3b9b3470c437222ba",
+          "seed": 1470428505,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "05c438721c585beeb28d6f0b66336b0501464b48c2e17999e248f23fc658dba8",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.9229664597738406,
+            "auditoryScore": 0.5805238485336304,
+            "humanSeed": {
+              "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+              "candidateId": "b8d89b73db972c15c57992de65a57c111393ac93832b56776cf64583ed4e092f",
+              "likeness": 2
+            }
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        {
+          "id": "d9d4c20e1b2be0ede52ae0fa8d886b8e10795b1cb828eb7dd8cf69a7318e6566",
+          "synth": "Soundboard",
+          "paramsSha256": "84fe01b0921a1e6a74eafb169c3eaff8e77c4dff5c72c281cc7ad15ff5f44d23",
+          "seed": 623774089,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "3d3480f07bec2bd34be72e57814be029b565cd9748b8ce2a947f36e17140b442",
+          "provenance": {
+            "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+            "candidateId": "0a441410235a022362cda316b255c0434b2aefee65823ba5888f25c8e9b6c004",
+            "archivedPcmSha256": "7ffa496328b4514c598107655abd177daf45c39dd12ba6d3e825026d0a02b2b2",
+            "previousLikeness": 3
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "338f700f6e05eeeb91f7c8373de1b8ab3ccb5c9fcf4c78a387ff5ad6ee65d95c",
+      "name": "jump/Jump Kopie 4.wav",
+      "sha256": "18b55df7af255bc15b779081db03297a4456ba82d46dddd5451ce6252e5b315d",
+      "folder": "023",
+      "referenceAudioSha256": "d63800e0d9fcee7256053b417c96bad317a82bcbd045430d301afad1722b275e",
+      "candidates": [
+        {
+          "id": "c3b5e5d2eb5e35223f22359dc4667688e1ca4d843db36b73b2dfadd175292d73",
+          "synth": "Bfxr",
+          "paramsSha256": "1eebc7f9d3172d7211d35f47c5afadf13e2e329d084fee473d3e4c8b65738201",
+          "seed": 7345224,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "04e70daaf28beaaf3aaba6ef9b67038609a4399cc04edca7901d608112b094f5",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.9853355322263769,
+            "auditoryScore": 0.6773307919502258,
+            "humanSeed": {
+              "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+              "candidateId": "2f89ba2d087c92b9d24ac02144145fbf01c5c2162576da714879060d1659b137",
+              "likeness": 2
+            }
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        {
+          "id": "92af5c3a5051aaf4eee795fa307286d4826d2d9b5727581eba94fc3056c086b0",
+          "synth": "Bfxr",
+          "paramsSha256": "0fdb942b79ec6ef961d09ecaeb92a86450187772cd92dbc29139cbb72f43aa33",
+          "seed": 7345224,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "8304ad83a57d46da345a3f2182b6e66e6936d07c189092d56b0758440303100c",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.9890844960427951,
+            "auditoryScore": 0.6757418513298035,
+            "humanSeed": {
+              "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+              "candidateId": "2f89ba2d087c92b9d24ac02144145fbf01c5c2162576da714879060d1659b137",
+              "likeness": 2
+            }
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        {
+          "id": "79e26572bebbc666991320fab92f89762603cc72cbd0896dd5d3760b2d5e8ff1",
+          "synth": "Bfxr",
+          "paramsSha256": "b53d388cff73b5e8f1f0b1db378a71ac6d2b72fa9c44b60c9d38ec8f6a7c4bde",
+          "seed": 7345224,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "fb9e87576b959c746dd63c922cc0ae1734f4ff5fb2cb0934dfb6ee5646028012",
+          "provenance": {
+            "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+            "candidateId": "2f89ba2d087c92b9d24ac02144145fbf01c5c2162576da714879060d1659b137",
+            "archivedPcmSha256": "4def17b55559ec8b046127d535b078cec4029758a5997cd33fd918614a1bb854",
+            "previousLikeness": 2
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 2,
+          "usefulness": 3
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "6db6a83f29dd9cb5d9d741fb513ddf9302ccf5052263f3f6b5b5629608c53043",
+      "name": "laser/laserRetro_000.ogg",
+      "sha256": "2a203a007d24cc7e607eb8bec1d86bedba7f551911217ce2c4c1f31393aed32c",
+      "folder": "024",
+      "referenceAudioSha256": "748db93d84de6b8ef304df63976d0359d3bcf0b10b2912100d2eb9770ee5b6fc",
+      "candidates": [
+        {
+          "id": "8bc7b0f9e95301e7cbd2e31d3d110076ff0d3ded01ab2a6ecf624edf3642631e",
+          "synth": "Soundboard",
+          "paramsSha256": "c6bcfd28c4198b094b67069cf1736f0115ab9da843c4c7c8654645c5d95731da",
+          "seed": 3539687966,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "c531a38ea62da77ef1a4ba0346e1948f6324f35c323c718eebc267e9691c1171",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.5808034282367778,
+            "auditoryScore": 0.4560020864009857,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "1cc7f0e250705d872641cd3972a018663686472b2165c71db8d28f5005a64654",
+          "synth": "Soundboard",
+          "paramsSha256": "1e295087f629eb83f88439ec4d367f5cd929261e5d5dd4c81c2545770e50dbe7",
+          "seed": 3539687966,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "cdb0793f475f20e451c9b235375e229bc18ef3f0ca785a68d1da71d882a0cfc5",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.5896485588064155,
+            "auditoryScore": 0.43914809823036194,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "323dee6abce140cbaabef5494f955be39f3252da9fa225ad4e7b0ebe7dad4bfb",
+          "synth": "Bfxr",
+          "paramsSha256": "abb12d5936ad9bdd36a630295de90533e06794b097b4f6bdda74648a537c98a4",
+          "seed": 611484608,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "c89c35f934e18d9795ae5c2721f319bbe540724f1b24eed8e8d953f95ce11b5a",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "79029ed9c4f859b559f88175bd2886626e0a6684d21d27000a12314b5f5b2fca",
+            "archivedPcmSha256": "7561f3abe276bffafa41858c2b8bc261aff5d93a95fdd81d565998990db255d2",
+            "previousLikeness": 2
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 3,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "9c1d1afc2497e775dbbc273d4fc16c67bcf48126fc540d3b2005b06493ab6e56",
+      "name": "magic/cureMagic.wav",
+      "sha256": "4422a2d1c23013ac655ff35f67477017f24b0ce330c8e896440252c1d4057994",
+      "folder": "025",
+      "referenceAudioSha256": "d42fb5cb82986e5a0b56d8c9b6445fb46295592b642acbeab3d1307aee99e4ce",
+      "candidates": [
+        {
+          "id": "e8306db7dd9f69a906ef18174a531ba718612698c3b0745cd11cd0808005cab3",
+          "synth": "Birdr",
+          "paramsSha256": "e356b972e055b5fe8c1767c44d3e044800ac2e2fdf86053a7d07e6ff367a5c90",
+          "seed": 2101241938,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "60898589135708b72e18d8302e99b0c07512b9d1567a8296f28a1eb07eecc46d",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.9830544989020149,
+            "auditoryScore": 0.7573724985122681,
+            "humanSeed": {
+              "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+              "candidateId": "c6d3c9ee32088934d5f35aa0ad0103d0e1c8795fba16c4f31462bc079a1d4f61",
+              "likeness": 3
+            }
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        {
+          "id": "594d2e2f8e9bce34c3f4707b5ad4c539af8d8276a03cd86136762ff0064d2433",
+          "synth": "Birdr",
+          "paramsSha256": "d7c03e110dc1b759b0619fcf2b7d73ffb221524dd7029ad56cbe68b7e7072a42",
+          "seed": 2101241938,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "1f92f8c881c3d5098247760751d4f789a742672e43c277807703f1d81c861c5e",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.0304039154408442,
+            "auditoryScore": 0.7087386250495911,
+            "humanSeed": {
+              "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+              "candidateId": "c6d3c9ee32088934d5f35aa0ad0103d0e1c8795fba16c4f31462bc079a1d4f61",
+              "likeness": 3
+            }
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        {
+          "id": "93541cf682223622dae5e1ceec35c646c18d5af6b0134548bd74c8d16dc88818",
+          "synth": "Birdr",
+          "paramsSha256": "8c45b1df77dad303409748e8a0aa8531de7eaab338f769016653868befa6d5e3",
+          "seed": 2101241938,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "a2298cf8e14d7575d061ec5c98883bc07fef4d0fb62afb277161e6c34fad8e99",
+          "provenance": {
+            "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+            "candidateId": "c6d3c9ee32088934d5f35aa0ad0103d0e1c8795fba16c4f31462bc079a1d4f61",
+            "archivedPcmSha256": "a77dff3fd0ac0ec3f545cb29b469a213791d041e088ff61de78afb43bf632e34",
+            "previousLikeness": 3
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 2,
+          "usefulness": 3
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "9fa87e7e1b3dac0576b8ab0f2d776d002a2a88953ed85460023f4cb5eb08f994",
+      "name": "misc/exhaust.wav",
+      "sha256": "e87be0849ff537c726033271de80d6bdcdee87951b539120eaeaff019073c8bc",
+      "folder": "026",
+      "referenceAudioSha256": "63c4a6b7d5b7303d7f8c43ba55d4abc8d816065c152943805dbb5a8b07ed77bf",
+      "candidates": [
+        {
+          "id": "e55e50de7f6ff848cf3b24a96629c7d3dab3e167dea839ce5d4fefb4971148a0",
+          "synth": "Riftr",
+          "paramsSha256": "1e87dfce9697fd41ab59f2b32e8ca54e749c38095094019e7fe41241d5b70417",
+          "seed": 1362431289,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "bb5da7431f2c98f73b37b69b6971d82d0afd6b2e842c8001e5a2e4f87caea1be",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.297008465558449,
+            "auditoryScore": 0.8537887930870056,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "57e79cf8c5c3387baf01c8de325a8259cc8d1a31ed7a7aee2d9f3fcb6f7fb600",
+          "synth": "Riftr",
+          "paramsSha256": "5aa9ab7102a9f1033ab9b1af13d3fcdeee85c2001270c7c1baf63811efac1c15",
+          "seed": 1362431289,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "264e6924d937a4ebd97e8957015aeee9aff6bd868748ae573c9f7df5a70922cf",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.3129189734916222,
+            "auditoryScore": 0.8378474116325378,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "8b578f1b31bd32c93ebade59d886cee4875b0b6a8cb18cb7f0fdcd8ac3cb194e",
+          "synth": "Signlr",
+          "paramsSha256": "c7a981c6bc8ca46a572ef2596634a658bd0c02a084d9033368201830a02fdee6",
+          "seed": 428307693,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "af05ab9e5272c3484ab3d06eddf2678422b1cafcfac93ab3965dc88adfd806b9",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "25cdc6b6e82a3524ea71dd6514077c9e24f676ac6b925e210fcc9f677abf6bd0",
+      "name": "monster/SNDB2DIE.wav",
+      "sha256": "5895b006474523624e2571396270f3343cc117f39912e234c2328b550f2726c3",
+      "folder": "027",
+      "referenceAudioSha256": "6c9c441b764efb53cff5d7ec61f57a53e59aeae859a59ed735b7e4d648fa82e3",
+      "candidates": [
+        {
+          "id": "522f08a5a7b0ba2d0e26934b6f0ab1f63e3fe55538f1b334eeb626b9a3928a32",
+          "synth": "Soundboard",
+          "paramsSha256": "66f31076a36f560733413aa986801aedb2e5d6728e7940f7b773db713a85dac3",
+          "seed": 870657696,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "d186d5fb2e0e5ac1b122d60034587f314b42ab75ad8269843f8e51d522513bfe",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.0122535312405614,
+            "auditoryScore": 0.8004986047744751,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "902cc92562c17faaf5a8e17ca2e39afca0b560789318815da0679ead1dbf71c9",
+          "synth": "Soundboard",
+          "paramsSha256": "cf75f963ae9da0ed58700d5ca6d1ae97fc3347646a47b6d9d9ab271a7e8940f9",
+          "seed": 870657696,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "7c2656a817d804f7300157c138bab86dd539ce37ce2403516bad6a84792cc1c8",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.057364291903062,
+            "auditoryScore": 0.7842700481414795,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "0b1fd2328072d2252cea42d2a6c6ac30ef99507cab2f424d0b6605651272e8a2",
+          "synth": "Transfxr",
+          "paramsSha256": "c19abbb7f673b361694f6000988b2e946d10bb41d6757fcb6bb4311dbe766157",
+          "seed": 1253812068,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "fd8a66708c93f7ea67148dcf106c18881c99affdd6492c3a214a43bb0a025b69",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "98354799e0d63112af794856f101da379f5254cd32072e070e6d3580382d0994",
+      "name": "motiv/UIMisc_Kalimba 3 Up_CB Sounddesign_APPlicable Sounds.wav",
+      "sha256": "0298f3405836720e064d1ff486f58fa032b03009d6f9e55e668b84e759dca360",
+      "folder": "028",
+      "referenceAudioSha256": "7c0b2259f7845c709646befac34bb8ac34666deebb6d9a3d021d91577680c8d7",
+      "candidates": [
+        {
+          "id": "99ccd40cdb09420d3062cd1427858b8159d6f86ee08c457fbfac344b96489715",
+          "synth": "Soundboard",
+          "paramsSha256": "ffcc9254c6d2c750aba0bc8451014d838a1f345a159bdf2ee4740e92b26fe977",
+          "seed": 2111498738,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "82498f5cde5fda0c3a21bfe23bf58b7f98a72ade04a2e576f201a4a84de93ae2",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.8240089457056674,
+            "auditoryScore": 0.6252501606941223,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        {
+          "id": "c78c1cc3e09c68bd181915b95f93296d1d67f357b2d843bdd79ca39f41090436",
+          "synth": "Clonkr",
+          "paramsSha256": "3bf8b776030badbac5030050e21d2f2b1274f7c8a7539d949b1dfea7ac7e128a",
+          "seed": 2055139799,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "e29f2d5f68a07231aef7df309d0828a4230a5aad77c01769028874da9cf91793",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.882468385958073,
+            "auditoryScore": 0.5714499354362488,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "cdeac0c6bad2a4fa417246c913e6cb5736b536595919e43d57dda06485c62106",
+          "synth": "Clonkr",
+          "paramsSha256": "23b3c7f9f0b86c2f8c2f3c28d28a7bcb7cb3ef75b59e93c78dc8087aa12b115a",
+          "seed": 1650941415,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "57321f3c56e84bb21e26d9e7adffd115173df004604f0a0bb38ce3bd484f5cc0",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 1,
+          "usefulness": 3
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "268f1e7afdd0c06966cf86bcd78d009162bb47c1c95b6e015288a7d05343f810",
+      "name": "power_up/1up.wav",
+      "sha256": "58d302fd480f4311c9528c69b580b0ec2025c662aa6246c60dcd7feafe921779",
+      "folder": "029",
+      "referenceAudioSha256": "b06583b44852bf2069a6fffef892142e9cd902e11922484d9d24fd0a7a3f5b80",
+      "candidates": [
+        {
+          "id": "000c7a1210e42c0e2edec07e85b42d49e5124c1fc09d40c6fac22ab08bfc3c94",
+          "synth": "Soundboard",
+          "paramsSha256": "fda42a3dd91513633fc33aec1dee8c57087320a9d4869779aa3e6e1b4ac5bdf6",
+          "seed": 1998234762,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "23c1981c4960260c26f614add0113c1a2772a0d8f366a3cd522369a7358ca22d",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.8515618246738159,
+            "auditoryScore": 0.7294703722000122,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        {
+          "id": "86d3503c842fe96a8d5751d90bb5270716e8369c6a4981d6ab13daccfde532d1",
+          "synth": "Signlr",
+          "paramsSha256": "e67d246403e78ab0e416da4f75d46a76e09d648162c761897f03d090410822a6",
+          "seed": 1404590720,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "485a4c3f90960e157b07a91de233eddb33c281fd5b26b022ffd64b3226a54c4e",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.9688061113124987,
+            "auditoryScore": 0.63808673620224,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        {
+          "id": "0e87de3d9fcb7b28ef1cb7965d1d5aadbfa9f1745d88cc8216c89b7a4381da92",
+          "synth": "Bfxr",
+          "paramsSha256": "a286d7b0bdf9ea2840b8ef4fd84fe8b1e31a61a5cdb94aa985886be81a1854a0",
+          "seed": 772210727,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "575071fc0e8ce82576fd3678b873933a7b15b353244bdfd12e533406fb21a089",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "eaa2ee89fca2288dac232f70ff1cdf0bcde39b3240489685cc2ffca7ea252ff2",
+            "archivedPcmSha256": "dc63047b846e0f2a5d7d8bb74d5d2e9578b93c001fc9b606c54beb66cd23fa39",
+            "previousLikeness": 2
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 1,
+          "usefulness": 3
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "a7b9bd029cd258641912b2ce3f6da0431cddb9b98f99f9fc30a9e47fe8f199c8",
+      "name": "select/savePoint.wav",
+      "sha256": "2d12f6c922226d5213879739c2a09f67f27068463f41b29665f44d0cde761e1f",
+      "folder": "030",
+      "referenceAudioSha256": "5f22b0a22602dae38ccb0547680beec6ac49196de24627ebd90dd5c352a50b7b",
+      "candidates": [
+        {
+          "id": "f405574bc504a27bd23f8ee8555dccf064143d2f2e557a19d3f1f3abf727d4b7",
+          "synth": "Soundboard",
+          "paramsSha256": "b159e854252fe3e3e36daa7f5a9ba921b9939a4721bee62d3c7d4c480e5b7b16",
+          "seed": 3174559258,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "bc1d57654d76455ec61a30917f22fd041e1f248060a3aedddc28b9c85551e903",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned",
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.9362641341111709,
+            "auditoryScore": 0.5119122266769409,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Both new selectors agree",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "538bb0ec9f8c228bb7387df6a26dd463e3ddfd2d131fb3d59ad8683c795aaecf",
+          "synth": "Transfxr",
+          "paramsSha256": "e5a2c9c181659ca45daff3ceeac25803a00bdd90b9d747fb391381fb8deae79f",
+          "seed": 1587338737,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "eda96e01d35ca537bca63fa44ab7b477fd7f16024213d50f758021ab0e734af0",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 1,
+          "usefulness": 3
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "66e4141edfb80785d3083e5c430790d2325ffef74947fd24486cf602bed55d8b",
+      "name": "shoot/Shooting.wav",
+      "sha256": "2218abe9327a3866cf6da4419add2b46d86ab957fc6fecb7518ce0ccccc204a5",
+      "folder": "031",
+      "referenceAudioSha256": "4c11265161688220fa379f85f8f8add96dc7559fde06291ddcd42f50ce624ea6",
+      "candidates": [
+        {
+          "id": "adccb7c65352cb06ec7843ec7b8908558934c93491b04ccea16d9195958be0f8",
+          "synth": "Boomr",
+          "paramsSha256": "de06d7247f1bbc0dddd271dac32f4a8efbdc111bc4a4f69510e54dfa44251693",
+          "seed": 687413261,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "83925675941ccdf1a45fc4ad620f4a35a078fd112d7e82344621ed75a6b3b678",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.0765498563335636,
+            "auditoryScore": 0.7091276049613953,
+            "humanSeed": {
+              "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+              "candidateId": "21c39dbb159425c0166d4b4439c3644a1dd9c57f8f83cd5787386f7236205b41",
+              "likeness": 3
+            }
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "0ec3fcacb5a47b326eef8434973eef767d1de052c82e638834696231dd7d922f",
+          "synth": "Boomr",
+          "paramsSha256": "bf7470584a3a80592033aa226b8a5637017238884d99509649126c143a4c5ec3",
+          "seed": 687413261,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "73b7d40272415e54a0c79656df738d71ac2d1e5051de49eaea258cc6b75326a6",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.24210407421366,
+            "auditoryScore": 0.6656110286712646,
+            "humanSeed": {
+              "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+              "candidateId": "eb5269faea5cbe8e52d3840b77e853c4b0dff6773b839fd0db9c1efe826088bb",
+              "likeness": 3
+            }
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "74595e99bd6642260827c83494457863976caa7fe2550f00d6967e2358add511",
+          "synth": "Boomr",
+          "paramsSha256": "625a31b7e78e57fbe52e786ab9e32ffae1bf4deec8f33e6a5a7d3793bd55551e",
+          "seed": 687413261,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "88f1c39b6ddabdf13d9dc27804b3864b883a7585f12b3e120a2ede1dd531eae6",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "eb5269faea5cbe8e52d3840b77e853c4b0dff6773b839fd0db9c1efe826088bb",
+            "archivedPcmSha256": "ede0240406933f515de8513f1c8cc67767b7982e3be0fa29beedf0dbef5491fd",
+            "previousLikeness": 3
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 3,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "53690592c9bbe1c339ee9f7821c26a6f04e680beaad4edcd2686ae64f01f85b2",
+      "name": "slime/slime_000.ogg",
+      "sha256": "480ee82b690136ea9db6966a3c3033356b8274752795c4e37afd6b6defcfacff",
+      "folder": "032",
+      "referenceAudioSha256": "92701ff9c3ec74bd03ff8527bd8a2e8e9aa1c43ec2ad40839e746e9ffe941059",
+      "candidates": [
+        {
+          "id": "173c4c245527a7dd3eb40323c02a7226ec955948a03074d0687ecc1b5c681347",
+          "synth": "Signlr",
+          "paramsSha256": "4e0591366d4c5f7f999494694226942b070c4f794eac020ef5beb57f57f1b2ac",
+          "seed": 1258643452,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "e82f00bcd678bb7bbd619c34f305957a7f1196bd9ab0fb51fe5a3141f1ce1aab",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.546260511282298,
+            "auditoryScore": 1.2811996936798096,
+            "humanSeed": {
+              "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+              "candidateId": "fe7ffd5c328556c3adfad9fdb8b6573e1ff243e188059a8e91e44599a3ecc555",
+              "likeness": 2
+            }
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "de7ddd901669a10c56640a26bbabd5b765a11127ec6f073fd1faf924518b695f",
+          "synth": "Signlr",
+          "paramsSha256": "f2490792c818a3e8d4b43c788484a7d2a354c9b65895196f6da57d43ae685b83",
+          "seed": 1258643452,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "03d1e733672877dbcac568b5018bfd7292edaffe0d8ffa355b5a85817c023171",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.7549562154201466,
+            "auditoryScore": 1.2575757503509521,
+            "humanSeed": {
+              "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+              "candidateId": "fe7ffd5c328556c3adfad9fdb8b6573e1ff243e188059a8e91e44599a3ecc555",
+              "likeness": 2
+            }
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "6fb286dbf5b849a19b09e5a97704f482a55765a73ec792206f9dfebdecec5f37",
+          "synth": "Bfxr",
+          "paramsSha256": "dcdd3ca76bb8e71fc038089af6207db5239f90cf9a32e2d617a10a9f66fa792e",
+          "seed": 1098980134,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "76ed2e5c372ee24855f233b91956e0835f619ca5755e53f3f8178251c30f5280",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "a9bf5288be0a17477f22241f013feffa599ee36db85861b5e7cdd147bf6f05c3",
+            "archivedPcmSha256": "e30f43c5bb8db3f00fe012167b00427d1c4b5f118c27f33b9957a40f55121658",
+            "previousLikeness": 3
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "348b7cdc8edcc3df995e3ec5f2adf05d02cad8df359c514f6cb6b5df3898fef1",
+      "name": "step/step2.wav",
+      "sha256": "73bfc925afff23db9c552f3003017c2926106ab446c9646ed2251b8506350091",
+      "folder": "033",
+      "referenceAudioSha256": "731b56d3b9edc1082cdd8c5f3462c469d8a035a3efa282a900997723f7cedf8a",
+      "candidates": [
+        {
+          "id": "7360f440ce7893148301b86df2da9e05a024fc83b8c7adf024370bc410aca15c",
+          "synth": "Boomr",
+          "paramsSha256": "77014aa79d841695245e6e07348f132a0faeddd41d4179e05ab89165524ceb25",
+          "seed": 213862135,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "31d3a498903a32bae125c700bb6012945a19d1e6397e96ba54f0438c29171944",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.8836449163486695,
+            "auditoryScore": 0.6845302581787109,
+            "humanSeed": {
+              "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+              "candidateId": "e0a72f8361a8c8bb50f0ce6f98cb41ce49db8b3f5ed2fd71b35d3f0fed96bced",
+              "likeness": 3
+            }
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 3,
+          "usefulness": 4
+        },
+        {
+          "id": "094c322e2001f2ab585007e0d82888d14a97994452d445306f234d415bf122f4",
+          "synth": "Soundboard",
+          "paramsSha256": "f95f1b205d9df2fcdaafbc9914ffb476fcc60cab4a34f5116adb502d2af46c44",
+          "seed": 659083552,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "58aef3d81e6df3925b9653840b5d32e0e6867d565f2c5c23c90e9805dff80a6f",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.0123692622585148,
+            "auditoryScore": 0.6434130668640137,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 4
+        },
+        {
+          "id": "82377a890ef3dbf9ecdcd13dbdde69d4b8b7c4403397136cdd670f5c45f55500",
+          "synth": "Boomr",
+          "paramsSha256": "9d4a70fc227b59fd5f83a3c4bab050339ba4fca2e870844f36dfbad5d7fd44bc",
+          "seed": 213862135,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "5addb6d8e389addfa73dfd7fcec11ebf58e359ec4af818eb05e1877d01778eaa",
+          "provenance": {
+            "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+            "candidateId": "e0a72f8361a8c8bb50f0ce6f98cb41ce49db8b3f5ed2fd71b35d3f0fed96bced",
+            "archivedPcmSha256": "78247211ac76289748ab0f800889729d46afcaee80b042c0f6b0d96a19c8db08",
+            "previousLikeness": 3
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "19541e1f0d3376844ec5a212195f07062a80d41f90ce5e97077b797eae33488f",
+      "name": "sword/ma_sword3.wav",
+      "sha256": "7e9d6131b1748ccfdc059a9f6a37cd46c98230b1cecc256cd5ec038cd43e4e94",
+      "folder": "034",
+      "referenceAudioSha256": "4e0136335558af68c86fe6b9ed42cf188b1946b75c5393d5d44e3b98ae32ff75",
+      "candidates": [
+        {
+          "id": "555d4ab3db8c169f4615000fc1d62412e7bb8b61fd214b274cb9d80031ea9dbd",
+          "synth": "Transfxr",
+          "paramsSha256": "7b847f074016f4817bd69eeaa088fd7545d60f20fb982f61b314dc4fc31761e1",
+          "seed": 2016817510,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "2c38202f1af23da4559e300f8ad16a32f00079a56372dfff3448011577da1482",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned",
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.5345072827421202,
+            "auditoryScore": 0.402047723531723,
+            "humanSeed": {
+              "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+              "candidateId": "fcd6b5916e90d7bdcc165debc0ebd3eced53e668c196abe68cb674bc0ac9b509",
+              "likeness": 1
+            }
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Both new selectors agree",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        {
+          "id": "31f13e472cbc56a6dbf13ad2ebe9e4075d5239ee94cd90ee52fc8b746e8289b1",
+          "synth": "Bfxr",
+          "paramsSha256": "454762d24aafdb41aefe9f25668ac26ea0ffd858a7bae17abb46357f6efedbb0",
+          "seed": 1179116962,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "a291072bb26c6ebbfa84134d9d9840809e51e9a843611e11805ca19ee9ad8f76",
+          "provenance": {
+            "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+            "candidateId": "2432e673d3b7b2ec7e6c1f433034457b9bf09c1375cc2eb51f207ae4a61bc297",
+            "archivedPcmSha256": "2e2650239ba793803a3c73b64290c639eee4c85722194a60b7949ec9ce86231c",
+            "previousLikeness": 1
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Previous best",
+          "likeness": 2,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "9c92e9c2b5882e323936cd58bd440851dcce61d9e45e05230660975ccbb85af6",
+      "name": "unlock/metalLatch.ogg",
+      "sha256": "ba9ba60b172b3ebc131a940f25793cd2e207aca7af73dc80d637277f060f1708",
+      "folder": "035",
+      "referenceAudioSha256": "088fb448d4332ba2629527aea02dcff001953ef15e3de69df2f1ca7017d0b945",
+      "candidates": [
+        {
+          "id": "6fac52011d82b7d4b5a7a868edb04879ca73ddd4f366319c5233606b6ff35797",
+          "synth": "Soundboard",
+          "paramsSha256": "556b5c2ff3bde0803f28be73a8ad7b219ccdaf27f7cd810c5805c3032163c53b",
+          "seed": 583087790,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "f29532e284a215eb1591685f9b660263545d2896a9b53ae8c0006b4a4e4b1fe0",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.8032424596028247,
+            "auditoryScore": 0.6395315527915955,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        {
+          "id": "d4b7151cdd26f7b645c58e4eb8fbec39cf940b23396c88f4bded8197f0bba014",
+          "synth": "Soundboard",
+          "paramsSha256": "862c7db2781fc3a5a7b45cc74ee4f0e34cb08e58a9b99115cad8f8510ca26769",
+          "seed": 583087790,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "ee069b50001fe22617d77f4d4531b36498e867ebfaa55654eac9d945d16dc7b9",
+          "provenance": {
+            "backend": "board",
+            "sourceRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 0.8440268786755485,
+            "auditoryScore": 0.594373881816864,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 2,
+          "usefulness": 4
+        },
+        {
+          "id": "131c750835c12a899e0212b75a6cdc3abaacc60994f4f14481e21791c4783a7c",
+          "synth": "Squishr",
+          "paramsSha256": "abddca32c966c7a5ab01fc88573267bbbdf8c6ed2ee5af561f1b0939f35eb1bc",
+          "seed": 1448350945,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "63b35841725193114b20f7abc4deaf62934e36f8c7bf16b6ecd0c10739e6d73b",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 1,
+          "usefulness": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "f1534fc003c77b96dd60ac49bb972ecef413f034487b8243d031c3ffe9558606",
+      "name": "voice/ozzie.wav",
+      "sha256": "6efecb192b226ff495083b6094aa0b8503e23bfe3f9d6c63af0d23b1090923ea",
+      "folder": "036",
+      "referenceAudioSha256": "78b57917103ffae19d894a681c978486fedd8c9b73c1c8261da56491a00a63c3",
+      "candidates": [
+        {
+          "id": "7e92638963a83d17c166a5d681bf9df39efa2cf82602629790996cecf90d3007",
+          "synth": "Riftr",
+          "paramsSha256": "f5a6902203b527625dc666157345d9fa830e58dad25856090d7014a566357b4a",
+          "seed": 1013276526,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "636fdda4357d7471d3f9611e31704a98e740afd46d87c167ead740e79230ceb7",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "learned"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.1002222544093145,
+            "auditoryScore": 0.7706782221794128,
+            "humanSeed": null
+          },
+          "file": "learned.wav",
+          "role": "learned",
+          "label": "Retrained match",
+          "likeness": 2,
+          "usefulness": 3
+        },
+        {
+          "id": "6e24e933ce44be5b60e3dc88331712f3fb1b0f1f56333b4609858cbdc4bfd8a6",
+          "synth": "Boomr",
+          "paramsSha256": "3ce5c0c92f6e1835d7582c5a07e87ebb726b152a5f45a7d1825f4e14f5ffd0fd",
+          "seed": 1518005398,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "e9eac461c49ed2393fcd493fa9c5a64f1f1b9c080cc95294ed0d7f3688266a11",
+          "provenance": {
+            "backend": "legacy",
+            "sourceRevision": null,
+            "selectors": [
+              "auditory"
+            ],
+            "modelHash": "56cda3cf76b40087944dadfd7671b76c2e534787e852fea56c72d1d0a4d74ba2",
+            "learnedScore": 1.1845551217371462,
+            "auditoryScore": 0.7682167887687683,
+            "humanSeed": null
+          },
+          "file": "auditory.wav",
+          "role": "auditory",
+          "label": "Expanded original model",
+          "likeness": 1,
+          "usefulness": 3
+        },
+        {
+          "id": "0bcb453db3a3b392208ef43885bd8b2240d968dbbfc9bfe58a8425ee7e52aed5",
+          "synth": "Boomr",
+          "paramsSha256": "4e0a43fa89cb0503b2ea7f944828696c093c0b10872d68523c5515066b2e20e9",
+          "seed": 741356464,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "121c8afe0f93549427c7b4dbfdf73e334213a4cc48022793c7ff14ecece0353a",
+          "provenance": {
+            "objectiveVersion": "auditory-v1",
+            "libraryHash": "9ab82f7a68ec0fc64804d2dfeaeca7c9ed15c3dc0adefe8aa3f3ac6d5527425c",
+            "budgetPerExpert": 64,
+            "experts": 5
+          },
+          "file": "baseline.wav",
+          "role": "baseline",
+          "label": "Original matcher",
+          "likeness": 1,
+          "usefulness": 2
+        }
+      ],
+      "note": ""
+    }
+  ]
+}

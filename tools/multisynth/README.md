@@ -185,3 +185,8 @@ the frozen Soundboard catalogue. The learned metric has not beaten auditory-v1
 on grouped validation; both select from the expanded shared search pool.
 [PERCEPTUAL_RESEARCH.md](PERCEPTUAL_RESEARCH.md) records the psychoacoustic
 literature, its limits, and concrete next feature benchmarks.
+
+The subsequent v4 listening pass shows modest progress: preference-v4 won
+6 / tied 30 / lost 0 against expanded auditory-v1, but mean likeness was still
+1.94/5 and none of the displayed clips exceeded 3/5. All 103 dual-dimension
+judgments and exact audio are retained. See the human verdict in `BIG_V4.md`.

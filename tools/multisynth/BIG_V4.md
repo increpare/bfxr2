@@ -175,4 +175,45 @@ Full parameters, traces and run provenance: `evaluations/big-v4-results.json`.
 Replay hashes and verification summary: `evaluations/big-v4-verification.json`.
 The listening page is `runs/big-v4/index.html`, experiment
 `140d89d3331adb085c93a93a2bd2e72943145c89329088d0ebcf14b3827ee8f2`.
-Its perceptual verdict is pending human ratings.
+The human verdict below supersedes the pending evaluation status.
+
+## Human verdict, 2026-10-04
+
+All 36 references and 103 clips were rated on both dimensions. Raw feedback,
+exact audio and parameters are retained in `listening_data/2026-10-04-big-v4/`;
+complete comparisons are in `evaluations/big-v4-human-review.json`.
+
+| Method | Mean likeness | Mean usefulness | Likeness versus historical baseline |
+| --- | ---: | ---: | --- |
+| Preference-v4 | 1.94 | 3.61 | 13 wins / 18 ties / 5 losses |
+| Expanded auditory-v1 | 1.75 | 3.58 | 8 wins / 21 ties / 7 losses |
+| Historical baseline | 1.69 | 3.67 | — |
+
+Preference-v4 beats expanded auditory-v1 on six references, ties on thirty,
+and loses on none. Four wins and fourteen ties occur among the eighteen new
+exact-reference groups. These same-pool comparisons are evidence of modest
+selection progress, despite the earlier cross-validation result. The means
+summarize ordinal ratings and are not calibrated perceptual distances.
+
+Absolute recreation quality remains poor: no displayed clip exceeds 3/5
+likeness, and even choosing the human-preferred clip from every displayed set
+would average only 2.08/5. This is a ceiling for the displayed finalists only,
+not evidence that the full library or synths cannot produce closer sounds.
+Usefulness stays separate and does not count as reproduction success.
+
+The checkpoint also predicts 27/36 new strict within-session preferences
+correctly versus auditory-v1's 16/36; on the eighteen new references this is
+16/20 versus 8/20, spanning eleven reference groups with strict preferences.
+These scores use the frozen checkpoint and exact archived audition audio,
+before any fit to this session. The candidate set is metric-selected and pairs
+share references, so these are diagnostic rather than independent population
+accuracy estimates. Historical baseline ratings are compared within this new
+session, not against their older numeric scores.
+
+The explicit qualitative feedback concerns unwanted clicks in the bird
+recreations. Keep that as reference-specific evidence: a universal anti-click
+penalty could damage legitimate impacts. The next feature experiments should
+separate event ordering/gaps from texture modulation and test unwanted
+transients relative to the reference. Preference-v4 is the experimental
+incumbent for subsequent comparisons; the CLI default remains unchanged until
+there is stronger evidence of satisfactory reproduction.
