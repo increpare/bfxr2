@@ -10,6 +10,25 @@
 | `2026-10-04-big-v4/` | 36 | 103 |
 | `2026-10-04-neural-v1-quick-01/` | 5 | 19 |
 | `2026-10-04-neural-v2-quick-01/` | 5 | 20 |
+| `2026-10-04-temporal-v3-quick-01/` | 5 | 15 |
+
+The seventh archive is a partial temporal-v3 session: five of six references,
+four best choices and one rejection, with 15 candidate identities and 19 exact
+PCM audios. New Pluckr wins book-close over both heard historical options. New
+Bfxr wins charm2 over heard original Bfxr; the earlier Transfxr option was not
+recorded as auditioned, so no preference against that earlier winner is inferred.
+Earlier Bfxr wins spinout and bird. All heard robot-talk candidates are rejected
+again. Egg jump remains unjudged. There are six strict heard-only comparisons
+from four reference groups, with no scalar ratings. The separate, verbatim
+`qualitative-feedback.json` records book-close as the same general character but
+still a bit off, and charm2 as closeish, approaching a recreation. These are
+qualified partial matches, not fully convincing successes or evidence that the
+entire new pipeline is close. The matching objective agrees with four of six pairs and
+disagrees on bird and one spinout pair, supporting regular human review even
+when numerical scores improve. See
+[the temporal-v3 human review](../evaluations/temporal-v3-quick-01-human-review.json).
+Keep the earlier Transfxr charm2 as a listening anchor alongside the new Bfxr:
+this partial audition does not justify replacing it as the established baseline.
 
 The sixth archive retains all five v2 quick comparisons, 20 candidate identities
 and 24 exact PCM audios. Four best choices yield seven strict comparisons from

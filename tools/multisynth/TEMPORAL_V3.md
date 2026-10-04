@@ -105,6 +105,19 @@ explanations. Future short batches will regularly include consensus successes,
 uncertain cases and representative coverage, rather than using human ears only
 as a tie-breaker.
 
+The first returned temporal-v3 session judges five references. New Pluckr wins
+book-close and new Bfxr wins charm2 against the heard alternatives; older audio
+still wins spinout and bird, and robot talk is rejected. Charm2's earlier
+Transfxr was not recorded as auditioned, so the new candidate is not labelled
+better than that earlier successful recreation. A separate user reply describes
+book-close as having the same general character but still a bit off, and charm2
+as closeish, approaching a recreation. Preserve these as qualified partial
+matches without assigning scalar ratings or declaring full success.
+Six strict comparisons from four reference groups are retained;
+the objective disagrees with two of them. See the immutable archive
+`listening_data/2026-10-04-temporal-v3-quick-01` and
+`evaluations/temporal-v3-quick-01-human-review.json`.
+
 ## Reproducibility
 
 - `evaluations/temporal-v3-data-audit.json`: data preservation and exclusions.

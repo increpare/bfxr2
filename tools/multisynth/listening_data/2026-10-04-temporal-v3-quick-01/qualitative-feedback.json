@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "444a9e83e39823f877710e5422d552f7dbcc98bf7fdf78f11419a7c17a0198de",
+  "source": "Direct user reply in this chat on 2026-10-04, following the archived quick-choice export.",
+  "question": "Optional calibration: did the new book-close and charm2 choices feel like convincing recreations, or mainly the least-bad options?",
+  "verbatim": "kinda close - new-book was in the same genre - but it's a short and noisy sound so the difference between \"similar\" and \"bang on\" is tricky to judge - fair to say it's a bit off still. charm2 was 'closeish' - approaching being a recreation if not there yet,.",
+  "interpretation": [
+    {
+      "target": "card/bookClose.ogg",
+      "candidateId": "17826977676e9071d9a149a0dfdf14932cb89d76ab28252201982e3903acab5e",
+      "synth": "Pluckr",
+      "assessment": "Same general character; short noisy event makes the degree of similarity difficult to judge; still a bit off.",
+      "fullyConvincingRecreationEstablished": false
+    },
+    {
+      "target": "die/charm2.wav",
+      "candidateId": "e2b97a74f780fe922f68de2af6be02ea4f9c8e3ccd0b2783d7fe3147da29d1a0",
+      "synth": "Bfxr",
+      "assessment": "Closeish; approaching being a recreation, with some remaining uncertainty.",
+      "fullyConvincingRecreationEstablished": false
+    }
+  ],
+  "numericScoresInferred": false,
+  "comparisonAgainstUnauditionedCandidatesInferred": false,
+  "archivePolicy": "Supplementary human evidence. Original feedback.json and manifest.json remain unchanged."
+}

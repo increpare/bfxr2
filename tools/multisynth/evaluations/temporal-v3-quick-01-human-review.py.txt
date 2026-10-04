@@ -1,0 +1,84 @@
+"""Summarize exact archived choices without inferring unheard comparisons."""
+import hashlib
+import json
+from pathlib import Path
+import numpy as np
+import soundfile as sf
+from match.objective import MatchObjective
+from multisynth.preference import training_pairs
+
+ROOT = Path(__file__).resolve().parents[3]
+archive = ROOT/'tools/multisynth/listening_data/2026-10-04-temporal-v3-quick-01'
+manifest = json.loads((archive/'manifest.json').read_text())
+qualitative_path = archive/'qualitative-feedback.json'
+qualitative = json.loads(qualitative_path.read_text())
+assert qualitative['experimentId'] == manifest['experimentId']
+gallery_path = ROOT/'tools/multisynth/runs/temporal-v3-listening/results.json'
+gallery = json.loads(gallery_path.read_text())
+diagnostics = {r['source']['sha256']:r['diagnostics']['target'] for r in gallery['results']}
+data = training_pairs([archive])
+candidates = {c['id']:c for c in manifest['candidates']}
+for item in qualitative['interpretation']:
+    assert candidates[item['candidateId']]['role'] == 'selected'
+    target = next(t for t in manifest['targets'] if t['source']['name'] == item['target'])
+    assert item['candidateId'] in target['choice']['preferredCandidateIds']
+rows, scores = [], {}
+for t in manifest['targets']:
+    wave, rate = sf.read(archive/t['referenceAudio']['file'], dtype='float32')
+    assert rate == 44100
+    objective = MatchObjective(wave)
+    choice = t['choice']
+    heard = set(choice['auditionedCandidateIds'])
+    preferred = choice['preferredCandidateIds']
+    winner = candidates[preferred[0]] if preferred else None
+    options = []
+    for item in t['candidates']:
+        c = candidates[item['id']]
+        wave, rate = sf.read(archive/c['audio']['file'], dtype='float32')
+        assert rate == 44100
+        scores[c['id']] = float(objective.score_batch([wave])[0])
+        options.append({'id':c['id'], 'role':item['role'], 'synth':c['synth'],
+                        'auditioned':c['id'] in heard, 'preferred':c['id'] in preferred,
+                        'pcmSha256':c['audio']['pcmSha256'], 'auditionMatchObjective':scores[c['id']],
+                        'archivedAuditionPitchDiagnostic':c['provenance'].get('auditionPitchDiagnostic')})
+    rows.append({'target':t['source']['name'], 'kind':choice['kind'], 'note':t['note'],
+        'referencePcmSha256':t['referenceAudio']['pcmSha256'],
+        'targetPitchDiagnostic':diagnostics[t['source']['sha256']],
+        'winnerRole':winner['role'] if winner else None,
+        'winnerAudioAliasRoles':[o['role'] for o in options if winner and o['pcmSha256']==winner['audio']['pcmSha256']],
+        'winnerSynth':winner['synth'] if winner else None,
+        'presented':len(choice['presentedCandidateIds']), 'auditioned':len(heard), 'options':options,
+        'strictPairs':sum(o['target']==t['source']['name'] for o in data.observations)})
+pairs = []
+for o in data.observations:
+    assert o['preferenceSign'] == 1
+    a,b = candidates[o['candidateA']],candidates[o['candidateB']]
+    assert o['candidateA'] in o['choice']['auditionedCandidateIds'] and o['candidateB'] in o['choice']['auditionedCandidateIds']
+    pairs.append({**o, 'winnerRole':a['role'], 'loserRole':b['role'],
+        'winnerMatchObjective':scores[a['id']], 'loserMatchObjective':scores[b['id']],
+        'objectiveAgrees':scores[a['id']] < scores[b['id']]})
+assert len(pairs) == 6 and len(set(data.groups)) == 4
+assert all('6123aeed8b2bda5eee8be5f6ed42cd1042da467c334d5792173e059860217634' not in (p['candidateA'],p['candidateB']) for p in pairs)
+review = {'experimentId':manifest['experimentId'], 'archive':str(archive.relative_to(ROOT)),
+    'feedbackSha256':manifest['feedbackSha256'], 'reviewScriptSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+    'galleryReportSha256':hashlib.sha256(gallery_path.read_bytes()).hexdigest(),
+    'qualitativeFeedback':qualitative,
+    'qualitativeFeedbackSha256':hashlib.sha256(qualitative_path.read_bytes()).hexdigest(),
+    'judgedReferences':len(rows), 'experimentReferences':manifest['provenance']['targetCount'],
+    'partialSession':True, 'unjudgedReferences':['jump/Egg Jump.wav'],
+    'retainedCandidateIdentities':len(candidates), 'retainedPcmAudios':data.summary['uniqueAudioPcm'],
+    'archiveSummary':manifest['summary'], 'trainingPairPolicy':data.summary,
+    'strictPreferencePairs':len(pairs), 'strictReferencePcmGroups':len(set(data.groups)),
+    'relativeChoiceEvidence':rows, 'heardOnlyPreferencePairs':pairs,
+    'objectiveAgreement':{'correct':sum(p['objectiveAgrees'] for p in pairs),'total':len(pairs),
+        'scope':'Frozen MatchObjective on exact audition PCM; correlated development comparisons, not independent accuracy.'},
+    'interpretation':{
+        'newPreferredReferences':['card/bookClose.ogg','die/charm2.wav'],
+        'absoluteAdequacy':'Supplied separately in the user reply: book-close has the same general character but is still a bit off; charm2 is closeish, approaching a recreation. Neither is promoted to a fully convincing success or assigned a numerical rating.',
+        'charmCaveat':'New Bfxr preferred over heard original Bfxr. Earlier Transfxr was presented but not recorded as auditioned; no comparison against that earlier winner is inferred.',
+        'robot':'All three heard candidates rejected again. None is retained as rejection evidence, without inventing pair rankings or scalar ratings.',
+        'bird':'Original Bfxr preferred over new Pluckr despite the new candidate having lower matching distance.',
+        'decision':'Retain these new relative improvements and earlier winners. Next controlled architecture change should repair versioned pitch/onset input; do not expand the coarse-feature model unchanged or claim an overall perceptual breakthrough.'}}
+out=ROOT/'tools/multisynth/evaluations/temporal-v3-quick-01-human-review.json'
+out.write_text(json.dumps(review,indent=2,allow_nan=False)+'\n')
+print(json.dumps({k:review[k] for k in ('judgedReferences','retainedCandidateIdentities','retainedPcmAudios','strictPreferencePairs','strictReferencePcmGroups','objectiveAgreement')},indent=2))

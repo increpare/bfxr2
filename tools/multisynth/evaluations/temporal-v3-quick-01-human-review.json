@@ -1,0 +1,1029 @@
+{
+  "experimentId": "444a9e83e39823f877710e5422d552f7dbcc98bf7fdf78f11419a7c17a0198de",
+  "archive": "tools/multisynth/listening_data/2026-10-04-temporal-v3-quick-01",
+  "feedbackSha256": "0db9633c4c2d843f0fca3d92a04ca7125e3578b41fb163b97bdb7edcb84667a6",
+  "reviewScriptSha256": "31718eef2015df648fb7d68a14e4e92c8b93472acdaf5a45cb0a00ee5cb8f6f7",
+  "galleryReportSha256": "660fc5264771020902dc6c7df02408a25d9f43a0b374f6c3d6e542a6bf5ce315",
+  "qualitativeFeedback": {
+    "schemaVersion": 1,
+    "experimentId": "444a9e83e39823f877710e5422d552f7dbcc98bf7fdf78f11419a7c17a0198de",
+    "source": "Direct user reply in this chat on 2026-10-04, following the archived quick-choice export.",
+    "question": "Optional calibration: did the new book-close and charm2 choices feel like convincing recreations, or mainly the least-bad options?",
+    "verbatim": "kinda close - new-book was in the same genre - but it's a short and noisy sound so the difference between \"similar\" and \"bang on\" is tricky to judge - fair to say it's a bit off still. charm2 was 'closeish' - approaching being a recreation if not there yet,.",
+    "interpretation": [
+      {
+        "target": "card/bookClose.ogg",
+        "candidateId": "17826977676e9071d9a149a0dfdf14932cb89d76ab28252201982e3903acab5e",
+        "synth": "Pluckr",
+        "assessment": "Same general character; short noisy event makes the degree of similarity difficult to judge; still a bit off.",
+        "fullyConvincingRecreationEstablished": false
+      },
+      {
+        "target": "die/charm2.wav",
+        "candidateId": "e2b97a74f780fe922f68de2af6be02ea4f9c8e3ccd0b2783d7fe3147da29d1a0",
+        "synth": "Bfxr",
+        "assessment": "Closeish; approaching being a recreation, with some remaining uncertainty.",
+        "fullyConvincingRecreationEstablished": false
+      }
+    ],
+    "numericScoresInferred": false,
+    "comparisonAgainstUnauditionedCandidatesInferred": false,
+    "archivePolicy": "Supplementary human evidence. Original feedback.json and manifest.json remain unchanged."
+  },
+  "qualitativeFeedbackSha256": "e2c2279cdcc6dc8b1c417b5d915333c0814a7a2c46f719dc8dcadd1cd0a33fcc",
+  "judgedReferences": 5,
+  "experimentReferences": 6,
+  "partialSession": true,
+  "unjudgedReferences": [
+    "jump/Egg Jump.wav"
+  ],
+  "retainedCandidateIdentities": 15,
+  "retainedPcmAudios": 19,
+  "archiveSummary": {
+    "targets": 5,
+    "uniqueRatedCandidates": 0,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "choices": 5,
+    "choiceKinds": {
+      "best": 4,
+      "tie": 0,
+      "none": 1,
+      "skip": 0
+    }
+  },
+  "trainingPairPolicy": {
+    "targets": 5,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "duplicateAudioAliases": 0,
+    "conflictingAudioRatingGroups": 0,
+    "tiedPairs": 0,
+    "duplicateSessionPairs": 0,
+    "directChoicePairs": 6,
+    "choices": 5,
+    "choiceKinds": {
+      "best": 4,
+      "tie": 0,
+      "none": 1,
+      "skip": 0
+    },
+    "validatedAudioFiles": 19,
+    "uniqueAudioPcm": 19
+  },
+  "strictPreferencePairs": 6,
+  "strictReferencePcmGroups": 4,
+  "relativeChoiceEvidence": [
+    {
+      "target": "attack/spinout.wav",
+      "kind": "best",
+      "note": "",
+      "referencePcmSha256": "65846b1877c418e7f6cc6f8a1a588979162674aa1d905bb930fd97588c20d69f",
+      "targetPitchDiagnostic": {
+        "activeFrames": 59,
+        "voicedFrames": 52,
+        "voicedFraction": 0.8813559322033898,
+        "medianHz": 1949.4637451171875,
+        "reliable": true,
+        "contourHz": [
+          908.5446166992188,
+          2221.50390625,
+          247.28726196289062,
+          817.9793090820312,
+          690.7688598632812,
+          1910.28271484375,
+          1949.27685546875,
+          1938.0577392578125,
+          1960.233154296875,
+          1942.760009765625,
+          1958.7513427734375,
+          1951.9833984375,
+          1966.94384765625,
+          1953.21484375,
+          1970.0120849609375,
+          1995.2301025390625
+        ],
+        "contourTime": [
+          0.03125,
+          0.09375,
+          0.15625,
+          0.21875,
+          0.28125,
+          0.34375,
+          0.40625,
+          0.46875,
+          0.53125,
+          0.59375,
+          0.65625,
+          0.71875,
+          0.78125,
+          0.84375,
+          0.90625,
+          0.96875
+        ],
+        "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+        "startToEndSemitones": 13.39890253030677,
+        "direction": 1,
+        "excursionSemitones": 38.00732215441535,
+        "secondary": {
+          "voicedFraction": 0.7446808510638298,
+          "medianHz": 1837.500244140625
+        },
+        "guardReliable": false
+      },
+      "winnerRole": "previous",
+      "winnerAudioAliasRoles": [
+        "previous"
+      ],
+      "winnerSynth": "Bfxr",
+      "presented": 3,
+      "auditioned": 3,
+      "options": [
+        {
+          "id": "15159f0365c03dc715016ef6003336533d98caed6c82b187b47f4305ea716e8d",
+          "role": "selected",
+          "synth": "Bfxr",
+          "auditioned": true,
+          "preferred": false,
+          "pcmSha256": "aa9e02d48fcba568b9fb00ce7499295f3739c9621f239cf78cd51f85f02f6551",
+          "auditionMatchObjective": 5.512221354491618,
+          "archivedAuditionPitchDiagnostic": {
+            "activeFrames": 9,
+            "voicedFrames": 0,
+            "voicedFraction": 0.0,
+            "medianHz": null
+          }
+        },
+        {
+          "id": "797e743506fcb8a09763709d59e649074733a710fa07bd20ce643097e114fbe1",
+          "role": "previous",
+          "synth": "Bfxr",
+          "auditioned": true,
+          "preferred": true,
+          "pcmSha256": "7637f86b0bbf76f5eceab8555ef9971b93b8e6075d7390a3452d3f667765a4b4",
+          "auditionMatchObjective": 5.179886741698534,
+          "archivedAuditionPitchDiagnostic": null
+        },
+        {
+          "id": "fc9adbb4dda340556caa86fdd49223196255cdb932fb1bd3c515b1d9ee0bd32e",
+          "role": "original",
+          "synth": "Bfxr",
+          "auditioned": true,
+          "preferred": false,
+          "pcmSha256": "5b3d41a514c5f6c26ef6b058342da30b965671a9faad9543a417925cbf953ab9",
+          "auditionMatchObjective": 4.860266111074427,
+          "archivedAuditionPitchDiagnostic": {
+            "activeFrames": 35,
+            "voicedFrames": 0,
+            "voicedFraction": 0.0,
+            "medianHz": null
+          }
+        }
+      ],
+      "strictPairs": 2
+    },
+    {
+      "target": "bird/Bird Sounds.WAV",
+      "kind": "best",
+      "note": "",
+      "referencePcmSha256": "e0f588c7d2e53ab658bdd324ebaf51df4522d234ee9fb9e03b1b8fbfeca02fac",
+      "targetPitchDiagnostic": {
+        "activeFrames": 27,
+        "voicedFrames": 26,
+        "voicedFraction": 0.9629629629629629,
+        "medianHz": 2536.623779296875,
+        "reliable": true,
+        "contourHz": [
+          3328.302978515625,
+          3527.999267578125,
+          2780.6435546875,
+          2685.725341796875,
+          2459.88916015625,
+          2449.999755859375,
+          2449.999755859375,
+          2452.7822265625,
+          2525.162109375,
+          2522.95458984375,
+          2449.999755859375,
+          2449.999755859375,
+          2463.3046875,
+          3172.662353515625,
+          3527.999267578125,
+          3394.81982421875
+        ],
+        "contourTime": [
+          0.03125,
+          0.09375,
+          0.15625,
+          0.21875,
+          0.28125,
+          0.34375,
+          0.40625,
+          0.46875,
+          0.53125,
+          0.59375,
+          0.65625,
+          0.71875,
+          0.78125,
+          0.84375,
+          0.90625,
+          0.96875
+        ],
+        "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+        "startToEndSemitones": 0.34257885544258215,
+        "direction": 0,
+        "excursionSemitones": 6.31282387108584,
+        "secondary": {
+          "voicedFraction": 1.0,
+          "medianHz": 1225.0003662109375
+        },
+        "guardReliable": false
+      },
+      "winnerRole": "original",
+      "winnerAudioAliasRoles": [
+        "previous",
+        "original"
+      ],
+      "winnerSynth": "Bfxr",
+      "presented": 2,
+      "auditioned": 2,
+      "options": [
+        {
+          "id": "dfdaf50e9f77a9c098b911cb80e14f688aa27029e2412e2830a38c612fa81ce0",
+          "role": "selected",
+          "synth": "Pluckr",
+          "auditioned": true,
+          "preferred": false,
+          "pcmSha256": "afaa07b89db9b88f8c9c9582172f54daa3a07b4806ca721c9d3f64c8efd749af",
+          "auditionMatchObjective": 3.863862769901181,
+          "archivedAuditionPitchDiagnostic": {
+            "activeFrames": 40,
+            "voicedFrames": 2,
+            "voicedFraction": 0.05000000074505806,
+            "medianHz": 3834.78271484375
+          }
+        },
+        {
+          "id": "55d33ccaf25525d43403d0f396127e9b83cc8006165b76bcfebb84bffa5e8bac",
+          "role": "previous",
+          "synth": "Bfxr",
+          "auditioned": false,
+          "preferred": false,
+          "pcmSha256": "689cb763a16778d695cbce90af0bd51540de75e251194f4ca0ee9a2d2ce78f05",
+          "auditionMatchObjective": 4.969183725706304,
+          "archivedAuditionPitchDiagnostic": null
+        },
+        {
+          "id": "ee777218e0c093aec662440b63d8fa84ee9965cbb3f33923a881b13361674374",
+          "role": "original",
+          "synth": "Bfxr",
+          "auditioned": true,
+          "preferred": true,
+          "pcmSha256": "689cb763a16778d695cbce90af0bd51540de75e251194f4ca0ee9a2d2ce78f05",
+          "auditionMatchObjective": 4.969183725706304,
+          "archivedAuditionPitchDiagnostic": {
+            "activeFrames": 22,
+            "voicedFrames": 21,
+            "voicedFraction": 0.9545454382896423,
+            "medianHz": 2401.58740234375
+          }
+        }
+      ],
+      "strictPairs": 1
+    },
+    {
+      "target": "card/bookClose.ogg",
+      "kind": "best",
+      "note": "",
+      "referencePcmSha256": "3a34c99cee7fe4fc5679083fb569033b765ec88a07d4ddac08d76d2245d778be",
+      "targetPitchDiagnostic": {
+        "activeFrames": 16,
+        "voicedFrames": 2,
+        "voicedFraction": 0.125,
+        "medianHz": null,
+        "reliable": false,
+        "contourHz": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          4200.00048828125,
+          null,
+          null,
+          null,
+          4200.00048828125,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "contourTime": [
+          0.03125,
+          0.09375,
+          0.15625,
+          0.21875,
+          0.28125,
+          0.34375,
+          0.40625,
+          0.46875,
+          0.53125,
+          0.59375,
+          0.65625,
+          0.71875,
+          0.78125,
+          0.84375,
+          0.90625,
+          0.96875
+        ],
+        "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+        "startToEndSemitones": null,
+        "direction": null,
+        "excursionSemitones": null,
+        "secondary": {
+          "voicedFraction": 0.0,
+          "medianHz": null
+        },
+        "guardReliable": false
+      },
+      "winnerRole": "selected",
+      "winnerAudioAliasRoles": [
+        "selected"
+      ],
+      "winnerSynth": "Pluckr",
+      "presented": 3,
+      "auditioned": 3,
+      "options": [
+        {
+          "id": "17826977676e9071d9a149a0dfdf14932cb89d76ab28252201982e3903acab5e",
+          "role": "selected",
+          "synth": "Pluckr",
+          "auditioned": true,
+          "preferred": true,
+          "pcmSha256": "81e4d069983c3eb497af76ea5a06c5e668b0353c27f44c7e4b69a22ec82128d5",
+          "auditionMatchObjective": 1.588768649140143,
+          "archivedAuditionPitchDiagnostic": {
+            "activeFrames": 22,
+            "voicedFrames": 3,
+            "voicedFraction": 0.13636364042758942,
+            "medianHz": 4200.00048828125
+          }
+        },
+        {
+          "id": "5e09d3ba782320c4d5c381d6e17265f97422bc5ebee7239b2a8fb1895b028b9b",
+          "role": "previous",
+          "synth": "Bfxr",
+          "auditioned": true,
+          "preferred": false,
+          "pcmSha256": "fb0b65c6436d1f0f42c49b8cb8b0c814cb3c1701210a5bb96f8570335c58e6f5",
+          "auditionMatchObjective": 1.8417122807355297,
+          "archivedAuditionPitchDiagnostic": null
+        },
+        {
+          "id": "18a6d1898fa9bc18101edd08d149f935cdbe226ae40608badc01bdd933a2aff0",
+          "role": "original",
+          "synth": "Bfxr",
+          "auditioned": true,
+          "preferred": false,
+          "pcmSha256": "947d4ece8cbdda60ac2968231673ce9c5966278cdbcee1edf6f6d69d4254c8d9",
+          "auditionMatchObjective": 1.7247223866693047,
+          "archivedAuditionPitchDiagnostic": {
+            "activeFrames": 15,
+            "voicedFrames": 0,
+            "voicedFraction": 0.0,
+            "medianHz": null
+          }
+        }
+      ],
+      "strictPairs": 2
+    },
+    {
+      "target": "computer/robo_talk.wav",
+      "kind": "none",
+      "note": "",
+      "referencePcmSha256": "f42dbf000892e3acf1a7503e1fd6e7c392a2405b1f2724901c666a6bce1630f9",
+      "targetPitchDiagnostic": {
+        "activeFrames": 73,
+        "voicedFrames": 38,
+        "voicedFraction": 0.5205479452054794,
+        "medianHz": null,
+        "reliable": false,
+        "contourHz": [
+          204.86351013183594,
+          206.1979522705078,
+          138.8383026123047,
+          139.02676391601562,
+          2323.4541015625,
+          136.6504669189453,
+          null,
+          145.37921142578125,
+          null,
+          149.8520050048828,
+          149.9835662841797,
+          142.1762237548828,
+          142.1790008544922,
+          138.94485473632812,
+          138.9613037109375,
+          136.18914794921875
+        ],
+        "contourTime": [
+          0.03125,
+          0.09375,
+          0.15625,
+          0.21875,
+          0.28125,
+          0.34375,
+          0.40625,
+          0.46875,
+          0.53125,
+          0.59375,
+          0.65625,
+          0.71875,
+          0.78125,
+          0.84375,
+          0.90625,
+          0.96875
+        ],
+        "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+        "startToEndSemitones": null,
+        "direction": null,
+        "excursionSemitones": null,
+        "secondary": {
+          "voicedFraction": 0.44680851063829785,
+          "medianHz": 139.55697631835938
+        },
+        "guardReliable": false
+      },
+      "winnerRole": null,
+      "winnerAudioAliasRoles": [],
+      "winnerSynth": null,
+      "presented": 3,
+      "auditioned": 3,
+      "options": [
+        {
+          "id": "8b19f05616842feaf8aa54db28a8364376e701ef03b22abfbe755052383e1999",
+          "role": "selected",
+          "synth": "Transfxr",
+          "auditioned": true,
+          "preferred": false,
+          "pcmSha256": "897a415d18e9c2b9b2d8ca84823544973ec83e5db1198ea6692e87d6c542fc10",
+          "auditionMatchObjective": 2.317511121866433,
+          "archivedAuditionPitchDiagnostic": {
+            "activeFrames": 85,
+            "voicedFrames": 0,
+            "voicedFraction": 0.0,
+            "medianHz": null
+          }
+        },
+        {
+          "id": "f3903dd0a7c0e94b924a831e90c6bd72192b103917723a3d85b8adb8e925f045",
+          "role": "previous",
+          "synth": "Soundboard",
+          "auditioned": true,
+          "preferred": false,
+          "pcmSha256": "83f2098479910aa84a0cc40272b93ce1562acc689ca99304df0f29ee0329405a",
+          "auditionMatchObjective": 7.195905476622114,
+          "archivedAuditionPitchDiagnostic": null
+        },
+        {
+          "id": "8d0d89e88ee082d59df2d1ce41b4b3b41d5fecdc9c87da10282cb87d8d1cbfc8",
+          "role": "original",
+          "synth": "Bfxr",
+          "auditioned": true,
+          "preferred": false,
+          "pcmSha256": "ec9636bdbb67f4f459113b5dc6733adbe79ea735a9861e4f8bb02b959fbb1832",
+          "auditionMatchObjective": 2.790477065214852,
+          "archivedAuditionPitchDiagnostic": {
+            "activeFrames": 72,
+            "voicedFrames": 2,
+            "voicedFraction": 0.02777777798473835,
+            "medianHz": 407.4296875
+          }
+        }
+      ],
+      "strictPairs": 0
+    },
+    {
+      "target": "die/charm2.wav",
+      "kind": "best",
+      "note": "",
+      "referencePcmSha256": "999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850",
+      "targetPitchDiagnostic": {
+        "activeFrames": 177,
+        "voicedFrames": 176,
+        "voicedFraction": 0.9943502824858758,
+        "medianHz": 637.060546875,
+        "reliable": true,
+        "contourHz": [
+          925.0104370117188,
+          850.3627319335938,
+          891.22412109375,
+          758.9833984375,
+          797.306884765625,
+          625.9508666992188,
+          698.0194702148438,
+          625.3197631835938,
+          558.3927612304688,
+          631.9451904296875,
+          549.6168823242188,
+          636.6155395507812,
+          547.2173461914062,
+          601.7199096679688,
+          589.1105346679688,
+          606.9022216796875
+        ],
+        "contourTime": [
+          0.03125,
+          0.09375,
+          0.15625,
+          0.21875,
+          0.28125,
+          0.34375,
+          0.40625,
+          0.46875,
+          0.53125,
+          0.59375,
+          0.65625,
+          0.71875,
+          0.78125,
+          0.84375,
+          0.90625,
+          0.96875
+        ],
+        "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+        "startToEndSemitones": -6.80035423891502,
+        "direction": -1,
+        "excursionSemitones": 9.088268172369965,
+        "secondary": {
+          "voicedFraction": 1.0,
+          "medianHz": 689.0624389648438
+        },
+        "guardReliable": true
+      },
+      "winnerRole": "selected",
+      "winnerAudioAliasRoles": [
+        "selected"
+      ],
+      "winnerSynth": "Bfxr",
+      "presented": 3,
+      "auditioned": 2,
+      "options": [
+        {
+          "id": "e2b97a74f780fe922f68de2af6be02ea4f9c8e3ccd0b2783d7fe3147da29d1a0",
+          "role": "selected",
+          "synth": "Bfxr",
+          "auditioned": true,
+          "preferred": true,
+          "pcmSha256": "781e2b6a2624ae79dafb33b831f5cdb0c89a27d1c16ef35c580bef6ad1c7a03a",
+          "auditionMatchObjective": 3.5371477243286336,
+          "archivedAuditionPitchDiagnostic": {
+            "activeFrames": 177,
+            "voicedFrames": 177,
+            "voicedFraction": 1.0,
+            "medianHz": 634.3832397460938
+          }
+        },
+        {
+          "id": "6123aeed8b2bda5eee8be5f6ed42cd1042da467c334d5792173e059860217634",
+          "role": "previous",
+          "synth": "Transfxr",
+          "auditioned": false,
+          "preferred": false,
+          "pcmSha256": "3ad58753fc408535c051a3d39c494465e6d8e50a3509d39ecbd7c40bb3a1bd0f",
+          "auditionMatchObjective": 3.6674478386692315,
+          "archivedAuditionPitchDiagnostic": null
+        },
+        {
+          "id": "9e98c4427248ea8024ad1799ca97897e3398583579a0d4fb5b2eb404eb8219ed",
+          "role": "original",
+          "synth": "Bfxr",
+          "auditioned": true,
+          "preferred": false,
+          "pcmSha256": "3510aae512950108156aac1283f2579efc4dad7b8770a38639a7f4367c93dfac",
+          "auditionMatchObjective": 5.81735043986529,
+          "archivedAuditionPitchDiagnostic": {
+            "activeFrames": 1,
+            "voicedFrames": 1,
+            "voicedFraction": 1.0,
+            "medianHz": 1046.0609130859375
+          }
+        }
+      ],
+      "strictPairs": 1
+    }
+  ],
+  "heardOnlyPreferencePairs": [
+    {
+      "archive": "2026-10-04-temporal-v3-quick-01",
+      "experimentId": "444a9e83e39823f877710e5422d552f7dbcc98bf7fdf78f11419a7c17a0198de",
+      "target": "attack/spinout.wav",
+      "referencePcmSha256": "65846b1877c418e7f6cc6f8a1a588979162674aa1d905bb930fd97588c20d69f",
+      "candidateA": "797e743506fcb8a09763709d59e649074733a710fa07bd20ce643097e114fbe1",
+      "candidateB": "fc9adbb4dda340556caa86fdd49223196255cdb932fb1bd3c515b1d9ee0bd32e",
+      "candidateAliasesA": [
+        "797e743506fcb8a09763709d59e649074733a710fa07bd20ce643097e114fbe1"
+      ],
+      "candidateAliasesB": [
+        "fc9adbb4dda340556caa86fdd49223196255cdb932fb1bd3c515b1d9ee0bd32e"
+      ],
+      "candidatePcmSha256A": "7637f86b0bbf76f5eceab8555ef9971b93b8e6075d7390a3452d3f667765a4b4",
+      "candidatePcmSha256B": "5b3d41a514c5f6c26ef6b058342da30b965671a9faad9543a417925cbf953ab9",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.3143036365509033,
+        -0.14638559520244598,
+        0.0061038788408041,
+        -0.3309403881430626,
+        -0.3266128972172737,
+        -0.17509688436985016,
+        -0.2069607712328434,
+        0.0007157474756240845,
+        -0.15442721545696259,
+        -0.27419354838709675,
+        -0.07426812158276638,
+        0.04837836326707784,
+        -0.022571302950382233,
+        -0.5385549515485764,
+        -0.019494250416755676,
+        -0.13488465547561646,
+        -0.19710548967123032,
+        -0.09975326061248779,
+        -0.09980681538581848,
+        -0.10129594802856445
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "797e743506fcb8a09763709d59e649074733a710fa07bd20ce643097e114fbe1",
+          "fc9adbb4dda340556caa86fdd49223196255cdb932fb1bd3c515b1d9ee0bd32e",
+          "15159f0365c03dc715016ef6003336533d98caed6c82b187b47f4305ea716e8d"
+        ],
+        "auditionedCandidateIds": [
+          "797e743506fcb8a09763709d59e649074733a710fa07bd20ce643097e114fbe1",
+          "fc9adbb4dda340556caa86fdd49223196255cdb932fb1bd3c515b1d9ee0bd32e",
+          "15159f0365c03dc715016ef6003336533d98caed6c82b187b47f4305ea716e8d"
+        ],
+        "preferredCandidateIds": [
+          "797e743506fcb8a09763709d59e649074733a710fa07bd20ce643097e114fbe1"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "previous",
+      "loserRole": "original",
+      "winnerMatchObjective": 5.179886741698534,
+      "loserMatchObjective": 4.860266111074427,
+      "objectiveAgrees": false
+    },
+    {
+      "archive": "2026-10-04-temporal-v3-quick-01",
+      "experimentId": "444a9e83e39823f877710e5422d552f7dbcc98bf7fdf78f11419a7c17a0198de",
+      "target": "attack/spinout.wav",
+      "referencePcmSha256": "65846b1877c418e7f6cc6f8a1a588979162674aa1d905bb930fd97588c20d69f",
+      "candidateA": "797e743506fcb8a09763709d59e649074733a710fa07bd20ce643097e114fbe1",
+      "candidateB": "15159f0365c03dc715016ef6003336533d98caed6c82b187b47f4305ea716e8d",
+      "candidateAliasesA": [
+        "797e743506fcb8a09763709d59e649074733a710fa07bd20ce643097e114fbe1"
+      ],
+      "candidateAliasesB": [
+        "15159f0365c03dc715016ef6003336533d98caed6c82b187b47f4305ea716e8d"
+      ],
+      "candidatePcmSha256A": "7637f86b0bbf76f5eceab8555ef9971b93b8e6075d7390a3452d3f667765a4b4",
+      "candidatePcmSha256B": "aa9e02d48fcba568b9fb00ce7499295f3739c9621f239cf78cd51f85f02f6551",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.13898181915283203,
+        -0.11517311632633209,
+        -0.011179551482200623,
+        -0.28793593496084213,
+        -0.26537296921014786,
+        -0.09580515325069427,
+        -0.7640068866312504,
+        -0.005998901324346662,
+        -0.12718142569065094,
+        -0.06451612903225805,
+        -0.034797438109914466,
+        0.05675339573492681,
+        -0.010245062410831451,
+        -0.3883097618818283,
+        -0.017193466424942017,
+        -0.2325291633605957,
+        -0.7276256754994392,
+        -0.04531240463256836,
+        -0.04556956887245178,
+        -0.04421275854110718
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "797e743506fcb8a09763709d59e649074733a710fa07bd20ce643097e114fbe1",
+          "fc9adbb4dda340556caa86fdd49223196255cdb932fb1bd3c515b1d9ee0bd32e",
+          "15159f0365c03dc715016ef6003336533d98caed6c82b187b47f4305ea716e8d"
+        ],
+        "auditionedCandidateIds": [
+          "797e743506fcb8a09763709d59e649074733a710fa07bd20ce643097e114fbe1",
+          "fc9adbb4dda340556caa86fdd49223196255cdb932fb1bd3c515b1d9ee0bd32e",
+          "15159f0365c03dc715016ef6003336533d98caed6c82b187b47f4305ea716e8d"
+        ],
+        "preferredCandidateIds": [
+          "797e743506fcb8a09763709d59e649074733a710fa07bd20ce643097e114fbe1"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "previous",
+      "loserRole": "selected",
+      "winnerMatchObjective": 5.179886741698534,
+      "loserMatchObjective": 5.512221354491618,
+      "objectiveAgrees": true
+    },
+    {
+      "archive": "2026-10-04-temporal-v3-quick-01",
+      "experimentId": "444a9e83e39823f877710e5422d552f7dbcc98bf7fdf78f11419a7c17a0198de",
+      "target": "bird/Bird Sounds.WAV",
+      "referencePcmSha256": "e0f588c7d2e53ab658bdd324ebaf51df4522d234ee9fb9e03b1b8fbfeca02fac",
+      "candidateA": "ee777218e0c093aec662440b63d8fa84ee9965cbb3f33923a881b13361674374",
+      "candidateB": "dfdaf50e9f77a9c098b911cb80e14f688aa27029e2412e2830a38c612fa81ce0",
+      "candidateAliasesA": [
+        "55d33ccaf25525d43403d0f396127e9b83cc8006165b76bcfebb84bffa5e8bac",
+        "ee777218e0c093aec662440b63d8fa84ee9965cbb3f33923a881b13361674374"
+      ],
+      "candidateAliasesB": [
+        "dfdaf50e9f77a9c098b911cb80e14f688aa27029e2412e2830a38c612fa81ce0"
+      ],
+      "candidatePcmSha256A": "689cb763a16778d695cbce90af0bd51540de75e251194f4ca0ee9a2d2ce78f05",
+      "candidatePcmSha256B": "afaa07b89db9b88f8c9c9582172f54daa3a07b4806ca721c9d3f64c8efd749af",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.1429424285888672,
+        -0.0891575813293457,
+        0.0010417737066745758,
+        -0.3812037408351898,
+        -0.33613909780979156,
+        -0.19796308875083923,
+        -0.019829891622066498,
+        -0.006845757830888033,
+        -0.26377642154693604,
+        -0.3629032258064516,
+        -0.09164160179595153,
+        -0.029771149540706865,
+        -0.06835884228348732,
+        -0.632866308093071,
+        0.00018214434385299683,
+        -0.11315053701400757,
+        -0.01888561248779297,
+        0.08012290298938751,
+        0.041902005672454834,
+        0.04894673824310303
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "dfdaf50e9f77a9c098b911cb80e14f688aa27029e2412e2830a38c612fa81ce0",
+          "ee777218e0c093aec662440b63d8fa84ee9965cbb3f33923a881b13361674374"
+        ],
+        "auditionedCandidateIds": [
+          "dfdaf50e9f77a9c098b911cb80e14f688aa27029e2412e2830a38c612fa81ce0",
+          "ee777218e0c093aec662440b63d8fa84ee9965cbb3f33923a881b13361674374"
+        ],
+        "preferredCandidateIds": [
+          "ee777218e0c093aec662440b63d8fa84ee9965cbb3f33923a881b13361674374"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "original",
+      "loserRole": "selected",
+      "winnerMatchObjective": 4.969183725706304,
+      "loserMatchObjective": 3.863862769901181,
+      "objectiveAgrees": false
+    },
+    {
+      "archive": "2026-10-04-temporal-v3-quick-01",
+      "experimentId": "444a9e83e39823f877710e5422d552f7dbcc98bf7fdf78f11419a7c17a0198de",
+      "target": "card/bookClose.ogg",
+      "referencePcmSha256": "3a34c99cee7fe4fc5679083fb569033b765ec88a07d4ddac08d76d2245d778be",
+      "candidateA": "17826977676e9071d9a149a0dfdf14932cb89d76ab28252201982e3903acab5e",
+      "candidateB": "5e09d3ba782320c4d5c381d6e17265f97422bc5ebee7239b2a8fb1895b028b9b",
+      "candidateAliasesA": [
+        "17826977676e9071d9a149a0dfdf14932cb89d76ab28252201982e3903acab5e"
+      ],
+      "candidateAliasesB": [
+        "5e09d3ba782320c4d5c381d6e17265f97422bc5ebee7239b2a8fb1895b028b9b"
+      ],
+      "candidatePcmSha256A": "81e4d069983c3eb497af76ea5a06c5e668b0353c27f44c7e4b69a22ec82128d5",
+      "candidatePcmSha256B": "fb0b65c6436d1f0f42c49b8cb8b0c814cb3c1701210a5bb96f8570335c58e6f5",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.14662453532218933,
+        0.013571083545684814,
+        0.0015947576612234116,
+        0.0779525674879551,
+        0.05897177383303642,
+        0.04673302173614502,
+        0.020518159493803978,
+        0.0025711897760629654,
+        0.034567102789878845,
+        0.03225806451612903,
+        -0.0047675048311551504,
+        0.05015843891748113,
+        0.020999528467655182,
+        0.012249939143657684,
+        0.010193701833486557,
+        -0.0009012222290039062,
+        0.019541144371032715,
+        -0.06558296084403992,
+        -0.05575808882713318,
+        -0.04856708645820618
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "17826977676e9071d9a149a0dfdf14932cb89d76ab28252201982e3903acab5e",
+          "5e09d3ba782320c4d5c381d6e17265f97422bc5ebee7239b2a8fb1895b028b9b",
+          "18a6d1898fa9bc18101edd08d149f935cdbe226ae40608badc01bdd933a2aff0"
+        ],
+        "auditionedCandidateIds": [
+          "17826977676e9071d9a149a0dfdf14932cb89d76ab28252201982e3903acab5e",
+          "5e09d3ba782320c4d5c381d6e17265f97422bc5ebee7239b2a8fb1895b028b9b",
+          "18a6d1898fa9bc18101edd08d149f935cdbe226ae40608badc01bdd933a2aff0"
+        ],
+        "preferredCandidateIds": [
+          "17826977676e9071d9a149a0dfdf14932cb89d76ab28252201982e3903acab5e"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "selected",
+      "loserRole": "previous",
+      "winnerMatchObjective": 1.588768649140143,
+      "loserMatchObjective": 1.8417122807355297,
+      "objectiveAgrees": true
+    },
+    {
+      "archive": "2026-10-04-temporal-v3-quick-01",
+      "experimentId": "444a9e83e39823f877710e5422d552f7dbcc98bf7fdf78f11419a7c17a0198de",
+      "target": "card/bookClose.ogg",
+      "referencePcmSha256": "3a34c99cee7fe4fc5679083fb569033b765ec88a07d4ddac08d76d2245d778be",
+      "candidateA": "17826977676e9071d9a149a0dfdf14932cb89d76ab28252201982e3903acab5e",
+      "candidateB": "18a6d1898fa9bc18101edd08d149f935cdbe226ae40608badc01bdd933a2aff0",
+      "candidateAliasesA": [
+        "17826977676e9071d9a149a0dfdf14932cb89d76ab28252201982e3903acab5e"
+      ],
+      "candidateAliasesB": [
+        "18a6d1898fa9bc18101edd08d149f935cdbe226ae40608badc01bdd933a2aff0"
+      ],
+      "candidatePcmSha256A": "81e4d069983c3eb497af76ea5a06c5e668b0353c27f44c7e4b69a22ec82128d5",
+      "candidatePcmSha256B": "947d4ece8cbdda60ac2968231673ce9c5966278cdbcee1edf6f6d69d4254c8d9",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.20330902934074402,
+        0.0019001513719558716,
+        0.012373841367661953,
+        0.024520419538021088,
+        0.006804436445236206,
+        -0.1264156997203827,
+        -0.20619776286184788,
+        0.0013465937227010727,
+        -0.06136131286621094,
+        0.0,
+        0.024049704816813275,
+        0.037069011279269926,
+        -0.011121705174446106,
+        -0.17398514598608017,
+        0.008590662851929665,
+        -0.06619817018508911,
+        -0.19637879729270935,
+        -0.07311569154262543,
+        -0.0745563805103302,
+        -0.06693808734416962
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "17826977676e9071d9a149a0dfdf14932cb89d76ab28252201982e3903acab5e",
+          "5e09d3ba782320c4d5c381d6e17265f97422bc5ebee7239b2a8fb1895b028b9b",
+          "18a6d1898fa9bc18101edd08d149f935cdbe226ae40608badc01bdd933a2aff0"
+        ],
+        "auditionedCandidateIds": [
+          "17826977676e9071d9a149a0dfdf14932cb89d76ab28252201982e3903acab5e",
+          "5e09d3ba782320c4d5c381d6e17265f97422bc5ebee7239b2a8fb1895b028b9b",
+          "18a6d1898fa9bc18101edd08d149f935cdbe226ae40608badc01bdd933a2aff0"
+        ],
+        "preferredCandidateIds": [
+          "17826977676e9071d9a149a0dfdf14932cb89d76ab28252201982e3903acab5e"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "selected",
+      "loserRole": "original",
+      "winnerMatchObjective": 1.588768649140143,
+      "loserMatchObjective": 1.7247223866693047,
+      "objectiveAgrees": true
+    },
+    {
+      "archive": "2026-10-04-temporal-v3-quick-01",
+      "experimentId": "444a9e83e39823f877710e5422d552f7dbcc98bf7fdf78f11419a7c17a0198de",
+      "target": "die/charm2.wav",
+      "referencePcmSha256": "999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850",
+      "candidateA": "e2b97a74f780fe922f68de2af6be02ea4f9c8e3ccd0b2783d7fe3147da29d1a0",
+      "candidateB": "9e98c4427248ea8024ad1799ca97897e3398583579a0d4fb5b2eb404eb8219ed",
+      "candidateAliasesA": [
+        "e2b97a74f780fe922f68de2af6be02ea4f9c8e3ccd0b2783d7fe3147da29d1a0"
+      ],
+      "candidateAliasesB": [
+        "9e98c4427248ea8024ad1799ca97897e3398583579a0d4fb5b2eb404eb8219ed"
+      ],
+      "candidatePcmSha256A": "781e2b6a2624ae79dafb33b831f5cdb0c89a27d1c16ef35c580bef6ad1c7a03a",
+      "candidatePcmSha256B": "3510aae512950108156aac1283f2579efc4dad7b8770a38639a7f4367c93dfac",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.14431852102279663,
+        0.0644615963101387,
+        -0.005903720855712891,
+        -0.207681093364954,
+        -0.3556451629847288,
+        -0.3441709205508232,
+        -2.6951866447925568,
+        -0.034812272526323795,
+        -0.11331169307231903,
+        -0.02419354838709678,
+        0.0023394965877135687,
+        -0.0605531610097582,
+        -0.09051422029733658,
+        -0.7397442311048508,
+        -0.07662728428840637,
+        -0.03268277645111084,
+        -2.566844403743744,
+        -0.05116673558950424,
+        -0.05013001710176468,
+        -0.05111740529537201
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "9e98c4427248ea8024ad1799ca97897e3398583579a0d4fb5b2eb404eb8219ed",
+          "e2b97a74f780fe922f68de2af6be02ea4f9c8e3ccd0b2783d7fe3147da29d1a0",
+          "6123aeed8b2bda5eee8be5f6ed42cd1042da467c334d5792173e059860217634"
+        ],
+        "auditionedCandidateIds": [
+          "9e98c4427248ea8024ad1799ca97897e3398583579a0d4fb5b2eb404eb8219ed",
+          "e2b97a74f780fe922f68de2af6be02ea4f9c8e3ccd0b2783d7fe3147da29d1a0"
+        ],
+        "preferredCandidateIds": [
+          "e2b97a74f780fe922f68de2af6be02ea4f9c8e3ccd0b2783d7fe3147da29d1a0"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "selected",
+      "loserRole": "original",
+      "winnerMatchObjective": 3.5371477243286336,
+      "loserMatchObjective": 5.81735043986529,
+      "objectiveAgrees": true
+    }
+  ],
+  "objectiveAgreement": {
+    "correct": 4,
+    "total": 6,
+    "scope": "Frozen MatchObjective on exact audition PCM; correlated development comparisons, not independent accuracy."
+  },
+  "interpretation": {
+    "newPreferredReferences": [
+      "card/bookClose.ogg",
+      "die/charm2.wav"
+    ],
+    "absoluteAdequacy": "Supplied separately in the user reply: book-close has the same general character but is still a bit off; charm2 is closeish, approaching a recreation. Neither is promoted to a fully convincing success or assigned a numerical rating.",
+    "charmCaveat": "New Bfxr preferred over heard original Bfxr. Earlier Transfxr was presented but not recorded as auditioned; no comparison against that earlier winner is inferred.",
+    "robot": "All three heard candidates rejected again. None is retained as rejection evidence, without inventing pair rankings or scalar ratings.",
+    "bird": "Original Bfxr preferred over new Pluckr despite the new candidate having lower matching distance.",
+    "decision": "Retain these new relative improvements and earlier winners. Next controlled architecture change should repair versioned pitch/onset input; do not expand the coarse-feature model unchanged or claim an overall perceptual breakthrough."
+  }
+}
