@@ -43,3 +43,22 @@ def test_distinct_starts_preserve_multiple_engines_and_recipes():
           {'backend':'board','synth':'Soundboard','signature':'B:x+C:y'},
           {'backend':'legacy','synth':'D','preset':'z'}]
     assert distinct_starts(rows,np.array([.1,.11,.2,.3]),3)==[0,2,3]
+
+
+def test_refinement_uses_supplied_descriptor_and_keeps_best_incumbent():
+    from multisynth.refine import refine
+    class Metric:
+        def distances(self,target,candidates):
+            return np.abs(candidates-target).sum(axis=1)
+    start={'synth':'Test','params':{'pitch':.5},'seed':7}
+    spec={'params':[{'name':'pitch','type':'KNOB','min':0,'max':1}]}
+    calls=[]
+    def encode(wave):
+        calls.append(float(wave[0]))
+        return np.array([wave[0],wave[0]**2])
+    def render(row):
+        return row['params'],np.array([row['params']['pitch']])
+    children,trace=refine(start,render,spec,None,np.array([.4,.16]),Metric(),Metric(),20,42,describe_fn=encode)
+    assert len(calls)==21 and trace['failures']==0
+    assert np.all(np.diff(trace['trace'])<=0)
+    assert children[0]['score']<=abs(.5-.4)+abs(.25-.16)

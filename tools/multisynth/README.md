@@ -190,3 +190,13 @@ The subsequent v4 listening pass shows modest progress: preference-v4 won
 6 / tied 30 / lost 0 against expanded auditory-v1, but mean likeness was still
 1.94/5 and none of the displayed clips exceeded 3/5. All 103 dual-dimension
 judgments and exact audio are retained. See the human verdict in `BIG_V4.md`.
+
+## Event/texture iteration and all-engine coverage (v5)
+
+[PERCEPTUAL_V5.md](PERCEPTUAL_V5.md) describes the next fixed experiment: a
+30-component event/texture scorer trained on all four saved listening rounds,
+with the old feature set refitted on identical held-out reference groups.
+The new features score 72/103 preferences versus 75/103 for the old features,
+so they remain experimental. A tagged comparison preserves the v4 incumbent
+and exact historical best audio. Balanced held-out synthetic recovery is a
+separate coverage diagnostic; synthetic matches do not become human labels.

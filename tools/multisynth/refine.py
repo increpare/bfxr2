@@ -102,13 +102,13 @@ def distinct_starts(rows,scores,count):
     return chosen
 
 
-def refine(start,render,spec,source_specs,reference,metric,other_metric,budget,seed):
+def refine(start,render,spec,source_specs,reference,metric,other_metric,budget,seed,describe_fn=describe):
     """Return an incumbent plus diverse best proposals under both objectives."""
     rng=np.random.default_rng(seed)
     space=RecipeSpace(start['params'],spec,source_specs)
     initial=deepcopy(start)
     params,wave=render(initial)
-    descriptor=describe(wave)
+    descriptor=describe_fn(wave)
     initial.update(params=params,score=float(metric.distances(reference,descriptor[None])[0]),
                    otherScore=float(other_metric.distances(reference,descriptor[None])[0]))
     elites=[initial];alternatives=[initial];trace=[initial['score']];failures=0
@@ -118,7 +118,7 @@ def refine(start,render,spec,source_specs,reference,metric,other_metric,budget,s
         proposal={**parent,'params':space.mutate(parent['params'],rng,sigma)}
         try:
             params,wave=render(proposal)
-            descriptor=describe(wave)
+            descriptor=describe_fn(wave)
             proposal.update(params=params,score=float(metric.distances(reference,descriptor[None])[0]),
                             otherScore=float(other_metric.distances(reference,descriptor[None])[0]))
         except (ValueError,RuntimeError):

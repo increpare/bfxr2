@@ -1,0 +1,372 @@
+{
+  "verifiedTargets": 18,
+  "verifiedCandidates": 52,
+  "experimentId": "d535274b6236a4207109679f950409e59f19fc1b630b1936e5d19f2c5c69e291",
+  "rejectedProposals": 0,
+  "checks": [
+    {
+      "folder": "001",
+      "role": "v5",
+      "synth": "Riftr",
+      "sha256": "0822d332f1495c9e567bcf9781f8bcd3f86fd5c8db37182d248a0919f9245951",
+      "exactReplay": true
+    },
+    {
+      "folder": "001",
+      "role": "v4",
+      "synth": "Riftr",
+      "sha256": "53bc761bfc52963518d491e375b9a959abcfc146920d5bf17366c2fd41a43297",
+      "exactReplay": true
+    },
+    {
+      "folder": "001",
+      "role": "baseline",
+      "synth": "Riftr",
+      "sha256": "1740d5cc3b3dcfb899d5fefe5a5020d67594d443d4c9a9e692122cc3f11ff66c",
+      "exactReplay": true
+    },
+    {
+      "folder": "002",
+      "role": "v5",
+      "synth": "Bfxr",
+      "sha256": "dff6996ab44ebfee7aa8b90e403bad456fc13ecbdb4cea7d7ba276b0351e4de4",
+      "exactReplay": true
+    },
+    {
+      "folder": "002",
+      "role": "v4",
+      "synth": "Machinr",
+      "sha256": "e63ea14ec8cb30f8d5b739644cd8c46ee25cfdb74f96078b5f399959756d33dd",
+      "exactReplay": true
+    },
+    {
+      "folder": "002",
+      "role": "baseline",
+      "synth": "Soundboard",
+      "sha256": "b186e1e6435161dfb5642b3f73159f49557399ca64adb2aed41a7e23ec1879a9",
+      "exactReplay": true
+    },
+    {
+      "folder": "003",
+      "role": "v5",
+      "synth": "Soundboard",
+      "sha256": "e660f0688e3f753f09c10c95be4ae9ab0cca3e259303fe221a27a6bc06cbb9d6",
+      "exactReplay": true
+    },
+    {
+      "folder": "003",
+      "role": "v4",
+      "synth": "Soundboard",
+      "sha256": "49cb8fdf004b9977af0da0b08a600e0a797bc5bf78a44143c9246600b74b0313",
+      "exactReplay": true
+    },
+    {
+      "folder": "003",
+      "role": "baseline",
+      "synth": "Transfxr",
+      "sha256": "c2a2bba3f69479dba3ce61b0df56afe04d7bdb7872626dff1cecb5c448f35efa",
+      "exactReplay": true
+    },
+    {
+      "folder": "004",
+      "role": "v5",
+      "synth": "Soundboard",
+      "sha256": "5e73b30a7710ad39786154bf00ec2204a50569083e30ba546a9fc0e675226b77",
+      "exactReplay": true
+    },
+    {
+      "folder": "004",
+      "role": "baseline",
+      "synth": "Soundboard",
+      "sha256": "086ce40c0c2662b5c7ca2ebc13b45b2eb737111ee63869fc4a8e3dc45ab97711",
+      "exactReplay": true
+    },
+    {
+      "folder": "005",
+      "role": "v5",
+      "synth": "Bfxr",
+      "sha256": "a2d83e3f5304a44a5956994cc895473ee477d33de8b29632e8c3f35f424495a4",
+      "exactReplay": true
+    },
+    {
+      "folder": "005",
+      "role": "v4",
+      "synth": "Transfxr",
+      "sha256": "78bbc33facd2fdc6fcf55a9c1093dd011077fcc816dad16947dcea6eef6ac520",
+      "exactReplay": true
+    },
+    {
+      "folder": "005",
+      "role": "baseline",
+      "synth": "Bfxr",
+      "sha256": "885562eb1ecab9109687666103aaa3326c7070ba765476209938c8f09e9d18cf",
+      "exactReplay": true
+    },
+    {
+      "folder": "006",
+      "role": "v5",
+      "synth": "Soundboard",
+      "sha256": "869b9f47d1e946108c0780e20ed3af8cb3970122356a7005cb3929a85acbd6b9",
+      "exactReplay": true
+    },
+    {
+      "folder": "006",
+      "role": "v4",
+      "synth": "Soundboard",
+      "sha256": "5a20d255fe8cc86365168089b8cc5abd12fb6540ba425a3cd629a02beddb7be8",
+      "exactReplay": true
+    },
+    {
+      "folder": "006",
+      "role": "baseline",
+      "synth": "Soundboard",
+      "sha256": "df9ad6d5cf4b8d64fdeaea90b6f1075b2ef52c04043162141515daa2ec1a31d0",
+      "exactReplay": true
+    },
+    {
+      "folder": "007",
+      "role": "v5",
+      "synth": "Clonkr",
+      "sha256": "dacddb1443be52f87c8a7140d9814a5f0cab88e29b6df9b16f6acfb8260e2df6",
+      "exactReplay": true
+    },
+    {
+      "folder": "007",
+      "role": "v4",
+      "synth": "Soundboard",
+      "sha256": "ee6f1734067d480c744138331b55a583b863397742c2cf186301f93a172b6651",
+      "exactReplay": true
+    },
+    {
+      "folder": "007",
+      "role": "baseline",
+      "synth": "Jinglr",
+      "sha256": "4c19505746c54a3ccd819a97db9e8b076e8f429cc9b9c1ceec3d39f6f3abe715",
+      "exactReplay": true
+    },
+    {
+      "folder": "008",
+      "role": "v5",
+      "synth": "Rustlr",
+      "sha256": "26fa0757aa9db0fd4fc1787d49c691e4d6aa2533ccef201ed71a30976148911c",
+      "exactReplay": true
+    },
+    {
+      "folder": "008",
+      "role": "v4",
+      "synth": "Rustlr",
+      "sha256": "aacb7c22443bfb5ab56012f30e5af34e34d50a7bca16c2b88e8e57d809216ec4",
+      "exactReplay": true
+    },
+    {
+      "folder": "008",
+      "role": "baseline",
+      "synth": "Rustlr",
+      "sha256": "0490ea2c4ca8322783eff74cd7e08b78acc91f9e51602fd3c1c4c6313c9a2b65",
+      "exactReplay": true
+    },
+    {
+      "folder": "009",
+      "role": "v5",
+      "synth": "Soundboard",
+      "sha256": "0f1b22a4d81943fea815e685df25a85a9fa4e0d2800940e1bec4271dc3c7d1f8",
+      "exactReplay": true
+    },
+    {
+      "folder": "009",
+      "role": "baseline",
+      "synth": "Transfxr",
+      "sha256": "0baba01a144d906794d85e36d634639a5daa8dc1eaf58a0f97a2a6f7ba36ddb3",
+      "exactReplay": true
+    },
+    {
+      "folder": "010",
+      "role": "v5",
+      "synth": "Soundboard",
+      "sha256": "daad12f9ea82f9d5f4ad18a79f5ccf163452b09dd80182396510d2f7ba875276",
+      "exactReplay": true
+    },
+    {
+      "folder": "010",
+      "role": "v4",
+      "synth": "Soundboard",
+      "sha256": "89ccfe7758a8087f9da5f8d5773415dcd95083bd00a8f328eec246321f412ac5",
+      "exactReplay": true
+    },
+    {
+      "folder": "010",
+      "role": "baseline",
+      "synth": "Soundboard",
+      "sha256": "0f7415f0f344ea3409bd3edd9a08c6b92649635612e4ecde701595202de7e774",
+      "exactReplay": true
+    },
+    {
+      "folder": "011",
+      "role": "v5",
+      "synth": "Soundboard",
+      "sha256": "7a3bb17f088f5fe7a0e0af25860da2db84f3c4ed55a8827d85aa2fef31984472",
+      "exactReplay": true
+    },
+    {
+      "folder": "011",
+      "role": "v4",
+      "synth": "Soundboard",
+      "sha256": "96e6d67d5657ac887637134fd52584f35b7929e03f78407f1612ba8ac0dc0c91",
+      "exactReplay": true
+    },
+    {
+      "folder": "011",
+      "role": "baseline",
+      "synth": "Soundboard",
+      "sha256": "0249c910765a6332f78cd848878208a0c08f2cbf5285caf1ce63c31dab663f7c",
+      "exactReplay": true
+    },
+    {
+      "folder": "012",
+      "role": "v5",
+      "synth": "Soundboard",
+      "sha256": "be68138857a45503ce047d56b1e131ed2e392d0c04fcca35c355945198842298",
+      "exactReplay": true
+    },
+    {
+      "folder": "012",
+      "role": "v4",
+      "synth": "Soundboard",
+      "sha256": "2feee243f0d7b84ade9880b2ba3ca7bab84342b4371847b5ae45240ec3ea9e8b",
+      "exactReplay": true
+    },
+    {
+      "folder": "012",
+      "role": "baseline",
+      "synth": "Bfxr",
+      "sha256": "c89c35f934e18d9795ae5c2721f319bbe540724f1b24eed8e8d953f95ce11b5a",
+      "exactReplay": true
+    },
+    {
+      "folder": "013",
+      "role": "v5",
+      "synth": "Riftr",
+      "sha256": "d9f8c79089a4ac9de0109f6dcde07fd239774db572ac069ee883e733c23af012",
+      "exactReplay": true
+    },
+    {
+      "folder": "013",
+      "role": "v4",
+      "synth": "Riftr",
+      "sha256": "86788335e53cfe2f71151e3f6c758234c377f22ca4b672e4d12dee74111e9d4e",
+      "exactReplay": true
+    },
+    {
+      "folder": "013",
+      "role": "baseline",
+      "synth": "Signlr",
+      "sha256": "af05ab9e5272c3484ab3d06eddf2678422b1cafcfac93ab3965dc88adfd806b9",
+      "exactReplay": true
+    },
+    {
+      "folder": "014",
+      "role": "v5",
+      "synth": "Clonkr",
+      "sha256": "adcfd9a7c3bd11a1e0f688460923ad19d21c9c407414438f59525dd81211716d",
+      "exactReplay": true
+    },
+    {
+      "folder": "014",
+      "role": "v4",
+      "synth": "Soundboard",
+      "sha256": "a88f6bfb772db24197f48a77179b7843daedec39c94968cd9c0bbce5d4175c66",
+      "exactReplay": true
+    },
+    {
+      "folder": "014",
+      "role": "baseline",
+      "synth": "Soundboard",
+      "sha256": "82498f5cde5fda0c3a21bfe23bf58b7f98a72ade04a2e576f201a4a84de93ae2",
+      "exactReplay": true
+    },
+    {
+      "folder": "015",
+      "role": "v5",
+      "synth": "Soundboard",
+      "sha256": "e6a25badca117944e4f603c10fe3c6908cd8760c70a2b5fef23860dcd15a22ad",
+      "exactReplay": true
+    },
+    {
+      "folder": "015",
+      "role": "v4",
+      "synth": "Soundboard",
+      "sha256": "20c22824fab4996a0f9b387ad5bb28a375e71e442d3526df26b1c49c2848578e",
+      "exactReplay": true
+    },
+    {
+      "folder": "015",
+      "role": "baseline",
+      "synth": "Soundboard",
+      "sha256": "bc1d57654d76455ec61a30917f22fd041e1f248060a3aedddc28b9c85551e903",
+      "exactReplay": true
+    },
+    {
+      "folder": "016",
+      "role": "v5",
+      "synth": "Signlr",
+      "sha256": "60b2b12e16c4c73804542b408f40ae26e5adecc0cf9c6a33b235c76021ac5ea1",
+      "exactReplay": true
+    },
+    {
+      "folder": "016",
+      "role": "v4",
+      "synth": "Signlr",
+      "sha256": "498f396a4989328a2b01bd469ad502ae0771593e9b7871ceb98613812bd99e7f",
+      "exactReplay": true
+    },
+    {
+      "folder": "016",
+      "role": "baseline",
+      "synth": "Bfxr",
+      "sha256": "76ed2e5c372ee24855f233b91956e0835f619ca5755e53f3f8178251c30f5280",
+      "exactReplay": true
+    },
+    {
+      "folder": "017",
+      "role": "v5",
+      "synth": "Transfxr",
+      "sha256": "e1b4a5534f161977363812ec0d44b4f93a7fc4ae068f2430418427e11ebe6d48",
+      "exactReplay": true
+    },
+    {
+      "folder": "017",
+      "role": "v4",
+      "synth": "Soundboard",
+      "sha256": "684914364c84f304bf5f72a3128a0793aa3e47e60b2adffb4c5d7861d6298d73",
+      "exactReplay": true
+    },
+    {
+      "folder": "017",
+      "role": "baseline",
+      "synth": "Bfxr",
+      "sha256": "a291072bb26c6ebbfa84134d9d9840809e51e9a843611e11805ca19ee9ad8f76",
+      "exactReplay": true
+    },
+    {
+      "folder": "018",
+      "role": "v5",
+      "synth": "Riftr",
+      "sha256": "fe739dd7953c620590bdb258e8457d19abe502f0fc55eff1d3e0fb233047f4fb",
+      "exactReplay": true
+    },
+    {
+      "folder": "018",
+      "role": "v4",
+      "synth": "Riftr",
+      "sha256": "459fe26e573193b56b51d6b2077dc08a55db139158beb50e2cb9c17f9061c2d2",
+      "exactReplay": true
+    },
+    {
+      "folder": "018",
+      "role": "baseline",
+      "synth": "Riftr",
+      "sha256": "636fdda4357d7471d3f9611e31704a98e740afd46d87c167ead740e79230ceb7",
+      "exactReplay": true
+    }
+  ]
+}
