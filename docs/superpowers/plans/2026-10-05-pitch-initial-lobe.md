@@ -31,7 +31,7 @@ and their hashes. Do not change data distribution or architectures in this arm.
   Investigate initial-lobe exclusion as a single change, retain explicit version,
   configuration and code hashes. Test noise, boundary, short signals, motion,
   gain and unchanged columns. Spec then quality review; freeze before replay.
-- [ ] Create versioned pitch_v5_data.py and pitch_v5_temporal.py by controlled
+- [x] Create versioned pitch_v5_data.py and pitch_v5_temporal.py by controlled
   adaptation of reviewed v4 pipeline, retaining source data, rows, labels, splits,
   architecture/recipe/seed and all22 normalization. No monkeypatching. Tests
   must exercise strict replay/loading and compatibility rejection. Review/freeze.

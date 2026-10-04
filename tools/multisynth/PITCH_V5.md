@@ -48,3 +48,26 @@ Only request another short listening session after reviewing actual tagged outpu
 Retain the latest human winners, both separately heard charm2 anchors, exact
 historical PCM and the liked cached-WebAudio best/tie/none interface. A relative
 winner does not imply that a recreation is convincing.
+
+## Commands and execution
+
+Runtime: `/Users/stephenlavelle/Documents/bfxr2/tools/.venv/bin/python`, with
+`PYTHONPATH=tools OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MPLCONFIGDIR=/tmp/bfxr-mpl`.
+
+```sh
+python -m neural_invert.pitch_v5_data --source tools/multisynth/runs/temporal-v3/data --output tools/multisynth/runs/pitch-v5/data --jobs 8
+```
+
+The v5 data/training adaptation passed 40 fixture tests, including both directions
+of v4/v5 dataset, resume and checkpoint rejection. Independent spec review ran
+six focused compatibility tests; quality review confirmed the controlled version
+changes and unchanged frozen dependencies. Full replay is in progress. The v5
+training/listening audit scripts are prepared but have not yet run on production
+artifacts; no production v5 checkpoint or listening page is claimed complete.
+
+The three-arm evaluator and five-target gallery passed independent specification
+and quality reviews. The final focused suite passed 21 tests; 35 combined v4/v5
+evaluation/gallery tests also passed. Diagnostics retain full relative-time
+contours and missing voicing, with direction explicitly limited to the observed
+voiced span. Historical PCM and both charm2 anchors remain exact. These checks
+verify the experiment tooling, not the quality of a trained v5 model.
