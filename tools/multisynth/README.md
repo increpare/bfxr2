@@ -1,6 +1,14 @@
 # Multi-synth inverse model
 
-An offline **nonparametric inverse model**: render examples from the app's
+The current learned implementation lives in `../neural_invert/`: a shared
+whole-sound encoder and separate audio-to-control experts for 22 individual
+synths, trained on 45,056 actual DSP renders. It preserves the original Bfxr
+neural model and optimizer as an independent candidate. See
+[NEURAL_V1.md](NEURAL_V1.md) for training, reconstruction checks and the listening
+comparison. Mixr composition and arbitrary phrase transcription remain separate
+work; model capacity and parameter validation do not establish audible likeness.
+
+The earlier iterations below use an offline **nonparametric inverse model**: render examples from the app's
 preset distributions, encode their audio, retrieve plausible parameters for
 each synth, refine several synths independently, then automatically select the
 closest result. This is a working baseline for expanding reachable game SFX,

@@ -83,3 +83,14 @@ def test_audition_preserves_scored_onset_and_duration(tmp_path):
     assert rate==44100
     assert len(played)==len(wave)
     np.testing.assert_allclose(played,wave/max(np.max(np.abs(wave)),1e-9)*.5,atol=1/32768)
+
+
+def test_pitch_summary_serializes_numpy_errors_and_missing_candidates():
+    import json
+    from neural_invert.tonal import summarize_pitch
+    records=[{'candidates':{'selected':{'absolutePitchErrorSemitones':np.float64(.2)},'original':None}},
+             {'candidates':{'selected':{'absolutePitchErrorSemitones':None},'original':None}}]
+    result=json.loads(json.dumps(summarize_pitch(records),allow_nan=False))
+    assert result['selected']['withinOneSemitone']==1
+    assert result['selected']['unreliableOrMissing']==1
+    assert result['original']['medianAbsoluteSemitones'] is None

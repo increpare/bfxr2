@@ -40,14 +40,20 @@ budgets and renderer failures. Do not import the new gallery into training.
 
 ## Task 3 — Execute training and evaluation
 
-- [ ] Generate balanced data with DSP and feature provenance.
-- [ ] Train the model, save validation history and best checkpoint.
-- [ ] Run independent synthetic reconstruction checks and tonal pitch probes.
-- [ ] Produce a tagged listening batch with neural, original Bfxr and previous
+- [x] Generate balanced data with DSP and feature provenance.
+- [x] Train the model, save validation history and best checkpoint.
+- [x] Run independent synthetic reconstruction checks and tonal pitch probes.
+- [x] Produce a tagged listening batch with neural, original Bfxr and previous
       best audio, preserving independent ratings through export_coverage.
-- [ ] Review implementation for spec compliance and then correctness.
-- [ ] Verify result reproduction, gallery audio and JSON export.
-- [ ] Save reports, commands and limitations; commit verified code and reports.
+- [x] Review implementation for spec compliance and then correctness.
+- [x] Verify result reproduction, gallery audio and JSON export.
+- [x] Save reports, commands and limitations; commit verified code and reports.
+
+Execution: 45,056 synthetic examples, 50 MPS epochs (best epoch 12), 44 fresh
+synthetic targets, eight calibrated tonal probes and 12 tagged development
+references. See `tools/multisynth/NEURAL_V1.md` and versioned evaluation reports.
+This completes the first implementation/evaluation stage, not the overall
+human-likeness goal or Mixr composition.
 
 ## Task 4 — Continue toward composition
 

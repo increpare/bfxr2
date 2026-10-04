@@ -1,0 +1,23 @@
+{
+  "modelSha256": "8152b85d04767204d22d6f03a80f7feff60e1ac01d589105c0d5501bac9c14f9",
+  "dataManifestSha256": "a12d9252905e499ccdd01401a277a2f4d5a90a6de2fd39c626483d17c9d4c23f",
+  "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+  "counts": {
+    "neuralRenders": 227,
+    "originalBfxrRenders": 69,
+    "previousPcmCopies": 12,
+    "referenceCopies": 12,
+    "syntheticReferences": 44,
+    "tonalReferences": 8
+  },
+  "allAuditionPcmReplayedExactly": true,
+  "maximumScoreReplayDifference": 0.0,
+  "humanQualityClaim": false,
+  "verificationScriptSha256": "10ffa945540263969ae6da3350f1a6fba98d089b77ed044c96fdbceeec8b7b61",
+  "evaluationCodeSha256": {
+    "evaluate": "e1a43cb866d8410697193f76fc88ed47d927c040c0af202e59bae2b2554456fb",
+    "predict": "d9acc36a0d3fbf2ad095af6d0f7195a078c8cd8680ad8d798af91ab74c75f83d",
+    "experiment": "9ab6abd9e35bc55fffb1983e80bf174709434acfb737e1188cc49f9b02ef081c",
+    "tonal": "7dd141d914b6e4c1a6058f2fb30f2074827d11998bc1d581a4299f23c0a60e41"
+  }
+}

@@ -1,0 +1,628 @@
+{
+  "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+  "httpRequests": 122,
+  "allStatus200": true,
+  "browserIndependentRatingSmoke": {
+    "raw": 1,
+    "selected": 5,
+    "original": null,
+    "previous": null,
+    "testRatingsCleared": true
+  },
+  "temporaryFeedbackArchiveVerified": true,
+  "archiveIdempotenceVerified": true,
+  "uniqueCandidates": 46,
+  "testsPassed": 26,
+  "requests": [
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/index.html",
+      "status": 200,
+      "bytes": 249387
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/001/target.wav",
+      "status": 200,
+      "bytes": 64256
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/001/raw.wav",
+      "status": 200,
+      "bytes": 176782
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/001/selected.wav",
+      "status": 200,
+      "bytes": 66138
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/001/original.wav",
+      "status": 200,
+      "bytes": 70200
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/001/previous.wav",
+      "status": 200,
+      "bytes": 63054
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/002/target.wav",
+      "status": 200,
+      "bytes": 31458
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/002/raw.wav",
+      "status": 200,
+      "bytes": 21154
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/002/selected.wav",
+      "status": 200,
+      "bytes": 41376
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/002/original.wav",
+      "status": 200,
+      "bytes": 50312
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/002/previous.wav",
+      "status": 200,
+      "bytes": 43098
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/003/target.wav",
+      "status": 200,
+      "bytes": 20384
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/003/raw.wav",
+      "status": 200,
+      "bytes": 23340
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/003/selected.wav",
+      "status": 200,
+      "bytes": 20092
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/003/original.wav",
+      "status": 200,
+      "bytes": 20092
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/003/previous.wav",
+      "status": 200,
+      "bytes": 19870
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/004/target.wav",
+      "status": 200,
+      "bytes": 78812
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/004/raw.wav",
+      "status": 200,
+      "bytes": 132310
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/004/selected.wav",
+      "status": 200,
+      "bytes": 79510
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/004/original.wav",
+      "status": 200,
+      "bytes": 83428
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/004/previous.wav",
+      "status": 200,
+      "bytes": 81844
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/005/target.wav",
+      "status": 200,
+      "bytes": 185150
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/005/raw.wav",
+      "status": 200,
+      "bytes": 360770
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/005/selected.wav",
+      "status": 200,
+      "bytes": 322534
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/005/original.wav",
+      "status": 200,
+      "bytes": 1026
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/005/previous.wav",
+      "status": 200,
+      "bytes": 184380
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/006/target.wav",
+      "status": 200,
+      "bytes": 72212
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/006/raw.wav",
+      "status": 200,
+      "bytes": 122360
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/006/selected.wav",
+      "status": 200,
+      "bytes": 103750
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/006/original.wav",
+      "status": 200,
+      "bytes": 78962
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/006/previous.wav",
+      "status": 200,
+      "bytes": 72436
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/007/target.wav",
+      "status": 200,
+      "bytes": 23610
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/007/raw.wav",
+      "status": 200,
+      "bytes": 38100
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/007/selected.wav",
+      "status": 200,
+      "bytes": 44716
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/007/original.wav",
+      "status": 200,
+      "bytes": 22578
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/007/previous.wav",
+      "status": 200,
+      "bytes": 30318
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/008/target.wav",
+      "status": 200,
+      "bytes": 28362
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/008/raw.wav",
+      "status": 200,
+      "bytes": 25542
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/008/selected.wav",
+      "status": 200,
+      "bytes": 30658
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/008/original.wav",
+      "status": 200,
+      "bytes": 28058
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/008/previous.wav",
+      "status": 200,
+      "bytes": 22280
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/009/target.wav",
+      "status": 200,
+      "bytes": 20808
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/009/raw.wav",
+      "status": 200,
+      "bytes": 27346
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/009/selected.wav",
+      "status": 200,
+      "bytes": 20676
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/009/original.wav",
+      "status": 200,
+      "bytes": 21740
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/009/previous.wav",
+      "status": 200,
+      "bytes": 19588
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/010/target.wav",
+      "status": 200,
+      "bytes": 38196
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/010/raw.wav",
+      "status": 200,
+      "bytes": 69700
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/010/selected.wav",
+      "status": 200,
+      "bytes": 441044
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/010/original.wav",
+      "status": 200,
+      "bytes": 41606
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/010/previous.wav",
+      "status": 200,
+      "bytes": 39284
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/011/target.wav",
+      "status": 200,
+      "bytes": 58786
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/011/raw.wav",
+      "status": 200,
+      "bytes": 35440
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/011/selected.wav",
+      "status": 200,
+      "bytes": 165234
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/011/original.wav",
+      "status": 200,
+      "bytes": 39834
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/011/previous.wav",
+      "status": 200,
+      "bytes": 58520
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/012/target.wav",
+      "status": 200,
+      "bytes": 23376
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/012/raw.wav",
+      "status": 200,
+      "bytes": 35980
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/012/selected.wav",
+      "status": 200,
+      "bytes": 25036
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/012/original.wav",
+      "status": 200,
+      "bytes": 25036
+    },
+    {
+      "url": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v1-listening/012/previous.wav",
+      "status": 200,
+      "bytes": 29010
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/index.html",
+      "status": 200,
+      "bytes": 249387
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/001/target.wav",
+      "status": 200,
+      "bytes": 64256
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/001/raw.wav",
+      "status": 200,
+      "bytes": 176782
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/001/selected.wav",
+      "status": 200,
+      "bytes": 66138
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/001/original.wav",
+      "status": 200,
+      "bytes": 70200
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/001/previous.wav",
+      "status": 200,
+      "bytes": 63054
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/002/target.wav",
+      "status": 200,
+      "bytes": 31458
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/002/raw.wav",
+      "status": 200,
+      "bytes": 21154
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/002/selected.wav",
+      "status": 200,
+      "bytes": 41376
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/002/original.wav",
+      "status": 200,
+      "bytes": 50312
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/002/previous.wav",
+      "status": 200,
+      "bytes": 43098
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/003/target.wav",
+      "status": 200,
+      "bytes": 20384
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/003/raw.wav",
+      "status": 200,
+      "bytes": 23340
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/003/selected.wav",
+      "status": 200,
+      "bytes": 20092
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/003/original.wav",
+      "status": 200,
+      "bytes": 20092
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/003/previous.wav",
+      "status": 200,
+      "bytes": 19870
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/004/target.wav",
+      "status": 200,
+      "bytes": 78812
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/004/raw.wav",
+      "status": 200,
+      "bytes": 132310
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/004/selected.wav",
+      "status": 200,
+      "bytes": 79510
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/004/original.wav",
+      "status": 200,
+      "bytes": 83428
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/004/previous.wav",
+      "status": 200,
+      "bytes": 81844
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/005/target.wav",
+      "status": 200,
+      "bytes": 185150
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/005/raw.wav",
+      "status": 200,
+      "bytes": 360770
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/005/selected.wav",
+      "status": 200,
+      "bytes": 322534
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/005/original.wav",
+      "status": 200,
+      "bytes": 1026
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/005/previous.wav",
+      "status": 200,
+      "bytes": 184380
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/006/target.wav",
+      "status": 200,
+      "bytes": 72212
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/006/raw.wav",
+      "status": 200,
+      "bytes": 122360
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/006/selected.wav",
+      "status": 200,
+      "bytes": 103750
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/006/original.wav",
+      "status": 200,
+      "bytes": 78962
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/006/previous.wav",
+      "status": 200,
+      "bytes": 72436
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/007/target.wav",
+      "status": 200,
+      "bytes": 23610
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/007/raw.wav",
+      "status": 200,
+      "bytes": 38100
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/007/selected.wav",
+      "status": 200,
+      "bytes": 44716
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/007/original.wav",
+      "status": 200,
+      "bytes": 22578
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/007/previous.wav",
+      "status": 200,
+      "bytes": 30318
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/008/target.wav",
+      "status": 200,
+      "bytes": 28362
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/008/raw.wav",
+      "status": 200,
+      "bytes": 25542
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/008/selected.wav",
+      "status": 200,
+      "bytes": 30658
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/008/original.wav",
+      "status": 200,
+      "bytes": 28058
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/008/previous.wav",
+      "status": 200,
+      "bytes": 22280
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/009/target.wav",
+      "status": 200,
+      "bytes": 20808
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/009/raw.wav",
+      "status": 200,
+      "bytes": 27346
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/009/selected.wav",
+      "status": 200,
+      "bytes": 20676
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/009/original.wav",
+      "status": 200,
+      "bytes": 21740
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/009/previous.wav",
+      "status": 200,
+      "bytes": 19588
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/010/target.wav",
+      "status": 200,
+      "bytes": 38196
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/010/raw.wav",
+      "status": 200,
+      "bytes": 69700
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/010/selected.wav",
+      "status": 200,
+      "bytes": 441044
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/010/original.wav",
+      "status": 200,
+      "bytes": 41606
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/010/previous.wav",
+      "status": 200,
+      "bytes": 39284
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/011/target.wav",
+      "status": 200,
+      "bytes": 58786
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/011/raw.wav",
+      "status": 200,
+      "bytes": 35440
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/011/selected.wav",
+      "status": 200,
+      "bytes": 165234
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/011/original.wav",
+      "status": 200,
+      "bytes": 39834
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/011/previous.wav",
+      "status": 200,
+      "bytes": 58520
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/012/target.wav",
+      "status": 200,
+      "bytes": 23376
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/012/raw.wav",
+      "status": 200,
+      "bytes": 35980
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/012/selected.wav",
+      "status": 200,
+      "bytes": 25036
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/012/original.wav",
+      "status": 200,
+      "bytes": 25036
+    },
+    {
+      "url": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v1-listening/012/previous.wav",
+      "status": 200,
+      "bytes": 29010
+    }
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "metadata": {
+    "experiment": "neural-multisynth-v1",
+    "modelSha256": "8152b85d04767204d22d6f03a80f7feff60e1ac01d589105c0d5501bac9c14f9",
+    "targetCount": 12,
+    "bfxrCheckpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+    "targetManifestSha256": "c0b4cd97d863cd32cb21376c0abbbe8049b658d2a98aab6b31d8ebeef466b82d",
+    "trainedEngines": [
+      "Bfxr",
+      "Footsteppr",
+      "Transfxr",
+      "Birdr",
+      "Boomr",
+      "Bouncr",
+      "Breathr",
+      "Choirr",
+      "Clonkr",
+      "Crittr",
+      "Fractr",
+      "Glitchr",
+      "Jinglr",
+      "Machinr",
+      "Pluckr",
+      "Riftr",
+      "Rustlr",
+      "Signlr",
+      "Squishr",
+      "Swarmr",
+      "Whooshr",
+      "Zappr"
+    ],
+    "complete": true,
+    "galleryTitle": "Learned multisynth inversion \u00b7 first training run",
+    "galleryIntro": [
+      "These candidates come from trained audio-to-control experts for every listed instrument. The original Bfxr neural model and optimizer are restored as a separate baseline.",
+      "Raw neural prediction shows the best rendered prediction before refinement. Automatic expert choice compares refined learned predictions with Original Bfxr. Previous best is the exact audio from your earlier ratings.",
+      "Rate likeness independently from useful/fun. These are familiar tagged development references; this first trained model has not yet established a human quality improvement. Ratings save here and can be copied as JSON."
+    ],
+    "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+    "starts": 4,
+    "refinementBudgetPerStart": 128,
+    "originalBfxrBudget": 2000,
+    "scope": "Individual numeric engines; Jinglr editable phrase structure comes from predicted generator, not note transcription.",
+    "seconds": 205.97568762511946
+  },
+  "targets": 12,
+  "cards": 48,
+  "newDistinctCandidates": 22,
+  "selectedExpertCounts": {
+    "learned-refined": 10,
+    "original-bfxr": 2
+  },
+  "rows": [
+    {
+      "name": "attack/spinout.wav",
+      "rawSynth": "Bfxr",
+      "selectedSynth": "Whooshr",
+      "selectedExpert": "learned-refined",
+      "rawScore": 8.234804712916512,
+      "selectedScore": 4.029177549817409,
+      "originalScore": 5.1795242593374295,
+      "originalEvaluations": 3003,
+      "referencePitch": {
+        "activeFrames": 59,
+        "voicedFrames": 52,
+        "voicedFraction": 0.8813559412956238,
+        "medianHz": 1948.54638671875
+      },
+      "selectedPitch": {
+        "activeFrames": 61,
+        "voicedFrames": 0,
+        "voicedFraction": 0.0,
+        "medianHz": null
+      },
+      "previousLikeness": 2
+    },
+    {
+      "name": "bird/Bird Sounds.WAV",
+      "rawSynth": "Footsteppr",
+      "selectedSynth": "Crittr",
+      "selectedExpert": "learned-refined",
+      "rawScore": 6.625629216702729,
+      "selectedScore": 3.8819019416794545,
+      "originalScore": 4.554939808957736,
+      "originalEvaluations": 2015,
+      "referencePitch": {
+        "activeFrames": 27,
+        "voicedFrames": 26,
+        "voicedFraction": 0.9629629850387573,
+        "medianHz": 2476.68017578125
+      },
+      "selectedPitch": {
+        "activeFrames": 37,
+        "voicedFrames": 30,
+        "voicedFraction": 0.8108108043670654,
+        "medianHz": 2572.456298828125
+      },
+      "previousLikeness": 2
+    },
+    {
+      "name": "card/bookClose.ogg",
+      "rawSynth": "Footsteppr",
+      "selectedSynth": "Bfxr",
+      "selectedExpert": "original-bfxr",
+      "rawScore": 3.484733782629016,
+      "selectedScore": 2.0348159044631124,
+      "originalScore": 2.0348159044631124,
+      "originalEvaluations": 2015,
+      "referencePitch": {
+        "activeFrames": 16,
+        "voicedFrames": 2,
+        "voicedFraction": 0.125,
+        "medianHz": 4200.00048828125
+      },
+      "selectedPitch": {
+        "activeFrames": 16,
+        "voicedFrames": 0,
+        "voicedFraction": 0.0,
+        "medianHz": null
+      },
+      "previousLikeness": 3
+    },
+    {
+      "name": "computer/robo_talk.wav",
+      "rawSynth": "Breathr",
+      "selectedSynth": "Breathr",
+      "selectedExpert": "learned-refined",
+      "rawScore": 4.254798076649688,
+      "selectedScore": 2.373800050699986,
+      "originalScore": 2.8393680500537544,
+      "originalEvaluations": 3001,
+      "referencePitch": {
+        "activeFrames": 73,
+        "voicedFrames": 38,
+        "voicedFraction": 0.5205479264259338,
+        "medianHz": 142.1762237548828
+      },
+      "selectedPitch": {
+        "activeFrames": 74,
+        "voicedFrames": 0,
+        "voicedFraction": 0.0,
+        "medianHz": null
+      },
+      "previousLikeness": 1
+    },
+    {
+      "name": "die/charm2.wav",
+      "rawSynth": "Transfxr",
+      "selectedSynth": "Transfxr",
+      "selectedExpert": "learned-refined",
+      "rawScore": 4.947700155394848,
+      "selectedScore": 3.6642164371111887,
+      "originalScore": 5.7721337394601875,
+      "originalEvaluations": 3003,
+      "referencePitch": {
+        "activeFrames": 177,
+        "voicedFrames": 176,
+        "voicedFraction": 0.994350254535675,
+        "medianHz": 636.6155395507812
+      },
+      "selectedPitch": {
+        "activeFrames": 214,
+        "voicedFrames": 214,
+        "voicedFraction": 1.0,
+        "medianHz": 615.5746459960938
+      },
+      "previousLikeness": 1
+    },
+    {
+      "name": "explode/Bifun Jump.WAV",
+      "rawSynth": "Bouncr",
+      "selectedSynth": "Crittr",
+      "selectedExpert": "learned-refined",
+      "rawScore": 3.820389917223861,
+      "selectedScore": 1.9718126720951226,
+      "originalScore": 2.512673148656731,
+      "originalEvaluations": 3001,
+      "referencePitch": {
+        "activeFrames": 67,
+        "voicedFrames": 64,
+        "voicedFraction": 0.9552238583564758,
+        "medianHz": 164.93307495117188
+      },
+      "selectedPitch": {
+        "activeFrames": 81,
+        "voicedFrames": 81,
+        "voicedFraction": 1.0,
+        "medianHz": 163.2539520263672
+      },
+      "previousLikeness": 2
+    },
+    {
+      "name": "footstep/footstep03.ogg",
+      "rawSynth": "Transfxr",
+      "selectedSynth": "Transfxr",
+      "selectedExpert": "learned-refined",
+      "rawScore": 2.662538851693956,
+      "selectedScore": 1.7047140388862052,
+      "originalScore": 2.214087893592974,
+      "originalEvaluations": 2015,
+      "referencePitch": {
+        "activeFrames": 20,
+        "voicedFrames": 5,
+        "voicedFraction": 0.25,
+        "medianHz": 4200.00048828125
+      },
+      "selectedPitch": {
+        "activeFrames": 25,
+        "voicedFrames": 0,
+        "voicedFraction": 0.0,
+        "medianHz": null
+      },
+      "previousLikeness": 3
+    },
+    {
+      "name": "hit/PUNCH7.WAV",
+      "rawSynth": "Boomr",
+      "selectedSynth": "Boomr",
+      "selectedExpert": "learned-refined",
+      "rawScore": 2.426221750645308,
+      "selectedScore": 1.498854596372004,
+      "originalScore": 1.7669890940547346,
+      "originalEvaluations": 3003,
+      "referencePitch": {
+        "activeFrames": 24,
+        "voicedFrames": 6,
+        "voicedFraction": 0.25,
+        "medianHz": 147.83560180664062
+      },
+      "selectedPitch": {
+        "activeFrames": 26,
+        "voicedFrames": 0,
+        "voicedFraction": 0.0,
+        "medianHz": null
+      },
+      "previousLikeness": 2
+    },
+    {
+      "name": "laser/laserRetro_000.ogg",
+      "rawSynth": "Rustlr",
+      "selectedSynth": "Rustlr",
+      "selectedExpert": "learned-refined",
+      "rawScore": 5.053845808252093,
+      "selectedScore": 2.7534515175995296,
+      "originalScore": 3.9938818245861545,
+      "originalEvaluations": 2015,
+      "referencePitch": {
+        "activeFrames": 17,
+        "voicedFrames": 16,
+        "voicedFraction": 0.9411764740943909,
+        "medianHz": 566.9012451171875
+      },
+      "selectedPitch": {
+        "activeFrames": 17,
+        "voicedFrames": 0,
+        "voicedFraction": 0.0,
+        "medianHz": null
+      },
+      "previousLikeness": 3
+    },
+    {
+      "name": "motiv/UIMisc_Kalimba 3 Up_CB Sounddesign_APPlicable Sounds.wav",
+      "rawSynth": "Rustlr",
+      "selectedSynth": "Pluckr",
+      "selectedExpert": "learned-refined",
+      "rawScore": 5.757330951825032,
+      "selectedScore": 3.296831964135025,
+      "originalScore": 3.4237601635603636,
+      "originalEvaluations": 3003,
+      "referencePitch": {
+        "activeFrames": 34,
+        "voicedFrames": 33,
+        "voicedFraction": 0.970588207244873,
+        "medianHz": 351.1628723144531
+      },
+      "selectedPitch": {
+        "activeFrames": 48,
+        "voicedFrames": 46,
+        "voicedFraction": 0.9583333134651184,
+        "medianHz": 290.9158020019531
+      },
+      "previousLikeness": 2
+    },
+    {
+      "name": "select/savePoint.wav",
+      "rawSynth": "Clonkr",
+      "selectedSynth": "Birdr",
+      "selectedExpert": "learned-refined",
+      "rawScore": 8.711250134359206,
+      "selectedScore": 2.448564279612288,
+      "originalScore": 4.395318923688829,
+      "originalEvaluations": 2015,
+      "referencePitch": {
+        "activeFrames": 54,
+        "voicedFrames": 54,
+        "voicedFraction": 1.0,
+        "medianHz": 1978.86376953125
+      },
+      "selectedPitch": {
+        "activeFrames": 63,
+        "voicedFrames": 63,
+        "voicedFraction": 1.0,
+        "medianHz": 1938.322998046875
+      },
+      "previousLikeness": 1
+    },
+    {
+      "name": "sword/ma_sword3.wav",
+      "rawSynth": "Pluckr",
+      "selectedSynth": "Bfxr",
+      "selectedExpert": "original-bfxr",
+      "rawScore": 2.950325860627624,
+      "selectedScore": 1.2462466876759764,
+      "originalScore": 1.2462466876759764,
+      "originalEvaluations": 2015,
+      "referencePitch": {
+        "activeFrames": 19,
+        "voicedFrames": 3,
+        "voicedFraction": 0.15789473056793213,
+        "medianHz": 131.85736083984375
+      },
+      "selectedPitch": {
+        "activeFrames": 21,
+        "voicedFrames": 0,
+        "voicedFraction": 0.0,
+        "medianHz": null
+      },
+      "previousLikeness": 2
+    }
+  ]
+}

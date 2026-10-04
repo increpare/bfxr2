@@ -1,6 +1,7 @@
 """Controlled absolute-pitch checks, separate from human likeness judgments."""
 import argparse
 from copy import deepcopy
+from concurrent.futures import ProcessPoolExecutor
 import json
 from pathlib import Path
 
@@ -39,51 +40,71 @@ def probes(renderer):
     return cases
 
 
+def summarize_pitch(records):
+    summary={}
+    for role in records[0]['candidates']:
+        errors=[r['candidates'][role]['absolutePitchErrorSemitones'] if r['candidates'][role] else None for r in records]
+        valid=[e for e in errors if e is not None]
+        summary[role]={'withinOneSemitone':sum(int(e<=1) for e in valid),'total':len(errors),
+                       'unreliableOrMissing':len(errors)-len(valid),'medianAbsoluteSemitones':float(np.median(valid)) if valid else None}
+    return summary
+
+
+def evaluate_probe(item):
+    args,index,synth,hz,params=item
+    torch.set_num_threads(1)
+    model,metadata=load_model(args.model)
+    with Renderer() as renderer,BfxrRenderer(jobs=1) as bfxr:
+        original=OriginalBfxr(args.bfxr_checkpoint,bfxr)
+        canonical,wave=renderer.render(synth,params,91827+index)
+        target_pitch=pitch_summary(wave)
+        if target_pitch['medianHz'] is None or target_pitch['voicedFraction']<.6:
+            raise ValueError('Unreliable tonal probe '+synth+str(hz))
+        calibration=float(abs(12*np.log2(target_pitch['medianHz']/hz)))
+        if calibration>.5:raise ValueError('Tonal probe differs from claimed pitch')
+        result=approximate(model,metadata,wave,renderer,original,starts=4,budget=args.budget,
+                           bfxr_budget=args.bfxr_budget,seed=43270+index*71)
+        known=[r for r in result['allRaw'] if r['synth']==synth]
+        known=min(known,key=lambda r:r['score']) if known else None
+        roles={'knownRaw':known,'unrestrictedRaw':result['raw'],'neuralRefined':result['neural'],
+               'selected':result['selected'],'original':result['original']}
+        dest=args.output/f'{index+1:03d}';dest.mkdir()
+        sf.write(dest/'target.wav',normalize_peak(wave),44100,subtype='PCM_16')
+        record={'sourceSynth':synth,'expectedHz':hz,'targetPitch':target_pitch,
+            'calibrationSemitones':calibration,'sourceParams':canonical,'sourceSeed':91827+index,
+            'sourceHash':metadata['sourceHash'],'candidates':{}}
+        for role,c in roles.items():
+            if c is None:record['candidates'][role]=None;continue
+            pitch=pitch_summary(c['wave'])
+            error=float(abs(12*np.log2(pitch['medianHz']/target_pitch['medianHz']))) if pitch['medianHz'] and pitch['voicedFraction']>=.6 else None
+            record['candidates'][role]={**serializable(c),'pitch':pitch,'absolutePitchErrorSemitones':error}
+            sf.write(dest/(role+'.wav'),normalize_peak(c['wave']),44100,subtype='PCM_16')
+        # Keep each completed probe even if a later probe/report fails.
+        (dest/'report.json').write_text(json.dumps(record,indent=2,allow_nan=False)+'\n')
+        print(json.dumps({'synth':synth,'hz':hz,'pitchErrors':{
+            k:v['absolutePitchErrorSemitones'] if v else None for k,v in record['candidates'].items()}}),flush=True)
+        return record
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('model','bfxr-checkpoint','output'):
         parser.add_argument('--'+name,type=Path,required=True)
     parser.add_argument('--budget',type=int,default=128);parser.add_argument('--bfxr-budget',type=int,default=2000)
+    parser.add_argument('--jobs',type=int,default=1)
     args=parser.parse_args();torch.set_num_threads(1)
+    if min(args.jobs,args.budget,args.bfxr_budget)<1:parser.error('Jobs and budgets must be positive')
     if args.output.exists():raise ValueError('Use a fresh tonal output directory')
-    args.output.mkdir(parents=True);model,metadata=load_model(args.model);records=[]
-    with Renderer() as renderer,BfxrRenderer(jobs=2) as bfxr:
-        original=OriginalBfxr(args.bfxr_checkpoint,bfxr)
-        for index,(synth,hz,params) in enumerate(probes(renderer)):
-            canonical,wave=renderer.render(synth,params,91827+index)
-            target_pitch=pitch_summary(wave)
-            if target_pitch['medianHz'] is None or target_pitch['voicedFraction']<.6:
-                raise ValueError('Unreliable tonal probe '+synth+str(hz))
-            calibration=abs(12*np.log2(target_pitch['medianHz']/hz))
-            if calibration>.5:raise ValueError('Tonal probe differs from claimed pitch')
-            result=approximate(model,metadata,wave,renderer,original,starts=4,budget=args.budget,
-                               bfxr_budget=args.bfxr_budget,seed=43270+index*71)
-            known=[r for r in result['allRaw'] if r['synth']==synth]
-            known=min(known,key=lambda r:r['score']) if known else None
-            roles={'knownRaw':known,'unrestrictedRaw':result['raw'],'neuralRefined':result['neural'],
-                   'selected':result['selected'],'original':result['original']}
-            dest=args.output/f'{index+1:03d}';dest.mkdir()
-            sf.write(dest/'target.wav',normalize_peak(wave),44100,subtype='PCM_16')
-            record={'sourceSynth':synth,'expectedHz':hz,'targetPitch':target_pitch,
-                'calibrationSemitones':calibration,'sourceParams':canonical,'sourceSeed':91827+index,
-                'sourceHash':metadata['sourceHash'],'candidates':{}}
-            for role,c in roles.items():
-                if c is None:record['candidates'][role]=None;continue
-                pitch=pitch_summary(c['wave'])
-                error=abs(12*np.log2(pitch['medianHz']/target_pitch['medianHz'])) if pitch['medianHz'] and pitch['voicedFraction']>=.6 else None
-                record['candidates'][role]={**serializable(c),'pitch':pitch,'absolutePitchErrorSemitones':error}
-                sf.write(dest/(role+'.wav'),normalize_peak(c['wave']),44100,subtype='PCM_16')
-            records.append(record)
-            print(json.dumps({'synth':synth,'hz':hz,'pitchErrors':{
-                k:v['absolutePitchErrorSemitones'] if v else None for k,v in record['candidates'].items()}}),flush=True)
-    summary={}
-    for role in records[0]['candidates']:
-        errors=[r['candidates'][role]['absolutePitchErrorSemitones'] if r['candidates'][role] else None for r in records]
-        valid=[e for e in errors if e is not None]
-        summary[role]={'withinOneSemitone':sum(e<=1 for e in valid),'total':len(errors),
-                       'unreliableOrMissing':len(errors)-len(valid),'medianAbsoluteSemitones':float(np.median(valid)) if valid else None}
+    args.output.mkdir(parents=True);_,metadata=load_model(args.model)
+    with Renderer() as renderer:cases=probes(renderer)
+    items=[(args,index,synth,hz,params) for index,(synth,hz,params) in enumerate(cases)]
+    # CMA's global RNG is isolated between probes, as in the other evaluations.
+    with ProcessPoolExecutor(max_workers=args.jobs) as executor:
+        records=list(executor.map(evaluate_probe,items))
+    summary=summarize_pitch(records)
     report={'metadata':{'modelSha256':digest(args.model),'bfxrCheckpointSha256':digest(args.bfxr_checkpoint),
-        'sourceHash':metadata['sourceHash'],'scope':'Controlled stationary tones only; diagnostic pitch tracker, not human likeness.'},
+        'sourceHash':metadata['sourceHash'],'jobs':args.jobs,'complete':True,
+        'scope':'Controlled stationary tones only; diagnostic pitch tracker, not human likeness.'},
         'summary':summary,'results':records}
     (args.output/'results.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps(summary,indent=2))

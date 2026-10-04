@@ -1,0 +1,946 @@
+{
+  "scope": "Stationary tones are diagnostic absolute-pitch checks, not the full gesture reconstruction benchmark or human likeness evaluation. Read-only diagnosis of the frozen v1 checkpoint and dataset; no training or inference changes.",
+  "artifacts": {
+    "checkpointPath": "tools/multisynth/runs/neural-v1/model/best.pt",
+    "checkpointSha256": "8152b85d04767204d22d6f03a80f7feff60e1ac01d589105c0d5501bac9c14f9",
+    "dataManifestSha256": "a12d9252905e499ccdd01401a277a2f4d5a90a6de2fd39c626483d17c9d4c23f",
+    "bfxrNpZSha256": "6896c3bc8a0cb00ee2bf5cb5e4a3b4ccae6e2dd00d8bbb7f76ba76f5b4536776",
+    "bfxrMetadataSha256": "95c4af84fb5d8fba0a9dc29a5bb068f41cad38e17c46edd3020b27fa8e7a035a",
+    "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+    "featureHash": "fa36498127a6b820ef7b576f708ac0aaa8826b82d2df6acc726511a0a0fff3b1",
+    "featureCodeHash": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+    "probeDefinitionPath": "tools/neural_invert/tonal.py",
+    "probeDefinitionSha256": "6bf04061cebb93f3370754a17b0f7e34711c58db64960f6d5067dbceedaf4c67",
+    "probeFunctionSha256": "01257fdcf967b927a13a8a1e025c689e8c58dca64af45fb99c1549722322b788",
+    "probeDefinitionHashMeaning": "Complete tonal.py snapshot during diagnosis; JSON reporting and process orchestration were subsequently repaired. The probes function and all probe parameters are unchanged.",
+    "probeDefinitionRevision": "a223da3"
+  },
+  "training": {
+    "epochs": 50,
+    "bestEpoch": 12,
+    "bestValidationLoss": 0.7858078857348239,
+    "finalTrainLoss": 0.19181488264605157,
+    "finalValidationLoss": 0.8909177162682018
+  },
+  "bfxrCoverage": {
+    "examples": 2048,
+    "allWaveformCounts": {
+      "0": 546,
+      "1": 439,
+      "2": 80,
+      "3": 206,
+      "4": 58,
+      "5": 58,
+      "6": 49,
+      "7": 119,
+      "8": 48,
+      "9": 173,
+      "10": 181,
+      "11": 91
+    },
+    "stationaryCriterion": {
+      "allExactlyZero": [
+        "frequency_slide",
+        "frequency_acceleration",
+        "vibratoDepth",
+        "pitch_jump_amount",
+        "pitch_jump_2_amount",
+        "repeatSpeed"
+      ],
+      "meaning": "This checks selected saved pitch-motion controls, not whether every amplitude/filter/timbre control is static."
+    },
+    "stationaryExamples": 255,
+    "stationaryWaveformCounts": {
+      "0": 125,
+      "1": 41,
+      "2": 0,
+      "3": 9,
+      "4": 1,
+      "5": 2,
+      "6": 0,
+      "7": 35,
+      "8": 2,
+      "9": 3,
+      "10": 37,
+      "11": 0
+    },
+    "sineCountsByMode": {
+      "original": 36,
+      "sparse": 22,
+      "broad": 22
+    }
+  },
+  "bfxrValidation": {
+    "rows": 307,
+    "lossComponents": {
+      "numericUnitMSEWeighted": 0.30051323771476746,
+      "generatorCrossEntropyWeighted": 0.47857117652893066,
+      "waveformCrossEntropyWeighted": 0.9176627993583679
+    },
+    "generatorAccuracy": 0.6351791620254517,
+    "waveformAccuracy": 0.524429976940155,
+    "frequencyStartR2": 0.47348934412002563,
+    "frequencyStartR2WithTrueGenerator": 0.5597304701805115,
+    "perControlR2": {
+      "attackTime": 0.5666155219078064,
+      "sustainTime": 0.36404043436050415,
+      "sustainPunch": 0.09474146366119385,
+      "decayTime": 0.37709206342697144,
+      "compressionAmount": 0.15486150979995728,
+      "frequency_start": 0.47348934412002563,
+      "frequency_slide": 0.3148071765899658,
+      "frequency_acceleration": -0.030138850212097168,
+      "min_frequency_relative_to_starting_frequency": 0.2606346607208252,
+      "vibratoDepth": 0.10776180028915405,
+      "vibratoSpeed": 0.05831003189086914,
+      "pitch_jump_repeat_speed": 0.19198882579803467,
+      "pitch_jump_amount": -0.12972748279571533,
+      "pitch_jump_onset_percent": 0.2189275026321411,
+      "pitch_jump_2_amount": -0.060016512870788574,
+      "pitch_jump_onset2_percent": 0.18078476190567017,
+      "overtones": 0.14189785718917847,
+      "overtoneFalloff": 0.15581834316253662,
+      "squareDuty": 0.17708820104599,
+      "dutySweep": -0.0781106948852539,
+      "repeatSpeed": 0.27573347091674805,
+      "flangerOffset": -0.14319825172424316,
+      "flangerSweep": -0.11472070217132568,
+      "lpFilterCutoff": 0.06410866975784302,
+      "lpFilterCutoffSweep": 0.05588245391845703,
+      "lpFilterResonance": 0.25338226556777954,
+      "hpFilterCutoff": 0.14559590816497803,
+      "hpFilterCutoffSweep": -0.13484930992126465,
+      "bitCrush": 0.13295531272888184,
+      "bitCrushSweep": -0.025608539581298828
+    }
+  },
+  "probes": [
+    {
+      "synth": "Bfxr",
+      "expectedHz": 220,
+      "sourceSeed": 91827,
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 2,
+        "attackTime": 0.03,
+        "sustainTime": 0.35,
+        "sustainPunch": 0,
+        "decayTime": 0.15,
+        "compressionAmount": 0,
+        "frequency_start": 0.24770602867914,
+        "frequency_slide": 0,
+        "frequency_acceleration": 0,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0,
+        "vibratoSpeed": 0,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0,
+        "pitch_jump_onset_percent": 0,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0,
+        "overtones": 0,
+        "overtoneFalloff": 0,
+        "squareDuty": 0,
+        "dutySweep": 0,
+        "repeatSpeed": 0,
+        "flangerOffset": 0,
+        "flangerSweep": 0,
+        "lpFilterCutoff": 1,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0,
+        "hpFilterCutoff": 0,
+        "hpFilterCutoffSweep": 0,
+        "bitCrush": 0,
+        "bitCrushSweep": 0
+      },
+      "measuredTargetPitch": {
+        "activeFrames": 25,
+        "voicedFrames": 25,
+        "voicedFraction": 1.0,
+        "medianHz": 220.29388427734375
+      },
+      "descriptor": {
+        "relativeMedianPitchHz": 220.5,
+        "relativeMedianVoicing": 0.9843345284461975,
+        "normalizedRMS": 1.0047374963760376
+      },
+      "topGeneratorPredictions": [
+        {
+          "generator": "generate_blip_select",
+          "probability": 0.8692529201507568,
+          "pitchControls": {
+            "frequency_start": {
+              "trueUnit": 0.24770602583885193,
+              "predictedUnit": 0.3339739143848419
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 16,
+            "voicedFrames": 16,
+            "voicedFraction": 1.0,
+            "medianHz": 375.8639221191406
+          },
+          "savedPitchMotionControls": {
+            "frequency_slide": 0.03948259353637695,
+            "frequency_acceleration": 0.11710810661315918,
+            "vibratoDepth": 0.09204421937465668,
+            "pitch_jump_amount": 0.01858985424041748,
+            "pitch_jump_2_amount": -0.09831464290618896,
+            "repeatSpeed": 0.06299331784248352
+          },
+          "predictedDiscreteVoice": {
+            "waveType": 7
+          }
+        },
+        {
+          "generator": "generate_laser_shoot",
+          "probability": 0.0421304926276207,
+          "pitchControls": {
+            "frequency_start": {
+              "trueUnit": 0.24770602583885193,
+              "predictedUnit": 0.43431201577186584
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 24,
+            "voicedFrames": 24,
+            "voicedFraction": 1.0,
+            "medianHz": 502.5464172363281
+          },
+          "savedPitchMotionControls": {
+            "frequency_slide": -0.11651328206062317,
+            "frequency_acceleration": 0.06045341491699219,
+            "vibratoDepth": 0.07144273072481155,
+            "pitch_jump_amount": 0.010914087295532227,
+            "pitch_jump_2_amount": -0.12783223390579224,
+            "repeatSpeed": 0.07147474586963654
+          },
+          "predictedDiscreteVoice": {
+            "waveType": 2
+          }
+        }
+      ],
+      "allGeneratorConditions": [
+        {
+          "generator": "generate_pickup_coin",
+          "predictedFrequencyStart": 0.391956090927124,
+          "predictedWaveType": 7
+        },
+        {
+          "generator": "generate_laser_shoot",
+          "predictedFrequencyStart": 0.43431201577186584,
+          "predictedWaveType": 2
+        },
+        {
+          "generator": "generate_explosion",
+          "predictedFrequencyStart": 0.20400306582450867,
+          "predictedWaveType": 7
+        },
+        {
+          "generator": "generate_powerup",
+          "predictedFrequencyStart": 0.28583529591560364,
+          "predictedWaveType": 7
+        },
+        {
+          "generator": "generate_hit_hurt",
+          "predictedFrequencyStart": 0.3514515161514282,
+          "predictedWaveType": 7
+        },
+        {
+          "generator": "generate_jump",
+          "predictedFrequencyStart": 0.33017295598983765,
+          "predictedWaveType": 7
+        },
+        {
+          "generator": "generate_blip_select",
+          "predictedFrequencyStart": 0.3339739143848419,
+          "predictedWaveType": 7
+        },
+        {
+          "generator": "randomize_params",
+          "predictedFrequencyStart": 0.24228829145431519,
+          "predictedWaveType": 7
+        }
+      ]
+    },
+    {
+      "synth": "Transfxr",
+      "expectedHz": 220,
+      "sourceSeed": 91828,
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 0.65,
+        "pitch": {
+          "start": 0.3513473740910425,
+          "end": 0.3513473740910425,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 1,
+          "end": 1,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "level": {
+          "start": 0.7,
+          "end": 0.7,
+          "curve": "Linear"
+        },
+        "attack": 0.015,
+        "release": 0.15,
+        "resonance": 0,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "measuredTargetPitch": {
+        "activeFrames": 52,
+        "voicedFrames": 52,
+        "voicedFraction": 1.0,
+        "medianHz": 220.00108337402344
+      },
+      "descriptor": {
+        "relativeMedianPitchHz": 220.5,
+        "relativeMedianVoicing": 0.9842870235443115,
+        "normalizedRMS": 0.9459076523780823
+      },
+      "topGeneratorPredictions": [
+        {
+          "generator": "generate_family_sand_sprays",
+          "probability": 0.2393486648797989,
+          "pitchControls": {
+            "pitch.start": {
+              "trueUnit": 0.3513473868370056,
+              "predictedUnit": 0.30304959416389465
+            },
+            "pitch.end": {
+              "trueUnit": 0.3513473868370056,
+              "predictedUnit": 0.18677955865859985
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 104,
+            "voicedFrames": 99,
+            "voicedFraction": 0.9519230723381042,
+            "medianHz": 124.33551025390625
+          },
+          "savedPitchMotionControls": {},
+          "predictedDiscreteVoice": {
+            "waveType": 0,
+            "waveTo": 4
+          }
+        },
+        {
+          "generator": "generate_morph",
+          "probability": 0.1525246948003769,
+          "pitchControls": {
+            "pitch.start": {
+              "trueUnit": 0.3513473868370056,
+              "predictedUnit": 0.3825950026512146
+            },
+            "pitch.end": {
+              "trueUnit": 0.3513473868370056,
+              "predictedUnit": 0.30867689847946167
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 117,
+            "voicedFrames": 117,
+            "voicedFraction": 1.0,
+            "medianHz": 207.11329650878906
+          },
+          "savedPitchMotionControls": {},
+          "predictedDiscreteVoice": {
+            "waveType": 0,
+            "waveTo": -1
+          }
+        }
+      ]
+    },
+    {
+      "synth": "Bfxr",
+      "expectedHz": 440,
+      "sourceSeed": 91829,
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 2,
+        "attackTime": 0.03,
+        "sustainTime": 0.35,
+        "sustainPunch": 0,
+        "decayTime": 0.15,
+        "compressionAmount": 0,
+        "frequency_start": 0.35173363968773563,
+        "frequency_slide": 0,
+        "frequency_acceleration": 0,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0,
+        "vibratoSpeed": 0,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0,
+        "pitch_jump_onset_percent": 0,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0,
+        "overtones": 0,
+        "overtoneFalloff": 0,
+        "squareDuty": 0,
+        "dutySweep": 0,
+        "repeatSpeed": 0,
+        "flangerOffset": 0,
+        "flangerSweep": 0,
+        "lpFilterCutoff": 1,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0,
+        "hpFilterCutoff": 0,
+        "hpFilterCutoffSweep": 0,
+        "bitCrush": 0,
+        "bitCrushSweep": 0
+      },
+      "measuredTargetPitch": {
+        "activeFrames": 25,
+        "voicedFrames": 25,
+        "voicedFraction": 1.0,
+        "medianHz": 440.7248229980469
+      },
+      "descriptor": {
+        "relativeMedianPitchHz": 441.0,
+        "relativeMedianVoicing": 0.9960474967956543,
+        "normalizedRMS": 1.0306448936462402
+      },
+      "topGeneratorPredictions": [
+        {
+          "generator": "generate_blip_select",
+          "probability": 0.5728400349617004,
+          "pitchControls": {
+            "frequency_start": {
+              "trueUnit": 0.35173362493515015,
+              "predictedUnit": 0.4048287570476532
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 11,
+            "voicedFrames": 11,
+            "voicedFraction": 1.0,
+            "medianHz": 500.70806884765625
+          },
+          "savedPitchMotionControls": {
+            "frequency_slide": 0.12838435173034668,
+            "frequency_acceleration": -0.043022871017456055,
+            "vibratoDepth": 0.04537387192249298,
+            "pitch_jump_amount": 0.0373082160949707,
+            "pitch_jump_2_amount": -0.1565486192703247,
+            "repeatSpeed": 0.042589638382196426
+          },
+          "predictedDiscreteVoice": {
+            "waveType": 7
+          }
+        },
+        {
+          "generator": "randomize_params",
+          "probability": 0.13001209497451782,
+          "pitchControls": {
+            "frequency_start": {
+              "trueUnit": 0.35173362493515015,
+              "predictedUnit": 0.3268987238407135
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 29,
+            "voicedFrames": 29,
+            "voicedFraction": 1.0,
+            "medianHz": 387.1826171875
+          },
+          "savedPitchMotionControls": {
+            "frequency_slide": 0.18154674768447876,
+            "frequency_acceleration": 0.027965545654296875,
+            "vibratoDepth": 0.09072227030992508,
+            "pitch_jump_amount": 0.06720781326293945,
+            "pitch_jump_2_amount": -0.2546353340148926,
+            "repeatSpeed": 0.07578637450933456
+          },
+          "predictedDiscreteVoice": {
+            "waveType": 7
+          }
+        }
+      ]
+    },
+    {
+      "synth": "Transfxr",
+      "expectedHz": 440,
+      "sourceSeed": 91830,
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 0.65,
+        "pitch": {
+          "start": 0.49420451694818535,
+          "end": 0.49420451694818535,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 1,
+          "end": 1,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "level": {
+          "start": 0.7,
+          "end": 0.7,
+          "curve": "Linear"
+        },
+        "attack": 0.015,
+        "release": 0.15,
+        "resonance": 0,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "measuredTargetPitch": {
+        "activeFrames": 52,
+        "voicedFrames": 52,
+        "voicedFraction": 1.0,
+        "medianHz": 440.0005798339844
+      },
+      "descriptor": {
+        "relativeMedianPitchHz": 441.0,
+        "relativeMedianVoicing": 0.9959611296653748,
+        "normalizedRMS": 1.015594244003296
+      },
+      "topGeneratorPredictions": [
+        {
+          "generator": "generate_family_soft_pips",
+          "probability": 0.6742171049118042,
+          "pitchControls": {
+            "pitch.start": {
+              "trueUnit": 0.4942045211791992,
+              "predictedUnit": 0.3863154351711273
+            },
+            "pitch.end": {
+              "trueUnit": 0.4942045211791992,
+              "predictedUnit": 0.5208969712257385
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 90,
+            "voicedFrames": 90,
+            "voicedFraction": 1.0,
+            "medianHz": 452.8984680175781
+          },
+          "savedPitchMotionControls": {},
+          "predictedDiscreteVoice": {
+            "waveType": 0,
+            "waveTo": -1
+          }
+        },
+        {
+          "generator": "generate_family_wavering_calls",
+          "probability": 0.22385244071483612,
+          "pitchControls": {
+            "pitch.start": {
+              "trueUnit": 0.4942045211791992,
+              "predictedUnit": 0.41335147619247437
+            },
+            "pitch.end": {
+              "trueUnit": 0.4942045211791992,
+              "predictedUnit": 0.5494980812072754
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 103,
+            "voicedFrames": 103,
+            "voicedFraction": 1.0,
+            "medianHz": 442.1526184082031
+          },
+          "savedPitchMotionControls": {},
+          "predictedDiscreteVoice": {
+            "waveType": 1,
+            "waveTo": -1
+          }
+        }
+      ]
+    },
+    {
+      "synth": "Bfxr",
+      "expectedHz": 880,
+      "sourceSeed": 91831,
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 2,
+        "attackTime": 0.03,
+        "sustainTime": 0.35,
+        "sustainPunch": 0,
+        "decayTime": 0.15,
+        "compressionAmount": 0,
+        "frequency_start": 0.49843064369675716,
+        "frequency_slide": 0,
+        "frequency_acceleration": 0,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0,
+        "vibratoSpeed": 0,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0,
+        "pitch_jump_onset_percent": 0,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0,
+        "overtones": 0,
+        "overtoneFalloff": 0,
+        "squareDuty": 0,
+        "dutySweep": 0,
+        "repeatSpeed": 0,
+        "flangerOffset": 0,
+        "flangerSweep": 0,
+        "lpFilterCutoff": 1,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0,
+        "hpFilterCutoff": 0,
+        "hpFilterCutoffSweep": 0,
+        "bitCrush": 0,
+        "bitCrushSweep": 0
+      },
+      "measuredTargetPitch": {
+        "activeFrames": 25,
+        "voicedFrames": 25,
+        "voicedFraction": 1.0,
+        "medianHz": 881.9998168945312
+      },
+      "descriptor": {
+        "relativeMedianPitchHz": 918.7498168945312,
+        "relativeMedianVoicing": 0.9677062630653381,
+        "normalizedRMS": 1.060725212097168
+      },
+      "topGeneratorPredictions": [
+        {
+          "generator": "generate_blip_select",
+          "probability": 0.40249913930892944,
+          "pitchControls": {
+            "frequency_start": {
+              "trueUnit": 0.49843063950538635,
+              "predictedUnit": 0.4487510919570923
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 9,
+            "voicedFrames": 9,
+            "voicedFraction": 1.0,
+            "medianHz": 409.2221984863281
+          },
+          "savedPitchMotionControls": {
+            "frequency_slide": 0.04433393478393555,
+            "frequency_acceleration": 0.05344593524932861,
+            "vibratoDepth": 0.07316512614488602,
+            "pitch_jump_amount": 0.031955599784851074,
+            "pitch_jump_2_amount": -0.2719990611076355,
+            "repeatSpeed": 0.07164733111858368
+          },
+          "predictedDiscreteVoice": {
+            "waveType": 7
+          }
+        },
+        {
+          "generator": "generate_laser_shoot",
+          "probability": 0.33397766947746277,
+          "pitchControls": {
+            "frequency_start": {
+              "trueUnit": 0.49843063950538635,
+              "predictedUnit": 0.5619648694992065
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 13,
+            "voicedFrames": 13,
+            "voicedFraction": 1.0,
+            "medianHz": 611.3705444335938
+          },
+          "savedPitchMotionControls": {
+            "frequency_slide": -0.10737583041191101,
+            "frequency_acceleration": -0.023057103157043457,
+            "vibratoDepth": 0.05449990928173065,
+            "pitch_jump_amount": 0.011857390403747559,
+            "pitch_jump_2_amount": -0.27232545614242554,
+            "repeatSpeed": 0.07034304738044739
+          },
+          "predictedDiscreteVoice": {
+            "waveType": 2
+          }
+        }
+      ]
+    },
+    {
+      "synth": "Transfxr",
+      "expectedHz": 880,
+      "sourceSeed": 91832,
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 0.65,
+        "pitch": {
+          "start": 0.6370616598053281,
+          "end": 0.6370616598053281,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 1,
+          "end": 1,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "level": {
+          "start": 0.7,
+          "end": 0.7,
+          "curve": "Linear"
+        },
+        "attack": 0.015,
+        "release": 0.15,
+        "resonance": 0,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "measuredTargetPitch": {
+        "activeFrames": 52,
+        "voicedFrames": 52,
+        "voicedFraction": 1.0,
+        "medianHz": 880.00634765625
+      },
+      "descriptor": {
+        "relativeMedianPitchHz": 848.0768432617188,
+        "relativeMedianVoicing": 0.9669661521911621,
+        "normalizedRMS": 1.0669041872024536
+      },
+      "topGeneratorPredictions": [
+        {
+          "generator": "generate_family_bubble_swells",
+          "probability": 0.39199939370155334,
+          "pitchControls": {
+            "pitch.start": {
+              "trueUnit": 0.6370616555213928,
+              "predictedUnit": 0.5616346001625061
+            },
+            "pitch.end": {
+              "trueUnit": 0.6370616555213928,
+              "predictedUnit": 0.5672814249992371
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 60,
+            "voicedFrames": 60,
+            "voicedFraction": 1.0,
+            "medianHz": 620.4573974609375
+          },
+          "savedPitchMotionControls": {},
+          "predictedDiscreteVoice": {
+            "waveType": 0,
+            "waveTo": -1
+          }
+        },
+        {
+          "generator": "generate_family_soft_pips",
+          "probability": 0.2521025836467743,
+          "pitchControls": {
+            "pitch.start": {
+              "trueUnit": 0.6370616555213928,
+              "predictedUnit": 0.6353833675384521
+            },
+            "pitch.end": {
+              "trueUnit": 0.6370616555213928,
+              "predictedUnit": 0.5102133750915527
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 72,
+            "voicedFrames": 72,
+            "voicedFraction": 1.0,
+            "medianHz": 525.65673828125
+          },
+          "savedPitchMotionControls": {},
+          "predictedDiscreteVoice": {
+            "waveType": 0,
+            "waveTo": -1
+          }
+        }
+      ]
+    },
+    {
+      "synth": "Pluckr",
+      "expectedHz": 220,
+      "sourceSeed": 91833,
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "material": 0,
+        "duration": 0.8,
+        "pitch": 0.5,
+        "strings": 1,
+        "damping": 0.25,
+        "brightness": 0.6,
+        "pluck": 0.3,
+        "coupling": 0,
+        "strum": 0,
+        "tremolo": 0,
+        "vibrato": 0,
+        "tremoloRate": 4,
+        "inharmonic": 0
+      },
+      "measuredTargetPitch": {
+        "activeFrames": 65,
+        "voicedFrames": 65,
+        "voicedFraction": 1.0,
+        "medianHz": 219.44131469726562
+      },
+      "descriptor": {
+        "relativeMedianPitchHz": 220.5,
+        "relativeMedianVoicing": 0.983325719833374,
+        "normalizedRMS": 0.807790219783783
+      },
+      "topGeneratorPredictions": [
+        {
+          "generator": "generate_kalimba",
+          "probability": 0.8324559926986694,
+          "pitchControls": {
+            "pitch": {
+              "trueUnit": 0.5,
+              "predictedUnit": 0.5133901238441467
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 72,
+            "voicedFrames": 72,
+            "voicedFraction": 1.0,
+            "medianHz": 227.5835723876953
+          },
+          "savedPitchMotionControls": {},
+          "predictedDiscreteVoice": {}
+        },
+        {
+          "generator": "generate_metal_string",
+          "probability": 0.06989865005016327,
+          "pitchControls": {
+            "pitch": {
+              "trueUnit": 0.5,
+              "predictedUnit": 0.5020148754119873
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 95,
+            "voicedFrames": 95,
+            "voicedFraction": 1.0,
+            "medianHz": 110.06636810302734
+          },
+          "savedPitchMotionControls": {},
+          "predictedDiscreteVoice": {}
+        }
+      ]
+    },
+    {
+      "synth": "Pluckr",
+      "expectedHz": 440,
+      "sourceSeed": 91834,
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "material": 0,
+        "duration": 0.8,
+        "pitch": 0.75,
+        "strings": 1,
+        "damping": 0.25,
+        "brightness": 0.6,
+        "pluck": 0.3,
+        "coupling": 0,
+        "strum": 0,
+        "tremolo": 0,
+        "vibrato": 0,
+        "tremoloRate": 4,
+        "inharmonic": 0
+      },
+      "measuredTargetPitch": {
+        "activeFrames": 65,
+        "voicedFrames": 65,
+        "voicedFraction": 1.0,
+        "medianHz": 437.7585754394531
+      },
+      "descriptor": {
+        "relativeMedianPitchHz": 441.0,
+        "relativeMedianVoicing": 0.9945366382598877,
+        "normalizedRMS": 0.9656782746315002
+      },
+      "topGeneratorPredictions": [
+        {
+          "generator": "generate_kalimba",
+          "probability": 0.9651094675064087,
+          "pitchControls": {
+            "pitch": {
+              "trueUnit": 0.75,
+              "predictedUnit": 0.8449456095695496
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 77,
+            "voicedFrames": 77,
+            "voicedFraction": 1.0,
+            "medianHz": 570.7067260742188
+          },
+          "savedPitchMotionControls": {},
+          "predictedDiscreteVoice": {}
+        },
+        {
+          "generator": "randomize_params",
+          "probability": 0.017790481448173523,
+          "pitchControls": {
+            "pitch": {
+              "trueUnit": 0.75,
+              "predictedUnit": 0.8446934819221497
+            }
+          },
+          "renderedPitch": {
+            "activeFrames": 88,
+            "voicedFrames": 88,
+            "voicedFraction": 1.0,
+            "medianHz": 569.3761596679688
+          },
+          "savedPitchMotionControls": {},
+          "predictedDiscreteVoice": {}
+        }
+      ]
+    }
+  ],
+  "findings": [
+    "The 220 Hz Bfxr input descriptor measures approximately 220.5 Hz; feature normalization produces ordinary magnitudes. Its large raw-head pitch error is not explained by losing the target fundamental or a gross normalization mismatch.",
+    "The Bfxr dataset contains no stationary sine examples under the explicit pitch-motion criterion, despite 255 examples passing that criterion overall. The sine category has only 80 of 2048 examples. Engine/generator balancing does not imply acoustic category or control-interaction balancing.",
+    "The Bfxr validation objective is dominated by classification; generator and waveform classification contribute about 82 percent of weighted loss. Thirty continuous sliders share the remaining unweighted MSE, including controls that may be acoustically inactive.",
+    "Generator-conditioned predictions for the same 220 Hz audio vary substantially. Generator ancestry is a weak or ambiguous acoustic label after global mutation and can impose inappropriate control/category priors.",
+    "More epochs already overfit the existing distribution: best validation is epoch 12, while the epoch 50 training loss is lower and validation loss is higher.",
+    "The pitch descriptor uses integer autocorrelation lags without window-autocorrelation correction or sub-sample interpolation. Around 880 Hz it can introduce roughly 0.6\u20130.75 semitone error; this merits a later independently validated feature revision but cannot explain the 220 Hz raw-head error."
+  ],
+  "recommendedNextLearnedExperiment": {
+    "priority": "Add independent structured synthetic coverage and improve the supervised acoustic loss before extending training epochs.",
+    "data": "Add a broad log-uniform pitch curriculum across actual waveform/voice categories, with stationary tones, sparse pitch ramps/jumps, varied durations/envelopes and near-zero-motion examples. Preserve the original generator/global draws. Reserve fresh pitches, control combinations and render seeds for evaluation; do not derive labels or controls from user-rated target audio.",
+    "loss": "Mask acoustically inactive controls and measure per-engine control observability with the actual renderer. Weight audible pitch/temporal controls accordingly; use log-frequency error for controls whose DSP mapping is known, so octave errors are represented directly rather than diluted among linear slider errors.",
+    "conditioning": "Ablate hard generator conditioning for numeric/category heads against conditioning on physically meaningful discrete voice/waveform choices; keep generator identity recorded and evaluate generator classification separately.",
+    "precedent": "The existing invert.dataset stratifies waveform types in its random slice and includes a 25 percent structured tonal slice. Existing invert.train masks square-only Bfxr controls, while invert.constants contains actual-renderer sensitivity weights.",
+    "comparison": "Compare structured-data-only and loss-only ablations against the frozen v1 checkpoint, using the same fresh held-out reconstruction and tonal protocols. No inference-time pitch correction should be presented as a learned gain."
+  }
+}
