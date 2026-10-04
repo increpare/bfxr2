@@ -26,6 +26,14 @@ parameter loss, not a differentiable audio renderer or perceptual audio loss.
 Shared encoder size and feature extraction remain unchanged. Old v1 checkpoints
 load with their original architecture.
 
+The older original Bfxr checkpoint is a different, more developed pipeline:
+a temporal convolutional encoder, synthetic knob training with forward-surrogate
+feature loss, then five epochs of unlabeled real-audio spectral finetuning. Its
+retained `v7_real_ft/run.sh` and checkpoint metadata bind that last stage. V2
+does not yet replicate this complete training loop across synths. The measured
+raw pitch improvement is a starting-point repair, not a replacement claim for
+that Bfxr pipeline; the original checkpoint stays in the candidate pool.
+
 Both checkpoints bind the immutable training manifest `2701d790…` in
 `runs/neural-v2/data`. A later provenance-certified derivative
 `runs/neural-v2/data-certified-v2` binds Python/worker dependencies and contains
@@ -56,6 +64,31 @@ vectors from both training datasets, shares one original-Bfxr search per target,
 and preserves every actual source, raw and refined candidate. FLOAT WAVs and
 control replays bind its diagnostic scores to exact rendered samples.
 
+The [completed paired benchmark](evaluations/neural-v2-paired-summary.json)
+rendered 39 fresh references and all three arms in 3,904 seconds, with no failed
+predictions and no missing engine coverage. Its unchanged MatchObjective selector
+chooses between refined neural experts and the shared original Bfxr baseline:
+
+| Model | Mean distance, 22 native cases | Mean distance, 9 tones | Mean distance, 8 gestures | Mean gesture contour error |
+| --- | ---: | ---: | ---: | ---: |
+| Frozen v1 | 2.103 | 0.638 | 0.929 | 0.86 semitones |
+| Structured data only | 2.124 | 0.496 | 1.266 | 1.26 semitones |
+| Acoustic v2 | 2.030 | 0.461 | 0.585 | 0.44 semitones |
+
+V2's selected result has lower distance on 25/39 cases, ties two and is worse on
+12. Within the 22 native cases that is 13 lower, one tie and eight regressions.
+Every model reaches within one semitone on all nine final static results after
+search: the raw-head pitch result above is a predictor improvement, not a newly
+solved final static-pitch test. V1 and v2 preserve measured movement direction
+on 7/8 cases each; all eight final contours are reliable. Known-source raw
+gesture contour error falls from 7.03 to 1.54 semitones.
+
+These distances are not perceptual ratings. One native example per synth is
+limited coverage, and this benchmark does not validate the experimental
+human-preference/pitch selector used by the listening delivery. Original Bfxr
+uses its separate 2,000-requested-evaluation search; its actual counts are
+recorded and may be larger. All three neural arms use identical budgets/seeds.
+
 ## Human feedback and selection
 
 All five retained archives contribute 110 strict preferences across 45 exact
@@ -77,6 +110,12 @@ different register in the initial development preview. These choices are
 experimental and are recorded in the complete pool ranking. The policy
 was motivated by a development failure and needs listening
 validation; the refit's held-out numbers do not validate this added safeguard.
+
+The frozen source rows retain their original `previouslyRatedReference` and
+`normalizedPcmSha256` annotations from the v1 target manifest. Current audition
+identities are the exported `referenceAudioSha256` and actual archive PCM hashes.
+The [delivery audit](evaluations/neural-v2-delivery-audit.json) distinguishes
+those identities and verifies all five historical references/comparison clips.
 
 Quick-choice winners replay exact archived PCM in subsequent comparisons.
 A later scalar session returns selection to the previous scalar policy: latest

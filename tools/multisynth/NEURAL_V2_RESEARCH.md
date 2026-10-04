@@ -55,3 +55,33 @@ forward surrogate and real-reference finetuning (`invert/surrogate.py` and
 `invert/finetune_real.py`). V2's data/head/loss ablation supplies a better raw
 starting point; a multisynth forward model and real-audio finetuning should be a
 separate measured stage, with surrogate exploitation checked through actual DSP.
+
+[Sound texture perception via statistics of the auditory periphery](https://www.cns.nyu.edu/~lcv/pubs/makeAbs.php?loc=Mcdermott10)
+(McDermott and Simoncelli, 2011) synthesizes textures from auditory-channel and
+modulation statistics. Channel power and sparsity alone often failed; adding
+correlations between channels produced recognizable textures.
+
+Application inference: Rustlr/Swarmr/Whooshr-like textures need modulation and
+cross-band relationships, not just a similar average spectrum. This evidence is
+about textures; applying time-averaged statistics to a short attack, pitch jump
+or ordered event sequence could discard the gesture we need to preserve.
+
+[Time-Frequency Scattering Accurately Models Auditory Similarities Between Instrumental Playing Techniques](https://arxiv.org/abs/2007.10926)
+(Lostanlen et al., 2020 revision) combines spectrotemporal modulation features
+with triplet-based metric learning. It uses timbre clusters from 31 participants
+and reports retrieval over isolated musical notes; its ablation removes either
+feature extraction or metric learning.
+
+Application inference: the retained user choices can supervise a gesture-aware
+metric rather than a universal fixed spectral distance. Musical-note retrieval
+accuracy does not transfer to our SFX. Keep exact-reference grouped validation
+and hold out unseen events, engines and recording sources before promotion.
+
+[Musical Metamerism with Time–Frequency Scattering](https://arxiv.org/abs/2602.11896)
+(Lostanlen and Han, submitted February 2026; technical report written in 2024)
+describes differentiable JTFS synthesis of alternative waveforms from recordings
+without transcription, beat tracking or source separation.
+
+Application inference: test this representation as one possible auditory target
+for a validated DSP surrogate. The report motivates an experiment; it does not
+validate our control model, selector, or arbitrary short-game-SFX similarity.

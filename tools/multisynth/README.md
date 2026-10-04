@@ -10,6 +10,12 @@ neural model and optimizer as an independent candidate. See
 comparison. Mixr composition and arbitrary phrase transcription remain separate
 work; model capacity and parameter validation do not establish audible likeness.
 
+The next human check is the five-reference
+[neural-v2 quick listening round](runs/neural-v2-quick/index.html), comparing the
+new automatic choice, original Bfxr and exact historical comparison audio.
+Choose the closest feel (or none), then copy the feedback JSON. Saved choices
+remain tied to the actual clip and model hashes.
+
 The earlier iterations below use an offline **nonparametric inverse model**: render examples from the app's
 preset distributions, encode their audio, retrieve plausible parameters for
 each synth, refine several synths independently, then automatically select the

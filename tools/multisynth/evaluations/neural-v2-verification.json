@@ -1,0 +1,71 @@
+{
+  "complete": true,
+  "testsPassed": 75,
+  "runtimeSeconds": 82.91,
+  "exitCode": 0,
+  "interpreter": "/Users/stephenlavelle/Documents/bfxr2/tools/.venv/bin/python",
+  "command": "PYTHONPATH=tools OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m pytest tools/tests/test_neural_acoustic.py tools/tests/test_neural_benchmark.py tools/tests/test_neural_evaluation.py tools/tests/test_neural_history.py tools/tests/test_neural_invert.py tools/tests/test_neural_run.py tools/tests/test_neural_selection.py tools/tests/test_neural_structured.py -q",
+  "testFiles": {
+    "tools/tests/test_neural_acoustic.py": "cc24ce476d385fba55e145738a339f3b8cdca5cbba59aba68f0e9b9880967adf",
+    "tools/tests/test_neural_benchmark.py": "2549b785023df78f3b7fcfb9ca21a8201369b8408e2abaf674b92a5c1d2293ad",
+    "tools/tests/test_neural_evaluation.py": "fbcc09c22e402dd5b5c7b1bc8e205c74cb222a7591c6e5fd3053904e4b2d8563",
+    "tools/tests/test_neural_history.py": "200c2db9a20256a84fd8b50baccb0fa1be03a2bce3463c98c715d1fd38bae690",
+    "tools/tests/test_neural_invert.py": "ddb14f15f4083dddf4b7a18f5479ac78b9a539a08633705428bee8bd93835d60",
+    "tools/tests/test_neural_run.py": "9d12dfd3bbe185e4b65a8616f799a5ff5603b38e15cbd9cfdbb0bd51acd74c43",
+    "tools/tests/test_neural_selection.py": "0e59f8041a38e8e86b99ec30a7d7db5e7297ea0da51048471f985cfa4e590cee",
+    "tools/tests/test_neural_structured.py": "6adadc2c97c33261d5f89117fb92d0384f76002c351e5ede9d9a8dd02e38cf48"
+  },
+  "testLog": "........................................................................ [ 96%]\n...                                                                      [100%]\n75 passed in 82.91s (0:01:22)\n",
+  "codeCommit": "2c54e95",
+  "scope": "Focused old and new neural modules; separate actual DSP, data, CLI, serving and browser verification reports supplement these tests.",
+  "browser": {
+    "isolatedOrigin": "http://127.0.0.1:8766",
+    "playbackStarted": true,
+    "sequenceCompleted": true,
+    "singleChoiceAdvanced": true,
+    "heardOnlySchema3Export": true,
+    "undoRestoredZeroJudged": true,
+    "consoleErrorsOrWarnings": 0,
+    "humanOriginNoTestChoices": true
+  },
+  "screenshots": [
+    "/Users/stephenlavelle/.codex/visualizations/2026/10/03/01a10123-6302-7273-b11e-25df59b841d7/neural-v2-quick.jpg"
+  ],
+  "supportingReports": {
+    "delivery": {
+      "path": "tools/multisynth/evaluations/neural-v2-delivery-audit.json",
+      "sha256": "29ce5ff6acf990641bda0a3994d9f0437afa89d47d9fbc09225dcea8cd473ece"
+    },
+    "cli": {
+      "path": "tools/multisynth/evaluations/neural-v2-cli-verification.json",
+      "sha256": "ec08867a4eaa17ed746879a31faa8a375cc7c2975b6a44d3eefd333a16141d82"
+    },
+    "serving": {
+      "path": "tools/multisynth/evaluations/neural-v2-serving.json",
+      "sha256": "a01be4625a34e39dc03c197a440d1829e5b87b003b16ea9a07aa2622c4b99cdd"
+    },
+    "training": {
+      "path": "tools/multisynth/evaluations/neural-v2-training.json",
+      "sha256": "3946bef35f59804a92a4e9950f70ef355ada8e2929f10552bf0ec84edcf9e096"
+    },
+    "data": {
+      "path": "tools/multisynth/evaluations/neural-v2-data-certification.json",
+      "sha256": "b76e68340edd32dd017366b5eb272e44851c55e344d7236dc67bd3bb2bd3f7d7"
+    },
+    "pairedBenchmark": {
+      "path": "tools/multisynth/evaluations/neural-v2-paired-summary.json",
+      "sha256": "7fc2424fc12812cdb36d67a069697c3041b4bf66707e2b94609e0c47e3dcabd6"
+    },
+    "pairedActualReplay": {
+      "path": "tools/multisynth/evaluations/neural-v2-paired-verification.json",
+      "sha256": "43101ac27c806696d1fd29a9756e9fa7d8cf6687aff0d4910993728a4b4a7b57"
+    }
+  },
+  "gallery": {
+    "path": "tools/multisynth/runs/neural-v2-quick",
+    "experimentId": "9a2d8dc4fb2ac668b9addee042ed8a857a19e0ccc197cec681b1534f7457c30e",
+    "localhost": "http://127.0.0.1:8765/tools/multisynth/runs/neural-v2-quick/index.html",
+    "lan": "http://192.168.178.131:8765/tools/multisynth/runs/neural-v2-quick/index.html"
+  },
+  "rawDiagnosticEqualsPairedKnownHeadCases": 27
+}

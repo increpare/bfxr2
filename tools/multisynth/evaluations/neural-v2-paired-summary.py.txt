@@ -1,0 +1,35 @@
+import hashlib,json
+from pathlib import Path
+root=Path('tools/multisynth/runs/neural-v2/paired-fresh')
+report=json.loads((root/'results.json').read_text())
+assert report['metadata']['complete'] and len(report['results'])==39
+comparisons={}
+for arm in ('data-only','acoustic'):
+ comparisons[arm]={}
+ for family in ('all','native','static','moving'):
+  records=[r for r in report['results'] if family=='all' or r['family']==family]
+  comparisons[arm][family]={}
+  for role in ('knownRaw','unrestrictedRaw','neuralRefined','selected'):
+   pairs=[(r['arms']['v1']['candidates'][role],r['arms'][arm]['candidates'][role]) for r in records]
+   valid=[(a['score'],b['score']) for a,b in pairs if a is not None and b is not None]
+   comparisons[arm][family][role]={'total':len(pairs),'missingEither':len(pairs)-len(valid),
+    'lowerObjective':sum(b<a-1e-8 for a,b in valid),'sameObjective':sum(abs(b-a)<=1e-8 for a,b in valid),
+    'higherObjective':sum(b>a+1e-8 for a,b in valid)}
+compact=[]
+for record in report['results']:
+ row={k:record[k] for k in ('id','sourceSynth','family','expectedHz','gesture','sourceHash','parameterHash','controlHash','audioHash','targetPitch','waveFileSha256')}
+ row['arms']={}
+ for name,arm in record['arms'].items():
+  row['arms'][name]={k:arm[k] for k in ('checkpointSha256','evaluationSeed','budgetPerRefinedStart','requestedRefinedStarts','actualRefinedStarts','originalSharedAcrossArms','bfxrBudget','failures','evaluations')}
+  row['arms'][name]['candidates']={}
+  for role,c in arm['candidates'].items():
+   row['arms'][name]['candidates'][role]=None if c is None else {
+    **{k:c[k] for k in ('synth','seed','score','audioHash','waveFileSha256','pitchComparison')},
+    'pitch':{k:v for k,v in c['pitch'].items() if k not in ('contourHz','contourTime','contourMeaning')}}
+ compact.append(row)
+out={'complete':True,'scope':'One fresh native/mutated sample per active engine, nine static tones and eight supported moving gestures. Equal budgets/references for neural model arms. Original Bfxr has a larger separate search budget. MatchObjective comparisons are not human likeness judgments.',
+     'fullReportPath':str(root/'results.json'),'fullReportSha256':hashlib.sha256((root/'results.json').read_bytes()).hexdigest(),
+     'metadata':report['metadata'],'summary':report['summary'],'pairedAgainstV1':comparisons,'results':compact}
+dest=Path('tools/multisynth/evaluations/neural-v2-paired-summary.json')
+dest.write_text(json.dumps(out,indent=2)+'\n')
+print(json.dumps({'seconds':out['metadata']['seconds'],'summary':out['summary']['arms'],'pairedAgainstV1':comparisons},indent=2))

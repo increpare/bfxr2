@@ -1,0 +1,74 @@
+import json
+from pathlib import Path
+import numpy as np
+import soundfile as sf
+import torch
+from match.objective import MatchObjective
+from match.renderer import BfxrRenderer
+from multisynth.renderer import Renderer
+from neural_invert.evaluate import digest
+from neural_invert.benchmark import audio_hash,control_hash,pitch_diagnostic,compare_pitch,summarize
+from neural_invert.data import parameter_hash
+
+torch.set_num_threads(1)
+root=Path('tools/multisynth/runs/neural-v2/paired-fresh')
+report=json.loads((root/'results.json').read_text())
+metadata=report['metadata'];records=report['results']
+assert metadata['complete'] and len(records)==39
+for name,path in metadata['models'].items():assert digest(path)==metadata['modelHashes'][name]
+assert digest(metadata['bfxrCheckpoint'])==metadata['bfxrCheckpointSha256']
+assert digest('tools/neural_invert/benchmark.py')==metadata['benchmarkCodeSha256']
+excluded=set()
+with Renderer() as renderer,BfxrRenderer(jobs=1) as original:
+ assert renderer.inventory['sourceHash']==metadata['sourceHash']
+ for dataset in metadata['datasets']:
+  p=Path(dataset['path']);manifest=json.loads((p/'manifest.json').read_text())
+  assert digest(p/'manifest.json')==dataset['manifestSha256']
+  for name in manifest['engines']:
+   shard=json.loads((p/(name+'.json')).read_text())
+   for row in shard['rows']:
+    excluded.add(parameter_hash({'synth':name,'params':row['params']}))
+    excluded.add(control_hash(renderer.specs[name],row['params']))
+ checks=[];file_count=0;replay_count=0
+ for record in records:
+  assert record['parameterHash'] not in excluded and record['controlHash'] not in excluded
+  target,rate=sf.read(record['waveFile'],dtype='float32')
+  assert rate==44100 and audio_hash(target)==record['audioHash']
+  assert digest(record['waveFile'])==record['waveFileSha256']
+  canonical,wave=renderer.render(record['sourceSynth'],record['sourceParams'],record['sourceSeed'])
+  assert canonical==record['sourceParams'] and np.array_equal(wave,target)
+  assert pitch_diagnostic(target)==record['targetPitch']
+  objective=MatchObjective(target);original_hashes=set();file_count+=1;replay_count+=1
+  rowcheck={'target':record['id'],'sourceEngine':record['sourceSynth'],'family':record['family'],'arms':{}}
+  for arm,run in record['arms'].items():
+   assert run['checkpointSha256']==metadata['modelHashes'][arm]
+   assert run['evaluationSeed']==record['evaluationSeed'] and run['budgetPerRefinedStart']==metadata['budget']
+   selected=run['candidates']['selected']
+   wave=original.render(selected['params'],seed=selected['seed']) if selected.get('expert')=='original-bfxr' else renderer.render(selected['synth'],selected['params'],selected['seed'])[1]
+   assert audio_hash(wave)==selected['audioHash']
+   score=float(objective.score_batch([wave])[0])
+   assert abs(score-selected['score'])<1e-8
+   assert pitch_diagnostic(wave)==selected['pitch']
+   assert compare_pitch(record['targetPitch'],selected['pitch'],record['family'])==selected['pitchComparison']
+   replay_count+=1
+   original_hashes.add(run['candidates']['original']['audioHash'])
+   seen=set()
+   for row in list(run['candidates'].values())+run['allRaw']+run['allRefined']:
+    if row is None or row['waveFile'] in seen:continue
+    seen.add(row['waveFile']);p=Path(row['waveFile'])
+    assert digest(p)==row['waveFileSha256']
+    pcm,rate=sf.read(p,dtype='float32')
+    assert rate==44100 and audio_hash(pcm)==row['audioHash'] and len(pcm)==row['audioSamples']
+    file_count+=1
+   rowcheck['arms'][arm]={'selectedSynth':selected['synth'],'exactActualDSPReplay':True,'score':score,'predictionFailures':len(run['failures'])}
+  assert len(original_hashes)==1
+  checks.append(rowcheck)
+ summary=summarize(records,list(metadata['models']),report['summary']['broadCoverage']['engines'])
+ assert summary==report['summary']
+ assert not summary['broadCoverage']['missingEngines']
+out={'complete':True,'resultJsonSha256':digest(root/'results.json'),'auditCodeSha256':digest(__file__),
+     'targetCount':len(records),'pairedArms':len(metadata['models']),'wavFilesVerified':file_count,
+     'actualDSPReplays':replay_count,'fullTrainValidationControlExclusion':True,
+     'sharedOriginalBaselineVerified':True,'summaryRecomputed':True,'summary':summary,'checks':checks}
+Path('tools/multisynth/evaluations/neural-v2-paired-verification.json').write_text(json.dumps(out,indent=2)+'\n')
+print(json.dumps({k:v for k,v in out.items() if k not in ('checks','summary')},indent=2))

@@ -1,0 +1,2574 @@
+{
+  "complete": true,
+  "resultJsonSha256": "f7bc09b1dd33ebe7d992afc0bbd9aab196d720b4611764782ee94f831a834f5b",
+  "auditCodeSha256": "0ef091ef2e2711748f399e29d6c272c6e3d846be5153d8e0274c5b61ead9d660",
+  "targetCount": 39,
+  "pairedArms": 3,
+  "wavFilesVerified": 6084,
+  "actualDSPReplays": 156,
+  "fullTrainValidationControlExclusion": true,
+  "sharedOriginalBaselineVerified": true,
+  "summaryRecomputed": true,
+  "summary": {
+    "arms": {
+      "v1": {
+        "all": {
+          "knownRaw": {
+            "total": 39,
+            "count": 39,
+            "missing": 0,
+            "meanScore": 5.801445348275997,
+            "medianScore": 4.988992559839528,
+            "sourceEngineRecovery": 39,
+            "sourceEngineRecoveryTotal": 39,
+            "staticTotal": 9,
+            "withinOneSemitone": 2,
+            "pitchUnreliableOrMissing": 1,
+            "meanAbsolutePitchSemitones": 6.462956034934322,
+            "medianAbsolutePitchSemitones": 6.382367126315459,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 7.034175367691688,
+            "medianContourErrorSemitones": 3.7946686122524365,
+            "movingDirectionMatches": 6,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 5.5129364124756535,
+            "medianExcursionErrorSemitones": 5.335115939404069,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 1
+          },
+          "unrestrictedRaw": {
+            "total": 39,
+            "count": 39,
+            "missing": 0,
+            "meanScore": 3.1386917222183826,
+            "medianScore": 2.9347459408381713,
+            "sourceEngineRecovery": 9,
+            "sourceEngineRecoveryTotal": 39,
+            "staticTotal": 9,
+            "withinOneSemitone": 5,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 1.000638311210676,
+            "medianAbsolutePitchSemitones": 0.6912918889344071,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 1.9197717709952649,
+            "medianContourErrorSemitones": 2.03828194293232,
+            "movingDirectionMatches": 7,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 3.6962336083173213,
+            "medianExcursionErrorSemitones": 2.750467034959726,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 3
+          },
+          "neuralRefined": {
+            "total": 39,
+            "count": 39,
+            "missing": 0,
+            "meanScore": 1.5866709096118883,
+            "medianScore": 0.9261568634103715,
+            "sourceEngineRecovery": 13,
+            "sourceEngineRecoveryTotal": 39,
+            "staticTotal": 9,
+            "withinOneSemitone": 9,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.12017337420303724,
+            "medianAbsolutePitchSemitones": 0.09118522145337177,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 0.9606323288184402,
+            "medianContourErrorSemitones": 0.8122490417247381,
+            "movingDirectionMatches": 7,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 1.5165647682966465,
+            "medianExcursionErrorSemitones": 1.7096613692168603,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 3
+          },
+          "selected": {
+            "total": 39,
+            "count": 39,
+            "missing": 0,
+            "meanScore": 1.5242139606492635,
+            "medianScore": 0.9126878800776528,
+            "sourceEngineRecovery": 14,
+            "sourceEngineRecoveryTotal": 39,
+            "staticTotal": 9,
+            "withinOneSemitone": 9,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.12017337420303724,
+            "medianAbsolutePitchSemitones": 0.09118522145337177,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 0.8582374749824466,
+            "medianContourErrorSemitones": 0.6584071896807644,
+            "movingDirectionMatches": 7,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 1.2905712620728593,
+            "medianExcursionErrorSemitones": 1.1609175545204238,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 3
+          },
+          "original": {
+            "total": 39,
+            "count": 39,
+            "missing": 0,
+            "meanScore": 3.7571607576686423,
+            "medianScore": 3.906573099199689,
+            "sourceEngineRecovery": 8,
+            "sourceEngineRecoveryTotal": 39,
+            "staticTotal": 9,
+            "withinOneSemitone": 3,
+            "pitchUnreliableOrMissing": 4,
+            "meanAbsolutePitchSemitones": 1.0063958279702117,
+            "medianAbsolutePitchSemitones": 0.5776868493333729,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 1.5012575345219785,
+            "medianContourErrorSemitones": 1.4725303368029654,
+            "movingDirectionMatches": 6,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 3.222065902953343,
+            "medianExcursionErrorSemitones": 4.1162167463328245,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 10
+          }
+        },
+        "native": {
+          "knownRaw": {
+            "total": 22,
+            "count": 22,
+            "missing": 0,
+            "meanScore": 5.023488536417194,
+            "medianScore": 4.905576152776433,
+            "sourceEngineRecovery": 22,
+            "sourceEngineRecoveryTotal": 22,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "unrestrictedRaw": {
+            "total": 22,
+            "count": 22,
+            "missing": 0,
+            "meanScore": 3.6113941319152945,
+            "medianScore": 3.8230951973710767,
+            "sourceEngineRecovery": 6,
+            "sourceEngineRecoveryTotal": 22,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 3
+          },
+          "neuralRefined": {
+            "total": 22,
+            "count": 22,
+            "missing": 0,
+            "meanScore": 2.182730342312258,
+            "medianScore": 1.8237440398891511,
+            "sourceEngineRecovery": 8,
+            "sourceEngineRecoveryTotal": 22,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 3
+          },
+          "selected": {
+            "total": 22,
+            "count": 22,
+            "missing": 0,
+            "meanScore": 2.1033797378408727,
+            "medianScore": 1.8237440398891511,
+            "sourceEngineRecovery": 8,
+            "sourceEngineRecoveryTotal": 22,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 3
+          },
+          "original": {
+            "total": 22,
+            "count": 22,
+            "missing": 0,
+            "meanScore": 3.6621116584652427,
+            "medianScore": 4.073119068263366,
+            "sourceEngineRecovery": 1,
+            "sourceEngineRecoveryTotal": 22,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 6
+          }
+        },
+        "static": {
+          "knownRaw": {
+            "total": 9,
+            "count": 9,
+            "missing": 0,
+            "meanScore": 6.102011764079673,
+            "medianScore": 6.963266785140995,
+            "sourceEngineRecovery": 9,
+            "sourceEngineRecoveryTotal": 9,
+            "staticTotal": 9,
+            "withinOneSemitone": 2,
+            "pitchUnreliableOrMissing": 1,
+            "meanAbsolutePitchSemitones": 6.462956034934322,
+            "medianAbsolutePitchSemitones": 6.382367126315459,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 1
+          },
+          "unrestrictedRaw": {
+            "total": 9,
+            "count": 9,
+            "missing": 0,
+            "meanScore": 2.308975080068293,
+            "medianScore": 2.113636653187795,
+            "sourceEngineRecovery": 1,
+            "sourceEngineRecoveryTotal": 9,
+            "staticTotal": 9,
+            "withinOneSemitone": 5,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 1.000638311210676,
+            "medianAbsolutePitchSemitones": 0.6912918889344071,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "neuralRefined": {
+            "total": 9,
+            "count": 9,
+            "missing": 0,
+            "meanScore": 0.6377296315143379,
+            "medianScore": 0.5901662804243668,
+            "sourceEngineRecovery": 2,
+            "sourceEngineRecoveryTotal": 9,
+            "staticTotal": 9,
+            "withinOneSemitone": 9,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.12017337420303724,
+            "medianAbsolutePitchSemitones": 0.09118522145337177,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "selected": {
+            "total": 9,
+            "count": 9,
+            "missing": 0,
+            "meanScore": 0.6377296315143379,
+            "medianScore": 0.5901662804243668,
+            "sourceEngineRecovery": 2,
+            "sourceEngineRecoveryTotal": 9,
+            "staticTotal": 9,
+            "withinOneSemitone": 9,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.12017337420303724,
+            "medianAbsolutePitchSemitones": 0.09118522145337177,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "original": {
+            "total": 9,
+            "count": 9,
+            "missing": 0,
+            "meanScore": 4.237468572605859,
+            "medianScore": 3.906573099199689,
+            "sourceEngineRecovery": 3,
+            "sourceEngineRecoveryTotal": 9,
+            "staticTotal": 9,
+            "withinOneSemitone": 3,
+            "pitchUnreliableOrMissing": 4,
+            "meanAbsolutePitchSemitones": 1.0063958279702117,
+            "medianAbsolutePitchSemitones": 0.5776868493333729,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 4
+          }
+        },
+        "moving": {
+          "knownRaw": {
+            "total": 8,
+            "count": 8,
+            "missing": 0,
+            "meanScore": 7.602689363108564,
+            "medianScore": 7.175963561989141,
+            "sourceEngineRecovery": 8,
+            "sourceEngineRecoveryTotal": 8,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 7.034175367691688,
+            "medianContourErrorSemitones": 3.7946686122524365,
+            "movingDirectionMatches": 6,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 5.5129364124756535,
+            "medianExcursionErrorSemitones": 5.335115939404069,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "unrestrictedRaw": {
+            "total": 8,
+            "count": 8,
+            "missing": 0,
+            "meanScore": 2.772191317970723,
+            "medianScore": 3.0375104360039096,
+            "sourceEngineRecovery": 2,
+            "sourceEngineRecoveryTotal": 8,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 1.9197717709952649,
+            "medianContourErrorSemitones": 2.03828194293232,
+            "movingDirectionMatches": 7,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 3.6962336083173213,
+            "medianExcursionErrorSemitones": 2.750467034959726,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "neuralRefined": {
+            "total": 8,
+            "count": 8,
+            "missing": 0,
+            "meanScore": 1.0150664075456153,
+            "medianScore": 1.0064649883460777,
+            "sourceEngineRecovery": 3,
+            "sourceEngineRecoveryTotal": 8,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 0.9606323288184402,
+            "medianContourErrorSemitones": 0.8122490417247381,
+            "movingDirectionMatches": 7,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 1.5165647682966465,
+            "medianExcursionErrorSemitones": 1.7096613692168603,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "selected": {
+            "total": 8,
+            "count": 8,
+            "missing": 0,
+            "meanScore": 0.9288029436491289,
+            "medianScore": 0.8530835884096271,
+            "sourceEngineRecovery": 4,
+            "sourceEngineRecoveryTotal": 8,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 0.8582374749824466,
+            "medianContourErrorSemitones": 0.6584071896807644,
+            "movingDirectionMatches": 7,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 1.2905712620728593,
+            "medianExcursionErrorSemitones": 1.1609175545204238,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "original": {
+            "total": 8,
+            "count": 8,
+            "missing": 0,
+            "meanScore": 3.478199488673625,
+            "medianScore": 3.169665448729278,
+            "sourceEngineRecovery": 4,
+            "sourceEngineRecoveryTotal": 8,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 1.5012575345219785,
+            "medianContourErrorSemitones": 1.4725303368029654,
+            "movingDirectionMatches": 6,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 3.222065902953343,
+            "medianExcursionErrorSemitones": 4.1162167463328245,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          }
+        }
+      },
+      "data-only": {
+        "all": {
+          "knownRaw": {
+            "total": 39,
+            "count": 39,
+            "missing": 0,
+            "meanScore": 4.403675487340403,
+            "medianScore": 4.048791557463115,
+            "sourceEngineRecovery": 39,
+            "sourceEngineRecoveryTotal": 39,
+            "staticTotal": 9,
+            "withinOneSemitone": 2,
+            "pitchUnreliableOrMissing": 1,
+            "meanAbsolutePitchSemitones": 2.161515887572923,
+            "medianAbsolutePitchSemitones": 1.622403213038559,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 4.790751310234514,
+            "medianContourErrorSemitones": 3.6861999584163883,
+            "movingDirectionMatches": 5,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 8.436950876018255,
+            "medianExcursionErrorSemitones": 2.746045549281831,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 1
+          },
+          "unrestrictedRaw": {
+            "total": 39,
+            "count": 39,
+            "missing": 0,
+            "meanScore": 3.0664398185375794,
+            "medianScore": 2.775343125496244,
+            "sourceEngineRecovery": 12,
+            "sourceEngineRecoveryTotal": 39,
+            "staticTotal": 9,
+            "withinOneSemitone": 5,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.8977529444801478,
+            "medianAbsolutePitchSemitones": 0.8478993155424842,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 2.1790865181569683,
+            "medianContourErrorSemitones": 2.495730579580045,
+            "movingDirectionMatches": 6,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 3.699286903662678,
+            "medianExcursionErrorSemitones": 2.0789206590475118,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 2
+          },
+          "neuralRefined": {
+            "total": 39,
+            "count": 39,
+            "missing": 0,
+            "meanScore": 1.6615559088247613,
+            "medianScore": 1.1219254722973275,
+            "sourceEngineRecovery": 17,
+            "sourceEngineRecoveryTotal": 39,
+            "staticTotal": 9,
+            "withinOneSemitone": 9,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.11587810867152941,
+            "medianAbsolutePitchSemitones": 0.015311424403271386,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 2.004389920798868,
+            "medianContourErrorSemitones": 1.1443244435362474,
+            "movingDirectionMatches": 5,
+            "movingDirectionReliableCount": 7,
+            "movingDirectionUnreliableOrMissing": 1,
+            "meanExcursionErrorSemitones": 2.805300787750788,
+            "medianExcursionErrorSemitones": 2.1924594626060667,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 3
+          },
+          "selected": {
+            "total": 39,
+            "count": 39,
+            "missing": 0,
+            "meanScore": 1.572442539949041,
+            "medianScore": 1.0983855240298777,
+            "sourceEngineRecovery": 17,
+            "sourceEngineRecoveryTotal": 39,
+            "staticTotal": 9,
+            "withinOneSemitone": 9,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.11587810867152941,
+            "medianAbsolutePitchSemitones": 0.015311424403271386,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 1.2572546860438312,
+            "medianContourErrorSemitones": 0.7669416496474427,
+            "movingDirectionMatches": 6,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 2.5099616474642303,
+            "medianExcursionErrorSemitones": 1.4697536690999584,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 3
+          },
+          "original": {
+            "total": 39,
+            "count": 39,
+            "missing": 0,
+            "meanScore": 3.7571607576686423,
+            "medianScore": 3.906573099199689,
+            "sourceEngineRecovery": 8,
+            "sourceEngineRecoveryTotal": 39,
+            "staticTotal": 9,
+            "withinOneSemitone": 3,
+            "pitchUnreliableOrMissing": 4,
+            "meanAbsolutePitchSemitones": 1.0063958279702117,
+            "medianAbsolutePitchSemitones": 0.5776868493333729,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 1.5012575345219785,
+            "medianContourErrorSemitones": 1.4725303368029654,
+            "movingDirectionMatches": 6,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 3.222065902953343,
+            "medianExcursionErrorSemitones": 4.1162167463328245,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 10
+          }
+        },
+        "native": {
+          "knownRaw": {
+            "total": 22,
+            "count": 22,
+            "missing": 0,
+            "meanScore": 5.1701256789554,
+            "medianScore": 5.307760269288158,
+            "sourceEngineRecovery": 22,
+            "sourceEngineRecoveryTotal": 22,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "unrestrictedRaw": {
+            "total": 22,
+            "count": 22,
+            "missing": 0,
+            "meanScore": 3.6806019804977272,
+            "medianScore": 3.6481726976383886,
+            "sourceEngineRecovery": 5,
+            "sourceEngineRecoveryTotal": 22,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 2
+          },
+          "neuralRefined": {
+            "total": 22,
+            "count": 22,
+            "missing": 0,
+            "meanScore": 2.1879331448166637,
+            "medianScore": 1.9479079842270028,
+            "sourceEngineRecovery": 8,
+            "sourceEngineRecoveryTotal": 22,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 3
+          },
+          "selected": {
+            "total": 22,
+            "count": 22,
+            "missing": 0,
+            "meanScore": 2.1243982872021596,
+            "medianScore": 1.9479079842270028,
+            "sourceEngineRecovery": 8,
+            "sourceEngineRecoveryTotal": 22,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 3
+          },
+          "original": {
+            "total": 22,
+            "count": 22,
+            "missing": 0,
+            "meanScore": 3.6621116584652427,
+            "medianScore": 4.073119068263366,
+            "sourceEngineRecovery": 1,
+            "sourceEngineRecoveryTotal": 22,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 6
+          }
+        },
+        "static": {
+          "knownRaw": {
+            "total": 9,
+            "count": 9,
+            "missing": 0,
+            "meanScore": 2.5505784967748895,
+            "medianScore": 2.3300797797282926,
+            "sourceEngineRecovery": 9,
+            "sourceEngineRecoveryTotal": 9,
+            "staticTotal": 9,
+            "withinOneSemitone": 2,
+            "pitchUnreliableOrMissing": 1,
+            "meanAbsolutePitchSemitones": 2.161515887572923,
+            "medianAbsolutePitchSemitones": 1.622403213038559,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 1
+          },
+          "unrestrictedRaw": {
+            "total": 9,
+            "count": 9,
+            "missing": 0,
+            "meanScore": 1.6946560755986602,
+            "medianScore": 1.6337100451095092,
+            "sourceEngineRecovery": 5,
+            "sourceEngineRecoveryTotal": 9,
+            "staticTotal": 9,
+            "withinOneSemitone": 5,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.8977529444801478,
+            "medianAbsolutePitchSemitones": 0.8478993155424842,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "neuralRefined": {
+            "total": 9,
+            "count": 9,
+            "missing": 0,
+            "meanScore": 0.49561748896801483,
+            "medianScore": 0.4703894633991148,
+            "sourceEngineRecovery": 4,
+            "sourceEngineRecoveryTotal": 9,
+            "staticTotal": 9,
+            "withinOneSemitone": 9,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.11587810867152941,
+            "medianAbsolutePitchSemitones": 0.015311424403271386,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "selected": {
+            "total": 9,
+            "count": 9,
+            "missing": 0,
+            "meanScore": 0.49561748896801483,
+            "medianScore": 0.4703894633991148,
+            "sourceEngineRecovery": 4,
+            "sourceEngineRecoveryTotal": 9,
+            "staticTotal": 9,
+            "withinOneSemitone": 9,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.11587810867152941,
+            "medianAbsolutePitchSemitones": 0.015311424403271386,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "original": {
+            "total": 9,
+            "count": 9,
+            "missing": 0,
+            "meanScore": 4.237468572605859,
+            "medianScore": 3.906573099199689,
+            "sourceEngineRecovery": 3,
+            "sourceEngineRecoveryTotal": 9,
+            "staticTotal": 9,
+            "withinOneSemitone": 3,
+            "pitchUnreliableOrMissing": 4,
+            "meanAbsolutePitchSemitones": 1.0063958279702117,
+            "medianAbsolutePitchSemitones": 0.5776868493333729,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 4
+          }
+        },
+        "moving": {
+          "knownRaw": {
+            "total": 8,
+            "count": 8,
+            "missing": 0,
+            "meanScore": 4.380671574785364,
+            "medianScore": 3.6903297993342834,
+            "sourceEngineRecovery": 8,
+            "sourceEngineRecoveryTotal": 8,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 4.790751310234514,
+            "medianContourErrorSemitones": 3.6861999584163883,
+            "movingDirectionMatches": 5,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 8.436950876018255,
+            "medianExcursionErrorSemitones": 2.746045549281831,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "unrestrictedRaw": {
+            "total": 8,
+            "count": 8,
+            "missing": 0,
+            "meanScore": 2.920750583953457,
+            "medianScore": 2.720809685742637,
+            "sourceEngineRecovery": 2,
+            "sourceEngineRecoveryTotal": 8,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 2.1790865181569683,
+            "medianContourErrorSemitones": 2.495730579580045,
+            "movingDirectionMatches": 6,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 3.699286903662678,
+            "medianExcursionErrorSemitones": 2.0789206590475118,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "neuralRefined": {
+            "total": 8,
+            "count": 8,
+            "missing": 0,
+            "meanScore": 1.5256992321858687,
+            "medianScore": 1.1773980503080943,
+            "sourceEngineRecovery": 5,
+            "sourceEngineRecoveryTotal": 8,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 2.004389920798868,
+            "medianContourErrorSemitones": 1.1443244435362474,
+            "movingDirectionMatches": 5,
+            "movingDirectionReliableCount": 7,
+            "movingDirectionUnreliableOrMissing": 1,
+            "meanExcursionErrorSemitones": 2.805300787750788,
+            "medianExcursionErrorSemitones": 2.1924594626060667,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "selected": {
+            "total": 8,
+            "count": 8,
+            "missing": 0,
+            "meanScore": 1.2659924173566182,
+            "medianScore": 1.043550806215494,
+            "sourceEngineRecovery": 5,
+            "sourceEngineRecoveryTotal": 8,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 1.2572546860438312,
+            "medianContourErrorSemitones": 0.7669416496474427,
+            "movingDirectionMatches": 6,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 2.5099616474642303,
+            "medianExcursionErrorSemitones": 1.4697536690999584,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "original": {
+            "total": 8,
+            "count": 8,
+            "missing": 0,
+            "meanScore": 3.478199488673625,
+            "medianScore": 3.169665448729278,
+            "sourceEngineRecovery": 4,
+            "sourceEngineRecoveryTotal": 8,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 1.5012575345219785,
+            "medianContourErrorSemitones": 1.4725303368029654,
+            "movingDirectionMatches": 6,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 3.222065902953343,
+            "medianExcursionErrorSemitones": 4.1162167463328245,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          }
+        }
+      },
+      "acoustic": {
+        "all": {
+          "knownRaw": {
+            "total": 39,
+            "count": 39,
+            "missing": 0,
+            "meanScore": 3.7384536305880123,
+            "medianScore": 3.17282435533121,
+            "sourceEngineRecovery": 39,
+            "sourceEngineRecoveryTotal": 39,
+            "staticTotal": 9,
+            "withinOneSemitone": 6,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.7453099009018322,
+            "medianAbsolutePitchSemitones": 0.8959004743951184,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 1.5365411329011183,
+            "medianContourErrorSemitones": 0.6121628554088414,
+            "movingDirectionMatches": 8,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 3.053169219157027,
+            "medianExcursionErrorSemitones": 1.1268482835739846,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "unrestrictedRaw": {
+            "total": 39,
+            "count": 39,
+            "missing": 0,
+            "meanScore": 2.804425139997126,
+            "medianScore": 2.39552979659586,
+            "sourceEngineRecovery": 19,
+            "sourceEngineRecoveryTotal": 39,
+            "staticTotal": 9,
+            "withinOneSemitone": 6,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.6413301897070449,
+            "medianAbsolutePitchSemitones": 0.32053787912700615,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 1.8357213227622262,
+            "medianContourErrorSemitones": 1.5662924518837973,
+            "movingDirectionMatches": 5,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 4.7773248887096855,
+            "medianExcursionErrorSemitones": 4.123089672184705,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 3
+          },
+          "neuralRefined": {
+            "total": 39,
+            "count": 39,
+            "missing": 0,
+            "meanScore": 1.428180287828227,
+            "medianScore": 0.89914079933489,
+            "sourceEngineRecovery": 19,
+            "sourceEngineRecoveryTotal": 39,
+            "staticTotal": 9,
+            "withinOneSemitone": 9,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.19399267369583503,
+            "medianAbsolutePitchSemitones": 0.1294324465715331,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 0.6305879436217078,
+            "medianContourErrorSemitones": 0.4315821710304324,
+            "movingDirectionMatches": 7,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 0.9969752924147599,
+            "medianExcursionErrorSemitones": 0.9627834323292106,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 5
+          },
+          "selected": {
+            "total": 39,
+            "count": 39,
+            "missing": 0,
+            "meanScore": 1.3718107286460322,
+            "medianScore": 0.8901900878462691,
+            "sourceEngineRecovery": 20,
+            "sourceEngineRecoveryTotal": 39,
+            "staticTotal": 9,
+            "withinOneSemitone": 9,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.19399267369583503,
+            "medianAbsolutePitchSemitones": 0.1294324465715331,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 0.44160341770262934,
+            "medianContourErrorSemitones": 0.4315821710304324,
+            "movingDirectionMatches": 7,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 0.7827892232691784,
+            "medianExcursionErrorSemitones": 0.5801519794209895,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 5
+          },
+          "original": {
+            "total": 39,
+            "count": 39,
+            "missing": 0,
+            "meanScore": 3.7571607576686423,
+            "medianScore": 3.906573099199689,
+            "sourceEngineRecovery": 8,
+            "sourceEngineRecoveryTotal": 39,
+            "staticTotal": 9,
+            "withinOneSemitone": 3,
+            "pitchUnreliableOrMissing": 4,
+            "meanAbsolutePitchSemitones": 1.0063958279702117,
+            "medianAbsolutePitchSemitones": 0.5776868493333729,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 1.5012575345219785,
+            "medianContourErrorSemitones": 1.4725303368029654,
+            "movingDirectionMatches": 6,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 3.222065902953343,
+            "medianExcursionErrorSemitones": 4.1162167463328245,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 10
+          }
+        },
+        "native": {
+          "knownRaw": {
+            "total": 22,
+            "count": 22,
+            "missing": 0,
+            "meanScore": 5.190066707809891,
+            "medianScore": 5.084682464304434,
+            "sourceEngineRecovery": 22,
+            "sourceEngineRecoveryTotal": 22,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "unrestrictedRaw": {
+            "total": 22,
+            "count": 22,
+            "missing": 0,
+            "meanScore": 3.658810616113051,
+            "medianScore": 3.8191115023312188,
+            "sourceEngineRecovery": 7,
+            "sourceEngineRecoveryTotal": 22,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 3
+          },
+          "neuralRefined": {
+            "total": 22,
+            "count": 22,
+            "missing": 0,
+            "meanScore": 2.0400255119254513,
+            "medianScore": 1.6208402237127628,
+            "sourceEngineRecovery": 8,
+            "sourceEngineRecoveryTotal": 22,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 5
+          },
+          "selected": {
+            "total": 22,
+            "count": 22,
+            "missing": 0,
+            "meanScore": 2.0303360226033536,
+            "medianScore": 1.6208402237127628,
+            "sourceEngineRecovery": 8,
+            "sourceEngineRecoveryTotal": 22,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 5
+          },
+          "original": {
+            "total": 22,
+            "count": 22,
+            "missing": 0,
+            "meanScore": 3.6621116584652427,
+            "medianScore": 4.073119068263366,
+            "sourceEngineRecovery": 1,
+            "sourceEngineRecoveryTotal": 22,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 6
+          }
+        },
+        "static": {
+          "knownRaw": {
+            "total": 9,
+            "count": 9,
+            "missing": 0,
+            "meanScore": 1.4281241599003682,
+            "medianScore": 1.1073855296562967,
+            "sourceEngineRecovery": 9,
+            "sourceEngineRecoveryTotal": 9,
+            "staticTotal": 9,
+            "withinOneSemitone": 6,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.7453099009018322,
+            "medianAbsolutePitchSemitones": 0.8959004743951184,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "unrestrictedRaw": {
+            "total": 9,
+            "count": 9,
+            "missing": 0,
+            "meanScore": 1.2552288455394247,
+            "medianScore": 1.1073855296562967,
+            "sourceEngineRecovery": 7,
+            "sourceEngineRecoveryTotal": 9,
+            "staticTotal": 9,
+            "withinOneSemitone": 6,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.6413301897070449,
+            "medianAbsolutePitchSemitones": 0.32053787912700615,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "neuralRefined": {
+            "total": 9,
+            "count": 9,
+            "missing": 0,
+            "meanScore": 0.4614334829518183,
+            "medianScore": 0.44854426998765534,
+            "sourceEngineRecovery": 7,
+            "sourceEngineRecoveryTotal": 9,
+            "staticTotal": 9,
+            "withinOneSemitone": 9,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.19399267369583503,
+            "medianAbsolutePitchSemitones": 0.1294324465715331,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "selected": {
+            "total": 9,
+            "count": 9,
+            "missing": 0,
+            "meanScore": 0.4614334829518183,
+            "medianScore": 0.44854426998765534,
+            "sourceEngineRecovery": 7,
+            "sourceEngineRecoveryTotal": 9,
+            "staticTotal": 9,
+            "withinOneSemitone": 9,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": 0.19399267369583503,
+            "medianAbsolutePitchSemitones": 0.1294324465715331,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "original": {
+            "total": 9,
+            "count": 9,
+            "missing": 0,
+            "meanScore": 4.237468572605859,
+            "medianScore": 3.906573099199689,
+            "sourceEngineRecovery": 3,
+            "sourceEngineRecoveryTotal": 9,
+            "staticTotal": 9,
+            "withinOneSemitone": 3,
+            "pitchUnreliableOrMissing": 4,
+            "meanAbsolutePitchSemitones": 1.0063958279702117,
+            "medianAbsolutePitchSemitones": 0.5776868493333729,
+            "movingPitchReliableCount": 0,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": null,
+            "medianContourErrorSemitones": null,
+            "movingDirectionMatches": 0,
+            "movingDirectionReliableCount": 0,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": null,
+            "medianExcursionErrorSemitones": null,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 4
+          }
+        },
+        "moving": {
+          "knownRaw": {
+            "total": 8,
+            "count": 8,
+            "missing": 0,
+            "meanScore": 2.3456383227514395,
+            "medianScore": 2.1546496434064815,
+            "sourceEngineRecovery": 8,
+            "sourceEngineRecoveryTotal": 8,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 1.5365411329011183,
+            "medianContourErrorSemitones": 0.6121628554088414,
+            "movingDirectionMatches": 8,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 3.053169219157027,
+            "medianExcursionErrorSemitones": 1.1268482835739846,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "unrestrictedRaw": {
+            "total": 8,
+            "count": 8,
+            "missing": 0,
+            "meanScore": 2.1977109119432434,
+            "medianScore": 2.0035257461418836,
+            "sourceEngineRecovery": 5,
+            "sourceEngineRecoveryTotal": 8,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 1.8357213227622262,
+            "medianContourErrorSemitones": 1.5662924518837973,
+            "movingDirectionMatches": 5,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 4.7773248887096855,
+            "medianExcursionErrorSemitones": 4.123089672184705,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "neuralRefined": {
+            "total": 8,
+            "count": 8,
+            "missing": 0,
+            "meanScore": 0.8331960770468202,
+            "medianScore": 0.6389155792374821,
+            "sourceEngineRecovery": 4,
+            "sourceEngineRecoveryTotal": 8,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 0.6305879436217078,
+            "medianContourErrorSemitones": 0.4315821710304324,
+            "movingDirectionMatches": 7,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 0.9969752924147599,
+            "medianExcursionErrorSemitones": 0.9627834323292106,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "selected": {
+            "total": 8,
+            "count": 8,
+            "missing": 0,
+            "meanScore": 0.5850405716693893,
+            "medianScore": 0.6389155792374821,
+            "sourceEngineRecovery": 5,
+            "sourceEngineRecoveryTotal": 8,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 0.44160341770262934,
+            "medianContourErrorSemitones": 0.4315821710304324,
+            "movingDirectionMatches": 7,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 0.7827892232691784,
+            "medianExcursionErrorSemitones": 0.5801519794209895,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          },
+          "original": {
+            "total": 8,
+            "count": 8,
+            "missing": 0,
+            "meanScore": 3.478199488673625,
+            "medianScore": 3.169665448729278,
+            "sourceEngineRecovery": 4,
+            "sourceEngineRecoveryTotal": 8,
+            "staticTotal": 0,
+            "withinOneSemitone": 0,
+            "pitchUnreliableOrMissing": 0,
+            "meanAbsolutePitchSemitones": null,
+            "medianAbsolutePitchSemitones": null,
+            "movingPitchReliableCount": 8,
+            "movingPitchUnreliableOrMissing": 0,
+            "meanContourErrorSemitones": 1.5012575345219785,
+            "medianContourErrorSemitones": 1.4725303368029654,
+            "movingDirectionMatches": 6,
+            "movingDirectionReliableCount": 8,
+            "movingDirectionUnreliableOrMissing": 0,
+            "meanExcursionErrorSemitones": 3.222065902953343,
+            "medianExcursionErrorSemitones": 4.1162167463328245,
+            "excursionUnreliableOrMissing": 0,
+            "voicedTargetUnvoicedFinalist": 0
+          }
+        }
+      }
+    },
+    "broadCoverage": {
+      "engines": [
+        "Bfxr",
+        "Footsteppr",
+        "Transfxr",
+        "Birdr",
+        "Boomr",
+        "Bouncr",
+        "Breathr",
+        "Choirr",
+        "Clonkr",
+        "Crittr",
+        "Fractr",
+        "Glitchr",
+        "Jinglr",
+        "Machinr",
+        "Pluckr",
+        "Riftr",
+        "Rustlr",
+        "Signlr",
+        "Squishr",
+        "Swarmr",
+        "Whooshr",
+        "Zappr"
+      ],
+      "observedEngines": [
+        "Bfxr",
+        "Birdr",
+        "Boomr",
+        "Bouncr",
+        "Breathr",
+        "Choirr",
+        "Clonkr",
+        "Crittr",
+        "Footsteppr",
+        "Fractr",
+        "Glitchr",
+        "Jinglr",
+        "Machinr",
+        "Pluckr",
+        "Riftr",
+        "Rustlr",
+        "Signlr",
+        "Squishr",
+        "Swarmr",
+        "Transfxr",
+        "Whooshr",
+        "Zappr"
+      ],
+      "missingEngines": []
+    }
+  },
+  "checks": [
+    {
+      "target": "001-Bfxr-native",
+      "sourceEngine": "Bfxr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 2.7755620502264002,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Breathr",
+          "exactActualDSPReplay": true,
+          "score": 2.638173272653115,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Rustlr",
+          "exactActualDSPReplay": true,
+          "score": 2.709337316925047,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "002-Footsteppr-native",
+      "sourceEngine": "Footsteppr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Rustlr",
+          "exactActualDSPReplay": true,
+          "score": 0.9060255745561363,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 1.079791574163178,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Rustlr",
+          "exactActualDSPReplay": true,
+          "score": 1.1372705564654415,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "003-Transfxr-native",
+      "sourceEngine": "Transfxr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.8163767091637246,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Birdr",
+          "exactActualDSPReplay": true,
+          "score": 1.245250139144697,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Clonkr",
+          "exactActualDSPReplay": true,
+          "score": 1.54921648196278,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "004-Birdr-native",
+      "sourceEngine": "Birdr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Birdr",
+          "exactActualDSPReplay": true,
+          "score": 1.8998540848129681,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Birdr",
+          "exactActualDSPReplay": true,
+          "score": 1.0320196325637363,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Birdr",
+          "exactActualDSPReplay": true,
+          "score": 1.1796876092525785,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "005-Boomr-native",
+      "sourceEngine": "Boomr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Bfxr",
+          "exactActualDSPReplay": true,
+          "score": 3.4001582020798615,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Bfxr",
+          "exactActualDSPReplay": true,
+          "score": 3.4001582020798615,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Bfxr",
+          "exactActualDSPReplay": true,
+          "score": 3.4001582020798615,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "006-Bouncr-native",
+      "sourceEngine": "Bouncr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Bouncr",
+          "exactActualDSPReplay": true,
+          "score": 4.310919711820839,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Bouncr",
+          "exactActualDSPReplay": true,
+          "score": 2.6863161497215846,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Bouncr",
+          "exactActualDSPReplay": true,
+          "score": 3.7642025430163852,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "007-Breathr-native",
+      "sourceEngine": "Breathr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Bfxr",
+          "exactActualDSPReplay": true,
+          "score": 4.810132365743221,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Bfxr",
+          "exactActualDSPReplay": true,
+          "score": 4.810132365743221,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Machinr",
+          "exactActualDSPReplay": true,
+          "score": 3.460519513162383,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "008-Choirr-native",
+      "sourceEngine": "Choirr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Boomr",
+          "exactActualDSPReplay": true,
+          "score": 3.2085667962232294,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Whooshr",
+          "exactActualDSPReplay": true,
+          "score": 3.447248878548227,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 3.0077282894723445,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "009-Clonkr-native",
+      "sourceEngine": "Clonkr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Bouncr",
+          "exactActualDSPReplay": true,
+          "score": 0.9261568634103715,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Clonkr",
+          "exactActualDSPReplay": true,
+          "score": 0.114630142002462,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Clonkr",
+          "exactActualDSPReplay": true,
+          "score": 0.0824379560184118,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "010-Crittr-native",
+      "sourceEngine": "Crittr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Boomr",
+          "exactActualDSPReplay": true,
+          "score": 3.350310762637548,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Boomr",
+          "exactActualDSPReplay": true,
+          "score": 3.3292572006439833,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Boomr",
+          "exactActualDSPReplay": true,
+          "score": 3.3493152115024296,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "011-Fractr-native",
+      "sourceEngine": "Fractr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Rustlr",
+          "exactActualDSPReplay": true,
+          "score": 1.7476339949653341,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Fractr",
+          "exactActualDSPReplay": true,
+          "score": 1.411876619259397,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Fractr",
+          "exactActualDSPReplay": true,
+          "score": 1.6924639654627458,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "012-Glitchr-native",
+      "sourceEngine": "Glitchr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Riftr",
+          "exactActualDSPReplay": true,
+          "score": 3.0695955388689233,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Boomr",
+          "exactActualDSPReplay": true,
+          "score": 3.5296058604274654,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 3.252100152178495,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "013-Jinglr-native",
+      "sourceEngine": "Jinglr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Clonkr",
+          "exactActualDSPReplay": true,
+          "score": 3.646222627938102,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Clonkr",
+          "exactActualDSPReplay": true,
+          "score": 4.099615093449124,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Clonkr",
+          "exactActualDSPReplay": true,
+          "score": 4.1213850218062245,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "014-Machinr-native",
+      "sourceEngine": "Machinr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.8613639239195695,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Bfxr",
+          "exactActualDSPReplay": true,
+          "score": 2.2720919164079185,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 1.2008213530038934,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "015-Pluckr-native",
+      "sourceEngine": "Pluckr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Clonkr",
+          "exactActualDSPReplay": true,
+          "score": 1.3817694735893147,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Clonkr",
+          "exactActualDSPReplay": true,
+          "score": 1.0915407608330288,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 1.1199959213690267,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "016-Riftr-native",
+      "sourceEngine": "Riftr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Riftr",
+          "exactActualDSPReplay": true,
+          "score": 0.9126878800776528,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Riftr",
+          "exactActualDSPReplay": true,
+          "score": 1.4375010663315477,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 1.41228287650879,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "017-Rustlr-native",
+      "sourceEngine": "Rustlr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Rustlr",
+          "exactActualDSPReplay": true,
+          "score": 0.3545678385604335,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Rustlr",
+          "exactActualDSPReplay": true,
+          "score": 0.40728149950442205,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Rustlr",
+          "exactActualDSPReplay": true,
+          "score": 0.25859853070643213,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "018-Signlr-native",
+      "sourceEngine": "Signlr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Signlr",
+          "exactActualDSPReplay": true,
+          "score": 2.3187282682109407,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Signlr",
+          "exactActualDSPReplay": true,
+          "score": 2.6548516541333886,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Bfxr",
+          "exactActualDSPReplay": true,
+          "score": 1.943746214721996,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "019-Squishr-native",
+      "sourceEngine": "Squishr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 1.250749946812883,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 1.1219254722973275,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Rustlr",
+          "exactActualDSPReplay": true,
+          "score": 1.4410486744834734,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "020-Swarmr-native",
+      "sourceEngine": "Swarmr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Swarmr",
+          "exactActualDSPReplay": true,
+          "score": 3.3309045511665607,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 2.6827309836345523,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Rustlr",
+          "exactActualDSPReplay": true,
+          "score": 3.1365278323332753,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "021-Whooshr-native",
+      "sourceEngine": "Whooshr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Whooshr",
+          "exactActualDSPReplay": true,
+          "score": 0.3968643028982156,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Whooshr",
+          "exactActualDSPReplay": true,
+          "score": 1.6237240520460874,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Whooshr",
+          "exactActualDSPReplay": true,
+          "score": 0.8901900878462691,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "022-Zappr-native",
+      "sourceEngine": "Zappr",
+      "family": "native",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Signlr",
+          "exactActualDSPReplay": true,
+          "score": 0.5992027648169733,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Rustlr",
+          "exactActualDSPReplay": true,
+          "score": 0.6210397828591895,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Zappr",
+          "exactActualDSPReplay": true,
+          "score": 0.5583581869954976,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "023-Bfxr-static",
+      "sourceEngine": "Bfxr",
+      "family": "static",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.6038803201922294,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.4117271667879887,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.7403896675719667,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "024-Bfxr-static",
+      "sourceEngine": "Bfxr",
+      "family": "static",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Birdr",
+          "exactActualDSPReplay": true,
+          "score": 0.4489168580171531,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Bfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.47353840814538806,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Bfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.6050426769450774,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "025-Bfxr-static",
+      "sourceEngine": "Bfxr",
+      "family": "static",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Signlr",
+          "exactActualDSPReplay": true,
+          "score": 0.7437327239762683,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Signlr",
+          "exactActualDSPReplay": true,
+          "score": 0.8478608016104828,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Whooshr",
+          "exactActualDSPReplay": true,
+          "score": 0.4367453646406838,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "026-Transfxr-static",
+      "sourceEngine": "Transfxr",
+      "family": "static",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Machinr",
+          "exactActualDSPReplay": true,
+          "score": 1.2182488167377166,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.6634921616894708,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.24812248274423215,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "027-Transfxr-static",
+      "sourceEngine": "Transfxr",
+      "family": "static",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.5901662804243668,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.4703894633991148,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.44854426998765534,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "028-Transfxr-static",
+      "sourceEngine": "Transfxr",
+      "family": "static",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Whooshr",
+          "exactActualDSPReplay": true,
+          "score": 0.5918837426999632,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Signlr",
+          "exactActualDSPReplay": true,
+          "score": 0.8381538746080742,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.8124831869425337,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "029-Pluckr-static",
+      "sourceEngine": "Pluckr",
+      "family": "static",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.5673303649214995,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.402395784597391,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.5018319750945943,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "030-Pluckr-static",
+      "sourceEngine": "Pluckr",
+      "family": "static",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.5017577535016002,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.21084649916316156,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.1484024846914792,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "031-Pluckr-static",
+      "sourceEngine": "Pluckr",
+      "family": "static",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Signlr",
+          "exactActualDSPReplay": true,
+          "score": 0.4736498231582434,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.14215324071106147,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.21133923794814274,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "032-Bfxr-moving",
+      "sourceEngine": "Bfxr",
+      "family": "moving",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Signlr",
+          "exactActualDSPReplay": true,
+          "score": 0.5468288667573619,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 2.207428065314559,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.7180803008682124,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "033-Bfxr-moving",
+      "sourceEngine": "Bfxr",
+      "family": "moving",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Signlr",
+          "exactActualDSPReplay": true,
+          "score": 0.878538975979546,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Bfxr",
+          "exactActualDSPReplay": true,
+          "score": 1.256410576586311,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.7684780530167094,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "034-Bfxr-moving",
+      "sourceEngine": "Bfxr",
+      "family": "moving",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Bfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.8276282008397082,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Bfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.8276282008397082,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Bfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.8276282008397082,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "035-Bfxr-moving",
+      "sourceEngine": "Bfxr",
+      "family": "moving",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Crittr",
+          "exactActualDSPReplay": true,
+          "score": 0.7790847887701848,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.9887160884011101,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Bfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.5002740138633035,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "036-Transfxr-moving",
+      "sourceEngine": "Transfxr",
+      "family": "moving",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 1.2450245530529758,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 1.0983855240298777,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Signlr",
+          "exactActualDSPReplay": true,
+          "score": 0.5597508576067519,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "037-Transfxr-moving",
+      "sourceEngine": "Transfxr",
+      "family": "moving",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 1.380473114050693,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.7738632822210955,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.13058216639998219,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "038-Transfxr-moving",
+      "sourceEngine": "Transfxr",
+      "family": "moving",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 1.1343910007126095,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 2.351318705031141,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.89914079933489,
+          "predictionFailures": 0
+        }
+      }
+    },
+    {
+      "target": "039-Transfxr-moving",
+      "sourceEngine": "Transfxr",
+      "family": "moving",
+      "arms": {
+        "v1": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.6384540490299525,
+          "predictionFailures": 0
+        },
+        "data-only": {
+          "selectedSynth": "Pluckr",
+          "exactActualDSPReplay": true,
+          "score": 0.6241888964291438,
+          "predictionFailures": 0
+        },
+        "acoustic": {
+          "selectedSynth": "Transfxr",
+          "exactActualDSPReplay": true,
+          "score": 0.2763901814255565,
+          "predictionFailures": 0
+        }
+      }
+    }
+  ]
+}
