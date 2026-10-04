@@ -5,6 +5,21 @@ The acoustic model learns controls directly from audio; preset ancestry remains
 an auxiliary prediction for fixed text/random anchors. The frozen v1 model and
 original trained Bfxr model remain available.
 
+## Human outcome: not an audible improvement
+
+The subsequent five-reference listening round rejected this iteration as a
+successful approximation. The user reported only `die/charm2.wav` as actually
+close; its winning clip is the retained **previous Transfxr**, not the new Pluckr
+output. Bird/card Bfxr wins are relative choices, not adequate likeness labels.
+Computer was rejected and spinout preferred the previous Bfxr audio. Preserve
+v2's numerical gains as diagnostics; do not promote its checkpoint or experimental
+pitch gate as the replacement for the older Bfxr pipeline.
+
+The [exact feedback archive](listening_data/2026-10-04-neural-v2-quick-01/README.md)
+and [human audit](evaluations/neural-v2-quick-01-human-review.json) retain both
+choices and the qualitative rejection. A bounded forward-audio pilot now tests
+a missing training prerequisite before further listening demands.
+
 ## Training
 
 The 51,200 examples retain every one of v1's 45,056 native/mutated examples.

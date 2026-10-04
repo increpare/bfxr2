@@ -1,0 +1,158 @@
+{
+  "experimentId": "9a2d8dc4fb2ac668b9addee042ed8a857a19e0ccc197cec681b1534f7457c30e",
+  "archive": "tools/multisynth/listening_data/2026-10-04-neural-v2-quick-01",
+  "feedbackSha256": "8b7703f9cada6bf3c0d0aff3dfb835877cbd142ff324b369a624bd68074fa553",
+  "judgedReferences": 5,
+  "experimentReferences": 5,
+  "archiveSummary": {
+    "targets": 5,
+    "uniqueRatedCandidates": 0,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "choices": 5,
+    "choiceKinds": {
+      "best": 4,
+      "tie": 0,
+      "none": 1,
+      "skip": 0
+    }
+  },
+  "strictPreferencePairs": 7,
+  "strictReferencePcmGroups": 4,
+  "winningRoles": {
+    "previous": 2,
+    "selected": 2
+  },
+  "winningAudioAliasRoles": {
+    "previous": 2,
+    "original": 1,
+    "selected": 2
+  },
+  "relativeChoiceEvidence": [
+    {
+      "target": "attack/spinout.wav",
+      "kind": "best",
+      "winnerRoles": [
+        "previous"
+      ],
+      "winnerAudioAliasRoles": [
+        "previous"
+      ],
+      "winnerSynths": [
+        "Bfxr"
+      ],
+      "presented": 3,
+      "auditioned": 3,
+      "strictPairs": 2,
+      "referencePcmSha256": "65846b1877c418e7f6cc6f8a1a588979162674aa1d905bb930fd97588c20d69f",
+      "winningAudioPcmSha256": [
+        "7637f86b0bbf76f5eceab8555ef9971b93b8e6075d7390a3452d3f667765a4b4"
+      ]
+    },
+    {
+      "target": "bird/Bird Sounds.WAV",
+      "kind": "best",
+      "winnerRoles": [
+        "selected"
+      ],
+      "winnerAudioAliasRoles": [
+        "selected",
+        "original"
+      ],
+      "winnerSynths": [
+        "Bfxr"
+      ],
+      "presented": 2,
+      "auditioned": 2,
+      "strictPairs": 1,
+      "referencePcmSha256": "e0f588c7d2e53ab658bdd324ebaf51df4522d234ee9fb9e03b1b8fbfeca02fac",
+      "winningAudioPcmSha256": [
+        "689cb763a16778d695cbce90af0bd51540de75e251194f4ca0ee9a2d2ce78f05"
+      ]
+    },
+    {
+      "target": "card/bookClose.ogg",
+      "kind": "best",
+      "winnerRoles": [
+        "selected"
+      ],
+      "winnerAudioAliasRoles": [
+        "selected"
+      ],
+      "winnerSynths": [
+        "Bfxr"
+      ],
+      "presented": 3,
+      "auditioned": 3,
+      "strictPairs": 2,
+      "referencePcmSha256": "3a34c99cee7fe4fc5679083fb569033b765ec88a07d4ddac08d76d2245d778be",
+      "winningAudioPcmSha256": [
+        "fb0b65c6436d1f0f42c49b8cb8b0c814cb3c1701210a5bb96f8570335c58e6f5"
+      ]
+    },
+    {
+      "target": "computer/robo_talk.wav",
+      "kind": "none",
+      "winnerRoles": [],
+      "winnerAudioAliasRoles": [],
+      "winnerSynths": [],
+      "presented": 3,
+      "auditioned": 3,
+      "strictPairs": 0,
+      "referencePcmSha256": "f42dbf000892e3acf1a7503e1fd6e7c392a2405b1f2724901c666a6bce1630f9",
+      "winningAudioPcmSha256": []
+    },
+    {
+      "target": "die/charm2.wav",
+      "kind": "best",
+      "winnerRoles": [
+        "previous"
+      ],
+      "winnerAudioAliasRoles": [
+        "previous"
+      ],
+      "winnerSynths": [
+        "Transfxr"
+      ],
+      "presented": 3,
+      "auditioned": 3,
+      "strictPairs": 2,
+      "referencePcmSha256": "999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850",
+      "winningAudioPcmSha256": [
+        "3ad58753fc408535c051a3d39c494465e6d8e50a3509d39ecbd7c40bb3a1bd0f"
+      ]
+    }
+  ],
+  "qualitativeAssessment": {
+    "source": "Direct user message accompanying the feedback attachment",
+    "verbatim": "we're so far away - only one charm2.wav was actually approximated",
+    "onlyReferenceReportedApproximated": "die/charm2.wav",
+    "numericScoresInferred": false,
+    "bestChoiceMeansRelativePreferenceOnly": true,
+    "acceptedReferenceWinningRole": "previous",
+    "acceptedReferenceWinningSynth": "Transfxr",
+    "newV2AudibleSuccessDemonstrated": false,
+    "interpretation": "The user reports only one successful reference approximation; its chosen clip is the retained previous Transfxr render. Bird/card relative best choices do not establish adequate approximation."
+  },
+  "feedbackBytesAndAudioPreserved": true,
+  "decision": "Do not promote v2 as an audible improvement. Keep its numerical benchmark as diagnostic evidence only. Validate an audio-forward training prerequisite before another listening batch.",
+  "trainingPairPolicy": {
+    "targets": 5,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "duplicateAudioAliases": 0,
+    "conflictingAudioRatingGroups": 0,
+    "tiedPairs": 0,
+    "duplicateSessionPairs": 0,
+    "directChoicePairs": 7,
+    "choices": 5,
+    "choiceKinds": {
+      "best": 4,
+      "tie": 0,
+      "none": 1,
+      "skip": 0
+    },
+    "validatedAudioFiles": 24,
+    "uniqueAudioPcm": 24
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "source": "Direct user message accompanying the feedback attachment",
+  "verbatim": "we're so far away - only one charm2.wav was actually approximated",
+  "onlyReferenceReportedApproximated": "die/charm2.wav",
+  "numericScoresInferred": false,
+  "bestChoiceMeansRelativePreferenceOnly": true,
+  "acceptedReferenceWinningRole": "previous",
+  "acceptedReferenceWinningSynth": "Transfxr",
+  "newV2AudibleSuccessDemonstrated": false,
+  "interpretation": "The user reports only one successful reference approximation; its chosen clip is the retained previous Transfxr render. Bird/card relative best choices do not establish adequate approximation."
+}

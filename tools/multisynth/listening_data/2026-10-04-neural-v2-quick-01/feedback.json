@@ -1,0 +1,3262 @@
+{
+  "schemaVersion": 3,
+  "experimentId": "9a2d8dc4fb2ac668b9addee042ed8a857a19e0ccc197cec681b1534f7457c30e",
+  "provenance": {
+    "experiment": "neural-multisynth-v2",
+    "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+    "modelHeadMode": "acoustic",
+    "modelLossPolicy": {
+      "version": "acoustic-controls-v2",
+      "numericWeight": 8,
+      "octaveWeight": 1,
+      "categoricalWeight": 0.2,
+      "generatorWeight": 0.05,
+      "pitchControlWeight": 4,
+      "temporalControlWeight": 2,
+      "otherControlWeight": 1,
+      "pitchMappings": {
+        "Bfxr": "log2(3528*(frequency_start^2+.001))",
+        "Transfxr": "log2(40)+7*pitch",
+        "Pluckr": "log2(55)+4*pitch"
+      },
+      "masks": "Bfxr square-only, zero-depth vibrato rate, zero-amount jump onset/repeat; Pluckr motion rate when both tremolo/vibrato are zero and one-string strum; equal-endpoint transition curves; Transfxr disabled morph."
+    },
+    "targetCount": 5,
+    "bfxrCheckpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+    "targetManifestSha256": "143c865004a35a8e8e68dde1d5dda13fbd1cc42395056b9d50f6c7e3552b4f97",
+    "trainedEngines": [
+      "Bfxr",
+      "Footsteppr",
+      "Transfxr",
+      "Birdr",
+      "Boomr",
+      "Bouncr",
+      "Breathr",
+      "Choirr",
+      "Clonkr",
+      "Crittr",
+      "Fractr",
+      "Glitchr",
+      "Jinglr",
+      "Machinr",
+      "Pluckr",
+      "Riftr",
+      "Rustlr",
+      "Signlr",
+      "Squishr",
+      "Swarmr",
+      "Whooshr",
+      "Zappr"
+    ],
+    "complete": true,
+    "galleryTitle": "Learned multisynth inversion · training v2",
+    "galleryIntro": [
+      "These candidates come from trained audio-to-control experts for every listed instrument. The original Bfxr neural model and optimizer are restored as a separate baseline.",
+      "Automatic expert choice uses the experimental scorer fitted to your saved preferences, with a coarse pitch/voicing safeguard. Original Bfxr and your exact previous winner remain separate comparisons. Raw model output is available in details.",
+      "Choose the closest gesture and feel. These are familiar tagged development references; measured reconstruction changes still need your ears. Choices save here and can be copied as JSON."
+    ],
+    "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+    "starts": 4,
+    "refinementBudgetPerStart": 128,
+    "selectorModelSha256": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+    "selectionObjective": "experimental-human-preference-rerank",
+    "originalBfxrBudget": 2000,
+    "scope": "Individual numeric engines; Jinglr editable phrase structure comes from predicted generator, not note transcription.",
+    "coarsePitchPolicy": {
+      "targetVoicedFraction": 0.75,
+      "candidateVoicedFraction": 0.6,
+      "registerToleranceSemitones": 3,
+      "penaltyPerOctave": 0.5,
+      "maxRegisterErrorOctaves": 3,
+      "lostVoicingPenalty": 2,
+      "preferredRegisterErrorOctaves": 1,
+      "status": "Fixed experimental safeguard; not fitted to human ratings or validated as a perceptual metric"
+    },
+    "seconds": 277.76259195804596
+  },
+  "ratingScales": {
+    "likeness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Likeness to reference: 1 = far off, 5 = very close"
+    },
+    "usefulness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Useful/fun game sound: 1 = not useful, 5 = very useful or fun"
+    }
+  },
+  "targets": [
+    {
+      "id": "95183b07061a6cf2fb71eb4fdaa22506f1eb84f264c6dd5195ce3d3cf5ba3a8a",
+      "name": "attack/spinout.wav",
+      "sha256": "63f22019f9cb29641090eaa86c67b1beb58f40462d53554a4bb5e9c526634b73",
+      "folder": "001",
+      "referenceAudioSha256": "b78c895f0183d907588cb962d8e1c9dd27b21665d64d2ecf2a0b8bfdd843714d",
+      "candidates": [
+        {
+          "id": "97ba5f9671c2218dbff3323f8dcf61a9dee783d5d928b92e74e14f96022f2f62",
+          "synth": "Rustlr",
+          "paramsSha256": "e77236d940e8e42143aa65eac2eefe69dc1da9d3466d303c42ac2bb9ac8ab29e",
+          "seed": 20261012,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "b138e10e9d1929377c4be94f154de6e22ecdc77b458465d775604606dd048461",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "randomize_params",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              2,
+              0
+            ],
+            "generatorProbability": 0.7877964377403259,
+            "proposalRank": 1,
+            "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "anchorSeed": 20261012,
+            "fixedText": [],
+            "fixedRandomness": [
+              "seed"
+            ],
+            "structureScope": "numeric individual synth",
+            "matchObjectiveScore": 5.264697143818526,
+            "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "backend": "neural",
+            "pitchDiagnostic": {
+              "activeFrames": 107,
+              "voicedFrames": 3,
+              "voicedFraction": 0.028037382289767265,
+              "medianHz": 3834.78271484375
+            },
+            "auditionMatchObjectiveScore": 5.264901614656214,
+            "auditionWavSha256": "b138e10e9d1929377c4be94f154de6e22ecdc77b458465d775604606dd048461",
+            "auditionPitchDiagnostic": {
+              "activeFrames": 107,
+              "voicedFrames": 3,
+              "voicedFraction": 0.028037382289767265,
+              "medianHz": 3834.78271484375
+            },
+            "auditionTransform": "peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio"
+          },
+          "file": "raw.wav",
+          "role": "raw",
+          "label": "Raw neural prediction",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "3ca2e5d016d858e97aac0ae8d128307ddb8b234fbd995be50d4efc1e20b532e3",
+          "synth": "Fractr",
+          "paramsSha256": "aa6fb342ba268991a53994917c0c1e2429b26523fde5d2cf0e7e68f48e0597e9",
+          "seed": 20261006,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "ecde8c1aded1eb038701e578ed7f7fa9771fff463bcff3548b8aaaea0399bacb",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "generate_crystal_break",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              3
+            ],
+            "generatorProbability": 0.49085357785224915,
+            "proposalRank": 1,
+            "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "anchorSeed": 20261006,
+            "fixedText": [],
+            "fixedRandomness": [
+              "seed"
+            ],
+            "structureScope": "numeric individual synth",
+            "selectionObjective": "experimental-human-preference-rerank",
+            "selectorModelSha256": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+            "preferenceScore": 2.302132780392967,
+            "selectionScore": 2.5498435000443327,
+            "coarsePitchPenalty": 0.24771071965136582,
+            "coarsePitchPolicy": {
+              "targetVoicedFraction": 0.75,
+              "candidateVoicedFraction": 0.6,
+              "registerToleranceSemitones": 3,
+              "penaltyPerOctave": 0.5,
+              "maxRegisterErrorOctaves": 3,
+              "lostVoicingPenalty": 2,
+              "preferredRegisterErrorOctaves": 1,
+              "status": "Fixed experimental safeguard; not fitted to human ratings or validated as a perceptual metric"
+            },
+            "matchingRegisterCandidates": 1,
+            "selectorRanking": [
+              {
+                "synth": "Bfxr",
+                "seed": 20261011,
+                "preferenceScore": 1.6813265668792914,
+                "coarsePitchPenalty": 1.0306348823438825,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Bfxr",
+                "seed": 20261011,
+                "preferenceScore": 2.037775710107792,
+                "coarsePitchPenalty": 1.1246967115518027,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Footsteppr",
+                "seed": 20261004,
+                "preferenceScore": 2.564482370657915,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Footsteppr",
+                "seed": 20261004,
+                "preferenceScore": 2.774347693980295,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Transfxr",
+                "seed": 20261013,
+                "preferenceScore": 1.8956933276903882,
+                "coarsePitchPenalty": 1.2484364301309812,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Transfxr",
+                "seed": 20261013,
+                "preferenceScore": 1.7340795001806262,
+                "coarsePitchPenalty": 1.375,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Birdr",
+                "seed": 20261014,
+                "preferenceScore": 1.9877356361330585,
+                "coarsePitchPenalty": 1.050199510291859,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Birdr",
+                "seed": 20261014,
+                "preferenceScore": 2.011629422938912,
+                "coarsePitchPenalty": 0.5425634138247449,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Boomr",
+                "seed": 20261009,
+                "preferenceScore": 2.3544438449545995,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Boomr",
+                "seed": 20261009,
+                "preferenceScore": 2.754460666994324,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Bouncr",
+                "seed": 20261009,
+                "preferenceScore": 1.9218161416526618,
+                "coarsePitchPenalty": 1.2624048715600256,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Bouncr",
+                "seed": 20261009,
+                "preferenceScore": 1.8623568345981667,
+                "coarsePitchPenalty": 0.7649621550321056,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Breathr",
+                "seed": 20261016,
+                "preferenceScore": 2.4583834300599268,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Breathr",
+                "seed": 20261016,
+                "preferenceScore": 2.9109209022491545,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Choirr",
+                "seed": 20261010,
+                "preferenceScore": 1.9271924178598048,
+                "coarsePitchPenalty": 1.375,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Choirr",
+                "seed": 20261010,
+                "preferenceScore": 2.2044477148090587,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Clonkr",
+                "seed": 20261013,
+                "preferenceScore": 2.0126628392941903,
+                "coarsePitchPenalty": 1.2252020882601837,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Clonkr",
+                "seed": 20261013,
+                "preferenceScore": 1.9291947025692926,
+                "coarsePitchPenalty": 0.659275541280191,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Crittr",
+                "seed": 20261014,
+                "preferenceScore": 1.7951421966330254,
+                "coarsePitchPenalty": 1.186841948260459,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Crittr",
+                "seed": 20261014,
+                "preferenceScore": 1.8998391474331164,
+                "coarsePitchPenalty": 1.1881356344923368,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Fractr",
+                "seed": 20261006,
+                "preferenceScore": 1.9975411095462272,
+                "coarsePitchPenalty": 1.375,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Fractr",
+                "seed": 20261006,
+                "preferenceScore": 2.302132780392967,
+                "coarsePitchPenalty": 0.24771071965136582,
+                "eligible": true,
+                "chosen": true
+              },
+              {
+                "synth": "Glitchr",
+                "seed": 20261010,
+                "preferenceScore": 1.9677405715796104,
+                "coarsePitchPenalty": 0.6769470909492178,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Glitchr",
+                "seed": 20261010,
+                "preferenceScore": 2.672012690289498,
+                "coarsePitchPenalty": 1.375,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Jinglr",
+                "seed": 20261016,
+                "preferenceScore": 1.7665367334201725,
+                "coarsePitchPenalty": 1.2381486789811738,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Jinglr",
+                "seed": 20261016,
+                "preferenceScore": 1.7665367334201725,
+                "coarsePitchPenalty": 1.2381486789811738,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Machinr",
+                "seed": 20261006,
+                "preferenceScore": 1.758273166854913,
+                "coarsePitchPenalty": 1.3376741605546043,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Machinr",
+                "seed": 20261006,
+                "preferenceScore": 1.8805389729196111,
+                "coarsePitchPenalty": 1.3414098893623363,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Pluckr",
+                "seed": 20261012,
+                "preferenceScore": 2.2352519641173085,
+                "coarsePitchPenalty": 1.375,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Pluckr",
+                "seed": 20261012,
+                "preferenceScore": 2.022223248256953,
+                "coarsePitchPenalty": 1.375,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Riftr",
+                "seed": 20261010,
+                "preferenceScore": 1.565983401581374,
+                "coarsePitchPenalty": 1.2237786886448105,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Riftr",
+                "seed": 20261010,
+                "preferenceScore": 1.430702719896007,
+                "coarsePitchPenalty": 0.7207140975907367,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Rustlr",
+                "seed": 20261012,
+                "preferenceScore": 2.365701094742091,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Rustlr",
+                "seed": 20261012,
+                "preferenceScore": 2.4687037955032105,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Signlr",
+                "seed": 20261011,
+                "preferenceScore": 3.0031763859005385,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Signlr",
+                "seed": 20261011,
+                "preferenceScore": 2.2265587875029373,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Squishr",
+                "seed": 20261014,
+                "preferenceScore": 1.885479445292738,
+                "coarsePitchPenalty": 0.5042905449847954,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Squishr",
+                "seed": 20261014,
+                "preferenceScore": 2.0605059023182335,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Swarmr",
+                "seed": 20261012,
+                "preferenceScore": 2.068479277399408,
+                "coarsePitchPenalty": 0.6401810562942886,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Swarmr",
+                "seed": 20261012,
+                "preferenceScore": 3.3590140916980795,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Whooshr",
+                "seed": 20261012,
+                "preferenceScore": 2.4868782024794545,
+                "coarsePitchPenalty": 1.2847489774938632,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Zappr",
+                "seed": 20261012,
+                "preferenceScore": 2.056640138612009,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Rustlr",
+                "seed": 20261012,
+                "preferenceScore": 2.550067219698915,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Boomr",
+                "seed": 20261009,
+                "preferenceScore": 2.671723982355446,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Fractr",
+                "seed": 20261006,
+                "preferenceScore": 2.961517840727444,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Bfxr",
+                "seed": 20261011,
+                "preferenceScore": 2.534748601163411,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Bfxr",
+                "seed": 1234,
+                "preferenceScore": 3.274661542177289,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              }
+            ],
+            "poolSize": 47,
+            "selectionScope": "raw experts, refined experts and original Bfxr; search score remains MatchObjective",
+            "matchObjectiveScore": 9.488688702440365,
+            "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "backend": "neural",
+            "pitchDiagnostic": {
+              "activeFrames": 171,
+              "voicedFrames": 117,
+              "voicedFraction": 0.6842105388641357,
+              "medianHz": 3266.667724609375
+            },
+            "auditionMatchObjectiveScore": 9.518058634408458,
+            "auditionWavSha256": "ecde8c1aded1eb038701e578ed7f7fa9771fff463bcff3548b8aaaea0399bacb",
+            "auditionPitchDiagnostic": {
+              "activeFrames": 171,
+              "voicedFrames": 117,
+              "voicedFraction": 0.6842105388641357,
+              "medianHz": 3266.667724609375
+            },
+            "auditionTransform": "peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio"
+          },
+          "file": "selected.wav",
+          "role": "selected",
+          "label": "Automatic expert choice",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "fc9adbb4dda340556caa86fdd49223196255cdb932fb1bd3c515b1d9ee0bd32e",
+          "synth": "Bfxr",
+          "paramsSha256": "a037a3715380b9a8d1211d2ac6b53d5f4be6936119c6e54ef6fe9fd7af71df1f",
+          "seed": 1234,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "99a71b58e0371fccfe0f02c470d3c13c611f0457f0575b5e4e7a66c068959f0d",
+          "provenance": {
+            "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+            "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+            "budget": 2000,
+            "evaluations": 3003,
+            "allowPitchShift": false,
+            "allowTimeStretch": false,
+            "structureObjective": false,
+            "optimizer": "original StagedOptimizer with neural seeds",
+            "matchObjectiveScore": 4.860288967518382,
+            "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "backend": "original-bfxr",
+            "pitchDiagnostic": {
+              "activeFrames": 35,
+              "voicedFrames": 0,
+              "voicedFraction": 0,
+              "medianHz": null
+            },
+            "auditionMatchObjectiveScore": 4.860266111074427,
+            "auditionWavSha256": "99a71b58e0371fccfe0f02c470d3c13c611f0457f0575b5e4e7a66c068959f0d",
+            "auditionPitchDiagnostic": {
+              "activeFrames": 35,
+              "voicedFrames": 0,
+              "voicedFraction": 0,
+              "medianHz": null
+            },
+            "auditionTransform": "peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio"
+          },
+          "file": "original.wav",
+          "role": "original",
+          "label": "Original Bfxr",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "cab9edd485cf722831f00556f204e02191279a757576792e902b6c7e8583a21a",
+          "synth": "Bfxr",
+          "paramsSha256": "04bd836bcae694e3da78b70650d961f36301e194998da17c41879a469a7f4000",
+          "seed": 1234,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "c31fe7bffac4a5f75e30d6b7e521f87e68f640b50ce3f421def0753ebb007083",
+          "provenance": {
+            "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+            "candidateId": "c8ecab452dbb90190bd3fc74c70434ff6c22dbdfda96717cf423913115e13ae5",
+            "archivedPcmSha256": "7637f86b0bbf76f5eceab8555ef9971b93b8e6075d7390a3452d3f667765a4b4",
+            "previousLikeness": null,
+            "previousLabelSource": "direct-choice"
+          },
+          "file": "previous.wav",
+          "role": "previous",
+          "label": "Previous best",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "fc9adbb4dda340556caa86fdd49223196255cdb932fb1bd3c515b1d9ee0bd32e",
+          "3ca2e5d016d858e97aac0ae8d128307ddb8b234fbd995be50d4efc1e20b532e3",
+          "cab9edd485cf722831f00556f204e02191279a757576792e902b6c7e8583a21a"
+        ],
+        "auditionedCandidateIds": [
+          "fc9adbb4dda340556caa86fdd49223196255cdb932fb1bd3c515b1d9ee0bd32e",
+          "3ca2e5d016d858e97aac0ae8d128307ddb8b234fbd995be50d4efc1e20b532e3",
+          "cab9edd485cf722831f00556f204e02191279a757576792e902b6c7e8583a21a"
+        ],
+        "preferredCandidateIds": [
+          "cab9edd485cf722831f00556f204e02191279a757576792e902b6c7e8583a21a"
+        ]
+      }
+    },
+    {
+      "id": "d0ad1ffd30ac7061d11ceddc8413e14bc8aa44bfe457d8d101b3c8d9d1c74e5d",
+      "name": "bird/Bird Sounds.WAV",
+      "sha256": "b7e6a6985e2182452977e32c60e7fc705cf80a36151c6d49f4f1139bffb34370",
+      "folder": "002",
+      "referenceAudioSha256": "090801d95c5bfe35ac1a7aa4d54f7cbc54859e45a03b6225d6104ae72e8a52b3",
+      "candidates": [
+        {
+          "id": "a0dc96ea6733793bf5274870cac1b79000529c9232d04172eb596bc587827357",
+          "synth": "Footsteppr",
+          "paramsSha256": "f1ae3e165934a82c926da913295754aadcf154fed1c41bfbdb70167d4d69b5b1",
+          "seed": 20261004,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "6e88915ffed670f4aa7a6cbf5413d2fe081ccbe039b64af6444dbd75e932165f",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "randomize_params",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              2
+            ],
+            "generatorProbability": 1,
+            "proposalRank": 0,
+            "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "anchorSeed": 20261004,
+            "fixedText": [],
+            "fixedRandomness": [],
+            "structureScope": "numeric individual synth",
+            "matchObjectiveScore": 6.677854156807423,
+            "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "backend": "neural",
+            "pitchDiagnostic": {
+              "activeFrames": 17,
+              "voicedFrames": 0,
+              "voicedFraction": 0,
+              "medianHz": null
+            },
+            "auditionMatchObjectiveScore": 6.677843619211047,
+            "auditionWavSha256": "6e88915ffed670f4aa7a6cbf5413d2fe081ccbe039b64af6444dbd75e932165f",
+            "auditionPitchDiagnostic": {
+              "activeFrames": 17,
+              "voicedFrames": 0,
+              "voicedFraction": 0,
+              "medianHz": null
+            },
+            "auditionTransform": "peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio"
+          },
+          "file": "raw.wav",
+          "role": "raw",
+          "label": "Raw neural prediction",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "8a5dfd8f7153d0f9796323f51dfb57be32be01a12f4f61845962e9cc4070468c",
+          "synth": "Bfxr",
+          "paramsSha256": "fc8974f5d8762d77ed276aa5a935f56f4d1f60b42b4695e90f2bfb7020391b96",
+          "seed": 1234,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "da98ca93ab2c01e036c2e73ba194132a37ae078e1a231c8820102f280a727100",
+          "provenance": {
+            "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+            "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+            "budget": 2000,
+            "evaluations": 2015,
+            "allowPitchShift": false,
+            "allowTimeStretch": false,
+            "structureObjective": false,
+            "optimizer": "original StagedOptimizer with neural seeds",
+            "selectionObjective": "experimental-human-preference-rerank",
+            "selectorModelSha256": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+            "preferenceScore": 1.7049804956647736,
+            "selectionScore": 1.7049804956647736,
+            "coarsePitchPenalty": 0,
+            "coarsePitchPolicy": {
+              "targetVoicedFraction": 0.75,
+              "candidateVoicedFraction": 0.6,
+              "registerToleranceSemitones": 3,
+              "penaltyPerOctave": 0.5,
+              "maxRegisterErrorOctaves": 3,
+              "lostVoicingPenalty": 2,
+              "preferredRegisterErrorOctaves": 1,
+              "status": "Fixed experimental safeguard; not fitted to human ratings or validated as a perceptual metric"
+            },
+            "matchingRegisterCandidates": 6,
+            "selectorRanking": [
+              {
+                "synth": "Bfxr",
+                "seed": 20261011,
+                "preferenceScore": 2.4897558778689963,
+                "coarsePitchPenalty": 1.375,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Bfxr",
+                "seed": 20261011,
+                "preferenceScore": 2.4872055881434285,
+                "coarsePitchPenalty": 1.375,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Footsteppr",
+                "seed": 20261004,
+                "preferenceScore": 3.1597252606426594,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Footsteppr",
+                "seed": 20261004,
+                "preferenceScore": 3.117927789558041,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Transfxr",
+                "seed": 20261016,
+                "preferenceScore": 2.7017396093042105,
+                "coarsePitchPenalty": 1.375,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Transfxr",
+                "seed": 20261016,
+                "preferenceScore": 2.884925553742854,
+                "coarsePitchPenalty": 1.375,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Birdr",
+                "seed": 20261010,
+                "preferenceScore": 2.5438543607008173,
+                "coarsePitchPenalty": 1.2422389813269992,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Birdr",
+                "seed": 20261010,
+                "preferenceScore": 2.4511929364561285,
+                "coarsePitchPenalty": 0.7909002314548288,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Boomr",
+                "seed": 20261004,
+                "preferenceScore": 3.172478078351615,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Boomr",
+                "seed": 20261004,
+                "preferenceScore": 3.1244473779338335,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Bouncr",
+                "seed": 20261012,
+                "preferenceScore": 2.924739110681076,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Bouncr",
+                "seed": 20261012,
+                "preferenceScore": 3.105922364451087,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Breathr",
+                "seed": 20261012,
+                "preferenceScore": 2.6628335009218045,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Breathr",
+                "seed": 20261012,
+                "preferenceScore": 3.301134225170819,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Choirr",
+                "seed": 20261012,
+                "preferenceScore": 2.5343349875918717,
+                "coarsePitchPenalty": 1.375,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Choirr",
+                "seed": 20261012,
+                "preferenceScore": 2.7230949786662917,
+                "coarsePitchPenalty": 1.375,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Clonkr",
+                "seed": 20261014,
+                "preferenceScore": 3.8993863352687903,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Clonkr",
+                "seed": 20261014,
+                "preferenceScore": 3.154554770603694,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Crittr",
+                "seed": 20261014,
+                "preferenceScore": 2.4127963623615054,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Crittr",
+                "seed": 20261014,
+                "preferenceScore": 2.015931321812909,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Fractr",
+                "seed": 20261012,
+                "preferenceScore": 2.3781473590885494,
+                "coarsePitchPenalty": 0.15219304379990628,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Fractr",
+                "seed": 20261012,
+                "preferenceScore": 2.709564006565326,
+                "coarsePitchPenalty": 0.07470606822856318,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Glitchr",
+                "seed": 20261012,
+                "preferenceScore": 2.3541487275405526,
+                "coarsePitchPenalty": 1.1177673292142944,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Glitchr",
+                "seed": 20261012,
+                "preferenceScore": 2.5637109465138637,
+                "coarsePitchPenalty": 1.375,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Jinglr",
+                "seed": 20261007,
+                "preferenceScore": 2.6829330846689396,
+                "coarsePitchPenalty": 0.9127640813044249,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Jinglr",
+                "seed": 20261007,
+                "preferenceScore": 2.6829330846689396,
+                "coarsePitchPenalty": 0.9127640813044249,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Machinr",
+                "seed": 20261006,
+                "preferenceScore": 2.751745637519111,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Machinr",
+                "seed": 20261006,
+                "preferenceScore": 2.4393028695904624,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Pluckr",
+                "seed": 20261012,
+                "preferenceScore": 3.0603635114796353,
+                "coarsePitchPenalty": 1.375,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Pluckr",
+                "seed": 20261012,
+                "preferenceScore": 3.01781478950594,
+                "coarsePitchPenalty": 1.375,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Riftr",
+                "seed": 20261011,
+                "preferenceScore": 3.01904916375212,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Riftr",
+                "seed": 20261011,
+                "preferenceScore": 3.142771469623031,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Rustlr",
+                "seed": 20261012,
+                "preferenceScore": 3.2287512344686604,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Rustlr",
+                "seed": 20261012,
+                "preferenceScore": 3.4271790346921076,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Signlr",
+                "seed": 20261011,
+                "preferenceScore": 2.340799658017184,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Signlr",
+                "seed": 20261011,
+                "preferenceScore": 2.0993538527901525,
+                "coarsePitchPenalty": 1.1078968151100046,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Squishr",
+                "seed": 20261014,
+                "preferenceScore": 3.157483966732412,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Squishr",
+                "seed": 20261014,
+                "preferenceScore": 3.140395355218664,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Swarmr",
+                "seed": 20261007,
+                "preferenceScore": 1.988764110643194,
+                "coarsePitchPenalty": 0.059524509787177854,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Swarmr",
+                "seed": 20261007,
+                "preferenceScore": 3.1783065606036853,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Whooshr",
+                "seed": 20261012,
+                "preferenceScore": 2.844047385573736,
+                "coarsePitchPenalty": 1.2283096339488855,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Zappr",
+                "seed": 20261012,
+                "preferenceScore": 2.6457623983831873,
+                "coarsePitchPenalty": 0.6225438116312378,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Footsteppr",
+                "seed": 20261004,
+                "preferenceScore": 3.414102530894537,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Squishr",
+                "seed": 20261014,
+                "preferenceScore": 3.121668657672169,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Clonkr",
+                "seed": 20261014,
+                "preferenceScore": 3.898483940021385,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Crittr",
+                "seed": 20261014,
+                "preferenceScore": 1.8160944094975533,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Bfxr",
+                "seed": 1234,
+                "preferenceScore": 1.7049804956647736,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": true
+              }
+            ],
+            "poolSize": 47,
+            "selectionScope": "raw experts, refined experts and original Bfxr; search score remains MatchObjective",
+            "matchObjectiveScore": 4.96915732111877,
+            "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "backend": "original-bfxr",
+            "pitchDiagnostic": {
+              "activeFrames": 22,
+              "voicedFrames": 21,
+              "voicedFraction": 0.9545454382896423,
+              "medianHz": 2401.58740234375
+            },
+            "auditionMatchObjectiveScore": 4.969183725706304,
+            "auditionWavSha256": "da98ca93ab2c01e036c2e73ba194132a37ae078e1a231c8820102f280a727100",
+            "auditionPitchDiagnostic": {
+              "activeFrames": 22,
+              "voicedFrames": 21,
+              "voicedFraction": 0.9545454382896423,
+              "medianHz": 2401.58740234375
+            },
+            "auditionTransform": "peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio"
+          },
+          "file": "selected.wav",
+          "role": "selected",
+          "label": "Automatic expert choice",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "ee777218e0c093aec662440b63d8fa84ee9965cbb3f33923a881b13361674374",
+          "synth": "Bfxr",
+          "paramsSha256": "fc8974f5d8762d77ed276aa5a935f56f4d1f60b42b4695e90f2bfb7020391b96",
+          "seed": 1234,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "da98ca93ab2c01e036c2e73ba194132a37ae078e1a231c8820102f280a727100",
+          "provenance": {
+            "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+            "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+            "budget": 2000,
+            "evaluations": 2015,
+            "allowPitchShift": false,
+            "allowTimeStretch": false,
+            "structureObjective": false,
+            "optimizer": "original StagedOptimizer with neural seeds",
+            "matchObjectiveScore": 4.96915732111877,
+            "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "backend": "original-bfxr",
+            "pitchDiagnostic": {
+              "activeFrames": 22,
+              "voicedFrames": 21,
+              "voicedFraction": 0.9545454382896423,
+              "medianHz": 2401.58740234375
+            },
+            "auditionMatchObjectiveScore": 4.969183725706304,
+            "auditionWavSha256": "da98ca93ab2c01e036c2e73ba194132a37ae078e1a231c8820102f280a727100",
+            "auditionPitchDiagnostic": {
+              "activeFrames": 22,
+              "voicedFrames": 21,
+              "voicedFraction": 0.9545454382896423,
+              "medianHz": 2401.58740234375
+            },
+            "auditionTransform": "peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio"
+          },
+          "file": "original.wav",
+          "role": "original",
+          "label": "Original Bfxr",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "817c7dbc5c25a23cbd55f1d749619f90695c3a932f8d91850a1e78ddc0055b74",
+          "synth": "Soundboard",
+          "paramsSha256": "d30ee78ce3de6368e749ccc59ff35b1156f3cbd2e50975654db3c6662cfda3c5",
+          "seed": 626554359,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "b186e1e6435161dfb5642b3f73159f49557399ca64adb2aed41a7e23ec1879a9",
+          "provenance": {
+            "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+            "candidateId": "63e03437aedc36a73a8cbd72fbf0ff1c6e1399f37eb6c27d00b9928cc749872d",
+            "archivedPcmSha256": "8526c7a0969c29289e0f23011d12722d502ac69aae9dd32527419a7956c60620",
+            "previousLikeness": null,
+            "previousLabelSource": "direct-choice"
+          },
+          "file": "previous.wav",
+          "role": "previous",
+          "label": "Previous best",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "8a5dfd8f7153d0f9796323f51dfb57be32be01a12f4f61845962e9cc4070468c",
+          "817c7dbc5c25a23cbd55f1d749619f90695c3a932f8d91850a1e78ddc0055b74"
+        ],
+        "auditionedCandidateIds": [
+          "8a5dfd8f7153d0f9796323f51dfb57be32be01a12f4f61845962e9cc4070468c",
+          "817c7dbc5c25a23cbd55f1d749619f90695c3a932f8d91850a1e78ddc0055b74"
+        ],
+        "preferredCandidateIds": [
+          "8a5dfd8f7153d0f9796323f51dfb57be32be01a12f4f61845962e9cc4070468c"
+        ]
+      }
+    },
+    {
+      "id": "944c23a84c249cdfb74e43ae97689c8e34599ee6fc6eb4f7cfa58406ee75296b",
+      "name": "card/bookClose.ogg",
+      "sha256": "81e976532565f4372abd14e83d2684195fa548d0a28d345de221e56052454f32",
+      "folder": "003",
+      "referenceAudioSha256": "1694d1c771a06481c05b4dfc5ce9015168e50c0b4149958af6302cd500f9deb4",
+      "candidates": [
+        {
+          "id": "8fb2b174991136898b9db87633815758e923c5195c497fc7f71bdf7a5c331503",
+          "synth": "Footsteppr",
+          "paramsSha256": "cb7b03bdf3337328b5b7f49962c36349f162a6651e290981cf37d91ddb37437e",
+          "seed": 20261004,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "a663e0642dd7bc8b147e120c918091ad869438ae411f6383e8225e1a02aaf317",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "randomize_params",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              4
+            ],
+            "generatorProbability": 1,
+            "proposalRank": 0,
+            "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "anchorSeed": 20261004,
+            "fixedText": [],
+            "fixedRandomness": [],
+            "structureScope": "numeric individual synth",
+            "matchObjectiveScore": 3.368160125865377,
+            "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "backend": "neural",
+            "pitchDiagnostic": {
+              "activeFrames": 19,
+              "voicedFrames": 2,
+              "voicedFraction": 0.10526315867900848,
+              "medianHz": 149.90977478027344
+            },
+            "auditionMatchObjectiveScore": 3.367908058722258,
+            "auditionWavSha256": "a663e0642dd7bc8b147e120c918091ad869438ae411f6383e8225e1a02aaf317",
+            "auditionPitchDiagnostic": {
+              "activeFrames": 19,
+              "voicedFrames": 2,
+              "voicedFraction": 0.10526315867900848,
+              "medianHz": 149.90957641601562
+            },
+            "auditionTransform": "peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio"
+          },
+          "file": "raw.wav",
+          "role": "raw",
+          "label": "Raw neural prediction",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "29b9fd6ac83317fdc1fdab0b5906dd2c3086da9703671f4387b6c1d5fda4a61e",
+          "synth": "Bfxr",
+          "paramsSha256": "76d2e8c2b607977b28611925796ef7a5c47a3d84b2269339d1dbb7681f8e44f6",
+          "seed": 20261011,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "5212d3dcc0b84a9a60b9f0c2a1957b9b7cfeff3d6cb71d2de4d0b65c4de114d4",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "randomize_params",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              7
+            ],
+            "generatorProbability": 0.2046331763267517,
+            "proposalRank": 1,
+            "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "anchorSeed": 20261011,
+            "fixedText": [],
+            "fixedRandomness": [],
+            "structureScope": "numeric individual synth",
+            "refinement": {
+              "budget": 128,
+              "seed": 20263237,
+              "failures": 2,
+              "initialScore": 6.570179222932084,
+              "finalScore": 1.8416403915747155,
+              "trace": [
+                6.570179222932084,
+                6.570179222932084,
+                5.900060316270914,
+                5.87959560334618,
+                5.751186702233288,
+                5.751186702233288,
+                5.751186702233288,
+                5.74955314160796,
+                5.591612264193031,
+                5.567627532185311,
+                5.567627532185311,
+                5.567627532185311,
+                5.491930341188354,
+                5.4782611123333576,
+                5.4782611123333576,
+                5.4782611123333576,
+                5.459513800901068,
+                5.459513800901068,
+                5.43430930399017,
+                5.43430930399017,
+                5.43430930399017,
+                5.238155907706761,
+                3.056885315037821,
+                3.056885315037821,
+                3.056885315037821,
+                3.056885315037821,
+                3.056885315037821,
+                3.056885315037821,
+                3.056885315037821,
+                3.0142423022072746,
+                3.0142423022072746,
+                3.0142423022072746,
+                2.96500726233783,
+                2.96500726233783,
+                2.96500726233783,
+                2.96500726233783,
+                2.96500726233783,
+                2.96500726233783,
+                2.96500726233783,
+                2.9551980451547353,
+                2.8423828508573483,
+                2.8423828508573483,
+                2.8423828508573483,
+                2.8423828508573483,
+                2.8423828508573483,
+                2.8423828508573483,
+                2.8423828508573483,
+                2.8423828508573483,
+                2.8423828508573483,
+                2.8423828508573483,
+                2.8423828508573483,
+                2.8423828508573483,
+                2.8423828508573483,
+                2.7362280375107257,
+                2.7362280375107257,
+                2.7362280375107257,
+                2.636418683261939,
+                2.6331469767727915,
+                2.6331469767727915,
+                2.6331469767727915,
+                2.6331469767727915,
+                2.6331469767727915,
+                2.6331469767727915,
+                2.5801539523376085,
+                2.5801539523376085,
+                2.5801539523376085,
+                2.5801539523376085,
+                2.5801539523376085,
+                2.5801539523376085,
+                2.5801539523376085,
+                2.5801539523376085,
+                2.51386440626525,
+                2.4558373390533115,
+                2.4558373390533115,
+                2.4558373390533115,
+                2.4558373390533115,
+                2.4558373390533115,
+                2.4558373390533115,
+                2.4558373390533115,
+                2.4558373390533115,
+                2.3862961087266332,
+                2.3862961087266332,
+                2.3862961087266332,
+                2.381283066523098,
+                2.381283066523098,
+                2.381283066523098,
+                2.381283066523098,
+                2.381283066523098,
+                2.381283066523098,
+                2.381283066523098,
+                2.381283066523098,
+                2.381283066523098,
+                2.381283066523098,
+                2.2446071127605114,
+                2.2446071127605114,
+                2.2390163942682397,
+                2.2390163942682397,
+                2.2390163942682397,
+                2.2390163942682397,
+                2.2328514345016597,
+                2.2328514345016597,
+                2.2328514345016597,
+                2.2328514345016597,
+                2.2328514345016597,
+                2.2328514345016597,
+                2.2328514345016597,
+                2.2328514345016597,
+                2.2328514345016597,
+                2.2328514345016597,
+                2.2328514345016597,
+                2.2328514345016597,
+                2.2328514345016597,
+                2.0159484540454,
+                2.0159484540454,
+                2.0159484540454,
+                2.0159484540454,
+                2.0159484540454,
+                1.974207781973125,
+                1.974207781973125,
+                1.9561130770972188,
+                1.9561130770972188,
+                1.9243226980138375,
+                1.913263471548912,
+                1.913263471548912,
+                1.907445854850785,
+                1.907445854850785,
+                1.8416403915747155,
+                1.8416403915747155,
+                1.8416403915747155
+              ],
+              "scope": "full numeric ranges and categorical controls"
+            },
+            "selectionObjective": "experimental-human-preference-rerank",
+            "selectorModelSha256": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+            "preferenceScore": 1.2538507070563991,
+            "selectionScore": 1.2538507070563991,
+            "coarsePitchPenalty": 0,
+            "coarsePitchPolicy": {
+              "targetVoicedFraction": 0.75,
+              "candidateVoicedFraction": 0.6,
+              "registerToleranceSemitones": 3,
+              "penaltyPerOctave": 0.5,
+              "maxRegisterErrorOctaves": 3,
+              "lostVoicingPenalty": 2,
+              "preferredRegisterErrorOctaves": 1,
+              "status": "Fixed experimental safeguard; not fitted to human ratings or validated as a perceptual metric"
+            },
+            "matchingRegisterCandidates": 0,
+            "selectorRanking": [
+              {
+                "synth": "Bfxr",
+                "seed": 20261011,
+                "preferenceScore": 2.50616766673206,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Bfxr",
+                "seed": 20261011,
+                "preferenceScore": 2.4767127554534145,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Footsteppr",
+                "seed": 20261004,
+                "preferenceScore": 1.439672177215462,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Footsteppr",
+                "seed": 20261004,
+                "preferenceScore": 1.5511949546632842,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Transfxr",
+                "seed": 20261009,
+                "preferenceScore": 2.309839219813375,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Transfxr",
+                "seed": 20261009,
+                "preferenceScore": 2.304095855281824,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Birdr",
+                "seed": 20261004,
+                "preferenceScore": 2.9143028614400714,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Birdr",
+                "seed": 20261004,
+                "preferenceScore": 2.4167038864704624,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Boomr",
+                "seed": 20261011,
+                "preferenceScore": 1.5014015105356733,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Boomr",
+                "seed": 20261011,
+                "preferenceScore": 1.704797087577556,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Bouncr",
+                "seed": 20261012,
+                "preferenceScore": 2.5901635668592027,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Bouncr",
+                "seed": 20261012,
+                "preferenceScore": 2.7374283354881923,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Breathr",
+                "seed": 20261007,
+                "preferenceScore": 2.3539462392111425,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Breathr",
+                "seed": 20261007,
+                "preferenceScore": 2.222810000356229,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Choirr",
+                "seed": 20261012,
+                "preferenceScore": 2.0312349906842333,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Choirr",
+                "seed": 20261012,
+                "preferenceScore": 2.206853187082902,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Clonkr",
+                "seed": 20261014,
+                "preferenceScore": 1.923452339961033,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Clonkr",
+                "seed": 20261014,
+                "preferenceScore": 2.1967033115084003,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Crittr",
+                "seed": 20261004,
+                "preferenceScore": 2.304837199239157,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Crittr",
+                "seed": 20261004,
+                "preferenceScore": 2.5406687762901496,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Fractr",
+                "seed": 20261014,
+                "preferenceScore": 2.5310435465463375,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Fractr",
+                "seed": 20261014,
+                "preferenceScore": 2.421599828279444,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Glitchr",
+                "seed": 20261011,
+                "preferenceScore": 2.4043318462017185,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Glitchr",
+                "seed": 20261011,
+                "preferenceScore": 2.7730299750506635,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Jinglr",
+                "seed": 20261006,
+                "preferenceScore": 2.4390328584444645,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Jinglr",
+                "seed": 20261006,
+                "preferenceScore": 2.3569832079151274,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Machinr",
+                "seed": 20261012,
+                "preferenceScore": 2.21266000447842,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Machinr",
+                "seed": 20261012,
+                "preferenceScore": 2.01991461740185,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Pluckr",
+                "seed": 20261004,
+                "preferenceScore": 1.8989126995405017,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Pluckr",
+                "seed": 20261004,
+                "preferenceScore": 2.461964149811475,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Riftr",
+                "seed": 20261006,
+                "preferenceScore": 2.3483918883388704,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Riftr",
+                "seed": 20261006,
+                "preferenceScore": 2.6021443528209964,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Rustlr",
+                "seed": 20261012,
+                "preferenceScore": 1.932185277238215,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Rustlr",
+                "seed": 20261012,
+                "preferenceScore": 2.224649189693929,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Signlr",
+                "seed": 20261011,
+                "preferenceScore": 2.4616163891178724,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Signlr",
+                "seed": 20261011,
+                "preferenceScore": 2.2625947268587114,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Squishr",
+                "seed": 20261006,
+                "preferenceScore": 1.7546270791091136,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Squishr",
+                "seed": 20261006,
+                "preferenceScore": 1.6416753084109756,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Swarmr",
+                "seed": 20261011,
+                "preferenceScore": 2.0617996444361184,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Swarmr",
+                "seed": 20261011,
+                "preferenceScore": 2.0624764807713283,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Whooshr",
+                "seed": 20261007,
+                "preferenceScore": 1.8961353141436919,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Zappr",
+                "seed": 20261010,
+                "preferenceScore": 2.4773473377337165,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Footsteppr",
+                "seed": 20261004,
+                "preferenceScore": 1.476997890341565,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Squishr",
+                "seed": 20261006,
+                "preferenceScore": 1.4501632928798918,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Boomr",
+                "seed": 20261011,
+                "preferenceScore": 1.7037392019192878,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Bfxr",
+                "seed": 20261011,
+                "preferenceScore": 1.2538507070563991,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": true
+              },
+              {
+                "synth": "Bfxr",
+                "seed": 1234,
+                "preferenceScore": 1.7863473490481883,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              }
+            ],
+            "poolSize": 47,
+            "selectionScope": "raw experts, refined experts and original Bfxr; search score remains MatchObjective",
+            "matchObjectiveScore": 1.8416403915747155,
+            "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "backend": "neural",
+            "pitchDiagnostic": {
+              "activeFrames": 16,
+              "voicedFrames": 0,
+              "voicedFraction": 0,
+              "medianHz": null
+            },
+            "auditionMatchObjectiveScore": 1.8417122807355297,
+            "auditionWavSha256": "5212d3dcc0b84a9a60b9f0c2a1957b9b7cfeff3d6cb71d2de4d0b65c4de114d4",
+            "auditionPitchDiagnostic": {
+              "activeFrames": 16,
+              "voicedFrames": 0,
+              "voicedFraction": 0,
+              "medianHz": null
+            },
+            "auditionTransform": "peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio"
+          },
+          "file": "selected.wav",
+          "role": "selected",
+          "label": "Automatic expert choice",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "18a6d1898fa9bc18101edd08d149f935cdbe226ae40608badc01bdd933a2aff0",
+          "synth": "Bfxr",
+          "paramsSha256": "3f7556c3422b29c84e757932761dc252de33e3b85dd9ff2e3a2ed8f264ce14eb",
+          "seed": 1234,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "9c84e94e3b0c78f2e47a8b08c160ced536cfa089ac01a515a017a011775fc558",
+          "provenance": {
+            "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+            "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+            "budget": 2000,
+            "evaluations": 2015,
+            "allowPitchShift": false,
+            "allowTimeStretch": false,
+            "structureObjective": false,
+            "optimizer": "original StagedOptimizer with neural seeds",
+            "matchObjectiveScore": 1.6820900942030788,
+            "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "backend": "original-bfxr",
+            "pitchDiagnostic": {
+              "activeFrames": 15,
+              "voicedFrames": 0,
+              "voicedFraction": 0,
+              "medianHz": null
+            },
+            "auditionMatchObjectiveScore": 1.7247223866693047,
+            "auditionWavSha256": "9c84e94e3b0c78f2e47a8b08c160ced536cfa089ac01a515a017a011775fc558",
+            "auditionPitchDiagnostic": {
+              "activeFrames": 15,
+              "voicedFrames": 0,
+              "voicedFraction": 0,
+              "medianHz": null
+            },
+            "auditionTransform": "peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio"
+          },
+          "file": "original.wav",
+          "role": "original",
+          "label": "Original Bfxr",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "88e18f23844e97931998e83fd37f27c7f8314e75309af800186845c7b2a2c422",
+          "synth": "Transfxr",
+          "paramsSha256": "9708a81dadac9e5219b8442a10eb0ce4821f89cebea0f26e6b6a1be716fa44e1",
+          "seed": 1733427261,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "c2a2bba3f69479dba3ce61b0df56afe04d7bdb7872626dff1cecb5c448f35efa",
+          "provenance": {
+            "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+            "candidateId": "6db0e238c392d3d35da5f7ce771b0622dd81b1a53e2d7608afb47e16b757d070",
+            "archivedPcmSha256": "3c4dcda97ff8b9ff66458cfd759af533f31431f731987c309b433ceed608056a",
+            "previousLikeness": null,
+            "previousLabelSource": "direct-choice"
+          },
+          "file": "previous.wav",
+          "role": "previous",
+          "label": "Previous best",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "88e18f23844e97931998e83fd37f27c7f8314e75309af800186845c7b2a2c422",
+          "29b9fd6ac83317fdc1fdab0b5906dd2c3086da9703671f4387b6c1d5fda4a61e",
+          "18a6d1898fa9bc18101edd08d149f935cdbe226ae40608badc01bdd933a2aff0"
+        ],
+        "auditionedCandidateIds": [
+          "88e18f23844e97931998e83fd37f27c7f8314e75309af800186845c7b2a2c422",
+          "29b9fd6ac83317fdc1fdab0b5906dd2c3086da9703671f4387b6c1d5fda4a61e",
+          "18a6d1898fa9bc18101edd08d149f935cdbe226ae40608badc01bdd933a2aff0"
+        ],
+        "preferredCandidateIds": [
+          "29b9fd6ac83317fdc1fdab0b5906dd2c3086da9703671f4387b6c1d5fda4a61e"
+        ]
+      }
+    },
+    {
+      "id": "5e0485ad3ea0478994f15349e9b8cbf6b4d3e936a84aff51da0be5666f21814a",
+      "name": "computer/robo_talk.wav",
+      "sha256": "405f8bbc7adcdae6815b249b1551423407f5b157947c386340faf161b94e6391",
+      "folder": "004",
+      "referenceAudioSha256": "035aa65fecb30c29dc07b580a4ef6a5d10e035a0f194d6a2d5e098bc6e65215e",
+      "candidates": [
+        {
+          "id": "74a449c7bb3f6d9e3a1dd96a05799b5787cf0bd7f12e8b0287f80a9d7f79b65e",
+          "synth": "Rustlr",
+          "paramsSha256": "b7f0916dcded14d2de223e04c0892145ed335579c36a6fb3a151c94e5aa9326e",
+          "seed": 20261012,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "b38efb3f5c3b473e795e4eb54aae3965e16ce9b3383deb340925471cc82b78e7",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "randomize_params",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              0,
+              2
+            ],
+            "generatorProbability": 0.8143696784973145,
+            "proposalRank": 1,
+            "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "anchorSeed": 20261012,
+            "fixedText": [],
+            "fixedRandomness": [
+              "seed"
+            ],
+            "structureScope": "numeric individual synth",
+            "matchObjectiveScore": 2.753035664092458,
+            "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "backend": "neural",
+            "pitchDiagnostic": {
+              "activeFrames": 83,
+              "voicedFrames": 0,
+              "voicedFraction": 0,
+              "medianHz": null
+            },
+            "auditionMatchObjectiveScore": 2.7530883201451206,
+            "auditionWavSha256": "b38efb3f5c3b473e795e4eb54aae3965e16ce9b3383deb340925471cc82b78e7",
+            "auditionPitchDiagnostic": {
+              "activeFrames": 83,
+              "voicedFrames": 0,
+              "voicedFraction": 0,
+              "medianHz": null
+            },
+            "auditionTransform": "peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio"
+          },
+          "file": "raw.wav",
+          "role": "raw",
+          "label": "Raw neural prediction",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "2bdc46df4bd2d403db5b5c1fb76f665244a746cf7dffabbe3ff195d69dddbe0f",
+          "synth": "Breathr",
+          "paramsSha256": "fad23cc6b37cd4b912eab539a0353c46c9637dac9caf2550ab8bb4529f4a97a7",
+          "seed": 20261016,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "786121761a94a772ced7ff1bebf9013552bbe68c36add26662daa0503e1de2fb",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "randomize_params",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              1,
+              0
+            ],
+            "generatorProbability": 0.4795878231525421,
+            "proposalRank": 1,
+            "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "anchorSeed": 20261016,
+            "fixedText": [],
+            "fixedRandomness": [
+              "seed"
+            ],
+            "structureScope": "numeric individual synth",
+            "refinement": {
+              "budget": 128,
+              "seed": 20264104,
+              "failures": 0,
+              "initialScore": 2.811573944376166,
+              "finalScore": 2.508739482518737,
+              "trace": [
+                2.811573944376166,
+                2.811573944376166,
+                2.8059709377359194,
+                2.7978026791431803,
+                2.7978026791431803,
+                2.7978026791431803,
+                2.792789200215249,
+                2.7596404343590293,
+                2.7596404343590293,
+                2.7596404343590293,
+                2.7596404343590293,
+                2.7596404343590293,
+                2.7596404343590293,
+                2.7596404343590293,
+                2.7596404343590293,
+                2.717678574061342,
+                2.717678574061342,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.717127823734684,
+                2.7154126634032894,
+                2.7154126634032894,
+                2.7154126634032894,
+                2.7154126634032894,
+                2.7154126634032894,
+                2.69574889241618,
+                2.69574889241618,
+                2.69574889241618,
+                2.69574889241618,
+                2.69574889241618,
+                2.69574889241618,
+                2.69574889241618,
+                2.69574889241618,
+                2.69574889241618,
+                2.69574889241618,
+                2.69574889241618,
+                2.69574889241618,
+                2.69574889241618,
+                2.69574889241618,
+                2.69574889241618,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6839228251290947,
+                2.6838811040370287,
+                2.6838811040370287,
+                2.6838811040370287,
+                2.6838811040370287,
+                2.6823620036914435,
+                2.6823620036914435,
+                2.6823620036914435,
+                2.5367444619623,
+                2.5367444619623,
+                2.5367444619623,
+                2.5367444619623,
+                2.5367444619623,
+                2.5367444619623,
+                2.5367444619623,
+                2.5367444619623,
+                2.526494846350427,
+                2.526494846350427,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5224677715574755,
+                2.5198990537899815,
+                2.5198990537899815,
+                2.5198990537899815,
+                2.515301638345336,
+                2.508739482518737,
+                2.508739482518737,
+                2.508739482518737,
+                2.508739482518737
+              ],
+              "scope": "full numeric ranges and categorical controls"
+            },
+            "selectionObjective": "experimental-human-preference-rerank",
+            "selectorModelSha256": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+            "preferenceScore": 1.7721434340761442,
+            "selectionScore": 1.7721434340761442,
+            "coarsePitchPenalty": 0,
+            "coarsePitchPolicy": {
+              "targetVoicedFraction": 0.75,
+              "candidateVoicedFraction": 0.6,
+              "registerToleranceSemitones": 3,
+              "penaltyPerOctave": 0.5,
+              "maxRegisterErrorOctaves": 3,
+              "lostVoicingPenalty": 2,
+              "preferredRegisterErrorOctaves": 1,
+              "status": "Fixed experimental safeguard; not fitted to human ratings or validated as a perceptual metric"
+            },
+            "matchingRegisterCandidates": 0,
+            "selectorRanking": [
+              {
+                "synth": "Bfxr",
+                "seed": 20261011,
+                "preferenceScore": 2.7131750786213438,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Bfxr",
+                "seed": 20261011,
+                "preferenceScore": 2.7337432529589702,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Footsteppr",
+                "seed": 20261004,
+                "preferenceScore": 1.8027577489630313,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Footsteppr",
+                "seed": 20261004,
+                "preferenceScore": 1.9303607776058858,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Transfxr",
+                "seed": 20261013,
+                "preferenceScore": 2.268372583459845,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Transfxr",
+                "seed": 20261013,
+                "preferenceScore": 2.156797216570025,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Birdr",
+                "seed": 20261008,
+                "preferenceScore": 2.0643344024432517,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Birdr",
+                "seed": 20261008,
+                "preferenceScore": 2.0552845595147318,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Boomr",
+                "seed": 20261012,
+                "preferenceScore": 2.3512991537205115,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Boomr",
+                "seed": 20261012,
+                "preferenceScore": 2.6404499860107062,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Bouncr",
+                "seed": 20261009,
+                "preferenceScore": 2.2769251013005567,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Bouncr",
+                "seed": 20261009,
+                "preferenceScore": 2.368727059947353,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Breathr",
+                "seed": 20261016,
+                "preferenceScore": 1.82678045953342,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Breathr",
+                "seed": 20261016,
+                "preferenceScore": 1.803711233797723,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Choirr",
+                "seed": 20261010,
+                "preferenceScore": 1.9328844077869203,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Choirr",
+                "seed": 20261010,
+                "preferenceScore": 1.9127364238183326,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Clonkr",
+                "seed": 20261013,
+                "preferenceScore": 3.6681761978793404,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Clonkr",
+                "seed": 20261013,
+                "preferenceScore": 3.4160114765872502,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Crittr",
+                "seed": 20261011,
+                "preferenceScore": 1.9756334990959372,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Crittr",
+                "seed": 20261011,
+                "preferenceScore": 1.9532732527568368,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Fractr",
+                "seed": 20261006,
+                "preferenceScore": 2.8385702885501813,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Fractr",
+                "seed": 20261006,
+                "preferenceScore": 3.3613647883775104,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Glitchr",
+                "seed": 20261010,
+                "preferenceScore": 1.9627523252817152,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Glitchr",
+                "seed": 20261010,
+                "preferenceScore": 1.9139949500152746,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Jinglr",
+                "seed": 20261016,
+                "preferenceScore": 2.9736294821275306,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Jinglr",
+                "seed": 20261016,
+                "preferenceScore": 3.00776537110392,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Machinr",
+                "seed": 20261006,
+                "preferenceScore": 2.0405955423067246,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Machinr",
+                "seed": 20261006,
+                "preferenceScore": 2.7822886473882433,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Pluckr",
+                "seed": 20261007,
+                "preferenceScore": 3.095686883876868,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Pluckr",
+                "seed": 20261007,
+                "preferenceScore": 3.130234386124746,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Riftr",
+                "seed": 20261008,
+                "preferenceScore": 2.3599391958981255,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Riftr",
+                "seed": 20261008,
+                "preferenceScore": 3.0828441995179245,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Rustlr",
+                "seed": 20261012,
+                "preferenceScore": 1.9891262543068144,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Rustlr",
+                "seed": 20261012,
+                "preferenceScore": 1.9237921571936565,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Signlr",
+                "seed": 20261007,
+                "preferenceScore": 2.356612767737541,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Signlr",
+                "seed": 20261007,
+                "preferenceScore": 2.2664327044611494,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Squishr",
+                "seed": 20261014,
+                "preferenceScore": 2.2451885579072552,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Squishr",
+                "seed": 20261014,
+                "preferenceScore": 2.7454058434021658,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Swarmr",
+                "seed": 20261004,
+                "preferenceScore": 2.0494688215133054,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Swarmr",
+                "seed": 20261004,
+                "preferenceScore": 2.545659103291661,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Whooshr",
+                "seed": 20261012,
+                "preferenceScore": 2.263508596112129,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Zappr",
+                "seed": 20261012,
+                "preferenceScore": 2.298251391161636,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Rustlr",
+                "seed": 20261012,
+                "preferenceScore": 1.9088850810742102,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Breathr",
+                "seed": 20261016,
+                "preferenceScore": 1.7721434340761442,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": true
+              },
+              {
+                "synth": "Fractr",
+                "seed": 20261006,
+                "preferenceScore": 2.4582066458944634,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Whooshr",
+                "seed": 20261012,
+                "preferenceScore": 2.012942567353594,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Bfxr",
+                "seed": 1234,
+                "preferenceScore": 2.058566244029315,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              }
+            ],
+            "poolSize": 47,
+            "selectionScope": "raw experts, refined experts and original Bfxr; search score remains MatchObjective",
+            "matchObjectiveScore": 2.508739482518737,
+            "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "backend": "neural",
+            "pitchDiagnostic": {
+              "activeFrames": 73,
+              "voicedFrames": 0,
+              "voicedFraction": 0,
+              "medianHz": null
+            },
+            "auditionMatchObjectiveScore": 2.5087352088032313,
+            "auditionWavSha256": "786121761a94a772ced7ff1bebf9013552bbe68c36add26662daa0503e1de2fb",
+            "auditionPitchDiagnostic": {
+              "activeFrames": 73,
+              "voicedFrames": 0,
+              "voicedFraction": 0,
+              "medianHz": null
+            },
+            "auditionTransform": "peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio"
+          },
+          "file": "selected.wav",
+          "role": "selected",
+          "label": "Automatic expert choice",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "8d0d89e88ee082d59df2d1ce41b4b3b41d5fecdc9c87da10282cb87d8d1cbfc8",
+          "synth": "Bfxr",
+          "paramsSha256": "d45616f9ecc49147fa8e14304662794f733cb3f1f5d4ac1f3ea56393ad3fc8dd",
+          "seed": 1234,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "bdc4446e294eb4f018f4d0db0175055f973959d349916965d83f660d9bb3fafe",
+          "provenance": {
+            "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+            "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+            "budget": 2000,
+            "evaluations": 3001,
+            "allowPitchShift": false,
+            "allowTimeStretch": false,
+            "structureObjective": false,
+            "optimizer": "original StagedOptimizer with neural seeds",
+            "matchObjectiveScore": 2.7904859401959423,
+            "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "backend": "original-bfxr",
+            "pitchDiagnostic": {
+              "activeFrames": 72,
+              "voicedFrames": 2,
+              "voicedFraction": 0.02777777798473835,
+              "medianHz": 407.4299621582031
+            },
+            "auditionMatchObjectiveScore": 2.790477065214852,
+            "auditionWavSha256": "bdc4446e294eb4f018f4d0db0175055f973959d349916965d83f660d9bb3fafe",
+            "auditionPitchDiagnostic": {
+              "activeFrames": 72,
+              "voicedFrames": 2,
+              "voicedFraction": 0.02777777798473835,
+              "medianHz": 407.4296875
+            },
+            "auditionTransform": "peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio"
+          },
+          "file": "original.wav",
+          "role": "original",
+          "label": "Original Bfxr",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "786b6fa8e7a68250911dfa88fd7c2360d9214b0c65161a71835625ccf94e0a3d",
+          "synth": "Soundboard",
+          "paramsSha256": "bce9c2d2a245e110ca556621eeda21dcfba9dea761d4de3f14b88275ee2ac154",
+          "seed": 2060021392,
+          "sourceHash": "12d656f4b4d313813204ecbdd64ef36e41aa76c7ef5dfef3cb962a41ce3deec1",
+          "audioSha256": "df9ad6d5cf4b8d64fdeaea90b6f1075b2ef52c04043162141515daa2ec1a31d0",
+          "provenance": {
+            "experimentId": "140d89d3331adb085c93a93a2bd2e72943145c89329088d0ebcf14b3827ee8f2",
+            "candidateId": "506efcb7a6223f0e86595495cbd5a2d4fca4b36f8497e142408a88dbfd66985c",
+            "archivedPcmSha256": "83f2098479910aa84a0cc40272b93ce1562acc689ca99304df0f29ee0329405a",
+            "previousLikeness": 1,
+            "previousLabelSource": "scalar-likeness"
+          },
+          "file": "previous.wav",
+          "role": "previous",
+          "label": "Previous best",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "none",
+        "presentedCandidateIds": [
+          "786b6fa8e7a68250911dfa88fd7c2360d9214b0c65161a71835625ccf94e0a3d",
+          "8d0d89e88ee082d59df2d1ce41b4b3b41d5fecdc9c87da10282cb87d8d1cbfc8",
+          "2bdc46df4bd2d403db5b5c1fb76f665244a746cf7dffabbe3ff195d69dddbe0f"
+        ],
+        "auditionedCandidateIds": [
+          "786b6fa8e7a68250911dfa88fd7c2360d9214b0c65161a71835625ccf94e0a3d",
+          "8d0d89e88ee082d59df2d1ce41b4b3b41d5fecdc9c87da10282cb87d8d1cbfc8",
+          "2bdc46df4bd2d403db5b5c1fb76f665244a746cf7dffabbe3ff195d69dddbe0f"
+        ],
+        "preferredCandidateIds": []
+      }
+    },
+    {
+      "id": "45bbee92c2f3006107710b8ee7f764ce95b3b52674cfa4db945a6b0bbb7537ec",
+      "name": "die/charm2.wav",
+      "sha256": "d161711f9e872a84d289f26097f57028ef444959afd79c0233b74aef9f3ae24e",
+      "folder": "005",
+      "referenceAudioSha256": "4b56fe1ef7f5e2a79c97e750337f46df12f2b6753743859af10ff498624f7a24",
+      "candidates": [
+        {
+          "id": "2b1324bfeb27a3132802a2e0807e31e04478d8d3006f66965beb9559e4625081",
+          "synth": "Bfxr",
+          "paramsSha256": "efa7e4c05b5807847993a846d2d9fe376e50f2998d0c428bc7dd706cd1247c70",
+          "seed": 20261011,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "137a8eaa45db11f77199b9d2ab0192623d8d43d5bd7cbb3a3a8647c72a74c6a8",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "randomize_params",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              1
+            ],
+            "generatorProbability": 0.9784624576568604,
+            "proposalRank": 0,
+            "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "anchorSeed": 20261011,
+            "fixedText": [],
+            "fixedRandomness": [],
+            "structureScope": "numeric individual synth",
+            "matchObjectiveScore": 5.330198202743815,
+            "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "backend": "neural",
+            "pitchDiagnostic": {
+              "activeFrames": 161,
+              "voicedFrames": 161,
+              "voicedFraction": 1,
+              "medianHz": 649.0281982421875
+            },
+            "auditionMatchObjectiveScore": 5.330208944332433,
+            "auditionWavSha256": "137a8eaa45db11f77199b9d2ab0192623d8d43d5bd7cbb3a3a8647c72a74c6a8",
+            "auditionPitchDiagnostic": {
+              "activeFrames": 161,
+              "voicedFrames": 161,
+              "voicedFraction": 1,
+              "medianHz": 649.0281982421875
+            },
+            "auditionTransform": "peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio"
+          },
+          "file": "raw.wav",
+          "role": "raw",
+          "label": "Raw neural prediction",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "bd364e7088fb7985815c4c62b890617493e3b19034144c998406f76cb0cee3da",
+          "synth": "Pluckr",
+          "paramsSha256": "1106bcc851e04c2c703ece2518e78ae861fa9cc80520f5f1949af13e62317d03",
+          "seed": 20261007,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "90aee770627c6f9472fcecc3cd3bc1ebf4a4f9f9b1c8c1b5c97d9edc998b16b1",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "generate_metal_string",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              1
+            ],
+            "generatorProbability": 0.554729163646698,
+            "proposalRank": 0,
+            "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "anchorSeed": 20261007,
+            "fixedText": [],
+            "fixedRandomness": [
+              "seed"
+            ],
+            "structureScope": "numeric individual synth",
+            "selectionObjective": "experimental-human-preference-rerank",
+            "selectorModelSha256": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+            "preferenceScore": 0.8132119423453377,
+            "selectionScore": 0.8132119423453377,
+            "coarsePitchPenalty": 0,
+            "coarsePitchPolicy": {
+              "targetVoicedFraction": 0.75,
+              "candidateVoicedFraction": 0.6,
+              "registerToleranceSemitones": 3,
+              "penaltyPerOctave": 0.5,
+              "maxRegisterErrorOctaves": 3,
+              "lostVoicingPenalty": 2,
+              "preferredRegisterErrorOctaves": 1,
+              "status": "Fixed experimental safeguard; not fitted to human ratings or validated as a perceptual metric"
+            },
+            "matchingRegisterCandidates": 27,
+            "selectorRanking": [
+              {
+                "synth": "Bfxr",
+                "seed": 20261011,
+                "preferenceScore": 0.9954690249357218,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Bfxr",
+                "seed": 20261011,
+                "preferenceScore": 1.3812998449951803,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Footsteppr",
+                "seed": 20261004,
+                "preferenceScore": 3.7856418404383207,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Footsteppr",
+                "seed": 20261004,
+                "preferenceScore": 2.9401422654346225,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Transfxr",
+                "seed": 20261027,
+                "preferenceScore": 1.0208884406188878,
+                "coarsePitchPenalty": 0.1953801958708884,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Transfxr",
+                "seed": 20261027,
+                "preferenceScore": 0.8998008939068802,
+                "coarsePitchPenalty": 0.2187523787366089,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Birdr",
+                "seed": 20261008,
+                "preferenceScore": 1.5868012582455304,
+                "coarsePitchPenalty": 0.062258710629648384,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Birdr",
+                "seed": 20261008,
+                "preferenceScore": 1.4167886032218537,
+                "coarsePitchPenalty": 0.16657592417706885,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Boomr",
+                "seed": 20261012,
+                "preferenceScore": 2.5941953906453175,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Boomr",
+                "seed": 20261012,
+                "preferenceScore": 2.3068697426547233,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Bouncr",
+                "seed": 20261012,
+                "preferenceScore": 1.1610576396519754,
+                "coarsePitchPenalty": 0.09481719930171398,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Bouncr",
+                "seed": 20261012,
+                "preferenceScore": 1.4016120685206608,
+                "coarsePitchPenalty": 0.18895912336352533,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Breathr",
+                "seed": 20261013,
+                "preferenceScore": 2.4072188669404353,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Breathr",
+                "seed": 20261013,
+                "preferenceScore": 2.593122096720233,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Choirr",
+                "seed": 20261007,
+                "preferenceScore": 2.099988120128184,
+                "coarsePitchPenalty": 1.24692726583993,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Choirr",
+                "seed": 20261007,
+                "preferenceScore": 2.101703669601526,
+                "coarsePitchPenalty": 0.9932374835027911,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Clonkr",
+                "seed": 20261004,
+                "preferenceScore": 0.9363098942876584,
+                "coarsePitchPenalty": 0.03970862382278825,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Clonkr",
+                "seed": 20261004,
+                "preferenceScore": 0.9714075445785196,
+                "coarsePitchPenalty": 0.1960882787488178,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Crittr",
+                "seed": 20261005,
+                "preferenceScore": 1.364706920365502,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Crittr",
+                "seed": 20261005,
+                "preferenceScore": 1.3762349037540507,
+                "coarsePitchPenalty": 0.5441894147445885,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Fractr",
+                "seed": 20261006,
+                "preferenceScore": 0.9366213464402576,
+                "coarsePitchPenalty": 0.8313603182370828,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Fractr",
+                "seed": 20261006,
+                "preferenceScore": 2.089777679446766,
+                "coarsePitchPenalty": 1.0031157007483553,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Glitchr",
+                "seed": 20261009,
+                "preferenceScore": 1.383216700509917,
+                "coarsePitchPenalty": 0.4462413432501533,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Glitchr",
+                "seed": 20261009,
+                "preferenceScore": 2.056021261742152,
+                "coarsePitchPenalty": 0.03914307052832297,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Jinglr",
+                "seed": 20261011,
+                "preferenceScore": 1.2654240666806142,
+                "coarsePitchPenalty": 0.10857344517203898,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Jinglr",
+                "seed": 20261011,
+                "preferenceScore": 1.2198364031432454,
+                "coarsePitchPenalty": 0.06689933376329643,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Machinr",
+                "seed": 20261005,
+                "preferenceScore": 1.404323288529519,
+                "coarsePitchPenalty": 0.1927752759278582,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Machinr",
+                "seed": 20261005,
+                "preferenceScore": 1.541593192660068,
+                "coarsePitchPenalty": 0.39410399290188314,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Pluckr",
+                "seed": 20261007,
+                "preferenceScore": 0.8132119423453377,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": true
+              },
+              {
+                "synth": "Pluckr",
+                "seed": 20261007,
+                "preferenceScore": 0.8367382822077207,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Riftr",
+                "seed": 20261005,
+                "preferenceScore": 1.3514249238967715,
+                "coarsePitchPenalty": 0.1339297228787678,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Riftr",
+                "seed": 20261005,
+                "preferenceScore": 1.9401843752121595,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Rustlr",
+                "seed": 20261012,
+                "preferenceScore": 3.802716975561741,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Rustlr",
+                "seed": 20261012,
+                "preferenceScore": 3.912323218071961,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Signlr",
+                "seed": 20261012,
+                "preferenceScore": 1.5640940375167995,
+                "coarsePitchPenalty": 0.4020786464976971,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Signlr",
+                "seed": 20261012,
+                "preferenceScore": 1.179699715540119,
+                "coarsePitchPenalty": 0.2292594842590408,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Squishr",
+                "seed": 20261012,
+                "preferenceScore": 1.8136808423270085,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Squishr",
+                "seed": 20261012,
+                "preferenceScore": 2.8899815353055613,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Swarmr",
+                "seed": 20261006,
+                "preferenceScore": 1.2697369843132376,
+                "coarsePitchPenalty": 0.09975482224778912,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Swarmr",
+                "seed": 20261006,
+                "preferenceScore": 2.4708332428580904,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Whooshr",
+                "seed": 20261012,
+                "preferenceScore": 1.655008160669435,
+                "coarsePitchPenalty": 0.009089938533961617,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Zappr",
+                "seed": 20261012,
+                "preferenceScore": 1.955872018998038,
+                "coarsePitchPenalty": 0.17063763449078057,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Bfxr",
+                "seed": 20261011,
+                "preferenceScore": 0.9435262707346508,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Clonkr",
+                "seed": 20261004,
+                "preferenceScore": 0.9989674238227197,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Rustlr",
+                "seed": 20261012,
+                "preferenceScore": 2.7073899054715342,
+                "coarsePitchPenalty": 2,
+                "eligible": false,
+                "chosen": false
+              },
+              {
+                "synth": "Whooshr",
+                "seed": 20261012,
+                "preferenceScore": 1.463382311869526,
+                "coarsePitchPenalty": 0,
+                "eligible": true,
+                "chosen": false
+              },
+              {
+                "synth": "Bfxr",
+                "seed": 1234,
+                "preferenceScore": 3.5465730685919086,
+                "coarsePitchPenalty": 0.23323629265750911,
+                "eligible": true,
+                "chosen": false
+              }
+            ],
+            "poolSize": 47,
+            "selectionScope": "raw experts, refined experts and original Bfxr; search score remains MatchObjective",
+            "matchObjectiveScore": 8.846265076851186,
+            "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "backend": "neural",
+            "pitchDiagnostic": {
+              "activeFrames": 116,
+              "voicedFrames": 116,
+              "voicedFraction": 1,
+              "medianHz": 583.7628173828125
+            },
+            "auditionMatchObjectiveScore": 8.845416688031701,
+            "auditionWavSha256": "90aee770627c6f9472fcecc3cd3bc1ebf4a4f9f9b1c8c1b5c97d9edc998b16b1",
+            "auditionPitchDiagnostic": {
+              "activeFrames": 116,
+              "voicedFrames": 116,
+              "voicedFraction": 1,
+              "medianHz": 583.7628173828125
+            },
+            "auditionTransform": "peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio"
+          },
+          "file": "selected.wav",
+          "role": "selected",
+          "label": "Automatic expert choice",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "9e98c4427248ea8024ad1799ca97897e3398583579a0d4fb5b2eb404eb8219ed",
+          "synth": "Bfxr",
+          "paramsSha256": "f0b918371317e8ac15b7f9076dc74316fa25102a9d3fac1365ea3a5d56284121",
+          "seed": 1234,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "2fd7aedcc6a931f63260529abc455e03060f6f8bf6dd94c7a190740b02a888b6",
+          "provenance": {
+            "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+            "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+            "budget": 2000,
+            "evaluations": 3003,
+            "allowPitchShift": false,
+            "allowTimeStretch": false,
+            "structureObjective": false,
+            "optimizer": "original StagedOptimizer with neural seeds",
+            "matchObjectiveScore": 5.817345134459152,
+            "modelSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "backend": "original-bfxr",
+            "pitchDiagnostic": {
+              "activeFrames": 1,
+              "voicedFrames": 1,
+              "voicedFraction": 1,
+              "medianHz": 1046.060302734375
+            },
+            "auditionMatchObjectiveScore": 5.81735043986529,
+            "auditionWavSha256": "2fd7aedcc6a931f63260529abc455e03060f6f8bf6dd94c7a190740b02a888b6",
+            "auditionPitchDiagnostic": {
+              "activeFrames": 1,
+              "voicedFrames": 1,
+              "voicedFraction": 1,
+              "medianHz": 1046.0609130859375
+            },
+            "auditionTransform": "peak normalized to 0.5 and PCM16; search score describes pre-export DSP float audio"
+          },
+          "file": "original.wav",
+          "role": "original",
+          "label": "Original Bfxr",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "c14b787c745e157137b8437844143c755f30aa1a7897f901936bd57a498287e7",
+          "synth": "Transfxr",
+          "paramsSha256": "f65b644d338f13f0c4addd5ed9592e5be3aad20142e075fd963a68c6f25f248f",
+          "seed": 20261027,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "a93dd5e8fd6c42abd3b5bc3e5f5d39e6475e23735f78db853ca678e9688aece6",
+          "provenance": {
+            "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+            "candidateId": "ef85202d1e09ebe15f1fdd52cca3128484216dad3e4fd0086a6d451e4fc4df6d",
+            "archivedPcmSha256": "3ad58753fc408535c051a3d39c494465e6d8e50a3509d39ecbd7c40bb3a1bd0f",
+            "previousLikeness": null,
+            "previousLabelSource": "direct-choice"
+          },
+          "file": "previous.wav",
+          "role": "previous",
+          "label": "Previous best",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "c14b787c745e157137b8437844143c755f30aa1a7897f901936bd57a498287e7",
+          "9e98c4427248ea8024ad1799ca97897e3398583579a0d4fb5b2eb404eb8219ed",
+          "bd364e7088fb7985815c4c62b890617493e3b19034144c998406f76cb0cee3da"
+        ],
+        "auditionedCandidateIds": [
+          "c14b787c745e157137b8437844143c755f30aa1a7897f901936bd57a498287e7",
+          "9e98c4427248ea8024ad1799ca97897e3398583579a0d4fb5b2eb404eb8219ed",
+          "bd364e7088fb7985815c4c62b890617493e3b19034144c998406f76cb0cee3da"
+        ],
+        "preferredCandidateIds": [
+          "c14b787c745e157137b8437844143c755f30aa1a7897f901936bd57a498287e7"
+        ]
+      }
+    }
+  ]
+}

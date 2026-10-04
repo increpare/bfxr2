@@ -1,0 +1,51 @@
+import hashlib,json
+from collections import Counter
+from pathlib import Path
+from multisynth.preference import training_pairs
+
+archive=Path('tools/multisynth/listening_data/2026-10-04-neural-v2-quick-01')
+manifest=json.loads((archive/'manifest.json').read_text())
+feedback=json.loads((archive/'feedback.json').read_text())
+lookup={c['id']:c for c in manifest['candidates']}
+rows=[];roles=Counter();aliases=Counter()
+for target in manifest['targets']:
+ choice=target['choice'];winner=choice['preferredCandidateIds']
+ all_aliases=target['candidates']
+ byid={c['id']:[] for c in all_aliases}
+ for c in all_aliases:byid[c['id']].append(c['role'])
+ win_roles=[role for cid in winner for role in byid[cid]]
+ for role in win_roles:roles[role]+=1
+ winner_pcm={lookup[cid]['audio']['pcmSha256'] for cid in winner}
+ win_alias_roles=[c['role'] for c in all_aliases if lookup[c['id']]['audio']['pcmSha256'] in winner_pcm]
+ for role in set(win_alias_roles):aliases[role]+=1
+ heard=set(choice['auditionedCandidateIds'])
+ losers={lookup[cid]['audio']['pcmSha256'] for cid in heard if cid not in winner}-winner_pcm
+ pair_count=len(losers) if choice['kind']=='best' and set(winner)<=heard else 0
+ rows.append({'target':target['source']['name'],'kind':choice['kind'],
+  'winnerRoles':win_roles,'winnerAudioAliasRoles':win_alias_roles,
+  'winnerSynths':[lookup[cid]['synth'] for cid in winner],
+  'presented':len(choice['presentedCandidateIds']),'auditioned':len(heard),'strictPairs':pair_count,
+  'referencePcmSha256':target['referenceAudio']['pcmSha256'],
+  'winningAudioPcmSha256':list(winner_pcm)})
+training=training_pairs([archive])
+y,groups,provenance=training.y,training.groups,training.summary
+assert len(y)==sum(r['strictPairs'] for r in rows)
+quote="we're so far away - only one charm2.wav was actually approximated"
+assessment={'source':'Direct user message accompanying the feedback attachment',
+ 'verbatim':quote,'onlyReferenceReportedApproximated':'die/charm2.wav',
+ 'numericScoresInferred':False,'bestChoiceMeansRelativePreferenceOnly':True,
+ 'acceptedReferenceWinningRole':'previous','acceptedReferenceWinningSynth':'Transfxr',
+ 'newV2AudibleSuccessDemonstrated':False,
+ 'interpretation':'The user reports only one successful reference approximation; its chosen clip is the retained previous Transfxr render. Bird/card relative best choices do not establish adequate approximation.'}
+(archive/'qualitative-assessment.json').write_text(json.dumps(assessment,indent=2)+'\n')
+report={'experimentId':manifest['experimentId'],'archive':str(archive),
+ 'feedbackSha256':hashlib.sha256((archive/'feedback.json').read_bytes()).hexdigest(),
+ 'judgedReferences':len(rows),'experimentReferences':5,'archiveSummary':manifest['summary'],
+ 'strictPreferencePairs':len(y),'strictReferencePcmGroups':len(set(groups)),
+ 'winningRoles':dict(roles),'winningAudioAliasRoles':dict(aliases),
+ 'relativeChoiceEvidence':rows,'qualitativeAssessment':assessment,
+ 'feedbackBytesAndAudioPreserved':True,
+ 'decision':'Do not promote v2 as an audible improvement. Keep its numerical benchmark as diagnostic evidence only. Validate an audio-forward training prerequisite before another listening batch.',
+ 'trainingPairPolicy':provenance}
+Path('tools/multisynth/evaluations/neural-v2-quick-01-human-review.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps({k:report[k] for k in ('judgedReferences','strictPreferencePairs','strictReferencePcmGroups','winningRoles','winningAudioAliasRoles')},indent=2))

@@ -9,6 +9,16 @@
 | `2026-10-03-coverage-v3/` | 6 | 24 |
 | `2026-10-04-big-v4/` | 36 | 103 |
 | `2026-10-04-neural-v1-quick-01/` | 5 | 19 |
+| `2026-10-04-neural-v2-quick-01/` | 5 | 20 |
+
+The sixth archive retains all five v2 quick comparisons, 20 candidate identities
+and 24 exact PCM audios. Four best choices yield seven strict comparisons from
+four reference PCM groups; computer was rejected. Previous Bfxr wins spinout,
+selected Bfxr wins bird/card, and previous Transfxr wins charm2. The user's
+separate qualitative assessment says **only charm2 was actually approximated**.
+That clip predates v2, so this round demonstrates no new v2 audible success.
+Relative choices do not establish absolute closeness. See
+[the v2 human review](../evaluations/neural-v2-quick-01-human-review.json).
 
 The fifth archive is a **partial quick-listening session** using schema 3:
 four explicit best choices and one “None are close”, with no scalar likeness
