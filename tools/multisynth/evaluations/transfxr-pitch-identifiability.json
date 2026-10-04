@@ -1,0 +1,659 @@
+{
+  "complete": true,
+  "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+  "scriptSha256": "5dbc15be24d85899ef9a1d557deee22e8c499706221ea8251e3e8c8d3fb979fc",
+  "relevantCode": {
+    "js/audio/Transfxr_DSP.js": "ef848b3710c20af793f759dc5b4ff7f006136683d0cf751794aac3579529460c",
+    "js/audio/BfxrWaveforms.js": "f6ff28c975145d9d49d6d9120c1a28591a3e64e31e335accd669901fa04f2166",
+    "tools/neural_invert/temporal.py": "a382766fbb7279637003ae5bff83da98742c4b77c1208fb55da4c3242b41082a"
+  },
+  "finding": "With these fixed controls and seed, Transfxr White at2800/4000/5000Hz produces byte-identical audible PCM. White updates its random value at each phase cell; above this rate every oversampled call changes cell. This is one demonstrated equivalence region, not a claim that pitch is always inactive for noise.",
+  "trainingImplication": "The frozen Transfxr control loss imposes an octave penalty even on this many-to-one region. Consider a separately controlled audibility-aware loss or equivalence-class objective after the pitch-input experiment; do not change the running v5 recipe.",
+  "rows": [
+    {
+      "waveType": 0,
+      "nominalHz": 500,
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 0.2,
+        "pitch": {
+          "start": 0.5205508842535321,
+          "end": 0.5205508842535321,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.9,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.85,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "attack": 0.008,
+        "release": 0.18,
+        "resonance": 0.15,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 1234,
+      "audioHash": "9bc02dff5a57f1634f7b19ae99c2dc240905c4aa83595fae213f89de2c3a5dab",
+      "samples": 8820,
+      "peak": 0.2992100715637207
+    },
+    {
+      "waveType": 0,
+      "nominalHz": 1500,
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 0.2,
+        "pitch": {
+          "start": 0.7469740986422686,
+          "end": 0.7469740986422686,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.9,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.85,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "attack": 0.008,
+        "release": 0.18,
+        "resonance": 0.15,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 1234,
+      "audioHash": "661f45e7647c155a66bc28e8de08afeaba2f602d33cf00235bd19621bf22102f",
+      "samples": 8820,
+      "peak": 0.30037519335746765
+    },
+    {
+      "waveType": 0,
+      "nominalHz": 2800,
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 0.2,
+        "pitch": {
+          "start": 0.8756118595635666,
+          "end": 0.8756118595635666,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.9,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.85,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "attack": 0.008,
+        "release": 0.18,
+        "resonance": 0.15,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 1234,
+      "audioHash": "5fe5773644e1492bfef53491659e1f45ce35b21c0ad33d1f40b0954cdaf506c3",
+      "samples": 8820,
+      "peak": 0.30337756872177124
+    },
+    {
+      "waveType": 0,
+      "nominalHz": 4000,
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 0.2,
+        "pitch": {
+          "start": 0.9491223128249606,
+          "end": 0.9491223128249606,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.9,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.85,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "attack": 0.008,
+        "release": 0.18,
+        "resonance": 0.15,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 1234,
+      "audioHash": "1d9ed4c86f7d553a74c059c17a3b511945bce244d131578df44044c6defb492d",
+      "samples": 8820,
+      "peak": 0.30784475803375244
+    },
+    {
+      "waveType": 0,
+      "nominalHz": 5000,
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 0.2,
+        "pitch": {
+          "start": 0.9951120406660124,
+          "end": 0.9951120406660124,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.9,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.85,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "attack": 0.008,
+        "release": 0.18,
+        "resonance": 0.15,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 1234,
+      "audioHash": "3ef9d84e29ec340fdc662455d6bb61b9d120b586d61016775e850782e649cc90",
+      "samples": 8820,
+      "peak": 0.3115760087966919
+    },
+    {
+      "waveType": 7,
+      "nominalHz": 500,
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 7,
+        "duration": 0.2,
+        "pitch": {
+          "start": 0.5205508842535321,
+          "end": 0.5205508842535321,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.9,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.85,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "attack": 0.008,
+        "release": 0.18,
+        "resonance": 0.15,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 1234,
+      "audioHash": "2b5cb9c843cb73d1964d2bfacdd0ea9a820d664c97f1577236622fa3cfc02a90",
+      "samples": 8820,
+      "peak": 0.31764113903045654
+    },
+    {
+      "waveType": 7,
+      "nominalHz": 1500,
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 7,
+        "duration": 0.2,
+        "pitch": {
+          "start": 0.7469740986422686,
+          "end": 0.7469740986422686,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.9,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.85,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "attack": 0.008,
+        "release": 0.18,
+        "resonance": 0.15,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 1234,
+      "audioHash": "a25a09238e3f7a1656ca1d80744580bba0fd545c0e13796452f318a6113f6218",
+      "samples": 8820,
+      "peak": 0.3115391731262207
+    },
+    {
+      "waveType": 7,
+      "nominalHz": 2800,
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 7,
+        "duration": 0.2,
+        "pitch": {
+          "start": 0.8756118595635666,
+          "end": 0.8756118595635666,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.9,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.85,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "attack": 0.008,
+        "release": 0.18,
+        "resonance": 0.15,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 1234,
+      "audioHash": "a312af3835edf07d7ccd41d806a179abf5efb6e137d2422e6d5412b4ba9004c0",
+      "samples": 8820,
+      "peak": 0.2966371476650238
+    },
+    {
+      "waveType": 7,
+      "nominalHz": 4000,
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 7,
+        "duration": 0.2,
+        "pitch": {
+          "start": 0.9491223128249606,
+          "end": 0.9491223128249606,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.9,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.85,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "attack": 0.008,
+        "release": 0.18,
+        "resonance": 0.15,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 1234,
+      "audioHash": "a312af3835edf07d7ccd41d806a179abf5efb6e137d2422e6d5412b4ba9004c0",
+      "samples": 8820,
+      "peak": 0.2966371476650238
+    },
+    {
+      "waveType": 7,
+      "nominalHz": 5000,
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 7,
+        "duration": 0.2,
+        "pitch": {
+          "start": 0.9951120406660124,
+          "end": 0.9951120406660124,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.9,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.85,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "attack": 0.008,
+        "release": 0.18,
+        "resonance": 0.15,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 1234,
+      "audioHash": "a312af3835edf07d7ccd41d806a179abf5efb6e137d2422e6d5412b4ba9004c0",
+      "samples": 8820,
+      "peak": 0.2966371476650238
+    },
+    {
+      "waveType": 9,
+      "nominalHz": 500,
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 9,
+        "duration": 0.2,
+        "pitch": {
+          "start": 0.5205508842535321,
+          "end": 0.5205508842535321,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.9,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.85,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "attack": 0.008,
+        "release": 0.18,
+        "resonance": 0.15,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 1234,
+      "audioHash": "718ce9566a05d265253d540b9480dd382c7c88e47c888058a422706a6e2cfa55",
+      "samples": 8820,
+      "peak": 0.27864786982536316
+    },
+    {
+      "waveType": 9,
+      "nominalHz": 1500,
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 9,
+        "duration": 0.2,
+        "pitch": {
+          "start": 0.7469740986422686,
+          "end": 0.7469740986422686,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.9,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.85,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "attack": 0.008,
+        "release": 0.18,
+        "resonance": 0.15,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 1234,
+      "audioHash": "a9b668c5604564c699fcf0c15a712a53fd98b60e5f299e27666dd3aec23f1392",
+      "samples": 8820,
+      "peak": 0.2775897979736328
+    },
+    {
+      "waveType": 9,
+      "nominalHz": 2800,
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 9,
+        "duration": 0.2,
+        "pitch": {
+          "start": 0.8756118595635666,
+          "end": 0.8756118595635666,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.9,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.85,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "attack": 0.008,
+        "release": 0.18,
+        "resonance": 0.15,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 1234,
+      "audioHash": "cec4b08f13f3c0303346b26d50ba6e7a02c315b863e7de186f012d94cc886367",
+      "samples": 8820,
+      "peak": 0.2785986065864563
+    },
+    {
+      "waveType": 9,
+      "nominalHz": 4000,
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 9,
+        "duration": 0.2,
+        "pitch": {
+          "start": 0.9491223128249606,
+          "end": 0.9491223128249606,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.9,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.85,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "attack": 0.008,
+        "release": 0.18,
+        "resonance": 0.15,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 1234,
+      "audioHash": "e40310c7839c40a239811d3519f9651b011d531358638740fa405e91e80f11a7",
+      "samples": 8820,
+      "peak": 0.28024813532829285
+    },
+    {
+      "waveType": 9,
+      "nominalHz": 5000,
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 9,
+        "duration": 0.2,
+        "pitch": {
+          "start": 0.9951120406660124,
+          "end": 0.9951120406660124,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.9,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0.15,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.85,
+          "end": 0.45,
+          "curve": "Linear"
+        },
+        "attack": 0.008,
+        "release": 0.18,
+        "resonance": 0.15,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 1234,
+      "audioHash": "963a696b35b308af143214e059433433cbc7d3861924307ac6872b2304e6070d",
+      "samples": 8820,
+      "peak": 0.2802475392818451
+    }
+  ]
+}

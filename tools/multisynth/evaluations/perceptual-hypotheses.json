@@ -66,6 +66,13 @@
           "finding": "The user says the short noisy book-close sound is in the same genre, but the distinction between similar and exact is hard to judge and it remains off. This motivates separating event-family recognition from finer transient/texture fidelity; it does not identify which acoustic component caused the remaining mismatch."
         }
       ]
+    },
+    {
+      "id": "audibly-equivalent-controls-should-not-compete",
+      "claim": "Exact control reconstruction can penalize acoustically equivalent patches, consuming model capacity without improving sound similarity.",
+      "status": "actual-dsp-equivalence-observed-training-effect-untested",
+      "evidence": "evaluations/transfxr-pitch-identifiability.json records identical non-silent PCM for one fixed Transfxr White setup at nominal 2800, 4000 and 5000 Hz, while a tonal control changes. The frozen Transfxr loss still adds pitch-octave penalties. This does not imply pitch is always irrelevant for noise.",
+      "nextTest": "After the controlled v5 input experiment, test audibility-aware loss or equivalence handling on separately rendered sensitivity pairs; retain all inputs/data, compare actual sound outputs, and ask for human review even when metrics agree."
     }
   ]
 }
