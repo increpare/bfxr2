@@ -32,6 +32,17 @@ def descriptor_pitch(wave):
             'meaning': 'Corrected descriptor diagnostic; not independent ground truth or selection criterion.'}
 
 
+def conservative_pitch_summary(rows):
+    """Keep the known limited old tracker from certifying octave errors alone."""
+    statics = [r['selected'] for r in rows if r['family'] == 'static']
+    pairs = [(c['pitchComparison'].get('absolutePitchErrorSemitones'),
+              c.get('correctedPitchErrorSemitones')) if c else (None,None) for c in statics]
+    return {'staticWithinOneSemitoneCorrected': sum(b is not None and b <= 1 for a,b in pairs),
+            'staticWithinOneSemitoneBoth': sum(a is not None and b is not None and a <= 1 and b <= 1 for a,b in pairs),
+            'staticTrackerPassDisagreements': sum(a is not None and b is not None and (a <= 1) != (b <= 1) for a,b in pairs),
+            'staticCorrectedUnreliableOrMissing': sum(b is None for a,b in pairs)}
+
+
 def evaluate_candidates(candidates, target, source_synth, family, renderer, output, count=4):
     """Save every audible actual render and account for every missing slot."""
     if (type(count) is not int or count < 1 or source_synth not in ENGINES
@@ -41,6 +52,7 @@ def evaluate_candidates(candidates, target, source_synth, family, renderer, outp
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     objective, target_pitch = MatchObjective(target), pitch_diagnostic(target)
+    corrected_target = descriptor_pitch(target)
     actual, failures = rendered_candidates(candidates, renderer, objective)
     saved = []
     for index, row in enumerate(actual):
@@ -56,10 +68,13 @@ def evaluate_candidates(candidates, target, source_synth, family, renderer, outp
         if rate != 44100 or audio_hash(decoded) != audio_hash(replay):
             raise ValueError('Saved candidate differs from scored float PCM')
         pitch = pitch_diagnostic(replay)
+        corrected = descriptor_pitch(replay)
+        a,b = corrected_target['medianHz'],corrected['medianHz']
+        corrected_error = float(abs(12*np.log2(b/a))) if family == 'static' and a and b else None
         saved.append({**serializable(row), 'audioHash': audio_hash(replay),
             'waveFile': str(path.resolve()), 'waveFileSha256': file_hash(path),
             'pitch': pitch, 'pitchComparison': compare_pitch(target_pitch, pitch, family),
-            'correctedInputPitch': descriptor_pitch(replay)})
+            'correctedInputPitch': corrected, 'correctedPitchErrorSemitones': corrected_error})
     accounting = {name: proposal_accounting(count, sum(c['synth'] == name for c in candidates),
                                             sum(c['synth'] == name for c in saved)) for name in ENGINES}
     known = [c for c in saved if c['synth'] == source_synth]
@@ -151,7 +166,7 @@ def benchmark(benchmark_path, old_root, new_root, output, count=4):
             rows = [{**r['arms'][version], 'family': r['family'], 'selected': r['arms'][version][selection],
                      'accounting': r['arms'][version]['accounting'][r['sourceSynth']] if label == 'sourceEngine'
                                    else r['arms'][version]['totalAccounting']} for r in records]
-            summary[version][label] = summarize_arm(rows)
+            summary[version][label] = {**summarize_arm(rows), **conservative_pitch_summary(rows)}
             summary[version][label]['improvedVersusTemporalV3'] = sum(
                 bool(r['arms'][version][selection] and r['arms']['temporal-v3'][selection]) and
                 r['arms'][version][selection]['score'] < r['arms']['temporal-v3'][selection]['score'] for r in records)

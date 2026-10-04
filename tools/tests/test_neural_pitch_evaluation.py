@@ -46,3 +46,25 @@ def test_invalid_budget_is_rejected_before_render_or_write(tmp_path):
     with pytest.raises(ValueError, match='budget'):
         evaluate_candidates([row, row], np.ones(3000), 'Bfxr', 'native', NeverRender(), tmp_path/'out', count=1)
     assert not (tmp_path/'out').exists()
+
+
+def test_corrected_diagnostic_exposes_upper_register_octave_false_pass(tmp_path):
+    from multisynth.renderer import Renderer
+    from neural_invert.benchmark import probe_controls
+    from neural_invert.pitch_eval import evaluate_candidates, conservative_pitch_summary
+    import torch
+    torch.set_num_threads(1)
+    with Renderer() as renderer:
+        spec = renderer.specs['Transfxr']
+        params,_ = probe_controls(spec, np.random.default_rng(99), 2500)
+        _,target = renderer.render('Transfxr',params,1)
+        params,_ = probe_controls(spec, np.random.default_rng(99), 5000)
+        result = evaluate_candidates([dict(synth='Transfxr',params=params,seed=1,provenance={})],
+            target,'Transfxr','static',renderer,tmp_path,count=1)
+    chosen = result['selected']
+    assert chosen['pitchComparison']['absolutePitchErrorSemitones'] < 1.
+    assert chosen['correctedPitchErrorSemitones'] > 11.
+    summary = conservative_pitch_summary([dict(family='static',selected=chosen)])
+    assert summary['staticWithinOneSemitoneCorrected'] == 0
+    assert summary['staticWithinOneSemitoneBoth'] == 0
+    assert summary['staticTrackerPassDisagreements'] == 1
