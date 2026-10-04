@@ -1,0 +1,2860 @@
+{
+  "complete": true,
+  "auditScriptSha256": "38c52f82b745047176c9d6b7925e4e682507a31cfaf95c4adea3f5377abe7b93",
+  "knownDescriptorDefect": {
+    "status": "compromised-pitch-measurements",
+    "report": "tools/multisynth/evaluations/pitch-v4-overtone-failure.json",
+    "reportSha256": "6cb2f0bbc0020a02e1ba6bc9a7c5f6811118ab424f696db061d28007614e1605",
+    "meaning": "Corrected-tracker medians, spreads, confidence and frame tolerance are outputs of a demonstrated defective estimator. Do not interpret as physical pitch accuracy/instability or true frequency coverage. Old primary tracker also has known octave errors. Objective scores and DSP/audio provenance are unaffected."
+  },
+  "correctedDescriptorCodeSha256": "1b6fc371d0aaa4d3e808cd36081c45602dc7cd67f0c8d8dd2dda92349403eb7a",
+  "trainingAuditSha256": "49cb9fd4118c24ccde0b60b2eb6af200f3c2ed3c9f09d2827862f27095486093",
+  "scope": "Fixed development probes; architecture choice inherited from temporal-v3. Neither numerical distance nor median pitch passes establish human likeness. Static contour spread and in-tolerance active-frame fractions expose median-only false reassurance.",
+  "reports": {
+    "paired": {
+      "unrestrictedMovingMeanErrors": {
+        "temporal-v3": {
+          "contourErrorSemitones": 0.8714175654511965,
+          "excursionErrorSemitones": 1.276220592812951
+        },
+        "pitch-v4": {
+          "contourErrorSemitones": 1.212054362304011,
+          "excursionErrorSemitones": 1.9080086350799856
+        }
+      },
+      "reportPath": "tools/multisynth/runs/pitch-v4/paired/results.json",
+      "reportSha256": "f07dfe6d07dc64ed5e6f1ee57ca5527459cf8ceb33eb419346e9d4e54826ce7e",
+      "metadata": {
+        "complete": true,
+        "experiment": "pitch-input-only-v4",
+        "benchmarkPath": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/neural-v2/paired-fresh/results.json",
+        "benchmarkSha256": "f7bc09b1dd33ebe7d992afc0bbd9aab196d720b4611764782ee94f831a834f5b",
+        "models": {
+          "temporal-v3": {
+            "Bfxr": {
+              "checkpointHash": "34766ccb414e4e07f426336a77e0f6fbff92537a4a42be57ec6a41098708dc95",
+              "dataManifestHash": "5162ae6d90328f098389bfc762437bc29083eea4d5a446eb2fef14edced5e87c",
+              "featureHash": "fa36498127a6b820ef7b576f708ac0aaa8826b82d2df6acc726511a0a0fff3b1",
+              "featureCodeHash": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+              "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7"
+            },
+            "Transfxr": {
+              "checkpointHash": "acd95dd42b38e9478ff927d5b8fd623b1d2121c7b2ff56839e47f6e689f531bf",
+              "dataManifestHash": "5162ae6d90328f098389bfc762437bc29083eea4d5a446eb2fef14edced5e87c",
+              "featureHash": "fa36498127a6b820ef7b576f708ac0aaa8826b82d2df6acc726511a0a0fff3b1",
+              "featureCodeHash": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+              "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7"
+            },
+            "Pluckr": {
+              "checkpointHash": "6e8bc3a5e55781d4c1be5b29ce30d3fbbcb4d81e86430de9a81cba65695f3c55",
+              "dataManifestHash": "5162ae6d90328f098389bfc762437bc29083eea4d5a446eb2fef14edced5e87c",
+              "featureHash": "fa36498127a6b820ef7b576f708ac0aaa8826b82d2df6acc726511a0a0fff3b1",
+              "featureCodeHash": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+              "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7"
+            }
+          },
+          "pitch-v4": {
+            "Bfxr": {
+              "checkpointHash": "0547eb18f82f4ba3412c926f572193eee02b893b43621f22ee1b05d9660b2923",
+              "dataManifestHash": "2f59e13c8300fbdf543c8cf0932e16956c9e009c09db19cd408eba0183fd1cc8",
+              "featureHash": "8aa8db8c7199b229f4cefbe229aa96b1613dd63454047fef8fb04c8c37cf8aef",
+              "featureCodeHash": "1b6fc371d0aaa4d3e808cd36081c45602dc7cd67f0c8d8dd2dda92349403eb7a",
+              "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7"
+            },
+            "Transfxr": {
+              "checkpointHash": "c99ee18c4e8ffbd549209b40d6f01f199d029236fca7bfff6ee5ec23a2a32e3a",
+              "dataManifestHash": "2f59e13c8300fbdf543c8cf0932e16956c9e009c09db19cd408eba0183fd1cc8",
+              "featureHash": "8aa8db8c7199b229f4cefbe229aa96b1613dd63454047fef8fb04c8c37cf8aef",
+              "featureCodeHash": "1b6fc371d0aaa4d3e808cd36081c45602dc7cd67f0c8d8dd2dda92349403eb7a",
+              "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7"
+            },
+            "Pluckr": {
+              "checkpointHash": "cac7b21852b9017af401ac9c2c062817f3ad2c8ff7174db8bfeb549c38e9c3fa",
+              "dataManifestHash": "2f59e13c8300fbdf543c8cf0932e16956c9e009c09db19cd408eba0183fd1cc8",
+              "featureHash": "8aa8db8c7199b229f4cefbe229aa96b1613dd63454047fef8fb04c8c37cf8aef",
+              "featureCodeHash": "1b6fc371d0aaa4d3e808cd36081c45602dc7cd67f0c8d8dd2dda92349403eb7a",
+              "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7"
+            }
+          }
+        },
+        "modelDirectories": {
+          "temporal-v3": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/temporal-v3/hybrid-experts",
+          "pitch-v4": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/pitch-v4/experts"
+        },
+        "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+        "candidateBudgetPerEngine": 4,
+        "candidateBudgetTotal": 12,
+        "codeHashes": {
+          "pitch_eval.py": "c3ca055b8f999b90cbdb611467e42ecdebe9dc9749e3d7cb145704cc26a0237e",
+          "temporal_eval.py": "bca42b4b1a9673e4f888e55486d06d328931362a8d2b4a9cf7dc0b2031fbd731",
+          "benchmark.py": "03f2dc3e97685aa975880043888a0f83b5031e0f937efda629e41b8f104295a9",
+          "evaluate.py": "b5e174c099028b4d39ec807bd29a67cb280d278a376d23744527f6fc4b441c83",
+          "data.py": "15b3683eb8690a9cc37612e676f6582e59cd9167de5d4098f308bcfe6fa7136c",
+          "pitch_features.py": "1b6fc371d0aaa4d3e808cd36081c45602dc7cd67f0c8d8dd2dda92349403eb7a",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/objective.py": "ea3768c5ff641f68e398a7a39f902345f5f3a1a69277b66f8df556f7eeb2278e",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/headroom.py": "42756fb86e95559b70b61da5693c28f241ad75fbe24915e9aecda987cdabd910",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/renderer.py": "c389dba1354cdccac284ee1b34831b5e17e03b4225474aebdde10041bfb37609",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/batch.py": "3ea21d7ee8145197f5b7183fd911eb41aa2a6c09ab4ebd62206dc14d324fc829",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/bfxr_io.py": "80777afd6d211dc5862e7827b536acd91733e9145fe4ab2cef4133c6c4c34f8e",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/refine.py": "9141097014c65adebd12971a75e4f23423f95e53197a57dd2381bd2d8283978f",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/metric_bakeoff.py": "5c97c728c9cc41241b8b657b9e0db1e4138fc1a5f21ec5ac218e111790c92de1",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/features.py": "dc8d2c049f9940215387d2f2500cfa0dbdd2a5b27e07eced41f16fc69cba6859",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/listen_compare.py": "e45f0f0651902ec1d8df2ab9ffd13cbeaacc300140019ef46d456a327d649909",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/notes.py": "78a7e09b0a5e07f09432a5302646d18344fcb1ad39ebc66d8de01b0f0c4ccf89",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/structure_probes.py": "79c397de858075ce69c9150589443cf8885ef491a495ce3f75ea16ac929a51df",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/alt_metrics.py": "3fb79bb4832a126909cf9b260ce75229fa9d9352dca006c892ae684a73f64942",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/structure.py": "1fef062dcd488b6a2f52c0fcdb03921296770972235253fe7a2b876e183d5aa2",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/optimizer.py": "427c729e7605da863bfdda41b338edf19b3b6ee14e53e846d6a61156c81b8972",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/audio.py": "90bd5aa0dd1e885f0cdd1057e2a0d9c06c25bcf7584e8e7ab92fd5edeb14fa52",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/listen_refine_compare.py": "e2cd3d3a4bc833e61dbe886317482d9c35c453fc48d6ebe5ce5ae06c8745d558",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/report.py": "95f6353b5844a9eadf6707dca3b7e869c78d27b58b76191a0cb55304ad8fcfa2",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/match.py": "dfbd46019a6bf9dee378de53d0117a4164cc427a6db64cb20e3e6b38f064fc34",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/length_report.py": "f295404ba1054b50fa1c87ef9ea62b1a7d7476cb4fd30bb78276d7d223454b20"
+        },
+        "correctedDiagnosticFeatureHash": "8aa8db8c7199b229f4cefbe229aa96b1613dd63454047fef8fb04c8c37cf8aef",
+        "correctedDiagnosticCodeHash": "1b6fc371d0aaa4d3e808cd36081c45602dc7cd67f0c8d8dd2dda92349403eb7a",
+        "scope": "Fixed development probes, including sparse upper-register coverage; not independent generalization or human likeness.",
+        "selection": "Unchanged MatchObjective over actual DSP float audio; source-engine and unrestricted summaries are separate."
+      },
+      "summary": {
+        "temporal-v3": {
+          "sourceEngine": {
+            "meanMatchObjective": 1.7477408543972228,
+            "staticWithinOneSemitone": 7,
+            "staticTotal": 9,
+            "movingDirectionMatches": 7,
+            "movingTotal": 8,
+            "missingCandidates": 0,
+            "missingRenderedSlots": 0,
+            "staticWithinOneSemitoneCorrected": 7,
+            "staticWithinOneSemitoneBoth": 7,
+            "staticTrackerPassDisagreements": 0,
+            "staticCorrectedUnreliableOrMissing": 0,
+            "improvedVersusTemporalV3": 0
+          },
+          "unrestricted": {
+            "meanMatchObjective": 1.4356814884675424,
+            "staticWithinOneSemitone": 8,
+            "staticTotal": 9,
+            "movingDirectionMatches": 7,
+            "movingTotal": 8,
+            "missingCandidates": 0,
+            "missingRenderedSlots": 0,
+            "staticWithinOneSemitoneCorrected": 8,
+            "staticWithinOneSemitoneBoth": 8,
+            "staticTrackerPassDisagreements": 0,
+            "staticCorrectedUnreliableOrMissing": 0,
+            "improvedVersusTemporalV3": 0
+          }
+        },
+        "pitch-v4": {
+          "sourceEngine": {
+            "meanMatchObjective": 2.2810103732908673,
+            "staticWithinOneSemitone": 7,
+            "staticTotal": 9,
+            "movingDirectionMatches": 7,
+            "movingTotal": 8,
+            "missingCandidates": 0,
+            "missingRenderedSlots": 0,
+            "staticWithinOneSemitoneCorrected": 7,
+            "staticWithinOneSemitoneBoth": 7,
+            "staticTrackerPassDisagreements": 0,
+            "staticCorrectedUnreliableOrMissing": 0,
+            "improvedVersusTemporalV3": 7
+          },
+          "unrestricted": {
+            "meanMatchObjective": 1.705418265301411,
+            "staticWithinOneSemitone": 7,
+            "staticTotal": 9,
+            "movingDirectionMatches": 8,
+            "movingTotal": 8,
+            "missingCandidates": 0,
+            "missingRenderedSlots": 0,
+            "staticWithinOneSemitoneCorrected": 7,
+            "staticWithinOneSemitoneBoth": 7,
+            "staticTrackerPassDisagreements": 0,
+            "staticCorrectedUnreliableOrMissing": 0,
+            "improvedVersusTemporalV3": 7
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "001-Bfxr-native",
+          "family": "native",
+          "sourceSynth": "Bfxr",
+          "arms": {
+            "temporal-v3": {
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 4.536159302574337,
+                "audioHash": "79cf564773e3223706551c9b791093726f724e2a048b34f1b7697bda06def733",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 0,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 2.705805731896507,
+                "audioHash": "7f2bc59c23906f343d4e3731053276ba3a39ae1f935418363637f1bae9786267",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 0,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            },
+            "pitch-v4": {
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 11.9733420222933,
+                "audioHash": "40beb36676c5852fd96a340ac4ca1391f2416ba961d537b5794176a0960df588",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 0,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 3.6036086145803994,
+                "audioHash": "c5301c8712d88958547b6c16866d0694fd18161cd4c006aa49fc5ea18b103917",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 0,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            }
+          },
+          "staticTargetPitch": null
+        },
+        {
+          "id": "003-Transfxr-native",
+          "family": "native",
+          "sourceSynth": "Transfxr",
+          "arms": {
+            "temporal-v3": {
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 2.7586047080509912,
+                "audioHash": "0de7a733abf8df97934d0f74dc1560bc2e77685175510486177d3491939d0e34",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 2.4650149206650327,
+                "audioHash": "edb83b5f7f64aa0f946ee89155fffd2ac723bd7daca40ca7443602d7285c90ff",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            },
+            "pitch-v4": {
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 3.2463447152355873,
+                "audioHash": "e52d104c8a964510dc7aeb869e9823b28a3d6f04423fd38f5f054657eb8dba7c",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Pluckr",
+                "score": 2.385937222827166,
+                "audioHash": "2c69a7e7dbeeff89b7532ce40e2b83f77be3e1c8dd72d9faca0db781575c8135",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            }
+          },
+          "staticTargetPitch": null
+        },
+        {
+          "id": "015-Pluckr-native",
+          "family": "native",
+          "sourceSynth": "Pluckr",
+          "arms": {
+            "temporal-v3": {
+              "sourceEngine": {
+                "synth": "Pluckr",
+                "score": 2.8115587851263273,
+                "audioHash": "edc681dfde431cb34e97e16f7ab6a966ce54fa3d34d17194d52373d0567814e1",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Pluckr",
+                "score": 2.8115587851263273,
+                "audioHash": "edc681dfde431cb34e97e16f7ab6a966ce54fa3d34d17194d52373d0567814e1",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            },
+            "pitch-v4": {
+              "sourceEngine": {
+                "synth": "Pluckr",
+                "score": 1.8964957616712939,
+                "audioHash": "bff42c5e4d528082bf2af3a1fb08c8de24224fda353180b55b8e17eb0b646af1",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 15,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Pluckr",
+                "score": 1.8964957616712939,
+                "audioHash": "bff42c5e4d528082bf2af3a1fb08c8de24224fda353180b55b8e17eb0b646af1",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 15,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            }
+          },
+          "staticTargetPitch": null
+        },
+        {
+          "id": "023-Bfxr-static",
+          "family": "static",
+          "sourceSynth": "Bfxr",
+          "arms": {
+            "temporal-v3": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 1,
+                "bestActiveFramesWithinOneSemitone": 0.44680851063829785,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 1.5959083991861267,
+                "audioHash": "93b8fcecae4cd8ba638ff9c72e5d093819c1e74cc16f08ffe12f94ac211b8a83",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 1.586718473884365,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 1.5821362343322076,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 150.07977294921875,
+                  "pitchHzP10P50P90": [
+                    136.13641967773438,
+                    150.07977294921875,
+                    150.951953125
+                  ],
+                  "pitchSpanP10P90Semitones": 1.7884362052880478,
+                  "activeFramesWithinOneSemitone": 0.44680851063829785,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 1.5959083991861267,
+                "audioHash": "93b8fcecae4cd8ba638ff9c72e5d093819c1e74cc16f08ffe12f94ac211b8a83",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 1.586718473884365,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 1.5821362343322076,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 150.07977294921875,
+                  "pitchHzP10P50P90": [
+                    136.13641967773438,
+                    150.07977294921875,
+                    150.951953125
+                  ],
+                  "pitchSpanP10P90Semitones": 1.7884362052880478,
+                  "activeFramesWithinOneSemitone": 0.44680851063829785,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            },
+            "pitch-v4": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 3,
+                "bestActiveFramesWithinOneSemitone": 0.9787234042553191,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 2.255489918166693,
+                "audioHash": "2337f8b2e0bcb16c8c066d30537ba73f135b73df59324ae82557d0d0078195c3",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 2.229903542885007,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 2.2241823492277977,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 120.45851135253906,
+                  "pitchHzP10P50P90": [
+                    120.05926055908203,
+                    120.45851135253906,
+                    122.51891174316407
+                  ],
+                  "pitchSpanP10P90Semitones": 0.3510932397317512,
+                  "activeFramesWithinOneSemitone": 0.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 2.255489918166693,
+                "audioHash": "2337f8b2e0bcb16c8c066d30537ba73f135b73df59324ae82557d0d0078195c3",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 2.229903542885007,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 2.2241823492277977,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 120.45851135253906,
+                  "pitchHzP10P50P90": [
+                    120.05926055908203,
+                    120.45851135253906,
+                    122.51891174316407
+                  ],
+                  "pitchSpanP10P90Semitones": 0.3510932397317512,
+                  "activeFramesWithinOneSemitone": 0.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            }
+          },
+          "staticTargetPitch": {
+            "voicedFraction": 0.9787234042553191,
+            "medianHz": 136.9723663330078,
+            "pitchHzP10P50P90": [
+              136.97216796875,
+              136.9723663330078,
+              136.97904205322266
+            ],
+            "pitchSpanP10P90Semitones": 0.000868815224199174,
+            "activeFramesWithinOneSemitone": null,
+            "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+          }
+        },
+        {
+          "id": "024-Bfxr-static",
+          "family": "static",
+          "sourceSynth": "Bfxr",
+          "arms": {
+            "temporal-v3": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 9,
+                "bestActiveFramesWithinOneSemitone": 1.0,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 0.993635011428488,
+                "audioHash": "c0c413cbe526371d4339d492b9cf1f15a297e86a9887023c53ff271f67b7be01",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.22005787758311232,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.2274201683643623,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 306.6698303222656,
+                  "pitchHzP10P50P90": [
+                    306.1491333007813,
+                    306.6698303222656,
+                    309.8152160644531
+                  ],
+                  "pitchSpanP10P90Semitones": 0.2060808310787251,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 0.993635011428488,
+                "audioHash": "c0c413cbe526371d4339d492b9cf1f15a297e86a9887023c53ff271f67b7be01",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.22005787758311232,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.2274201683643623,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 306.6698303222656,
+                  "pitchHzP10P50P90": [
+                    306.1491333007813,
+                    306.6698303222656,
+                    309.8152160644531
+                  ],
+                  "pitchSpanP10P90Semitones": 0.2060808310787251,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            },
+            "pitch-v4": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 5,
+                "bestActiveFramesWithinOneSemitone": 1.0,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 1.0972623959125811,
+                "audioHash": "7a147363d58ed825fe4e7766c5b17a7f23b8d1d13dd7a1797a7bb5d1906d2efe",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.03858885915444352,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.02264772034568638,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 310.3186950683594,
+                  "pitchHzP10P50P90": [
+                    306.2078369140625,
+                    310.3186950683594,
+                    310.71672973632815
+                  ],
+                  "pitchSpanP10P90Semitones": 0.2530645784862587,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 1.0972623959125811,
+                "audioHash": "7a147363d58ed825fe4e7766c5b17a7f23b8d1d13dd7a1797a7bb5d1906d2efe",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.03858885915444352,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.02264772034568638,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 310.3186950683594,
+                  "pitchHzP10P50P90": [
+                    306.2078369140625,
+                    310.3186950683594,
+                    310.71672973632815
+                  ],
+                  "pitchSpanP10P90Semitones": 0.2530645784862587,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            }
+          },
+          "staticTargetPitch": {
+            "voicedFraction": 1.0,
+            "medianHz": 310.72491455078125,
+            "pitchHzP10P50P90": [
+              310.72491455078125,
+              310.72491455078125,
+              310.7288330078125
+            ],
+            "pitchSpanP10P90Semitones": 0.00021831926379132526,
+            "activeFramesWithinOneSemitone": null,
+            "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+          }
+        },
+        {
+          "id": "025-Bfxr-static",
+          "family": "static",
+          "sourceSynth": "Bfxr",
+          "arms": {
+            "temporal-v3": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 6,
+                "bestActiveFramesWithinOneSemitone": 1.0,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 2.824614334960539,
+                "audioHash": "824086cfa4f6fc44070d902be60eb03cfe34ee44e3a54dce7fe42feab579c7f1",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 1.6166506857185001,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 1.571520267111321,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 611.59814453125,
+                  "pitchHzP10P50P90": [
+                    610.7703857421875,
+                    611.59814453125,
+                    689.0543579101562
+                  ],
+                  "pitchSpanP10P90Semitones": 2.087852232451568,
+                  "activeFramesWithinOneSemitone": 0.3617021276595745,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Pluckr",
+                "score": 1.6881099639117545,
+                "audioHash": "50efcab86e4b0c9f9b3f7a77991f6b7f4ee4ddae843d4fdb4da0366f3a225a86",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.03831435298579103,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.06453389157193053,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 672.214599609375,
+                  "pitchHzP10P50P90": [
+                    671.8522827148438,
+                    672.214599609375,
+                    672.5796020507812
+                  ],
+                  "pitchSpanP10P90Semitones": 0.01873148258421136,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            },
+            "pitch-v4": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 4,
+                "bestActiveFramesWithinOneSemitone": 1.0,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 2.2281075922708364,
+                "audioHash": "687922ca5e85e4e7d4f005a541bce6a3ed68dafb2c6737299756cca5bfece911",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 1.0843168701439376,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 1.0583620310006085,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 629.9979858398438,
+                  "pitchHzP10P50P90": [
+                    629.6820068359375,
+                    629.9979858398438,
+                    757.8531494140625
+                  ],
+                  "pitchSpanP10P90Semitones": 3.2075385468304574,
+                  "activeFramesWithinOneSemitone": 0.06382978723404255,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 2.2281075922708364,
+                "audioHash": "687922ca5e85e4e7d4f005a541bce6a3ed68dafb2c6737299756cca5bfece911",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 1.0843168701439376,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 1.0583620310006085,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 629.9979858398438,
+                  "pitchHzP10P50P90": [
+                    629.6820068359375,
+                    629.9979858398438,
+                    757.8531494140625
+                  ],
+                  "pitchSpanP10P90Semitones": 3.2075385468304574,
+                  "activeFramesWithinOneSemitone": 0.06382978723404255,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            }
+          },
+          "staticTargetPitch": {
+            "voicedFraction": 1.0,
+            "medianHz": 669.7135009765625,
+            "pitchHzP10P50P90": [
+              669.7135009765625,
+              669.7135009765625,
+              669.7157592773438
+            ],
+            "pitchSpanP10P90Semitones": 5.837780794543897e-05,
+            "activeFramesWithinOneSemitone": null,
+            "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+          }
+        },
+        {
+          "id": "026-Transfxr-static",
+          "family": "static",
+          "sourceSynth": "Transfxr",
+          "arms": {
+            "temporal-v3": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 8,
+                "bestActiveFramesWithinOneSemitone": 0.9787234042553191,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 0.9997884995261834,
+                "audioHash": "86fddbf06abf62c2d6e500d378fde690fc59a02b1591ff87adc6b7413b98d8f9",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.21879247612599,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.27506466130945406,
+                "staticPitchContour": {
+                  "voicedFraction": 0.975,
+                  "medianHz": 139.1942596435547,
+                  "pitchHzP10P50P90": [
+                    134.91500549316407,
+                    139.1942596435547,
+                    143.7714630126953
+                  ],
+                  "pitchSpanP10P90Semitones": 1.1007183525545692,
+                  "activeFramesWithinOneSemitone": 0.95,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Pluckr",
+                "score": 0.9613414473919871,
+                "audioHash": "dbefb118fda67a21e054b7c68360e707ab5f54653b18f9c169c51ac1c4ede9a1",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.6090216749854033,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.6105756991432543,
+                "staticPitchContour": {
+                  "voicedFraction": 0.9787234042553191,
+                  "medianHz": 132.25261688232422,
+                  "pitchHzP10P50P90": [
+                    132.0214080810547,
+                    132.25261688232422,
+                    132.4959945678711
+                  ],
+                  "pitchSpanP10P90Semitones": 0.06212227691475022,
+                  "activeFramesWithinOneSemitone": 0.9787234042553191,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            },
+            "pitch-v4": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 4,
+                "bestActiveFramesWithinOneSemitone": 0.75,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 1.3657076802170305,
+                "audioHash": "3d030f1c37a8018212c3ea9b41f9afab9424c1c163c3584091633c6d0cd6d2e1",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.09829371300844078,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.17083652284792097,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 138.3587646484375,
+                  "pitchHzP10P50P90": [
+                    130.7643798828125,
+                    138.3587646484375,
+                    146.649365234375
+                  ],
+                  "pitchSpanP10P90Semitones": 1.9848146536708433,
+                  "activeFramesWithinOneSemitone": 0.75,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 1.3657076802170305,
+                "audioHash": "3d030f1c37a8018212c3ea9b41f9afab9424c1c163c3584091633c6d0cd6d2e1",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.09829371300844078,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.17083652284792097,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 138.3587646484375,
+                  "pitchHzP10P50P90": [
+                    130.7643798828125,
+                    138.3587646484375,
+                    146.649365234375
+                  ],
+                  "pitchSpanP10P90Semitones": 1.9848146536708433,
+                  "activeFramesWithinOneSemitone": 0.75,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            }
+          },
+          "staticTargetPitch": {
+            "voicedFraction": 1.0,
+            "medianHz": 137.0001678466797,
+            "pitchHzP10P50P90": [
+              136.99967346191406,
+              137.0001678466797,
+              137.02745361328124
+            ],
+            "pitchSpanP10P90Semitones": 0.00351015934905171,
+            "activeFramesWithinOneSemitone": null,
+            "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+          }
+        },
+        {
+          "id": "027-Transfxr-static",
+          "family": "static",
+          "sourceSynth": "Transfxr",
+          "arms": {
+            "temporal-v3": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 4,
+                "bestActiveFramesWithinOneSemitone": 1.0,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 0.6081593277567127,
+                "audioHash": "297215c439d56c7a2ad0b8d72f01bf9e6e2c9afb2d4a4aebb00d551dc960cd83",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.14084234571734924,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.12891580611873263,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 308.6927795410156,
+                  "pitchHzP10P50P90": [
+                    303.3696594238281,
+                    308.6927795410156,
+                    313.8122253417969
+                  ],
+                  "pitchSpanP10P90Semitones": 0.5858970129038578,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 0.6081593277567127,
+                "audioHash": "297215c439d56c7a2ad0b8d72f01bf9e6e2c9afb2d4a4aebb00d551dc960cd83",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.14084234571734924,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.12891580611873263,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 308.6927795410156,
+                  "pitchHzP10P50P90": [
+                    303.3696594238281,
+                    308.6927795410156,
+                    313.8122253417969
+                  ],
+                  "pitchSpanP10P90Semitones": 0.5858970129038578,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            },
+            "pitch-v4": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 9,
+                "bestActiveFramesWithinOneSemitone": 1.0,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 0.6070893552647836,
+                "audioHash": "aad84870a30d1bcb916a0e28715d59f3cde0877b17fc5b332a29440eac79e396",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.09893392122838085,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.07889908240135006,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 309.5859069824219,
+                  "pitchHzP10P50P90": [
+                    303.9514495849609,
+                    309.5859069824219,
+                    312.0428955078125
+                  ],
+                  "pitchSpanP10P90Semitones": 0.45484159252758805,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 0.6070893552647836,
+                "audioHash": "aad84870a30d1bcb916a0e28715d59f3cde0877b17fc5b332a29440eac79e396",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.09893392122838085,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.07889908240135006,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 309.5859069824219,
+                  "pitchHzP10P50P90": [
+                    303.9514495849609,
+                    309.5859069824219,
+                    312.0428955078125
+                  ],
+                  "pitchSpanP10P90Semitones": 0.45484159252758805,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            }
+          },
+          "staticTargetPitch": {
+            "voicedFraction": 1.0,
+            "medianHz": 311.0000305175781,
+            "pitchHzP10P50P90": [
+              310.9999694824219,
+              311.0000305175781,
+              311.0139099121094
+            ],
+            "pitchSpanP10P90Semitones": 0.0007760002577818464,
+            "activeFramesWithinOneSemitone": null,
+            "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+          }
+        },
+        {
+          "id": "028-Transfxr-static",
+          "family": "static",
+          "sourceSynth": "Transfxr",
+          "arms": {
+            "temporal-v3": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 8,
+                "bestActiveFramesWithinOneSemitone": 1.0,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 0.662526959104239,
+                "audioHash": "976a2f27566e140fe24a01318bc0459d9fd4889af9a463e803248fcfb9ff07a7",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.24298215892093072,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.13340551599040223,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 667.8339233398438,
+                  "pitchHzP10P50P90": [
+                    645.0773193359375,
+                    667.8339233398438,
+                    678.5761291503907
+                  ],
+                  "pitchSpanP10P90Semitones": 0.8764630425537467,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 0.662526959104239,
+                "audioHash": "976a2f27566e140fe24a01318bc0459d9fd4889af9a463e803248fcfb9ff07a7",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.24298215892093072,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.13340551599040223,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 667.8339233398438,
+                  "pitchHzP10P50P90": [
+                    645.0773193359375,
+                    667.8339233398438,
+                    678.5761291503907
+                  ],
+                  "pitchSpanP10P90Semitones": 0.8764630425537467,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            },
+            "pitch-v4": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 9,
+                "bestActiveFramesWithinOneSemitone": 1.0,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 1.020413540049838,
+                "audioHash": "c20a145768bfb9ec280a7c8296e0f0bb58ac5391ba62984f07c3dec0c7a4bae3",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.1283557921819966,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.004814523587606085,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 672.8128356933594,
+                  "pitchHzP10P50P90": [
+                    650.0269897460937,
+                    672.8128356933594,
+                    694.9445190429688
+                  ],
+                  "pitchSpanP10P90Semitones": 1.1567781993182251,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 1.020413540049838,
+                "audioHash": "c20a145768bfb9ec280a7c8296e0f0bb58ac5391ba62984f07c3dec0c7a4bae3",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.1283557921819966,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.004814523587606085,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 672.8128356933594,
+                  "pitchHzP10P50P90": [
+                    650.0269897460937,
+                    672.8128356933594,
+                    694.9445190429688
+                  ],
+                  "pitchSpanP10P90Semitones": 1.1567781993182251,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            }
+          },
+          "staticTargetPitch": {
+            "voicedFraction": 1.0,
+            "medianHz": 673.0,
+            "pitchHzP10P50P90": [
+              673.0,
+              673.0,
+              673.0042602539063
+            ],
+            "pitchSpanP10P90Semitones": 0.00010959098478518135,
+            "activeFramesWithinOneSemitone": null,
+            "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+          }
+        },
+        {
+          "id": "029-Pluckr-static",
+          "family": "static",
+          "sourceSynth": "Pluckr",
+          "arms": {
+            "temporal-v3": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 4,
+                "bestActiveFramesWithinOneSemitone": 0.9787234042553191,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Pluckr",
+                "score": 0.807655271997501,
+                "audioHash": "737a2c72ff5f3c1bbf4aaaec9eb086aed39acc2ba1560a01e0927dc81c8885da",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.2674075248235728,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.26677404368767976,
+                "staticPitchContour": {
+                  "voicedFraction": 0.9787234042553191,
+                  "medianHz": 134.75928497314453,
+                  "pitchHzP10P50P90": [
+                    134.706298828125,
+                    134.75928497314453,
+                    134.7978515625
+                  ],
+                  "pitchSpanP10P90Semitones": 0.011762283950168527,
+                  "activeFramesWithinOneSemitone": 0.9787234042553191,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Pluckr",
+                "score": 0.807655271997501,
+                "audioHash": "737a2c72ff5f3c1bbf4aaaec9eb086aed39acc2ba1560a01e0927dc81c8885da",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.2674075248235728,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.26677404368767976,
+                "staticPitchContour": {
+                  "voicedFraction": 0.9787234042553191,
+                  "medianHz": 134.75928497314453,
+                  "pitchHzP10P50P90": [
+                    134.706298828125,
+                    134.75928497314453,
+                    134.7978515625
+                  ],
+                  "pitchSpanP10P90Semitones": 0.011762283950168527,
+                  "activeFramesWithinOneSemitone": 0.9787234042553191,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            },
+            "pitch-v4": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 7,
+                "bestActiveFramesWithinOneSemitone": 0.9787234042553191,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Pluckr",
+                "score": 1.3777003016332834,
+                "audioHash": "a55264489a583de6dd558019a01cf46cd4854e5f40d6dd576ee1dfa920fe295e",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.039401745458481234,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.03894705323417218,
+                "staticPitchContour": {
+                  "voicedFraction": 0.9787234042553191,
+                  "medianHz": 136.54440307617188,
+                  "pitchHzP10P50P90": [
+                    136.52780151367188,
+                    136.54440307617188,
+                    136.55462646484375
+                  ],
+                  "pitchSpanP10P90Semitones": 0.0034011905728588048,
+                  "activeFramesWithinOneSemitone": 0.9787234042553191,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Pluckr",
+                "score": 1.3777003016332834,
+                "audioHash": "a55264489a583de6dd558019a01cf46cd4854e5f40d6dd576ee1dfa920fe295e",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.039401745458481234,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.03894705323417218,
+                "staticPitchContour": {
+                  "voicedFraction": 0.9787234042553191,
+                  "medianHz": 136.54440307617188,
+                  "pitchHzP10P50P90": [
+                    136.52780151367188,
+                    136.54440307617188,
+                    136.55462646484375
+                  ],
+                  "pitchSpanP10P90Semitones": 0.0034011905728588048,
+                  "activeFramesWithinOneSemitone": 0.9787234042553191,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            }
+          },
+          "staticTargetPitch": {
+            "voicedFraction": 0.9787234042553191,
+            "medianHz": 136.8519287109375,
+            "pitchHzP10P50P90": [
+              136.85123443603516,
+              136.8519287109375,
+              136.85746002197266
+            ],
+            "pitchSpanP10P90Semitones": 0.0007875487019941928,
+            "activeFramesWithinOneSemitone": null,
+            "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+          }
+        },
+        {
+          "id": "030-Pluckr-static",
+          "family": "static",
+          "sourceSynth": "Pluckr",
+          "arms": {
+            "temporal-v3": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 4,
+                "bestActiveFramesWithinOneSemitone": 1.0,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Pluckr",
+                "score": 0.30766061727446575,
+                "audioHash": "87c1ada44667924c36299d921e7089497cf603cc6b1be9da91c33e5b28958993",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.22901936423212887,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.2292853711857933,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 306.1524353027344,
+                  "pitchHzP10P50P90": [
+                    305.914892578125,
+                    306.1524353027344,
+                    306.38209228515626
+                  ],
+                  "pitchSpanP10P90Semitones": 0.026419604129774794,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Pluckr",
+                "score": 0.30766061727446575,
+                "audioHash": "87c1ada44667924c36299d921e7089497cf603cc6b1be9da91c33e5b28958993",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.22901936423212887,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.2292853711857933,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 306.1524353027344,
+                  "pitchHzP10P50P90": [
+                    305.914892578125,
+                    306.1524353027344,
+                    306.38209228515626
+                  ],
+                  "pitchSpanP10P90Semitones": 0.026419604129774794,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            },
+            "pitch-v4": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 5,
+                "bestActiveFramesWithinOneSemitone": 1.0,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Pluckr",
+                "score": 0.8391537833429747,
+                "audioHash": "4fa9693e1bef9f234dba59c1022d6146bf17e1304c1ea2b5bd8ecbf84ae70d3f",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.44622801402623724,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.4457488388112885,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 318.3255615234375,
+                  "pitchHzP10P50P90": [
+                    318.2181457519531,
+                    318.3255615234375,
+                    318.45599365234375
+                  ],
+                  "pitchSpanP10P90Semitones": 0.012935044077533465,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Pluckr",
+                "score": 0.8391537833429747,
+                "audioHash": "4fa9693e1bef9f234dba59c1022d6146bf17e1304c1ea2b5bd8ecbf84ae70d3f",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.44622801402623724,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.4457488388112885,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 318.3255615234375,
+                  "pitchHzP10P50P90": [
+                    318.2181457519531,
+                    318.3255615234375,
+                    318.45599365234375
+                  ],
+                  "pitchSpanP10P90Semitones": 0.012935044077533465,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            }
+          },
+          "staticTargetPitch": {
+            "voicedFraction": 1.0,
+            "medianHz": 310.2341003417969,
+            "pitchHzP10P50P90": [
+              310.2323059082031,
+              310.2341003417969,
+              310.2493835449219
+            ],
+            "pitchSpanP10P90Semitones": 0.0009529817454778928,
+            "activeFramesWithinOneSemitone": null,
+            "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+          }
+        },
+        {
+          "id": "031-Pluckr-static",
+          "family": "static",
+          "sourceSynth": "Pluckr",
+          "arms": {
+            "temporal-v3": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 6,
+                "bestActiveFramesWithinOneSemitone": 1.0,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Pluckr",
+                "score": 0.42253510001793426,
+                "audioHash": "3bffd26b9f9079a7f19041aa43ecdd490c299354efc82ff60f7e9dd5c08dd168",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.0044976403880133044,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.005661306709362302,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 669.203857421875,
+                  "pitchHzP10P50P90": [
+                    668.8297119140625,
+                    669.203857421875,
+                    669.7672729492188
+                  ],
+                  "pitchSpanP10P90Semitones": 0.024251329876206644,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Pluckr",
+                "score": 0.42253510001793426,
+                "audioHash": "3bffd26b9f9079a7f19041aa43ecdd490c299354efc82ff60f7e9dd5c08dd168",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.0044976403880133044,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.005661306709362302,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 669.203857421875,
+                  "pitchHzP10P50P90": [
+                    668.8297119140625,
+                    669.203857421875,
+                    669.7672729492188
+                  ],
+                  "pitchSpanP10P90Semitones": 0.024251329876206644,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            },
+            "pitch-v4": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 5,
+                "bestActiveFramesWithinOneSemitone": 1.0,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Pluckr",
+                "score": 1.0850988692595318,
+                "audioHash": "0a99f1759c2acda311435ef25056a9a35a829f153edd7fec27f6096a80e4f847",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.09970043947654979,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.09972701052789022,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 673.2900695800781,
+                  "pitchHzP10P50P90": [
+                    673.2500610351562,
+                    673.2900695800781,
+                    673.3154602050781
+                  ],
+                  "pitchSpanP10P90Semitones": 0.001681630311374846,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Pluckr",
+                "score": 1.0850988692595318,
+                "audioHash": "0a99f1759c2acda311435ef25056a9a35a829f153edd7fec27f6096a80e4f847",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 0.09970043947654979,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.09972701052789022,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 673.2900695800781,
+                  "pitchHzP10P50P90": [
+                    673.2500610351562,
+                    673.2900695800781,
+                    673.3154602050781
+                  ],
+                  "pitchSpanP10P90Semitones": 0.001681630311374846,
+                  "activeFramesWithinOneSemitone": 1.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            }
+          },
+          "staticTargetPitch": {
+            "voicedFraction": 1.0,
+            "medianHz": 669.4227294921875,
+            "pitchHzP10P50P90": [
+              669.4224243164062,
+              669.4227294921875,
+              669.4418701171875
+            ],
+            "pitchSpanP10P90Semitones": 0.0005028923777591448,
+            "activeFramesWithinOneSemitone": null,
+            "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+          }
+        },
+        {
+          "id": "032-Bfxr-moving",
+          "family": "moving",
+          "sourceSynth": "Bfxr",
+          "arms": {
+            "temporal-v3": {
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 1.3472557571741386,
+                "audioHash": "74826bc532d75cffc74aa804a5e1a3d27a5e082dfc2519a7fc0041ed74e3a753",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.671265232807003,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 1.8878049743074286
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 1.3472557571741386,
+                "audioHash": "74826bc532d75cffc74aa804a5e1a3d27a5e082dfc2519a7fc0041ed74e3a753",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.671265232807003,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 1.8878049743074286
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            },
+            "pitch-v4": {
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 1.1341147165773235,
+                "audioHash": "1ffdbd56b12a5cef0e778e33a88f03993b1ea8263e6ec1c5d4fbfa7f94d365b0",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.37454580067875565,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 1.1294068553937961
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 1.1341147165773235,
+                "audioHash": "1ffdbd56b12a5cef0e778e33a88f03993b1ea8263e6ec1c5d4fbfa7f94d365b0",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.37454580067875565,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 1.1294068553937961
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            }
+          },
+          "staticTargetPitch": null
+        },
+        {
+          "id": "033-Bfxr-moving",
+          "family": "moving",
+          "sourceSynth": "Bfxr",
+          "arms": {
+            "temporal-v3": {
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 2.5349981189394377,
+                "audioHash": "62ef3b211c1d99bd2ef136b86711a126873481a0b2ff746fbc6996666180f8d3",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 2.1709413967087485,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 3.575173754186011
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 2.11529137033245,
+                "audioHash": "5ff870c5e84c15a6e26b9e7172958448c2ebb7d01fd0ae68a0255a994a1db79a",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.5242999181741679,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 0.5023439480643361
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            },
+            "pitch-v4": {
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 2.998389685675982,
+                "audioHash": "07a928e808300cde2f3eea1ddb6c3e9a467a1dbd0c5832161b68af8db16ecefc",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 4.824952041492444,
+                  "reliableContourPairs": 14,
+                  "directionMatches": false,
+                  "excursionErrorSemitones": 43.72315914336066
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 1.2643196572867512,
+                "audioHash": "1f305b3eadfe46701cb8c3dc8e61ad4c51b54b679922d44c442b823fc977b499",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 1.3433753522393284,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 0.3833947100972921
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            }
+          },
+          "staticTargetPitch": null
+        },
+        {
+          "id": "034-Bfxr-moving",
+          "family": "moving",
+          "sourceSynth": "Bfxr",
+          "arms": {
+            "temporal-v3": {
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 5.51506099274522,
+                "audioHash": "dc4f78f90c49e43a023d5e92cac9ba6126d57a39806c554666524f83a17321b3",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 5.603822677009612,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 19.972526572707096
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 2.9924752040053755,
+                "audioHash": "02034551c04640b3d303c5b94beebf7ae8852ee8c97bcbfb797cc41672284eed",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 2.629119750323143,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 2.6737973065688436
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            },
+            "pitch-v4": {
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 4.548795774428645,
+                "audioHash": "05528c1886f0458058226d18bd20c2b3812ac51bf760ab7cd2ab488a76762d2e",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 4.636143917555767,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 7.5627120405679165
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 4.164734582092325,
+                "audioHash": "cc3cb1fe962ba678a6786f9b0ae8e7fbafa0f0d5f09436b19ee026ee32c6568f",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 3.2180946556496393,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 2.39648484269847
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            }
+          },
+          "staticTargetPitch": null
+        },
+        {
+          "id": "035-Bfxr-moving",
+          "family": "moving",
+          "sourceSynth": "Bfxr",
+          "arms": {
+            "temporal-v3": {
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 1.280579380122949,
+                "audioHash": "54e6f737b3b74f51f66e6ee6dea9287654489a7f61d848728bbdefb99059fe8b",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.4622230584212974,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 0.9641769644181295
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 1.280579380122949,
+                "audioHash": "54e6f737b3b74f51f66e6ee6dea9287654489a7f61d848728bbdefb99059fe8b",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.4622230584212974,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 0.9641769644181295
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            },
+            "pitch-v4": {
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 1.612384429592036,
+                "audioHash": "65c2131fec2d997b96f997d166b8d7b87e5f813441efbcdf5566070c63788e91",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.47165594330923316,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 1.0236064910091187
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 1.612384429592036,
+                "audioHash": "65c2131fec2d997b96f997d166b8d7b87e5f813441efbcdf5566070c63788e91",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.47165594330923316,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 1.0236064910091187
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            }
+          },
+          "staticTargetPitch": null
+        },
+        {
+          "id": "036-Transfxr-moving",
+          "family": "moving",
+          "sourceSynth": "Transfxr",
+          "arms": {
+            "temporal-v3": {
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 1.3962940148942609,
+                "audioHash": "199b03827f41f9ef16f45bec9b1f6bc0e49db0148e0d8bbe9f6b0ad405991e4b",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.7676339633470163,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 0.54853728110524
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 1.3962940148942609,
+                "audioHash": "199b03827f41f9ef16f45bec9b1f6bc0e49db0148e0d8bbe9f6b0ad405991e4b",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.7676339633470163,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 0.54853728110524
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            },
+            "pitch-v4": {
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 1.8241513073891669,
+                "audioHash": "e3cda9eed20a7af9dcc83b3e28c13a3f9fc507ea6964c6075ce63177aab353db",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.7339251727721385,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 0.8856578330359639
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 1.8241513073891669,
+                "audioHash": "e3cda9eed20a7af9dcc83b3e28c13a3f9fc507ea6964c6075ce63177aab353db",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.7339251727721385,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 0.8856578330359639
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            }
+          },
+          "staticTargetPitch": null
+        },
+        {
+          "id": "037-Transfxr-moving",
+          "family": "moving",
+          "sourceSynth": "Transfxr",
+          "arms": {
+            "temporal-v3": {
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 0.7664200221810132,
+                "audioHash": "a89f24f169f51bc8753b5d39f1c5aa5d300d736bf287aa74189372e29e4a48ee",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.7214471147175568,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 1.130761705235912
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 0.7664200221810132,
+                "audioHash": "a89f24f169f51bc8753b5d39f1c5aa5d300d736bf287aa74189372e29e4a48ee",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.7214471147175568,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 1.130761705235912
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            },
+            "pitch-v4": {
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 0.5846010478501635,
+                "audioHash": "eb166c39d2ac67229a914c0175db2836a0142edaa925bb9dee06c1fa76d37295",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.7936546914414124,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 0.8929599310772147
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 0.5846010478501635,
+                "audioHash": "eb166c39d2ac67229a914c0175db2836a0142edaa925bb9dee06c1fa76d37295",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.7936546914414124,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 0.8929599310772147
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            }
+          },
+          "staticTargetPitch": null
+        },
+        {
+          "id": "038-Transfxr-moving",
+          "family": "moving",
+          "sourceSynth": "Transfxr",
+          "arms": {
+            "temporal-v3": {
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 1.9344749131255379,
+                "audioHash": "227985c7b5a50b6ba8c3b5b79bf82ec3c09cb90af48716e1859e0be446d3efce",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.8725584519637476,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 1.6984626149943267
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 1.9344749131255379,
+                "audioHash": "227985c7b5a50b6ba8c3b5b79bf82ec3c09cb90af48716e1859e0be446d3efce",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.8725584519637476,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 1.6984626149943267
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            },
+            "pitch-v4": {
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 3.143441292196975,
+                "audioHash": "067ee0dd4545c566635f0a96751c7a29b0c039a386db3c95bdd86b22f1618c30",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 1.6724490176289146,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 2.322590366828379
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 2.9798712532547227,
+                "audioHash": "d763a10f60c1ff29e68dfc71c221659e01310010cf4e8577c2773e52bf830df2",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 2.624133822025658,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 8.286666853209368
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            }
+          },
+          "staticTargetPitch": null
+        },
+        {
+          "id": "039-Transfxr-moving",
+          "family": "moving",
+          "sourceSynth": "Transfxr",
+          "arms": {
+            "temporal-v3": {
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 0.8509275717580526,
+                "audioHash": "7de6c9e2183d0f5cc4bfacc24470dcf1823a07d441c6c6b41ca4445edea055d4",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.32279303385564057,
+                  "reliableContourPairs": 16,
+                  "directionMatches": false,
+                  "excursionErrorSemitones": 0.8038799478093921
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 0.8509275717580526,
+                "audioHash": "7de6c9e2183d0f5cc4bfacc24470dcf1823a07d441c6c6b41ca4445edea055d4",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.32279303385564057,
+                  "reliableContourPairs": 16,
+                  "directionMatches": false,
+                  "excursionErrorSemitones": 0.8038799478093921
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            },
+            "pitch-v4": {
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 0.7821232767893218,
+                "audioHash": "7162bf33d53327319c45971c78e8a935c9c301084724f67af2aea2bfc3561cdd",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.1370494603159242,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 0.265891564118661
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              },
+              "unrestricted": {
+                "synth": "Transfxr",
+                "score": 0.7821232767893218,
+                "audioHash": "7162bf33d53327319c45971c78e8a935c9c301084724f67af2aea2bfc3561cdd",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": null,
+                  "contourErrorSemitones": 0.1370494603159242,
+                  "reliableContourPairs": 16,
+                  "directionMatches": true,
+                  "excursionErrorSemitones": 0.265891564118661
+                },
+                "correctedMedianPitchErrorSemitones": null,
+                "staticPitchContour": null
+              }
+            }
+          },
+          "staticTargetPitch": null
+        }
+      ]
+    },
+    "high-pitch": {
+      "unrestrictedMovingMeanErrors": {
+        "temporal-v3": {
+          "contourErrorSemitones": null,
+          "excursionErrorSemitones": null
+        },
+        "pitch-v4": {
+          "contourErrorSemitones": null,
+          "excursionErrorSemitones": null
+        }
+      },
+      "reportPath": "tools/multisynth/runs/pitch-v4/high-pitch/results.json",
+      "reportSha256": "5dbfcc14846e0fbd603fec76f56707293a76c20e63a47b3d4e2480594a9b3cea",
+      "metadata": {
+        "complete": true,
+        "experiment": "pitch-input-only-v4",
+        "benchmarkPath": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/temporal-v3/high-pitch-targets/results.json",
+        "benchmarkSha256": "9f594f4da124916a115b9d65638b2f52a9735cd0768196366613c46771276d73",
+        "models": {
+          "temporal-v3": {
+            "Bfxr": {
+              "checkpointHash": "34766ccb414e4e07f426336a77e0f6fbff92537a4a42be57ec6a41098708dc95",
+              "dataManifestHash": "5162ae6d90328f098389bfc762437bc29083eea4d5a446eb2fef14edced5e87c",
+              "featureHash": "fa36498127a6b820ef7b576f708ac0aaa8826b82d2df6acc726511a0a0fff3b1",
+              "featureCodeHash": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+              "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7"
+            },
+            "Transfxr": {
+              "checkpointHash": "acd95dd42b38e9478ff927d5b8fd623b1d2121c7b2ff56839e47f6e689f531bf",
+              "dataManifestHash": "5162ae6d90328f098389bfc762437bc29083eea4d5a446eb2fef14edced5e87c",
+              "featureHash": "fa36498127a6b820ef7b576f708ac0aaa8826b82d2df6acc726511a0a0fff3b1",
+              "featureCodeHash": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+              "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7"
+            },
+            "Pluckr": {
+              "checkpointHash": "6e8bc3a5e55781d4c1be5b29ce30d3fbbcb4d81e86430de9a81cba65695f3c55",
+              "dataManifestHash": "5162ae6d90328f098389bfc762437bc29083eea4d5a446eb2fef14edced5e87c",
+              "featureHash": "fa36498127a6b820ef7b576f708ac0aaa8826b82d2df6acc726511a0a0fff3b1",
+              "featureCodeHash": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+              "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7"
+            }
+          },
+          "pitch-v4": {
+            "Bfxr": {
+              "checkpointHash": "0547eb18f82f4ba3412c926f572193eee02b893b43621f22ee1b05d9660b2923",
+              "dataManifestHash": "2f59e13c8300fbdf543c8cf0932e16956c9e009c09db19cd408eba0183fd1cc8",
+              "featureHash": "8aa8db8c7199b229f4cefbe229aa96b1613dd63454047fef8fb04c8c37cf8aef",
+              "featureCodeHash": "1b6fc371d0aaa4d3e808cd36081c45602dc7cd67f0c8d8dd2dda92349403eb7a",
+              "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7"
+            },
+            "Transfxr": {
+              "checkpointHash": "c99ee18c4e8ffbd549209b40d6f01f199d029236fca7bfff6ee5ec23a2a32e3a",
+              "dataManifestHash": "2f59e13c8300fbdf543c8cf0932e16956c9e009c09db19cd408eba0183fd1cc8",
+              "featureHash": "8aa8db8c7199b229f4cefbe229aa96b1613dd63454047fef8fb04c8c37cf8aef",
+              "featureCodeHash": "1b6fc371d0aaa4d3e808cd36081c45602dc7cd67f0c8d8dd2dda92349403eb7a",
+              "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7"
+            },
+            "Pluckr": {
+              "checkpointHash": "cac7b21852b9017af401ac9c2c062817f3ad2c8ff7174db8bfeb549c38e9c3fa",
+              "dataManifestHash": "2f59e13c8300fbdf543c8cf0932e16956c9e009c09db19cd408eba0183fd1cc8",
+              "featureHash": "8aa8db8c7199b229f4cefbe229aa96b1613dd63454047fef8fb04c8c37cf8aef",
+              "featureCodeHash": "1b6fc371d0aaa4d3e808cd36081c45602dc7cd67f0c8d8dd2dda92349403eb7a",
+              "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7"
+            }
+          }
+        },
+        "modelDirectories": {
+          "temporal-v3": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/temporal-v3/hybrid-experts",
+          "pitch-v4": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/pitch-v4/experts"
+        },
+        "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+        "candidateBudgetPerEngine": 4,
+        "candidateBudgetTotal": 12,
+        "codeHashes": {
+          "pitch_eval.py": "c3ca055b8f999b90cbdb611467e42ecdebe9dc9749e3d7cb145704cc26a0237e",
+          "temporal_eval.py": "bca42b4b1a9673e4f888e55486d06d328931362a8d2b4a9cf7dc0b2031fbd731",
+          "benchmark.py": "03f2dc3e97685aa975880043888a0f83b5031e0f937efda629e41b8f104295a9",
+          "evaluate.py": "b5e174c099028b4d39ec807bd29a67cb280d278a376d23744527f6fc4b441c83",
+          "data.py": "15b3683eb8690a9cc37612e676f6582e59cd9167de5d4098f308bcfe6fa7136c",
+          "pitch_features.py": "1b6fc371d0aaa4d3e808cd36081c45602dc7cd67f0c8d8dd2dda92349403eb7a",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/objective.py": "ea3768c5ff641f68e398a7a39f902345f5f3a1a69277b66f8df556f7eeb2278e",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/headroom.py": "42756fb86e95559b70b61da5693c28f241ad75fbe24915e9aecda987cdabd910",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/renderer.py": "c389dba1354cdccac284ee1b34831b5e17e03b4225474aebdde10041bfb37609",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/batch.py": "3ea21d7ee8145197f5b7183fd911eb41aa2a6c09ab4ebd62206dc14d324fc829",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/bfxr_io.py": "80777afd6d211dc5862e7827b536acd91733e9145fe4ab2cef4133c6c4c34f8e",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/refine.py": "9141097014c65adebd12971a75e4f23423f95e53197a57dd2381bd2d8283978f",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/metric_bakeoff.py": "5c97c728c9cc41241b8b657b9e0db1e4138fc1a5f21ec5ac218e111790c92de1",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/features.py": "dc8d2c049f9940215387d2f2500cfa0dbdd2a5b27e07eced41f16fc69cba6859",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/listen_compare.py": "e45f0f0651902ec1d8df2ab9ffd13cbeaacc300140019ef46d456a327d649909",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/notes.py": "78a7e09b0a5e07f09432a5302646d18344fcb1ad39ebc66d8de01b0f0c4ccf89",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/structure_probes.py": "79c397de858075ce69c9150589443cf8885ef491a495ce3f75ea16ac929a51df",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/alt_metrics.py": "3fb79bb4832a126909cf9b260ce75229fa9d9352dca006c892ae684a73f64942",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/structure.py": "1fef062dcd488b6a2f52c0fcdb03921296770972235253fe7a2b876e183d5aa2",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/optimizer.py": "427c729e7605da863bfdda41b338edf19b3b6ee14e53e846d6a61156c81b8972",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/audio.py": "90bd5aa0dd1e885f0cdd1057e2a0d9c06c25bcf7584e8e7ab92fd5edeb14fa52",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/listen_refine_compare.py": "e2cd3d3a4bc833e61dbe886317482d9c35c453fc48d6ebe5ce5ae06c8745d558",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/report.py": "95f6353b5844a9eadf6707dca3b7e869c78d27b58b76191a0cb55304ad8fcfa2",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/match.py": "dfbd46019a6bf9dee378de53d0117a4164cc427a6db64cb20e3e6b38f064fc34",
+          "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/length_report.py": "f295404ba1054b50fa1c87ef9ea62b1a7d7476cb4fd30bb78276d7d223454b20"
+        },
+        "correctedDiagnosticFeatureHash": "8aa8db8c7199b229f4cefbe229aa96b1613dd63454047fef8fb04c8c37cf8aef",
+        "correctedDiagnosticCodeHash": "1b6fc371d0aaa4d3e808cd36081c45602dc7cd67f0c8d8dd2dda92349403eb7a",
+        "scope": "Fixed development probes, including sparse upper-register coverage; not independent generalization or human likeness.",
+        "selection": "Unchanged MatchObjective over actual DSP float audio; source-engine and unrestricted summaries are separate."
+      },
+      "summary": {
+        "temporal-v3": {
+          "sourceEngine": {
+            "meanMatchObjective": 7.650958299452537,
+            "staticWithinOneSemitone": 0,
+            "staticTotal": 4,
+            "movingDirectionMatches": 0,
+            "movingTotal": 0,
+            "missingCandidates": 0,
+            "missingRenderedSlots": 0,
+            "staticWithinOneSemitoneCorrected": 0,
+            "staticWithinOneSemitoneBoth": 0,
+            "staticTrackerPassDisagreements": 0,
+            "staticCorrectedUnreliableOrMissing": 0,
+            "improvedVersusTemporalV3": 0
+          },
+          "unrestricted": {
+            "meanMatchObjective": 7.522992094641875,
+            "staticWithinOneSemitone": 0,
+            "staticTotal": 4,
+            "movingDirectionMatches": 0,
+            "movingTotal": 0,
+            "missingCandidates": 0,
+            "missingRenderedSlots": 0,
+            "staticWithinOneSemitoneCorrected": 0,
+            "staticWithinOneSemitoneBoth": 0,
+            "staticTrackerPassDisagreements": 0,
+            "staticCorrectedUnreliableOrMissing": 0,
+            "improvedVersusTemporalV3": 0
+          }
+        },
+        "pitch-v4": {
+          "sourceEngine": {
+            "meanMatchObjective": 8.337734410860282,
+            "staticWithinOneSemitone": 0,
+            "staticTotal": 4,
+            "movingDirectionMatches": 0,
+            "movingTotal": 0,
+            "missingCandidates": 0,
+            "missingRenderedSlots": 0,
+            "staticWithinOneSemitoneCorrected": 1,
+            "staticWithinOneSemitoneBoth": 0,
+            "staticTrackerPassDisagreements": 1,
+            "staticCorrectedUnreliableOrMissing": 0,
+            "improvedVersusTemporalV3": 2
+          },
+          "unrestricted": {
+            "meanMatchObjective": 7.888424957185869,
+            "staticWithinOneSemitone": 0,
+            "staticTotal": 4,
+            "movingDirectionMatches": 0,
+            "movingTotal": 0,
+            "missingCandidates": 0,
+            "missingRenderedSlots": 0,
+            "staticWithinOneSemitoneCorrected": 2,
+            "staticWithinOneSemitoneBoth": 0,
+            "staticTrackerPassDisagreements": 2,
+            "staticCorrectedUnreliableOrMissing": 0,
+            "improvedVersusTemporalV3": 2
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "Bfxr-2500",
+          "family": "static",
+          "sourceSynth": "Bfxr",
+          "arms": {
+            "temporal-v3": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 0,
+                "bestActiveFramesWithinOneSemitone": 0.19148936170212766,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 5.284716485082083,
+                "audioHash": "162f66d085374906f4b51e8e904adc20e42ae70cf3e8da807424f805eabd4ed3",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 1.4845611987267744,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 1.6755936103878342,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 2713.97802734375,
+                  "pitchHzP10P50P90": [
+                    2462.3326171875,
+                    2713.97802734375,
+                    2761.48427734375
+                  ],
+                  "pitchSpanP10P90Semitones": 1.9850190724320063,
+                  "activeFramesWithinOneSemitone": 0.19148936170212766,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 5.284716485082083,
+                "audioHash": "162f66d085374906f4b51e8e904adc20e42ae70cf3e8da807424f805eabd4ed3",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 1.4845611987267744,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 1.6755936103878342,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 2713.97802734375,
+                  "pitchHzP10P50P90": [
+                    2462.3326171875,
+                    2713.97802734375,
+                    2761.48427734375
+                  ],
+                  "pitchSpanP10P90Semitones": 1.9850190724320063,
+                  "activeFramesWithinOneSemitone": 0.19148936170212766,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            },
+            "pitch-v4": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 0,
+                "bestActiveFramesWithinOneSemitone": 0.0,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 8.568956588600647,
+                "audioHash": "45819c76fcfc47f4b3c10734a670ef678369cf0ebb23e8289ece2d0e6d9c9d2e",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 2.0440515214657,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 11,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 6.908626032374448,
+                "staticPitchContour": {
+                  "voicedFraction": 0.7916666666666666,
+                  "medianHz": 3671.8193359375,
+                  "pitchHzP10P50P90": [
+                    2766.176904296875,
+                    3671.8193359375,
+                    5495.1048828125
+                  ],
+                  "pitchSpanP10P90Semitones": 11.883043127761487,
+                  "activeFramesWithinOneSemitone": 0.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 8.568956588600647,
+                "audioHash": "45819c76fcfc47f4b3c10734a670ef678369cf0ebb23e8289ece2d0e6d9c9d2e",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 2.0440515214657,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 11,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 6.908626032374448,
+                "staticPitchContour": {
+                  "voicedFraction": 0.7916666666666666,
+                  "medianHz": 3671.8193359375,
+                  "pitchHzP10P50P90": [
+                    2766.176904296875,
+                    3671.8193359375,
+                    5495.1048828125
+                  ],
+                  "pitchSpanP10P90Semitones": 11.883043127761487,
+                  "activeFramesWithinOneSemitone": 0.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            }
+          },
+          "staticTargetPitch": {
+            "voicedFraction": 1.0,
+            "medianHz": 2463.614013671875,
+            "pitchHzP10P50P90": [
+              2463.614013671875,
+              2463.614013671875,
+              2463.614990234375
+            ],
+            "pitchSpanP10P90Semitones": 6.86251136187233e-06,
+            "activeFramesWithinOneSemitone": null,
+            "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+          }
+        },
+        {
+          "id": "Bfxr-3200",
+          "family": "static",
+          "sourceSynth": "Bfxr",
+          "arms": {
+            "temporal-v3": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 0,
+                "bestActiveFramesWithinOneSemitone": 0.0,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 9.15783711542754,
+                "audioHash": "0f4f2f8bb7ddea2a5d40aa08db8b4f0c2073441816d65beedd1df72f5fffc49b",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 6.280814031308648,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 6.223583625679009,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 2208.7703857421875,
+                  "pitchHzP10P50P90": [
+                    735.8857421875,
+                    2208.7703857421875,
+                    2440.991455078125
+                  ],
+                  "pitchSpanP10P90Semitones": 20.758962685259952,
+                  "activeFramesWithinOneSemitone": 0.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 9.15783711542754,
+                "audioHash": "0f4f2f8bb7ddea2a5d40aa08db8b4f0c2073441816d65beedd1df72f5fffc49b",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 6.280814031308648,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 6.223583625679009,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 2208.7703857421875,
+                  "pitchHzP10P50P90": [
+                    735.8857421875,
+                    2208.7703857421875,
+                    2440.991455078125
+                  ],
+                  "pitchSpanP10P90Semitones": 20.758962685259952,
+                  "activeFramesWithinOneSemitone": 0.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            },
+            "pitch-v4": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 1,
+                "bestActiveFramesWithinOneSemitone": 0.09523809523809523,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Bfxr",
+                "score": 7.683486962545065,
+                "audioHash": "215d47e695c189474915592392d8ae75d52dacf21d93991f70fe8de627375737",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 2.4089586854072804,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 8,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.016400441712357057,
+                "staticPitchContour": {
+                  "voicedFraction": 0.7142857142857143,
+                  "medianHz": 3167.275146484375,
+                  "pitchHzP10P50P90": [
+                    2461.726123046875,
+                    3167.275146484375,
+                    6109.523144531249
+                  ],
+                  "pitchSpanP10P90Semitones": 15.736674183371555,
+                  "activeFramesWithinOneSemitone": 0.09523809523809523,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 7.683486962545065,
+                "audioHash": "215d47e695c189474915592392d8ae75d52dacf21d93991f70fe8de627375737",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 2.4089586854072804,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 8,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.016400441712357057,
+                "staticPitchContour": {
+                  "voicedFraction": 0.7142857142857143,
+                  "medianHz": 3167.275146484375,
+                  "pitchHzP10P50P90": [
+                    2461.726123046875,
+                    3167.275146484375,
+                    6109.523144531249
+                  ],
+                  "pitchSpanP10P90Semitones": 15.736674183371555,
+                  "activeFramesWithinOneSemitone": 0.09523809523809523,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            }
+          },
+          "staticTargetPitch": {
+            "voicedFraction": 1.0,
+            "medianHz": 3164.276123046875,
+            "pitchHzP10P50P90": [
+              3164.276123046875,
+              3164.276123046875,
+              3164.276611328125
+            ],
+            "pitchSpanP10P90Semitones": 2.6714769093787298e-06,
+            "activeFramesWithinOneSemitone": null,
+            "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+          }
+        },
+        {
+          "id": "Transfxr-2500",
+          "family": "static",
+          "sourceSynth": "Transfxr",
+          "arms": {
+            "temporal-v3": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 0,
+                "bestActiveFramesWithinOneSemitone": 0.1276595744680851,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 5.9235441005234035,
+                "audioHash": "85d6e2aca8845e5c7ee3aeeb9b52514910a843bd3f3b105e8c102e5e54be5f3d",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 6.29412590162411,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 6.703410316406037,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 1697.3758544921875,
+                  "pitchHzP10P50P90": [
+                    1443.0707763671876,
+                    1697.3758544921875,
+                    1815.5539916992188
+                  ],
+                  "pitchSpanP10P90Semitones": 3.9752132968499363,
+                  "activeFramesWithinOneSemitone": 0.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 5.70760716094747,
+                "audioHash": "915df99516261f44bab004692361c43845b20d4ff2ae9f63d25112b894b5918d",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 1.5654822620933748,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 1.618795540349217,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 2745.032470703125,
+                  "pitchHzP10P50P90": [
+                    2606.20234375,
+                    2745.032470703125,
+                    2750.702783203125
+                  ],
+                  "pitchSpanP10P90Semitones": 0.9342139801467503,
+                  "activeFramesWithinOneSemitone": 0.1276595744680851,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            },
+            "pitch-v4": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 0,
+                "bestActiveFramesWithinOneSemitone": 0.06451612903225806,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 7.381844442713915,
+                "audioHash": "dadf6e9fc1d52be656925fb81ac35b4411622f1c1603e285d4eea0da15563c21",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 9.528420814037244,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 9.434191406827862,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 1449.6865844726562,
+                  "pitchHzP10P50P90": [
+                    1414.6708740234376,
+                    1449.6865844726562,
+                    1487.2644287109374
+                  ],
+                  "pitchSpanP10P90Semitones": 0.8663367412241567,
+                  "activeFramesWithinOneSemitone": 0.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 7.2455821774569795,
+                "audioHash": "28d571b9171a9b5932150ac2652fbdadd4b367937297a2a0e4cb49ee7e2c1723",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 1.710089269303554,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 3.7053153860691084,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 3096.6318359375,
+                  "pitchHzP10P50P90": [
+                    2528.700927734375,
+                    3096.6318359375,
+                    3703.056640625
+                  ],
+                  "pitchSpanP10P90Semitones": 6.60384238412439,
+                  "activeFramesWithinOneSemitone": 0.06451612903225806,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            }
+          },
+          "staticTargetPitch": {
+            "voicedFraction": 1.0,
+            "medianHz": 2499.9921875,
+            "pitchHzP10P50P90": [
+              2499.9921875,
+              2499.9921875,
+              2499.99501953125
+            ],
+            "pitchSpanP10P90Semitones": 1.96116858910036e-05,
+            "activeFramesWithinOneSemitone": null,
+            "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+          }
+        },
+        {
+          "id": "Transfxr-3200",
+          "family": "static",
+          "sourceSynth": "Transfxr",
+          "arms": {
+            "temporal-v3": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 0,
+                "bestActiveFramesWithinOneSemitone": 0.0,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 10.237735496777121,
+                "audioHash": "0234152e8f97dde75dc736c47ac7924e68ea89b245e660864278ee28d7be7fb8",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 23.664814668242933,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 23.52349200513081,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 822.3124084472656,
+                  "pitchHzP10P50P90": [
+                    789.7063781738282,
+                    822.3124084472656,
+                    856.4058776855469
+                  ],
+                  "pitchSpanP10P90Semitones": 1.4037402566995603,
+                  "activeFramesWithinOneSemitone": 0.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 9.941807617110404,
+                "audioHash": "28c170dc5b6f8c28d3461504ab264ec4d7c4bcd5d6fd18bd09e0054795747b1c",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 12.061741684635152,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 6.272177030026882,
+                "staticPitchContour": {
+                  "voicedFraction": 0.6875,
+                  "medianHz": 2227.411376953125,
+                  "pitchHzP10P50P90": [
+                    1121.724658203125,
+                    2227.411376953125,
+                    5525.716162109375
+                  ],
+                  "pitchSpanP10P90Semitones": 27.605314395191904,
+                  "activeFramesWithinOneSemitone": 0.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            },
+            "pitch-v4": {
+              "staticProposalCoverage": {
+                "audibleCandidates": 12,
+                "medianWithinOneSemitone": 1,
+                "bestActiveFramesWithinOneSemitone": 0.08,
+                "meaning": "Candidate-generation diagnostic before selection; no human quality threshold."
+              },
+              "sourceEngine": {
+                "synth": "Transfxr",
+                "score": 9.7166496495815,
+                "audioHash": "d5c1183b76c611dda70ccd08442f2e7f4b6bb59b866cc5ca22b8477f46fb7e4b",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 19.399223805769097,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 16,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 19.371636099319502,
+                "staticPitchContour": {
+                  "voicedFraction": 1.0,
+                  "medianHz": 1045.1763916015625,
+                  "pitchHzP10P50P90": [
+                    1037.130908203125,
+                    1045.1763916015625,
+                    1053.8316284179687
+                  ],
+                  "pitchSpanP10P90Semitones": 0.27655656011536256,
+                  "activeFramesWithinOneSemitone": 0.0,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              },
+              "unrestricted": {
+                "synth": "Bfxr",
+                "score": 8.055674100140784,
+                "audioHash": "53df48d682f5e61d2aad93249d3090592b910966a1989d41c6205f5ab1a0f555",
+                "pitchComparison": {
+                  "absolutePitchErrorSemitones": 3.551548127032851,
+                  "contourErrorSemitones": null,
+                  "reliableContourPairs": 10,
+                  "directionMatches": null,
+                  "excursionErrorSemitones": null
+                },
+                "correctedMedianPitchErrorSemitones": 0.6716893473392819,
+                "staticPitchContour": {
+                  "voicedFraction": 0.88,
+                  "medianHz": 3326.542724609375,
+                  "pitchHzP10P50P90": [
+                    2459.69697265625,
+                    3326.542724609375,
+                    6709.491943359377
+                  ],
+                  "pitchSpanP10P90Semitones": 17.37267523108247,
+                  "activeFramesWithinOneSemitone": 0.08,
+                  "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+                }
+              }
+            }
+          },
+          "staticTargetPitch": {
+            "voicedFraction": 1.0,
+            "medianHz": 3199.9501953125,
+            "pitchHzP10P50P90": [
+              3199.9501953125,
+              3199.9501953125,
+              3199.973974609375
+            ],
+            "pitchSpanP10P90Semitones": 0.00012865005059375836,
+            "activeFramesWithinOneSemitone": null,
+            "meaning": "Corrected tracker diagnostic only; unvoiced active frames count outside tolerance. No human quality threshold."
+          }
+        }
+      ]
+    }
+  }
+}

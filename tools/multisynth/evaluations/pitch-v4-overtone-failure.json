@@ -1,0 +1,317 @@
+{
+  "complete": true,
+  "scriptSha256": "3f156276a8f772c89a68fee763ec0873c06075524ee13898e0368ca62e2628a0",
+  "descriptorCodeSha256": "1b6fc371d0aaa4d3e808cd36081c45602dc7cd67f0c8d8dd2dda92349403eb7a",
+  "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+  "interpretation": "V4 accepts short-lag ripples inside the initial positive autocorrelation lobe when a weak distant partial overlays a strong low fundamental. Sine/nearby-harmonic tests miss this case. High apparent training coverage and median output pitch are not trusted as fundamental estimates on these timbres. V4 is not promoted; listening generation stopped before delivery.",
+  "synthetic": [
+    {
+      "fundamentalHz": 100,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.0,
+      "audioHash": "f96ba060a0aaad9927f4a66ac3e7b1728425419586e5df25763aeb83c6e1f41b",
+      "dominantFftHz": 100.0,
+      "tracker": {
+        "medianHz": 99.99967956542969,
+        "voicedFraction": 0.9787234042553191,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      }
+    },
+    {
+      "fundamentalHz": 100,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.1,
+      "audioHash": "aa9c2dfebc08e13aa45afdb0729c95e83f9c830adf4daf605b53892eaad01861",
+      "dominantFftHz": 100.0,
+      "tracker": {
+        "medianHz": 2315.01904296875,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      }
+    },
+    {
+      "fundamentalHz": 100,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.25,
+      "audioHash": "735379e97ff3409581efb225201e1594d4c8e3442d465e0ddd84276c74e537e4",
+      "dominantFftHz": 100.0,
+      "tracker": {
+        "medianHz": 2044.463623046875,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      }
+    },
+    {
+      "fundamentalHz": 165,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.0,
+      "audioHash": "23fe06804f1e8c04edc44f02751c02127bbd8d5dda4f132d3569e68895dd515c",
+      "dominantFftHz": 164.0,
+      "tracker": {
+        "medianHz": 164.9999542236328,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      }
+    },
+    {
+      "fundamentalHz": 165,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.1,
+      "audioHash": "f41df4ac7a72a5be9568bea5d770c5dbf4dd3c60a6a09872bcb405f1aaf7e198",
+      "dominantFftHz": 164.0,
+      "tracker": {
+        "medianHz": 3820.701904296875,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      }
+    },
+    {
+      "fundamentalHz": 165,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.25,
+      "audioHash": "a05d3aab4649ce980c5e0150c0a89688e78df7dac91983f66fcb259ce3835076",
+      "dominantFftHz": 164.0,
+      "tracker": {
+        "medianHz": 3373.455078125,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      }
+    },
+    {
+      "fundamentalHz": 220,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.0,
+      "audioHash": "57a15e12218032b59f1bfdf9c6e42deeb78543a5d82652e966ab90e35f247270",
+      "dominantFftHz": 220.0,
+      "tracker": {
+        "medianHz": 219.99998474121094,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      }
+    },
+    {
+      "fundamentalHz": 220,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.1,
+      "audioHash": "090457ffa9f176d965d0cc0a3cdb0e653500e5e54795fc1411472b30bf2e0fdd",
+      "dominantFftHz": 220.0,
+      "tracker": {
+        "medianHz": 5094.45361328125,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      }
+    },
+    {
+      "fundamentalHz": 220,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.25,
+      "audioHash": "3c403cc198b676601c5d8221ac4177d159c7df7d83f43cf5cbbb808e88d4a268",
+      "dominantFftHz": 220.0,
+      "tracker": {
+        "medianHz": 4498.13818359375,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      }
+    },
+    {
+      "fundamentalHz": 330,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.0,
+      "audioHash": "5bbceb85c7261da8420e3dab778ab37f015725440eed0834e0ae5aa4f1a0b967",
+      "dominantFftHz": 328.0,
+      "tracker": {
+        "medianHz": 330.0000305175781,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      }
+    },
+    {
+      "fundamentalHz": 330,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.1,
+      "audioHash": "7c7affdb954bf01ee0475c8393fb6a7e3346dd83b00123499d34dbd608e03f99",
+      "dominantFftHz": 328.0,
+      "tracker": {
+        "medianHz": 7650.95166015625,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      }
+    },
+    {
+      "fundamentalHz": 330,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.25,
+      "audioHash": "2f13d14b2f242718ef53e3803720190d4281d3a81252e22a16aa7844b33f7ca7",
+      "dominantFftHz": 328.0,
+      "tracker": {
+        "medianHz": 6748.0634765625,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      }
+    },
+    {
+      "fundamentalHz": 440,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.0,
+      "audioHash": "4648765820d0b7fe182cbeb7508a5b4f10ba8b8317206e52fa7465c67698d47d",
+      "dominantFftHz": 440.0,
+      "tracker": {
+        "medianHz": 440.0,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      }
+    },
+    {
+      "fundamentalHz": 440,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.1,
+      "audioHash": "f385f1e5446e2c24925d6a739e8efbcb702c11341f922766d100d347a5359500",
+      "dominantFftHz": 440.0,
+      "tracker": {
+        "medianHz": 459.8321838378906,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      }
+    },
+    {
+      "fundamentalHz": 440,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.25,
+      "audioHash": "8598a1af798bdd800fd10b5bec6fd09e5ff9a2cd40e9ac5f76ab7d9b785f8f78",
+      "dominantFftHz": 440.0,
+      "tracker": {
+        "medianHz": 462.62432861328125,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      }
+    }
+  ],
+  "actual": [
+    {
+      "engine": "Bfxr",
+      "rowIndex": 2059,
+      "metadataSha256": "313e89aab66474728602a3622e267faaa6b57d8f33ff95314acdca6217291649",
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 7,
+        "attackTime": 0.13018725510360668,
+        "sustainTime": 0.3751751989030536,
+        "sustainPunch": 0.06902544705000341,
+        "decayTime": 0.14826434544118894,
+        "compressionAmount": 0,
+        "frequency_start": 0.21399947653059262,
+        "frequency_slide": 0,
+        "frequency_acceleration": 0,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0,
+        "vibratoSpeed": 0,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0,
+        "pitch_jump_onset_percent": 0,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0,
+        "overtones": 0,
+        "overtoneFalloff": 0,
+        "squareDuty": 0.5208297172880835,
+        "dutySweep": 0,
+        "repeatSpeed": 0,
+        "flangerOffset": 0,
+        "flangerSweep": 0,
+        "lpFilterCutoff": 1,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0,
+        "hpFilterCutoff": 0,
+        "hpFilterCutoffSweep": 0,
+        "bitCrush": 0,
+        "bitCrushSweep": 0
+      },
+      "seed": 201529735,
+      "audioHash": "fe1a945e64f5c33e9378b7621255bcaafa41cc1f353548796f516e244304d4b5",
+      "dominantFftHz": 166.97104677060133,
+      "tracker": {
+        "medianHz": 3573.48095703125,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      },
+      "nominalGesture": {
+        "kind": "stationary",
+        "nominalStartHz": 165.09549757053713,
+        "nominalEndHz": 165.09549757053713,
+        "nominalDurationSeconds": 0.4074545745860808,
+        "pitchMeaning": "nominal DSP control, not measured pitch"
+      }
+    },
+    {
+      "engine": "Transfxr",
+      "rowIndex": 2066,
+      "metadataSha256": "a683de2ce177506ef0a31a1cae516e395a9945478467b870ee6c2212db5df326",
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 6,
+        "duration": 1.715474525672735,
+        "pitch": {
+          "start": 0.43883361047985214,
+          "end": 0.43883361047985214,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 0.877025519274959,
+          "end": 0.877025519274959,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "level": {
+          "start": 0.7772969749831294,
+          "end": 0.7772969749831294,
+          "curve": "Linear"
+        },
+        "attack": 0.11221640509273072,
+        "release": 0.1830037257734718,
+        "resonance": 0.1008737719689858,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "seed": 62121637,
+      "audioHash": "24339a98534e769ffbe6c4521bd0e2ec38651595e8e2e155b518b733776a836c",
+      "dominantFftHz": 335.7690477449373,
+      "tracker": {
+        "medianHz": 6858.8798828125,
+        "voicedFraction": 1.0,
+        "reliable": true,
+        "meaning": "Corrected descriptor diagnostic; not independent ground truth or selection criterion."
+      },
+      "nominalGesture": {
+        "kind": "stationary",
+        "nominalStartHz": 336.33692583035577,
+        "nominalEndHz": 336.33692583035577,
+        "nominalDurationSeconds": 1.715474525672735,
+        "pitchMeaning": "nominal DSP control, not measured pitch"
+      }
+    }
+  ]
+}

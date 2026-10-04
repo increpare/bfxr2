@@ -8,7 +8,12 @@
       "status": "supported-by-direct-user-feedback",
       "evidence": "The neural-v2 quick export contained four best choices; the user separately said only charm2.wav was actually approximated.",
       "nextTest": "Retain best/none choices and invite optional close-enough or failure notes; do not relabel all winners as successful recreations.",
-      "observations": [{"session": "2026-10-04-temporal-v3-quick-01", "finding": "The user qualified the two new winners: book-close has the same general character but is still a bit off; charm2 is closeish, approaching a recreation. This adds partial absolute-likeness evidence without establishing fully convincing success or numerical ratings."}]
+      "observations": [
+        {
+          "session": "2026-10-04-temporal-v3-quick-01",
+          "finding": "The user qualified the two new winners: book-close has the same general character but is still a bit off; charm2 is closeish, approaching a recreation. This adds partial absolute-likeness evidence without establishing fully convincing success or numerical ratings."
+        }
+      ]
     },
     {
       "id": "metric-consensus-needs-human-audit",
@@ -16,7 +21,12 @@
       "status": "user-required-evaluation-policy",
       "evidence": "On 2026-10-04 the user requested continued involvement even when models and metrics agree and emphasized developing psychoacoustic theories from listening.",
       "nextTest": "Include claimed successes and representative coverage alongside uncertain cases in regular short listening batches.",
-      "observations": [{"session": "2026-10-04-temporal-v3-quick-01", "finding": "Human choices disagree with frozen matching distance on bird and one spinout pair; objective agrees with four of six heard-only pairs. This establishes concrete metric disagreement on these cases, not consensus across several independent models or a general error rate."}]
+      "observations": [
+        {
+          "session": "2026-10-04-temporal-v3-quick-01",
+          "finding": "Human choices disagree with frozen matching distance on bird and one spinout pair; objective agrees with four of six heard-only pairs. This establishes concrete metric disagreement on these cases, not consensus across several independent models or a general error rate."
+        }
+      ]
     },
     {
       "id": "pitch-and-gesture-cannot-be-traded-freely",
@@ -24,14 +34,25 @@
       "status": "plausible-needs-human-calibration",
       "evidence": "The user reported poor pitch matching. The forward pilot also found lower actual descriptor loss with substantially worse pitch and motion; this is diagnostic evidence, not a listening validation of a new weighting rule.",
       "nextTest": "Compare real renders while preserving already matched reliable pitch and motion. Keep noisy targets outside pitch constraints; ask whether retained pitch/gesture produces better likeness.",
-      "observations": [{"session": "2026-10-04-temporal-v3-quick-01", "finding": "For bird, the preferred original Bfxr has an estimated median pitch near 2,402 Hz versus target 2,537 Hz; the rejected new Pluckr is near 3,835 Hz despite lower total distance. For charm2, the preferred new Bfxr is near 634 Hz versus target 637 Hz and original Bfxr 1,046 Hz. These observations are consistent with register mattering, but timbre/gesture also differ and pitch estimators have known failures; this is not a causal isolation."}]
+      "observations": [
+        {
+          "session": "2026-10-04-temporal-v3-quick-01",
+          "finding": "For bird, the preferred original Bfxr has an estimated median pitch near 2,402 Hz versus target 2,537 Hz; the rejected new Pluckr is near 3,835 Hz despite lower total distance. For charm2, the preferred new Bfxr is near 634 Hz versus target 637 Hz and original Bfxr 1,046 Hz. These observations are consistent with register mattering, but timbre/gesture also differ and pitch estimators have known failures; this is not a causal isolation."
+        }
+      ]
     },
     {
       "id": "pitch-input-can-hide-register-errors",
       "claim": "An input descriptor with an octave error can make wrong-register reproductions appear plausible to the inverse and matching pipeline.",
       "status": "automated-diagnostic-observation-needs-controlled-test",
       "evidence": "The bird reference produced roughly 2.54 kHz in the older pitch diagnostic and 1.23 kHz in the coarse neural descriptor. Clean sine probes isolate descriptor errors: 2,000 Hz becomes roughly 1,002 Hz and 3,200 Hz becomes 1,575 Hz. The older diagnostic itself halves a 4,000 Hz sine. None of the new flat/temporal/mixture raw inverses passed a one-semitone check on four additional high-pitch development probes. This does not isolate the input error as the cause of the full model failures.",
-      "nextTest": "Version a finer-resolution, confidence-aware input separately; compare actual pitch and human judgments at equal training and render budgets, including metric-consensus cases."
+      "nextTest": "Separately version peak selection that rejects initial-lobe ripples and selects major post-zero-crossing peaks; validate actual synth waveforms and existing low/high pitch/noise/motion cases before another matched replay/training run.",
+      "observations": [
+        {
+          "session": "2026-10-05-pitch-v4",
+          "finding": "Controlled pitch-only retraining regressed overall on 20 fixed development probes. Strong low fundamentals with weak 20th partials expose a new ACF initial-lobe failure, reproduced on actual Bfxr/Transfxr Whistle rows; clean sine tests were insufficient. High-pitch median-only passes and realized coverage counts are therefore not trusted as fundamental estimates on these timbres. No new listening claims or human labels."
+        }
+      ]
     },
     {
       "id": "transient-and-tail-identity",
@@ -39,7 +60,12 @@
       "status": "untested",
       "evidence": "User emphasizes large-scale gestural qualities and feel. No causal ablation has established the appropriate balance for this corpus.",
       "nextTest": "Use controlled encoder comparisons and optional human failure descriptions; test any inferred rule on different sound families before broad adoption.",
-      "observations": [{"session": "2026-10-04-temporal-v3-quick-01", "finding": "The user says the short noisy book-close sound is in the same genre, but the distinction between similar and exact is hard to judge and it remains off. This motivates separating event-family recognition from finer transient/texture fidelity; it does not identify which acoustic component caused the remaining mismatch."}]
+      "observations": [
+        {
+          "session": "2026-10-04-temporal-v3-quick-01",
+          "finding": "The user says the short noisy book-close sound is in the same genre, but the distinction between similar and exact is hard to judge and it remains off. This motivates separating event-family recognition from finer transient/texture fidelity; it does not identify which acoustic component caused the remaining mismatch."
+        }
+      ]
     }
   ]
 }
