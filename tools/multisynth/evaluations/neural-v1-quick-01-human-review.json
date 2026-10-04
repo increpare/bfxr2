@@ -1,0 +1,531 @@
+{
+  "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+  "archive": "tools/multisynth/listening_data/2026-10-04-neural-v1-quick-01",
+  "feedbackSha256": "c89f746a0db386f83d9ab5dd94b33d233e60c991aafd2ca7a018cb248549e24c",
+  "partialSession": true,
+  "judgedReferences": 5,
+  "experimentReferences": 12,
+  "archiveSummary": {
+    "targets": 5,
+    "uniqueRatedCandidates": 0,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "choices": 5,
+    "choiceKinds": {
+      "best": 4,
+      "tie": 0,
+      "none": 1,
+      "skip": 0
+    }
+  },
+  "strictPreferencePairs": 7,
+  "strictReferencePcmGroups": 4,
+  "winningRoles": {
+    "original": 1,
+    "previous": 2,
+    "selected": 1
+  },
+  "targets": [
+    {
+      "target": "attack/spinout.wav",
+      "kind": "best",
+      "winnerRoles": [
+        "original"
+      ],
+      "winnerSynths": [
+        "Bfxr"
+      ],
+      "presented": 3,
+      "auditioned": 3,
+      "strictPairs": 2
+    },
+    {
+      "target": "bird/Bird Sounds.WAV",
+      "kind": "best",
+      "winnerRoles": [
+        "previous"
+      ],
+      "winnerSynths": [
+        "Soundboard"
+      ],
+      "presented": 3,
+      "auditioned": 3,
+      "strictPairs": 2
+    },
+    {
+      "target": "card/bookClose.ogg",
+      "kind": "best",
+      "winnerRoles": [
+        "previous"
+      ],
+      "winnerSynths": [
+        "Transfxr"
+      ],
+      "presented": 2,
+      "auditioned": 2,
+      "strictPairs": 1
+    },
+    {
+      "target": "computer/robo_talk.wav",
+      "kind": "none",
+      "winnerRoles": [],
+      "winnerSynths": [],
+      "presented": 3,
+      "auditioned": 3,
+      "strictPairs": 0
+    },
+    {
+      "target": "die/charm2.wav",
+      "kind": "best",
+      "winnerRoles": [
+        "selected"
+      ],
+      "winnerSynths": [
+        "Transfxr"
+      ],
+      "presented": 3,
+      "auditioned": 3,
+      "strictPairs": 2
+    }
+  ],
+  "pairEvidence": [
+    {
+      "archive": "2026-10-04-neural-v1-quick-01",
+      "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+      "target": "attack/spinout.wav",
+      "referencePcmSha256": "65846b1877c418e7f6cc6f8a1a588979162674aa1d905bb930fd97588c20d69f",
+      "candidateA": "c8ecab452dbb90190bd3fc74c70434ff6c22dbdfda96717cf423913115e13ae5",
+      "candidateB": "d150329741d7c35ccd07f42ba03cfc14332925a46f1c06e99015b63a13703c5a",
+      "candidateAliasesA": [
+        "c8ecab452dbb90190bd3fc74c70434ff6c22dbdfda96717cf423913115e13ae5"
+      ],
+      "candidateAliasesB": [
+        "d150329741d7c35ccd07f42ba03cfc14332925a46f1c06e99015b63a13703c5a"
+      ],
+      "candidatePcmSha256A": "7637f86b0bbf76f5eceab8555ef9971b93b8e6075d7390a3452d3f667765a4b4",
+      "candidatePcmSha256B": "08a78c9b0da506596f8b7e3ee67b80e977bc80a20a38d7d8e996cf9fabe660da",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.34516870975494385,
+        0.10496684908866882,
+        0.027909728232771158,
+        -0.029377110302448273,
+        0.0,
+        0.006691135466098785,
+        0.035147104412317276,
+        8.502230048179626e-05,
+        0.12777597829699516,
+        0.016129032258064523,
+        0.0020836343367894514,
+        0.05890966487483934,
+        0.03713426738977432,
+        0.014340043067932129,
+        -0.040319472551345825,
+        -0.011981964111328125,
+        0.03347343951463699,
+        0.12471663951873779,
+        0.11831694841384888,
+        0.11680543422698975
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "c8ecab452dbb90190bd3fc74c70434ff6c22dbdfda96717cf423913115e13ae5",
+          "d150329741d7c35ccd07f42ba03cfc14332925a46f1c06e99015b63a13703c5a",
+          "3e6689a59002f31d2b4e761f77f911c99142977b1382956bdad912e5776be1d9"
+        ],
+        "auditionedCandidateIds": [
+          "c8ecab452dbb90190bd3fc74c70434ff6c22dbdfda96717cf423913115e13ae5",
+          "d150329741d7c35ccd07f42ba03cfc14332925a46f1c06e99015b63a13703c5a",
+          "3e6689a59002f31d2b4e761f77f911c99142977b1382956bdad912e5776be1d9"
+        ],
+        "preferredCandidateIds": [
+          "c8ecab452dbb90190bd3fc74c70434ff6c22dbdfda96717cf423913115e13ae5"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null
+    },
+    {
+      "archive": "2026-10-04-neural-v1-quick-01",
+      "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+      "target": "attack/spinout.wav",
+      "referencePcmSha256": "65846b1877c418e7f6cc6f8a1a588979162674aa1d905bb930fd97588c20d69f",
+      "candidateA": "c8ecab452dbb90190bd3fc74c70434ff6c22dbdfda96717cf423913115e13ae5",
+      "candidateB": "3e6689a59002f31d2b4e761f77f911c99142977b1382956bdad912e5776be1d9",
+      "candidateAliasesA": [
+        "c8ecab452dbb90190bd3fc74c70434ff6c22dbdfda96717cf423913115e13ae5"
+      ],
+      "candidateAliasesB": [
+        "3e6689a59002f31d2b4e761f77f911c99142977b1382956bdad912e5776be1d9"
+      ],
+      "candidatePcmSha256A": "7637f86b0bbf76f5eceab8555ef9971b93b8e6075d7390a3452d3f667765a4b4",
+      "candidatePcmSha256B": "791e1df3efd4dff746a3a0fc00b96a269db10d04e6c86f6f8fba1c38d8a34bde",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.2305583953857422,
+        -0.06968404352664948,
+        -0.009755473583936691,
+        -0.3382822498679161,
+        -0.32933468371629715,
+        -0.12158326804637909,
+        0.03089727833867073,
+        0.0013869148679077625,
+        -0.07675333321094513,
+        -0.10483870967741932,
+        -0.05174028563002746,
+        0.06797953411149715,
+        -0.02163655310869217,
+        -0.48806558549404144,
+        -0.019494250416755676,
+        -0.4963286519050598,
+        0.0294259712100029,
+        -0.07030528783798218,
+        -0.07083845138549805,
+        -0.07332682609558105
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "c8ecab452dbb90190bd3fc74c70434ff6c22dbdfda96717cf423913115e13ae5",
+          "d150329741d7c35ccd07f42ba03cfc14332925a46f1c06e99015b63a13703c5a",
+          "3e6689a59002f31d2b4e761f77f911c99142977b1382956bdad912e5776be1d9"
+        ],
+        "auditionedCandidateIds": [
+          "c8ecab452dbb90190bd3fc74c70434ff6c22dbdfda96717cf423913115e13ae5",
+          "d150329741d7c35ccd07f42ba03cfc14332925a46f1c06e99015b63a13703c5a",
+          "3e6689a59002f31d2b4e761f77f911c99142977b1382956bdad912e5776be1d9"
+        ],
+        "preferredCandidateIds": [
+          "c8ecab452dbb90190bd3fc74c70434ff6c22dbdfda96717cf423913115e13ae5"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null
+    },
+    {
+      "archive": "2026-10-04-neural-v1-quick-01",
+      "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+      "target": "bird/Bird Sounds.WAV",
+      "referencePcmSha256": "e0f588c7d2e53ab658bdd324ebaf51df4522d234ee9fb9e03b1b8fbfeca02fac",
+      "candidateA": "63e03437aedc36a73a8cbd72fbf0ff1c6e1399f37eb6c27d00b9928cc749872d",
+      "candidateB": "f7d0591612112c8c8a567e6ca069314f5353b5870d43ad9093d8aedc3a3ea037",
+      "candidateAliasesA": [
+        "63e03437aedc36a73a8cbd72fbf0ff1c6e1399f37eb6c27d00b9928cc749872d"
+      ],
+      "candidateAliasesB": [
+        "f7d0591612112c8c8a567e6ca069314f5353b5870d43ad9093d8aedc3a3ea037"
+      ],
+      "candidatePcmSha256A": "8526c7a0969c29289e0f23011d12722d502ac69aae9dd32527419a7956c60620",
+      "candidatePcmSha256B": "7b83632d44d7c471f052049eb6bb58191c08657e4b154ad0d3d65670c82b1605",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.11339902877807617,
+        -0.03390035033226013,
+        -0.003087662160396576,
+        -0.4350730627775192,
+        -0.3769656978547573,
+        -0.4002454802393913,
+        -0.8797678351402283,
+        -0.01439531659707427,
+        -0.06798817217350006,
+        -0.28225806451612906,
+        -0.035006613781054824,
+        -0.021845160396518404,
+        -0.05222630500793457,
+        -0.829674981534481,
+        -0.0006996393203735352,
+        -0.8183810114860535,
+        -0.8378740847110748,
+        -0.04658025503158569,
+        -0.04823248088359833,
+        -0.038827523589134216
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "f7d0591612112c8c8a567e6ca069314f5353b5870d43ad9093d8aedc3a3ea037",
+          "63e03437aedc36a73a8cbd72fbf0ff1c6e1399f37eb6c27d00b9928cc749872d",
+          "bb960ab671e62ec3b28bcee5199e1c2b259e2f433dfadb5df50141731343793a"
+        ],
+        "auditionedCandidateIds": [
+          "f7d0591612112c8c8a567e6ca069314f5353b5870d43ad9093d8aedc3a3ea037",
+          "63e03437aedc36a73a8cbd72fbf0ff1c6e1399f37eb6c27d00b9928cc749872d",
+          "bb960ab671e62ec3b28bcee5199e1c2b259e2f433dfadb5df50141731343793a"
+        ],
+        "preferredCandidateIds": [
+          "63e03437aedc36a73a8cbd72fbf0ff1c6e1399f37eb6c27d00b9928cc749872d"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null
+    },
+    {
+      "archive": "2026-10-04-neural-v1-quick-01",
+      "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+      "target": "bird/Bird Sounds.WAV",
+      "referencePcmSha256": "e0f588c7d2e53ab658bdd324ebaf51df4522d234ee9fb9e03b1b8fbfeca02fac",
+      "candidateA": "63e03437aedc36a73a8cbd72fbf0ff1c6e1399f37eb6c27d00b9928cc749872d",
+      "candidateB": "bb960ab671e62ec3b28bcee5199e1c2b259e2f433dfadb5df50141731343793a",
+      "candidateAliasesA": [
+        "63e03437aedc36a73a8cbd72fbf0ff1c6e1399f37eb6c27d00b9928cc749872d"
+      ],
+      "candidateAliasesB": [
+        "bb960ab671e62ec3b28bcee5199e1c2b259e2f433dfadb5df50141731343793a"
+      ],
+      "candidatePcmSha256A": "8526c7a0969c29289e0f23011d12722d502ac69aae9dd32527419a7956c60620",
+      "candidatePcmSha256B": "acc1d04eb1b590de02b2fe642f8682cffa85b933e7426972f4a22ef0596c0a9e",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.2528655529022217,
+        -0.10902589559555054,
+        -0.0041511766612529755,
+        -0.09250639379024506,
+        -0.07484878227114677,
+        -0.14455118030309677,
+        0.02768722176551819,
+        -0.0027353153564035892,
+        -0.100176140666008,
+        -0.12096774193548386,
+        0.016183860599994646,
+        -0.012157959367143867,
+        0.032005682587623596,
+        -0.1757255420088768,
+        -0.021746523678302765,
+        -0.07082033157348633,
+        0.026368767023086548,
+        -0.07503180205821991,
+        -0.09975187480449677,
+        -0.0819750428199768
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "f7d0591612112c8c8a567e6ca069314f5353b5870d43ad9093d8aedc3a3ea037",
+          "63e03437aedc36a73a8cbd72fbf0ff1c6e1399f37eb6c27d00b9928cc749872d",
+          "bb960ab671e62ec3b28bcee5199e1c2b259e2f433dfadb5df50141731343793a"
+        ],
+        "auditionedCandidateIds": [
+          "f7d0591612112c8c8a567e6ca069314f5353b5870d43ad9093d8aedc3a3ea037",
+          "63e03437aedc36a73a8cbd72fbf0ff1c6e1399f37eb6c27d00b9928cc749872d",
+          "bb960ab671e62ec3b28bcee5199e1c2b259e2f433dfadb5df50141731343793a"
+        ],
+        "preferredCandidateIds": [
+          "63e03437aedc36a73a8cbd72fbf0ff1c6e1399f37eb6c27d00b9928cc749872d"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null
+    },
+    {
+      "archive": "2026-10-04-neural-v1-quick-01",
+      "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+      "target": "card/bookClose.ogg",
+      "referencePcmSha256": "3a34c99cee7fe4fc5679083fb569033b765ec88a07d4ddac08d76d2245d778be",
+      "candidateA": "6db0e238c392d3d35da5f7ce771b0622dd81b1a53e2d7608afb47e16b757d070",
+      "candidateB": "300e4be6e0dcc915d8cd3f23bd9156a734c953c5fd4b289fcb8cc5a8719c1a7d",
+      "candidateAliasesA": [
+        "6db0e238c392d3d35da5f7ce771b0622dd81b1a53e2d7608afb47e16b757d070"
+      ],
+      "candidateAliasesB": [
+        "300e4be6e0dcc915d8cd3f23bd9156a734c953c5fd4b289fcb8cc5a8719c1a7d"
+      ],
+      "candidatePcmSha256A": "3c4dcda97ff8b9ff66458cfd759af533f31431f731987c309b433ceed608056a",
+      "candidatePcmSha256B": "76d3055d0d07a92bb535b79b848d49b8fc152ea5264826acab6938cdcfadc6c4",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.14532622694969177,
+        0.017515316605567932,
+        0.009395940229296684,
+        -0.09324370324611664,
+        -0.06985887140035629,
+        -0.04729142785072327,
+        0.003906965255737305,
+        0.0062886071391403675,
+        0.04125934839248657,
+        0.02419354838709678,
+        0.07076341783006986,
+        -0.022586964663531217,
+        0.008349277079105377,
+        -0.127607099711895,
+        -0.02219520090147853,
+        -0.6172897815704346,
+        0.003720879554748535,
+        -0.03675388544797897,
+        -0.04309317469596863,
+        -0.04775655269622803
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "6db0e238c392d3d35da5f7ce771b0622dd81b1a53e2d7608afb47e16b757d070",
+          "300e4be6e0dcc915d8cd3f23bd9156a734c953c5fd4b289fcb8cc5a8719c1a7d"
+        ],
+        "auditionedCandidateIds": [
+          "6db0e238c392d3d35da5f7ce771b0622dd81b1a53e2d7608afb47e16b757d070",
+          "300e4be6e0dcc915d8cd3f23bd9156a734c953c5fd4b289fcb8cc5a8719c1a7d"
+        ],
+        "preferredCandidateIds": [
+          "6db0e238c392d3d35da5f7ce771b0622dd81b1a53e2d7608afb47e16b757d070"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null
+    },
+    {
+      "archive": "2026-10-04-neural-v1-quick-01",
+      "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+      "target": "die/charm2.wav",
+      "referencePcmSha256": "999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850",
+      "candidateA": "ef85202d1e09ebe15f1fdd52cca3128484216dad3e4fd0086a6d451e4fc4df6d",
+      "candidateB": "08ef31403b783caeb26ae3d174db50a5d715e6b4052f71bf189fa09ba709c27f",
+      "candidateAliasesA": [
+        "ef85202d1e09ebe15f1fdd52cca3128484216dad3e4fd0086a6d451e4fc4df6d"
+      ],
+      "candidateAliasesB": [
+        "08ef31403b783caeb26ae3d174db50a5d715e6b4052f71bf189fa09ba709c27f"
+      ],
+      "candidatePcmSha256A": "3ad58753fc408535c051a3d39c494465e6d8e50a3509d39ecbd7c40bb3a1bd0f",
+      "candidatePcmSha256B": "e3a434f8e4b71a40862d02115a010bbcf4de90c495724c8a373d5c6547f1ceb0",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.004657924175262451,
+        0.033285029232501984,
+        0.035479675978422165,
+        -0.008348489180207253,
+        0.0036290318239480257,
+        0.009943630546331406,
+        0.0933800176717341,
+        0.000157036236487329,
+        0.020068533718585968,
+        0.008064516129032251,
+        0.022720168034235634,
+        -0.034708591812750364,
+        -0.003616131842136383,
+        0.015338500961661339,
+        -0.01116391271352768,
+        -0.020985126495361328,
+        0.0889333188533783,
+        0.005767665803432465,
+        0.004476569592952728,
+        0.0003785863518714905
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "08ef31403b783caeb26ae3d174db50a5d715e6b4052f71bf189fa09ba709c27f",
+          "ef85202d1e09ebe15f1fdd52cca3128484216dad3e4fd0086a6d451e4fc4df6d",
+          "46ebd108a9bad9e37e3b287a4614b562fc5cdfaf6dd11b9f36caaea22ad2c323"
+        ],
+        "auditionedCandidateIds": [
+          "08ef31403b783caeb26ae3d174db50a5d715e6b4052f71bf189fa09ba709c27f",
+          "ef85202d1e09ebe15f1fdd52cca3128484216dad3e4fd0086a6d451e4fc4df6d",
+          "46ebd108a9bad9e37e3b287a4614b562fc5cdfaf6dd11b9f36caaea22ad2c323"
+        ],
+        "preferredCandidateIds": [
+          "ef85202d1e09ebe15f1fdd52cca3128484216dad3e4fd0086a6d451e4fc4df6d"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null
+    },
+    {
+      "archive": "2026-10-04-neural-v1-quick-01",
+      "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+      "target": "die/charm2.wav",
+      "referencePcmSha256": "999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850",
+      "candidateA": "ef85202d1e09ebe15f1fdd52cca3128484216dad3e4fd0086a6d451e4fc4df6d",
+      "candidateB": "46ebd108a9bad9e37e3b287a4614b562fc5cdfaf6dd11b9f36caaea22ad2c323",
+      "candidateAliasesA": [
+        "ef85202d1e09ebe15f1fdd52cca3128484216dad3e4fd0086a6d451e4fc4df6d"
+      ],
+      "candidateAliasesB": [
+        "46ebd108a9bad9e37e3b287a4614b562fc5cdfaf6dd11b9f36caaea22ad2c323"
+      ],
+      "candidatePcmSha256A": "3ad58753fc408535c051a3d39c494465e6d8e50a3509d39ecbd7c40bb3a1bd0f",
+      "candidatePcmSha256B": "4fcbecbc67c4606d9ed8740df5938b8311f904caebf8f2b73ded18579d2cf9bd",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.12175160646438599,
+        -0.01153600960969925,
+        -0.030467502772808075,
+        -0.2143139336258173,
+        -0.366078631952405,
+        -0.3536803610622883,
+        -2.550989054143429,
+        -0.0327103401068598,
+        -0.20590075105428696,
+        -0.10483870967741934,
+        -0.08236236187318961,
+        -0.057796177995199954,
+        -0.08340603858232498,
+        -0.767850250005722,
+        -0.0620415136218071,
+        -0.015988290309906006,
+        -2.42951363325119,
+        -0.040029071271419525,
+        -0.04211097210645676,
+        -0.04336260259151459
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "08ef31403b783caeb26ae3d174db50a5d715e6b4052f71bf189fa09ba709c27f",
+          "ef85202d1e09ebe15f1fdd52cca3128484216dad3e4fd0086a6d451e4fc4df6d",
+          "46ebd108a9bad9e37e3b287a4614b562fc5cdfaf6dd11b9f36caaea22ad2c323"
+        ],
+        "auditionedCandidateIds": [
+          "08ef31403b783caeb26ae3d174db50a5d715e6b4052f71bf189fa09ba709c27f",
+          "ef85202d1e09ebe15f1fdd52cca3128484216dad3e4fd0086a6d451e4fc4df6d",
+          "46ebd108a9bad9e37e3b287a4614b562fc5cdfaf6dd11b9f36caaea22ad2c323"
+        ],
+        "preferredCandidateIds": [
+          "ef85202d1e09ebe15f1fdd52cca3128484216dad3e4fd0086a6d451e4fc4df6d"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null
+    }
+  ],
+  "interpretation": [
+    "Four explicit best choices and one explicit rejection; no scalar likeness or usefulness scores supplied.",
+    "All presented options were auditioned on these five references; seven heard-only strict comparisons are available.",
+    "The neural-selected finalist won on die/charm2.wav. Original Bfxr won attack/spinout.wav; previous audio won bird and card.",
+    "These are familiar development references and a partial session; no generalization or absolute-quality conclusion follows.",
+    "The user reported the quick listening flow was much better; this is retained separately from sound preference labels."
+  ],
+  "nextUse": [
+    "Include direct-choice pairs alongside older same-session ratings in grouped preference fitting.",
+    "Retain the computer rejection for candidate-generation diagnosis; it supplies no winner-versus-loser label.",
+    "Maintain original Bfxr and previously rated PCM baselines in future comparisons.",
+    "Continue the proposed acoustic pitch/gesture training coverage work; do not assume longer training alone solves the inverse model."
+  ]
+}

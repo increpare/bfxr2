@@ -2,12 +2,28 @@
 
 ## Retained sessions
 
-| Archive | References judged | Distinct rated candidate identities |
+| Archive | References judged | Distinct retained candidate identities |
 | --- | ---: | ---: |
 | `2026-10-03-real-v1/` | 40 | 73 |
 | `2026-10-03-tagged-v2/` | 18 | 48 |
 | `2026-10-03-coverage-v3/` | 6 | 24 |
 | `2026-10-04-big-v4/` | 36 | 103 |
+| `2026-10-04-neural-v1-quick-01/` | 5 | 19 |
+
+The fifth archive is a **partial quick-listening session** using schema 3:
+four explicit best choices and one “None are close”, with no scalar likeness
+or usefulness ratings. All presented options were auditioned. Four reference
+groups produce seven strict heard-only comparisons; these are correlated
+comparisons, not seven independent reference judgments. It retains all 19
+candidate identities (including raw diagnostic clips) and 24 exact PCM audios.
+
+Original Bfxr won `attack/spinout.wav`; previous audio won bird and card;
+the neural-selected Transfxr finalist won `die/charm2.wav`. All three displayed
+computer finalists were rejected. See
+[the partial human review](../evaluations/neural-v1-quick-01-human-review.json).
+The user reported that the quick listening flow was much better. This UI
+feedback is separate from the sound preference evidence; no absolute sound
+quality scores or new model-quality claims are inferred.
 
 The first two sessions contain 58 reference judgments, **57 exact unique reference
 audios** and **120 exact unique reference/candidate audio pairs**. The repeated
@@ -56,6 +72,10 @@ Schema 2 stores each target's role aliases in a `candidates` array and candidate
 labels in `likeness` and `usefulness`. Schema 1 instead uses named roles and a
 single `rating` field for likeness. Future consumers must explicitly support
 the schema and dimension; never silently substitute usefulness for likeness.
+Schema 3 adds an optional target-local `choice` with protocol/kind, presented,
+auditioned and preferred IDs. Preserve it unchanged. Only a heard best choice
+versus other heard, distinct audio yields strict training labels. None, ties
+and skips remain useful evidence without invented scores or strict labels.
 
 ## First session format
 

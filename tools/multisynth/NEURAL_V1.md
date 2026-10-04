@@ -134,6 +134,15 @@ criteria; a lower matching score does not establish a listening win.
 
 ## Verification and local listening
 
+The first quick-listening feedback batch is now retained in
+`listening_data/2026-10-04-neural-v1-quick-01`: five of twelve references, four
+best choices and one rejection, yielding seven heard-only strict comparisons.
+The neural-selected finalist won once, original Bfxr once and previous audio
+twice. These are preferences among familiar development finalists, with no
+absolute likeness scores. The user's positive feedback on the new listening
+interface is separate from this mixed sound verdict. See
+[the partial review](evaluations/neural-v1-quick-01-human-review.json).
+
 The 26 neural implementation/evaluation tests pass. Original Bfxr native/browser
 parity checks pass all 19 cases. Spec and code reviews approved the implementation
 and the tonal-report repair. Replay verification checks all 372 audition files:
