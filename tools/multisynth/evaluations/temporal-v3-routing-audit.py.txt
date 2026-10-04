@@ -1,0 +1,45 @@
+"""Add unrestricted routing results to the known-engine development comparison."""
+import json
+from pathlib import Path
+from neural_invert.data import file_hash
+from neural_invert.temporal_eval import summarize_arm, proposal_accounting
+
+ROOT = Path(__file__).resolve().parents[3]
+RUN = ROOT/'tools/multisynth/runs/temporal-v3'
+DEST = ROOT/'tools/multisynth/evaluations/temporal-v3-comparison.json'
+compact = json.loads(DEST.read_text())
+selection = compact['metadata']['selection']
+rows = []
+for engine in ('Bfxr', 'Transfxr', 'Pluckr'):
+    path = RUN/f'paired-{engine}/results.json'
+    assert file_hash(path) == compact['metadata']['partReports'][engine]
+    part = json.loads(path.read_text())
+    assert part['metadata']['complete']
+    rows += part['results']
+assert len(rows) == len({r['id'] for r in rows}) == 20
+by_id = {r['id']:r for r in compact['results']}
+arms = {label:[] for label in ('v2','flat','temporal','mixture','hybrid')}
+for row in rows:
+    candidates = {label:arm['candidates'] for label, arm in row['arms'].items()}
+    candidates['hybrid'] = [c for engine, label in selection.items()
+                            for c in row['arms'][label]['candidates'] if c['synth'] == engine]
+    by_id[row['id']]['unrestricted'] = {}
+    for label, options in candidates.items():
+        winner = min(options, key=lambda c:c['score'])
+        assert len(options) == 12
+        item = {k:winner[k] for k in ('synth','score','pitchComparison','audioHash')}
+        item['candidates'] = len(options)
+        by_id[row['id']]['unrestricted'][label] = item
+        arms[label].append({'selected':winner, 'family':row['family'],
+                            'accounting':proposal_accounting(12,12,len(options))})
+compact['unrestrictedSummary'] = {}
+for label, evaluated in arms.items():
+    summary = summarize_arm(evaluated)
+    summary['improvedVersusV2'] = sum(a['selected']['score'] < b['selected']['score']
+                                    for a,b in zip(evaluated, arms['v2']))
+    compact['unrestrictedSummary'][label] = summary
+compact['metadata']['summarySemantics'] = 'summary uses only candidates from the known source engine (4 per arm); unrestrictedSummary selects across all three engines (12 per arm), with no source-engine hint.'
+compact['metadata']['routingAuditSha256'] = file_hash(__file__)
+compact['metadata']['hybridCaveat'] = 'Per-engine architecture selection used these same development probes; both summaries are optimistic model-selection results, not independent tests.'
+DEST.write_text(json.dumps(compact, indent=2)+'\n')
+print(json.dumps(compact['unrestrictedSummary'], indent=2))

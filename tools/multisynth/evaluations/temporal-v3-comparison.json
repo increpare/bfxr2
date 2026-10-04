@@ -1,0 +1,3212 @@
+{
+  "metadata": {
+    "complete": true,
+    "parentBenchmarkSha256": "f7bc09b1dd33ebe7d992afc0bbd9aab196d720b4611764782ee94f831a834f5b",
+    "partReports": {
+      "Bfxr": "73e3421f6b236b32dd6e6bb68f272ac786848f7932ce6fdd39fb57686da57b68",
+      "Transfxr": "18369489159416119a0d545ae457f64f66f473ac440deec19398782c5f0e1b1a",
+      "Pluckr": "153b65b6abb2a34c1be4b3e440646ddbd4be8be3bbf6a85fc36d0a091278f176"
+    },
+    "selection": {
+      "Bfxr": "mixture",
+      "Transfxr": "flat",
+      "Pluckr": "temporal"
+    },
+    "expertPaths": {
+      "Bfxr": "four-experts/Bfxr",
+      "Transfxr": "flat-one/Transfxr",
+      "Pluckr": "temporal-one/Pluckr"
+    },
+    "selectionFitOnThisBenchmark": true,
+    "scope": "Development model selection on fixed probes; numerical gains are optimistic and do not establish human likeness. High-pitch follow-up remains failing.",
+    "summarySemantics": "summary uses only candidates from the known source engine (4 per arm); unrestrictedSummary selects across all three engines (12 per arm), with no source-engine hint.",
+    "routingAuditSha256": "d591abe0200dc849c02ce7f3f8367832683d550b13da2d0bef372f402aa67a09",
+    "hybridCaveat": "Per-engine architecture selection used these same development probes; both summaries are optimistic model-selection results, not independent tests."
+  },
+  "summary": {
+    "v2": {
+      "meanMatchObjective": 2.317298118995199,
+      "staticWithinOneSemitone": 6,
+      "staticTotal": 9,
+      "movingDirectionMatches": 8,
+      "movingTotal": 8,
+      "missingCandidates": 0,
+      "missingRenderedSlots": 0,
+      "improvedVersusV2": 0
+    },
+    "flat": {
+      "meanMatchObjective": 2.279703479920139,
+      "staticWithinOneSemitone": 6,
+      "staticTotal": 9,
+      "movingDirectionMatches": 5,
+      "movingTotal": 8,
+      "missingCandidates": 0,
+      "missingRenderedSlots": 0,
+      "improvedVersusV2": 10
+    },
+    "temporal": {
+      "meanMatchObjective": 2.4653063691727493,
+      "staticWithinOneSemitone": 5,
+      "staticTotal": 9,
+      "movingDirectionMatches": 7,
+      "movingTotal": 8,
+      "missingCandidates": 0,
+      "missingRenderedSlots": 0,
+      "improvedVersusV2": 10
+    },
+    "mixture": {
+      "meanMatchObjective": 1.8072943507619628,
+      "staticWithinOneSemitone": 5,
+      "staticTotal": 9,
+      "movingDirectionMatches": 7,
+      "movingTotal": 8,
+      "missingCandidates": 0,
+      "missingRenderedSlots": 0,
+      "improvedVersusV2": 14
+    },
+    "hybrid": {
+      "meanMatchObjective": 1.7477408543972228,
+      "staticWithinOneSemitone": 7,
+      "staticTotal": 9,
+      "movingDirectionMatches": 7,
+      "movingTotal": 8,
+      "missingCandidates": 0,
+      "missingRenderedSlots": 0,
+      "improvedVersusV2": 14
+    }
+  },
+  "results": [
+    {
+      "id": "001-Bfxr-native",
+      "family": "native",
+      "sourceSynth": "Bfxr",
+      "arms": {
+        "v2": {
+          "score": 3.9334467692099877,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 0,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "ee6105950681b20fb4fc1f1dd7e9762e40259b368116032a00e0baf66225fdf8",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 4.565579311169188,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 0,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "cec9a33d11ca06528131b1120feb1f70300af99ec72106c18e739118974192d9",
+          "checkpointHash": "9d6330c1c57761e6c74e8a91fc7d50fd7c410606e0e03b030ed20a36cc12c1a4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 4.657108585825837,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 0,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "0ec5a7d887d4120a6ad8a0dbf5a0443cdbc88a5687c4a78c677f5c6570b45009",
+          "checkpointHash": "ac52ae6f79bfca5751825b1ae1d6cf3188a697cc91639a3af762681847c659b4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 4.536159302574337,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 0,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "79cf564773e3223706551c9b791093726f724e2a048b34f1b7697bda06def733",
+          "checkpointHash": "34766ccb414e4e07f426336a77e0f6fbff92537a4a42be57ec6a41098708dc95",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Bfxr",
+          "score": 3.9334467692099877,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 0,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "ee6105950681b20fb4fc1f1dd7e9762e40259b368116032a00e0baf66225fdf8",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 2.705805731896507,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 0,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "7f2bc59c23906f343d4e3731053276ba3a39ae1f935418363637f1bae9786267",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Bfxr",
+          "score": 4.657108585825837,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 0,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "0ec5a7d887d4120a6ad8a0dbf5a0443cdbc88a5687c4a78c677f5c6570b45009",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Transfxr",
+          "score": 3.325755081141864,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 0,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "5212924f15e37ac26c17b246ffcd9308d30332c0bb95b011c333c4c3b8b0ceb0",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Transfxr",
+          "score": 2.705805731896507,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 0,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "7f2bc59c23906f343d4e3731053276ba3a39ae1f935418363637f1bae9786267",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "003-Transfxr-native",
+      "family": "native",
+      "sourceSynth": "Transfxr",
+      "arms": {
+        "v2": {
+          "score": 7.663846662600692,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 0,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "d9247aa6bc931127026c5ad00548abac11d9d4768f9331ebee7f7659d1a817a6",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 2.7586047080509912,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "0de7a733abf8df97934d0f74dc1560bc2e77685175510486177d3491939d0e34",
+          "checkpointHash": "acd95dd42b38e9478ff927d5b8fd623b1d2121c7b2ff56839e47f6e689f531bf",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 1.363166319066014,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "2b1cca018628fed3ceea12ade24918423c3484df11cb76dc50ce2371f5d9bac7",
+          "checkpointHash": "9c1b5719b50ee7424faf33322ced473f5d0b98bfefe7fcd7331ddafff83c9ddd",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 2.5596263508552033,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "f1549077f972c226c3b8158931ab82104404eeb4f711e4940aa02befc7452827",
+          "checkpointHash": "926709146c3f162fa07696c6086b63244d6045fa8f5e1d5885aabc516113e552",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Pluckr",
+          "score": 2.7348927619368317,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "1a7b1645a50526226da3365af68222a23e62419fc48322c5ef170d8d25f8d0d4",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 2.7586047080509912,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "0de7a733abf8df97934d0f74dc1560bc2e77685175510486177d3491939d0e34",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 1.363166319066014,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "2b1cca018628fed3ceea12ade24918423c3484df11cb76dc50ce2371f5d9bac7",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Bfxr",
+          "score": 2.4650149206650327,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "edb83b5f7f64aa0f946ee89155fffd2ac723bd7daca40ca7443602d7285c90ff",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Bfxr",
+          "score": 2.4650149206650327,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "edb83b5f7f64aa0f946ee89155fffd2ac723bd7daca40ca7443602d7285c90ff",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "015-Pluckr-native",
+      "family": "native",
+      "sourceSynth": "Pluckr",
+      "arms": {
+        "v2": {
+          "score": 3.17282435533121,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "2c3f8345cdf391372f0fbb34da46623a142bc5c41221c79d4527116e7ea1659d",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 2.343496996451165,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "bc6745c294326026fc19a94baac3e2530f9dfd2ac26e0b4687be638b988b6f26",
+          "checkpointHash": "53af4cfe0f44a7d3485a0f07a594e3e53514fd02ac502b0325280a6b1353e16c",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 2.8115587851263273,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "edc681dfde431cb34e97e16f7ab6a966ce54fa3d34d17194d52373d0567814e1",
+          "checkpointHash": "6e8bc3a5e55781d4c1be5b29ce30d3fbbcb4d81e86430de9a81cba65695f3c55",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 2.9736957120045524,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "e817ff578815dbec48eacabbe52465efd789b3471eb76f71161fc94580a0799d",
+          "checkpointHash": "435a9a2abe1d2cb2b22af9072edd13408f88607f2086cf6c69dbf59bad788951",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Pluckr",
+          "score": 3.17282435533121,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "2c3f8345cdf391372f0fbb34da46623a142bc5c41221c79d4527116e7ea1659d",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Pluckr",
+          "score": 2.343496996451165,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "bc6745c294326026fc19a94baac3e2530f9dfd2ac26e0b4687be638b988b6f26",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Pluckr",
+          "score": 2.8115587851263273,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "edc681dfde431cb34e97e16f7ab6a966ce54fa3d34d17194d52373d0567814e1",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Pluckr",
+          "score": 2.9736957120045524,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "e817ff578815dbec48eacabbe52465efd789b3471eb76f71161fc94580a0799d",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Pluckr",
+          "score": 2.8115587851263273,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "edc681dfde431cb34e97e16f7ab6a966ce54fa3d34d17194d52373d0567814e1",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "023-Bfxr-static",
+      "family": "static",
+      "sourceSynth": "Bfxr",
+      "arms": {
+        "v2": {
+          "score": 1.0395705158528088,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.18598338022872046,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "f239c68f13cea564039a54cff21958bf9ac58074a9a248446fdc8764f40f42fd",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 3.506706497096706,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.2283514590670779,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "a4ee715614d60bfa3cee43478fe4af8261ee15d89b80c6ec082e968b820fb3fb",
+          "checkpointHash": "9d6330c1c57761e6c74e8a91fc7d50fd7c410606e0e03b030ed20a36cc12c1a4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 2.564668307295259,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.5675257023060971,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "55f8e7c4676cede42d63fc1cb011cf7335ac989a50cd978ee4ad5bd98c8e9f1e",
+          "checkpointHash": "ac52ae6f79bfca5751825b1ae1d6cf3188a697cc91639a3af762681847c659b4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 1.5959083991861267,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.586718473884365,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "93b8fcecae4cd8ba638ff9c72e5d093819c1e74cc16f08ffe12f94ac211b8a83",
+          "checkpointHash": "34766ccb414e4e07f426336a77e0f6fbff92537a4a42be57ec6a41098708dc95",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Bfxr",
+          "score": 1.0395705158528088,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.18598338022872046,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "f239c68f13cea564039a54cff21958bf9ac58074a9a248446fdc8764f40f42fd",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Pluckr",
+          "score": 1.1293333392564302,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.0396479279562143,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "3203ae8bec5653099406c7f974c8395a0726604678f83ca7ff967a2942773c1e",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 1.5801709838550926,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.4473738270407994,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "50b901ce03a9171c040a9d0cca2fcc536f13e21c7837216856d5337748924c8e",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Bfxr",
+          "score": 1.5959083991861267,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.586718473884365,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "93b8fcecae4cd8ba638ff9c72e5d093819c1e74cc16f08ffe12f94ac211b8a83",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Bfxr",
+          "score": 1.5959083991861267,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.586718473884365,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "93b8fcecae4cd8ba638ff9c72e5d093819c1e74cc16f08ffe12f94ac211b8a83",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "024-Bfxr-static",
+      "family": "static",
+      "sourceSynth": "Bfxr",
+      "arms": {
+        "v2": {
+          "score": 1.8006341655614415,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.9359329922482262,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "16b90921ef4688fe82b629104bf32bb72f4ff8bdab8bba62271264b0075b5053",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 3.8741303254108947,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 2.3512682820710706,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "869376bb48e411c88888fe0c511b6d735a411be102e52ad5bdabc7a0d0452674",
+          "checkpointHash": "9d6330c1c57761e6c74e8a91fc7d50fd7c410606e0e03b030ed20a36cc12c1a4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 4.087249901582915,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 3.4900988758658675,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "f79632057bf54e6a7a815d7ad0e9638f96334aeeddf2fde0e34d8781066c8298",
+          "checkpointHash": "ac52ae6f79bfca5751825b1ae1d6cf3188a697cc91639a3af762681847c659b4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 0.993635011428488,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.22005787758311232,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "c0c413cbe526371d4339d492b9cf1f15a297e86a9887023c53ff271f67b7be01",
+          "checkpointHash": "34766ccb414e4e07f426336a77e0f6fbff92537a4a42be57ec6a41098708dc95",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Pluckr",
+          "score": 1.5441118440766373,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.2654998171128249,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "8759d9d0ea6f3803bbb4be1674b5e98e2339b26d71ff58c8dbc0aea3da48811b",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 1.0560758469548417,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.13270606510780017,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "ae3ca021cb1409fe98ce36183f98e028a77cd06ca4b8406381d5f981995c6fdd",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 1.1680420420163804,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.13016567124677517,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "dc2643aa3b7b65759126cd48d3e0d33818acafe89feee50458bac693dc674387",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Bfxr",
+          "score": 0.993635011428488,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.22005787758311232,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "c0c413cbe526371d4339d492b9cf1f15a297e86a9887023c53ff271f67b7be01",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Bfxr",
+          "score": 0.993635011428488,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.22005787758311232,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "c0c413cbe526371d4339d492b9cf1f15a297e86a9887023c53ff271f67b7be01",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "025-Bfxr-static",
+      "family": "static",
+      "sourceSynth": "Bfxr",
+      "arms": {
+        "v2": {
+          "score": 3.035235528882473,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.5201184418734526,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "3d288674f3babc094c0f37e782639e940b5d0cccd9da18cb56a1afd6f72673b1",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 3.879439456777722,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 2.2684815956522075,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "cb7611ee4cc3f5283f04be44aa27ca0b0f2475583d5e50aeaa931f034b5d1761",
+          "checkpointHash": "9d6330c1c57761e6c74e8a91fc7d50fd7c410606e0e03b030ed20a36cc12c1a4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 7.381527134671882,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 10.79515469078609,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "7edc2c161156cae26fd62c3abcd84687bda063884b1690503f569e72cea751b0",
+          "checkpointHash": "ac52ae6f79bfca5751825b1ae1d6cf3188a697cc91639a3af762681847c659b4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 2.824614334960539,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.6166506857185001,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "824086cfa4f6fc44070d902be60eb03cfe34ee44e3a54dce7fe42feab579c7f1",
+          "checkpointHash": "34766ccb414e4e07f426336a77e0f6fbff92537a4a42be57ec6a41098708dc95",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Pluckr",
+          "score": 1.825618527993125,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.3192749033954723,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "ddb5c0fcd4b1fca1b72102e68b26d28409e7d4f34e37035954cdce735b722751",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 1.7593818770819523,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.7979630290719222,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "0b4b3800816ed0608c6c26147840cbda77862d246beabe263f94ca967b0f10f0",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 1.3586324079709338,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.06835474283751988,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "dbbabcd41e43cb234ab7c6ab5f26438e0f6e58594174cd0981c652a7d65d6c03",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Transfxr",
+          "score": 2.1725783356652792,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 2.0473140458768397,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "38d779f3dbda32ad8fea8f048ae90f495a51b9e13377d7c270eda6a1bc5ef8ae",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Pluckr",
+          "score": 1.6881099639117545,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.03831435298579103,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "50efcab86e4b0c9f9b3f7a77991f6b7f4ee4ddae843d4fdb4da0366f3a225a86",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "026-Transfxr-static",
+      "family": "static",
+      "sourceSynth": "Transfxr",
+      "arms": {
+        "v2": {
+          "score": 0.5324957110690143,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.07870184226430682,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "c03e12a64f269320507acea670538a5e19a64947711e723934aa3376123c5060",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 0.9997884995261834,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.21879247612599,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "86fddbf06abf62c2d6e500d378fde690fc59a02b1591ff87adc6b7413b98d8f9",
+          "checkpointHash": "acd95dd42b38e9478ff927d5b8fd623b1d2121c7b2ff56839e47f6e689f531bf",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 1.1366105305595833,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.7252917106969915,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "87bb3fee040859106d147ad4a24e5204b737c9542eae84f28ea6a02a7dc3cb47",
+          "checkpointHash": "9c1b5719b50ee7424faf33322ced473f5d0b98bfefe7fcd7331ddafff83c9ddd",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 1.342631513569786,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.2406947028282134,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "7cbaf2f89a7c3aaae49f9f1da5aeb82746a21947ae3940415bda21cf8a4bea35",
+          "checkpointHash": "926709146c3f162fa07696c6086b63244d6045fa8f5e1d5885aabc516113e552",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Transfxr",
+          "score": 0.5324957110690143,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.07870184226430682,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "c03e12a64f269320507acea670538a5e19a64947711e723934aa3376123c5060",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 0.9997884995261834,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.21879247612599,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "86fddbf06abf62c2d6e500d378fde690fc59a02b1591ff87adc6b7413b98d8f9",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Pluckr",
+          "score": 0.9613414473919871,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.6090216749854033,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "dbefb118fda67a21e054b7c68360e707ab5f54653b18f9c169c51ac1c4ede9a1",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Transfxr",
+          "score": 1.342631513569786,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.2406947028282134,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "7cbaf2f89a7c3aaae49f9f1da5aeb82746a21947ae3940415bda21cf8a4bea35",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Pluckr",
+          "score": 0.9613414473919871,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.6090216749854033,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "dbefb118fda67a21e054b7c68360e707ab5f54653b18f9c169c51ac1c4ede9a1",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "027-Transfxr-static",
+      "family": "static",
+      "sourceSynth": "Transfxr",
+      "arms": {
+        "v2": {
+          "score": 0.9565451632831508,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.32053787912700615,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "581801fa171e0a0640fac2f05fb2cd2f07c029edeeb83048011bb9445de77c8f",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 0.6081593277567127,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.14084234571734924,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "297215c439d56c7a2ad0b8d72f01bf9e6e2c9afb2d4a4aebb00d551dc960cd83",
+          "checkpointHash": "acd95dd42b38e9478ff927d5b8fd623b1d2121c7b2ff56839e47f6e689f531bf",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 1.2058840634760086,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.1201464533114134,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "dae39a3c48bc709a94fa54262ef43b7b09e605d0b69402dd6311ba53364e3b63",
+          "checkpointHash": "9c1b5719b50ee7424faf33322ced473f5d0b98bfefe7fcd7331ddafff83c9ddd",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 0.8835803793318036,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.5274824347283009,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "6d1d5128183ace3a5b9cadf8ad96b51623e78e9ae2d208a1a8b4a2d0e91808e1",
+          "checkpointHash": "926709146c3f162fa07696c6086b63244d6045fa8f5e1d5885aabc516113e552",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Transfxr",
+          "score": 0.9565451632831508,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.32053787912700615,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "581801fa171e0a0640fac2f05fb2cd2f07c029edeeb83048011bb9445de77c8f",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 0.6081593277567127,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.14084234571734924,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "297215c439d56c7a2ad0b8d72f01bf9e6e2c9afb2d4a4aebb00d551dc960cd83",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 1.2058840634760086,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.1201464533114134,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "dae39a3c48bc709a94fa54262ef43b7b09e605d0b69402dd6311ba53364e3b63",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Transfxr",
+          "score": 0.8835803793318036,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.5274824347283009,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "6d1d5128183ace3a5b9cadf8ad96b51623e78e9ae2d208a1a8b4a2d0e91808e1",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Transfxr",
+          "score": 0.6081593277567127,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.14084234571734924,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "297215c439d56c7a2ad0b8d72f01bf9e6e2c9afb2d4a4aebb00d551dc960cd83",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "028-Transfxr-static",
+      "family": "static",
+      "sourceSynth": "Transfxr",
+      "arms": {
+        "v2": {
+          "score": 1.2758362882443945,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.8959004743951184,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "4a01ebb312820f576dc655150b5ea704ee7ec4ff3ed15a44a521ab9b1ba7ed4c",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 0.662526959104239,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.24298215892093072,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "976a2f27566e140fe24a01318bc0459d9fd4889af9a463e803248fcfb9ff07a7",
+          "checkpointHash": "acd95dd42b38e9478ff927d5b8fd623b1d2121c7b2ff56839e47f6e689f531bf",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 0.535209419643657,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.11148793200287169,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "db02af2a6e22630fb8cf5c8297fb0510a4a1ad36271dde7b284a61f4486b4b6a",
+          "checkpointHash": "9c1b5719b50ee7424faf33322ced473f5d0b98bfefe7fcd7331ddafff83c9ddd",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 0.8072497170781961,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.3387797487685874,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "73ed64e386b25bfb0ac5f7fdfe0ee06b05dd9ba6845fc97896ec8a72bf8dabdc",
+          "checkpointHash": "926709146c3f162fa07696c6086b63244d6045fa8f5e1d5885aabc516113e552",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Transfxr",
+          "score": 1.2758362882443945,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.8959004743951184,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "4a01ebb312820f576dc655150b5ea704ee7ec4ff3ed15a44a521ab9b1ba7ed4c",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 0.662526959104239,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.24298215892093072,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "976a2f27566e140fe24a01318bc0459d9fd4889af9a463e803248fcfb9ff07a7",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 0.535209419643657,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.11148793200287169,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "db02af2a6e22630fb8cf5c8297fb0510a4a1ad36271dde7b284a61f4486b4b6a",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Transfxr",
+          "score": 0.8072497170781961,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.3387797487685874,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "73ed64e386b25bfb0ac5f7fdfe0ee06b05dd9ba6845fc97896ec8a72bf8dabdc",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Transfxr",
+          "score": 0.662526959104239,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.24298215892093072,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "976a2f27566e140fe24a01318bc0459d9fd4889af9a463e803248fcfb9ff07a7",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "029-Pluckr-static",
+      "family": "static",
+      "sourceSynth": "Pluckr",
+      "arms": {
+        "v2": {
+          "score": 2.1017141966876847,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.3356626712467832,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "37775726362426df9f5be45a53ed0797a8c930f6ddb5efc3e3934b5f16ee5391",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 0.832051213725825,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.09312554488781216,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "9604809c38ff9a440fd514d35e379dfeeb2f403337014bf9fc7fbad9c5e42e4d",
+          "checkpointHash": "53af4cfe0f44a7d3485a0f07a594e3e53514fd02ac502b0325280a6b1353e16c",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 0.807655271997501,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.2674075248235728,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "737a2c72ff5f3c1bbf4aaaec9eb086aed39acc2ba1560a01e0927dc81c8885da",
+          "checkpointHash": "6e8bc3a5e55781d4c1be5b29ce30d3fbbcb4d81e86430de9a81cba65695f3c55",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 1.1388744344901196,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.277331739977444,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "79af2e20111f0ecc57c9f2b9acd1ab9108f15838174694a000f41400f48515b0",
+          "checkpointHash": "435a9a2abe1d2cb2b22af9072edd13408f88607f2086cf6c69dbf59bad788951",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Pluckr",
+          "score": 2.1017141966876847,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.3356626712467832,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "37775726362426df9f5be45a53ed0797a8c930f6ddb5efc3e3934b5f16ee5391",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Pluckr",
+          "score": 0.832051213725825,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.09312554488781216,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "9604809c38ff9a440fd514d35e379dfeeb2f403337014bf9fc7fbad9c5e42e4d",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Pluckr",
+          "score": 0.807655271997501,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.2674075248235728,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "737a2c72ff5f3c1bbf4aaaec9eb086aed39acc2ba1560a01e0927dc81c8885da",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Pluckr",
+          "score": 1.1388744344901196,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.277331739977444,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "79af2e20111f0ecc57c9f2b9acd1ab9108f15838174694a000f41400f48515b0",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Pluckr",
+          "score": 0.807655271997501,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.2674075248235728,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "737a2c72ff5f3c1bbf4aaaec9eb086aed39acc2ba1560a01e0927dc81c8885da",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "030-Pluckr-static",
+      "family": "static",
+      "sourceSynth": "Pluckr",
+      "arms": {
+        "v2": {
+          "score": 1.0037003398660511,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.25663331871847356,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "d446cd48846901f5a7e07ac504658ef972faf340825e9265f84ee3d3cf850d1f",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 0.7892519395267067,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.08687163576542836,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "1f61d6137189a981e5a135fa8a374e21b9cb1f5f4f2c2d814f84b012bc24af11",
+          "checkpointHash": "53af4cfe0f44a7d3485a0f07a594e3e53514fd02ac502b0325280a6b1353e16c",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 0.30766061727446575,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.22901936423212887,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "87c1ada44667924c36299d921e7089497cf603cc6b1be9da91c33e5b28958993",
+          "checkpointHash": "6e8bc3a5e55781d4c1be5b29ce30d3fbbcb4d81e86430de9a81cba65695f3c55",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 0.9382096959915582,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.519734052036145,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "29ea6cd156cbbf8b79ee17b5e1219dafa7a200585308da43ec6ec7f75b91a028",
+          "checkpointHash": "435a9a2abe1d2cb2b22af9072edd13408f88607f2086cf6c69dbf59bad788951",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Pluckr",
+          "score": 1.0037003398660511,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.25663331871847356,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "d446cd48846901f5a7e07ac504658ef972faf340825e9265f84ee3d3cf850d1f",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Pluckr",
+          "score": 0.7892519395267067,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.08687163576542836,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "1f61d6137189a981e5a135fa8a374e21b9cb1f5f4f2c2d814f84b012bc24af11",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Pluckr",
+          "score": 0.30766061727446575,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.22901936423212887,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "87c1ada44667924c36299d921e7089497cf603cc6b1be9da91c33e5b28958993",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Pluckr",
+          "score": 0.9382096959915582,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.519734052036145,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "29ea6cd156cbbf8b79ee17b5e1219dafa7a200585308da43ec6ec7f75b91a028",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Pluckr",
+          "score": 0.30766061727446575,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.22901936423212887,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "87c1ada44667924c36299d921e7089497cf603cc6b1be9da91c33e5b28958993",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "031-Pluckr-static",
+      "family": "static",
+      "sourceSynth": "Pluckr",
+      "arms": {
+        "v2": {
+          "score": 1.1073855296562967,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.1783181080144032,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "84f9c4b5eff05e4a296ab2853d2fea0a04f84b4c3ad2040fe97e2744c695d171",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 1.1160223402046625,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.3455544815480548,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "7f278c2432fddd56146d3f7f20b5b8d4d086e1b40589343f486632d3ba871f34",
+          "checkpointHash": "53af4cfe0f44a7d3485a0f07a594e3e53514fd02ac502b0325280a6b1353e16c",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 0.42253510001793426,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.0044976403880133044,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "3bffd26b9f9079a7f19041aa43ecdd490c299354efc82ff60f7e9dd5c08dd168",
+          "checkpointHash": "6e8bc3a5e55781d4c1be5b29ce30d3fbbcb4d81e86430de9a81cba65695f3c55",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 0.9453871971837406,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.07003763404453227,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "027717e5873cf9bb0a0966c54ff29368c805b91425b9d9ccb55f39a75e2a25b1",
+          "checkpointHash": "435a9a2abe1d2cb2b22af9072edd13408f88607f2086cf6c69dbf59bad788951",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Pluckr",
+          "score": 1.1073855296562967,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.1783181080144032,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "84f9c4b5eff05e4a296ab2853d2fea0a04f84b4c3ad2040fe97e2744c695d171",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Pluckr",
+          "score": 1.1160223402046625,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.3455544815480548,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "7f278c2432fddd56146d3f7f20b5b8d4d086e1b40589343f486632d3ba871f34",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Pluckr",
+          "score": 0.42253510001793426,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.0044976403880133044,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "3bffd26b9f9079a7f19041aa43ecdd490c299354efc82ff60f7e9dd5c08dd168",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Pluckr",
+          "score": 0.9453871971837406,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.07003763404453227,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "027717e5873cf9bb0a0966c54ff29368c805b91425b9d9ccb55f39a75e2a25b1",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Pluckr",
+          "score": 0.42253510001793426,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.0044976403880133044,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "3bffd26b9f9079a7f19041aa43ecdd490c299354efc82ff60f7e9dd5c08dd168",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "032-Bfxr-moving",
+      "family": "moving",
+      "sourceSynth": "Bfxr",
+      "arms": {
+        "v2": {
+          "score": 3.0610667285489104,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 2.481349583248908,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 6.385083435700352
+          },
+          "audioHash": "3ea7356409181eaa7b853db5940ee229051907b7fe57eb13e1c9d3ba2b1b57b5",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 3.075035078687133,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.8868284294046183,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 2.6431266277380416
+          },
+          "audioHash": "2cfb90af859d52c60e9341020629232e327460468ada120433a40ec4ce9186df",
+          "checkpointHash": "9d6330c1c57761e6c74e8a91fc7d50fd7c410606e0e03b030ed20a36cc12c1a4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 5.4749630977946735,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 6.3564594331891255,
+            "reliableContourPairs": 16,
+            "directionMatches": false,
+            "excursionErrorSemitones": 8.188352484711302
+          },
+          "audioHash": "63d91042d11d9abbad890c060d3ec7d23fb0d376d2dcbdc4e2a6acf5e4743f0e",
+          "checkpointHash": "ac52ae6f79bfca5751825b1ae1d6cf3188a697cc91639a3af762681847c659b4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 1.3472557571741386,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.671265232807003,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.8878049743074286
+          },
+          "audioHash": "74826bc532d75cffc74aa804a5e1a3d27a5e082dfc2519a7fc0041ed74e3a753",
+          "checkpointHash": "34766ccb414e4e07f426336a77e0f6fbff92537a4a42be57ec6a41098708dc95",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Pluckr",
+          "score": 2.39552979659586,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 2.4742758080090543,
+            "reliableContourPairs": 16,
+            "directionMatches": false,
+            "excursionErrorSemitones": 8.95984320364758
+          },
+          "audioHash": "c7a20bea9e1491d5f269a31ed9a4608f1a8d60988af731b72fab712b8e72768d",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 2.973024569011879,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 2.001320589989139,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 3.7264268307229713
+          },
+          "audioHash": "8a68c830f0cfc92c2dcc8061a276127cdf51ccbfa17685471b3a3d7e33c33f02",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 1.0174722171402364,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.6234405194099086,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.9106428157517712
+          },
+          "audioHash": "ed03b6d8d05cf49dd2a89b541188defce03b236c7a505e00e96e869da778cba6",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Bfxr",
+          "score": 1.3472557571741386,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.671265232807003,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.8878049743074286
+          },
+          "audioHash": "74826bc532d75cffc74aa804a5e1a3d27a5e082dfc2519a7fc0041ed74e3a753",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Bfxr",
+          "score": 1.3472557571741386,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.671265232807003,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.8878049743074286
+          },
+          "audioHash": "74826bc532d75cffc74aa804a5e1a3d27a5e082dfc2519a7fc0041ed74e3a753",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "033-Bfxr-moving",
+      "family": "moving",
+      "sourceSynth": "Bfxr",
+      "arms": {
+        "v2": {
+          "score": 3.309096957479781,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 2.9928414515268846,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 7.06435283916629
+          },
+          "audioHash": "c88834be5e4550c0955c4a5622fb4c801d1b6116d36e24857a02469ab1d62ed1",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 3.7305715505035844,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 3.1395350309716017,
+            "reliableContourPairs": 16,
+            "directionMatches": false,
+            "excursionErrorSemitones": 8.577868147859931
+          },
+          "audioHash": "95b4c7af8c3dcccc4cff4a73298baf74a623ccddaaf14d624eec52938a726e6a",
+          "checkpointHash": "9d6330c1c57761e6c74e8a91fc7d50fd7c410606e0e03b030ed20a36cc12c1a4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 2.5979381591474664,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 1.8287385776155896,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 7.15669935967486
+          },
+          "audioHash": "f0a4f272eb8af7cc67d2f035fca2a6222a4136f4591485663534d84fdad01c31",
+          "checkpointHash": "ac52ae6f79bfca5751825b1ae1d6cf3188a697cc91639a3af762681847c659b4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 2.5349981189394377,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 2.1709413967087485,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 3.575173754186011
+          },
+          "audioHash": "62ef3b211c1d99bd2ef136b86711a126873481a0b2ff746fbc6996666180f8d3",
+          "checkpointHash": "34766ccb414e4e07f426336a77e0f6fbff92537a4a42be57ec6a41098708dc95",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Bfxr",
+          "score": 3.309096957479781,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 2.9928414515268846,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 7.06435283916629
+          },
+          "audioHash": "c88834be5e4550c0955c4a5622fb4c801d1b6116d36e24857a02469ab1d62ed1",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 2.11529137033245,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.5242999181741679,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.5023439480643361
+          },
+          "audioHash": "5ff870c5e84c15a6e26b9e7172958448c2ebb7d01fd0ae68a0255a994a1db79a",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 1.6518915753522965,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.9201170158719635,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 2.925880736273484
+          },
+          "audioHash": "4a73020efee94afb5a86fc4aabece642661c0be08a41fdc5c4a8a60661bbec55",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Bfxr",
+          "score": 2.5349981189394377,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 2.1709413967087485,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 3.575173754186011
+          },
+          "audioHash": "62ef3b211c1d99bd2ef136b86711a126873481a0b2ff746fbc6996666180f8d3",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Transfxr",
+          "score": 2.11529137033245,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.5242999181741679,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.5023439480643361
+          },
+          "audioHash": "5ff870c5e84c15a6e26b9e7172958448c2ebb7d01fd0ae68a0255a994a1db79a",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "034-Bfxr-moving",
+      "family": "moving",
+      "sourceSynth": "Bfxr",
+      "arms": {
+        "v2": {
+          "score": 4.616939524288283,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 4.709160553720192,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 7.2524063800911165
+          },
+          "audioHash": "0c2862677a9a25b8cb8a814e738f88755353b6d8d068fae79e646933913728b5",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 4.519424532056644,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 4.829852980015454,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 5.665408561176633
+          },
+          "audioHash": "2c9a8a04ab97e40e272e9e72e6fb7335f13d33068e86ec2b2a86f688481ccec1",
+          "checkpointHash": "9d6330c1c57761e6c74e8a91fc7d50fd7c410606e0e03b030ed20a36cc12c1a4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 6.635606321512078,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 8.008639567161847,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 8.1084814112196
+          },
+          "audioHash": "8630fda991ce024ac89fd46074a6d618f6636626696e373137f497cdefc36fbf",
+          "checkpointHash": "ac52ae6f79bfca5751825b1ae1d6cf3188a697cc91639a3af762681847c659b4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 5.51506099274522,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 5.603822677009612,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 19.972526572707096
+          },
+          "audioHash": "dc4f78f90c49e43a023d5e92cac9ba6126d57a39806c554666524f83a17321b3",
+          "checkpointHash": "34766ccb414e4e07f426336a77e0f6fbff92537a4a42be57ec6a41098708dc95",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Pluckr",
+          "score": 4.315151687024218,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 4.999326286471293,
+            "reliableContourPairs": 16,
+            "directionMatches": false,
+            "excursionErrorSemitones": 10.161586531750856
+          },
+          "audioHash": "3db4bba58c193e24de96f20f9da1a0736604794efe83c07d6541716497ab449b",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 2.9924752040053755,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 2.629119750323143,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 2.6737973065688436
+          },
+          "audioHash": "02034551c04640b3d303c5b94beebf7ae8852ee8c97bcbfb797cc41672284eed",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 2.1737026969150453,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 1.552959346120869,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 2.366730172304841
+          },
+          "audioHash": "b52c378c9a8ba9ec6e8375fd2f126542ad03a18905a9d612fe3c374a969445ac",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Transfxr",
+          "score": 3.611181069808272,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 1.89003702172382,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 4.354992845491168
+          },
+          "audioHash": "45ff90a6521a6bcbe94ce01ea65b34adb590a772e20e386aa1fc3d6d3f9119f5",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Transfxr",
+          "score": 2.9924752040053755,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 2.629119750323143,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 2.6737973065688436
+          },
+          "audioHash": "02034551c04640b3d303c5b94beebf7ae8852ee8c97bcbfb797cc41672284eed",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "035-Bfxr-moving",
+      "family": "moving",
+      "sourceSynth": "Bfxr",
+      "arms": {
+        "v2": {
+          "score": 1.2429121616386793,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.41672812957705907,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.1767277209966949
+          },
+          "audioHash": "b06c637206863d767bd66550259e360672838459e5588452be6e403878161a92",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 3.3851643403955607,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 2.2261677964325544,
+            "reliableContourPairs": 16,
+            "directionMatches": false,
+            "excursionErrorSemitones": 4.68747736093583
+          },
+          "audioHash": "555e5cdff40e2e72960a50b1436ae2d68c733c93c66701c0e84fcf5406893603",
+          "checkpointHash": "9d6330c1c57761e6c74e8a91fc7d50fd7c410606e0e03b030ed20a36cc12c1a4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 3.1935419324653647,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 3.0944607288152497,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.0580756008077685
+          },
+          "audioHash": "9c5fa318cb6e8bc86682c59ab991864e88f26cd20b837b0e1c5492d56708d5a0",
+          "checkpointHash": "ac52ae6f79bfca5751825b1ae1d6cf3188a697cc91639a3af762681847c659b4",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 1.280579380122949,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.4622230584212974,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.9641769644181295
+          },
+          "audioHash": "54e6f737b3b74f51f66e6ee6dea9287654489a7f61d848728bbdefb99059fe8b",
+          "checkpointHash": "34766ccb414e4e07f426336a77e0f6fbff92537a4a42be57ec6a41098708dc95",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Bfxr",
+          "score": 1.2429121616386793,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.41672812957705907,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.1767277209966949
+          },
+          "audioHash": "b06c637206863d767bd66550259e360672838459e5588452be6e403878161a92",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 1.3535883630189867,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.713585614492315,
+            "reliableContourPairs": 16,
+            "directionMatches": false,
+            "excursionErrorSemitones": 0.11129567749365776
+          },
+          "audioHash": "55a8db8c20827df809743758e8cbff9d6ea77dfb3bdf2256e37557abd81a35e1",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 1.5424479738838421,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.6361626954582345,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.7670970185113788
+          },
+          "audioHash": "6ebd2ac41601e7e8f061f4a248199f3901571eccc4804cf80bd73d8c420bdba3",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Bfxr",
+          "score": 1.280579380122949,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.4622230584212974,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.9641769644181295
+          },
+          "audioHash": "54e6f737b3b74f51f66e6ee6dea9287654489a7f61d848728bbdefb99059fe8b",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Bfxr",
+          "score": 1.280579380122949,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.4622230584212974,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.9641769644181295
+          },
+          "audioHash": "54e6f737b3b74f51f66e6ee6dea9287654489a7f61d848728bbdefb99059fe8b",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "036-Transfxr-moving",
+      "family": "moving",
+      "sourceSynth": "Transfxr",
+      "arms": {
+        "v2": {
+          "score": 2.6977775911250563,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.39722178443754697,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.6073710340778007
+          },
+          "audioHash": "c6b36dd2b7ffcfcc22f11935c2a1770eb483db8408dd314691be6319ce5bfe61",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 1.3962940148942609,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.7676339633470163,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.54853728110524
+          },
+          "audioHash": "199b03827f41f9ef16f45bec9b1f6bc0e49db0148e0d8bbe9f6b0ad405991e4b",
+          "checkpointHash": "acd95dd42b38e9478ff927d5b8fd623b1d2121c7b2ff56839e47f6e689f531bf",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 1.2219669026778688,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.8174933833347899,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.16958960288761205
+          },
+          "audioHash": "860113231ff3a95213a1602cc7062fce29337f102ad6895e16939dc94262dc13",
+          "checkpointHash": "9c1b5719b50ee7424faf33322ced473f5d0b98bfefe7fcd7331ddafff83c9ddd",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 1.1406294814609506,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 1.4357084093271508,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.099707633947503
+          },
+          "audioHash": "b2411cb0d7e78f4156182a0972c2dc380b63a900c13eeef7e259a64f97042221",
+          "checkpointHash": "926709146c3f162fa07696c6086b63244d6045fa8f5e1d5885aabc516113e552",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Pluckr",
+          "score": 2.4816830738766047,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 2.5075713458151627,
+            "reliableContourPairs": 16,
+            "directionMatches": false,
+            "excursionErrorSemitones": 8.9166764708921
+          },
+          "audioHash": "eaf4cfcf27b4f220a5a3f043a041876b7b295d8d2af0e0b07f8336f464baff05",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 1.3962940148942609,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.7676339633470163,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.54853728110524
+          },
+          "audioHash": "199b03827f41f9ef16f45bec9b1f6bc0e49db0148e0d8bbe9f6b0ad405991e4b",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 1.2219669026778688,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.8174933833347899,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.16958960288761205
+          },
+          "audioHash": "860113231ff3a95213a1602cc7062fce29337f102ad6895e16939dc94262dc13",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Transfxr",
+          "score": 1.1406294814609506,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 1.4357084093271508,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.099707633947503
+          },
+          "audioHash": "b2411cb0d7e78f4156182a0972c2dc380b63a900c13eeef7e259a64f97042221",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Transfxr",
+          "score": 1.3962940148942609,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.7676339633470163,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.54853728110524
+          },
+          "audioHash": "199b03827f41f9ef16f45bec9b1f6bc0e49db0148e0d8bbe9f6b0ad405991e4b",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "037-Transfxr-moving",
+      "family": "moving",
+      "sourceSynth": "Transfxr",
+      "arms": {
+        "v2": {
+          "score": 1.1917392033514702,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.1923439004966817,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.0769688461512743
+          },
+          "audioHash": "648b9354fbae54e97ae4d8006118e610b6f91e5b7e7a5ee4afdad651dbddc898",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 0.7664200221810132,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.7214471147175568,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.130761705235912
+          },
+          "audioHash": "a89f24f169f51bc8753b5d39f1c5aa5d300d736bf287aa74189372e29e4a48ee",
+          "checkpointHash": "acd95dd42b38e9478ff927d5b8fd623b1d2121c7b2ff56839e47f6e689f531bf",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 1.1112248738807722,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.6765951009691935,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.6371673429324574
+          },
+          "audioHash": "abdaaa56a164a6da3b83936c363b6809b62314f79d46478b4f51afa02253198b",
+          "checkpointHash": "9c1b5719b50ee7424faf33322ced473f5d0b98bfefe7fcd7331ddafff83c9ddd",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 0.5542559137165194,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.8648931399248083,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.9457283840452675
+          },
+          "audioHash": "2c60a6ebbb3ac414a7ea49560296186a96ac17d7dda113a57e4c032e5550e042",
+          "checkpointHash": "926709146c3f162fa07696c6086b63244d6045fa8f5e1d5885aabc516113e552",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Transfxr",
+          "score": 1.1917392033514702,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.1923439004966817,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.0769688461512743
+          },
+          "audioHash": "648b9354fbae54e97ae4d8006118e610b6f91e5b7e7a5ee4afdad651dbddc898",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 0.7664200221810132,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.7214471147175568,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.130761705235912
+          },
+          "audioHash": "a89f24f169f51bc8753b5d39f1c5aa5d300d736bf287aa74189372e29e4a48ee",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 1.1112248738807722,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.6765951009691935,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.6371673429324574
+          },
+          "audioHash": "abdaaa56a164a6da3b83936c363b6809b62314f79d46478b4f51afa02253198b",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Transfxr",
+          "score": 0.5542559137165194,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.8648931399248083,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.9457283840452675
+          },
+          "audioHash": "2c60a6ebbb3ac414a7ea49560296186a96ac17d7dda113a57e4c032e5550e042",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Transfxr",
+          "score": 0.7664200221810132,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.7214471147175568,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.130761705235912
+          },
+          "audioHash": "a89f24f169f51bc8753b5d39f1c5aa5d300d736bf287aa74189372e29e4a48ee",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "038-Transfxr-moving",
+      "family": "moving",
+      "sourceSynth": "Transfxr",
+      "arms": {
+        "v2": {
+          "score": 1.6115216956879068,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.6583090957585401,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.7058827944889003
+          },
+          "audioHash": "60bc14e2653b613a530a3c1abdecb0d880b60c7a67e5f3b7cfd982c97e8c3e3f",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 1.9344749131255379,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.8725584519637476,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.6984626149943267
+          },
+          "audioHash": "227985c7b5a50b6ba8c3b5b79bf82ec3c09cb90af48716e1859e0be446d3efce",
+          "checkpointHash": "acd95dd42b38e9478ff927d5b8fd623b1d2121c7b2ff56839e47f6e689f531bf",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 0.4105302091413928,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.6168475108431175,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.036094565273430135
+          },
+          "audioHash": "bcebd255feb28aac3ae9164b09c5988519fc1dd0bb358a5b30a54ee38dab6a5c",
+          "checkpointHash": "9c1b5719b50ee7424faf33322ced473f5d0b98bfefe7fcd7331ddafff83c9ddd",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 1.7530693948993346,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 1.3188564332952823,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 2.875763111321433
+          },
+          "audioHash": "1f37ede9f5c1477547b8a1200c4cca2b7dfd575ce28637dd2e8656063e6ab3ca",
+          "checkpointHash": "926709146c3f162fa07696c6086b63244d6045fa8f5e1d5885aabc516113e552",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Transfxr",
+          "score": 1.6115216956879068,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.6583090957585401,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.7058827944889003
+          },
+          "audioHash": "60bc14e2653b613a530a3c1abdecb0d880b60c7a67e5f3b7cfd982c97e8c3e3f",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 1.9344749131255379,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.8725584519637476,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.6984626149943267
+          },
+          "audioHash": "227985c7b5a50b6ba8c3b5b79bf82ec3c09cb90af48716e1859e0be446d3efce",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 0.4105302091413928,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.6168475108431175,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.036094565273430135
+          },
+          "audioHash": "bcebd255feb28aac3ae9164b09c5988519fc1dd0bb358a5b30a54ee38dab6a5c",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Transfxr",
+          "score": 1.7530693948993346,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 1.3188564332952823,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 2.875763111321433
+          },
+          "audioHash": "1f37ede9f5c1477547b8a1200c4cca2b7dfd575ce28637dd2e8656063e6ab3ca",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Transfxr",
+          "score": 1.9344749131255379,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.8725584519637476,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 1.6984626149943267
+          },
+          "audioHash": "227985c7b5a50b6ba8c3b5b79bf82ec3c09cb90af48716e1859e0be446d3efce",
+          "candidates": 12
+        }
+      }
+    },
+    {
+      "id": "039-Transfxr-moving",
+      "family": "moving",
+      "sourceSynth": "Transfxr",
+      "arms": {
+        "v2": {
+          "score": 0.9916732915386981,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.5660166150591428,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.15146191837736467
+          },
+          "audioHash": "db87b1b4b94df149f03327672c9e2bd00dd7bc57de39daba6f985875cce60fa5",
+          "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "flat": {
+          "score": 0.8509275717580526,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.32279303385564057,
+            "reliableContourPairs": 16,
+            "directionMatches": false,
+            "excursionErrorSemitones": 0.8038799478093921
+          },
+          "audioHash": "7de6c9e2183d0f5cc4bfacc24470dcf1823a07d441c6c6b41ca4445edea055d4",
+          "checkpointHash": "acd95dd42b38e9478ff927d5b8fd623b1d2121c7b2ff56839e47f6e689f531bf",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "temporal": {
+          "score": 1.3795218502979836,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 1.3783558793720003,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.008847155973398912
+          },
+          "audioHash": "5d31d87cfd2110c5978121b0a57d2abbb72031ea417efa038a2b0c2fa2dda04e",
+          "checkpointHash": "9c1b5719b50ee7424faf33322ced473f5d0b98bfefe7fcd7331ddafff83c9ddd",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        },
+        "mixture": {
+          "score": 0.4804659275262566,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.327886234517525,
+            "reliableContourPairs": 16,
+            "directionMatches": false,
+            "excursionErrorSemitones": 0.5838442756221269
+          },
+          "audioHash": "9ee1b22530cfa4cc7e13a9c584c0178d52da8307b357893556e1c3e823c148fb",
+          "checkpointHash": "926709146c3f162fa07696c6086b63244d6045fa8f5e1d5885aabc516113e552",
+          "accounting": {
+            "expected": 4,
+            "proposed": 4,
+            "rendered": 4,
+            "missingProposals": 0,
+            "failedRenders": 0,
+            "missingRendered": 0
+          }
+        }
+      },
+      "unrestricted": {
+        "v2": {
+          "synth": "Transfxr",
+          "score": 0.9916732915386981,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.5660166150591428,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.15146191837736467
+          },
+          "audioHash": "db87b1b4b94df149f03327672c9e2bd00dd7bc57de39daba6f985875cce60fa5",
+          "candidates": 12
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 0.8509275717580526,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.32279303385564057,
+            "reliableContourPairs": 16,
+            "directionMatches": false,
+            "excursionErrorSemitones": 0.8038799478093921
+          },
+          "audioHash": "7de6c9e2183d0f5cc4bfacc24470dcf1823a07d441c6c6b41ca4445edea055d4",
+          "candidates": 12
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 1.3795218502979836,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 1.3783558793720003,
+            "reliableContourPairs": 16,
+            "directionMatches": true,
+            "excursionErrorSemitones": 0.008847155973398912
+          },
+          "audioHash": "5d31d87cfd2110c5978121b0a57d2abbb72031ea417efa038a2b0c2fa2dda04e",
+          "candidates": 12
+        },
+        "mixture": {
+          "synth": "Transfxr",
+          "score": 0.4804659275262566,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.327886234517525,
+            "reliableContourPairs": 16,
+            "directionMatches": false,
+            "excursionErrorSemitones": 0.5838442756221269
+          },
+          "audioHash": "9ee1b22530cfa4cc7e13a9c584c0178d52da8307b357893556e1c3e823c148fb",
+          "candidates": 12
+        },
+        "hybrid": {
+          "synth": "Transfxr",
+          "score": 0.8509275717580526,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": null,
+            "contourErrorSemitones": 0.32279303385564057,
+            "reliableContourPairs": 16,
+            "directionMatches": false,
+            "excursionErrorSemitones": 0.8038799478093921
+          },
+          "audioHash": "7de6c9e2183d0f5cc4bfacc24470dcf1823a07d441c6c6b41ca4445edea055d4",
+          "candidates": 12
+        }
+      }
+    }
+  ],
+  "unrestrictedSummary": {
+    "v2": {
+      "meanMatchObjective": 1.9383724935200206,
+      "staticWithinOneSemitone": 5,
+      "staticTotal": 9,
+      "movingDirectionMatches": 5,
+      "movingTotal": 8,
+      "missingCandidates": 0,
+      "missingRenderedSlots": 0,
+      "improvedVersusV2": 0
+    },
+    "flat": {
+      "meanMatchObjective": 1.5571497403931889,
+      "staticWithinOneSemitone": 9,
+      "staticTotal": 9,
+      "movingDirectionMatches": 6,
+      "movingTotal": 8,
+      "missingCandidates": 0,
+      "missingRenderedSlots": 0,
+      "improvedVersusV2": 13
+    },
+    "temporal": {
+      "meanMatchObjective": 1.3843861671475788,
+      "staticWithinOneSemitone": 7,
+      "staticTotal": 9,
+      "movingDirectionMatches": 8,
+      "movingTotal": 8,
+      "missingCandidates": 0,
+      "missingRenderedSlots": 0,
+      "improvedVersusV2": 14
+    },
+    "mixture": {
+      "meanMatchObjective": 1.6142477720692203,
+      "staticWithinOneSemitone": 5,
+      "staticTotal": 9,
+      "movingDirectionMatches": 7,
+      "movingTotal": 8,
+      "missingCandidates": 0,
+      "missingRenderedSlots": 0,
+      "improvedVersusV2": 15
+    },
+    "hybrid": {
+      "meanMatchObjective": 1.4356814884675426,
+      "staticWithinOneSemitone": 8,
+      "staticTotal": 9,
+      "movingDirectionMatches": 7,
+      "movingTotal": 8,
+      "missingCandidates": 0,
+      "missingRenderedSlots": 0,
+      "improvedVersusV2": 16
+    }
+  }
+}

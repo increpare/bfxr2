@@ -1,0 +1,19 @@
+{
+  "experimentId": "444a9e83e39823f877710e5422d552f7dbcc98bf7fdf78f11419a7c17a0198de",
+  "testOrigin": "http://127.0.0.1:8766",
+  "deliveryUrl": "http://127.0.0.1:8765/tools/multisynth/runs/temporal-v3-listening/index.html",
+  "lanHttpStatus": 200,
+  "checks": {
+    "firstReferenceAndThreeDistinctOptionsLoaded": true,
+    "sequencePlaybackStartedAndFinished": true,
+    "noneChoiceAdvancedToBirdAndAutoplayed": true,
+    "birdDuplicateHistoricalAudioCollapsedToTwoOptions": true,
+    "exportSchemaVersion": 3,
+    "exportExperimentIdentityMatched": true,
+    "testNoneChoiceIncludedAllThreeAuditionedCandidates": true,
+    "undoRestoredZeroOfSixAndFirstReference": true,
+    "deliveryOriginOpenedWithZeroOfSix": true,
+    "visualLayoutChecked": true
+  },
+  "scope": "Browser interaction and exported feedback identity checks; no human quality judgments were added. The isolated test choice was undone and the test tab closed."
+}

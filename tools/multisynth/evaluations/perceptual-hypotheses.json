@@ -24,6 +24,13 @@
       "nextTest": "Compare real renders while preserving already matched reliable pitch and motion. Keep noisy targets outside pitch constraints; ask whether retained pitch/gesture produces better likeness."
     },
     {
+      "id": "pitch-input-can-hide-register-errors",
+      "claim": "An input descriptor with an octave error can make wrong-register reproductions appear plausible to the inverse and matching pipeline.",
+      "status": "automated-diagnostic-observation-needs-controlled-test",
+      "evidence": "The bird reference produced roughly 2.54 kHz in the older pitch diagnostic and 1.23 kHz in the coarse neural descriptor. Clean sine probes isolate descriptor errors: 2,000 Hz becomes roughly 1,002 Hz and 3,200 Hz becomes 1,575 Hz. The older diagnostic itself halves a 4,000 Hz sine. None of the new flat/temporal/mixture raw inverses passed a one-semitone check on four additional high-pitch development probes. This does not isolate the input error as the cause of the full model failures.",
+      "nextTest": "Version a finer-resolution, confidence-aware input separately; compare actual pitch and human judgments at equal training and render budgets, including metric-consensus cases."
+    },
+    {
       "id": "transient-and-tail-identity",
       "claim": "Attack character, event rhythm and tail may explain likeness failures that a pooled spectrum misses.",
       "status": "untested",

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "manifest": "temporal-v3-listening-targets.json",
+  "reason": "The frozen manifest incorrectly marks the five familiar regression references as previouslyRatedReference:false. These are previously reviewed references, not unheard holdouts. Preserve the frozen manifest bytes and correct their interpretation here.",
+  "corrections": [
+    {"name": "attack/spinout.wav", "previouslyReviewedReference": true},
+    {"name": "bird/Bird Sounds.WAV", "previouslyReviewedReference": true},
+    {"name": "card/bookClose.ogg", "previouslyReviewedReference": true},
+    {"name": "computer/robo_talk.wav", "previouslyReviewedReference": true},
+    {"name": "die/charm2.wav", "previouslyReviewedReference": true},
+    {"name": "jump/Egg Jump.wav", "newToThisQuickListeningRegressionSet": true}
+  ],
+  "evidence": "The first five source SHA-256 identities occur in runs/neural-v2-quick/results.json and listening_data/2026-10-04-neural-v2-quick-01/manifest.json. The user explicitly judged only charm2 as actually approximated; other preferred choices were relative preferences."
+}

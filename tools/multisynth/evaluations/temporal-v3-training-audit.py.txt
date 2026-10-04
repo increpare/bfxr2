@@ -1,0 +1,49 @@
+"""Recompute selected-checkpoint validation losses on CPU; run from repository root."""
+import json
+from pathlib import Path
+import numpy as np
+import torch
+from neural_invert.temporal import load_temporal, acoustic_energy, mixture_loss, balanced_weights
+from neural_invert.data import file_hash
+
+torch.set_num_threads(1)
+root = Path('tools/multisynth/runs/temporal-v3')
+records = []
+for arm in ('flat-one', 'temporal-one', 'four-experts'):
+    for engine in ('Bfxr', 'Transfxr', 'Pluckr'):
+        path = root / arm / engine
+        model, metadata = load_temporal(path)
+        data = Path(metadata['datasetPath'])
+        shard_meta = json.loads((data/(engine+'.json')).read_text())
+        ids = torch.tensor(shard_meta['val'], dtype=torch.long)
+        weights = balanced_weights(shard_meta['rows'], shard_meta['val'])
+        mean, std = [torch.tensor(metadata['normalization'][key]) for key in ('mean', 'std')]
+        with np.load(data/(engine+'.npz')) as stored:
+            arrays = {key: torch.from_numpy(stored[key].astype(np.int64 if key == 'categorical' else np.float32))
+                      for key in ('features', 'continuous', 'categorical')}
+        total = 0.
+        batch_size = metadata['trainingRecipe']['batchSize']
+        with torch.no_grad():
+            for offset in range(0, len(ids), batch_size):
+                batch = ids[offset:offset+batch_size]
+                predicted = model((arrays['features'][batch]-mean)/std)
+                labels = {key: arrays[key][batch] for key in ('continuous', 'categorical')}
+                loss, _ = mixture_loss(acoustic_energy(predicted, labels, metadata['spec']),
+                    predicted['mode_logits'], weights[offset:offset+batch_size])
+                total += float(loss)*len(batch)
+        actual = total/len(ids)
+        report = json.loads((path/'training.json').read_text())
+        expected = report['bestValidation']['total']
+        assert abs(actual-expected) <= 3e-5, (arm, engine, actual, expected)
+        records.append({'arm': arm, 'engine': engine, 'checkpointSha256': metadata['checkpointHash'],
+            'checkpointEpoch': metadata['checkpointEpoch'], 'reportSha256': file_hash(path/'training.json'),
+            'validationRows': len(ids), 'recomputedLoss': actual, 'reportedLoss': expected,
+            'difference': abs(actual-expected), 'allEpochs': len(report['history']),
+            'lastEpochLoss': report['history'][-1]['validation']['total'],
+            'validationModeUtilization': report['bestValidation']['utilization']})
+        print(arm, engine, metadata['checkpointEpoch'], actual, flush=True)
+result = {'complete': True, 'cpuValidationRecomputed': True, 'absoluteTolerance': 3e-5,
+    'dataManifestSha256': file_hash(root/'data/manifest.json'),
+    'auditScriptSha256': file_hash(__file__), 'models': records,
+    'note': 'Independent checkpoint forward pass on all validation rows. Shared loss functions are unit-tested. No claim of audible likeness.'}
+Path('tools/multisynth/evaluations/temporal-v3-training-audit.json').write_text(json.dumps(result, indent=2)+'\n')

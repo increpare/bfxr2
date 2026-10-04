@@ -1,0 +1,163 @@
+{
+  "complete": true,
+  "cpuValidationRecomputed": true,
+  "absoluteTolerance": 3e-05,
+  "dataManifestSha256": "5162ae6d90328f098389bfc762437bc29083eea4d5a446eb2fef14edced5e87c",
+  "auditScriptSha256": "d71c4404cf975f9c178cb70530c4e7fe6afab40ff5372a733686646ae93037a1",
+  "models": [
+    {
+      "arm": "flat-one",
+      "engine": "Bfxr",
+      "checkpointSha256": "9d6330c1c57761e6c74e8a91fc7d50fd7c410606e0e03b030ed20a36cc12c1a4",
+      "checkpointEpoch": 13,
+      "reportSha256": "2ba65ccc1ce1050fc5f88f07e93990129e169b600cbb1411840cc8c4ccf7ef19",
+      "validationRows": 1843,
+      "recomputedLoss": 0.8280336736371449,
+      "reportedLoss": 0.8280336736371449,
+      "difference": 0.0,
+      "allEpochs": 90,
+      "lastEpochLoss": 0.936598555257163,
+      "validationModeUtilization": [
+        1.0
+      ]
+    },
+    {
+      "arm": "flat-one",
+      "engine": "Transfxr",
+      "checkpointSha256": "acd95dd42b38e9478ff927d5b8fd623b1d2121c7b2ff56839e47f6e689f531bf",
+      "checkpointEpoch": 40,
+      "reportSha256": "a5e6281b9caf23d752d3e946a09fc011207a8a2ff0cd88663f4d39bf1c8861c9",
+      "validationRows": 1843,
+      "recomputedLoss": 0.5718714549421973,
+      "reportedLoss": 0.5718714549421973,
+      "difference": 0.0,
+      "allEpochs": 90,
+      "lastEpochLoss": 0.6239629697359844,
+      "validationModeUtilization": [
+        1.0
+      ]
+    },
+    {
+      "arm": "flat-one",
+      "engine": "Pluckr",
+      "checkpointSha256": "53af4cfe0f44a7d3485a0f07a594e3e53514fd02ac502b0325280a6b1353e16c",
+      "checkpointEpoch": 43,
+      "reportSha256": "45dd5bd269f4bd7b84a1586bbf0996e018486506ec150eb447c48b12a9b5c32a",
+      "validationRows": 1843,
+      "recomputedLoss": 0.25738916385613636,
+      "reportedLoss": 0.25738916385613636,
+      "difference": 0.0,
+      "allEpochs": 90,
+      "lastEpochLoss": 0.27342445593341436,
+      "validationModeUtilization": [
+        1.0
+      ]
+    },
+    {
+      "arm": "temporal-one",
+      "engine": "Bfxr",
+      "checkpointSha256": "ac52ae6f79bfca5751825b1ae1d6cf3188a697cc91639a3af762681847c659b4",
+      "checkpointEpoch": 10,
+      "reportSha256": "909a5650e27a1ccf6c4ba6d5685c3de6045b300974c6127eeadad8d9401f75b4",
+      "validationRows": 1843,
+      "recomputedLoss": 0.7394242483801126,
+      "reportedLoss": 0.73942422861768,
+      "difference": 1.976243257928445e-08,
+      "allEpochs": 90,
+      "lastEpochLoss": 0.9674991791882429,
+      "validationModeUtilization": [
+        1.0
+      ]
+    },
+    {
+      "arm": "temporal-one",
+      "engine": "Transfxr",
+      "checkpointSha256": "9c1b5719b50ee7424faf33322ced473f5d0b98bfefe7fcd7331ddafff83c9ddd",
+      "checkpointEpoch": 18,
+      "reportSha256": "d4ce3d03b0f3be66675183ac948630d187c1dcaed01455fadade7594838c9f4a",
+      "validationRows": 1843,
+      "recomputedLoss": 0.4989265878454894,
+      "reportedLoss": 0.49892660905922875,
+      "difference": 2.121373937624682e-08,
+      "allEpochs": 90,
+      "lastEpochLoss": 0.616328853693383,
+      "validationModeUtilization": [
+        1.0
+      ]
+    },
+    {
+      "arm": "temporal-one",
+      "engine": "Pluckr",
+      "checkpointSha256": "6e8bc3a5e55781d4c1be5b29ce30d3fbbcb4d81e86430de9a81cba65695f3c55",
+      "checkpointEpoch": 13,
+      "reportSha256": "8a989bd73ff86b57b005a77ba6ab255b9d08f26528cb600470e6273669c77f35",
+      "validationRows": 1843,
+      "recomputedLoss": 0.23582458004509052,
+      "reportedLoss": 0.23582458553094937,
+      "difference": 5.4858588505179995e-09,
+      "allEpochs": 90,
+      "lastEpochLoss": 0.2941374933540142,
+      "validationModeUtilization": [
+        1.0
+      ]
+    },
+    {
+      "arm": "four-experts",
+      "engine": "Bfxr",
+      "checkpointSha256": "34766ccb414e4e07f426336a77e0f6fbff92537a4a42be57ec6a41098708dc95",
+      "checkpointEpoch": 13,
+      "reportSha256": "81fca1684b3e6cc8dec51e542f793d51554c94c37af77cc14a8d4233ebf9bbc1",
+      "validationRows": 1843,
+      "recomputedLoss": 0.4009967316760683,
+      "reportedLoss": 0.4009967316760683,
+      "difference": 0.0,
+      "allEpochs": 90,
+      "lastEpochLoss": 0.6431315366585036,
+      "validationModeUtilization": [
+        0.581605382413238,
+        0.01395610344124997,
+        0.3672512963098866,
+        0.037187214801962826
+      ]
+    },
+    {
+      "arm": "four-experts",
+      "engine": "Transfxr",
+      "checkpointSha256": "926709146c3f162fa07696c6086b63244d6045fa8f5e1d5885aabc516113e552",
+      "checkpointEpoch": 11,
+      "reportSha256": "4df0877b5b9721bfe83e30450dec4bf0adfafc7fa14d5b3d6cd7ab28a1f7877d",
+      "validationRows": 1843,
+      "recomputedLoss": 0.39696812479717863,
+      "reportedLoss": 0.39696812479717863,
+      "difference": 0.0,
+      "allEpochs": 90,
+      "lastEpochLoss": 0.5108192216744419,
+      "validationModeUtilization": [
+        0.02297620101238937,
+        0.03566363438752536,
+        0.5804179000647509,
+        0.3609422620585996
+      ]
+    },
+    {
+      "arm": "four-experts",
+      "engine": "Pluckr",
+      "checkpointSha256": "435a9a2abe1d2cb2b22af9072edd13408f88607f2086cf6c69dbf59bad788951",
+      "checkpointEpoch": 18,
+      "reportSha256": "a990f1f2a9177914dd5178f36015ca25905527d9dd3accaf431683198eec509f",
+      "validationRows": 1843,
+      "recomputedLoss": 0.20836068106066322,
+      "reportedLoss": 0.20836068106066322,
+      "difference": 0.0,
+      "allEpochs": 90,
+      "lastEpochLoss": 0.2524396059140199,
+      "validationModeUtilization": [
+        0.18887041705623633,
+        0.27374008901081714,
+        0.031249221032298394,
+        0.5061402737415167
+      ]
+    }
+  ],
+  "note": "Independent checkpoint forward pass on all validation rows. Shared loss functions are unit-tested. No claim of audible likeness."
+}

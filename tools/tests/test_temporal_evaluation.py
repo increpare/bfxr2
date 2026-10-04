@@ -2,6 +2,55 @@ import numpy as np
 import pytest
 
 
+def test_new_reference_without_history_has_no_previous_candidate():
+    from neural_invert.temporal_gallery import previous_candidate
+    assert previous_candidate({}, 'new-source') is None
+    assert previous_candidate({'new-source': []}, 'new-source') is None
+
+
+def test_resume_requires_incomplete_matching_inputs(tmp_path):
+    import json
+    from neural_invert.temporal_gallery import check_resume
+    meta = {'complete': False, 'targetManifestSha256': 'a', 'checkpointHashes': {'Bfxr': 'x'},
+            'sourceHash': 'd', 'previousReportSha256': 'p', 'refinementBudgetPerEngine': 384,
+            'evaluationCodeSha256': 'e', 'codeSha256': 'old'}
+    (tmp_path/'manifest.json').write_text(json.dumps(meta))
+    assert check_resume(tmp_path, {**meta, 'codeSha256': 'new'})['codeSha256'] == 'old'
+    with pytest.raises(ValueError, match='inputs'):
+        check_resume(tmp_path, {**meta, 'sourceHash': 'changed'})
+    (tmp_path/'results.json').write_text('{}')
+    with pytest.raises(ValueError, match='completed'):
+        check_resume(tmp_path, meta)
+
+
+def test_repeated_resume_preserves_original_generation_hash(tmp_path):
+    from neural_invert.temporal_gallery import retained_code_map
+    (tmp_path/'001').mkdir()
+    (tmp_path/'001'/'report.json').write_text('{}')
+    first = retained_code_map(tmp_path, {'codeSha256': 'original'})
+    assert first == {'001': 'original'}
+    second = retained_code_map(tmp_path, {'codeSha256': 'repaired', 'generationCodeByFolder': first})
+    assert second == first
+
+
+def test_resumed_record_rejects_changed_audio_or_source(tmp_path):
+    import json
+    from neural_invert.data import file_hash
+    from neural_invert.temporal_gallery import completed_record
+    import soundfile as sf
+    source = {'sha256': 'same'}
+    sf.write(tmp_path/'selected.wav', np.ones(100, dtype=np.float32)*.1, 44100, subtype='PCM_16')
+    row = {'source': source, 'candidates': [{'file': 'selected.wav', 'provenance': {
+        'auditionWavSha256': file_hash(tmp_path/'selected.wav')}}]}
+    (tmp_path/'report.json').write_text(json.dumps(row))
+    assert completed_record(tmp_path, source) == row
+    with pytest.raises(ValueError, match='source'):
+        completed_record(tmp_path, {'sha256': 'other'})
+    sf.write(tmp_path/'selected.wav', np.zeros(100, dtype=np.float32), 44100, subtype='PCM_16')
+    with pytest.raises(ValueError, match='audio'):
+        completed_record(tmp_path, source)
+
+
 def test_pitch_guard_requires_two_agreeing_target_estimators():
     from neural_invert.temporal_eval import pitch_consensus
     assert pitch_consensus({'reliable': True, 'medianHz': 440., 'voicedFraction': .95},

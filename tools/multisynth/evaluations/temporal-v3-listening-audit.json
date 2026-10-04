@@ -1,0 +1,133 @@
+{
+  "complete": true,
+  "experimentId": "444a9e83e39823f877710e5422d552f7dbcc98bf7fdf78f11419a7c17a0198de",
+  "reportSha256": "660fc5264771020902dc6c7df02408a25d9f43a0b374f6c3d6e542a6bf5ce315",
+  "htmlSha256": "9ab972ecd3ea200727be02cc4a071aad97669938d2d6449391c1020820bc7640",
+  "auditScriptSha256": "42abadbf1635a6f2406d4ae6c87b4ffbde165c84a1f069103d4f743f7a9f08f7",
+  "rawAndRefinedReplays": 89,
+  "failedRawProposals": 1,
+  "targets": [
+    {
+      "name": "attack/spinout.wav",
+      "referencePcmSha256": "65846b1877c418e7f6cc6f8a1a588979162674aa1d905bb930fd97588c20d69f",
+      "audibleRawCandidates": 12,
+      "proposalFailures": [],
+      "candidates": {
+        "selected": {
+          "wavSha256": "9cd838d80e8edc23d1b8707720bd372e2c3f3a2c21877ace6a2dce142f898c9c",
+          "pcmSha256": "aa9e02d48fcba568b9fb00ce7499295f3739c9621f239cf78cd51f85f02f6551"
+        },
+        "previous": {
+          "wavSha256": "c31fe7bffac4a5f75e30d6b7e521f87e68f640b50ce3f421def0753ebb007083",
+          "pcmSha256": "7637f86b0bbf76f5eceab8555ef9971b93b8e6075d7390a3452d3f667765a4b4"
+        },
+        "original": {
+          "wavSha256": "99a71b58e0371fccfe0f02c470d3c13c611f0457f0575b5e4e7a66c068959f0d",
+          "pcmSha256": "5b3d41a514c5f6c26ef6b058342da30b965671a9faad9543a417925cbf953ab9"
+        }
+      }
+    },
+    {
+      "name": "bird/Bird Sounds.WAV",
+      "referencePcmSha256": "e0f588c7d2e53ab658bdd324ebaf51df4522d234ee9fb9e03b1b8fbfeca02fac",
+      "audibleRawCandidates": 12,
+      "proposalFailures": [],
+      "candidates": {
+        "selected": {
+          "wavSha256": "c056b6b6b9c03ee5fb6dc1a63e5451c37254a6b9c6d3251bbb5011f315eb7eb1",
+          "pcmSha256": "afaa07b89db9b88f8c9c9582172f54daa3a07b4806ca721c9d3f64c8efd749af"
+        },
+        "previous": {
+          "wavSha256": "da98ca93ab2c01e036c2e73ba194132a37ae078e1a231c8820102f280a727100",
+          "pcmSha256": "689cb763a16778d695cbce90af0bd51540de75e251194f4ca0ee9a2d2ce78f05"
+        },
+        "original": {
+          "wavSha256": "da98ca93ab2c01e036c2e73ba194132a37ae078e1a231c8820102f280a727100",
+          "pcmSha256": "689cb763a16778d695cbce90af0bd51540de75e251194f4ca0ee9a2d2ce78f05"
+        }
+      }
+    },
+    {
+      "name": "card/bookClose.ogg",
+      "referencePcmSha256": "3a34c99cee7fe4fc5679083fb569033b765ec88a07d4ddac08d76d2245d778be",
+      "audibleRawCandidates": 12,
+      "proposalFailures": [],
+      "candidates": {
+        "selected": {
+          "wavSha256": "6d54ac458f336189620a584755c58715f71cf55bfea08471e7d636b3f3862c50",
+          "pcmSha256": "81e4d069983c3eb497af76ea5a06c5e668b0353c27f44c7e4b69a22ec82128d5"
+        },
+        "previous": {
+          "wavSha256": "5212d3dcc0b84a9a60b9f0c2a1957b9b7cfeff3d6cb71d2de4d0b65c4de114d4",
+          "pcmSha256": "fb0b65c6436d1f0f42c49b8cb8b0c814cb3c1701210a5bb96f8570335c58e6f5"
+        },
+        "original": {
+          "wavSha256": "9c84e94e3b0c78f2e47a8b08c160ced536cfa089ac01a515a017a011775fc558",
+          "pcmSha256": "947d4ece8cbdda60ac2968231673ce9c5966278cdbcee1edf6f6d69d4254c8d9"
+        }
+      }
+    },
+    {
+      "name": "computer/robo_talk.wav",
+      "referencePcmSha256": "f42dbf000892e3acf1a7503e1fd6e7c392a2405b1f2724901c666a6bce1630f9",
+      "audibleRawCandidates": 12,
+      "proposalFailures": [],
+      "candidates": {
+        "selected": {
+          "wavSha256": "ee03d2c63d49f5d9ad7c5df867d4529dada093e6bd5ccee747932d2a208e1a21",
+          "pcmSha256": "897a415d18e9c2b9b2d8ca84823544973ec83e5db1198ea6692e87d6c542fc10"
+        },
+        "previous": {
+          "wavSha256": "df9ad6d5cf4b8d64fdeaea90b6f1075b2ef52c04043162141515daa2ec1a31d0",
+          "pcmSha256": "83f2098479910aa84a0cc40272b93ce1562acc689ca99304df0f29ee0329405a"
+        },
+        "original": {
+          "wavSha256": "bdc4446e294eb4f018f4d0db0175055f973959d349916965d83f660d9bb3fafe",
+          "pcmSha256": "ec9636bdbb67f4f459113b5dc6733adbe79ea735a9861e4f8bb02b959fbb1832"
+        }
+      }
+    },
+    {
+      "name": "die/charm2.wav",
+      "referencePcmSha256": "999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850",
+      "audibleRawCandidates": 11,
+      "proposalFailures": [
+        {
+          "synth": "Bfxr",
+          "error": "Silent prediction"
+        }
+      ],
+      "candidates": {
+        "selected": {
+          "wavSha256": "80470b6a7020303ecd29aaa2ee732156019ea1fb4b2d38c8eb94f27453948aa1",
+          "pcmSha256": "781e2b6a2624ae79dafb33b831f5cdb0c89a27d1c16ef35c580bef6ad1c7a03a"
+        },
+        "previous": {
+          "wavSha256": "a93dd5e8fd6c42abd3b5bc3e5f5d39e6475e23735f78db853ca678e9688aece6",
+          "pcmSha256": "3ad58753fc408535c051a3d39c494465e6d8e50a3509d39ecbd7c40bb3a1bd0f"
+        },
+        "original": {
+          "wavSha256": "2fd7aedcc6a931f63260529abc455e03060f6f8bf6dd94c7a190740b02a888b6",
+          "pcmSha256": "3510aae512950108156aac1283f2579efc4dad7b8770a38639a7f4367c93dfac"
+        }
+      }
+    },
+    {
+      "name": "jump/Egg Jump.wav",
+      "referencePcmSha256": "a5f27ae12c91e3886ab9a72d73318c17a57ae45cc6f3c6849dae817895371dd8",
+      "audibleRawCandidates": 12,
+      "proposalFailures": [],
+      "candidates": {
+        "selected": {
+          "wavSha256": "11bb4e3b6c5a071e1cae40915ea57bde7ac1e4ded2ffe8055f4532c785eb9fe9",
+          "pcmSha256": "a022455292aa1b92ccbe674692d564fb77f6fb06ceabcdd52c96f0366cf3c9ae"
+        },
+        "original": {
+          "wavSha256": "b9b9d7b3a9557b0dd1034368f7d3277b886d0083da4230dbd94fa634e438462c",
+          "pcmSha256": "c429acd2071e13b9aadfe0cb750499b578ea36e606c6d2e7c8502112bcfee33f"
+        }
+      }
+    }
+  ],
+  "scope": "Exact rendered controls, scores, audition PCM and historical identities; does not establish audible likeness."
+}

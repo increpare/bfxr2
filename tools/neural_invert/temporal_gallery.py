@@ -24,6 +24,49 @@ from .experiment import audition_details, audition_pcm, listening_history, previ
 from .temporal_eval import load_experts, proposals, refine_guarded, target_diagnostics, GUARD_POLICY
 
 
+def previous_candidate(history, source_hash):
+    observations = [o for o in history.get(source_hash, [])
+                    if o.get('labelSource') == 'direct-choice' or o.get('rating') is not None]
+    return previous_best(observations) if observations else None
+
+
+def check_resume(output, metadata):
+    output = Path(output)
+    old = json.loads((output/'manifest.json').read_text())
+    if old.get('complete') or (output/'results.json').exists() or (output/'index.html').exists():
+        raise ValueError('Cannot resume a completed gallery')
+    for key, value in metadata.items():
+        if key not in ('codeSha256', 'complete') and old.get(key) != value:
+            raise ValueError('Resume inputs differ: '+key)
+    return old
+
+
+def completed_record(dest, source):
+    dest = Path(dest)
+    row = json.loads((dest/'report.json').read_text())
+    if row['source'] != source:
+        raise ValueError('Resumed source differs')
+    for c in row['candidates']:
+        path = dest/c['file']
+        if Path(c['file']).name != c['file'] or not path.is_file():
+            raise ValueError('Resumed audio path invalid')
+        p = c['provenance']
+        if 'auditionWavSha256' in p:
+            valid = file_hash(path) == p['auditionWavSha256']
+        else:
+            wave, rate = sf.read(path, dtype='int16', always_2d=True)
+            digest = hashlib.sha256(str((rate, wave.shape)).encode()+wave.astype('<i2').tobytes()).hexdigest()
+            valid = digest == p.get('archivedPcmSha256')
+        if not valid:
+            raise ValueError('Resumed audio changed')
+    return row
+
+
+def retained_code_map(output, prior):
+    return {p.parent.name: prior.get('generationCodeByFolder', {}).get(p.parent.name, prior['codeSha256'])
+            for p in Path(output).glob('*/report.json')}
+
+
 def save_candidate(dest, candidate, renderer, objective, filename='selected.wav'):
     canonical, replay = renderer.render(candidate['synth'], candidate['params'], candidate['seed'])
     if canonical != candidate['params'] or not np.array_equal(replay, candidate['wave']):
@@ -67,9 +110,9 @@ def backend_provenance(renderer):
     return {**bound, 'sourceHash': hashlib.sha256(json.dumps(bound, sort_keys=True).encode()).hexdigest()}
 
 
-def run(targets, model, old_gallery, archives, checkpoint, output, budget=384):
+def run(targets, model, old_gallery, archives, checkpoint, output, budget=384, resume=False):
     output = Path(output)
-    if output.exists() or budget < 0:
+    if (output.exists() and not resume) or (resume and not output.is_dir()) or budget < 0:
         raise ValueError('Fresh output and nonnegative budget required')
     torch.set_num_threads(1)
     experts = load_experts(model)
@@ -88,7 +131,7 @@ def run(targets, model, old_gallery, archives, checkpoint, output, budget=384):
     source_hashes = {meta['sourceHash'] for _, meta in experts.values()}
     if len(source_hashes) != 1:
         raise ValueError('Expert DSP provenance differs')
-    output.mkdir(parents=True)
+    output.mkdir(parents=True, exist_ok=resume)
     metadata = {'experiment': 'temporal-v3-listening', 'complete': False,
         'galleryTitle': 'Temporal inverse · six listening comparisons',
         'galleryIntro': ['Choose the most convincing gesture and feel. “None” is useful when all approximations miss.',
@@ -102,6 +145,13 @@ def run(targets, model, old_gallery, archives, checkpoint, output, budget=384):
         'guardPolicy': GUARD_POLICY, 'humanReviewRequired': True,
         'samplingPolicy': 'Fixed regression examples plus new gesture coverage; subsequent regular batches include consensus successes and uncertain cases.',
         'targetCount': len(frozen['targets'])}
+    prior = check_resume(output, metadata) if resume else None
+    if prior:
+        prior_hash = file_hash(output/'manifest.json')
+        shutil.copyfile(output/'manifest.json', output/('resume-manifest-'+prior_hash[:12]+'.json'))
+        metadata['resumption'] = {'priorManifestSha256': prior_hash,
+            'priorCodeSha256': prior['codeSha256'], 'reusedFolders': []}
+    metadata['generationCodeByFolder'] = retained_code_map(output, prior) if prior else {}
     _json_write(output/'manifest.json', metadata)
     started = time.monotonic()
     records = []
@@ -114,7 +164,23 @@ def run(targets, model, old_gallery, archives, checkpoint, output, budget=384):
         for index, source in enumerate(frozen['targets']):
             if file_hash(source['path']) != source['sha256']:
                 raise ValueError('Frozen source changed')
-            dest = output/f'{index+1:03d}'; dest.mkdir()
+            dest = output/f'{index+1:03d}'
+            if resume and (dest/'report.json').is_file():
+                reference, rate = sf.read(dest/'target.wav', dtype='float32')
+                if source['sha256'] in references:
+                    archive, audio = references[source['sha256']]
+                    verify_archived_audio(archive, audio)
+                    expected, expected_rate = sf.read(archive/audio['file'], dtype='float32')
+                else:
+                    expected, expected_rate = audition_pcm(prepare_target(source['path'])), 44100
+                if rate != expected_rate or not np.array_equal(reference, expected):
+                    raise ValueError('Resumed reference audio changed')
+                records.append(completed_record(dest, source))
+                metadata['resumption']['reusedFolders'].append(dest.name)
+                metadata['generationCodeByFolder'][dest.name] = prior.get('generationCodeByFolder', {}).get(dest.name, prior['codeSha256'])
+                print(json.dumps({'reused': source['name']}), flush=True)
+                continue
+            dest.mkdir(exist_ok=resume)
             old = old_rows.get(source['sha256'])
             if old:
                 ref = old_gallery/old['folder']/'target.wav'
@@ -135,7 +201,7 @@ def run(targets, model, old_gallery, archives, checkpoint, output, budget=384):
                        for i, r in enumerate(starts)]
             selected = min(refined+raw, key=lambda r:r['score'])
             cards = [save_candidate(dest, selected, renderer, objective)]
-            previous = previous_best(history.get(source['sha256'], []))
+            previous = previous_candidate(history, source['sha256'])
             if previous:
                 c = previous['candidate']
                 copy_archived_audio(previous['archive']/c['audio']['file'], dest/'previous.wav')
@@ -174,6 +240,8 @@ def run(targets, model, old_gallery, archives, checkpoint, output, budget=384):
                     'allRefined': [serializable(c) for c in refined], 'failures': errors}}
             _json_write(dest/'report.json', record)
             records.append(record)
+            metadata['generationCodeByFolder'][dest.name] = metadata['codeSha256']
+            _json_write(output/'manifest.json', metadata)
             print(json.dumps({'target': source['name'], 'newSynth': selected['synth'],
                               'score': selected['score'], 'guardActive': diagnostic['guardReliable']}), flush=True)
         if backend_provenance(bfxr) != original_backend:
@@ -194,8 +262,9 @@ def main():
         parser.add_argument('--'+name, type=Path, required=True)
     parser.add_argument('--archives', type=Path, nargs='+', required=True)
     parser.add_argument('--budget', type=int, default=384)
+    parser.add_argument('--resume', action='store_true', help='Reuse verified completed rows of an incomplete gallery with matching inputs')
     a = parser.parse_args()
-    run(a.targets, a.model, a.old_gallery, a.archives, a.checkpoint, a.output, a.budget)
+    run(a.targets, a.model, a.old_gallery, a.archives, a.checkpoint, a.output, a.budget, a.resume)
 
 
 if __name__ == '__main__':

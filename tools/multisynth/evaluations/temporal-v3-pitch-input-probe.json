@@ -1,0 +1,78 @@
+{
+  "featureCodeSha256": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+  "method": "One-second 0.5-amplitude clean sinusoid at 44100Hz. No feature-code changes. Median of active voiced relative frames.",
+  "sourceRangeObservation": "Autocorrelation uses analysis rate11025Hz and lags5..220; it cannot directly represent frequencies above2205Hz. Local-maximum selection additionally excludes endpoint lags unless fallback is used.",
+  "scope": "Demonstrates descriptor range/quantization limitation; does not isolate the cause of full inverse-model failures or assess perceptual likeness.",
+  "rows": [
+    {
+      "trueHz": 220,
+      "coarseDescriptorHz": 220.5,
+      "coarseVoicedFraction": 0.9791666666666666,
+      "olderDiagnosticHz": 220.0,
+      "olderReliable": true
+    },
+    {
+      "trueHz": 440,
+      "coarseDescriptorHz": 441.0,
+      "coarseVoicedFraction": 0.9791666666666666,
+      "olderDiagnosticHz": 440.0002746582031,
+      "olderReliable": true
+    },
+    {
+      "trueHz": 880,
+      "coarseDescriptorHz": 848.0768432617188,
+      "coarseVoicedFraction": 0.9791666666666666,
+      "olderDiagnosticHz": 880.0023193359375,
+      "olderReliable": true
+    },
+    {
+      "trueHz": 1500,
+      "coarseDescriptorHz": 1575.0001220703125,
+      "coarseVoicedFraction": 0.9791666666666666,
+      "olderDiagnosticHz": 1500.0279541015625,
+      "olderReliable": true
+    },
+    {
+      "trueHz": 1800,
+      "coarseDescriptorHz": 1837.500244140625,
+      "coarseVoicedFraction": 0.9791666666666666,
+      "olderDiagnosticHz": 1799.99951171875,
+      "olderReliable": true
+    },
+    {
+      "trueHz": 2000,
+      "coarseDescriptorHz": 1002.2727661132812,
+      "coarseVoicedFraction": 0.9791666666666666,
+      "olderDiagnosticHz": 2000.0301513671875,
+      "olderReliable": true
+    },
+    {
+      "trueHz": 2200,
+      "coarseDescriptorHz": 1102.5001220703125,
+      "coarseVoicedFraction": 0.9791666666666666,
+      "olderDiagnosticHz": 2200.04052734375,
+      "olderReliable": true
+    },
+    {
+      "trueHz": 2500,
+      "coarseDescriptorHz": 1225.0003662109375,
+      "coarseVoicedFraction": 0.9791666666666666,
+      "olderDiagnosticHz": 2499.738525390625,
+      "olderReliable": true
+    },
+    {
+      "trueHz": 3200,
+      "coarseDescriptorHz": 1575.0001220703125,
+      "coarseVoicedFraction": 0.9791666666666666,
+      "olderDiagnosticHz": 3199.28271484375,
+      "olderReliable": true
+    },
+    {
+      "trueHz": 4000,
+      "coarseDescriptorHz": 1002.2727661132812,
+      "coarseVoicedFraction": 0.9791666666666666,
+      "olderDiagnosticHz": 2000.1226806640625,
+      "olderReliable": true
+    }
+  ]
+}

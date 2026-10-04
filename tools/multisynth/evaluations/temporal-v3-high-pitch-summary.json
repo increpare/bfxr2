@@ -1,0 +1,296 @@
+{
+  "reportPath": "tools/multisynth/runs/temporal-v3/high-pitch-comparison/results.json",
+  "reportSha256": "46c75b840307ddbd6446f9ac46f82d63784c376b452f8c6fbdfa644e772360a4",
+  "scope": "Known-source-engine raw inversion on four development follow-up probes, not independent holdout or human evaluation.",
+  "metadata": {
+    "complete": true,
+    "benchmarkSha256": "9f594f4da124916a115b9d65638b2f52a9735cd0768196366613c46771276d73",
+    "codeSha256": "bca42b4b1a9673e4f888e55486d06d328931362a8d2b4a9cf7dc0b2031fbd731",
+    "candidateBudgetPerEngine": 4,
+    "oldCheckpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+    "engines": [
+      "Bfxr",
+      "Transfxr",
+      "Pluckr"
+    ],
+    "scope": "Fixed development probes, not held-out human likeness evaluation.",
+    "modelHashes": {
+      "flat": {
+        "Bfxr": "9d6330c1c57761e6c74e8a91fc7d50fd7c410606e0e03b030ed20a36cc12c1a4",
+        "Transfxr": "acd95dd42b38e9478ff927d5b8fd623b1d2121c7b2ff56839e47f6e689f531bf",
+        "Pluckr": "53af4cfe0f44a7d3485a0f07a594e3e53514fd02ac502b0325280a6b1353e16c"
+      },
+      "temporal": {
+        "Bfxr": "ac52ae6f79bfca5751825b1ae1d6cf3188a697cc91639a3af762681847c659b4",
+        "Transfxr": "9c1b5719b50ee7424faf33322ced473f5d0b98bfefe7fcd7331ddafff83c9ddd",
+        "Pluckr": "6e8bc3a5e55781d4c1be5b29ce30d3fbbcb4d81e86430de9a81cba65695f3c55"
+      },
+      "mixture": {
+        "Bfxr": "34766ccb414e4e07f426336a77e0f6fbff92537a4a42be57ec6a41098708dc95",
+        "Transfxr": "926709146c3f162fa07696c6086b63244d6045fa8f5e1d5885aabc516113e552",
+        "Pluckr": "435a9a2abe1d2cb2b22af9072edd13408f88607f2086cf6c69dbf59bad788951"
+      }
+    },
+    "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7"
+  },
+  "summary": {
+    "v2": {
+      "meanMatchObjective": 6.667923193671143,
+      "staticWithinOneSemitone": 1,
+      "staticTotal": 4,
+      "movingDirectionMatches": 0,
+      "movingTotal": 0,
+      "missingCandidates": 0,
+      "missingRenderedSlots": 0,
+      "improvedVersusV2": 0
+    },
+    "flat": {
+      "meanMatchObjective": 7.510548401026565,
+      "staticWithinOneSemitone": 0,
+      "staticTotal": 4,
+      "movingDirectionMatches": 0,
+      "movingTotal": 0,
+      "missingCandidates": 0,
+      "missingRenderedSlots": 0,
+      "improvedVersusV2": 0
+    },
+    "temporal": {
+      "meanMatchObjective": 7.649141005206517,
+      "staticWithinOneSemitone": 0,
+      "staticTotal": 4,
+      "movingDirectionMatches": 0,
+      "movingTotal": 0,
+      "missingCandidates": 0,
+      "missingRenderedSlots": 0,
+      "improvedVersusV2": 2
+    },
+    "mixture": {
+      "meanMatchObjective": 6.182418125906501,
+      "staticWithinOneSemitone": 0,
+      "staticTotal": 4,
+      "movingDirectionMatches": 0,
+      "movingTotal": 0,
+      "missingCandidates": 0,
+      "missingRenderedSlots": 0,
+      "improvedVersusV2": 2
+    }
+  },
+  "results": [
+    {
+      "id": "Bfxr-2500",
+      "sourceSynth": "Bfxr",
+      "arms": {
+        "v2": {
+          "synth": "Bfxr",
+          "score": 2.286605043926515,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 0.05259712256839519,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "597d23b6b512189444151c6292fa2286f01ff216ed04632e1ba5efc3dcaf938f"
+        },
+        "flat": {
+          "synth": "Bfxr",
+          "score": 4.003085445231754,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 2.3578032531060136,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "67d6193f2e1499ab84daf7c6f3b5135cbe964575152e82d0689d0a42c1aceddf"
+        },
+        "temporal": {
+          "synth": "Bfxr",
+          "score": 8.642018367417295,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 10.381117932064303,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "1bda217e66f721a76ad6fa79abb1d69edb14df7b72095cf849c413bfe5cb698c"
+        },
+        "mixture": {
+          "synth": "Bfxr",
+          "score": 5.284716485082083,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 1.4845611987267744,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "162f66d085374906f4b51e8e904adc20e42ae70cf3e8da807424f805eabd4ed3"
+        }
+      }
+    },
+    {
+      "id": "Bfxr-3200",
+      "sourceSynth": "Bfxr",
+      "arms": {
+        "v2": {
+          "synth": "Bfxr",
+          "score": 9.51130492407016,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 9.765769625032856,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "f13df809c3e7e6e1aa6d869368e7aa951076908fbe418fb5c2b7fbe456c2fb07"
+        },
+        "flat": {
+          "synth": "Bfxr",
+          "score": 9.877828561573978,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 11.134928741500337,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "4aca42bea79a3686cc839fca1b9b0b512849955b0a923f227a2f354e0ece081a"
+        },
+        "temporal": {
+          "synth": "Bfxr",
+          "score": 10.387000733872656,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 13.288295359014842,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "4c5cc53d5171c4a4648391b99cdab651969935c452b5a13640ba586069501fa0"
+        },
+        "mixture": {
+          "synth": "Bfxr",
+          "score": 9.15783711542754,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 6.280814031308648,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "0f4f2f8bb7ddea2a5d40aa08db8b4f0c2073441816d65beedd1df72f5fffc49b"
+        }
+      }
+    },
+    {
+      "id": "Transfxr-2500",
+      "sourceSynth": "Transfxr",
+      "arms": {
+        "v2": {
+          "synth": "Transfxr",
+          "score": 5.22876443993134,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 3.096267653224108,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "37feacc07c86213f5774ab5e15f36ff225712fc715bd89d24bf5c41c4f2b4931"
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 5.9235441005234035,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 6.29412590162411,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "85d6e2aca8845e5c7ee3aeeb9b52514910a843bd3f3b105e8c102e5e54be5f3d"
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 4.23026081743645,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 4.56409944309174,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "eebf5b51f17de066d927d81ee05ee0bd7c4e237a7281df5d638a4cb0297d2bcf"
+        },
+        "mixture": {
+          "synth": "Transfxr",
+          "score": 5.922467903935793,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 2.787058579856877,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "564a236aadcb6ef659cda9fb56d76bfe65761b29d10e26f946f9df4d36b4b4d2"
+        }
+      }
+    },
+    {
+      "id": "Transfxr-3200",
+      "sourceSynth": "Transfxr",
+      "arms": {
+        "v2": {
+          "synth": "Transfxr",
+          "score": 9.645018366756554,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 11.94037665995458,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "690752415dd90b0396f1a165a6a6fe7fa349154e961b3ddbc723362709b6ca9a"
+        },
+        "flat": {
+          "synth": "Transfxr",
+          "score": 10.237735496777121,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 23.664814668242933,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "0234152e8f97dde75dc736c47ac7924e68ea89b245e660864278ee28d7be7fb8"
+        },
+        "temporal": {
+          "synth": "Transfxr",
+          "score": 7.33728410209967,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 7.03164984752959,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "c9e885ce3d4dfa13dd8c697536358a8de0dc15e3aaee1105c13ad3d00086b7d0"
+        },
+        "mixture": {
+          "synth": "Transfxr",
+          "score": 4.364650999180592,
+          "pitchComparison": {
+            "absolutePitchErrorSemitones": 3.1918367785428754,
+            "contourErrorSemitones": null,
+            "reliableContourPairs": 16,
+            "directionMatches": null,
+            "excursionErrorSemitones": null
+          },
+          "audioHash": "156b4839a39219aaed291ee31a3413c96108251270c722ae65eb36ffaeb71c36"
+        }
+      }
+    }
+  ]
+}

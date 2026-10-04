@@ -1,0 +1,139 @@
+"""Run with PYTHONPATH=tools after the immutable six-reference gallery completes."""
+import hashlib
+import io
+import json
+import re
+from pathlib import Path
+
+import numpy as np
+import soundfile as sf
+from match.objective import MatchObjective
+from match.audio import prepare_target
+from match.renderer import BfxrRenderer
+from multisynth.renderer import Renderer
+from multisynth.coverage_feedback import coverage_model
+from neural_invert.temporal_gallery import backend_provenance
+
+ROOT = Path(__file__).resolve().parents[3]
+GALLERY = ROOT/'tools/multisynth/runs/temporal-v3-listening'
+OLD = ROOT/'tools/multisynth/runs/neural-v2-quick'
+ARCHIVES = ROOT/'tools/multisynth/listening_data'
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+def pcm(path):
+    wave, rate = sf.read(path, dtype='int16', always_2d=True)
+    assert rate == 44100 and wave.shape[1] == 1
+    return hashlib.sha256(str((rate, wave.shape)).encode()+wave.astype('<i2').tobytes()).hexdigest()
+
+def audition(raw):
+    # Independently apply the documented single gain transform and PCM16 encoding.
+    wave = np.asarray(raw, dtype=np.float32)
+    peak = np.max(np.abs(wave)) if len(wave) else 0
+    if peak >= 1e-8:
+        wave = wave * (0.5/peak)
+    data = io.BytesIO()
+    sf.write(data, wave, 44100, format='WAV', subtype='PCM_16')
+    data.seek(0)
+    return sf.read(data, dtype='float32')[0]
+
+report = json.loads((GALLERY/'results.json').read_text())
+meta = report['metadata']
+assert meta['complete'] and len(report['results']) == 6
+assert sha(ROOT/'tools/neural_invert/temporal_gallery.py') == meta['codeSha256']
+assert sha(ROOT/'tools/neural_invert/temporal_eval.py') == meta['evaluationCodeSha256']
+assert sha(OLD/'results.json') == meta['previousReportSha256']
+assert sha(ROOT/'tools/multisynth/evaluations/temporal-v3-listening-targets.json') == meta['targetManifestSha256']
+frozen = json.loads((ROOT/'tools/multisynth/evaluations/temporal-v3-listening-targets.json').read_text())
+assert [r['source'] for r in report['results']] == frozen['targets']
+for engine, checkpoint_hash in meta['checkpointHashes'].items():
+    assert sha(Path(meta['modelDirectory'])/engine/'best.pt') == checkpoint_hash
+old = {r['source']['sha256']:r for r in json.loads((OLD/'results.json').read_text())['results']}
+latest = ARCHIVES/'2026-10-04-neural-v2-quick-01'
+latest_refs = {t['source']['sha256']:t['referenceAudio'] for t in json.loads((latest/'manifest.json').read_text())['targets']}
+archives = {}
+for path in sorted(ARCHIVES.glob('*/manifest.json')):
+    manifest = json.loads(path.read_text())
+    archives[manifest['experimentId']] = (path.parent, manifest)
+checked, replayed, failed_proposals = [], 0, 0
+with Renderer() as renderer, BfxrRenderer(jobs=1) as bfxr:
+    assert renderer.inventory['sourceHash'] == meta['sourceHash']
+    assert backend_provenance(bfxr) == meta['originalBfxrBackend']
+    for row in report['results']:
+        dest = GALLERY/row['folder']
+        assert sha(row['source']['path']) == row['source']['sha256']
+        target, rate = sf.read(dest/'target.wav', dtype='float32')
+        assert rate == 44100
+        objective = MatchObjective(target)
+        if row['source']['sha256'] in old:
+            prior = old[row['source']['sha256']]
+            assert pcm(dest/'target.wav') == pcm(OLD/prior['folder']/'target.wav')
+            ref = latest_refs[row['source']['sha256']]
+            assert pcm(dest/'target.wav') == ref['pcmSha256'] == pcm(latest/ref['file'])
+        else:
+            assert np.array_equal(target, audition(prepare_target(row['source']['path'])))
+        raw_candidates, refined = row['diagnostics']['allRaw'], row['diagnostics']['allRefined']
+        failures = row['diagnostics']['failures']
+        assert len(raw_candidates)+len(failures) == 12 and len(refined) == 3
+        for engine in ('Bfxr', 'Transfxr', 'Pluckr'):
+            assert sum(c['synth'] == engine for c in raw_candidates)+sum(c['synth'] == engine for c in failures) == 4
+            assert sum(c['synth'] == engine for c in refined) == 1
+        if failures:
+            from neural_invert.temporal_eval import load_experts, proposals
+            from neural_invert.evaluate import rendered_candidates
+            experts = load_experts(meta['modelDirectory'])
+            reproduced, reproduced_errors = rendered_candidates(proposals(experts, target, renderer, 4), renderer, objective)
+            assert reproduced_errors == failures
+            assert [(c['synth'],c['params'],c['seed']) for c in reproduced] == [(c['synth'],c['params'],c['seed']) for c in raw_candidates]
+        failed_proposals += len(failures)
+        winner = min(refined+raw_candidates, key=lambda c:c['score'])
+        for candidate in raw_candidates+refined:
+            canonical, wave = renderer.render(candidate['synth'], candidate['params'], candidate['seed'])
+            assert canonical == candidate['params']
+            score = float(objective.score_batch([wave])[0])
+            assert np.isclose(score, candidate['score'], rtol=1e-7, atol=1e-7)
+            replayed += 1
+        roles = {}
+        for card in row['candidates']:
+            path = dest/card['file']
+            p = card['provenance']
+            if card['role'] == 'selected':
+                assert all(card[key] == winner[key] for key in ('synth','params','seed','score'))
+                canonical, raw = renderer.render(card['synth'], card['params'], card['seed'])
+                assert canonical == card['params']
+                assert card['sourceHash'] == renderer.inventory['sourceHash']
+                assert hashlib.sha256(np.asarray(raw, dtype='<f4').tobytes()).hexdigest() == p['actualRenderAudioHash']
+                saved = sf.read(path, dtype='float32')[0]
+                assert np.array_equal(saved, audition(raw))
+                assert sha(path) == p['auditionWavSha256']
+                assert np.isclose(objective.score_batch([saved])[0], p['auditionMatchObjectiveScore'], rtol=1e-7, atol=1e-7)
+            elif card['role'] == 'previous':
+                archive, manifest = archives[p['experimentId']]
+                source = next(c for c in manifest['candidates'] if c['id'] == p['candidateId'])
+                assert pcm(path) == source['audio']['pcmSha256'] == pcm(archive/source['audio']['file'])
+                assert source['params'] == card['params'] and source['seed'] == card['seed']
+            elif row['source']['sha256'] in old:
+                prior = old[row['source']['sha256']]
+                source = next(c for c in prior['candidates'] if c['role'] == 'original')
+                assert sha(path) == sha(OLD/prior['folder']/source['file']) == p['auditionWavSha256']
+            else:
+                assert p['renderBackend'] == meta['originalBfxrBackend']
+                raw = bfxr.render(card['params'], seed=card['seed'])
+                assert hashlib.sha256(np.asarray(raw, dtype='<f4').tobytes()).hexdigest() == p['actualRenderAudioHash']
+                assert np.array_equal(sf.read(path, dtype='float32')[0], audition(raw))
+                assert sha(path) == p['auditionWavSha256']
+            roles[card['role']] = {'wavSha256': sha(path), 'pcmSha256': pcm(path)}
+        checked.append({'name': row['source']['name'], 'referencePcmSha256': pcm(dest/'target.wav'),
+                        'audibleRawCandidates': len(raw_candidates), 'proposalFailures': failures, 'candidates': roles})
+        print(json.dumps({'audited': row['source']['name']}), flush=True)
+model = coverage_model(GALLERY, report['results'], meta)
+embedded = re.search(r'<script type="application/json" id="feedback-data">(.*?)</script>', (GALLERY/'index.html').read_text(), re.S)
+assert embedded and json.loads(embedded.group(1)) == model
+audit = {'complete': True, 'experimentId': model['experimentId'], 'reportSha256': sha(GALLERY/'results.json'),
+         'htmlSha256': sha(GALLERY/'index.html'), 'auditScriptSha256': sha(__file__),
+         'rawAndRefinedReplays': replayed, 'failedRawProposals': failed_proposals, 'targets': checked,
+         'scope': 'Exact rendered controls, scores, audition PCM and historical identities; does not establish audible likeness.'}
+out = ROOT/'tools/multisynth/evaluations/temporal-v3-listening-audit.json'
+out.write_text(json.dumps(audit, indent=2)+'\n')
+print(json.dumps({'complete': True, 'targets': len(checked), 'replays': replayed, 'experimentId': model['experimentId']}))

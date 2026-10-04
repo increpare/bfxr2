@@ -31,21 +31,32 @@ classification as a reproduction router. No Windows training job is dispatched.
   CLI --data --output --engines --epochs --modes --device. No existing code edits.
   Added matched-flat encoder with identical heads/loss/balancing for comparison.
   Independent spec and quality review approved;39 model tests passed.
-- [ ] Spec then quality review; root fresh tests then MPS one-mode temporal and
-  same-data flat baseline; separately compare4mode and all22 cross-synth warm-up
-  ablation on frozen new data, separate outputs. Archive audited training summary.
-- [ ] Root implements actual-DSP evaluation/ranking/delivery runner in separate
+- [x] Spec then quality review; root fresh tests then MPS one-mode temporal and
+  same-data flat baseline; separately compare4mode on frozen new data, separate
+  outputs. All9runs completed90epochs; independently recomputed CPU validation
+  matched reported losses within2.13e-8. Durable audited training summary saved.
+- [ ] Follow-up architecture ablation: all22 cross-synth warm-up. Deferred until
+  this controlled input/head comparison receives listening feedback.
+- [x] Root implements actual-DSP evaluation/ranking/delivery runner in separate
   new module with TDD/reviews. Uses benchmark20 and same4candidate budgets for
   v2/ablation/mixture. Save source-engine raw+unrestricted comparisons; enforce
   predeclared diagnostic checks and preserve reliable pitch/gesture in actual
   refinement. Revise autonomously if needed until new feedback set is credible.
   Implementation and two-stage review completed;9 evaluation/gallery tests passed.
-  Actual full-data training and benchmark execution in progress.
-- [ ] Root freezes6 references before new inference; exact archived previous
+  Actual full-data training and benchmark execution complete. Both known-engine
+  and unrestricted selection reported with equal budgets; hybrid architecture
+  selection uses these same development probes and is not independent evaluation.
+  Four high-pitch follow-up probes remain failing for every new architecture.
+- [x] Root freezes6 references before new inference; exact archived previous
   PCM and original Bfxr baseline, run actual candidates without reference tags.
   Generate unchanged quick UX. Audit all new actual controls/WAV/score hashes,
   archived winners/reference identities; independent review and isolated-origin
   browser check; localhost/LAN serve/open page. Retain reports+code commit.
+  Complete:6references,89raw/refined actual replay checks,71audible raw proposals
+  and1explicit independently reproduced silent proposal. Exact17candidate audio
+  files and embedded HTML identities verified. Independent review approved.
+  Browser sequence/automatic progression/none/export/undo checked on isolated8766;
+  test choice undone. User page opened at8765 with0/6judged; LAN HTTP200.
 - [ ] Final asks for6 best/none choices and copied JSON, clearly distinguishes
   measured diagnostic gains from audible quality that still needs feedback.
 
