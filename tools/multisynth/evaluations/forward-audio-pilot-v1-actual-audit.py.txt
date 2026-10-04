@@ -1,0 +1,72 @@
+import json
+from pathlib import Path
+import numpy as np
+import soundfile as sf
+import torch
+from multisynth.renderer import Renderer
+from neural_invert.benchmark import audio_hash,pitch_diagnostic,compare_pitch
+from neural_invert.data import file_hash
+from neural_invert.features import describe
+from neural_invert.forward import load_forward,feature_loss
+from neural_invert.forward_probe import summarize
+from match.objective import MatchObjective
+
+torch.set_num_threads(1)
+root=Path('tools/multisynth/runs/forward-audio-pilot-v1/probe')
+p=root/'results.json'
+report=json.loads(p.read_text());rows=report['results'];checks=[]
+assert report['metadata']['complete'] and len(rows)==20
+for path,expected in report['metadata']['inputFileHashes'].items():assert file_hash(path)==expected
+assert report['summary']==summarize(rows)
+frozen_report=json.loads(Path(report['metadata']['benchmark']).read_text())
+frozen={r['id']:r for r in frozen_report['results'] if r['sourceSynth'] in ('Bfxr','Transfxr','Pluckr')}
+assert set(frozen)==set(r['id'] for r in rows) and len(frozen)==len(rows)==20
+for r in rows:
+ original=frozen[r['id']];before=original['arms']['acoustic']['candidates']['knownRaw']
+ assert r['sourceSynth']==original['sourceSynth'] and r['family']==original['family']
+ assert r['target']['params']==original['sourceParams'] and r['target']['seed']==original['sourceSeed']
+ assert r['target']['audioHash']==original['audioHash'] and r['frozenTargetWaveFileSha256']==original['waveFileSha256']
+ assert r['before']['params']==before['params'] and r['before']['seed']==before['seed']
+ assert r['before']['audioHash']==before['audioHash'] and r['frozenBeforeWaveFileSha256']==before['waveFileSha256']
+models={n:load_forward(Path('tools/multisynth/runs/forward-audio-pilot-v1/model')/n) for n in ('Bfxr','Transfxr','Pluckr')}
+with Renderer() as renderer:
+ for row in rows:
+  name=row['sourceSynth'];meta=models[name][1]
+  waves={}
+  for role in ('target','before','after'):
+   rec=row[role];assert rec['sourceHash']==renderer.inventory['sourceHash']
+   wave,rate=sf.read(rec['waveFile'],dtype='float32')
+   assert rate==44100 and sf.info(rec['waveFile']).subtype=='FLOAT'
+   assert file_hash(rec['waveFile'])==rec['waveFileSha256'] and audio_hash(wave)==rec['audioHash']
+   params,replay=renderer.render(name,rec['params'],rec['seed'])
+   assert params==rec['params'] and audio_hash(replay)==rec['audioHash']
+   assert rec['pitch']==pitch_diagnostic(wave)
+   assert rec['descriptorHash']==audio_hash(describe(wave))
+   waves[role]=wave
+  assert row['before']['seed']==row['after']['seed']
+  from neural_invert.schema import ControlSchema
+  schema=ControlSchema(meta['spec']);_,before_cat=schema.encode(row['before']['params']);_,after_cat=schema.encode(row['after']['params'])
+  assert np.array_equal(before_cat,after_cat)
+  for anchor in schema.fixed_randomness+schema.fixed_text+['masterVolume']:assert row['before']['params'].get(anchor)==row['after']['params'].get(anchor)
+  assert row['checkpointHash']==meta['checkpointHash'] and row['normalizationHash']==meta['normalizationHash']
+  target=torch.tensor((describe(waves['target'])-np.asarray(meta['normalization']['mean'],dtype=np.float32))/np.asarray(meta['normalization']['std'],dtype=np.float32))
+  objective=MatchObjective(waves['target'])
+  for role in ('before','after'):
+   rec=row[role];candidate=torch.tensor((describe(waves[role])-np.asarray(meta['normalization']['mean'],dtype=np.float32))/np.asarray(meta['normalization']['std'],dtype=np.float32))
+   total,groups=feature_loss(candidate,target)
+   assert np.isclose(float(total),rec['featureLoss']['total'],rtol=2e-6,atol=2e-7)
+   for group,value in groups.items():assert np.isclose(float(value),rec['featureLoss']['groups'][group],rtol=2e-6,atol=2e-7)
+   assert rec['pitch']==pitch_diagnostic(waves[role])
+   assert np.isclose(float(objective.score_batch([waves[role]])[0]),rec['matchObjective'],rtol=2e-6,atol=2e-7)
+   assert rec['pitchComparison']==compare_pitch(row['target']['pitch'],rec['pitch'],row['family'])
+  checks.append({'id':row['id'],'frozenSourceAndKnownRawBindings':True,'wavHashes':3,'exactDspReplays':3,'recomputedActualLosses':2,'recomputedPitchDiagnostics':2})
+  print(row['id'],'exact control/WAV/feature loss replay verified',flush=True)
+static_regressions=[];direction_regressions=[]
+for row in rows:
+ before=row['before']['pitchComparison'];after=row['after']['pitchComparison']
+ if row['family']=='static' and before['absolutePitchErrorSemitones'] is not None and before['absolutePitchErrorSemitones']<=1.:
+  if after['absolutePitchErrorSemitones'] is None or after['absolutePitchErrorSemitones']>1.:static_regressions.append(row['id'])
+ if row['family']=='moving' and before['directionMatches'] is True and after['directionMatches'] is not True:direction_regressions.append(row['id'])
+supplement={'predeclaredBeforeProbe':True,'staticPreviouslyWithinOneSemitoneMustRemainWithinOneSemitone':True,'movingPreviouslyCorrectDirectionMustRemainCorrect':True,'staticRegressions':static_regressions,'directionRegressions':direction_regressions,'passed':not static_regressions and not direction_regressions}
+output={'complete':True,'resultsSha256':file_hash(p),'cases':len(rows),'checks':checks,'actualSummary':report['summary'],'supplementalPitchSafeguards':supplement,'promotionPrerequisitePassed':report['summary']['actualGate']['passed'] and supplement['passed'],'meaning':'Numerical/source binding audit; no human likeness claim.'}
+Path('tools/multisynth/evaluations/forward-audio-pilot-v1-actual-audit.json').write_text(json.dumps(output,indent=2)+'\n')

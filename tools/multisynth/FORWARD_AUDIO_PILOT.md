@@ -51,3 +51,40 @@ these separately; their failure also prevents promotion.
 No new listening round or checkpoint promotion is justified by prediction error
 alone. The purpose is to establish a trustworthy prerequisite for audio-loss
 inverse training and subsequent real-reference fine-tuning.
+
+## Actual outcome: rejected
+
+All 20 surrogate losses improved, but actual descriptor loss improved on only
+9/20 cases. Mean actual loss rose from .287 to .654; two cases lost reliable
+pitch. Bfxr improved 0/8 actual losses. Transfxr improved 7/8 descriptor losses,
+but that did not preserve its pitch or motion. Pluckr improved 2/4.
+
+All six static cases previously within one semitone regressed outside that band.
+Seven of eight previously matching movement directions no longer matched. Both
+the original actual gate and the separate predeclared pitch safeguards failed.
+This pilot is **not eligible for inverse fine-tuning or promotion** under its
+predeclared policy. No new listening session is justified by this result.
+
+The [actual audit](evaluations/forward-audio-pilot-v1-actual-audit.json) independently
+replays all 60 target/before/after FLOAT WAVs through shipped DSP, checks frozen
+source/knownRaw bindings, recomputes losses and MatchObjective, and verifies pitch
+and checkpoint bindings. The full controls, loss traces, spectra/envelope/pitch
+evidence and actual audio remain in `runs/forward-audio-pilot-v1/probe/`.
+
+A concrete example: Transfxr's 137 Hz static case moved from .079 to 4.266
+semitones of actual pitch error while its total actual descriptor loss decreased.
+Its pitch endpoints diverged and its vibrato controls moved from about .016/.010
+to .859/1.0. This exposes two distinct issues: surrogate gradients can exploit
+prediction errors, and even our actual grouped descriptor score can trade pitch
+or gesture for other terms. Prediction accuracy alone does not validate either
+its gradients or a perceptual objective.
+
+This is a failed **unconstrained control-gradient pilot**, not proof that every
+small-step surrogate-assisted inverse fine-tuning method must fail. No such new
+inverse model was trained in this stage. The older Bfxr checkpoint is intact.
+
+Before the next training stage, measure local gradient agreement with real DSP
+and calibrate pitch/gesture constraints explicitly. Retain synthetic supervision
+and useful control-domain priors when testing real-audio loss; evaluate temporal
+encoders and multiple valid control solutions separately. Increasing engine
+count or merely reducing surrogate loss is not an acceptance criterion.

@@ -18,7 +18,11 @@ pitch gate as the replacement for the older Bfxr pipeline.
 The [exact feedback archive](listening_data/2026-10-04-neural-v2-quick-01/README.md)
 and [human audit](evaluations/neural-v2-quick-01-human-review.json) retain both
 choices and the qualitative rejection. A bounded forward-audio pilot now tests
-a missing training prerequisite before further listening demands.
+a missing training prerequisite before further listening demands. That pilot's
+forward prediction passed, but its actual-DSP gradients failed: 9/20 losses
+improved, average error increased, and accurate pitch/gesture regressed. See
+[the measured pilot outcome](FORWARD_AUDIO_PILOT.md). No new inverse checkpoint
+was trained through that rejected surrogate.
 
 ## Training
 

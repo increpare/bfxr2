@@ -1,0 +1,281 @@
+{
+  "complete": true,
+  "resultsSha256": "7ae73efab6acefc238fdf98ae8582454e0b61816f75424199c7dd53f33f6badb",
+  "cases": 20,
+  "checks": [
+    {
+      "id": "001-Bfxr-native",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "003-Transfxr-native",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "015-Pluckr-native",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "023-Bfxr-static",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "024-Bfxr-static",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "025-Bfxr-static",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "026-Transfxr-static",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "027-Transfxr-static",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "028-Transfxr-static",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "029-Pluckr-static",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "030-Pluckr-static",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "031-Pluckr-static",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "032-Bfxr-moving",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "033-Bfxr-moving",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "034-Bfxr-moving",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "035-Bfxr-moving",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "036-Transfxr-moving",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "037-Transfxr-moving",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "038-Transfxr-moving",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    },
+    {
+      "id": "039-Transfxr-moving",
+      "frozenSourceAndKnownRawBindings": true,
+      "wavHashes": 3,
+      "exactDspReplays": 3,
+      "recomputedActualLosses": 2,
+      "recomputedPitchDiagnostics": 2
+    }
+  ],
+  "actualSummary": {
+    "cases": 20,
+    "actualImproved": 9,
+    "lostReliablePitch": 2,
+    "meanActualBefore": 0.28702112305909394,
+    "meanActualAfter": 0.6539861464872956,
+    "meanSurrogateInitial": 0.3216476920992136,
+    "meanSurrogateBest": 0.140639753267169,
+    "surrogateImproved": 20,
+    "actualGate": {
+      "policy": {
+        "cases": 20,
+        "minimumStrictImprovements": 15,
+        "meanActualLossMustDecrease": true,
+        "maximumReliablePitchLosses": 0,
+        "meaning": "actual-DSP descriptor gradient prerequisite; no perceptual likeness claim"
+      },
+      "improved": 9,
+      "casesPassed": true,
+      "countPassed": false,
+      "meanPassed": false,
+      "pitchPassed": false,
+      "passed": false
+    },
+    "byFamily": {
+      "moving": {
+        "cases": 8,
+        "actualImproved": 3,
+        "lostReliablePitch": 1,
+        "meanActualBefore": 0.2871610503643751,
+        "meanActualAfter": 0.7518619382753968,
+        "meanSurrogateInitial": 0.3390206843614578,
+        "meanSurrogateBest": 0.14118194859474897,
+        "surrogateImproved": 8
+      },
+      "native": {
+        "cases": 3,
+        "actualImproved": 2,
+        "lostReliablePitch": 0,
+        "meanActualBefore": 0.5010786851247152,
+        "meanActualAfter": 0.562183233598868,
+        "meanSurrogateInitial": 0.33215104540189105,
+        "meanSurrogateBest": 0.15251768628756204,
+        "surrogateImproved": 3
+      },
+      "static": {
+        "cases": 9,
+        "actualImproved": 4,
+        "lostReliablePitch": 1,
+        "meanActualBefore": 0.21554422254363695,
+        "meanActualAfter": 0.5975864136384593,
+        "meanSurrogateInitial": 0.3027039145429929,
+        "meanSurrogateBest": 0.136198490858078,
+        "surrogateImproved": 9
+      }
+    },
+    "byEngine": {
+      "Bfxr": {
+        "cases": 8,
+        "actualImproved": 0,
+        "lostReliablePitch": 2,
+        "meanActualBefore": 0.3820251617580652,
+        "meanActualAfter": 1.3710664361715317,
+        "meanSurrogateInitial": 0.3955741748213768,
+        "meanSurrogateBest": 0.15525977313518524,
+        "surrogateImproved": 8
+      },
+      "Pluckr": {
+        "cases": 4,
+        "actualImproved": 2,
+        "lostReliablePitch": 0,
+        "meanActualBefore": 0.10422466043382883,
+        "meanActualAfter": 0.09398657735437155,
+        "meanSurrogateInitial": 0.15972466953098774,
+        "meanSurrogateBest": 0.11295020207762718,
+        "surrogateImproved": 4
+      },
+      "Transfxr": {
+        "cases": 8,
+        "actualImproved": 7,
+        "lostReliablePitch": 0,
+        "meanActualBefore": 0.28341531567275524,
+        "meanActualAfter": 0.21690564136952162,
+        "meanSurrogateInitial": 0.32868272066116333,
+        "meanSurrogateBest": 0.13986450899392366,
+        "surrogateImproved": 8
+      }
+    }
+  },
+  "supplementalPitchSafeguards": {
+    "predeclaredBeforeProbe": true,
+    "staticPreviouslyWithinOneSemitoneMustRemainWithinOneSemitone": true,
+    "movingPreviouslyCorrectDirectionMustRemainCorrect": true,
+    "staticRegressions": [
+      "023-Bfxr-static",
+      "024-Bfxr-static",
+      "026-Transfxr-static",
+      "027-Transfxr-static",
+      "028-Transfxr-static",
+      "030-Pluckr-static"
+    ],
+    "directionRegressions": [
+      "032-Bfxr-moving",
+      "033-Bfxr-moving",
+      "034-Bfxr-moving",
+      "035-Bfxr-moving",
+      "036-Transfxr-moving",
+      "038-Transfxr-moving",
+      "039-Transfxr-moving"
+    ],
+    "passed": false
+  },
+  "promotionPrerequisitePassed": false,
+  "meaning": "Numerical/source binding audit; no human likeness claim."
+}

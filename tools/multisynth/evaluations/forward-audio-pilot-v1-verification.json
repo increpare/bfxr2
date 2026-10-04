@@ -1,0 +1,34 @@
+{
+  "complete": true,
+  "codeCommit": "ce961e2",
+  "fileHashes": {
+    "tools/neural_invert/forward.py": "efcf56c0a2f5fb37b53702a3e1d7f9e2719c85b427d226b889168d389b4776db",
+    "tools/neural_invert/forward_probe.py": "3f3bdbac66513614e11b5bfdece106bbd1a1c8babd4f6f7beef07fb3f24d49b6",
+    "tools/tests/test_neural_forward.py": "f4988a4b211e0ebe045910fdb1ef977f9121a8deb86a2ef9faf4304c2030790f",
+    "tools/tests/test_neural_forward_probe.py": "7672b6b8a865e00ebe9a573b9134a3e734b3ece47c70f6a6382e03616e4aee44",
+    "tools/multisynth/evaluations/forward-audio-pilot-v1-training-audit.json": "2dac6233249ca5877f23591aa4f03ed0f32dd9192fd7553fe7f25169eeca8107",
+    "tools/multisynth/evaluations/forward-audio-pilot-v1-actual-audit.json": "364297d6e01bc9fc5e6cb89158f919fdeabbd5b19aa01e69084a185737b03c33",
+    "tools/multisynth/evaluations/forward-audio-pilot-v1-gradient-results.json": "7ae73efab6acefc238fdf98ae8582454e0b61816f75424199c7dd53f33f6badb"
+  },
+  "tests": {
+    "passed": 78,
+    "seconds": 24.71,
+    "command": "PYTHONPATH=tools python -m pytest -q tools/tests/test_neural_forward_probe.py tools/tests/test_neural_forward.py tools/tests/test_neural_invert.py"
+  },
+  "reviews": {
+    "forwardSpec": "approved",
+    "forwardQuality": "approved",
+    "probeSpec": "approved after exact-v2 dataset binding fix",
+    "probeQuality": "approved"
+  },
+  "outcome": {
+    "forwardPredictiveGatesPassed": true,
+    "actualGradientGatePassed": false,
+    "supplementalPitchSafeguardsPassed": false,
+    "inverseFinetuningRun": false,
+    "modelPromoted": false,
+    "newListeningSessionRequested": false,
+    "broaderReproductionGoalAchieved": false
+  },
+  "meaning": "Measured failed prerequisite pilot, with exact original user feedback retained; code/tests are verified but model quality is not solved."
+}

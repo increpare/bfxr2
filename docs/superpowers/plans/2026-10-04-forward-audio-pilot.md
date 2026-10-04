@@ -36,11 +36,18 @@ validation gate, then actual-DSP before/after checks on fixed fresh controls.
 - [x] Spec review then quality review; fix findings before full training. Root
   trains40epochs in existing venv on MPS with approved escalation if necessary.
   Preserve failure/non-passing gates and summaries without claim of likeness.
-- [ ] Root, with an isolated implementer: only for predictive-gate-passing models, implement a separate
+- [x] Root, with an isolated implementer: only for predictive-gate-passing models, implement a separate
   `forward_probe.py` with regression tests for fixed categorical/RNG anchors,
   frozen weights/gradient-through-unit, fresh output and actual-DSP score binding.
   Evaluate the20 frozen source-engine targets with100gradient steps,.01lr; save
   all before/after scores/audio/controls and apply predeclared actual-DSP gate.
-- [ ] Document measured outcomes, archive/code/reports commit, preserve prior
+- [x] Document measured outcomes, archive/code/reports commit, preserve prior
   defaults. A successful pilot enables the next training stage; a failed one is
   explicitly a failed architectural hypothesis, not another listening delivery.
+
+Outcome: all predictive gates passed; the actual-gradient gate failed (9/20,
+mean loss .287→.654, two reliable-pitch losses). Separate pitch safeguards
+also failed (six static pitch and seven moving-direction regressions). No
+inverse fine-tuning or new listening batch, and no promotion. The broader
+multi-synth reproduction goal remains unachieved; this prerequisite stage
+is measured and complete.
