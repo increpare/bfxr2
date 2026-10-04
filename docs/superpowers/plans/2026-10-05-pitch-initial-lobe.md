@@ -15,14 +15,17 @@ Hz, reported3573/6859 Hz). The earliest-strong-peak rule accepts a small ripple
 in the initial positive autocorrelation lobe. Frozen v4 outputs are retained;
 its partial listening gallery is not delivered.
 
-Hypothesis: exclude local peaks in the initial positive autocorrelation lobe
-before comparing periodic peaks. Validate actual synth waveforms, missing/weak
+Hypothesis: exclude the initial positive autocorrelation lobe and retain the
+strongest interpolated peak in each later positive lobe before period selection.
+Initial-lobe exclusion alone reduced but did not pass the new regressions;
+near-period ripples also need major-peak selection. This adapts the peak-selection
+rule from McLeod and Wyvill (2005), section 5, without adopting their full NSDF. Validate actual synth waveforms, missing/weak
 fundamentals and high frequencies before any full replay. Preserve v4 modules
 and their hashes. Do not change data distribution or architectures in this arm.
 
 ## Tasks
 
-- [ ] Implement separate pitch_v5_features.py with the v4 public API and exact
+- [x] Implement separate pitch_v5_features.py with the v4 public API and exact
   unchanged feature columns. First add regression tests for weak20th partials
   and actual Bfxr/Transfxr whistle waveforms plus prior low/high harmonic tests.
   Investigate initial-lobe exclusion as a single change, retain explicit version,

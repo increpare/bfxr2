@@ -1,0 +1,4370 @@
+{
+  "scriptSha256": "6a95f8789069e99acf760f44d9e27a7c9be30665abcf9e0170426600c42bfebb",
+  "featureCodeHash": "9b69ca66840c45b3746c704b8783c6bfec8b9e6cdb178853e35f4939555465d0",
+  "featureHash": "38490743458f48304878b35b372dcab671f28ea3922745753d48d1fa30d596d9",
+  "frozenFeatureCodeHash": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+  "config": {
+    "version": "neural-pitch-v5",
+    "sampleRate": 44100,
+    "fft": 2048,
+    "autocorrelationOversample": 4,
+    "minHz": 55.0,
+    "maxHz": 8000.0,
+    "minVoice": 0.6,
+    "lowFrequencyLagGuard": 3,
+    "peakSelection": "strongest-peak-per-positive-lobe-after-initial",
+    "dcRemoval": "hann-weighted-frame-mean",
+    "peakRatio": 0.9,
+    "window": "hann-autocorrelation-corrected",
+    "relative": 48,
+    "absolute": 32,
+    "absoluteSeconds": 6.0,
+    "maxAnalysisFrames": 512,
+    "frozenFeatureHash": "fa36498127a6b820ef7b576f708ac0aaa8826b82d2df6acc726511a0a0fff3b1",
+    "frozenFeatureCodeHash": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8"
+  },
+  "tones": [
+    {
+      "frequency": 40,
+      "voicedFraction": 0.0,
+      "medianAbsoluteSemitones": null,
+      "maxAbsoluteSemitones": null,
+      "medianConfidence": 0.0
+    },
+    {
+      "frequency": 50,
+      "voicedFraction": 0.0,
+      "medianAbsoluteSemitones": null,
+      "maxAbsoluteSemitones": null,
+      "medianConfidence": 0.0
+    },
+    {
+      "frequency": 54,
+      "voicedFraction": 0.0,
+      "medianAbsoluteSemitones": null,
+      "maxAbsoluteSemitones": null,
+      "medianConfidence": 0.0
+    },
+    {
+      "frequency": 55,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.013396564115459243,
+      "maxAbsoluteSemitones": 0.03584372795808356,
+      "medianConfidence": 0.9909340143203735
+    },
+    {
+      "frequency": 56.738746262595,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.005702555235896481,
+      "maxAbsoluteSemitones": 0.018057602260687786,
+      "medianConfidence": 0.9940716028213501
+    },
+    {
+      "frequency": 58.532460499111565,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0035640849046534116,
+      "maxAbsoluteSemitones": 0.006252591589707222,
+      "medianConfidence": 0.9965978860855103
+    },
+    {
+      "frequency": 60.3828804433537,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.002241072749443262,
+      "maxAbsoluteSemitones": 0.007002906713452748,
+      "medianConfidence": 0.9978654384613037
+    },
+    {
+      "frequency": 62.29179876509191,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00316937387523132,
+      "maxAbsoluteSemitones": 0.010319711025002322,
+      "medianConfidence": 0.9988634586334229
+    },
+    {
+      "frequency": 64.26106480678506,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0016857911852479776,
+      "maxAbsoluteSemitones": 0.008701259481347185,
+      "medianConfidence": 0.9997527599334717
+    },
+    {
+      "frequency": 65,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0014254771329274933,
+      "maxAbsoluteSemitones": 0.007753973245469508,
+      "medianConfidence": 0.9999226331710815
+    },
+    {
+      "frequency": 66.29258637520633,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0018189386705144096,
+      "maxAbsoluteSemitones": 0.006994570680647289,
+      "medianConfidence": 0.9998953342437744
+    },
+    {
+      "frequency": 68.38833158970894,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0009635800995974518,
+      "maxAbsoluteSemitones": 0.002979186601313125,
+      "medianConfidence": 0.999494194984436
+    },
+    {
+      "frequency": 70.55033078892193,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0004792756951505245,
+      "maxAbsoluteSemitones": 0.0011925373496801581,
+      "medianConfidence": 0.999268114566803
+    },
+    {
+      "frequency": 72.78067849772334,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0018265972210589091,
+      "maxAbsoluteSemitones": 0.0035248754945419033,
+      "medianConfidence": 0.999363899230957
+    },
+    {
+      "frequency": 75.08153545639684,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.002294162651008966,
+      "maxAbsoluteSemitones": 0.0036172992190906823,
+      "medianConfidence": 0.9996386766433716
+    },
+    {
+      "frequency": 77.45513071393687,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0016966540441849124,
+      "maxAbsoluteSemitones": 0.0025903313401250327,
+      "medianConfidence": 0.9997652769088745
+    },
+    {
+      "frequency": 79.90376378753076,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00046306253744055634,
+      "maxAbsoluteSemitones": 0.0008064457339767531,
+      "medianConfidence": 0.999744176864624
+    },
+    {
+      "frequency": 82.4298068903097,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0007523106663633853,
+      "maxAbsoluteSemitones": 0.0011366026717025614,
+      "medianConfidence": 0.9998213052749634
+    },
+    {
+      "frequency": 85.03570722952699,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0010756343149984633,
+      "maxAbsoluteSemitones": 0.0018565854318055935,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 87.7239893773899,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0009986230765084239,
+      "maxAbsoluteSemitones": 0.0015384569158593637,
+      "medianConfidence": 0.9999985694885254
+    },
+    {
+      "frequency": 90.49725771684189,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0003195395931581698,
+      "maxAbsoluteSemitones": 0.0004956072016249375,
+      "medianConfidence": 0.9999508857727051
+    },
+    {
+      "frequency": 93.3581989646647,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0003501618742794197,
+      "maxAbsoluteSemitones": 0.0005742105559955962,
+      "medianConfidence": 0.999887228012085
+    },
+    {
+      "frequency": 96.30958477434484,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0005422691816721429,
+      "maxAbsoluteSemitones": 0.0009080117542276473,
+      "medianConfidence": 0.9999218583106995
+    },
+    {
+      "frequency": 99.35427442122602,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00033440090816211885,
+      "maxAbsoluteSemitones": 0.0006560195642229063,
+      "medianConfidence": 0.9999645352363586
+    },
+    {
+      "frequency": 102.49521757254858,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.817515268258347e-06,
+      "maxAbsoluteSemitones": 1.5260868781395104e-05,
+      "medianConfidence": 0.999919056892395
+    },
+    {
+      "frequency": 105.73545714506008,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00015115082224296606,
+      "maxAbsoluteSemitones": 0.0004607525305367461,
+      "medianConfidence": 0.9999402761459351
+    },
+    {
+      "frequency": 109.07813225296451,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00013991809292140614,
+      "maxAbsoluteSemitones": 0.00044324335523511743,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 110,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00012067553986122988,
+      "maxAbsoluteSemitones": 0.0003938420445581925,
+      "medianConfidence": 0.999987006187439
+    },
+    {
+      "frequency": 112.5264812490678,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.644587503815434e-05,
+      "maxAbsoluteSemitones": 0.00010793083071078742,
+      "medianConfidence": 0.9999600648880005
+    },
+    {
+      "frequency": 116.0838448620639,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00013515699040018725,
+      "maxAbsoluteSemitones": 0.0002613751916813098,
+      "medianConfidence": 0.9999608397483826
+    },
+    {
+      "frequency": 119.75366943300149,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00017922991137826755,
+      "maxAbsoluteSemitones": 0.0002933437948097053,
+      "medianConfidence": 0.9999946355819702
+    },
+    {
+      "frequency": 123.5395102540681,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.133897067140884e-05,
+      "maxAbsoluteSemitones": 4.951453443641524e-05,
+      "medianConfidence": 0.9999874830245972
+    },
+    {
+      "frequency": 127.44503501292398,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00013110325266487492,
+      "maxAbsoluteSemitones": 0.00018589697267568575,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 131.4740273459241,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00011624835604205532,
+      "maxAbsoluteSemitones": 0.00016648023721870667,
+      "medianConfidence": 0.9999963045120239
+    },
+    {
+      "frequency": 135.6303905036703,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.8946980128020125e-05,
+      "maxAbsoluteSemitones": 3.169286281303236e-05,
+      "medianConfidence": 0.9999910593032837
+    },
+    {
+      "frequency": 139.91815113244397,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.900129302524877e-05,
+      "maxAbsoluteSemitones": 0.0001358470112211107,
+      "medianConfidence": 0.9999963045120239
+    },
+    {
+      "frequency": 144.3414631751846,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.037067829422591e-05,
+      "maxAbsoluteSemitones": 4.233242020603524e-05,
+      "medianConfidence": 0.9999920129776001
+    },
+    {
+      "frequency": 148.90461189579094,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.30627473785649e-05,
+      "maxAbsoluteSemitones": 7.742927448644896e-05,
+      "medianConfidence": 0.9999906420707703
+    },
+    {
+      "frequency": 153.61201803064475,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.977645693017073e-05,
+      "maxAbsoluteSemitones": 6.055674744449059e-05,
+      "medianConfidence": 0.9999964833259583
+    },
+    {
+      "frequency": 158.46824207138027,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.7857481654574855e-05,
+      "maxAbsoluteSemitones": 3.2152269044726554e-05,
+      "medianConfidence": 0.9999919533729553
+    },
+    {
+      "frequency": 163.47798868304585,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.474201689087714e-05,
+      "maxAbsoluteSemitones": 5.4187229642246545e-05,
+      "medianConfidence": 0.9999993443489075
+    },
+    {
+      "frequency": 168.64611126194018,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.331430343899105e-05,
+      "maxAbsoluteSemitones": 1.9505188910868536e-05,
+      "medianConfidence": 0.9999982118606567
+    },
+    {
+      "frequency": 173.97761663753803,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.8976857555304818e-05,
+      "maxAbsoluteSemitones": 4.264236883956225e-05,
+      "medianConfidence": 0.9999998211860657
+    },
+    {
+      "frequency": 179.47766992305984,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.207187352277634e-06,
+      "maxAbsoluteSemitones": 1.556647425440553e-05,
+      "medianConfidence": 0.9999963045120239
+    },
+    {
+      "frequency": 185.15159951938662,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.4590114883228951e-05,
+      "maxAbsoluteSemitones": 2.8212418039665764e-05,
+      "medianConfidence": 0.9999994039535522
+    },
+    {
+      "frequency": 191.00490227716523,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.7678740581931587e-06,
+      "maxAbsoluteSemitones": 1.4211510591439703e-05,
+      "medianConfidence": 0.9999973773956299
+    },
+    {
+      "frequency": 197.0432488221059,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.497609046825399e-06,
+      "maxAbsoluteSemitones": 1.561208274485456e-05,
+      "medianConfidence": 0.9999988675117493
+    },
+    {
+      "frequency": 203.2724890486333,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.301889082130732e-06,
+      "maxAbsoluteSemitones": 1.7099259543228614e-05,
+      "medianConfidence": 0.9999986886978149
+    },
+    {
+      "frequency": 209.6986577872094,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.480979843257472e-06,
+      "maxAbsoluteSemitones": 4.077447826213864e-06,
+      "medianConfidence": 0.9999992847442627
+    },
+    {
+      "frequency": 216.32798065082198,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.986132452964959e-06,
+      "maxAbsoluteSemitones": 1.5312938592267403e-05,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 220,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.401503031777446e-06,
+      "maxAbsoluteSemitones": 6.0037569509855465e-06,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 223.16688006630096,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.9630381793673435e-06,
+      "maxAbsoluteSemitones": 6.690372185627095e-06,
+      "medianConfidence": 0.9999988675117493
+    },
+    {
+      "frequency": 230.2219814963057,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.4006289227727978e-06,
+      "maxAbsoluteSemitones": 5.4839973280515445e-06,
+      "medianConfidence": 0.9999994039535522
+    },
+    {
+      "frequency": 237.5001198580131,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.0632859155696365e-06,
+      "maxAbsoluteSemitones": 7.6246604911483815e-06,
+      "medianConfidence": 0.9999997615814209
+    },
+    {
+      "frequency": 245.00834614472203,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.9175259395105527e-08,
+      "maxAbsoluteSemitones": 4.2835820556351245e-06,
+      "medianConfidence": 0.9999991655349731
+    },
+    {
+      "frequency": 252.75393425678945,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.731722797757846e-07,
+      "maxAbsoluteSemitones": 8.731722797757846e-07,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 260.74438804851974,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.2704510123836295e-06,
+      "maxAbsoluteSemitones": 5.860748417984903e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 268.98744859782835,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.3697950862312972e-06,
+      "maxAbsoluteSemitones": 7.2980889081923845e-06,
+      "medianConfidence": 0.9999997615814209
+    },
+    {
+      "frequency": 277.4911017057271,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.102974196936443e-06,
+      "maxAbsoluteSemitones": 3.006929449944266e-06,
+      "medianConfidence": 0.9999995827674866
+    },
+    {
+      "frequency": 286.2635856328945,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.211704892445634e-07,
+      "maxAbsoluteSemitones": 3.211704892445634e-07,
+      "medianConfidence": 0.9999995827674866
+    },
+    {
+      "frequency": 295.31339908082595,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.248965124993716e-07,
+      "maxAbsoluteSemitones": 2.753205093044829e-06,
+      "medianConfidence": 0.9999997615814209
+    },
+    {
+      "frequency": 304.64930942529867,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.906733930033416e-07,
+      "maxAbsoluteSemitones": 2.4777781296343006e-06,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 314.280361210124,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.4728510671992835e-06,
+      "maxAbsoluteSemitones": 1.889310636156875e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 324.2158849094167,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.4393751101974392e-06,
+      "maxAbsoluteSemitones": 1.819753969004065e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 334.4655059668743,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.746422728016172e-07,
+      "maxAbsoluteSemitones": 3.633895654052488e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 345.03915412081676,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.5278034629538638e-06,
+      "maxAbsoluteSemitones": 1.5278034629538638e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 355.9470730240258,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.6183669871054174e-07,
+      "maxAbsoluteSemitones": 4.6183669871054174e-07,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 367.19983016770146,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.026516780088562e-08,
+      "maxAbsoluteSemitones": 2.827354142160181e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 378.80832711914866,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.0278508080713166e-06,
+      "maxAbsoluteSemitones": 1.0278508080713166e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 390.78381008311726,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.5033498562504877e-07,
+      "maxAbsoluteSemitones": 4.206265324258347e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 403.1378807970202,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.4127118858135606e-06,
+      "maxAbsoluteSemitones": 1.4127118858135606e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 415.8825077705888,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.2518030078023151e-06,
+      "maxAbsoluteSemitones": 1.2518030078023151e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 429.03003788085664,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.4638323870218793e-07,
+      "maxAbsoluteSemitones": 3.4638323870218793e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 440,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0,
+      "maxAbsoluteSemitones": 0.0,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 442.5932083336987,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.4929554757406214e-06,
+      "maxAbsoluteSemitones": 1.4929554757406214e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 456.5851590035193,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.7470108387436529e-06,
+      "maxAbsoluteSemitones": 1.7470108387436529e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 471.0194451630416,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.008948390160721e-07,
+      "maxAbsoluteSemitones": 2.008948390160721e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 485.9100506155287,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.6728890880009732e-06,
+      "maxAbsoluteSemitones": 1.6728890880009732e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 501.2714012421665,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.9079694467837573e-07,
+      "maxAbsoluteSemitones": 2.9079694467837573e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 517.1183789777226,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.0649424370522844e-06,
+      "maxAbsoluteSemitones": 1.0649424370522844e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 533.466336228026,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.0839435497710234e-06,
+      "maxAbsoluteSemitones": 1.0839435497710234e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 550.3311107432388,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.7634040066088922e-06,
+      "maxAbsoluteSemitones": 1.7634040066088922e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 567.729040961322,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.1299581270830186e-06,
+      "maxAbsoluteSemitones": 1.1299581270830186e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 585.67698183656,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.946363382433283e-07,
+      "maxAbsoluteSemitones": 5.946363382433283e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 604.1923211684918,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.7314367809353752e-06,
+      "maxAbsoluteSemitones": 1.7314367809353752e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 623.2929964470426,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.259862755708062e-07,
+      "maxAbsoluteSemitones": 9.259862755708062e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 642.9975122302046,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.9502474113791077e-07,
+      "maxAbsoluteSemitones": 3.9502474113791077e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 663.3249580710803,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.8006467519124088e-07,
+      "maxAbsoluteSemitones": 1.8006467519124088e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 684.2950270116623,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.1157472789920612e-06,
+      "maxAbsoluteSemitones": 1.1157472789920612e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 705.9280346612785,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.1135912517297382e-06,
+      "maxAbsoluteSemitones": 3.1135912517297382e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 728.2449388781575,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.564986681665134e-06,
+      "maxAbsoluteSemitones": 1.564986681665134e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 751.267360073213,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.053092406455232e-07,
+      "maxAbsoluteSemitones": 8.053092406455232e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 775.0176021557027,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.2636042738771273e-06,
+      "maxAbsoluteSemitones": 3.2636042738771273e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 799.5186741410397,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.586581869733155e-06,
+      "maxAbsoluteSemitones": 2.586581869733155e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 824.7943124417236,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.927472256894578e-08,
+      "maxAbsoluteSemitones": 1.927472256894578e-08,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 850.8690038629541,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.429337925326921e-07,
+      "maxAbsoluteSemitones": 9.429337925326921e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 877.7680093252188,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.4855976836444753e-06,
+      "maxAbsoluteSemitones": 2.4855976836444753e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 880,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0,
+      "maxAbsoluteSemitones": 0.0,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 905.5173883368496,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.2776437176032433e-07,
+      "maxAbsoluteSemitones": 1.2776437176032433e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 934.1440242402224,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.177526538911782e-06,
+      "maxAbsoluteSemitones": 4.177526538911782e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 963.6756502560961,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.449783275369152e-06,
+      "maxAbsoluteSemitones": 3.449783275369152e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 994.1408763513073,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.251347670888593e-06,
+      "maxAbsoluteSemitones": 2.251347670888593e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 1025.5692169558295,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.1734070147234e-06,
+      "maxAbsoluteSemitones": 4.1734070147234e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 1057.991119556091,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.4996615782105353e-06,
+      "maxAbsoluteSemitones": 2.4996615782105353e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 1091.4379941922161,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.375948055188742e-08,
+      "maxAbsoluteSemitones": 9.375948055188742e-08,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 1125.9422438877762,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.371661028836538e-06,
+      "maxAbsoluteSemitones": 5.371661028836538e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 1161.5372960415527,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.782205263191424e-06,
+      "maxAbsoluteSemitones": 2.782205263191424e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 1198.2576348116797,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.330890717826991e-06,
+      "maxAbsoluteSemitones": 4.330890717826991e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 1236.1388345235819,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.697154897574805e-06,
+      "maxAbsoluteSemitones": 5.697154897574805e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 1275.2175941340627,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.405895765824259e-06,
+      "maxAbsoluteSemitones": 7.405895765824259e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 1315.531772784898,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.758813213046187e-06,
+      "maxAbsoluteSemitones": 2.758813213046187e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 1357.1204264804373,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.260842564038877e-07,
+      "maxAbsoluteSemitones": 7.260842564038877e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 1400.023845924696,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.874859066223841e-07,
+      "maxAbsoluteSemitones": 9.874859066223841e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 1444.2835955546107,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.612186940947086e-06,
+      "maxAbsoluteSemitones": 2.612186940947086e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 1489.9425538072994,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.105091291437447e-06,
+      "maxAbsoluteSemitones": 5.105091291437447e-06,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 1500,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.862175940215062e-06,
+      "maxAbsoluteSemitones": 9.862175940215062e-06,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 1537.0449546602763,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.4940515126319986e-06,
+      "maxAbsoluteSemitones": 4.4940515126319986e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 1585.6364304849292,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.478507911217095e-06,
+      "maxAbsoluteSemitones": 8.478507911217095e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 1635.7640562547508,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.65203566454517e-06,
+      "maxAbsoluteSemitones": 6.65203566454517e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 1687.4763951511165,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.7972589715617225e-06,
+      "maxAbsoluteSemitones": 5.7972589715617225e-06,
+      "medianConfidence": 0.9999997019767761
+    },
+    {
+      "frequency": 1740.8235456108662,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.908287766417777e-06,
+      "maxAbsoluteSemitones": 7.908287766417777e-06,
+      "medianConfidence": 0.9999998211860657
+    },
+    {
+      "frequency": 1795.857189861199,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.29730627673118e-06,
+      "maxAbsoluteSemitones": 9.29730627673118e-06,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 1852.6306439889327,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.1138438671706896e-05,
+      "maxAbsoluteSemitones": 1.1138438671706896e-05,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 1911.1989095926558,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.0492570840460845e-05,
+      "maxAbsoluteSemitones": 2.0492570840460845e-05,
+      "medianConfidence": 0.9999997615814209
+    },
+    {
+      "frequency": 1971.618727067745,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.703224532122186e-06,
+      "maxAbsoluteSemitones": 4.703224532122186e-06,
+      "medianConfidence": 0.999999463558197
+    },
+    {
+      "frequency": 2000,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.47932533754262e-05,
+      "maxAbsoluteSemitones": 1.47932533754262e-05,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 2033.948630575948,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.785219676805954e-05,
+      "maxAbsoluteSemitones": 1.785219676805954e-05,
+      "medianConfidence": 0.9999997615814209
+    },
+    {
+      "frequency": 2098.2490047527517,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.197267937238087e-06,
+      "maxAbsoluteSemitones": 6.197267937238087e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 2164.5821432074326,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.962477483520888e-06,
+      "maxAbsoluteSemitones": 4.962477483520888e-06,
+      "medianConfidence": 0.9999991655349731
+    },
+    {
+      "frequency": 2200,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.729081438878335e-05,
+      "maxAbsoluteSemitones": 1.729081438878335e-05,
+      "medianConfidence": 0.9999998211860657
+    },
+    {
+      "frequency": 2233.0123088725545,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.89566349841276e-07,
+      "maxAbsoluteSemitones": 7.89566349841276e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 2303.605796261297,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.530492852869073e-05,
+      "maxAbsoluteSemitones": 1.530492852869073e-05,
+      "medianConfidence": 0.9999991655349731
+    },
+    {
+      "frequency": 2376.430995692957,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.6041144986408537e-05,
+      "maxAbsoluteSemitones": 2.6041144986408537e-05,
+      "medianConfidence": 0.9999997019767761
+    },
+    {
+      "frequency": 2451.558459548886,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.67262834467348e-06,
+      "maxAbsoluteSemitones": 7.67262834467348e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 2500,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.521593094608977e-05,
+      "maxAbsoluteSemitones": 1.521593094608977e-05,
+      "medianConfidence": 0.9999987483024597
+    },
+    {
+      "frequency": 2529.0609706229557,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.2982901802163384e-05,
+      "maxAbsoluteSemitones": 3.2982901802163384e-05,
+      "medianConfidence": 0.9999995231628418
+    },
+    {
+      "frequency": 2609.0136126328703,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.200725723330843e-05,
+      "maxAbsoluteSemitones": 3.200725723330843e-05,
+      "medianConfidence": 0.9999988079071045
+    },
+    {
+      "frequency": 2691.4938429605963,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.85001917754766e-05,
+      "maxAbsoluteSemitones": 1.85001917754766e-05,
+      "medianConfidence": 0.9999982118606567
+    },
+    {
+      "frequency": 2776.5815676923257,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.0809893747228867e-05,
+      "maxAbsoluteSemitones": 1.0809893747228867e-05,
+      "medianConfidence": 0.9999979734420776
+    },
+    {
+      "frequency": 2864.359219030782,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.152052060631141e-05,
+      "maxAbsoluteSemitones": 3.152052060631141e-05,
+      "medianConfidence": 0.9999980926513672
+    },
+    {
+      "frequency": 2954.9118351547704,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.274789435599556e-05,
+      "maxAbsoluteSemitones": 5.274789435599556e-05,
+      "medianConfidence": 0.9999987483024597
+    },
+    {
+      "frequency": 3048.327142603367,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.463054942550267e-05,
+      "maxAbsoluteSemitones": 3.463054942550267e-05,
+      "medianConfidence": 0.9999997019767761
+    },
+    {
+      "frequency": 3144.6956412646136,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.0447374517527134e-05,
+      "maxAbsoluteSemitones": 3.0447374517527134e-05,
+      "medianConfidence": 0.9999998211860657
+    },
+    {
+      "frequency": 3200,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.962475741033464e-05,
+      "maxAbsoluteSemitones": 3.962475741033464e-05,
+      "medianConfidence": 0.9999997019767761
+    },
+    {
+      "frequency": 3244.1106920509355,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.072049065065323e-05,
+      "maxAbsoluteSemitones": 6.072049065065323e-05,
+      "medianConfidence": 0.9999973177909851
+    },
+    {
+      "frequency": 3346.668607346349,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.402832826671716e-05,
+      "maxAbsoluteSemitones": 7.402832826671716e-05,
+      "medianConfidence": 0.9999980330467224
+    },
+    {
+      "frequency": 3452.4687443130315,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.165258072654369e-05,
+      "maxAbsoluteSemitones": 4.165258072654369e-05,
+      "medianConfidence": 0.9999997615814209
+    },
+    {
+      "frequency": 3561.613601147581,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.5289423354678934e-05,
+      "maxAbsoluteSemitones": 2.5289423354678934e-05,
+      "medianConfidence": 0.9999943971633911
+    },
+    {
+      "frequency": 3674.208916380358,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.921801329757369e-06,
+      "maxAbsoluteSemitones": 4.921801329757369e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 3790.363771313988,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.903678804306978e-05,
+      "maxAbsoluteSemitones": 3.903678804306978e-05,
+      "medianConfidence": 0.999993085861206
+    },
+    {
+      "frequency": 3910.190695700303,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.692074247444636e-05,
+      "maxAbsoluteSemitones": 6.692074247444636e-05,
+      "medianConfidence": 0.9999994039535522
+    },
+    {
+      "frequency": 4000,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.128625312341589e-05,
+      "maxAbsoluteSemitones": 6.128625312341589e-05,
+      "medianConfidence": 0.999999463558197
+    },
+    {
+      "frequency": 4033.805776758171,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00013250772348384637,
+      "maxAbsoluteSemitones": 0.00013250772348384637,
+      "medianConfidence": 0.9999964237213135
+    },
+    {
+      "frequency": 4161.328771637671,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00011513016984081533,
+      "maxAbsoluteSemitones": 0.00011513016984081533,
+      "medianConfidence": 0.9999922513961792
+    },
+    {
+      "frequency": 4292.883223439737,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.120082316548461e-05,
+      "maxAbsoluteSemitones": 7.120082316548461e-05,
+      "medianConfidence": 0.999999463558197
+    },
+    {
+      "frequency": 4428.596580903604,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0001332301253799766,
+      "maxAbsoluteSemitones": 0.0001332301253799766,
+      "medianConfidence": 0.9999978542327881
+    },
+    {
+      "frequency": 4568.600321877913,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0001544254416680085,
+      "maxAbsoluteSemitones": 0.0001544254416680085,
+      "medianConfidence": 0.9999887943267822
+    },
+    {
+      "frequency": 4713.030080695284,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00012805313262363583,
+      "maxAbsoluteSemitones": 0.00012805313262363583,
+      "medianConfidence": 0.9999851584434509
+    },
+    {
+      "frequency": 4862.02577957359,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00022637484824955005,
+      "maxAbsoluteSemitones": 0.00022637484824955005,
+      "medianConfidence": 0.9999918341636658
+    },
+    {
+      "frequency": 5015.7317641712925,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00019945558325249626,
+      "maxAbsoluteSemitones": 0.00019945558325249626,
+      "medianConfidence": 0.9999964833259583
+    },
+    {
+      "frequency": 5174.296943428238,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00012719982139595444,
+      "maxAbsoluteSemitones": 0.00012719982139595444,
+      "medianConfidence": 0.9999988079071045
+    },
+    {
+      "frequency": 5337.8749338271955,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.781297788597243e-05,
+      "maxAbsoluteSemitones": 7.781297788597243e-05,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 5506.624208216124,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.62181677255557e-05,
+      "maxAbsoluteSemitones": 5.62181677255557e-05,
+      "medianConfidence": 0.9999997615814209
+    },
+    {
+      "frequency": 5680.7082493352345,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.896434718336761e-05,
+      "maxAbsoluteSemitones": 9.896434718336761e-05,
+      "medianConfidence": 0.9999994039535522
+    },
+    {
+      "frequency": 5860.295708197495,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00020394884254351512,
+      "maxAbsoluteSemitones": 0.00020394884254351512,
+      "medianConfidence": 0.999997615814209
+    },
+    {
+      "frequency": 6000,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0003226309432974661,
+      "maxAbsoluteSemitones": 0.0003226309432974661,
+      "medianConfidence": 0.9999650716781616
+    },
+    {
+      "frequency": 6045.560567476211,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00036068942638383685,
+      "maxAbsoluteSemitones": 0.00036068942638383685,
+      "medianConfidence": 0.999991774559021
+    },
+    {
+      "frequency": 6236.682310057867,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00048743959452325343,
+      "maxAbsoluteSemitones": 0.00048743959452325343,
+      "medianConfidence": 0.9999774694442749
+    },
+    {
+      "frequency": 6433.846092923411,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00035238081835635865,
+      "maxAbsoluteSemitones": 0.00035238081835635865,
+      "medianConfidence": 0.9999505877494812
+    },
+    {
+      "frequency": 6637.242926526722,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00036745901613213105,
+      "maxAbsoluteSemitones": 0.00036745901613213105,
+      "medianConfidence": 0.99994295835495
+    },
+    {
+      "frequency": 6847.069859843697,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0006124551779775858,
+      "maxAbsoluteSemitones": 0.0006124551779775858,
+      "medianConfidence": 0.999976634979248
+    },
+    {
+      "frequency": 7063.5301712715045,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00010027702396824394,
+      "maxAbsoluteSemitones": 0.00010027702396824394,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 7286.833565562878,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.000690067278376752,
+      "maxAbsoluteSemitones": 0.000690067278376752,
+      "medianConfidence": 0.999976634979248
+    },
+    {
+      "frequency": 7500,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00016568530143410722,
+      "maxAbsoluteSemitones": 0.00016568530143410722,
+      "medianConfidence": 0.9998877644538879
+    },
+    {
+      "frequency": 7517.196376986049,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.000268557409966995,
+      "maxAbsoluteSemitones": 0.000268557409966995,
+      "medianConfidence": 0.9998913407325745
+    },
+    {
+      "frequency": 7754.841778907439,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0009134594994019796,
+      "maxAbsoluteSemitones": 0.0009134594994019796,
+      "medianConfidence": 0.9999566674232483
+    },
+    {
+      "frequency": 8000,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00026627662676308064,
+      "maxAbsoluteSemitones": 0.00026627662676308064,
+      "medianConfidence": 0.9999979734420776
+    },
+    {
+      "frequency": 8100,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0009852017290463602,
+      "maxAbsoluteSemitones": 0.0009852017290463602,
+      "medianConfidence": 0.9999595880508423
+    },
+    {
+      "frequency": 8500,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 12.000041769254237,
+      "maxAbsoluteSemitones": 12.000041769254237,
+      "medianConfidence": 0.9998076558113098
+    },
+    {
+      "frequency": 9000,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 11.99936507554424,
+      "maxAbsoluteSemitones": 11.99936507554424,
+      "medianConfidence": 0.9999497532844543
+    }
+  ],
+  "harmonicTones": [
+    {
+      "frequency": 55.0,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.010800392735929514,
+      "maxAbsoluteSemitones": 0.026482723616500302,
+      "medianConfidence": 0.9415324926376343
+    },
+    {
+      "frequency": 57.75939592512717,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.009371096823888952,
+      "maxAbsoluteSemitones": 0.023463445594657455,
+      "medianConfidence": 0.9698573350906372
+    },
+    {
+      "frequency": 60.657233047919945,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00832033614528029,
+      "maxAbsoluteSemitones": 0.01539402991757901,
+      "medianConfidence": 0.9808396697044373
+    },
+    {
+      "frequency": 63.700457078863934,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0063285846518077015,
+      "maxAbsoluteSemitones": 0.011322128342276458,
+      "medianConfidence": 0.9882532358169556
+    },
+    {
+      "frequency": 66.89636220053944,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.004036736530880202,
+      "maxAbsoluteSemitones": 0.006565760366547901,
+      "medianConfidence": 0.9977188110351562
+    },
+    {
+      "frequency": 70.25260855075761,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0018454031801329496,
+      "maxAbsoluteSemitones": 0.0028014184423667274,
+      "medianConfidence": 0.9979244470596313
+    },
+    {
+      "frequency": 73.7772405828397,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0002139397087429463,
+      "maxAbsoluteSemitones": 0.00042157852113824663,
+      "medianConfidence": 0.9980243444442749
+    },
+    {
+      "frequency": 77.47870634704724,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0008182687983823095,
+      "maxAbsoluteSemitones": 0.0011336318031398194,
+      "medianConfidence": 0.997773289680481
+    },
+    {
+      "frequency": 81.36587773937754,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0012629425749488183,
+      "maxAbsoluteSemitones": 0.001834977247964198,
+      "medianConfidence": 0.9982336759567261
+    },
+    {
+      "frequency": 85.44807176625811,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0007569199966663809,
+      "maxAbsoluteSemitones": 0.0015143947373468963,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 89.73507287610877,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0007455516371549327,
+      "maxAbsoluteSemitones": 0.0011046685708997748,
+      "medianConfidence": 0.9996969699859619
+    },
+    {
+      "frequency": 94.23715641129647,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0002557917433027841,
+      "maxAbsoluteSemitones": 0.00036661324381914,
+      "medianConfidence": 0.9995777606964111
+    },
+    {
+      "frequency": 98.9651132366947,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.719155041452632e-05,
+      "maxAbsoluteSemitones": 0.00015524875936695064,
+      "medianConfidence": 0.9994305968284607
+    },
+    {
+      "frequency": 103.93027560387806,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0002644512860181474,
+      "maxAbsoluteSemitones": 0.00042839779759896795,
+      "medianConfidence": 0.9994508624076843
+    },
+    {
+      "frequency": 109.14454431294499,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0002129886771403567,
+      "maxAbsoluteSemitones": 0.00037670485802651405,
+      "medianConfidence": 0.9997236728668213
+    },
+    {
+      "frequency": 114.62041723707236,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.412144310095598e-05,
+      "maxAbsoluteSemitones": 0.00017938736745826394,
+      "medianConfidence": 0.9998470544815063
+    },
+    {
+      "frequency": 120.37101927816963,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.613598804467016e-06,
+      "maxAbsoluteSemitones": 2.9364910238122105e-05,
+      "medianConfidence": 0.9996755123138428
+    },
+    {
+      "frequency": 126.41013382543487,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.2253855532825305e-05,
+      "maxAbsoluteSemitones": 0.00013694254408411628,
+      "medianConfidence": 0.9997572302818298
+    },
+    {
+      "frequency": 132.75223579221088,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.8753747359399166e-05,
+      "maxAbsoluteSemitones": 0.0001223296893351522,
+      "medianConfidence": 0.9999582171440125
+    },
+    {
+      "frequency": 139.41252631032987,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.859781674979157e-06,
+      "maxAbsoluteSemitones": 2.7808227628185536e-05,
+      "medianConfidence": 0.9998819828033447
+    },
+    {
+      "frequency": 146.406969165101,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.6828078528052213e-05,
+      "maxAbsoluteSemitones": 5.617081521616905e-05,
+      "medianConfidence": 0.9998819828033447
+    },
+    {
+      "frequency": 153.7523290582718,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.5844874839007705e-05,
+      "maxAbsoluteSemitones": 5.607473807272539e-05,
+      "medianConfidence": 0.9999831318855286
+    },
+    {
+      "frequency": 161.46621179067563,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.362184863659051e-06,
+      "maxAbsoluteSemitones": 1.2015222510862396e-05,
+      "medianConfidence": 0.9999925494194031
+    },
+    {
+      "frequency": 169.56710646087393,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.1810331993913517e-05,
+      "maxAbsoluteSemitones": 3.2542635026597565e-05,
+      "medianConfidence": 0.99997878074646
+    },
+    {
+      "frequency": 178.074429780942,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.508654416082115e-05,
+      "maxAbsoluteSemitones": 2.3483287672817918e-05,
+      "medianConfidence": 0.9999990463256836
+    },
+    {
+      "frequency": 187.00857261561237,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.976335616710187e-06,
+      "maxAbsoluteSemitones": 6.8015048611568525e-06,
+      "medianConfidence": 0.99997478723526
+    },
+    {
+      "frequency": 196.39094885632807,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.04591559316695e-05,
+      "maxAbsoluteSemitones": 1.6442837149005004e-05,
+      "medianConfidence": 0.9999898076057434
+    },
+    {
+      "frequency": 206.24404674734652,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.9515613330042264e-07,
+      "maxAbsoluteSemitones": 1.9515613330042264e-07,
+      "medianConfidence": 0.9999828934669495
+    },
+    {
+      "frequency": 216.59148278691669,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.9465761686957324e-06,
+      "maxAbsoluteSemitones": 9.249900822985673e-06,
+      "medianConfidence": 0.9999927282333374
+    },
+    {
+      "frequency": 227.4580583327251,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.5224461720888946e-06,
+      "maxAbsoluteSemitones": 1.9616952610745803e-06,
+      "medianConfidence": 0.9999892115592957
+    },
+    {
+      "frequency": 238.86981904728265,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.7018835077667416e-06,
+      "maxAbsoluteSemitones": 6.125469426172767e-06,
+      "medianConfidence": 0.9999961853027344
+    },
+    {
+      "frequency": 250.8541173257359,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.5621666242542385e-06,
+      "maxAbsoluteSemitones": 2.5621666242542385e-06,
+      "medianConfidence": 0.9999995231628418
+    },
+    {
+      "frequency": 263.4396778557362,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.2755504180616676e-06,
+      "maxAbsoluteSemitones": 1.2755504180616676e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 276.65666646649845,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.235143529588432e-06,
+      "maxAbsoluteSemitones": 1.235143529588432e-06,
+      "medianConfidence": 0.9999966621398926
+    },
+    {
+      "frequency": 290.53676243207894,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.1481317184649145e-06,
+      "maxAbsoluteSemitones": 2.488796555692729e-06,
+      "medianConfidence": 0.9999971389770508
+    },
+    {
+      "frequency": 305.1132344021646,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.6581790754069496e-06,
+      "maxAbsoluteSemitones": 2.6581790754069496e-06,
+      "medianConfidence": 0.9999992847442627
+    },
+    {
+      "frequency": 320.42102014237724,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.3174722557867245e-06,
+      "maxAbsoluteSemitones": 3.3174722557867245e-06,
+      "medianConfidence": 0.9999980330467224
+    },
+    {
+      "frequency": 336.49681027521314,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.178633749853938e-07,
+      "maxAbsoluteSemitones": 8.178633749853938e-07,
+      "medianConfidence": 0.9999997615814209
+    },
+    {
+      "frequency": 353.379136222335,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.941164048338705e-07,
+      "maxAbsoluteSemitones": 6.941164048338705e-07,
+      "medianConfidence": 0.9999997615814209
+    },
+    {
+      "frequency": 371.10846255900555,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.7033320441128593e-06,
+      "maxAbsoluteSemitones": 2.7033320441128593e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 389.7272840020149,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.850785171066827e-07,
+      "maxAbsoluteSemitones": 4.850785171066827e-07,
+      "medianConfidence": 0.9999997019767761
+    },
+    {
+      "frequency": 409.2802272635795,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.622551158240822e-07,
+      "maxAbsoluteSemitones": 6.622551158240822e-07,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 429.8141580153291,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.0529650052872887e-06,
+      "maxAbsoluteSemitones": 2.0529650052872887e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 451.37829321877365,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.0677063401556227e-06,
+      "maxAbsoluteSemitones": 2.2381896396660354e-06,
+      "medianConfidence": 0.9999997615814209
+    },
+    {
+      "frequency": 474.0243190914783,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.2394073741836982e-06,
+      "maxAbsoluteSemitones": 1.2394073741836982e-06,
+      "medianConfidence": 0.9999997019767761
+    },
+    {
+      "frequency": 497.8065149916999,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.1852282355572294e-06,
+      "maxAbsoluteSemitones": 1.1852282355572294e-06,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 522.7818835184243,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.671891858716254e-07,
+      "maxAbsoluteSemitones": 7.671891858716254e-07,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 549.0102871386254,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.767252808255603e-07,
+      "maxAbsoluteSemitones": 8.767252808255603e-07,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 576.5545916692296,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.879009267671857e-07,
+      "maxAbsoluteSemitones": 7.879009267671857e-07,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 605.4808169576917,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.005082881154633e-06,
+      "maxAbsoluteSemitones": 4.005082881154633e-06,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 635.8582951223408,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.1511460773538938e-06,
+      "maxAbsoluteSemitones": 1.1511460773538938e-06,
+      "medianConfidence": 0.9999998211860657
+    },
+    {
+      "frequency": 667.7598367317756,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.9036777008502032e-06,
+      "maxAbsoluteSemitones": 2.9036777008502032e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 701.261905321616,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.0991703872678472e-06,
+      "maxAbsoluteSemitones": 3.0991703872678472e-06,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 736.4448006669135,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.536564394210619e-07,
+      "maxAbsoluteSemitones": 5.536564394210619e-07,
+      "medianConfidence": 0.9999995827674866
+    },
+    {
+      "frequency": 773.3928512494842,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.488015085442032e-07,
+      "maxAbsoluteSemitones": 6.488015085442032e-07,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 812.1946163814903,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.731151066711886e-06,
+      "maxAbsoluteSemitones": 5.731151066711886e-06,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 852.9430984697309,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.331618304731994e-06,
+      "maxAbsoluteSemitones": 8.331618304731994e-06,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 895.735965929417,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.760678022459821e-08,
+      "maxAbsoluteSemitones": 7.760678022459821e-08,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 940.6757872816991,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.3576090952992836e-06,
+      "maxAbsoluteSemitones": 2.3576090952992836e-06,
+      "medianConfidence": 0.9999988675117493
+    },
+    {
+      "frequency": 987.8702769960787,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.93990370137973e-06,
+      "maxAbsoluteSemitones": 4.93990370137973e-06,
+      "medianConfidence": 0.9999988079071045
+    },
+    {
+      "frequency": 1037.4325536669369,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.770593972356165e-07,
+      "maxAbsoluteSemitones": 9.770593972356165e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 1089.4814111429885,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.15578952240524e-06,
+      "maxAbsoluteSemitones": 9.15578952240524e-06,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 1144.1416032595291,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.659804749693843e-05,
+      "maxAbsoluteSemitones": 1.659804749693843e-05,
+      "medianConfidence": 0.9999995827674866
+    },
+    {
+      "frequency": 1201.5441428559432,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.571121423478449e-05,
+      "maxAbsoluteSemitones": 2.571121423478449e-05,
+      "medianConfidence": 0.9999994039535522
+    },
+    {
+      "frequency": 1261.826615795164,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.6188380696520092e-05,
+      "maxAbsoluteSemitones": 2.6188380696520092e-05,
+      "medianConfidence": 0.9999991655349731
+    },
+    {
+      "frequency": 1325.1335107377495,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.798939170643303e-05,
+      "maxAbsoluteSemitones": 1.798939170643303e-05,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 1391.616565461007,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.630128080714359e-05,
+      "maxAbsoluteSemitones": 3.630128080714359e-05,
+      "medianConfidence": 0.9999982714653015
+    },
+    {
+      "frequency": 1461.4351305532348,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.278823238236669e-05,
+      "maxAbsoluteSemitones": 4.278823238236669e-05,
+      "medianConfidence": 0.9999969601631165
+    },
+    {
+      "frequency": 1534.7565513548045,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.6067524384693027e-05,
+      "maxAbsoluteSemitones": 1.6067524384693027e-05,
+      "medianConfidence": 0.9999998211860657
+    },
+    {
+      "frequency": 1611.7565690615431,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.646803263585956e-05,
+      "maxAbsoluteSemitones": 2.646803263585956e-05,
+      "medianConfidence": 0.9999910593032837
+    },
+    {
+      "frequency": 1692.6197419518217,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.002267125293747e-05,
+      "maxAbsoluteSemitones": 6.002267125293747e-05,
+      "medianConfidence": 0.9999969601631165
+    },
+    {
+      "frequency": 1777.5398877469434,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.399667252844221e-05,
+      "maxAbsoluteSemitones": 7.399667252844221e-05,
+      "medianConfidence": 0.9999955892562866
+    },
+    {
+      "frequency": 1866.7205481651247,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.7013376329424785e-06,
+      "maxAbsoluteSemitones": 3.7013376329424785e-06,
+      "medianConfidence": 0.9999812245368958
+    },
+    {
+      "frequency": 1960.3754767825399,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.522610711284387e-06,
+      "maxAbsoluteSemitones": 8.522610711284387e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 2058.7291513707764,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00012031658610971467,
+      "maxAbsoluteSemitones": 0.00012031658610971467,
+      "medianConfidence": 0.9999865889549255
+    },
+    {
+      "frequency": 2162.017311938651,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.952643822660543e-05,
+      "maxAbsoluteSemitones": 9.952643822660543e-05,
+      "medianConfidence": 0.9999747276306152
+    },
+    {
+      "frequency": 2270.4875257680665,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00015805737264223155,
+      "maxAbsoluteSemitones": 0.00015805737264223155,
+      "medianConfidence": 0.999981164932251
+    },
+    {
+      "frequency": 2384.3997807981827,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.684375157719713e-05,
+      "maxAbsoluteSemitones": 1.684375157719713e-05,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 2504.027108780159,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00010290058318183887,
+      "maxAbsoluteSemitones": 0.00010290058318183887,
+      "medianConfidence": 0.9999480247497559
+    },
+    {
+      "frequency": 2629.6562396960835,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0001045419992628006,
+      "maxAbsoluteSemitones": 0.0001045419992628006,
+      "medianConfidence": 0.9999974370002747
+    },
+    {
+      "frequency": 2761.5882890106745,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00017697681077494194,
+      "maxAbsoluteSemitones": 0.00017697681077494194,
+      "medianConfidence": 0.9999927282333374
+    },
+    {
+      "frequency": 2900.1394794029484,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0002700683252290063,
+      "maxAbsoluteSemitones": 0.0002700683252290063,
+      "medianConfidence": 0.9999825954437256
+    },
+    {
+      "frequency": 3045.6418987077664,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00015850761908419827,
+      "maxAbsoluteSemitones": 0.00015850761908419827,
+      "medianConfidence": 0.9999953508377075
+    },
+    {
+      "frequency": 3198.444295883961,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00032661661089934354,
+      "maxAbsoluteSemitones": 0.00032661661089934354,
+      "medianConfidence": 0.9999805688858032
+    },
+    {
+      "frequency": 3358.9129169168395,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.721267737766285e-05,
+      "maxAbsoluteSemitones": 8.721267737766285e-05,
+      "medianConfidence": 0.9998122453689575
+    },
+    {
+      "frequency": 3527.432382658611,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.391724162804178e-05,
+      "maxAbsoluteSemitones": 2.391724162804178e-05,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 3704.4066107107874,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0005892993478054079,
+      "maxAbsoluteSemitones": 0.0005892993478054079,
+      "medianConfidence": 0.9998074769973755
+    },
+    {
+      "frequency": 3890.2597835582305,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0007767279153835451,
+      "maxAbsoluteSemitones": 0.0007767279153835451,
+      "medianConfidence": 0.999803364276886
+    },
+    {
+      "frequency": 4085.437365275263,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0007692347235593191,
+      "maxAbsoluteSemitones": 0.0007692347235593191,
+      "medianConfidence": 0.9999299645423889
+    },
+    {
+      "frequency": 4290.4071692407715,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0006247978858644693,
+      "maxAbsoluteSemitones": 0.0006247978858644693,
+      "medianConfidence": 0.9999637603759766
+    },
+    {
+      "frequency": 4505.6604794214845,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0009030386177297672,
+      "maxAbsoluteSemitones": 0.0009030386177297672,
+      "medianConfidence": 0.9999250173568726
+    },
+    {
+      "frequency": 4638.413,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00022083619719684235,
+      "maxAbsoluteSemitones": 0.00022083619719684235,
+      "medianConfidence": 0.999996542930603
+    },
+    {
+      "frequency": 4731.713227910976,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0014832989251142323,
+      "maxAbsoluteSemitones": 0.0014832989251142323,
+      "medianConfidence": 0.9997029304504395
+    },
+    {
+      "frequency": 4969.107231546758,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.2571281022685625e-05,
+      "maxAbsoluteSemitones": 1.2571281022685625e-05,
+      "medianConfidence": 0.9990693926811218
+    },
+    {
+      "frequency": 5107.861,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0006145428483069336,
+      "maxAbsoluteSemitones": 0.0006145428483069336,
+      "medianConfidence": 0.9990596175193787
+    },
+    {
+      "frequency": 5218.411490569483,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0017135032333719614,
+      "maxAbsoluteSemitones": 0.0017135032333719614,
+      "medianConfidence": 0.9997754693031311
+    },
+    {
+      "frequency": 5480.223552437012,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.001929824444835364,
+      "maxAbsoluteSemitones": 0.001929824444835364,
+      "medianConfidence": 0.9997487664222717
+    },
+    {
+      "frequency": 5755.170944062117,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0025002438201830015,
+      "maxAbsoluteSemitones": 0.0025002438201830015,
+      "medianConfidence": 0.9990461468696594
+    },
+    {
+      "frequency": 5900.0,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.001447149324364703,
+      "maxAbsoluteSemitones": 0.001447149324364703,
+      "medianConfidence": 0.9998995661735535
+    },
+    {
+      "frequency": 5902.604,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0016240991775285092,
+      "maxAbsoluteSemitones": 0.0016240991775285092,
+      "medianConfidence": 0.9998719692230225
+    },
+    {
+      "frequency": 6000.0,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.002297733852519609,
+      "maxAbsoluteSemitones": 0.002297733852519609,
+      "medianConfidence": 0.9985896944999695
+    },
+    {
+      "frequency": 6043.912675906761,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.002573092347950821,
+      "maxAbsoluteSemitones": 0.002573092347950821,
+      "medianConfidence": 0.999638020992279
+    },
+    {
+      "frequency": 6347.1408215380525,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00319588315502494,
+      "maxAbsoluteSemitones": 0.00319588315502494,
+      "medianConfidence": 0.9994582533836365
+    },
+    {
+      "frequency": 6665.582176431882,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0014186805833718997,
+      "maxAbsoluteSemitones": 0.0014186805833718997,
+      "medianConfidence": 0.9973180294036865
+    },
+    {
+      "frequency": 7000.0,
+      "fundamentalAmplitude": 0.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.004198361420880701,
+      "maxAbsoluteSemitones": 0.004198361420880701,
+      "medianConfidence": 0.9992613196372986
+    },
+    {
+      "frequency": 55.0,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.015134283382261684,
+      "maxAbsoluteSemitones": 0.040396548095392545,
+      "medianConfidence": 0.9219897985458374
+    },
+    {
+      "frequency": 57.75939592512717,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.013256969945519871,
+      "maxAbsoluteSemitones": 0.03446042270151849,
+      "medianConfidence": 0.9584681987762451
+    },
+    {
+      "frequency": 60.657233047919945,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.011765574945625716,
+      "maxAbsoluteSemitones": 0.021671644896474128,
+      "medianConfidence": 0.9736074805259705
+    },
+    {
+      "frequency": 63.700457078863934,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.008970606092365292,
+      "maxAbsoluteSemitones": 0.015478344072021937,
+      "medianConfidence": 0.9841373562812805
+    },
+    {
+      "frequency": 66.89636220053944,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.005741673172282037,
+      "maxAbsoluteSemitones": 0.008991253833973735,
+      "medianConfidence": 0.997144341468811
+    },
+    {
+      "frequency": 70.25260855075761,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0025673054120011604,
+      "maxAbsoluteSemitones": 0.0040274923611096705,
+      "medianConfidence": 0.9973592758178711
+    },
+    {
+      "frequency": 73.7772405828397,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00026854366466487413,
+      "maxAbsoluteSemitones": 0.0006919733296591245,
+      "medianConfidence": 0.997527539730072
+    },
+    {
+      "frequency": 77.47870634704724,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.001126813198986135,
+      "maxAbsoluteSemitones": 0.0018393422545715716,
+      "medianConfidence": 0.9970271587371826
+    },
+    {
+      "frequency": 81.36587773937754,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0017929574893622037,
+      "maxAbsoluteSemitones": 0.002638623374541256,
+      "medianConfidence": 0.9974062442779541
+    },
+    {
+      "frequency": 85.44807176625811,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.001100098338458144,
+      "maxAbsoluteSemitones": 0.002177598822105475,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 89.73507287610877,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0010708284658719393,
+      "maxAbsoluteSemitones": 0.001586023186624355,
+      "medianConfidence": 0.9997223615646362
+    },
+    {
+      "frequency": 94.23715641129647,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0003362891194740977,
+      "maxAbsoluteSemitones": 0.0005696491971018275,
+      "medianConfidence": 0.9994711875915527
+    },
+    {
+      "frequency": 98.9651132366947,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00013389436136876587,
+      "maxAbsoluteSemitones": 0.00025581878425599304,
+      "medianConfidence": 0.999243974685669
+    },
+    {
+      "frequency": 103.93027560387806,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00037490891406693106,
+      "maxAbsoluteSemitones": 0.0006152224593139835,
+      "medianConfidence": 0.9992368221282959
+    },
+    {
+      "frequency": 109.14454431294499,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0003055661312570284,
+      "maxAbsoluteSemitones": 0.0005061889842172595,
+      "medianConfidence": 0.9996306300163269
+    },
+    {
+      "frequency": 114.62041723707236,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00012022275328243105,
+      "maxAbsoluteSemitones": 0.0002727263842306803,
+      "medianConfidence": 0.9998051524162292
+    },
+    {
+      "frequency": 120.37101927816963,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.4526923544265985e-05,
+      "maxAbsoluteSemitones": 5.131078539991038e-05,
+      "medianConfidence": 0.9995675086975098
+    },
+    {
+      "frequency": 126.41013382543487,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.158396857379079e-05,
+      "maxAbsoluteSemitones": 0.00019754582781689406,
+      "medianConfidence": 0.9996642470359802
+    },
+    {
+      "frequency": 132.75223579221088,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.6662911748042964e-05,
+      "maxAbsoluteSemitones": 0.00016809729611584143,
+      "medianConfidence": 0.9999478459358215
+    },
+    {
+      "frequency": 139.41252631032987,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.4211349240620811e-05,
+      "maxAbsoluteSemitones": 4.296696945394817e-05,
+      "medianConfidence": 0.9998492002487183
+    },
+    {
+      "frequency": 146.406969165101,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.60864454536131e-05,
+      "maxAbsoluteSemitones": 7.962709643432866e-05,
+      "medianConfidence": 0.9998328685760498
+    },
+    {
+      "frequency": 153.7523290582718,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.388511543421047e-05,
+      "maxAbsoluteSemitones": 8.184667976590419e-05,
+      "medianConfidence": 0.999977171421051
+    },
+    {
+      "frequency": 161.46621179067563,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.0889351536130067e-05,
+      "maxAbsoluteSemitones": 2.0195420182387574e-05,
+      "medianConfidence": 0.9999921321868896
+    },
+    {
+      "frequency": 169.56710646087393,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.115761713431662e-05,
+      "maxAbsoluteSemitones": 4.344782506498567e-05,
+      "medianConfidence": 0.9999660849571228
+    },
+    {
+      "frequency": 178.074429780942,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.1999831013960025e-05,
+      "maxAbsoluteSemitones": 3.53509455255593e-05,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 187.00857261561237,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.911753110132357e-06,
+      "maxAbsoluteSemitones": 1.0149503691936151e-05,
+      "medianConfidence": 0.9999659061431885
+    },
+    {
+      "frequency": 196.39094885632807,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.240753552163846e-05,
+      "maxAbsoluteSemitones": 2.3168341951463367e-05,
+      "medianConfidence": 0.9999871850013733
+    },
+    {
+      "frequency": 206.24404674734652,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.9515613330042264e-07,
+      "maxAbsoluteSemitones": 2.7568332689796347e-06,
+      "medianConfidence": 0.9999772310256958
+    },
+    {
+      "frequency": 216.59148278691669,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.1516634011913354e-06,
+      "maxAbsoluteSemitones": 1.3923412808075377e-05,
+      "medianConfidence": 0.9999902844429016
+    },
+    {
+      "frequency": 227.4580583327251,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.5224461720888946e-06,
+      "maxAbsoluteSemitones": 1.9616952610745803e-06,
+      "medianConfidence": 0.9999854564666748
+    },
+    {
+      "frequency": 238.86981904728265,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.933497489152693e-06,
+      "maxAbsoluteSemitones": 8.337261961513915e-06,
+      "medianConfidence": 0.9999951124191284
+    },
+    {
+      "frequency": 250.8541173257359,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.5621666242542385e-06,
+      "maxAbsoluteSemitones": 2.5621666242542385e-06,
+      "medianConfidence": 0.9999992847442627
+    },
+    {
+      "frequency": 263.4396778557362,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.2755504180616676e-06,
+      "maxAbsoluteSemitones": 5.28656810336e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 276.65666646649845,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.235143529588432e-06,
+      "maxAbsoluteSemitones": 3.144841845781303e-06,
+      "medianConfidence": 0.9999954104423523
+    },
+    {
+      "frequency": 290.53676243207894,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.1481317184649145e-06,
+      "maxAbsoluteSemitones": 2.488796555692729e-06,
+      "medianConfidence": 0.9999963045120239
+    },
+    {
+      "frequency": 305.1132344021646,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.6581790754069496e-06,
+      "maxAbsoluteSemitones": 2.6581790754069496e-06,
+      "medianConfidence": 0.9999991655349731
+    },
+    {
+      "frequency": 320.42102014237724,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.3174722557867245e-06,
+      "maxAbsoluteSemitones": 3.3174722557867245e-06,
+      "medianConfidence": 0.9999972581863403
+    },
+    {
+      "frequency": 336.49681027521314,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.178633749853938e-07,
+      "maxAbsoluteSemitones": 8.178633749853938e-07,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 353.379136222335,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.941164048338705e-07,
+      "maxAbsoluteSemitones": 6.941164048338705e-07,
+      "medianConfidence": 0.9999997615814209
+    },
+    {
+      "frequency": 371.10846255900555,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.7033320441128593e-06,
+      "maxAbsoluteSemitones": 2.7033320441128593e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 389.7272840020149,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.850785171066827e-07,
+      "maxAbsoluteSemitones": 4.850785171066827e-07,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 409.2802272635795,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.622551158240822e-07,
+      "maxAbsoluteSemitones": 6.622551158240822e-07,
+      "medianConfidence": 0.9999995231628418
+    },
+    {
+      "frequency": 429.8141580153291,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.0529650052872887e-06,
+      "maxAbsoluteSemitones": 2.0529650052872887e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 451.37829321877365,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.0677063401556227e-06,
+      "maxAbsoluteSemitones": 2.2381896396660354e-06,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 474.0243190914783,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.2394073741836982e-06,
+      "maxAbsoluteSemitones": 1.2394073741836982e-06,
+      "medianConfidence": 0.9999995827674866
+    },
+    {
+      "frequency": 497.8065149916999,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.1852282355572294e-06,
+      "maxAbsoluteSemitones": 1.1852282355572294e-06,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 522.7818835184243,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.671891858716254e-07,
+      "maxAbsoluteSemitones": 7.671891858716254e-07,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 549.0102871386254,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.767252808255603e-07,
+      "maxAbsoluteSemitones": 8.767252808255603e-07,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 576.5545916692296,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.879009267671857e-07,
+      "maxAbsoluteSemitones": 7.879009267671857e-07,
+      "medianConfidence": 0.9999998211860657
+    },
+    {
+      "frequency": 605.4808169576917,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.005082881154633e-06,
+      "maxAbsoluteSemitones": 4.005082881154633e-06,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 635.8582951223408,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.1511460773538938e-06,
+      "maxAbsoluteSemitones": 1.1511460773538938e-06,
+      "medianConfidence": 0.9999998211860657
+    },
+    {
+      "frequency": 667.7598367317756,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.9036777008502032e-06,
+      "maxAbsoluteSemitones": 2.9036777008502032e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 701.261905321616,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.0991703872678472e-06,
+      "maxAbsoluteSemitones": 3.0991703872678472e-06,
+      "medianConfidence": 0.9999997019767761
+    },
+    {
+      "frequency": 736.4448006669135,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.536564394210619e-07,
+      "maxAbsoluteSemitones": 5.536564394210619e-07,
+      "medianConfidence": 0.9999995827674866
+    },
+    {
+      "frequency": 773.3928512494842,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.488015085442032e-07,
+      "maxAbsoluteSemitones": 6.488015085442032e-07,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 812.1946163814903,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.731151066711886e-06,
+      "maxAbsoluteSemitones": 5.731151066711886e-06,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 852.9430984697309,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.331618304731994e-06,
+      "maxAbsoluteSemitones": 8.331618304731994e-06,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 895.735965929417,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.760678022459821e-08,
+      "maxAbsoluteSemitones": 7.760678022459821e-08,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 940.6757872816991,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.3576090952992836e-06,
+      "maxAbsoluteSemitones": 2.3576090952992836e-06,
+      "medianConfidence": 0.999998927116394
+    },
+    {
+      "frequency": 987.8702769960787,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.93990370137973e-06,
+      "maxAbsoluteSemitones": 4.93990370137973e-06,
+      "medianConfidence": 0.9999988675117493
+    },
+    {
+      "frequency": 1037.4325536669369,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.770593972356165e-07,
+      "maxAbsoluteSemitones": 9.770593972356165e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 1089.4814111429885,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.15578952240524e-06,
+      "maxAbsoluteSemitones": 9.15578952240524e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 1144.1416032595291,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.659804749693843e-05,
+      "maxAbsoluteSemitones": 1.659804749693843e-05,
+      "medianConfidence": 0.9999995827674866
+    },
+    {
+      "frequency": 1201.5441428559432,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.571121423478449e-05,
+      "maxAbsoluteSemitones": 2.571121423478449e-05,
+      "medianConfidence": 0.999999463558197
+    },
+    {
+      "frequency": 1261.826615795164,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.6188380696520092e-05,
+      "maxAbsoluteSemitones": 2.6188380696520092e-05,
+      "medianConfidence": 0.9999992251396179
+    },
+    {
+      "frequency": 1325.1335107377495,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.798939170643303e-05,
+      "maxAbsoluteSemitones": 1.798939170643303e-05,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 1391.616565461007,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.630128080714359e-05,
+      "maxAbsoluteSemitones": 3.630128080714359e-05,
+      "medianConfidence": 0.9999983906745911
+    },
+    {
+      "frequency": 1461.4351305532348,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.278823238236669e-05,
+      "maxAbsoluteSemitones": 4.278823238236669e-05,
+      "medianConfidence": 0.9999971389770508
+    },
+    {
+      "frequency": 1534.7565513548045,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.6067524384693027e-05,
+      "maxAbsoluteSemitones": 1.6067524384693027e-05,
+      "medianConfidence": 0.9999998211860657
+    },
+    {
+      "frequency": 1611.7565690615431,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.646803263585956e-05,
+      "maxAbsoluteSemitones": 2.646803263585956e-05,
+      "medianConfidence": 0.9999916553497314
+    },
+    {
+      "frequency": 1692.6197419518217,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.002267125293747e-05,
+      "maxAbsoluteSemitones": 6.002267125293747e-05,
+      "medianConfidence": 0.9999971389770508
+    },
+    {
+      "frequency": 1777.5398877469434,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.399667252844221e-05,
+      "maxAbsoluteSemitones": 7.399667252844221e-05,
+      "medianConfidence": 0.9999958872795105
+    },
+    {
+      "frequency": 1866.7205481651247,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.7013376329424785e-06,
+      "maxAbsoluteSemitones": 3.7013376329424785e-06,
+      "medianConfidence": 0.9999825358390808
+    },
+    {
+      "frequency": 1960.3754767825399,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.522610711284387e-06,
+      "maxAbsoluteSemitones": 8.522610711284387e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 2058.7291513707764,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00011415743557551385,
+      "maxAbsoluteSemitones": 0.00011415743557551385,
+      "medianConfidence": 0.9999874830245972
+    },
+    {
+      "frequency": 2162.017311938651,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.366154178876154e-05,
+      "maxAbsoluteSemitones": 9.366154178876154e-05,
+      "medianConfidence": 0.999976396560669
+    },
+    {
+      "frequency": 2270.4875257680665,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00015805737264223155,
+      "maxAbsoluteSemitones": 0.00015805737264223155,
+      "medianConfidence": 0.9999824166297913
+    },
+    {
+      "frequency": 2384.3997807981827,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.684375157719713e-05,
+      "maxAbsoluteSemitones": 1.684375157719713e-05,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 2504.027108780159,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00010290058318183887,
+      "maxAbsoluteSemitones": 0.00010290058318183887,
+      "medianConfidence": 0.9999515414237976
+    },
+    {
+      "frequency": 2629.6562396960835,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0001045419992628006,
+      "maxAbsoluteSemitones": 0.0001045419992628006,
+      "medianConfidence": 0.999997615814209
+    },
+    {
+      "frequency": 2761.5882890106745,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00017697681077494194,
+      "maxAbsoluteSemitones": 0.00017697681077494194,
+      "medianConfidence": 0.9999932646751404
+    },
+    {
+      "frequency": 2900.1394794029484,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0002700683252290063,
+      "maxAbsoluteSemitones": 0.0002700683252290063,
+      "medianConfidence": 0.9999837279319763
+    },
+    {
+      "frequency": 3045.6418987077664,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00015850761908419827,
+      "maxAbsoluteSemitones": 0.00015850761908419827,
+      "medianConfidence": 0.9999956488609314
+    },
+    {
+      "frequency": 3198.444295883961,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00032000938829168966,
+      "maxAbsoluteSemitones": 0.00032000938829168966,
+      "medianConfidence": 0.9999818801879883
+    },
+    {
+      "frequency": 3358.9129169168395,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.721267737766285e-05,
+      "maxAbsoluteSemitones": 8.721267737766285e-05,
+      "medianConfidence": 0.9998249411582947
+    },
+    {
+      "frequency": 3527.432382658611,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.391724162804178e-05,
+      "maxAbsoluteSemitones": 2.391724162804178e-05,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 3704.4066107107874,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0005835942656564021,
+      "maxAbsoluteSemitones": 0.0005835942656564021,
+      "medianConfidence": 0.9998205304145813
+    },
+    {
+      "frequency": 3890.2597835582305,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0007647772913536412,
+      "maxAbsoluteSemitones": 0.0007647772913536412,
+      "medianConfidence": 0.9998167157173157
+    },
+    {
+      "frequency": 4085.437365275263,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0007568205050511821,
+      "maxAbsoluteSemitones": 0.0007568205050511821,
+      "medianConfidence": 0.999934732913971
+    },
+    {
+      "frequency": 4290.4071692407715,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0006129766455000968,
+      "maxAbsoluteSemitones": 0.0006129766455000968,
+      "medianConfidence": 0.9999662041664124
+    },
+    {
+      "frequency": 4505.6604794214845,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0008955344107866711,
+      "maxAbsoluteSemitones": 0.0008955344107866711,
+      "medianConfidence": 0.9999300837516785
+    },
+    {
+      "frequency": 4638.413,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00021354647529670825,
+      "maxAbsoluteSemitones": 0.00021354647529670825,
+      "medianConfidence": 0.9999967813491821
+    },
+    {
+      "frequency": 4731.713227910976,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0014618625315421859,
+      "maxAbsoluteSemitones": 0.0014618625315421859,
+      "medianConfidence": 0.9997230768203735
+    },
+    {
+      "frequency": 4969.107231546758,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.2571281022685625e-05,
+      "maxAbsoluteSemitones": 1.2571281022685625e-05,
+      "medianConfidence": 0.9991324543952942
+    },
+    {
+      "frequency": 5107.861,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0006079227858468557,
+      "maxAbsoluteSemitones": 0.0006079227858468557,
+      "medianConfidence": 0.9991233348846436
+    },
+    {
+      "frequency": 5218.411490569483,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0016956826073151949,
+      "maxAbsoluteSemitones": 0.0016956826073151949,
+      "medianConfidence": 0.9997906684875488
+    },
+    {
+      "frequency": 5480.223552437012,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0019128587346270711,
+      "maxAbsoluteSemitones": 0.0019128587346270711,
+      "medianConfidence": 0.9997657537460327
+    },
+    {
+      "frequency": 5755.170944062117,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.002470863268072651,
+      "maxAbsoluteSemitones": 0.002470863268072651,
+      "medianConfidence": 0.9991108179092407
+    },
+    {
+      "frequency": 5900.0,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0014356862801596709,
+      "maxAbsoluteSemitones": 0.0014356862801596709,
+      "medianConfidence": 0.9999063611030579
+    },
+    {
+      "frequency": 5902.604,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0016026152382433308,
+      "maxAbsoluteSemitones": 0.0016026152382433308,
+      "medianConfidence": 0.9998806715011597
+    },
+    {
+      "frequency": 6000.0,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.002268151234383947,
+      "maxAbsoluteSemitones": 0.002268151234383947,
+      "medianConfidence": 0.9986853003501892
+    },
+    {
+      "frequency": 6043.912675906761,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.002550717331314935,
+      "maxAbsoluteSemitones": 0.002550717331314935,
+      "medianConfidence": 0.9996625185012817
+    },
+    {
+      "frequency": 6347.1408215380525,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0031625813739751406,
+      "maxAbsoluteSemitones": 0.0031625813739751406,
+      "medianConfidence": 0.9994949698448181
+    },
+    {
+      "frequency": 6665.582176431882,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00139585483904722,
+      "maxAbsoluteSemitones": 0.00139585483904722,
+      "medianConfidence": 0.9974997639656067
+    },
+    {
+      "frequency": 7000.0,
+      "fundamentalAmplitude": 0.35,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00415127586836384,
+      "maxAbsoluteSemitones": 0.00415127586836384,
+      "medianConfidence": 0.9993113279342651
+    },
+    {
+      "frequency": 55.0,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.021266323138162423,
+      "maxAbsoluteSemitones": 0.06105848687441788,
+      "medianConfidence": 0.9170598983764648
+    },
+    {
+      "frequency": 57.75939592512717,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.019208513742115598,
+      "maxAbsoluteSemitones": 0.05101690345263968,
+      "medianConfidence": 0.9551962018013
+    },
+    {
+      "frequency": 60.657233047919945,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.016588931653948688,
+      "maxAbsoluteSemitones": 0.031483742673334474,
+      "medianConfidence": 0.9719069004058838
+    },
+    {
+      "frequency": 63.700457078863934,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.013042775753424562,
+      "maxAbsoluteSemitones": 0.022199522397327812,
+      "medianConfidence": 0.9833442568778992
+    },
+    {
+      "frequency": 66.89636220053944,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.008210724059015448,
+      "maxAbsoluteSemitones": 0.012864628603089442,
+      "medianConfidence": 0.9970352649688721
+    },
+    {
+      "frequency": 70.25260855075761,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.003617367824647367,
+      "maxAbsoluteSemitones": 0.0059006195583567,
+      "medianConfidence": 0.9971134662628174
+    },
+    {
+      "frequency": 73.7772405828397,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00032493751503474393,
+      "maxAbsoluteSemitones": 0.0010786562530643226,
+      "medianConfidence": 0.9973260164260864
+    },
+    {
+      "frequency": 77.47870634704724,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0015793918544595993,
+      "maxAbsoluteSemitones": 0.0027631998956866763,
+      "medianConfidence": 0.9968839883804321
+    },
+    {
+      "frequency": 81.36587773937754,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.002576210967750718,
+      "maxAbsoluteSemitones": 0.0038011350959854997,
+      "medianConfidence": 0.9972467422485352
+    },
+    {
+      "frequency": 85.44807176625811,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0016743962361449737,
+      "maxAbsoluteSemitones": 0.003074278772826023,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 89.73507287610877,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0015513733174238346,
+      "maxAbsoluteSemitones": 0.0022558202257959544,
+      "medianConfidence": 0.9997523427009583
+    },
+    {
+      "frequency": 94.23715641129647,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00045962696971291596,
+      "maxAbsoluteSemitones": 0.0008499574441514443,
+      "medianConfidence": 0.9994418025016785
+    },
+    {
+      "frequency": 98.9651132366947,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00018527842688296212,
+      "maxAbsoluteSemitones": 0.00039328399931889285,
+      "medianConfidence": 0.9992151856422424
+    },
+    {
+      "frequency": 103.93027560387806,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0005375813749213428,
+      "maxAbsoluteSemitones": 0.0008783055034289791,
+      "medianConfidence": 0.9991992712020874
+    },
+    {
+      "frequency": 109.14454431294499,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00044231432213245967,
+      "maxAbsoluteSemitones": 0.0007179600006094144,
+      "medianConfidence": 0.9996143579483032
+    },
+    {
+      "frequency": 114.62041723707236,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00017611213805678906,
+      "maxAbsoluteSemitones": 0.0004052438769628729,
+      "medianConfidence": 0.9997918605804443
+    },
+    {
+      "frequency": 120.37101927816963,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.0848628975428972e-05,
+      "maxAbsoluteSemitones": 8.31322549712711e-05,
+      "medianConfidence": 0.9995489120483398
+    },
+    {
+      "frequency": 126.41013382543487,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.770570865494548e-05,
+      "maxAbsoluteSemitones": 0.00027800223916744763,
+      "medianConfidence": 0.9996453523635864
+    },
+    {
+      "frequency": 132.75223579221088,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.153672041287063e-05,
+      "maxAbsoluteSemitones": 0.00024172319227227027,
+      "medianConfidence": 0.9999485015869141
+    },
+    {
+      "frequency": 139.41252631032987,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.8001042370558514e-05,
+      "maxAbsoluteSemitones": 6.381021779873083e-05,
+      "medianConfidence": 0.9998435974121094
+    },
+    {
+      "frequency": 146.406969165101,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.028421551384312e-05,
+      "maxAbsoluteSemitones": 0.0001157137449816625,
+      "medianConfidence": 0.9998249411582947
+    },
+    {
+      "frequency": 153.7523290582718,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.79387402902736e-05,
+      "maxAbsoluteSemitones": 0.00011449119432030251,
+      "medianConfidence": 0.9999768137931824
+    },
+    {
+      "frequency": 161.46621179067563,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.579747848788826e-05,
+      "maxAbsoluteSemitones": 3.001165228615839e-05,
+      "medianConfidence": 0.9999915957450867
+    },
+    {
+      "frequency": 169.56710646087393,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.439960641483495e-05,
+      "maxAbsoluteSemitones": 6.214245254287298e-05,
+      "medianConfidence": 0.99996417760849
+    },
+    {
+      "frequency": 178.074429780942,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.090057287766453e-05,
+      "maxAbsoluteSemitones": 5.166898835436799e-05,
+      "medianConfidence": 0.9999991655349731
+    },
+    {
+      "frequency": 187.00857261561237,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.736920279926592e-06,
+      "maxAbsoluteSemitones": 1.7212419026953246e-05,
+      "medianConfidence": 0.9999645352363586
+    },
+    {
+      "frequency": 196.39094885632807,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.913303875646115e-05,
+      "maxAbsoluteSemitones": 3.258405306428815e-05,
+      "medianConfidence": 0.9999868869781494
+    },
+    {
+      "frequency": 206.24404674734652,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.9515613330042264e-07,
+      "maxAbsoluteSemitones": 2.7568332689796347e-06,
+      "medianConfidence": 0.9999762773513794
+    },
+    {
+      "frequency": 216.59148278691669,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.590958626911291e-06,
+      "maxAbsoluteSemitones": 1.900707623059633e-05,
+      "medianConfidence": 0.9999898672103882
+    },
+    {
+      "frequency": 227.4580583327251,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.5224461720888946e-06,
+      "maxAbsoluteSemitones": 3.84520751708132e-06,
+      "medianConfidence": 0.9999847412109375
+    },
+    {
+      "frequency": 238.86981904728265,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.125469426172767e-06,
+      "maxAbsoluteSemitones": 1.1654950238542624e-05,
+      "medianConfidence": 0.9999949336051941
+    },
+    {
+      "frequency": 250.8541173257359,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.5621666242542385e-06,
+      "maxAbsoluteSemitones": 2.5621666242542385e-06,
+      "medianConfidence": 0.9999992847442627
+    },
+    {
+      "frequency": 263.4396778557362,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.013772976875755e-06,
+      "maxAbsoluteSemitones": 7.292076595601727e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 276.65666646649845,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.58425247275161e-06,
+      "maxAbsoluteSemitones": 3.144841845781303e-06,
+      "medianConfidence": 0.999995231628418
+    },
+    {
+      "frequency": 290.53676243207894,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.1481317184649145e-06,
+      "maxAbsoluteSemitones": 2.488796555692729e-06,
+      "medianConfidence": 0.9999961853027344
+    },
+    {
+      "frequency": 305.1132344021646,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.6581790754069496e-06,
+      "maxAbsoluteSemitones": 2.6581790754069496e-06,
+      "medianConfidence": 0.9999991059303284
+    },
+    {
+      "frequency": 320.42102014237724,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.3174722557867245e-06,
+      "maxAbsoluteSemitones": 3.3174722557867245e-06,
+      "medianConfidence": 0.9999971389770508
+    },
+    {
+      "frequency": 336.49681027521314,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.178633749853938e-07,
+      "maxAbsoluteSemitones": 3.958045475006521e-06,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 353.379136222335,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.941164048338705e-07,
+      "maxAbsoluteSemitones": 6.941164048338705e-07,
+      "medianConfidence": 0.9999997615814209
+    },
+    {
+      "frequency": 371.10846255900555,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.7033320441128593e-06,
+      "maxAbsoluteSemitones": 2.7033320441128593e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 389.7272840020149,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.850785171066827e-07,
+      "maxAbsoluteSemitones": 3.5818480681751965e-06,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 409.2802272635795,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.622551158240822e-07,
+      "maxAbsoluteSemitones": 1.9195003028631783e-06,
+      "medianConfidence": 0.9999995231628418
+    },
+    {
+      "frequency": 429.8141580153291,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.0529650052872887e-06,
+      "maxAbsoluteSemitones": 2.0529650052872887e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 451.37829321877365,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.0677063401556227e-06,
+      "maxAbsoluteSemitones": 2.2381896396660354e-06,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 474.0243190914783,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.2394073741836982e-06,
+      "maxAbsoluteSemitones": 1.2394073741836982e-06,
+      "medianConfidence": 0.9999995231628418
+    },
+    {
+      "frequency": 497.8065149916999,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.1852282355572294e-06,
+      "maxAbsoluteSemitones": 1.1852282355572294e-06,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 522.7818835184243,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.671891858716254e-07,
+      "maxAbsoluteSemitones": 7.671891858716254e-07,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 549.0102871386254,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.767252808255603e-07,
+      "maxAbsoluteSemitones": 8.767252808255603e-07,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 576.5545916692296,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.879009267671857e-07,
+      "maxAbsoluteSemitones": 7.879009267671857e-07,
+      "medianConfidence": 0.9999998211860657
+    },
+    {
+      "frequency": 605.4808169576917,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.005082881154633e-06,
+      "maxAbsoluteSemitones": 4.005082881154633e-06,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 635.8582951223408,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.1511460773538938e-06,
+      "maxAbsoluteSemitones": 1.1511460773538938e-06,
+      "medianConfidence": 0.9999998211860657
+    },
+    {
+      "frequency": 667.7598367317756,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.9036777008502032e-06,
+      "maxAbsoluteSemitones": 2.9036777008502032e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 701.261905321616,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.0991703872678472e-06,
+      "maxAbsoluteSemitones": 3.0991703872678472e-06,
+      "medianConfidence": 0.9999997615814209
+    },
+    {
+      "frequency": 736.4448006669135,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.536564394210619e-07,
+      "maxAbsoluteSemitones": 5.536564394210619e-07,
+      "medianConfidence": 0.9999997615814209
+    },
+    {
+      "frequency": 773.3928512494842,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.488015085442032e-07,
+      "maxAbsoluteSemitones": 6.488015085442032e-07,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 812.1946163814903,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.731151066711886e-06,
+      "maxAbsoluteSemitones": 5.731151066711886e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 852.9430984697309,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.331618304731994e-06,
+      "maxAbsoluteSemitones": 8.331618304731994e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 895.735965929417,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 7.760678022459821e-08,
+      "maxAbsoluteSemitones": 7.760678022459821e-08,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 940.6757872816991,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.3576090952992836e-06,
+      "maxAbsoluteSemitones": 2.3576090952992836e-06,
+      "medianConfidence": 0.9999992847442627
+    },
+    {
+      "frequency": 987.8702769960787,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 4.93990370137973e-06,
+      "maxAbsoluteSemitones": 4.93990370137973e-06,
+      "medianConfidence": 0.9999992251396179
+    },
+    {
+      "frequency": 1037.4325536669369,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.770593972356165e-07,
+      "maxAbsoluteSemitones": 9.770593972356165e-07,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 1089.4814111429885,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.15578952240524e-06,
+      "maxAbsoluteSemitones": 9.15578952240524e-06,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 1144.1416032595291,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.659804749693843e-05,
+      "maxAbsoluteSemitones": 1.659804749693843e-05,
+      "medianConfidence": 0.9999997019767761
+    },
+    {
+      "frequency": 1201.5441428559432,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.8675848831738435e-05,
+      "maxAbsoluteSemitones": 1.8675848831738435e-05,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 1261.826615795164,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.948912241303769e-05,
+      "maxAbsoluteSemitones": 1.948912241303769e-05,
+      "medianConfidence": 0.999999463558197
+    },
+    {
+      "frequency": 1325.1335107377495,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.798939170643303e-05,
+      "maxAbsoluteSemitones": 1.798939170643303e-05,
+      "medianConfidence": 0.9999997615814209
+    },
+    {
+      "frequency": 1391.616565461007,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.630128080714359e-05,
+      "maxAbsoluteSemitones": 3.630128080714359e-05,
+      "medianConfidence": 0.999998927116394
+    },
+    {
+      "frequency": 1461.4351305532348,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.8450042350756256e-05,
+      "maxAbsoluteSemitones": 3.8450042350756256e-05,
+      "medianConfidence": 0.9999980926513672
+    },
+    {
+      "frequency": 1534.7565513548045,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.6067524384693027e-05,
+      "maxAbsoluteSemitones": 1.6067524384693027e-05,
+      "medianConfidence": 0.9999998807907104
+    },
+    {
+      "frequency": 1611.7565690615431,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.1223270633296975e-05,
+      "maxAbsoluteSemitones": 2.1223270633296975e-05,
+      "medianConfidence": 0.9999943971633911
+    },
+    {
+      "frequency": 1692.6197419518217,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 5.3779934581017706e-05,
+      "maxAbsoluteSemitones": 5.3779934581017706e-05,
+      "medianConfidence": 0.9999980926513672
+    },
+    {
+      "frequency": 1777.5398877469434,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.448548518075715e-05,
+      "maxAbsoluteSemitones": 6.448548518075715e-05,
+      "medianConfidence": 0.9999971985816956
+    },
+    {
+      "frequency": 1866.7205481651247,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.7013376329424785e-06,
+      "maxAbsoluteSemitones": 3.7013376329424785e-06,
+      "medianConfidence": 0.9999881982803345
+    },
+    {
+      "frequency": 1960.3754767825399,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.522610711284387e-06,
+      "maxAbsoluteSemitones": 8.522610711284387e-06,
+      "medianConfidence": 1.0
+    },
+    {
+      "frequency": 2058.7291513707764,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00010799828723445365,
+      "maxAbsoluteSemitones": 0.00010799828723445365,
+      "medianConfidence": 0.9999915361404419
+    },
+    {
+      "frequency": 2162.017311938651,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.366154178876154e-05,
+      "maxAbsoluteSemitones": 9.366154178876154e-05,
+      "medianConfidence": 0.9999840259552002
+    },
+    {
+      "frequency": 2270.4875257680665,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0001468879225457529,
+      "maxAbsoluteSemitones": 0.0001468879225457529,
+      "medianConfidence": 0.9999881386756897
+    },
+    {
+      "frequency": 2384.3997807981827,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.684375157719713e-05,
+      "maxAbsoluteSemitones": 1.684375157719713e-05,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 2504.027108780159,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.108507466379561e-05,
+      "maxAbsoluteSemitones": 9.108507466379561e-05,
+      "medianConfidence": 0.9999672174453735
+    },
+    {
+      "frequency": 2629.6562396960835,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.329096580192864e-05,
+      "maxAbsoluteSemitones": 9.329096580192864e-05,
+      "medianConfidence": 0.9999983906745911
+    },
+    {
+      "frequency": 2761.5882890106745,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00016014100843321947,
+      "maxAbsoluteSemitones": 0.00016014100843321947,
+      "medianConfidence": 0.9999954104423523
+    },
+    {
+      "frequency": 2900.1394794029484,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00024820708929201266,
+      "maxAbsoluteSemitones": 0.00024820708929201266,
+      "medianConfidence": 0.9999890327453613
+    },
+    {
+      "frequency": 3045.6418987077664,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00014601759350741733,
+      "maxAbsoluteSemitones": 0.00014601759350741733,
+      "medianConfidence": 0.999997079372406
+    },
+    {
+      "frequency": 3198.444295883961,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00029754481254998526,
+      "maxAbsoluteSemitones": 0.00029754481254998526,
+      "medianConfidence": 0.9999877214431763
+    },
+    {
+      "frequency": 3358.9129169168395,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 8.217930329472248e-05,
+      "maxAbsoluteSemitones": 8.217930329472248e-05,
+      "medianConfidence": 0.9998816251754761
+    },
+    {
+      "frequency": 3527.432382658611,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.391724162804178e-05,
+      "maxAbsoluteSemitones": 2.391724162804178e-05,
+      "medianConfidence": 0.9999999403953552
+    },
+    {
+      "frequency": 3704.4066107107874,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0005436587432545081,
+      "maxAbsoluteSemitones": 0.0005436587432545081,
+      "medianConfidence": 0.9998786449432373
+    },
+    {
+      "frequency": 3890.2597835582305,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0007126290172243933,
+      "maxAbsoluteSemitones": 0.0007126290172243933,
+      "medianConfidence": 0.9998760223388672
+    },
+    {
+      "frequency": 4085.437365275263,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0006999218896621679,
+      "maxAbsoluteSemitones": 0.0006999218896621679,
+      "medianConfidence": 0.9999558329582214
+    },
+    {
+      "frequency": 4290.4071692407715,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0005716022406534985,
+      "maxAbsoluteSemitones": 0.0005716022406534985,
+      "medianConfidence": 0.9999771118164062
+    },
+    {
+      "frequency": 4505.6604794214845,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0008336245794046694,
+      "maxAbsoluteSemitones": 0.0008336245794046694,
+      "medianConfidence": 0.9999527335166931
+    },
+    {
+      "frequency": 4638.413,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00019714458980146034,
+      "maxAbsoluteSemitones": 0.00019714458980146034,
+      "medianConfidence": 0.9999977946281433
+    },
+    {
+      "frequency": 4731.713227910976,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0013636120547108868,
+      "maxAbsoluteSemitones": 0.0013636120547108868,
+      "medianConfidence": 0.999812662601471
+    },
+    {
+      "frequency": 4969.107231546758,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.2571281022685625e-05,
+      "maxAbsoluteSemitones": 1.2571281022685625e-05,
+      "medianConfidence": 0.999413251876831
+    },
+    {
+      "frequency": 5107.861,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0005632374304552598,
+      "maxAbsoluteSemitones": 0.0005632374304552598,
+      "medianConfidence": 0.9994070529937744
+    },
+    {
+      "frequency": 5218.411490569483,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.001575798872442826,
+      "maxAbsoluteSemitones": 0.001575798872442826,
+      "medianConfidence": 0.9998583793640137
+    },
+    {
+      "frequency": 5480.223552437012,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0017755901041998944,
+      "maxAbsoluteSemitones": 0.0017755901041998944,
+      "medianConfidence": 0.9998415112495422
+    },
+    {
+      "frequency": 5755.170944062117,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0022945810024856458,
+      "maxAbsoluteSemitones": 0.0022945810024856458,
+      "medianConfidence": 0.999398410320282
+    },
+    {
+      "frequency": 5900.0,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0013325192238571285,
+      "maxAbsoluteSemitones": 0.0013325192238571285,
+      "medianConfidence": 0.9999366402626038
+    },
+    {
+      "frequency": 5902.604,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0014880346789916071,
+      "maxAbsoluteSemitones": 0.0014880346789916071,
+      "medianConfidence": 0.9999192357063293
+    },
+    {
+      "frequency": 6000.0,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0021075589967350728,
+      "maxAbsoluteSemitones": 0.0021075589967350728,
+      "medianConfidence": 0.9991105794906616
+    },
+    {
+      "frequency": 6043.912675906761,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0023619269770605456,
+      "maxAbsoluteSemitones": 0.0023619269770605456,
+      "medianConfidence": 0.9997716546058655
+    },
+    {
+      "frequency": 6347.1408215380525,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.002938795066939577,
+      "maxAbsoluteSemitones": 0.002938795066939577,
+      "medianConfidence": 0.9996582269668579
+    },
+    {
+      "frequency": 6665.582176431882,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0012982110374847257,
+      "maxAbsoluteSemitones": 0.0012982110374847257,
+      "medianConfidence": 0.998308539390564
+    },
+    {
+      "frequency": 7000.0,
+      "fundamentalAmplitude": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.003855479083621982,
+      "maxAbsoluteSemitones": 0.003855479083621982,
+      "medianConfidence": 0.9995338320732117
+    }
+  ],
+  "distantPartials": [
+    {
+      "frequency": 55,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.1,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0016409048217622658,
+      "maxAbsoluteSemitones": 0.00444101050478774,
+      "medianConfidence": 0.9910703301429749
+    },
+    {
+      "frequency": 55,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.25,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00029178509738031824,
+      "maxAbsoluteSemitones": 0.0007924779169341471,
+      "medianConfidence": 0.9918140172958374
+    },
+    {
+      "frequency": 100,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.1,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.1699813183765865e-05,
+      "maxAbsoluteSemitones": 6.0757924280178735e-05,
+      "medianConfidence": 0.9999545216560364
+    },
+    {
+      "frequency": 100,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.25,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.604132531955972e-06,
+      "maxAbsoluteSemitones": 1.0566617293917625e-05,
+      "medianConfidence": 0.999958336353302
+    },
+    {
+      "frequency": 165,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.1,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.60100220497445e-06,
+      "maxAbsoluteSemitones": 6.404007343175288e-06,
+      "medianConfidence": 0.9999979138374329
+    },
+    {
+      "frequency": 165,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.25,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.6010020569177605e-06,
+      "maxAbsoluteSemitones": 3.202003965778858e-06,
+      "medianConfidence": 0.9999980926513672
+    },
+    {
+      "frequency": 220,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.1,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.003759034954801e-06,
+      "maxAbsoluteSemitones": 6.003759034954801e-06,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "frequency": 220,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.25,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 6.003759034954801e-06,
+      "maxAbsoluteSemitones": 6.003759034954801e-06,
+      "medianConfidence": 0.9999995827674866
+    },
+    {
+      "frequency": 330,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.1,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.2808021791151383e-05,
+      "maxAbsoluteSemitones": 1.2808021791151383e-05,
+      "medianConfidence": 0.999998927116394
+    },
+    {
+      "frequency": 330,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.25,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.2808021791151383e-05,
+      "maxAbsoluteSemitones": 1.2808021791151383e-05,
+      "medianConfidence": 0.9999938011169434
+    },
+    {
+      "frequency": 440,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.1,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.8818062355694563e-05,
+      "maxAbsoluteSemitones": 2.8818062355694563e-05,
+      "medianConfidence": 0.9999998211860657
+    },
+    {
+      "frequency": 440,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.25,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.8818062355694563e-05,
+      "maxAbsoluteSemitones": 2.8818062355694563e-05,
+      "medianConfidence": 0.9999989867210388
+    },
+    {
+      "frequency": 880,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.1,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00020052435567697696,
+      "maxAbsoluteSemitones": 0.00020052435567697696,
+      "medianConfidence": 0.9999464154243469
+    },
+    {
+      "frequency": 880,
+      "fundamentalAmplitude": 0.75,
+      "twentiethPartialAmplitude": 0.25,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00022934203627099668,
+      "maxAbsoluteSemitones": 0.00022934203627099668,
+      "medianConfidence": 0.9996932744979858
+    }
+  ],
+  "actualWhistles": [
+    {
+      "engine": "Bfxr",
+      "rowIndex": 2059,
+      "metadataSha256": "313e89aab66474728602a3622e267faaa6b57d8f33ff95314acdca6217291649",
+      "audioHash": "fe1a945e64f5c33e9378b7621255bcaafa41cc1f353548796f516e244304d4b5",
+      "nominalHz": 165.09549757053713,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.03516460448726899,
+      "maxAbsoluteSemitones": 0.050588377721128265,
+      "medianConfidence": 0.991119384765625
+    },
+    {
+      "engine": "Transfxr",
+      "rowIndex": 2066,
+      "metadataSha256": "a683de2ce177506ef0a31a1cae516e395a9945478467b870ee6c2212db5df326",
+      "audioHash": "24339a98534e769ffbe6c4521bd0e2ec38651595e8e2e155b518b733776a836c",
+      "nominalHz": 336.33692583035577,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 1.0390131090137554e-05,
+      "maxAbsoluteSemitones": 1.5102640546172597e-05,
+      "medianConfidence": 0.9999886155128479
+    }
+  ],
+  "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+  "whiteNoise": [
+    {
+      "seed": 0,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 1,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 2,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 3,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 4,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 5,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 6,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 7,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 8,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 9,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 10,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 11,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 12,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 13,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 14,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 15,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 16,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 17,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 18,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    },
+    {
+      "seed": 19,
+      "voicedFraction": 0.0,
+      "nonzeroConfidenceFraction": 0.0
+    }
+  ],
+  "glides": [
+    {
+      "startHz": 220,
+      "endHz": 880,
+      "seconds": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0008847363524100472,
+      "maxAbsoluteSemitones": 0.0031100813205014017,
+      "medianConfidence": 0.9987828731536865
+    },
+    {
+      "startHz": 880,
+      "endHz": 220,
+      "seconds": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0004140902330896304,
+      "maxAbsoluteSemitones": 0.0018283582983405176,
+      "medianConfidence": 0.998782753944397
+    },
+    {
+      "startHz": 2000,
+      "endHz": 4000,
+      "seconds": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00036136186965915934,
+      "maxAbsoluteSemitones": 0.0007082432214881534,
+      "medianConfidence": 0.9996208548545837
+    },
+    {
+      "startHz": 4000,
+      "endHz": 2000,
+      "seconds": 1.0,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 9.240514714136384e-05,
+      "maxAbsoluteSemitones": 0.00032792531360821325,
+      "medianConfidence": 0.9996209740638733
+    },
+    {
+      "startHz": 55,
+      "endHz": 8000,
+      "seconds": 0.5,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.008911156990075329,
+      "maxAbsoluteSemitones": 0.10317423324123143,
+      "medianConfidence": 0.9868205785751343
+    },
+    {
+      "startHz": 8000,
+      "endHz": 55,
+      "seconds": 0.5,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0071690538425302945,
+      "maxAbsoluteSemitones": 0.08873714087398867,
+      "medianConfidence": 0.9868153929710388
+    },
+    {
+      "startHz": 110,
+      "endHz": 880,
+      "seconds": 0.1,
+      "voicedFraction": 0.7333333333333333,
+      "medianAbsoluteSemitones": 0.10805470282836901,
+      "maxAbsoluteSemitones": 1.8411341389599534,
+      "medianConfidence": 0.8120176792144775
+    },
+    {
+      "startHz": 880,
+      "endHz": 110,
+      "seconds": 0.1,
+      "voicedFraction": 0.7833333333333333,
+      "medianAbsoluteSemitones": 0.10667371102162304,
+      "maxAbsoluteSemitones": 0.36934648332878395,
+      "medianConfidence": 0.8114415407180786
+    }
+  ],
+  "timings": [
+    {
+      "seconds": 0.1,
+      "descriptor": "neural-fullsound-v1",
+      "medianMilliseconds": 0.5160205764696002,
+      "repetitions": 10
+    },
+    {
+      "seconds": 0.1,
+      "descriptor": "neural-pitch-v5",
+      "medianMilliseconds": 1.998687395825982,
+      "repetitions": 10
+    },
+    {
+      "seconds": 0.5,
+      "descriptor": "neural-fullsound-v1",
+      "medianMilliseconds": 1.523936865851283,
+      "repetitions": 10
+    },
+    {
+      "seconds": 0.5,
+      "descriptor": "neural-pitch-v5",
+      "medianMilliseconds": 13.181229471229017,
+      "repetitions": 10
+    },
+    {
+      "seconds": 2.0,
+      "descriptor": "neural-fullsound-v1",
+      "medianMilliseconds": 7.111458457075059,
+      "repetitions": 10
+    },
+    {
+      "seconds": 2.0,
+      "descriptor": "neural-pitch-v5",
+      "medianMilliseconds": 44.08950009383261,
+      "repetitions": 10
+    },
+    {
+      "seconds": 6.0,
+      "descriptor": "neural-fullsound-v1",
+      "medianMilliseconds": 23.299812572076917,
+      "repetitions": 10
+    },
+    {
+      "seconds": 6.0,
+      "descriptor": "neural-pitch-v5",
+      "medianMilliseconds": 98.76514610368758,
+      "repetitions": 10
+    },
+    {
+      "seconds": 12.0,
+      "descriptor": "neural-fullsound-v1",
+      "medianMilliseconds": 19.036333076655865,
+      "repetitions": 10
+    },
+    {
+      "seconds": 12.0,
+      "descriptor": "neural-pitch-v5",
+      "medianMilliseconds": 97.75222942698747,
+      "repetitions": 10
+    }
+  ],
+  "dcOffsetTones": [
+    {
+      "offset": 0.0,
+      "frequency": 55,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.013396564115459243,
+      "maxAbsoluteSemitones": 0.03584372795808356,
+      "medianConfidence": 0.9909340143203735
+    },
+    {
+      "offset": 0.0,
+      "frequency": 65,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0014254771329274933,
+      "maxAbsoluteSemitones": 0.007753973245469508,
+      "medianConfidence": 0.9999226331710815
+    },
+    {
+      "offset": 0.0,
+      "frequency": 220,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.401503031777446e-06,
+      "maxAbsoluteSemitones": 6.0037569509855465e-06,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "offset": 0.0,
+      "frequency": 3200,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.962475741033464e-05,
+      "maxAbsoluteSemitones": 3.962475741033464e-05,
+      "medianConfidence": 0.9999997019767761
+    },
+    {
+      "offset": 0.0,
+      "frequency": 8000,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00026627662676308064,
+      "maxAbsoluteSemitones": 0.00026627662676308064,
+      "medianConfidence": 0.9999979734420776
+    },
+    {
+      "offset": 2.0,
+      "frequency": 55,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.013424202983259909,
+      "maxAbsoluteSemitones": 0.035834141810497724,
+      "medianConfidence": 0.9910252094268799
+    },
+    {
+      "offset": 2.0,
+      "frequency": 65,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.0014701822193510681,
+      "maxAbsoluteSemitones": 0.007837324457449531,
+      "medianConfidence": 0.9999251365661621
+    },
+    {
+      "offset": 2.0,
+      "frequency": 220,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 2.401503031777446e-06,
+      "maxAbsoluteSemitones": 6.0037569509855465e-06,
+      "medianConfidence": 0.9999996423721313
+    },
+    {
+      "offset": 2.0,
+      "frequency": 3200,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 3.962475741033464e-05,
+      "maxAbsoluteSemitones": 3.962475741033464e-05,
+      "medianConfidence": 0.9999997019767761
+    },
+    {
+      "offset": 2.0,
+      "frequency": 8000,
+      "voicedFraction": 1.0,
+      "medianAbsoluteSemitones": 0.00026627662676308064,
+      "maxAbsoluteSemitones": 0.00026627662676308064,
+      "medianConfidence": 0.9999979734420776
+    }
+  ],
+  "listeningTargets": [
+    {
+      "folder": 1,
+      "available": true,
+      "wavSha256": "b78c895f0183d907588cb962d8e1c9dd27b21665d64d2ecf2a0b8bfdd843714d",
+      "old": {
+        "voicedFraction": 0.7446808510638298,
+        "medianHz": 1837.500244140625
+      },
+      "new": {
+        "voicedFraction": 0.5531914893617021,
+        "medianHz": 1946.97509765625
+      }
+    },
+    {
+      "folder": 2,
+      "available": true,
+      "wavSha256": "090801d95c5bfe35ac1a7aa4d54f7cbc54859e45a03b6225d6104ae72e8a52b3",
+      "old": {
+        "voicedFraction": 1.0,
+        "medianHz": 1225.0003662109375
+      },
+      "new": {
+        "voicedFraction": 0.5217391304347826,
+        "medianHz": 2451.617919921875
+      }
+    },
+    {
+      "folder": 3,
+      "available": true,
+      "wavSha256": "1694d1c771a06481c05b4dfc5ce9015168e50c0b4149958af6302cd500f9deb4",
+      "old": {
+        "voicedFraction": 0.0,
+        "medianHz": null
+      },
+      "new": {
+        "voicedFraction": 0.25,
+        "medianHz": 155.8175506591797
+      }
+    },
+    {
+      "folder": 4,
+      "available": true,
+      "wavSha256": "035aa65fecb30c29dc07b580a4ef6a5d10e035a0f194d6a2d5e098bc6e65215e",
+      "old": {
+        "voicedFraction": 0.44680851063829785,
+        "medianHz": 139.55697631835938
+      },
+      "new": {
+        "voicedFraction": 0.44680851063829785,
+        "medianHz": 136.64208984375
+      }
+    },
+    {
+      "folder": 5,
+      "available": true,
+      "wavSha256": "4b56fe1ef7f5e2a79c97e750337f46df12f2b6753743859af10ff498624f7a24",
+      "old": {
+        "voicedFraction": 1.0,
+        "medianHz": 689.0624389648438
+      },
+      "new": {
+        "voicedFraction": 1.0,
+        "medianHz": 677.9505615234375
+      }
+    },
+    {
+      "folder": 6,
+      "available": true,
+      "wavSha256": "857d9d132080c34e47108b3b58f41bb31651d09cb3c2fd54ea370ee8ebbfe957",
+      "old": {
+        "voicedFraction": 0.2391304347826087,
+        "medianHz": 210.2285919189453
+      },
+      "new": {
+        "voicedFraction": 0.5217391304347826,
+        "medianHz": 246.34295654296875
+      }
+    }
+  ],
+  "limitations": [
+    "Native 2048-sample windows contain only about 2.5 cycles at 55 Hz; a three-native-sample lag guard covers phase-dependent endpoint movement in harmonic tones.",
+    "The configured frequency range is approximate: out-of-range tones can alias to integer subharmonic periods; this is not an out-of-band classifier.",
+    "Rapid chirps are not locally periodic; voiced coverage/error is reported without requiring accuracy.",
+    "Frozen linear sampling of log-pitch and confidence is retained; voiced/unvoiced transitions can yield intermediate encoded pitch.",
+    "No synthetic diagnostic establishes performance on real effects or human listening preference."
+  ]
+}
