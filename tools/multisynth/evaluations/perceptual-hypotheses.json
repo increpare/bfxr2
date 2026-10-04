@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Evolving hypotheses about audible likeness, tested with regular human listening including model/metric agreement cases.",
+  "hypotheses": [
+    {
+      "id": "relative-preference-is-not-adequacy",
+      "claim": "A chosen winner can still fail to evoke the reference.",
+      "status": "supported-by-direct-user-feedback",
+      "evidence": "The neural-v2 quick export contained four best choices; the user separately said only charm2.wav was actually approximated.",
+      "nextTest": "Retain best/none choices and invite optional close-enough or failure notes; do not relabel all winners as successful recreations."
+    },
+    {
+      "id": "metric-consensus-needs-human-audit",
+      "claim": "Models and similarity metrics can agree while sharing an audible blind spot.",
+      "status": "user-required-evaluation-policy",
+      "evidence": "On 2026-10-04 the user requested continued involvement even when models and metrics agree and emphasized developing psychoacoustic theories from listening.",
+      "nextTest": "Include claimed successes and representative coverage alongside uncertain cases in regular short listening batches."
+    },
+    {
+      "id": "pitch-and-gesture-cannot-be-traded-freely",
+      "claim": "Some pitch-register and gesture errors matter more than aggregate spectral improvements.",
+      "status": "plausible-needs-human-calibration",
+      "evidence": "The user reported poor pitch matching. The forward pilot also found lower actual descriptor loss with substantially worse pitch and motion; this is diagnostic evidence, not a listening validation of a new weighting rule.",
+      "nextTest": "Compare real renders while preserving already matched reliable pitch and motion. Keep noisy targets outside pitch constraints; ask whether retained pitch/gesture produces better likeness."
+    },
+    {
+      "id": "transient-and-tail-identity",
+      "claim": "Attack character, event rhythm and tail may explain likeness failures that a pooled spectrum misses.",
+      "status": "untested",
+      "evidence": "User emphasizes large-scale gestural qualities and feel. No causal ablation has established the appropriate balance for this corpus.",
+      "nextTest": "Use controlled encoder comparisons and optional human failure descriptions; test any inferred rule on different sound families before broad adoption."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "complete": true,
+  "dataManifestSha256": "5162ae6d90328f098389bfc762437bc29083eea4d5a446eb2fef14edced5e87c",
+  "benchmarkSha256": "f7bc09b1dd33ebe7d992afc0bbd9aab196d720b4611764782ee94f831a834f5b",
+  "benchmarkControlsExcluded": true,
+  "engines": [
+    {
+      "synth": "Bfxr",
+      "rows": 12288,
+      "train": 10445,
+      "validation": 1843,
+      "excludedBenchmarkCases": 8
+    },
+    {
+      "synth": "Transfxr",
+      "rows": 12288,
+      "train": 10445,
+      "validation": 1843,
+      "excludedBenchmarkCases": 8
+    },
+    {
+      "synth": "Pluckr",
+      "rows": 12288,
+      "train": 10445,
+      "validation": 1843,
+      "excludedBenchmarkCases": 4
+    }
+  ],
+  "note": "Parameter-group split; this is not a held-out preset-family benchmark."
+}
