@@ -12,10 +12,10 @@
 
 Files: create `tools/neural_invert/pitch_features.py`, `tools/tests/test_neural_pitch_features.py`.
 
-- [ ] Write failing tests: parameterize sine frequencies 65,110,220,440,880,1500,2000,2200,2500,3200,4000,6000,7500; require interior median error below 0.5 semitone and adequate voiced coverage. Test white noise rejection, harmonic fundamental, opposite glides, zero audio, invalid arrays, gain invariance and exact untouched feature channels.
-- [ ] Run `PYTHONPATH=tools OPENBLAS_NUM_THREADS=1 /Users/stephenlavelle/Documents/bfxr2/tools/.venv/bin/python -m pytest tools/tests/test_neural_pitch_features.py -q`; confirm absence of new module fails.
-- [ ] Implement `describe(wave)` returning float32 4083 values. Begin with `result = frozen.describe(wave)`; assign only slices `3888:3984` and `4016:4080`. Export VERSION, DIM, CONFIG, FEATURE_HASH, FEATURE_CODE_HASH and bound FROZEN_FEATURE_CODE_HASH. Expose a small `pitch_track(wave, positions)` helper for diagnostic tests. Reject invalid input before processing. Preserve silence behavior.
-- [ ] Run focused tests and archive clean-tone/noise/glide diagnostics; measure representative extraction time. Spec review, then quality review; fix findings before freezing the code for data generation.
+- [x] Write failing tests: parameterize sine frequencies 65,110,220,440,880,1500,2000,2200,2500,3200,4000,6000,7500; require interior median error below 0.5 semitone and adequate voiced coverage. Test white noise rejection, harmonic fundamental, opposite glides, zero audio, invalid arrays, gain invariance and exact untouched feature channels.
+- [x] Run `PYTHONPATH=tools OPENBLAS_NUM_THREADS=1 /Users/stephenlavelle/Documents/bfxr2/tools/.venv/bin/python -m pytest tools/tests/test_neural_pitch_features.py -q`; confirm absence of new module fails.
+- [x] Implement `describe(wave)` returning float32 4083 values. Begin with `result = frozen.describe(wave)`; assign only slices `3888:3984` and `4016:4080`. Export VERSION, DIM, CONFIG, FEATURE_HASH, FEATURE_CODE_HASH and bound FROZEN_FEATURE_CODE_HASH. Expose a small `pitch_track(wave, positions)` helper for diagnostic tests. Reject invalid input before processing. Preserve silence behavior.
+- [x] Run focused tests and archive clean-tone/noise/glide diagnostics; measure representative extraction time. Spec review, then quality review; fix findings before freezing the code for data generation.
 
 ## Task 2: Frozen-data re-extraction and strict training
 
