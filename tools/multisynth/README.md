@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All eighteen feedback archives,
+do not establish general success on real recordings. All nineteen feedback archives,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
@@ -45,6 +45,14 @@ excluded, but source-family independence is not established. See the
 [frozen targets](evaluations/off-model-transfer-v1-targets.json),
 [evaluation](evaluations/off-model-transfer-v1-evaluation.json), and
 [historical Bfxr overlap audit](evaluations/off-model-transfer-v1-bfxr-training-overlap.json).
+
+The first five external-transfer judgments contain **two similar, one least-bad,
+and two none-close** outcomes; no convincing recreation. Similar choices are
+Transfxr-mixture metallic footstep and shared Rustlr cloth. The footstep supplies
+only an absolute label because no other option was recorded as heard. Four
+strict pairs across cloth and belt/chain agree with soft and legacy scores,
+while preference-neural-v2 agrees on one. Three trials remain unsubmitted. See the
+[partial human review](evaluations/off-model-transfer-v1-quick-01-human-review.json).
 
 The earlier [specialist experiment](evaluations/specialists-v1-plan.json) trains
 independent Boomr and Footsteppr models on 12,288 examples each. The older shared

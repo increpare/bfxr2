@@ -168,7 +168,7 @@
       "status": "one-real-tagged-reachable-positive-after-smooth-search",
       "evidence": "Five tagged references yielded one similar and four least-bad winners. A frozen 64,415-training-preset search plus four bounded refinement starts per target produces ten novel scorer-selected alternatives, all from retrieved starts. All 1,065 retained candidate waveforms replay exactly. Numerical improvement does not yet establish useful teachers or audible recreation.",
       "source": "evaluations/tagged-coverage-v1-evaluation.json",
-      "nextTest": "Evaluate pretrained perceptual representations against family-grouped historical judgments before using them to generate a genuinely new listening batch. Preserve original pitch/event descriptors and do not conflate ranking with adequacy.",
+      "nextTest": "Complete the remaining three frozen external trials before choosing the next candidate-coverage or selection diagnostic. Do not infer full-pool inadequacy from the displayed subset, or promote a scorer from four pairs across two references.",
       "observations": [
         {
           "session": "2026-10-05-tagged-coverage-quick-01",
@@ -179,6 +179,11 @@
           "session": "2026-10-05-soft-periodicity-quick-01",
           "finding": "Further bounded search finds a Squishr wooden footstep explicitly judged very-close. Preserve the exact controls/audio as a transfer benchmark; do not infer adequacy for unjudged controls or use rejected prior pseudo-labels as successful teachers.",
           "source": "evaluations/soft-periodicity-quick-01-human-review.json"
+        },
+        {
+          "session": "2026-10-06-off-model-transfer-v1-quick-01",
+          "finding": "First five full-pool external trials yield two similar choices (Transfxr-mixture footstep, shared Rustlr cloth), one least-bad original Bfxr belt/chain, and none-close hit/door. No very-close. Footstep has only chosen option auditioned, so no strict pairs. Four heard pairs from two other references favor soft/legacy4of4 over preference1of4, but adequacy still fails. Three existing trials remain unsubmitted.",
+          "source": "evaluations/off-model-transfer-v1-quick-01-human-review.json"
         }
       ]
     },

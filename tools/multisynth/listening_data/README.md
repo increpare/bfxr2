@@ -53,6 +53,23 @@ external generalization.
 | `2026-10-05-soft-periodicity-quick-01/` | 5 | 15 |
 | `2026-10-06-squishr-v1-quick-01/` | 5 | 11 |
 | `2026-10-06-squishr-v1-quick-02/` | 10 | 21 |
+| `2026-10-06-off-model-transfer-v1-quick-01/` | 5 | 15 |
+
+The nineteenth archive retains the first five of eight external-transfer trials.
+The chosen Transfxr-mixture metallic footstep is **similar**, but only its chosen
+option is recorded as auditioned, so no strict pairs against unheard options are
+created. Rustlr cloth wins and is **similar** with all three options heard.
+Original Bfxr wins belt/chain as **least-bad**. Hit/pat and door reject all three
+displayed candidates. No very-close judgments occur in this partial submission.
+
+Four strict pairs across two references and nine candidate-scoped labels are
+retained: two similar, one least-bad, six not-close. Frozen legacy and soft scores
+agree on 4/4 pairs; preference-neural-v2 on 1/4. This small, selected comparison
+does not establish a universally better scorer. The old Bfxr anchor has four
+training-list overlaps and one holdout-list overlap here. Bell/cloth-belt, laser
+and coin remain unsubmitted; collect those existing trials before choosing the
+next experiment. See the
+[partial external-transfer review](../evaluations/off-model-transfer-v1-quick-01-human-review.json).
 
 The eighteenth archive completes the same Squishr experiment. Its first five
 targets are byte-for-byte equal as JSON objects to the earlier partial export;
