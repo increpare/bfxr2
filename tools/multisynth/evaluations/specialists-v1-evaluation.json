@@ -1,0 +1,413 @@
+{
+  "complete": true,
+  "scriptSha256": "86e1a5617f2f0eb11da6e052e75b6a630456270339bd7415504262f2a48cb959",
+  "reportSha256": "0ee499e62ec90c93a4dd28539b3ef209e380b5319569aeb4fc9a05e705ed6e03",
+  "trainingReceiptSha256": "58da99f11e1c3a143fe6f6ee81cd20a3dc70eb2071ac8633cb8c700ed097c4f9",
+  "checkpoints": {
+    "Boomr": "e8fefa597fc7698e3d12f0a0d60618ac5007ddd8f60110619117b7da4a6c502a",
+    "Footsteppr": "d5cb9d2c88ab6f9cfb1b9bc5ee3a24d9458f54ff5c82c0ccb3b566ba1c60f733",
+    "Transfxr": "a816f97284cdd4ec0bfcfbcdbdbd11ab6e8b0230d4fa0b1388e758958694e73f",
+    "old-Boomr": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+    "old-Footsteppr": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97"
+  },
+  "targets": 155,
+  "summary": {
+    "self-anchor/clean": {
+      "count": 3,
+      "meanDistance": {
+        "Transfxr": 3.3459692813070565,
+        "old-Boomr": 10.842785698099172,
+        "old-Footsteppr": 4.4155503029917575,
+        "Boomr": 8.5176908741785,
+        "Footsteppr": 9.214465565020047
+      },
+      "selectedCounts": {
+        "Transfxr": 2,
+        "old-Boomr": 0,
+        "old-Footsteppr": 0,
+        "Boomr": 0,
+        "Footsteppr": 1
+      },
+      "meanCombinedDistance": 3.208785652727307
+    },
+    "self-anchor/mp3-32k": {
+      "count": 3,
+      "meanDistance": {
+        "Transfxr": 4.195528247761493,
+        "old-Boomr": 9.902961304257545,
+        "old-Footsteppr": 5.085239531087255,
+        "Boomr": 8.390558673827348,
+        "Footsteppr": 9.734077724131248
+      },
+      "selectedCounts": {
+        "Transfxr": 2,
+        "old-Boomr": 0,
+        "old-Footsteppr": 0,
+        "Boomr": 0,
+        "Footsteppr": 1
+      },
+      "meanCombinedDistance": 3.8704816756190166
+    },
+    "self-anchor/mp3-96k": {
+      "count": 3,
+      "meanDistance": {
+        "Transfxr": 3.055416283991621,
+        "old-Boomr": 9.526544630926876,
+        "old-Footsteppr": 4.400425230966609,
+        "Boomr": 7.007070303628775,
+        "Footsteppr": 9.187602334453613
+      },
+      "selectedCounts": {
+        "Transfxr": 2,
+        "old-Boomr": 0,
+        "old-Footsteppr": 0,
+        "Boomr": 0,
+        "Footsteppr": 1
+      },
+      "meanCombinedDistance": 2.90913402127763
+    },
+    "self-anchor/pcm8": {
+      "count": 3,
+      "meanDistance": {
+        "Transfxr": 4.682140144815871,
+        "old-Boomr": 10.464404324354552,
+        "old-Footsteppr": 5.121178210120657,
+        "Boomr": 7.116478655562911,
+        "Footsteppr": 6.824611958560591
+      },
+      "selectedCounts": {
+        "Transfxr": 1,
+        "old-Boomr": 0,
+        "old-Footsteppr": 0,
+        "Boomr": 1,
+        "Footsteppr": 1
+      },
+      "meanCombinedDistance": 3.832268842657955
+    },
+    "self-anchor/lowpass-1800": {
+      "count": 3,
+      "meanDistance": {
+        "Transfxr": 4.645544547519125,
+        "old-Boomr": 11.385211836754479,
+        "old-Footsteppr": 7.935500865165278,
+        "Boomr": 8.401189964164356,
+        "Footsteppr": 9.40390610961308
+      },
+      "selectedCounts": {
+        "Transfxr": 2,
+        "old-Boomr": 0,
+        "old-Footsteppr": 0,
+        "Boomr": 0,
+        "Footsteppr": 1
+      },
+      "meanCombinedDistance": 4.33760382544969
+    },
+    "self-anchor/highpass-350": {
+      "count": 3,
+      "meanDistance": {
+        "Transfxr": 4.645219123097742,
+        "old-Boomr": 8.98159319737953,
+        "old-Footsteppr": 4.374020999845123,
+        "Boomr": 8.024947973338449,
+        "Footsteppr": 9.527769876256178
+      },
+      "selectedCounts": {
+        "Transfxr": 2,
+        "old-Boomr": 0,
+        "old-Footsteppr": 1,
+        "Boomr": 0,
+        "Footsteppr": 0
+      },
+      "meanCombinedDistance": 3.61774554629156
+    },
+    "self-anchor/transpose+5": {
+      "count": 3,
+      "meanDistance": {
+        "Transfxr": 4.8344473946149655,
+        "old-Boomr": 9.377571931221281,
+        "old-Footsteppr": 3.9618192702128545,
+        "Boomr": 8.050609925400332,
+        "Footsteppr": 9.164314962950812
+      },
+      "selectedCounts": {
+        "Transfxr": 1,
+        "old-Boomr": 0,
+        "old-Footsteppr": 2,
+        "Boomr": 0,
+        "Footsteppr": 0
+      },
+      "meanCombinedDistance": 3.617909812058084
+    },
+    "self-anchor/transpose-5": {
+      "count": 3,
+      "meanDistance": {
+        "Transfxr": 2.9573653790209797,
+        "old-Boomr": 11.043798847383584,
+        "old-Footsteppr": 4.5669533618802145,
+        "Boomr": 8.595674701560085,
+        "Footsteppr": 9.046698516025044
+      },
+      "selectedCounts": {
+        "Transfxr": 3,
+        "old-Boomr": 0,
+        "old-Footsteppr": 0,
+        "Boomr": 0,
+        "Footsteppr": 0
+      },
+      "meanCombinedDistance": 2.9573653790209797
+    },
+    "self-other/clean": {
+      "count": 5,
+      "meanDistance": {
+        "Transfxr": 2.4764030223742513,
+        "old-Boomr": 6.716458512512709,
+        "old-Footsteppr": 7.236054511008557,
+        "Boomr": 9.222135041104142,
+        "Footsteppr": 10.99206737358649
+      },
+      "selectedCounts": {
+        "Transfxr": 4,
+        "old-Boomr": 1,
+        "old-Footsteppr": 0,
+        "Boomr": 0,
+        "Footsteppr": 0
+      },
+      "meanCombinedDistance": 2.243305848647749
+    },
+    "self-other/mp3-32k": {
+      "count": 5,
+      "meanDistance": {
+        "Transfxr": 4.054909799732043,
+        "old-Boomr": 6.6114988701515305,
+        "old-Footsteppr": 7.152396194927212,
+        "Boomr": 9.370095919707333,
+        "Footsteppr": 10.899976475796889
+      },
+      "selectedCounts": {
+        "Transfxr": 4,
+        "old-Boomr": 1,
+        "old-Footsteppr": 0,
+        "Boomr": 0,
+        "Footsteppr": 0
+      },
+      "meanCombinedDistance": 3.338561641637731
+    },
+    "self-other/mp3-96k": {
+      "count": 5,
+      "meanDistance": {
+        "Transfxr": 2.755755763832761,
+        "old-Boomr": 6.896123848889093,
+        "old-Footsteppr": 7.222367069191978,
+        "Boomr": 8.389865353615821,
+        "Footsteppr": 10.86486753183017
+      },
+      "selectedCounts": {
+        "Transfxr": 4,
+        "old-Boomr": 1,
+        "old-Footsteppr": 0,
+        "Boomr": 0,
+        "Footsteppr": 0
+      },
+      "meanCombinedDistance": 2.4896768750081133
+    },
+    "self-other/pcm8": {
+      "count": 5,
+      "meanDistance": {
+        "Transfxr": 2.786104817940907,
+        "old-Boomr": 7.804170697072001,
+        "old-Footsteppr": 6.808882559513807,
+        "Boomr": 9.073829318486053,
+        "Footsteppr": 9.16068118964164
+      },
+      "selectedCounts": {
+        "Transfxr": 4,
+        "old-Boomr": 0,
+        "old-Footsteppr": 1,
+        "Boomr": 0,
+        "Footsteppr": 0
+      },
+      "meanCombinedDistance": 2.732175812898461
+    },
+    "self-other/lowpass-1800": {
+      "count": 5,
+      "meanDistance": {
+        "Transfxr": 4.183909420072734,
+        "old-Boomr": 8.971906210996295,
+        "old-Footsteppr": 7.336688881359206,
+        "Boomr": 9.838221593817574,
+        "Footsteppr": 11.080904737036652
+      },
+      "selectedCounts": {
+        "Transfxr": 5,
+        "old-Boomr": 0,
+        "old-Footsteppr": 0,
+        "Boomr": 0,
+        "Footsteppr": 0
+      },
+      "meanCombinedDistance": 4.183909420072734
+    },
+    "self-other/highpass-350": {
+      "count": 5,
+      "meanDistance": {
+        "Transfxr": 6.870145537507345,
+        "old-Boomr": 6.742249219999681,
+        "old-Footsteppr": 7.846146370640277,
+        "Boomr": 7.7887147046463365,
+        "Footsteppr": 10.696798112863513
+      },
+      "selectedCounts": {
+        "Transfxr": 2,
+        "old-Boomr": 1,
+        "old-Footsteppr": 1,
+        "Boomr": 0,
+        "Footsteppr": 1
+      },
+      "meanCombinedDistance": 4.209997674396566
+    },
+    "self-other/transpose+5": {
+      "count": 5,
+      "meanDistance": {
+        "Transfxr": 3.737529418237495,
+        "old-Boomr": 6.60845498465024,
+        "old-Footsteppr": 6.942481398267709,
+        "Boomr": 9.192796554364453,
+        "Footsteppr": 11.576291753057077
+      },
+      "selectedCounts": {
+        "Transfxr": 4,
+        "old-Boomr": 1,
+        "old-Footsteppr": 0,
+        "Boomr": 0,
+        "Footsteppr": 0
+      },
+      "meanCombinedDistance": 2.837242875114235
+    },
+    "self-other/transpose-5": {
+      "count": 5,
+      "meanDistance": {
+        "Transfxr": 3.9979265135954485,
+        "old-Boomr": 6.722626005439208,
+        "old-Footsteppr": 7.324824208397885,
+        "Boomr": 10.857342253639183,
+        "Footsteppr": 9.659803739824552
+      },
+      "selectedCounts": {
+        "Transfxr": 4,
+        "old-Boomr": 0,
+        "old-Footsteppr": 1,
+        "Boomr": 0,
+        "Footsteppr": 0
+      },
+      "meanCombinedDistance": 3.9825962371143433
+    },
+    "other-synth": {
+      "count": 21,
+      "meanDistance": {
+        "Transfxr": 7.4259884428004606,
+        "old-Boomr": 5.644622090288543,
+        "old-Footsteppr": 5.688033881126857,
+        "Boomr": 6.505869114131602,
+        "Footsteppr": 7.153870396591908
+      },
+      "selectedCounts": {
+        "Transfxr": 2,
+        "old-Boomr": 4,
+        "old-Footsteppr": 5,
+        "Boomr": 6,
+        "Footsteppr": 4
+      },
+      "meanCombinedDistance": 3.902249772301852
+    },
+    "real-repeated": {
+      "count": 5,
+      "meanDistance": {
+        "Transfxr": 8.007974299181928,
+        "old-Boomr": 10.663098722863733,
+        "old-Footsteppr": 9.180198953360916,
+        "Boomr": 9.593162725410918,
+        "Footsteppr": 11.039577849521425
+      },
+      "selectedCounts": {
+        "Transfxr": 3,
+        "old-Boomr": 1,
+        "old-Footsteppr": 1,
+        "Boomr": 0,
+        "Footsteppr": 0
+      },
+      "meanCombinedDistance": 6.61481445091125
+    },
+    "fresh-native": {
+      "count": 32,
+      "meanDistance": {
+        "Transfxr": 3.9680481444154925,
+        "old-Boomr": 6.97230255875342,
+        "old-Footsteppr": 5.636106518537551,
+        "Boomr": 7.5157277079839995,
+        "Footsteppr": 7.694997661423321
+      },
+      "selectedCounts": {
+        "Transfxr": 22,
+        "old-Boomr": 3,
+        "old-Footsteppr": 2,
+        "Boomr": 1,
+        "Footsteppr": 4
+      },
+      "meanCombinedDistance": 3.1346376423611
+    },
+    "fresh-native-Boomr": {
+      "count": 16,
+      "meanDistance": {
+        "Transfxr": 3.9663447975299317,
+        "old-Boomr": 2.4570328107240904,
+        "old-Footsteppr": 4.603616236239939,
+        "Boomr": 2.485383843946957,
+        "Footsteppr": 4.303782597669587
+      },
+      "selectedCounts": {
+        "Transfxr": 1,
+        "old-Boomr": 7,
+        "old-Footsteppr": 2,
+        "Boomr": 6,
+        "Footsteppr": 0
+      },
+      "meanCombinedDistance": 1.8413028416727202
+    },
+    "fresh-native-Footsteppr": {
+      "count": 16,
+      "meanDistance": {
+        "Transfxr": 2.8716232341545966,
+        "old-Boomr": 4.257452231154565,
+        "old-Footsteppr": 1.804608133867277,
+        "Boomr": 3.6872180430498633,
+        "Footsteppr": 1.264812007891825
+      },
+      "selectedCounts": {
+        "Transfxr": 1,
+        "old-Boomr": 0,
+        "old-Footsteppr": 5,
+        "Boomr": 0,
+        "Footsteppr": 10
+      },
+      "meanCombinedDistance": 1.1193452862430053
+    },
+    "real-repeated-book": {
+      "count": 1,
+      "meanDistance": {
+        "Transfxr": 12.156168354741395,
+        "old-Boomr": 6.467366007573974,
+        "old-Footsteppr": 3.367908058722258,
+        "Boomr": 6.206695853411499,
+        "Footsteppr": 4.023927514084372
+      },
+      "selectedCounts": {
+        "Transfxr": 0,
+        "old-Boomr": 0,
+        "old-Footsteppr": 1,
+        "Boomr": 0,
+        "Footsteppr": 0
+      },
+      "meanCombinedDistance": 3.367908058722258
+    }
+  },
+  "scope": "155 references including 32 native test controls; all five arms receive identical audition PCM. Four proposals each; no search, source-engine label or pitch guard used for selection. Old shared-v2 engine heads included; not an all-synth system benchmark."
+}

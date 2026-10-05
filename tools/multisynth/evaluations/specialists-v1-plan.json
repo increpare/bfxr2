@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "experiment": "specialists-v1",
+  "purpose": "Add independent Boomr and Footsteppr inverse experts after their Transfxr recreations failed human adequacy; keep older experts available.",
+  "engines": [
+    "Boomr",
+    "Footsteppr"
+  ],
+  "data": {
+    "rowsPerEngine": 12288,
+    "seeds": {
+      "Boomr": 20261109,
+      "Footsteppr": 20261110
+    },
+    "sampling": "existing 50% native / 30% sparse / 20% broad global mutations",
+    "split": "Parameter-hash grouped original split, then reserve all 16 selected native control groups per engine from validation too, in separate fit-data views. Exact numeric/categorical controls are also checked for overlap ignoring randomness codes.",
+    "paths": {
+      "Boomr": "tools/multisynth/runs/specialists-v1/data/Boomr-parallel",
+      "Footsteppr": "tools/multisynth/runs/specialists-v1/data/Footsteppr"
+    },
+    "parallelBoomrParts": {
+      "rowsPerPart": 3072,
+      "seeds": [
+        20261109,
+        20365838,
+        20470567,
+        20575296
+      ],
+      "globalRegroupSeed": 20261109,
+      "mergeScript": "tools/multisynth/evaluations/specialists-v1-merge-data.py"
+    }
+  },
+  "training": {
+    "independentModels": true,
+    "epochs": 90,
+    "hidden": 256,
+    "batchSize": 128,
+    "learningRate": 0.001,
+    "headMode": "acoustic",
+    "lossMode": "acoustic",
+    "seeds": {
+      "Boomr": 20261111,
+      "Footsteppr": 20261112
+    },
+    "device": "mps",
+    "selection": "minimum per-engine validation control loss; not evaluation audio scores"
+  },
+  "evaluation": {
+    "freshNativeControlsPerEngine": 16,
+    "nativeSelectionSeed": 20261113,
+    "priorTargets": "all 122 fixed native-mixture development references",
+    "taggedAdditional": [
+      "card/bookClose.ogg"
+    ],
+    "input": "exact peak-normalized PCM16 reference given to each new expert",
+    "selection": "minimum actual-audition matching distance; no source-engine label or pitch guard",
+    "proposalsPerExpert": 4,
+    "historicalBaseline": "retained Transfxr mixture pool rescored on the same audition reference; also preserve exact historical human winners for listening",
+    "freshBaseline": "four Transfxr mixture proposals from the same PCM16 reference",
+    "claims": "Changing capacity and adding source synths, not a matched architecture ablation. Self-inversion and cross-engine transfer reported separately. No success claim from distance alone.",
+    "nativeHoldout": "No optimization or checkpoint-selection validation exposure. Same preset families as training; not a preset-family holdout."
+  },
+  "listening": {
+    "maximumComparisons": 6,
+    "include": "native controls, cross-engine examples, tagged real reference, and metric agreement/disagreement cases where distinct plausible outputs exist",
+    "protocol": "feel-choice-v2 with immediate winner-scoped adequacy",
+    "candidateGeneration": "no human adjudication fabricated or inferred from metrics"
+  },
+  "codeHashes": {
+    "tools/neural_invert/data.py": "15b3683eb8690a9cc37612e676f6582e59cd9167de5d4098f308bcfe6fa7136c",
+    "tools/neural_invert/features.py": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+    "tools/neural_invert/schema.py": "164371d97f58e7db447f794c618eedc146949d9d70d15689f44bbec65c75871e",
+    "tools/neural_invert/model.py": "1e7c07e7981582082aa832879db5b4a15b788a58ed10c4c3c4c92f7e3a2629cc",
+    "tools/neural_invert/train.py": "31676020def7cadcaa844651f429ee4cc970272c301aa7a89bcd8fbb3c25354d",
+    "tools/neural_invert/predict.py": "953a5a79b089d42c1be2d8a9c92d02e8a39d25f4ba019899b840502769db51d4",
+    "tools/neural_invert/acoustic.py": "29d02dfa7cd34d3166759d81444e5cee51c6bb12711e99a1f7e9ee230ea9946f"
+  },
+  "preTrainingAmendments": [
+    "Boomr generation moved from one worker to four independently seeded parts after observing rendering cost. Total rows unchanged; merge regroups all exact controls before splitting. The interrupted single-worker manifest remains incomplete and is not training input. No model trained or evaluation score inspected before this change.",
+    "Before fitting, strengthen the 32 native references into a true test split by excluding their entire control groups from checkpoint-selection validation as well. Original generated data remains unchanged; the training script creates separately bound fit-data views. No model or evaluation scores yet."
+  ]
+}

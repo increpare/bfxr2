@@ -1,0 +1,56 @@
+{
+  "reportSha256": "0ee499e62ec90c93a4dd28539b3ef209e380b5319569aeb4fc9a05e705ed6e03",
+  "policy": "Six deliberately selected diagnostic comparisons after outcome inspection, including wins, losses, two first-in-frozen-order untouched native controls, cross-engine transfer and one real recording. Not a population win-rate estimate. Historical human winners preserved exactly; every comparison includes a newly trained specialist output.",
+  "rows": [
+    {
+      "id": "external-Footsteppr",
+      "label": "Footstep reference",
+      "newEngine": "Footsteppr",
+      "baseline": "old-Footsteppr",
+      "reason": "Familiar source where both previous Transfxr recreations were rejected. Directly compare old shared and new independent Footsteppr heads; new model is worse by matching distance."
+    },
+    {
+      "id": "external-Boomr",
+      "label": "Rocket burst reference",
+      "newEngine": "Boomr",
+      "baseline": "archive",
+      "archive": "tools/multisynth/listening_data/2026-10-05-native-mixture-quick-01",
+      "archiveTargetId": "615bfd5a72970385b89a1f7e33011356ca2bd2aeb471a82a43abff978395798c",
+      "archiveCandidateId": "9c4d4e4c062296b0dafeb23a8b4b8618d52c0d4842e650d0401607e2744d5908",
+      "extraBaselineEngine": "old-Boomr",
+      "reason": "New independent Boomr leads numerically. Preserve the exact older human winner rated roughly similar, and also include the older shared Boomr head."
+    },
+    {
+      "id": "Boomr-specialist-03383",
+      "label": "New short burst",
+      "newEngine": "Boomr",
+      "baseline": "old-Boomr",
+      "reason": "First Boomr test control in the pretraining-frozen order. Both models are excluded from these exact controls; shared preset families. New improves numerical distance; no human adequacy assumed."
+    },
+    {
+      "id": "Footsteppr-specialist-02077",
+      "label": "New footstep",
+      "newEngine": "Footsteppr",
+      "baseline": "old-Footsteppr",
+      "reason": "First Footsteppr test control in the pretraining-frozen order. New model improves numerical distance; assess whether this is audible."
+    },
+    {
+      "id": "external-Whooshr",
+      "label": "Wingbeat reference",
+      "newEngine": "Footsteppr",
+      "baseline": "old-Footsteppr",
+      "reason": "Cross-engine reference from Whooshr; new Footsteppr is the lowest-distance option and old Footsteppr the strongest previous arm. Low-distance agreement case still needs human adequacy."
+    },
+    {
+      "id": "tagged/card/bookClose.ogg",
+      "label": "Tagged recording \u00b7 book close",
+      "newEngine": "Footsteppr",
+      "baseline": "archive",
+      "archive": "tools/multisynth/listening_data/2026-10-04-temporal-v3-quick-01",
+      "archiveTargetId": "944c23a84c249cdfb74e43ae97689c8e34599ee6fc6eb4f7cfa58406ee75296b",
+      "archiveCandidateId": "17826977676e9071d9a149a0dfdf14932cb89d76ab28252201982e3903acab5e",
+      "extraBaselineEngine": "old-Footsteppr",
+      "reason": "Real tagged transfer test. Retain the exact earlier human winner and strongest current old shared head alongside the new specialist; the new head loses to old Footsteppr numerically."
+    }
+  ]
+}

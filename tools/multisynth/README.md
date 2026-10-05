@@ -1,6 +1,6 @@
 # Multi-synth inverse model
 
-The current learned implementation lives in `../neural_invert/`: a shared
+The general-purpose CLI implementation lives in `../neural_invert/`: a shared
 whole-sound encoder and separate audio-to-control experts for 22 individual
 synths. The acoustic v2 model uses 51,200 actual DSP training examples and
 learns controls directly from audio, with pitch-aware supervised loss. It preserves the original Bfxr
@@ -10,7 +10,57 @@ neural model and optimizer as an independent candidate. See
 comparison. Mixr composition and arbitrary phrase transcription remain separate
 work; model capacity and parameter validation do not establish audible likeness.
 
-The latest reviewed checkpoint is
+Newer independent-expert experiments are retained alongside that baseline.
+[Expanded Transfxr mixtures](NATIVE_MIXTURE_V1.md) now have explicit **very-close**
+human judgments for two additional native rises and one filtered bouncing rise.
+The same partial submission rejects both Footsteppr transfer options and prefers
+an older Boomr recreation rated **roughly similar**. Three native/altered positives
+do not establish general success on real recordings. All eleven feedback sessions,
+including exact audition PCM and immediate candidate-scoped adequacy, are retained.
+
+The latest [specialist experiment](evaluations/specialists-v1-plan.json) trains
+independent Boomr and Footsteppr models on 12,288 examples each. The older shared
+model already had heads for these engines, trained on 2,048 examples each; those
+heads remain explicit baselines. These new models start from random weights,
+use the existing direct control-head architecture and loss, and select epochs
+14 (Boomr) and 57 (Footsteppr) by validation loss after 90 epochs on MPS.
+This changes training data and encoder sharing together, so it is not an
+isolated architecture ablation or a blanket replacement of the older models.
+
+Each new data set contains 10,445 optimization, 1,827 validation and 16 test rows.
+Test control groups are excluded from both optimization and checkpoint selection;
+they also do not occur in the old shared model's data. Preset families still
+overlap. The benchmark gives all five arms the same audition PCM and four
+proposals each: Transfxr mixture, two old shared heads, and two new independent
+experts. Engine identity and pitch guards do not select the winner. It covers
+155 references: 122 previously monitored cases, 32 new native test controls,
+and archived tagged book-close. This is a focused comparison, not an all-synth
+or original-Bfxr-search benchmark.
+
+| Native test set | Old same-engine mean distance | New same-engine mean distance | New wins |
+| --- | ---: | ---: | ---: |
+| Boomr, 16 controls | 2.45703 | 2.48538 | 8/16 |
+| Footsteppr, 16 controls | 1.80461 | 1.26481 | 11/16 |
+
+These are actual-render matching distances, not human likeness ratings.
+Footsteppr improves its native average by about 30%; Boomr is essentially flat.
+Other-engine transfer is mixed, and neither new head wins any of the six tagged
+recordings within this five-arm metric comparison. Older expert strengths must
+remain available. The [new listening page](runs/specialists-v1-listening/index.html)
+contains six short comparisons: familiar footstep and rocket references, the
+first frozen native test control from each engine, a Whooshr wingbeat, and the
+tagged book-close. It includes numerical losses as well as wins. Historical
+human winners are replayed exactly; two trials have a third option to also
+retain the older shared head. This selected batch cannot estimate a success rate.
+
+The [evaluation](evaluations/specialists-v1-evaluation.json),
+[independent verification](evaluations/specialists-v1-audit.json) and
+[listening selection](evaluations/specialists-v1-listening-targets.json) bind the
+models, data, actual renders and comparison scope. Reproduction scripts are the
+`evaluations/specialists-v1-*.py` files; full models/data/audio remain under
+`runs/specialists-v1`. No global model promotion follows from these scores.
+
+An earlier reviewed checkpoint is
 [pitch-calibration listening](runs/pitch-calibration-listening-v1/index.html),
 using frozen v3 Bfxr/Transfxr/Pluckr experts plus bounded DSP pitch correction.
 Both changed selections lost their human comparisons; the synthetic pitch gate
@@ -19,7 +69,7 @@ does not establish perceptual improvement. The user subsequently confirmed
 This requires improving candidate generation as well as selection. See the
 [human review](evaluations/pitch-calibration-quick-01-human-review.json) and
 [verbatim adequacy follow-up](listening_data/2026-10-05-pitch-calibration-quick-01/qualitative-feedback.json).
-All eight feedback sessions and exact audition PCM remain versioned. A fresh
+The first eight feedback sessions and exact audition PCM remain versioned. A
 preference-scorer refit reaches about 73% reference-balanced held-out agreement
 overall but only 3/7 on this latest batch; it is experimental and not deployed.
 
@@ -30,8 +80,8 @@ No new listening round is requested from that failed experiment.
 
 Follow-up [local gradient checks](FORWARD_AUDIO_PILOT.md) and
 [Transfxr pitch-gesture supervision](PHYSICAL_GESTURE_V2.md) also failed their promotion
-checks. Exact results and models are retained. A larger native Transfxr training
-corpus is being generated to test the substantial coverage/overfitting gap.
+checks. Exact results and models are retained. The subsequent larger native
+Transfxr corpus and mixture results are linked above.
 
 The earlier iterations below use an offline **nonparametric inverse model**: render examples from the app's
 preset distributions, encode their audio, retrieve plausible parameters for

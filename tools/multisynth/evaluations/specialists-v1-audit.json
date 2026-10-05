@@ -1,0 +1,39 @@
+{
+  "complete": true,
+  "scriptSha256": "08f55c78146eddf293d80ad2edff674b11fda828de633b6047cfa2617abeeec5",
+  "reportSha256": "0ee499e62ec90c93a4dd28539b3ef209e380b5319569aeb4fc9a05e705ed6e03",
+  "trainingReceiptSha256": "58da99f11e1c3a143fe6f6ee81cd20a3dc70eb2071ac8633cb8c700ed097c4f9",
+  "validation": {
+    "Boomr": {
+      "cpuValidation": 0.22103242272716045,
+      "recordedValidation": 0.22103242984741975,
+      "absoluteError": 7.120259298831755e-09,
+      "trainRows": 10445,
+      "validationRows": 1827,
+      "testRows": 16,
+      "selectedEpoch": 14,
+      "checkpointSha256": "e8fefa597fc7698e3d12f0a0d60618ac5007ddd8f60110619117b7da4a6c502a"
+    },
+    "Footsteppr": {
+      "cpuValidation": 0.09358967793366266,
+      "recordedValidation": 0.0935896838712901,
+      "absoluteError": 5.937627445273819e-09,
+      "trainRows": 10445,
+      "validationRows": 1827,
+      "testRows": 16,
+      "selectedEpoch": 57,
+      "checkpointSha256": "d5cb9d2c88ab6f9cfb1b9bc5ee3a24d9458f54ff5c82c0ccb3b566ba1c60f733"
+    }
+  },
+  "targets": 155,
+  "filePcmChecks": 3255,
+  "selectedDspReplays": 775,
+  "maxRescoreError": 0.0,
+  "oldSharedDatasetSha256": "2701d7907e824f9e34872c1bc4b99ccc1e3d85941040a42ff4029eb658564657",
+  "oldSharedExamples": {
+    "Boomr": 2048,
+    "Footsteppr": 2048
+  },
+  "nativeTestControlsAlsoAbsentFromOldSharedData": true,
+  "scope": "New native test groups excluded from optimization and checkpoint selection. CPU validation and all selected actual DSP replays verified; no human likeness inferred."
+}

@@ -1,0 +1,101 @@
+{
+  "complete": true,
+  "experimentId": "5ea2ca433edc028e29f8beaf655b9986d3aceaa615c2c85fd8073bec47b1754d",
+  "htmlSha256": "2c5eef14cb153b006dd88641951b6bacffd94f9bc547736b2c00f98b971a7f70",
+  "resultsSha256": "fec06c92297119abf751534d2a07a16291dc1e39ea62963ae6399211263963fb",
+  "checks": [
+    {
+      "id": "external-Footsteppr",
+      "candidateAudioHashes": [
+        "3a10d4a6944651a335b503297bef4fe2be1c83325c4c9b49b0d251eee96aa8ab",
+        "e06c1593513c425aa5410d6493e6a6e52d9ebf1d84b6ac7edf1965e961402297"
+      ],
+      "scores": [
+        2.0910520527803396,
+        3.123176171189889
+      ]
+    },
+    {
+      "id": "external-Boomr",
+      "candidateAudioHashes": [
+        "2f6f9daa0a850e9b9cc4989966b6bb47ef6f26e4d36322b25799d578b4b8b3ea",
+        "42c06d69f1c135681a883f5baeab13a06632b558300c33034f99d7a5010db2bf",
+        "3b6c0dca26e261ffe9af5b90d1c78eb283f3254d6cfe2430e729aeacd3539367"
+      ],
+      "scores": [
+        2.0305680760515026,
+        1.2297055066845761,
+        2.042396842683001
+      ]
+    },
+    {
+      "id": "Boomr-specialist-03383",
+      "candidateAudioHashes": [
+        "69446a4fdced51d299ab23dd0d6c960adf25eee7a192a929663a67bc74f2b982",
+        "bc2ed201c9c2af8901a2a0a4ebc44a6c71b28c62ef991b84c2d720203fe34f3e"
+      ],
+      "scores": [
+        3.1076993588825355,
+        2.07506193885977
+      ]
+    },
+    {
+      "id": "Footsteppr-specialist-02077",
+      "candidateAudioHashes": [
+        "d9bfee0bb441af84cd038234dbe804fd53d6ca8588d47f2b73b198f6e6851446",
+        "d1b19c88f59e562518faba250a7eb10f0bc1a5d1be5d546b44069ad73ec38b03"
+      ],
+      "scores": [
+        1.4682206420395425,
+        1.118080564421092
+      ]
+    },
+    {
+      "id": "external-Whooshr",
+      "candidateAudioHashes": [
+        "83a35be8d88b349a299bfb6de6f01aa37e113d18a74549f4c3756bf3b53df205",
+        "597f2aad83fc6a13d5e7bfad1a1f169810ce6ed6aba45b284e1d3423df2565c8"
+      ],
+      "scores": [
+        0.7750378415574596,
+        0.5350192627520804
+      ]
+    },
+    {
+      "id": "tagged/card/bookClose.ogg",
+      "candidateAudioHashes": [
+        "d41ea01ec4b762dc7994a28beb81cf4789d701d60ce558d67ae446d8719a1460",
+        "847800649071f4dc33748adb738b05442bc8b059f513537257ad9b0cd4963c05",
+        "a87526ea34f12eb1204305720c58209b026a3ad496f9d9ee5bff1c5ae2df711c"
+      ],
+      "scores": [
+        1.588768649140143,
+        4.023927514084372,
+        3.367908058722258
+      ]
+    }
+  ],
+  "audioFiles": {
+    "001/selected.wav": "87ffc7f75c96b0cf287106e46be69a4e25b0a234ed1baf459636dd15df00b13b",
+    "001/target.wav": "01591dd5efd3b3ea040b3415fad2eff231978149acddf9bd97c73b28a10095c3",
+    "001/previous.wav": "340cd9787551a3cc6ee04063f00ffc678ca08ded759f02ad8ff8c99b93ca4a65",
+    "006/original.wav": "a663e0642dd7bc8b147e120c918091ad869438ae411f6383e8225e1a02aaf317",
+    "006/selected.wav": "44cb14ec928f2fbaa88e6d1aa1c7dbadbaf9f366fac440024cf34f1fb0818825",
+    "006/target.wav": "1694d1c771a06481c05b4dfc5ce9015168e50c0b4149958af6302cd500f9deb4",
+    "006/previous.wav": "6d54ac458f336189620a584755c58715f71cf55bfea08471e7d636b3f3862c50",
+    "003/selected.wav": "41b160f952e6ee05b57965fae00fba4371994c2e4d722f68ff010df3835530c3",
+    "003/target.wav": "e6cfde270a6c0391660a4fcec09ae43b1f9f842517b90b3201cb72091bc489b3",
+    "003/previous.wav": "22333ee94713f453cec9631053c91c4007ab129dcd400a1a6fe75f88389f7272",
+    "004/selected.wav": "ee90a0019a4d323fc72fcae0702708bda5cece5383e76d07a3f533ac490faa23",
+    "004/target.wav": "b1b295fcb0dbfa4227cf1dbe346247a822fa50eaeb936d987d328bf4fb421731",
+    "004/previous.wav": "7cd2962d0f6ea65c4b0e021342b4b749e8cadb77f67002266c662921d7811968",
+    "005/selected.wav": "0af4bcf5a63d37bd81bac4a6a7aaaed87f2b86a7b5b37870b304fb722ee92758",
+    "005/target.wav": "607fbb74ae3a5a3433e391d480de19db3c8cdebc64ce3f2bd844492277d8aad9",
+    "005/previous.wav": "ad1eddd4a1a43dcb317d72258a2af568e07a1c5f78e27898714a06cca5b034ca",
+    "002/original.wav": "d583617bec336b9ca5fc5ee026e35a40e3bb626e5af436b164b74986042c7198",
+    "002/selected.wav": "67cc9a986cac15345c2784f7696283eee4a527a63289e8d3b5b770e4f3438537",
+    "002/target.wav": "3aeeb71d3a24e24af3f9742663612e05806d08fd3deac114a3b4ca2d8e55d354",
+    "002/previous.wav": "d0053c8acde4db780240af6d84707c61a468b1c3094b713d10c7ea634a528fcd"
+  },
+  "scope": "Every new candidate DSP replayed; archived audio/reference exact; one audition transform; distinct candidate PCM; questionnaire unanswered by assistant."
+}

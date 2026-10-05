@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "planSha256": "b24d9297a6acbcd0e48cdb5d6605b45bc4d76c127c0ef3bb8c18f8bf1ac6215a",
+  "amendmentTiming": "After new-model fitting started, before any evaluation rendering or score inspection.",
+  "reason": "The older shared22-synth model already contains Boomr/Footsteppr heads. Include these as additional baselines to test actual improvement over existing engine-specific predictions, not just Transfxr transfer.",
+  "sharedModelPath": "tools/multisynth/runs/neural-v2/acoustic-model",
+  "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+  "trainingSha256": "22b2ab9b1e544ffba7ec042535ea446a8b38858424ff736a5bcd994c174e567d",
+  "evaluatedHeads": [
+    "Boomr",
+    "Footsteppr"
+  ],
+  "proposalsPerHead": 4,
+  "scope": "Focused five-arm comparison: Transfxr mixture, shared-v2 Boomr, shared-v2 Footsteppr, independent Boomr, independent Footsteppr. This does not benchmark all other synth heads, original Bfxr search, or claim a globally best system.",
+  "selection": "All candidates scored against the same audition reference; retain separate best-by-arm and unrestricted minimum. No source-synth identity enters ranking."
+}
