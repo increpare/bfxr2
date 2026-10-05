@@ -52,19 +52,19 @@ Create `tools/neural_invert/pitch_calibration_eval.py` and
 `tools/tests/test_neural_pitch_calibration_evaluation.py`.
 CLI accepts `--benchmark` (one frozen v5 comparison results file) and fresh
 `--output`. Process only its temporal-v3 arm, preserving target order/IDs.
-- [ ] Test missing/modified source report/audio/DSP/checkpoint bindings, incomplete
+- [x] Test missing/modified source report/audio/DSP/checkpoint bindings, incomplete
   source, missing originals, safe fresh output, literal actual render persistence,
   all3 output selections and counted render failures. Use temporary fixture
   reports with real tone render identities and fake predictor-free pools.
-- [ ] Implement report schema with incomplete manifest until alltargets verified;
+- [x] Implement report schema with incomplete manifest until alltargets verified;
   original report/hash, model/checkpoint/data/DSP hashes, policy/code hashes,
   all original/accepted/rejected attempts and exact FLOAT WAVs, source-engine
   versus unrestricted outputs where meaningful. Store full v5 diagnostics and
   objective values; report baseline/expanded-objective/pitch-first separately.
   Aggregate all predeclared gates from the spec with explicit pass/fail; the
   combined20+4 gate may be a root analysis script consuming both reports.
-- [ ] Run focused tests; independent spec then quality reviews; freeze code.
-- [ ] Execute both24-target development cohorts. Independently replay every new
+- [x] Run focused tests; independent spec then quality reviews; freeze code.
+- [x] Execute both24-target development cohorts. Independently replay every new
   accepted/selected output and audit attempted render accounting/code identities.
   Archive compact report and predeclared gate result in evaluations/. No promotion
   or human page on a known failed gate.
@@ -94,9 +94,53 @@ CLI accepts `--benchmark` (one frozen v5 comparison results file) and fresh
   link and ask best/tie/none plus optional adequacy notes. Retain outcome as a
   human-quality checkpoint, not a claim that the full goal is complete.
 
+### Listening implementation details
+
+Own new `pitch_calibration_gallery.py` and its focused gallery tests only. Reuse
+frozen v3 prediction/refinement and existing quick UI. Fresh reference preparation
+is `audition_pcm(prepare_target(path))` exactly once, then direct PCM16 persistence;
+assert its decoded float32 hash matches the fixed manifest. Never peak-normalize
+an already audition-transformed reference a second time. For charm, copy the
+archived reference and bind `archivedReferencePcmSha256`; the inherited source
+`normalizedPcmSha256` is a different identity.
+
+The original Bfxr checkpoint is
+`/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt`,
+SHA256 `47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98`.
+Keep its optimizer and seed policy fixed; record actual evaluations and running
+backend identity. Verify original-backend versus shipped-DSP replay before treating
+its controls as a calibration candidate. If backends differ, retain its actual
+original PCM in the common baseline/selection pool and heard comparison, explicitly
+skip adjustment of that row, and record why; never replace its PCM silently.
+
+Fresh target refinement seed is `20261011 + target_index*1009 + engine_index*71`
+(zero-based fixed manifest and Bfxr/Transfxr/Pluckr order). Original Bfxr optimizer
+seed omits the engine term. The common pool has up to12 raw +3 refined +1 original
+Bfxr candidates. Its calibration budget is at most3 extra renders per actual pool
+member, reported separately from384 trials per engine and original-Bfxr fitting.
+Task2's36-render total applies to its12-member synthetic benchmark only.
+
+All accepted/rejected pitch attempts and actual original pool PCM are retained.
+Use bounded calibration as frozen; choose all new options without human labels.
+Human history only supplies exact comparison anchors. Label the new option as
+pitch-calibrated, not as a newly trained model. No page unless the predeclared
+synthetic gate passes; fixed fresh listening references are a separate human check.
+
 ## Execution constraints
 
 Do not edit frozen v3/v4/v5 feature, model, data, evaluation, gallery or synth code.
 Do not rerun training or delete prior artifacts. Root owns documentation/reports;
 one implementation agent at a time owns its specified files. Each stage completes
 review before dependent work. No new user-owned threads, messages or automations.
+
+## Completed synthetic probe
+
+Code frozen at65508e6 after104 calibration/evaluator tests and independent spec
+and quality reviews. Both production cohorts completed; independent replay audit
+`tools/multisynth/evaluations/pitch-calibration-audit.json` passed every predeclared
+gate. High-register eligible4/4, mean objective7.522992→0.651379; ordinary mean
+1.435681→1.484319 (+3.39%, within the predeclared10% bound). No prior ordinary
+static median/direction pass lost. Moving contour .981062→.903158 semitones;
+span1.311111→1.224379. All originals retained; no failed renders. This supports
+the bounded hybrid component proceeding to human listening, not a learned-model
+or general auditory success claim.
