@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All eleven feedback sessions,
+do not establish general success on real recordings. All twelve feedback sessions,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The latest [specialist experiment](evaluations/specialists-v1-plan.json) trains
@@ -52,6 +52,52 @@ first frozen native test control from each engine, a Whooshr wingbeat, and the
 tagged book-close. It includes numerical losses as well as wins. Historical
 human winners are replayed exactly; two trials have a third option to also
 retain the older shared head. This selected batch cannot estimate a success rate.
+
+The [specialist listening feedback](evaluations/specialists-quick-01-human-review.json)
+now confirms three new wins, all **very close**: familiar footstep, rocket burst,
+and Whooshr wingbeat. The older Boomr wins the native short burst, also very close;
+the native footstep is a roughly-similar tie. Book-close was not submitted.
+Matching distance agrees with 3/5 strict pairs, the frozen learned preference
+scorer with 4/5. Preserve both generations. These five selected synthetic
+references establish some audible successes, including cross-engine transfer,
+but no general real-recording success. The next test uses five newly selected
+tagged sources and retains original Bfxr plus the older ensemble.
+
+The [tagged-transfer batch](runs/specialists-tagged-v1-listening/index.html) now
+contains exactly five previously unjudged files: wooden footstep, brick break,
+block hit, cloth rustle and laser. Selection was frozen before inference; no
+source was dropped for a disappointing result. Exclusion covers exact previously
+judged files/PCM, not source families or the original Bfxr real-finetuning corpus.
+Old proposals span the shared 22-engine model and Transfxr mixture. New proposals
+come from Boomr/Footsteppr; each pool gets two 128-mutation refinement starts.
+Original Bfxr uses its neural-seeded optimizer with requested budget 2,000;
+the existing optimizer actually used 2,015 evaluations on four references and
+3,001 on laser. Counts are recorded rather than claiming equal total compute.
+
+The new specialist pool has lower matching distance on one of five (laser).
+Older outputs lead the other four, including an almost-tied brick break. These
+scores do not establish audible wins; every reference is presented for review.
+Three options per trial retain the older pool winner, new specialist winner,
+and original Bfxr. Where original Bfxr is already the older winner, the third
+option is a distinct raw specialist. All 15 options are verified visible in the
+quick questionnaire, and immediate closeness is collected before advancing.
+
+The [frozen targets](evaluations/specialists-tagged-v1-targets.json),
+[evaluation](evaluations/specialists-tagged-v1-evaluation.json),
+[295-candidate replay audit](evaluations/specialists-tagged-v1-listening-audit.json)
+and [22-response HTTP audit](evaluations/specialists-tagged-v1-http-audit.json)
+bind the run. Reproduce generation with `evaluations/specialists-tagged-v1.py`;
+use **`evaluations/specialists-tagged-v1-gallery.py`** for verification/export,
+not the unused embedded publish action. The separate exporter corrects a hidden
+raw-option role and binds original Bfxr to its actual renderer, while preserving
+all evaluated audio. That backend was bound after evaluation, not before it;
+every saved original Bfxr output exactly replays against the recorded backend.
+No model or metric was retrained or globally promoted in this transfer batch.
+
+The [scorer decomposition](evaluations/specialists-quick-01-components.json)
+identifies a testable hypothesis: pitch penalties reverse the otherwise better
+new footstep match. The short-burst error has a different pattern. These are
+post-feedback diagnostics, not justification for globally removing pitch loss.
 
 The [evaluation](evaluations/specialists-v1-evaluation.json),
 [independent verification](evaluations/specialists-v1-audit.json) and

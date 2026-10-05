@@ -1,0 +1,733 @@
+{
+  "complete": true,
+  "partialSubmission": true,
+  "scriptSha256": "341c1b096010cfa3aefe7a505177d360f560b43947f6d072f38c503f6f10f36c",
+  "experimentId": "5ea2ca433edc028e29f8beaf655b9986d3aceaa615c2c85fd8073bec47b1754d",
+  "feedbackSha256": "cf5b1e3b11aaa46a0baf4cada8db23bc2c64991cb16668b67f956d38206608ea",
+  "manifestSha256": "de39d4def82cca02d42f213303f2e7030b785772e1f5a42694c2c4bd4b2e1266",
+  "galleryReportSha256": "fec06c92297119abf751534d2a07a16291dc1e39ea62963ae6399211263963fb",
+  "galleryAuditSha256": "03ded07dcc87ccbc8a1dd177e30be434526a9fe6f5756d0201477f2ad8516ea5",
+  "metricHashes": {
+    "preferenceNeuralV2": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b"
+  },
+  "archiveSummary": {
+    "targets": 5,
+    "uniqueRatedCandidates": 0,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "choices": 5,
+    "choiceKinds": {
+      "best": 4,
+      "tie": 1,
+      "none": 0,
+      "skip": 0
+    }
+  },
+  "trainingPairSummary": {
+    "targets": 5,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "duplicateAudioAliases": 0,
+    "conflictingAudioRatingGroups": 0,
+    "tiedPairs": 0,
+    "duplicateSessionPairs": 0,
+    "directChoicePairs": 5,
+    "choices": 5,
+    "choiceKinds": {
+      "best": 4,
+      "tie": 1,
+      "none": 0,
+      "skip": 0
+    },
+    "validatedAudioFiles": 16,
+    "uniqueAudioPcm": 16
+  },
+  "rows": [
+    {
+      "name": "Footstep reference",
+      "targetId": "083b75c522786a875853e6ff295e735f897a5cf0b19a9e88784164b848cb21a4",
+      "kind": "best",
+      "adequacy": {
+        "level": "very-close",
+        "candidateIds": [
+          "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895"
+        ]
+      },
+      "preferredRoles": [
+        "selected"
+      ],
+      "options": [
+        {
+          "id": "d01c48e86b334f81a2f95e721e9a77a692d25f9ddaf9aaec14221afd4bc1e08d",
+          "role": "previous",
+          "synth": "Footsteppr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "pcmSha256": "6361d21f38314b21205b588258f407a2e1d74b19b7a5cfd6ef375349dc091e58",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 2.0910520527803396,
+            "preferenceNeuralV2": 0.7647467099221298
+          }
+        },
+        {
+          "id": "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895",
+          "role": "selected",
+          "synth": "Footsteppr",
+          "checkpointSha256": "d5cb9d2c88ab6f9cfb1b9bc5ee3a24d9458f54ff5c82c0ccb3b566ba1c60f733",
+          "pcmSha256": "c1d4eedd8c8e458140186b0a2482e75628bd304d062edb7a0647e14e5744ba6b",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "very-close",
+          "scores": {
+            "MatchObjective": 3.123176171189889,
+            "preferenceNeuralV2": 0.6081975949362031
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "previous",
+        "preferenceNeuralV2": "selected"
+      },
+      "note": ""
+    },
+    {
+      "name": "Rocket burst reference",
+      "targetId": "22f2adee254d00f8c664b1abb2d476064399df501e3bc22f8f3a071e479c984a",
+      "kind": "best",
+      "adequacy": {
+        "level": "very-close",
+        "candidateIds": [
+          "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949"
+        ]
+      },
+      "preferredRoles": [
+        "selected"
+      ],
+      "options": [
+        {
+          "id": "f6c74bdabe7f92990c2396458caafaa3ebdb2a28dbd513265774ec87e880efeb",
+          "role": "previous",
+          "synth": "Transfxr",
+          "checkpointSha256": "c0e4426098e13aa79cd8cfee76e5a06cd0bb74ec1683541790adb04f0244cec4",
+          "pcmSha256": "f69fa1cbd13a479a29983d1315e53cd287e1970ca7f2dad9cddaeadff562f9cc",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 2.0305680760515026,
+            "preferenceNeuralV2": 1.0202755553395142
+          }
+        },
+        {
+          "id": "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949",
+          "role": "selected",
+          "synth": "Boomr",
+          "checkpointSha256": "e8fefa597fc7698e3d12f0a0d60618ac5007ddd8f60110619117b7da4a6c502a",
+          "pcmSha256": "ccb71da75b24a214492fb4656b7a395237ef8603305b7f9b0d8b6becf8f5d70e",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "very-close",
+          "scores": {
+            "MatchObjective": 1.2297055066845761,
+            "preferenceNeuralV2": 0.4976413163985753
+          }
+        },
+        {
+          "id": "fa6689fa6220019fdf0ef00d4654210cc71f5da9be493a6ac7ff761c3412fd84",
+          "role": "original",
+          "synth": "Boomr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "pcmSha256": "0d7a782a59c395b2e3e4a69fa84c25d32f73c48db3c6bdb89117d2648da881bc",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 2.042396842683001,
+            "preferenceNeuralV2": 0.77589103043345
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "selected",
+        "preferenceNeuralV2": "selected"
+      },
+      "note": ""
+    },
+    {
+      "name": "New short burst",
+      "targetId": "f8d4074d6789ce8abbc860171a8909ffe48b166513b421e5c3be9b5eb9a5aae7",
+      "kind": "best",
+      "adequacy": {
+        "level": "very-close",
+        "candidateIds": [
+          "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577"
+        ]
+      },
+      "preferredRoles": [
+        "previous"
+      ],
+      "options": [
+        {
+          "id": "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577",
+          "role": "previous",
+          "synth": "Boomr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "pcmSha256": "da7072ddf395283fc29a9b07d7fdde68c8919cfd65ac96634bb6e870087203de",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "very-close",
+          "scores": {
+            "MatchObjective": 3.1076993588825355,
+            "preferenceNeuralV2": 0.8828937606524674
+          }
+        },
+        {
+          "id": "0df7d37e9f7596bccbb2cb531ffc96f0df53487df3fa2aab89cd6da0b661325b",
+          "role": "selected",
+          "synth": "Boomr",
+          "checkpointSha256": "e8fefa597fc7698e3d12f0a0d60618ac5007ddd8f60110619117b7da4a6c502a",
+          "pcmSha256": "141726ba2778b95e240afeacae2246ebd36f8eda60545ca6c628cffea61ee1be",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 2.07506193885977,
+            "preferenceNeuralV2": 0.7837996790216615
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "selected",
+        "preferenceNeuralV2": "selected"
+      },
+      "note": ""
+    },
+    {
+      "name": "New footstep",
+      "targetId": "4263da03e0ca43ea1e42c1dfb691b2d5b43ae0feecf6c78820ec2b020f6d6b22",
+      "kind": "tie",
+      "adequacy": {
+        "level": "similar",
+        "candidateIds": [
+          "9276204cb91421c377bdc0b3ef780c57cd211862e040a7f14922f697bee5f0b1",
+          "6d0882a113f649ead87bc02485317e2e9cb864a3a252020077cb021dd97090ef"
+        ]
+      },
+      "preferredRoles": [],
+      "options": [
+        {
+          "id": "9276204cb91421c377bdc0b3ef780c57cd211862e040a7f14922f697bee5f0b1",
+          "role": "previous",
+          "synth": "Footsteppr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "pcmSha256": "d643ed0e52c0ec8dcd8b0bd9eb442e1b487915ee024ffcaaa8fbe237ceef498c",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "similar",
+          "scores": {
+            "MatchObjective": 1.4682206420395425,
+            "preferenceNeuralV2": 0.675304063434339
+          }
+        },
+        {
+          "id": "6d0882a113f649ead87bc02485317e2e9cb864a3a252020077cb021dd97090ef",
+          "role": "selected",
+          "synth": "Footsteppr",
+          "checkpointSha256": "d5cb9d2c88ab6f9cfb1b9bc5ee3a24d9458f54ff5c82c0ccb3b566ba1c60f733",
+          "pcmSha256": "237600201f9be45699d7ad1f29707ff76d679eb96ef73cc32a7870ad83b41127",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "similar",
+          "scores": {
+            "MatchObjective": 1.118080564421092,
+            "preferenceNeuralV2": 0.7143946848539282
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "selected",
+        "preferenceNeuralV2": "previous"
+      },
+      "note": ""
+    },
+    {
+      "name": "Wingbeat reference",
+      "targetId": "f6854e00d4b76c1732b6236cef03d3e957c367dfb6a18459e05b1fab964ea87b",
+      "kind": "best",
+      "adequacy": {
+        "level": "very-close",
+        "candidateIds": [
+          "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8"
+        ]
+      },
+      "preferredRoles": [
+        "selected"
+      ],
+      "options": [
+        {
+          "id": "f26064677b386b00524005b90d78cbd32cad5a05a5c71b3c0731cd44f2162343",
+          "role": "previous",
+          "synth": "Footsteppr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "pcmSha256": "7edb3eeadf4c3dfdd94b8e162f88e13e17e862c6b49c906a3513759e3893a90b",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 0.7750378415574596,
+            "preferenceNeuralV2": 0.4059432540380173
+          }
+        },
+        {
+          "id": "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8",
+          "role": "selected",
+          "synth": "Footsteppr",
+          "checkpointSha256": "d5cb9d2c88ab6f9cfb1b9bc5ee3a24d9458f54ff5c82c0ccb3b566ba1c60f733",
+          "pcmSha256": "fc10f0bcbeecdd70edb04e07207f30778f02725df3b577e590dbd118ea6214ac",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "very-close",
+          "scores": {
+            "MatchObjective": 0.5350192627520804,
+            "preferenceNeuralV2": 0.3536792775844769
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "selected",
+        "preferenceNeuralV2": "selected"
+      },
+      "note": ""
+    }
+  ],
+  "pairs": [
+    {
+      "archive": "2026-10-05-specialists-quick-01",
+      "experimentId": "5ea2ca433edc028e29f8beaf655b9986d3aceaa615c2c85fd8073bec47b1754d",
+      "target": "Footstep reference",
+      "referencePcmSha256": "4e80b9866fcb0b30bcf111f082cafd5abed4f800929c820448a5f5645be267e5",
+      "candidateA": "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895",
+      "candidateB": "d01c48e86b334f81a2f95e721e9a77a692d25f9ddaf9aaec14221afd4bc1e08d",
+      "candidateAliasesA": [
+        "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895"
+      ],
+      "candidateAliasesB": [
+        "d01c48e86b334f81a2f95e721e9a77a692d25f9ddaf9aaec14221afd4bc1e08d"
+      ],
+      "candidatePcmSha256A": "c1d4eedd8c8e458140186b0a2482e75628bd304d062edb7a0647e14e5744ba6b",
+      "candidatePcmSha256B": "6361d21f38314b21205b588258f407a2e1d74b19b7a5cfd6ef375349dc091e58",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.01797303557395935,
+        -0.05150320380926132,
+        -0.003522307612001896,
+        0.011541985906660557,
+        0.006804436445236206,
+        -0.009737804532051086,
+        -0.03324379026889801,
+        -0.002341320039704442,
+        -0.06698726490139961,
+        -0.008064516129032244,
+        0.021139880021413177,
+        0.03345430286745987,
+        -0.030539751052856445,
+        -0.028559938073158264,
+        0.014663156121969223,
+        0.013908639550209045,
+        -0.03166073560714722,
+        -0.0043234266340732574,
+        -0.005068771541118622,
+        -0.0059020034968853
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895",
+          "d01c48e86b334f81a2f95e721e9a77a692d25f9ddaf9aaec14221afd4bc1e08d"
+        ],
+        "auditionedCandidateIds": [
+          "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895",
+          "d01c48e86b334f81a2f95e721e9a77a692d25f9ddaf9aaec14221afd4bc1e08d"
+        ],
+        "preferredCandidateIds": [
+          "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "selected",
+      "loserRole": "previous",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-05-specialists-quick-01",
+      "experimentId": "5ea2ca433edc028e29f8beaf655b9986d3aceaa615c2c85fd8073bec47b1754d",
+      "target": "Rocket burst reference",
+      "referencePcmSha256": "56870d7272881b9525806f48730fc91ae23ee8386b4d014add75a7c812216e31",
+      "candidateA": "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949",
+      "candidateB": "f6c74bdabe7f92990c2396458caafaa3ebdb2a28dbd513265774ec87e880efeb",
+      "candidateAliasesA": [
+        "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949"
+      ],
+      "candidateAliasesB": [
+        "f6c74bdabe7f92990c2396458caafaa3ebdb2a28dbd513265774ec87e880efeb"
+      ],
+      "candidatePcmSha256A": "ccb71da75b24a214492fb4656b7a395237ef8603305b7f9b0d8b6becf8f5d70e",
+      "candidatePcmSha256B": "f69fa1cbd13a479a29983d1315e53cd287e1970ca7f2dad9cddaeadff562f9cc",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.2962782382965088,
+        0.03106437623500824,
+        -0.0078056976199150085,
+        0.012414060533046722,
+        0.00952620804309845,
+        -0.019402816891670227,
+        -0.04602457582950592,
+        -0.0006490639061667025,
+        0.009992510080337524,
+        0.01612903225806451,
+        0.005493875282506149,
+        -0.017129954117366977,
+        -0.10641396977007389,
+        -0.0471823513507843,
+        0.0006350390613079071,
+        -0.2961742877960205,
+        -0.043832927942276,
+        -0.09343154728412628,
+        -0.097141794860363,
+        -0.0988994687795639
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "f6c74bdabe7f92990c2396458caafaa3ebdb2a28dbd513265774ec87e880efeb",
+          "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949",
+          "fa6689fa6220019fdf0ef00d4654210cc71f5da9be493a6ac7ff761c3412fd84"
+        ],
+        "auditionedCandidateIds": [
+          "f6c74bdabe7f92990c2396458caafaa3ebdb2a28dbd513265774ec87e880efeb",
+          "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949",
+          "fa6689fa6220019fdf0ef00d4654210cc71f5da9be493a6ac7ff761c3412fd84"
+        ],
+        "preferredCandidateIds": [
+          "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "selected",
+      "loserRole": "previous",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-05-specialists-quick-01",
+      "experimentId": "5ea2ca433edc028e29f8beaf655b9986d3aceaa615c2c85fd8073bec47b1754d",
+      "target": "Rocket burst reference",
+      "referencePcmSha256": "56870d7272881b9525806f48730fc91ae23ee8386b4d014add75a7c812216e31",
+      "candidateA": "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949",
+      "candidateB": "fa6689fa6220019fdf0ef00d4654210cc71f5da9be493a6ac7ff761c3412fd84",
+      "candidateAliasesA": [
+        "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949"
+      ],
+      "candidateAliasesB": [
+        "fa6689fa6220019fdf0ef00d4654210cc71f5da9be493a6ac7ff761c3412fd84"
+      ],
+      "candidatePcmSha256A": "ccb71da75b24a214492fb4656b7a395237ef8603305b7f9b0d8b6becf8f5d70e",
+      "candidatePcmSha256B": "0d7a782a59c395b2e3e4a69fa84c25d32f73c48db3c6bdb89117d2648da881bc",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.08468702435493469,
+        0.03565879911184311,
+        -0.004596111364662647,
+        -0.049560317769646645,
+        -0.04808467999100685,
+        -0.029086202383041382,
+        0.010413572192192078,
+        -0.0002675300929695368,
+        0.05524882301688194,
+        0.03225806451612904,
+        -0.04388554828862348,
+        -0.020809854249697644,
+        -0.03752307407557964,
+        -0.03410877287387848,
+        -0.07621654868125916,
+        -0.0006567835807800293,
+        0.009917691349983215,
+        -0.02847611904144287,
+        -0.02790054678916931,
+        -0.027975812554359436
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "f6c74bdabe7f92990c2396458caafaa3ebdb2a28dbd513265774ec87e880efeb",
+          "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949",
+          "fa6689fa6220019fdf0ef00d4654210cc71f5da9be493a6ac7ff761c3412fd84"
+        ],
+        "auditionedCandidateIds": [
+          "f6c74bdabe7f92990c2396458caafaa3ebdb2a28dbd513265774ec87e880efeb",
+          "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949",
+          "fa6689fa6220019fdf0ef00d4654210cc71f5da9be493a6ac7ff761c3412fd84"
+        ],
+        "preferredCandidateIds": [
+          "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "selected",
+      "loserRole": "original",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-05-specialists-quick-01",
+      "experimentId": "5ea2ca433edc028e29f8beaf655b9986d3aceaa615c2c85fd8073bec47b1754d",
+      "target": "New short burst",
+      "referencePcmSha256": "c831ed3b31140f674af53ab6255dd774e43e27aa25968e5b188c0fae96e39e94",
+      "candidateA": "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577",
+      "candidateB": "0df7d37e9f7596bccbb2cb531ffc96f0df53487df3fa2aab89cd6da0b661325b",
+      "candidateAliasesA": [
+        "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577"
+      ],
+      "candidateAliasesB": [
+        "0df7d37e9f7596bccbb2cb531ffc96f0df53487df3fa2aab89cd6da0b661325b"
+      ],
+      "candidatePcmSha256A": "da7072ddf395283fc29a9b07d7fdde68c8919cfd65ac96634bb6e870087203de",
+      "candidatePcmSha256B": "141726ba2778b95e240afeacae2246ebd36f8eda60545ca6c628cffea61ee1be",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.07781249284744263,
+        0.004696366377174854,
+        0.00023013289319351315,
+        0.0023610740900039673,
+        0.0013608857989311218,
+        -0.003956630825996399,
+        0.10728692263364792,
+        0.0008027227595448494,
+        0.00853981263935566,
+        0.008064516129032251,
+        0.01318771989705662,
+        0.0048201641688863095,
+        -0.013756165280938148,
+        -0.046139322221279144,
+        0.01742713525891304,
+        0.009543240070343018,
+        0.10217803716659546,
+        0.035587161779403687,
+        0.03115219622850418,
+        0.025437012314796448
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "0df7d37e9f7596bccbb2cb531ffc96f0df53487df3fa2aab89cd6da0b661325b",
+          "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577"
+        ],
+        "auditionedCandidateIds": [
+          "0df7d37e9f7596bccbb2cb531ffc96f0df53487df3fa2aab89cd6da0b661325b",
+          "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577"
+        ],
+        "preferredCandidateIds": [
+          "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "previous",
+      "loserRole": "selected",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preferenceNeuralV2": false
+      }
+    },
+    {
+      "archive": "2026-10-05-specialists-quick-01",
+      "experimentId": "5ea2ca433edc028e29f8beaf655b9986d3aceaa615c2c85fd8073bec47b1754d",
+      "target": "Wingbeat reference",
+      "referencePcmSha256": "d1ec7e4555e683d678b7c1b192c921c314e653a6702ce5f432c3e03e7b418016",
+      "candidateA": "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8",
+      "candidateB": "f26064677b386b00524005b90d78cbd32cad5a05a5c71b3c0731cd44f2162343",
+      "candidateAliasesA": [
+        "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8"
+      ],
+      "candidateAliasesB": [
+        "f26064677b386b00524005b90d78cbd32cad5a05a5c71b3c0731cd44f2162343"
+      ],
+      "candidatePcmSha256A": "fc10f0bcbeecdd70edb04e07207f30778f02725df3b577e590dbd118ea6214ac",
+      "candidatePcmSha256B": "7edb3eeadf4c3dfdd94b8e162f88e13e17e862c6b49c906a3513759e3893a90b",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.01056922972202301,
+        -0.01316966861486435,
+        -0.002892749384045601,
+        0.0,
+        0.0,
+        0.0003624334931373596,
+        0.01472780667245388,
+        0.0004020884807687253,
+        -0.026834532618522644,
+        0.0,
+        -0.023795605947573982,
+        -0.006257224572936888,
+        -0.012348754331469536,
+        -0.0011862441897392273,
+        0.0,
+        0.0,
+        0.014026463031768799,
+        -0.0062873587012290955,
+        -0.0027511492371559143,
+        -0.0037620440125465393
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8",
+          "f26064677b386b00524005b90d78cbd32cad5a05a5c71b3c0731cd44f2162343"
+        ],
+        "auditionedCandidateIds": [
+          "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8",
+          "f26064677b386b00524005b90d78cbd32cad5a05a5c71b3c0731cd44f2162343"
+        ],
+        "preferredCandidateIds": [
+          "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "selected",
+      "loserRole": "previous",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preferenceNeuralV2": true
+      }
+    }
+  ],
+  "explicitQualitativeLabels": [
+    {
+      "targetId": "083b75c522786a875853e6ff295e735f897a5cf0b19a9e88784164b848cb21a4",
+      "candidateId": "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895",
+      "referencePcmSha256": "4e80b9866fcb0b30bcf111f082cafd5abed4f800929c820448a5f5645be267e5",
+      "candidatePcmSha256": "c1d4eedd8c8e458140186b0a2482e75628bd304d062edb7a0647e14e5744ba6b",
+      "label": "very-close"
+    },
+    {
+      "targetId": "22f2adee254d00f8c664b1abb2d476064399df501e3bc22f8f3a071e479c984a",
+      "candidateId": "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949",
+      "referencePcmSha256": "56870d7272881b9525806f48730fc91ae23ee8386b4d014add75a7c812216e31",
+      "candidatePcmSha256": "ccb71da75b24a214492fb4656b7a395237ef8603305b7f9b0d8b6becf8f5d70e",
+      "label": "very-close"
+    },
+    {
+      "targetId": "f8d4074d6789ce8abbc860171a8909ffe48b166513b421e5c3be9b5eb9a5aae7",
+      "candidateId": "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577",
+      "referencePcmSha256": "c831ed3b31140f674af53ab6255dd774e43e27aa25968e5b188c0fae96e39e94",
+      "candidatePcmSha256": "da7072ddf395283fc29a9b07d7fdde68c8919cfd65ac96634bb6e870087203de",
+      "label": "very-close"
+    },
+    {
+      "targetId": "4263da03e0ca43ea1e42c1dfb691b2d5b43ae0feecf6c78820ec2b020f6d6b22",
+      "candidateId": "9276204cb91421c377bdc0b3ef780c57cd211862e040a7f14922f697bee5f0b1",
+      "referencePcmSha256": "59f4329828de6783072ad284ad0758c00732c907f854a1b0c3bc8acb8991e907",
+      "candidatePcmSha256": "d643ed0e52c0ec8dcd8b0bd9eb442e1b487915ee024ffcaaa8fbe237ceef498c",
+      "label": "similar"
+    },
+    {
+      "targetId": "4263da03e0ca43ea1e42c1dfb691b2d5b43ae0feecf6c78820ec2b020f6d6b22",
+      "candidateId": "6d0882a113f649ead87bc02485317e2e9cb864a3a252020077cb021dd97090ef",
+      "referencePcmSha256": "59f4329828de6783072ad284ad0758c00732c907f854a1b0c3bc8acb8991e907",
+      "candidatePcmSha256": "237600201f9be45699d7ad1f29707ff76d679eb96ef73cc32a7870ad83b41127",
+      "label": "similar"
+    },
+    {
+      "targetId": "f6854e00d4b76c1732b6236cef03d3e957c367dfb6a18459e05b1fab964ea87b",
+      "candidateId": "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8",
+      "referencePcmSha256": "d1ec7e4555e683d678b7c1b192c921c314e653a6702ce5f432c3e03e7b418016",
+      "candidatePcmSha256": "fc10f0bcbeecdd70edb04e07207f30778f02725df3b577e590dbd118ea6214ac",
+      "label": "very-close"
+    }
+  ],
+  "unsubmittedReferences": [
+    "Tagged recording \u00b7 book close"
+  ],
+  "metricAgreement": {
+    "MatchObjective": {
+      "correct": 3,
+      "pairs": 5
+    },
+    "preferenceNeuralV2": {
+      "correct": 4,
+      "pairs": 5
+    }
+  },
+  "interpretation": [
+    "New specialists win footstep reference, rocket burst and Whooshr wingbeat, each explicitly very close. Wingbeat is a cross-engine success.",
+    "Older shared Boomr wins the untouched native short burst and is very close; the newer model is not a universal replacement.",
+    "The new native footstep is a tie, both roughly similar, despite lower new-model matching distance.",
+    "Matching distance rejects the human-preferred footstep specialist and older short burst. Metrics do not establish adequate selection.",
+    "Book-close was not submitted. No real-recording adequacy or scalar ratings are inferred.",
+    "These deliberately selected diagnostics are not a population win-rate estimate. All eleven options were recorded as auditioned.",
+    "The UI offers a break after five trials. Use five-trial future batches so tagged references are not consistently placed after that break.",
+    "Keep both generations of experts and the original Bfxr pipeline; test actual tagged recordings next, before expanding training volume again."
+  ]
+}

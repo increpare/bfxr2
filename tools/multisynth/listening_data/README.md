@@ -32,6 +32,26 @@ future exports use the updated questionnaire.
 | `2026-10-05-coverage-selection-quick-01/` | 3 | 6 |
 | `2026-10-05-transfxr-transfer-quick-01/` | 6 | 12 |
 | `2026-10-05-native-mixture-quick-01/` | 5 | 10 |
+| `2026-10-05-specialists-quick-01/` | 5 | 11 |
+
+The twelfth archive retains five of six specialist comparisons and all eleven
+auditioned candidates. New Footsteppr wins the familiar footstep and the Whooshr
+wingbeat, both **very close**; new Boomr wins rocket burst, also **very close**.
+The older shared Boomr wins the fresh native short burst and is **very close**.
+The fresh native footstep is a tie, both **roughly similar**. These produce five
+strict heard pairs and six candidate-scoped qualitative labels: four very-close
+and two similar. No scalar ratings are inferred. Book-close is unsubmitted and
+unknown; no retrospective clarification is requested.
+
+MatchObjective agrees with 3/5 strict pairs and the frozen preference-neural-v2
+scorer with 4/5. Lower matching distance wrongly rejects the new footstep winner
+and favors the losing new short burst. The new experts have audible strengths,
+including a Whooshr-to-Footsteppr transfer, but are not universal replacements.
+This deliberately selected synthetic batch establishes no tagged-recording
+success or population win rate. See the
+[specialist human review](../evaluations/specialists-quick-01-human-review.json).
+The questionnaire offers a break after five trials, so future short batches
+contain five trials instead of putting the sole tagged reference after a break.
 
 The eleventh archive is a partial submission of five of six native-mixture
 comparisons. All ten options are recorded as auditioned. The new mixture wins

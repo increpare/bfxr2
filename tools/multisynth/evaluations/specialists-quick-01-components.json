@@ -1,0 +1,354 @@
+{
+  "complete": true,
+  "scriptSha256": "bbd0f52e828e4670f88e7e766135ad27338515f52236ad14daf74ba76793d129",
+  "archiveManifestSha256": "de39d4def82cca02d42f213303f2e7030b785772e1f5a42694c2c4bd4b2e1266",
+  "humanReviewSha256": "9d31ed1bde36b274bfc51dfe2bf34f6e508c012f30cf813899b790576a2bab78",
+  "rows": [
+    {
+      "name": "Footstep reference",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895",
+          "d01c48e86b334f81a2f95e721e9a77a692d25f9ddaf9aaec14221afd4bc1e08d"
+        ],
+        "auditionedCandidateIds": [
+          "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895",
+          "d01c48e86b334f81a2f95e721e9a77a692d25f9ddaf9aaec14221afd4bc1e08d"
+        ],
+        "preferredCandidateIds": [
+          "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895"
+          ]
+        }
+      },
+      "options": [
+        {
+          "id": "d01c48e86b334f81a2f95e721e9a77a692d25f9ddaf9aaec14221afd4bc1e08d",
+          "role": "previous",
+          "pcmSha256": "6361d21f38314b21205b588258f407a2e1d74b19b7a5cfd6ef375349dc091e58",
+          "terms": {
+            "coverage": 0.5454545454545454,
+            "env": 0.41345791816711425,
+            "env_motion": 0.13869550824165344,
+            "pitch": 0.0,
+            "voiced_mismatch": 0.25,
+            "pitch_slope": 0.0,
+            "pitch_movement": 0.0,
+            "timbre": 0.37903136677212185,
+            "mel": 0.3644127141449048,
+            "structure_pitch": 0.0
+          },
+          "total": 2.0910520527803396,
+          "withoutPitchAndVoicing": 1.8410520527803396
+        },
+        {
+          "id": "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895",
+          "role": "selected",
+          "pcmSha256": "c1d4eedd8c8e458140186b0a2482e75628bd304d062edb7a0647e14e5744ba6b",
+          "terms": {
+            "coverage": 0.40909090909090906,
+            "env": 0.2886981725692749,
+            "env_motion": 0.14626702666282654,
+            "pitch": 1.2568016052246094,
+            "voiced_mismatch": 0.39473684210526316,
+            "pitch_slope": 0.0,
+            "pitch_movement": 0.0,
+            "timbre": 0.35647805113541453,
+            "mel": 0.2711035644015913,
+            "structure_pitch": 0.0
+          },
+          "total": 3.123176171189889,
+          "withoutPitchAndVoicing": 1.4716377238600162
+        }
+      ]
+    },
+    {
+      "name": "Rocket burst reference",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "f6c74bdabe7f92990c2396458caafaa3ebdb2a28dbd513265774ec87e880efeb",
+          "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949",
+          "fa6689fa6220019fdf0ef00d4654210cc71f5da9be493a6ac7ff761c3412fd84"
+        ],
+        "auditionedCandidateIds": [
+          "f6c74bdabe7f92990c2396458caafaa3ebdb2a28dbd513265774ec87e880efeb",
+          "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949",
+          "fa6689fa6220019fdf0ef00d4654210cc71f5da9be493a6ac7ff761c3412fd84"
+        ],
+        "preferredCandidateIds": [
+          "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949"
+          ]
+        }
+      },
+      "options": [
+        {
+          "id": "f6c74bdabe7f92990c2396458caafaa3ebdb2a28dbd513265774ec87e880efeb",
+          "role": "previous",
+          "pcmSha256": "f69fa1cbd13a479a29983d1315e53cd287e1970ca7f2dad9cddaeadff562f9cc",
+          "terms": {
+            "coverage": 0.07411534488201142,
+            "env": 0.44073710441589353,
+            "env_motion": 0.04222199320793152,
+            "pitch": 0.0,
+            "voiced_mismatch": 0.1171875,
+            "pitch_slope": 0.0,
+            "pitch_movement": 0.0,
+            "timbre": 1.1367486715316772,
+            "mel": 0.21955746201398876,
+            "structure_pitch": 0.0
+          },
+          "total": 2.0305680760515026,
+          "withoutPitchAndVoicing": 1.9133805760515026
+        },
+        {
+          "id": "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949",
+          "role": "selected",
+          "pcmSha256": "ccb71da75b24a214492fb4656b7a395237ef8603305b7f9b0d8b6becf8f5d70e",
+          "terms": {
+            "coverage": 0.12656250000000002,
+            "env": 0.3761124610900879,
+            "env_motion": 0.015626907348632812,
+            "pitch": 0.0,
+            "voiced_mismatch": 0.1640625,
+            "pitch_slope": 0.0,
+            "pitch_movement": 0.0,
+            "timbre": 0.3146551102399826,
+            "mel": 0.23268602800587276,
+            "structure_pitch": 0.0
+          },
+          "total": 1.2297055066845761,
+          "withoutPitchAndVoicing": 1.0656430066845761
+        },
+        {
+          "id": "fa6689fa6220019fdf0ef00d4654210cc71f5da9be493a6ac7ff761c3412fd84",
+          "role": "original",
+          "pcmSha256": "0d7a782a59c395b2e3e4a69fa84c25d32f73c48db3c6bdb89117d2648da881bc",
+          "terms": {
+            "coverage": 0.07968750000000001,
+            "env": 0.3920762062072754,
+            "env_motion": 0.0379667729139328,
+            "pitch": 0.0,
+            "voiced_mismatch": 0.2109375,
+            "pitch_slope": 0.0,
+            "pitch_movement": 0.0,
+            "timbre": 1.064908117055893,
+            "mel": 0.2568207465058995,
+            "structure_pitch": 0.0
+          },
+          "total": 2.042396842683001,
+          "withoutPitchAndVoicing": 1.8314593426830008
+        }
+      ]
+    },
+    {
+      "name": "New short burst",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "0df7d37e9f7596bccbb2cb531ffc96f0df53487df3fa2aab89cd6da0b661325b",
+          "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577"
+        ],
+        "auditionedCandidateIds": [
+          "0df7d37e9f7596bccbb2cb531ffc96f0df53487df3fa2aab89cd6da0b661325b",
+          "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577"
+        ],
+        "preferredCandidateIds": [
+          "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577"
+          ]
+        }
+      },
+      "options": [
+        {
+          "id": "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577",
+          "role": "previous",
+          "pcmSha256": "da7072ddf395283fc29a9b07d7fdde68c8919cfd65ac96634bb6e870087203de",
+          "terms": {
+            "coverage": 0.744081880004527,
+            "env": 0.7798109531402588,
+            "env_motion": 0.35851210355758667,
+            "pitch": 0.0,
+            "voiced_mismatch": 0.09375,
+            "pitch_slope": 0.0,
+            "pitch_movement": 0.0,
+            "timbre": 0.9520172476768494,
+            "mel": 0.17952717450331357,
+            "structure_pitch": 0.0
+          },
+          "total": 3.1076993588825355,
+          "withoutPitchAndVoicing": 3.0139493588825355
+        },
+        {
+          "id": "0df7d37e9f7596bccbb2cb531ffc96f0df53487df3fa2aab89cd6da0b661325b",
+          "role": "selected",
+          "pcmSha256": "141726ba2778b95e240afeacae2246ebd36f8eda60545ca6c628cffea61ee1be",
+          "terms": {
+            "coverage": 0.2114953871829518,
+            "env": 0.4864765167236328,
+            "env_motion": 0.2830900549888611,
+            "pitch": 0.0,
+            "voiced_mismatch": 0.1875,
+            "pitch_slope": 0.0,
+            "pitch_movement": 0.0,
+            "timbre": 0.7470272555947304,
+            "mel": 0.15947272436959403,
+            "structure_pitch": 0.0
+          },
+          "total": 2.07506193885977,
+          "withoutPitchAndVoicing": 1.8875619388597702
+        }
+      ]
+    },
+    {
+      "name": "New footstep",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "tie",
+        "presentedCandidateIds": [
+          "9276204cb91421c377bdc0b3ef780c57cd211862e040a7f14922f697bee5f0b1",
+          "6d0882a113f649ead87bc02485317e2e9cb864a3a252020077cb021dd97090ef"
+        ],
+        "auditionedCandidateIds": [
+          "9276204cb91421c377bdc0b3ef780c57cd211862e040a7f14922f697bee5f0b1",
+          "6d0882a113f649ead87bc02485317e2e9cb864a3a252020077cb021dd97090ef"
+        ],
+        "preferredCandidateIds": [],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "9276204cb91421c377bdc0b3ef780c57cd211862e040a7f14922f697bee5f0b1",
+            "6d0882a113f649ead87bc02485317e2e9cb864a3a252020077cb021dd97090ef"
+          ]
+        }
+      },
+      "options": [
+        {
+          "id": "9276204cb91421c377bdc0b3ef780c57cd211862e040a7f14922f697bee5f0b1",
+          "role": "previous",
+          "pcmSha256": "d643ed0e52c0ec8dcd8b0bd9eb442e1b487915ee024ffcaaa8fbe237ceef498c",
+          "terms": {
+            "coverage": 0.2171400785446167,
+            "env": 0.3192301750183105,
+            "env_motion": 0.0004150271415710449,
+            "pitch": 0.0,
+            "voiced_mismatch": 0.2410714285714286,
+            "pitch_slope": 0.0,
+            "pitch_movement": 0.0,
+            "timbre": 0.4456181185586112,
+            "mel": 0.2447458142050043,
+            "structure_pitch": 0.0
+          },
+          "total": 1.4682206420395425,
+          "withoutPitchAndVoicing": 1.227149213468114
+        },
+        {
+          "id": "6d0882a113f649ead87bc02485317e2e9cb864a3a252020077cb021dd97090ef",
+          "role": "selected",
+          "pcmSha256": "237600201f9be45699d7ad1f29707ff76d679eb96ef73cc32a7870ad83b41127",
+          "terms": {
+            "coverage": 0.007977965474128724,
+            "env": 0.15558943748474122,
+            "env_motion": 0.024606406688690186,
+            "pitch": 0.0,
+            "voiced_mismatch": 0.25,
+            "pitch_slope": 0.0,
+            "pitch_movement": 0.0,
+            "timbre": 0.46479798952738444,
+            "mel": 0.21510876524614755,
+            "structure_pitch": 0.0
+          },
+          "total": 1.118080564421092,
+          "withoutPitchAndVoicing": 0.868080564421092
+        }
+      ]
+    },
+    {
+      "name": "Wingbeat reference",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8",
+          "f26064677b386b00524005b90d78cbd32cad5a05a5c71b3c0731cd44f2162343"
+        ],
+        "auditionedCandidateIds": [
+          "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8",
+          "f26064677b386b00524005b90d78cbd32cad5a05a5c71b3c0731cd44f2162343"
+        ],
+        "preferredCandidateIds": [
+          "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8"
+          ]
+        }
+      },
+      "options": [
+        {
+          "id": "f26064677b386b00524005b90d78cbd32cad5a05a5c71b3c0731cd44f2162343",
+          "role": "previous",
+          "pcmSha256": "7edb3eeadf4c3dfdd94b8e162f88e13e17e862c6b49c906a3513759e3893a90b",
+          "terms": {
+            "coverage": 0.005843305069467296,
+            "env": 0.24043028354644774,
+            "env_motion": 0.0808020532131195,
+            "pitch": 0.0,
+            "voiced_mismatch": 0.0,
+            "pitch_slope": 0.0,
+            "pitch_movement": 0.0,
+            "timbre": 0.2690357954605766,
+            "mel": 0.17892640426784842,
+            "structure_pitch": 0.0
+          },
+          "total": 0.7750378415574596,
+          "withoutPitchAndVoicing": 0.7750378415574596
+        },
+        {
+          "id": "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8",
+          "role": "selected",
+          "pcmSha256": "fc10f0bcbeecdd70edb04e07207f30778f02725df3b577e590dbd118ea6214ac",
+          "terms": {
+            "coverage": 0.0,
+            "env": 0.18138507604599,
+            "env_motion": 0.021515876054763794,
+            "pitch": 0.0,
+            "voiced_mismatch": 0.0,
+            "pitch_slope": 0.0,
+            "pitch_movement": 0.0,
+            "timbre": 0.18224177153214163,
+            "mel": 0.14987653911918508,
+            "structure_pitch": 0.0
+          },
+          "total": 0.5350192627520804,
+          "withoutPitchAndVoicing": 0.5350192627520804
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    "The preferred new footstep is better by envelope, coverage, mel and timbre terms, but incurs pitch=1.2568 versus zero for the older option. Removing pitch/voicing contributions changes this pair ordering.",
+    "This suggests investigating voicing-confidence and noisy-transient pitch estimates. It does not establish that the pitch estimate is objectively wrong or that pitch should be globally discounted.",
+    "The preferred older short burst is worse on coverage, envelope, envelope motion, timbre and mel, but better on voiced mismatch. Pitch is zero on both. The footstep explanation does not resolve this disagreement.",
+    "All terms were inspected after human outcomes. These are exploratory diagnostics, not an independently validated new distance, causal experiment, or deployed selection rule."
+  ]
+}

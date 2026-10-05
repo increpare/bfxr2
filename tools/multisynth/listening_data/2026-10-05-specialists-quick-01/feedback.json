@@ -1,0 +1,633 @@
+{
+  "schemaVersion": 3,
+  "experimentId": "5ea2ca433edc028e29f8beaf655b9986d3aceaa615c2c85fd8073bec47b1754d",
+  "provenance": {
+    "experiment": "specialists-v1-listening",
+    "complete": true,
+    "targetCount": 6,
+    "galleryTitle": "New synth experts · six short comparisons",
+    "humanReviewRequired": true,
+    "galleryIntro": [
+      "Choose the closest sound, then say how close it is before moving on.",
+      "None are close and Skip advance immediately. Replay always starts at the beginning; your answers save locally.",
+      "A mix of synthetic references and a tagged recording. Every pair contains a new recreation."
+    ],
+    "reportSha256": "0ee499e62ec90c93a4dd28539b3ef209e380b5319569aeb4fc9a05e705ed6e03",
+    "selectionSha256": "d04cf62b7698bcaa7c254f0268feee41f134d446b986fd816f40a581be3181d0",
+    "scriptSha256": "27c0a3866341cf169f44a843a7f872cf92a1198e19e54ad510675b1fb1842e98",
+    "checkpoints": {
+      "Boomr": "e8fefa597fc7698e3d12f0a0d60618ac5007ddd8f60110619117b7da4a6c502a",
+      "Footsteppr": "d5cb9d2c88ab6f9cfb1b9bc5ee3a24d9458f54ff5c82c0ccb3b566ba1c60f733",
+      "Transfxr": "a816f97284cdd4ec0bfcfbcdbdbd11ab6e8b0230d4fa0b1388e758958694e73f",
+      "old-Boomr": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+      "old-Footsteppr": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97"
+    },
+    "selectionPolicy": "Six deliberately selected diagnostic comparisons after outcome inspection, including wins, losses, two first-in-frozen-order untouched native controls, cross-engine transfer and one real recording. Not a population win-rate estimate. Historical human winners preserved exactly; every comparison includes a newly trained specialist output.",
+    "uiCodeHashes": {
+      "quick_listening.html": "167c746f5ec3f77802b799cd1659dd85c8d0fe599ffc365b4376cf4fc2777cd4",
+      "quick_choice.js": "0bb2e27258fa918053f77e737b45200eb9389ec90fd0e185e71ef85bef4f911e",
+      "quick_listening.css": "833a39c37a9140b9e995d693dcd648266204cc022107b2c398c32468d231f7a7",
+      "quick_audio.js": "0abfac40fe8cd7a1c9f79143458b45c7ef79342892113fdc53f9ca15cab7f83a",
+      "quick_listening.js": "36090e70e9915d9ecc5d26e038ff34754731921e66734da0de4fafbd9af45457",
+      "quick_feedback.py": "619e79872880d81831f0c0106f6b55fa78b0402977f4d728ce1dea45d34d2351"
+    }
+  },
+  "ratingScales": {
+    "likeness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Likeness to reference: 1 = far off, 5 = very close"
+    },
+    "usefulness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Useful/fun game sound: 1 = not useful, 5 = very useful or fun"
+    }
+  },
+  "targets": [
+    {
+      "id": "083b75c522786a875853e6ff295e735f897a5cf0b19a9e88784164b848cb21a4",
+      "name": "Footstep reference",
+      "sha256": "01591dd5efd3b3ea040b3415fad2eff231978149acddf9bd97c73b28a10095c3",
+      "folder": "001",
+      "referenceAudioSha256": "01591dd5efd3b3ea040b3415fad2eff231978149acddf9bd97c73b28a10095c3",
+      "candidates": [
+        {
+          "id": "d01c48e86b334f81a2f95e721e9a77a692d25f9ddaf9aaec14221afd4bc1e08d",
+          "synth": "Footsteppr",
+          "paramsSha256": "efadb8660327b01252f2f0ec55ce3afad17563ab0bc1fc271d74d63636e1c5a2",
+          "seed": 20261004,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "340cd9787551a3cc6ee04063f00ffc678ca08ded759f02ad8ff8c99b93ca4a65",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "randomize_params",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              0
+            ],
+            "generatorProbability": 1,
+            "proposalRank": 1,
+            "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "anchorSeed": 20261004,
+            "fixedText": [],
+            "fixedRandomness": [],
+            "structureScope": "numeric individual synth",
+            "actualRenderAudioHash": "3fa7576569d8cb0b2052d74f4ec55fea429d7a826243ddf214c1c5f85cbc1e6f",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "auditionMatchObjective": 2.0910520527803396,
+            "auditionPcmHash": "3a10d4a6944651a335b503297bef4fe2be1c83325c4c9b49b0d251eee96aa8ab",
+            "auditionWavSha256": "340cd9787551a3cc6ee04063f00ffc678ca08ded759f02ad8ff8c99b93ca4a65",
+            "sourceCase": "external-Footsteppr",
+            "experimentReportSha256": "0ee499e62ec90c93a4dd28539b3ef209e380b5319569aeb4fc9a05e705ed6e03",
+            "selectionReason": "Familiar source where both previous Transfxr recreations were rejected. Directly compare old shared and new independent Footsteppr heads; new model is worse by matching distance."
+          },
+          "file": "previous.wav",
+          "role": "previous",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895",
+          "synth": "Footsteppr",
+          "paramsSha256": "5a33ffe20c586b35c07aefa2be76021914db6b23bc1738d1d1e10e96c9c2241a",
+          "seed": 20261004,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "87ffc7f75c96b0cf287106e46be69a4e25b0a234ed1baf459636dd15df00b13b",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "randomize_params",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              1
+            ],
+            "generatorProbability": 1,
+            "proposalRank": 0,
+            "checkpointHash": "d5cb9d2c88ab6f9cfb1b9bc5ee3a24d9458f54ff5c82c0ccb3b566ba1c60f733",
+            "anchorSeed": 20261004,
+            "fixedText": [],
+            "fixedRandomness": [],
+            "structureScope": "numeric individual synth",
+            "actualRenderAudioHash": "db1994063164dd29dd543f260be3e851ab9b8942a886e47f40af7cede5d037a9",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "auditionMatchObjective": 3.123176171189889,
+            "auditionPcmHash": "e06c1593513c425aa5410d6493e6a6e52d9ebf1d84b6ac7edf1965e961402297",
+            "auditionWavSha256": "87ffc7f75c96b0cf287106e46be69a4e25b0a234ed1baf459636dd15df00b13b",
+            "sourceCase": "external-Footsteppr",
+            "experimentReportSha256": "0ee499e62ec90c93a4dd28539b3ef209e380b5319569aeb4fc9a05e705ed6e03",
+            "selectionReason": "Familiar source where both previous Transfxr recreations were rejected. Directly compare old shared and new independent Footsteppr heads; new model is worse by matching distance."
+          },
+          "file": "selected.wav",
+          "role": "selected",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895",
+          "d01c48e86b334f81a2f95e721e9a77a692d25f9ddaf9aaec14221afd4bc1e08d"
+        ],
+        "auditionedCandidateIds": [
+          "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895",
+          "d01c48e86b334f81a2f95e721e9a77a692d25f9ddaf9aaec14221afd4bc1e08d"
+        ],
+        "preferredCandidateIds": [
+          "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "ed15fa565d283631a03d690b9e02738cdaec9769b005701c46f72ddc20a64895"
+          ]
+        }
+      }
+    },
+    {
+      "id": "22f2adee254d00f8c664b1abb2d476064399df501e3bc22f8f3a071e479c984a",
+      "name": "Rocket burst reference",
+      "sha256": "3aeeb71d3a24e24af3f9742663612e05806d08fd3deac114a3b4ca2d8e55d354",
+      "folder": "002",
+      "referenceAudioSha256": "3aeeb71d3a24e24af3f9742663612e05806d08fd3deac114a3b4ca2d8e55d354",
+      "candidates": [
+        {
+          "id": "f6c74bdabe7f92990c2396458caafaa3ebdb2a28dbd513265774ec87e880efeb",
+          "synth": "Transfxr",
+          "paramsSha256": "301e408f788c1319c78f14095f9e89f39b275b3e1b1b63deb3678966f8471fc9",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "d0053c8acde4db780240af6d84707c61a468b1c3094b713d10c7ea634a528fcd",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              7,
+              4,
+              3,
+              0,
+              2,
+              8,
+              0
+            ],
+            "jointLogProbability": -4.563003122806549,
+            "proposalRank": 3,
+            "proposalSource": "categorical-alternative",
+            "checkpointHash": "c0e4426098e13aa79cd8cfee76e5a06cd0bb74ec1683541790adb04f0244cec4",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "52303e5f85bc797478ab3f49cd30837732fd2e844ed3a5ae01ddc374bc5d65e2",
+            "auditionPcmSha256": "2f6f9daa0a850e9b9cc4989966b6bb47ef6f26e4d36322b25799d578b4b8b3ea",
+            "auditionWavSha256": "d0053c8acde4db780240af6d84707c61a468b1c3094b713d10c7ea634a528fcd",
+            "auditionTransform": "exact archived PCM, no additional normalization",
+            "transferReportSha256": "c49e06b826b96d0b8f0c6a4e34cf2656cd1b631c01893cb65315973d4c4d9743",
+            "sourceCase": "external-Boomr",
+            "comparisonRole": "ensemble",
+            "archiveManifestSha256": "b0e3e3f11da8fe6630d7ee82a530b2261bb4910e4ea1b60d4dbd3fa0f504cc88",
+            "archiveCandidateId": "9c4d4e4c062296b0dafeb23a8b4b8618d52c0d4842e650d0401607e2744d5908",
+            "experimentReportSha256": "0ee499e62ec90c93a4dd28539b3ef209e380b5319569aeb4fc9a05e705ed6e03",
+            "selectionReason": "New independent Boomr leads numerically. Preserve the exact older human winner rated roughly similar, and also include the older shared Boomr head.",
+            "auditionMatchObjective": 2.0305680760515026,
+            "auditionPcmHash": "2f6f9daa0a850e9b9cc4989966b6bb47ef6f26e4d36322b25799d578b4b8b3ea"
+          },
+          "file": "previous.wav",
+          "role": "previous",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949",
+          "synth": "Boomr",
+          "paramsSha256": "f319d995793e9495cf4d87d07db7d04e51edf19d11f13685b541a3e1bab6c025",
+          "seed": 20261004,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "67cc9a986cac15345c2784f7696283eee4a527a63289e8d3b5b770e4f3438537",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "generate_grenade",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              3
+            ],
+            "generatorProbability": 0.3325953185558319,
+            "proposalRank": 0,
+            "checkpointHash": "e8fefa597fc7698e3d12f0a0d60618ac5007ddd8f60110619117b7da4a6c502a",
+            "anchorSeed": 20261004,
+            "fixedText": [],
+            "fixedRandomness": [
+              "seed"
+            ],
+            "structureScope": "numeric individual synth",
+            "actualRenderAudioHash": "7016a96f9745225a9c893ae370c75fba17c986be1d67356405bf00d326a7bcd4",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "auditionMatchObjective": 1.2297055066845761,
+            "auditionPcmHash": "42c06d69f1c135681a883f5baeab13a06632b558300c33034f99d7a5010db2bf",
+            "auditionWavSha256": "67cc9a986cac15345c2784f7696283eee4a527a63289e8d3b5b770e4f3438537",
+            "sourceCase": "external-Boomr",
+            "experimentReportSha256": "0ee499e62ec90c93a4dd28539b3ef209e380b5319569aeb4fc9a05e705ed6e03",
+            "selectionReason": "New independent Boomr leads numerically. Preserve the exact older human winner rated roughly similar, and also include the older shared Boomr head."
+          },
+          "file": "selected.wav",
+          "role": "selected",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "fa6689fa6220019fdf0ef00d4654210cc71f5da9be493a6ac7ff761c3412fd84",
+          "synth": "Boomr",
+          "paramsSha256": "e93b42956f6087d5a19e17343469a8834c2ee8fcb1396d58f2fc117524d3f055",
+          "seed": 20261006,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "d583617bec336b9ca5fc5ee026e35a40e3bb626e5af436b164b74986042c7198",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "generate_rocket",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              2
+            ],
+            "generatorProbability": 0.5757085680961609,
+            "proposalRank": 3,
+            "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "anchorSeed": 20261006,
+            "fixedText": [],
+            "fixedRandomness": [
+              "seed"
+            ],
+            "structureScope": "numeric individual synth",
+            "actualRenderAudioHash": "98c908c0c34d7b8181286379953fe1fec35dfc2dff75f02d0fcfac35e4488cac",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "auditionMatchObjective": 2.042396842683001,
+            "auditionPcmHash": "3b6c0dca26e261ffe9af5b90d1c78eb283f3254d6cfe2430e729aeacd3539367",
+            "auditionWavSha256": "d583617bec336b9ca5fc5ee026e35a40e3bb626e5af436b164b74986042c7198",
+            "sourceCase": "external-Boomr",
+            "experimentReportSha256": "0ee499e62ec90c93a4dd28539b3ef209e380b5319569aeb4fc9a05e705ed6e03",
+            "selectionReason": "New independent Boomr leads numerically. Preserve the exact older human winner rated roughly similar, and also include the older shared Boomr head."
+          },
+          "file": "original.wav",
+          "role": "original",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "f6c74bdabe7f92990c2396458caafaa3ebdb2a28dbd513265774ec87e880efeb",
+          "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949",
+          "fa6689fa6220019fdf0ef00d4654210cc71f5da9be493a6ac7ff761c3412fd84"
+        ],
+        "auditionedCandidateIds": [
+          "f6c74bdabe7f92990c2396458caafaa3ebdb2a28dbd513265774ec87e880efeb",
+          "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949",
+          "fa6689fa6220019fdf0ef00d4654210cc71f5da9be493a6ac7ff761c3412fd84"
+        ],
+        "preferredCandidateIds": [
+          "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "c77a06fb75a9e9a0ef92ef2908063a59b529677117e75d80034d0e9512b25949"
+          ]
+        }
+      }
+    },
+    {
+      "id": "f8d4074d6789ce8abbc860171a8909ffe48b166513b421e5c3be9b5eb9a5aae7",
+      "name": "New short burst",
+      "sha256": "e6cfde270a6c0391660a4fcec09ae43b1f9f842517b90b3201cb72091bc489b3",
+      "folder": "003",
+      "referenceAudioSha256": "e6cfde270a6c0391660a4fcec09ae43b1f9f842517b90b3201cb72091bc489b3",
+      "candidates": [
+        {
+          "id": "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577",
+          "synth": "Boomr",
+          "paramsSha256": "ea9d3c253fa8dd57da38bcde2044f76805719b353b5d852184b453ea8cfa75b3",
+          "seed": 20261011,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "22333ee94713f453cec9631053c91c4007ab129dcd400a1a6fe75f88389f7272",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "generate_tiny_pop",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              5
+            ],
+            "generatorProbability": 0.9610315561294556,
+            "proposalRank": 0,
+            "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "anchorSeed": 20261011,
+            "fixedText": [],
+            "fixedRandomness": [
+              "seed"
+            ],
+            "structureScope": "numeric individual synth",
+            "actualRenderAudioHash": "af3f56b4105b0ee59d78eb88441338d1526476957431b95b65695751f04e7397",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "auditionMatchObjective": 3.1076993588825355,
+            "auditionPcmHash": "69446a4fdced51d299ab23dd0d6c960adf25eee7a192a929663a67bc74f2b982",
+            "auditionWavSha256": "22333ee94713f453cec9631053c91c4007ab129dcd400a1a6fe75f88389f7272",
+            "sourceCase": "Boomr-specialist-03383",
+            "experimentReportSha256": "0ee499e62ec90c93a4dd28539b3ef209e380b5319569aeb4fc9a05e705ed6e03",
+            "selectionReason": "First Boomr test control in the pretraining-frozen order. Both models are excluded from these exact controls; shared preset families. New improves numerical distance; no human adequacy assumed."
+          },
+          "file": "previous.wav",
+          "role": "previous",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "0df7d37e9f7596bccbb2cb531ffc96f0df53487df3fa2aab89cd6da0b661325b",
+          "synth": "Boomr",
+          "paramsSha256": "db803508b6962fc4ef60ec5868245c25ea3031df0ce94b921e25329dece7756a",
+          "seed": 20261011,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "41b160f952e6ee05b57965fae00fba4371994c2e4d722f68ff010df3835530c3",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "generate_tiny_pop",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              5
+            ],
+            "generatorProbability": 0.9008773565292358,
+            "proposalRank": 0,
+            "checkpointHash": "e8fefa597fc7698e3d12f0a0d60618ac5007ddd8f60110619117b7da4a6c502a",
+            "anchorSeed": 20261011,
+            "fixedText": [],
+            "fixedRandomness": [
+              "seed"
+            ],
+            "structureScope": "numeric individual synth",
+            "actualRenderAudioHash": "f797129743c61b08a6b1aab0a08ab03aec4abd280e76972d68116c4832995e37",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "auditionMatchObjective": 2.07506193885977,
+            "auditionPcmHash": "bc2ed201c9c2af8901a2a0a4ebc44a6c71b28c62ef991b84c2d720203fe34f3e",
+            "auditionWavSha256": "41b160f952e6ee05b57965fae00fba4371994c2e4d722f68ff010df3835530c3",
+            "sourceCase": "Boomr-specialist-03383",
+            "experimentReportSha256": "0ee499e62ec90c93a4dd28539b3ef209e380b5319569aeb4fc9a05e705ed6e03",
+            "selectionReason": "First Boomr test control in the pretraining-frozen order. Both models are excluded from these exact controls; shared preset families. New improves numerical distance; no human adequacy assumed."
+          },
+          "file": "selected.wav",
+          "role": "selected",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "0df7d37e9f7596bccbb2cb531ffc96f0df53487df3fa2aab89cd6da0b661325b",
+          "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577"
+        ],
+        "auditionedCandidateIds": [
+          "0df7d37e9f7596bccbb2cb531ffc96f0df53487df3fa2aab89cd6da0b661325b",
+          "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577"
+        ],
+        "preferredCandidateIds": [
+          "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "55e00602f9866c38623c80fce5b948aaf480ffd67646307949f4bc1137d49577"
+          ]
+        }
+      }
+    },
+    {
+      "id": "4263da03e0ca43ea1e42c1dfb691b2d5b43ae0feecf6c78820ec2b020f6d6b22",
+      "name": "New footstep",
+      "sha256": "b1b295fcb0dbfa4227cf1dbe346247a822fa50eaeb936d987d328bf4fb421731",
+      "folder": "004",
+      "referenceAudioSha256": "b1b295fcb0dbfa4227cf1dbe346247a822fa50eaeb936d987d328bf4fb421731",
+      "candidates": [
+        {
+          "id": "9276204cb91421c377bdc0b3ef780c57cd211862e040a7f14922f697bee5f0b1",
+          "synth": "Footsteppr",
+          "paramsSha256": "00ca6dcdbf9580f637730d5572ec1fd67e3757265572a12cb1b04c3b90c16763",
+          "seed": 20261004,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "7cd2962d0f6ea65c4b0e021342b4b749e8cadb77f67002266c662921d7811968",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "randomize_params",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              0
+            ],
+            "generatorProbability": 1,
+            "proposalRank": 1,
+            "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "anchorSeed": 20261004,
+            "fixedText": [],
+            "fixedRandomness": [],
+            "structureScope": "numeric individual synth",
+            "actualRenderAudioHash": "c02dfa230d8907dc47a87c7b3884b0c219b82fc869227a63552faaf804479278",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "auditionMatchObjective": 1.4682206420395425,
+            "auditionPcmHash": "d9bfee0bb441af84cd038234dbe804fd53d6ca8588d47f2b73b198f6e6851446",
+            "auditionWavSha256": "7cd2962d0f6ea65c4b0e021342b4b749e8cadb77f67002266c662921d7811968",
+            "sourceCase": "Footsteppr-specialist-02077",
+            "experimentReportSha256": "0ee499e62ec90c93a4dd28539b3ef209e380b5319569aeb4fc9a05e705ed6e03",
+            "selectionReason": "First Footsteppr test control in the pretraining-frozen order. New model improves numerical distance; assess whether this is audible."
+          },
+          "file": "previous.wav",
+          "role": "previous",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "6d0882a113f649ead87bc02485317e2e9cb864a3a252020077cb021dd97090ef",
+          "synth": "Footsteppr",
+          "paramsSha256": "38130862f19824f91d61bf915c8021658706e02db4433614d267cc57da737d25",
+          "seed": 20261004,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "ee90a0019a4d323fc72fcae0702708bda5cece5383e76d07a3f533ac490faa23",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "randomize_params",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              0
+            ],
+            "generatorProbability": 1,
+            "proposalRank": 1,
+            "checkpointHash": "d5cb9d2c88ab6f9cfb1b9bc5ee3a24d9458f54ff5c82c0ccb3b566ba1c60f733",
+            "anchorSeed": 20261004,
+            "fixedText": [],
+            "fixedRandomness": [],
+            "structureScope": "numeric individual synth",
+            "actualRenderAudioHash": "400faacc9a0d201075f0123bad26c74585f816fe599589d7f970d0138456d550",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "auditionMatchObjective": 1.118080564421092,
+            "auditionPcmHash": "d1b19c88f59e562518faba250a7eb10f0bc1a5d1be5d546b44069ad73ec38b03",
+            "auditionWavSha256": "ee90a0019a4d323fc72fcae0702708bda5cece5383e76d07a3f533ac490faa23",
+            "sourceCase": "Footsteppr-specialist-02077",
+            "experimentReportSha256": "0ee499e62ec90c93a4dd28539b3ef209e380b5319569aeb4fc9a05e705ed6e03",
+            "selectionReason": "First Footsteppr test control in the pretraining-frozen order. New model improves numerical distance; assess whether this is audible."
+          },
+          "file": "selected.wav",
+          "role": "selected",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "tie",
+        "presentedCandidateIds": [
+          "9276204cb91421c377bdc0b3ef780c57cd211862e040a7f14922f697bee5f0b1",
+          "6d0882a113f649ead87bc02485317e2e9cb864a3a252020077cb021dd97090ef"
+        ],
+        "auditionedCandidateIds": [
+          "9276204cb91421c377bdc0b3ef780c57cd211862e040a7f14922f697bee5f0b1",
+          "6d0882a113f649ead87bc02485317e2e9cb864a3a252020077cb021dd97090ef"
+        ],
+        "preferredCandidateIds": [],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "9276204cb91421c377bdc0b3ef780c57cd211862e040a7f14922f697bee5f0b1",
+            "6d0882a113f649ead87bc02485317e2e9cb864a3a252020077cb021dd97090ef"
+          ]
+        }
+      }
+    },
+    {
+      "id": "f6854e00d4b76c1732b6236cef03d3e957c367dfb6a18459e05b1fab964ea87b",
+      "name": "Wingbeat reference",
+      "sha256": "607fbb74ae3a5a3433e391d480de19db3c8cdebc64ce3f2bd844492277d8aad9",
+      "folder": "005",
+      "referenceAudioSha256": "607fbb74ae3a5a3433e391d480de19db3c8cdebc64ce3f2bd844492277d8aad9",
+      "candidates": [
+        {
+          "id": "f26064677b386b00524005b90d78cbd32cad5a05a5c71b3c0731cd44f2162343",
+          "synth": "Footsteppr",
+          "paramsSha256": "b7454838f5e7d6fd699f03bc466dedcc0a569df991dcd0eb7b85ef4b02803459",
+          "seed": 20261004,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "ad1eddd4a1a43dcb317d72258a2af568e07a1c5f78e27898714a06cca5b034ca",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "randomize_params",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              0
+            ],
+            "generatorProbability": 1,
+            "proposalRank": 0,
+            "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+            "anchorSeed": 20261004,
+            "fixedText": [],
+            "fixedRandomness": [],
+            "structureScope": "numeric individual synth",
+            "actualRenderAudioHash": "6d3c0d6430e17416b9ce27b02c7b2e9f0fe5e9196d60aa9e845ba6b1d872e7b8",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "auditionMatchObjective": 0.7750378415574596,
+            "auditionPcmHash": "83a35be8d88b349a299bfb6de6f01aa37e113d18a74549f4c3756bf3b53df205",
+            "auditionWavSha256": "ad1eddd4a1a43dcb317d72258a2af568e07a1c5f78e27898714a06cca5b034ca",
+            "sourceCase": "external-Whooshr",
+            "experimentReportSha256": "0ee499e62ec90c93a4dd28539b3ef209e380b5319569aeb4fc9a05e705ed6e03",
+            "selectionReason": "Cross-engine reference from Whooshr; new Footsteppr is the lowest-distance option and old Footsteppr the strongest previous arm. Low-distance agreement case still needs human adequacy."
+          },
+          "file": "previous.wav",
+          "role": "previous",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8",
+          "synth": "Footsteppr",
+          "paramsSha256": "97dede945ec83e367b40c921068ffdcc7f963b18d331a40c62c32b2063d32084",
+          "seed": 20261004,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "0af4bcf5a63d37bd81bac4a6a7aaaed87f2b86a7b5b37870b304fb722ee92758",
+          "provenance": {
+            "method": "neural-global-controls",
+            "neuralRaw": true,
+            "generator": "randomize_params",
+            "headMode": "acoustic",
+            "categoricalProposal": [
+              0
+            ],
+            "generatorProbability": 1,
+            "proposalRank": 0,
+            "checkpointHash": "d5cb9d2c88ab6f9cfb1b9bc5ee3a24d9458f54ff5c82c0ccb3b566ba1c60f733",
+            "anchorSeed": 20261004,
+            "fixedText": [],
+            "fixedRandomness": [],
+            "structureScope": "numeric individual synth",
+            "actualRenderAudioHash": "d773497ad7c32fe591b47836890549273dc0a49f43514cd91ef92ee6259201b4",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "auditionMatchObjective": 0.5350192627520804,
+            "auditionPcmHash": "597f2aad83fc6a13d5e7bfad1a1f169810ce6ed6aba45b284e1d3423df2565c8",
+            "auditionWavSha256": "0af4bcf5a63d37bd81bac4a6a7aaaed87f2b86a7b5b37870b304fb722ee92758",
+            "sourceCase": "external-Whooshr",
+            "experimentReportSha256": "0ee499e62ec90c93a4dd28539b3ef209e380b5319569aeb4fc9a05e705ed6e03",
+            "selectionReason": "Cross-engine reference from Whooshr; new Footsteppr is the lowest-distance option and old Footsteppr the strongest previous arm. Low-distance agreement case still needs human adequacy."
+          },
+          "file": "selected.wav",
+          "role": "selected",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8",
+          "f26064677b386b00524005b90d78cbd32cad5a05a5c71b3c0731cd44f2162343"
+        ],
+        "auditionedCandidateIds": [
+          "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8",
+          "f26064677b386b00524005b90d78cbd32cad5a05a5c71b3c0731cd44f2162343"
+        ],
+        "preferredCandidateIds": [
+          "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "1902b3100567807d49e8d8c6d1f275709cfbf9b3eea519d7801f3b5bd1c004b8"
+          ]
+        }
+      }
+    }
+  ]
+}

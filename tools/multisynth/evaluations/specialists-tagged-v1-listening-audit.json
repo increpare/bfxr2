@@ -1,0 +1,203 @@
+{
+  "complete": true,
+  "experimentId": "02b376a1c31f054aac16ac91606ddcdd6382805a457d9844b90aee86c0ddc5f4",
+  "scriptSha256": "aa2cc45fb63e69e732210fc0afee97dee4a51d8c00169f0edc73e7aae699e02f",
+  "evaluatedScriptSha256": "f665d7492f93c2a3304da5850f39ad8917ecebe22b737455e1653ba4c22825d9",
+  "reportSha256": "5c1a144adbbf2d5396e22b54e39f795bbdf98c58449cfc893165dd2dc500b021",
+  "resultsSha256": "16f07fe30b5bb21040d09e9fd871285b3a43a1c7d8844dba40b781fb6a31e398",
+  "htmlSha256": "dc5a790303f9355c44e13507093a79fa6bf7e10100a1d2282957e45f07da077b",
+  "replayedCandidates": 295,
+  "maxScoreError": 0.0,
+  "checks": [
+    {
+      "source": "footstep/footstep_wood_000.ogg",
+      "referenceHash": "9f4a7bd23c682b4b5a7695f037de4984a201fc8994f2d99f607720a7e007ed5f",
+      "poolCandidates": 59,
+      "roles": [
+        "previous",
+        "selected",
+        "original"
+      ],
+      "candidates": [
+        {
+          "role": "previous",
+          "synth": "Clonkr",
+          "pcmHash": "49d9ab7c8e804a1102835f86d48fbc4196dd3e12af92bc56760843abcb82ce70",
+          "score": 2.381778882570269
+        },
+        {
+          "role": "selected",
+          "synth": "Footsteppr",
+          "pcmHash": "12bcb31d15fcbbc5adf870b5f6b9985401611767703a2db4d39a30fe59e12d0d",
+          "score": 4.732153109662439
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "pcmHash": "4bdc029cbc2851b627d9c70febb792bdae3012aff7f4c5d324c75787211bf5e2",
+          "score": 3.3992879928881146
+        }
+      ]
+    },
+    {
+      "source": "explode/Break Brick.wav",
+      "referenceHash": "e332027487f4e053f0b107fbad922dad01a858a5295f8643303e76d5f8690838",
+      "poolCandidates": 59,
+      "roles": [
+        "previous",
+        "selected",
+        "original"
+      ],
+      "candidates": [
+        {
+          "role": "previous",
+          "synth": "Rustlr",
+          "pcmHash": "2da01721542c1cc22666a1d7bcdcdd218a1a7e463c8c2338c4ea35d3dba52f5c",
+          "score": 1.292612701575337
+        },
+        {
+          "role": "selected",
+          "synth": "Footsteppr",
+          "pcmHash": "35117f5741ae4f77a7a149beef9c27ba07e42308496e1385fb9cab5d4165aa04",
+          "score": 1.3025343335013504
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "pcmHash": "5068e677fdab1d3e56ffa2b2b267e3801349199a330748c2cdc0d59f363293f8",
+          "score": 1.423290836822337
+        }
+      ]
+    },
+    {
+      "source": "hit/hit block (snes).WAV",
+      "referenceHash": "6e31cc938f78f9fd3ac7d4aa2dd32a310048e141b931bc02a72a3286e6ebb217",
+      "poolCandidates": 59,
+      "roles": [
+        "previous",
+        "selected",
+        "alternative"
+      ],
+      "candidates": [
+        {
+          "role": "previous",
+          "synth": "Bfxr",
+          "pcmHash": "611a35ab3181babd1d906ca45181cea83ef9279366d4079442810f22a3c8c93c",
+          "score": 1.3375685952425762
+        },
+        {
+          "role": "selected",
+          "synth": "Footsteppr",
+          "pcmHash": "614ee4af49702d2a8573298c41fd91022649458871b7819378f687596554ddd8",
+          "score": 3.3549511925174076
+        },
+        {
+          "role": "alternative",
+          "synth": "Footsteppr",
+          "pcmHash": "8177ac7846c3e7ac5942a6f32c216fdf732d0ac0cf6c5faf559740c5bc3a3f1e",
+          "score": 4.664511405070819
+        }
+      ]
+    },
+    {
+      "source": "clothes/cloth3.ogg",
+      "referenceHash": "10ed053c461ef087c435151efafc3d3ac94e85562a69ab4637fa1865a6c402d1",
+      "poolCandidates": 59,
+      "roles": [
+        "previous",
+        "selected",
+        "original"
+      ],
+      "candidates": [
+        {
+          "role": "previous",
+          "synth": "Bfxr",
+          "pcmHash": "1853a2944637c9ad59052e45eb09664b9ea7b22a0db960d8ceb9c68658f56026",
+          "score": 1.7297938848893717
+        },
+        {
+          "role": "selected",
+          "synth": "Footsteppr",
+          "pcmHash": "a93d8191ceb413fdc980fce8012e8a413048caae88ddec7c8e2022ade50cf832",
+          "score": 1.8363964015319023
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "pcmHash": "fcad7c8bb0f80207123aafc1388ddb1d889b7f3d0c0ab116e789c03dcfd52a84",
+          "score": 1.849057253067244
+        }
+      ]
+    },
+    {
+      "source": "laser/Lasers.wav",
+      "referenceHash": "63bf88691d2b30c32b2dfec6ded77a3dd33aabeaaac17df61def303d99a75c56",
+      "poolCandidates": 59,
+      "roles": [
+        "previous",
+        "selected",
+        "original"
+      ],
+      "candidates": [
+        {
+          "role": "previous",
+          "synth": "Rustlr",
+          "pcmHash": "b06b560f4b99019ea8a44c4b5e1da9ef83821dbf2c8fa01f1756c308374af364",
+          "score": 2.4080279411025196
+        },
+        {
+          "role": "selected",
+          "synth": "Footsteppr",
+          "pcmHash": "9c0b61381adece747ef3532764f6d2c2e314e4f4d110aa940ea8dd8db0084660",
+          "score": 2.2208295965378313
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "pcmHash": "07a90fbd2b55533e6fe4177afe78376a846ec8afe7334d7597ebf4458c005e87",
+          "score": 3.1113514466073084
+        }
+      ]
+    }
+  ],
+  "originalBackend": {
+    "backend": "native",
+    "command": [
+      "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+    ],
+    "files": {
+      "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_render": "5462b34f18b76ea8f2573cf7b5370290f16f92b6e32a79970541fe83e534cd43",
+      "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7",
+      "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/bfxr_io.py": "80777afd6d211dc5862e7827b536acd91733e9145fe4ab2cef4133c6c4c34f8e",
+      "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/match/renderer.py": "c389dba1354cdccac284ee1b34831b5e17e03b4225474aebdde10041bfb37609"
+    },
+    "sourceHash": "864191bdaae14fd2c49614361c2a6b6ecedf7349814a5dbbb2b7f5ff9add5544"
+  },
+  "corrections": [
+    "Use visible alternative role for raw fallback; quick questionnaire hides diagnostic raw roles.",
+    "Original Bfxr sourceHash is the separately verified backend, not multisynth inventory. Original run backend was not pre-frozen; all saved original outputs exactly replayed against the bound current backend."
+  ],
+  "audioFiles": {
+    "001/original.wav": "ab4bc6404676bc0193b3e5e7e7ae11398322de65f34e25f78c428c0a99437126",
+    "001/selected.wav": "7109e5c84426f89cd7d4462eb2dfd53d203e7bec4fb566574c592dace37abfd5",
+    "001/target.wav": "63b20fe0aa4df84bc99d7c985835e12cc9801ea31a693a21b886bdab3831f75f",
+    "001/previous.wav": "1226b4eb19e782155a9759bedd8faa2c79909360a59bfe9400ff4d727cc80e04",
+    "003/raw.wav": "7f9ac7d77ebd78e09926f63bbbaeb181d0874b0ff728e9e0cae127d7d7c6f26c",
+    "003/selected.wav": "8853eb1b60c8f7566734a0c22b6d2b8681ec8d721ca72ffba95a56e82dc6a088",
+    "003/target.wav": "f5261bb007f5fd500302a3d18c2100bb82a942f6818ea35b7e426ed657064584",
+    "003/previous.wav": "a9b64b6e610b778e8161183104067de06081c7ac60f8c4591022f2e7e75c74eb",
+    "004/original.wav": "380969b585113197880347e8611821062d44e043c3a8c15b921e6b2a02017d17",
+    "004/selected.wav": "e3f1fdc7356b0b6ab66dcbc79ec9661e331ba87f4fbb01d343ab622d94c6dd8c",
+    "004/target.wav": "9bf73e40da40ddea67e89eaa371156edc0728408c88042583d29f972c237c469",
+    "004/previous.wav": "723b78708d90bc6ad97eb99d58f7837765d077a31d1776d419554ece8e858f65",
+    "005/original.wav": "6b101367ca55079ea826107958851f8ceacb241e45a6395b99b1fff1b383aa0e",
+    "005/selected.wav": "5fef0f416516e72d5612e79314b8bf9c650317ac072c6016d0aed347d0cfefe8",
+    "005/target.wav": "14175d01910438486f03146058eefb2bbde00535d586d9759e1f514885a4c500",
+    "005/previous.wav": "eef267bd4d1f22f1279d591873262f9de616e87a07dac8c9b744e84d4625ade4",
+    "002/original.wav": "8217a86193eb397fda96c1b358dc03cff9fce20309bd3a9d26d2339978074c52",
+    "002/selected.wav": "6c0cefc2f775cbb7717920fed19fb09eb223539233ca5f13d340a662d76c4c1b",
+    "002/target.wav": "dc9534d1894cd6824ac854918156fe501889c8ac6a29ca8e3eb673cf350a097d",
+    "002/previous.wav": "8720fb89ab411b622882b2467e53ac3093779537c66ee162ee5c1f6ebd3be3eb"
+  },
+  "scope": "Full source, reference, pool audio and finalist replay verification; all five preselected sources included, no score-based selection. No assistant judgments."
+}

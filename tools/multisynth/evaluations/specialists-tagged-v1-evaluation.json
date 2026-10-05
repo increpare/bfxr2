@@ -1,0 +1,121 @@
+{
+  "complete": true,
+  "reportSha256": "5c1a144adbbf2d5396e22b54e39f795bbdf98c58449cfc893165dd2dc500b021",
+  "targetsSha256": "c3b7cbbd4039101d3f3a02404daedd10262e61690f74f62be67b95d938cc8f3b",
+  "scriptSha256": "f665d7492f93c2a3304da5850f39ad8917ecebe22b737455e1653ba4c22825d9",
+  "checkpoints": {
+    "shared": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+    "Transfxr": "a816f97284cdd4ec0bfcfbcdbdbd11ab6e8b0230d4fa0b1388e758958694e73f",
+    "Boomr": "e8fefa597fc7698e3d12f0a0d60618ac5007ddd8f60110619117b7da4a6c502a",
+    "Footsteppr": "d5cb9d2c88ab6f9cfb1b9bc5ee3a24d9458f54ff5c82c0ccb3b566ba1c60f733",
+    "originalBfxr": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98"
+  },
+  "rows": [
+    {
+      "source": {
+        "name": "footstep/footstep_wood_000.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep_wood_000.ogg",
+        "sha256": "5f1c252942a220d658121bd9417448cd19649ded9fff2ff15f6e50899373ce8e"
+      },
+      "summary": {
+        "oldBest": 2.381778882570269,
+        "newBest": 4.732153109662439,
+        "originalBfxr": 3.3992879928881146,
+        "rawSpecialist": 5.608587177936853,
+        "oldEngine": "Clonkr",
+        "newEngine": "Footsteppr",
+        "oldRawCandidates": 46,
+        "newRawCandidates": 8,
+        "oldSearch": 256,
+        "newSearch": 256,
+        "originalEvaluations": 2015
+      },
+      "seconds": 108.25614004209638
+    },
+    {
+      "source": {
+        "name": "explode/Break Brick.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/explode/Break Brick.wav",
+        "sha256": "7cc284c586ad81cfbe90ebaab3ccb255036712d46d9a19e240625abe00c4ada7"
+      },
+      "summary": {
+        "oldBest": 1.292612701575337,
+        "newBest": 1.3025343335013504,
+        "originalBfxr": 1.423290836822337,
+        "rawSpecialist": 2.2202849780752842,
+        "oldEngine": "Rustlr",
+        "newEngine": "Footsteppr",
+        "oldRawCandidates": 46,
+        "newRawCandidates": 8,
+        "oldSearch": 256,
+        "newSearch": 256,
+        "originalEvaluations": 2015
+      },
+      "seconds": 80.20381741598248
+    },
+    {
+      "source": {
+        "name": "hit/hit block (snes).WAV",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/hit block (snes).WAV",
+        "sha256": "91ec337c29ae3df25e4d3030b20014323254f9cd1a0dafd3e080bb05c01ff5b5"
+      },
+      "summary": {
+        "oldBest": 1.3375685952425762,
+        "newBest": 3.3549511925174076,
+        "originalBfxr": 1.3375685952425762,
+        "rawSpecialist": 4.664511405070819,
+        "oldEngine": "Bfxr",
+        "newEngine": "Footsteppr",
+        "oldRawCandidates": 46,
+        "newRawCandidates": 8,
+        "oldSearch": 256,
+        "newSearch": 256,
+        "originalEvaluations": 2015
+      },
+      "seconds": 19.68065600004047
+    },
+    {
+      "source": {
+        "name": "clothes/cloth3.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/clothes/cloth3.ogg",
+        "sha256": "a48632d17a4f1416541d261a32a31612e01267144c407fa3ecab3ff410f0085b"
+      },
+      "summary": {
+        "oldBest": 1.7297938848893717,
+        "newBest": 1.8363964015319023,
+        "originalBfxr": 1.849057253067244,
+        "rawSpecialist": 2.0610831810631796,
+        "oldEngine": "Bfxr",
+        "newEngine": "Footsteppr",
+        "oldRawCandidates": 46,
+        "newRawCandidates": 8,
+        "oldSearch": 256,
+        "newSearch": 256,
+        "originalEvaluations": 2015
+      },
+      "seconds": 60.87902258406393
+    },
+    {
+      "source": {
+        "name": "laser/Lasers.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/Lasers.wav",
+        "sha256": "7e1ba424329fb486c312ab8fbb0582cd03f8e00a28d44c436963b61ad2602b28"
+      },
+      "summary": {
+        "oldBest": 2.4080279411025196,
+        "newBest": 2.2208295965378313,
+        "originalBfxr": 3.1113514466073084,
+        "rawSpecialist": 4.0591640678769485,
+        "oldEngine": "Rustlr",
+        "newEngine": "Footsteppr",
+        "oldRawCandidates": 46,
+        "newRawCandidates": 8,
+        "oldSearch": 256,
+        "newSearch": 256,
+        "originalEvaluations": 3001
+      },
+      "seconds": 58.472895834129304
+    }
+  ],
+  "scope": "Five preselected tagged files, no previously judged exact file/PCM. Not source-family holdout or population success estimate. More engines use more total compute. No new human adequacy yet."
+}
