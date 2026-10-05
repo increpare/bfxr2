@@ -198,8 +198,9 @@ The results support further investigation of objective discontinuities and
 local derivative error; they do not justify adopting this binary reliability
 mask or enabling surrogate-audio fine-tuning. A useful next test would freeze
 additional cases and compare finite-difference scale stability before training
-derivative targets. Human adequacy feedback on coverage-selection remains a
-separate question; none of these objective changes establishes audible likeness.
+derivative targets. Subsequent coverage-selection feedback confirms very-close
+reproductions from both experts for two synthetic gestures, with weaker texture
+likeness. That separate experiment does not validate these gradient changes.
 
 Audit: all 74 before/original/new candidate WAV references and descriptor scores
 verified; 26 exact DSP replays (eight before states and all 18 new steps), with

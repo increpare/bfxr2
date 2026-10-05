@@ -1,6 +1,6 @@
 # Native coverage v1
 
-The expanded Transfxr model learns useful additional coverage, but **does not pass its replacement/listening gate**. Human status remains zero convincing recreations on the previous five-reference batch. Numerical improvements below are not likeness labels.
+The expanded Transfxr model learns useful additional coverage, but **does not pass its original replacement/listening gate**. The previous five real-reference batch has zero convincing recreations. A later selected synthetic check finds both experts' Warbling sweep and Bouncing rise reproductions very close, with Short texture less close but similar; see `COVERAGE_SELECTION_V1.md`. Keep these scopes separate. Numerical improvements below are not likeness labels.
 
 The old corpus had only 2,048 native examples among 12,288 rows. Added 32,768 native draws with preset/sparse/broad mutations. Original rows and splits remain byte-exact; new control groups use a stable split. Training native pool grows from 1,730 to 29,557, structured pool stays 8,715. No parameter, audio, or packed-feature identity overlaps between train and holdout. Shared preset families limit generalization claims.
 

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "3afd5c29406ff55b3877ecefd48debf7174e7c871b7ff54f1f39c7454665b5e8",
+  "feedbackSha256": "3a44d3cc4e45df905f3a7006efb83d515edee32ce72cb782d1ec4bdf46d51da0",
+  "archiveManifestSha256": "4f9045fcab21f25459e0099adadf65af6102da44c18163f8999bf4fab0349ad1",
+  "source": "Direct user reply in this chat on 2026-10-05, following the archived coverage-selection quick-choice export.",
+  "verbatim": "Warbling sweep repros are very close, \"short texture\" were less close but similar, bouncing rise are all very close.",
+  "interpretation": [
+    {
+      "target": "Warbling sweep · held-out Transfxr",
+      "targetId": "60a3b152749d832204894b39e7f58e6591b890b9429e9e3ef881c63fc66c6bc8",
+      "referencePcmSha256": "9773bf5e303932f75210507d58c204ff4220fd86abdf961d38802e4bdac1c341",
+      "assessment": "very close",
+      "scope": "Both presented reproductions; not only the preferred candidate.",
+      "candidates": [
+        {
+          "candidateId": "be1bccbdc5c3ccf6b1289eff269d16acd0af65750fc3d4554c88dafeffbe61f0",
+          "role": "previous",
+          "candidatePcmSha256": "3c80cc39eef0a4594dad34c11788ba6c899bdbf43f9ce974834e8745e8612f96"
+        },
+        {
+          "candidateId": "bed57e7761b03f5197583789148f72ad5d4441c762706189f8138225d2026189",
+          "role": "expanded",
+          "candidatePcmSha256": "1d3969a92577bf8bdd22e706344eaff1aea93a46238216e194bdef6f83bd07cc"
+        }
+      ]
+    },
+    {
+      "target": "Short texture · held-out Transfxr",
+      "targetId": "676c240aaf63958a76c2a4c2d0a163b3f5a0e53bb138fe8e950d2cc42053e761",
+      "referencePcmSha256": "16907cedd17729cc03006161416363b8a454933e025b41adbba642d25224977c",
+      "assessment": "less close but similar",
+      "scope": "Both presented reproductions; not only the preferred candidate.",
+      "candidates": [
+        {
+          "candidateId": "19fa82c17f90a8f168fac3ac503d335d3bb200387685ad61532d2bbcd0a7f568",
+          "role": "previous",
+          "candidatePcmSha256": "fddc5d4e7c04063cee3570cf758951cc75f43db433cd5924e476518b45667013"
+        },
+        {
+          "candidateId": "9b421ed900bd6871d0a89ba5881c4299bf2672c46972ba61666daea3a597423f",
+          "role": "expanded",
+          "candidatePcmSha256": "7ebe2af9b9cd56245a106cdf7c8ab8d7d244eeea6de1bc51f6490b8ce8c361c0"
+        }
+      ]
+    },
+    {
+      "target": "Bouncing rise · held-out Transfxr",
+      "targetId": "f64e2f5e82821f0c719e6062c997cbdcfa47a03a3b4eddc62666f760c0cbb4fb",
+      "referencePcmSha256": "6a6f60662941a9e9340a6c7afe22ea0b56c15fe00350b9c872677ed269fcb9ee",
+      "assessment": "all very close",
+      "scope": "Both presented reproductions; not only the preferred candidate.",
+      "candidates": [
+        {
+          "candidateId": "5ced5ffa2b263516e3aa28d051836f07f2e11bdc813eb3e3c6e79d2052fb8fef",
+          "role": "previous",
+          "candidatePcmSha256": "9a88571d5101dc6329af788bc403add920bba52449e0d001f417563f11c049a1"
+        },
+        {
+          "candidateId": "34163e48aa72f9e13ee2ad6b82bed2de100ae6d804c9f4b7c36a8d01d26335d5",
+          "role": "expanded",
+          "candidatePcmSha256": "d26be1c488a6dca7959b2a19e7601570abf858bd407d35b76f0aea8b465f4be3"
+        }
+      ]
+    }
+  ],
+  "numericScoresInferred": false,
+  "relativePreferencesRemainValid": true,
+  "scope": "Selected held-out Transfxr self-inversion cases with shared preset families. Positive likeness evidence for both gesture alternatives, not a representative success rate or evidence of real-recording transfer.",
+  "implication": "Retain both experts and the exact gesture reproductions as human-confirmed very-close regression anchors. Parameter discrepancies alone must not override the listener assessment. Short texture remains a weaker match.",
+  "archivePolicy": "Supplementary human evidence. Original feedback.json, manifest.json and published audio remain unchanged."
+}

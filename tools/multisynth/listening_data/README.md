@@ -17,14 +17,21 @@
 The ninth archive retains three held-out Transfxr self-inversion comparisons.
 The expanded expert wins Warbling sweep and Bouncing rise; Short texture is a
 tie. All nine reference/candidate audios are retained losslessly. No scalar
-ratings or absolute adequacy judgments were supplied. The previous batch's
-zero-convincing verdict does not apply to these new comparisons.
+ratings were supplied. The subsequent
+[qualitative follow-up](2026-10-05-coverage-selection-quick-01/qualitative-feedback.json)
+says both Warbling sweep reproductions are **very close**, Short texture is
+**less close but similar**, and Bouncing rise reproductions are **all very close**.
+This applies to both alternatives, not only the expanded expert's relative wins.
+The previous batch's zero-convincing verdict does not apply to these comparisons.
 Warbling sweep has an explicit preference but empty playback telemetry: retain
 that choice as evidence, without claiming the listener did not hear it. The
 existing strict heard-only training policy yields one pair, from Bouncing rise;
 the tie remains non-directional evidence. These deliberately selected synthetic
 diagnostics do not establish a population win rate or real-recording transfer.
 See [the coverage-selection human review](../evaluations/coverage-selection-quick-01-human-review.json).
+That original review predates the follow-up; its null adequacy fields describe
+what was available then. Preserve it and consult the linked supplementary
+evidence for the later absolute likeness assessment. Do not invent 1–5 labels.
 
 The eighth archive retains all five pitch-calibration comparisons, with all 12
 options auditioned and seven strict heard-only preferences. Both changed

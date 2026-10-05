@@ -1,6 +1,6 @@
 # Coverage selection v1
 
-Keeping both Transfxr experts is more useful than replacing the old expert. The new selection policy passes its numerical check on 32 additional held-out native control groups. **This is not a human quality result.**
+Keeping both Transfxr experts is more useful than replacing the old expert. The new selection policy passes its numerical check on 32 additional held-out native control groups. A subsequent small listening check confirms very close reproductions for two selected gestures from both experts; see the human feedback below. This does not establish a representative quality rate or real-recording transfer.
 
 The old four-proposal winner remains available. Additional candidates may win only with lower actual rendered distance and without losing its reliable pitch, previously matched static register/direction, contour support, one-semitone coverage, or mean paired contour accuracy. All candidates compare against that fixed baseline. Unreliable targets use distance alone. Descriptor evidence is now a selection input; preserved metrics are partly guaranteed by construction.
 
@@ -33,9 +33,17 @@ Experiment ID: `3afd5c29406ff55b3877ecefd48debf7174e7c871b7ff54f1f39c7454665b5e8
 The listener preferred the expanded expert on Warbling sweep and Bouncing rise,
 and judged Short texture a tie. Original feedback and all nine exact audition
 audios are retained in `listening_data/2026-10-05-coverage-selection-quick-01`.
-There are no scalar ratings or absolute adequacy judgments in the export;
-whether these are convincing recreations remains unknown. The previous five
-real references' zero-convincing verdict is a separate observation.
+There are no scalar ratings or absolute adequacy judgments in the original
+export. A subsequent direct reply supplies absolute likeness evidence:
+
+> Warbling sweep repros are very close, "short texture" were less close but similar, bouncing rise are all very close.
+
+This covers both alternatives for each gesture, including the old expert.
+Retain the two gestures and their four exact reproductions as human-confirmed
+very-close anchors. The texture's two alternatives remain similar but less
+close. The previous five real references' zero-convincing verdict is separate.
+The verbatim follow-up and all six candidate PCM identities are bound in
+`listening_data/2026-10-05-coverage-selection-quick-01/qualitative-feedback.json`.
 
 Warbling sweep has an explicit best choice but no recorded playback IDs. This
 is missing telemetry, not evidence that the user did not listen. The current
@@ -45,7 +53,12 @@ rise, while preserving both submitted wins and the tie. See
 
 Known source controls show closer duration in both preferred versions and a
 closer ending level in Warbling sweep. This does not establish the cause of
-preference. Bouncing rise still predicts release 0.2664 against source 0.5916;
-its relative win does not remove that error. These three deliberately selected
-cases support retaining the expanded expert as a complementary proposal source,
-not replacement of the original expert or a claim of reliable real-sound matching.
+preference. Bouncing rise predicts release 0.2664 against source 0.5916, yet the
+listener finds it very close. This is a control discrepancy, not an established
+audible defect. Warbling sweep's distances 6.2200 (old) and 1.5113 (expanded)
+both correspond to very-close judgments, whereas the texture's lower distances
+1.2597 and 0.9078 correspond to weaker likeness. Raw distances across different
+references therefore must not be treated as a calibrated absolute quality scale.
+These selected cases support retaining both experts and broadening coverage;
+they do not establish reliable real-sound matching. Avoid training changes aimed
+solely at eliminating parameter discrepancies in these human-approved gestures.
