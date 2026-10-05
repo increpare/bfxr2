@@ -31,7 +31,7 @@ Public API:
   expanded-objective selection, pitch-first selection, eligibility records/reason.
   Use the exact eligibility and baseline-preservation rules in the spec.
 
-- [ ] Write failing tests first. Start with input immutability and known shifts:
+- [x] Write failing tests first. Start with input immutability and known shifts:
   `shift_register('Transfxr', p, 12, spec)['pitch']['start'] == p['pitch']['start']+1/7`
   when unclamped, and Bfxr `(new_s**2+.001)/(old_s**2+.001) == 2`.
   Real-render tests compare a stable 440Hz target to lower-pitched compatible
@@ -41,9 +41,9 @@ Public API:
   actual PCM/seed bindings, nonpitch controls unchanged, duration/voicing/span
   rejection, all-active tolerance, and selection that cannot discard original
   fallback or regress reliable baseline pitch. Use actual DSP for acoustic claims.
-- [ ] Run red tests, implement module, run focused suite with
+- [x] Run red tests, implement module, run focused suite with
   `PYTHONPATH=tools OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MPLCONFIGDIR=/tmp/bfxr-mpl /Users/stephenlavelle/Documents/bfxr2/tools/.venv/bin/python -m pytest tools/tests/test_neural_pitch_calibration.py -q`.
-- [ ] Independent specification review, then code-quality review; fix findings,
+- [x] Independent specification review, then code-quality review; fix findings,
   rerun relevant tests, freeze and commit only the two owned files.
 
 ## Task2: actual probe and audit

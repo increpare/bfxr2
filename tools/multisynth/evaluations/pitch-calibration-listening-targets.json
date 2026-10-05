@@ -10,7 +10,9 @@
       "durationSeconds": 2.113968253968254,
       "normalizedPcmSha256": "98971f210ae3659c11256c8d53e180be3165b73f6b227d62d3686d2f7ff514ce",
       "previouslyRatedReference": true,
-      "selectionReason": "Retain both previously heard partial-success anchors; check a moving tonal recreation"
+      "selectionReason": "Retain both previously heard partial-success anchors; check a moving tonal recreation",
+      "archivedReferencePcmSha256": "999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850",
+      "referenceBindingNote": "normalizedPcmSha256 is inherited source metadata, not the actually heard archive PCM identity. Use archivedReferencePcmSha256 and the archive referenceAudio binding for exact charm2 audition PCM."
     },
     {
       "name": "attack/battleStart.wav",
@@ -56,5 +58,5 @@
   "inputProfileSha256": "696b05f5318115691b08dcc2a3718f4ce7999cfd8389ac59ace536e5f35cbf1d",
   "selection": "One familiar qualified partial success, three fresh nearly stationary tagged references at low/mid/high register, one fresh falling whistle. Curated development examples, not independent generalization. Selected from inputs before new model/calibration outputs. Skip redundant unchanged comparison opportunities; at most five items.",
   "charmPolicy": "Retain both the latest Bfxr partial success and the earlier Transfxr anchor. Latest choice did not audition the Transfxr option; no preference between them was established.",
-  "scope": "Use exact archived reference/anchor PCM for charm2. Fresh inputs use bound float32 audition hash; this differs from the archive PCM16 hash convention."
+  "scope": "Use exact archived reference/anchor PCM for charm2, bound by archivedReferencePcmSha256. Its inherited normalizedPcmSha256 is source metadata and is not the heard archive PCM hash. Fresh inputs use auditionFloat32Sha256, a separate raw float32 byte hash convention."
 }
