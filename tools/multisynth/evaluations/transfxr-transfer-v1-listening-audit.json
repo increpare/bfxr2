@@ -1,0 +1,27 @@
+{
+  "complete": true,
+  "experimentId": "8242b8603755b097d7cdba29233b686d1270e5caf185603987090011b080d5bd",
+  "htmlSha256": "f4ce3980f70c6d530c87630969c98534c5056476ec4737d11c994ef553f6535a",
+  "resultsSha256": "d0be93ba38440740dada1cf7fd1b39dbc8617b4ab191d5fe1bd40cb89ce8a93f",
+  "audioFiles": {
+    "001/target.wav": "0a1a89b51f8c6bf46d40aee71ebdd34b978c58cd5129d5e46765321dd7f18464",
+    "001/frozen-clean.wav": "0c388d1d82f4ed40c0edbadda46fdb82a8f294ab5d641e7a88e9e5d1fe4fb2a4",
+    "001/adapted.wav": "ebb5daf13d88962092a88d59479cff0e5b17d7006c6b59a23872631ca2d3a236",
+    "006/target.wav": "e43271882b55f0818d58da5b28069019c8a254e048d265f18253225777a1c91b",
+    "006/ensemble.wav": "87acc185aa27e80c85f40bd7b8b26b3f2f49ac429e546b9d1d24950439c54c5a",
+    "006/old.wav": "880eaada4fc4ae2302402a4d337120aa00314b3cde3c864213c7d4c9ca3bc490",
+    "003/target.wav": "5ed455fa17b8501811767e30ca4bdeef118570f352ed4da7615199ca0ace8fa8",
+    "003/frozen-clean.wav": "401d3971d8d35f79079da94052d923f0ef9cc701a1406ad074dd82cbffd496ef",
+    "003/adapted.wav": "64c19c3ab7d784da67b03d506fadaa4173dcff6d86cdecd786da7119cbb6e1cb",
+    "004/target.wav": "b529e9c8bae707f4694d04a8b6d86f1f1d31621a252b13465ccfee1e4b9b9f3f",
+    "004/ensemble.wav": "864ee981fffaac7af8256fb2f6560ffc89fdb1e53623fffe9c60b88d6de64d61",
+    "004/old.wav": "dee4d12dc1cb0db46dab379248b43f79ed1ed36b6ca7227499a0d3c6ecd26a9b",
+    "005/target.wav": "3aeeb71d3a24e24af3f9742663612e05806d08fd3deac114a3b4ca2d8e55d354",
+    "005/ensemble.wav": "d0053c8acde4db780240af6d84707c61a468b1c3094b713d10c7ea634a528fcd",
+    "005/old.wav": "f8d837c27747f55edb3a9adac13bb1f79db4abfffab24afa257c1643662c5a14",
+    "002/target.wav": "cae583cd3e5da1c57de16c43c44f5fb0d97c49f0caf6a01d3d208e0ff2731190",
+    "002/frozen-clean.wav": "0c388d1d82f4ed40c0edbadda46fdb82a8f294ab5d641e7a88e9e5d1fe4fb2a4",
+    "002/adapted.wav": "3b4429c3d7ab8b6439c7abfcfec3c03f8a915734a2bd0eabb2d0f31f001837c8"
+  },
+  "scope": "All selected DSP replay and single audition transform verified."
+}
