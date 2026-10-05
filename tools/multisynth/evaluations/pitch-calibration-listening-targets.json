@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "frozenBeforeCalibrationEvaluation": true,
+  "targets": [
+    {
+      "name": "die/charm2.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/die/charm2.wav",
+      "sha256": "d161711f9e872a84d289f26097f57028ef444959afd79c0233b74aef9f3ae24e",
+      "tag": "die",
+      "durationSeconds": 2.113968253968254,
+      "normalizedPcmSha256": "98971f210ae3659c11256c8d53e180be3165b73f6b227d62d3686d2f7ff514ce",
+      "previouslyRatedReference": true,
+      "selectionReason": "Retain both previously heard partial-success anchors; check a moving tonal recreation"
+    },
+    {
+      "name": "attack/battleStart.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/attack/battleStart.wav",
+      "sha256": "fdc85a871dd4f6320cd07360359c3ea6a782bc5734f7ed6639483850759fff53",
+      "tag": "attack",
+      "durationSeconds": 1.065079365079365,
+      "auditionFloat32Sha256": "7b1ab411f82008fad10d0b2b374e8e141cb78970dac21a2e57e015072ab39f4b",
+      "previouslyRatedReference": false,
+      "selectionReason": "Fresh short tagged pitch-calibration coverage selected by input pitch/gesture and tag diversity, before new output generation"
+    },
+    {
+      "name": "select/Select Beep.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/select/Select Beep.wav",
+      "sha256": "44d12555c6a60be548169eb89790f57cbc4ee18909f6f41867294418c8a3c642",
+      "tag": "select",
+      "durationSeconds": 0.27825396825396825,
+      "auditionFloat32Sha256": "7565e5cf979954ba6840c94ee6271c20f8f567503fe826e7f7ab99bcf9cc3722",
+      "previouslyRatedReference": false,
+      "selectionReason": "Fresh short tagged pitch-calibration coverage selected by input pitch/gesture and tag diversity, before new output generation"
+    },
+    {
+      "name": "bell/impactBell_heavy_003.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/impactBell_heavy_003.ogg",
+      "sha256": "5572ccdeb3b62373b86fa955355b3a222c36e815f0636ba16165189a21cf2514",
+      "tag": "bell",
+      "durationSeconds": 0.6536054421768708,
+      "auditionFloat32Sha256": "dde2fa3f0976c94c2c14f39b46d6dc25234ff36817b93a135083d071c79caa6f",
+      "previouslyRatedReference": false,
+      "selectionReason": "Fresh short tagged pitch-calibration coverage selected by input pitch/gesture and tag diversity, before new output generation"
+    },
+    {
+      "name": "fall/Descending Fall Whistle.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/fall/Descending Fall Whistle.wav",
+      "sha256": "4381a8e14ac848595acf5b3812507f4ba1eeca17a5538a0efe8701aa9f10a1dc",
+      "tag": "fall",
+      "durationSeconds": 1.2359183673469387,
+      "auditionFloat32Sha256": "5368815236240964d40973bcf7e6589e1ffa95705a10ac8c132e4a1062dea1a8",
+      "previouslyRatedReference": false,
+      "selectionReason": "Fresh short tagged pitch-calibration coverage selected by input pitch/gesture and tag diversity, before new output generation"
+    }
+  ],
+  "inputProfileSha256": "696b05f5318115691b08dcc2a3718f4ce7999cfd8389ac59ace536e5f35cbf1d",
+  "selection": "One familiar qualified partial success, three fresh nearly stationary tagged references at low/mid/high register, one fresh falling whistle. Curated development examples, not independent generalization. Selected from inputs before new model/calibration outputs. Skip redundant unchanged comparison opportunities; at most five items.",
+  "charmPolicy": "Retain both the latest Bfxr partial success and the earlier Transfxr anchor. Latest choice did not audition the Transfxr option; no preference between them was established.",
+  "scope": "Use exact archived reference/anchor PCM for charm2. Fresh inputs use bound float32 audition hash; this differs from the archive PCM16 hash convention."
+}

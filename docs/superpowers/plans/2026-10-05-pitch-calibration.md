@@ -71,11 +71,20 @@ CLI accepts `--benchmark` (one frozen v5 comparison results file) and fresh
 
 ## Task3: useful short listening checkpoint, conditional on actual evidence
 
-- [ ] Use fixed tagged references initially bird, charm2, spinout, bookClose and
-  EggJump. Verify cached v3 allRaw/allRefined and original Bfxr controls/seed/PCM
+- [ ] Use `evaluations/pitch-calibration-listening-targets.json`, frozen from input
+  profiles before calibration outputs: charm2, battleStart, Select Beep, heavy
+  impact bell003, Descending Fall Whistle. Bird/spinout/book/Egg have insufficient
+  global pitch confidence for this conservative component; don't rerate unchanged
+  sets. Verify cached v3 allRaw/allRefined and original Bfxr controls/seed/PCM
   against archived reports/audit before using as model proposals. Bind source
   artifacts; human choices only choose historical comparison anchors, never
   calibration or automatic selection.
+- [ ] For fresh targets, obtain frozen-v3 proposals and same384 guarded trials
+  per available engine plus original Bfxr baseline with declared2000 budget
+  (record actual evaluations). These define the common pre-calibration pool;
+  calibration adds only Task1's bounded pitch trials. Retain uncalibrated winner
+  and original Bfxr for comparison, deduplicating exact heard PCM. No claim of
+  equal computation versus a raw inverse or learned-model improvement.
 - [ ] Create a separately named calibration listening run. Apply frozen Task1
   without extra tuning to these candidate pools, preserve all attempts and exact
   historical heard PCM. Skip redundant unchanged comparison sets; max5 items.
