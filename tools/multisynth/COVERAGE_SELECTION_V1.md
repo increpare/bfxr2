@@ -26,4 +26,26 @@ Full retained run: `runs/coverage-selection-v1`. Tracked summary/audit: `evaluat
 
 The question is whether these numerical improvements actually preserve audible gesture and character when exact synth reproduction is possible. One texture has unreliable pitch diagnostics; two tests have reliable moving-pitch evidence. This is a biased diagnostic sample, not a quality-rate estimate. All references and candidates replayed exactly, each audition received one normalization/PCM16 transform, served HTML and all nine WAVs match export hashes, and browser playback completes without entering choices. Relative wins will remain separate from absolute human likeness judgments.
 
-Experiment ID: `3afd5c29406ff55b3877ecefd48debf7174e7c871b7ff54f1f39c7454665b5e8`. Tracked delivery receipt: `evaluations/coverage-selection-v1-listening-audit.json`. The five real-reference refinement pairs are complete and audited; charm2 improvement still does not beat its earlier Bfxr distance and is not offered for another rating. Human quality feedback on these three synthetic cases is pending.
+Experiment ID: `3afd5c29406ff55b3877ecefd48debf7174e7c871b7ff54f1f39c7454665b5e8`. Tracked delivery receipt: `evaluations/coverage-selection-v1-listening-audit.json`. The five real-reference refinement pairs are complete and audited; charm2 improvement still does not beat its earlier Bfxr distance and is not offered for another rating.
+
+### Human feedback received
+
+The listener preferred the expanded expert on Warbling sweep and Bouncing rise,
+and judged Short texture a tie. Original feedback and all nine exact audition
+audios are retained in `listening_data/2026-10-05-coverage-selection-quick-01`.
+There are no scalar ratings or absolute adequacy judgments in the export;
+whether these are convincing recreations remains unknown. The previous five
+real references' zero-convincing verdict is a separate observation.
+
+Warbling sweep has an explicit best choice but no recorded playback IDs. This
+is missing telemetry, not evidence that the user did not listen. The current
+strict heard-only preference pipeline therefore yields one pair, from Bouncing
+rise, while preserving both submitted wins and the tie. See
+`evaluations/coverage-selection-quick-01-human-review.json`.
+
+Known source controls show closer duration in both preferred versions and a
+closer ending level in Warbling sweep. This does not establish the cause of
+preference. Bouncing rise still predicts release 0.2664 against source 0.5916;
+its relative win does not remove that error. These three deliberately selected
+cases support retaining the expanded expert as a complementary proposal source,
+not replacement of the original expert or a claim of reliable real-sound matching.

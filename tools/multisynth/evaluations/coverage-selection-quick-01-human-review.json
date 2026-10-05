@@ -1,0 +1,312 @@
+{
+  "complete": true,
+  "experimentId": "3afd5c29406ff55b3877ecefd48debf7174e7c871b7ff54f1f39c7454665b5e8",
+  "scriptSha256": "76fead49df5433d5a064c4762e843e70d383d23e5505ec1d562dc1275a69d170",
+  "feedbackSha256": "3a44d3cc4e45df905f3a7006efb83d515edee32ce72cb782d1ec4bdf46d51da0",
+  "manifestSha256": "4f9045fcab21f25459e0099adadf65af6102da44c18163f8999bf4fab0349ad1",
+  "galleryReportSha256": "aa4fe2ac5845ad58f3ac4b32b67bbeaf3a79d56234b887f55a338d022115bb1f",
+  "summary": {
+    "targets": 3,
+    "uniqueRatedCandidates": 0,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "choices": 3,
+    "choiceKinds": {
+      "best": 2,
+      "tie": 1,
+      "none": 0,
+      "skip": 0
+    }
+  },
+  "trainingPairSummary": {
+    "targets": 3,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "duplicateAudioAliases": 0,
+    "conflictingAudioRatingGroups": 0,
+    "tiedPairs": 0,
+    "duplicateSessionPairs": 0,
+    "directChoicePairs": 1,
+    "choices": 3,
+    "choiceKinds": {
+      "best": 2,
+      "tie": 1,
+      "none": 0,
+      "skip": 0
+    },
+    "validatedAudioFiles": 9,
+    "uniqueAudioPcm": 9
+  },
+  "strictHeardPairs": 1,
+  "records": [
+    {
+      "name": "Warbling sweep \u00b7 held-out Transfxr",
+      "kind": "best",
+      "preferredRoles": [
+        "expanded"
+      ],
+      "preferredCandidateIds": [
+        "bed57e7761b03f5197583789148f72ad5d4441c762706189f8138225d2026189"
+      ],
+      "referencePcmSha256": "9773bf5e303932f75210507d58c204ff4220fd86abdf961d38802e4bdac1c341",
+      "auditionedCandidateIds": [],
+      "absoluteAdequacy": null,
+      "notes": "",
+      "controlEvidence": {
+        "duration": {
+          "target": 0.44,
+          "previous": 0.3825300335884094,
+          "expanded": 0.4358855187892914
+        },
+        "attack": {
+          "target": 0.012,
+          "previous": 0.02195218950510025,
+          "expanded": 0.030319005250930786
+        },
+        "release": {
+          "target": 0.12,
+          "previous": 0.10927341878414154,
+          "expanded": 0.14017508924007416
+        },
+        "pitch": {
+          "target": {
+            "start": 0.6273938645422459,
+            "end": 0.8573938645422459,
+            "curve": "Triangle"
+          },
+          "previous": {
+            "start": 0.6388806700706482,
+            "end": 0.8472773432731628,
+            "curve": "Triangle"
+          },
+          "expanded": {
+            "start": 0.6324153542518616,
+            "end": 0.86700439453125,
+            "curve": "Triangle"
+          }
+        },
+        "level": {
+          "target": {
+            "start": 0.8,
+            "end": 0.55,
+            "curve": "Linear"
+          },
+          "previous": {
+            "start": 0.8234083652496338,
+            "end": 0.67047518491745,
+            "curve": "Linear"
+          },
+          "expanded": {
+            "start": 0.796326756477356,
+            "end": 0.5515363812446594,
+            "curve": "Linear"
+          }
+        },
+        "vibrato": {
+          "target": {
+            "start": 0.05,
+            "end": 0.8,
+            "curve": "Ease In"
+          },
+          "previous": {
+            "start": 0.041875939816236496,
+            "end": 0.8367774486541748,
+            "curve": "Ease In"
+          },
+          "expanded": {
+            "start": 0.07953213155269623,
+            "end": 0.8263167142868042,
+            "curve": "Ease In"
+          }
+        }
+      },
+      "descriptorDistances": {
+        "previous": 6.220000751655712,
+        "expanded": 1.5112619071536004
+      }
+    },
+    {
+      "name": "Short texture \u00b7 held-out Transfxr",
+      "kind": "tie",
+      "preferredRoles": [],
+      "preferredCandidateIds": [],
+      "referencePcmSha256": "16907cedd17729cc03006161416363b8a454933e025b41adbba642d25224977c",
+      "auditionedCandidateIds": [
+        "19fa82c17f90a8f168fac3ac503d335d3bb200387685ad61532d2bbcd0a7f568",
+        "9b421ed900bd6871d0a89ba5881c4299bf2672c46972ba61666daea3a597423f"
+      ],
+      "absoluteAdequacy": null,
+      "notes": "",
+      "controlEvidence": {
+        "duration": {
+          "target": 0.22795475434089796,
+          "previous": 0.1893628090620041,
+          "expanded": 0.2090013474225998
+        },
+        "attack": {
+          "target": 0.0071233140030788015,
+          "previous": 0.0417906828224659,
+          "expanded": 0.03795716539025307
+        },
+        "release": {
+          "target": 0.11343361825025822,
+          "previous": 0.16466572880744934,
+          "expanded": 0.1949656903743744
+        },
+        "pitch": {
+          "target": {
+            "start": 0.3548558032723437,
+            "end": 0.4418330582652032,
+            "curve": "Linear"
+          },
+          "previous": {
+            "start": 0.3556941747665405,
+            "end": 0.360089510679245,
+            "curve": "Linear"
+          },
+          "expanded": {
+            "start": 0.35518789291381836,
+            "end": 0.36688563227653503,
+            "curve": "Linear"
+          }
+        },
+        "level": {
+          "target": {
+            "start": 0.8977886510874283,
+            "end": 0.27693391630703906,
+            "curve": "Ease Out"
+          },
+          "previous": {
+            "start": 0.8520448207855225,
+            "end": 0.15648747980594635,
+            "curve": "Ease Out"
+          },
+          "expanded": {
+            "start": 0.7804334759712219,
+            "end": 0.26402920484542847,
+            "curve": "Ease Out"
+          }
+        },
+        "vibrato": {
+          "target": {
+            "start": 0,
+            "end": 0,
+            "curve": "Linear"
+          },
+          "previous": {
+            "start": 0.0011744272196665406,
+            "end": 0.005344386678189039,
+            "curve": "Linear"
+          },
+          "expanded": {
+            "start": 0.007336739916354418,
+            "end": 0.004931668285280466,
+            "curve": "Linear"
+          }
+        }
+      },
+      "descriptorDistances": {
+        "previous": 1.2597243471483301,
+        "expanded": 0.9078093460203379
+      }
+    },
+    {
+      "name": "Bouncing rise \u00b7 held-out Transfxr",
+      "kind": "best",
+      "preferredRoles": [
+        "expanded"
+      ],
+      "preferredCandidateIds": [
+        "34163e48aa72f9e13ee2ad6b82bed2de100ae6d804c9f4b7c36a8d01d26335d5"
+      ],
+      "referencePcmSha256": "6a6f60662941a9e9340a6c7afe22ea0b56c15fe00350b9c872677ed269fcb9ee",
+      "auditionedCandidateIds": [
+        "5ced5ffa2b263516e3aa28d051836f07f2e11bdc813eb3e3c6e79d2052fb8fef",
+        "34163e48aa72f9e13ee2ad6b82bed2de100ae6d804c9f4b7c36a8d01d26335d5"
+      ],
+      "absoluteAdequacy": null,
+      "notes": "",
+      "controlEvidence": {
+        "duration": {
+          "target": 0.3800000250339508,
+          "previous": 0.29947900772094727,
+          "expanded": 0.34090039134025574
+        },
+        "attack": {
+          "target": 0.003000000026077032,
+          "previous": 0.010579848662018776,
+          "expanded": 0.020202433690428734
+        },
+        "release": {
+          "target": 0.5916262865066528,
+          "previous": 0.20343652367591858,
+          "expanded": 0.26639747619628906
+        },
+        "pitch": {
+          "target": {
+            "start": 0.29958322644233704,
+            "end": 0.6895832419395447,
+            "curve": "Bounce"
+          },
+          "previous": {
+            "start": 0.3220514953136444,
+            "end": 0.6612851023674011,
+            "curve": "Bounce"
+          },
+          "expanded": {
+            "start": 0.30855846405029297,
+            "end": 0.7045770287513733,
+            "curve": "Bounce"
+          }
+        },
+        "level": {
+          "target": {
+            "start": 0.949999988079071,
+            "end": 0.10000000149011612,
+            "curve": "Linear"
+          },
+          "previous": {
+            "start": 0.9030547142028809,
+            "end": 0.1156766265630722,
+            "curve": "Linear"
+          },
+          "expanded": {
+            "start": 0.9167647957801819,
+            "end": 0.1274988055229187,
+            "curve": "Linear"
+          }
+        },
+        "vibrato": {
+          "target": {
+            "start": 0,
+            "end": 0.15000000596046448,
+            "curve": "Ease In"
+          },
+          "previous": {
+            "start": 0.020037977024912834,
+            "end": 0.10651904344558716,
+            "curve": "Steps"
+          },
+          "expanded": {
+            "start": 0.030887870118021965,
+            "end": 0.1502169966697693,
+            "curve": "Ease In"
+          }
+        }
+      },
+      "descriptorDistances": {
+        "previous": 7.100770443739167,
+        "expanded": 5.455745740537551
+      }
+    }
+  ],
+  "interpretation": [
+    "Expanded model explicitly preferred on both gesture references; texture judged a tie.",
+    "No scalar ratings, notes or absolute adequacy judgments were supplied. Do not infer convincing recreations or extend the previous batch's zero-convincing verdict to this batch.",
+    "Warbling sweep playback telemetry is empty. Retain its explicit submitted choice, but the existing heard-only training policy does not create a strict pair from it. This is missing telemetry, not proof the user did not listen.",
+    "Bouncing rise produces one strict heard-only training pair. Texture tie stays tie evidence, with no directional training label.",
+    "Known source controls show closer duration on both preferred gestures; warble ending level also becomes closer. These observations do not establish what caused the human preference.",
+    "Expanded bouncing-rise release remains substantially below the source setting. The preference is compatible with remaining recreation errors.",
+    "Targets were deliberately selected after numerical evaluation, share synth preset families, and are synthetic. No population win rate or real-recording transfer follows."
+  ]
+}

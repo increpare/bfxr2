@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 3,
+  "experimentId": "3afd5c29406ff55b3877ecefd48debf7174e7c871b7ff54f1f39c7454665b5e8",
+  "provenance": {
+    "experiment": "coverage-selection-v1-listening",
+    "complete": true,
+    "targetCount": 3,
+    "galleryTitle": "Three quick self-inversion checks",
+    "humanReviewRequired": true,
+    "galleryIntro": [
+      "Three new synth-generated references whose exact control groups were held out of training. Both systems get eight proposals.",
+      "Choose the closer recreation, a tie, or none. A relative winner is not automatically convincing.",
+      "Please also tell me whether any is a convincing recreation. These are deliberately selected diagnostics, not a representative quality estimate.",
+      "This checks pitch gestures and texture before wider training. The real-recording search remains separate."
+    ],
+    "selectionReason": "Two pitch gestures and one tracker-uncertain texture where expanded proposals improve distance; includes agreement and safeguard disagreement cases. Selected after evaluation, not a random sample.",
+    "sourceReportSha256": "9a3b29adb8844dc1f82b802e09ed9baf7caab5ecbebfd4527939fa6a52b89129",
+    "auditSha256": "65cad3be75123a680528a3deeb2b28126dc930c3912b0bbe54cc8cd8ffde2c67",
+    "scriptSha256": "e1c146bdab8be5d4b9947321bdbb396f33d238a2b78a35b45b378cba735c5656",
+    "checkpoints": {
+      "control": "c0e4426098e13aa79cd8cfee76e5a06cd0bb74ec1683541790adb04f0244cec4",
+      "expanded": "a9c492976fd4a4ed45791ac223d238751ff669ad91f6364ec496937618db38fe"
+    },
+    "policy": {
+      "version": "coverage-selection-v1",
+      "staticSemitones": 1,
+      "baseline": "fixed old-four minimum actual-DSP distance",
+      "scope": "Descriptor safeguards are selection inputs, not independent perceptual validation"
+    },
+    "uiCodeHashes": {
+      "quick_listening.html": "26d1e14690044b3a78380ea8eb95eee24acd804ed599097cea56e99190e500af",
+      "quick_choice.js": "b7e77493580c6e1bf2851493e2da230a13199435a6f1e5ae5eb4804643be0fd2",
+      "quick_listening.css": "155fc502d4886bb290afbfb782bad1cbf53c0198aba5954ef757e4bad9fb0b40",
+      "quick_audio.js": "0abfac40fe8cd7a1c9f79143458b45c7ef79342892113fdc53f9ca15cab7f83a",
+      "quick_listening.js": "bd363ddcd6acb4ef1eed1e117dd1600da7a4fc655fbed9a33ed256a62ef30d84",
+      "quick_feedback.py": "4e9c0d370ad551f8ebfcf6ea93f9b609f28736362aac4e7cd30e06bf7fa8902a"
+    }
+  },
+  "ratingScales": {
+    "likeness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Likeness to reference: 1 = far off, 5 = very close"
+    },
+    "usefulness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Useful/fun game sound: 1 = not useful, 5 = very useful or fun"
+    }
+  },
+  "targets": [
+    {
+      "id": "60a3b152749d832204894b39e7f58e6591b890b9429e9e3ef881c63fc66c6bc8",
+      "name": "Warbling sweep · held-out Transfxr",
+      "sha256": "0343775044f15b66334ccd43909ca3a0d766da599e783529359d5bc541711810",
+      "folder": "001",
+      "referenceAudioSha256": "0343775044f15b66334ccd43909ca3a0d766da599e783529359d5bc541711810",
+      "candidates": [
+        {
+          "id": "be1bccbdc5c3ccf6b1289eff269d16acd0af65750fc3d4554c88dafeffbe61f0",
+          "synth": "Transfxr",
+          "paramsSha256": "29ccee0ffe1820d02cd6111fa0c442a097691b05de4327359f8940b6781c01b0",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "73b87aa9720ba0d729c27ad89f3594a9f9055c35c2b8db72266393d1ab10cf8f",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              0,
+              4,
+              0,
+              1,
+              0,
+              0,
+              3
+            ],
+            "jointLogProbability": -0.05885710543952882,
+            "proposalRank": 0,
+            "proposalSource": "mode-primary",
+            "checkpointHash": "c0e4426098e13aa79cd8cfee76e5a06cd0bb74ec1683541790adb04f0244cec4",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "5055591733c1cf2e2304e3f7db3b96a39d04f168a6bc476689afac4e59717af5",
+            "auditionWavSha256": "73b87aa9720ba0d729c27ad89f3594a9f9055c35c2b8db72266393d1ab10cf8f",
+            "auditionPcmSha256": "3029fdbf7d8ebc8a8acc4844f1bd1133caa39fbbb3a13bea40365ace91100798",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "selectionArm": "old-eight",
+            "sourceReportSha256": "9a3b29adb8844dc1f82b802e09ed9baf7caab5ecbebfd4527939fa6a52b89129",
+            "sourceTargetId": "Transfxr-selection-17860",
+            "selectionPolicy": "lowest rendered distance from eight old-expert proposals"
+          },
+          "file": "previous.wav",
+          "role": "previous",
+          "label": "Previous expert · eight proposals",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "bed57e7761b03f5197583789148f72ad5d4441c762706189f8138225d2026189",
+          "synth": "Transfxr",
+          "paramsSha256": "170d551c4681674089fea9c7c7639adbc5b99bacccc77c8355886954f09099e1",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "56e2578a7b8c154165f4f2c3ad94f41eb7564661b91ef604f60f400a5b0dca4f",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              0,
+              4,
+              0,
+              1,
+              0,
+              0,
+              3
+            ],
+            "jointLogProbability": -0.4129241416230798,
+            "proposalRank": 0,
+            "proposalSource": "mode-primary",
+            "checkpointHash": "a9c492976fd4a4ed45791ac223d238751ff669ad91f6364ec496937618db38fe",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "f20eb3f850f5ed910875e3afb6e2f73f8b9151fd69049171a949ebfe50780a61",
+            "auditionWavSha256": "56e2578a7b8c154165f4f2c3ad94f41eb7564661b91ef604f60f400a5b0dca4f",
+            "auditionPcmSha256": "f311eadf866aed33f29c1877290a3ce02c1390dae46e43ab153e18317c282082",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "selectionArm": "guarded-ensemble",
+            "sourceReportSha256": "9a3b29adb8844dc1f82b802e09ed9baf7caab5ecbebfd4527939fa6a52b89129",
+            "sourceTargetId": "Transfxr-selection-17860",
+            "selectionPolicy": {
+              "version": "coverage-selection-v1",
+              "staticSemitones": 1,
+              "baseline": "fixed old-four minimum actual-DSP distance",
+              "scope": "Descriptor safeguards are selection inputs, not independent perceptual validation"
+            }
+          },
+          "file": "expanded.wav",
+          "role": "expanded",
+          "label": "Combined experts · four plus four",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "bed57e7761b03f5197583789148f72ad5d4441c762706189f8138225d2026189",
+          "be1bccbdc5c3ccf6b1289eff269d16acd0af65750fc3d4554c88dafeffbe61f0"
+        ],
+        "auditionedCandidateIds": [],
+        "preferredCandidateIds": [
+          "bed57e7761b03f5197583789148f72ad5d4441c762706189f8138225d2026189"
+        ]
+      }
+    },
+    {
+      "id": "676c240aaf63958a76c2a4c2d0a163b3f5a0e53bb138fe8e950d2cc42053e761",
+      "name": "Short texture · held-out Transfxr",
+      "sha256": "365e08476eed79b5e0e5a7c3ac7210d95ab299590efeef8df0cb6c811c63833f",
+      "folder": "002",
+      "referenceAudioSha256": "365e08476eed79b5e0e5a7c3ac7210d95ab299590efeef8df0cb6c811c63833f",
+      "candidates": [
+        {
+          "id": "19fa82c17f90a8f168fac3ac503d335d3bb200387685ad61532d2bbcd0a7f568",
+          "synth": "Transfxr",
+          "paramsSha256": "b240c3faf9bf9f89bbcf7a26c4e622a068b3ad14d4f4da02300dbad8201a0a7a",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "d80605755123a589e8df32653f877af37e9bd70787328a0331ee6c4f71a0421f",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              1,
+              0,
+              0,
+              0,
+              2,
+              8,
+              3
+            ],
+            "jointLogProbability": -4.17990233033197,
+            "proposalRank": 7,
+            "proposalSource": "categorical-alternative",
+            "checkpointHash": "c0e4426098e13aa79cd8cfee76e5a06cd0bb74ec1683541790adb04f0244cec4",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "71665bb632040a4d363d01b993f109611a8658c614abb7613d61a6527dc33f77",
+            "auditionWavSha256": "d80605755123a589e8df32653f877af37e9bd70787328a0331ee6c4f71a0421f",
+            "auditionPcmSha256": "efb229f4b35b949004c8f828f7920da6049b4e2d5d4587c0ce55b7c67e706516",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "selectionArm": "old-eight",
+            "sourceReportSha256": "9a3b29adb8844dc1f82b802e09ed9baf7caab5ecbebfd4527939fa6a52b89129",
+            "sourceTargetId": "Transfxr-selection-17445",
+            "selectionPolicy": "lowest rendered distance from eight old-expert proposals"
+          },
+          "file": "previous.wav",
+          "role": "previous",
+          "label": "Previous expert · eight proposals",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "9b421ed900bd6871d0a89ba5881c4299bf2672c46972ba61666daea3a597423f",
+          "synth": "Transfxr",
+          "paramsSha256": "12c6371c453c72e1bace7c26d2656bce0ea3c0834fd008e0df3e9e686cf6737c",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "a696cb8042e8a6a84dcdec7e5dd7bd743733689452df89cf12fe83dc7abe69ea",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              1,
+              0,
+              0,
+              0,
+              2,
+              8,
+              5
+            ],
+            "jointLogProbability": -1.3668037187308073,
+            "proposalRank": 1,
+            "proposalSource": "categorical-alternative",
+            "checkpointHash": "a9c492976fd4a4ed45791ac223d238751ff669ad91f6364ec496937618db38fe",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "40d253ee96146ec1f99e54c78f70015e611ed44cfcc72629798fcb52fe2b454e",
+            "auditionWavSha256": "a696cb8042e8a6a84dcdec7e5dd7bd743733689452df89cf12fe83dc7abe69ea",
+            "auditionPcmSha256": "240407c064de01508d08f5d06a2e74317f1db1abc8ab4171fba5cdfcd6a777d5",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "selectionArm": "guarded-ensemble",
+            "sourceReportSha256": "9a3b29adb8844dc1f82b802e09ed9baf7caab5ecbebfd4527939fa6a52b89129",
+            "sourceTargetId": "Transfxr-selection-17445",
+            "selectionPolicy": {
+              "version": "coverage-selection-v1",
+              "staticSemitones": 1,
+              "baseline": "fixed old-four minimum actual-DSP distance",
+              "scope": "Descriptor safeguards are selection inputs, not independent perceptual validation"
+            }
+          },
+          "file": "expanded.wav",
+          "role": "expanded",
+          "label": "Combined experts · four plus four",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "tie",
+        "presentedCandidateIds": [
+          "19fa82c17f90a8f168fac3ac503d335d3bb200387685ad61532d2bbcd0a7f568",
+          "9b421ed900bd6871d0a89ba5881c4299bf2672c46972ba61666daea3a597423f"
+        ],
+        "auditionedCandidateIds": [
+          "19fa82c17f90a8f168fac3ac503d335d3bb200387685ad61532d2bbcd0a7f568",
+          "9b421ed900bd6871d0a89ba5881c4299bf2672c46972ba61666daea3a597423f"
+        ],
+        "preferredCandidateIds": []
+      }
+    },
+    {
+      "id": "f64e2f5e82821f0c719e6062c997cbdcfa47a03a3b4eddc62666f760c0cbb4fb",
+      "name": "Bouncing rise · held-out Transfxr",
+      "sha256": "1b11fe7e13727e954ff8687279ddef6e74c1ae353a7a807a46bc1191bf997f4c",
+      "folder": "003",
+      "referenceAudioSha256": "1b11fe7e13727e954ff8687279ddef6e74c1ae353a7a807a46bc1191bf997f4c",
+      "candidates": [
+        {
+          "id": "5ced5ffa2b263516e3aa28d051836f07f2e11bdc813eb3e3c6e79d2052fb8fef",
+          "synth": "Transfxr",
+          "paramsSha256": "eb6ef40eb8de8fe29ca91cce88d45108591ad673269a4e802b9728db29c41002",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "182298cda3c09c53824e8f662f248d667339f030cb880045b0982a2ad0bf8da6",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              1,
+              6,
+              0,
+              7,
+              0,
+              0,
+              3
+            ],
+            "jointLogProbability": -5.951847356860526,
+            "proposalRank": 6,
+            "proposalSource": "categorical-alternative",
+            "checkpointHash": "c0e4426098e13aa79cd8cfee76e5a06cd0bb74ec1683541790adb04f0244cec4",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "2c378dfbf7871f3057903c0b032e8ab1dcc9ca28b2c7da459e6562c9c729a356",
+            "auditionWavSha256": "182298cda3c09c53824e8f662f248d667339f030cb880045b0982a2ad0bf8da6",
+            "auditionPcmSha256": "1e4cc743deec7d1ba3ebdc09acbc674b4e800bca0dd51e7bc0d2157b31ac9652",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "selectionArm": "old-eight",
+            "sourceReportSha256": "9a3b29adb8844dc1f82b802e09ed9baf7caab5ecbebfd4527939fa6a52b89129",
+            "sourceTargetId": "Transfxr-selection-21373",
+            "selectionPolicy": "lowest rendered distance from eight old-expert proposals"
+          },
+          "file": "previous.wav",
+          "role": "previous",
+          "label": "Previous expert · eight proposals",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "34163e48aa72f9e13ee2ad6b82bed2de100ae6d804c9f4b7c36a8d01d26335d5",
+          "synth": "Transfxr",
+          "paramsSha256": "e0ad5507ab9000c5163b426491d2b6d20d09b280ae181b4a086581af5d34d3f5",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "4ea1fe80585acd2282aad5c0577090746043685e7cc3bb9bd6d3b7182865006c",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              1,
+              6,
+              0,
+              1,
+              0,
+              0,
+              3
+            ],
+            "jointLogProbability": -0.3730153935030103,
+            "proposalRank": 0,
+            "proposalSource": "mode-primary",
+            "checkpointHash": "a9c492976fd4a4ed45791ac223d238751ff669ad91f6364ec496937618db38fe",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "d5c0ce5feba2128f1cb4908cde2f455c4603530ac5b581d09f8133d942413fe0",
+            "auditionWavSha256": "4ea1fe80585acd2282aad5c0577090746043685e7cc3bb9bd6d3b7182865006c",
+            "auditionPcmSha256": "a6b53615f7aff0061fc09bd6ef0015377315367d9575c56cc507f7c1ed800d3d",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "selectionArm": "guarded-ensemble",
+            "sourceReportSha256": "9a3b29adb8844dc1f82b802e09ed9baf7caab5ecbebfd4527939fa6a52b89129",
+            "sourceTargetId": "Transfxr-selection-21373",
+            "selectionPolicy": {
+              "version": "coverage-selection-v1",
+              "staticSemitones": 1,
+              "baseline": "fixed old-four minimum actual-DSP distance",
+              "scope": "Descriptor safeguards are selection inputs, not independent perceptual validation"
+            }
+          },
+          "file": "expanded.wav",
+          "role": "expanded",
+          "label": "Combined experts · four plus four",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "5ced5ffa2b263516e3aa28d051836f07f2e11bdc813eb3e3c6e79d2052fb8fef",
+          "34163e48aa72f9e13ee2ad6b82bed2de100ae6d804c9f4b7c36a8d01d26335d5"
+        ],
+        "auditionedCandidateIds": [
+          "5ced5ffa2b263516e3aa28d051836f07f2e11bdc813eb3e3c6e79d2052fb8fef",
+          "34163e48aa72f9e13ee2ad6b82bed2de100ae6d804c9f4b7c36a8d01d26335d5"
+        ],
+        "preferredCandidateIds": [
+          "34163e48aa72f9e13ee2ad6b82bed2de100ae6d804c9f4b7c36a8d01d26335d5"
+        ]
+      }
+    }
+  ]
+}

@@ -12,6 +12,19 @@
 | `2026-10-04-neural-v2-quick-01/` | 5 | 20 |
 | `2026-10-04-temporal-v3-quick-01/` | 5 | 15 |
 | `2026-10-05-pitch-calibration-quick-01/` | 5 | 12 |
+| `2026-10-05-coverage-selection-quick-01/` | 3 | 6 |
+
+The ninth archive retains three held-out Transfxr self-inversion comparisons.
+The expanded expert wins Warbling sweep and Bouncing rise; Short texture is a
+tie. All nine reference/candidate audios are retained losslessly. No scalar
+ratings or absolute adequacy judgments were supplied. The previous batch's
+zero-convincing verdict does not apply to these new comparisons.
+Warbling sweep has an explicit preference but empty playback telemetry: retain
+that choice as evidence, without claiming the listener did not hear it. The
+existing strict heard-only training policy yields one pair, from Bouncing rise;
+the tie remains non-directional evidence. These deliberately selected synthetic
+diagnostics do not establish a population win rate or real-recording transfer.
+See [the coverage-selection human review](../evaluations/coverage-selection-quick-01-human-review.json).
 
 The eighth archive retains all five pitch-calibration comparisons, with all 12
 options auditioned and seven strict heard-only preferences. Both changed
