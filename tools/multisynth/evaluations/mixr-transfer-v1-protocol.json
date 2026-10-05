@@ -1,0 +1,158 @@
+{
+  "complete": true,
+  "inventory": {
+    "ok": true,
+    "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+    "baseSourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+    "sampleRate": 44100,
+    "sources": [
+      "Bfxr",
+      "Transfxr",
+      "Birdr",
+      "Boomr",
+      "Bouncr",
+      "Breathr",
+      "Choirr",
+      "Clonkr",
+      "Crittr",
+      "Fractr",
+      "Glitchr",
+      "Holor",
+      "Jinglr",
+      "Machinr",
+      "Notifr",
+      "Pewpr",
+      "Pluckr",
+      "Pulser",
+      "Riftr",
+      "Rollr",
+      "Rumblr",
+      "Rustlr",
+      "Signlr",
+      "Squishr",
+      "Swarmr",
+      "Tappr",
+      "Tickr",
+      "Weathr",
+      "Whooshr",
+      "Zappr"
+    ],
+    "dependencies": {
+      "tools/render/composition_context.js": "7bae1d1d6cbdc91b855b22cb0325701845df9835fe9d14a02fa571cb20e35eba",
+      "tools/render/composition_worker.js": "56664b7b33175eb962b4dbb6b9ad5c805847f9224d4a0562bb78f59acf5102ac",
+      "tools/multisynth/composition.py": "8b8b25d8152c63001b4c79f19da208be15ef4db9b13ee3e4c498431a25fd1fd5",
+      "tests/helpers/synth-context.js": "537f3a32b720ca359391bc32b9d4c8a8496840e94769cb3b6a55c81908654364",
+      "js/audio/Stackr_DSP.js": "419ddd4ee2155888bf2ecd0ac7e8a6460d47c691d907f3bb3ab0da18e047795d",
+      "js/synths/Stackr.js": "2174d51cc1d8a618c374ee5484db56ca89073f7596b131a9abc3883b5c2db601",
+      "js/audio/Mixr_DSP.js": "219cf10c4d3ec98ca16c1961852abf00bb678bab971d6712352eb01b6c2248d1",
+      "js/synths/Mixr.js": "9c00506f665f419732314aa7cdea1e7c6f3eae295dcb79c9a5011fdec7db7563"
+    },
+    "excluded": [
+      {
+        "name": "Footsteppr",
+        "reason": "Separate PureData host is not loaded in this first composition bridge."
+      }
+    ],
+    "seedPolicy": "Actual Stackr.render_source and SoundDSP.rng; source renderSeed in [0,1]."
+  },
+  "archiveManifestSha256": "929d62763d43eb85ad61998a19d329d09641f3cd4770de69ee53c08cb2fa8aaf",
+  "priorReportSha256": "85a73e0ce9be154bd388200f3a0689911ee2f4f4665bbd13a091229dc93cfb48",
+  "metricSha256": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+  "scriptSha256": "eb244b8fe9e6dd04c8486598e88458e7c3de3ada5abecf7a8226ee97fc46b934",
+  "planSha256": "211813c144ad92ff5e873feef4388e86b83a5083cf4dbda6a466df6e6aeca981",
+  "poolSize": 12,
+  "maxPerSynth": 2,
+  "balances": [
+    0.2,
+    0.35,
+    0.5,
+    0.65,
+    0.8
+  ],
+  "selection": "Alternating soft/preference ranks, unique PCM and maximum2 per synth. Test every pair and five balances; soft winner enters listening alongside soft-best single and exact prior candidate.",
+  "seedPolicy": "Map saved uint32 render seed to float seed/4294967295, then canonicalize and re-render with native Mixr source semantics. Do not claim source PCM unchanged.",
+  "scope": "Four repeated external development sources, not held-out validation. No inverse retraining. Original Bfxr source controls may reflect old real-audio fitting. Footsteppr excluded from this bridge.",
+  "targets": [
+    {
+      "source": {
+        "name": "hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+        "sha256": "f723badf49fb5d2902efb259008c23cb2edc96b6ce59bf20448827f51a44e4ea",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "referenceAudio": {
+        "file": "audio/e9af30f41e2c16297769dbe6d7838a747563f8005190213048fa4469bfcde76d.flac",
+        "pcmSha256": "e9af30f41e2c16297769dbe6d7838a747563f8005190213048fa4469bfcde76d",
+        "sampleRate": 44100,
+        "frames": 15876,
+        "channels": 1,
+        "auditionWavSha256": "a4379a7c998e2e6015729cdb2c36f1d452e5566f5300e2e82d6d18b34596c986"
+      },
+      "retainedCandidateId": "949a6f3fd5e585d7ee028a5021da9363233f16fd9c8166896a3f66fb90a8ab06",
+      "priorFolder": null
+    },
+    {
+      "source": {
+        "name": "door/doorClose_3.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/door/doorClose_3.ogg",
+        "sha256": "d0a2540e5e1639bc2fbeef34e76f28e9f9cb8a151736a0ac4c13859994328d0e",
+        "historicalBfxrSplits": [
+          "holdout"
+        ]
+      },
+      "referenceAudio": {
+        "file": "audio/4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf.flac",
+        "pcmSha256": "4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf",
+        "sampleRate": 44100,
+        "frames": 31485,
+        "channels": 1,
+        "auditionWavSha256": "0f9d5430e7bfa5c0d84dcffda1b0ab0b72cda8f28f6fad4da53304482ade2482"
+      },
+      "retainedCandidateId": "1a01ce22f5155785f970f3f3ae022e64b4c3fd944a08bee34e988672b592631a",
+      "priorFolder": null
+    },
+    {
+      "source": {
+        "name": "laser/laser1.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/laser1.ogg",
+        "sha256": "0bf468769b48a834dc1c6e38e457f2c71159b010225a9aedf84316795e8cc3e5",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "referenceAudio": {
+        "file": "audio/6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8.flac",
+        "pcmSha256": "6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8",
+        "sampleRate": 44100,
+        "frames": 41895,
+        "channels": 1,
+        "auditionWavSha256": "1860d14de1b4283cd52e8f367bee9581651efb397fe1d4fd88e1d241afcad695"
+      },
+      "retainedCandidateId": "530dee521775c5ea8cb6ec155b99c9fd5119b1f953041e2cb788f1db7a0d9ef2",
+      "priorFolder": null
+    },
+    {
+      "source": {
+        "name": "clothes/cloth4.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/clothes/cloth4.ogg",
+        "sha256": "e7ab9a6c4466dea874196c61f59bf1da05cfe58748f42fadd695d441a154a99b",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "referenceAudio": {
+        "file": "audio/1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e.flac",
+        "pcmSha256": "1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e",
+        "sampleRate": 44100,
+        "frames": 16950,
+        "channels": 1,
+        "auditionWavSha256": "0b52048821d5cd6009320da469868d7b82785714e8567ecbfe391b1214b113cc"
+      },
+      "retainedCandidateId": "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9",
+      "priorFolder": null
+    }
+  ],
+  "protocolSha256": "b91439aca0a274d6be9fa181e49da42219dfe7586f2c97f7330f5ea5e6a823c6"
+}

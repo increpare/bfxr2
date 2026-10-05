@@ -1,0 +1,31 @@
+{
+  "complete": true,
+  "experimentId": "8f0e9cdb900bc31ed2729bafcaacded726f24f7fe716f78f392a89c3e354d2fa",
+  "targetCount": 4,
+  "optionCounts": [
+    2,
+    3,
+    3,
+    3
+  ],
+  "resultsSha256": "d9285bbb6525b9dae65ebec01515dcb30bee26ae5b5c35c2b274403986d4dec8",
+  "htmlSha256": "f21ddd624578cafda6c3518a4213bec28a5b633f1f399a1f65e78bbc3500207a",
+  "scriptSha256": "eb244b8fe9e6dd04c8486598e88458e7c3de3ada5abecf7a8226ee97fc46b934",
+  "audioFiles": {
+    "001/previous.wav": "8a493b4fbc6f0e3d8c46ac8c82fbfbe3766a9a06ef3ee2a2d5b8581bb0e27ea6",
+    "001/selected.wav": "eb23174f5df3d75f30f94cbfebcaaff41fd8c80a902b9e4d89e6ba420561ba25",
+    "001/target.wav": "a4379a7c998e2e6015729cdb2c36f1d452e5566f5300e2e82d6d18b34596c986",
+    "002/previous.wav": "a6e00fe65ee1c7323bc596b7a430c410c92ff408e046385f5e966494760d899f",
+    "002/selected.wav": "25bb594c52efd9850403c4ea49e20146b596e0a313c14f2709539421e37bc954",
+    "002/single.wav": "b41b242109255be5dd68998273a76d95d71ba576b7115be94eb0e3cc86b89a4d",
+    "002/target.wav": "0f9d5430e7bfa5c0d84dcffda1b0ab0b72cda8f28f6fad4da53304482ade2482",
+    "003/previous.wav": "782cf993677f054e92d69b37e119e0b55665540834ccbd7132f4648db30d8e1b",
+    "003/selected.wav": "64a24fa0259431361342e352f055ad83ddd170cced259eed93d8534ffaebdcf0",
+    "003/single.wav": "7d8b58b41ca5c69950d1760d643516686c6c4e00387ac125611f9cb4f26873f7",
+    "003/target.wav": "1860d14de1b4283cd52e8f367bee9581651efb397fe1d4fd88e1d241afcad695",
+    "004/previous.wav": "73937802402b5d78acf1ed4af07eb743580884a5518949d130bc9efee3ab49eb",
+    "004/selected.wav": "38a4bf569e891004d33376c686c388729d0a01a958c8e4e2a57d35ac71158466",
+    "004/single.wav": "34da8be045282347f824a391c7c6bd57d577054a22dff9c6f254c97df3099ba2",
+    "004/target.wav": "0b52048821d5cd6009320da469868d7b82785714e8567ecbfe391b1214b113cc"
+  }
+}

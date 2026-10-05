@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All nineteen feedback archives,
+do not establish general success on real recordings. All twenty feedback archives,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
@@ -53,6 +53,34 @@ only an absolute label because no other option was recorded as heard. Four
 strict pairs across cloth and belt/chain agree with soft and legacy scores,
 while preference-neural-v2 agrees on one. Three trials remain unsubmitted. See the
 [partial human review](evaluations/off-model-transfer-v1-quick-01-human-review.json).
+
+The completed external batch adds **very-close original Bfxr coin**, **least-bad
+Squishr cloth-belt**, and **none-close laser**. None of the newer experts has a
+very-close external judgment here. Native success therefore has not established
+convincing transfer. Eight strict heard pairs remain after cumulative-export
+deduplication; the footstep contributes adequacy only. See the
+[complete human review](evaluations/off-model-transfer-v1-quick-02-human-review.json).
+
+The [four-trial Mixr composition probe](runs/mixr-transfer-v1-listening/index.html)
+compares exact earlier audio with single-source controls and actual two-source
+Mixr patches. It reuses the rejected hit, door and laser plus the roughly similar
+cloth reference; these are development cases, not held-out validation. Existing
+predictions supply the sources: **no inverse model was retrained**. The frozen
+search evaluates 330 mixtures per reference (1,320 total), selecting with the
+soft-periodicity scorer. Only laser improves that score over the best single;
+all four cases remain in the listening batch. No audible improvement is claimed.
+
+The renderer uses shipped Mixr/Stackr synthesis with replayable source controls,
+and checks exact uncached native replay against cached rendering. Thirty source
+engines are supported; Footsteppr's separate host is excluded. Each source was
+predicted from the whole reference, and voices start together: this does not test
+onset/residual-conditioned models or temporal composition. A negative result
+would therefore reject this narrow search, not composition in general. The page
+contains 2/3/3/3 distinct options after exact-audio deduplication, with immediate
+adequacy questions. See the [protocol](evaluations/mixr-transfer-v1-protocol.json),
+[numerical results](evaluations/mixr-transfer-v1-evaluation.json),
+[audio replay receipt](evaluations/mixr-transfer-v1-listening-audit.json), and
+[served-file verification](evaluations/mixr-transfer-v1-http-audit.json).
 
 The earlier [specialist experiment](evaluations/specialists-v1-plan.json) trains
 independent Boomr and Footsteppr models on 12,288 examples each. The older shared

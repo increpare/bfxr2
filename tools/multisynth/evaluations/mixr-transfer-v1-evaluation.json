@@ -1,0 +1,203 @@
+{
+  "complete": true,
+  "reportSha256": "02635865ee7b02292ccd03e3959a0c6e6712866e2de9666ef0b9026c1565624e",
+  "protocolSha256": "b91439aca0a274d6be9fa181e49da42219dfe7586f2c97f7330f5ea5e6a823c6",
+  "scriptSha256": "eb244b8fe9e6dd04c8486598e88458e7c3de3ada5abecf7a8226ee97fc46b934",
+  "rows": [
+    {
+      "name": "hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+      "singles": 56,
+      "mixes": 330,
+      "excluded": [
+        {
+          "index": 2,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 3,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 50,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 51,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 52,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 53,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 59,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        }
+      ],
+      "singleSoft": 3.248915364809788,
+      "mixSoft": 3.4197353193826343,
+      "singlePreference": 1.5107989874671635,
+      "mixPreference": 2.1644509096068636,
+      "sourceSynths": [
+        "Bfxr",
+        "Pluckr"
+      ],
+      "balance": 0.2
+    },
+    {
+      "name": "door/doorClose_3.ogg",
+      "singles": 56,
+      "mixes": 330,
+      "excluded": [
+        {
+          "index": 2,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 3,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 50,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 51,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 52,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 53,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        }
+      ],
+      "singleSoft": 2.914009620266942,
+      "mixSoft": 2.9294617904057527,
+      "singlePreference": 1.277930010569426,
+      "mixPreference": 1.2477405191472775,
+      "sourceSynths": [
+        "Rustlr",
+        "Rustlr"
+      ],
+      "balance": 0.2
+    },
+    {
+      "name": "laser/laser1.ogg",
+      "singles": 56,
+      "mixes": 330,
+      "excluded": [
+        {
+          "index": 2,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 3,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 50,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 51,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 52,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 53,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        }
+      ],
+      "singleSoft": 3.1115173603233797,
+      "mixSoft": 2.989501211426684,
+      "singlePreference": 1.2272781262296215,
+      "mixPreference": 1.146338598103584,
+      "sourceSynths": [
+        "Squishr",
+        "Jinglr"
+      ],
+      "balance": 0.2
+    },
+    {
+      "name": "clothes/cloth4.ogg",
+      "singles": 56,
+      "mixes": 330,
+      "excluded": [
+        {
+          "index": 2,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 3,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 50,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 51,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 52,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 53,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        },
+        {
+          "index": 58,
+          "synth": "Footsteppr",
+          "reason": "unsupported source"
+        }
+      ],
+      "singleSoft": 2.0717370310885967,
+      "mixSoft": 2.3686369977048845,
+      "singlePreference": 0.7906389885612509,
+      "mixPreference": 0.7146448844922888,
+      "sourceSynths": [
+        "Rustlr",
+        "Rustlr"
+      ],
+      "balance": 0.2
+    }
+  ],
+  "scope": "Four repeated external development sources, not held-out validation. No inverse retraining. Original Bfxr source controls may reflect old real-audio fitting. Footsteppr excluded from this bridge."
+}

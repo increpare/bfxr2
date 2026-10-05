@@ -54,6 +54,25 @@ external generalization.
 | `2026-10-06-squishr-v1-quick-01/` | 5 | 11 |
 | `2026-10-06-squishr-v1-quick-02/` | 10 | 21 |
 | `2026-10-06-off-model-transfer-v1-quick-01/` | 5 | 15 |
+| `2026-10-06-off-model-transfer-v1-quick-02/` | 8 | 24 |
+
+The twentieth archive completes the external batch. The first five targets are
+unchanged from the partial export. Original Bfxr coin wins and is **very-close**;
+its file occurs in the old real-finetune holdout list, not its training list,
+without establishing source-family independence. Dedicated Squishr cloth-belt
+is **least-bad**, and laser rejects all displayed options. Final outcomes are
+one very-close, two similar, two least-bad and three none-close. No newer expert
+receives a very-close judgment in this external batch.
+
+The complete export supplies eight strict heard pairs (four new), and fourteen
+candidate-scoped labels: one very-close, two similar, two least-bad, nine
+not-close. Combined loading skips the four repeated session pairs. Legacy and
+soft scores agree on 6/8 pairs, frozen preference on 4/8; none of this establishes
+good coverage of rejected sounds. The next bounded probe tests actual two-source
+Mixr patches against single-source controls and exact earlier audio on four
+repeated external references. It is composition search, not a newly trained
+neural model. See the
+[complete external review](../evaluations/off-model-transfer-v1-quick-02-human-review.json).
 
 The nineteenth archive retains the first five of eight external-transfer trials.
 The chosen Transfxr-mixture metallic footstep is **similar**, but only its chosen

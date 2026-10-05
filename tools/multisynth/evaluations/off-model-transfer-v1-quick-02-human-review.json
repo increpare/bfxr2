@@ -1,0 +1,1336 @@
+{
+  "complete": true,
+  "partialSubmission": false,
+  "scriptSha256": "025c0df39a2df739409fc260f6f02d24e7e4afe9d945209d90db0cfc1e98d5c2",
+  "experimentId": "1b7578642452ff8fdb622480fdabb7ee37e370171c7b914a551072b4e92a2677",
+  "feedbackSha256": "5684af2f2a2a5ad56e9cd8a592b9d5a8149f1db680e755581e96d965b6987098",
+  "manifestSha256": "929d62763d43eb85ad61998a19d329d09641f3cd4770de69ee53c08cb2fa8aaf",
+  "galleryReportSha256": "e07f7945df5e331f112496596bb646a15256cf044642d4f361bbbd8bd0f3a03d",
+  "galleryAuditSha256": "2f8c910add0596cf67e4947940ffa2ca583aee30d486943b36096ed7908eafa6",
+  "metricHashes": {
+    "preferenceNeuralV2": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b"
+  },
+  "archiveSummary": {
+    "targets": 8,
+    "uniqueRatedCandidates": 0,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "choices": 8,
+    "choiceKinds": {
+      "best": 5,
+      "tie": 0,
+      "none": 3,
+      "skip": 0
+    }
+  },
+  "trainingPairSummary": {
+    "targets": 8,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "duplicateAudioAliases": 0,
+    "conflictingAudioRatingGroups": 0,
+    "tiedPairs": 0,
+    "duplicateSessionPairs": 0,
+    "directChoicePairs": 8,
+    "choices": 8,
+    "choiceKinds": {
+      "best": 5,
+      "tie": 0,
+      "none": 3,
+      "skip": 0
+    },
+    "validatedAudioFiles": 32,
+    "uniqueAudioPcm": 32
+  },
+  "rows": [
+    {
+      "name": "footstep/impactMetal_002.ogg",
+      "targetId": "f88df3b356903d22a83e5c40d350194a50dd26e2056c200fdbff1964a12924ae",
+      "kind": "best",
+      "adequacy": {
+        "level": "similar",
+        "candidateIds": [
+          "4ab9593c92f342a7043ba51e4356031eedf2841d6484c32d932c69936490f368"
+        ]
+      },
+      "historicalBfxrSplits": [
+        "train"
+      ],
+      "preferredRoles": [
+        "preference"
+      ],
+      "options": [
+        {
+          "id": "ee74b2ec1f2f45824d933102e0ae959139a62186ef16b55c7b8e191dec490283",
+          "role": "soft",
+          "synth": "Transfxr",
+          "checkpointSha256": "a816f97284cdd4ec0bfcfbcdbdbd11ab6e8b0230d4fa0b1388e758958694e73f",
+          "origin": "Transfxr-mixture",
+          "pcmSha256": "316fc34e4941e1049f812ae5ce092f7d9dd39926419c518f58a8157c4bda11f2",
+          "heard": false,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 1.8776389442772694,
+            "preferenceNeuralV2": 0.7261478471405483,
+            "softPeriodicity": 2.7407084137388393
+          }
+        },
+        {
+          "id": "4ab9593c92f342a7043ba51e4356031eedf2841d6484c32d932c69936490f368",
+          "role": "preference",
+          "synth": "Transfxr",
+          "checkpointSha256": "a816f97284cdd4ec0bfcfbcdbdbd11ab6e8b0230d4fa0b1388e758958694e73f",
+          "origin": "Transfxr-mixture",
+          "pcmSha256": "5e32abe7b0efcb57b90720134e8f943a4285734807a68d1ece5570c98e42973e",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "similar",
+          "scores": {
+            "MatchObjective": 2.3434904163578762,
+            "preferenceNeuralV2": 0.5212172174536033,
+            "softPeriodicity": 3.7563349749147505
+          }
+        },
+        {
+          "id": "5e632a22faffa9fdb555a9f51c5e25f3f3e26f1f59debc0a352f8ca73c4f6035",
+          "role": "original",
+          "synth": "Bfxr",
+          "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+          "origin": "original-bfxr",
+          "pcmSha256": "8a7c6be5afa92fc09b21c4766eda4c9354dcc210794f6ef221e2d579a2db7565",
+          "heard": false,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 2.0079423347039054,
+            "preferenceNeuralV2": 0.8151163167705481,
+            "softPeriodicity": 3.898503647543697
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "soft",
+        "preferenceNeuralV2": "preference",
+        "softPeriodicity": "soft"
+      },
+      "note": ""
+    },
+    {
+      "name": "clothes/cloth4.ogg",
+      "targetId": "436e8ac06c0fe30ad90d1c7a72c05c4850080b03702db52fe317e529f5dda35d",
+      "kind": "best",
+      "adequacy": {
+        "level": "similar",
+        "candidateIds": [
+          "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9"
+        ]
+      },
+      "historicalBfxrSplits": [
+        "train"
+      ],
+      "preferredRoles": [
+        "soft"
+      ],
+      "options": [
+        {
+          "id": "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9",
+          "role": "soft",
+          "synth": "Rustlr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "origin": "shared22",
+          "pcmSha256": "72394dda846b3618fc30235bc06286deea48e2cf35422b259695c8ab7564d3fb",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "similar",
+          "scores": {
+            "MatchObjective": 1.0895657483096832,
+            "preferenceNeuralV2": 0.7910136537864787,
+            "softPeriodicity": 2.071679059004378
+          }
+        },
+        {
+          "id": "669008d12d443891d522fa884a330e1fb0552c6c56c2035cb125289fa3ab5495",
+          "role": "preference",
+          "synth": "Boomr",
+          "checkpointSha256": "e8fefa597fc7698e3d12f0a0d60618ac5007ddd8f60110619117b7da4a6c502a",
+          "origin": "Boomr-specialist",
+          "pcmSha256": "031e1cee40b9a679361e89cf127bce23692764a78af041ccb74ea83b15cf5cc1",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 1.464133519455945,
+            "preferenceNeuralV2": 0.6360366447717277,
+            "softPeriodicity": 2.6976193731279725
+          }
+        },
+        {
+          "id": "270b82d90e38b365823b6c8ecd0381457e5ff6c8f5c333e5a6ce112d36f252a3",
+          "role": "original",
+          "synth": "Bfxr",
+          "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+          "origin": "original-bfxr",
+          "pcmSha256": "7d955c4d46f27a335507706c22bef032614c0c5f11b21b4cb95db34f007d4c84",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 1.669986926985232,
+            "preferenceNeuralV2": 1.192191347199557,
+            "softPeriodicity": 2.7847444827084225
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "soft",
+        "preferenceNeuralV2": "preference",
+        "softPeriodicity": "soft"
+      },
+      "note": ""
+    },
+    {
+      "name": "hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+      "targetId": "7b4bb0251af98149229323cfde4c0a6a27771f00789303bfff1e34d752738aa0",
+      "kind": "none",
+      "adequacy": null,
+      "historicalBfxrSplits": [
+        "train"
+      ],
+      "preferredRoles": [],
+      "options": [
+        {
+          "id": "949a6f3fd5e585d7ee028a5021da9363233f16fd9c8166896a3f66fb90a8ab06",
+          "role": "soft",
+          "synth": "Transfxr",
+          "checkpointSha256": "a816f97284cdd4ec0bfcfbcdbdbd11ab6e8b0230d4fa0b1388e758958694e73f",
+          "origin": "Transfxr-mixture",
+          "pcmSha256": "9efa325a97560140d797f00e66da0483840e5a8ec3da37dcbcc8736726b64682",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "not-close",
+          "scores": {
+            "MatchObjective": 11.837303550935315,
+            "preferenceNeuralV2": 1.5107989874671635,
+            "softPeriodicity": 3.248915364809788
+          }
+        },
+        {
+          "id": "56753bbfe326b05b32681fed8dfc0daa7b4d948a4698dbad476c9b3e60530109",
+          "role": "preference",
+          "synth": "Transfxr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "origin": "shared22",
+          "pcmSha256": "b47db7d2c4734d7c602b602bcf967169cfc35b940f4b56c4734d431b4dfbbc13",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "not-close",
+          "scores": {
+            "MatchObjective": 12.205775733115964,
+            "preferenceNeuralV2": 1.0094847234048658,
+            "softPeriodicity": 6.1781164721731425
+          }
+        },
+        {
+          "id": "ae0413ee7b8172dcc9a82471bc43823960271f9b0161d1a2a2dc9a5ed448270b",
+          "role": "original",
+          "synth": "Bfxr",
+          "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+          "origin": "original-bfxr",
+          "pcmSha256": "147d007feeb610f287f42f74b25d9c9253a4753622a56ae7da2ba102df340bf7",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "not-close",
+          "scores": {
+            "MatchObjective": 3.199297241511655,
+            "preferenceNeuralV2": 2.165479121695783,
+            "softPeriodicity": 3.475306830945325
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "original",
+        "preferenceNeuralV2": "preference",
+        "softPeriodicity": "soft"
+      },
+      "note": ""
+    },
+    {
+      "name": "chains/beltHandle2.ogg",
+      "targetId": "c6442895c976b11d792417a0ad12de248c75ba6dfd463ecc0eb44a36cb3dd2f9",
+      "kind": "best",
+      "adequacy": {
+        "level": "least-bad",
+        "candidateIds": [
+          "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7"
+        ]
+      },
+      "historicalBfxrSplits": [
+        "train"
+      ],
+      "preferredRoles": [
+        "soft"
+      ],
+      "options": [
+        {
+          "id": "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7",
+          "role": "soft",
+          "synth": "Bfxr",
+          "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+          "origin": "original-bfxr",
+          "pcmSha256": "ad808bd22da078fa624fa2d8baa9b19faaf9c9a94867a13359c0645963c30ae9",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "least-bad",
+          "scores": {
+            "MatchObjective": 2.088061414744308,
+            "preferenceNeuralV2": 2.183097391558959,
+            "softPeriodicity": 2.472934366035132
+          }
+        },
+        {
+          "id": "2a32d9c649acb3104d14a0fcf40315859367c8a031085ef98489576f5a51cb7a",
+          "role": "preference",
+          "synth": "Whooshr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "origin": "shared22",
+          "pcmSha256": "c553a181462e99d01f5a74d04c0a16f3f85023715e9691338f57ef746cd09e70",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 3.4260701533313482,
+            "preferenceNeuralV2": 1.646662002300477,
+            "softPeriodicity": 4.542709418749401
+          }
+        },
+        {
+          "id": "b151c364c6caf1c8dafb75dc9c6ae0039997ecd3a013388e35a9381563456c9e",
+          "role": "alternative",
+          "synth": "Whooshr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "origin": "shared22",
+          "pcmSha256": "1d1ac18d4142b52434dd9b76b8b6201f18b6b9c86714e5bebadb39d9ab627cb5",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 4.6954741214416185,
+            "preferenceNeuralV2": 1.9542089937894935,
+            "softPeriodicity": 5.664560415654267
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "soft",
+        "preferenceNeuralV2": "preference",
+        "softPeriodicity": "soft"
+      },
+      "note": ""
+    },
+    {
+      "name": "door/doorClose_3.ogg",
+      "targetId": "cc0937dd996551d0e443b956b2afdb6b6da751786272c6d9ebdc199af36ae977",
+      "kind": "none",
+      "adequacy": null,
+      "historicalBfxrSplits": [
+        "holdout"
+      ],
+      "preferredRoles": [],
+      "options": [
+        {
+          "id": "1a01ce22f5155785f970f3f3ae022e64b4c3fd944a08bee34e988672b592631a",
+          "role": "soft",
+          "synth": "Rustlr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "origin": "shared22",
+          "pcmSha256": "36a86fc2a47814d79bfdf66f74ca6d3e94112801c7c65831cf9bc66cfb5cd1b8",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "not-close",
+          "scores": {
+            "MatchObjective": 2.085452919091895,
+            "preferenceNeuralV2": 1.2779835815137963,
+            "softPeriodicity": 2.913984553282882
+          }
+        },
+        {
+          "id": "c0925fc95bc49ad568e2cf932cfdb40818646f227a3d2edcbbaa5fc8aefb9737",
+          "role": "preference",
+          "synth": "Rustlr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "origin": "shared22",
+          "pcmSha256": "1d6e205ca01cb95c7ab93b4ed367d469a537305a1d1abc19895dd0240bb12249",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "not-close",
+          "scores": {
+            "MatchObjective": 8.373305385424958,
+            "preferenceNeuralV2": 1.0497232004406125,
+            "softPeriodicity": 3.1663630450016376
+          }
+        },
+        {
+          "id": "399f2393abf3b0662e109b3208edba02640c077000869b311caff09861959348",
+          "role": "original",
+          "synth": "Bfxr",
+          "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+          "origin": "original-bfxr",
+          "pcmSha256": "a35198590b8aa0f33454eca2a800d3340b0fa7cce36fac13767af696e4e2af6e",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "not-close",
+          "scores": {
+            "MatchObjective": 2.6663515421803154,
+            "preferenceNeuralV2": 1.62073064999774,
+            "softPeriodicity": 3.707048650235299
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "soft",
+        "preferenceNeuralV2": "preference",
+        "softPeriodicity": "soft"
+      },
+      "note": ""
+    },
+    {
+      "name": "bell/clothBelt2.ogg",
+      "targetId": "eefe0f79980c6eff57bea987fbdb0134699becb304e267647d3d62429c2f50ea",
+      "kind": "best",
+      "adequacy": {
+        "level": "least-bad",
+        "candidateIds": [
+          "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207"
+        ]
+      },
+      "historicalBfxrSplits": [
+        "train"
+      ],
+      "preferredRoles": [
+        "preference"
+      ],
+      "options": [
+        {
+          "id": "239ec32849552c82ce83522f4cba7aa245dd9cd58a23ca7f00e4fbee57f92117",
+          "role": "soft",
+          "synth": "Footsteppr",
+          "checkpointSha256": "d5cb9d2c88ab6f9cfb1b9bc5ee3a24d9458f54ff5c82c0ccb3b566ba1c60f733",
+          "origin": "Footsteppr-specialist",
+          "pcmSha256": "f8c55975e2158e397f16e56b21343aaf784410acc6b897f85b1f0ae827a29ffd",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 9.585642707681076,
+            "preferenceNeuralV2": 1.7123443695797065,
+            "softPeriodicity": 1.9299482106607284
+          }
+        },
+        {
+          "id": "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207",
+          "role": "preference",
+          "synth": "Squishr",
+          "checkpointSha256": "232e19d4425cc9210ae6c348bbe3983d2b19f623cc8265564bf8de737c4a2c18",
+          "origin": "Squishr-specialist",
+          "pcmSha256": "9363d165659a432100785e8682e98300e774f57678b75edec2a3053020cfa477",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "least-bad",
+          "scores": {
+            "MatchObjective": 10.283943615602483,
+            "preferenceNeuralV2": 1.256525148567142,
+            "softPeriodicity": 3.0756399317196603
+          }
+        },
+        {
+          "id": "fdc98f15384090181c460fc906b3fd5a3c15d1951bbf0f02c5f367b6a6741d2e",
+          "role": "original",
+          "synth": "Bfxr",
+          "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+          "origin": "original-bfxr",
+          "pcmSha256": "7312247919073fb0820fcf00de424ef9294505eab3d656e95e869c62654a4476",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 1.831239398341248,
+            "preferenceNeuralV2": 1.5889905812992509,
+            "softPeriodicity": 2.0804158649358193
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "original",
+        "preferenceNeuralV2": "preference",
+        "softPeriodicity": "soft"
+      },
+      "note": ""
+    },
+    {
+      "name": "laser/laser1.ogg",
+      "targetId": "7aea38e19e612bda0a8a9ebddea395ef94c85dd0ad174eb538e3a074d80812c3",
+      "kind": "none",
+      "adequacy": null,
+      "historicalBfxrSplits": [
+        "train"
+      ],
+      "preferredRoles": [],
+      "options": [
+        {
+          "id": "530dee521775c5ea8cb6ec155b99c9fd5119b1f953041e2cb788f1db7a0d9ef2",
+          "role": "soft",
+          "synth": "Squishr",
+          "checkpointSha256": "232e19d4425cc9210ae6c348bbe3983d2b19f623cc8265564bf8de737c4a2c18",
+          "origin": "Squishr-specialist",
+          "pcmSha256": "e919575185167ad99a3b6cd294fb599ece37d766672953941c5e61c86e9071ca",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "not-close",
+          "scores": {
+            "MatchObjective": 15.346278332854295,
+            "preferenceNeuralV2": 1.2272781262296215,
+            "softPeriodicity": 3.1115300437029063
+          }
+        },
+        {
+          "id": "e3b831a22554da934ca15aee7506b7da6667d1f7bb9cd44c2f8e67275caa6d05",
+          "role": "preference",
+          "synth": "Boomr",
+          "checkpointSha256": "e8fefa597fc7698e3d12f0a0d60618ac5007ddd8f60110619117b7da4a6c502a",
+          "origin": "Boomr-specialist",
+          "pcmSha256": "0f50669aaae1b434951a41b038ec81205e0f4ae4d0d109e021c374070cf76572",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "not-close",
+          "scores": {
+            "MatchObjective": 2.52193952023789,
+            "preferenceNeuralV2": 0.7109749157623254,
+            "softPeriodicity": 3.9381279849528203
+          }
+        },
+        {
+          "id": "d16ee86bba1a0b593cd52a917ca690d2021a37aa7ad9ed14304f7c612d360a29",
+          "role": "original",
+          "synth": "Bfxr",
+          "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+          "origin": "original-bfxr",
+          "pcmSha256": "8069aa21d4b9b62f8c4be07fb8aa2ba25c53af32677e1fc6cdc9439c51db1f4e",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "not-close",
+          "scores": {
+            "MatchObjective": 3.3852083560735777,
+            "preferenceNeuralV2": 1.1903659115996095,
+            "softPeriodicity": 5.841107157991193
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "preference",
+        "preferenceNeuralV2": "preference",
+        "softPeriodicity": "soft"
+      },
+      "note": ""
+    },
+    {
+      "name": "collect/coin (nes).wav",
+      "targetId": "fea806ba44ac825db485a02395c6741687ffd02804ae76a5ec4dd3047e30a4cd",
+      "kind": "best",
+      "adequacy": {
+        "level": "very-close",
+        "candidateIds": [
+          "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5"
+        ]
+      },
+      "historicalBfxrSplits": [
+        "holdout"
+      ],
+      "preferredRoles": [
+        "soft"
+      ],
+      "options": [
+        {
+          "id": "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5",
+          "role": "soft",
+          "synth": "Bfxr",
+          "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+          "origin": "original-bfxr",
+          "pcmSha256": "a2798deaef3eaef350a1924fe2589bb08f984c4721f7fca2826ec55740ac2ebd",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "very-close",
+          "scores": {
+            "MatchObjective": 0.9753662961577332,
+            "preferenceNeuralV2": 0.5560644422844656,
+            "softPeriodicity": 0.946332322784581
+          }
+        },
+        {
+          "id": "17425fc7cef8e07db38d9ce70f2a63bc43607f0d4229455b2d05ed385e5af287",
+          "role": "preference",
+          "synth": "Transfxr",
+          "checkpointSha256": "a816f97284cdd4ec0bfcfbcdbdbd11ab6e8b0230d4fa0b1388e758958694e73f",
+          "origin": "Transfxr-mixture",
+          "pcmSha256": "46f1aa60a9db2dce140a18b4e63c9980504a0f2cf6fa006474b0008cbe81bc97",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 3.9142735344465147,
+            "preferenceNeuralV2": 0.5017333425738437,
+            "softPeriodicity": 3.7451293615509926
+          }
+        },
+        {
+          "id": "9a8cbbfe2e15abed03282fafa4f6242cfd2106ebb65838d394db5974204e4ac9",
+          "role": "alternative",
+          "synth": "Transfxr",
+          "checkpointSha256": "a816f97284cdd4ec0bfcfbcdbdbd11ab6e8b0230d4fa0b1388e758958694e73f",
+          "origin": "Transfxr-mixture",
+          "pcmSha256": "c44bb59777f55d0e17ff689ff7aa80f6c2f18274ac551369b4bf71f7b41210c6",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 1.449297604217961,
+            "preferenceNeuralV2": 0.6391546077298358,
+            "softPeriodicity": 1.9631690625843827
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "soft",
+        "preferenceNeuralV2": "preference",
+        "softPeriodicity": "soft"
+      },
+      "note": ""
+    }
+  ],
+  "pairs": [
+    {
+      "archive": "2026-10-06-off-model-transfer-v1-quick-02",
+      "experimentId": "1b7578642452ff8fdb622480fdabb7ee37e370171c7b914a551072b4e92a2677",
+      "target": "clothes/cloth4.ogg",
+      "referencePcmSha256": "1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e",
+      "candidateA": "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9",
+      "candidateB": "669008d12d443891d522fa884a330e1fb0552c6c56c2035cb125289fa3ab5495",
+      "candidateAliasesA": [
+        "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9"
+      ],
+      "candidateAliasesB": [
+        "669008d12d443891d522fa884a330e1fb0552c6c56c2035cb125289fa3ab5495"
+      ],
+      "candidatePcmSha256A": "72394dda846b3618fc30235bc06286deea48e2cf35422b259695c8ab7564d3fb",
+      "candidatePcmSha256B": "031e1cee40b9a679361e89cf127bce23692764a78af041ccb74ea83b15cf5cc1",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.027616024017333984,
+        0.06009461730718613,
+        0.0026172855868935585,
+        0.02083437144756317,
+        0.023588716983795166,
+        0.023925408720970154,
+        0.03659567050635815,
+        -0.0024410304613411427,
+        0.04626825451850891,
+        0.05645161290322579,
+        0.011807178457578026,
+        -0.005935282792740998,
+        -0.011541739106178284,
+        0.06289499998092651,
+        0.0006053633987903595,
+        0.18405121564865112,
+        0.0348530113697052,
+        -0.013225480914115906,
+        0.0017773956060409546,
+        0.006216391921043396
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "669008d12d443891d522fa884a330e1fb0552c6c56c2035cb125289fa3ab5495",
+          "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9",
+          "270b82d90e38b365823b6c8ecd0381457e5ff6c8f5c333e5a6ce112d36f252a3"
+        ],
+        "auditionedCandidateIds": [
+          "669008d12d443891d522fa884a330e1fb0552c6c56c2035cb125289fa3ab5495",
+          "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9",
+          "270b82d90e38b365823b6c8ecd0381457e5ff6c8f5c333e5a6ce112d36f252a3"
+        ],
+        "preferredCandidateIds": [
+          "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "soft",
+      "loserRole": "preference",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preferenceNeuralV2": false,
+        "softPeriodicity": true
+      }
+    },
+    {
+      "archive": "2026-10-06-off-model-transfer-v1-quick-02",
+      "experimentId": "1b7578642452ff8fdb622480fdabb7ee37e370171c7b914a551072b4e92a2677",
+      "target": "clothes/cloth4.ogg",
+      "referencePcmSha256": "1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e",
+      "candidateA": "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9",
+      "candidateB": "270b82d90e38b365823b6c8ecd0381457e5ff6c8f5c333e5a6ce112d36f252a3",
+      "candidateAliasesA": [
+        "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9"
+      ],
+      "candidateAliasesB": [
+        "270b82d90e38b365823b6c8ecd0381457e5ff6c8f5c333e5a6ce112d36f252a3"
+      ],
+      "candidatePcmSha256A": "72394dda846b3618fc30235bc06286deea48e2cf35422b259695c8ab7564d3fb",
+      "candidatePcmSha256B": "7d955c4d46f27a335507706c22bef032614c0c5f11b21b4cb95db34f007d4c84",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.3000010848045349,
+        -0.014172941446304321,
+        -0.0019203433766961098,
+        0.008222419768571854,
+        0.0058971792459487915,
+        0.010011017322540283,
+        0.02535509318113327,
+        -0.0012391121126711369,
+        -0.05319584906101227,
+        0.008064516129032251,
+        -0.024416991819938026,
+        -0.046783292083102876,
+        -0.052316974848508835,
+        -0.0055023133754730225,
+        0.0004654712975025177,
+        0.01340755820274353,
+        0.024147719144821167,
+        -0.11320943385362625,
+        -0.10280043631792068,
+        -0.09878166019916534
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "669008d12d443891d522fa884a330e1fb0552c6c56c2035cb125289fa3ab5495",
+          "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9",
+          "270b82d90e38b365823b6c8ecd0381457e5ff6c8f5c333e5a6ce112d36f252a3"
+        ],
+        "auditionedCandidateIds": [
+          "669008d12d443891d522fa884a330e1fb0552c6c56c2035cb125289fa3ab5495",
+          "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9",
+          "270b82d90e38b365823b6c8ecd0381457e5ff6c8f5c333e5a6ce112d36f252a3"
+        ],
+        "preferredCandidateIds": [
+          "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "soft",
+      "loserRole": "original",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preferenceNeuralV2": true,
+        "softPeriodicity": true
+      }
+    },
+    {
+      "archive": "2026-10-06-off-model-transfer-v1-quick-02",
+      "experimentId": "1b7578642452ff8fdb622480fdabb7ee37e370171c7b914a551072b4e92a2677",
+      "target": "chains/beltHandle2.ogg",
+      "referencePcmSha256": "a48028571fece94d0e1c9682e5e9cca2d9f25a30daf5a9a0232d211ea1cdc13b",
+      "candidateA": "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7",
+      "candidateB": "b151c364c6caf1c8dafb75dc9c6ae0039997ecd3a013388e35a9381563456c9e",
+      "candidateAliasesA": [
+        "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7"
+      ],
+      "candidateAliasesB": [
+        "b151c364c6caf1c8dafb75dc9c6ae0039997ecd3a013388e35a9381563456c9e"
+      ],
+      "candidatePcmSha256A": "ad808bd22da078fa624fa2d8baa9b19faaf9c9a94867a13359c0645963c30ae9",
+      "candidatePcmSha256B": "1d1ac18d4142b52434dd9b76b8b6201f18b6b9c86714e5bebadb39d9ab627cb5",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.2080979347229004,
+        0.01893971860408783,
+        -0.008131766691803932,
+        0.003592155873775482,
+        0.004989929497241974,
+        0.052139922976493835,
+        -0.25300475349649787,
+        -0.005577917443588376,
+        0.0768626481294632,
+        0.2096774193548387,
+        -0.04384208098053931,
+        0.014876906069296564,
+        -0.034985557198524475,
+        0.08496701717376709,
+        0.0009440183639526367,
+        0.05673414468765259,
+        -0.24095690250396729,
+        0.06391298770904541,
+        0.0700693130493164,
+        0.06761059165000916
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "b151c364c6caf1c8dafb75dc9c6ae0039997ecd3a013388e35a9381563456c9e",
+          "2a32d9c649acb3104d14a0fcf40315859367c8a031085ef98489576f5a51cb7a",
+          "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7"
+        ],
+        "auditionedCandidateIds": [
+          "b151c364c6caf1c8dafb75dc9c6ae0039997ecd3a013388e35a9381563456c9e",
+          "2a32d9c649acb3104d14a0fcf40315859367c8a031085ef98489576f5a51cb7a",
+          "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7"
+        ],
+        "preferredCandidateIds": [
+          "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "soft",
+      "loserRole": "alternative",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preferenceNeuralV2": false,
+        "softPeriodicity": true
+      }
+    },
+    {
+      "archive": "2026-10-06-off-model-transfer-v1-quick-02",
+      "experimentId": "1b7578642452ff8fdb622480fdabb7ee37e370171c7b914a551072b4e92a2677",
+      "target": "chains/beltHandle2.ogg",
+      "referencePcmSha256": "a48028571fece94d0e1c9682e5e9cca2d9f25a30daf5a9a0232d211ea1cdc13b",
+      "candidateA": "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7",
+      "candidateB": "2a32d9c649acb3104d14a0fcf40315859367c8a031085ef98489576f5a51cb7a",
+      "candidateAliasesA": [
+        "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7"
+      ],
+      "candidateAliasesB": [
+        "2a32d9c649acb3104d14a0fcf40315859367c8a031085ef98489576f5a51cb7a"
+      ],
+      "candidatePcmSha256A": "ad808bd22da078fa624fa2d8baa9b19faaf9c9a94867a13359c0645963c30ae9",
+      "candidatePcmSha256B": "c553a181462e99d01f5a74d04c0a16f3f85023715e9691338f57ef746cd09e70",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.23856794834136963,
+        0.01608043909072876,
+        0.012080926448106766,
+        0.05451304465532303,
+        0.05715726315975189,
+        0.0496397539973259,
+        -0.04475202551111579,
+        -0.003071370767429471,
+        0.07829852402210236,
+        0.20161290322580644,
+        -0.044463134060303375,
+        0.018976052971088245,
+        -0.03480643033981323,
+        0.11576628684997559,
+        -0.006125777959823608,
+        0.516826868057251,
+        -0.04262098670005798,
+        0.07400131225585938,
+        0.08099164068698883,
+        0.07768933475017548
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "b151c364c6caf1c8dafb75dc9c6ae0039997ecd3a013388e35a9381563456c9e",
+          "2a32d9c649acb3104d14a0fcf40315859367c8a031085ef98489576f5a51cb7a",
+          "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7"
+        ],
+        "auditionedCandidateIds": [
+          "b151c364c6caf1c8dafb75dc9c6ae0039997ecd3a013388e35a9381563456c9e",
+          "2a32d9c649acb3104d14a0fcf40315859367c8a031085ef98489576f5a51cb7a",
+          "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7"
+        ],
+        "preferredCandidateIds": [
+          "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "soft",
+      "loserRole": "preference",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preferenceNeuralV2": false,
+        "softPeriodicity": true
+      }
+    },
+    {
+      "archive": "2026-10-06-off-model-transfer-v1-quick-02",
+      "experimentId": "1b7578642452ff8fdb622480fdabb7ee37e370171c7b914a551072b4e92a2677",
+      "target": "bell/clothBelt2.ogg",
+      "referencePcmSha256": "1b23547ef0690160e2e64edbb719bec7ef24923e9af52c1cb90dbc515ea8683a",
+      "candidateA": "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207",
+      "candidateB": "239ec32849552c82ce83522f4cba7aa245dd9cd58a23ca7f00e4fbee57f92117",
+      "candidateAliasesA": [
+        "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207"
+      ],
+      "candidateAliasesB": [
+        "239ec32849552c82ce83522f4cba7aa245dd9cd58a23ca7f00e4fbee57f92117"
+      ],
+      "candidatePcmSha256A": "9363d165659a432100785e8682e98300e774f57678b75edec2a3053020cfa477",
+      "candidatePcmSha256B": "f8c55975e2158e397f16e56b21343aaf784410acc6b897f85b1f0ae827a29ffd",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.2418726682662964,
+        -0.0037720948457717896,
+        0.0053402818739414215,
+        -0.04548937827348709,
+        -0.0893649235367775,
+        -0.008240558207035065,
+        -0.024232426192611456,
+        0.0026252532843500376,
+        -0.011224180459976196,
+        0.04838709677419357,
+        0.07308708255489668,
+        -0.04363109370354229,
+        -0.03333704173564911,
+        -0.019049495458602905,
+        0.029571533203125,
+        -0.4533511996269226,
+        -0.023078501224517822,
+        -0.0950431376695633,
+        -0.08757960051298141,
+        -0.08445023000240326
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "239ec32849552c82ce83522f4cba7aa245dd9cd58a23ca7f00e4fbee57f92117",
+          "fdc98f15384090181c460fc906b3fd5a3c15d1951bbf0f02c5f367b6a6741d2e",
+          "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207"
+        ],
+        "auditionedCandidateIds": [
+          "239ec32849552c82ce83522f4cba7aa245dd9cd58a23ca7f00e4fbee57f92117",
+          "fdc98f15384090181c460fc906b3fd5a3c15d1951bbf0f02c5f367b6a6741d2e",
+          "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207"
+        ],
+        "preferredCandidateIds": [
+          "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "preference",
+      "loserRole": "soft",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preferenceNeuralV2": true,
+        "softPeriodicity": false
+      }
+    },
+    {
+      "archive": "2026-10-06-off-model-transfer-v1-quick-02",
+      "experimentId": "1b7578642452ff8fdb622480fdabb7ee37e370171c7b914a551072b4e92a2677",
+      "target": "bell/clothBelt2.ogg",
+      "referencePcmSha256": "1b23547ef0690160e2e64edbb719bec7ef24923e9af52c1cb90dbc515ea8683a",
+      "candidateA": "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207",
+      "candidateB": "fdc98f15384090181c460fc906b3fd5a3c15d1951bbf0f02c5f367b6a6741d2e",
+      "candidateAliasesA": [
+        "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207"
+      ],
+      "candidateAliasesB": [
+        "fdc98f15384090181c460fc906b3fd5a3c15d1951bbf0f02c5f367b6a6741d2e"
+      ],
+      "candidatePcmSha256A": "9363d165659a432100785e8682e98300e774f57678b75edec2a3053020cfa477",
+      "candidatePcmSha256B": "7312247919073fb0820fcf00de424ef9294505eab3d656e95e869c62654a4476",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.23275744915008545,
+        -0.03370574116706848,
+        0.005712240934371948,
+        -0.05128895491361618,
+        -0.08664315193891525,
+        0.003090508282184601,
+        0.003130307886749506,
+        0.0027915688697248697,
+        -0.05201950669288635,
+        0.03225806451612905,
+        0.08721157473822436,
+        -0.03902491051249979,
+        0.01594063639640808,
+        -0.048902854323387146,
+        0.004364080727100372,
+        -0.39545321464538574,
+        0.002981245517730713,
+        -0.06584343314170837,
+        -0.08015217632055283,
+        -0.07848873734474182
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "239ec32849552c82ce83522f4cba7aa245dd9cd58a23ca7f00e4fbee57f92117",
+          "fdc98f15384090181c460fc906b3fd5a3c15d1951bbf0f02c5f367b6a6741d2e",
+          "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207"
+        ],
+        "auditionedCandidateIds": [
+          "239ec32849552c82ce83522f4cba7aa245dd9cd58a23ca7f00e4fbee57f92117",
+          "fdc98f15384090181c460fc906b3fd5a3c15d1951bbf0f02c5f367b6a6741d2e",
+          "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207"
+        ],
+        "preferredCandidateIds": [
+          "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "preference",
+      "loserRole": "original",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preferenceNeuralV2": true,
+        "softPeriodicity": false
+      }
+    },
+    {
+      "archive": "2026-10-06-off-model-transfer-v1-quick-02",
+      "experimentId": "1b7578642452ff8fdb622480fdabb7ee37e370171c7b914a551072b4e92a2677",
+      "target": "collect/coin (nes).wav",
+      "referencePcmSha256": "093e972370b0c8532720ffd1ec3a4da3b4d02a27d1214b8ccdf57cff6cbcf0ae",
+      "candidateA": "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5",
+      "candidateB": "9a8cbbfe2e15abed03282fafa4f6242cfd2106ebb65838d394db5974204e4ac9",
+      "candidateAliasesA": [
+        "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5"
+      ],
+      "candidateAliasesB": [
+        "9a8cbbfe2e15abed03282fafa4f6242cfd2106ebb65838d394db5974204e4ac9"
+      ],
+      "candidatePcmSha256A": "a2798deaef3eaef350a1924fe2589bb08f984c4721f7fca2826ec55740ac2ebd",
+      "candidatePcmSha256B": "c44bb59777f55d0e17ff689ff7aa80f6c2f18274ac551369b4bf71f7b41210c6",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.07111784815788269,
+        0.04344639554619789,
+        0.017958992160856724,
+        -0.005295029026456177,
+        0.0,
+        -0.021476786583662033,
+        0.04226023983210325,
+        -0.0016308314516209066,
+        0.05383783206343651,
+        0.01612903225806453,
+        -0.037336453795433044,
+        -0.020355190186067174,
+        -0.01966884732246399,
+        -0.021736696362495422,
+        -0.018430326133966446,
+        -0.011822521686553955,
+        0.0402478463947773,
+        -0.011299625039100647,
+        -0.019152015447616577,
+        -0.024306833744049072
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "9a8cbbfe2e15abed03282fafa4f6242cfd2106ebb65838d394db5974204e4ac9",
+          "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5",
+          "17425fc7cef8e07db38d9ce70f2a63bc43607f0d4229455b2d05ed385e5af287"
+        ],
+        "auditionedCandidateIds": [
+          "9a8cbbfe2e15abed03282fafa4f6242cfd2106ebb65838d394db5974204e4ac9",
+          "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5",
+          "17425fc7cef8e07db38d9ce70f2a63bc43607f0d4229455b2d05ed385e5af287"
+        ],
+        "preferredCandidateIds": [
+          "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "soft",
+      "loserRole": "alternative",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preferenceNeuralV2": true,
+        "softPeriodicity": true
+      }
+    },
+    {
+      "archive": "2026-10-06-off-model-transfer-v1-quick-02",
+      "experimentId": "1b7578642452ff8fdb622480fdabb7ee37e370171c7b914a551072b4e92a2677",
+      "target": "collect/coin (nes).wav",
+      "referencePcmSha256": "093e972370b0c8532720ffd1ec3a4da3b4d02a27d1214b8ccdf57cff6cbcf0ae",
+      "candidateA": "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5",
+      "candidateB": "17425fc7cef8e07db38d9ce70f2a63bc43607f0d4229455b2d05ed385e5af287",
+      "candidateAliasesA": [
+        "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5"
+      ],
+      "candidateAliasesB": [
+        "17425fc7cef8e07db38d9ce70f2a63bc43607f0d4229455b2d05ed385e5af287"
+      ],
+      "candidatePcmSha256A": "a2798deaef3eaef350a1924fe2589bb08f984c4721f7fca2826ec55740ac2ebd",
+      "candidatePcmSha256B": "46f1aa60a9db2dce140a18b4e63c9980504a0f2cf6fa006474b0008cbe81bc97",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.08767461776733398,
+        0.05986951105296612,
+        0.015657267533242702,
+        -0.02178024232853204,
+        0.0,
+        -0.008026123046875,
+        -0.03516082093119621,
+        -0.0012433439842425287,
+        0.07034219987690449,
+        0.01612903225806453,
+        -0.00029705216487248753,
+        -0.0692785790383649,
+        -0.008462008088827133,
+        -0.006285965442657471,
+        -0.06376870721578598,
+        -0.01695483922958374,
+        -0.033486489206552505,
+        0.03428729623556137,
+        0.031076885759830475,
+        0.028549298644065857
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "9a8cbbfe2e15abed03282fafa4f6242cfd2106ebb65838d394db5974204e4ac9",
+          "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5",
+          "17425fc7cef8e07db38d9ce70f2a63bc43607f0d4229455b2d05ed385e5af287"
+        ],
+        "auditionedCandidateIds": [
+          "9a8cbbfe2e15abed03282fafa4f6242cfd2106ebb65838d394db5974204e4ac9",
+          "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5",
+          "17425fc7cef8e07db38d9ce70f2a63bc43607f0d4229455b2d05ed385e5af287"
+        ],
+        "preferredCandidateIds": [
+          "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "soft",
+      "loserRole": "preference",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preferenceNeuralV2": false,
+        "softPeriodicity": true
+      }
+    }
+  ],
+  "explicitQualitativeLabels": [
+    {
+      "targetId": "f88df3b356903d22a83e5c40d350194a50dd26e2056c200fdbff1964a12924ae",
+      "candidateId": "4ab9593c92f342a7043ba51e4356031eedf2841d6484c32d932c69936490f368",
+      "referencePcmSha256": "cb353f5e727d25e09aa66afd7abcc1b5f73f5e8cbc80db9d6d9d68b5cfe3df99",
+      "candidatePcmSha256": "5e32abe7b0efcb57b90720134e8f943a4285734807a68d1ece5570c98e42973e",
+      "label": "similar"
+    },
+    {
+      "targetId": "436e8ac06c0fe30ad90d1c7a72c05c4850080b03702db52fe317e529f5dda35d",
+      "candidateId": "5c5a9edeb1b273637a860614e49d2954ef922a298380eb3455493771da4595c9",
+      "referencePcmSha256": "1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e",
+      "candidatePcmSha256": "72394dda846b3618fc30235bc06286deea48e2cf35422b259695c8ab7564d3fb",
+      "label": "similar"
+    },
+    {
+      "targetId": "7b4bb0251af98149229323cfde4c0a6a27771f00789303bfff1e34d752738aa0",
+      "candidateId": "949a6f3fd5e585d7ee028a5021da9363233f16fd9c8166896a3f66fb90a8ab06",
+      "referencePcmSha256": "e9af30f41e2c16297769dbe6d7838a747563f8005190213048fa4469bfcde76d",
+      "candidatePcmSha256": "9efa325a97560140d797f00e66da0483840e5a8ec3da37dcbcc8736726b64682",
+      "label": "not-close"
+    },
+    {
+      "targetId": "7b4bb0251af98149229323cfde4c0a6a27771f00789303bfff1e34d752738aa0",
+      "candidateId": "56753bbfe326b05b32681fed8dfc0daa7b4d948a4698dbad476c9b3e60530109",
+      "referencePcmSha256": "e9af30f41e2c16297769dbe6d7838a747563f8005190213048fa4469bfcde76d",
+      "candidatePcmSha256": "b47db7d2c4734d7c602b602bcf967169cfc35b940f4b56c4734d431b4dfbbc13",
+      "label": "not-close"
+    },
+    {
+      "targetId": "7b4bb0251af98149229323cfde4c0a6a27771f00789303bfff1e34d752738aa0",
+      "candidateId": "ae0413ee7b8172dcc9a82471bc43823960271f9b0161d1a2a2dc9a5ed448270b",
+      "referencePcmSha256": "e9af30f41e2c16297769dbe6d7838a747563f8005190213048fa4469bfcde76d",
+      "candidatePcmSha256": "147d007feeb610f287f42f74b25d9c9253a4753622a56ae7da2ba102df340bf7",
+      "label": "not-close"
+    },
+    {
+      "targetId": "c6442895c976b11d792417a0ad12de248c75ba6dfd463ecc0eb44a36cb3dd2f9",
+      "candidateId": "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7",
+      "referencePcmSha256": "a48028571fece94d0e1c9682e5e9cca2d9f25a30daf5a9a0232d211ea1cdc13b",
+      "candidatePcmSha256": "ad808bd22da078fa624fa2d8baa9b19faaf9c9a94867a13359c0645963c30ae9",
+      "label": "least-bad"
+    },
+    {
+      "targetId": "cc0937dd996551d0e443b956b2afdb6b6da751786272c6d9ebdc199af36ae977",
+      "candidateId": "1a01ce22f5155785f970f3f3ae022e64b4c3fd944a08bee34e988672b592631a",
+      "referencePcmSha256": "4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf",
+      "candidatePcmSha256": "36a86fc2a47814d79bfdf66f74ca6d3e94112801c7c65831cf9bc66cfb5cd1b8",
+      "label": "not-close"
+    },
+    {
+      "targetId": "cc0937dd996551d0e443b956b2afdb6b6da751786272c6d9ebdc199af36ae977",
+      "candidateId": "c0925fc95bc49ad568e2cf932cfdb40818646f227a3d2edcbbaa5fc8aefb9737",
+      "referencePcmSha256": "4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf",
+      "candidatePcmSha256": "1d6e205ca01cb95c7ab93b4ed367d469a537305a1d1abc19895dd0240bb12249",
+      "label": "not-close"
+    },
+    {
+      "targetId": "cc0937dd996551d0e443b956b2afdb6b6da751786272c6d9ebdc199af36ae977",
+      "candidateId": "399f2393abf3b0662e109b3208edba02640c077000869b311caff09861959348",
+      "referencePcmSha256": "4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf",
+      "candidatePcmSha256": "a35198590b8aa0f33454eca2a800d3340b0fa7cce36fac13767af696e4e2af6e",
+      "label": "not-close"
+    },
+    {
+      "targetId": "eefe0f79980c6eff57bea987fbdb0134699becb304e267647d3d62429c2f50ea",
+      "candidateId": "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207",
+      "referencePcmSha256": "1b23547ef0690160e2e64edbb719bec7ef24923e9af52c1cb90dbc515ea8683a",
+      "candidatePcmSha256": "9363d165659a432100785e8682e98300e774f57678b75edec2a3053020cfa477",
+      "label": "least-bad"
+    },
+    {
+      "targetId": "7aea38e19e612bda0a8a9ebddea395ef94c85dd0ad174eb538e3a074d80812c3",
+      "candidateId": "530dee521775c5ea8cb6ec155b99c9fd5119b1f953041e2cb788f1db7a0d9ef2",
+      "referencePcmSha256": "6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8",
+      "candidatePcmSha256": "e919575185167ad99a3b6cd294fb599ece37d766672953941c5e61c86e9071ca",
+      "label": "not-close"
+    },
+    {
+      "targetId": "7aea38e19e612bda0a8a9ebddea395ef94c85dd0ad174eb538e3a074d80812c3",
+      "candidateId": "e3b831a22554da934ca15aee7506b7da6667d1f7bb9cd44c2f8e67275caa6d05",
+      "referencePcmSha256": "6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8",
+      "candidatePcmSha256": "0f50669aaae1b434951a41b038ec81205e0f4ae4d0d109e021c374070cf76572",
+      "label": "not-close"
+    },
+    {
+      "targetId": "7aea38e19e612bda0a8a9ebddea395ef94c85dd0ad174eb538e3a074d80812c3",
+      "candidateId": "d16ee86bba1a0b593cd52a917ca690d2021a37aa7ad9ed14304f7c612d360a29",
+      "referencePcmSha256": "6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8",
+      "candidatePcmSha256": "8069aa21d4b9b62f8c4be07fb8aa2ba25c53af32677e1fc6cdc9439c51db1f4e",
+      "label": "not-close"
+    },
+    {
+      "targetId": "fea806ba44ac825db485a02395c6741687ffd02804ae76a5ec4dd3047e30a4cd",
+      "candidateId": "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5",
+      "referencePcmSha256": "093e972370b0c8532720ffd1ec3a4da3b4d02a27d1214b8ccdf57cff6cbcf0ae",
+      "candidatePcmSha256": "a2798deaef3eaef350a1924fe2589bb08f984c4721f7fca2826ec55740ac2ebd",
+      "label": "very-close"
+    }
+  ],
+  "unsubmittedReferences": [],
+  "metricAgreement": {
+    "MatchObjective": {
+      "correct": 6,
+      "pairs": 8
+    },
+    "preferenceNeuralV2": {
+      "correct": 4,
+      "pairs": 8
+    },
+    "softPeriodicity": {
+      "correct": 6,
+      "pairs": 8
+    }
+  },
+  "interpretation": [
+    "Complete cumulative eight-reference export. First five targets unchanged; three new judgments. Earlier four strict pairs must not be counted twice.",
+    "Original Bfxr coin wins and is very-close. Its exact file appears in the old real-finetune holdout list, not the training list; this is not proof of family-independent generalization.",
+    "Transfxr-mixture footstep and shared Rustlr cloth remain similar. Original Bfxr chain and dedicated Squishr cloth-belt are least-bad. Hit, door and laser reject every displayed option.",
+    "The metallic footstep records only its chosen candidate as heard, so no strict pair against unheard options. Eight strict heard pairs in total, four new. Fourteen candidate-scoped labels: one very-close, two similar, two least-bad, nine not-close.",
+    "None of the newer synthetic-trained experts receives very-close adequacy in this external batch. Native successes did not transfer to convincing reproductions here.",
+    "Next probe actual two-source Mixr composition on three rejected references and one similar control. Compare against exact earlier audio and a single-source control under the same composition renderer. This is an expressive-coverage diagnostic, not a trained Mixr inverse or a quality claim."
+  ],
+  "cumulativeExport": {
+    "previousArchive": "tools/multisynth/listening_data/2026-10-06-off-model-transfer-v1-quick-01",
+    "previousFeedbackSha256": "b9fe803eb4665964a07d09bb05f6c3a38229201465c9015209f84d8e82e0c619",
+    "unchangedTargetCount": 5,
+    "newTargetCount": 3,
+    "newStrictPairs": 4,
+    "combinedDistinctPairs": 8,
+    "duplicateSessionPairsSkipped": 4
+  }
+}
