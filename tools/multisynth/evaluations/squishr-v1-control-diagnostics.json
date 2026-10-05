@@ -1,0 +1,78 @@
+{
+  "complete": true,
+  "reportSha256": "175fd3e023d736e1865d9bf4dd42154462a34702670f38ef64a9e434994617f9",
+  "scriptSha256": "50c93a61470b0756e0de4e960ec5a7fdd2ed89f64dd941c691d5b10119b4c3ae",
+  "summary": {
+    "shared": {
+      "numericMeanAbsoluteErrorNormalized": 0.08492708951234818,
+      "byControl": {
+        "viscosity": {
+          "normalizedMAE": 0.05152430012822151,
+          "controlUnitsMAE": 0.05152430012822151
+        },
+        "stretch": {
+          "normalizedMAE": 0.12098810076713562,
+          "controlUnitsMAE": 0.12098810076713562
+        },
+        "pressure": {
+          "normalizedMAE": 0.11156081408262253,
+          "controlUnitsMAE": 0.11156081408262253
+        },
+        "wetness": {
+          "normalizedMAE": 0.14111576974391937,
+          "controlUnitsMAE": 0.14111576974391937
+        },
+        "bubbleSize": {
+          "normalizedMAE": 0.06192067265510559,
+          "controlUnitsMAE": 0.06192067265510559
+        },
+        "duration": {
+          "normalizedMAE": 0.022452907636761665,
+          "controlUnitsMAE": 0.06511343270540237
+        }
+      },
+      "topRankTextureCorrect": 32,
+      "trueTextureCoveredByProposals": 32,
+      "softSelectedRawTextureCorrect": 31,
+      "count": 32,
+      "nominalBaseFrequencyMAEOctaves": 0.2352985451065324,
+      "durationControlMeanAbsLog2Ratio": 0.18249647929443696
+    },
+    "specialist": {
+      "numericMeanAbsoluteErrorNormalized": 0.057775069028139114,
+      "byControl": {
+        "viscosity": {
+          "normalizedMAE": 0.031164444983005524,
+          "controlUnitsMAE": 0.031164444983005524
+        },
+        "stretch": {
+          "normalizedMAE": 0.05678495019674301,
+          "controlUnitsMAE": 0.05678495019674301
+        },
+        "pressure": {
+          "normalizedMAE": 0.09978072345256805,
+          "controlUnitsMAE": 0.09978072345256805
+        },
+        "wetness": {
+          "normalizedMAE": 0.10864218324422836,
+          "controlUnitsMAE": 0.10864218324422836
+        },
+        "bubbleSize": {
+          "normalizedMAE": 0.03619798272848129,
+          "controlUnitsMAE": 0.03619798272848129
+        },
+        "duration": {
+          "normalizedMAE": 0.014080150052905083,
+          "controlUnitsMAE": 0.040832437574863434
+        }
+      },
+      "topRankTextureCorrect": 32,
+      "trueTextureCoveredByProposals": 32,
+      "softSelectedRawTextureCorrect": 32,
+      "count": 32,
+      "nominalBaseFrequencyMAEOctaves": 0.13755234977875075,
+      "durationControlMeanAbsLog2Ratio": 0.11879709438058214
+    }
+  },
+  "scope": "Post-hoc native-test diagnostic. Ground-truth controls never influence inference, checkpoint selection, or displayed choices. Parameter agreement does not establish perceptual equivalence; alternative controls may be valid."
+}

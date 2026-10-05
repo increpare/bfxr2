@@ -42,6 +42,22 @@ questions about hidden synth labels.
 | `2026-10-05-specialists-tagged-quick-01/` | 5 | 15 |
 | `2026-10-05-tagged-coverage-quick-01/` | 5 | 15 |
 | `2026-10-05-cue-calibration-quick-01/` | 5 | 10 |
+| `2026-10-05-soft-periodicity-quick-01/` | 5 | 15 |
+
+The sixteenth archive retains five actual-synth comparisons. The new soft-search
+Squishr wooden footstep wins and is **very close**. The chosen soft-search
+Transfxr block-hit is **similar**, but its export records only that option as
+auditioned, so it supplies no strict pairwise comparisons. Brick remains **none
+close**. The earlier Transfxr cloth is **least-bad**, and the unchanged earlier
+Bfxr laser is **similar**. Preserve both that laser judgment and its earlier
+least-bad judgment; this is not a new synthesis improvement.
+
+Six strict heard preference pairs and seven candidate-scoped adequacy labels
+are retained: one very-close, two similar, one least-bad and three not-close.
+No numeric scores or unheard comparisons are inferred. Frozen legacy and soft
+scores each agree on 2/6 pairs; preference-neural-v2 agrees on 4/6. The successful
+footstep is useful reachable-synth evidence, **not a global scorer endorsement**.
+See the [soft-search human review](../evaluations/soft-periodicity-quick-01-human-review.json).
 
 The fifteenth archive retains five controlled-edit comparisons. All ten options
 were auditioned; all five preferred edits are explicitly **very close**. Winners:

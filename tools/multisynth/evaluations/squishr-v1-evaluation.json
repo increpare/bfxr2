@@ -1,0 +1,100 @@
+{
+  "complete": true,
+  "binding": {
+    "scriptSha256": "e2e792ede776053c0a5b4f589cd09a6f550430c70e56d1a581c688ce464f32e4",
+    "protocolSha256": "dc2a3387dd106e729a3d1b966a578989b9b2d2ef84e2b860471828e0879578d5",
+    "targetsSha256": "963ea40129adb90b9e171c9950b1dc9088ae112ac11ae3199c37ddafdc010b77",
+    "trainingReceiptSha256": "2c2da8ad4e2e805bbad62afc01af7ed3474d998822b16a4eb8adaf6229c3f4d4",
+    "checkpoints": {
+      "shared": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+      "specialist": "232e19d4425cc9210ae6c348bbe3983d2b19f623cc8265564bf8de737c4a2c18"
+    }
+  },
+  "summary": {
+    "native-test": {
+      "count": 32,
+      "selectedRaw": {
+        "meanSoft": {
+          "shared": 2.8994337652448596,
+          "specialist": 2.631542068640626
+        },
+        "meanLegacy": {
+          "shared": 6.394322166552402,
+          "specialist": 5.48470926379124
+        },
+        "specialistLowerSoft": 25
+      },
+      "refined": {
+        "meanSoft": {
+          "shared": 1.6510499739399547,
+          "specialist": 1.548998499824968
+        },
+        "meanLegacy": {
+          "shared": 4.305995415835673,
+          "specialist": 3.882765880209263
+        },
+        "specialistLowerSoft": 22
+      }
+    },
+    "tagged-new": {
+      "count": 4,
+      "selectedRaw": {
+        "meanSoft": {
+          "shared": 4.020614688346248,
+          "specialist": 3.798018547839713
+        },
+        "meanLegacy": {
+          "shared": 8.563742244996526,
+          "specialist": 6.713123211901626
+        },
+        "specialistLowerSoft": 1
+      },
+      "refined": {
+        "meanSoft": {
+          "shared": 2.6303092650046467,
+          "specialist": 2.5851594819768704
+        },
+        "meanLegacy": {
+          "shared": 7.667470975712788,
+          "specialist": 9.93415435295688
+        },
+        "specialistLowerSoft": 2
+      }
+    },
+    "tagged-repeated": {
+      "count": 1,
+      "selectedRaw": {
+        "meanSoft": {
+          "shared": 5.295140485683316,
+          "specialist": 5.561604659093751
+        },
+        "meanLegacy": {
+          "shared": 12.565303574720255,
+          "specialist": 14.725204547577436
+        },
+        "specialistLowerSoft": 0
+      },
+      "refined": {
+        "meanSoft": {
+          "shared": 2.476548212912964,
+          "specialist": 2.5077032234331575
+        },
+        "meanLegacy": {
+          "shared": 7.839858121157309,
+          "specialist": 8.684824342137636
+        },
+        "specialistLowerSoft": 0
+      }
+    }
+  },
+  "reportSha256": "175fd3e023d736e1865d9bf4dd42154462a34702670f38ef64a9e434994617f9",
+  "targets": 37,
+  "mutationAttempts": 9472,
+  "splitCounts": {
+    "train": 6964,
+    "val": 1196,
+    "test": 32
+  },
+  "scope": "Dedicated Squishr head comparison, not full ensemble benchmark. Synthetic-only training; real sources are transfer tests for the new expert. Native exact controls held out; preset families overlap. No human winners used for fitting.",
+  "failures": 0
+}

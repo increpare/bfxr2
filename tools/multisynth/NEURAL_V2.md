@@ -171,3 +171,70 @@ pitch diagnostics and hashes of exported audition WAVs.
 Composition through Mixr/Stackr, arbitrary text/phrase transcription and fixed
 random-anchor inference remain separate work. A single fresh native example per
 engine is a coverage check, not evidence for its entire sound distribution.
+
+## Dedicated Squishr experiment, 2026-10-05
+
+The sixteenth listening archive supplies a new positive: the soft-search Squishr
+wooden footstep is explicitly **very close**. The scorer itself agrees on only
+2/6 strict heard preferences, so it remains experimental. The successful controls
+and exact audio are a transfer anchor; neither is used as a training teacher.
+
+The isolated checkpoint at `runs/squishr-v1/model/best.pt` uses the existing
+acoustic-head architecture and loss with a dedicated encoder. It is a combined
+data/capacity experiment, not an architecture-only ablation. The new dataset has
+8,192 fresh DSP renders: **6,964 fitting / 1,196 validation / 32 native test**.
+The original generator draws include the built-in randomizer; additional sparse
+and broad mutations use the existing sampler. There are 4,129 original draws,
+2,421 sparse and 1,642 broad. There were no rejected draws.
+Sixty CPU epochs took about 24 seconds after about 20 minutes of generation;
+epoch 26 has the lowest validation loss. Checkpoint SHA256:
+`232e19d4425cc9210ae6c348bbe3983d2b19f623cc8265564bf8de737c4a2c18`.
+
+Native tests exclude exact encoded controls, ignoring randomness, from both
+fitting and checkpoint selection, and exclude the shared model's old controls.
+Preset families still overlap. The approved footstep plus four unjudged tagged
+files were frozen before fitting; these are transfer tests for the synthetic-only
+expert, not independent population validation or an all-synth benchmark.
+
+Both Squishr heads produce four categorical alternatives from one numeric
+prediction. Both inverse heads receive the same reference PCM; actual DSP renders
+their predicted controls. Raw proposals and equal 128-attempt refinement are
+retained separately. Both arms use
+the experimental soft score, with legacy distance reported independently. Ten
+listening references were fixed before results: all five tagged sources and the
+first five seeded native tests. The exact approved footstep stays in its trial.
+
+Bindings and procedures: [protocol](evaluations/squishr-v1-protocol.json),
+[test manifest](evaluations/squishr-v1-targets.json),
+[training receipt](evaluations/squishr-v1-training-receipt.json).
+
+All 37 references finished with no failed raw proposals and 9,472 total mutation
+attempts. Each saved raw/refined waveform replays through actual DSP. Native
+distance improves, while tagged transfer remains mixed:
+
+| Reference group | Stage | Shared mean soft distance | Specialist mean | Specialist lower |
+| --- | --- | ---: | ---: | ---: |
+| 32 native tests | Raw | 2.8994 | 2.6315 | 25/32 |
+| 32 native tests | Refined | 1.6510 | 1.5490 | 22/32 |
+| 4 new tagged | Raw | 4.0206 | 3.7980 | 1/4 |
+| 4 new tagged | Refined | 2.6303 | 2.5852 | 2/4 |
+| Repeated footstep | Refined | 2.4765 | 2.5077 | 0/1 |
+
+The tagged average hides regressions: only one new tagged raw prediction wins.
+Legacy distance on the four new tagged refined outputs rises from 7.6675 to
+9.9342, despite the small soft-distance decrease. These disagreeing metrics do
+not establish audible improvement. Native normalized numeric-control MAE falls
+from .08493 to .05778; both heads identify all 32 native textures at rank zero.
+Control-derived nominal base-frequency error falls from .2353 to .1376 octaves,
+but that is not measured audio pitch error or a human closeness score.
+
+The [ten-trial listening page](runs/squishr-v1-listening/index.html) has 21 options,
+with immediate adequacy and the exact prior approved footstep. Its first five
+references are tagged sources, and the last five are reserved native controls.
+All 31 audio files plus HTML/report were verified over HTTP. Human quality
+judgments are now required. No other synth expert or CLI default was replaced.
+
+See [render evaluation](evaluations/squishr-v1-evaluation.json),
+[control diagnostics](evaluations/squishr-v1-control-diagnostics.json),
+[listening audit](evaluations/squishr-v1-listening-audit.json), and
+[HTTP audit](evaluations/squishr-v1-http-audit.json).

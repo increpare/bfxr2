@@ -1,0 +1,174 @@
+{
+  "complete": true,
+  "experimentId": "ca0be7aeceb0f4224488b650da258358ea77a8485c329245532eb3898a4f5f09",
+  "checks": [
+    {
+      "file": "index.html",
+      "sha256": "370292500b5f246fc28a69f9901521cbb520779b9ab7945f145826745c98b2dc",
+      "bytes": 215569
+    },
+    {
+      "file": "results.json",
+      "sha256": "5cb570d2dfdbe51bd7d97fdfc494b908a8abb841e4402a61363824ff5163e9d8",
+      "bytes": 182903
+    },
+    {
+      "file": "001/retained.wav",
+      "sha256": "d9c970ea245625295c7b93cba9f621912ac3cd7cb2edd6054ea6e4b757a17c64",
+      "bytes": 21778
+    },
+    {
+      "file": "001/shared.wav",
+      "sha256": "87dc0a6638c9b0f823afbb7249cecf66d076e85c3d476256253aec4053c1ee1c",
+      "bytes": 21610
+    },
+    {
+      "file": "001/specialist.wav",
+      "sha256": "2701aed88ab8c1ac8eb722e0441ecae09b2ae79dea95b6a1d45b24d9208b0691",
+      "bytes": 22496
+    },
+    {
+      "file": "001/target.wav",
+      "sha256": "63b20fe0aa4df84bc99d7c985835e12cc9801ea31a693a21b886bdab3831f75f",
+      "bytes": 22058
+    },
+    {
+      "file": "002/shared.wav",
+      "sha256": "45c730b849ad8480c3f690646ab38c55c423a23ecef638aa2d8dbff877a56581",
+      "bytes": 27244
+    },
+    {
+      "file": "002/specialist.wav",
+      "sha256": "7d5e5a6032c176763a625fb7f364fdf061ec1cd8ec1203a71e74cb1ea346642b",
+      "bytes": 26408
+    },
+    {
+      "file": "002/target.wav",
+      "sha256": "01607550e106f0c0fa6c398b88af06f734ee36e4dc3550efa4ff886094f1f1e1",
+      "bytes": 21994
+    },
+    {
+      "file": "003/shared.wav",
+      "sha256": "7049177ff33e6ff32b0dd21dcd3be768fd51e467f4d92c1218d54e0aa701ea90",
+      "bytes": 119822
+    },
+    {
+      "file": "003/specialist.wav",
+      "sha256": "896368f8f9d1887bb4e08fa57e9e180631ad4664eb4323e86e5f7b86fe2fa9e7",
+      "bytes": 110638
+    },
+    {
+      "file": "003/target.wav",
+      "sha256": "d2235eb6f436e399d24e7aced0ce6cb9184da34d6348f28dab7275bd1540dd35",
+      "bytes": 108530
+    },
+    {
+      "file": "004/shared.wav",
+      "sha256": "f38de4a1c3e35af56947d13ab62625f9cfcecc57cc3857c40d9a95473de3a535",
+      "bytes": 16742
+    },
+    {
+      "file": "004/specialist.wav",
+      "sha256": "8e2d1e3bff740ea2731f9c28dce5b4dd9a404c7d10fdadfc65424d9893dacadd",
+      "bytes": 19220
+    },
+    {
+      "file": "004/target.wav",
+      "sha256": "d855f0e322e30650cc6aa257c9391fbdece83286180c3ec4030c18493ef5ff60",
+      "bytes": 16802
+    },
+    {
+      "file": "005/shared.wav",
+      "sha256": "2118a55587633b52475b342efb512449a781e77b56b6f9737b087a64d99494b0",
+      "bytes": 145146
+    },
+    {
+      "file": "005/specialist.wav",
+      "sha256": "f787ab06b2dd7154d4648dc5b37c622f4313f3e15f86b89d269ffce0e41754b7",
+      "bytes": 125764
+    },
+    {
+      "file": "005/target.wav",
+      "sha256": "2f5a5164e09022a5ab6a8233ccc89178f55578a5b183d7f844c2a0418dc36246",
+      "bytes": 124406
+    },
+    {
+      "file": "006/shared.wav",
+      "sha256": "113db1c9ae739dabc90fae1a0563a1e2e0d324fbc1c66747f27e0f3f9ee855ae",
+      "bytes": 74578
+    },
+    {
+      "file": "006/specialist.wav",
+      "sha256": "89ab69bfd05b376c103d9a773bca6ad5c98abbbbdb6cc7582af7b3c1c2a27b61",
+      "bytes": 74188
+    },
+    {
+      "file": "006/target.wav",
+      "sha256": "41e8f1d2f472c04e3701a4f46817909c15fd2b62e6bd7b8e6a72100b1975a3cd",
+      "bytes": 73102
+    },
+    {
+      "file": "007/shared.wav",
+      "sha256": "fea867fb09e155f215934bb9224fdf0434afe309a9991ce3f5c4097d37d71639",
+      "bytes": 57588
+    },
+    {
+      "file": "007/specialist.wav",
+      "sha256": "37a7562d93780fcbd55a3282cffa85568a27350f51f01ab28d2eeaf472689741",
+      "bytes": 58550
+    },
+    {
+      "file": "007/target.wav",
+      "sha256": "fa5105500c048c9bf9d6d9c09766382e97d305591a8e83af8fe488cac9643335",
+      "bytes": 56176
+    },
+    {
+      "file": "008/shared.wav",
+      "sha256": "5cbe1cb3592bb07e0aab9e972e420c08d09f20fce67ded5cbc62f569e6d23caa",
+      "bytes": 90912
+    },
+    {
+      "file": "008/specialist.wav",
+      "sha256": "e55b54cac7f9976225ab5a66b179498544d1ae07728d33fa20b87cc486afd25e",
+      "bytes": 89652
+    },
+    {
+      "file": "008/target.wav",
+      "sha256": "77da12dabe6b016e0d3a1488ebc2b5b58254782fd0715e45042c4d7cb84ad54d",
+      "bytes": 90012
+    },
+    {
+      "file": "009/shared.wav",
+      "sha256": "d65aab337216ae328bbe6fefce5f646faf2939e79c1d4d4f76dd14892599c5fc",
+      "bytes": 21078
+    },
+    {
+      "file": "009/specialist.wav",
+      "sha256": "414dc78a7025b9aa90874bf72e89c10c0404f43b01fc92710d10425aa696417d",
+      "bytes": 20492
+    },
+    {
+      "file": "009/target.wav",
+      "sha256": "9b5d61cfe82138df6cb44307dd09690c75eb1d9264b6e0e79d24df147f70f002",
+      "bytes": 19836
+    },
+    {
+      "file": "010/shared.wav",
+      "sha256": "7faba5e1c5d28f3794ec3fcb7a899c634424097501ab74e22165fa56c1471f43",
+      "bytes": 37910
+    },
+    {
+      "file": "010/specialist.wav",
+      "sha256": "26c8bd27c579bb6ab250bb546de17e7291765485045b63ebc5e585ce1511aa2e",
+      "bytes": 37086
+    },
+    {
+      "file": "010/target.wav",
+      "sha256": "3bb19880c3f2efcd05df350f291cc3bc74e1631ed50d39101a281abc023e0579",
+      "bytes": 37318
+    }
+  ],
+  "baseUrl": "http://127.0.0.1:8765/tools/multisynth/runs/squishr-v1-listening/",
+  "listeningAuditSha256": "058c74973cca8b6e38383a7975efcc4d78520e66286c0ffd431def2b83cc45e7",
+  "scriptSha256": "7414ce5602c2db37262383e3c8186e90383aa484083374f70a85759110b7bb96"
+}

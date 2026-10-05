@@ -1,0 +1,239 @@
+{
+  "complete": true,
+  "experimentId": "ca0be7aeceb0f4224488b650da258358ea77a8485c329245532eb3898a4f5f09",
+  "checks": [
+    {
+      "targetId": "tagged-anchor",
+      "group": "tagged-repeated",
+      "optionCount": 3,
+      "options": [
+        {
+          "role": "previous",
+          "synth": "Squishr",
+          "origin": null,
+          "file": "retained.wav"
+        },
+        {
+          "role": "selected",
+          "synth": "Squishr",
+          "origin": "shared",
+          "file": "shared.wav"
+        },
+        {
+          "role": "alternative",
+          "synth": "Squishr",
+          "origin": "specialist",
+          "file": "specialist.wav"
+        }
+      ]
+    },
+    {
+      "targetId": "tagged-footstep",
+      "group": "tagged-new",
+      "optionCount": 2,
+      "options": [
+        {
+          "role": "selected",
+          "synth": "Squishr",
+          "origin": "shared",
+          "file": "shared.wav"
+        },
+        {
+          "role": "alternative",
+          "synth": "Squishr",
+          "origin": "specialist",
+          "file": "specialist.wav"
+        }
+      ]
+    },
+    {
+      "targetId": "tagged-hit",
+      "group": "tagged-new",
+      "optionCount": 2,
+      "options": [
+        {
+          "role": "selected",
+          "synth": "Squishr",
+          "origin": "shared",
+          "file": "shared.wav"
+        },
+        {
+          "role": "alternative",
+          "synth": "Squishr",
+          "origin": "specialist",
+          "file": "specialist.wav"
+        }
+      ]
+    },
+    {
+      "targetId": "tagged-step",
+      "group": "tagged-new",
+      "optionCount": 2,
+      "options": [
+        {
+          "role": "selected",
+          "synth": "Squishr",
+          "origin": "shared",
+          "file": "shared.wav"
+        },
+        {
+          "role": "alternative",
+          "synth": "Squishr",
+          "origin": "specialist",
+          "file": "specialist.wav"
+        }
+      ]
+    },
+    {
+      "targetId": "tagged-clothes",
+      "group": "tagged-new",
+      "optionCount": 2,
+      "options": [
+        {
+          "role": "selected",
+          "synth": "Squishr",
+          "origin": "shared",
+          "file": "shared.wav"
+        },
+        {
+          "role": "alternative",
+          "synth": "Squishr",
+          "origin": "specialist",
+          "file": "specialist.wav"
+        }
+      ]
+    },
+    {
+      "targetId": "Squishr-02730",
+      "group": "native-test",
+      "optionCount": 2,
+      "options": [
+        {
+          "role": "selected",
+          "synth": "Squishr",
+          "origin": "shared",
+          "file": "shared.wav"
+        },
+        {
+          "role": "alternative",
+          "synth": "Squishr",
+          "origin": "specialist",
+          "file": "specialist.wav"
+        }
+      ]
+    },
+    {
+      "targetId": "Squishr-02057",
+      "group": "native-test",
+      "optionCount": 2,
+      "options": [
+        {
+          "role": "selected",
+          "synth": "Squishr",
+          "origin": "shared",
+          "file": "shared.wav"
+        },
+        {
+          "role": "alternative",
+          "synth": "Squishr",
+          "origin": "specialist",
+          "file": "specialist.wav"
+        }
+      ]
+    },
+    {
+      "targetId": "Squishr-05824",
+      "group": "native-test",
+      "optionCount": 2,
+      "options": [
+        {
+          "role": "selected",
+          "synth": "Squishr",
+          "origin": "shared",
+          "file": "shared.wav"
+        },
+        {
+          "role": "alternative",
+          "synth": "Squishr",
+          "origin": "specialist",
+          "file": "specialist.wav"
+        }
+      ]
+    },
+    {
+      "targetId": "Squishr-03341",
+      "group": "native-test",
+      "optionCount": 2,
+      "options": [
+        {
+          "role": "selected",
+          "synth": "Squishr",
+          "origin": "shared",
+          "file": "shared.wav"
+        },
+        {
+          "role": "alternative",
+          "synth": "Squishr",
+          "origin": "specialist",
+          "file": "specialist.wav"
+        }
+      ]
+    },
+    {
+      "targetId": "Squishr-01797",
+      "group": "native-test",
+      "optionCount": 2,
+      "options": [
+        {
+          "role": "selected",
+          "synth": "Squishr",
+          "origin": "shared",
+          "file": "shared.wav"
+        },
+        {
+          "role": "alternative",
+          "synth": "Squishr",
+          "origin": "specialist",
+          "file": "specialist.wav"
+        }
+      ]
+    }
+  ],
+  "resultsSha256": "5cb570d2dfdbe51bd7d97fdfc494b908a8abb841e4402a61363824ff5163e9d8",
+  "htmlSha256": "370292500b5f246fc28a69f9901521cbb520779b9ab7945f145826745c98b2dc",
+  "scriptSha256": "a877f5fff970e574d49425de8fc268711ecc96d31ad245530c312604da13e4bd",
+  "reportSha256": "175fd3e023d736e1865d9bf4dd42154462a34702670f38ef64a9e434994617f9",
+  "audioFiles": {
+    "001/retained.wav": "d9c970ea245625295c7b93cba9f621912ac3cd7cb2edd6054ea6e4b757a17c64",
+    "001/shared.wav": "87dc0a6638c9b0f823afbb7249cecf66d076e85c3d476256253aec4053c1ee1c",
+    "001/specialist.wav": "2701aed88ab8c1ac8eb722e0441ecae09b2ae79dea95b6a1d45b24d9208b0691",
+    "001/target.wav": "63b20fe0aa4df84bc99d7c985835e12cc9801ea31a693a21b886bdab3831f75f",
+    "002/shared.wav": "45c730b849ad8480c3f690646ab38c55c423a23ecef638aa2d8dbff877a56581",
+    "002/specialist.wav": "7d5e5a6032c176763a625fb7f364fdf061ec1cd8ec1203a71e74cb1ea346642b",
+    "002/target.wav": "01607550e106f0c0fa6c398b88af06f734ee36e4dc3550efa4ff886094f1f1e1",
+    "003/shared.wav": "7049177ff33e6ff32b0dd21dcd3be768fd51e467f4d92c1218d54e0aa701ea90",
+    "003/specialist.wav": "896368f8f9d1887bb4e08fa57e9e180631ad4664eb4323e86e5f7b86fe2fa9e7",
+    "003/target.wav": "d2235eb6f436e399d24e7aced0ce6cb9184da34d6348f28dab7275bd1540dd35",
+    "004/shared.wav": "f38de4a1c3e35af56947d13ab62625f9cfcecc57cc3857c40d9a95473de3a535",
+    "004/specialist.wav": "8e2d1e3bff740ea2731f9c28dce5b4dd9a404c7d10fdadfc65424d9893dacadd",
+    "004/target.wav": "d855f0e322e30650cc6aa257c9391fbdece83286180c3ec4030c18493ef5ff60",
+    "005/shared.wav": "2118a55587633b52475b342efb512449a781e77b56b6f9737b087a64d99494b0",
+    "005/specialist.wav": "f787ab06b2dd7154d4648dc5b37c622f4313f3e15f86b89d269ffce0e41754b7",
+    "005/target.wav": "2f5a5164e09022a5ab6a8233ccc89178f55578a5b183d7f844c2a0418dc36246",
+    "006/shared.wav": "113db1c9ae739dabc90fae1a0563a1e2e0d324fbc1c66747f27e0f3f9ee855ae",
+    "006/specialist.wav": "89ab69bfd05b376c103d9a773bca6ad5c98abbbbdb6cc7582af7b3c1c2a27b61",
+    "006/target.wav": "41e8f1d2f472c04e3701a4f46817909c15fd2b62e6bd7b8e6a72100b1975a3cd",
+    "007/shared.wav": "fea867fb09e155f215934bb9224fdf0434afe309a9991ce3f5c4097d37d71639",
+    "007/specialist.wav": "37a7562d93780fcbd55a3282cffa85568a27350f51f01ab28d2eeaf472689741",
+    "007/target.wav": "fa5105500c048c9bf9d6d9c09766382e97d305591a8e83af8fe488cac9643335",
+    "008/shared.wav": "5cbe1cb3592bb07e0aab9e972e420c08d09f20fce67ded5cbc62f569e6d23caa",
+    "008/specialist.wav": "e55b54cac7f9976225ab5a66b179498544d1ae07728d33fa20b87cc486afd25e",
+    "008/target.wav": "77da12dabe6b016e0d3a1488ebc2b5b58254782fd0715e45042c4d7cb84ad54d",
+    "009/shared.wav": "d65aab337216ae328bbe6fefce5f646faf2939e79c1d4d4f76dd14892599c5fc",
+    "009/specialist.wav": "414dc78a7025b9aa90874bf72e89c10c0404f43b01fc92710d10425aa696417d",
+    "009/target.wav": "9b5d61cfe82138df6cb44307dd09690c75eb1d9264b6e0e79d24df147f70f002",
+    "010/shared.wav": "7faba5e1c5d28f3794ec3fcb7a899c634424097501ab74e22165fa56c1471f43",
+    "010/specialist.wav": "26c8bd27c579bb6ab250bb546de17e7291765485045b63ebc5e585ce1511aa2e",
+    "010/target.wav": "3bb19880c3f2efcd05df350f291cc3bc74e1631ed50d39101a281abc023e0579"
+  }
+}

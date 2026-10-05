@@ -85,3 +85,34 @@ without transcription, beat tracking or source separation.
 Application inference: test this representation as one possible auditory target
 for a validated DSP surrogate. The report motivates an experiment; it does not
 validate our control model, selector, or arbitrary short-game-SFX similarity.
+
+## Follow-up during Squishr training, 2026-10-05
+
+[Audio synthesizer inversion in symmetric parameter spaces with approximately equivariant flow matching](https://arxiv.org/html/2506.07199v1)
+(Hayes, Saitis and Fazekas, ISMIR 2025) isolates permutation ambiguity and compares
+point regression with conditional generative models. Its relaxed-equivariance
+flow performs well on Surge XT reconstruction. The authors distinguish native
+inversion from arbitrary-audio matching; their
+[demo page](https://benhayes.net/synth-perm/) explicitly disclaims established
+out-of-distribution robustness.
+
+Application inference: joint alternatives for complete parameter sets deserve
+an ablation against one numeric estimate with categorical substitutions. We
+already have a four-mode Transfxr experiment, so this is not an untried principle
+across the whole project. Squishr v1 intentionally retains the existing acoustic
+head to establish a dedicated-data baseline. Squishr has no exposed interchangeable
+oscillator blocks: do not impose the paper's permutation symmetry without DSP
+evidence. Mixr's interchangeable components are a more direct potential setting.
+
+[Synthesizer Sound Matching Using Audio Spectrogram Transformers](https://arxiv.org/html/2407.16643v1)
+(Bruford, Blang and Nercessian, DAFx 2024) trains on one million Massive examples
+with 16 continuous parameters. It improves reconstruction over its MLP/CNN
+baselines, but reports oscillator-pitch failures and discusses limitations of
+parameter-only loss and fixed-pitch training. Transfer is illustrated with audio
+examples, not our SFX listening protocol.
+
+Application inference: this supports testing temporal representations and dataset
+scale, not treating a transformer as a pitch or perceptual-quality guarantee.
+Freeze data, render budgets and native/real test sources for any such ablation;
+retain human adequacy even where numerical metrics agree. Neither paper's method
+is implemented by the current Squishr run.

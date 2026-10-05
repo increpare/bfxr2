@@ -15,10 +15,16 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All fifteen feedback sessions,
+do not establish general success on real recordings. All sixteen feedback sessions,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
-The latest [specialist experiment](evaluations/specialists-v1-plan.json) trains
+The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
+follows a **very-close** tagged wooden-footstep search result. Its 8,192-example
+synthetic dataset reserves validation and native test controls; the human-approved
+reference and preset stay outside fitting. The new expert requires fresh listening
+judgments before any quality claim.
+
+The earlier [specialist experiment](evaluations/specialists-v1-plan.json) trains
 independent Boomr and Footsteppr models on 12,288 examples each. The older shared
 model already had heads for these engines, trained on 2,048 examples each; those
 heads remain explicit baselines. These new models start from random weights,
@@ -136,9 +142,18 @@ human best synth candidate (brick falls back one session because its latest
 three options were all rejected). These are actual synth outputs, unlike the
 preceding edited-original calibration. All twenty finalists replay exactly and
 are rescored on the actual audition PCM. This tests the scoring change within
-hybrid inversion, not new neural weights. Human adequacy remains pending.
+hybrid inversion, not new neural weights.
 
-A subsequent [candidate-coverage diagnostic](runs/tagged-coverage-v1-listening/index.html)
+The [completed soft-search feedback](evaluations/soft-periodicity-quick-01-human-review.json)
+marks the new Squishr footstep **very close** and the new Transfxr block-hit
+**similar**. Only block-hit's chosen option was auditioned, so it creates no
+strict comparisons against the others. Brick remains none-close; earlier cloth
+is least-bad and the unchanged earlier Bfxr laser is similar. Six strict heard
+pairs favor legacy/soft scoring 2/6 each and preference-neural-v2 4/6. This gives
+one convincing reachable real-sound example while leaving selector reliability
+and wider reproduction quality unresolved.
+
+The earlier [candidate-coverage diagnostic](runs/tagged-coverage-v1-listening/index.html)
 queries **64,415 optimization presets** from the certified shared22 data and two
 specialist datasets. It retrieves four nearest controls per engine using the
 existing nine normalized feature groups and four using six groups without pitch

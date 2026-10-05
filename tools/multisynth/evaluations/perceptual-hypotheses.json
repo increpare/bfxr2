@@ -165,7 +165,7 @@
     {
       "id": "inverse-proposal-vs-reachable-coverage",
       "claim": "A control regressor can miss usable preset regions even when an engine can render similar sounds.",
-      "status": "broader-search-no-convincing-displayed-match",
+      "status": "one-real-tagged-reachable-positive-after-smooth-search",
       "evidence": "Five tagged references yielded one similar and four least-bad winners. A frozen 64,415-training-preset search plus four bounded refinement starts per target produces ten novel scorer-selected alternatives, all from retrieved starts. All 1,065 retained candidate waveforms replay exactly. Numerical improvement does not yet establish useful teachers or audible recreation.",
       "source": "evaluations/tagged-coverage-v1-evaluation.json",
       "nextTest": "Evaluate pretrained perceptual representations against family-grouped historical judgments before using them to generate a genuinely new listening batch. Preserve original pitch/event descriptors and do not conflate ranking with adequacy.",
@@ -174,16 +174,28 @@
           "session": "2026-10-05-tagged-coverage-quick-01",
           "finding": "New Squishr footstep is similar; new Transfxr cloth and retained original Bfxr block/laser are least-bad. None of three brick options is close. Zero very-close. This search did not find adequate teachers; it does not prove synth-space inadequacy.",
           "source": "evaluations/tagged-coverage-quick-01-human-review.json"
+        },
+        {
+          "session": "2026-10-05-soft-periodicity-quick-01",
+          "finding": "Further bounded search finds a Squishr wooden footstep explicitly judged very-close. Preserve the exact controls/audio as a transfer benchmark; do not infer adequacy for unjudged controls or use rejected prior pseudo-labels as successful teachers.",
+          "source": "evaluations/soft-periodicity-quick-01-human-review.json"
         }
       ]
     },
     {
       "id": "continuous-periodicity-avoids-hard-pitch-jumps",
       "claim": "A continuous periodicity representation may retain useful tonal structure without penalizing tiny waveform changes as unrelated pitches.",
-      "status": "historical-aggregate-gain-controlled-search-pending",
+      "status": "one-human-approved-search-result-no-global-ranking-win",
       "evidence": "Human-preferred near-identity footstep scores2.818legacy, mostlyhardpitch/slope. Smoothreplacement fixesit and improves historical91/162to108/162, but currentcalibration remains2/5 and17historical/currentpairdirections regress.",
       "source": "evaluations/soft-periodicity-v1-evaluation.json",
-      "nextTest": "Compare identical-start equal-budget actual-DSP refinement under old and experimental objectives, keeping human winners. No globalpitchinvariance, candidateadequacy or modelpromotion inferred."
+      "nextTest": "Train a synthetic-only Squishr inverse specialist on a broader dataset; keep the approved footstep outside training as a transfer anchor alongside fresh tagged references and reserved native controls. Compare against the shared Squishr head with equal refinement budgets.",
+      "observations": [
+        {
+          "session": "2026-10-05-soft-periodicity-quick-01",
+          "finding": "Soft-search Squishr footstep wins and is very-close. Block-hit is similar but only its chosen option was auditioned. Brick remains none-close; cloth earlier option is least-bad; earlier Bfxr laser is similar. Soft metric agrees on only2/6 strict heard pairs, versus preference4/6 and legacy2/6. Keep scorer opt-in; this is one reachable real-sound success, not general adequacy.",
+          "source": "evaluations/soft-periodicity-quick-01-human-review.json"
+        }
+      ]
     }
   ]
 }
