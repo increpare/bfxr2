@@ -52,10 +52,14 @@ pool. The input correction alone has not solved high-register inversion.
 
 Independent results review confirmed the figures and hash bindings. The frozen
 v3 experts remain the working baseline. No v5 listening gallery was generated or
-presented for rating. Next test: an explicit pitch-calibration component using
-the known synth frequency mappings and actual-render verification, separately
-from this failed training ablation. The prepared v5 gallery code remains available
-as tooling, not as evidence of listening success.
+presented for rating. A separate bounded actual-render calibration component on
+the frozen v3 experts subsequently passed its predeclared 24-probe gate; see
+[evidence](evaluations/pitch-calibration-audit.json). High-register eligibility
+reached 4/4 and mean distance fell 7.523→0.651; ordinary mean distance rose 3.39%,
+with no previously passing pitch/direction cases lost. One pluck substitution
+substantially worsens distance despite satisfying pitch coverage, so human
+listening must assess that tradeoff. This is hybrid inference, not a v5 training
+win. The prepared v5 gallery code remains tooling, not listening evidence.
 
 ## Controlled follow-up
 
