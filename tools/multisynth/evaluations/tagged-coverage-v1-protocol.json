@@ -1,0 +1,122 @@
+{
+  "complete": true,
+  "scriptSha256": "ed700397e0a71782e0a69c162a7412ac7a601829af687da6d18bf43828fe60fe",
+  "designSha256": "b0577ba27e7947af08cd15f8b4b797daf12db6ff6137cab39416b4dd370fabc9",
+  "archiveManifestSha256": "4130dbeaf340c74e899148e0295ac79cb8276cfd53e336d91796aea75752a837",
+  "priorReportSha256": "5c1a144adbbf2d5396e22b54e39f795bbdf98c58449cfc893165dd2dc500b021",
+  "metricSha256": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+  "datasets": [
+    {
+      "path": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/neural-v2/data-certified-v2",
+      "manifestSha256": "8c32761f1ec0e7207df59525959f02311db282dd1713ef568243603c51406bdd",
+      "engines": [
+        "Bfxr",
+        "Footsteppr",
+        "Transfxr",
+        "Birdr",
+        "Boomr",
+        "Bouncr",
+        "Breathr",
+        "Choirr",
+        "Clonkr",
+        "Crittr",
+        "Fractr",
+        "Glitchr",
+        "Jinglr",
+        "Machinr",
+        "Pluckr",
+        "Riftr",
+        "Rustlr",
+        "Signlr",
+        "Squishr",
+        "Swarmr",
+        "Whooshr",
+        "Zappr"
+      ]
+    },
+    {
+      "path": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/specialists-v1/fit-data/Boomr",
+      "manifestSha256": "dbaae95febe2e73c38f9eb99fe71312a6de0ca825aa8b5354f08fe106055e9db",
+      "engines": [
+        "Boomr"
+      ]
+    },
+    {
+      "path": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/specialists-v1/fit-data/Footsteppr",
+      "manifestSha256": "df69f8f867a4701d4e6444739832659a8454e36dc21914737699bcdd4ff615ba",
+      "engines": [
+        "Footsteppr"
+      ]
+    }
+  ],
+  "topPerEnginePerRoute": 4,
+  "refinementStartsPerMetric": 2,
+  "budgetPerStart": 128,
+  "seed": 20261117,
+  "groups": {
+    "relativeSpectrum": [
+      [
+        0,
+        2304
+      ]
+    ],
+    "absoluteSpectrum": [
+      [
+        2304,
+        3840
+      ]
+    ],
+    "relativeEnvelope": [
+      [
+        3840,
+        3888
+      ]
+    ],
+    "absoluteEnvelope": [
+      [
+        3984,
+        4016
+      ]
+    ],
+    "relativePitch": [
+      [
+        3888,
+        3936
+      ]
+    ],
+    "absolutePitch": [
+      [
+        4016,
+        4048
+      ]
+    ],
+    "combinedVoicing": [
+      [
+        3936,
+        3984
+      ],
+      [
+        4048,
+        4080
+      ]
+    ],
+    "duration": [
+      [
+        4080,
+        4081
+      ]
+    ],
+    "rms": [
+      [
+        4082,
+        4083
+      ]
+    ]
+  },
+  "pitchLightExcludedGroups": [
+    "relativePitch",
+    "absolutePitch",
+    "combinedVoicing"
+  ],
+  "scope": "Five repeated development cases. Retrieval from optimization rows only; pitch-light retrieval is exploratory. Frozen scorers. No inverse retraining, no source-family holdout, no equal-compute claim."
+}

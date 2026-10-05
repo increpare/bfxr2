@@ -33,6 +33,25 @@ future exports use the updated questionnaire.
 | `2026-10-05-transfxr-transfer-quick-01/` | 6 | 12 |
 | `2026-10-05-native-mixture-quick-01/` | 5 | 10 |
 | `2026-10-05-specialists-quick-01/` | 5 | 11 |
+| `2026-10-05-specialists-tagged-quick-01/` | 5 | 15 |
+
+The thirteenth archive retains all five tagged-transfer choices and all fifteen
+auditioned options. Older Clonkr wins wooden footstep and is **roughly similar**.
+New Footsteppr wins brick-break and cloth, but both are **least-bad**. Original
+Bfxr wins block-hit and laser, also **least-bad**. Thus this batch contains zero
+very-close winners, one similar winner and four least-bad winners. No adequacy
+is assigned to the unchosen options, and no numerical likeness ratings are
+invented. Ten heard preference pairs remain useful independently of adequacy.
+
+Matching distance agrees with 6/10 pairs; frozen preference-neural-v2 with 8/10.
+The specialist relative wins do not demonstrate successful real-recording
+transfer. Merely choosing better among these displayed options cannot solve the
+four least-bad cases; diagnose candidate coverage before training on their
+pseudo-labels. Exact audio and provenance are retained in the
+[tagged human review](../evaluations/specialists-tagged-quick-01-human-review.json).
+The five references were preselected and excluded prior exact judged files/PCM;
+they were not checked for membership in original Bfxr's real training corpus
+and do not constitute family-disjoint or population validation.
 
 The twelfth archive retains five of six specialist comparisons and all eleven
 auditioned candidates. New Footsteppr wins the familiar footstep and the Whooshr

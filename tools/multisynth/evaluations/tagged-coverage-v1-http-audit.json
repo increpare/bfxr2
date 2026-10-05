@@ -1,0 +1,29 @@
+{
+  "complete": true,
+  "host": "http://127.0.0.1:8765",
+  "experimentId": "16136e3be3be05aff6ab5dbc2503726dd86b6cb9f27ec5d641a2a02383674f02",
+  "verifiedFiles": {
+    "001/selected.wav": "6b31499d0f47bcda8aba2571f8a0833fcc9cefde0d894a3d9ef2c227c52366ac",
+    "001/target.wav": "63b20fe0aa4df84bc99d7c985835e12cc9801ea31a693a21b886bdab3831f75f",
+    "001/previous.wav": "1226b4eb19e782155a9759bedd8faa2c79909360a59bfe9400ff4d727cc80e04",
+    "001/alternative.wav": "258e86dd782ae44e6a854873af7b2d68111f8396eb8609270af0af8d2ed33c06",
+    "003/selected.wav": "93385c66c65aee5a215a87f9b59c15119574d63d05cc940c0c8e2ed9d8bd9e43",
+    "003/target.wav": "f5261bb007f5fd500302a3d18c2100bb82a942f6818ea35b7e426ed657064584",
+    "003/previous.wav": "a9b64b6e610b778e8161183104067de06081c7ac60f8c4591022f2e7e75c74eb",
+    "003/alternative.wav": "2e9d35ddf1581f7a94e2037c2c2937f8765531827c173d21e4aec24ce011360a",
+    "004/selected.wav": "3f185a6f0f3f2539f7c9da2286a7a0de033dded7a67c1d7175ea4c2e631182ae",
+    "004/target.wav": "9bf73e40da40ddea67e89eaa371156edc0728408c88042583d29f972c237c469",
+    "004/previous.wav": "e3f1fdc7356b0b6ab66dcbc79ec9661e331ba87f4fbb01d343ab622d94c6dd8c",
+    "004/alternative.wav": "a61e66c626016760438ce5753a96ed3b28ff90c33dde17a8cfe923903c43629e",
+    "005/selected.wav": "f062b94310c421e16a6c6b99d7b614f6b8b6a1bb9112c3c39b455a7b6981ce18",
+    "005/target.wav": "14175d01910438486f03146058eefb2bbde00535d586d9759e1f514885a4c500",
+    "005/previous.wav": "6b101367ca55079ea826107958851f8ceacb241e45a6395b99b1fff1b383aa0e",
+    "005/alternative.wav": "6e839a15fba82c723b541fdc3bc44b2f90503a7d8ca7b836905b712ff4aadaf4",
+    "002/selected.wav": "689113ce9b81835dccadf6cfe9c933693b7861c21ab7b8d6c58fe71a2318dc16",
+    "002/target.wav": "dc9534d1894cd6824ac854918156fe501889c8ac6a29ca8e3eb673cf350a097d",
+    "002/previous.wav": "6c0cefc2f775cbb7717920fed19fb09eb223539233ca5f13d340a662d76c4c1b",
+    "002/alternative.wav": "da4519becd09c2baab8ed177c4bf4dea629a951ae3c0456c0fb8d4fb8d048af2",
+    "index.html": "bd76eb354900b139652c77390284cc84678a077d133e7ab6a9d01b4f707dc07d",
+    "results.json": "ead2cb5f1c0fd76ccf4401cda1d5dccf99667de6fb8b226348770ea5208d9784"
+  }
+}

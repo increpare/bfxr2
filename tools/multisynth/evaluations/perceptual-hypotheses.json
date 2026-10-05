@@ -145,7 +145,14 @@
       "status": "supported-on-selected-synthetic-listening-cases",
       "evidence": "New Footsteppr wins a Footsteppr source and a Whooshr wingbeat; new Boomr wins rocket burst; old Boomr wins native short burst. All four winners explicitly very close. Native footstep is a similar tie; tagged book-close unsubmitted.",
       "source": "evaluations/specialists-quick-01-human-review.json",
-      "nextTest": "Retain both generations; compare original Bfxr, the older ensemble, and new specialists on five new tagged files. Do not infer real transfer or a population success rate from selected native positives."
+      "nextTest": "Retain both generations; compare original Bfxr, the older ensemble, and new specialists on five new tagged files. Do not infer real transfer or a population success rate from selected native positives.",
+      "observations": [
+        {
+          "session": "2026-10-05-specialists-tagged-quick-01",
+          "finding": "All five actual tagged references judged. New Footsteppr has two relative wins but each is only least-bad. Older Clonkr footstep is similar; two original Bfxr winners are least-bad. Zero very-close judgments. Synthetic successes do not transfer adequately to this batch.",
+          "source": "evaluations/specialists-tagged-quick-01-human-review.json"
+        }
+      ]
     },
     {
       "id": "noisy-transient-voicing-confidence",
@@ -154,6 +161,14 @@
       "evidence": "For the explicitly very-close preferred specialist footstep, envelope, coverage, mel and timbre terms improve, but pitch contributes 1.2568 versus zero for the older option. Removing pitch/voicing terms changes this pair ordering. The separate short-burst preference error has zero pitch penalty on both and is not explained by this hypothesis.",
       "source": "evaluations/specialists-quick-01-components.json",
       "nextTest": "On additional noisy real and synthetic sources, compare pitch estimator confidence with explicit listening outcomes. Preserve reliable tonal pitch checks and hold this pair out of any claimed independent validation. Do not globally remove pitch terms."
+    },
+    {
+      "id": "inverse-proposal-vs-reachable-coverage",
+      "claim": "A control regressor can miss usable preset regions even when an engine can render similar sounds.",
+      "status": "candidate-generation-diagnostic-awaiting-listening",
+      "evidence": "Five tagged references yielded one similar and four least-bad winners. A frozen 64,415-training-preset search plus four bounded refinement starts per target produces ten novel scorer-selected alternatives, all from retrieved starts. All 1,065 retained candidate waveforms replay exactly. Numerical improvement does not yet establish useful teachers or audible recreation.",
+      "source": "evaluations/tagged-coverage-v1-evaluation.json",
+      "nextTest": "Listen to frozen matching- and preference-selected outputs beside exact historical winners. If useful candidates exist, investigate multimodal/retrieval-conditioned inversion or distillation; if not, improve representation, objective or synth coverage without training on least-bad pseudo-labels."
     }
   ]
 }

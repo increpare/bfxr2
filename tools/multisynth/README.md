@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All twelve feedback sessions,
+do not establish general success on real recordings. All thirteen feedback sessions,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The latest [specialist experiment](evaluations/specialists-v1-plan.json) trains
@@ -81,6 +81,42 @@ Three options per trial retain the older pool winner, new specialist winner,
 and original Bfxr. Where original Bfxr is already the older winner, the third
 option is a distinct raw specialist. All 15 options are verified visible in the
 quick questionnaire, and immediate closeness is collected before advancing.
+
+The [completed tagged listening pass](evaluations/specialists-tagged-quick-01-human-review.json)
+finds **no very-close matches**. Older Clonkr's wooden footstep is roughly
+similar. New Footsteppr wins brick-break and cloth, but both are least-bad;
+original Bfxr wins block-hit and laser, also least-bad. Frozen matching distance
+agrees with 6/10 heard pairs and preference-neural-v2 with 8/10. These outcomes
+reject an interpretation of the native successes as general real-sound
+reproduction. Keep candidate generation and selection as separate problems.
+
+A subsequent [candidate-coverage diagnostic](runs/tagged-coverage-v1-listening/index.html)
+queries **64,415 optimization presets** from the certified shared22 data and two
+specialist datasets. It retrieves four nearest controls per engine using the
+existing nine normalized feature groups and four using six groups without pitch
+or voicing. Validation/test rows are excluded. It renders 750 distinct retrieved
+candidates across the five repeated targets, then refines four starts per target
+(two chosen by each frozen scorer, 128 mutations each). The 295 earlier neural
+candidates remain in the pool. This is broader candidate generation and search,
+**not a newly trained inverse model**, equal-compute comparison, or held-out test.
+
+Both scorers find novel alternatives for all five references. The selected ten
+alternatives all originate from refined retrieved controls. Matching and learned
+preference disagree markedly on block-hit and laser; neither is automatically
+promoted. The new five-trial page preserves each exact previous human winner
+alongside both distinct selections. Previously heard alternatives are excluded
+from the new slots; this is adaptive development using feedback, not blind
+validation. Lower scores merely qualify a distinct sample for listening.
+
+The [protocol](evaluations/tagged-coverage-v1-protocol.json),
+[results](evaluations/tagged-coverage-v1-evaluation.json) and
+[1,065-candidate exact DSP replay audit](evaluations/tagged-coverage-v1-listening-audit.json)
+retain data bindings, control membership, all raw/finalist audio and score checks.
+The audit reports zero score error. This tests whether better fitting candidates
+exist before attempting to distill them into an inverse network. No least-bad
+output is treated as a successful training label. Reproduce with
+`evaluations/tagged-coverage-v1.py` and export using
+`evaluations/tagged-coverage-v1-gallery.py` into fresh run paths.
 
 The [frozen targets](evaluations/specialists-tagged-v1-targets.json),
 [evaluation](evaluations/specialists-tagged-v1-evaluation.json),
