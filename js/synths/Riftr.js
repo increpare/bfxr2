@@ -1,5 +1,6 @@
 class Riftr extends PresetSynth {
     name = 'Riftr';
+    canvas_bg_logo = 'img/logo_riftr.png';
     tooltip = 'Warped spaces, force fields and reversals through a moving resonant field.';
     static DSP = Riftr_DSP;
     param_info = [

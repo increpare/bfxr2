@@ -1,5 +1,6 @@
 class Clonkr extends PresetSynth {
     name = 'Clonkr';
+    canvas_bg_logo = 'img/logo_clonkr.png';
     tooltip = 'Knock, scrape, and rattle imaginary objects made of real-sounding materials.';
     static DSP = Clonkr_DSP;
     header_properties = ['material', 'action'];

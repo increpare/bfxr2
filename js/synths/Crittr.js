@@ -1,5 +1,6 @@
 class Crittr extends PresetSynth {
     name = 'Crittr';
+    canvas_bg_logo = 'img/logo_crittr.png';
     tooltip = 'Nonverbal beasts, tiny companions and impossible wildlife.';
     static DSP = Crittr_DSP;
     param_info = [
