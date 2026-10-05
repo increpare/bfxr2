@@ -46,11 +46,15 @@
       "claim": "An input descriptor with an octave error can make wrong-register reproductions appear plausible to the inverse and matching pipeline.",
       "status": "automated-diagnostic-observation-needs-controlled-test",
       "evidence": "The bird reference produced roughly 2.54 kHz in the older pitch diagnostic and 1.23 kHz in the coarse neural descriptor. Clean sine probes isolate descriptor errors: 2,000 Hz becomes roughly 1,002 Hz and 3,200 Hz becomes 1,575 Hz. The older diagnostic itself halves a 4,000 Hz sine. None of the new flat/temporal/mixture raw inverses passed a one-semitone check on four additional high-pitch development probes. This does not isolate the input error as the cause of the full model failures.",
-      "nextTest": "Separately version peak selection that rejects initial-lobe ripples and selects major post-zero-crossing peaks; validate actual synth waveforms and existing low/high pitch/noise/motion cases before another matched replay/training run.",
+      "nextTest": "Use the fixed diagnostic to test broader pitch training coverage separately. First ask for human listening on the bounded calibration component; do not infer general likeness from register agreement.",
       "observations": [
         {
           "session": "2026-10-05-pitch-v4",
           "finding": "Controlled pitch-only retraining regressed overall on 20 fixed development probes. Strong low fundamentals with weak 20th partials expose a new ACF initial-lobe failure, reproduced on actual Bfxr/Transfxr Whistle rows; clean sine tests were insufficient. High-pitch median-only passes and realized coverage counts are therefore not trusted as fundamental estimates on these timbres. No new listening claims or human labels."
+        },
+        {
+          "session": "2026-10-05-pitch-v5",
+          "finding": "Correcting the initial-lobe diagnostic defect did not improve the trained inverse overall: ordinary mean objective1.435681\u21921.864569, moving direction6/8\u21923/8. Retained as a negative result; the input bug was real but did not explain all model failures. Frozen-v3 proposals with bounded actual-render calibration subsequently cleared a predeclared24-probe gate, recovering4/4high registers; this is a hybrid inference result, not a retraining win."
         }
       ]
     },
@@ -73,6 +77,14 @@
       "status": "actual-dsp-equivalence-observed-training-effect-untested",
       "evidence": "evaluations/transfxr-pitch-identifiability.json records identical non-silent PCM for one fixed Transfxr White setup at nominal 2800, 4000 and 5000 Hz, while a tonal control changes. The frozen Transfxr loss still adds pitch-octave penalties. This does not imply pitch is always irrelevant for noise.",
       "nextTest": "After the controlled v5 input experiment, test audibility-aware loss or equivalence handling on separately rendered sensitivity pairs; retain all inputs/data, compare actual sound outputs, and ask for human review even when metrics agree."
+    },
+    {
+      "id": "voiced-coverage-can-compete-with-timbre",
+      "claim": "Requiring a large fraction of target-active frames to carry matching pitch can replace an already accurate pitch/timbre candidate with a more continuously voiced candidate.",
+      "status": "automated-selector-counterexample-auditory-effect-unresolved",
+      "evidence": "pitch-calibration-v1/paired/031-Pluckr-static: baseline Pluckr median error0.00566semitone and objective0.422535; target-active pitch coverage0.7045 fails the0.75eligibility rule. Selected Bfxr has coverage1.0 but objective3.076493. Target/baseline/selected voicedframes44/31/47. This demonstrates the selector tradeoff; no human preference has been established.",
+      "nextTest": "Retain uncalibrated baselines in short listening comparisons. Examine attack/tail and event feel when pitch constraints change the winning engine; do not silently treat voicing coverage as perceptual ground truth.",
+      "source": "evaluations/pitch-calibration-audit.json"
     }
   ]
 }

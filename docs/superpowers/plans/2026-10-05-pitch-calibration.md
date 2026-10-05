@@ -144,3 +144,16 @@ static median/direction pass lost. Moving contour .981062→.903158 semitones;
 span1.311111→1.224379. All originals retained; no failed renders. This supports
 the bounded hybrid component proceeding to human listening, not a learned-model
 or general auditory success claim.
+
+### Selector tradeoff retained for human scrutiny
+
+The passing mean gate does not imply every ordinary choice improved. In
+`031-Pluckr-static`, baseline Pluckr objective0.422535 becomes Bfxr3.076493.
+Baseline median error was already0.00566 semitone; it failed the target-active
+frame fraction (.7045 versus the .75 requirement), while the longer-voiced Bfxr
+passes1.0. Baseline voiced31 frames, target44, new47. The selector is therefore
+trading envelope/voicing coverage against objective/timbre, rather than fixing a
+wrong median pitch in this case. Keep this counterexample, do not silently
+change the frozen rule, and retain uncalibrated baselines in human comparisons.
+Auditory preference is unresolved; aggregate pass is permission to test, not
+promotion of the selector as generally superior.
