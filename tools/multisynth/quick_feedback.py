@@ -3,14 +3,16 @@
 CHOICE_KINDS = ('best', 'tie', 'none', 'skip')
 CHOICE_FIELDS = {'protocol', 'kind', 'presentedCandidateIds', 'auditionedCandidateIds',
                  'preferredCandidateIds'}
+ADEQUACY_LEVELS = ('very-close', 'similar', 'least-bad', 'not-sure')
 
 
 def validate_choice(choice, candidate_ids):
     """Validate target-local evidence and return the original choice unchanged."""
     if choice is None:
         return None
-    if (not isinstance(choice, dict) or set(choice) != CHOICE_FIELDS
-            or choice.get('protocol') != 'feel-choice-v1'
+    fields = CHOICE_FIELDS | ({'adequacy'} if isinstance(choice, dict) and choice.get('protocol') == 'feel-choice-v2' else set())
+    if (not isinstance(choice, dict) or set(choice) != fields
+            or choice.get('protocol') not in ('feel-choice-v1', 'feel-choice-v2')
             or choice.get('kind') not in CHOICE_KINDS):
         raise ValueError('Invalid listening choice protocol, kind or fields')
     for field in ('presentedCandidateIds', 'auditionedCandidateIds', 'preferredCandidateIds'):
@@ -27,6 +29,16 @@ def validate_choice(choice, candidate_ids):
     if (len(preferred) != (1 if choice['kind'] == 'best' else 0)
             or not set(preferred) <= presented):
         raise ValueError('Listening choice preferred IDs do not match its kind or presented set')
+    adequacy = choice.get('adequacy')
+    if adequacy is not None:
+        expected = preferred if choice['kind'] == 'best' else choice['presentedCandidateIds']
+        if (choice['kind'] not in ('best', 'tie') or not isinstance(adequacy, dict)
+                or set(adequacy) != {'level', 'candidateIds'} or adequacy['level'] not in ADEQUACY_LEVELS
+                or not isinstance(adequacy['candidateIds'], list)
+                or any(not isinstance(cid, str) for cid in adequacy['candidateIds'])
+                or len(adequacy['candidateIds']) != len(set(adequacy['candidateIds']))
+                or set(adequacy['candidateIds']) != set(expected)):
+            raise ValueError('Invalid listening adequacy or assessed candidate scope')
     return choice
 
 

@@ -8,6 +8,7 @@
     const $=id=>document.getElementById('quick-'+id);
     const detailed=document.getElementById('detailed-listening');
     let index=helper.firstPendingIndex(targets,state,model.experimentId), options=[], heard=new Set();
+    let pendingChoice=null;
     let revision=0, sequence=0, sequenceRunning=false, started=false, ready=false, loadFailed=false, block=0;
     const undo=[], letters=['A','B','C'];let endPlayback=null;
     const path=(target,file)=>encodeURIComponent(target.folder)+'/'+encodeURIComponent(file);
@@ -21,14 +22,30 @@
                 const option=options.findIndex(c=>url(c)===audioURL);
                 $('status').textContent='Playing '+(option<0?'Reference':letters[option])+'…';
             }
-            if(status==='ended' && !sequenceRunning)$('status').textContent='Choose the best feel, or replay anything.';
+            if(status==='ended' && !sequenceRunning)$('status').textContent=idlePrompt();
         }
     });
     function stop() {
         sequence++;sequenceRunning=false;player.stop();
         if(endPlayback){endPlayback();endPlayback=null;}
         $('sequence').textContent=started?'▶ Replay sequence (Space)':'▶ Start listening (Space)';
-        if(ready)$('status').textContent='Choose the best feel, or replay anything.';
+        if(ready)$('status').textContent=idlePrompt();
+    }
+    function idlePrompt() {return pendingChoice?'How close is it? Answer below, or replay anything.':'Choose the best feel, or replay anything.';}
+    function showAdequacy(choice) {
+        pendingChoice=helper.needsAdequacy(choice)?choice:null;
+        const active=!!pendingChoice;
+        $('adequacy').hidden=!active;$('other').hidden=active;
+        root.querySelectorAll('.choose').forEach(button=>{button.hidden=active;});
+        options.forEach((c,i)=>$('options').children[i].classList.toggle('is-selected',active &&
+            (choice.kind==='tie' || choice.preferredCandidateIds.includes(c.id))));
+        if(active) {
+            const letter=letters[options.findIndex(c=>choice.preferredCandidateIds.includes(c.id))];
+            $('adequacy-title').textContent=choice.kind==='tie'?'How close are these tied options to the reference?':
+                'How close is '+letter+' to the reference?';
+            $('adequacy-far').textContent=choice.kind==='tie'?'Still far off (3)':'Only the least-bad option (3)';
+            $('status').textContent=idlePrompt();$('adequacy-title').focus?.();
+        }
     }
     function pauseNative() {document.querySelectorAll('audio').forEach(a=>a.pause());}
     async function playOne(audioURL) {
@@ -54,7 +71,7 @@
             if(token!==sequence)return;
             await new Promise(resolve=>setTimeout(resolve,350));
         }
-        if(token===sequence){sequenceRunning=false;$('sequence').textContent='▶ Replay sequence (Space)';$('status').textContent='Which feels closest? Choose below.';}
+        if(token===sequence){sequenceRunning=false;$('sequence').textContent='▶ Replay sequence (Space)';$('status').textContent=pendingChoice?idlePrompt():'Which feels closest? Choose below.';}
     }
     function refreshExport(payload=feedback.getPayload(),storageOK=feedback.storageOK) {
         $('feedback-json').value=JSON.stringify(payload,null,2);
@@ -78,7 +95,7 @@
         $('continue').hidden=finished;
     }
     async function show(next,autoplay=false) {
-        stop();const token=++revision, playbackToken=sequence;index=next;loadFailed=false;refreshExport();
+        stop();pendingChoice=null;const token=++revision, playbackToken=sequence;index=next;loadFailed=false;refreshExport();
         if(index>=targets.length){showBreak(true);return;}
         $('trial').hidden=false;$('break').hidden=true;
         const target=targets[index];options=helper.primaryCandidates(target,model.experimentId);
@@ -93,39 +110,64 @@
             const choose=document.createElement('button');choose.className='choose';choose.textContent='Choose '+letters[i]+' ('+(i+1)+')';choose.addEventListener('click',()=>vote('best',c.id));
             card.append(label,play,choose);$('options').append(card);
         });
+        showAdequacy(helper.validatedChoice(target,state.choices[target.id]));
         enable(false);$('status').textContent='Preparing audio…';
         try {
             await Promise.all([reference(),...options.map(url)].map(audioURL=>player.preload(audioURL)));
             if(token!==revision)return;
-            enable(true);$('status').textContent=started?'Choose the best feel, or replay anything.':'Press Start once. Then listen and choose.';
+            enable(true);$('status').textContent=pendingChoice || started?idlePrompt():'Press Start once. Then listen and choose.';
             // Decode the next comparison while this one is being judged.
             const nextTarget=targets[index+1];
             if(nextTarget)[path(nextTarget,'target.wav'),...helper.primaryCandidates(nextTarget,model.experimentId).map(c=>path(nextTarget,c.file))].forEach(audioURL=>player.preload(audioURL).catch(()=>{}));
-            if(autoplay && playbackToken===sequence && started && $('autoplay').checked && !document.hidden)playSequence();
+            if(autoplay && !pendingChoice && playbackToken===sequence && started && $('autoplay').checked && !document.hidden)playSequence();
         }catch(error){if(token===revision){
             loadFailed=true;$('skip').disabled=false;
-            $('status').textContent='Audio unavailable. Skip this reference, or open detailed ratings.';
+            if(pendingChoice) {
+                enable(true);
+                $('status').textContent='Audio unavailable. Your choice is saved; choose Not sure or change your choice.';
+            } else $('status').textContent='Audio unavailable. Skip this reference, or open detailed ratings.';
         }}
     }
     function vote(kind,preferred) {
-        if((!ready && !(kind==='skip' && loadFailed)) || $('trial').hidden || index>=targets.length || detailed.hidden===false)return;
+        if(pendingChoice || (!ready && !(kind==='skip' && loadFailed)) || $('trial').hidden || index>=targets.length || detailed.hidden===false)return;
         stop();const target=targets[index];
-        const choice={protocol:'feel-choice-v1',kind,presentedCandidateIds:options.map(c=>c.id),
-            auditionedCandidateIds:options.filter(c=>heard.has(c.id)).map(c=>c.id),preferredCandidateIds:preferred?[preferred]:[]};
+        const choice={protocol:'feel-choice-v2',kind,presentedCandidateIds:options.map(c=>c.id),
+            auditionedCandidateIds:options.filter(c=>heard.has(c.id)).map(c=>c.id),preferredCandidateIds:preferred?[preferred]:[],adequacy:null};
         if(!helper.validatedChoice(target,choice))return;
         undo.push({index,previous:state.choices[target.id] || null});
         feedback.setChoice(target.id,choice);$('undo').disabled=false;
+        if(helper.needsAdequacy(choice)){showAdequacy(choice);return;}
+        advance();
+    }
+    function advance() {
+        pendingChoice=null;
         const next=helper.firstPendingIndex(targets,state,model.experimentId);
         if(++block>=5 && next<targets.length){index=next;showBreak();return;}
         show(next,true);
     }
+    function assess(level) {
+        if(!pendingChoice || !ready || $('trial').hidden || !detailed.hidden)return;
+        stop();const choice={...pendingChoice,
+            auditionedCandidateIds:options.filter(c=>heard.has(c.id)).map(c=>c.id),
+            adequacy:{level,candidateIds:[...(pendingChoice.kind==='best'?pendingChoice.preferredCandidateIds:pendingChoice.presentedCandidateIds)]}};
+        if(!helper.validatedChoice(targets[index],choice))return;
+        // A resumed pending choice has no in-memory undo entry yet.
+        if(!undo.length || undo[undo.length-1].index!==index)undo.push({index,previous:pendingChoice});
+        feedback.setChoice(targets[index].id,choice);$('undo').disabled=false;advance();
+    }
+    root.querySelectorAll('[data-adequacy]').forEach(button=>button.addEventListener('click',()=>assess(button.dataset.adequacy)));
+    $('change-choice').addEventListener('click',()=>{
+        if(!pendingChoice)return;
+        if(undo.length && undo[undo.length-1].index===index)undoLast();
+        else {feedback.setChoice(targets[index].id,null);show(index);}
+    });
     $('reference').addEventListener('click',()=>playOne(reference()));
     $('sequence').addEventListener('click',()=>sequenceRunning || player.current?stop():playSequence());
     $('stop').addEventListener('click',stop);
     root.querySelectorAll('[data-choice]').forEach(button=>button.addEventListener('click',()=>vote(button.dataset.choice)));
     $('continue').addEventListener('click',()=>{block=0;show(index,true);});
     function undoLast() {
-        const last=undo.pop();if(!last)return;stop();block=Math.max(0,block-1);
+        const last=undo.pop();if(!last)return;stop();if(!pendingChoice)block=Math.max(0,block-1);
         feedback.setChoice(targets[last.index].id,last.previous);$('undo').disabled=!undo.length;show(last.index);
     }
     $('undo').addEventListener('click',undoLast);$('undo').disabled=true;
@@ -143,14 +185,15 @@
     document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
     window.addEventListener('pagehide',stop);
     document.addEventListener('keydown',event=>{
-        if(root.hidden || event.ctrlKey || event.metaKey || event.altKey || event.target.closest('input,textarea,select,[contenteditable="true"]'))return;
+        if(root.hidden || event.repeat || event.ctrlKey || event.metaKey || event.altKey || event.target.closest('input,textarea,select,[contenteditable="true"]'))return;
         const key=event.key.toLowerCase();let handled=true;
         if(key==='arrowleft')undoLast();
-        else if(key==='s' && loadFailed && !$('trial').hidden)vote('skip');
+        else if(key==='s' && loadFailed && !pendingChoice && !$('trial').hidden)vote('skip');
         else if(key===' '){if(!ready || $('trial').hidden)return;sequenceRunning || player.current?stop():playSequence();}
         else if(!ready || $('trial').hidden)return;
         else if(key==='r')playOne(reference());
         else if(['a','b','c'].includes(key)){const c=options[letters.map(l=>l.toLowerCase()).indexOf(key)];if(c)playOne(url(c));}
+        else if(pendingChoice && ['1','2','3','s'].includes(key))assess({'1':'very-close','2':'similar','3':'least-bad',s:'not-sure'}[key]);
         else if(['1','2','3'].includes(key)){const c=options[Number(key)-1];if(c)vote('best',c.id);}
         else if(key==='0')vote('none');else if(key==='t')vote('tie');else if(key==='s')vote('skip');else handled=false;
         if(handled)event.preventDefault();

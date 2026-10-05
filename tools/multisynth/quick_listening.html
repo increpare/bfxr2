@@ -1,6 +1,6 @@
 <main id="quick-listening" hidden>
   <header class="quick-header"><div><p class="eyebrow">QUICK LISTENING</p><h1>Which captures the reference’s feel best?</h1></div><button id="quick-details" class="quiet">Detailed ratings</button></header>
-  <p class="quick-help">Listen for the same gesture, pitch and character. Choose once to move on. <span>Options are shuffled and duplicates removed.</span></p>
+  <p class="quick-help">Choose the closest, then say how close it is while it’s still here. <span>Options are shuffled. Listen for gesture, pitch and character.</span></p>
   <div class="quick-topline"><span id="quick-progress"></span><span id="quick-saved" role="status"></span></div>
   <progress id="quick-overall" max="1" value="0" aria-label="References judged"></progress>
   <div id="quick-trial">
@@ -9,9 +9,20 @@
     <p id="quick-status" role="status" aria-live="polite">Preparing audio…</p>
     <progress id="quick-audio-progress" max="1" value="0" aria-label="Audio playback progress"></progress>
     <div id="quick-options"></div>
-    <div class="quick-other"><button data-choice="none">None are close <kbd>0</kbd></button><button data-choice="tie">About equal <kbd>T</kbd></button><button id="quick-skip" data-choice="skip" class="quiet">Skip <kbd>S</kbd></button></div>
+    <div id="quick-other" class="quick-other"><button data-choice="none">None are close <kbd>0</kbd></button><button data-choice="tie">About equal <kbd>T</kbd></button><button id="quick-skip" data-choice="skip" class="quiet">Skip <kbd>S</kbd></button></div>
+    <section id="quick-adequacy" hidden aria-labelledby="quick-adequacy-title">
+      <h2 id="quick-adequacy-title" tabindex="-1">How close is your choice?</h2>
+      <p>You can replay the reference and options above before answering.</p>
+      <div class="quick-adequacy-buttons">
+        <button data-adequacy="very-close">Very close <kbd>1</kbd></button>
+        <button data-adequacy="similar">Roughly similar <kbd>2</kbd></button>
+        <button id="quick-adequacy-far" data-adequacy="least-bad">Only the least-bad option <kbd>3</kbd></button>
+        <button data-adequacy="not-sure" class="quiet">Not sure <kbd>S</kbd></button>
+      </div>
+      <button id="quick-change-choice" class="quiet">← Change my choice</button>
+    </section>
   </div>
   <div id="quick-break" hidden><h2 id="quick-break-title">Five done. Take a breather.</h2><p id="quick-break-copy">Your choices are saved. Continue when you feel like it, or copy what you have.</p><button id="quick-continue">Continue listening</button></div>
   <footer class="quick-footer"><button id="quick-undo" class="quiet">← Undo last choice</button><button id="quick-copy">Copy feedback JSON</button><span id="quick-copy-status" role="status"></span></footer>
-  <details id="quick-export"><summary>Feedback JSON / keyboard shortcuts</summary><p>R = reference · A/B/C = replay · 1/2/3 = choose · 0 = none · T = equal · S = skip · Space = play sequence / stop · ← = undo. Every replay starts at the beginning. Nothing is sent automatically.</p><textarea id="quick-feedback-json" readonly rows="8" aria-label="Quick feedback JSON" spellcheck="false"></textarea></details>
+  <details id="quick-export"><summary>Feedback JSON / keyboard shortcuts</summary><p>R = reference · A/B/C = replay · 1/2/3 = choose, then rate closeness · 0 = none · T = equal · S = skip / not sure · Space = play sequence / stop · ← = undo. Every replay starts at the beginning. Nothing is sent automatically.</p><textarea id="quick-feedback-json" readonly rows="8" aria-label="Quick feedback JSON" spellcheck="false"></textarea></details>
 </main>

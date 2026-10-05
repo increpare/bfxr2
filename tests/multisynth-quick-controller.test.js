@@ -16,11 +16,11 @@ function element(id = '') {
     };
 }
 
-function controller({deferFirstPlay=false,storageOK=true,failPreparation=false}={}) {
+function controller({deferFirstPlay=false,storageOK=true,failPreparation=false,initialChoices={}}={}) {
     const ids = ['status', 'sequence', 'trial', 'break', 'break-title', 'break-copy',
         'continue', 'name', 'reference', 'options', 'stop', 'autoplay', 'undo', 'copy',
         'copy-status', 'export', 'feedback-json', 'saved', 'progress', 'overall',
-        'audio-progress', 'details', 'skip'];
+        'audio-progress', 'details', 'skip', 'adequacy', 'adequacy-title', 'adequacy-far', 'change-choice', 'other'];
     const nodes = Object.fromEntries(ids.map(id => ['quick-' + id, element('quick-' + id)]));
     for (const id of ['quick-listening', 'detailed-listening', 'back-to-quick']) nodes[id] = element(id);
     const listeners = {};
@@ -30,7 +30,7 @@ function controller({deferFirstPlay=false,storageOK=true,failPreparation=false}=
     };
     const targets = ['one', 'two'].map(id => ({id, name: id, folder: id,
         candidates: [{id: id + '-option', file: 'option.wav', role: 'selected'}]}));
-    const state = {ratings: {}, choices: {}};
+    const state = {ratings: {}, choices: {...initialChoices}};
     const played = [], deferred = new Map();let instance, rejectPlay;
     class Player {
         constructor(config) {this.current = null;this.config=config;instance=this;}
@@ -59,7 +59,7 @@ function controller({deferFirstPlay=false,storageOK=true,failPreparation=false}=
             storageOK,
             model: {experimentId: 'controller-test', targets}, state,
             getPayload: () => ({targets: []}), subscribe() {},
-            setChoice(id, choice) {state.choices[id] = choice;}
+            setChoice(id, choice) {if(choice)state.choices[id] = choice;else delete state.choices[id];}
         }
     };
     const source = fs.readFileSync(path.join(__dirname, '../tools/multisynth/quick_listening.js'), 'utf8');
@@ -79,6 +79,7 @@ test('Stop during preparation cancels next-reference autoplay while retaining ex
     assert.deepEqual(fixture.played, ['one/target.wav']);
     fixture.key('1');
     assert.equal(fixture.state.choices.one.kind, 'best');
+    fixture.key('2'); // Answer immediate likeness before advancing.
     fixture.click('stop');
     for (const request of fixture.deferred.values()) request.resolve();
     await settle();
@@ -120,4 +121,54 @@ test('an unavailable clip can be explicitly skipped without pretending it was he
     assert.equal(fixture.state.choices.one?.kind,'skip');
     assert.deepEqual([...fixture.state.choices.one.auditionedCandidateIds],[]);
     fixture.click('stop');
+});
+
+
+test('winner stays on screen for adequacy, saves pending, then advances once',async()=>{
+ const f=controller();await settle();f.key('1');
+ assert.equal(f.state.choices.one.adequacy,null);
+ assert.equal(f.nodes['quick-name'].textContent,'one');
+ assert.equal(f.nodes['quick-adequacy'].hidden,false);
+ assert.match(f.nodes['quick-adequacy-title'].textContent,/A/);
+ f.key('2');
+ assert.equal(f.state.choices.one.adequacy.level,'similar');
+ assert.deepEqual([...f.state.choices.one.adequacy.candidateIds],['one-option']);
+ assert.equal(f.nodes['quick-name'].textContent,'two');
+ f.click('undo');await settle();
+ assert.equal(f.nodes['quick-name'].textContent,'one');
+ assert.equal(f.state.choices.one,undefined);
+ f.click('stop');
+});
+
+test('reload resumes pending adequacy on the same reference and not-sure advances',async()=>{
+ const choice={protocol:'feel-choice-v2',kind:'best',presentedCandidateIds:['one-option'],
+   auditionedCandidateIds:['one-option'],preferredCandidateIds:['one-option'],adequacy:null};
+ const f=controller({initialChoices:{one:choice}});await settle();
+ assert.equal(f.nodes['quick-name'].textContent,'one');
+ assert.equal(f.nodes['quick-adequacy'].hidden,false);
+ f.key('s');assert.equal(f.state.choices.one.adequacy.level,'not-sure');
+ assert.equal(f.nodes['quick-name'].textContent,'two');
+ assert.equal(f.nodes['quick-undo'].disabled,false);f.click('undo');await settle();
+ assert.equal(f.state.choices.one.adequacy,null);
+ assert.equal(f.nodes['quick-name'].textContent,'one');
+ assert.equal(f.nodes['quick-adequacy'].hidden,false);f.click('stop');
+});
+
+test('ties ask immediate likeness for displayed candidates; none needs no follow-up',async()=>{
+ const f=controller();await settle();f.key('t');
+ assert.match(f.nodes['quick-adequacy-title'].textContent,/tied options/);
+ f.click('change-choice');await settle();
+ assert.equal(f.nodes['quick-adequacy'].hidden,true);
+ f.key('0');assert.equal(f.state.choices.one.kind,'none');
+ assert.equal(f.state.choices.one.adequacy,null);
+ assert.equal(f.nodes['quick-name'].textContent,'two');f.click('stop');
+});
+
+test('pending choice remains escapable when audio fails after reload',async()=>{
+ const choice={protocol:'feel-choice-v2',kind:'best',presentedCandidateIds:['one-option'],
+   auditionedCandidateIds:['one-option'],preferredCandidateIds:['one-option'],adequacy:null};
+ const f=controller({initialChoices:{one:choice},failPreparation:true});await settle();
+ assert.match(f.nodes['quick-status'].textContent,/choice is saved/);
+ f.key('s');assert.equal(f.state.choices.one.adequacy.level,'not-sure');
+ assert.equal(f.nodes['quick-name'].textContent,'two');f.click('stop');
 });

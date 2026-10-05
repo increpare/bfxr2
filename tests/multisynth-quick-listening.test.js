@@ -105,3 +105,16 @@ test('a failed decode does not poison the cache or pretend playback started',asy
  assert.equal(p.sources.length,0);
  await player.play('bad');assert.equal(p.sources.length,1);
 });
+
+test('immediate adequacy stays pending through export and resumes without re-rating old choices',()=>{
+ const judgment={protocol:'feel-choice-v2',kind:'best',presentedCandidateIds:['new','old'],
+   auditionedCandidateIds:['new','old'],preferredCandidateIds:['new'],adequacy:null};
+ assert.deepEqual(choice.validatedChoice(target,judgment),judgment);
+ const state={choices:{t:judgment}};
+ assert.equal(choice.completed(target,state,'experiment'),false);
+ assert.equal(feedbackPayload({targets:[target],experimentId:'experiment'},state).targets[0].choice.adequacy,null);
+ judgment.adequacy={level:'similar',candidateIds:['new']};
+ assert.equal(choice.completed(target,state,'experiment'),true);
+ assert.equal(choice.validatedChoice(target,{...judgment,adequacy:{level:'similar',candidateIds:['old']}}),null);
+ assert.equal(choice.validatedChoice(target,{...judgment,adequacy:{level:'similar',candidateIds:['new','new']}}),null);
+});

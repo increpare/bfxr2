@@ -1,5 +1,22 @@
 # Persistent listening evidence
 
+## Collection policy
+
+Collect absolute likeness while the reference and the listener's A/B/C choice
+are still visible. Do not ask the listener to reconstruct anonymous comparisons
+after submitting or refer to hidden synth/model labels as if they were visible.
+The user explicitly objected to that follow-up burden on 2026-10-05. Missing
+adequacy in prior submissions remains unknown; no request to repeat those trials.
+
+New galleries use `feel-choice-v2` within schema 3. After best/tie, retain the
+relative choice and ask very close / roughly similar / least-bad / not sure
+before advancing. `adequacy` binds a `level` to exact `candidateIds`: the winner
+for best, all presented tied candidates for tie. Null means unanswered; not-sure
+is explicit uncertainty. None/skip need no second answer. These are separate
+qualitative labels, not inferred numeric scores. A pending answer survives
+reload; completed v1 choices remain completed. Published galleries are frozen;
+future exports use the updated questionnaire.
+
 ## Retained sessions
 
 | Archive | References judged | Distinct retained candidate identities |
@@ -23,6 +40,8 @@ Combined Transfxr models win the Bfxr and Boomr source comparisons. Both Pluckr
 recreations are rejected as not close. Four best choices yield four strict
 heard-only pairs; the tie and rejection remain separate evidence. No scalar
 scores or absolute likeness judgments for the winners were supplied.
+Do not request retrospective clarification for these winners: the questionnaire
+failed to collect it when the sounds were being judged.
 
 On the exact audition PCM, MatchObjective and the frozen preference-neural-v2
 scorer each agree with 2/4 preferences, on different pairs. MatchObjective favors

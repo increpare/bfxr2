@@ -212,3 +212,42 @@ def test_schema3_manifest_scalar_and_schema_match_raw(quick_report, tmp_path, ta
     (output/'manifest.json').write_text(json.dumps(manifest))
     with pytest.raises(ValueError, match='schema|usefulness'):
         training_pairs([output])
+
+
+@pytest.mark.parametrize('level', ['very-close','similar','least-bad','not-sure',None])
+def test_v2_adequacy_roundtrip_without_scalar_labels(quick_report,tmp_path,level):
+    choice=quick_report[2]['targets'][0]['choice']
+    choice.update(protocol='feel-choice-v2',adequacy=None if level is None else
+                  {'level':level,'candidateIds':choice['preferredCandidateIds'][:]})
+    output,summary=save_archive(quick_report,tmp_path)
+    manifest=json.loads((output/'manifest.json').read_text())
+    assert manifest['targets'][0]['choice']==choice
+    assert summary['likenessRatings']==0
+    data=training_pairs([output]);assert len(data.y)==1
+    assert data.observations[0]['likenessA'] is None
+
+
+@pytest.mark.parametrize('kind', ['best','tie','none','skip'])
+def test_v2_adequacy_scope_is_explicit(quick_report,tmp_path,kind):
+    from multisynth.quick_feedback import validate_choice
+    choice=quick_report[2]['targets'][0]['choice']
+    ids=choice['presentedCandidateIds']
+    choice.update(protocol='feel-choice-v2',kind=kind,
+                  preferredCandidateIds=[ids[0]] if kind=='best' else [],adequacy=None)
+    assessed=[ids[0]] if kind=='best' else ids[:]
+    choice['adequacy']={'level':'similar','candidateIds':assessed}
+    if kind in ('none','skip'):
+        with pytest.raises(ValueError):validate_choice(choice,ids)
+    else:
+        assert validate_choice(choice,ids)==choice
+        choice['adequacy']['candidateIds']=['foreign']
+        with pytest.raises(ValueError):validate_choice(choice,ids)
+
+
+@pytest.mark.parametrize('bad', [{'level':'5','candidateIds':[]},{'level':'similar'},
+                               {'level':'similar','candidateIds':[]},{'level':'similar','candidateIds':'x'},
+                               {'level':'similar','candidateIds':['x','x']},'very close'])
+def test_v2_bad_adequacy_rejected(quick_report,tmp_path,bad):
+    choice=quick_report[2]['targets'][0]['choice']
+    choice.update(protocol='feel-choice-v2',adequacy=bad)
+    with pytest.raises(ValueError):save_archive(quick_report,tmp_path)
