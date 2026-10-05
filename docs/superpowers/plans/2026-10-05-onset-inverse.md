@@ -39,3 +39,15 @@ User authorizes autonomous experiment choices and execution. Work inline.
   are live status, not evidence of completion or audible improvement.
 - Actual renders, checkpoint validation replay and human quality review remain
   outstanding. Do not claim the hypothesis is supported until results exist.
+
+## Completed outcome
+
+The checkpoint above is historical. Both 12,288-row datasets completed exact DSP
+replay, all four 90-epoch training runs completed, and full saved validation loss
+reproduced independently on CPU. Both frozen render lists completed. Neither
+engine passed the primary promotion gate: Bfxr regressed static median pitch;
+Transfxr improved mean objective by only 2.71%. No listening promotion or human
+quality claim follows. See `tools/multisynth/ONSET_V1.md` and its linked audits.
+Review corrected complete-population and independent-silence gate checks, with
+two regression tests (eight focused tests pass). Raw reports remain immutable;
+corrected gates live in a separate audit, retaining the source used by the run.

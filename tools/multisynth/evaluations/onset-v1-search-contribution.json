@@ -1,0 +1,210 @@
+{
+  "scriptSha256": "b68263708532ced5ac723c85d0202fce1230d950537ea92c762a558a95c4e6f5",
+  "rawReportSha256": "63cd7420232d9ef974b2746cd31082c46ba10145b6b5efb39aa501e653b1dc46",
+  "rows": [
+    {
+      "id": "001-Bfxr-native",
+      "engine": "Bfxr",
+      "family": "native",
+      "referencePcmSha256": "15b7a6a608cc45d5a5c2ad86d7a1250c61389bf2bac5497a9804582dcc9aa79d",
+      "rawScore": 7.750513358104447,
+      "refinedScore": 4.004570226064011,
+      "rawPcmSha256": "2196524f219803e6ec4504d513e949b8ddcf33ef2e7763d248e25cff958b47cb",
+      "refinedPcmSha256": "9e5edd95f33c6092e8a40d46edb5870379d0f5038c1df431407d153ffb2343e9",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 3001
+    },
+    {
+      "id": "023-Bfxr-static",
+      "engine": "Bfxr",
+      "family": "static",
+      "referencePcmSha256": "0cd1162f6c98416b0243397894d02c0c7f772ac82e45ec9f7e24367e0807fbc9",
+      "rawScore": 4.8128346122144485,
+      "refinedScore": 3.5450557558898126,
+      "rawPcmSha256": "b58ed43dfdda3a3e5564d37fe2bc203d02c71921f6face529db1b6daafa2c331",
+      "refinedPcmSha256": "3d467db1b54ee46e9a7fcb1603fbbb88c5bbe2c7dc2a86a6c2d20765ee5fbdef",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 2015
+    },
+    {
+      "id": "024-Bfxr-static",
+      "engine": "Bfxr",
+      "family": "static",
+      "referencePcmSha256": "b384e0a9991ec7b4d605b9dea2005b8d74439d5189dbc2533255f875f8419111",
+      "rawScore": 5.319897797986819,
+      "refinedScore": 3.6584484080086193,
+      "rawPcmSha256": "6bc1bffdefec29e01d29454ca8f385bf6f4c7447daab3811666588629e40d513",
+      "refinedPcmSha256": "edd282bc100dcca8550dab5a246a1d9f5f7ae624e2fe2673156847203a19549a",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 2015
+    },
+    {
+      "id": "025-Bfxr-static",
+      "engine": "Bfxr",
+      "family": "static",
+      "referencePcmSha256": "2a9be7217b07998941cd7f53efb8088c699481902ecdddeeb25fec33095694e1",
+      "rawScore": 7.429726430276794,
+      "refinedScore": 3.6650385208532685,
+      "rawPcmSha256": "84aea40177b297194dddb9a9972fe9496c8309d10c3d3a34bcf6d3ffa1a5770e",
+      "refinedPcmSha256": "496d44d1cd8fbc1aacfc76892b2d65854ad6ec3d9290e1a582664e109a23aca8",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 2015
+    },
+    {
+      "id": "032-Bfxr-moving",
+      "engine": "Bfxr",
+      "family": "moving",
+      "referencePcmSha256": "770fd500cac664605c675502595c517543eb13a7a11a3307d1304b8761c1a25c",
+      "rawScore": 5.213755642105245,
+      "refinedScore": 3.271715074827405,
+      "rawPcmSha256": "553783fb0f1a1c88a7ca5bf02c1dc7e536692d121cb859bfc150baabe2aa3ff8",
+      "refinedPcmSha256": "6009421e39af43a48f40d8477ef7410a13bbc1dba6ec5a01530d9f85f77fe6ff",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 2015
+    },
+    {
+      "id": "033-Bfxr-moving",
+      "engine": "Bfxr",
+      "family": "moving",
+      "referencePcmSha256": "23458b1cfdfea42d2d47984da367490dbd31e4991602e4702ecf059fdb0bb42e",
+      "rawScore": 4.4955493878954975,
+      "refinedScore": 3.0676158226311507,
+      "rawPcmSha256": "5caf5aab6d231737c98b6a2b63e5918d1135d1755a190fb61ebc5a03a991f7f1",
+      "refinedPcmSha256": "518be87c751625545db82fa46201a5f521eaac95c1f9b2e26914255459754ad5",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 2015
+    },
+    {
+      "id": "034-Bfxr-moving",
+      "engine": "Bfxr",
+      "family": "moving",
+      "referencePcmSha256": "2f32f8a2eb2fc0b696cef478db82161e385bf5346acd7ecd6158293ad7011f45",
+      "rawScore": 6.422990382119388,
+      "refinedScore": 0.8276282008397082,
+      "rawPcmSha256": "fc22aafc6f3356d35e0f44af13408c2b920edcb49fc4afb21102c612bc8f6773",
+      "refinedPcmSha256": "0abe1f3732e98265c34fcf2ff750f1f0c0a4c8dd106a4e286b724e348478a03f",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 3003
+    },
+    {
+      "id": "035-Bfxr-moving",
+      "engine": "Bfxr",
+      "family": "moving",
+      "referencePcmSha256": "7e3c33a5a165b8ab35e8d389153436acbeea068e311f695ffc8df744df43c448",
+      "rawScore": 4.591013878231536,
+      "refinedScore": 4.112512352586572,
+      "rawPcmSha256": "c4aa72c30db8bc8f2bacd0d4cc37600761b344ba9d02f4f3d656c4bf3c4743c2",
+      "refinedPcmSha256": "2dbbd5c94ef341cc9f96c2ef56626a6b0ab990970bf50c7327019b35c0e654c8",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 2015
+    },
+    {
+      "id": "003-Transfxr-native",
+      "engine": "Transfxr",
+      "family": "native",
+      "referencePcmSha256": "ee0f58e83a16c82a1e6d2b976f91e2a2034620937393d3c4fbb7eff9284aed08",
+      "rawScore": 8.411163767217719,
+      "refinedScore": 2.1374211571842245,
+      "rawPcmSha256": "ef806fc077d91650630e8b8d0336f02a7c9d62c5e5a6c5432d6579eae00ee123",
+      "refinedPcmSha256": "368ab52cc2e1b27dadafe2d46a8bd7c2ae1e6b9bff3ae1369c13b910a4abb8d1",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 2015
+    },
+    {
+      "id": "026-Transfxr-static",
+      "engine": "Transfxr",
+      "family": "static",
+      "referencePcmSha256": "f184db55bf253c26792f2b312320372a0d3b460286487265c205815031fdff15",
+      "rawScore": 8.402498870104495,
+      "refinedScore": 3.906573099199689,
+      "rawPcmSha256": "056e05b057ce0635c8e362a8c16a2998b253da9174212a19ba35cccb1397cbcd",
+      "refinedPcmSha256": "eac6ed407f4d2caf27413bc0fb6e7b30b25ffd13e03197060694d02d3817a1f8",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 2015
+    },
+    {
+      "id": "027-Transfxr-static",
+      "engine": "Transfxr",
+      "family": "static",
+      "referencePcmSha256": "ce9fdc744c7fae3be0f36c7207c87f7ed2dac4546bba2722305d85cfaf7a91e5",
+      "rawScore": 1.6919870136126933,
+      "refinedScore": 1.5055692613925793,
+      "rawPcmSha256": "31e480c43697c22fcb2962cdd586fbd4256efa8b11f962eede81e459e40b2e2c",
+      "refinedPcmSha256": "cc7b9624692234cf27bdea620d1de98f97cddafb6866a8b91690859a7ff32674",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 2015
+    },
+    {
+      "id": "028-Transfxr-static",
+      "engine": "Transfxr",
+      "family": "static",
+      "referencePcmSha256": "52ad465868d728d35372b571d2350eae95ef2281655d7a0ec275f0676c3d14dd",
+      "rawScore": 5.819736320472754,
+      "refinedScore": 4.298258361386956,
+      "rawPcmSha256": "44cc237f8d53bdc11cb2d19e944c2a16b6d1341e7a5b4e5e795015b6d1174489",
+      "refinedPcmSha256": "eebd157968f8e9aa63e980871a4255a629fdb47ce708b684b7e66bd7535086d6",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 2015
+    },
+    {
+      "id": "036-Transfxr-moving",
+      "engine": "Transfxr",
+      "family": "moving",
+      "referencePcmSha256": "19b61fafabce191759e1f67d7184f61fb3223834e9f12b20798624669090ed3f",
+      "rawScore": 6.476290801782565,
+      "refinedScore": 5.707971073180299,
+      "rawPcmSha256": "27550d92d213bc5c180ba3c6968964cc6c968339021d836eaf1329c0d8483b18",
+      "refinedPcmSha256": "41269d2fd25e86f7a7fe81d5de40762a696c541b8fe0963c289bb8487af3ffc2",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 2015
+    },
+    {
+      "id": "037-Transfxr-moving",
+      "engine": "Transfxr",
+      "family": "moving",
+      "referencePcmSha256": "bbee746461a147c208d58094e0fdd21d678067baf8cb56590a7c61871fb0afc1",
+      "rawScore": 5.689303773606005,
+      "refinedScore": 5.057717110306448,
+      "rawPcmSha256": "b5889b7da675e9f37fe43eda3a2a2ff306ae93d17cd3204180c7b9fca79771ac",
+      "refinedPcmSha256": "87604f51c7d59c201e2d5c7b87c6fa3c3784086769e938ae08af70f8163b8fd5",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 2015
+    },
+    {
+      "id": "038-Transfxr-moving",
+      "engine": "Transfxr",
+      "family": "moving",
+      "referencePcmSha256": "187ed6067270b7ab44713b7c8bb8696f798dcfa3a80bf6ffa55dcd25bf3d6e72",
+      "rawScore": 4.329443761332835,
+      "refinedScore": 2.8353325218956855,
+      "rawPcmSha256": "f488f5135ced70fe6ee75f330f99d103efc87674471b4edfe0354deb65df8ad1",
+      "refinedPcmSha256": "c88ba18c09cc8cda8baf78437058b8e3676210db1d94e89ddd8c46e30d46b871",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 3003
+    },
+    {
+      "id": "039-Transfxr-moving",
+      "engine": "Transfxr",
+      "family": "moving",
+      "referencePcmSha256": "c196bbb5606b1b8dfff65adad3afc59ecbf214359f8a104286ecbb956b6c6fb8",
+      "rawScore": 2.509944766147063,
+      "refinedScore": 2.945103753121731,
+      "rawPcmSha256": "ad506103739558b9220f24c576554dc719771387a09f023899be7acfca1a283d",
+      "refinedPcmSha256": "b4ef676f97c2618eee90b2fe631899188b793fa90942f2f4fc7effa333e5613e",
+      "declaredSearchBudget": 2000,
+      "actualSearchEvaluations": 2015
+    }
+  ],
+  "summary": {
+    "targets": 16,
+    "rawMean": 5.585415660200644,
+    "refinedMean": 3.40915816871051,
+    "refinedLower": 15
+  },
+  "limitations": [
+    "Existing synthetic development probes, not human likeness judgments.",
+    "Historical staged optimizer starts from three neural guesses and also uses other search stages; current raw comparator gets four guesses.",
+    "This does not isolate neural initialization versus other optimizer initializations, nor establish that a lower objective sounds closer.",
+    "No inference that these synthetic results explain every real-reference human failure."
+  ]
+}

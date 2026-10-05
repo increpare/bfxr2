@@ -1,0 +1,84 @@
+{
+  "oldCheckpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+  "oldVersion": 1,
+  "oldWaveformTypes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "oldNumericHeadCount": 1,
+  "onsetNumericModes": 1,
+  "proposalNumericDiversity": {
+    "Bfxr": {
+      "sourceReportSha256": "04427fa9d7528405c4f2011eacdcd365c80dd357179006dad79f14c3ae67606d",
+      "rows": [
+        {
+          "target": "die/charm2.wav",
+          "proposals": 4,
+          "distinctNumericVectors": 1
+        },
+        {
+          "target": "attack/battleStart.wav",
+          "proposals": 4,
+          "distinctNumericVectors": 1
+        },
+        {
+          "target": "select/Select Beep.wav",
+          "proposals": 4,
+          "distinctNumericVectors": 1
+        },
+        {
+          "target": "bell/impactBell_heavy_003.ogg",
+          "proposals": 4,
+          "distinctNumericVectors": 1
+        },
+        {
+          "target": "fall/Descending Fall Whistle.wav",
+          "proposals": 4,
+          "distinctNumericVectors": 1
+        }
+      ]
+    },
+    "Transfxr": {
+      "sourceReportSha256": "abe5811a9ab1f23af1dcdf69ba2caaaaecd559999558792f746e9a694e268967",
+      "rows": [
+        {
+          "target": "die/charm2.wav",
+          "proposals": 4,
+          "distinctNumericVectors": 1
+        },
+        {
+          "target": "attack/battleStart.wav",
+          "proposals": 4,
+          "distinctNumericVectors": 1
+        },
+        {
+          "target": "select/Select Beep.wav",
+          "proposals": 4,
+          "distinctNumericVectors": 1
+        },
+        {
+          "target": "bell/impactBell_heavy_003.ogg",
+          "proposals": 4,
+          "distinctNumericVectors": 1
+        },
+        {
+          "target": "fall/Descending Fall Whistle.wav",
+          "proposals": 4,
+          "distinctNumericVectors": 1
+        }
+      ]
+    }
+  },
+  "interpretation": "Checkpoint inspection disproves the proposed historical decoder difference: the retained working Bfxr checkpoint is version 1 with a shared numeric head, just like the single-mode onset trial. Version 2 waveform-specific heads exist in code but are not used by this checkpoint. All ten real-reference onset proposal pools contain only one distinct numeric vector; that is a candidate-diversity limitation, not evidence explaining the gap against the old model. Generic four-mode Bfxr v3 remains a separate multi-solution baseline.",
+  "proposedHistoricalDifferenceConfirmed": false
+}

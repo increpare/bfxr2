@@ -23,6 +23,11 @@ All eight feedback sessions and exact audition PCM remain versioned. A fresh
 preference-scorer refit reaches about 73% reference-balanced held-out agreement
 overall but only 3/7 on this latest batch; it is experimental and not deployed.
 
+The subsequent [paired fine-onset experiment](ONSET_V1.md) trained four new
+checkpoints, but neither engine passed its actual-render promotion gate. Bfxr
+regressed static pitch; Transfxr's mean improvement was below the threshold.
+No new listening round is requested from that failed experiment.
+
 The earlier iterations below use an offline **nonparametric inverse model**: render examples from the app's
 preset distributions, encode their audio, retrieve plausible parameters for
 each synth, refine several synths independently, then automatically select the

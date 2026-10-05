@@ -89,7 +89,7 @@ def test_fitting_saves_best_epoch_and_can_reproduce_validation(tmp_path):
 def test_render_gate_cannot_hide_missing_outputs_or_pitch_regression():
     assert importlib.util.find_spec('neural_invert.onset_eval') is not None, 'onset evaluation module is missing'
     from neural_invert.onset_eval import gate
-    a={'meanObjective':2.,'missing':0,'failedRenders':0,'staticPass':8,'targets':32}
+    a={'meanObjective':2.,'missing':0,'failedRenders':0,'silentRenders':0,'staticPass':8,'targets':32}
     b={**a,'meanObjective':1.8}
     assert gate(a,b)['passed']
     assert not gate(a,{**b,'missing':1})['passed']
@@ -110,3 +110,17 @@ def test_derived_features_require_exact_actual_dsp_pcm():
     np.testing.assert_array_equal(derived[0],module().onset_features(wave).astype('<f2'))
     with pytest.raises(ValueError,match='replay mismatch'):
         replay_chunk('Bfxr',[{**row,'audioHash':'incorrect'}],source_hash)
+
+
+def test_render_gate_requires_the_same_complete_target_population():
+    from neural_invert.onset_eval import gate
+    control={'targets':2,'missing':1,'meanObjective':10.,'failedRenders':4,'silentRenders':0,'staticPass':0}
+    onset={**control,'missing':0,'meanObjective':9.,'failedRenders':0}
+    assert not gate(control,onset)['passed'], 'Missing control target must not disappear from the comparison'
+
+
+def test_render_gate_counts_silence_separately_from_other_failures():
+    from neural_invert.onset_eval import gate
+    control={'targets':2,'missing':0,'meanObjective':10.,'failedRenders':2,'silentRenders':0,'staticPass':0}
+    onset={**control,'meanObjective':9.,'silentRenders':2}
+    assert not gate(control,onset)['passed'], 'Fewer other failures must not excuse more silent predictions'

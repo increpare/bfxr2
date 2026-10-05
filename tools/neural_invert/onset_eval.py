@@ -17,18 +17,20 @@ from .pitch_v5_eval import descriptor_pitch, compare_descriptor_pitch
 from .temporal import load_temporal, predict_temporal
 
 GATE = {'minimumMeanObjectiveReduction':.05,'maximumAdditionalMissing':0,
-        'maximumAdditionalFailedRenders':0,'maximumStaticPitchPassLoss':0,
+        'maximumAdditionalFailedRenders':0,'maximumAdditionalSilentRenders':0,
+        'requireBothArmsComplete':True,'maximumStaticPitchPassLoss':0,
         'meaning':'synthetic candidate-generation gate for listening, not perceptual adequacy'}
 
 
 def gate(control, onset):
     mean = (control['meanObjective'] is not None and onset['meanObjective'] is not None
             and onset['meanObjective'] <= control['meanObjective']*.95)
-    complete = control['targets']==onset['targets'] and control['targets']>0 and onset['missing']==0
+    complete = control['targets']==onset['targets'] and control['targets']>0 and control['missing']==onset['missing']==0
     renders = onset['failedRenders'] <= control['failedRenders']
+    silence = onset['silentRenders'] <= control['silentRenders']
     pitch = onset['staticPass'] >= control['staticPass']
-    return {'passed':bool(mean and complete and renders and pitch),'objectivePassed':bool(mean),
-            'coveragePassed':bool(complete),'rendersPassed':bool(renders),'pitchPassed':bool(pitch),'policy':GATE}
+    return {'passed':bool(mean and complete and renders and silence and pitch),'objectivePassed':bool(mean),
+            'coveragePassed':bool(complete),'rendersPassed':bool(renders),'silencePassed':bool(silence),'pitchPassed':bool(pitch),'policy':GATE}
 
 
 def freeze(source, output, per_stratum=16, seed=20261015):
@@ -67,7 +69,9 @@ def summary(rows, arm):
     scores=[r['score'] for r in best if r]
     return {'targets':len(rows),'missing':sum(r is None for r in best),
             'failedRenders':sum(len(r['arms'][arm]['failures']) for r in rows),
+            'silentRenders':sum(e.get('error')=='Silent prediction' for r in rows for e in r['arms'][arm]['failures']),
             'meanObjective':float(np.mean(scores)) if scores else None,
+            'staticMetric':'median-pitch error on reliable static targets; not contour or perceptual accuracy',
             'staticTotal':sum(r['staticDiagnostic'] for r in rows),
             'staticPass':sum(r['staticDiagnostic'] and c is not None and c['pitchComparison']['medianErrorSemitones'] is not None
                              and c['pitchComparison']['medianErrorSemitones']<=1 for r,c in zip(rows,best))}

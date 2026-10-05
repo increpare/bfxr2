@@ -1,0 +1,55 @@
+{
+  "derivedManifestSha256": "7c5cac3db65e75f6851c8a2a7f301bd781fe80689768aed1f9388766eb6d3ebf",
+  "engines": {
+    "Bfxr": {
+      "rows": 12288,
+      "train": 10445,
+      "validation": 1843,
+      "independentReplayRows": [
+        11540,
+        6834,
+        8818,
+        5081,
+        6127,
+        9412,
+        7697,
+        4263,
+        1230,
+        8355,
+        3925,
+        1378,
+        10044,
+        6708,
+        10074,
+        555
+      ],
+      "exact": true
+    },
+    "Transfxr": {
+      "rows": 12288,
+      "train": 10445,
+      "validation": 1843,
+      "independentReplayRows": [
+        4637,
+        4861,
+        6521,
+        3317,
+        5173,
+        4003,
+        12157,
+        11547,
+        6572,
+        6335,
+        4516,
+        11363,
+        9717,
+        4222,
+        821,
+        8434
+      ],
+      "exact": true
+    }
+  },
+  "passed": true,
+  "scriptSha256": "15905f5a074dde88594bea7d3eedd2de0ba8c1dada9b8a850e3a733440487ed8"
+}

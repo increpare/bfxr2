@@ -1,0 +1,48 @@
+{
+  "engines": {
+    "Bfxr": {
+      "control": {
+        "checkpointSha256": "cde0aa8c3cadc8b8d96ee45b6421bdbcfc90e41218013b1d9ff671e19203d84c",
+        "bestEpoch": 11,
+        "savedValidation": 0.7133556493334129,
+        "independentCpuValidation": 0.7133556435201258,
+        "absoluteDifference": 5.813287073941353e-09,
+        "rows": 1843,
+        "fullHistorySha256": "16212b3168351b989aea51a6dcfe45a174d1b9d57414ca72361c641adf796fe5"
+      },
+      "onset": {
+        "checkpointSha256": "fff04fa4d757ac88d64f904d31df2e511987ea14bd9af151b561fc9169a0ecad",
+        "bestEpoch": 11,
+        "savedValidation": 0.6794859969476061,
+        "independentCpuValidation": 0.6794860162896644,
+        "absoluteDifference": 1.9342058288351893e-08,
+        "rows": 1843,
+        "fullHistorySha256": "f27a4192d7d1fec055decc2a49af169650f680814d1517936ac0a434376077a3"
+      },
+      "pairedConditionsEqual": true
+    },
+    "Transfxr": {
+      "control": {
+        "checkpointSha256": "8d1cce6c0cfaaf07887c2c76ccd074a19faf46b0347b29bee345dfc7f9d4fc80",
+        "bestEpoch": 16,
+        "savedValidation": 0.4996321613531978,
+        "independentCpuValidation": 0.49963213555901975,
+        "absoluteDifference": 2.5794178071247842e-08,
+        "rows": 1843,
+        "fullHistorySha256": "21bedfabcf883819e7808e1abaa23a5371451863783b98779d2b4f27478d2441"
+      },
+      "onset": {
+        "checkpointSha256": "8541c9b3a9a07172b5ef6e96005ab6f2a48549b09f19f02a9c05d9f924b0a415",
+        "bestEpoch": 19,
+        "savedValidation": 0.49575184955909984,
+        "independentCpuValidation": 0.4957518295908953,
+        "absoluteDifference": 1.9968204534315248e-08,
+        "rows": 1843,
+        "fullHistorySha256": "dda59180b86916f33e3f0ce141ae5ffe59907081280e51f2bc4a62b68758f52d"
+      },
+      "pairedConditionsEqual": true
+    }
+  },
+  "passed": true,
+  "scriptSha256": "15905f5a074dde88594bea7d3eedd2de0ba8c1dada9b8a850e3a733440487ed8"
+}

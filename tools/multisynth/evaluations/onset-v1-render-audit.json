@@ -1,0 +1,243 @@
+{
+  "scriptSha256": "96f9f1e633036bfcb02536ca1c592e26e7678af83aef839986a6c4e0875d43fa",
+  "correctedGateCodeSha256": "ee4f16244f116835fd169a3f7b9c18ec59f461ec93edff7bb9c48b31c8f9564a",
+  "corrections": [
+    "Both arms must cover every target before comparing means.",
+    "Count silence independently of other render failures.",
+    "Static pass means median-pitch accuracy, not whole-contour fidelity."
+  ],
+  "reports": {
+    "validation-renders": {
+      "sourceReportSha256": "84fbd9b6991c10727eb6f75a42a536ad799a909c1a28863615d1c370ac5101fb",
+      "targets": 64,
+      "verifiedCandidateFiles": 766,
+      "selectedDspReplays": 192,
+      "maxRescoreError": 0.0,
+      "summaries": {
+        "Bfxr": {
+          "control": {
+            "targets": 32,
+            "missing": 0,
+            "failedRenders": 1,
+            "silentRenders": 0,
+            "meanObjective": 4.398354836430995,
+            "staticMetric": "median-pitch error on reliable static targets; not contour or perceptual accuracy",
+            "staticTotal": 12,
+            "staticPass": 8
+          },
+          "onset": {
+            "targets": 32,
+            "missing": 0,
+            "failedRenders": 0,
+            "silentRenders": 0,
+            "meanObjective": 4.025206538803542,
+            "staticMetric": "median-pitch error on reliable static targets; not contour or perceptual accuracy",
+            "staticTotal": 12,
+            "staticPass": 6
+          },
+          "frozen-v3": {
+            "targets": 32,
+            "missing": 0,
+            "failedRenders": 1,
+            "silentRenders": 0,
+            "meanObjective": 4.365126244466756,
+            "staticMetric": "median-pitch error on reliable static targets; not contour or perceptual accuracy",
+            "staticTotal": 12,
+            "staticPass": 5
+          }
+        },
+        "Transfxr": {
+          "control": {
+            "targets": 32,
+            "missing": 0,
+            "failedRenders": 0,
+            "silentRenders": 0,
+            "meanObjective": 3.5752002885232326,
+            "staticMetric": "median-pitch error on reliable static targets; not contour or perceptual accuracy",
+            "staticTotal": 12,
+            "staticPass": 11
+          },
+          "onset": {
+            "targets": 32,
+            "missing": 0,
+            "failedRenders": 0,
+            "silentRenders": 0,
+            "meanObjective": 3.4784849012128576,
+            "staticMetric": "median-pitch error on reliable static targets; not contour or perceptual accuracy",
+            "staticTotal": 12,
+            "staticPass": 11
+          },
+          "frozen-v3": {
+            "targets": 32,
+            "missing": 0,
+            "failedRenders": 0,
+            "silentRenders": 0,
+            "meanObjective": 3.4584020454204456,
+            "staticMetric": "median-pitch error on reliable static targets; not contour or perceptual accuracy",
+            "staticTotal": 12,
+            "staticPass": 10
+          }
+        }
+      },
+      "correctedGates": {
+        "Bfxr": {
+          "passed": false,
+          "objectivePassed": true,
+          "coveragePassed": true,
+          "rendersPassed": true,
+          "silencePassed": true,
+          "pitchPassed": false,
+          "policy": {
+            "minimumMeanObjectiveReduction": 0.05,
+            "maximumAdditionalMissing": 0,
+            "maximumAdditionalFailedRenders": 0,
+            "maximumAdditionalSilentRenders": 0,
+            "requireBothArmsComplete": true,
+            "maximumStaticPitchPassLoss": 0,
+            "meaning": "synthetic candidate-generation gate for listening, not perceptual adequacy"
+          }
+        },
+        "Transfxr": {
+          "passed": false,
+          "objectivePassed": false,
+          "coveragePassed": true,
+          "rendersPassed": true,
+          "silencePassed": true,
+          "pitchPassed": true,
+          "policy": {
+            "minimumMeanObjectiveReduction": 0.05,
+            "maximumAdditionalMissing": 0,
+            "maximumAdditionalFailedRenders": 0,
+            "maximumAdditionalSilentRenders": 0,
+            "requireBothArmsComplete": true,
+            "maximumStaticPitchPassLoss": 0,
+            "meaning": "synthetic candidate-generation gate for listening, not perceptual adequacy"
+          }
+        }
+      }
+    },
+    "probe-renders": {
+      "sourceReportSha256": "18f51bbff77fe2df0c876af27be5c4b70da3bd4b651dc640185250680f80aada",
+      "targets": 20,
+      "verifiedCandidateFiles": 240,
+      "selectedDspReplays": 60,
+      "maxRescoreError": 0.0,
+      "summaries": {
+        "Bfxr": {
+          "control": {
+            "targets": 10,
+            "missing": 0,
+            "failedRenders": 0,
+            "silentRenders": 0,
+            "meanObjective": 4.717331760844498,
+            "staticMetric": "median-pitch error on reliable static targets; not contour or perceptual accuracy",
+            "staticTotal": 5,
+            "staticPass": 0
+          },
+          "onset": {
+            "targets": 10,
+            "missing": 0,
+            "failedRenders": 0,
+            "silentRenders": 0,
+            "meanObjective": 4.8997215646261205,
+            "staticMetric": "median-pitch error on reliable static targets; not contour or perceptual accuracy",
+            "staticTotal": 5,
+            "staticPass": 3
+          },
+          "frozen-v3": {
+            "targets": 10,
+            "missing": 0,
+            "failedRenders": 0,
+            "silentRenders": 0,
+            "meanObjective": 3.507076489764086,
+            "staticMetric": "median-pitch error on reliable static targets; not contour or perceptual accuracy",
+            "staticTotal": 5,
+            "staticPass": 1
+          }
+        },
+        "Transfxr": {
+          "control": {
+            "targets": 10,
+            "missing": 0,
+            "failedRenders": 0,
+            "silentRenders": 0,
+            "meanObjective": 2.7787184269717513,
+            "staticMetric": "median-pitch error on reliable static targets; not contour or perceptual accuracy",
+            "staticTotal": 6,
+            "staticPass": 4
+          },
+          "onset": {
+            "targets": 10,
+            "missing": 0,
+            "failedRenders": 0,
+            "silentRenders": 0,
+            "meanObjective": 2.5193335777149093,
+            "staticMetric": "median-pitch error on reliable static targets; not contour or perceptual accuracy",
+            "staticTotal": 6,
+            "staticPass": 4
+          },
+          "frozen-v3": {
+            "targets": 10,
+            "missing": 0,
+            "failedRenders": 0,
+            "silentRenders": 0,
+            "meanObjective": 2.6138475613697514,
+            "staticMetric": "median-pitch error on reliable static targets; not contour or perceptual accuracy",
+            "staticTotal": 6,
+            "staticPass": 4
+          }
+        }
+      },
+      "correctedGates": {
+        "Bfxr": {
+          "passed": false,
+          "objectivePassed": false,
+          "coveragePassed": true,
+          "rendersPassed": true,
+          "silencePassed": true,
+          "pitchPassed": true,
+          "policy": {
+            "minimumMeanObjectiveReduction": 0.05,
+            "maximumAdditionalMissing": 0,
+            "maximumAdditionalFailedRenders": 0,
+            "maximumAdditionalSilentRenders": 0,
+            "requireBothArmsComplete": true,
+            "maximumStaticPitchPassLoss": 0,
+            "meaning": "synthetic candidate-generation gate for listening, not perceptual adequacy"
+          }
+        },
+        "Transfxr": {
+          "passed": true,
+          "objectivePassed": true,
+          "coveragePassed": true,
+          "rendersPassed": true,
+          "silencePassed": true,
+          "pitchPassed": true,
+          "policy": {
+            "minimumMeanObjectiveReduction": 0.05,
+            "maximumAdditionalMissing": 0,
+            "maximumAdditionalFailedRenders": 0,
+            "maximumAdditionalSilentRenders": 0,
+            "requireBothArmsComplete": true,
+            "maximumStaticPitchPassLoss": 0,
+            "meaning": "synthetic candidate-generation gate for listening, not perceptual adequacy"
+          }
+        }
+      }
+    }
+  },
+  "allVerified": true,
+  "listeningPromotion": {
+    "Bfxr": {
+      "passed": false,
+      "validationGatePassed": false,
+      "probeMedianPitchPreserved": true
+    },
+    "Transfxr": {
+      "passed": false,
+      "validationGatePassed": false,
+      "probeMedianPitchPreserved": true
+    }
+  },
+  "conclusion": "No human likeness evidence is inferred from parameter loss or objective scores."
+}
