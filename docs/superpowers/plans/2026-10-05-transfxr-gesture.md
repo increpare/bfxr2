@@ -27,4 +27,4 @@ Seven focused tests pass. Saved validation losses reproduce exactly on MPS;
 the small CPU stepped-curve boundary discrepancy is explicitly diagnosed.
 Render audit verifies 504 candidate files and 126 selected replays/rescores.
 Neither gate passes: primary distance worsens and probe contour coverage drops.
-No human listening request follows. See `tools/multisynth/GESTURE_V2.md`.
+No human listening request follows. See `tools/multisynth/PHYSICAL_GESTURE_V2.md`.

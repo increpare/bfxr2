@@ -29,7 +29,7 @@ regressed static pitch; Transfxr's mean improvement was below the threshold.
 No new listening round is requested from that failed experiment.
 
 Follow-up [local gradient checks](FORWARD_AUDIO_PILOT.md) and
-[Transfxr pitch-gesture supervision](GESTURE_V2.md) also failed their promotion
+[Transfxr pitch-gesture supervision](PHYSICAL_GESTURE_V2.md) also failed their promotion
 checks. Exact results and models are retained. A larger native Transfxr training
 corpus is being generated to test the substantial coverage/overfitting gap.
 
