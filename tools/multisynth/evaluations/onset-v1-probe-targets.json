@@ -1,0 +1,903 @@
+{
+  "schemaVersion": 1,
+  "sourcePath": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/temporal-v3/data",
+  "sourceManifestSha256": "5162ae6d90328f098389bfc762437bc29083eea4d5a446eb2fef14edced5e87c",
+  "sourceReports": {
+    "tools/multisynth/runs/temporal-v3/paired-shards/Bfxr.json": "2c2f1598a8091decdde94c3bfca771b5f664bd7e7d37bf0d3016d02b1c19b7b4",
+    "tools/multisynth/runs/temporal-v3/paired-shards/Transfxr.json": "0d4262d6cd32cccd3cb74645d6a2b407d01a89e0174f01321a9ba39197639618",
+    "tools/multisynth/runs/temporal-v3/high-pitch-targets/results.json": "9f594f4da124916a115b9d65638b2f52a9735cd0768196366613c46771276d73"
+  },
+  "rows": [
+    {
+      "id": "001-Bfxr-native",
+      "sourceSynth": "Bfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 1,
+        "attackTime": 0,
+        "sustainTime": 0.3001531958580017,
+        "sustainPunch": 0,
+        "decayTime": 0.5720697641372681,
+        "compressionAmount": 0,
+        "frequency_start": 0.31165337562561035,
+        "frequency_slide": -0.24687695503234863,
+        "frequency_acceleration": 0,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0,
+        "vibratoSpeed": 0,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0,
+        "pitch_jump_onset_percent": 0,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0,
+        "overtones": 0,
+        "overtoneFalloff": 0,
+        "squareDuty": 0,
+        "dutySweep": 0,
+        "repeatSpeed": 0.46687397360801697,
+        "flangerOffset": 0,
+        "flangerSweep": 0,
+        "lpFilterCutoff": 0.8198733925819397,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0,
+        "hpFilterCutoff": 0.36696985363960266,
+        "hpFilterCutoffSweep": 0.5068460702896118,
+        "bitCrush": 0,
+        "bitCrushSweep": 0
+      },
+      "sourceSeed": 3484344750,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "15b7a6a608cc45d5a5c2ad86d7a1250c61389bf2bac5497a9804582dcc9aa79d",
+      "parameterHash": "9a964d4b41efcb03a25bc79de6241a4c5a9f433ee96157f934069e6bfe1d90c5",
+      "family": "native",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "023-Bfxr-static",
+      "sourceSynth": "Bfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 2,
+        "attackTime": 0.025,
+        "sustainTime": 0.641969210530118,
+        "sustainPunch": 0,
+        "decayTime": 0.21,
+        "compressionAmount": 0,
+        "frequency_start": 0.19450501162305628,
+        "frequency_slide": 0,
+        "frequency_acceleration": 0,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0,
+        "vibratoSpeed": 0,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0,
+        "pitch_jump_onset_percent": 0,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0,
+        "overtones": 0,
+        "overtoneFalloff": 0,
+        "squareDuty": 0,
+        "dutySweep": 0,
+        "repeatSpeed": 0,
+        "flangerOffset": 0,
+        "flangerSweep": 0,
+        "lpFilterCutoff": 1,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0,
+        "hpFilterCutoff": 0,
+        "hpFilterCutoffSweep": 0,
+        "bitCrush": 0,
+        "bitCrushSweep": 0
+      },
+      "sourceSeed": 2387736336,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "0cd1162f6c98416b0243397894d02c0c7f772ac82e45ec9f7e24367e0807fbc9",
+      "parameterHash": "5e460077b39d3fc020fc95a2732cb93f60d3c29e708165de252b8ab96062662a",
+      "family": "static",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "024-Bfxr-static",
+      "sourceSynth": "Bfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 2,
+        "attackTime": 0.025,
+        "sustainTime": 0.6497243777195121,
+        "sustainPunch": 0,
+        "decayTime": 0.21,
+        "compressionAmount": 0,
+        "frequency_start": 0.29521505286424965,
+        "frequency_slide": 0,
+        "frequency_acceleration": 0,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0,
+        "vibratoSpeed": 0,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0,
+        "pitch_jump_onset_percent": 0,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0,
+        "overtones": 0,
+        "overtoneFalloff": 0,
+        "squareDuty": 0,
+        "dutySweep": 0,
+        "repeatSpeed": 0,
+        "flangerOffset": 0,
+        "flangerSweep": 0,
+        "lpFilterCutoff": 1,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0,
+        "hpFilterCutoff": 0,
+        "hpFilterCutoffSweep": 0,
+        "bitCrush": 0,
+        "bitCrushSweep": 0
+      },
+      "sourceSeed": 2210838850,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "b384e0a9991ec7b4d605b9dea2005b8d74439d5189dbc2533255f875f8419111",
+      "parameterHash": "85505e72a8ff169a3f96cb0315b0f0be033e4bb5bcaa6558dde1a8d8001959a6",
+      "family": "static",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "025-Bfxr-static",
+      "sourceSynth": "Bfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 2,
+        "attackTime": 0.025,
+        "sustainTime": 0.6563495825257959,
+        "sustainPunch": 0,
+        "decayTime": 0.21,
+        "compressionAmount": 0,
+        "frequency_start": 0.43561409204502166,
+        "frequency_slide": 0,
+        "frequency_acceleration": 0,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0,
+        "vibratoSpeed": 0,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0,
+        "pitch_jump_onset_percent": 0,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0,
+        "overtones": 0,
+        "overtoneFalloff": 0,
+        "squareDuty": 0,
+        "dutySweep": 0,
+        "repeatSpeed": 0,
+        "flangerOffset": 0,
+        "flangerSweep": 0,
+        "lpFilterCutoff": 1,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0,
+        "hpFilterCutoff": 0,
+        "hpFilterCutoffSweep": 0,
+        "bitCrush": 0,
+        "bitCrushSweep": 0
+      },
+      "sourceSeed": 3684886517,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "2a9be7217b07998941cd7f53efb8088c699481902ecdddeeb25fec33095694e1",
+      "parameterHash": "fa55480ce419791a42662fa470c0e58712c0716d56215e5b9e1324fba606f9e2",
+      "family": "static",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "032-Bfxr-moving",
+      "sourceSynth": "Bfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 2,
+        "attackTime": 0.025,
+        "sustainTime": 0.6519851173741733,
+        "sustainPunch": 0,
+        "decayTime": 0.21,
+        "compressionAmount": 0,
+        "frequency_start": 0.29521505286424965,
+        "frequency_slide": 0.10780140521139606,
+        "frequency_acceleration": 0,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0,
+        "vibratoSpeed": 0,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0,
+        "pitch_jump_onset_percent": 0,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0,
+        "overtones": 0,
+        "overtoneFalloff": 0,
+        "squareDuty": 0,
+        "dutySweep": 0,
+        "repeatSpeed": 0,
+        "flangerOffset": 0,
+        "flangerSweep": 0,
+        "lpFilterCutoff": 1,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0,
+        "hpFilterCutoff": 0,
+        "hpFilterCutoffSweep": 0,
+        "bitCrush": 0,
+        "bitCrushSweep": 0
+      },
+      "sourceSeed": 1128209245,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "770fd500cac664605c675502595c517543eb13a7a11a3307d1304b8761c1a25c",
+      "parameterHash": "c703c487b35c964fa9ac24068925fb1e6920ba73bb6b7a3af1c6a461abc64d0a",
+      "family": "moving",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "033-Bfxr-moving",
+      "sourceSynth": "Bfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 2,
+        "attackTime": 0.025,
+        "sustainTime": 0.607052305400718,
+        "sustainPunch": 0,
+        "decayTime": 0.21,
+        "compressionAmount": 0,
+        "frequency_start": 0.29521505286424965,
+        "frequency_slide": -0.11315693742412003,
+        "frequency_acceleration": 0,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0,
+        "vibratoSpeed": 0,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0,
+        "pitch_jump_onset_percent": 0,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0,
+        "overtones": 0,
+        "overtoneFalloff": 0,
+        "squareDuty": 0,
+        "dutySweep": 0,
+        "repeatSpeed": 0,
+        "flangerOffset": 0,
+        "flangerSweep": 0,
+        "lpFilterCutoff": 1,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0,
+        "hpFilterCutoff": 0,
+        "hpFilterCutoffSweep": 0,
+        "bitCrush": 0,
+        "bitCrushSweep": 0
+      },
+      "sourceSeed": 729072767,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "23458b1cfdfea42d2d47984da367490dbd31e4991602e4702ecf059fdb0bb42e",
+      "parameterHash": "7a4d2b871283e19ce5666552b1e5c061e1a079b93241fff555357026e2ab3b98",
+      "family": "moving",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "034-Bfxr-moving",
+      "sourceSynth": "Bfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 2,
+        "attackTime": 0.025,
+        "sustainTime": 0.6546356257007214,
+        "sustainPunch": 0,
+        "decayTime": 0.21,
+        "compressionAmount": 0,
+        "frequency_start": 0.29521505286424965,
+        "frequency_slide": 0,
+        "frequency_acceleration": 0,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0,
+        "vibratoSpeed": 0,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0.7027283689263065,
+        "pitch_jump_onset_percent": 0.45,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0,
+        "overtones": 0,
+        "overtoneFalloff": 0,
+        "squareDuty": 0,
+        "dutySweep": 0,
+        "repeatSpeed": 0,
+        "flangerOffset": 0,
+        "flangerSweep": 0,
+        "lpFilterCutoff": 1,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0,
+        "hpFilterCutoff": 0,
+        "hpFilterCutoffSweep": 0,
+        "bitCrush": 0,
+        "bitCrushSweep": 0
+      },
+      "sourceSeed": 2354076124,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "2f32f8a2eb2fc0b696cef478db82161e385bf5346acd7ecd6158293ad7011f45",
+      "parameterHash": "0b0daaabc49636c6687a7bcbfa6e1bd55ad5ed7f55b50c2ac7f9219a64065a80",
+      "family": "moving",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "035-Bfxr-moving",
+      "sourceSynth": "Bfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 2,
+        "attackTime": 0.025,
+        "sustainTime": 0.5924982523239367,
+        "sustainPunch": 0,
+        "decayTime": 0.21,
+        "compressionAmount": 0,
+        "frequency_start": 0.29521505286424965,
+        "frequency_slide": 0,
+        "frequency_acceleration": 0,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0.085,
+        "vibratoSpeed": 0.27479484051197095,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0,
+        "pitch_jump_onset_percent": 0,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0,
+        "overtones": 0,
+        "overtoneFalloff": 0,
+        "squareDuty": 0,
+        "dutySweep": 0,
+        "repeatSpeed": 0,
+        "flangerOffset": 0,
+        "flangerSweep": 0,
+        "lpFilterCutoff": 1,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0,
+        "hpFilterCutoff": 0,
+        "hpFilterCutoffSweep": 0,
+        "bitCrush": 0,
+        "bitCrushSweep": 0
+      },
+      "sourceSeed": 2002572864,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "7e3c33a5a165b8ab35e8d389153436acbeea068e311f695ffc8df744df43c448",
+      "parameterHash": "766b60b13e6770272601f361f094ffefeec7dbf45b73c0a8b0e858bdd0b8615e",
+      "family": "moving",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "003-Transfxr-native",
+      "sourceSynth": "Transfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 0.47927770018577576,
+        "pitch": {
+          "start": 0.3775845468044281,
+          "end": 0.4325845539569855,
+          "curve": "Smooth"
+        },
+        "tone": {
+          "start": 0.5005402565002441,
+          "end": 0.550000011920929,
+          "curve": "Smooth"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "level": {
+          "start": 0.432809978723526,
+          "end": 0.6512882709503174,
+          "curve": "Ease In"
+        },
+        "attack": 0.3514856696128845,
+        "release": 0.038826119154691696,
+        "resonance": 0.3143092393875122,
+        "echo": 0.5053076148033142,
+        "waveTo": -1,
+        "morph": {
+          "start": 0.004450251813977957,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "sourceSeed": 708594037,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "ee0f58e83a16c82a1e6d2b976f91e2a2034620937393d3c4fbb7eff9284aed08",
+      "parameterHash": "3ebb41ba449e669de54f06506aa779387c872777efd2916633a50843c278838b",
+      "family": "native",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "026-Transfxr-static",
+      "sourceSynth": "Transfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 0.8303594438736803,
+        "pitch": {
+          "start": 0.2537291411533092,
+          "end": 0.2537291411533092,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 1,
+          "end": 1,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "level": {
+          "start": 0.7,
+          "end": 0.7,
+          "curve": "Linear"
+        },
+        "attack": 0.015,
+        "release": 0.12,
+        "resonance": 0,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "sourceSeed": 2765503256,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "f184db55bf253c26792f2b312320372a0d3b460286487265c205815031fdff15",
+      "parameterHash": "c00007d56c73bdf90e2a0f7b1fda89c2df0101327774af1d25801f9c3dae8e95",
+      "family": "static",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "027-Transfxr-static",
+      "sourceSynth": "Transfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 0.7897655105263167,
+        "pitch": {
+          "start": 0.42269181074903434,
+          "end": 0.42269181074903434,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 1,
+          "end": 1,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "level": {
+          "start": 0.7,
+          "end": 0.7,
+          "curve": "Linear"
+        },
+        "attack": 0.015,
+        "release": 0.12,
+        "resonance": 0,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "sourceSeed": 264429512,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "ce9fdc744c7fae3be0f36c7207c87f7ed2dac4546bba2722305d85cfaf7a91e5",
+      "parameterHash": "7ad71c5b03772c58fdd269b3b89f1881667bb7cdcf05910a479a82def0160f85",
+      "family": "static",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "028-Transfxr-static",
+      "sourceSynth": "Transfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 1.0423074317204462,
+        "pitch": {
+          "start": 0.5817906571032793,
+          "end": 0.5817906571032793,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 1,
+          "end": 1,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "level": {
+          "start": 0.7,
+          "end": 0.7,
+          "curve": "Linear"
+        },
+        "attack": 0.015,
+        "release": 0.12,
+        "resonance": 0,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "sourceSeed": 1369246092,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "52ad465868d728d35372b571d2350eae95ef2281655d7a0ec275f0676c3d14dd",
+      "parameterHash": "0c4d01118862f5f131eb7f9f95f74aaa6938ddfb601c190feea156c4daa844a5",
+      "family": "static",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "036-Transfxr-moving",
+      "sourceSynth": "Transfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 0.9489224541556658,
+        "pitch": {
+          "start": 0.42269181074903434,
+          "end": 0.54383422597117,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 1,
+          "end": 1,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "level": {
+          "start": 0.7,
+          "end": 0.7,
+          "curve": "Linear"
+        },
+        "attack": 0.015,
+        "release": 0.12,
+        "resonance": 0,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "sourceSeed": 2642786900,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "19b61fafabce191759e1f67d7184f61fb3223834e9f12b20798624669090ed3f",
+      "parameterHash": "f169ef668ab34cc85a1f47a74a1764d483bbd96d46ba8b17507e141717d67e41",
+      "family": "moving",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "037-Transfxr-moving",
+      "sourceSynth": "Transfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 0.9766044630794554,
+        "pitch": {
+          "start": 0.42269181074903434,
+          "end": 0.29947802842759647,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 1,
+          "end": 1,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "level": {
+          "start": 0.7,
+          "end": 0.7,
+          "curve": "Linear"
+        },
+        "attack": 0.015,
+        "release": 0.12,
+        "resonance": 0,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "sourceSeed": 1588837870,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "bbee746461a147c208d58094e0fdd21d678067baf8cb56590a7c61871fb0afc1",
+      "parameterHash": "8afe9ae79e13e9a571628da7ed06175b3fdb6f72d4e5a61c68398a22ae28df43",
+      "family": "moving",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "038-Transfxr-moving",
+      "sourceSynth": "Transfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 0.8233273381536478,
+        "pitch": {
+          "start": 0.42269181074903434,
+          "end": 0.54383422597117,
+          "curve": "Steps"
+        },
+        "tone": {
+          "start": 1,
+          "end": 1,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "level": {
+          "start": 0.7,
+          "end": 0.7,
+          "curve": "Linear"
+        },
+        "attack": 0.015,
+        "release": 0.12,
+        "resonance": 0,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "sourceSeed": 2402907066,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "187ed6067270b7ab44713b7c8bb8696f798dcfa3a80bf6ffa55dcd25bf3d6e72",
+      "parameterHash": "d44770fd6a30ea985170d580bd16c2c9d4fc291064132f551b780e4000560707",
+      "family": "moving",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "039-Transfxr-moving",
+      "sourceSynth": "Transfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 1.0876305208861137,
+        "pitch": {
+          "start": 0.42269181074903434,
+          "end": 0.42269181074903434,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 1,
+          "end": 1,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0.16,
+          "end": 0.16,
+          "curve": "Linear"
+        },
+        "level": {
+          "start": 0.7,
+          "end": 0.7,
+          "curve": "Linear"
+        },
+        "attack": 0.015,
+        "release": 0.12,
+        "resonance": 0,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "sourceSeed": 2730049105,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "c196bbb5606b1b8dfff65adad3afc59ecbf214359f8a104286ecbb956b6c6fb8",
+      "parameterHash": "9b0cc6d140445b319e7b8f53091db379386fb5de50bfe7582f07f4da918ca544",
+      "family": "moving",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "Bfxr-2500",
+      "sourceSynth": "Bfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 2,
+        "attackTime": 0.025,
+        "sustainTime": 0.5853101966411758,
+        "sustainPunch": 0,
+        "decayTime": 0.21,
+        "compressionAmount": 0,
+        "frequency_start": 0.841199607730146,
+        "frequency_slide": 0,
+        "frequency_acceleration": 0,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0,
+        "vibratoSpeed": 0,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0,
+        "pitch_jump_onset_percent": 0,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0,
+        "overtones": 0,
+        "overtoneFalloff": 0,
+        "squareDuty": 0,
+        "dutySweep": 0,
+        "repeatSpeed": 0,
+        "flangerOffset": 0,
+        "flangerSweep": 0,
+        "lpFilterCutoff": 1,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0,
+        "hpFilterCutoff": 0,
+        "hpFilterCutoffSweep": 0,
+        "bitCrush": 0,
+        "bitCrushSweep": 0
+      },
+      "sourceSeed": 2622423681,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "50bd9456c013396778f7e623ac49b999b07346c488490dcef2127bddf927ae15",
+      "parameterHash": "a8f9d45356857504f2404575f3d7e9cf6831101c97496217ea1ba6eecf9f3912",
+      "family": "static",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "Bfxr-3200",
+      "sourceSynth": "Bfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 2,
+        "attackTime": 0.025,
+        "sustainTime": 0.5610867258426402,
+        "sustainPunch": 0,
+        "decayTime": 0.21,
+        "compressionAmount": 0,
+        "frequency_start": 0.9518558075980048,
+        "frequency_slide": 0,
+        "frequency_acceleration": 0,
+        "min_frequency_relative_to_starting_frequency": 0,
+        "vibratoDepth": 0,
+        "vibratoSpeed": 0,
+        "pitch_jump_repeat_speed": 0,
+        "pitch_jump_amount": 0,
+        "pitch_jump_onset_percent": 0,
+        "pitch_jump_2_amount": 0,
+        "pitch_jump_onset2_percent": 0,
+        "overtones": 0,
+        "overtoneFalloff": 0,
+        "squareDuty": 0,
+        "dutySweep": 0,
+        "repeatSpeed": 0,
+        "flangerOffset": 0,
+        "flangerSweep": 0,
+        "lpFilterCutoff": 1,
+        "lpFilterCutoffSweep": 0,
+        "lpFilterResonance": 0,
+        "hpFilterCutoff": 0,
+        "hpFilterCutoffSweep": 0,
+        "bitCrush": 0,
+        "bitCrushSweep": 0
+      },
+      "sourceSeed": 1542690216,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "aa5654584fc9b08eb6416db97723b54ffba3742594c547a8945d4685c638a072",
+      "parameterHash": "ee099b80586f6384d3af2d887210f17d1614dd161d5cd67f22321cd2e6bd712a",
+      "family": "static",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "Transfxr-2500",
+      "sourceSynth": "Transfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 1.05007340264645,
+        "pitch": {
+          "start": 0.8522548978088695,
+          "end": 0.8522548978088695,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 1,
+          "end": 1,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "level": {
+          "start": 0.7,
+          "end": 0.7,
+          "curve": "Linear"
+        },
+        "attack": 0.015,
+        "release": 0.12,
+        "resonance": 0,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "sourceSeed": 790282562,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "c869330914ebb91adc26879568fe4183feeac43d9487bebd7289fe813d2a363d",
+      "parameterHash": "d720b171ebbf6f1df596e1da04cf39b406caefbba38584fc8073b1ecaf4ba301",
+      "family": "static",
+      "stratum": "development-probe"
+    },
+    {
+      "id": "Transfxr-3200",
+      "sourceSynth": "Transfxr",
+      "sourceParams": {
+        "masterVolume": 0.5,
+        "waveType": 0,
+        "duration": 0.953835793225238,
+        "pitch": {
+          "start": 0.9031325849839089,
+          "end": 0.9031325849839089,
+          "curve": "Linear"
+        },
+        "tone": {
+          "start": 1,
+          "end": 1,
+          "curve": "Linear"
+        },
+        "vibrato": {
+          "start": 0,
+          "end": 0,
+          "curve": "Linear"
+        },
+        "level": {
+          "start": 0.7,
+          "end": 0.7,
+          "curve": "Linear"
+        },
+        "attack": 0.015,
+        "release": 0.12,
+        "resonance": 0,
+        "echo": 0,
+        "waveTo": -1,
+        "morph": {
+          "start": 0,
+          "end": 1,
+          "curve": "Smooth"
+        }
+      },
+      "sourceSeed": 4079583940,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "audioHash": "4e4293d0d0489d61379ec123bd2edc2710e2a475c7c32f906d9c57620beeb439",
+      "parameterHash": "02ad758df065739c83d57fb8be9f98259cc010a2e18aa44539d01fb76010c401",
+      "family": "static",
+      "stratum": "development-probe"
+    }
+  ],
+  "scope": "Existing development probes, excluded controls from all training and validation rows. Static pitch regressions veto listening promotion even if validation mean improves."
+}
