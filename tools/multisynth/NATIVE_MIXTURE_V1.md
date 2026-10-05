@@ -102,4 +102,51 @@ audition telemetry were entered.
 
 Listening page: `runs/native-mixture-v1-listening/index.html`, experiment
 `31d337163dcb3009bbebbdcbb95efa25cdea449820209b96414e1cf2273eb5f6`.
-Await human quality feedback before promoting the new expert or changing ranking.
+## Human feedback, 2026-10-05
+
+Five of six comparisons were submitted. The new mixture is preferred and
+explicitly **very close** on the gentle rise, wide rising sweep and low-pass
+filtered bouncing rise. These are human-confirmed positives: two additional
+native control groups and one altered input from a previously monitored family.
+Both Footsteppr options are **not close**. The older Boomr option wins and is
+**roughly similar**. The clean warble comparison remains unsubmitted; do not
+count it as a rejection, tie or regression confirmation.
+
+The original export, exact audition audio and candidate-scoped labels are in
+`listening_data/2026-10-05-native-mixture-quick-01`. The immutable human review
+records four heard preference pairs and six qualitative candidate labels,
+without fabricating scalar scores. Both MatchObjective and preference-neural-v2
+agree with three of four strict preferences; both incorrectly favor the new
+Boomr option. Numerical gains on Footsteppr are not successful reproduction.
+
+The review also probes the existing pitch-guard rules using the displayed
+previous candidate as a hypothetical baseline (which differs from the policy's
+original old-four baseline on some trials). Those rules reject the human-approved
+gentle rise for one fewer paired voiced frame, and the wide rise for direction
+and contour diagnostics. This is evidence against promoting that strict rule as
+a perceptual safeguard, not evidence that pitch is unimportant.
+
+The follow-on export-stability audit isolates a concrete measurement defect:
+the wide rise's PCM16 rounding extends its threshold-based trim boundary by
+2,239 samples (50.77 ms). Resampling pitch evidence on that shifted timeline
+changes its reported direction from rising to falling. Changing just one tiny
+tail sample in the float waveform reproduces the flip; quantizing the interior
+while retaining the original support does not. The archived audio exactly
+matches the intended audition export. No frozen feature module, model or
+selector is changed by this investigation.
+
+Across all 122 references and their three selected outputs (488 distinct audio
+signals), export changes 450 trim boundaries and 21 direction labels, including
+two opposite-direction flips. These are correlated development recordings, not
+an independent perceptual error rate. Peak normalization alone changes no trim
+boundaries or direction labels in this audit.
+
+A separate fixed-model input audit renders four mixture proposals per reference
+from audition PCM16 and compares them with the four original float-input
+proposals, scoring both against identical audition references. It records 488
+new DSP renders across all 122 cases. The 32 native controls change in both
+directions (15 numerical improvements, 17 regressions; mean absolute matching
+score change 0.536). Crucially, all five repeated tagged-real inputs were already
+in the audition representation: their predictions and scores stay unchanged.
+Thus this format sensitivity does **not** explain their poor reproduction.
+See `evaluations/native-mixture-input-stability.json` and its full retained run.

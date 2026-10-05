@@ -31,6 +31,31 @@ future exports use the updated questionnaire.
 | `2026-10-05-pitch-calibration-quick-01/` | 5 | 12 |
 | `2026-10-05-coverage-selection-quick-01/` | 3 | 6 |
 | `2026-10-05-transfxr-transfer-quick-01/` | 6 | 12 |
+| `2026-10-05-native-mixture-quick-01/` | 5 | 10 |
+
+The eleventh archive is a partial submission of five of six native-mixture
+comparisons. All ten options are recorded as auditioned. The new mixture wins
+Gentle rise, Wide rising sweep and Low-pass filtered bouncing rise, with an
+immediate **very-close** label for each winning candidate. Both Footsteppr
+recreations are rejected as not close. The older Boomr recreation wins and is
+immediately rated **roughly similar**. These yield four strict heard preference
+pairs, three positive adequacy labels, one similar label, and two explicit
+not-close labels; no scalar ratings are inferred. Warbling sweep was not
+submitted and remains unknown. No request to complete or recall that trial.
+
+Both frozen matching scorers favor the new option on all five references:
+they agree with 3/4 strict preferences but favor the rejected new Boomr option,
+and the large Footsteppr score improvement still fails the absolute listening
+test. Native self-inversion progress does not establish other-synth or tagged
+real-recording success. See the
+[exact-audio human review](../evaluations/native-mixture-quick-01-human-review.json).
+Its pitch-guard probe uses the displayed previous option as a hypothetical
+baseline, not necessarily the original old-four baseline of the deployed policy.
+The gentle and wide rises would be rejected by those strict guards despite
+their explicit very-close judgments. The separate
+[export-stability audit](../evaluations/native-mixture-export-stability.json)
+isolates trimming sensitivity behind the wide sweep's changed direction
+diagnostic. The listening audio itself is correct.
 
 The tenth archive retains all six robustness/transfer judgments, all 12 options
 recorded as auditioned, and 17 unique lossless reference/candidate PCM files.

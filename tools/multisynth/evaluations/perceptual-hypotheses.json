@@ -17,6 +17,11 @@
           "session": "2026-10-05-pitch-calibration-quick-01",
           "finding": "The user explicitly reports no convincing recreations across all five pitch-calibration references, despite five best choices. Zero of five is the absolute adequacy outcome; retain the seven pairwise preferences without treating winners as successful reproductions. Improving selection among these presented options cannot alone solve the batch. No particular acoustic cause is established.",
           "source": "listening_data/2026-10-05-pitch-calibration-quick-01/qualitative-feedback.json"
+        },
+        {
+          "session": "2026-10-05-native-mixture-quick-01",
+          "finding": "Immediate candidate-scoped answers give three preferred new outputs very-close labels, the preferred older Boomr option a similar label, and reject both Footsteppr options. Five of six references submitted; no missing judgment or scalar score is inferred. This finally separates the absolute and relative evidence within the questionnaire.",
+          "source": "evaluations/native-mixture-quick-01-human-review.json"
         }
       ]
     },
@@ -30,6 +35,11 @@
         {
           "session": "2026-10-04-temporal-v3-quick-01",
           "finding": "Human choices disagree with frozen matching distance on bird and one spinout pair; objective agrees with four of six heard-only pairs. This establishes concrete metric disagreement on these cases, not consensus across several independent models or a general error rate."
+        },
+        {
+          "session": "2026-10-05-native-mixture-quick-01",
+          "finding": "Both MatchObjective and preference-neural-v2 favor the new option on all five references. They agree with three of four strict heard preferences, but both favor the rejected new Boomr option. The strong numerical Footsteppr improvement is still explicitly not close. Metric agreement is not an adequacy certificate.",
+          "source": "evaluations/native-mixture-quick-01-human-review.json"
         }
       ]
     },
@@ -43,6 +53,11 @@
         {
           "session": "2026-10-04-temporal-v3-quick-01",
           "finding": "For bird, the preferred original Bfxr has an estimated median pitch near 2,402 Hz versus target 2,537 Hz; the rejected new Pluckr is near 3,835 Hz despite lower total distance. For charm2, the preferred new Bfxr is near 634 Hz versus target 637 Hz and original Bfxr 1,046 Hz. These observations are consistent with register mattering, but timbre/gesture also differ and pitch estimators have known failures; this is not a causal isolation."
+        },
+        {
+          "session": "2026-10-05-native-mixture-quick-01",
+          "finding": "The new gentle rise and wide rising sweep are explicitly very close, but the strict pitch guards would reject them when using their displayed previous candidates as hypothetical baselines. The gentle rise loses one paired voiced frame; the wide sweep has worse measured contour error and an audition-only direction flip. These are proxy failures, not evidence that register or gesture no longer matter.",
+          "source": "evaluations/native-mixture-quick-01-human-review.json"
         }
       ]
     },
@@ -110,6 +125,14 @@
       "evidence": "The latest preferred beep is worse in 24/30 current distance components, while six spectrum/timbre/correlation components favor it. The preferred bell instead gains on envelope/event cues. Refitting the existing 30-component global scorer gives only 3/7 held-out and 4/7 full-fit agreement on the latest comparisons, despite about 73% held-out reference-balanced agreement overall. These are descriptive correlations, not evidence that conditioning will solve the problem.",
       "nextTest": "Keep the current refit experimental. Target-conditioned cue weights remain a possible ranking experiment, but the explicit zero-of-five convincing outcome also requires improved candidate generation. Compare candidate-generation changes against frozen baselines on held-out actual renders and a fresh human listening batch. Ranking agreement alone is not an adequacy gate.",
       "source": "evaluations/perceptual-after-calibration-feedback-training.json"
+    },
+    {
+      "id": "tiny-tail-changes-can-shift-whole-gesture-measurement",
+      "claim": "Threshold-based trimming can turn tiny quantization differences into large relative-time pitch diagnostic changes.",
+      "status": "single-case-mechanism-isolated-broader-audit-recorded",
+      "evidence": "For the human-approved wide rise, normalized float and audition PCM16 have reported directions +1 and -1. Quantization extends the trim endpoint by 2239 samples. Changing one float tail sample to its quantized value reproduces the flip; keeping the original support while quantizing the interior restores +1. The original audition archive matches the intended export.",
+      "nextTest": "Measure the existing inverse prediction sensitivity separately before attributing its transfer failures to this defect. Any robust support or augmentation experiment must retain frozen baselines, use fresh data/model bindings, and test held-out actual renders and human likeness.",
+      "source": "evaluations/native-mixture-export-stability.json"
     }
   ]
 }

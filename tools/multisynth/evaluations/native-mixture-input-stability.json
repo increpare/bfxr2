@@ -1,0 +1,202 @@
+{
+  "complete": true,
+  "scriptSha256": "24c7f7c3123f52bc03bdb9bc86ddc5668f32088bf47a127eeec04705353443f1",
+  "reportSha256": "1e1ed96cd05b9338dd53f1b3d9c0474ab956d6860de2604d6d933b76f07dcbc9",
+  "sourceReportSha256": "91226704c283674aa2e4f2db170d0339364b015f64e4e19e9912d56205a9e465",
+  "checkpointSha256": "a816f97284cdd4ec0bfcfbcdbdbd11ab6e8b0230d4fa0b1388e758958694e73f",
+  "targets": 122,
+  "newActualRenders": 488,
+  "summary": {
+    "self-anchor/clean": {
+      "targets": 3,
+      "meanRawInputScore": 3.296009609711998,
+      "meanPcm16InputScore": 3.3459692813070565,
+      "meanAbsoluteScoreChange": 0.5590357512275982,
+      "pcmInputWins": 1,
+      "pcmInputLosses": 2,
+      "maxScoreIncrease": 0.9123034857385828,
+      "maxScoreDecrease": -0.7636141194488091
+    },
+    "self-anchor/mp3-32k": {
+      "targets": 3,
+      "meanRawInputScore": 4.189575283702514,
+      "meanPcm16InputScore": 4.195528247761493,
+      "meanAbsoluteScoreChange": 0.2593278503734269,
+      "pcmInputWins": 1,
+      "pcmInputLosses": 2,
+      "maxScoreIncrease": 0.3916663119389101,
+      "maxScoreDecrease": -0.3800623294716745
+    },
+    "self-anchor/mp3-96k": {
+      "targets": 3,
+      "meanRawInputScore": 3.07860656990635,
+      "meanPcm16InputScore": 3.055416283991621,
+      "meanAbsoluteScoreChange": 0.2553575879700977,
+      "pcmInputWins": 2,
+      "pcmInputLosses": 1,
+      "maxScoreIncrease": 0.34825095308305354,
+      "maxScoreDecrease": -0.4143037022633784
+    },
+    "self-anchor/pcm8": {
+      "targets": 3,
+      "meanRawInputScore": 4.682140144815871,
+      "meanPcm16InputScore": 4.682140144815871,
+      "meanAbsoluteScoreChange": 0.0,
+      "pcmInputWins": 0,
+      "pcmInputLosses": 0,
+      "maxScoreIncrease": 0.0,
+      "maxScoreDecrease": 0.0
+    },
+    "self-anchor/lowpass-1800": {
+      "targets": 3,
+      "meanRawInputScore": 4.315463908646606,
+      "meanPcm16InputScore": 4.645544547519125,
+      "meanAbsoluteScoreChange": 0.3313361989876357,
+      "pcmInputWins": 1,
+      "pcmInputLosses": 2,
+      "maxScoreIncrease": 0.9450307415627357,
+      "maxScoreDecrease": -0.0018833401726747745
+    },
+    "self-anchor/highpass-350": {
+      "targets": 3,
+      "meanRawInputScore": 4.731949380363017,
+      "meanPcm16InputScore": 4.645219123097742,
+      "meanAbsoluteScoreChange": 0.3489153376525727,
+      "pcmInputWins": 1,
+      "pcmInputLosses": 2,
+      "maxScoreIncrease": 0.39251683883319277,
+      "maxScoreDecrease": -0.6534683923767712
+    },
+    "self-anchor/transpose+5": {
+      "targets": 3,
+      "meanRawInputScore": 4.166526056745095,
+      "meanPcm16InputScore": 4.8344473946149655,
+      "meanAbsoluteScoreChange": 0.6711493537551089,
+      "pcmInputWins": 1,
+      "pcmInputLosses": 2,
+      "maxScoreIncrease": 1.7352328383182933,
+      "maxScoreDecrease": -0.00484202382785659
+    },
+    "self-anchor/transpose-5": {
+      "targets": 3,
+      "meanRawInputScore": 3.124849114588061,
+      "meanPcm16InputScore": 2.9573653790209797,
+      "meanAbsoluteScoreChange": 0.2173085160844257,
+      "pcmInputWins": 2,
+      "pcmInputLosses": 1,
+      "maxScoreIncrease": 0.07473717077601716,
+      "maxScoreDecrease": -0.5721675328284554
+    },
+    "self-other/clean": {
+      "targets": 5,
+      "meanRawInputScore": 2.8795591720206373,
+      "meanPcm16InputScore": 2.4764030223742513,
+      "meanAbsoluteScoreChange": 0.4079136825970392,
+      "pcmInputWins": 2,
+      "pcmInputLosses": 3,
+      "maxScoreIncrease": 0.009948839049261693,
+      "maxScoreDecrease": -2.0252752107469103
+    },
+    "self-other/mp3-32k": {
+      "targets": 5,
+      "meanRawInputScore": 3.8587398460904057,
+      "meanPcm16InputScore": 4.054909799732043,
+      "meanAbsoluteScoreChange": 0.19692323649806093,
+      "pcmInputWins": 2,
+      "pcmInputLosses": 3,
+      "maxScoreIncrease": 0.9654341109414153,
+      "maxScoreDecrease": -0.0016654135351035215
+    },
+    "self-other/mp3-96k": {
+      "targets": 5,
+      "meanRawInputScore": 3.2044387063704356,
+      "meanPcm16InputScore": 2.755755763832761,
+      "meanAbsoluteScoreChange": 0.44906983724976035,
+      "pcmInputWins": 4,
+      "pcmInputLosses": 1,
+      "maxScoreIncrease": 0.0009672367802144866,
+      "maxScoreDecrease": -1.888580804512726
+    },
+    "self-other/pcm8": {
+      "targets": 5,
+      "meanRawInputScore": 2.786104817940907,
+      "meanPcm16InputScore": 2.786104817940907,
+      "meanAbsoluteScoreChange": 0.0,
+      "pcmInputWins": 0,
+      "pcmInputLosses": 0,
+      "maxScoreIncrease": 0.0,
+      "maxScoreDecrease": 0.0
+    },
+    "self-other/lowpass-1800": {
+      "targets": 5,
+      "meanRawInputScore": 4.414231242436492,
+      "meanPcm16InputScore": 4.183909420072734,
+      "meanAbsoluteScoreChange": 0.2314811125762503,
+      "pcmInputWins": 3,
+      "pcmInputLosses": 2,
+      "maxScoreIncrease": 0.0021839106354899496,
+      "maxScoreDecrease": -1.0561907759687514
+    },
+    "self-other/highpass-350": {
+      "targets": 5,
+      "meanRawInputScore": 6.890465825761481,
+      "meanPcm16InputScore": 6.870145537507345,
+      "meanAbsoluteScoreChange": 0.021342419135293066,
+      "pcmInputWins": 4,
+      "pcmInputLosses": 1,
+      "maxScoreIncrease": 0.0025553272028946417,
+      "maxScoreDecrease": -0.05437547032317802
+    },
+    "self-other/transpose+5": {
+      "targets": 5,
+      "meanRawInputScore": 3.7244250839203046,
+      "meanPcm16InputScore": 3.737529418237495,
+      "meanAbsoluteScoreChange": 0.018604232060986957,
+      "pcmInputWins": 2,
+      "pcmInputLosses": 3,
+      "maxScoreIncrease": 0.06025273026251554,
+      "maxScoreDecrease": -0.013577899609456878
+    },
+    "self-other/transpose-5": {
+      "targets": 5,
+      "meanRawInputScore": 3.962755681433112,
+      "meanPcm16InputScore": 3.9979265135954485,
+      "meanAbsoluteScoreChange": 0.04312101232033947,
+      "pcmInputWins": 3,
+      "pcmInputLosses": 2,
+      "maxScoreIncrease": 0.1444204097430406,
+      "maxScoreDecrease": -0.012941234840850413
+    },
+    "other-synth": {
+      "targets": 21,
+      "meanRawInputScore": 7.5141820829202235,
+      "meanPcm16InputScore": 7.4259884428004606,
+      "meanAbsoluteScoreChange": 0.153391788667667,
+      "pcmInputWins": 12,
+      "pcmInputLosses": 9,
+      "maxScoreIncrease": 0.45642922454545953,
+      "maxScoreDecrease": -2.033689660063306
+    },
+    "real-repeated": {
+      "targets": 5,
+      "meanRawInputScore": 8.007974299181928,
+      "meanPcm16InputScore": 8.007974299181928,
+      "meanAbsoluteScoreChange": 0.0,
+      "pcmInputWins": 0,
+      "pcmInputLosses": 0,
+      "maxScoreIncrease": 0.0,
+      "maxScoreDecrease": 0.0
+    },
+    "fresh-native": {
+      "targets": 32,
+      "meanRawInputScore": 4.022265164309124,
+      "meanPcm16InputScore": 3.9680481444154925,
+      "meanAbsoluteScoreChange": 0.536458391131845,
+      "pcmInputWins": 15,
+      "pcmInputLosses": 17,
+      "maxScoreIncrease": 1.526315448609481,
+      "maxScoreDecrease": -7.7255967455052605
+    }
+  },
+  "interpretation": "Input-format sensitivity of the same frozen model, with matching distance as a diagnostic only. Not a training improvement, perception test, or independent generalization test."
+}
