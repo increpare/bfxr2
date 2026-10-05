@@ -1,0 +1,95 @@
+{
+  "complete": true,
+  "experimentId": "31d337163dcb3009bbebbdcbb95efa25cdea449820209b96414e1cf2273eb5f6",
+  "htmlSha256": "c56ccd8f4cd7a4d18868315e3311fc788a03a7dbaf1aa233529c59f2fc888b5c",
+  "resultsSha256": "859a0acb81628f6e10dd1279cf160d092b62f634b6424a741c7a8b03eb5d9833",
+  "checks": [
+    {
+      "id": "Transfxr-mixture-21835",
+      "auditionHashes": [
+        "9cea5f0ecc676b785c232e57e5e672a822bb0a8ce5adc918be744538be44d675",
+        "24c3036e298921b4385eb327a17e179a97807ef5179a1518026e0e65907667db"
+      ],
+      "scores": [
+        1.2572691920998977,
+        0.48977131324943224
+      ]
+    },
+    {
+      "id": "Transfxr-mixture-18808",
+      "auditionHashes": [
+        "edc5492745eae51af6e519c15ff698b959498c04ca068fce3a6cba6c5dcb7a6a",
+        "d416b2ab20ad6d398cde9cdb60fd9743e415a176942a82bcd6a6b755352fc390"
+      ],
+      "scores": [
+        6.744953637656055,
+        3.1940400445493817
+      ]
+    },
+    {
+      "id": "external-Footsteppr",
+      "auditionHashes": [
+        "de4e6d127bdf80f14e06dabe75e7c322d35991ccb0fd7b267eb7c3897ffc326f",
+        "8885b34cc5a2d5c1f7bdbf14e69f588d710cdfaae160953c18eeb50d50a5977e"
+      ],
+      "scores": [
+        13.291616413973536,
+        1.6990131186827084
+      ]
+    },
+    {
+      "id": "external-Boomr",
+      "auditionHashes": [
+        "2f6f9daa0a850e9b9cc4989966b6bb47ef6f26e4d36322b25799d578b4b8b3ea",
+        "05e1ccde41524d6457cc602adab89a64faf096247c1db51662a8aacf41a5aa0e"
+      ],
+      "scores": [
+        2.0305680760515026,
+        1.48283158850464
+      ]
+    },
+    {
+      "id": "Transfxr-selection-21373/lowpass-1800",
+      "auditionHashes": [
+        "30d2b73d0e8abdb96021f99f62d844bcb34f0306c8912bd64f763d2a32d22975",
+        "0f13eadf434a751d27ca8d8023df0d31fc89fed353d4c18570553c8f86e5c532"
+      ],
+      "scores": [
+        8.666586902177503,
+        2.7614310454991684
+      ]
+    },
+    {
+      "id": "Transfxr-selection-17860/clean",
+      "auditionHashes": [
+        "f311eadf866aed33f29c1877290a3ce02c1390dae46e43ab153e18317c282082",
+        "f5e491c7a003e7029cabd81f2a6133586768b9727e29d44fe041699304b077fc"
+      ],
+      "scores": [
+        1.5122559939386941,
+        3.980895272293751
+      ]
+    }
+  ],
+  "audioFiles": {
+    "001/selected.wav": "bf6e3b853c854fe9f27e9aa81dff45489840c3e8b9e580e84e8e20bae92c7012",
+    "001/target.wav": "24b62b999c49ebc78f163fa053a732aa526f1fc95c70a28ecbf0f1f037bdc2af",
+    "001/previous.wav": "4511c8b3f581e0e990efb21d77de6bf5689a5763fb7fe9bdf334742a0def196a",
+    "006/selected.wav": "1dfe78d60c814698084570aaf767d6f5e4d913ea2fa7708ac5d9598eeebc9ed7",
+    "006/target.wav": "0343775044f15b66334ccd43909ca3a0d766da599e783529359d5bc541711810",
+    "006/previous.wav": "56e2578a7b8c154165f4f2c3ad94f41eb7564661b91ef604f60f400a5b0dca4f",
+    "003/selected.wav": "184a95e35a86330aadc8af283ce4fffbd2b73fe578c8281d3cf5bcf21c2cef9b",
+    "003/target.wav": "01591dd5efd3b3ea040b3415fad2eff231978149acddf9bd97c73b28a10095c3",
+    "003/previous.wav": "be743e87235e172ea0d99c2f7c87886ed4104d7ccfad20634dedc8916cd98bca",
+    "004/selected.wav": "85ae117e638914c25f78d2426d11abd41877102399ebe5f6361987fbfef75c22",
+    "004/target.wav": "3aeeb71d3a24e24af3f9742663612e05806d08fd3deac114a3b4ca2d8e55d354",
+    "004/previous.wav": "d0053c8acde4db780240af6d84707c61a468b1c3094b713d10c7ea634a528fcd",
+    "005/selected.wav": "718a5a4591d74913fa14746570e390bcd2e1a462336f927b2bb273cf6dc6ef54",
+    "005/target.wav": "ccf61964a660709eed57c8d5538f867069504cea94178bdb89aaf29b161c835b",
+    "005/previous.wav": "270afb99ae88a8192e73a17c90c6976af1689638d081eda14bb3833e481ade30",
+    "002/selected.wav": "dfcec76b51de3048d1b76376efaa08670f51f9f7b70dee0e7f71a2550c9c4a43",
+    "002/target.wav": "c1e8aa647c60aeeaab1382e9e0cd354b658b6e7efcda50bec836ac4292dec35f",
+    "002/previous.wav": "14567c24d879f1b0642820561da4c6b54f7114623c5cb93e9ed72f36b9e49a21"
+  },
+  "scope": "Selected new DSP replayed; archived old PCM exact; all audition transforms and candidate distinction verified."
+}

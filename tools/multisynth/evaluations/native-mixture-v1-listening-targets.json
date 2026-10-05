@@ -1,0 +1,52 @@
+{
+  "reportSha256": "91226704c283674aa2e4f2db170d0339364b015f64e4e19e9912d56205a9e465",
+  "policy": "Outcome-selected six-case diagnostic: two additional native controls (one consensus improvement, one contour/overall-distance disagreement), two external sources, one altered input, and one regression on a previously very-close gesture. Not a representative quality estimate. New candidates are raw predictions, without local search.",
+  "rows": [
+    {
+      "id": "Transfxr-mixture-21835",
+      "label": "New reference \u00b7 gentle rise",
+      "newArm": "mixture",
+      "baseline": "baseline",
+      "reason": "Additional native controls; both aggregate matching and tracked pitch improve. Test a numerical consensus case."
+    },
+    {
+      "id": "Transfxr-mixture-18808",
+      "label": "New reference \u00b7 wide rising sweep",
+      "newArm": "mixture",
+      "baseline": "baseline",
+      "reason": "Additional native controls; aggregate score and median pitch improve, while full-contour error worsens. Diagnose what listeners hear."
+    },
+    {
+      "id": "external-Footsteppr",
+      "label": "Footsteppr source sound",
+      "newArm": "single",
+      "baseline": "transfer-ensemble",
+      "reason": "External source; the further-trained single expert improves strongly while the mixture does not. Test transfer beyond native Transfxr."
+    },
+    {
+      "id": "external-Boomr",
+      "label": "Boomr source sound",
+      "newArm": "mixture",
+      "baseline": "archive",
+      "reason": "Compare the new mixture against the exact prior combined-model winner; prior absolute likeness remains unknown, not invented.",
+      "archive": "tools/multisynth/listening_data/2026-10-05-transfxr-transfer-quick-01",
+      "archiveTargetId": "579f71170b9d98f3e10c8433af3166afc8d3305586f16d0f881acbebf8d48178"
+    },
+    {
+      "id": "Transfxr-selection-21373/lowpass-1800",
+      "label": "Bouncing rise \u00b7 low-pass filtered",
+      "newArm": "mixture",
+      "baseline": "transfer-ensemble",
+      "reason": "Altered input; aggregate distance and tracked contour improve. This filtered reference has not been judged before."
+    },
+    {
+      "id": "Transfxr-selection-17860/clean",
+      "label": "Warbling sweep",
+      "newArm": "mixture",
+      "baseline": "archive",
+      "reason": "Known very-close native gesture. The mixture has worse matching distance; test whether the numerical regression is audible.",
+      "archive": "tools/multisynth/listening_data/2026-10-05-coverage-selection-quick-01",
+      "archiveTargetId": "60a3b152749d832204894b39e7f58e6591b890b9429e9e3ef881c63fc66c6bc8"
+    }
+  ]
+}

@@ -1,0 +1,461 @@
+{
+  "complete": true,
+  "reportSha256": "91226704c283674aa2e4f2db170d0339364b015f64e4e19e9912d56205a9e465",
+  "training": {
+    "single": {
+      "bestStep": 2400,
+      "cpu": {
+        "loss": 0.3583665026055686,
+        "bestEnergy": 0.3583665026055686,
+        "responsibility": [
+          1.0
+        ],
+        "winnerCounts": [
+          1843
+        ],
+        "rows": 1843
+      },
+      "recorded": {
+        "loss": 0.3583665447783612,
+        "bestEnergy": 0.3583665447783612,
+        "responsibility": [
+          1.0
+        ],
+        "winnerCounts": [
+          1843
+        ],
+        "rows": 1843
+      },
+      "checkpointSha256": "69d8c6f4f2e2c96e8f20a8ba615f5f13489ed7b662084debab036fe17518fb81"
+    },
+    "mixture": {
+      "bestStep": 3800,
+      "cpu": {
+        "loss": 0.2809212586502107,
+        "bestEnergy": 0.2531661313316192,
+        "responsibility": [
+          0.18705796134646535,
+          0.31575576856740456,
+          0.3208575039147943,
+          0.17632876565387828
+        ],
+        "winnerCounts": [
+          519,
+          472,
+          509,
+          343
+        ],
+        "rows": 1843
+      },
+      "recorded": {
+        "loss": 0.28092125607436075,
+        "bestEnergy": 0.2531661110214093,
+        "responsibility": [
+          0.18705794685765317,
+          0.3157557463167287,
+          0.32085757325410974,
+          0.1763287320191357
+        ],
+        "winnerCounts": [
+          519,
+          472,
+          509,
+          343
+        ],
+        "rows": 1843
+      },
+      "checkpointSha256": "a816f97284cdd4ec0bfcfbcdbdbd11ab6e8b0230d4fa0b1388e758958694e73f"
+    }
+  },
+  "verifiedAudioFiles": 1586,
+  "selectedDspReplays": 366,
+  "maxScoreError": 0.0,
+  "summary": {
+    "self/clean": {
+      "baseline": {
+        "count": 8,
+        "meanDistance": 3.6314620368801767,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 0,
+        "winsOverSingle": 3,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 2,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "single": {
+        "count": 8,
+        "meanDistance": 4.120197952337046,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 5,
+        "winsOverSingle": 0,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 4,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "mixture": {
+        "count": 8,
+        "meanDistance": 3.0332527359606996,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 6,
+        "winsOverSingle": 4,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 2,
+        "meanDistinctNumericPredictions": 4.0
+      }
+    },
+    "self/mp3-32k": {
+      "baseline": {
+        "count": 8,
+        "meanDistance": 4.483140171823107,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 0,
+        "winsOverSingle": 4,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 2,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "single": {
+        "count": 8,
+        "meanDistance": 5.152431908432748,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 4,
+        "winsOverSingle": 0,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 1,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "mixture": {
+        "count": 8,
+        "meanDistance": 3.980757258189574,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 5,
+        "winsOverSingle": 6,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 2,
+        "meanDistinctNumericPredictions": 4.0
+      }
+    },
+    "self/mp3-96k": {
+      "baseline": {
+        "count": 8,
+        "meanDistance": 3.6219441997401978,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 0,
+        "winsOverSingle": 3,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 2,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "single": {
+        "count": 8,
+        "meanDistance": 4.417809123142406,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 5,
+        "winsOverSingle": 0,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 3,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "mixture": {
+        "count": 8,
+        "meanDistance": 3.154815768778878,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 5,
+        "winsOverSingle": 5,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 1,
+        "meanDistinctNumericPredictions": 4.0
+      }
+    },
+    "self/pcm8": {
+      "baseline": {
+        "count": 8,
+        "meanDistance": 3.91974304440099,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 0,
+        "winsOverSingle": 3,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 3,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "single": {
+        "count": 8,
+        "meanDistance": 3.8453176341289765,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 5,
+        "winsOverSingle": 0,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 3,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "mixture": {
+        "count": 8,
+        "meanDistance": 3.4894430719780622,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 5,
+        "winsOverSingle": 4,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 2,
+        "meanDistinctNumericPredictions": 4.0
+      }
+    },
+    "self/lowpass-1800": {
+      "baseline": {
+        "count": 8,
+        "meanDistance": 4.910750072059583,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 0,
+        "winsOverSingle": 3,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 2,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "single": {
+        "count": 8,
+        "meanDistance": 5.116292030214526,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 5,
+        "winsOverSingle": 0,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 1,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "mixture": {
+        "count": 8,
+        "meanDistance": 4.373778825015843,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 5,
+        "winsOverSingle": 5,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 3,
+        "meanDistinctNumericPredictions": 4.0
+      }
+    },
+    "self/highpass-350": {
+      "baseline": {
+        "count": 8,
+        "meanDistance": 5.837374157989922,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 0,
+        "winsOverSingle": 4,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 1,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "single": {
+        "count": 8,
+        "meanDistance": 5.739600070838633,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 4,
+        "winsOverSingle": 0,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 0,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "mixture": {
+        "count": 8,
+        "meanDistance": 6.078956784149328,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 4,
+        "winsOverSingle": 5,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 1,
+        "meanDistinctNumericPredictions": 4.0
+      }
+    },
+    "self/transpose+5": {
+      "baseline": {
+        "count": 8,
+        "meanDistance": 4.934388860382266,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 0,
+        "winsOverSingle": 4,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 2,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "single": {
+        "count": 8,
+        "meanDistance": 4.882664381183905,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 4,
+        "winsOverSingle": 0,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 2,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "mixture": {
+        "count": 8,
+        "meanDistance": 3.870784358467258,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 5,
+        "winsOverSingle": 7,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 3,
+        "meanDistinctNumericPredictions": 4.0
+      }
+    },
+    "self/transpose-5": {
+      "baseline": {
+        "count": 8,
+        "meanDistance": 4.883249994393476,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 0,
+        "winsOverSingle": 3,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 2,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "single": {
+        "count": 8,
+        "meanDistance": 4.083092519261236,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 5,
+        "winsOverSingle": 0,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 3,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "mixture": {
+        "count": 8,
+        "meanDistance": 3.6438166878824223,
+        "pairedWithBaseline": 8,
+        "pairedWithSingle": 8,
+        "winsOverBaseline": 5,
+        "winsOverSingle": 5,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 3,
+        "meanDistinctNumericPredictions": 4.0
+      }
+    },
+    "other-synth": {
+      "baseline": {
+        "count": 21,
+        "meanDistance": 8.028980446104914,
+        "pairedWithBaseline": 21,
+        "pairedWithSingle": 21,
+        "winsOverBaseline": 0,
+        "winsOverSingle": 9,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 0,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "single": {
+        "count": 21,
+        "meanDistance": 7.201179978149666,
+        "pairedWithBaseline": 21,
+        "pairedWithSingle": 21,
+        "winsOverBaseline": 12,
+        "winsOverSingle": 0,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 2,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "mixture": {
+        "count": 21,
+        "meanDistance": 7.5132186812019155,
+        "pairedWithBaseline": 21,
+        "pairedWithSingle": 21,
+        "winsOverBaseline": 17,
+        "winsOverSingle": 13,
+        "reliableTargets": 6,
+        "pitchWithinSemitone": 2,
+        "meanDistinctNumericPredictions": 4.0
+      }
+    },
+    "real-repeated": {
+      "baseline": {
+        "count": 5,
+        "meanDistance": 8.819747091713387,
+        "pairedWithBaseline": 5,
+        "pairedWithSingle": 5,
+        "winsOverBaseline": 0,
+        "winsOverSingle": 3,
+        "reliableTargets": 5,
+        "pitchWithinSemitone": 0,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "single": {
+        "count": 5,
+        "meanDistance": 8.678745745171359,
+        "pairedWithBaseline": 5,
+        "pairedWithSingle": 5,
+        "winsOverBaseline": 2,
+        "winsOverSingle": 0,
+        "reliableTargets": 5,
+        "pitchWithinSemitone": 0,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "mixture": {
+        "count": 5,
+        "meanDistance": 8.005623563145566,
+        "pairedWithBaseline": 5,
+        "pairedWithSingle": 5,
+        "winsOverBaseline": 4,
+        "winsOverSingle": 4,
+        "reliableTargets": 5,
+        "pitchWithinSemitone": 0,
+        "meanDistinctNumericPredictions": 4.0
+      }
+    },
+    "fresh-native": {
+      "baseline": {
+        "count": 32,
+        "meanDistance": 4.671841665917123,
+        "pairedWithBaseline": 32,
+        "pairedWithSingle": 32,
+        "winsOverBaseline": 0,
+        "winsOverSingle": 12,
+        "reliableTargets": 20,
+        "pitchWithinSemitone": 5,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "single": {
+        "count": 32,
+        "meanDistance": 4.9384807567814,
+        "pairedWithBaseline": 32,
+        "pairedWithSingle": 32,
+        "winsOverBaseline": 20,
+        "winsOverSingle": 0,
+        "reliableTargets": 20,
+        "pitchWithinSemitone": 9,
+        "meanDistinctNumericPredictions": 1.0
+      },
+      "mixture": {
+        "count": 32,
+        "meanDistance": 4.018602967773048,
+        "pairedWithBaseline": 32,
+        "pairedWithSingle": 32,
+        "winsOverBaseline": 22,
+        "winsOverSingle": 23,
+        "reliableTargets": 20,
+        "pitchWithinSemitone": 9,
+        "meanDistinctNumericPredictions": 4.0
+      }
+    }
+  },
+  "scope": "All saved files hashed; all selections replayed/rescored. Descriptor summaries reused, not independently estimated."
+}
