@@ -1,0 +1,29 @@
+{
+  "complete": true,
+  "experimentId": "3afd5c29406ff55b3877ecefd48debf7174e7c871b7ff54f1f39c7454665b5e8",
+  "resultsSha256": "aa4fe2ac5845ad58f3ac4b32b67bbeaf3a79d56234b887f55a338d022115bb1f",
+  "htmlSha256": "0d0c0c1fa860d54dba672086726b40ace7bace5196249c1d4a76440fd3900b54",
+  "audioFiles": {
+    "001/target.wav": "0343775044f15b66334ccd43909ca3a0d766da599e783529359d5bc541711810",
+    "001/expanded.wav": "56e2578a7b8c154165f4f2c3ad94f41eb7564661b91ef604f60f400a5b0dca4f",
+    "001/previous.wav": "73b87aa9720ba0d729c27ad89f3594a9f9055c35c2b8db72266393d1ab10cf8f",
+    "003/target.wav": "1b11fe7e13727e954ff8687279ddef6e74c1ae353a7a807a46bc1191bf997f4c",
+    "003/expanded.wav": "4ea1fe80585acd2282aad5c0577090746043685e7cc3bb9bd6d3b7182865006c",
+    "003/previous.wav": "182298cda3c09c53824e8f662f248d667339f030cb880045b0982a2ad0bf8da6",
+    "002/target.wav": "365e08476eed79b5e0e5a7c3ac7210d95ab299590efeef8df0cb6c811c63833f",
+    "002/expanded.wav": "a696cb8042e8a6a84dcdec7e5dd7bd743733689452df89cf12fe83dc7abe69ea",
+    "002/previous.wav": "d80605755123a589e8df32653f877af37e9bd70787328a0331ee6c4f71a0421f"
+  },
+  "scope": "All references and candidates replayed exactly; single audition transform verified after PCM16 write. No human quality verdict.",
+  "deliveryChecks": {
+    "httpHtmlAndNineWavsMatchHashes": true,
+    "browserSequenceStartedAndCompleted": true,
+    "humanChoicesEnteredByAgent": 0
+  },
+  "selectedTargets": [
+    "Transfxr-selection-17860",
+    "Transfxr-selection-17445",
+    "Transfxr-selection-21373"
+  ],
+  "selectionScope": "Deliberately selected synthetic self-inversion diagnostics; two pitch gestures and one tracker-uncertain texture. Not a representative quality estimate."
+}
