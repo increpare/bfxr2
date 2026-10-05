@@ -1,0 +1,204 @@
+{
+  "dataSha256": "968f1d305eff8241897980ffbb2388729510cc84eae8d8cfe09acef6b103d2db",
+  "prepareScriptSha256": "7d1a8b80181bdeb8115986f2d390627c726d516a3780d6c732c51a9f23734958",
+  "designSha256": "d7a330db76f16365eacf635087165c049f90e29125dd83c1f7c3ecb994020a66",
+  "archives": [
+    {
+      "archive": "2026-10-03-coverage-v3",
+      "experimentId": "18eaf037282463564849286d2385a4fa7460042e4c2b395773799f30f53db44d",
+      "schemaVersion": 2,
+      "feedbackSha256": "d56f5685f08adf0882f02ea4aca4635c2b28a296f87ce48100537f018fcb8f9a",
+      "manifestSha256": "72403c7fb0088b036f4a785bf74cb43b6ccd82febc97dc5282f6b29ef106a9f6"
+    },
+    {
+      "archive": "2026-10-03-real-v1",
+      "experimentId": "51ebabd537188b5b7555a8d74e847674121e8d3f903fc1d00551fc604b526d34",
+      "schemaVersion": 1,
+      "feedbackSha256": "dcf72a32f2fbea1f707454655a76b3e475af2028706f51c1f576dedd462aa7c4",
+      "manifestSha256": "c28456efac1be70c3b65b76900aa0aa49bb1021526cd49543e999f25d2504c6a"
+    },
+    {
+      "archive": "2026-10-03-tagged-v2",
+      "experimentId": "1c0145142041360dc762cabb13f8b9ff133826b0d7cf7234784f6c6b53e4268c",
+      "schemaVersion": 1,
+      "feedbackSha256": "3dc851cdb94ea0ba8a5d6efae67cdd73fb926b888c8221765b5075ae0969f89b",
+      "manifestSha256": "c24ef8d61d352257d76f9a53b55a015a971c5368404e37b6eaf7fd192aa93bed"
+    },
+    {
+      "archive": "2026-10-04-big-v4",
+      "experimentId": "140d89d3331adb085c93a93a2bd2e72943145c89329088d0ebcf14b3827ee8f2",
+      "schemaVersion": 2,
+      "feedbackSha256": "fbbbb715cc6797bf2e317558d099f20367a881c8d3a1b8c03e592b780ed62d7e",
+      "manifestSha256": "66698fa235ffb20f4ecf3526d223f6bb15f051f68822ca30f2647862d9111bcd"
+    },
+    {
+      "archive": "2026-10-04-neural-v1-quick-01",
+      "experimentId": "98b618ba0e85c9c62a4cf6f7bb25f8700f46e5bcd79b8b6e8094cd7b49e1da71",
+      "schemaVersion": 3,
+      "feedbackSha256": "c89f746a0db386f83d9ab5dd94b33d233e60c991aafd2ca7a018cb248549e24c",
+      "manifestSha256": "eaa4cc29a8f452c52d2a71124b9eba63e9fcf5b2517ed3e4413b358a5e9221ea"
+    },
+    {
+      "archive": "2026-10-04-neural-v2-quick-01",
+      "experimentId": "9a2d8dc4fb2ac668b9addee042ed8a857a19e0ccc197cec681b1534f7457c30e",
+      "schemaVersion": 3,
+      "feedbackSha256": "8b7703f9cada6bf3c0d0aff3dfb835877cbd142ff324b369a624bd68074fa553",
+      "manifestSha256": "3cdfa538ba9ece002678cfcead888dcc5656911d39cfb5fcbd11ee37d5216f44"
+    },
+    {
+      "archive": "2026-10-04-temporal-v3-quick-01",
+      "experimentId": "444a9e83e39823f877710e5422d552f7dbcc98bf7fdf78f11419a7c17a0198de",
+      "schemaVersion": 3,
+      "feedbackSha256": "0db9633c4c2d843f0fca3d92a04ca7125e3578b41fb163b97bdb7edcb84667a6",
+      "manifestSha256": "4a8e731fc3eb48f16433497e64784cad69106fe358dddbab7bfe0fa58615bd00"
+    },
+    {
+      "archive": "2026-10-05-coverage-selection-quick-01",
+      "experimentId": "3afd5c29406ff55b3877ecefd48debf7174e7c871b7ff54f1f39c7454665b5e8",
+      "schemaVersion": 3,
+      "feedbackSha256": "3a44d3cc4e45df905f3a7006efb83d515edee32ce72cb782d1ec4bdf46d51da0",
+      "manifestSha256": "4f9045fcab21f25459e0099adadf65af6102da44c18163f8999bf4fab0349ad1"
+    },
+    {
+      "archive": "2026-10-05-native-mixture-quick-01",
+      "experimentId": "31d337163dcb3009bbebbdcbb95efa25cdea449820209b96414e1cf2273eb5f6",
+      "schemaVersion": 3,
+      "feedbackSha256": "49a070f911c4282456682b801a873e5b0173664289168a82d7a45a7903234ff4",
+      "manifestSha256": "b0e3e3f11da8fe6630d7ee82a530b2261bb4910e4ea1b60d4dbd3fa0f504cc88"
+    },
+    {
+      "archive": "2026-10-05-pitch-calibration-quick-01",
+      "experimentId": "a5d5dc9a2f3892807b671ec24ecddc61002ab06ed7d5fe8133b056002402cf60",
+      "schemaVersion": 3,
+      "feedbackSha256": "a6dedd959fe2cd3fd9d35b7e6dd57a05f4a300228da857fb528672eec4dd3c74",
+      "manifestSha256": "2daa265339a65fcfd87015143b070063c00604fcb46fba0f2270b4f7aab68f78"
+    },
+    {
+      "archive": "2026-10-05-specialists-quick-01",
+      "experimentId": "5ea2ca433edc028e29f8beaf655b9986d3aceaa615c2c85fd8073bec47b1754d",
+      "schemaVersion": 3,
+      "feedbackSha256": "cf5b1e3b11aaa46a0baf4cada8db23bc2c64991cb16668b67f956d38206608ea",
+      "manifestSha256": "de39d4def82cca02d42f213303f2e7030b785772e1f5a42694c2c4bd4b2e1266"
+    },
+    {
+      "archive": "2026-10-05-specialists-tagged-quick-01",
+      "experimentId": "02b376a1c31f054aac16ac91606ddcdd6382805a457d9844b90aee86c0ddc5f4",
+      "schemaVersion": 3,
+      "feedbackSha256": "bcd94fb56b1c4ad89a9040d2bae0e125a3ff303ee5c1a87cc3970a2865b5961e",
+      "manifestSha256": "4130dbeaf340c74e899148e0295ac79cb8276cfd53e336d91796aea75752a837"
+    },
+    {
+      "archive": "2026-10-05-tagged-coverage-quick-01",
+      "experimentId": "16136e3be3be05aff6ab5dbc2503726dd86b6cb9f27ec5d641a2a02383674f02",
+      "schemaVersion": 3,
+      "feedbackSha256": "fa8f30441f17fd9dd0196a9c2b8e0826f6203a0e0ed651544637af78a2838004",
+      "manifestSha256": "62d17eb894bbcef482893c4bea2e3af3b90b842efd2c3c4b06b23902b360ddcb"
+    },
+    {
+      "archive": "2026-10-05-transfxr-transfer-quick-01",
+      "experimentId": "8242b8603755b097d7cdba29233b686d1270e5caf185603987090011b080d5bd",
+      "schemaVersion": 3,
+      "feedbackSha256": "6a5eab5ca0a5fbca08c59cfff04b094a8f4370c175ec5de57263b75580638bf5",
+      "manifestSha256": "48c53544894a683f4157001d05d8e5f9f18cee1165ccf3a26937b400f2544426"
+    }
+  ],
+  "pairs": 162,
+  "families": 62,
+  "uniquePairAudio": 277,
+  "folds": [
+    {
+      "fold": 0,
+      "testFamilies": [
+        "03f12321fd36d500e01d713a48621361772cc2cf766f304432211286256fad24",
+        "2dcaabe389397ab737d63e1ea7733c74f5d0f4f0b8bd32eef8e834650c421f7b",
+        "403a76830c60680c049c78b650d480f2b1711ae0076e190e7cde1c9c718cd10f",
+        "445cbac5ed3b8fc2c5c879c27608a41e926e5b220561b82ed416d96b5096ccd2",
+        "4523c1f58c0ef47dfbae5961b34f83c74963968501dc42c1434ed6fd0067ea8b",
+        "4c0437dc52a7c6798cb94e69b0342c114c09bd0c688e1c01e4ded9ef451c5a32",
+        "80899b51122e42a332d3d323475c7259503b9c805590a58772326997dcbf0eb9",
+        "a1c78014876e1cf499e61ba8906db8a06a96a8672ddfa17bc3df6ec5e7830f75",
+        "aded2dd73a59fe65465c3d29deb91b8ea2fcd4ed7ad30f240240fc8621e1584c",
+        "af2fb973e089816906440ab6752d12e2d419bee4a2c61c9554b5a8436008f772",
+        "c159596b818a868ff061a27d827fe2eb457eb73807f7d8d622f583155e7343f4",
+        "c6bcf93d6c96de6583d5e2af7d12ffd20e0b16ab14b39e5b4d434485cceb3353",
+        "d1b63a91013852e36fc405fb6d37309e4bc7662bf00fbcc01bc07d05b3f89e9f"
+      ],
+      "testPairs": 51
+    },
+    {
+      "fold": 1,
+      "testFamilies": [
+        "05395d43e8f2f8ce877c9a3b91330129d981aaafc390e886884ff372c1902e09",
+        "39f2c17f7e76e2bd536551b897f448f5b94991681f4071abdbb4ec9bd7cdc627",
+        "39fde7eccaefb16ef4a59fee2b0c5a7862f6e58939cd91628070101d4cd35caa",
+        "40a3c879dcbb25c8e1fd8312b8404ba19275456040c71b38cd9ef8fe83e17989",
+        "437af2fba3367ddcad7f8a765c71266d567d94f66891c62827245e15a29c9a5f",
+        "5722aa6472930f75e4905e71694ed8214224c932a46a13af93328dbca30174b6",
+        "6747d14bb7b744ac76dd5d689e53acce6ffb2a9cde33e2a2e94a8d9dd012c2c0",
+        "67d2dfafdf11a103b8dc5b9925f47c4d3873b4f885e4d4b74e2130db1b7b502c",
+        "726415a951b81128579de3e209ce62b0c2bb93e69bb65b03360d6bb598351aad",
+        "75124f33079f977978e84212c8a9931a84810040acea735a65c7e34250f91da4",
+        "8f239931a6f54e886ed2badd2a861ae23f9ecd66fe7d1869bc617e71e547f5ba",
+        "bb7581ce29122c7bc77c5e2e3c8a9343f9f72c22f7b870f37b5b6bf4cc6d7d1e",
+        "ea6e14a90e6980764bed0ad9569d64c7871a6ebfde19fe09eb2de1bdb742fbaa"
+      ],
+      "testPairs": 21
+    },
+    {
+      "fold": 2,
+      "testFamilies": [
+        "1b4b5a221406946a4269376d0844da7b2574618c8f20b95f44718156cf446299",
+        "40104ff94f325833e49c861e87a5292ce654e2e4d165235be73e57d09fa52a62",
+        "6d261b0e29a07617672eb1d875086c8475528da329d43491b08ff0f80453cd74",
+        "6fc38930f9f4abaa0888fc81a0ed1fcad4134472c9e0527d8651f5d3db5beb64",
+        "8297be5c0565d995555d57433f6adf0b4a0adab487f5a8e5222e4e2011889b1d",
+        "900e93ce197fd56cc900dd785b464681fcc66be14ddcb0d02ce86937b375b037",
+        "a4f35455b4c8eac7cea08db89f9f0b1c59dcc5d6f1baacb6e1fc8f2e8d1c065d",
+        "bf9c77ff6db81fb6ab62947fd269a25efb4b677b379e2fdc89c1baa7d138e750",
+        "d4897fb86bcadaa7b5b93f487540ed1666b6b9d0a6c0520927d04b1afc47bae5",
+        "e5a3ec150ee7d1d25811b57f2aea38bedcae01e8b2aead082c5b3c955f77581c",
+        "e7a6f8311e54784941349e8c5804dd6702ee2f1dfd03968743b7f519ee86c080",
+        "ec841b220fc0d36a095552a025713e484224a220f5f80a66f3e920cf76e3919d"
+      ],
+      "testPairs": 30
+    },
+    {
+      "fold": 3,
+      "testFamilies": [
+        "01d40e2814f73c3b2bc1102f8f45684c13af17ff93d41b07d0c27505a34b8773",
+        "2c4c823575f30fe7d593d1bcde4acdea384f7789059207b74caf939840a827d7",
+        "4bbeeeb13995c8be8754baba9d2d440e882492f388bea2d25277cbb5f7705f70",
+        "4ffa1d3b4186903d764924be70c867af03dcce4e5057f062d793e18cb7ddc1fe",
+        "5d26663a09990a22f08699cdb3a8da5a60db928c7b2a31131fc48d19676e0786",
+        "6a1f65ded6c4688d397ec5224b992d71dd7cdf5c1b2c26d6f6de7e7d90ec70a3",
+        "6e8a35bbc03937fc46d4d8e1cf357fec9ad6ae9b50f78baeb7af04e717265ea8",
+        "a7562d03eec6d0e51ac6c57bc5bf52d1ec58ece230088b8aac4e6c5a0955a8fd",
+        "b3c98e865d59addc891a4b045a4f6ab1a36e463abcde1ce24a049161c90623c4",
+        "ba9dc15ba70eaf27ab1437319d699b5690d97c41556527fa516fda6550d6404c",
+        "f37d937a8cb0460ac66c8fbc17ea6e795742ca8b3b2a3a871c66bd744d8f576a",
+        "f7450f14f6d9683de2f0e4caf1034a8df105f466ed6aa02ef0ab28d9ac87fba3"
+      ],
+      "testPairs": 43
+    },
+    {
+      "fold": 4,
+      "testFamilies": [
+        "1588712be8c20aeca10b6016c1c33407dba13347eb09ddf35923f77981e5cb06",
+        "2db6bb39d787e7db00b84fd9507e7c2f8ad233944a96eec66360be7f4cc4b9ba",
+        "2fbb861369ef6df9a02aad2bd7c3c0fdb5033d7fc019504c55f701e448a7eeab",
+        "58954bde9c7910335b0ed4ad841f1234639a66491b0b1395fa91002f94e24e40",
+        "5bbf9ad824762660635f24977ef52b8d1f762f26269269afa97d68318d6d4b91",
+        "62906e63277e1f860a98e16b1f9035bf7244bf11bd84c2cc744e866906e9757e",
+        "8a4250f6dd56fcaa8341cc93307adf622775b27c5cec29e43fa70cbd4b1f243e",
+        "8d651961b2f8a04754adcad80613009da3a3139320dd84df8527174b645b5dbd",
+        "af29a6ab302244fecacf91da84c69171572674cd8311b0e807f66ec247de0a54",
+        "bff6a7f3b82e6b8e11f814c455322316e1055d5e3f8102c9a8592433b15bf271",
+        "e71fbafcaa0d6e27dcf3a8becc83f3ad60481cfe540e5f4289cfc19f2a98b0e8",
+        "fe4a5db8e9d32f4f0eff4a8d5b1a44f081d8db5cfe82878bc2104115cf6991d8"
+      ],
+      "testPairs": 17
+    }
+  ],
+  "gate": "Hybrid >= .05 improvement in family-balanced accuracy over same-fold baseline, and no strict-pair accuracy loss",
+  "status": "historical-development-screen-not-independent-test"
+}

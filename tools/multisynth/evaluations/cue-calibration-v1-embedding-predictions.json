@@ -1,0 +1,144 @@
+{
+  "complete": true,
+  "scriptSha256": "4b70b3a008874e2e656cb5985b4cd11a737e300821e477f10e846781215103e2",
+  "resultsSha256": "8cc8d6d5e7c5a6c0a65a147b4c3d2fdc4176c7c8ee78eab71f1df0899a49fb0e",
+  "extractionSha256": "bbba3398e9a1efb62909df3daf3743a62178ea9cc959600d417d5d768b0a7380",
+  "rows": [
+    {
+      "source": "footstep/footstep_wood_000.ogg",
+      "options": [
+        {
+          "transform": {
+            "operation": "attack-fade",
+            "seconds": 0.03
+          },
+          "audioSha256": "0e82312bf97ef084dab874a416c949425b19c78c9de73fc7c78208eaa11aa0eb",
+          "scores": {
+            "task": 0.12917232513427734,
+            "style": 0.0005252361297607422
+          }
+        },
+        {
+          "transform": {
+            "operation": "lowpass",
+            "hz": 2500
+          },
+          "audioSha256": "6085d898f4f95cbb56405e86381ec0e7e2a4fd3ff0533d34f2dc7aa99d2f7bb4",
+          "scores": {
+            "task": 0.009828805923461914,
+            "style": 5.942583084106445e-05
+          }
+        }
+      ]
+    },
+    {
+      "source": "explode/Break Brick.wav",
+      "options": [
+        {
+          "transform": {
+            "operation": "time-stretch",
+            "rate": 0.8
+          },
+          "audioSha256": "c904d855e7f3446b57090932e3841f520b21b4d49f59b14fae4cd78b234b5f7d",
+          "scores": {
+            "task": 0.16810685396194458,
+            "style": 0.001422286033630371
+          }
+        },
+        {
+          "transform": {
+            "operation": "lowpass",
+            "hz": 2500
+          },
+          "audioSha256": "2a8bd64bbce7543af43a9773de04e208a7f1805f6a7ce89bd212f219d96bb721",
+          "scores": {
+            "task": 0.06744080781936646,
+            "style": 0.00030475854873657227
+          }
+        }
+      ]
+    },
+    {
+      "source": "die/charm2.wav",
+      "options": [
+        {
+          "transform": {
+            "operation": "pitch-shift",
+            "semitones": 2
+          },
+          "audioSha256": "33a7025d6c3da4e298049c1ee1343269b5c9c73a367136293c5351e7664b62b8",
+          "scores": {
+            "task": 0.06273394823074341,
+            "style": 0.000567317008972168
+          }
+        },
+        {
+          "transform": {
+            "operation": "lowpass",
+            "hz": 2500
+          },
+          "audioSha256": "756377386634f4378119ba8f563c812b65ab077752b29000ff72b015b1a6c0ca",
+          "scores": {
+            "task": 0.14658737182617188,
+            "style": 0.0018274784088134766
+          }
+        }
+      ]
+    },
+    {
+      "source": "clothes/cloth3.ogg",
+      "options": [
+        {
+          "transform": {
+            "operation": "time-stretch",
+            "rate": 0.8
+          },
+          "audioSha256": "9726148ac1beac434834677d97a1ec775dd3da9fd3de3003196175c3ddf930f5",
+          "scores": {
+            "task": 0.15114784240722656,
+            "style": 0.0005159378051757812
+          }
+        },
+        {
+          "transform": {
+            "operation": "lowpass",
+            "hz": 1800
+          },
+          "audioSha256": "4629e1354204a1783a98ce86677247cf221621845484f8f779fb299e53dbb8af",
+          "scores": {
+            "task": 0.152692973613739,
+            "style": 0.000577092170715332
+          }
+        }
+      ]
+    },
+    {
+      "source": "laser/Lasers.wav",
+      "options": [
+        {
+          "transform": {
+            "operation": "pitch-shift",
+            "semitones": 2
+          },
+          "audioSha256": "a47303581602a986e79d361ece5ff76b9b5b9e2c3f2cd0bf4c26856dd4f1b84c",
+          "scores": {
+            "task": 0.04323172569274902,
+            "style": 0.00016927719116210938
+          }
+        },
+        {
+          "transform": {
+            "operation": "tail-fade",
+            "startFraction": 0.6,
+            "endDb": -18
+          },
+          "audioSha256": "cccd1492a6d382f42c5db0fd2bc96b5ba4d4a7328ab112228042c6fa513dab11",
+          "scores": {
+            "task": 0.014625787734985352,
+            "style": 9.202957153320312e-05
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1010 @@
+{
+  "complete": true,
+  "partialSubmission": false,
+  "scriptSha256": "3471126f2a53774b6055432d7b9388f6abcb8a23e0314914834eedc6d8fcf3a9",
+  "experimentId": "16136e3be3be05aff6ab5dbc2503726dd86b6cb9f27ec5d641a2a02383674f02",
+  "feedbackSha256": "fa8f30441f17fd9dd0196a9c2b8e0826f6203a0e0ed651544637af78a2838004",
+  "manifestSha256": "62d17eb894bbcef482893c4bea2e3af3b90b842efd2c3c4b06b23902b360ddcb",
+  "galleryReportSha256": "ead2cb5f1c0fd76ccf4401cda1d5dccf99667de6fb8b226348770ea5208d9784",
+  "galleryAuditSha256": "670250061ca824e6594036d28c24461649b0a4011dc3ec276ef91c4d8ecbd58f",
+  "metricHashes": {
+    "preferenceNeuralV2": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b"
+  },
+  "archiveSummary": {
+    "targets": 5,
+    "uniqueRatedCandidates": 0,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "choices": 5,
+    "choiceKinds": {
+      "best": 4,
+      "tie": 0,
+      "none": 1,
+      "skip": 0
+    }
+  },
+  "trainingPairSummary": {
+    "targets": 5,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "duplicateAudioAliases": 0,
+    "conflictingAudioRatingGroups": 0,
+    "tiedPairs": 0,
+    "duplicateSessionPairs": 0,
+    "directChoicePairs": 8,
+    "choices": 5,
+    "choiceKinds": {
+      "best": 4,
+      "tie": 0,
+      "none": 1,
+      "skip": 0
+    },
+    "validatedAudioFiles": 20,
+    "uniqueAudioPcm": 20
+  },
+  "rows": [
+    {
+      "name": "footstep/footstep_wood_000.ogg",
+      "targetId": "6ee2e31a205083a98b86a2d326fa1a48f4c4fa13504452fc293f59319cec48d6",
+      "kind": "best",
+      "adequacy": {
+        "level": "similar",
+        "candidateIds": [
+          "658dbe04493fc12e0c1426e81a0f2ec42740bd26c4fc5a02ac58687da7d827dd"
+        ]
+      },
+      "preferredRoles": [
+        "alternative"
+      ],
+      "options": [
+        {
+          "id": "a1d15fe27d7ddd6e008dc7d00b0554e118b989731999c6c4b1608f782add90df",
+          "role": "previous",
+          "synth": "Clonkr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "pcmSha256": "162675b59101ffa0e21b31ae851be4d3ff4d44b0a04939dfdfd2de4ee568a7fd",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 2.381778882570269,
+            "preferenceNeuralV2": 1.2815478536263558
+          }
+        },
+        {
+          "id": "d0b7ef1d65bde4437c430ed8f1fa7760192996010dafb036174bfeed9a000c0e",
+          "role": "selected",
+          "synth": "Clonkr",
+          "checkpointSha256": null,
+          "pcmSha256": "2a45644223b622773d4e9652b64a5635b70d469e8eaa009982b0c823b09bd330",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 2.371650424430929,
+            "preferenceNeuralV2": 1.281910690046152
+          }
+        },
+        {
+          "id": "658dbe04493fc12e0c1426e81a0f2ec42740bd26c4fc5a02ac58687da7d827dd",
+          "role": "alternative",
+          "synth": "Squishr",
+          "checkpointSha256": null,
+          "pcmSha256": "42623247ca49a67e3b685ea64a20a52606cfaf681727e3c342cd156dbde65e06",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "similar",
+          "scores": {
+            "MatchObjective": 13.154377879679469,
+            "preferenceNeuralV2": 1.047566548813164
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "selected",
+        "preferenceNeuralV2": "alternative"
+      },
+      "note": ""
+    },
+    {
+      "name": "explode/Break Brick.wav",
+      "targetId": "860a90c445e9d40cb6456854c036933b0818cd263f6cd82f48a11a5d5ef5f792",
+      "kind": "none",
+      "adequacy": null,
+      "preferredRoles": [],
+      "options": [
+        {
+          "id": "f02c1bc2fd9ccca749521ddc925a42ce9d6916629e77bb45a6e16e3eedf45633",
+          "role": "previous",
+          "synth": "Footsteppr",
+          "checkpointSha256": "d5cb9d2c88ab6f9cfb1b9bc5ee3a24d9458f54ff5c82c0ccb3b566ba1c60f733",
+          "pcmSha256": "24138555fa743e367f67c27f026a68f4869948a41c7f5a4a074377f79fff8300",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "not-close",
+          "scores": {
+            "MatchObjective": 1.3025343335013504,
+            "preferenceNeuralV2": 0.9157037868602267
+          }
+        },
+        {
+          "id": "3d26be2cb1f78530ef31a78264def94b82ffd47832f4d4b14a1119591279770f",
+          "role": "selected",
+          "synth": "Pluckr",
+          "checkpointSha256": null,
+          "pcmSha256": "0439a8971445cfe8dddb92ff10a422c41b3c80a539f32855ecdfcdb8d3192bfc",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "not-close",
+          "scores": {
+            "MatchObjective": 1.189212319446212,
+            "preferenceNeuralV2": 0.8231901418449066
+          }
+        },
+        {
+          "id": "9552247a0a99206c499796f5d9dc92796d11e6e99925a5ee87095075c08c7627",
+          "role": "alternative",
+          "synth": "Transfxr",
+          "checkpointSha256": null,
+          "pcmSha256": "14c4e647c7c55713f35972e480fc1c6363ec1045a22e0d2e3008337dd03b6704",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "not-close",
+          "scores": {
+            "MatchObjective": 1.2942568309220983,
+            "preferenceNeuralV2": 0.6222445509213459
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "selected",
+        "preferenceNeuralV2": "alternative"
+      },
+      "note": ""
+    },
+    {
+      "name": "hit/hit block (snes).WAV",
+      "targetId": "b9f6e86f5c9d8d6b6c14504ed5f38892ced7bac87ce8888790f7ee5ee3cc209e",
+      "kind": "best",
+      "adequacy": {
+        "level": "least-bad",
+        "candidateIds": [
+          "6bacab7cf4155582d67f685b1648d84616e815e308e50ba7d2f8fc20bfcd8c24"
+        ]
+      },
+      "preferredRoles": [
+        "previous"
+      ],
+      "options": [
+        {
+          "id": "6bacab7cf4155582d67f685b1648d84616e815e308e50ba7d2f8fc20bfcd8c24",
+          "role": "previous",
+          "synth": "Bfxr",
+          "checkpointSha256": null,
+          "pcmSha256": "9d7dcca58940553ce7f061b251e7b78bfb378b978b1a1cf4ec2a38fe0ac7719e",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "least-bad",
+          "scores": {
+            "MatchObjective": 1.3375685952425762,
+            "preferenceNeuralV2": 0.9536884511511794
+          }
+        },
+        {
+          "id": "2148b201e5f731f0d24cdf5430bc844f0d88b8425676b793ae24feb8df80db5d",
+          "role": "selected",
+          "synth": "Transfxr",
+          "checkpointSha256": null,
+          "pcmSha256": "31994a1f539994e9c42a4760493d8502006b67a2e72ba1679a7fa3ff330611dc",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 1.0976815938095348,
+            "preferenceNeuralV2": 1.0194661631303399
+          }
+        },
+        {
+          "id": "224e8b158ebeeaadf2d24fda4efcd5561a67cdbe655263776db9d50f1d0f6e2e",
+          "role": "alternative",
+          "synth": "Bfxr",
+          "checkpointSha256": null,
+          "pcmSha256": "ef638d93999a5f699fd3933d13538fb44ddf95c11cf106bddd84e88e513f1f11",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 3.9207250884349314,
+            "preferenceNeuralV2": 0.29799614200317154
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "selected",
+        "preferenceNeuralV2": "alternative"
+      },
+      "note": ""
+    },
+    {
+      "name": "clothes/cloth3.ogg",
+      "targetId": "2842657d9878d870e3643b7319a2d4f3fa636c18215f4df1009785f5de759e8d",
+      "kind": "best",
+      "adequacy": {
+        "level": "least-bad",
+        "candidateIds": [
+          "c25a5424e60771f174da47f4f607243bf8188e32ae14524fc9d14dbca16b56c8"
+        ]
+      },
+      "preferredRoles": [
+        "alternative"
+      ],
+      "options": [
+        {
+          "id": "7110b6cff805a03bd50d6aba3e88c74a1f97bc751a310f98d2ebfb73f574e31b",
+          "role": "previous",
+          "synth": "Footsteppr",
+          "checkpointSha256": "d5cb9d2c88ab6f9cfb1b9bc5ee3a24d9458f54ff5c82c0ccb3b566ba1c60f733",
+          "pcmSha256": "e6208eab9ca925cd41d8bc5c9e6c510a662aec420448064f39a546104db3d746",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 1.8363964015319023,
+            "preferenceNeuralV2": 1.3418699507627785
+          }
+        },
+        {
+          "id": "878554d2c7748238ba2529d07bf9a444985901aa0d68e76ebeb53866256e4a1e",
+          "role": "selected",
+          "synth": "Signlr",
+          "checkpointSha256": null,
+          "pcmSha256": "b0b673db09ddc8c9780994d9fd6dd792eaa502a1a112b4918ce367e700540986",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 1.6092852769052846,
+            "preferenceNeuralV2": 1.0701081738278537
+          }
+        },
+        {
+          "id": "c25a5424e60771f174da47f4f607243bf8188e32ae14524fc9d14dbca16b56c8",
+          "role": "alternative",
+          "synth": "Transfxr",
+          "checkpointSha256": null,
+          "pcmSha256": "3e5205df4e65a45e410f0240b5caaa9ec216dfed68f9519068db2f92879dc2d3",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "least-bad",
+          "scores": {
+            "MatchObjective": 3.1244108980327026,
+            "preferenceNeuralV2": 0.7263606845098336
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "selected",
+        "preferenceNeuralV2": "alternative"
+      },
+      "note": ""
+    },
+    {
+      "name": "laser/Lasers.wav",
+      "targetId": "1979139a40c4894b71703af5a3e143b726182fd2424ac07cb5641f1bf1d78687",
+      "kind": "best",
+      "adequacy": {
+        "level": "least-bad",
+        "candidateIds": [
+          "9145d84b0c1934504b38a66b7f2fab6ea4dab172bba56973427d4a976eb3a093"
+        ]
+      },
+      "preferredRoles": [
+        "previous"
+      ],
+      "options": [
+        {
+          "id": "9145d84b0c1934504b38a66b7f2fab6ea4dab172bba56973427d4a976eb3a093",
+          "role": "previous",
+          "synth": "Bfxr",
+          "checkpointSha256": null,
+          "pcmSha256": "c0fbed96309c0632bc9780668ee73f9e7c9854bce17abc0128a9a913bea51c21",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "least-bad",
+          "scores": {
+            "MatchObjective": 3.1113514466073084,
+            "preferenceNeuralV2": 2.079052548761661
+          }
+        },
+        {
+          "id": "9da1c063996681f278e657b00aa9a8262243956cf75d629f3e36e357be54ee1c",
+          "role": "selected",
+          "synth": "Footsteppr",
+          "checkpointSha256": null,
+          "pcmSha256": "4ad1849b2afcf3182dfad96c5f831450cc775ba9ec248dba0135e93092c80bf1",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 2.392702101786211,
+            "preferenceNeuralV2": 2.2522688849238754
+          }
+        },
+        {
+          "id": "1559712ae104038f27ca95984d824c77a18c80e814744cd0131184d6de19c4c4",
+          "role": "alternative",
+          "synth": "Bfxr",
+          "checkpointSha256": null,
+          "pcmSha256": "da3ff6e4eeee55af11ea605c82501d7a2e40f18d6bcaa0dd3cbdb41f002d2f74",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 8.093913690017047,
+            "preferenceNeuralV2": 0.9420453170829255
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "selected",
+        "preferenceNeuralV2": "alternative"
+      },
+      "note": ""
+    }
+  ],
+  "pairs": [
+    {
+      "archive": "2026-10-05-tagged-coverage-quick-01",
+      "experimentId": "16136e3be3be05aff6ab5dbc2503726dd86b6cb9f27ec5d641a2a02383674f02",
+      "target": "footstep/footstep_wood_000.ogg",
+      "referencePcmSha256": "544e295124cda104e86d4efc30185a937c695ba4457be1819650542557901e7b",
+      "candidateA": "658dbe04493fc12e0c1426e81a0f2ec42740bd26c4fc5a02ac58687da7d827dd",
+      "candidateB": "d0b7ef1d65bde4437c430ed8f1fa7760192996010dafb036174bfeed9a000c0e",
+      "candidateAliasesA": [
+        "658dbe04493fc12e0c1426e81a0f2ec42740bd26c4fc5a02ac58687da7d827dd"
+      ],
+      "candidateAliasesB": [
+        "d0b7ef1d65bde4437c430ed8f1fa7760192996010dafb036174bfeed9a000c0e"
+      ],
+      "candidatePcmSha256A": "42623247ca49a67e3b685ea64a20a52606cfaf681727e3c342cd156dbde65e06",
+      "candidatePcmSha256B": "2a45644223b622773d4e9652b64a5635b70d469e8eaa009982b0c823b09bd330",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.06387116387486458,
+        -0.038707513362169266,
+        -0.0014946006995160133,
+        0.09210456907749176,
+        -0.07258066534996033,
+        -0.06013929843902588,
+        0.16137794591486454,
+        0.0020282419282011688,
+        -0.07638837024569511,
+        -0.056451612903225805,
+        -0.054907465586438775,
+        -0.11174044882833328,
+        -0.07067973911762238,
+        -0.23774194717407227,
+        0.1880452036857605,
+        -0.25617772340774536,
+        0.1536933183670044,
+        0.021348772570490837,
+        0.021730856969952583,
+        0.02140001580119133
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "d0b7ef1d65bde4437c430ed8f1fa7760192996010dafb036174bfeed9a000c0e",
+          "658dbe04493fc12e0c1426e81a0f2ec42740bd26c4fc5a02ac58687da7d827dd",
+          "a1d15fe27d7ddd6e008dc7d00b0554e118b989731999c6c4b1608f782add90df"
+        ],
+        "auditionedCandidateIds": [
+          "d0b7ef1d65bde4437c430ed8f1fa7760192996010dafb036174bfeed9a000c0e",
+          "658dbe04493fc12e0c1426e81a0f2ec42740bd26c4fc5a02ac58687da7d827dd",
+          "a1d15fe27d7ddd6e008dc7d00b0554e118b989731999c6c4b1608f782add90df"
+        ],
+        "preferredCandidateIds": [
+          "658dbe04493fc12e0c1426e81a0f2ec42740bd26c4fc5a02ac58687da7d827dd"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "658dbe04493fc12e0c1426e81a0f2ec42740bd26c4fc5a02ac58687da7d827dd"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "alternative",
+      "loserRole": "selected",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-05-tagged-coverage-quick-01",
+      "experimentId": "16136e3be3be05aff6ab5dbc2503726dd86b6cb9f27ec5d641a2a02383674f02",
+      "target": "footstep/footstep_wood_000.ogg",
+      "referencePcmSha256": "544e295124cda104e86d4efc30185a937c695ba4457be1819650542557901e7b",
+      "candidateA": "658dbe04493fc12e0c1426e81a0f2ec42740bd26c4fc5a02ac58687da7d827dd",
+      "candidateB": "a1d15fe27d7ddd6e008dc7d00b0554e118b989731999c6c4b1608f782add90df",
+      "candidateAliasesA": [
+        "658dbe04493fc12e0c1426e81a0f2ec42740bd26c4fc5a02ac58687da7d827dd"
+      ],
+      "candidateAliasesB": [
+        "a1d15fe27d7ddd6e008dc7d00b0554e118b989731999c6c4b1608f782add90df"
+      ],
+      "candidatePcmSha256A": "42623247ca49a67e3b685ea64a20a52606cfaf681727e3c342cd156dbde65e06",
+      "candidatePcmSha256B": "162675b59101ffa0e21b31ae851be4d3ff4d44b0a04939dfdfd2de4ee568a7fd",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.06513841450214386,
+        -0.03891407325863838,
+        -0.001598762726644054,
+        0.09210456907749176,
+        -0.07258066534996033,
+        -0.06013929843902588,
+        0.1637724433094263,
+        0.001971994002815336,
+        -0.07830433174967766,
+        -0.056451612903225805,
+        -0.05350247130263597,
+        -0.09326334734470337,
+        -0.07144112139940262,
+        -0.23774194717407227,
+        0.1880452036857605,
+        -0.25617772340774536,
+        0.15597379207611084,
+        0.02173781394958496,
+        0.022014344111084938,
+        0.02179800719022751
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "d0b7ef1d65bde4437c430ed8f1fa7760192996010dafb036174bfeed9a000c0e",
+          "658dbe04493fc12e0c1426e81a0f2ec42740bd26c4fc5a02ac58687da7d827dd",
+          "a1d15fe27d7ddd6e008dc7d00b0554e118b989731999c6c4b1608f782add90df"
+        ],
+        "auditionedCandidateIds": [
+          "d0b7ef1d65bde4437c430ed8f1fa7760192996010dafb036174bfeed9a000c0e",
+          "658dbe04493fc12e0c1426e81a0f2ec42740bd26c4fc5a02ac58687da7d827dd",
+          "a1d15fe27d7ddd6e008dc7d00b0554e118b989731999c6c4b1608f782add90df"
+        ],
+        "preferredCandidateIds": [
+          "658dbe04493fc12e0c1426e81a0f2ec42740bd26c4fc5a02ac58687da7d827dd"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "658dbe04493fc12e0c1426e81a0f2ec42740bd26c4fc5a02ac58687da7d827dd"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "alternative",
+      "loserRole": "previous",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-05-tagged-coverage-quick-01",
+      "experimentId": "16136e3be3be05aff6ab5dbc2503726dd86b6cb9f27ec5d641a2a02383674f02",
+      "target": "hit/hit block (snes).WAV",
+      "referencePcmSha256": "aca6fd8c9f4ffd7bd5ec49fdac54ddd67fabf72499e176f8ccaaf17e6e126c33",
+      "candidateA": "6bacab7cf4155582d67f685b1648d84616e815e308e50ba7d2f8fc20bfcd8c24",
+      "candidateB": "2148b201e5f731f0d24cdf5430bc844f0d88b8425676b793ae24feb8df80db5d",
+      "candidateAliasesA": [
+        "6bacab7cf4155582d67f685b1648d84616e815e308e50ba7d2f8fc20bfcd8c24"
+      ],
+      "candidateAliasesB": [
+        "2148b201e5f731f0d24cdf5430bc844f0d88b8425676b793ae24feb8df80db5d"
+      ],
+      "candidatePcmSha256A": "9d7dcca58940553ce7f061b251e7b78bfb378b978b1a1cf4ec2a38fe0ac7719e",
+      "candidatePcmSha256B": "31994a1f539994e9c42a4760493d8502006b67a2e72ba1679a7fa3ff330611dc",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.024367988109588623,
+        -0.01705704629421234,
+        0.0,
+        0.013116955757141113,
+        0.04717741161584854,
+        0.021607227623462677,
+        -0.16653267736546695,
+        0.0027608186937868595,
+        -0.02718445286154747,
+        -0.008064516129032251,
+        -0.010357307891050976,
+        -0.016991254918331145,
+        -0.04929567873477936,
+        0.053688883781433105,
+        0.0007687434554100037,
+        0.05985194444656372,
+        -0.15860247611999512,
+        -0.008211947977542877,
+        -0.008199132978916168,
+        -0.008163034915924072
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "2148b201e5f731f0d24cdf5430bc844f0d88b8425676b793ae24feb8df80db5d",
+          "224e8b158ebeeaadf2d24fda4efcd5561a67cdbe655263776db9d50f1d0f6e2e",
+          "6bacab7cf4155582d67f685b1648d84616e815e308e50ba7d2f8fc20bfcd8c24"
+        ],
+        "auditionedCandidateIds": [
+          "2148b201e5f731f0d24cdf5430bc844f0d88b8425676b793ae24feb8df80db5d",
+          "224e8b158ebeeaadf2d24fda4efcd5561a67cdbe655263776db9d50f1d0f6e2e",
+          "6bacab7cf4155582d67f685b1648d84616e815e308e50ba7d2f8fc20bfcd8c24"
+        ],
+        "preferredCandidateIds": [
+          "6bacab7cf4155582d67f685b1648d84616e815e308e50ba7d2f8fc20bfcd8c24"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "6bacab7cf4155582d67f685b1648d84616e815e308e50ba7d2f8fc20bfcd8c24"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "previous",
+      "loserRole": "selected",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-05-tagged-coverage-quick-01",
+      "experimentId": "16136e3be3be05aff6ab5dbc2503726dd86b6cb9f27ec5d641a2a02383674f02",
+      "target": "hit/hit block (snes).WAV",
+      "referencePcmSha256": "aca6fd8c9f4ffd7bd5ec49fdac54ddd67fabf72499e176f8ccaaf17e6e126c33",
+      "candidateA": "6bacab7cf4155582d67f685b1648d84616e815e308e50ba7d2f8fc20bfcd8c24",
+      "candidateB": "224e8b158ebeeaadf2d24fda4efcd5561a67cdbe655263776db9d50f1d0f6e2e",
+      "candidateAliasesA": [
+        "6bacab7cf4155582d67f685b1648d84616e815e308e50ba7d2f8fc20bfcd8c24"
+      ],
+      "candidateAliasesB": [
+        "224e8b158ebeeaadf2d24fda4efcd5561a67cdbe655263776db9d50f1d0f6e2e"
+      ],
+      "candidatePcmSha256A": "9d7dcca58940553ce7f061b251e7b78bfb378b978b1a1cf4ec2a38fe0ac7719e",
+      "candidatePcmSha256B": "ef638d93999a5f699fd3933d13538fb44ddf95c11cf106bddd84e88e513f1f11",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.1560773253440857,
+        -0.04992281086742878,
+        0.0,
+        0.1418749773874879,
+        0.1088709607720375,
+        0.06952090561389923,
+        -0.05536358128301799,
+        0.00497741112485528,
+        -0.06694244220852852,
+        -0.02419354838709676,
+        -0.005598125358422597,
+        -0.012112117710160852,
+        0.030898625031113625,
+        0.17015094310045242,
+        0.06805654894560575,
+        0.6019033789634705,
+        -0.05272722244262695,
+        0.052570078521966934,
+        0.05223102122545242,
+        0.052032601088285446
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "2148b201e5f731f0d24cdf5430bc844f0d88b8425676b793ae24feb8df80db5d",
+          "224e8b158ebeeaadf2d24fda4efcd5561a67cdbe655263776db9d50f1d0f6e2e",
+          "6bacab7cf4155582d67f685b1648d84616e815e308e50ba7d2f8fc20bfcd8c24"
+        ],
+        "auditionedCandidateIds": [
+          "2148b201e5f731f0d24cdf5430bc844f0d88b8425676b793ae24feb8df80db5d",
+          "224e8b158ebeeaadf2d24fda4efcd5561a67cdbe655263776db9d50f1d0f6e2e",
+          "6bacab7cf4155582d67f685b1648d84616e815e308e50ba7d2f8fc20bfcd8c24"
+        ],
+        "preferredCandidateIds": [
+          "6bacab7cf4155582d67f685b1648d84616e815e308e50ba7d2f8fc20bfcd8c24"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "6bacab7cf4155582d67f685b1648d84616e815e308e50ba7d2f8fc20bfcd8c24"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "previous",
+      "loserRole": "alternative",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preferenceNeuralV2": false
+      }
+    },
+    {
+      "archive": "2026-10-05-tagged-coverage-quick-01",
+      "experimentId": "16136e3be3be05aff6ab5dbc2503726dd86b6cb9f27ec5d641a2a02383674f02",
+      "target": "clothes/cloth3.ogg",
+      "referencePcmSha256": "db68adec97a5f13e92ac0b6f1131802eaa5938d3ace2132b6efaad10a563e0d9",
+      "candidateA": "c25a5424e60771f174da47f4f607243bf8188e32ae14524fc9d14dbca16b56c8",
+      "candidateB": "7110b6cff805a03bd50d6aba3e88c74a1f97bc751a310f98d2ebfb73f574e31b",
+      "candidateAliasesA": [
+        "c25a5424e60771f174da47f4f607243bf8188e32ae14524fc9d14dbca16b56c8"
+      ],
+      "candidateAliasesB": [
+        "7110b6cff805a03bd50d6aba3e88c74a1f97bc751a310f98d2ebfb73f574e31b"
+      ],
+      "candidatePcmSha256A": "3e5205df4e65a45e410f0240b5caaa9ec216dfed68f9519068db2f92879dc2d3",
+      "candidatePcmSha256B": "e6208eab9ca925cd41d8bc5c9e6c510a662aec420448064f39a546104db3d746",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.14471280574798584,
+        -0.03740517795085907,
+        -0.0024375878274440765,
+        -0.08354693651199341,
+        -0.0639616809785366,
+        -0.06375805288553238,
+        0.0053854286670684814,
+        0.0034320286940783262,
+        -0.06391173601150513,
+        -0.07258064516129033,
+        -0.0007817527900139537,
+        -0.041758789089676285,
+        -0.06703606992959976,
+        -0.1022905707359314,
+        -0.0011023245751857758,
+        -0.10137248039245605,
+        0.005128979682922363,
+        -0.05503980815410614,
+        -0.053621090948581696,
+        -0.049470506608486176
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "7110b6cff805a03bd50d6aba3e88c74a1f97bc751a310f98d2ebfb73f574e31b",
+          "878554d2c7748238ba2529d07bf9a444985901aa0d68e76ebeb53866256e4a1e",
+          "c25a5424e60771f174da47f4f607243bf8188e32ae14524fc9d14dbca16b56c8"
+        ],
+        "auditionedCandidateIds": [
+          "7110b6cff805a03bd50d6aba3e88c74a1f97bc751a310f98d2ebfb73f574e31b",
+          "878554d2c7748238ba2529d07bf9a444985901aa0d68e76ebeb53866256e4a1e",
+          "c25a5424e60771f174da47f4f607243bf8188e32ae14524fc9d14dbca16b56c8"
+        ],
+        "preferredCandidateIds": [
+          "c25a5424e60771f174da47f4f607243bf8188e32ae14524fc9d14dbca16b56c8"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "c25a5424e60771f174da47f4f607243bf8188e32ae14524fc9d14dbca16b56c8"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "alternative",
+      "loserRole": "previous",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-05-tagged-coverage-quick-01",
+      "experimentId": "16136e3be3be05aff6ab5dbc2503726dd86b6cb9f27ec5d641a2a02383674f02",
+      "target": "clothes/cloth3.ogg",
+      "referencePcmSha256": "db68adec97a5f13e92ac0b6f1131802eaa5938d3ace2132b6efaad10a563e0d9",
+      "candidateA": "c25a5424e60771f174da47f4f607243bf8188e32ae14524fc9d14dbca16b56c8",
+      "candidateB": "878554d2c7748238ba2529d07bf9a444985901aa0d68e76ebeb53866256e4a1e",
+      "candidateAliasesA": [
+        "c25a5424e60771f174da47f4f607243bf8188e32ae14524fc9d14dbca16b56c8"
+      ],
+      "candidateAliasesB": [
+        "878554d2c7748238ba2529d07bf9a444985901aa0d68e76ebeb53866256e4a1e"
+      ],
+      "candidatePcmSha256A": "3e5205df4e65a45e410f0240b5caaa9ec216dfed68f9519068db2f92879dc2d3",
+      "candidatePcmSha256B": "b0b673db09ddc8c9780994d9fd6dd792eaa502a1a112b4918ce367e700540986",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.08695453405380249,
+        -0.0205642431974411,
+        -0.002918371930718422,
+        -0.04116344451904297,
+        -0.032207656651735306,
+        -0.030369646847248077,
+        0.014291590079665184,
+        0.004331604344770312,
+        -0.030733615159988403,
+        -0.06451612903225805,
+        -0.10837623476982117,
+        -0.05049082941402197,
+        -0.03738144785165787,
+        -0.06994502991437912,
+        -7.317960262298584e-05,
+        -0.054401278495788574,
+        0.013611048460006714,
+        -0.026490330696105957,
+        -0.03067934513092041,
+        -0.02904609590768814
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "7110b6cff805a03bd50d6aba3e88c74a1f97bc751a310f98d2ebfb73f574e31b",
+          "878554d2c7748238ba2529d07bf9a444985901aa0d68e76ebeb53866256e4a1e",
+          "c25a5424e60771f174da47f4f607243bf8188e32ae14524fc9d14dbca16b56c8"
+        ],
+        "auditionedCandidateIds": [
+          "7110b6cff805a03bd50d6aba3e88c74a1f97bc751a310f98d2ebfb73f574e31b",
+          "878554d2c7748238ba2529d07bf9a444985901aa0d68e76ebeb53866256e4a1e",
+          "c25a5424e60771f174da47f4f607243bf8188e32ae14524fc9d14dbca16b56c8"
+        ],
+        "preferredCandidateIds": [
+          "c25a5424e60771f174da47f4f607243bf8188e32ae14524fc9d14dbca16b56c8"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "c25a5424e60771f174da47f4f607243bf8188e32ae14524fc9d14dbca16b56c8"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "alternative",
+      "loserRole": "selected",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-05-tagged-coverage-quick-01",
+      "experimentId": "16136e3be3be05aff6ab5dbc2503726dd86b6cb9f27ec5d641a2a02383674f02",
+      "target": "laser/Lasers.wav",
+      "referencePcmSha256": "45d423cf5a051e07468581ac874e48e3458d9c467f3e4753379ed5db96884f58",
+      "candidateA": "9145d84b0c1934504b38a66b7f2fab6ea4dab172bba56973427d4a976eb3a093",
+      "candidateB": "1559712ae104038f27ca95984d824c77a18c80e814744cd0131184d6de19c4c4",
+      "candidateAliasesA": [
+        "9145d84b0c1934504b38a66b7f2fab6ea4dab172bba56973427d4a976eb3a093"
+      ],
+      "candidateAliasesB": [
+        "1559712ae104038f27ca95984d824c77a18c80e814744cd0131184d6de19c4c4"
+      ],
+      "candidatePcmSha256A": "c0fbed96309c0632bc9780668ee73f9e7c9854bce17abc0128a9a913bea51c21",
+      "candidatePcmSha256B": "da3ff6e4eeee55af11ea605c82501d7a2e40f18d6bcaa0dd3cbdb41f002d2f74",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.20624524354934692,
+        0.02859697863459587,
+        0.0035298392176628113,
+        0.19709512591362,
+        0.25267136096954346,
+        0.026125460863113403,
+        0.23110525612719357,
+        0.0014454800984822214,
+        0.06844129413366318,
+        -0.016129032258064523,
+        0.019635547728588186,
+        -0.04723910990974366,
+        0.06734972447156906,
+        0.2850140482187271,
+        0.0796702578663826,
+        0.33454591035842896,
+        0.2201002687215805,
+        0.05870461463928223,
+        0.062983438372612,
+        0.06780388951301575
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "9145d84b0c1934504b38a66b7f2fab6ea4dab172bba56973427d4a976eb3a093",
+          "1559712ae104038f27ca95984d824c77a18c80e814744cd0131184d6de19c4c4",
+          "9da1c063996681f278e657b00aa9a8262243956cf75d629f3e36e357be54ee1c"
+        ],
+        "auditionedCandidateIds": [
+          "9145d84b0c1934504b38a66b7f2fab6ea4dab172bba56973427d4a976eb3a093",
+          "1559712ae104038f27ca95984d824c77a18c80e814744cd0131184d6de19c4c4",
+          "9da1c063996681f278e657b00aa9a8262243956cf75d629f3e36e357be54ee1c"
+        ],
+        "preferredCandidateIds": [
+          "9145d84b0c1934504b38a66b7f2fab6ea4dab172bba56973427d4a976eb3a093"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "9145d84b0c1934504b38a66b7f2fab6ea4dab172bba56973427d4a976eb3a093"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "previous",
+      "loserRole": "alternative",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preferenceNeuralV2": false
+      }
+    },
+    {
+      "archive": "2026-10-05-tagged-coverage-quick-01",
+      "experimentId": "16136e3be3be05aff6ab5dbc2503726dd86b6cb9f27ec5d641a2a02383674f02",
+      "target": "laser/Lasers.wav",
+      "referencePcmSha256": "45d423cf5a051e07468581ac874e48e3458d9c467f3e4753379ed5db96884f58",
+      "candidateA": "9145d84b0c1934504b38a66b7f2fab6ea4dab172bba56973427d4a976eb3a093",
+      "candidateB": "9da1c063996681f278e657b00aa9a8262243956cf75d629f3e36e357be54ee1c",
+      "candidateAliasesA": [
+        "9145d84b0c1934504b38a66b7f2fab6ea4dab172bba56973427d4a976eb3a093"
+      ],
+      "candidateAliasesB": [
+        "9da1c063996681f278e657b00aa9a8262243956cf75d629f3e36e357be54ee1c"
+      ],
+      "candidatePcmSha256A": "c0fbed96309c0632bc9780668ee73f9e7c9854bce17abc0128a9a913bea51c21",
+      "candidatePcmSha256B": "4ad1849b2afcf3182dfad96c5f831450cc775ba9ec248dba0135e93092c80bf1",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.06967395544052124,
+        0.024954352527856827,
+        0.002639360725879669,
+        -0.015847057104110718,
+        -0.02268141508102417,
+        -0.04970869421958923,
+        0.2101044412702322,
+        0.0009251185110770166,
+        0.0800553523004055,
+        0.0,
+        0.007803076140893005,
+        -0.01555551761703125,
+        -0.03972099721431732,
+        -0.10056829452514648,
+        0.013763636350631714,
+        -0.18592166900634766,
+        0.20009948313236237,
+        -0.03433139622211456,
+        -0.02852901816368103,
+        -0.02474011480808258
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "9145d84b0c1934504b38a66b7f2fab6ea4dab172bba56973427d4a976eb3a093",
+          "1559712ae104038f27ca95984d824c77a18c80e814744cd0131184d6de19c4c4",
+          "9da1c063996681f278e657b00aa9a8262243956cf75d629f3e36e357be54ee1c"
+        ],
+        "auditionedCandidateIds": [
+          "9145d84b0c1934504b38a66b7f2fab6ea4dab172bba56973427d4a976eb3a093",
+          "1559712ae104038f27ca95984d824c77a18c80e814744cd0131184d6de19c4c4",
+          "9da1c063996681f278e657b00aa9a8262243956cf75d629f3e36e357be54ee1c"
+        ],
+        "preferredCandidateIds": [
+          "9145d84b0c1934504b38a66b7f2fab6ea4dab172bba56973427d4a976eb3a093"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "9145d84b0c1934504b38a66b7f2fab6ea4dab172bba56973427d4a976eb3a093"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "previous",
+      "loserRole": "selected",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preferenceNeuralV2": true
+      }
+    }
+  ],
+  "explicitQualitativeLabels": [
+    {
+      "targetId": "6ee2e31a205083a98b86a2d326fa1a48f4c4fa13504452fc293f59319cec48d6",
+      "candidateId": "658dbe04493fc12e0c1426e81a0f2ec42740bd26c4fc5a02ac58687da7d827dd",
+      "referencePcmSha256": "544e295124cda104e86d4efc30185a937c695ba4457be1819650542557901e7b",
+      "candidatePcmSha256": "42623247ca49a67e3b685ea64a20a52606cfaf681727e3c342cd156dbde65e06",
+      "label": "similar"
+    },
+    {
+      "targetId": "860a90c445e9d40cb6456854c036933b0818cd263f6cd82f48a11a5d5ef5f792",
+      "candidateId": "f02c1bc2fd9ccca749521ddc925a42ce9d6916629e77bb45a6e16e3eedf45633",
+      "referencePcmSha256": "aad0aec3a74d8a980ebc076be87a6bd5ae27031f5e8940c1463c8d1b89d1ac90",
+      "candidatePcmSha256": "24138555fa743e367f67c27f026a68f4869948a41c7f5a4a074377f79fff8300",
+      "label": "not-close"
+    },
+    {
+      "targetId": "860a90c445e9d40cb6456854c036933b0818cd263f6cd82f48a11a5d5ef5f792",
+      "candidateId": "3d26be2cb1f78530ef31a78264def94b82ffd47832f4d4b14a1119591279770f",
+      "referencePcmSha256": "aad0aec3a74d8a980ebc076be87a6bd5ae27031f5e8940c1463c8d1b89d1ac90",
+      "candidatePcmSha256": "0439a8971445cfe8dddb92ff10a422c41b3c80a539f32855ecdfcdb8d3192bfc",
+      "label": "not-close"
+    },
+    {
+      "targetId": "860a90c445e9d40cb6456854c036933b0818cd263f6cd82f48a11a5d5ef5f792",
+      "candidateId": "9552247a0a99206c499796f5d9dc92796d11e6e99925a5ee87095075c08c7627",
+      "referencePcmSha256": "aad0aec3a74d8a980ebc076be87a6bd5ae27031f5e8940c1463c8d1b89d1ac90",
+      "candidatePcmSha256": "14c4e647c7c55713f35972e480fc1c6363ec1045a22e0d2e3008337dd03b6704",
+      "label": "not-close"
+    },
+    {
+      "targetId": "b9f6e86f5c9d8d6b6c14504ed5f38892ced7bac87ce8888790f7ee5ee3cc209e",
+      "candidateId": "6bacab7cf4155582d67f685b1648d84616e815e308e50ba7d2f8fc20bfcd8c24",
+      "referencePcmSha256": "aca6fd8c9f4ffd7bd5ec49fdac54ddd67fabf72499e176f8ccaaf17e6e126c33",
+      "candidatePcmSha256": "9d7dcca58940553ce7f061b251e7b78bfb378b978b1a1cf4ec2a38fe0ac7719e",
+      "label": "least-bad"
+    },
+    {
+      "targetId": "2842657d9878d870e3643b7319a2d4f3fa636c18215f4df1009785f5de759e8d",
+      "candidateId": "c25a5424e60771f174da47f4f607243bf8188e32ae14524fc9d14dbca16b56c8",
+      "referencePcmSha256": "db68adec97a5f13e92ac0b6f1131802eaa5938d3ace2132b6efaad10a563e0d9",
+      "candidatePcmSha256": "3e5205df4e65a45e410f0240b5caaa9ec216dfed68f9519068db2f92879dc2d3",
+      "label": "least-bad"
+    },
+    {
+      "targetId": "1979139a40c4894b71703af5a3e143b726182fd2424ac07cb5641f1bf1d78687",
+      "candidateId": "9145d84b0c1934504b38a66b7f2fab6ea4dab172bba56973427d4a976eb3a093",
+      "referencePcmSha256": "45d423cf5a051e07468581ac874e48e3458d9c467f3e4753379ed5db96884f58",
+      "candidatePcmSha256": "c0fbed96309c0632bc9780668ee73f9e7c9854bce17abc0128a9a913bea51c21",
+      "label": "least-bad"
+    }
+  ],
+  "unsubmittedReferences": [],
+  "metricAgreement": {
+    "MatchObjective": {
+      "correct": 2,
+      "pairs": 8
+    },
+    "preferenceNeuralV2": {
+      "correct": 6,
+      "pairs": 8
+    }
+  },
+  "interpretation": [
+    "All five tagged references and fifteen options auditioned. Squishr footstep wins and is similar; Transfxr cloth wins but is least-bad. Original Bfxr wins block hit and laser, both least-bad. None of the brick options is close. Zero very-close judgments.",
+    "Eight strict heard preference pairs and seven candidate-scoped qualitative labels are retained separately. No scalar labels are inferred.",
+    "Broader training-preset retrieval and actual-render refinement did not produce convincing displayed matches. This does not establish an intrinsic synth-space limitation or absence of better undisplayed candidates.",
+    "This is a repeated development diagnostic on five preselected references, not independent generalization validation. Do not distill least-bad outputs as successful real-audio teachers.",
+    "Test new representations against grouped historical listening evidence before another comparable search batch. Ranking agreement alone does not establish adequate candidates."
+  ]
+}

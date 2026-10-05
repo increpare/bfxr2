@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All thirteen feedback sessions,
+do not establish general success on real recordings. All fourteen feedback sessions,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The latest [specialist experiment](evaluations/specialists-v1-plan.json) trains
@@ -90,6 +90,28 @@ agrees with 6/10 heard pairs and preference-neural-v2 with 8/10. These outcomes
 reject an interpretation of the native successes as general real-sound
 reproduction. Keep candidate generation and selection as separate problems.
 
+A frozen pretrained-audio diagnostic then tested LAION CLAP final embeddings and
+intermediate mean/std features on 162 strict historical preferences across 62
+conservative source families. With identical family folds, the current metric
+refit scores 69.27% family-balanced agreement; the hybrid scores 71.17%
+(112 versus 114 of 162 pairs). The predeclared five-point improvement screen
+fails; the family-bootstrap gain interval spans -0.16 to +5.47 points. Standalone
+CLAP final/style features score 102/162 and 98/162. No selector or inverse model
+is promoted. This is development evidence, not untouched validation or evidence
+of adequate recreations. See [protocol](evaluations/embedding-v1-protocol.json)
+and [evaluation](evaluations/embedding-v1-evaluation.json).
+
+The next [five-comparison cue calibration](runs/cue-calibration-v1-listening/index.html)
+uses **deliberately edited originals, not synth reproductions**. Fixed attack,
+filter, timing, pitch and tail changes probe local likeness preferences with two
+options per reference and immediate adequacy. All contrasts are retained, even
+when metrics agree. These are candidate-scoped comparisons, not universal cue
+weights or successful inverse training labels. Processing can introduce coupled
+artifacts, and edit strengths are unequal. Post-generation QA found the footstep
+filter is nearly an identity edit (-59.5 dB difference RMS relative to the
+reference), while the attack edit is substantial; it remains as a sanity check.
+Do not interpret its outcome as a universal attack/texture weight. See [protocol](evaluations/cue-calibration-v1-protocol.json).
+
 A subsequent [candidate-coverage diagnostic](runs/tagged-coverage-v1-listening/index.html)
 queries **64,415 optimization presets** from the certified shared22 data and two
 specialist datasets. It retrieves four nearest controls per engine using the
@@ -107,6 +129,13 @@ promoted. The new five-trial page preserves each exact previous human winner
 alongside both distinct selections. Previously heard alternatives are excluded
 from the new slots; this is adaptive development using feedback, not blind
 validation. Lower scores merely qualify a distinct sample for listening.
+
+Human feedback on this diagnostic is now retained: new Squishr footstep is
+similar, new Transfxr cloth only least-bad, original Bfxr retains block-hit and
+laser as least-bad, and none of the brick options is close. Zero very-close
+judgments. Matching distance agrees with 2/8 heard preference pairs; the frozen
+preference scorer agrees with 6/8. This does not establish an intrinsic synth
+limit. See the [human review](evaluations/tagged-coverage-quick-01-human-review.json).
 
 The [protocol](evaluations/tagged-coverage-v1-protocol.json),
 [results](evaluations/tagged-coverage-v1-evaluation.json) and

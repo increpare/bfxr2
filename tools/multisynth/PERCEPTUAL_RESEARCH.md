@@ -43,3 +43,30 @@ pitch/energy direction. This is an engineering inference from the sources and
 the user's feedback, not a result established by any one paper. Begin with a
 small explicit feature benchmark before training a complex gating network on
 the limited retained judgments.
+
+
+## 2026-10-05: frozen CLAP screen (negative)
+
+We tested [LAION's unfused HTSAT checkpoint](https://huggingface.co/laion/clap-htsat-unfused)
+at immutable revision `8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a`,
+using [Transformers CLAP](https://huggingface.co/docs/transformers/model_doc/clap).
+The 512-dimensional projected embedding and 5,760-dimensional concatenated
+mean/std statistics from ten blocks in the first three stages were extracted
+from 277 exact audition clips. Right-zero-padding, not repeat-padding, was used.
+This follows the general style-statistics idea in
+[Tian et al.](https://arxiv.org/abs/2507.07764), not their exact Microsoft CLAP
+architecture or controlled instrument-timbre evaluation.
+
+On identical five source-family folds, adding two cosine-distance components to
+the existing twenty descriptors improves family-balanced historical preference
+agreement by only 1.90 percentage points (69.27% to 71.17%). This fails the frozen
+five-point screen; the family-bootstrap interval includes zero. Neither standalone
+CLAP representation beats the existing metric. No promotion or new inverse
+training is justified by this result. Historical feedback remains development
+data because it influenced earlier design choices. Retain this negative result
+rather than tuning repeatedly and calling the same folds an independent test.
+
+Next: five predeclared controlled changes to tagged originals, preserving immediate
+adequacy and exact audio. These local comparisons can test perceptual priorities
+more directly than remote candidate failures, but effects are not perfectly pure:
+filtering and phase-vocoder processing can change several audible properties.

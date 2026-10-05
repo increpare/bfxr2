@@ -34,6 +34,22 @@ future exports use the updated questionnaire.
 | `2026-10-05-native-mixture-quick-01/` | 5 | 10 |
 | `2026-10-05-specialists-quick-01/` | 5 | 11 |
 | `2026-10-05-specialists-tagged-quick-01/` | 5 | 15 |
+| `2026-10-05-tagged-coverage-quick-01/` | 5 | 15 |
+
+The fourteenth archive retains the five candidate-coverage comparisons and all
+fifteen auditioned options. The new Squishr footstep wins and is **similar**;
+the new Transfxr cloth wins but is **least-bad**. Original Bfxr retains block-hit
+and laser, both **least-bad**. **None** of the three brick-break options is close.
+There are zero very-close judgments, eight strict heard preference pairs, and
+seven candidate-scoped qualitative labels. Matching distance agrees on 2/8
+pairs; frozen preference-neural-v2 agrees on 6/8. No unchosen adequacy or numeric
+rating is inferred except the explicitly rejected three brick options.
+
+Broader retrieval did not find convincing displayed recreations. That is not
+proof that the synths cannot produce them. Preserve these failures for ranking
+research; do not use least-bad controls as successful inverse-training teachers.
+This repeated batch is development evidence. See the
+[coverage human review](../evaluations/tagged-coverage-quick-01-human-review.json).
 
 The thirteenth archive retains all five tagged-transfer choices and all fifteen
 auditioned options. Older Clonkr wins wooden footstep and is **roughly similar**.

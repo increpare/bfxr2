@@ -1,0 +1,157 @@
+{
+  "scriptSha256": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+  "planSha256": "82a94588e53ca14e51214b2aaf98481ce486e4298d729143ae04114a989be196",
+  "packages": {
+    "numpy": "2.4.3",
+    "scipy": "1.18.1",
+    "librosa": "0.11.0",
+    "soxr": "1.1.0",
+    "soundfile": "0.13.1"
+  },
+  "purpose": "Controlled local likeness calibration; edited originals, not synth output or model improvement",
+  "rows": [
+    {
+      "archive": "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01",
+      "manifestSha256": "62d17eb894bbcef482893c4bea2e3af3b90b842efd2c3c4b06b23902b360ddcb",
+      "source": {
+        "name": "footstep/footstep_wood_000.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep_wood_000.ogg",
+        "sha256": "5f1c252942a220d658121bd9417448cd19649ded9fff2ff15f6e50899373ce8e"
+      },
+      "reference": {
+        "file": "audio/544e295124cda104e86d4efc30185a937c695ba4457be1819650542557901e7b.flac",
+        "pcmSha256": "544e295124cda104e86d4efc30185a937c695ba4457be1819650542557901e7b",
+        "sampleRate": 44100,
+        "frames": 11007,
+        "channels": 1,
+        "auditionWavSha256": "63b20fe0aa4df84bc99d7c985835e12cc9801ea31a693a21b886bdab3831f75f"
+      },
+      "operations": [
+        {
+          "operation": "attack-fade",
+          "seconds": 0.03
+        },
+        {
+          "operation": "lowpass",
+          "hz": 2500
+        }
+      ]
+    },
+    {
+      "archive": "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01",
+      "manifestSha256": "62d17eb894bbcef482893c4bea2e3af3b90b842efd2c3c4b06b23902b360ddcb",
+      "source": {
+        "name": "explode/Break Brick.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/explode/Break Brick.wav",
+        "sha256": "7cc284c586ad81cfbe90ebaab3ccb255036712d46d9a19e240625abe00c4ada7"
+      },
+      "reference": {
+        "file": "audio/aad0aec3a74d8a980ebc076be87a6bd5ae27031f5e8940c1463c8d1b89d1ac90.flac",
+        "pcmSha256": "aad0aec3a74d8a980ebc076be87a6bd5ae27031f5e8940c1463c8d1b89d1ac90",
+        "sampleRate": 44100,
+        "frames": 22776,
+        "channels": 1,
+        "auditionWavSha256": "dc9534d1894cd6824ac854918156fe501889c8ac6a29ca8e3eb673cf350a097d"
+      },
+      "operations": [
+        {
+          "operation": "time-stretch",
+          "rate": 0.8
+        },
+        {
+          "operation": "lowpass",
+          "hz": 2500
+        }
+      ]
+    },
+    {
+      "archive": "tools/multisynth/listening_data/2026-10-05-pitch-calibration-quick-01",
+      "manifestSha256": "2daa265339a65fcfd87015143b070063c00604fcb46fba0f2270b4f7aab68f78",
+      "source": {
+        "name": "die/charm2.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/die/charm2.wav",
+        "sha256": "d161711f9e872a84d289f26097f57028ef444959afd79c0233b74aef9f3ae24e",
+        "tag": "die",
+        "durationSeconds": 2.113968253968254,
+        "normalizedPcmSha256": "98971f210ae3659c11256c8d53e180be3165b73f6b227d62d3686d2f7ff514ce",
+        "previouslyRatedReference": true,
+        "selectionReason": "Retain both previously heard partial-success anchors; check a moving tonal recreation",
+        "archivedReferencePcmSha256": "999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850",
+        "referenceBindingNote": "normalizedPcmSha256 is inherited source metadata, not the actually heard archive PCM identity. Use archivedReferencePcmSha256 and the archive referenceAudio binding for exact charm2 audition PCM."
+      },
+      "reference": {
+        "file": "audio/999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850.flac",
+        "pcmSha256": "999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850",
+        "sampleRate": 44100,
+        "frames": 92553,
+        "channels": 1,
+        "auditionWavSha256": "4b56fe1ef7f5e2a79c97e750337f46df12f2b6753743859af10ff498624f7a24"
+      },
+      "operations": [
+        {
+          "operation": "pitch-shift",
+          "semitones": 2
+        },
+        {
+          "operation": "lowpass",
+          "hz": 2500
+        }
+      ]
+    },
+    {
+      "archive": "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01",
+      "manifestSha256": "62d17eb894bbcef482893c4bea2e3af3b90b842efd2c3c4b06b23902b360ddcb",
+      "source": {
+        "name": "clothes/cloth3.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/clothes/cloth3.ogg",
+        "sha256": "a48632d17a4f1416541d261a32a31612e01267144c407fa3ecab3ff410f0085b"
+      },
+      "reference": {
+        "file": "audio/db68adec97a5f13e92ac0b6f1131802eaa5938d3ace2132b6efaad10a563e0d9.flac",
+        "pcmSha256": "db68adec97a5f13e92ac0b6f1131802eaa5938d3ace2132b6efaad10a563e0d9",
+        "sampleRate": 44100,
+        "frames": 21017,
+        "channels": 1,
+        "auditionWavSha256": "9bf73e40da40ddea67e89eaa371156edc0728408c88042583d29f972c237c469"
+      },
+      "operations": [
+        {
+          "operation": "time-stretch",
+          "rate": 0.8
+        },
+        {
+          "operation": "lowpass",
+          "hz": 1800
+        }
+      ]
+    },
+    {
+      "archive": "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01",
+      "manifestSha256": "62d17eb894bbcef482893c4bea2e3af3b90b842efd2c3c4b06b23902b360ddcb",
+      "source": {
+        "name": "laser/Lasers.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/Lasers.wav",
+        "sha256": "7e1ba424329fb486c312ab8fbb0582cd03f8e00a28d44c436963b61ad2602b28"
+      },
+      "reference": {
+        "file": "audio/45d423cf5a051e07468581ac874e48e3458d9c467f3e4753379ed5db96884f58.flac",
+        "pcmSha256": "45d423cf5a051e07468581ac874e48e3458d9c467f3e4753379ed5db96884f58",
+        "sampleRate": 44100,
+        "frames": 17199,
+        "channels": 1,
+        "auditionWavSha256": "14175d01910438486f03146058eefb2bbde00535d586d9759e1f514885a4c500"
+      },
+      "operations": [
+        {
+          "operation": "pitch-shift",
+          "semitones": 2
+        },
+        {
+          "operation": "tail-fade",
+          "startFraction": 0.6,
+          "endDb": -18
+        }
+      ]
+    }
+  ]
+}

@@ -165,10 +165,17 @@
     {
       "id": "inverse-proposal-vs-reachable-coverage",
       "claim": "A control regressor can miss usable preset regions even when an engine can render similar sounds.",
-      "status": "candidate-generation-diagnostic-awaiting-listening",
+      "status": "broader-search-no-convincing-displayed-match",
       "evidence": "Five tagged references yielded one similar and four least-bad winners. A frozen 64,415-training-preset search plus four bounded refinement starts per target produces ten novel scorer-selected alternatives, all from retrieved starts. All 1,065 retained candidate waveforms replay exactly. Numerical improvement does not yet establish useful teachers or audible recreation.",
       "source": "evaluations/tagged-coverage-v1-evaluation.json",
-      "nextTest": "Listen to frozen matching- and preference-selected outputs beside exact historical winners. If useful candidates exist, investigate multimodal/retrieval-conditioned inversion or distillation; if not, improve representation, objective or synth coverage without training on least-bad pseudo-labels."
+      "nextTest": "Evaluate pretrained perceptual representations against family-grouped historical judgments before using them to generate a genuinely new listening batch. Preserve original pitch/event descriptors and do not conflate ranking with adequacy.",
+      "observations": [
+        {
+          "session": "2026-10-05-tagged-coverage-quick-01",
+          "finding": "New Squishr footstep is similar; new Transfxr cloth and retained original Bfxr block/laser are least-bad. None of three brick options is close. Zero very-close. This search did not find adequate teachers; it does not prove synth-space inadequacy.",
+          "source": "evaluations/tagged-coverage-quick-01-human-review.json"
+        }
+      ]
     }
   ]
 }
