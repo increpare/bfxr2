@@ -168,3 +168,43 @@ error. Secant renders are verified from retained PCM, not all independently
 replayed; pitch diagnostics are reused. See
 `evaluations/rendered-gradient-v1-audit.json`. Five focused tests and bounded
 independent review pass. No inverse-audio training or listening promotion follows.
+
+## Conditional pitch-loss diagnostic
+
+`confidence-gradient-v1` tests the post-hoc hypothesis above on the same eight
+development cases. It removes relative pitch, absolute pitch and combined
+voicing only for the three targets whose frozen pitch diagnostic is unreliable,
+then averages the remaining six groups. Both actual-render secants and frozen
+surrogate autograd use this loss. All five reliable-target cases retain their
+previous exact steps. Categories, seeds, normalization and proposal budgets stay
+fixed; no inverse is retrained in this diagnostic.
+
+For the three affected cases, before-step mean MatchObjective is 4.77988. At
+radius .005, conditional rendered directions reduce it to 3.58321 (all three
+improve), versus 4.89845 under the original rendered directions. However, at
+.001 the conditional rendered mean worsens to 4.91767, and even at .005 the
+conditional descriptor loss itself slightly worsens, .206879→.207198. This is
+a scale-specific result, not evidence of consistently useful descent.
+
+The conditional surrogate direction at .005 lowers actual conditional descriptor
+loss on all three cases (.206879→.199141), but mean MatchObjective worsens to
+7.78758. Case 00151 rises from 7.82159 to 18.16005, while the other two improve.
+Derivative cosine agreement turns positive for two cases (.9045 and .5450),
+but remains negative on 00151 (-.3355). Reverse .005 steps are retained as well;
+neither method's reversed conditional direction improves MatchObjective on any
+of the three cases.
+
+The results support further investigation of objective discontinuities and
+local derivative error; they do not justify adopting this binary reliability
+mask or enabling surrogate-audio fine-tuning. A useful next test would freeze
+additional cases and compare finite-difference scale stability before training
+derivative targets. Human adequacy feedback on coverage-selection remains a
+separate question; none of these objective changes establishes audible likeness.
+
+Audit: all 74 before/original/new candidate WAV references and descriptor scores
+verified; 26 exact DSP replays (eight before states and all 18 new steps), with
+zero MatchObjective error. Thirty reliable-case steps are unchanged. The audit
+recomputes gradients, direction construction, pitch diagnostics on new renders,
+and summaries. Independent review found no important implementation issue and
+emphasized the scale-dependent and post-hoc scope. Retained evidence:
+`evaluations/confidence-gradient-v1-audit.json`.
