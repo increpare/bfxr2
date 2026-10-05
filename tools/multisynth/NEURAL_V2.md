@@ -234,6 +234,16 @@ references are tagged sources, and the last five are reserved native controls.
 All 31 audio files plus HTML/report were verified over HTTP. Human quality
 judgments are now required. No other synth expert or CLI default was replaced.
 
+Human update, 2026-10-06: the first five tagged trials were submitted; the five
+reserved native trials remain unjudged. The repeated footstep ties all three
+options as very-close. The fresh footstep rejects both; hit and clothes prefer
+shared, and Anubis step prefers specialist, all least-bad. Thus none of the four
+fresh tagged references has a convincing displayed recreation. The three strict
+preferences agree with soft distance, but that does not imply absolute likeness.
+Keep defaults unchanged and obtain the already-published native judgments before
+choosing between native-inversion and transfer-focused follow-up experiments.
+See the [partial human review](evaluations/squishr-v1-quick-01-human-review.json).
+
 See [render evaluation](evaluations/squishr-v1-evaluation.json),
 [control diagnostics](evaluations/squishr-v1-control-diagnostics.json),
 [listening audit](evaluations/squishr-v1-listening-audit.json), and

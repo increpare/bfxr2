@@ -1,0 +1,631 @@
+{
+  "complete": true,
+  "partialSubmission": true,
+  "scriptSha256": "0208bd0f3d140c832df8c4a35697bb2cac6c7b17879145614436f7e325e67079",
+  "experimentId": "ca0be7aeceb0f4224488b650da258358ea77a8485c329245532eb3898a4f5f09",
+  "feedbackSha256": "0bd1fa35602d8a33b0a9aace6c9f99f9df145920498c855d4a99d037fb694c30",
+  "manifestSha256": "b4905929fbb7f9696a365d7f1a7bfca764fcaafe0c8b18eb44ec640d13802360",
+  "galleryReportSha256": "5cb570d2dfdbe51bd7d97fdfc494b908a8abb841e4402a61363824ff5163e9d8",
+  "galleryAuditSha256": "058c74973cca8b6e38383a7975efcc4d78520e66286c0ffd431def2b83cc45e7",
+  "metricHashes": {
+    "preferenceNeuralV2": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b"
+  },
+  "archiveSummary": {
+    "targets": 5,
+    "uniqueRatedCandidates": 0,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "choices": 5,
+    "choiceKinds": {
+      "best": 3,
+      "tie": 1,
+      "none": 1,
+      "skip": 0
+    }
+  },
+  "trainingPairSummary": {
+    "targets": 5,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "duplicateAudioAliases": 0,
+    "conflictingAudioRatingGroups": 0,
+    "tiedPairs": 0,
+    "duplicateSessionPairs": 0,
+    "directChoicePairs": 3,
+    "choices": 5,
+    "choiceKinds": {
+      "best": 3,
+      "tie": 1,
+      "none": 1,
+      "skip": 0
+    },
+    "validatedAudioFiles": 16,
+    "uniqueAudioPcm": 16
+  },
+  "rows": [
+    {
+      "name": "footstep/footstep_wood_000.ogg",
+      "targetId": "6ee2e31a205083a98b86a2d326fa1a48f4c4fa13504452fc293f59319cec48d6",
+      "kind": "tie",
+      "adequacy": {
+        "level": "very-close",
+        "candidateIds": [
+          "261227af963a55fdda67f4b15614032ff43112d66620535ed997e860c08b7a3c",
+          "5e9ec27277b7aab355f5d8509bfbf2db366fbb3338cc5e1dbf1938893f18d57f",
+          "62ad6929e68984fbefc8827ac81b0460067ea1ea21ca47b7e88bf553523cf7a5"
+        ]
+      },
+      "preferredRoles": [],
+      "options": [
+        {
+          "id": "5e9ec27277b7aab355f5d8509bfbf2db366fbb3338cc5e1dbf1938893f18d57f",
+          "role": "previous",
+          "synth": "Squishr",
+          "checkpointSha256": null,
+          "searchArm": "soft",
+          "pcmSha256": "1e62baa60aa701bc3f3ea1be6337ef34040eea2a34847abac1f41df04e99a585",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "very-close",
+          "scores": {
+            "MatchObjective": 9.191781319025006,
+            "preferenceNeuralV2": 1.197439620397733,
+            "softPeriodicity": 2.7185853072433144
+          }
+        },
+        {
+          "id": "62ad6929e68984fbefc8827ac81b0460067ea1ea21ca47b7e88bf553523cf7a5",
+          "role": "selected",
+          "synth": "Squishr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "searchArm": null,
+          "pcmSha256": "c562d2dda7bf0d09c43df482dcbf726800bc6034c736345cfd4cf7467bff35a4",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "very-close",
+          "scores": {
+            "MatchObjective": 7.839858121157309,
+            "preferenceNeuralV2": 1.1794152142679306,
+            "softPeriodicity": 2.476548212912964
+          }
+        },
+        {
+          "id": "261227af963a55fdda67f4b15614032ff43112d66620535ed997e860c08b7a3c",
+          "role": "alternative",
+          "synth": "Squishr",
+          "checkpointSha256": "232e19d4425cc9210ae6c348bbe3983d2b19f623cc8265564bf8de737c4a2c18",
+          "searchArm": null,
+          "pcmSha256": "7d1598acf98dc9e497d536ee369d29f75686a99d421558ac53283cf49b26cc8f",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "very-close",
+          "scores": {
+            "MatchObjective": 8.684824342137636,
+            "preferenceNeuralV2": 1.2811707090268736,
+            "softPeriodicity": 2.5077032234331575
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "selected",
+        "preferenceNeuralV2": "selected",
+        "softPeriodicity": "selected"
+      },
+      "note": ""
+    },
+    {
+      "name": "footstep/footstep00.ogg",
+      "targetId": "e5863edc96df38ccc6e43099fa65c8d7d0edccc642a6968a99b16a72507ec09f",
+      "kind": "none",
+      "adequacy": null,
+      "preferredRoles": [],
+      "options": [
+        {
+          "id": "65d0f2f8f6f02ebe3c25e305c5e6c73d5a9be821d1eed89bcc9c60ea1745c778",
+          "role": "selected",
+          "synth": "Squishr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "searchArm": null,
+          "pcmSha256": "f69ae1ef426aeb33565d1679b5102e05704637a891ed0575ac5a9e8cde647eac",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "not-close",
+          "scores": {
+            "MatchObjective": 10.26723439990917,
+            "preferenceNeuralV2": 1.3933802087545,
+            "softPeriodicity": 3.198628390823197
+          }
+        },
+        {
+          "id": "569d048786fe38a57ba4a7bbb58a18fd095ab78a697d64e9f2a328566d22f6f5",
+          "role": "alternative",
+          "synth": "Squishr",
+          "checkpointSha256": "232e19d4425cc9210ae6c348bbe3983d2b19f623cc8265564bf8de737c4a2c18",
+          "searchArm": null,
+          "pcmSha256": "ab0940dfbb190ed0257c219e632d98956dec4928d980007c0a79994af8b54f09",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": "not-close",
+          "scores": {
+            "MatchObjective": 10.274229747818156,
+            "preferenceNeuralV2": 1.361450540522267,
+            "softPeriodicity": 3.1583156811855666
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "selected",
+        "preferenceNeuralV2": "alternative",
+        "softPeriodicity": "alternative"
+      },
+      "note": ""
+    },
+    {
+      "name": "hit/C Falcon - Jump Flip Hit.wav",
+      "targetId": "3229dfbe219de8ed2db4d3165ce5730d05cc5ba3981ef0057b9da4222707d6a7",
+      "kind": "best",
+      "adequacy": {
+        "level": "least-bad",
+        "candidateIds": [
+          "da2314f854a0f24439606ddcd2727b0fd36ba5417ffe8a56b451deb7e8e04b00"
+        ]
+      },
+      "preferredRoles": [
+        "selected"
+      ],
+      "options": [
+        {
+          "id": "da2314f854a0f24439606ddcd2727b0fd36ba5417ffe8a56b451deb7e8e04b00",
+          "role": "selected",
+          "synth": "Squishr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "searchArm": null,
+          "pcmSha256": "01fae2ce34e8aaa564f6f1dd975176c6da7a35f9f4252e50c4715d470d4c8ba5",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "least-bad",
+          "scores": {
+            "MatchObjective": 9.480898462661179,
+            "preferenceNeuralV2": 0.7930445718251795,
+            "softPeriodicity": 2.809295401840655
+          }
+        },
+        {
+          "id": "d6b77763da832ca144de35040a85efe45851a3f4719f2f99a7a71d9e80662deb",
+          "role": "alternative",
+          "synth": "Squishr",
+          "checkpointSha256": "232e19d4425cc9210ae6c348bbe3983d2b19f623cc8265564bf8de737c4a2c18",
+          "searchArm": null,
+          "pcmSha256": "6a854b8a84394a6c8cfa73ab7d03de651671b2fd9704d7e0b7df236d5b75445d",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 7.619126894269132,
+            "preferenceNeuralV2": 1.1512038875576476,
+            "softPeriodicity": 2.81319808371474
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "alternative",
+        "preferenceNeuralV2": "selected",
+        "softPeriodicity": "selected"
+      },
+      "note": ""
+    },
+    {
+      "name": "step/AnubisStep1.wav",
+      "targetId": "72d61a80619d6a92f5482736d44be120c2168ba4265444439068ff8418f2084b",
+      "kind": "best",
+      "adequacy": {
+        "level": "least-bad",
+        "candidateIds": [
+          "994b9294011dd6ac7e0493894f684f9aba6c0e1a612b7f95c6c66d38bd439821"
+        ]
+      },
+      "preferredRoles": [
+        "alternative"
+      ],
+      "options": [
+        {
+          "id": "ad00b2ffc4ed7b4338eb2276ff2551c6ebbedaab22e88ac5f1e796a1bfa80c1b",
+          "role": "selected",
+          "synth": "Squishr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "searchArm": null,
+          "pcmSha256": "7a6e1f7e7755c793251f303d55d390174a4eaa65d3afd5814a441eacac7b838a",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 1.9156480644846219,
+            "preferenceNeuralV2": 1.536059082734007,
+            "softPeriodicity": 2.532659137028573
+          }
+        },
+        {
+          "id": "994b9294011dd6ac7e0493894f684f9aba6c0e1a612b7f95c6c66d38bd439821",
+          "role": "alternative",
+          "synth": "Squishr",
+          "checkpointSha256": "232e19d4425cc9210ae6c348bbe3983d2b19f623cc8265564bf8de737c4a2c18",
+          "searchArm": null,
+          "pcmSha256": "1cc4645e09fc4883d8933d0cb85a69d7e4ed3a9e857c6f4cbc8b2069f64d3c83",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "least-bad",
+          "scores": {
+            "MatchObjective": 9.515347705950031,
+            "preferenceNeuralV2": 1.5132563225104767,
+            "softPeriodicity": 2.3482709257041767
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "selected",
+        "preferenceNeuralV2": "alternative",
+        "softPeriodicity": "alternative"
+      },
+      "note": ""
+    },
+    {
+      "name": "clothes/FOLYClth_ClothMovement29_InMotionAudio_FoleyT-Shirt.wav",
+      "targetId": "8c1110034f7317d5c7ce40cf188ee5c82b0ae17af5c545a55aa5a56df42d429c",
+      "kind": "best",
+      "adequacy": {
+        "level": "least-bad",
+        "candidateIds": [
+          "968c54fbc6487a13cd36803d435f5dfef161cef994a21b6b06def3a1e3cac907"
+        ]
+      },
+      "preferredRoles": [
+        "selected"
+      ],
+      "options": [
+        {
+          "id": "968c54fbc6487a13cd36803d435f5dfef161cef994a21b6b06def3a1e3cac907",
+          "role": "selected",
+          "synth": "Squishr",
+          "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+          "searchArm": null,
+          "pcmSha256": "a8d68bd6838ea191d0c283d48932dd842bd6290302db72f6a4c580c6f592528c",
+          "heard": true,
+          "preferred": true,
+          "absoluteLikeness": "least-bad",
+          "scores": {
+            "MatchObjective": 9.006102975796178,
+            "preferenceNeuralV2": 1.2179976335509213,
+            "softPeriodicity": 1.9806541303261596
+          }
+        },
+        {
+          "id": "4acf493402138b0d7d63ebcf6e5300d3a0a0a760c379ed68939ca66212fe4ed2",
+          "role": "alternative",
+          "synth": "Squishr",
+          "checkpointSha256": "232e19d4425cc9210ae6c348bbe3983d2b19f623cc8265564bf8de737c4a2c18",
+          "searchArm": null,
+          "pcmSha256": "0d77fbfd29c1a308d75b5dc18085df6901c7a57e832922b1d52b294fb0730e8e",
+          "heard": true,
+          "preferred": false,
+          "absoluteLikeness": null,
+          "scores": {
+            "MatchObjective": 12.3279130637902,
+            "preferenceNeuralV2": 1.174491188258362,
+            "softPeriodicity": 2.020853237302999
+          }
+        }
+      ],
+      "metricWinners": {
+        "MatchObjective": "selected",
+        "preferenceNeuralV2": "alternative",
+        "softPeriodicity": "selected"
+      },
+      "note": ""
+    }
+  ],
+  "pairs": [
+    {
+      "archive": "2026-10-06-squishr-v1-quick-01",
+      "experimentId": "ca0be7aeceb0f4224488b650da258358ea77a8485c329245532eb3898a4f5f09",
+      "target": "hit/C Falcon - Jump Flip Hit.wav",
+      "referencePcmSha256": "eaa74a9d795ffb50f14308f74bfa290636f4f14af1aa200ffd0c7b158cb3fe2b",
+      "candidateA": "da2314f854a0f24439606ddcd2727b0fd36ba5417ffe8a56b451deb7e8e04b00",
+      "candidateB": "d6b77763da832ca144de35040a85efe45851a3f4719f2f99a7a71d9e80662deb",
+      "candidateAliasesA": [
+        "da2314f854a0f24439606ddcd2727b0fd36ba5417ffe8a56b451deb7e8e04b00"
+      ],
+      "candidateAliasesB": [
+        "d6b77763da832ca144de35040a85efe45851a3f4719f2f99a7a71d9e80662deb"
+      ],
+      "candidatePcmSha256A": "01fae2ce34e8aaa564f6f1dd975176c6da7a35f9f4252e50c4715d470d4c8ba5",
+      "candidatePcmSha256B": "6a854b8a84394a6c8cfa73ab7d03de651671b2fd9704d7e0b7df236d5b75445d",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.08050261437892914,
+        -0.11249250918626785,
+        -0.03151831030845642,
+        -0.017707258462905884,
+        -0.015423387289047241,
+        -0.025778502225875854,
+        0.01211501844227314,
+        -0.0005227457731962204,
+        -0.09245507419109344,
+        -0.016129032258064516,
+        -0.05168225616216659,
+        0.02864624386447171,
+        -0.03927755728363991,
+        -0.010139167308807373,
+        -0.03526597283780575,
+        -0.04584628343582153,
+        0.011538110673427582,
+        -0.024268023669719696,
+        -0.02548014372587204,
+        -0.02602604776620865
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "d6b77763da832ca144de35040a85efe45851a3f4719f2f99a7a71d9e80662deb",
+          "da2314f854a0f24439606ddcd2727b0fd36ba5417ffe8a56b451deb7e8e04b00"
+        ],
+        "auditionedCandidateIds": [
+          "d6b77763da832ca144de35040a85efe45851a3f4719f2f99a7a71d9e80662deb",
+          "da2314f854a0f24439606ddcd2727b0fd36ba5417ffe8a56b451deb7e8e04b00"
+        ],
+        "preferredCandidateIds": [
+          "da2314f854a0f24439606ddcd2727b0fd36ba5417ffe8a56b451deb7e8e04b00"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "da2314f854a0f24439606ddcd2727b0fd36ba5417ffe8a56b451deb7e8e04b00"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "selected",
+      "loserRole": "alternative",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preferenceNeuralV2": true,
+        "softPeriodicity": true
+      }
+    },
+    {
+      "archive": "2026-10-06-squishr-v1-quick-01",
+      "experimentId": "ca0be7aeceb0f4224488b650da258358ea77a8485c329245532eb3898a4f5f09",
+      "target": "step/AnubisStep1.wav",
+      "referencePcmSha256": "def505e44f9ba3e8524ae8a5fee509619fb583eaec94b79ef31ab655472c9d9a",
+      "candidateA": "994b9294011dd6ac7e0493894f684f9aba6c0e1a612b7f95c6c66d38bd439821",
+      "candidateB": "ad00b2ffc4ed7b4338eb2276ff2551c6ebbedaab22e88ac5f1e796a1bfa80c1b",
+      "candidateAliasesA": [
+        "994b9294011dd6ac7e0493894f684f9aba6c0e1a612b7f95c6c66d38bd439821"
+      ],
+      "candidateAliasesB": [
+        "ad00b2ffc4ed7b4338eb2276ff2551c6ebbedaab22e88ac5f1e796a1bfa80c1b"
+      ],
+      "candidatePcmSha256A": "1cc4645e09fc4883d8933d0cb85a69d7e4ed3a9e857c6f4cbc8b2069f64d3c83",
+      "candidatePcmSha256B": "7a6e1f7e7755c793251f303d55d390174a4eaa65d3afd5814a441eacac7b838a",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.07020345330238342,
+        -0.015735968947410583,
+        -0.0016269111074507236,
+        0.010109201073646545,
+        -0.004536285996437073,
+        -0.0013517141342163086,
+        0.0713697075843811,
+        0.0012399107217788696,
+        -0.03338688611984253,
+        -0.024193548387096767,
+        -0.004593640565872192,
+        0.01733740491896027,
+        0.015080884099006653,
+        0.003525286912918091,
+        0.0907275378704071,
+        -0.1319677233695984,
+        0.0679711103439331,
+        -0.024180307984352112,
+        -0.024238869547843933,
+        -0.023519039154052734
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "994b9294011dd6ac7e0493894f684f9aba6c0e1a612b7f95c6c66d38bd439821",
+          "ad00b2ffc4ed7b4338eb2276ff2551c6ebbedaab22e88ac5f1e796a1bfa80c1b"
+        ],
+        "auditionedCandidateIds": [
+          "994b9294011dd6ac7e0493894f684f9aba6c0e1a612b7f95c6c66d38bd439821",
+          "ad00b2ffc4ed7b4338eb2276ff2551c6ebbedaab22e88ac5f1e796a1bfa80c1b"
+        ],
+        "preferredCandidateIds": [
+          "994b9294011dd6ac7e0493894f684f9aba6c0e1a612b7f95c6c66d38bd439821"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "994b9294011dd6ac7e0493894f684f9aba6c0e1a612b7f95c6c66d38bd439821"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "alternative",
+      "loserRole": "selected",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preferenceNeuralV2": true,
+        "softPeriodicity": true
+      }
+    },
+    {
+      "archive": "2026-10-06-squishr-v1-quick-01",
+      "experimentId": "ca0be7aeceb0f4224488b650da258358ea77a8485c329245532eb3898a4f5f09",
+      "target": "clothes/FOLYClth_ClothMovement29_InMotionAudio_FoleyT-Shirt.wav",
+      "referencePcmSha256": "8fcb2e9575f5eebf7f247f3b6b091c97e2a2c61de96f8bc36cb095dc993f7c97",
+      "candidateA": "968c54fbc6487a13cd36803d435f5dfef161cef994a21b6b06def3a1e3cac907",
+      "candidateB": "4acf493402138b0d7d63ebcf6e5300d3a0a0a760c379ed68939ca66212fe4ed2",
+      "candidateAliasesA": [
+        "968c54fbc6487a13cd36803d435f5dfef161cef994a21b6b06def3a1e3cac907"
+      ],
+      "candidateAliasesB": [
+        "4acf493402138b0d7d63ebcf6e5300d3a0a0a760c379ed68939ca66212fe4ed2"
+      ],
+      "candidatePcmSha256A": "a8d68bd6838ea191d0c283d48932dd842bd6290302db72f6a4c580c6f592528c",
+      "candidatePcmSha256B": "0d77fbfd29c1a308d75b5dc18085df6901c7a57e832922b1d52b294fb0730e8e",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.2067854404449463,
+        -0.04994496703147888,
+        -0.022075247019529343,
+        0.0034584663808345795,
+        -0.007711689919233322,
+        -0.0061859190464019775,
+        0.005566695239394903,
+        -0.0009424178279004991,
+        -0.026873424649238586,
+        -0.05645161290322577,
+        -0.108399648219347,
+        0.002018128632742547,
+        -0.0036899223923683167,
+        -0.0012666955590248108,
+        0.014179937541484833,
+        0.0726330578327179,
+        0.005301624536514282,
+        0.08132312446832657,
+        0.0710831731557846,
+        0.07264971733093262
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "4acf493402138b0d7d63ebcf6e5300d3a0a0a760c379ed68939ca66212fe4ed2",
+          "968c54fbc6487a13cd36803d435f5dfef161cef994a21b6b06def3a1e3cac907"
+        ],
+        "auditionedCandidateIds": [
+          "4acf493402138b0d7d63ebcf6e5300d3a0a0a760c379ed68939ca66212fe4ed2",
+          "968c54fbc6487a13cd36803d435f5dfef161cef994a21b6b06def3a1e3cac907"
+        ],
+        "preferredCandidateIds": [
+          "968c54fbc6487a13cd36803d435f5dfef161cef994a21b6b06def3a1e3cac907"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "968c54fbc6487a13cd36803d435f5dfef161cef994a21b6b06def3a1e3cac907"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "selected",
+      "loserRole": "alternative",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preferenceNeuralV2": false,
+        "softPeriodicity": true
+      }
+    }
+  ],
+  "explicitQualitativeLabels": [
+    {
+      "targetId": "6ee2e31a205083a98b86a2d326fa1a48f4c4fa13504452fc293f59319cec48d6",
+      "candidateId": "5e9ec27277b7aab355f5d8509bfbf2db366fbb3338cc5e1dbf1938893f18d57f",
+      "referencePcmSha256": "544e295124cda104e86d4efc30185a937c695ba4457be1819650542557901e7b",
+      "candidatePcmSha256": "1e62baa60aa701bc3f3ea1be6337ef34040eea2a34847abac1f41df04e99a585",
+      "label": "very-close"
+    },
+    {
+      "targetId": "6ee2e31a205083a98b86a2d326fa1a48f4c4fa13504452fc293f59319cec48d6",
+      "candidateId": "62ad6929e68984fbefc8827ac81b0460067ea1ea21ca47b7e88bf553523cf7a5",
+      "referencePcmSha256": "544e295124cda104e86d4efc30185a937c695ba4457be1819650542557901e7b",
+      "candidatePcmSha256": "c562d2dda7bf0d09c43df482dcbf726800bc6034c736345cfd4cf7467bff35a4",
+      "label": "very-close"
+    },
+    {
+      "targetId": "6ee2e31a205083a98b86a2d326fa1a48f4c4fa13504452fc293f59319cec48d6",
+      "candidateId": "261227af963a55fdda67f4b15614032ff43112d66620535ed997e860c08b7a3c",
+      "referencePcmSha256": "544e295124cda104e86d4efc30185a937c695ba4457be1819650542557901e7b",
+      "candidatePcmSha256": "7d1598acf98dc9e497d536ee369d29f75686a99d421558ac53283cf49b26cc8f",
+      "label": "very-close"
+    },
+    {
+      "targetId": "e5863edc96df38ccc6e43099fa65c8d7d0edccc642a6968a99b16a72507ec09f",
+      "candidateId": "65d0f2f8f6f02ebe3c25e305c5e6c73d5a9be821d1eed89bcc9c60ea1745c778",
+      "referencePcmSha256": "010599871b03d61ab4d42a0145f1f62f61f0747c905c8e229d7e3f4a7b5fb984",
+      "candidatePcmSha256": "f69ae1ef426aeb33565d1679b5102e05704637a891ed0575ac5a9e8cde647eac",
+      "label": "not-close"
+    },
+    {
+      "targetId": "e5863edc96df38ccc6e43099fa65c8d7d0edccc642a6968a99b16a72507ec09f",
+      "candidateId": "569d048786fe38a57ba4a7bbb58a18fd095ab78a697d64e9f2a328566d22f6f5",
+      "referencePcmSha256": "010599871b03d61ab4d42a0145f1f62f61f0747c905c8e229d7e3f4a7b5fb984",
+      "candidatePcmSha256": "ab0940dfbb190ed0257c219e632d98956dec4928d980007c0a79994af8b54f09",
+      "label": "not-close"
+    },
+    {
+      "targetId": "3229dfbe219de8ed2db4d3165ce5730d05cc5ba3981ef0057b9da4222707d6a7",
+      "candidateId": "da2314f854a0f24439606ddcd2727b0fd36ba5417ffe8a56b451deb7e8e04b00",
+      "referencePcmSha256": "eaa74a9d795ffb50f14308f74bfa290636f4f14af1aa200ffd0c7b158cb3fe2b",
+      "candidatePcmSha256": "01fae2ce34e8aaa564f6f1dd975176c6da7a35f9f4252e50c4715d470d4c8ba5",
+      "label": "least-bad"
+    },
+    {
+      "targetId": "72d61a80619d6a92f5482736d44be120c2168ba4265444439068ff8418f2084b",
+      "candidateId": "994b9294011dd6ac7e0493894f684f9aba6c0e1a612b7f95c6c66d38bd439821",
+      "referencePcmSha256": "def505e44f9ba3e8524ae8a5fee509619fb583eaec94b79ef31ab655472c9d9a",
+      "candidatePcmSha256": "1cc4645e09fc4883d8933d0cb85a69d7e4ed3a9e857c6f4cbc8b2069f64d3c83",
+      "label": "least-bad"
+    },
+    {
+      "targetId": "8c1110034f7317d5c7ce40cf188ee5c82b0ae17af5c545a55aa5a56df42d429c",
+      "candidateId": "968c54fbc6487a13cd36803d435f5dfef161cef994a21b6b06def3a1e3cac907",
+      "referencePcmSha256": "8fcb2e9575f5eebf7f247f3b6b091c97e2a2c61de96f8bc36cb095dc993f7c97",
+      "candidatePcmSha256": "a8d68bd6838ea191d0c283d48932dd842bd6290302db72f6a4c580c6f592528c",
+      "label": "least-bad"
+    }
+  ],
+  "unsubmittedReferences": [
+    "Reserved suction sound (Squishr-02730)",
+    "Reserved bubbles sound (Squishr-02057)",
+    "Reserved spring sound (Squishr-05824)",
+    "Reserved bubbles sound (Squishr-03341)",
+    "Reserved gulp sound (Squishr-01797)"
+  ],
+  "metricAgreement": {
+    "MatchObjective": {
+      "correct": 1,
+      "pairs": 3
+    },
+    "preferenceNeuralV2": {
+      "correct": 2,
+      "pairs": 3
+    },
+    "softPeriodicity": {
+      "correct": 3,
+      "pairs": 3
+    }
+  },
+  "interpretation": [
+    "Partial submission: first five tagged references judged; five reserved native references unsubmitted. Gallery provenance complete means generation finished, not that all listening judgments were submitted.",
+    "All eleven displayed options were auditioned. Wooden footstep is a very-close tie across the retained anchor and both refined inverse heads. No strict labels from the tie.",
+    "The four fresh tagged references have no convincing displayed recreation: footstep00 rejects both, hit and clothes prefer shared but least-bad, Anubis step prefers specialist but least-bad.",
+    "Three strict heard preference pairs; eight candidate-scoped labels: three very-close, two not-close, three least-bad. Unchosen candidates in best trials have no inferred adequacy.",
+    "The new specialist does not demonstrate better tagged transfer. The successful repeated footstep supports reachable reproduction by both heads with refinement, not raw inverse predictions or global generalization.",
+    "Keep existing defaults. Collect the five already-published native trials before deciding whether basic native inversion or real-recording transfer is the next bottleneck. Do not retrain on rejected least-bad controls as successful teachers."
+  ]
+}

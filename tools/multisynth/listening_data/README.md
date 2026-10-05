@@ -43,6 +43,23 @@ questions about hidden synth labels.
 | `2026-10-05-tagged-coverage-quick-01/` | 5 | 15 |
 | `2026-10-05-cue-calibration-quick-01/` | 5 | 10 |
 | `2026-10-05-soft-periodicity-quick-01/` | 5 | 15 |
+| `2026-10-06-squishr-v1-quick-01/` | 5 | 11 |
+
+The seventeenth archive is a **partial submission**: the first five tagged
+references from the ten-trial Squishr specialist comparison. All eleven options
+were auditioned. The repeated wooden footstep is a **very-close tie** across the
+retained anchor, shared head and new specialist, each with its published search.
+The fresh footstep rejects both options. Shared wins hit and clothes, specialist
+wins Anubis step, but all three winners are **least-bad**. This does not establish
+better tagged transfer or adequacy of either raw inverse prediction.
+
+Three strict heard pairs and eight candidate-scoped labels are retained: three
+very-close, two not-close and three least-bad. The soft scorer agrees on all
+three strict pairs, preference-neural-v2 on two, legacy on one; ordering bad
+options correctly is not evidence of good reproduction. Five reserved native
+trials remain unsubmitted. Preserve this partial session when later feedback
+arrives, and avoid double-counting unchanged choices from cumulative exports.
+See the [Squishr human review](../evaluations/squishr-v1-quick-01-human-review.json).
 
 The sixteenth archive retains five actual-synth comparisons. The new soft-search
 Squishr wooden footstep wins and is **very close**. The chosen soft-search
