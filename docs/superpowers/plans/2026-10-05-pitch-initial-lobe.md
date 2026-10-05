@@ -35,7 +35,7 @@ and their hashes. Do not change data distribution or architectures in this arm.
   adaptation of reviewed v4 pipeline, retaining source data, rows, labels, splits,
   architecture/recipe/seed and all22 normalization. No monkeypatching. Tests
   must exercise strict replay/loading and compatibility rejection. Review/freeze.
-- [ ] Re-extract same75,776 source rows, re-train same three90epoch experts,
+- [x] Re-extract same75,776 source rows, re-train same three90epoch experts,
   audit strict bindings and validation, evaluate same20+4 development probes.
   Keep v3/v4/v5 separate. Judge full contours and actual proposal pools; median
   pitch alone and direction alone cannot establish recreation.

@@ -1,0 +1,454 @@
+{
+  "complete": true,
+  "dataManifestSha256": "94c84af68ce3d851954d097060d7df3b57bc40b8e0b2d4b365c23d710c0b8f9a",
+  "sourceDataManifestSha256": "5162ae6d90328f098389bfc762437bc29083eea4d5a446eb2fef14edced5e87c",
+  "auditScriptSha256": "5b5f9ee2291e3b45464dab67be9edea8dbd7cde8f8a2acc4247313a9c3cce863",
+  "data": [
+    {
+      "engine": "Bfxr",
+      "rows": 12288,
+      "train": 10445,
+      "validation": 1843,
+      "replayedRows": [
+        0,
+        1535,
+        3071,
+        4607,
+        6143,
+        7679,
+        9215,
+        10751,
+        12287
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Footsteppr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Transfxr",
+      "rows": 12288,
+      "train": 10445,
+      "validation": 1843,
+      "replayedRows": [
+        0,
+        1535,
+        3071,
+        4607,
+        6143,
+        7679,
+        9215,
+        10751,
+        12287
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Birdr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Boomr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Bouncr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Breathr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Choirr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Clonkr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Crittr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Fractr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Glitchr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Jinglr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Machinr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Pluckr",
+      "rows": 12288,
+      "train": 10445,
+      "validation": 1843,
+      "replayedRows": [
+        0,
+        1535,
+        3071,
+        4607,
+        6143,
+        7679,
+        9215,
+        10751,
+        12287
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Riftr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Rustlr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Signlr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Squishr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Swarmr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Whooshr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    },
+    {
+      "engine": "Zappr",
+      "rows": 2048,
+      "train": 1741,
+      "validation": 307,
+      "replayedRows": [
+        0,
+        255,
+        511,
+        767,
+        1023,
+        1279,
+        1535,
+        1791,
+        2047
+      ],
+      "unchangedColumnsLabelsSplits": true
+    }
+  ],
+  "models": [
+    {
+      "engine": "Bfxr",
+      "checkpointSha256": "94022f96759c6474e9c9476b414be5280c5039fb0aebc8455847df095b3259db",
+      "baselineCheckpointSha256": "34766ccb414e4e07f426336a77e0f6fbff92537a4a42be57ec6a41098708dc95",
+      "checkpointEpoch": 15,
+      "reportSha256": "56bfc850769ece4d8b0d17547eeb6f5051e6b281d0636ecf6594e3be1e6b2102",
+      "validationRows": 1843,
+      "recomputedLoss": 0.4052189289593722,
+      "reportedLoss": 0.40521891824638334,
+      "difference": 1.0712988884886698e-08,
+      "allEpochs": 90,
+      "baselineControlLoss": 0.4009967316760683,
+      "architectureRecipeSeedMatched": true,
+      "nonpitchNormalizationUnchanged": true
+    },
+    {
+      "engine": "Transfxr",
+      "checkpointSha256": "4233c1c35e09266824a2957190a600e089aa2cd52c6d72795227aa55bdd523cc",
+      "baselineCheckpointSha256": "acd95dd42b38e9478ff927d5b8fd623b1d2121c7b2ff56839e47f6e689f531bf",
+      "checkpointEpoch": 15,
+      "reportSha256": "75763bf86dcaecdcbeac52b2207da4929d7c2bbf96d91a6afe66e0e7154f13ab",
+      "validationRows": 1843,
+      "recomputedLoss": 0.5792336117999747,
+      "reportedLoss": 0.5792336117999747,
+      "difference": 0.0,
+      "allEpochs": 90,
+      "baselineControlLoss": 0.5718714549421973,
+      "architectureRecipeSeedMatched": true,
+      "nonpitchNormalizationUnchanged": true
+    },
+    {
+      "engine": "Pluckr",
+      "checkpointSha256": "ef21134d3ae6c3bc76c679779001ce0f0003f018da9fff605f70af4f0b2f1469",
+      "baselineCheckpointSha256": "6e8bc3a5e55781d4c1be5b29ce30d3fbbcb4d81e86430de9a81cba65695f3c55",
+      "checkpointEpoch": 12,
+      "reportSha256": "3b468ba75b2e6665c4a4b524743be07f03acffc71bdd9f310897775846be236c",
+      "validationRows": 1843,
+      "recomputedLoss": 0.25130996534957617,
+      "reportedLoss": 0.25130997445359543,
+      "difference": 9.104019260686158e-09,
+      "allEpochs": 90,
+      "baselineControlLoss": 0.23582458553094937,
+      "architectureRecipeSeedMatched": true,
+      "nonpitchNormalizationUnchanged": true
+    }
+  ],
+  "cpuValidationRecomputed": true,
+  "absoluteTolerance": 3e-05,
+  "scope": "Dataset preservation and controlled recipe/checkpoint validation; control loss does not establish audible likeness."
+}

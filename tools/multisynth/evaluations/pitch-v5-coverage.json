@@ -1,0 +1,149 @@
+{
+  "complete": true,
+  "diagnosticStatus": "Corrected v5 tracker; counts remain estimator outputs, not independently verified fundamentals or human quality.",
+  "scriptSha256": "6a458e067bc83a5478ac2a4f7186c0e86a83942bda034668906f2153946ae90f",
+  "manifestSha256": "94c84af68ce3d851954d097060d7df3b57bc40b8e0b2d4b365c23d710c0b8f9a",
+  "rule": "Diagnostic heuristic on packed corrected features: median voiced pitch >2 kHz, >=80% of active frames voiced; stableUpper additionally requires 10th\u201390th percentile pitch span <=2 semitones. Not an auditory adequacy test. Actual pitches may reflect tracker errors.",
+  "reports": {
+    "Bfxr": {
+      "train": {
+        "native": {
+          "rows": 1737,
+          "upper": 92,
+          "stableUpper": 28,
+          "stableUpperIndices": [
+            142,
+            168,
+            208,
+            232,
+            272,
+            320,
+            356,
+            393,
+            409,
+            430,
+            681,
+            717,
+            856,
+            920,
+            1008,
+            1208,
+            1296,
+            1360,
+            1440,
+            1473,
+            1488,
+            1536,
+            1689,
+            1694,
+            1776,
+            1928,
+            1937,
+            1950
+          ]
+        },
+        "structured": {
+          "rows": 8708,
+          "upper": 0,
+          "stableUpper": 0,
+          "stableUpperIndices": []
+        }
+      },
+      "val": {
+        "native": {
+          "rows": 311,
+          "upper": 19,
+          "stableUpper": 5,
+          "stableUpperIndices": [
+            976,
+            1128,
+            1192,
+            1203,
+            1352
+          ]
+        },
+        "structured": {
+          "rows": 1532,
+          "upper": 0,
+          "stableUpper": 0,
+          "stableUpperIndices": []
+        }
+      }
+    },
+    "Transfxr": {
+      "train": {
+        "native": {
+          "rows": 1730,
+          "upper": 32,
+          "stableUpper": 3,
+          "stableUpperIndices": [
+            1425,
+            1550,
+            1875
+          ]
+        },
+        "structured": {
+          "rows": 8715,
+          "upper": 5,
+          "stableUpper": 3,
+          "stableUpperIndices": [
+            2243,
+            2418,
+            9217
+          ]
+        }
+      },
+      "val": {
+        "native": {
+          "rows": 318,
+          "upper": 4,
+          "stableUpper": 1,
+          "stableUpperIndices": [
+            1775
+          ]
+        },
+        "structured": {
+          "rows": 1525,
+          "upper": 4,
+          "stableUpper": 4,
+          "stableUpperIndices": [
+            3697,
+            9346,
+            9362,
+            12066
+          ]
+        }
+      }
+    },
+    "Pluckr": {
+      "train": {
+        "native": {
+          "rows": 1756,
+          "upper": 0,
+          "stableUpper": 0,
+          "stableUpperIndices": []
+        },
+        "structured": {
+          "rows": 8689,
+          "upper": 0,
+          "stableUpper": 0,
+          "stableUpperIndices": []
+        }
+      },
+      "val": {
+        "native": {
+          "rows": 292,
+          "upper": 0,
+          "stableUpper": 0,
+          "stableUpperIndices": []
+        },
+        "structured": {
+          "rows": 1551,
+          "upper": 0,
+          "stableUpper": 0,
+          "stableUpperIndices": []
+        }
+      }
+    }
+  }
+}
