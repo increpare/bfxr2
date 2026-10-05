@@ -1,0 +1,527 @@
+{
+  "schemaVersion": 3,
+  "experimentId": "dcd011ae349b6452880075d82324d2f03f5b6c26c8e5883fe3e84b6cebcad985",
+  "provenance": {
+    "experiment": "cue-calibration-v1-listening",
+    "complete": true,
+    "targetCount": 5,
+    "galleryTitle": "What makes these sounds feel different?",
+    "galleryIntro": [
+      "These are deliberately edited originals, not new synth recreations.",
+      "Five short A/B comparisons. Pick the version that stays closest, then say how close it is.",
+      "This helps test which pitch, timing, attack and texture errors matter. Edits remain anonymous during quick listening."
+    ],
+    "metricHashes": {
+      "preferenceNeuralV2": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b"
+    },
+    "scoreCodeHashes": {
+      "tools/match/objective.py": "ea3768c5ff641f68e398a7a39f902345f5f3a1a69277b66f8df556f7eeb2278e",
+      "tools/multisynth/features.py": "7553a92b0caeb442b2f693752c0a94f788479e47cfc5a9d4a37dab893f3ab91c",
+      "tools/multisynth/preference.py": "37377ef14673d60ddae4cc8a0a64f8e580a0044b7eba93a6d01f3d4bf07531cb"
+    },
+    "humanReviewRequired": true,
+    "purpose": "local-perceptual-loss-calibration-not-reproduction",
+    "protocolSha256": "bb2ac170b5ae5b92eaa46e15ca0f42f0bd794f97e91bbae96a60e0fb77db62e4",
+    "generationSha256": "29376118c15067a01c154a5b2a95e8c4ea0ce19802b3f22bf0e1be78f1818c11",
+    "scriptSha256": "0c501a848e9cd190b4d21753d06cd8fb304a7e2440c9496fb635f651283127f6",
+    "selectionPolicy": "Five predeclared contrasts, no metric-based trial removal or strength tuning",
+    "uiCodeHashes": {
+      "quick_listening.html": "167c746f5ec3f77802b799cd1659dd85c8d0fe599ffc365b4376cf4fc2777cd4",
+      "quick_choice.js": "0bb2e27258fa918053f77e737b45200eb9389ec90fd0e185e71ef85bef4f911e",
+      "quick_listening.css": "833a39c37a9140b9e995d693dcd648266204cc022107b2c398c32468d231f7a7",
+      "quick_audio.js": "0abfac40fe8cd7a1c9f79143458b45c7ef79342892113fdc53f9ca15cab7f83a",
+      "quick_listening.js": "36090e70e9915d9ecc5d26e038ff34754731921e66734da0de4fafbd9af45457",
+      "quick_feedback.py": "619e79872880d81831f0c0106f6b55fa78b0402977f4d728ce1dea45d34d2351"
+    }
+  },
+  "ratingScales": {
+    "likeness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Likeness to reference: 1 = far off, 5 = very close"
+    },
+    "usefulness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Useful/fun game sound: 1 = not useful, 5 = very useful or fun"
+    }
+  },
+  "targets": [
+    {
+      "id": "6ee2e31a205083a98b86a2d326fa1a48f4c4fa13504452fc293f59319cec48d6",
+      "name": "footstep/footstep_wood_000.ogg",
+      "sha256": "5f1c252942a220d658121bd9417448cd19649ded9fff2ff15f6e50899373ce8e",
+      "folder": "001",
+      "referenceAudioSha256": "63b20fe0aa4df84bc99d7c985835e12cc9801ea31a693a21b886bdab3831f75f",
+      "candidates": [
+        {
+          "id": "50f50f81db04ef9d75ad2f701151f2fe230d635330bfaafd4c5275841678416b",
+          "synth": "Controlled audio edit",
+          "paramsSha256": "a166986c04f43a2ce6eb77d5dae9e538cd72546b62b4e4f9f3bbb24686f6857c",
+          "seed": 0,
+          "sourceHash": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+          "audioSha256": "0e82312bf97ef084dab874a416c949425b19c78c9de73fc7c78208eaa11aa0eb",
+          "provenance": {
+            "method": "controlled-reference-edit",
+            "scriptSha256": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+            "protocolSha256": "bb2ac170b5ae5b92eaa46e15ca0f42f0bd794f97e91bbae96a60e0fb77db62e4",
+            "referencePcmSha256": "544e295124cda104e86d4efc30185a937c695ba4457be1819650542557901e7b",
+            "referenceArchive": "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01",
+            "transform": {
+              "operation": "attack-fade",
+              "seconds": 0.03
+            },
+            "gain": 5.569413832187289,
+            "peakCapApplied": false,
+            "outputSamples": 11007,
+            "auditionWavSha256": "0e82312bf97ef084dab874a416c949425b19c78c9de73fc7c78208eaa11aa0eb",
+            "repeatRenderIdentical": true,
+            "notSynthReproduction": true,
+            "auditionMatchObjective": 2.2493146913724242,
+            "preferenceNeuralV2": 0.6123123334968106
+          },
+          "file": "option-1.wav",
+          "role": "selected",
+          "label": "Edited comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "d323be3860e08cc351761cd2aff10f229c17caaacd2a795a71651c94b9a808de",
+          "synth": "Controlled audio edit",
+          "paramsSha256": "04640b399481199e45f31ebf9a015cab9e0561e5413a77e13abe7589ba55ede6",
+          "seed": 0,
+          "sourceHash": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+          "audioSha256": "6085d898f4f95cbb56405e86381ec0e7e2a4fd3ff0533d34f2dc7aa99d2f7bb4",
+          "provenance": {
+            "method": "controlled-reference-edit",
+            "scriptSha256": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+            "protocolSha256": "bb2ac170b5ae5b92eaa46e15ca0f42f0bd794f97e91bbae96a60e0fb77db62e4",
+            "referencePcmSha256": "544e295124cda104e86d4efc30185a937c695ba4457be1819650542557901e7b",
+            "referenceArchive": "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01",
+            "transform": {
+              "operation": "lowpass",
+              "hz": 2500
+            },
+            "gain": 1.0000018239262656,
+            "peakCapApplied": false,
+            "outputSamples": 11007,
+            "auditionWavSha256": "6085d898f4f95cbb56405e86381ec0e7e2a4fd3ff0533d34f2dc7aa99d2f7bb4",
+            "repeatRenderIdentical": true,
+            "notSynthReproduction": true,
+            "auditionMatchObjective": 2.8186374839754014,
+            "preferenceNeuralV2": 0.09045761242209192
+          },
+          "file": "option-2.wav",
+          "role": "alternative",
+          "label": "Edited comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "d323be3860e08cc351761cd2aff10f229c17caaacd2a795a71651c94b9a808de",
+          "50f50f81db04ef9d75ad2f701151f2fe230d635330bfaafd4c5275841678416b"
+        ],
+        "auditionedCandidateIds": [
+          "d323be3860e08cc351761cd2aff10f229c17caaacd2a795a71651c94b9a808de",
+          "50f50f81db04ef9d75ad2f701151f2fe230d635330bfaafd4c5275841678416b"
+        ],
+        "preferredCandidateIds": [
+          "d323be3860e08cc351761cd2aff10f229c17caaacd2a795a71651c94b9a808de"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "d323be3860e08cc351761cd2aff10f229c17caaacd2a795a71651c94b9a808de"
+          ]
+        }
+      }
+    },
+    {
+      "id": "860a90c445e9d40cb6456854c036933b0818cd263f6cd82f48a11a5d5ef5f792",
+      "name": "explode/Break Brick.wav",
+      "sha256": "7cc284c586ad81cfbe90ebaab3ccb255036712d46d9a19e240625abe00c4ada7",
+      "folder": "002",
+      "referenceAudioSha256": "dc9534d1894cd6824ac854918156fe501889c8ac6a29ca8e3eb673cf350a097d",
+      "candidates": [
+        {
+          "id": "f35c7a362d3ecc7e8e0452603a246bc6a8894d340ba9636a0de46e3c1590e218",
+          "synth": "Controlled audio edit",
+          "paramsSha256": "9f0db973d650beeb589f102e6149ca2cad5e764d34870c9ef458f4b0ef1859fc",
+          "seed": 0,
+          "sourceHash": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+          "audioSha256": "c904d855e7f3446b57090932e3841f520b21b4d49f59b14fae4cd78b234b5f7d",
+          "provenance": {
+            "method": "controlled-reference-edit",
+            "scriptSha256": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+            "protocolSha256": "bb2ac170b5ae5b92eaa46e15ca0f42f0bd794f97e91bbae96a60e0fb77db62e4",
+            "referencePcmSha256": "aad0aec3a74d8a980ebc076be87a6bd5ae27031f5e8940c1463c8d1b89d1ac90",
+            "referenceArchive": "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01",
+            "transform": {
+              "operation": "time-stretch",
+              "rate": 0.8
+            },
+            "gain": 1.4321053620585589,
+            "peakCapApplied": false,
+            "outputSamples": 28470,
+            "auditionWavSha256": "c904d855e7f3446b57090932e3841f520b21b4d49f59b14fae4cd78b234b5f7d",
+            "repeatRenderIdentical": true,
+            "notSynthReproduction": true,
+            "auditionMatchObjective": 1.8070702208346796,
+            "preferenceNeuralV2": 0.3896961589419503
+          },
+          "file": "option-1.wav",
+          "role": "selected",
+          "label": "Edited comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "ef867f31a6f1ac64b9058e7b6599167b111c0e739f90405d72dae7fbe76e6761",
+          "synth": "Controlled audio edit",
+          "paramsSha256": "04640b399481199e45f31ebf9a015cab9e0561e5413a77e13abe7589ba55ede6",
+          "seed": 0,
+          "sourceHash": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+          "audioSha256": "2a8bd64bbce7543af43a9773de04e208a7f1805f6a7ce89bd212f219d96bb721",
+          "provenance": {
+            "method": "controlled-reference-edit",
+            "scriptSha256": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+            "protocolSha256": "bb2ac170b5ae5b92eaa46e15ca0f42f0bd794f97e91bbae96a60e0fb77db62e4",
+            "referencePcmSha256": "aad0aec3a74d8a980ebc076be87a6bd5ae27031f5e8940c1463c8d1b89d1ac90",
+            "referenceArchive": "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01",
+            "transform": {
+              "operation": "lowpass",
+              "hz": 2500
+            },
+            "gain": 1.1524646792901048,
+            "peakCapApplied": false,
+            "outputSamples": 22776,
+            "auditionWavSha256": "2a8bd64bbce7543af43a9773de04e208a7f1805f6a7ce89bd212f219d96bb721",
+            "repeatRenderIdentical": true,
+            "notSynthReproduction": true,
+            "auditionMatchObjective": 0.9168508236639675,
+            "preferenceNeuralV2": 0.552737173515392
+          },
+          "file": "option-2.wav",
+          "role": "alternative",
+          "label": "Edited comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "ef867f31a6f1ac64b9058e7b6599167b111c0e739f90405d72dae7fbe76e6761",
+          "f35c7a362d3ecc7e8e0452603a246bc6a8894d340ba9636a0de46e3c1590e218"
+        ],
+        "auditionedCandidateIds": [
+          "ef867f31a6f1ac64b9058e7b6599167b111c0e739f90405d72dae7fbe76e6761",
+          "f35c7a362d3ecc7e8e0452603a246bc6a8894d340ba9636a0de46e3c1590e218"
+        ],
+        "preferredCandidateIds": [
+          "f35c7a362d3ecc7e8e0452603a246bc6a8894d340ba9636a0de46e3c1590e218"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "f35c7a362d3ecc7e8e0452603a246bc6a8894d340ba9636a0de46e3c1590e218"
+          ]
+        }
+      }
+    },
+    {
+      "id": "30f6139d14ab0e4af939f951980389765c97a11bc3a949554151ed811f65fed8",
+      "name": "die/charm2.wav",
+      "sha256": "d161711f9e872a84d289f26097f57028ef444959afd79c0233b74aef9f3ae24e",
+      "folder": "003",
+      "referenceAudioSha256": "4b56fe1ef7f5e2a79c97e750337f46df12f2b6753743859af10ff498624f7a24",
+      "candidates": [
+        {
+          "id": "98450c1f48a5e0917345d19e604dba04f7e7f8fe4cfe4c9b77c3bad9bf2108e4",
+          "synth": "Controlled audio edit",
+          "paramsSha256": "30f40aec5cdf602336b1068dadceb728e5e831c66b20ae71b3b7da7ab4d1b3f5",
+          "seed": 0,
+          "sourceHash": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+          "audioSha256": "33a7025d6c3da4e298049c1ee1343269b5c9c73a367136293c5351e7664b62b8",
+          "provenance": {
+            "method": "controlled-reference-edit",
+            "scriptSha256": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+            "protocolSha256": "bb2ac170b5ae5b92eaa46e15ca0f42f0bd794f97e91bbae96a60e0fb77db62e4",
+            "referencePcmSha256": "999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850",
+            "referenceArchive": "tools/multisynth/listening_data/2026-10-05-pitch-calibration-quick-01",
+            "transform": {
+              "operation": "pitch-shift",
+              "semitones": 2
+            },
+            "gain": 1.4190078162618596,
+            "peakCapApplied": false,
+            "outputSamples": 92553,
+            "auditionWavSha256": "33a7025d6c3da4e298049c1ee1343269b5c9c73a367136293c5351e7664b62b8",
+            "repeatRenderIdentical": true,
+            "notSynthReproduction": true,
+            "auditionMatchObjective": 3.4669757896264897,
+            "preferenceNeuralV2": 0.37824097948282864
+          },
+          "file": "option-1.wav",
+          "role": "selected",
+          "label": "Edited comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "4534d705ff13d1ed68139d1736bca34d41aba3f35737d187e6fb24d378bfb096",
+          "synth": "Controlled audio edit",
+          "paramsSha256": "04640b399481199e45f31ebf9a015cab9e0561e5413a77e13abe7589ba55ede6",
+          "seed": 0,
+          "sourceHash": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+          "audioSha256": "756377386634f4378119ba8f563c812b65ab077752b29000ff72b015b1a6c0ca",
+          "provenance": {
+            "method": "controlled-reference-edit",
+            "scriptSha256": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+            "protocolSha256": "bb2ac170b5ae5b92eaa46e15ca0f42f0bd794f97e91bbae96a60e0fb77db62e4",
+            "referencePcmSha256": "999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850",
+            "referenceArchive": "tools/multisynth/listening_data/2026-10-05-pitch-calibration-quick-01",
+            "transform": {
+              "operation": "lowpass",
+              "hz": 2500
+            },
+            "gain": 1.0063541797254565,
+            "peakCapApplied": false,
+            "outputSamples": 92553,
+            "auditionWavSha256": "756377386634f4378119ba8f563c812b65ab077752b29000ff72b015b1a6c0ca",
+            "repeatRenderIdentical": true,
+            "notSynthReproduction": true,
+            "auditionMatchObjective": 0.21116495985812073,
+            "preferenceNeuralV2": 0.0403827281807434
+          },
+          "file": "option-2.wav",
+          "role": "alternative",
+          "label": "Edited comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "98450c1f48a5e0917345d19e604dba04f7e7f8fe4cfe4c9b77c3bad9bf2108e4",
+          "4534d705ff13d1ed68139d1736bca34d41aba3f35737d187e6fb24d378bfb096"
+        ],
+        "auditionedCandidateIds": [
+          "98450c1f48a5e0917345d19e604dba04f7e7f8fe4cfe4c9b77c3bad9bf2108e4",
+          "4534d705ff13d1ed68139d1736bca34d41aba3f35737d187e6fb24d378bfb096"
+        ],
+        "preferredCandidateIds": [
+          "98450c1f48a5e0917345d19e604dba04f7e7f8fe4cfe4c9b77c3bad9bf2108e4"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "98450c1f48a5e0917345d19e604dba04f7e7f8fe4cfe4c9b77c3bad9bf2108e4"
+          ]
+        }
+      }
+    },
+    {
+      "id": "2842657d9878d870e3643b7319a2d4f3fa636c18215f4df1009785f5de759e8d",
+      "name": "clothes/cloth3.ogg",
+      "sha256": "a48632d17a4f1416541d261a32a31612e01267144c407fa3ecab3ff410f0085b",
+      "folder": "004",
+      "referenceAudioSha256": "9bf73e40da40ddea67e89eaa371156edc0728408c88042583d29f972c237c469",
+      "candidates": [
+        {
+          "id": "aa05281c28d4229b9c8b28ca25f6a89d721b9727f6271689d3bcd82fcddbb09a",
+          "synth": "Controlled audio edit",
+          "paramsSha256": "9f0db973d650beeb589f102e6149ca2cad5e764d34870c9ef458f4b0ef1859fc",
+          "seed": 0,
+          "sourceHash": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+          "audioSha256": "9726148ac1beac434834677d97a1ec775dd3da9fd3de3003196175c3ddf930f5",
+          "provenance": {
+            "method": "controlled-reference-edit",
+            "scriptSha256": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+            "protocolSha256": "bb2ac170b5ae5b92eaa46e15ca0f42f0bd794f97e91bbae96a60e0fb77db62e4",
+            "referencePcmSha256": "db68adec97a5f13e92ac0b6f1131802eaa5938d3ace2132b6efaad10a563e0d9",
+            "referenceArchive": "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01",
+            "transform": {
+              "operation": "time-stretch",
+              "rate": 0.8
+            },
+            "gain": 1.4506722080853767,
+            "peakCapApplied": false,
+            "outputSamples": 26271,
+            "auditionWavSha256": "9726148ac1beac434834677d97a1ec775dd3da9fd3de3003196175c3ddf930f5",
+            "repeatRenderIdentical": true,
+            "notSynthReproduction": true,
+            "auditionMatchObjective": 4.071030565102087,
+            "preferenceNeuralV2": 0.34089449539532546
+          },
+          "file": "option-1.wav",
+          "role": "selected",
+          "label": "Edited comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "8f706a0b1f89836fbb4726355b38f3c8f30356b74ada3acea2faa5a6fb933483",
+          "synth": "Controlled audio edit",
+          "paramsSha256": "d2b85a76ebf12dd85ec6e89653d1a47aa366bf3a10135ffa5ea44f830671565e",
+          "seed": 0,
+          "sourceHash": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+          "audioSha256": "4629e1354204a1783a98ce86677247cf221621845484f8f779fb299e53dbb8af",
+          "provenance": {
+            "method": "controlled-reference-edit",
+            "scriptSha256": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+            "protocolSha256": "bb2ac170b5ae5b92eaa46e15ca0f42f0bd794f97e91bbae96a60e0fb77db62e4",
+            "referencePcmSha256": "db68adec97a5f13e92ac0b6f1131802eaa5938d3ace2132b6efaad10a563e0d9",
+            "referenceArchive": "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01",
+            "transform": {
+              "operation": "lowpass",
+              "hz": 1800
+            },
+            "gain": 1.0177405631575285,
+            "peakCapApplied": false,
+            "outputSamples": 21017,
+            "auditionWavSha256": "4629e1354204a1783a98ce86677247cf221621845484f8f779fb299e53dbb8af",
+            "repeatRenderIdentical": true,
+            "notSynthReproduction": true,
+            "auditionMatchObjective": 4.722364154825954,
+            "preferenceNeuralV2": 0.4366835844124948
+          },
+          "file": "option-2.wav",
+          "role": "alternative",
+          "label": "Edited comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "aa05281c28d4229b9c8b28ca25f6a89d721b9727f6271689d3bcd82fcddbb09a",
+          "8f706a0b1f89836fbb4726355b38f3c8f30356b74ada3acea2faa5a6fb933483"
+        ],
+        "auditionedCandidateIds": [
+          "aa05281c28d4229b9c8b28ca25f6a89d721b9727f6271689d3bcd82fcddbb09a",
+          "8f706a0b1f89836fbb4726355b38f3c8f30356b74ada3acea2faa5a6fb933483"
+        ],
+        "preferredCandidateIds": [
+          "aa05281c28d4229b9c8b28ca25f6a89d721b9727f6271689d3bcd82fcddbb09a"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "aa05281c28d4229b9c8b28ca25f6a89d721b9727f6271689d3bcd82fcddbb09a"
+          ]
+        }
+      }
+    },
+    {
+      "id": "1979139a40c4894b71703af5a3e143b726182fd2424ac07cb5641f1bf1d78687",
+      "name": "laser/Lasers.wav",
+      "sha256": "7e1ba424329fb486c312ab8fbb0582cd03f8e00a28d44c436963b61ad2602b28",
+      "folder": "005",
+      "referenceAudioSha256": "14175d01910438486f03146058eefb2bbde00535d586d9759e1f514885a4c500",
+      "candidates": [
+        {
+          "id": "433c3232528d91485431fa74e5d3c6bc5f3d1dd54ee74ba121afde7b45351f73",
+          "synth": "Controlled audio edit",
+          "paramsSha256": "30f40aec5cdf602336b1068dadceb728e5e831c66b20ae71b3b7da7ab4d1b3f5",
+          "seed": 0,
+          "sourceHash": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+          "audioSha256": "a47303581602a986e79d361ece5ff76b9b5b9e2c3f2cd0bf4c26856dd4f1b84c",
+          "provenance": {
+            "method": "controlled-reference-edit",
+            "scriptSha256": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+            "protocolSha256": "bb2ac170b5ae5b92eaa46e15ca0f42f0bd794f97e91bbae96a60e0fb77db62e4",
+            "referencePcmSha256": "45d423cf5a051e07468581ac874e48e3458d9c467f3e4753379ed5db96884f58",
+            "referenceArchive": "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01",
+            "transform": {
+              "operation": "pitch-shift",
+              "semitones": 2
+            },
+            "gain": 1.3185654931300066,
+            "peakCapApplied": false,
+            "outputSamples": 17199,
+            "auditionWavSha256": "a47303581602a986e79d361ece5ff76b9b5b9e2c3f2cd0bf4c26856dd4f1b84c",
+            "repeatRenderIdentical": true,
+            "notSynthReproduction": true,
+            "auditionMatchObjective": 4.002283333041189,
+            "preferenceNeuralV2": 0.5247833625154841
+          },
+          "file": "option-1.wav",
+          "role": "selected",
+          "label": "Edited comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "8f6a44584b571b6d8f2144f25e2b00cd6c79c2beeec1d337dbe3b49691052424",
+          "synth": "Controlled audio edit",
+          "paramsSha256": "b713a2c6cd11e36f0aa0192c527cbad310777084e74306ebe1b7250741052235",
+          "seed": 0,
+          "sourceHash": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+          "audioSha256": "cccd1492a6d382f42c5db0fd2bc96b5ba4d4a7328ab112228042c6fa513dab11",
+          "provenance": {
+            "method": "controlled-reference-edit",
+            "scriptSha256": "3909b62b25061796d505ca7039272b9c24a589cf542e5ae3b8e0e28614c1ab77",
+            "protocolSha256": "bb2ac170b5ae5b92eaa46e15ca0f42f0bd794f97e91bbae96a60e0fb77db62e4",
+            "referencePcmSha256": "45d423cf5a051e07468581ac874e48e3458d9c467f3e4753379ed5db96884f58",
+            "referenceArchive": "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01",
+            "transform": {
+              "operation": "tail-fade",
+              "startFraction": 0.6,
+              "endDb": -18
+            },
+            "gain": 1.0005554800425212,
+            "peakCapApplied": false,
+            "outputSamples": 17199,
+            "auditionWavSha256": "cccd1492a6d382f42c5db0fd2bc96b5ba4d4a7328ab112228042c6fa513dab11",
+            "repeatRenderIdentical": true,
+            "notSynthReproduction": true,
+            "auditionMatchObjective": 0.5461561543821046,
+            "preferenceNeuralV2": 0.41199735320434494
+          },
+          "file": "option-2.wav",
+          "role": "alternative",
+          "label": "Edited comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "433c3232528d91485431fa74e5d3c6bc5f3d1dd54ee74ba121afde7b45351f73",
+          "8f6a44584b571b6d8f2144f25e2b00cd6c79c2beeec1d337dbe3b49691052424"
+        ],
+        "auditionedCandidateIds": [
+          "433c3232528d91485431fa74e5d3c6bc5f3d1dd54ee74ba121afde7b45351f73",
+          "8f6a44584b571b6d8f2144f25e2b00cd6c79c2beeec1d337dbe3b49691052424"
+        ],
+        "preferredCandidateIds": [
+          "8f6a44584b571b6d8f2144f25e2b00cd6c79c2beeec1d337dbe3b49691052424"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "8f6a44584b571b6d8f2144f25e2b00cd6c79c2beeec1d337dbe3b49691052424"
+          ]
+        }
+      }
+    }
+  ]
+}

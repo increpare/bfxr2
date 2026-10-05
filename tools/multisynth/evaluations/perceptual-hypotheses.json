@@ -176,6 +176,14 @@
           "source": "evaluations/tagged-coverage-quick-01-human-review.json"
         }
       ]
+    },
+    {
+      "id": "continuous-periodicity-avoids-hard-pitch-jumps",
+      "claim": "A continuous periodicity representation may retain useful tonal structure without penalizing tiny waveform changes as unrelated pitches.",
+      "status": "historical-aggregate-gain-controlled-search-pending",
+      "evidence": "Human-preferred near-identity footstep scores2.818legacy, mostlyhardpitch/slope. Smoothreplacement fixesit and improves historical91/162to108/162, but currentcalibration remains2/5 and17historical/currentpairdirections regress.",
+      "source": "evaluations/soft-periodicity-v1-evaluation.json",
+      "nextTest": "Compare identical-start equal-budget actual-DSP refinement under old and experimental objectives, keeping human winners. No globalpitchinvariance, candidateadequacy or modelpromotion inferred."
     }
   ]
 }

@@ -17,6 +17,12 @@ qualitative labels, not inferred numeric scores. A pending answer survives
 reload; completed v1 choices remain completed. Published galleries are frozen;
 future exports use the updated questionnaire.
 
+The user confirmed on 2026-10-05 that the current buffered HTML interface is
+enjoyable and authorized up to **20 useful comparisons** per batch, including
+additional questions when helpful. Keep breaks optional and collect each extra
+judgment while its sound is still in view; do not pad batches or ask retrospective
+questions about hidden synth labels.
+
 ## Retained sessions
 
 | Archive | References judged | Distinct retained candidate identities |
@@ -35,6 +41,20 @@ future exports use the updated questionnaire.
 | `2026-10-05-specialists-quick-01/` | 5 | 11 |
 | `2026-10-05-specialists-tagged-quick-01/` | 5 | 15 |
 | `2026-10-05-tagged-coverage-quick-01/` | 5 | 15 |
+| `2026-10-05-cue-calibration-quick-01/` | 5 | 10 |
+
+The fifteenth archive retains five controlled-edit comparisons. All ten options
+were auditioned; all five preferred edits are explicitly **very close**. Winners:
+footstep lowpass, 125%-duration brick, charm shifted +2 semitones, 125%-duration
+cloth, and attenuated laser tail. These are edited originals, **not synth model
+successes**. Five strict pairs and five candidate-scoped adequacy labels are
+retained; the unchosen options have no inferred adequacy.
+
+Frozen matching agrees on 2/5; preference-neural-v2 and both CLAP representations
+each agree on 4/5. Pitch/duration tolerance is local evidence, not a universal
+invariance: edit strengths and artifacts differ. The near-identity footstep
+confirms a concrete hard-pitch scoring failure. See the
+[cue human review](../evaluations/cue-calibration-quick-01-human-review.json).
 
 The fourteenth archive retains the five candidate-coverage comparisons and all
 fifteen auditioned options. The new Squishr footstep wins and is **similar**;

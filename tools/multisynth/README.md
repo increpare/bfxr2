@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All fourteen feedback sessions,
+do not establish general success on real recordings. All fifteen feedback sessions,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The latest [specialist experiment](evaluations/specialists-v1-plan.json) trains
@@ -101,7 +101,7 @@ is promoted. This is development evidence, not untouched validation or evidence
 of adequate recreations. See [protocol](evaluations/embedding-v1-protocol.json)
 and [evaluation](evaluations/embedding-v1-evaluation.json).
 
-The next [five-comparison cue calibration](runs/cue-calibration-v1-listening/index.html)
+The [five-comparison cue calibration](runs/cue-calibration-v1-listening/index.html)
 uses **deliberately edited originals, not synth reproductions**. Fixed attack,
 filter, timing, pitch and tail changes probe local likeness preferences with two
 options per reference and immediate adequacy. All contrasts are retained, even
@@ -111,6 +111,32 @@ artifacts, and edit strengths are unequal. Post-generation QA found the footstep
 filter is nearly an identity edit (-59.5 dB difference RMS relative to the
 reference), while the attack edit is substantial; it remains as a sanity check.
 Do not interpret its outcome as a universal attack/texture weight. See [protocol](evaluations/cue-calibration-v1-protocol.json).
+
+Cue feedback is now retained: all five preferred edits are very close. The
+listener tolerates 25% longer brick/cloth and a two-semitone charm shift in these
+specific contrasts. Matching gets 2/5 choices, preference and both CLAP variants
+4/5. These are edited references, not successful synthesis.
+
+An isolated `SoftPeriodicityObjective` replaces unstable hard pitch decisions
+with continuous short-time autocorrelation maps and motion. It fixes the nearly
+unchanged footstep failure and passes self-distance, register, sweep and batching
+checks. Historical strict agreement improves 91/162 to 108/162; latest calibration
+remains 2/5. Across all167 comparisons,34 improve and17 worsen. The original
+matcher/checkpoints remain untouched; this is an experimental search objective,
+not a promoted selector or newly trained inverse. The report's gate field is
+named historicalNonRegression but checks all167; the separately audited historical
+subset also passes. See [evaluation](evaluations/soft-periodicity-v1-evaluation.json).
+
+The [new five-trial listening comparison](runs/soft-periodicity-v1-listening/index.html)
+compares equal-budget actual-render searches: two identical starting controls,
+256 mutation attempts per start under each objective, 5,120 attempts total.
+Starting controls come from the prior training-preset search; each arm selects
+its own best of two refined results. It also retains the most recent explicit
+human best synth candidate (brick falls back one session because its latest
+three options were all rejected). These are actual synth outputs, unlike the
+preceding edited-original calibration. All twenty finalists replay exactly and
+are rescored on the actual audition PCM. This tests the scoring change within
+hybrid inversion, not new neural weights. Human adequacy remains pending.
 
 A subsequent [candidate-coverage diagnostic](runs/tagged-coverage-v1-listening/index.html)
 queries **64,415 optimization presets** from the certified shared22 data and two

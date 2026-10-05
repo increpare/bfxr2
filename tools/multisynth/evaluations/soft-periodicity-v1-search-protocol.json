@@ -1,0 +1,11 @@
+{
+  "scriptSha256": "68f06e0258c269d25c9061d11113756f66f21d5beb7f061ccfff30b1bc0d55f2",
+  "objectiveSha256": "3ade081f6b3700ff254a9428d91fedd54da793f5904fd9b9948fc66b18a4dbfd",
+  "sourceReportSha256": "ca19c8a03f77832ac91a2c923e82dcf44a27c8d9d8c501962cbf773055684c3d",
+  "evaluationSha256": "0a592d1aaa5ae107c5b20e5786a1dd5acb9dcd1d4865c123f2eaf04e45a9e2ce",
+  "budgetPerStartPerArm": 256,
+  "starts": 2,
+  "seed": 20261123,
+  "startPolicy": "Best existing training-retrieval/refined controls by each scorer; if identical, best different-engine soft-scored controls. Both arms receive same starts.",
+  "scope": "Five repeated tagged development references. Same proposal RNG seed and attempt budget per start, but accepted paths diverge. No new inverse network training."
+}
