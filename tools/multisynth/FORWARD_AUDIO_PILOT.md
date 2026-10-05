@@ -107,3 +107,64 @@ It also prompted stronger preflight source/split checks and dependency hashes;
 the raw result and its original evaluator snapshot are unchanged. Pitch safeguard
 coverage is limited: five initially accurate static cases and fifteen initially
 matching movement directions. This is development evidence, not human likeness.
+
+## Rendered-direction diagnostic and research follow-up
+
+Before enlarging the surrogate or using its gradients for real-audio fine-tuning,
+`rendered-gradient-v1` compares its retained directions with finite differences
+through the actual synth. Eight fixed development cases use +/- .001 continuous
+control perturbations and the same frozen grouped-descriptor loss/normalization.
+This tests a bottleneck: inaccurate surrogate derivatives versus unhelpful local
+directions in the objective itself. Finite differences are scale-dependent,
+especially around descriptor pitch, voicing and trimming discontinuities.
+
+Relevant primary research, checked 2026-10-05:
+
+- [Sobolev Training for Neural Networks](https://arxiv.org/abs/1706.04859)
+  trains on function values and derivatives; it also considers stochastic
+  projections to avoid fitting full Jacobians. Our inference: nearby DSP render
+  pairs could supervise local directions rather than merely output values. This
+  paper does not establish that our finite-difference audio descriptors are good
+  perceptual targets, or that this will work for our synths.
+- [Multi-Scale Spectral Loss Revisited](https://www.audiolabs-erlangen.de/content/05_fau/assistant/00_schwaer/01_publications/2023_SchwaerM_MultiScaleSpecLoss_IEEE-SPL.pdf)
+  analyzes how spectral-loss configuration affects pitch optimization; useful
+  forward synthesis does not imply informative frequency gradients. Our
+  inference: check the actual objective's directions before blaming only the
+  learned approximation.
+- [Evaluating Sound Similarity Metrics for Differentiable, Iterative Sound-Matching](https://arxiv.org/abs/2506.22628)
+  reports synth-dependent loss performance and only moderate consistency among
+  its parameter, spectrogram and listening measures. Our implication is to retain
+  per-engine diagnostics and human checks, including agreement cases; do not
+  assume one numerical score transfers universally across engines.
+- [Synthesizer Sound Matching with Differentiable DSP](https://zenodo.org/records/5624609)
+  combines parameter pretraining with spectral fine-tuning on real sounds. This
+  supports investigating that missing stage in our new experts, while our failed
+  surrogate checks remain evidence against enabling it with the current model.
+
+The PNP/JTFS approach already discussed in `NEURAL_V2_RESEARCH.md` remains
+relevant, but is not newly implemented here. None of these papers certifies
+human likeness for the current game-SFX system.
+
+The rendered-direction diagnostic completed. At normalized radius .005,
+actual finite-difference and retained surrogate directions both improve
+descriptor loss on 6/8 cases. Mean descriptor loss is .297966 before, .269078
+after the rendered direction, and .266309 after the surrogate direction.
+Mean MatchObjective changes 3.00123→3.01053 for rendered descent (slightly
+worse), versus 2.96064 for surrogate descent. No reported reliability,
+previously accurate static median or moving-direction pass is lost in these
+eight cases; coverage is only two static and three moving reliable targets.
+
+All three pitch-unreliable native references have negative directional cosine
+agreement between the two methods. Two also worsen descriptor loss after
+rendered descent. For case 00151, the .001 rendered step's relative-pitch group
+error increases by about .692 despite the target's unreliable pitch diagnostic.
+This motivates investigating confidence-aware or smoother audio losses, but is
+a post-hoc hypothesis. It does not prove that removing pitch terms is correct,
+that secants are exact gradients, or that larger-data forward training would fail.
+
+The audit verifies 264 retained candidate file/PCM hashes, recomputes every
+candidate descriptor loss, and replays/rescores all 24 final steps with zero
+error. Secant renders are verified from retained PCM, not all independently
+replayed; pitch diagnostics are reused. See
+`evaluations/rendered-gradient-v1-audit.json`. Five focused tests and bounded
+independent review pass. No inverse-audio training or listening promotion follows.

@@ -18,7 +18,7 @@ Additional targets were frozen with seed 20261027 before inference. All 32 are d
 
 Verification: eight selection-policy tests and three coverage-data tests pass. Review found no important policy, split or budget issue. Audit verifies all 384 saved candidate PCM/file hashes, 70 distinct selected DSP replays/rescores with zero error, frozen target identities/exclusions, selection outputs, summaries and gates. Pitch diagnostics are reused, not independently re-estimated.
 
-Full retained run: `runs/coverage-selection-v1`. Tracked summary/audit: `evaluations/coverage-selection-v1-audit.json`. The original expanded-model replacement gate remains failed. A separate private equal-budget refinement check on the five previously rejected real references is the next test of transfer; no listening success is inferred from this synthetic result.
+Full retained run: `runs/coverage-selection-v1`. Tracked summary/audit: `evaluations/coverage-selection-v1-audit.json`. The original expanded-model replacement gate remains failed. The separate private equal-budget refinement check on five previously rejected real references is now complete: expanded wins only one of five within Transfxr. See `NATIVE_COVERAGE_V1.md` and `evaluations/native-coverage-v1-real-audit.json`; no listening success is inferred from this synthetic result.
 
 ## Small human calibration
 
@@ -26,4 +26,4 @@ Full retained run: `runs/coverage-selection-v1`. Tracked summary/audit: `evaluat
 
 The question is whether these numerical improvements actually preserve audible gesture and character when exact synth reproduction is possible. One texture has unreliable pitch diagnostics; two tests have reliable moving-pitch evidence. This is a biased diagnostic sample, not a quality-rate estimate. All references and candidates replayed exactly, each audition received one normalization/PCM16 transform, served HTML and all nine WAVs match export hashes, and browser playback completes without entering choices. Relative wins will remain separate from absolute human likeness judgments.
 
-Experiment ID: `3afd5c29406ff55b3877ecefd48debf7174e7c871b7ff54f1f39c7454665b5e8`. Tracked delivery receipt: `evaluations/coverage-selection-v1-listening-audit.json`. The five real-reference refinement pairs continue privately; initial charm2 improvement still does not beat its earlier Bfxr distance and is not offered for another rating.
+Experiment ID: `3afd5c29406ff55b3877ecefd48debf7174e7c871b7ff54f1f39c7454665b5e8`. Tracked delivery receipt: `evaluations/coverage-selection-v1-listening-audit.json`. The five real-reference refinement pairs are complete and audited; charm2 improvement still does not beat its earlier Bfxr distance and is not offered for another rating. Human quality feedback on these three synthetic cases is pending.

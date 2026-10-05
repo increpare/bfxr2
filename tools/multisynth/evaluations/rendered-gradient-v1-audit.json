@@ -1,0 +1,100 @@
+{
+  "complete": true,
+  "scriptSha256": "5dc8be5eb10b1c27c317ab3f56ac402c1eda1df9c65bcbf2e3585dbe06c065c9",
+  "reportSha256": "f05e73e2bfcb9ce18ed2105d428d224f312fad67cd53b255678298d696cdf4e8",
+  "candidateFilesVerified": 264,
+  "allCandidateDescriptorLossesRecomputed": true,
+  "finalStepDspReplays": 24,
+  "maxDescriptorLossError": 0.0,
+  "maxObjectiveError": 0.0,
+  "summaries": {
+    "rendered-0.001-+1": {
+      "cases": 8,
+      "improvements": 6,
+      "meanBefore": 0.2979656576644629,
+      "meanAfter": 0.28435822104802355,
+      "meanObjectiveBefore": 3.001234442908199,
+      "meanObjectiveAfter": 3.1048438428806135,
+      "reliablePitchLosses": 0,
+      "staticPitchLosses": 0,
+      "movingDirectionLosses": 0
+    },
+    "surrogate-0.001-+1": {
+      "cases": 8,
+      "improvements": 5,
+      "meanBefore": 0.2979656576644629,
+      "meanAfter": 0.2772380398819223,
+      "meanObjectiveBefore": 3.001234442908199,
+      "meanObjectiveAfter": 3.0220325665245826,
+      "reliablePitchLosses": 0,
+      "staticPitchLosses": 0,
+      "movingDirectionLosses": 0
+    },
+    "rendered-0.005-+1": {
+      "cases": 8,
+      "improvements": 6,
+      "meanBefore": 0.2979656576644629,
+      "meanAfter": 0.26907817949540913,
+      "meanObjectiveBefore": 3.001234442908199,
+      "meanObjectiveAfter": 3.010526563172442,
+      "reliablePitchLosses": 0,
+      "staticPitchLosses": 0,
+      "movingDirectionLosses": 0
+    },
+    "surrogate-0.005-+1": {
+      "cases": 8,
+      "improvements": 6,
+      "meanBefore": 0.2979656576644629,
+      "meanAfter": 0.2663090865826234,
+      "meanObjectiveBefore": 3.001234442908199,
+      "meanObjectiveAfter": 2.960640163097202,
+      "reliablePitchLosses": 0,
+      "staticPitchLosses": 0,
+      "movingDirectionLosses": 0
+    },
+    "rendered-0.005--1": {
+      "cases": 8,
+      "improvements": 3,
+      "meanBefore": 0.2979656576644629,
+      "meanAfter": 0.3544467557221651,
+      "meanObjectiveBefore": 3.001234442908199,
+      "meanObjectiveAfter": 2.9980755417949356,
+      "reliablePitchLosses": 0,
+      "staticPitchLosses": 0,
+      "movingDirectionLosses": 0
+    },
+    "surrogate-0.005--1": {
+      "cases": 8,
+      "improvements": 1,
+      "meanBefore": 0.2979656576644629,
+      "meanAfter": 0.35767557099461555,
+      "meanObjectiveBefore": 3.001234442908199,
+      "meanObjectiveAfter": 3.3695304874243854,
+      "reliablePitchLosses": 0,
+      "staticPitchLosses": 0,
+      "movingDirectionLosses": 0
+    }
+  },
+  "cosineAgreement": {
+    "Transfxr-local-01433": -0.06873615580642957,
+    "Transfxr-local-00151": -0.32121930597780923,
+    "Transfxr-local-01967": -0.22559880450135078,
+    "Transfxr-local-00603": 0.8061379163685092,
+    "Transfxr-local-03160": 0.7754285251100765,
+    "Transfxr-local-11443": 0.5113711413143711,
+    "Transfxr-local-10021": 0.281391525597501,
+    "Transfxr-local-06620": 0.7182732249425487
+  },
+  "targetPitchReliable": {
+    "Transfxr-local-01433": false,
+    "Transfxr-local-00151": false,
+    "Transfxr-local-01967": false,
+    "Transfxr-local-00603": true,
+    "Transfxr-local-03160": true,
+    "Transfxr-local-11443": true,
+    "Transfxr-local-10021": true,
+    "Transfxr-local-06620": true
+  },
+  "conclusion": "Mixed local directions. Rendered descent does not outperform surrogate descent here; no training promotion.",
+  "scope": "Eight reused development cases. Final-step DSP replays; secants verified from saved PCM and losses, not all replayed. Pitch diagnostics reused."
+}
