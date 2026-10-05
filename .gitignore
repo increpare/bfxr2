@@ -6,3 +6,6 @@ node_modules
 *.wav
 /tools/bfxr_native/testdata
 .worktrees/
+ios/build/
+xcuserdata/
+DerivedData/

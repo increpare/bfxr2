@@ -1,0 +1,86 @@
+name: iOS
+
+on:
+  push:
+    paths:
+      - 'ios/**'
+      - 'index.html'
+      - 'js/**'
+      - 'css/**'
+      - 'img/**'
+      - '.github/workflows/ios.yml'
+  pull_request:
+    paths:
+      - 'ios/**'
+      - 'index.html'
+      - 'js/**'
+      - 'css/**'
+      - 'img/**'
+      - '.github/workflows/ios.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show toolchain
+        run: xcodebuild -version
+
+      - name: Build for the simulator
+        run: |
+          xcodebuild build \
+            -project ios/Bfxr.xcodeproj \
+            -scheme Bfxr \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Build for devices (unsigned)
+        run: |
+          xcodebuild build \
+            -project ios/Bfxr.xcodeproj \
+            -scheme Bfxr \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build-device \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Smoke test in the simulator
+        run: |
+          set -euo pipefail
+          APP=build/Build/Products/Debug-iphonesimulator/Bfxr.app
+          test -f "$APP/index.html" && test -f "$APP/js/index.js" && test -f "$APP/NativeBridge.js"
+          DEVICE=$(xcrun simctl list devices available -j | python3 -c '
+          import json, sys
+          runtimes = json.load(sys.stdin)["devices"]
+          ios = sorted((r for r in runtimes if "iOS" in r), reverse=True)
+          print(next(d["udid"] for r in ios for d in runtimes[r] if d["name"].startswith("iPhone")))')
+          xcrun simctl boot "$DEVICE"
+          xcrun simctl bootstatus "$DEVICE" -b
+          xcrun simctl install "$DEVICE" "$APP"
+
+          # Normal launch, for a screenshot of the app as people will see it.
+          xcrun simctl launch "$DEVICE" net.bfxr.app
+          sleep 15
+          xcrun simctl io "$DEVICE" screenshot screenshot.png
+          xcrun simctl terminate "$DEVICE" net.bfxr.app
+
+          # Smoke-test launch: the app checks itself and exits.
+          perl -e 'alarm shift; exec @ARGV' 180 \
+            xcrun simctl launch --console-pty --terminate-running-process "$DEVICE" net.bfxr.app -BfxrSmokeTest \
+            | tee smoke.log || true
+          grep -q BFXR_SMOKE_OK smoke.log
+
+      - name: Upload screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: simulator-screenshot
+          path: screenshot.png
+          if-no-files-found: ignore

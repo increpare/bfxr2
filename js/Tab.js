@@ -1295,7 +1295,8 @@ class Tab {
         var file_jstor_json_string = SaveLoad.shallow_dict_serialize(this.name, file_name, params_parsed);
         //need to escape it so it can be used as a url parameter
         var file_jstor_json_string_escaped = encodeURIComponent(file_jstor_json_string);
-        var current_url = window.location.href;
+        // Embedded copies (e.g. the iOS app) set BFXR_SHARE_URL so links point at the public site.
+        var current_url = window.BFXR_SHARE_URL || window.location.href;
         //strip the query string
         var current_url_without_query = current_url.split("?")[0];
         //add the file_jstor_json_string_escaped to the url

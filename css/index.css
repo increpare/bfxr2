@@ -995,3 +995,30 @@ img {
 .speech-words { flex: 1; min-width: 0; }
 
 .morph-curve { width: 100%; padding: 0 5px 8px; }
+
+/* Phone-sized screens (also used by the iOS app): stack the three panels
+   and let the tab strip scroll sideways instead of wrapping into a wall. */
+@media (max-width: 640px) {
+    body { justify-content: flex-start; -webkit-text-size-adjust: 100%; }
+    #main_container { width: 100%; }
+    #tab_bar {
+        flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+        padding: calc(6px + env(safe-area-inset-top)) max(5px, env(safe-area-inset-right)) 0 max(5px, env(safe-area-inset-left));
+        scrollbar-width: none; -webkit-overflow-scrolling: touch;
+    }
+    #tab_bar::-webkit-scrollbar { display: none; }
+    #tab_bar .tab_button { flex: 0 0 auto; font-size: 17px; white-space: nowrap; border-bottom: none; }
+    .tab_page { height: auto; flex-wrap: wrap; filter: none; overflow-y: visible; }
+    .left_panel { order: 1; flex: 1 1 50%; width: auto; min-width: 0; }
+    .right_panel { order: 2; flex: 1 1 40%; width: auto; min-width: 0; padding: 0 var(--ui-margin); box-sizing: border-box; }
+    .centre_panel {
+        order: 3; flex: 0 0 100%; width: 100%; max-height: none; box-sizing: border-box;
+        margin: var(--ui-margin) 0 0; border-left: none; border-right: none;
+    }
+    .centre_params { overflow-y: visible; }
+    .filelist { max-height: 160px; min-height: 60px; }
+    .display_canvas_container { display: flex; justify-content: center; }
+    .right_panel_button_list > div > span { display: block; }
+    .right_panel_button_list button, .template_list button, .save_commands button { min-height: 32px; }
+    #footer { margin-bottom: calc(var(--ui-margin) + env(safe-area-inset-bottom)); }
+}

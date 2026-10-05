@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B0F0A500000000000000000E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F0A5000000000000000001 /* AppDelegate.swift */; };
+		B0F0A500000000000000000F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F0A5000000000000000002 /* SceneDelegate.swift */; };
+		B0F0A5000000000000000010 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F0A5000000000000000003 /* WebViewController.swift */; };
+		B0F0A5000000000000000011 /* BundleSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F0A5000000000000000004 /* BundleSchemeHandler.swift */; };
+		B0F0A5000000000000000012 /* NativeBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = B0F0A5000000000000000005 /* NativeBridge.js */; };
+		B0F0A5000000000000000013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0F0A5000000000000000006 /* Assets.xcassets */; };
+		B0F0A5000000000000000014 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = B0F0A5000000000000000007 /* index.html */; };
+		B0F0A5000000000000000015 /* favicon.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F0A5000000000000000008 /* favicon.png */; };
+		B0F0A5000000000000000016 /* js in Resources */ = {isa = PBXBuildFile; fileRef = B0F0A5000000000000000009 /* js */; };
+		B0F0A5000000000000000017 /* css in Resources */ = {isa = PBXBuildFile; fileRef = B0F0A500000000000000000A /* css */; };
+		B0F0A5000000000000000018 /* img in Resources */ = {isa = PBXBuildFile; fileRef = B0F0A500000000000000000B /* img */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B0F0A5000000000000000001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B0F0A5000000000000000002 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B0F0A5000000000000000003 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		B0F0A5000000000000000004 /* BundleSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleSchemeHandler.swift; sourceTree = "<group>"; };
+		B0F0A5000000000000000005 /* NativeBridge.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = NativeBridge.js; sourceTree = "<group>"; };
+		B0F0A5000000000000000006 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0F0A5000000000000000007 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		B0F0A5000000000000000008 /* favicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favicon.png; sourceTree = "<group>"; };
+		B0F0A5000000000000000009 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
+		B0F0A500000000000000000A /* css */ = {isa = PBXFileReference; lastKnownFileType = folder; path = css; sourceTree = "<group>"; };
+		B0F0A500000000000000000B /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
+		B0F0A500000000000000000C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0F0A500000000000000000D /* Bfxr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bfxr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B0F0A500000000000000001E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B0F0A5000000000000000019 /*  */ = {
+			isa = PBXGroup;
+			children = (
+				B0F0A500000000000000001A /* Bfxr */,
+				B0F0A500000000000000001B /* Web */,
+				B0F0A500000000000000001C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B0F0A500000000000000001A /* Bfxr */ = {
+			isa = PBXGroup;
+			children = (
+				B0F0A5000000000000000001 /* AppDelegate.swift */,
+				B0F0A5000000000000000002 /* SceneDelegate.swift */,
+				B0F0A5000000000000000003 /* WebViewController.swift */,
+				B0F0A5000000000000000004 /* BundleSchemeHandler.swift */,
+				B0F0A5000000000000000005 /* NativeBridge.js */,
+				B0F0A5000000000000000006 /* Assets.xcassets */,
+				B0F0A500000000000000000C /* Info.plist */,
+			);
+			path = Bfxr;
+			sourceTree = "<group>";
+		};
+		B0F0A500000000000000001B /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				B0F0A5000000000000000007 /* index.html */,
+				B0F0A5000000000000000008 /* favicon.png */,
+				B0F0A5000000000000000009 /* js */,
+				B0F0A500000000000000000A /* css */,
+				B0F0A500000000000000000B /* img */,
+			);
+			name = Web;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B0F0A500000000000000001C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0F0A500000000000000000D /* Bfxr.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B0F0A5000000000000000020 /* Bfxr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0F0A5000000000000000023 /* Build configuration list for PBXNativeTarget "Bfxr" */;
+			buildPhases = (
+				B0F0A500000000000000001D /* Sources */,
+				B0F0A500000000000000001E /* Frameworks */,
+				B0F0A500000000000000001F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bfxr;
+			productName = Bfxr;
+			productReference = B0F0A500000000000000000D /* Bfxr.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B0F0A5000000000000000021 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					B0F0A5000000000000000020 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = B0F0A5000000000000000022 /* Build configuration list for PBXProject "Bfxr" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B0F0A5000000000000000019;
+			productRefGroup = B0F0A500000000000000001C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B0F0A5000000000000000020 /* Bfxr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B0F0A500000000000000001F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0F0A5000000000000000012 /* NativeBridge.js in Resources */,
+				B0F0A5000000000000000013 /* Assets.xcassets in Resources */,
+				B0F0A5000000000000000014 /* index.html in Resources */,
+				B0F0A5000000000000000015 /* favicon.png in Resources */,
+				B0F0A5000000000000000016 /* js in Resources */,
+				B0F0A5000000000000000017 /* css in Resources */,
+				B0F0A5000000000000000018 /* img in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B0F0A500000000000000001D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0F0A500000000000000000E /* AppDelegate.swift in Sources */,
+				B0F0A500000000000000000F /* SceneDelegate.swift in Sources */,
+				B0F0A5000000000000000010 /* WebViewController.swift in Sources */,
+				B0F0A5000000000000000011 /* BundleSchemeHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B0F0A5000000000000000024 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B0F0A5000000000000000025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B0F0A5000000000000000026 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Bfxr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = net.bfxr.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B0F0A5000000000000000027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Bfxr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = net.bfxr.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B0F0A5000000000000000022 /* Build configuration list for PBXProject "Bfxr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0F0A5000000000000000024 /* Debug */,
+				B0F0A5000000000000000025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0F0A5000000000000000023 /* Build configuration list for PBXNativeTarget "Bfxr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0F0A5000000000000000026 /* Debug */,
+				B0F0A5000000000000000027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B0F0A5000000000000000021 /* Project object */;
+}
