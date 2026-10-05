@@ -1,0 +1,505 @@
+{
+  "complete": true,
+  "reportSha256": "85a73e0ce9be154bd388200f3a0689911ee2f4f4665bbd13a091229dc93cfb48",
+  "targetsSha256": "44d9c678c1da175a933e86af2ca4061861c5addc77290734f2805bc8cb3986d6",
+  "scriptSha256": "b01843fa5a44386fc0390060591b11b77d16d8b2acd0eed328995b7f511944fb",
+  "rows": [
+    {
+      "source": {
+        "name": "footstep/impactMetal_002.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/impactMetal_002.ogg",
+        "sha256": "0c1bb4db8a4d48b2b8c2e65a175d9056b845f1063837599995d81be1c5957d2c"
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 43,
+          "synth": "Transfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 17,
+          "synth": "Clonkr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 16,
+          "synth": "Clonkr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 42,
+          "synth": "Transfxr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 2015,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Transfxr",
+          "origin": "Transfxr-mixture",
+          "soft": 2.7407084137388393,
+          "preference": 0.7261478471405483,
+          "legacy": 1.8776389442772694
+        },
+        {
+          "role": "preference",
+          "synth": "Transfxr",
+          "origin": "Transfxr-mixture",
+          "soft": 3.7563349749147505,
+          "preference": 0.5212172174536033,
+          "legacy": 2.3434904163578762
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 3.898503647543697,
+          "preference": 0.8151163167705481,
+          "legacy": 2.0079423347039054
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "clothes/cloth4.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/clothes/cloth4.ogg",
+        "sha256": "e7ab9a6c4466dea874196c61f59bf1da05cfe58748f42fadd695d441a154a99b"
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 2,
+          "synth": "Footsteppr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 32,
+          "synth": "Rustlr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 46,
+          "synth": "Boomr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 1,
+          "synth": "Bfxr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 2015,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Rustlr",
+          "origin": "shared22",
+          "soft": 2.071679059004378,
+          "preference": 0.7910136537864787,
+          "legacy": 1.0895657483096832
+        },
+        {
+          "role": "preference",
+          "synth": "Boomr",
+          "origin": "Boomr-specialist",
+          "soft": 2.6976193731279725,
+          "preference": 0.6360366447717277,
+          "legacy": 1.464133519455945
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 2.7847444827084225,
+          "preference": 1.192191347199557,
+          "legacy": 1.669986926985232
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+        "sha256": "f723badf49fb5d2902efb259008c23cb2edc96b6ce59bf20448827f51a44e4ea"
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 43,
+          "synth": "Transfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 52,
+          "synth": "Footsteppr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 5,
+          "synth": "Transfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 25,
+          "synth": "Jinglr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 2015,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Transfxr",
+          "origin": "Transfxr-mixture",
+          "soft": 3.248915364809788,
+          "preference": 1.5107989874671635,
+          "legacy": 11.837303550935315
+        },
+        {
+          "role": "preference",
+          "synth": "Transfxr",
+          "origin": "shared22",
+          "soft": 6.1781164721731425,
+          "preference": 1.0094847234048658,
+          "legacy": 12.205775733115964
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 3.475306830945325,
+          "preference": 2.165479121695783,
+          "legacy": 3.199297241511655
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "chains/beltHandle2.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/chains/beltHandle2.ogg",
+        "sha256": "f3b692d5c83263c25bce779805b212dbab515d18a603c695fc6a1e8650cf5366"
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 50,
+          "synth": "Footsteppr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 1,
+          "synth": "Bfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 40,
+          "synth": "Whooshr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 55,
+          "synth": "Squishr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 2015,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 2.472934366035132,
+          "preference": 2.183097391558959,
+          "legacy": 2.088061414744308
+        },
+        {
+          "role": "preference",
+          "synth": "Whooshr",
+          "origin": "shared22",
+          "soft": 4.542709418749401,
+          "preference": 1.646662002300477,
+          "legacy": 3.4260701533313482
+        },
+        {
+          "role": "alternative",
+          "synth": "Whooshr",
+          "origin": "shared22",
+          "soft": 5.664560415654267,
+          "preference": 1.9542089937894935,
+          "legacy": 4.6954741214416185
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "door/doorClose_3.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/door/doorClose_3.ogg",
+        "sha256": "d0a2540e5e1639bc2fbeef34e76f28e9f9cb8a151736a0ac4c13859994328d0e"
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 32,
+          "synth": "Rustlr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 46,
+          "synth": "Boomr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 46,
+          "synth": "Boomr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 32,
+          "synth": "Rustlr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 3003,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Rustlr",
+          "origin": "shared22",
+          "soft": 2.913984553282882,
+          "preference": 1.2779835815137963,
+          "legacy": 2.085452919091895
+        },
+        {
+          "role": "preference",
+          "synth": "Rustlr",
+          "origin": "shared22",
+          "soft": 3.1663630450016376,
+          "preference": 1.0497232004406125,
+          "legacy": 8.373305385424958
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 3.707048650235299,
+          "preference": 1.62073064999774,
+          "legacy": 2.6663515421803154
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "bell/clothBelt2.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/clothBelt2.ogg",
+        "sha256": "d545b1d9f20e6188140aaf551a96f1e82fe0d15f7ca066fac8b065e1231e0038"
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 4,
+          "synth": "Transfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 50,
+          "synth": "Footsteppr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 55,
+          "synth": "Squishr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 27,
+          "synth": "Machinr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 3001,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Footsteppr",
+          "origin": "Footsteppr-specialist",
+          "soft": 1.9299482106607284,
+          "preference": 1.7123443695797065,
+          "legacy": 9.585642707681076
+        },
+        {
+          "role": "preference",
+          "synth": "Squishr",
+          "origin": "Squishr-specialist",
+          "soft": 3.0756399317196603,
+          "preference": 1.256525148567142,
+          "legacy": 10.283943615602483
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 2.0804158649358193,
+          "preference": 1.5889905812992509,
+          "legacy": 1.831239398341248
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "laser/laser1.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/laser1.ogg",
+        "sha256": "0bf468769b48a834dc1c6e38e457f2c71159b010225a9aedf84316795e8cc3e5"
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 54,
+          "synth": "Squishr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 31,
+          "synth": "Riftr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 47,
+          "synth": "Boomr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 29,
+          "synth": "Pluckr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 2015,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Squishr",
+          "origin": "Squishr-specialist",
+          "soft": 3.1115300437029063,
+          "preference": 1.2272781262296215,
+          "legacy": 15.346278332854295
+        },
+        {
+          "role": "preference",
+          "synth": "Boomr",
+          "origin": "Boomr-specialist",
+          "soft": 3.9381279849528203,
+          "preference": 0.7109749157623254,
+          "legacy": 2.52193952023789
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 5.841107157991193,
+          "preference": 1.1903659115996095,
+          "legacy": 3.3852083560735777
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "collect/coin (nes).wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/coin (nes).wav",
+        "sha256": "1ad33301e64df03d49b85008db26cd93e30314387e16f83cd5bf28e954d14372"
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 44,
+          "synth": "Transfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 16,
+          "synth": "Clonkr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 44,
+          "synth": "Transfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 0,
+          "synth": "Bfxr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 3001,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 0.946332322784581,
+          "preference": 0.5560644422844656,
+          "legacy": 0.9753662961577332
+        },
+        {
+          "role": "preference",
+          "synth": "Transfxr",
+          "origin": "Transfxr-mixture",
+          "soft": 3.7451293615509926,
+          "preference": 0.5017333425738437,
+          "legacy": 3.9142735344465147
+        },
+        {
+          "role": "alternative",
+          "synth": "Transfxr",
+          "origin": "Transfxr-mixture",
+          "soft": 1.9631690625843827,
+          "preference": 0.6391546077298358,
+          "legacy": 1.449297604217961
+        }
+      ]
+    }
+  ],
+  "scope": "Eight preselected unjudged tagged files; source families may overlap. Existing frozen checkpoints. Broader candidate pool, not equal-compute model comparison. No human quality claims."
+}

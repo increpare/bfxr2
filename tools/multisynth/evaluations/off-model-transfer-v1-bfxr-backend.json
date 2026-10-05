@@ -1,0 +1,9 @@
+{
+  "command": [
+    "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+  ],
+  "backendSha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7",
+  "recordedAt": "during inference before gallery export",
+  "note": "Multisynth sourceHash does not cover this native original-Bfxr backend. Final verification must recheck this binary and replay all original candidates.",
+  "targetsSha256": "44d9c678c1da175a933e86af2ca4061861c5addc77290734f2805bc8cb3986d6"
+}

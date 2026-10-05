@@ -29,6 +29,23 @@ winners/ties, but shared wins two, specialist one, and two tie. Native success
 does not establish off-model success or specialist superiority. See the
 [complete human review](evaluations/squishr-v1-quick-02-human-review.json).
 
+The [eight-trial external transfer page](runs/off-model-transfer-v1-listening/index.html)
+tests the full existing expert pool on eight unjudged tagged files. All 464 raw
+proposals rendered, followed by 4,096 neural mutation attempts across two frozen
+scorers and original Bfxr's independent optimizer (19,080 actual evaluations).
+Three distinct options per reference retain scorer alternatives and original Bfxr.
+There is no retraining or quality claim in this selection/transfer diagnostic.
+
+These are external inputs for the newer synthetic-trained experts. The historical
+original-Bfxr real-finetune manifest contains six in its training list and two in
+its holdout list: it is a familiar anchor, **not an unseen baseline**. All files
+in the eight chosen tag strata occur in that old manifest. This overlap is
+disclosed in the questionnaire. Exact prior feedback file/PCM duplicates were
+excluded, but source-family independence is not established. See the
+[frozen targets](evaluations/off-model-transfer-v1-targets.json),
+[evaluation](evaluations/off-model-transfer-v1-evaluation.json), and
+[historical Bfxr overlap audit](evaluations/off-model-transfer-v1-bfxr-training-overlap.json).
+
 The earlier [specialist experiment](evaluations/specialists-v1-plan.json) trains
 independent Boomr and Footsteppr models on 12,288 examples each. The older shared
 model already had heads for these engines, trained on 2,048 examples each; those

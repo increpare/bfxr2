@@ -1,0 +1,84 @@
+{
+  "complete": true,
+  "manifest": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/manifest.json",
+  "manifestSha256": "c222380bbe7dd6dfb34aa2223b3fdb91f82d79d0e37b1ee811933955bbaa48ef",
+  "manifestRows": 5186,
+  "readableUniqueFiles": 5186,
+  "missingFiles": [],
+  "sameSizedFilesHashed": 9,
+  "exactFileMatches": [
+    {
+      "target": "laser/laser1.ogg",
+      "source": {
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/kenney_digital-audio/Audio/laser1.ogg",
+        "pack": "kenney_digital-audio",
+        "split": "train"
+      }
+    },
+    {
+      "target": "bell/clothBelt2.ogg",
+      "source": {
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/clothBelt2.ogg",
+        "pack": "tags",
+        "split": "train"
+      }
+    },
+    {
+      "target": "chains/beltHandle2.ogg",
+      "source": {
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/chains/beltHandle2.ogg",
+        "pack": "tags",
+        "split": "train"
+      }
+    },
+    {
+      "target": "clothes/cloth4.ogg",
+      "source": {
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/clothes/cloth4.ogg",
+        "pack": "tags",
+        "split": "train"
+      }
+    },
+    {
+      "target": "collect/coin (nes).wav",
+      "source": {
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/coin (nes).wav",
+        "pack": "tags",
+        "split": "holdout"
+      }
+    },
+    {
+      "target": "door/doorClose_3.ogg",
+      "source": {
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/door/doorClose_3.ogg",
+        "pack": "tags",
+        "split": "holdout"
+      }
+    },
+    {
+      "target": "footstep/impactMetal_002.ogg",
+      "source": {
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/impactMetal_002.ogg",
+        "pack": "tags",
+        "split": "train"
+      }
+    },
+    {
+      "target": "hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+      "source": {
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+        "pack": "tags",
+        "split": "train"
+      }
+    },
+    {
+      "target": "laser/laser1.ogg",
+      "source": {
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/laser1.ogg",
+        "pack": "tags",
+        "split": "train"
+      }
+    }
+  ],
+  "scope": "Supplementary exact-byte audit of the known original Bfxr real-finetune manifest (all listed splits); does not rule out alternate encodings, source families, or other historical corpora."
+}
