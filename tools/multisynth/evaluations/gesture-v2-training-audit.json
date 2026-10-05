@@ -1,0 +1,90 @@
+{
+  "complete": true,
+  "scriptSha256": "1d0a325fa6ebd771c44c01789761afda0ce0bab828792e2d56aa5bcb03080d0d",
+  "scope": "Saved fixed-final weights; CPU and training-device validation replay using shared loss implementation; not independent formula or perceptual validation.",
+  "arms": {
+    "control": {
+      "checkpointSha256": "d3eeb6d68a411059984ccb9d3bcd0847807ff446560e83d299f7b7511f50ce6d",
+      "trainingReportSha256": "dc0dcd9f8b33e58bb7c61cbe4aa22ec7dfb407313d5c95d25a7398ce18c480a9",
+      "validationRows": 1843,
+      "epochs": 20,
+      "cpu": {
+        "total": 0.5853362844886013,
+        "acoustic": 0.5853362844886013,
+        "gesture": 0.26182856364870505
+      },
+      "saved": {
+        "total": 0.5853363095852938,
+        "acoustic": 0.5853363095852938,
+        "gesture": 0.2618156510135649
+      },
+      "maxCpuError": 1.291263514013874e-05,
+      "trainingDeviceReplay": {
+        "total": 0.5853363095852938,
+        "acoustic": 0.5853363095852938,
+        "gesture": 0.2618156510135649
+      },
+      "maxTrainingDeviceError": 0.0
+    },
+    "gesture": {
+      "checkpointSha256": "e6f9833c08071fc63f3fc2ef5ef256c82624abdad28ffc30ee5f332b8a55ca27",
+      "trainingReportSha256": "fb0827faa79dc3705a9ab5f4a7534ab40f74d3dd1b455bc731289bca60d6fac9",
+      "validationRows": 1843,
+      "epochs": 20,
+      "cpu": {
+        "total": 0.8468714323313224,
+        "acoustic": 0.5880046417725455,
+        "gesture": 0.25886678664234575
+      },
+      "saved": {
+        "total": 0.846857161219199,
+        "acoustic": 0.5880045750710509,
+        "gesture": 0.25885259615443346
+      },
+      "maxCpuError": 1.4271112123487306e-05,
+      "trainingDeviceReplay": {
+        "total": 0.846857161219199,
+        "acoustic": 0.5880045750710509,
+        "gesture": 0.25885259615443346
+      },
+      "maxTrainingDeviceError": 0.0
+    }
+  },
+  "quadratureDeviceDifference": {
+    "Linear": {
+      "maxAbsolute": 5.960464477539063e-08,
+      "indicesOver1e5": []
+    },
+    "Ease In": {
+      "maxAbsolute": 1.1920928955078125e-07,
+      "indicesOver1e5": []
+    },
+    "Ease Out": {
+      "maxAbsolute": 1.1920928955078125e-07,
+      "indicesOver1e5": []
+    },
+    "Smooth": {
+      "maxAbsolute": 1.7881393432617188e-07,
+      "indicesOver1e5": []
+    },
+    "Triangle": {
+      "maxAbsolute": 1.1920928955078125e-07,
+      "indicesOver1e5": []
+    },
+    "Pulse": {
+      "maxAbsolute": 2.682209014892578e-07,
+      "indicesOver1e5": []
+    },
+    "Bounce": {
+      "maxAbsolute": 1.7881393432617188e-07,
+      "indicesOver1e5": []
+    },
+    "Steps": {
+      "maxAbsolute": 0.25,
+      "indicesOver1e5": [
+        153
+      ]
+    }
+  },
+  "cpuCaveat": "CPU and MPS differ at the discontinuous Steps sample153 (t approximately .6), explaining a small CPU gesture-loss discrepancy. Saved weights reproduce on their training device; CPU totals are reported, not claimed identical."
+}

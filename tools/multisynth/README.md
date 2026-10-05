@@ -28,6 +28,11 @@ checkpoints, but neither engine passed its actual-render promotion gate. Bfxr
 regressed static pitch; Transfxr's mean improvement was below the threshold.
 No new listening round is requested from that failed experiment.
 
+Follow-up [local gradient checks](FORWARD_AUDIO_PILOT.md) and
+[Transfxr pitch-gesture supervision](GESTURE_V2.md) also failed their promotion
+checks. Exact results and models are retained. A larger native Transfxr training
+corpus is being generated to test the substantial coverage/overfitting gap.
+
 The earlier iterations below use an offline **nonparametric inverse model**: render examples from the app's
 preset distributions, encode their audio, retrieve plausible parameters for
 each synth, refine several synths independently, then automatically select the
