@@ -23,6 +23,14 @@ additional questions when helpful. Keep breaks optional and collect each extra
 judgment while its sound is still in view; do not pad batches or ask retrospective
 questions about hidden synth labels.
 
+On 2026-10-06 the user reiterated that tests must cover **off-model sounds**.
+Native held-out controls diagnose inversion but do not demonstrate transfer.
+Prioritize tagged external sources, cross-engine sounds and clearly identified
+perturbations. Audit historical real-audio fitting where possible: an unjudged
+file is not necessarily unseen by a model. Keep familiar baselines explicit,
+and never describe native wins or training-overlapping baselines as independent
+external generalization.
+
 ## Retained sessions
 
 | Archive | References judged | Distinct retained candidate identities |
@@ -44,6 +52,24 @@ questions about hidden synth labels.
 | `2026-10-05-cue-calibration-quick-01/` | 5 | 10 |
 | `2026-10-05-soft-periodicity-quick-01/` | 5 | 15 |
 | `2026-10-06-squishr-v1-quick-01/` | 5 | 11 |
+| `2026-10-06-squishr-v1-quick-02/` | 10 | 21 |
+
+The eighteenth archive completes the same Squishr experiment. Its first five
+targets are byte-for-byte equal as JSON objects to the earlier partial export;
+they are **not five new judgments**. All five additional native references have
+very-close winners or ties: specialist wins suction, shared wins one bubbles
+and spring, and the other bubbles and gulp tie. This confirms useful native
+reconstruction with refinement, but does not show specialist superiority or
+external-sound transfer. The four fresh tagged failures remain unchanged.
+
+The complete export contains six strict heard pairs (three new) and fifteen
+candidate-scoped labels: ten very-close, two not-close, three least-bad.
+Loading both archives produces six distinct pairs and skips the three repeated
+session pairs. Soft and preference scores each agree on 4/6, legacy on 3/6.
+The user reiterated that **off-model sounds are the important test**. The next
+batch uses eight unjudged external tagged files and the full existing expert
+pool; no native references pad its results. See the
+[completed Squishr human review](../evaluations/squishr-v1-quick-02-human-review.json).
 
 The seventeenth archive is a **partial submission**: the first five tagged
 references from the ten-trial Squishr specialist comparison. All eleven options

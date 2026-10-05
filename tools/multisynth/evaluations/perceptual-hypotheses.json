@@ -188,7 +188,7 @@
       "status": "one-human-approved-search-result-no-global-ranking-win",
       "evidence": "Human-preferred near-identity footstep scores2.818legacy, mostlyhardpitch/slope. Smoothreplacement fixesit and improves historical91/162to108/162, but currentcalibration remains2/5 and17historical/currentpairdirections regress.",
       "source": "evaluations/soft-periodicity-v1-evaluation.json",
-      "nextTest": "Collect the five already-published reserved-native trials before selecting a new training intervention. Preserve the current tagged failures as development evidence; do not convert least-bad controls into successful pseudo-labels.",
+      "nextTest": "Eight frozen unjudged external tagged files, full existing expert pool, dual frozen scorer refinement and original Bfxr baseline. No native sources and no retraining in this selection/transfer diagnostic.",
       "observations": [
         {
           "session": "2026-10-05-soft-periodicity-quick-01",
@@ -199,6 +199,11 @@
           "session": "2026-10-06-squishr-v1-quick-01",
           "finding": "Partial first-five tagged submission: very-close tie for retained wooden-footstep anchor and both refined Squishr heads. Four fresh tagged references yield none-close or least-bad, so improved transfer is not demonstrated. Soft metric agrees on3/3 strict heard pairs among poor options; this is not adequacy. Five native trials remain unsubmitted.",
           "source": "evaluations/squishr-v1-quick-01-human-review.json"
+        },
+        {
+          "session": "2026-10-06-squishr-v1-quick-02",
+          "finding": "Complete cumulative export: five native references have very-close winners/ties; dedicated wins1, shared2, tie2. Prior tagged failures unchanged. Native metric gains do not establish audible specialist superiority or off-model success. Three additional strict pairs; earlier five choices unchanged and deduplicated.",
+          "source": "evaluations/squishr-v1-quick-02-human-review.json"
         }
       ]
     }

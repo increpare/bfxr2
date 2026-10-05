@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All seventeen feedback sessions,
+do not establish general success on real recordings. All eighteen feedback archives,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
@@ -24,8 +24,10 @@ synthetic dataset reserves validation and native test controls; the human-approv
 reference and preset stay outside fitting. The first five human judgments tie
 both refined heads and the retained footstep as very-close, but reject both fresh
 footstep options and rate the other three tagged winners least-bad. Better tagged
-transfer is not demonstrated; five reserved native trials await feedback. See the
-[partial human review](evaluations/squishr-v1-quick-01-human-review.json).
+transfer is not demonstrated. The completed native half has five very-close
+winners/ties, but shared wins two, specialist one, and two tie. Native success
+does not establish off-model success or specialist superiority. See the
+[complete human review](evaluations/squishr-v1-quick-02-human-review.json).
 
 The earlier [specialist experiment](evaluations/specialists-v1-plan.json) trains
 independent Boomr and Footsteppr models on 12,288 examples each. The older shared

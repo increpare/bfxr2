@@ -244,6 +244,17 @@ Keep defaults unchanged and obtain the already-published native judgments before
 choosing between native-inversion and transfer-focused follow-up experiments.
 See the [partial human review](evaluations/squishr-v1-quick-01-human-review.json).
 
+The subsequent cumulative export completes the five native trials: all have a
+very-close winner or tie. Dedicated wins suction, shared wins one bubbles and
+spring, and two tie. Therefore lower average native distance did not establish
+human preference for the dedicated expert. The four new tagged cases remain
+none-close/least-bad. Prioritize external transfer and candidate selection,
+keeping both heads available without changing defaults. The next eight-trial
+batch contains only unjudged tagged files, evaluated by the existing full expert
+pool plus original Bfxr. No new training is claimed. See the
+[complete review](evaluations/squishr-v1-quick-02-human-review.json); its repeated
+first-five choices are deduplicated when both feedback archives are loaded.
+
 See [render evaluation](evaluations/squishr-v1-evaluation.json),
 [control diagnostics](evaluations/squishr-v1-control-diagnostics.json),
 [listening audit](evaluations/squishr-v1-listening-audit.json), and
