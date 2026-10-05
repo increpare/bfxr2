@@ -19,8 +19,12 @@ calibration selections lose: the uncalibrated Bfxr beep wins, and original Bfxr
 wins the bell. Original Bfxr also wins battleStart. The earlier Transfxr charm
 wins its first direct heard comparison against the later Bfxr partial success.
 The Transfxr whistle wins against original Bfxr, but is the unchanged baseline,
-so this is not evidence for calibration. No absolute likeness or usefulness
-ratings were supplied. The exact-audio matching objective agrees with 2/7 pairs;
+so this is not evidence for calibration. No numerical likeness or usefulness
+ratings were supplied. In a subsequent direct reply, the user confirmed that
+there were **no convincing recreations: zero of five references**. The separate
+[qualitative follow-up](2026-10-05-pitch-calibration-quick-01/qualitative-feedback.json)
+retains the exact words and winner identities. Relative preferences remain valid;
+none of these winners is an established successful recreation. The exact-audio matching objective agrees with 2/7 pairs;
 the older learned preference scorer agrees with 3/7. See
 [the human review](../evaluations/pitch-calibration-quick-01-human-review.json).
 Do not promote the passing synthetic pitch gate to a human quality claim.

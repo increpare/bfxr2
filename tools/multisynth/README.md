@@ -14,8 +14,11 @@ The latest reviewed checkpoint is
 [pitch-calibration listening](runs/pitch-calibration-listening-v1/index.html),
 using frozen v3 Bfxr/Transfxr/Pluckr experts plus bounded DSP pitch correction.
 Both changed selections lost their human comparisons; the synthetic pitch gate
-does not establish perceptual improvement. See the
-[human review](evaluations/pitch-calibration-quick-01-human-review.json).
+does not establish perceptual improvement. The user subsequently confirmed
+**zero convincing recreations across all five references**, including the winners.
+This requires improving candidate generation as well as selection. See the
+[human review](evaluations/pitch-calibration-quick-01-human-review.json) and
+[verbatim adequacy follow-up](listening_data/2026-10-05-pitch-calibration-quick-01/qualitative-feedback.json).
 All eight feedback sessions and exact audition PCM remain versioned. A fresh
 preference-scorer refit reaches about 73% reference-balanced held-out agreement
 overall but only 3/7 on this latest batch; it is experimental and not deployed.

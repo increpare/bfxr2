@@ -12,6 +12,11 @@
         {
           "session": "2026-10-04-temporal-v3-quick-01",
           "finding": "The user qualified the two new winners: book-close has the same general character but is still a bit off; charm2 is closeish, approaching a recreation. This adds partial absolute-likeness evidence without establishing fully convincing success or numerical ratings."
+        },
+        {
+          "session": "2026-10-05-pitch-calibration-quick-01",
+          "finding": "The user explicitly reports no convincing recreations across all five pitch-calibration references, despite five best choices. Zero of five is the absolute adequacy outcome; retain the seven pairwise preferences without treating winners as successful reproductions. Improving selection among these presented options cannot alone solve the batch. No particular acoustic cause is established.",
+          "source": "listening_data/2026-10-05-pitch-calibration-quick-01/qualitative-feedback.json"
         }
       ]
     },
@@ -103,7 +108,7 @@
       "claim": "A single global weighting of pitch, timbre and envelope may not express which cue dominates likeness for each reference.",
       "status": "plausible-not-causally-established",
       "evidence": "The latest preferred beep is worse in 24/30 current distance components, while six spectrum/timbre/correlation components favor it. The preferred bell instead gains on envelope/event cues. Refitting the existing 30-component global scorer gives only 3/7 held-out and 4/7 full-fit agreement on the latest comparisons, despite about 73% held-out reference-balanced agreement overall. These are descriptive correlations, not evidence that conditioning will solve the problem.",
-      "nextTest": "Keep the current refit experimental. Before another large inverse run, test target-conditioned cue weights against the fixed global scorer on the same held-out references; predeclare gates, include latest failure cases and earlier successes, and require fresh human listening before deployment. Absolute recreation quality remains a separate question.",
+      "nextTest": "Keep the current refit experimental. Target-conditioned cue weights remain a possible ranking experiment, but the explicit zero-of-five convincing outcome also requires improved candidate generation. Compare candidate-generation changes against frozen baselines on held-out actual renders and a fresh human listening batch. Ranking agreement alone is not an adequacy gate.",
       "source": "evaluations/perceptual-after-calibration-feedback-training.json"
     }
   ]

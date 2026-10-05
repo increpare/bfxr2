@@ -210,3 +210,19 @@ deploy it or advertise the aggregate gain as resolving the current failures.
 Saved predictions and all fold predictions were reconstructed; no known source
 audio hash crosses folds. Next architectural hypothesis is reference-dependent
 perceptual priorities, not another pitch threshold adjustment.
+
+
+## Absolute adequacy follow-up — zero convincing recreations
+
+On 2026-10-05 the user clarified: “No there were no convincing recreations.”
+The archive's separate `qualitative-feedback.json` links that statement to all
+five reviewed references and their preferred candidate PCM identities. The
+raw export, manifest, audio and seven relative preference pairs stay unchanged.
+No numeric likeness, usefulness judgment or acoustic cause is inferred.
+
+The earlier JSON-only review above remains a record of what was supplied at
+that point. This follow-up closes its adequacy uncertainty: zero of five
+references has a convincing recreation. A perfect chooser among these heard
+candidates would still fail that criterion. Candidate generation must therefore
+be part of the next improvement experiment; target-dependent score weighting
+alone is insufficient. This evidence does not judge unpresented pool candidates.
