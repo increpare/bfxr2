@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "a5d5dc9a2f3892807b671ec24ecddc61002ab06ed7d5fe8133b056002402cf60",
+  "reportSha256": "13722697e76f686fa8fdd9f3014e15afc0eb2da7acf9ba99bd1ca570ac669cb5",
+  "audioAuditSha256": "ea8a69ce9312578407ee97d5ce14f9921f874d2e509ffec9792ffd8f324624cb",
+  "scope": "Post-run diagnostic analysis only; no selection-rule changes, no new training, no changes to published audio. First failing reasons are ordered policy checks, not all independent causes. Descriptor errors are not independent auditory ground truth.",
+  "humanFeedbackStatus": "pending",
+  "fallbacks": [
+    {
+      "source": "die/charm2.wav",
+      "baseline": {
+        "synth": "Bfxr",
+        "score": 3.5371768592132287,
+        "audioHash": "100a5132d0675774f7485371de84414e542f7dd34f49ff83bed62f1f021b8695",
+        "sourceCandidateIndex": 11,
+        "pitch": {
+          "medianErrorSemitones": 0.7728842094581264,
+          "contourErrorSemitones": 2.038858186212282,
+          "spanErrorSemitones": 37.46302032470703,
+          "directionMatches": true,
+          "activeFrameWithinOneSemitoneFraction": 0.5128205128205128
+        }
+      },
+      "firstFailingEligibilityReasons": {
+        "median_error": 14,
+        "active_fraction": 9,
+        "unreliable_candidate": 1
+      },
+      "acceptedCount": 9,
+      "bestAcceptedByObjective": {
+        "synth": "Bfxr",
+        "score": 3.7306292803514984,
+        "audioHash": "b171793e1d0e7a2e44552e6244c53fc326befbc4b7830247bbcdb403b56d90bd",
+        "sourceCandidateIndex": 11,
+        "pitch": {
+          "medianErrorSemitones": 0.5382093539937565,
+          "contourErrorSemitones": 1.4999742446562863,
+          "spanErrorSemitones": 18.70838165283203,
+          "directionMatches": true,
+          "activeFrameWithinOneSemitoneFraction": 0.5384615384615384
+        }
+      },
+      "bestAcceptedByContour": {
+        "synth": "Bfxr",
+        "score": 6.811071190289582,
+        "audioHash": "d5eb4085511dff1b1ecf103a257a9719b4b04f999d60bc125e1ab3b935e0b50f",
+        "sourceCandidateIndex": 0,
+        "pitch": {
+          "medianErrorSemitones": 0.06581573685597888,
+          "contourErrorSemitones": 1.319775699517476,
+          "spanErrorSemitones": 4.320045471191406,
+          "directionMatches": true,
+          "activeFrameWithinOneSemitoneFraction": 0.5384615384615384
+        }
+      },
+      "interpretation": "Accepted register adjustments do not repair the full moving contour. The exact previously preferred Bfxr sound remains selected; its partial adequacy label must not become a successful recreation label."
+    },
+    {
+      "source": "attack/battleStart.wav",
+      "baseline": {
+        "synth": "Bfxr",
+        "score": 4.349215134786989,
+        "audioHash": "8edefb894ad114c98a2318dc69367420d56bfeaa8dca77981d8387de45a2cf36",
+        "sourceCandidateIndex": 12,
+        "pitch": {
+          "medianErrorSemitones": 11.655638268042896,
+          "contourErrorSemitones": 11.509620406574347,
+          "spanErrorSemitones": 5.9751434326171875,
+          "directionMatches": false,
+          "activeFrameWithinOneSemitoneFraction": 0.0
+        }
+      },
+      "firstFailingEligibilityReasons": {
+        "unreliable_candidate": 11,
+        "median_error": 8,
+        "active_fraction": 3
+      },
+      "acceptedCount": 6,
+      "bestAcceptedByObjective": {
+        "synth": "Transfxr",
+        "score": 4.998454220840054,
+        "audioHash": "bd5bcb3656e09bfa0cc7aefc1819548f205188555c1e0c834c32b13bd8bd01e0",
+        "sourceCandidateIndex": 4,
+        "pitch": {
+          "medianErrorSemitones": 0.015538395633505016,
+          "contourErrorSemitones": 0.033410333522697976,
+          "spanErrorSemitones": 0.1116790771484375,
+          "directionMatches": true,
+          "activeFrameWithinOneSemitoneFraction": 0.43478260869565216
+        }
+      },
+      "bestAcceptedByContour": {
+        "synth": "Transfxr",
+        "score": 5.0446350026258315,
+        "audioHash": "9153896b19ec7f4f6622b24cd35b55231a37949c5804f7484e0d4bdfa99b320c",
+        "sourceCandidateIndex": 5,
+        "pitch": {
+          "medianErrorSemitones": 0.014175859583985994,
+          "contourErrorSemitones": 0.0325832621676275,
+          "spanErrorSemitones": 0.1119232177734375,
+          "directionMatches": true,
+          "activeFrameWithinOneSemitoneFraction": 0.43478260869565216
+        }
+      },
+      "interpretation": "Some adjusted Transfxr candidates match measured voiced pitch closely, but only about 43.5% of all target-active positions pass. Pitch correctness on voiced overlap and all-event coverage must be separated. No human evidence yet establishes whether the selector is too strict or rejects an audibly poor option correctly."
+    },
+    {
+      "source": "fall/Descending Fall Whistle.wav",
+      "baseline": {
+        "synth": "Transfxr",
+        "score": 0.9972608812355135,
+        "audioHash": "705fe198d00b6e84a0aa479a8ab5bf889d818507de3983be9afb6af80d73fa74",
+        "sourceCandidateIndex": 13,
+        "pitch": {
+          "medianErrorSemitones": 1.0340188393278262,
+          "contourErrorSemitones": 0.7565120492752011,
+          "spanErrorSemitones": 0.8533248901367188,
+          "directionMatches": true,
+          "activeFrameWithinOneSemitoneFraction": 0.6666666666666666
+        }
+      },
+      "firstFailingEligibilityReasons": {
+        "median_error": 19,
+        "active_fraction": 3,
+        "unreliable_candidate": 1,
+        "baseline_span_error": 1
+      },
+      "acceptedCount": 8,
+      "bestAcceptedByObjective": {
+        "synth": "Transfxr",
+        "score": 1.0353084097174508,
+        "audioHash": "52c90a1ec1e0653c152cc0c0e687ca0492903d6e4152fde6a255096c54f4f4aa",
+        "sourceCandidateIndex": 13,
+        "pitch": {
+          "medianErrorSemitones": 1.2941038922234498,
+          "contourErrorSemitones": 0.7269860662141313,
+          "spanErrorSemitones": 0.8921356201171875,
+          "directionMatches": true,
+          "activeFrameWithinOneSemitoneFraction": 0.7333333333333333
+        }
+      },
+      "bestAcceptedByContour": {
+        "synth": "Transfxr",
+        "score": 1.0353084097174508,
+        "audioHash": "52c90a1ec1e0653c152cc0c0e687ca0492903d6e4152fde6a255096c54f4f4aa",
+        "sourceCandidateIndex": 13,
+        "pitch": {
+          "medianErrorSemitones": 1.2941038922234498,
+          "contourErrorSemitones": 0.7269860662141313,
+          "spanErrorSemitones": 0.8921356201171875,
+          "directionMatches": true,
+          "activeFrameWithinOneSemitoneFraction": 0.7333333333333333
+        }
+      },
+      "interpretation": "The best adjusted Transfxr candidate retains falling direction and has small span error, but median error remains above one semitone and coverage remains just below 75%. A global register adjustment cannot independently fit slope, timing and envelope. Retain this near-boundary case without tuning thresholds to it."
+    }
+  ],
+  "nextDecision": "Use the published best/tie/none judgments and optional adequacy comments before treating metric gains as improvements. Then isolate temporal pitch shape versus envelope/coverage in fresh controlled renders; do not fit eligibility thresholds to these five targets."
+}
