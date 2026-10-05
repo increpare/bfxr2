@@ -1,0 +1,438 @@
+{
+  "complete": true,
+  "attempts": 8192,
+  "finalists": 16,
+  "rows": [
+    {
+      "name": "hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+      "arms": {
+        "single-soft": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 2.920041428400397,
+            "preference": 1.3557445270777833,
+            "legacy": 10.073735642823895
+          },
+          "sourceEnergyBeforeClipping": [
+            0.4365525580000884
+          ],
+          "weakerLayerDb": null,
+          "isolatedSourceScores": [
+            {
+              "synth": "Transfxr",
+              "soft": 2.920041428400397,
+              "preference": 1.3557445270777833,
+              "auditionHash": "86e791e246f2a166e2818e04ded6ee3a04e7c2d5d2b714133f23312b31b980ff"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        },
+        "single-preference": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 6.1308319830707525,
+            "preference": 0.8704179246076371,
+            "legacy": 13.519218106009138
+          },
+          "sourceEnergyBeforeClipping": [
+            0.5308182432629922
+          ],
+          "weakerLayerDb": null,
+          "isolatedSourceScores": [
+            {
+              "synth": "Transfxr",
+              "soft": 6.1308319830707525,
+              "preference": 0.8704179246076371,
+              "auditionHash": "2b90b865521bf91c174371febe93a99a10e9ffce5169d7138bc4e2f524e63510"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        },
+        "pair-soft": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 2.0536216898261186,
+            "preference": 1.6154527400573402,
+            "legacy": 9.136064213294226
+          },
+          "sourceEnergyBeforeClipping": [
+            2.587566122681723,
+            0.004388448710051403
+          ],
+          "weakerLayerDb": -27.705804296607866,
+          "isolatedSourceScores": [
+            {
+              "synth": "Transfxr",
+              "soft": 2.9911282302352253,
+              "preference": 1.554014540256125,
+              "auditionHash": "7885b86a1dc28add2a204a12244b582739bbb087a4e8810a69b4f65b98cd475f"
+            },
+            {
+              "synth": "Pluckr",
+              "soft": 6.102004274283132,
+              "preference": 2.5098868713160964,
+              "auditionHash": "aaa5e70c1ca07d7b8cebf810c4f62d11cf4bcaf52eee0e4ddf38c7c4588da1ac"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        },
+        "pair-preference": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 6.136333999464185,
+            "preference": 0.8631602608824941,
+            "legacy": 12.267779560884534
+          },
+          "sourceEnergyBeforeClipping": [
+            0.0793525456666422,
+            0.5677998620397166
+          ],
+          "weakerLayerDb": -8.546344189841237,
+          "isolatedSourceScores": [
+            {
+              "synth": "Transfxr",
+              "soft": 7.263177165340091,
+              "preference": 2.3240105250231418,
+              "auditionHash": "5ddecec3ea9a161d49089449098b418db3bb5bdd086f53cf5b3e4b29bb193fad"
+            },
+            {
+              "synth": "Transfxr",
+              "soft": 6.2382773790465995,
+              "preference": 0.9952268095220982,
+              "auditionHash": "d873c37cdfd8756a6717f81e3eeef977da1a16ad15b631c5de2e59b9adf18af4"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        }
+      }
+    },
+    {
+      "name": "door/doorClose_3.ogg",
+      "arms": {
+        "single-soft": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 2.7504950911320436,
+            "preference": 1.1635762109563168,
+            "legacy": 7.790212526626281
+          },
+          "sourceEnergyBeforeClipping": [
+            0.8530772348898032
+          ],
+          "weakerLayerDb": null,
+          "isolatedSourceScores": [
+            {
+              "synth": "Rustlr",
+              "soft": 2.7504950911320436,
+              "preference": 1.1635762109563168,
+              "auditionHash": "314e311f9e03e107fd58e18e0a9bb58d306a985cc18826987d2358cefbbff862"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        },
+        "single-preference": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 3.448113252646298,
+            "preference": 1.070307170712059,
+            "legacy": 10.466978526590559
+          },
+          "sourceEnergyBeforeClipping": [
+            15.505855511994318
+          ],
+          "weakerLayerDb": null,
+          "isolatedSourceScores": [
+            {
+              "synth": "Boomr",
+              "soft": 3.448113252646298,
+              "preference": 1.070307170712059,
+              "auditionHash": "d697390e473af8d76ecd8777fc5d10c7cb65c3097a3dc393356e1abbe411df60"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        },
+        "pair-soft": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 2.748105420026665,
+            "preference": 1.0862971462771216,
+            "legacy": 9.810744015213096
+          },
+          "sourceEnergyBeforeClipping": [
+            0.5137692633890352,
+            0.01234295621728597
+          ],
+          "weakerLayerDb": -16.193489302586098,
+          "isolatedSourceScores": [
+            {
+              "synth": "Rustlr",
+              "soft": 2.8752815316836,
+              "preference": 1.1317474582873803,
+              "auditionHash": "09200665dc61553e3d20aa00dc9ed668429615a6848f04ed17855f1d6945dfed"
+            },
+            {
+              "synth": "Rustlr",
+              "soft": 3.6975298801476084,
+              "preference": 1.4000026395936165,
+              "auditionHash": "d4bde12603a1f20f1372b3c2a0e4626b7bf92d42750fd1ad3f2b604984bf79d1"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        },
+        "pair-preference": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 3.503559947347994,
+            "preference": 0.9770024582653242,
+            "legacy": 9.590101559948451
+          },
+          "sourceEnergyBeforeClipping": [
+            6.491449779055676,
+            1.7304517602087146
+          ],
+          "weakerLayerDb": -5.741822045604122,
+          "isolatedSourceScores": [
+            {
+              "synth": "Boomr",
+              "soft": 3.3537624950678264,
+              "preference": 1.0423853348213297,
+              "auditionHash": "78470186f1a25f447ab0366af122e21abe3228af8d92b75f1cc076db0d83b7b6"
+            },
+            {
+              "synth": "Swarmr",
+              "soft": 4.144916548740701,
+              "preference": 1.4358496407857482,
+              "auditionHash": "7971ff27a9ef7110864a0b9ba612ab23d3c6abf99465535e82a38fead10a5f2a"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        }
+      }
+    },
+    {
+      "name": "laser/laser1.ogg",
+      "arms": {
+        "single-soft": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 2.9775630918202114,
+            "preference": 1.279216192539403,
+            "legacy": 11.036181986585285
+          },
+          "sourceEnergyBeforeClipping": [
+            131.76699522267975
+          ],
+          "weakerLayerDb": null,
+          "isolatedSourceScores": [
+            {
+              "synth": "Squishr",
+              "soft": 2.9775630918202114,
+              "preference": 1.279216192539403,
+              "auditionHash": "2df173d87b01c1ed7f9df11842db9c38a3682cebed43932073b1fcff3bf3fd37"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        },
+        "single-preference": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 3.869813679829195,
+            "preference": 0.6037161000450537,
+            "legacy": 12.824649867283565
+          },
+          "sourceEnergyBeforeClipping": [
+            6.114662843832194
+          ],
+          "weakerLayerDb": null,
+          "isolatedSourceScores": [
+            {
+              "synth": "Boomr",
+              "soft": 3.869813679829195,
+              "preference": 0.6037161000450537,
+              "auditionHash": "a6bae7fd46f6e1ac5e3e82c8aed9147d68df5fcb938bbd5ccf33009c7c151664"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        },
+        "pair-soft": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 2.8057003905127815,
+            "preference": 1.0505849169015664,
+            "legacy": 15.574693385505944
+          },
+          "sourceEnergyBeforeClipping": [
+            90.78444852098575,
+            3.579725657438743
+          ],
+          "weakerLayerDb": -14.04161715241215,
+          "isolatedSourceScores": [
+            {
+              "synth": "Squishr",
+              "soft": 3.0924778969491316,
+              "preference": 1.305833715926711,
+              "auditionHash": "55e5f2ea8b798ebed093271e85fb95574850d136388c171f8689fc9bd130cdcd"
+            },
+            {
+              "synth": "Jinglr",
+              "soft": 4.1162723097101175,
+              "preference": 1.1131971949262913,
+              "auditionHash": "6d358bdeef41e144c3a8890a019c5e5eb628a2d52445779b167ffe2209775305"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        },
+        "pair-preference": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 3.051019241985449,
+            "preference": 0.49616928449100794,
+            "legacy": 13.817461505723152
+          },
+          "sourceEnergyBeforeClipping": [
+            4.0460956562437165,
+            7.009314697591411
+          ],
+          "weakerLayerDb": -2.386394129848051,
+          "isolatedSourceScores": [
+            {
+              "synth": "Boomr",
+              "soft": 3.46556365389503,
+              "preference": 0.8314750610725494,
+              "auditionHash": "a287deb9123eed034dae26278ac0926c025a3c8e4308d22bcb9d41e2cfe66d28"
+            },
+            {
+              "synth": "Transfxr",
+              "soft": 5.200774289532014,
+              "preference": 1.085495517753427,
+              "auditionHash": "7bc22f542db48f331803e9b28dde4b533afbab337011e95441aa0a56d2872490"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        }
+      }
+    },
+    {
+      "name": "clothes/cloth4.ogg",
+      "arms": {
+        "single-soft": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 2.0475854641963194,
+            "preference": 0.7601881379870826,
+            "legacy": 1.1408048725892257
+          },
+          "sourceEnergyBeforeClipping": [
+            0.7282607931444594
+          ],
+          "weakerLayerDb": null,
+          "isolatedSourceScores": [
+            {
+              "synth": "Rustlr",
+              "soft": 2.0475854641963194,
+              "preference": 0.7601881379870826,
+              "auditionHash": "7ce5665708445153384aa1f3e4d64bbd83624779cd0a87904d3b61455beed67e"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        },
+        "single-preference": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 2.672621476657846,
+            "preference": 0.6169017456100796,
+            "legacy": 1.4315253019408962
+          },
+          "sourceEnergyBeforeClipping": [
+            41.27674876098665
+          ],
+          "weakerLayerDb": null,
+          "isolatedSourceScores": [
+            {
+              "synth": "Boomr",
+              "soft": 2.672621476657846,
+              "preference": 0.6169017456100796,
+              "auditionHash": "bcea8ce19f9fde074691ed5dbc6bc40f596e1f52a656727635aa06d0042886e2"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        },
+        "pair-soft": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 1.9942225696982443,
+            "preference": 0.7637816035768182,
+            "legacy": 1.0629108192862569
+          },
+          "sourceEnergyBeforeClipping": [
+            0.4745585314199097,
+            0.008545456111350215
+          ],
+          "weakerLayerDb": -17.445545373494223,
+          "isolatedSourceScores": [
+            {
+              "synth": "Rustlr",
+              "soft": 2.0496980336814246,
+              "preference": 0.7690238132621485,
+              "auditionHash": "ab292f2784226122ce8f5d2030e1a984ab695153b1733642117542dfdc3f0e61"
+            },
+            {
+              "synth": "Rustlr",
+              "soft": 5.2850798287083345,
+              "preference": 0.8368547245448388,
+              "auditionHash": "4155a7a6d37ed4b20b6ae865bada4836bdf49a1b274f4d7d29f92767ffb7d031"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        },
+        "pair-preference": {
+          "nativeReplay": true,
+          "scoreReplay": true,
+          "scores": {
+            "soft": 2.5768276394904666,
+            "preference": 0.530291924851388,
+            "legacy": 1.3973070742190892
+          },
+          "sourceEnergyBeforeClipping": [
+            1.1723130492369023,
+            1.2871480971367726
+          ],
+          "weakerLayerDb": -0.4058491975948319,
+          "isolatedSourceScores": [
+            {
+              "synth": "Boomr",
+              "soft": 2.8331568659030646,
+              "preference": 0.8432015669790967,
+              "auditionHash": "7ac122d3f7871d1ef913d06900221823cae1567d536f0c85aaa22d95df01ac28"
+            },
+            {
+              "synth": "Rustlr",
+              "soft": 2.6600238475534654,
+              "preference": 0.800294235136519,
+              "auditionHash": "d703d5a212d38515a88fc4c156de8fd0a0720df79030be35d23b185cd094ac5f"
+            }
+          ],
+          "meaning": "Energy diagnostic only; coherent interference, masking and audibility are not inferred."
+        }
+      }
+    }
+  ],
+  "scriptSha256": "86bd16526c73c76729a57d5bd57dcfdcb2442452cf27b24fa8ba51b01031f962",
+  "reportSha256": "7eb47f578c9fd6a227495cd4a39b8d609f3493e962b0ab844bd188a4a4c8b3d6",
+  "protocolSha256": "7ee470a5870a62f3fc01c27bd4ff7bb926908767427c38381005aa82b54503b0"
+}

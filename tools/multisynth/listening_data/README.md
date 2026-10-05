@@ -55,6 +55,24 @@ external generalization.
 | `2026-10-06-squishr-v1-quick-02/` | 10 | 21 |
 | `2026-10-06-off-model-transfer-v1-quick-01/` | 5 | 15 |
 | `2026-10-06-off-model-transfer-v1-quick-02/` | 8 | 24 |
+| `2026-10-06-mixr-transfer-v1-quick-01/` | 4 | 11 |
+
+The twenty-first archive contains all four Mixr composition trials, with all
+11 candidates recorded as heard. The two-source hit/pat wins but is **least-bad**;
+door rejects all three options; laser ties all three as **least-bad**; cloth
+ties all three as **similar**. There are no very-close recreations. The one
+strict heard pair favors the hit mixture: legacy score agrees, soft-periodicity
+and frozen preference scores disagree. Ties do not supply strict preferences.
+Ten candidate-scoped labels survive: four least-bad, three similar, three
+not-close. No numerical ratings are inferred.
+
+The exact earlier laser receives none-close in the preceding session and
+least-bad in this tie. Both judgments remain intact; unchanged audio did not
+improve. These are repeated external development comparisons. The next bounded
+experiment co-adapts both source patches and gives single-source controls the
+same mutation budget; merely mixing frozen whole-sound predictions did not
+produce convincing transfer. See the
+[composition human review](../evaluations/mixr-transfer-v1-quick-01-human-review.json).
 
 The twentieth archive completes the external batch. The first five targets are
 unchanged from the partial export. Original Bfxr coin wins and is **very-close**;

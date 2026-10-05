@@ -1,0 +1,179 @@
+{
+  "complete": true,
+  "experimentId": "429b898ab5c16a77fb830bedc36901a0d8fb5b4599b382d72df9c7b361e50cae",
+  "checks": [
+    {
+      "file": "index.html",
+      "sha256": "f1a30ead99c65980197e1b04dc57aa3e4042e331422c34b4c78597dcf331d86a",
+      "bytes": 173178
+    },
+    {
+      "file": "results.json",
+      "sha256": "e596133ba211371b80e5672e1ea368627802d049697e03fff10765e94f82c0d0",
+      "bytes": 104250
+    },
+    {
+      "file": "001/pair.wav",
+      "sha256": "2a74af6e586e738efda2ea6ac2c7bdec42b02b4e146c043fafb21350fe9b4e45",
+      "bytes": 441044
+    },
+    {
+      "file": "001/previous.wav",
+      "sha256": "eb23174f5df3d75f30f94cbfebcaaff41fd8c80a902b9e4d89e6ba420561ba25",
+      "bytes": 181158
+    },
+    {
+      "file": "001/single.wav",
+      "sha256": "fd14077741f495af2b6ab198e89d14dddbd15dd8af190caf4dd90cc4c930691f",
+      "bytes": 48778
+    },
+    {
+      "file": "001/target.wav",
+      "sha256": "a4379a7c998e2e6015729cdb2c36f1d452e5566f5300e2e82d6d18b34596c986",
+      "bytes": 31796
+    },
+    {
+      "file": "002/pair.wav",
+      "sha256": "7f7e66160ec2d4295fa413ea61534a5ed9ffbbba27001e59c6f65b2ae4d8039b",
+      "bytes": 64712
+    },
+    {
+      "file": "002/previous.wav",
+      "sha256": "a6e00fe65ee1c7323bc596b7a430c410c92ff408e046385f5e966494760d899f",
+      "bytes": 64712
+    },
+    {
+      "file": "002/single.wav",
+      "sha256": "5beae54e5f8793daecbed49c610c324aa8f2859456422b1c70ecc4753ff5fc98",
+      "bytes": 64712
+    },
+    {
+      "file": "002/target.wav",
+      "sha256": "0f9d5430e7bfa5c0d84dcffda1b0ab0b72cda8f28f6fad4da53304482ade2482",
+      "bytes": 63014
+    },
+    {
+      "file": "003/pair.wav",
+      "sha256": "747f8d1c62aa33e7385aa7c049f3e31eef6a29629ee43f6409d0e9f011205aec",
+      "bytes": 126482
+    },
+    {
+      "file": "003/previous.wav",
+      "sha256": "782cf993677f054e92d69b37e119e0b55665540834ccbd7132f4648db30d8e1b",
+      "bytes": 83508
+    },
+    {
+      "file": "003/single.wav",
+      "sha256": "2f6b3eed8d5fb8cae68ae60cffd927e2efd354837b6c4328d171ec3757aea220",
+      "bytes": 84934
+    },
+    {
+      "file": "003/target.wav",
+      "sha256": "1860d14de1b4283cd52e8f367bee9581651efb397fe1d4fd88e1d241afcad695",
+      "bytes": 83834
+    },
+    {
+      "file": "004/pair.wav",
+      "sha256": "a0c2878855ac5a0130915031db45cb2b31e4ab1fade8299b681a1f3515d0d3f4",
+      "bytes": 38736
+    },
+    {
+      "file": "004/previous.wav",
+      "sha256": "73937802402b5d78acf1ed4af07eb743580884a5518949d130bc9efee3ab49eb",
+      "bytes": 38736
+    },
+    {
+      "file": "004/single.wav",
+      "sha256": "90dddb41f5199d7641c9950aa751d46f628dda5cffaab9d36d237f1252fb08c5",
+      "bytes": 38736
+    },
+    {
+      "file": "004/target.wav",
+      "sha256": "0b52048821d5cd6009320da469868d7b82785714e8567ecbfe391b1214b113cc",
+      "bytes": 33944
+    },
+    {
+      "file": "005/pair.wav",
+      "sha256": "0646019431c6b30a462af12ff74d8b7173bcc6cfead6d90e311ec2712973d552",
+      "bytes": 54540
+    },
+    {
+      "file": "005/previous.wav",
+      "sha256": "eb23174f5df3d75f30f94cbfebcaaff41fd8c80a902b9e4d89e6ba420561ba25",
+      "bytes": 181158
+    },
+    {
+      "file": "005/single.wav",
+      "sha256": "a036f514b80b7ef21ec03d5a9ccc7c8dd6ac62c6a1b606ad4b67a1ca5ee85079",
+      "bytes": 47854
+    },
+    {
+      "file": "005/target.wav",
+      "sha256": "a4379a7c998e2e6015729cdb2c36f1d452e5566f5300e2e82d6d18b34596c986",
+      "bytes": 31796
+    },
+    {
+      "file": "006/pair.wav",
+      "sha256": "e30369e11185c2040dc3d17b0397305c533b180c95c417019c42ccb006b7dd0b",
+      "bytes": 69816
+    },
+    {
+      "file": "006/previous.wav",
+      "sha256": "a6e00fe65ee1c7323bc596b7a430c410c92ff408e046385f5e966494760d899f",
+      "bytes": 64712
+    },
+    {
+      "file": "006/single.wav",
+      "sha256": "408d4480944eefa794bd811e3c76765fc0dcda34afe224d0de9696186d5303d9",
+      "bytes": 69816
+    },
+    {
+      "file": "006/target.wav",
+      "sha256": "0f9d5430e7bfa5c0d84dcffda1b0ab0b72cda8f28f6fad4da53304482ade2482",
+      "bytes": 63014
+    },
+    {
+      "file": "007/pair.wav",
+      "sha256": "9658b6da419c2b926dfba5dc043b38ab7ab1bbbd41cd30bf5d6a744d3db38196",
+      "bytes": 83344
+    },
+    {
+      "file": "007/previous.wav",
+      "sha256": "782cf993677f054e92d69b37e119e0b55665540834ccbd7132f4648db30d8e1b",
+      "bytes": 83508
+    },
+    {
+      "file": "007/single.wav",
+      "sha256": "413bca43cac1ac4215b1c5d1cdb5b794ceed1a82f386b4b71f81a7e3cd2a93fe",
+      "bytes": 83344
+    },
+    {
+      "file": "007/target.wav",
+      "sha256": "1860d14de1b4283cd52e8f367bee9581651efb397fe1d4fd88e1d241afcad695",
+      "bytes": 83834
+    },
+    {
+      "file": "008/pair.wav",
+      "sha256": "463562b603ec3fc4f2677e1d77a6c86314546814c6eda4ee4d1736e8a16c06b1",
+      "bytes": 36116
+    },
+    {
+      "file": "008/previous.wav",
+      "sha256": "73937802402b5d78acf1ed4af07eb743580884a5518949d130bc9efee3ab49eb",
+      "bytes": 38736
+    },
+    {
+      "file": "008/single.wav",
+      "sha256": "2ae5e26d62f845220c2b6ce877e3997441182e79baec67f0a8fd0f588b6833c2",
+      "bytes": 36116
+    },
+    {
+      "file": "008/target.wav",
+      "sha256": "0b52048821d5cd6009320da469868d7b82785714e8567ecbfe391b1214b113cc",
+      "bytes": 33944
+    }
+  ],
+  "baseUrl": "http://127.0.0.1:8765/tools/multisynth/runs/mixr-joint-v1-listening/",
+  "listeningAuditSha256": "5ff00100f9cf1d7bc3a784b9ec4c1f5cb95d3313bad2d385c16f0c29fd7c000a",
+  "scriptSha256": "c7bf95be79e560901742f2a8a6f26e7bcd04cffca5011fdf146d297ef53191a9"
+}

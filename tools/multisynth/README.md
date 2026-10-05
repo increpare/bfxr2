@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All twenty feedback archives,
+do not establish general success on real recordings. All twenty-one feedback archives,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
@@ -81,6 +81,52 @@ adequacy questions. See the [protocol](evaluations/mixr-transfer-v1-protocol.jso
 [numerical results](evaluations/mixr-transfer-v1-evaluation.json),
 [audio replay receipt](evaluations/mixr-transfer-v1-listening-audit.json), and
 [served-file verification](evaluations/mixr-transfer-v1-http-audit.json).
+
+The [complete Mixr human feedback](evaluations/mixr-transfer-v1-quick-01-human-review.json)
+finds **no very-close recreation**: two-source hit wins but is least-bad; door
+remains none-close; laser ties as least-bad and cloth ties as similar. All eleven
+options were heard. The sole strict pair favors the mixture despite worse soft
+and frozen-preference scores; legacy agrees. This does not validate either
+composition adequacy or the newer scorers. Preserve the relative win separately
+from the failed absolute quality check.
+
+
+The [joint-fitting page](runs/mixr-joint-v1-listening/index.html) now tests source
+co-adaptation: four external development references, two frozen scorers, and
+single/pair arms with four starts and 512 mutation attempts apiece. All 8,192
+attempts completed without failed renders. Every one of the 16 finalists replays
+exactly through native Mixr and reproduces its audition scores. The eight quick
+trials retain exact earlier audio and both newly fitted options, three per trial.
+No neural checkpoint was retrained and none of these fits is an approved teacher.
+
+| Reference | Soft single | Soft pair | Preference single | Preference pair |
+| --- | ---: | ---: | ---: | ---: |
+| Hit/pat | 2.9200 | 2.0536 | 0.8704 | 0.8632 |
+| Door | 2.7505 | 2.7481 | 1.0703 | 0.9770 |
+| Laser | 2.9776 | 2.8057 | 0.6037 | 0.4962 |
+| Cloth | 2.0476 | 1.9942 | 0.6169 | 0.5303 |
+
+Lower is better within each scorer; the two score scales are not comparable.
+All pairs beat their single control numerically, sometimes by tiny margins.
+Different starting patches and extra parameters remain confounds: this is not
+an isolated causal test of layering. The soft hit pair's weaker source is about
+28 dB below the stronger source by energy, so two stored voices do not prove two
+perceptually important components. The post-run audit also scores each fitted
+source alone; it does not change selection or establish audible improvement.
+Only listening can establish likeness. References have already been judged and
+are not an unseen test set.
+
+See the [frozen protocol](evaluations/mixr-joint-v1-protocol.json),
+[search results](evaluations/mixr-joint-v1-evaluation.json),
+[native replay and source ablation](evaluations/mixr-joint-v1-replay-audit.json),
+and [HTTP verification](evaluations/mixr-joint-v1-http-audit.json).
+A partial first attempt was stopped when review found missing scorer dependency
+bindings, a missing frozen-protocol check and a missing gallery PCM recheck. Its
+protocol and executed script remain in ignored `runs/mixr-joint-v1-interrupted-01`;
+the published run was restarted from the corrected protocol. The corrections
+passed independent review. Five joint-search tests, 44 feedback tests and five
+native composition tests passed; all 34 served page/audio assets match local
+hashes. No user choices or audition telemetry were fabricated during verification.
 
 The earlier [specialist experiment](evaluations/specialists-v1-plan.json) trains
 independent Boomr and Footsteppr models on 12,288 examples each. The older shared

@@ -1,0 +1,205 @@
+{
+  "complete": true,
+  "inventory": {
+    "ok": true,
+    "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+    "baseSourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+    "sampleRate": 44100,
+    "sources": [
+      "Bfxr",
+      "Transfxr",
+      "Birdr",
+      "Boomr",
+      "Bouncr",
+      "Breathr",
+      "Choirr",
+      "Clonkr",
+      "Crittr",
+      "Fractr",
+      "Glitchr",
+      "Holor",
+      "Jinglr",
+      "Machinr",
+      "Notifr",
+      "Pewpr",
+      "Pluckr",
+      "Pulser",
+      "Riftr",
+      "Rollr",
+      "Rumblr",
+      "Rustlr",
+      "Signlr",
+      "Squishr",
+      "Swarmr",
+      "Tappr",
+      "Tickr",
+      "Weathr",
+      "Whooshr",
+      "Zappr"
+    ],
+    "dependencies": {
+      "tools/render/composition_context.js": "7bae1d1d6cbdc91b855b22cb0325701845df9835fe9d14a02fa571cb20e35eba",
+      "tools/render/composition_worker.js": "56664b7b33175eb962b4dbb6b9ad5c805847f9224d4a0562bb78f59acf5102ac",
+      "tools/multisynth/composition.py": "8b8b25d8152c63001b4c79f19da208be15ef4db9b13ee3e4c498431a25fd1fd5",
+      "tests/helpers/synth-context.js": "537f3a32b720ca359391bc32b9d4c8a8496840e94769cb3b6a55c81908654364",
+      "js/audio/Stackr_DSP.js": "419ddd4ee2155888bf2ecd0ac7e8a6460d47c691d907f3bb3ab0da18e047795d",
+      "js/synths/Stackr.js": "2174d51cc1d8a618c374ee5484db56ca89073f7596b131a9abc3883b5c2db601",
+      "js/audio/Mixr_DSP.js": "219cf10c4d3ec98ca16c1961852abf00bb678bab971d6712352eb01b6c2248d1",
+      "js/synths/Mixr.js": "9c00506f665f419732314aa7cdea1e7c6f3eae295dcb79c9a5011fdec7db7563"
+    },
+    "excluded": [
+      {
+        "name": "Footsteppr",
+        "reason": "Separate PureData host is not loaded in this first composition bridge."
+      }
+    ],
+    "seedPolicy": "Actual Stackr.render_source and SoundDSP.rng; source renderSeed in [0,1]."
+  },
+  "bindings": {
+    "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/evaluations/mixr-joint-v1.py": "bf6c8d29ad50c6ebb00af7e41ebbcb6da82c4364e9656b2c38b31f621daf6273",
+    "tools/multisynth/joint_refine.py": "0448fb20f49eaa555419e563da3b8f40560c369fafa904efa12f1fff868ae741",
+    "tools/multisynth/search.py": "fcc4d6e93628e128d78d6fb8b0f9b53ad210705e982387003e8b78e0ae30a1b2",
+    "tools/multisynth/soft_periodicity.py": "3ade081f6b3700ff254a9428d91fedd54da793f5904fd9b9948fc66b18a4dbfd",
+    "tools/multisynth/preference.py": "37377ef14673d60ddae4cc8a0a64f8e580a0044b7eba93a6d01f3d4bf07531cb",
+    "tools/multisynth/features.py": "7553a92b0caeb442b2f693752c0a94f788479e47cfc5a9d4a37dab893f3ab91c",
+    "tools/multisynth/gesture.py": "407d5a21571aba977f124f4dd3425f9538f27f0001348ff70f46f908866d9207",
+    "tools/multisynth/renderer.py": "a64863bbd4d104ef1ee36d49d5973de9dc2a8998298ae4f4d12b2d11c1ad28b0",
+    "tools/match/structure.py": "1fef062dcd488b6a2f52c0fcdb03921296770972235253fe7a2b876e183d5aa2",
+    "tools/match/objective.py": "ea3768c5ff641f68e398a7a39f902345f5f3a1a69277b66f8df556f7eeb2278e",
+    "tools/match/features.py": "dc8d2c049f9940215387d2f2500cfa0dbdd2a5b27e07eced41f16fc69cba6859",
+    "tools/match/audio.py": "90bd5aa0dd1e885f0cdd1057e2a0d9c06c25bcf7584e8e7ab92fd5edeb14fa52",
+    "tools/neural_invert/experiment.py": "07bb2ead5eff152991c28e3725efd54764cfb8a9f306cc3a94ec4c2740af4d36"
+  },
+  "priorReportSha256": "02635865ee7b02292ccd03e3959a0c6e6712866e2de9666ef0b9026c1565624e",
+  "archiveManifestSha256": "9bfa8e5e98ca3f87fec5d5db3a99d6c97b0f33014aa66001393d2c70f93d55bd",
+  "metricSha256": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+  "planSha256": "187d8fc9c0c434781086966f29993f600f599f796251f4bc091c1284d9c0a393",
+  "budgetPerArm": 512,
+  "seed": 20261019,
+  "scope": "Repeated external development cases. Actual DSP search, not neural retraining. Equal mutation attempts and four starts per arm; not equal capacity, prior search cost or wall time. Source identities/seeds fixed; controls co-adapt; no delay or reference waveform layers.",
+  "selection": "Eight trials: four references per scorer, each with exact earlier control and that scorer single/pair winners. Exact audition duplicates removed; no outcome-based target exclusion.",
+  "protocolSha256": "7ee470a5870a62f3fc01c27bd4ff7bb926908767427c38381005aa82b54503b0",
+  "specsSha256": "94d7e4beeb6beb2b29bec0f06d9788d241fc2c8a68bbe488d0c22adb59cc1336",
+  "targets": [
+    {
+      "name": "hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+      "retained": "20559a4b3f3697c5a1a97b43a721e266de653bc0338e9f6d9dde1388cabf46af",
+      "starts": {
+        "single-soft": [
+          "21b3ab2b9d61b939a8573738fc634e191d8b168c542545699180489273836dc3",
+          "530f3e82d8e911194ef8de628c7395f1160179ee91921383b640d9a91f406bbf",
+          "caaf6d03e72e0268ba0d9834a91b46efb88bf8d716bf17c070d178e8c870c1de",
+          "8df12bef61bb5b5291b0cda4cff001838975fae307e9fbfa367147e9122cdada"
+        ],
+        "single-preference": [
+          "a58c5678d87384549d4b21a4ed1ed9f079da9e7e2bdf52dc53c0fddf948edd0c",
+          "0c727420f26d77b28268b11acd6375edb3541d7774fb57e60f67bfe395156563",
+          "caaf6d03e72e0268ba0d9834a91b46efb88bf8d716bf17c070d178e8c870c1de",
+          "dceb0ab07af80258752f7bc9c623528f0bd1502d37732ecd7254133db1f6f379"
+        ],
+        "pair-soft": [
+          "0379f64e6db34cb551eed076d316b14ea2c5d5ebe5b26433d22d413defa3d1fc",
+          "44ad24fb00ecdbcd43e3361c5572ee0b06e272a0661760b4196786a39d8fd2b4",
+          "c8381e3cbaee6b0ecc9e128bdb336389ac8bd2e6fba6a5c50f602bf3dbee41c0",
+          "e9877ec260e39fd689ea8469e8b236f874fbad2874c6ef91b9ccf5d6069b0c9e"
+        ],
+        "pair-preference": [
+          "45adb59a0b3aee54402e4b18880384da6ea697c64feb1dd286de8749e4dd3514",
+          "b1bb4b49191492121da3c5e86824c96054732c8056417d486c7738630edb4641",
+          "373b0242564b4f0cc2576069c8e7a236cc59c174c6bddb648f227aa73b2bdfc6",
+          "1d1ab2bb0a2871d5d995200def693c4a100a9ad6ce3d6c904d3138b126d205f2"
+        ]
+      }
+    },
+    {
+      "name": "door/doorClose_3.ogg",
+      "retained": "37e429a3e35fc1b7154c3bb8d98a6460cd9fd071e658440a5b4f553fcede9ede",
+      "starts": {
+        "single-soft": [
+          "1d4785b88e29571ae08d2a728aa7b22b565705c849ce23dbbde43ce5adc49730",
+          "66998a6c254cd32b12f39fd7f1202da0eb14572bf3662fb87975f7f379944c74",
+          "72b432a3b59db74eeab421907f0e4d8c6fed92cb3e16b739fbff8cd008b692e6",
+          "a25a52b0898531e6cf1f57d09644d505ab0070f04d0e43e2b702a45c3227d447"
+        ],
+        "single-preference": [
+          "3c08bdbcecf24bd07fc69ad743aeb2800c7aa534d236688aa46f0a3411500a40",
+          "b516e327409ff4a61f0a0d5e1baaf68b5e0fea4f7704c19ff11952c295fa48e9",
+          "a25a52b0898531e6cf1f57d09644d505ab0070f04d0e43e2b702a45c3227d447",
+          "72b432a3b59db74eeab421907f0e4d8c6fed92cb3e16b739fbff8cd008b692e6"
+        ],
+        "pair-soft": [
+          "95510b100988e7ddd9d1c5195edc834ac5c2bff15d400a63da6ead9d4e0aee53",
+          "045601dbc3bb1e96fa869710ce6ac59f93715494fded18ae01dc038b01301510",
+          "faeb446fccdd61e5e9c3c4051a51e84a47b99efdf6cbaa4259b045b367eac69f",
+          "72594537a64d851a35cd4719299af80569421d9d987050971882b9b22ff55558"
+        ],
+        "pair-preference": [
+          "e206ae4d7c69057cbaf7f933e549f7a112b9ab42fe5fbd3d3a96aad5dc17aaa1",
+          "0ea5f1a6a7f194cc0f526ff45910ffc3a7e23be2296fde0e48226e8e71172313",
+          "b73f2bbbe92ff78058bec43bb4ab5617de912161fe7a29d48dd65152f1f24ba8",
+          "cb66e51f4b15c935da2492185687c76d0de166ff963e91c6e999e23e38850718"
+        ]
+      }
+    },
+    {
+      "name": "laser/laser1.ogg",
+      "retained": "142cea3e76ed5a932d5305e459677b6578ab06f6026eac0fbf72cbb7782fea1d",
+      "starts": {
+        "single-soft": [
+          "6c31fb7cd0e5e3c824e316b1cfc40ed7767cb3f18d49ecb90e439466ae40e940",
+          "052c3ae9e502b271a3604465a6d33970a3700ef3885f8cf4f2cfe52e9393a49c",
+          "f15b0af9ed8feb6f46da262ba98aad37935e25aefeae0eee882c5444b1fcfe44",
+          "5ce4d9cdddff00335a82db85b6a71ebdf24b250859b276d4c9285910f03fe40d"
+        ],
+        "single-preference": [
+          "5ce4d9cdddff00335a82db85b6a71ebdf24b250859b276d4c9285910f03fe40d",
+          "e454a69379ab377dc7d95c17caf04df8c00469e0f28f475194e9355cbf80c0ff",
+          "764d1d8a441571cebb63d770b557b3f64b87fd14aa3c74064306f5057dbfff09",
+          "885f9b38597ea6f03da4492419aac50fc5a0400c311b3aba0c4d1db7edae3afd"
+        ],
+        "pair-soft": [
+          "682ce115b3d714d2c371472c77fc3455975d42b0bbebbeed2dcf6e5ae397423b",
+          "7b450944afd52a28a04b15eaf4af4f5eea7bf12398088af5712564191c0afa31",
+          "66fddabf926614e5192bc62bdc8eb169885bf4c241594685d5abc4cd148d7e63",
+          "7d529601674940474cebdc3d9378f81f3c23935a008003122b41187ada58d0e2"
+        ],
+        "pair-preference": [
+          "107ecc40b461e5ae00ac417e2290e1181a9b43cb555981c13ad2e17c1c51c820",
+          "3a1755146abfb4ecd6feb6d06330db9967d860dc9761be093ed24e1fed823f4b",
+          "b05aa9338d167d8e7fc8450fc050368c541fcc258a7fced5f6adf4b642a28a87",
+          "fdc589319cb26fd4fbf387a5e8eaffd0f5f9a5f72e785ea0ecac89fa295ef11f"
+        ]
+      }
+    },
+    {
+      "name": "clothes/cloth4.ogg",
+      "retained": "689dea033abd473e6c1de5ca9cca964a78bfa6dea627fda21561bb4c5a55b74c",
+      "starts": {
+        "single-soft": [
+          "1dd7dd3984a74fd9a34a1c38018a0f3b16655727e0c1ad4d5c1284218efd1809",
+          "14c48fb9cd004cda85000118d02522f628acd19b61321625b7a8b9b6bb402a35",
+          "e38e95eec49035c9d53c743992d2889fab2a83f15100d85c783ae132ef0ab3a9",
+          "78db2ae76aeb9972a2c34b519d9f4daec7119e77480c69915e093399461393a7"
+        ],
+        "single-preference": [
+          "14c48fb9cd004cda85000118d02522f628acd19b61321625b7a8b9b6bb402a35",
+          "e38e95eec49035c9d53c743992d2889fab2a83f15100d85c783ae132ef0ab3a9",
+          "1dd7dd3984a74fd9a34a1c38018a0f3b16655727e0c1ad4d5c1284218efd1809",
+          "b487be92775ecb65bd77834c26527931e967acdc2bb5901ef35d09fbaba7fd3e"
+        ],
+        "pair-soft": [
+          "dffddfc81861a245f94ad535c19a9ab55a45b570ee58ad22bd984f6fff11db55",
+          "1364618e295c03df2a2fdcffce512f0df1ee303210896b26894ebd3c2678b664",
+          "459deaf2ccd26d84fd7f3b2da3ee655f9d3a17d6944fbe7d312c217e34b10d1a",
+          "03790679debad0d5584896865a0451a0656ec7c673bb5c9c895e71e06a79b9c4"
+        ],
+        "pair-preference": [
+          "8896bc7a69aeea13cd4ec08a1e5db312ec6d0ecf2c6fde0d9441713bc4e07f0d",
+          "160f4195bb3ddbac6aee67a1eb2ff9f88a1c5c1f4e80652f1cc575d101d47483",
+          "29a21b70e82235f4db7e6c9c46271ee436724ca7608dbf8c6189fe1807bbd76d",
+          "cdd736a2b688c0c6343b140d4214e41608f8ae88ecd06e2b29a923e2c6506c68"
+        ]
+      }
+    }
+  ]
+}

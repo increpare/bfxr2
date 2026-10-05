@@ -1,0 +1,312 @@
+{
+  "complete": true,
+  "protocolSha256": "7ee470a5870a62f3fc01c27bd4ff7bb926908767427c38381005aa82b54503b0",
+  "reportSha256": "7eb47f578c9fd6a227495cd4a39b8d609f3493e962b0ab844bd188a4a4c8b3d6",
+  "scope": "Repeated external development cases. Actual DSP search, not neural retraining. Equal mutation attempts and four starts per arm; not equal capacity, prior search cost or wall time. Source identities/seeds fixed; controls co-adapt; no delay or reference waveform layers.",
+  "rows": [
+    {
+      "name": "hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+      "seconds": 275.0634093750268,
+      "arms": {
+        "single-soft": {
+          "initialScore": 3.248915364809788,
+          "score": 2.920041428400397,
+          "scores": {
+            "soft": 2.920041428400397,
+            "preference": 1.3557445270777833,
+            "legacy": 10.073735642823895
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "86e791e246f2a166e2818e04ded6ee3a04e7c2d5d2b714133f23312b31b980ff",
+          "sourceSynths": [
+            "Transfxr"
+          ]
+        },
+        "single-preference": {
+          "initialScore": 1.0094847234048658,
+          "score": 0.8704179246076371,
+          "scores": {
+            "soft": 6.1308319830707525,
+            "preference": 0.8704179246076371,
+            "legacy": 13.519218106009138
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "2b90b865521bf91c174371febe93a99a10e9ffce5169d7138bc4e2f524e63510",
+          "sourceSynths": [
+            "Transfxr"
+          ]
+        },
+        "pair-soft": {
+          "initialScore": 3.4197353193826343,
+          "score": 2.0536216898261186,
+          "scores": {
+            "soft": 2.0536216898261186,
+            "preference": 1.6154527400573402,
+            "legacy": 9.136064213294226
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "c32c6f747b2836b4bd71d565231418a66c1bb4ecb866bda5ef13ee5add0f136a",
+          "sourceSynths": [
+            "Transfxr",
+            "Pluckr"
+          ]
+        },
+        "pair-preference": {
+          "initialScore": 1.0008736506449634,
+          "score": 0.8631602608824941,
+          "scores": {
+            "soft": 6.136333999464185,
+            "preference": 0.8631602608824941,
+            "legacy": 12.267779560884534
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "02e7cbc609cd2281d9c4dacd01da285b777ea7741bbe773a8edeb7936ed9a802",
+          "sourceSynths": [
+            "Transfxr",
+            "Transfxr"
+          ]
+        }
+      }
+    },
+    {
+      "name": "door/doorClose_3.ogg",
+      "seconds": 173.85902991588227,
+      "arms": {
+        "single-soft": {
+          "initialScore": 2.914009620266942,
+          "score": 2.7504950911320436,
+          "scores": {
+            "soft": 2.7504950911320436,
+            "preference": 1.1635762109563168,
+            "legacy": 7.790212526626281
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "314e311f9e03e107fd58e18e0a9bb58d306a985cc18826987d2358cefbbff862",
+          "sourceSynths": [
+            "Rustlr"
+          ]
+        },
+        "single-preference": {
+          "initialScore": 1.0763243917297487,
+          "score": 1.070307170712059,
+          "scores": {
+            "soft": 3.448113252646298,
+            "preference": 1.070307170712059,
+            "legacy": 10.466978526590559
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "d697390e473af8d76ecd8777fc5d10c7cb65c3097a3dc393356e1abbe411df60",
+          "sourceSynths": [
+            "Boomr"
+          ]
+        },
+        "pair-soft": {
+          "initialScore": 2.9294617904057527,
+          "score": 2.748105420026665,
+          "scores": {
+            "soft": 2.748105420026665,
+            "preference": 1.0862971462771216,
+            "legacy": 9.810744015213096
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "41963b8727954f412cab780947895122a545a84c3b8476d3b4b6f64ae9be1cf0",
+          "sourceSynths": [
+            "Rustlr",
+            "Rustlr"
+          ]
+        },
+        "pair-preference": {
+          "initialScore": 1.0628662142986038,
+          "score": 0.9770024582653242,
+          "scores": {
+            "soft": 3.503559947347994,
+            "preference": 0.9770024582653242,
+            "legacy": 9.590101559948451
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "36fe5f114bec99c1fdfd9c92f919b4030f38ec0f3cdefe1b311d4dcf2a1bba90",
+          "sourceSynths": [
+            "Boomr",
+            "Swarmr"
+          ]
+        }
+      }
+    },
+    {
+      "name": "laser/laser1.ogg",
+      "seconds": 276.4939077501185,
+      "arms": {
+        "single-soft": {
+          "initialScore": 3.1115173603233797,
+          "score": 2.9775630918202114,
+          "scores": {
+            "soft": 2.9775630918202114,
+            "preference": 1.279216192539403,
+            "legacy": 11.036181986585285
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "2df173d87b01c1ed7f9df11842db9c38a3682cebed43932073b1fcff3bf3fd37",
+          "sourceSynths": [
+            "Squishr"
+          ]
+        },
+        "single-preference": {
+          "initialScore": 0.7109749157623254,
+          "score": 0.6037161000450537,
+          "scores": {
+            "soft": 3.869813679829195,
+            "preference": 0.6037161000450537,
+            "legacy": 12.824649867283565
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "a6bae7fd46f6e1ac5e3e82c8aed9147d68df5fcb938bbd5ccf33009c7c151664",
+          "sourceSynths": [
+            "Boomr"
+          ]
+        },
+        "pair-soft": {
+          "initialScore": 2.989501211426684,
+          "score": 2.8057003905127815,
+          "scores": {
+            "soft": 2.8057003905127815,
+            "preference": 1.0505849169015664,
+            "legacy": 15.574693385505944
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "0ef34b4265e542675d7b3c84234a398ac3151336e4bea67f1d28812f6e01e5a5",
+          "sourceSynths": [
+            "Squishr",
+            "Jinglr"
+          ]
+        },
+        "pair-preference": {
+          "initialScore": 0.6700806405395674,
+          "score": 0.49616928449100794,
+          "scores": {
+            "soft": 3.051019241985449,
+            "preference": 0.49616928449100794,
+            "legacy": 13.817461505723152
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "10bd33079485db3eb61ed4cb405b82ec202b6d7c11b465be7668db992a3a53d4",
+          "sourceSynths": [
+            "Boomr",
+            "Transfxr"
+          ]
+        }
+      }
+    },
+    {
+      "name": "clothes/cloth4.ogg",
+      "seconds": 74.99132229201496,
+      "arms": {
+        "single-soft": {
+          "initialScore": 2.0717370310885967,
+          "score": 2.0475854641963194,
+          "scores": {
+            "soft": 2.0475854641963194,
+            "preference": 0.7601881379870826,
+            "legacy": 1.1408048725892257
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "7ce5665708445153384aa1f3e4d64bbd83624779cd0a87904d3b61455beed67e",
+          "sourceSynths": [
+            "Rustlr"
+          ]
+        },
+        "single-preference": {
+          "initialScore": 0.7340872229406448,
+          "score": 0.6169017456100796,
+          "scores": {
+            "soft": 2.672621476657846,
+            "preference": 0.6169017456100796,
+            "legacy": 1.4315253019408962
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "bcea8ce19f9fde074691ed5dbc6bc40f596e1f52a656727635aa06d0042886e2",
+          "sourceSynths": [
+            "Boomr"
+          ]
+        },
+        "pair-soft": {
+          "initialScore": 2.3686369977048845,
+          "score": 1.9942225696982443,
+          "scores": {
+            "soft": 1.9942225696982443,
+            "preference": 0.7637816035768182,
+            "legacy": 1.0629108192862569
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "abdda8dc9c9dbc72cb073f7fa7cefdbdb2114056f793ae1131265cec3f238bf0",
+          "sourceSynths": [
+            "Rustlr",
+            "Rustlr"
+          ]
+        },
+        "pair-preference": {
+          "initialScore": 0.6379063327663448,
+          "score": 0.530291924851388,
+          "scores": {
+            "soft": 2.5768276394904666,
+            "preference": 0.530291924851388,
+            "legacy": 1.3973070742190892
+          },
+          "attempts": 512,
+          "initialRenders": 4,
+          "failures": 0,
+          "nativeReplay": true,
+          "auditionHash": "b9ebe6856383f36b8155be284e97944592c815d1eaef1be5044422aa2af53a35",
+          "sourceSynths": [
+            "Boomr",
+            "Rustlr"
+          ]
+        }
+      }
+    }
+  ]
+}
