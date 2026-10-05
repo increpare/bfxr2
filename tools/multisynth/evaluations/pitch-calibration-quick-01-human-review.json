@@ -1,0 +1,826 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "a5d5dc9a2f3892807b671ec24ecddc61002ab06ed7d5fe8133b056002402cf60",
+  "archive": "tools/multisynth/listening_data/2026-10-05-pitch-calibration-quick-01",
+  "feedbackSha256": "a6dedd959fe2cd3fd9d35b7e6dd57a05f4a300228da857fb528672eec4dd3c74",
+  "archiveManifestSha256": "2daa265339a65fcfd87015143b070063c00604fcb46fba0f2270b4f7aab68f78",
+  "reportSha256": "13722697e76f686fa8fdd9f3014e15afc0eb2da7acf9ba99bd1ca570ac669cb5",
+  "audioAuditSha256": "ea8a69ce9312578407ee97d5ce14f9921f874d2e509ffec9792ffd8f324624cb",
+  "reviewScriptSha256": "2b1792fb55726c2117c2498aaf642554ca47ccc25db54db772624967c723783d",
+  "frozenModelSha256s": {
+    "preference-neural-v2": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+    "perceptual-v5": "8bfabbb497a42a7138a6ba6c4f8f9352976b47852569935afd02e951d28e877d"
+  },
+  "unavailableFrozenMetrics": {
+    "perceptual-v5": "Incompatible perceptual model version/schema/hash"
+  },
+  "summary": {
+    "targets": 5,
+    "uniqueRatedCandidates": 0,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "choices": 5,
+    "choiceKinds": {
+      "best": 5,
+      "tie": 0,
+      "none": 0,
+      "skip": 0
+    }
+  },
+  "trainingPairPolicy": {
+    "targets": 5,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "duplicateAudioAliases": 0,
+    "conflictingAudioRatingGroups": 0,
+    "tiedPairs": 0,
+    "duplicateSessionPairs": 0,
+    "directChoicePairs": 7,
+    "choices": 5,
+    "choiceKinds": {
+      "best": 5,
+      "tie": 0,
+      "none": 0,
+      "skip": 0
+    },
+    "validatedAudioFiles": 17,
+    "uniqueAudioPcm": 17
+  },
+  "strictHeardPairs": 7,
+  "targets": [
+    {
+      "target": "die/charm2.wav",
+      "sourceSha256": "d161711f9e872a84d289f26097f57028ef444959afd79c0233b74aef9f3ae24e",
+      "referencePcmSha256": "999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850",
+      "note": "",
+      "winner": {
+        "id": "6d0be1327d030c3a686506a6571db61ba155c53aeeb493f030e9358b918aa79d",
+        "role": "anchor",
+        "synth": "Transfxr",
+        "heard": true,
+        "preferred": true,
+        "pcmSha256": "3ad58753fc408535c051a3d39c494465e6d8e50a3509d39ecbd7c40bb3a1bd0f",
+        "auditionScores": {
+          "MatchObjective": 3.6674478386692315,
+          "preference-neural-v2": 0.7071543193275078
+        }
+      },
+      "options": [
+        {
+          "id": "5cd8e70f2d2867bc0d437d2035103999007d5c2dace83506df8097feee03038e",
+          "role": "selected",
+          "synth": "Bfxr",
+          "heard": true,
+          "preferred": false,
+          "pcmSha256": "781e2b6a2624ae79dafb33b831f5cdb0c89a27d1c16ef35c580bef6ad1c7a03a",
+          "auditionScores": {
+            "MatchObjective": 3.5371477243286336,
+            "preference-neural-v2": 0.8513260615372744
+          }
+        },
+        {
+          "id": "6d0be1327d030c3a686506a6571db61ba155c53aeeb493f030e9358b918aa79d",
+          "role": "anchor",
+          "synth": "Transfxr",
+          "heard": true,
+          "preferred": true,
+          "pcmSha256": "3ad58753fc408535c051a3d39c494465e6d8e50a3509d39ecbd7c40bb3a1bd0f",
+          "auditionScores": {
+            "MatchObjective": 3.6674478386692315,
+            "preference-neural-v2": 0.7071543193275078
+          }
+        }
+      ],
+      "calibrationChangedSelectedAudio": false,
+      "selectionReason": "no_eligible_candidates",
+      "frozenMetricWinners": {
+        "MatchObjective": "5cd8e70f2d2867bc0d437d2035103999007d5c2dace83506df8097feee03038e",
+        "preference-neural-v2": "6d0be1327d030c3a686506a6571db61ba155c53aeeb493f030e9358b918aa79d"
+      }
+    },
+    {
+      "target": "attack/battleStart.wav",
+      "sourceSha256": "fdc85a871dd4f6320cd07360359c3ea6a782bc5734f7ed6639483850759fff53",
+      "referencePcmSha256": "614c797eeb15fe1b6d3d3643bfb6a43dd87c45073c755517cbe920145d2d923d",
+      "note": "",
+      "winner": {
+        "id": "a58f936fcd2cbef81fbc64ecad32cbbcd96898612c79038579b547ea1ccc5522",
+        "role": "original",
+        "synth": "Bfxr",
+        "heard": true,
+        "preferred": true,
+        "pcmSha256": "a3214206669489dc8343ba78e3f9dacebcc2067e182a3a8e3159845b8964f15e",
+        "auditionScores": {
+          "MatchObjective": 4.785202618994609,
+          "preference-neural-v2": 2.3596222992198674
+        }
+      },
+      "options": [
+        {
+          "id": "09167d02d9b2fec102f4631da4a66cc2fd2410a8dae72d876ff4a545b87185c4",
+          "role": "selected",
+          "synth": "Bfxr",
+          "heard": true,
+          "preferred": false,
+          "pcmSha256": "b076a530879daa52a005c74e54682cbd1f741ef61706b2c3237d7c8362443f0a",
+          "auditionScores": {
+            "MatchObjective": 4.349198040688263,
+            "preference-neural-v2": 1.6386543817245587
+          }
+        },
+        {
+          "id": "a58f936fcd2cbef81fbc64ecad32cbbcd96898612c79038579b547ea1ccc5522",
+          "role": "original",
+          "synth": "Bfxr",
+          "heard": true,
+          "preferred": true,
+          "pcmSha256": "a3214206669489dc8343ba78e3f9dacebcc2067e182a3a8e3159845b8964f15e",
+          "auditionScores": {
+            "MatchObjective": 4.785202618994609,
+            "preference-neural-v2": 2.3596222992198674
+          }
+        }
+      ],
+      "calibrationChangedSelectedAudio": false,
+      "selectionReason": "no_eligible_candidates",
+      "frozenMetricWinners": {
+        "MatchObjective": "09167d02d9b2fec102f4631da4a66cc2fd2410a8dae72d876ff4a545b87185c4",
+        "preference-neural-v2": "09167d02d9b2fec102f4631da4a66cc2fd2410a8dae72d876ff4a545b87185c4"
+      }
+    },
+    {
+      "target": "select/Select Beep.wav",
+      "sourceSha256": "44d12555c6a60be548169eb89790f57cbc4ee18909f6f41867294418c8a3c642",
+      "referencePcmSha256": "80081825573f9054a5746ba0d3b7c8386a5a3f6d533d0a767a58a66c8e16d106",
+      "note": "",
+      "winner": {
+        "id": "09549f1b0dc37af16baf60150c22f3a9d2ae349a0de03eae4d6afbb22bcbea0d",
+        "role": "baseline",
+        "synth": "Bfxr",
+        "heard": true,
+        "preferred": true,
+        "pcmSha256": "7fa5f0a149f7ecccf7c61a943244bae324534fc94d726cc7dea4acdfe5c8d2f2",
+        "auditionScores": {
+          "MatchObjective": 1.6618766350061287,
+          "preference-neural-v2": 1.6076175633923977
+        }
+      },
+      "options": [
+        {
+          "id": "d1ba89d6c4958926f08f29f070ad5ed2496639853a27ad4b2bd8f9bf77fe91a2",
+          "role": "selected",
+          "synth": "Bfxr",
+          "heard": true,
+          "preferred": false,
+          "pcmSha256": "dc2620339c87eee9f8a2f17c86d269c90d22be7dd8bab19798f1d6396d5ca39a",
+          "auditionScores": {
+            "MatchObjective": 1.4730922202139376,
+            "preference-neural-v2": 0.42876740126451307
+          }
+        },
+        {
+          "id": "09549f1b0dc37af16baf60150c22f3a9d2ae349a0de03eae4d6afbb22bcbea0d",
+          "role": "baseline",
+          "synth": "Bfxr",
+          "heard": true,
+          "preferred": true,
+          "pcmSha256": "7fa5f0a149f7ecccf7c61a943244bae324534fc94d726cc7dea4acdfe5c8d2f2",
+          "auditionScores": {
+            "MatchObjective": 1.6618766350061287,
+            "preference-neural-v2": 1.6076175633923977
+          }
+        },
+        {
+          "id": "1c7722036636dc22fd9bef3bc24934194b17fb1d6f5b704f60ceabb07a0da8c3",
+          "role": "original",
+          "synth": "Bfxr",
+          "heard": true,
+          "preferred": false,
+          "pcmSha256": "ccddbe63bc61c4ff9a11027f4dbd1c23e62403338524598f8aa3434b80a702fc",
+          "auditionScores": {
+            "MatchObjective": 4.953520890487197,
+            "preference-neural-v2": 3.380981213711882
+          }
+        }
+      ],
+      "calibrationChangedSelectedAudio": true,
+      "selectionReason": "eligible_minimum_objective",
+      "frozenMetricWinners": {
+        "MatchObjective": "d1ba89d6c4958926f08f29f070ad5ed2496639853a27ad4b2bd8f9bf77fe91a2",
+        "preference-neural-v2": "d1ba89d6c4958926f08f29f070ad5ed2496639853a27ad4b2bd8f9bf77fe91a2"
+      }
+    },
+    {
+      "target": "bell/impactBell_heavy_003.ogg",
+      "sourceSha256": "5572ccdeb3b62373b86fa955355b3a222c36e815f0636ba16165189a21cf2514",
+      "referencePcmSha256": "b2ee52ae258b954b522b2fddbabba07e569a488a2c6201dfe3522a3371c27ba1",
+      "note": "",
+      "winner": {
+        "id": "ee5a1bdbcdfacd1d64bd7e741a6ebeee066ac41f77b1346e34fe721b139cbe82",
+        "role": "original",
+        "synth": "Bfxr",
+        "heard": true,
+        "preferred": true,
+        "pcmSha256": "661517e62e694861f2d605f6b60eb878ec46fffcc513910a5b3e86da95b2c1eb",
+        "auditionScores": {
+          "MatchObjective": 5.474337283337712,
+          "preference-neural-v2": 1.1525284915341072
+        }
+      },
+      "options": [
+        {
+          "id": "20077e206b12faf5ab4b1bfbcbb1971aa6e21ba86c69d6095eea5090467f1aa8",
+          "role": "selected",
+          "synth": "Transfxr",
+          "heard": true,
+          "preferred": false,
+          "pcmSha256": "8c0e02a7e14e7bd6fbf12768bbad26e6fd7789437fad2588fe39431b514106ae",
+          "auditionScores": {
+            "MatchObjective": 4.163376164726241,
+            "preference-neural-v2": 0.7043653133538004
+          }
+        },
+        {
+          "id": "9cbcfc3a37d7e2f376ad92ccae4c4b06f0dfd5be62ff5cf8e87b81ab0320a291",
+          "role": "baseline",
+          "synth": "Bfxr",
+          "heard": true,
+          "preferred": false,
+          "pcmSha256": "151b16d5ef3ab8fb23529ef9fd11affdd114f38d44223b29593d7c5e4d582c6a",
+          "auditionScores": {
+            "MatchObjective": 4.818777055850698,
+            "preference-neural-v2": 0.9324084999357819
+          }
+        },
+        {
+          "id": "ee5a1bdbcdfacd1d64bd7e741a6ebeee066ac41f77b1346e34fe721b139cbe82",
+          "role": "original",
+          "synth": "Bfxr",
+          "heard": true,
+          "preferred": true,
+          "pcmSha256": "661517e62e694861f2d605f6b60eb878ec46fffcc513910a5b3e86da95b2c1eb",
+          "auditionScores": {
+            "MatchObjective": 5.474337283337712,
+            "preference-neural-v2": 1.1525284915341072
+          }
+        }
+      ],
+      "calibrationChangedSelectedAudio": true,
+      "selectionReason": "eligible_minimum_objective",
+      "frozenMetricWinners": {
+        "MatchObjective": "20077e206b12faf5ab4b1bfbcbb1971aa6e21ba86c69d6095eea5090467f1aa8",
+        "preference-neural-v2": "20077e206b12faf5ab4b1bfbcbb1971aa6e21ba86c69d6095eea5090467f1aa8"
+      }
+    },
+    {
+      "target": "fall/Descending Fall Whistle.wav",
+      "sourceSha256": "4381a8e14ac848595acf5b3812507f4ba1eeca17a5538a0efe8701aa9f10a1dc",
+      "referencePcmSha256": "f4dd6722495d064e998e068c8545fec9c4372ab39288239683d361052ee1eab2",
+      "note": "",
+      "winner": {
+        "id": "0603b90a26a14ba5a771aee1e78e5058ab3521884cac0cc6d8eddde4ddf3af75",
+        "role": "selected",
+        "synth": "Transfxr",
+        "heard": true,
+        "preferred": true,
+        "pcmSha256": "5db0b1851a0ecaba84f988e32bde60f1d697f4a99279f331aee90801bb7e3d0b",
+        "auditionScores": {
+          "MatchObjective": 0.9991561653247454,
+          "preference-neural-v2": 0.4700227797193453
+        }
+      },
+      "options": [
+        {
+          "id": "0603b90a26a14ba5a771aee1e78e5058ab3521884cac0cc6d8eddde4ddf3af75",
+          "role": "selected",
+          "synth": "Transfxr",
+          "heard": true,
+          "preferred": true,
+          "pcmSha256": "5db0b1851a0ecaba84f988e32bde60f1d697f4a99279f331aee90801bb7e3d0b",
+          "auditionScores": {
+            "MatchObjective": 0.9991561653247454,
+            "preference-neural-v2": 0.4700227797193453
+          }
+        },
+        {
+          "id": "162e614eae9f3c5079063554bd8351a4b70ca570b906a3b9cc642e8786c20cd4",
+          "role": "original",
+          "synth": "Bfxr",
+          "heard": true,
+          "preferred": false,
+          "pcmSha256": "671d6136cfcc1f788bb7dad79128704e2008afa8128e8539411ed71dbd2be496",
+          "auditionScores": {
+            "MatchObjective": 4.956459501711953,
+            "preference-neural-v2": 1.4818298863037085
+          }
+        }
+      ],
+      "calibrationChangedSelectedAudio": false,
+      "selectionReason": "no_eligible_candidates",
+      "frozenMetricWinners": {
+        "MatchObjective": "0603b90a26a14ba5a771aee1e78e5058ab3521884cac0cc6d8eddde4ddf3af75",
+        "preference-neural-v2": "0603b90a26a14ba5a771aee1e78e5058ab3521884cac0cc6d8eddde4ddf3af75"
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "archive": "2026-10-05-pitch-calibration-quick-01",
+      "experimentId": "a5d5dc9a2f3892807b671ec24ecddc61002ab06ed7d5fe8133b056002402cf60",
+      "target": "die/charm2.wav",
+      "referencePcmSha256": "999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850",
+      "candidateA": "6d0be1327d030c3a686506a6571db61ba155c53aeeb493f030e9358b918aa79d",
+      "candidateB": "5cd8e70f2d2867bc0d437d2035103999007d5c2dace83506df8097feee03038e",
+      "candidateAliasesA": [
+        "6d0be1327d030c3a686506a6571db61ba155c53aeeb493f030e9358b918aa79d"
+      ],
+      "candidateAliasesB": [
+        "5cd8e70f2d2867bc0d437d2035103999007d5c2dace83506df8097feee03038e"
+      ],
+      "candidatePcmSha256A": "3ad58753fc408535c051a3d39c494465e6d8e50a3509d39ecbd7c40bb3a1bd0f",
+      "candidatePcmSha256B": "781e2b6a2624ae79dafb33b831f5cdb0c89a27d1c16ef35c580bef6ad1c7a03a",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.010493248701095581,
+        -0.07599760591983795,
+        -0.024563781917095184,
+        -0.006700700148940086,
+        -0.010433468967676163,
+        -0.013167735189199448,
+        0.09441984444856644,
+        0.0008728958200663328,
+        -0.09258905798196793,
+        -0.08064516129032256,
+        -0.08470185846090318,
+        0.004753911807094335,
+        0.003984317183494568,
+        -0.03176431357860565,
+        0.0146193727850914,
+        0.015581011772155762,
+        0.08992362022399902,
+        0.008076146245002747,
+        0.00447101891040802,
+        0.003606945276260376
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "6d0be1327d030c3a686506a6571db61ba155c53aeeb493f030e9358b918aa79d",
+          "5cd8e70f2d2867bc0d437d2035103999007d5c2dace83506df8097feee03038e"
+        ],
+        "auditionedCandidateIds": [
+          "6d0be1327d030c3a686506a6571db61ba155c53aeeb493f030e9358b918aa79d",
+          "5cd8e70f2d2867bc0d437d2035103999007d5c2dace83506df8097feee03038e"
+        ],
+        "preferredCandidateIds": [
+          "6d0be1327d030c3a686506a6571db61ba155c53aeeb493f030e9358b918aa79d"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "anchor",
+      "loserRole": "selected",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preference-neural-v2": true
+      }
+    },
+    {
+      "archive": "2026-10-05-pitch-calibration-quick-01",
+      "experimentId": "a5d5dc9a2f3892807b671ec24ecddc61002ab06ed7d5fe8133b056002402cf60",
+      "target": "attack/battleStart.wav",
+      "referencePcmSha256": "614c797eeb15fe1b6d3d3643bfb6a43dd87c45073c755517cbe920145d2d923d",
+      "candidateA": "a58f936fcd2cbef81fbc64ecad32cbbcd96898612c79038579b547ea1ccc5522",
+      "candidateB": "09167d02d9b2fec102f4631da4a66cc2fd2410a8dae72d876ff4a545b87185c4",
+      "candidateAliasesA": [
+        "a58f936fcd2cbef81fbc64ecad32cbbcd96898612c79038579b547ea1ccc5522"
+      ],
+      "candidateAliasesB": [
+        "09167d02d9b2fec102f4631da4a66cc2fd2410a8dae72d876ff4a545b87185c4"
+      ],
+      "candidatePcmSha256A": "a3214206669489dc8343ba78e3f9dacebcc2067e182a3a8e3159845b8964f15e",
+      "candidatePcmSha256B": "b076a530879daa52a005c74e54682cbd1f741ef61706b2c3237d7c8362443f0a",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.0047397613525390625,
+        0.06725489348173141,
+        0.01684306189417839,
+        0.3163965567946434,
+        0.3052923381328583,
+        -0.03643212839961052,
+        0.21766342595219612,
+        6.0540856793522835e-05,
+        0.20219765603542328,
+        0.07258064516129031,
+        0.07131180850168069,
+        -0.00013925540810971748,
+        -0.17304764688014984,
+        0.311054527759552,
+        0.012329008430242538,
+        0.5453780889511108,
+        0.20729849860072136,
+        0.004342824220657349,
+        0.0026160478591918945,
+        0.0012692958116531372
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "09167d02d9b2fec102f4631da4a66cc2fd2410a8dae72d876ff4a545b87185c4",
+          "a58f936fcd2cbef81fbc64ecad32cbbcd96898612c79038579b547ea1ccc5522"
+        ],
+        "auditionedCandidateIds": [
+          "09167d02d9b2fec102f4631da4a66cc2fd2410a8dae72d876ff4a545b87185c4",
+          "a58f936fcd2cbef81fbc64ecad32cbbcd96898612c79038579b547ea1ccc5522"
+        ],
+        "preferredCandidateIds": [
+          "a58f936fcd2cbef81fbc64ecad32cbbcd96898612c79038579b547ea1ccc5522"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "original",
+      "loserRole": "selected",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preference-neural-v2": false
+      }
+    },
+    {
+      "archive": "2026-10-05-pitch-calibration-quick-01",
+      "experimentId": "a5d5dc9a2f3892807b671ec24ecddc61002ab06ed7d5fe8133b056002402cf60",
+      "target": "select/Select Beep.wav",
+      "referencePcmSha256": "80081825573f9054a5746ba0d3b7c8386a5a3f6d533d0a767a58a66c8e16d106",
+      "candidateA": "09549f1b0dc37af16baf60150c22f3a9d2ae349a0de03eae4d6afbb22bcbea0d",
+      "candidateB": "d1ba89d6c4958926f08f29f070ad5ed2496639853a27ad4b2bd8f9bf77fe91a2",
+      "candidateAliasesA": [
+        "09549f1b0dc37af16baf60150c22f3a9d2ae349a0de03eae4d6afbb22bcbea0d"
+      ],
+      "candidateAliasesB": [
+        "d1ba89d6c4958926f08f29f070ad5ed2496639853a27ad4b2bd8f9bf77fe91a2"
+      ],
+      "candidatePcmSha256A": "7fa5f0a149f7ecccf7c61a943244bae324534fc94d726cc7dea4acdfe5c8d2f2",
+      "candidatePcmSha256B": "dc2620339c87eee9f8a2f17c86d269c90d22be7dd8bab19798f1d6396d5ca39a",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.021642297506332397,
+        0.24181496165692806,
+        0.006928286049515009,
+        0.17803698359057307,
+        0.2358870804309845,
+        0.025215874426066875,
+        0.4642011821269989,
+        0.0026634339010342956,
+        0.43187185749411583,
+        0.1854838709677419,
+        0.14133196727683148,
+        0.04977907916032505,
+        -0.014110749587416649,
+        0.28504257649183273,
+        0.01391602773219347,
+        0.0030724406242370605,
+        0.4420963525772095,
+        -0.009001418948173523,
+        -0.009067125618457794,
+        -0.009065710008144379
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "d1ba89d6c4958926f08f29f070ad5ed2496639853a27ad4b2bd8f9bf77fe91a2",
+          "1c7722036636dc22fd9bef3bc24934194b17fb1d6f5b704f60ceabb07a0da8c3",
+          "09549f1b0dc37af16baf60150c22f3a9d2ae349a0de03eae4d6afbb22bcbea0d"
+        ],
+        "auditionedCandidateIds": [
+          "d1ba89d6c4958926f08f29f070ad5ed2496639853a27ad4b2bd8f9bf77fe91a2",
+          "1c7722036636dc22fd9bef3bc24934194b17fb1d6f5b704f60ceabb07a0da8c3",
+          "09549f1b0dc37af16baf60150c22f3a9d2ae349a0de03eae4d6afbb22bcbea0d"
+        ],
+        "preferredCandidateIds": [
+          "09549f1b0dc37af16baf60150c22f3a9d2ae349a0de03eae4d6afbb22bcbea0d"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "baseline",
+      "loserRole": "selected",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preference-neural-v2": false
+      }
+    },
+    {
+      "archive": "2026-10-05-pitch-calibration-quick-01",
+      "experimentId": "a5d5dc9a2f3892807b671ec24ecddc61002ab06ed7d5fe8133b056002402cf60",
+      "target": "select/Select Beep.wav",
+      "referencePcmSha256": "80081825573f9054a5746ba0d3b7c8386a5a3f6d533d0a767a58a66c8e16d106",
+      "candidateA": "09549f1b0dc37af16baf60150c22f3a9d2ae349a0de03eae4d6afbb22bcbea0d",
+      "candidateB": "1c7722036636dc22fd9bef3bc24934194b17fb1d6f5b704f60ceabb07a0da8c3",
+      "candidateAliasesA": [
+        "09549f1b0dc37af16baf60150c22f3a9d2ae349a0de03eae4d6afbb22bcbea0d"
+      ],
+      "candidateAliasesB": [
+        "1c7722036636dc22fd9bef3bc24934194b17fb1d6f5b704f60ceabb07a0da8c3"
+      ],
+      "candidatePcmSha256A": "7fa5f0a149f7ecccf7c61a943244bae324534fc94d726cc7dea4acdfe5c8d2f2",
+      "candidatePcmSha256B": "ccddbe63bc61c4ff9a11027f4dbd1c23e62403338524598f8aa3434b80a702fc",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -1.0397236049175262,
+        0.06677234172821045,
+        -0.015078595839440823,
+        -0.15595677495002747,
+        -0.21411290764808655,
+        -0.44455963000655174,
+        0.39792509377002716,
+        0.0010888657998293638,
+        0.23765215277671814,
+        0.1129032258064516,
+        0.06869962469985087,
+        0.03642827779365551,
+        -0.12980525381863117,
+        -0.6847787201404572,
+        0.013896224088966846,
+        -0.5107536911964417,
+        0.37897631525993347,
+        -0.34815916419029236,
+        -0.34807179868221283,
+        -0.347970649600029
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "d1ba89d6c4958926f08f29f070ad5ed2496639853a27ad4b2bd8f9bf77fe91a2",
+          "1c7722036636dc22fd9bef3bc24934194b17fb1d6f5b704f60ceabb07a0da8c3",
+          "09549f1b0dc37af16baf60150c22f3a9d2ae349a0de03eae4d6afbb22bcbea0d"
+        ],
+        "auditionedCandidateIds": [
+          "d1ba89d6c4958926f08f29f070ad5ed2496639853a27ad4b2bd8f9bf77fe91a2",
+          "1c7722036636dc22fd9bef3bc24934194b17fb1d6f5b704f60ceabb07a0da8c3",
+          "09549f1b0dc37af16baf60150c22f3a9d2ae349a0de03eae4d6afbb22bcbea0d"
+        ],
+        "preferredCandidateIds": [
+          "09549f1b0dc37af16baf60150c22f3a9d2ae349a0de03eae4d6afbb22bcbea0d"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "baseline",
+      "loserRole": "original",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preference-neural-v2": true
+      }
+    },
+    {
+      "archive": "2026-10-05-pitch-calibration-quick-01",
+      "experimentId": "a5d5dc9a2f3892807b671ec24ecddc61002ab06ed7d5fe8133b056002402cf60",
+      "target": "bell/impactBell_heavy_003.ogg",
+      "referencePcmSha256": "b2ee52ae258b954b522b2fddbabba07e569a488a2c6201dfe3522a3371c27ba1",
+      "candidateA": "ee5a1bdbcdfacd1d64bd7e741a6ebeee066ac41f77b1346e34fe721b139cbe82",
+      "candidateB": "9cbcfc3a37d7e2f376ad92ccae4c4b06f0dfd5be62ff5cf8e87b81ab0320a291",
+      "candidateAliasesA": [
+        "ee5a1bdbcdfacd1d64bd7e741a6ebeee066ac41f77b1346e34fe721b139cbe82"
+      ],
+      "candidateAliasesB": [
+        "9cbcfc3a37d7e2f376ad92ccae4c4b06f0dfd5be62ff5cf8e87b81ab0320a291"
+      ],
+      "candidatePcmSha256A": "661517e62e694861f2d605f6b60eb878ec46fffcc513910a5b3e86da95b2c1eb",
+      "candidatePcmSha256B": "151b16d5ef3ab8fb23529ef9fd11affdd114f38d44223b29593d7c5e4d582c6a",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.005387246608734131,
+        -0.016008410602808,
+        -0.007123221643269062,
+        0.015040121972560883,
+        0.1433467734605074,
+        0.01248311996459961,
+        0.006193786859512329,
+        0.0008070370240602642,
+        -0.049977660179138184,
+        -0.07258064516129031,
+        -0.019234950382572905,
+        0.007806990892806745,
+        0.026118330657482147,
+        0.12777327001094818,
+        -0.10206395387649536,
+        -0.0025166571140289307,
+        0.005898863077163696,
+        0.002591840922832489,
+        0.002389177680015564,
+        0.0015142783522605896
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "ee5a1bdbcdfacd1d64bd7e741a6ebeee066ac41f77b1346e34fe721b139cbe82",
+          "9cbcfc3a37d7e2f376ad92ccae4c4b06f0dfd5be62ff5cf8e87b81ab0320a291",
+          "20077e206b12faf5ab4b1bfbcbb1971aa6e21ba86c69d6095eea5090467f1aa8"
+        ],
+        "auditionedCandidateIds": [
+          "ee5a1bdbcdfacd1d64bd7e741a6ebeee066ac41f77b1346e34fe721b139cbe82",
+          "9cbcfc3a37d7e2f376ad92ccae4c4b06f0dfd5be62ff5cf8e87b81ab0320a291",
+          "20077e206b12faf5ab4b1bfbcbb1971aa6e21ba86c69d6095eea5090467f1aa8"
+        ],
+        "preferredCandidateIds": [
+          "ee5a1bdbcdfacd1d64bd7e741a6ebeee066ac41f77b1346e34fe721b139cbe82"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "original",
+      "loserRole": "baseline",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preference-neural-v2": false
+      }
+    },
+    {
+      "archive": "2026-10-05-pitch-calibration-quick-01",
+      "experimentId": "a5d5dc9a2f3892807b671ec24ecddc61002ab06ed7d5fe8133b056002402cf60",
+      "target": "bell/impactBell_heavy_003.ogg",
+      "referencePcmSha256": "b2ee52ae258b954b522b2fddbabba07e569a488a2c6201dfe3522a3371c27ba1",
+      "candidateA": "ee5a1bdbcdfacd1d64bd7e741a6ebeee066ac41f77b1346e34fe721b139cbe82",
+      "candidateB": "20077e206b12faf5ab4b1bfbcbb1971aa6e21ba86c69d6095eea5090467f1aa8",
+      "candidateAliasesA": [
+        "ee5a1bdbcdfacd1d64bd7e741a6ebeee066ac41f77b1346e34fe721b139cbe82"
+      ],
+      "candidateAliasesB": [
+        "20077e206b12faf5ab4b1bfbcbb1971aa6e21ba86c69d6095eea5090467f1aa8"
+      ],
+      "candidatePcmSha256A": "661517e62e694861f2d605f6b60eb878ec46fffcc513910a5b3e86da95b2c1eb",
+      "candidatePcmSha256B": "8c0e02a7e14e7bd6fbf12768bbad26e6fd7789437fad2588fe39431b514106ae",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.058768853545188904,
+        -0.07910455390810966,
+        -0.001039835624396801,
+        0.04093136638402939,
+        0.14606854738667607,
+        0.008033409714698792,
+        0.17349973320960999,
+        0.0006454440008383244,
+        -0.11123886704444885,
+        -0.008064516129032251,
+        -0.05226440359062205,
+        0.024890776117237987,
+        0.059433698654174805,
+        0.12059461325407028,
+        -0.01647406816482544,
+        0.002045184373855591,
+        0.16523785889148712,
+        0.018642820417881012,
+        0.018817126750946045,
+        0.01905415952205658
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "ee5a1bdbcdfacd1d64bd7e741a6ebeee066ac41f77b1346e34fe721b139cbe82",
+          "9cbcfc3a37d7e2f376ad92ccae4c4b06f0dfd5be62ff5cf8e87b81ab0320a291",
+          "20077e206b12faf5ab4b1bfbcbb1971aa6e21ba86c69d6095eea5090467f1aa8"
+        ],
+        "auditionedCandidateIds": [
+          "ee5a1bdbcdfacd1d64bd7e741a6ebeee066ac41f77b1346e34fe721b139cbe82",
+          "9cbcfc3a37d7e2f376ad92ccae4c4b06f0dfd5be62ff5cf8e87b81ab0320a291",
+          "20077e206b12faf5ab4b1bfbcbb1971aa6e21ba86c69d6095eea5090467f1aa8"
+        ],
+        "preferredCandidateIds": [
+          "ee5a1bdbcdfacd1d64bd7e741a6ebeee066ac41f77b1346e34fe721b139cbe82"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "original",
+      "loserRole": "selected",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preference-neural-v2": false
+      }
+    },
+    {
+      "archive": "2026-10-05-pitch-calibration-quick-01",
+      "experimentId": "a5d5dc9a2f3892807b671ec24ecddc61002ab06ed7d5fe8133b056002402cf60",
+      "target": "fall/Descending Fall Whistle.wav",
+      "referencePcmSha256": "f4dd6722495d064e998e068c8545fec9c4372ab39288239683d361052ee1eab2",
+      "candidateA": "0603b90a26a14ba5a771aee1e78e5058ab3521884cac0cc6d8eddde4ddf3af75",
+      "candidateB": "162e614eae9f3c5079063554bd8351a4b70ca570b906a3b9cc642e8786c20cd4",
+      "candidateAliasesA": [
+        "0603b90a26a14ba5a771aee1e78e5058ab3521884cac0cc6d8eddde4ddf3af75"
+      ],
+      "candidateAliasesB": [
+        "162e614eae9f3c5079063554bd8351a4b70ca570b906a3b9cc642e8786c20cd4"
+      ],
+      "candidatePcmSha256A": "5db0b1851a0ecaba84f988e32bde60f1d697f4a99279f331aee90801bb7e3d0b",
+      "candidatePcmSha256B": "671d6136cfcc1f788bb7dad79128704e2008afa8128e8539411ed71dbd2be496",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.06770159304141998,
+        -0.34612756967544556,
+        -0.09849083237349987,
+        -0.046997301280498505,
+        -0.01406249962747097,
+        -0.011735747568309307,
+        -0.024635259993374348,
+        -0.0013395982969086617,
+        -0.47628261893987656,
+        -0.30645161290322576,
+        -0.09033374507756281,
+        -0.06511764927250967,
+        -0.06320066750049591,
+        -0.02456364966928959,
+        -0.06137143075466156,
+        -0.038400113582611084,
+        -0.023462146520614624,
+        -0.01712832972407341,
+        -0.01947689801454544,
+        -0.021820858120918274
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "162e614eae9f3c5079063554bd8351a4b70ca570b906a3b9cc642e8786c20cd4",
+          "0603b90a26a14ba5a771aee1e78e5058ab3521884cac0cc6d8eddde4ddf3af75"
+        ],
+        "auditionedCandidateIds": [
+          "162e614eae9f3c5079063554bd8351a4b70ca570b906a3b9cc642e8786c20cd4",
+          "0603b90a26a14ba5a771aee1e78e5058ab3521884cac0cc6d8eddde4ddf3af75"
+        ],
+        "preferredCandidateIds": [
+          "0603b90a26a14ba5a771aee1e78e5058ab3521884cac0cc6d8eddde4ddf3af75"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "selected",
+      "loserRole": "original",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preference-neural-v2": true
+      }
+    }
+  ],
+  "findings": {
+    "changedSelectionWins": 0,
+    "changedSelectionComparisons": 2,
+    "winnerRoles": {
+      "die/charm2.wav": "anchor",
+      "attack/battleStart.wav": "original",
+      "select/Select Beep.wav": "baseline",
+      "bell/impactBell_heavy_003.ogg": "original",
+      "fall/Descending Fall Whistle.wav": "selected"
+    },
+    "decision": "Reject automatic promotion of pitch-calibration-v1: neither changed selected output won. Preserve calibrated candidates as experiments, but the passing synthetic pitch gate is not a perceptual release gate.",
+    "absoluteAdequacy": "No scalar ratings or adequacy notes supplied in this JSON; best means relative preference only.",
+    "charm": "The earlier Transfxr anchor now wins a direct heard comparison against the later Bfxr partial success. Earlier sessions did not establish this pair; this is new evidence, not a contradiction.",
+    "whistle": "The selected Transfxr wins against original Bfxr, but it is the unchanged pre-calibration baseline. This supports that candidate, not the calibration step."
+  },
+  "frozenMetricAgreement": {
+    "MatchObjective": {
+      "strictPairsCorrect": 2,
+      "strictPairs": 7,
+      "wholeTargetWinnerCorrect": 1,
+      "targets": 5
+    },
+    "preference-neural-v2": {
+      "strictPairsCorrect": 3,
+      "strictPairs": 7,
+      "wholeTargetWinnerCorrect": 2,
+      "targets": 5
+    }
+  },
+  "limitations": [
+    "Five selected development targets; no population accuracy claim.",
+    "Frozen preference models include prior related reference feedback, especially charm. These are descriptive checks, not an independent holdout.",
+    "No causal attribution of human preference to pitch, envelope or timbre from these joint changes.",
+    "No parameters, selector thresholds, published audio or prior labels changed."
+  ]
+}

@@ -10,11 +10,15 @@ neural model and optimizer as an independent candidate. See
 comparison. Mixr composition and arbitrary phrase transcription remain separate
 work; model capacity and parameter validation do not establish audible likeness.
 
-The next human check is the five-reference
-[neural-v2 quick listening round](runs/neural-v2-quick/index.html), comparing the
-new automatic choice, original Bfxr and exact historical comparison audio.
-Choose the closest feel (or none), then copy the feedback JSON. Saved choices
-remain tied to the actual clip and model hashes.
+The latest reviewed checkpoint is
+[pitch-calibration listening](runs/pitch-calibration-listening-v1/index.html),
+using frozen v3 Bfxr/Transfxr/Pluckr experts plus bounded DSP pitch correction.
+Both changed selections lost their human comparisons; the synthetic pitch gate
+does not establish perceptual improvement. See the
+[human review](evaluations/pitch-calibration-quick-01-human-review.json).
+All eight feedback sessions and exact audition PCM remain versioned. A fresh
+preference-scorer refit reaches about 73% reference-balanced held-out agreement
+overall but only 3/7 on this latest batch; it is experimental and not deployed.
 
 The earlier iterations below use an offline **nonparametric inverse model**: render examples from the app's
 preset distributions, encode their audio, retrieve plausible parameters for

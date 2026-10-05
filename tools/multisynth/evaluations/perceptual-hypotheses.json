@@ -81,7 +81,7 @@
     {
       "id": "voiced-coverage-can-compete-with-timbre",
       "claim": "Requiring a large fraction of target-active frames to carry matching pitch can replace an already accurate pitch/timbre candidate with a more continuously voiced candidate.",
-      "status": "automated-selector-counterexample-auditory-effect-unresolved",
+      "status": "human-rejected-two-changed-selections-causal-cue-unresolved",
       "evidence": "pitch-calibration-v1/paired/031-Pluckr-static: baseline Pluckr median error0.00566semitone and objective0.422535; target-active pitch coverage0.7045 fails the0.75eligibility rule. Selected Bfxr has coverage1.0 but objective3.076493. Target/baseline/selected voicedframes44/31/47. This demonstrates the selector tradeoff; no human preference has been established.",
       "nextTest": "Retain uncalibrated baselines in short listening comparisons. Examine attack/tail and event feel when pitch constraints change the winning engine; do not silently treat voicing coverage as perceptual ground truth.",
       "source": "evaluations/pitch-calibration-audit.json",
@@ -90,8 +90,21 @@
           "session": "2026-10-05-pitch-calibration-listening-v1",
           "finding": "On the five fixed tagged references, selection changes only Select Beep and heavy impact bell; charm2, battleStart and Descending Fall Whistle fall back unchanged. battleStart has adjusted Transfxr proposals near measured register but only 0.435 target-active pitch coverage, so none qualifies. This is partial diagnostic transfer, not human evidence that the conservative rule is correct. Human comparison pending.",
           "source": "evaluations/pitch-calibration-listening-audit.json"
+        },
+        {
+          "session": "2026-10-05-pitch-calibration-quick-01",
+          "finding": "Both calibrated changes lose: uncalibrated Bfxr wins the beep and original Bfxr wins the bell. The unchanged Transfxr whistle wins. Thus the passing synthetic pitch gate fails to establish human improvement; this does not isolate which jointly changed timbre, contour or envelope cue caused rejection.",
+          "source": "evaluations/pitch-calibration-quick-01-human-review.json"
         }
       ]
+    },
+    {
+      "id": "target-dependent-perceptual-priorities",
+      "claim": "A single global weighting of pitch, timbre and envelope may not express which cue dominates likeness for each reference.",
+      "status": "plausible-not-causally-established",
+      "evidence": "The latest preferred beep is worse in 24/30 current distance components, while six spectrum/timbre/correlation components favor it. The preferred bell instead gains on envelope/event cues. Refitting the existing 30-component global scorer gives only 3/7 held-out and 4/7 full-fit agreement on the latest comparisons, despite about 73% held-out reference-balanced agreement overall. These are descriptive correlations, not evidence that conditioning will solve the problem.",
+      "nextTest": "Keep the current refit experimental. Before another large inverse run, test target-conditioned cue weights against the fixed global scorer on the same held-out references; predeclare gates, include latest failure cases and earlier successes, and require fresh human listening before deployment. Absolute recreation quality remains a separate question.",
+      "source": "evaluations/perceptual-after-calibration-feedback-training.json"
     }
   ]
 }

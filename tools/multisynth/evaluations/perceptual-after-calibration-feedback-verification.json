@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "modelSha256": "9b2e8519836088212dcf6ad694320baeaa9c6e6c2d3ae1aec7a3722e871080d3",
+  "trainingReportSha256": "25565291dc45cf6f23b840db110209c6d041db803ee3a5aeb6b3fc835723312a",
+  "validatedArchiveCount": 8,
+  "pairs": 130,
+  "referencePcmGroups": 49,
+  "sourceAudioGroups": 49,
+  "allFoldPredictionsReconstructed": true,
+  "foldsDisjointByExactPcm": true,
+  "knownSourceAudioHashesCrossFolds": false,
+  "savedModelPredictionsMatch": true,
+  "latestHeldOutCorrect": 3,
+  "latestPairs": 7,
+  "deploymentDecision": "Retain experimental checkpoint only; latest human mismatch remains. No production selector or audio changed.",
+  "limitations": "This verifies stored fold predictions and known source isolation, not independent generalization, causal psychoacoustic validity or generated-audio likeness."
+}

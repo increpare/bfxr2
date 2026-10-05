@@ -183,3 +183,30 @@ LAN URL uses `192.168.178.131:8765` with the same path. Request best/tie/none;
 optional adequacy wording should distinguish convincing, closeish, same genre,
 and still off. Preserve the user's prior qualitative calibration and all old
 ratings. Broader multisynth inverse goal remains active.
+
+
+## Human checkpoint received — calibration promotion rejected
+
+Archive `2026-10-05-pitch-calibration-quick-01` retains all five choices, all
+12 heard options and seven strict preferences. Both changed selections lose:
+uncalibrated beep preferred; original Bfxr bell preferred. Original Bfxr also
+wins battleStart. Earlier Transfxr wins charm2 against the later Bfxr partial
+success, and unchanged Transfxr wins the whistle. No absolute adequacy ratings
+were supplied. The latest JSON therefore closes the relative-choice checkpoint,
+not the wider reproduction-quality goal.
+
+`pitch-calibration-quick-01-human-review.json` verifies exact heard PCM and labels.
+MatchObjective agrees with 2/7 pairs; frozen preference-neural-v2 with 3/7. The
+older perceptual-v5 checkpoint fails its current code-binding compatibility
+check and was not silently loaded or used as a valid comparator.
+
+Refitted existing 30-component perceptual scorer on all eight archives using
+fixed hyperparameters and unchanged five reference-PCM folds, against a fresh
+20-component fit on the same folds. There are 130 pairs / 49 reference groups.
+Reference-balanced held-out agreement is .7300 versus .6991, but both reach only
+3/7 on the latest batch. The saved richer full fit reaches 4/7 there. Keep the
+new checkpoint `perceptual-after-calibration-feedback.json` experimental; do not
+deploy it or advertise the aggregate gain as resolving the current failures.
+Saved predictions and all fold predictions were reconstructed; no known source
+audio hash crosses folds. Next architectural hypothesis is reference-dependent
+perceptual priorities, not another pitch threshold adjustment.

@@ -11,6 +11,19 @@
 | `2026-10-04-neural-v1-quick-01/` | 5 | 19 |
 | `2026-10-04-neural-v2-quick-01/` | 5 | 20 |
 | `2026-10-04-temporal-v3-quick-01/` | 5 | 15 |
+| `2026-10-05-pitch-calibration-quick-01/` | 5 | 12 |
+
+The eighth archive retains all five pitch-calibration comparisons, with all 12
+options auditioned and seven strict heard-only preferences. Both changed
+calibration selections lose: the uncalibrated Bfxr beep wins, and original Bfxr
+wins the bell. Original Bfxr also wins battleStart. The earlier Transfxr charm
+wins its first direct heard comparison against the later Bfxr partial success.
+The Transfxr whistle wins against original Bfxr, but is the unchanged baseline,
+so this is not evidence for calibration. No absolute likeness or usefulness
+ratings were supplied. The exact-audio matching objective agrees with 2/7 pairs;
+the older learned preference scorer agrees with 3/7. See
+[the human review](../evaluations/pitch-calibration-quick-01-human-review.json).
+Do not promote the passing synthetic pitch gate to a human quality claim.
 
 The seventh archive is a partial temporal-v3 session: five of six references,
 four best choices and one rejection, with 15 candidate identities and 19 exact
