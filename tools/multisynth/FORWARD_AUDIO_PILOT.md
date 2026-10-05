@@ -88,3 +88,22 @@ and calibrate pitch/gesture constraints explicitly. Retain synthetic supervision
 and useful control-domain priors when testing real-audio loss; evaluate temporal
 encoders and multiple valid control solutions separately. Increasing engine
 count or merely reducing surrogate loss is not an acceptance criterion.
+
+## Local gradient follow-up, 2026-10-05
+
+A fresh balanced 32-case Transfxr development set excluded both forward and
+inverse training controls. One normalized gradient step of .005 of each control
+range improved actual descriptor loss on 23/32 cases (mean .315813 → .277200),
+but failed the predeclared 24/32 threshold and lost one previously matching
+voiced-span direction. The latter flattened a weak descent from -.615 to -.270
+semitones against a -9.377-semitone target, crossing the tracker's deadband.
+It did not turn a faithful descent into a rise. No inverse audio training is
+authorized by this result. Other radii and reversed directions remain diagnostic.
+
+The [local summary](evaluations/local-gradient-v1-summary.json) retains all six
+radius/direction arms. Independent review verified 256 target/before/step WAV
+hashes, exact summary calculations, and no source-control training overlaps.
+It also prompted stronger preflight source/split checks and dependency hashes;
+the raw result and its original evaluator snapshot are unchanged. Pitch safeguard
+coverage is limited: five initially accurate static cases and fifteen initially
+matching movement directions. This is development evidence, not human likeness.
