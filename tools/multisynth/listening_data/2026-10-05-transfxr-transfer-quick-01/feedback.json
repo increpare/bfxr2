@@ -1,0 +1,722 @@
+{
+  "schemaVersion": 3,
+  "experimentId": "8242b8603755b097d7cdba29233b686d1270e5caf185603987090011b080d5bd",
+  "provenance": {
+    "experiment": "transfxr-transfer-v1-listening",
+    "complete": true,
+    "targetCount": 6,
+    "galleryTitle": "Does the match survive changes?",
+    "humanReviewRequired": true,
+    "galleryIntro": [
+      "Six short checks: three altered inputs, then three sounds made by other synths. All recreations use Transfxr.",
+      "Choose the closer match, tie, or None are close. For altered inputs, the reference is the altered sound; match what you hear.",
+      "The first three compare predictions from clean and altered input. The others compare the earlier model with the combined models. Identical outputs appear once.",
+      "These are fixed diagnostic examples, not a representative success rate. A quick overall comment on whether any are convincing would help."
+    ],
+    "selectionReason": "Fixed cases: warble MP3-32k and +5 semitones, texture lowpass-1800, new native Bfxr/Boomr/Pluckr. No selection by match-score improvement.",
+    "reportSha256": "c49e06b826b96d0b8f0c6a4e34cf2656cd1b631c01893cb65315973d4c4d9743",
+    "auditSha256": "e42b0e7c501bfb3ffe4a9a9b83e5c1e165ac45f9b2f4bf6473c91d0a374ed6d9",
+    "sourceAuditSha256": "e7dae6a25683e016de0e25dfc1e4377f676597cb4f6b0c749fba0b5fa934a309",
+    "scriptSha256": "1e05075cc09c1fb99570f43a27d83c33d4e837298257e78aa152a01f07795a50",
+    "checkpoints": {
+      "control": "c0e4426098e13aa79cd8cfee76e5a06cd0bb74ec1683541790adb04f0244cec4",
+      "expanded": "a9c492976fd4a4ed45791ac223d238751ff669ad91f6364ec496937618db38fe"
+    },
+    "uiCodeHashes": {
+      "quick_listening.html": "26d1e14690044b3a78380ea8eb95eee24acd804ed599097cea56e99190e500af",
+      "quick_choice.js": "b7e77493580c6e1bf2851493e2da230a13199435a6f1e5ae5eb4804643be0fd2",
+      "quick_listening.css": "155fc502d4886bb290afbfb782bad1cbf53c0198aba5954ef757e4bad9fb0b40",
+      "quick_audio.js": "0abfac40fe8cd7a1c9f79143458b45c7ef79342892113fdc53f9ca15cab7f83a",
+      "quick_listening.js": "bd363ddcd6acb4ef1eed1e117dd1600da7a4fc655fbed9a33ed256a62ef30d84",
+      "quick_feedback.py": "4e9c0d370ad551f8ebfcf6ea93f9b609f28736362aac4e7cd30e06bf7fa8902a"
+    }
+  },
+  "ratingScales": {
+    "likeness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Likeness to reference: 1 = far off, 5 = very close"
+    },
+    "usefulness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Useful/fun game sound: 1 = not useful, 5 = very useful or fun"
+    }
+  },
+  "targets": [
+    {
+      "id": "6404bb776d1404b16c439e8a53ef0883aba2bfc0a094438fddb8a0cab22b923f",
+      "name": "Warbling sweep · MP3 32 kbps",
+      "sha256": "0a1a89b51f8c6bf46d40aee71ebdd34b978c58cd5129d5e46765321dd7f18464",
+      "folder": "001",
+      "referenceAudioSha256": "0a1a89b51f8c6bf46d40aee71ebdd34b978c58cd5129d5e46765321dd7f18464",
+      "candidates": [
+        {
+          "id": "0e057b6e5dfa8f53f44c35e9ab60b597bade0c46dc1bcc0a61311a84274e7cdd",
+          "synth": "Transfxr",
+          "paramsSha256": "f4ff149232ae4d76d4d9bcf091e137c0adbb16c6335dbe20cec830324df6e500",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "0c388d1d82f4ed40c0edbadda46fdb82a8f294ab5d641e7a88e9e5d1fe4fb2a4",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              0,
+              4,
+              0,
+              1,
+              0,
+              0,
+              3
+            ],
+            "jointLogProbability": -0.41292372811585665,
+            "proposalRank": 0,
+            "proposalSource": "mode-primary",
+            "checkpointHash": "a9c492976fd4a4ed45791ac223d238751ff669ad91f6364ec496937618db38fe",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "93fec93e6cb758c783c5723f405b8f83934d6fa74485f570b9027c7db2636a6f",
+            "auditionPcmSha256": "5a78af120cf07b5c0e3a29df1d803234b36ea35c65f5aa320348fbfaf2646d8b",
+            "auditionWavSha256": "0c388d1d82f4ed40c0edbadda46fdb82a8f294ab5d641e7a88e9e5d1fe4fb2a4",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "transferReportSha256": "c49e06b826b96d0b8f0c6a4e34cf2656cd1b631c01893cb65315973d4c4d9743",
+            "sourceCase": "Transfxr-selection-17860/mp3-32k",
+            "comparisonRole": "frozen-clean"
+          },
+          "file": "frozen-clean.wav",
+          "role": "frozen-clean",
+          "label": "Prediction from clean input",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "9188ad6b0ed4a56ec135e71a94d347fa58c1d467f035b07a52bba9669963867b",
+          "synth": "Transfxr",
+          "paramsSha256": "56cf98d349fb3b4e2939c918785ecdb02a7af11d9c57bc13816971a9f6794e90",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "ebb5daf13d88962092a88d59479cff0e5b17d7006c6b59a23872631ca2d3a236",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              0,
+              4,
+              0,
+              1,
+              0,
+              0,
+              3
+            ],
+            "jointLogProbability": -0.06310609879437834,
+            "proposalRank": 0,
+            "proposalSource": "mode-primary",
+            "checkpointHash": "c0e4426098e13aa79cd8cfee76e5a06cd0bb74ec1683541790adb04f0244cec4",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "d915a5de676f16e552e5c6ffc8b81f52780e3132d5f1115eaa069df4110d65ce",
+            "auditionPcmSha256": "2a5d843ae233d128c21b204116d7e7d3a5ab4a908890a7eece840f8a619e70c4",
+            "auditionWavSha256": "ebb5daf13d88962092a88d59479cff0e5b17d7006c6b59a23872631ca2d3a236",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "transferReportSha256": "c49e06b826b96d0b8f0c6a4e34cf2656cd1b631c01893cb65315973d4c4d9743",
+            "sourceCase": "Transfxr-selection-17860/mp3-32k",
+            "comparisonRole": "adapted"
+          },
+          "file": "adapted.wav",
+          "role": "adapted",
+          "label": "Prediction from altered input",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "tie",
+        "presentedCandidateIds": [
+          "0e057b6e5dfa8f53f44c35e9ab60b597bade0c46dc1bcc0a61311a84274e7cdd",
+          "9188ad6b0ed4a56ec135e71a94d347fa58c1d467f035b07a52bba9669963867b"
+        ],
+        "auditionedCandidateIds": [
+          "0e057b6e5dfa8f53f44c35e9ab60b597bade0c46dc1bcc0a61311a84274e7cdd",
+          "9188ad6b0ed4a56ec135e71a94d347fa58c1d467f035b07a52bba9669963867b"
+        ],
+        "preferredCandidateIds": []
+      }
+    },
+    {
+      "id": "192844f67de769febc40fd842d366d743f569a43deb9699ece15071b640bb44a",
+      "name": "Warbling sweep · up five semitones",
+      "sha256": "cae583cd3e5da1c57de16c43c44f5fb0d97c49f0caf6a01d3d208e0ff2731190",
+      "folder": "002",
+      "referenceAudioSha256": "cae583cd3e5da1c57de16c43c44f5fb0d97c49f0caf6a01d3d208e0ff2731190",
+      "candidates": [
+        {
+          "id": "bd660f83f531b6ed5cbebf7e47a77fdb917a2af46515346386b9ffe372dd189d",
+          "synth": "Transfxr",
+          "paramsSha256": "f4ff149232ae4d76d4d9bcf091e137c0adbb16c6335dbe20cec830324df6e500",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "0c388d1d82f4ed40c0edbadda46fdb82a8f294ab5d641e7a88e9e5d1fe4fb2a4",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              0,
+              4,
+              0,
+              1,
+              0,
+              0,
+              3
+            ],
+            "jointLogProbability": -0.41292372811585665,
+            "proposalRank": 0,
+            "proposalSource": "mode-primary",
+            "checkpointHash": "a9c492976fd4a4ed45791ac223d238751ff669ad91f6364ec496937618db38fe",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "93fec93e6cb758c783c5723f405b8f83934d6fa74485f570b9027c7db2636a6f",
+            "auditionPcmSha256": "5a78af120cf07b5c0e3a29df1d803234b36ea35c65f5aa320348fbfaf2646d8b",
+            "auditionWavSha256": "0c388d1d82f4ed40c0edbadda46fdb82a8f294ab5d641e7a88e9e5d1fe4fb2a4",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "transferReportSha256": "c49e06b826b96d0b8f0c6a4e34cf2656cd1b631c01893cb65315973d4c4d9743",
+            "sourceCase": "Transfxr-selection-17860/transpose+5",
+            "comparisonRole": "frozen-clean"
+          },
+          "file": "frozen-clean.wav",
+          "role": "frozen-clean",
+          "label": "Prediction from clean input",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "c133c6a8d3b17353859dc41bf2f77601d4ed1681a6011d89d0c1bd9d6b0507c7",
+          "synth": "Transfxr",
+          "paramsSha256": "e2b0f1c98d50e6ad256c07102a71fab128dd6d27b1921a72cd4eaa173f0e3561",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "3b4429c3d7ab8b6439c7abfcfec3c03f8a915734a2bd0eabb2d0f31f001837c8",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              0,
+              4,
+              0,
+              1,
+              1,
+              0,
+              3
+            ],
+            "jointLogProbability": -3.8771977350115776,
+            "proposalRank": 3,
+            "proposalSource": "categorical-alternative",
+            "checkpointHash": "a9c492976fd4a4ed45791ac223d238751ff669ad91f6364ec496937618db38fe",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "42b7028d2e166b4f4c50a40f7982618734ffeac7e7988f2bd56ce454c5747838",
+            "auditionPcmSha256": "c893f22678d2dd5dc58a8ef0187f27e6cfbc0f5b086cc4500c9acbeeb96fc0b5",
+            "auditionWavSha256": "3b4429c3d7ab8b6439c7abfcfec3c03f8a915734a2bd0eabb2d0f31f001837c8",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "transferReportSha256": "c49e06b826b96d0b8f0c6a4e34cf2656cd1b631c01893cb65315973d4c4d9743",
+            "sourceCase": "Transfxr-selection-17860/transpose+5",
+            "comparisonRole": "adapted"
+          },
+          "file": "adapted.wav",
+          "role": "adapted",
+          "label": "Prediction from altered input",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "c133c6a8d3b17353859dc41bf2f77601d4ed1681a6011d89d0c1bd9d6b0507c7",
+          "bd660f83f531b6ed5cbebf7e47a77fdb917a2af46515346386b9ffe372dd189d"
+        ],
+        "auditionedCandidateIds": [
+          "c133c6a8d3b17353859dc41bf2f77601d4ed1681a6011d89d0c1bd9d6b0507c7",
+          "bd660f83f531b6ed5cbebf7e47a77fdb917a2af46515346386b9ffe372dd189d"
+        ],
+        "preferredCandidateIds": [
+          "c133c6a8d3b17353859dc41bf2f77601d4ed1681a6011d89d0c1bd9d6b0507c7"
+        ]
+      }
+    },
+    {
+      "id": "cdb5b267b8e69032c52865a2c8692f9c4f686433c7034119b35c1d6463cb1e02",
+      "name": "Short texture · low-pass filtered",
+      "sha256": "5ed455fa17b8501811767e30ca4bdeef118570f352ed4da7615199ca0ace8fa8",
+      "folder": "003",
+      "referenceAudioSha256": "5ed455fa17b8501811767e30ca4bdeef118570f352ed4da7615199ca0ace8fa8",
+      "candidates": [
+        {
+          "id": "a2025307641a9e21eb2b5dad9285adecd1109391f2367f9b8b936b9906d25e53",
+          "synth": "Transfxr",
+          "paramsSha256": "38ed8a25a78af699741f9e39313adb1975979c36d58ca95dba80685cd4c731bb",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "401d3971d8d35f79079da94052d923f0ef9cc701a1406ad074dd82cbffd496ef",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              1,
+              0,
+              0,
+              0,
+              2,
+              8,
+              5
+            ],
+            "jointLogProbability": -1.3668032437562943,
+            "proposalRank": 1,
+            "proposalSource": "categorical-alternative",
+            "checkpointHash": "a9c492976fd4a4ed45791ac223d238751ff669ad91f6364ec496937618db38fe",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "fce94455cac9caf8f814bba48aa6742e5d147c2655eaf75cd633573b1af903a4",
+            "auditionPcmSha256": "62e945582806cfe48b5627db3c58d0943c4538a32230a3ac1f2f953e1a9f03ee",
+            "auditionWavSha256": "401d3971d8d35f79079da94052d923f0ef9cc701a1406ad074dd82cbffd496ef",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "transferReportSha256": "c49e06b826b96d0b8f0c6a4e34cf2656cd1b631c01893cb65315973d4c4d9743",
+            "sourceCase": "Transfxr-selection-17445/lowpass-1800",
+            "comparisonRole": "frozen-clean"
+          },
+          "file": "frozen-clean.wav",
+          "role": "frozen-clean",
+          "label": "Prediction from clean input",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "81e24fa11ce8d8060a710e80c6e443c04841ef6d4190c61af4a3174c178039c8",
+          "synth": "Transfxr",
+          "paramsSha256": "ad12e4afa1ea4d1c8cc01ecc78e009fe5dad468605ed6150eca50748ac10be75",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "64c19c3ab7d784da67b03d506fadaa4173dcff6d86cdecd786da7119cbb6e1cb",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              1,
+              0,
+              3,
+              5,
+              2,
+              8,
+              0
+            ],
+            "jointLogProbability": -3.1743325609713793,
+            "proposalRank": 2,
+            "proposalSource": "categorical-alternative",
+            "checkpointHash": "a9c492976fd4a4ed45791ac223d238751ff669ad91f6364ec496937618db38fe",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "610bc1023290447193330c6a2039d7a3d2ac3ba1a3eaacdb2de384381cafa95a",
+            "auditionPcmSha256": "0bd1c1cf2a7a6b28a71a257fb1dbfddeb512f9a9dabed60378ffd00ee1bd1ab8",
+            "auditionWavSha256": "64c19c3ab7d784da67b03d506fadaa4173dcff6d86cdecd786da7119cbb6e1cb",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "transferReportSha256": "c49e06b826b96d0b8f0c6a4e34cf2656cd1b631c01893cb65315973d4c4d9743",
+            "sourceCase": "Transfxr-selection-17445/lowpass-1800",
+            "comparisonRole": "adapted"
+          },
+          "file": "adapted.wav",
+          "role": "adapted",
+          "label": "Prediction from altered input",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "81e24fa11ce8d8060a710e80c6e443c04841ef6d4190c61af4a3174c178039c8",
+          "a2025307641a9e21eb2b5dad9285adecd1109391f2367f9b8b936b9906d25e53"
+        ],
+        "auditionedCandidateIds": [
+          "81e24fa11ce8d8060a710e80c6e443c04841ef6d4190c61af4a3174c178039c8",
+          "a2025307641a9e21eb2b5dad9285adecd1109391f2367f9b8b936b9906d25e53"
+        ],
+        "preferredCandidateIds": [
+          "a2025307641a9e21eb2b5dad9285adecd1109391f2367f9b8b936b9906d25e53"
+        ]
+      }
+    },
+    {
+      "id": "840c12666323eb23027aeb919971cfcfd81dcf96e3263465cda7949be7c12726",
+      "name": "New sound from Bfxr",
+      "sha256": "b529e9c8bae707f4694d04a8b6d86f1f1d31621a252b13465ccfee1e4b9b9f3f",
+      "folder": "004",
+      "referenceAudioSha256": "b529e9c8bae707f4694d04a8b6d86f1f1d31621a252b13465ccfee1e4b9b9f3f",
+      "candidates": [
+        {
+          "id": "d7b82524e423bf18625d08b0c8cce5163315621ed08f4d5fe260b3a6e8109d8f",
+          "synth": "Transfxr",
+          "paramsSha256": "15ed13b538086af7fdba5da0b03777518c010a10ba7eabaaa9e9994f0c55a6e1",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "dee4d12dc1cb0db46dab379248b43f79ed1ed36b6ca7227499a0d3c6ecd26a9b",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              3,
+              2,
+              2,
+              1,
+              2,
+              8,
+              0
+            ],
+            "jointLogProbability": -1.1998556209728122,
+            "proposalRank": 0,
+            "proposalSource": "mode-primary",
+            "checkpointHash": "c0e4426098e13aa79cd8cfee76e5a06cd0bb74ec1683541790adb04f0244cec4",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "2722b7aa930ca0fbaf7842b0da29d21ca713242f4f3d14b4b74b3c799e0d5f06",
+            "auditionPcmSha256": "0c8b298340a2c84653960fd45f1b9267cf987eabd33c457818ba3a91ff855e76",
+            "auditionWavSha256": "dee4d12dc1cb0db46dab379248b43f79ed1ed36b6ca7227499a0d3c6ecd26a9b",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "transferReportSha256": "c49e06b826b96d0b8f0c6a4e34cf2656cd1b631c01893cb65315973d4c4d9743",
+            "sourceCase": "external-Bfxr",
+            "comparisonRole": "old"
+          },
+          "file": "old.wav",
+          "role": "old",
+          "label": "Earlier Transfxr model",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "f749a5b3a9581042a08add2e2291adbaf24b7a9236fc0d88a5e7b9f74ed2c7d4",
+          "synth": "Transfxr",
+          "paramsSha256": "fff1535edd764412237edd29bb11af66d85147d486cef3c7da6c43868fc2a7ed",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "864ee981fffaac7af8256fb2f6560ffc89fdb1e53623fffe9c60b88d6de64d61",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              3,
+              2,
+              2,
+              0,
+              0,
+              8,
+              0
+            ],
+            "jointLogProbability": -4.17675593495369,
+            "proposalRank": 0,
+            "proposalSource": "mode-primary",
+            "checkpointHash": "a9c492976fd4a4ed45791ac223d238751ff669ad91f6364ec496937618db38fe",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "2ec45b8af43820aafffbadf869d7244b7658c4e9b15544a4128c2549f196bcd5",
+            "auditionPcmSha256": "5daa5978d2ef0f6a3a35c0c62110bd65ffddcdb77c75137f27fb778f8ca4defa",
+            "auditionWavSha256": "864ee981fffaac7af8256fb2f6560ffc89fdb1e53623fffe9c60b88d6de64d61",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "transferReportSha256": "c49e06b826b96d0b8f0c6a4e34cf2656cd1b631c01893cb65315973d4c4d9743",
+            "sourceCase": "external-Bfxr",
+            "comparisonRole": "ensemble"
+          },
+          "file": "ensemble.wav",
+          "role": "ensemble",
+          "label": "Combined Transfxr models",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "f749a5b3a9581042a08add2e2291adbaf24b7a9236fc0d88a5e7b9f74ed2c7d4",
+          "d7b82524e423bf18625d08b0c8cce5163315621ed08f4d5fe260b3a6e8109d8f"
+        ],
+        "auditionedCandidateIds": [
+          "f749a5b3a9581042a08add2e2291adbaf24b7a9236fc0d88a5e7b9f74ed2c7d4",
+          "d7b82524e423bf18625d08b0c8cce5163315621ed08f4d5fe260b3a6e8109d8f"
+        ],
+        "preferredCandidateIds": [
+          "f749a5b3a9581042a08add2e2291adbaf24b7a9236fc0d88a5e7b9f74ed2c7d4"
+        ]
+      }
+    },
+    {
+      "id": "579f71170b9d98f3e10c8433af3166afc8d3305586f16d0f881acbebf8d48178",
+      "name": "New sound from Boomr",
+      "sha256": "3aeeb71d3a24e24af3f9742663612e05806d08fd3deac114a3b4ca2d8e55d354",
+      "folder": "005",
+      "referenceAudioSha256": "3aeeb71d3a24e24af3f9742663612e05806d08fd3deac114a3b4ca2d8e55d354",
+      "candidates": [
+        {
+          "id": "1ab4e8f64f4a7a4ed6b089aa6ddb29684791ee9a689964b8f202ba653f14c672",
+          "synth": "Transfxr",
+          "paramsSha256": "e9dfc8e04c321c85b29873e6d774df9e612ea9ca2b9146e1d9d827e63ffa4f90",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "f8d837c27747f55edb3a9adac13bb1f79db4abfffab24afa257c1643662c5a14",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              9,
+              4,
+              3,
+              0,
+              2,
+              10,
+              0
+            ],
+            "jointLogProbability": -4.769741058349609,
+            "proposalRank": 5,
+            "proposalSource": "categorical-alternative",
+            "checkpointHash": "c0e4426098e13aa79cd8cfee76e5a06cd0bb74ec1683541790adb04f0244cec4",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "beee1713d6d49451b67fcbde2e9b9629dd4ad73bedcbd4d3389ebece8d3105b6",
+            "auditionPcmSha256": "c52b7e168a23b47cf11f5a301242c3f5f5d9261119bb5685f13125ef4750bb11",
+            "auditionWavSha256": "f8d837c27747f55edb3a9adac13bb1f79db4abfffab24afa257c1643662c5a14",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "transferReportSha256": "c49e06b826b96d0b8f0c6a4e34cf2656cd1b631c01893cb65315973d4c4d9743",
+            "sourceCase": "external-Boomr",
+            "comparisonRole": "old"
+          },
+          "file": "old.wav",
+          "role": "old",
+          "label": "Earlier Transfxr model",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "97140776f55cfa86618a5c01dc47c116abdfb0df43289eb9cc6e6bfee218a0f4",
+          "synth": "Transfxr",
+          "paramsSha256": "301e408f788c1319c78f14095f9e89f39b275b3e1b1b63deb3678966f8471fc9",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "d0053c8acde4db780240af6d84707c61a468b1c3094b713d10c7ea634a528fcd",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              7,
+              4,
+              3,
+              0,
+              2,
+              8,
+              0
+            ],
+            "jointLogProbability": -4.563003122806549,
+            "proposalRank": 3,
+            "proposalSource": "categorical-alternative",
+            "checkpointHash": "c0e4426098e13aa79cd8cfee76e5a06cd0bb74ec1683541790adb04f0244cec4",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "52303e5f85bc797478ab3f49cd30837732fd2e844ed3a5ae01ddc374bc5d65e2",
+            "auditionPcmSha256": "2f6f9daa0a850e9b9cc4989966b6bb47ef6f26e4d36322b25799d578b4b8b3ea",
+            "auditionWavSha256": "d0053c8acde4db780240af6d84707c61a468b1c3094b713d10c7ea634a528fcd",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "transferReportSha256": "c49e06b826b96d0b8f0c6a4e34cf2656cd1b631c01893cb65315973d4c4d9743",
+            "sourceCase": "external-Boomr",
+            "comparisonRole": "ensemble"
+          },
+          "file": "ensemble.wav",
+          "role": "ensemble",
+          "label": "Combined Transfxr models",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "97140776f55cfa86618a5c01dc47c116abdfb0df43289eb9cc6e6bfee218a0f4",
+          "1ab4e8f64f4a7a4ed6b089aa6ddb29684791ee9a689964b8f202ba653f14c672"
+        ],
+        "auditionedCandidateIds": [
+          "97140776f55cfa86618a5c01dc47c116abdfb0df43289eb9cc6e6bfee218a0f4",
+          "1ab4e8f64f4a7a4ed6b089aa6ddb29684791ee9a689964b8f202ba653f14c672"
+        ],
+        "preferredCandidateIds": [
+          "97140776f55cfa86618a5c01dc47c116abdfb0df43289eb9cc6e6bfee218a0f4"
+        ]
+      }
+    },
+    {
+      "id": "0868c181622a94140d2af4b36bcef7f5ccb94a0c1377c25f461b2d1d158a2a2e",
+      "name": "New sound from Pluckr",
+      "sha256": "e43271882b55f0818d58da5b28069019c8a254e048d265f18253225777a1c91b",
+      "folder": "006",
+      "referenceAudioSha256": "e43271882b55f0818d58da5b28069019c8a254e048d265f18253225777a1c91b",
+      "candidates": [
+        {
+          "id": "1ef23e16c6c2cbf9f2ac7f0fcce65645f563dfb6c091f91ffe08d8e92dcf94dc",
+          "synth": "Transfxr",
+          "paramsSha256": "4678663b8a64c95f7d0bd465410d755cb29a039e0cc546700f09812a9bbbd5e8",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "880eaada4fc4ae2302402a4d337120aa00314b3cde3c864213c7d4c9ca3bc490",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              11,
+              2,
+              2,
+              0,
+              2,
+              9,
+              0
+            ],
+            "jointLogProbability": -3.809912348166108,
+            "proposalRank": 7,
+            "proposalSource": "categorical-alternative",
+            "checkpointHash": "c0e4426098e13aa79cd8cfee76e5a06cd0bb74ec1683541790adb04f0244cec4",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "1787774782142c424eb82e324aff2f95b099d1040f5280b1ec17fb7782bee981",
+            "auditionPcmSha256": "67da521b10274ae6b87c9fc9db580d3b9d8a66a8ad39a961c0adec09878711f3",
+            "auditionWavSha256": "880eaada4fc4ae2302402a4d337120aa00314b3cde3c864213c7d4c9ca3bc490",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "transferReportSha256": "c49e06b826b96d0b8f0c6a4e34cf2656cd1b631c01893cb65315973d4c4d9743",
+            "sourceCase": "external-Pluckr",
+            "comparisonRole": "old"
+          },
+          "file": "old.wav",
+          "role": "old",
+          "label": "Earlier Transfxr model",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "8e1357460597651998e81894df26ba787e2dd0e6d3b74c2a45db365a2b9c0d45",
+          "synth": "Transfxr",
+          "paramsSha256": "8ccfddedbd5b7bf406f7e3c05274d45c7b8895a6e0f4df6509f36f5f1abd3af2",
+          "seed": 20261010,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "87acc185aa27e80c85f40bd7b8b26b3f2f49ac429e546b9d1d24950439c54c5a",
+          "provenance": {
+            "method": "neural-temporal-controls",
+            "neuralRaw": true,
+            "mode": 0,
+            "modeProbability": 1,
+            "categoricalProposal": [
+              11,
+              2,
+              2,
+              0,
+              2,
+              9,
+              0
+            ],
+            "jointLogProbability": -3.4067043475806713,
+            "proposalRank": 3,
+            "proposalSource": "categorical-alternative",
+            "checkpointHash": "a9c492976fd4a4ed45791ac223d238751ff669ad91f6364ec496937618db38fe",
+            "anchorSeed": 20261010,
+            "encoderKind": "flat",
+            "fixedRandomness": [],
+            "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+            "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+            "actualRenderAudioHash": "55473dcf78694e4a43102efcf69b2eb88d67c0654a85bb41a3a8dab6a8ac8ed7",
+            "auditionPcmSha256": "115b2fdfac050223afb21cb015203054343e0b99d3ccd5f4ff6bb45b7a558e29",
+            "auditionWavSha256": "87acc185aa27e80c85f40bd7b8b26b3f2f49ac429e546b9d1d24950439c54c5a",
+            "auditionTransform": "single peak normalization to 0.5 and PCM16 quantization",
+            "transferReportSha256": "c49e06b826b96d0b8f0c6a4e34cf2656cd1b631c01893cb65315973d4c4d9743",
+            "sourceCase": "external-Pluckr",
+            "comparisonRole": "ensemble"
+          },
+          "file": "ensemble.wav",
+          "role": "ensemble",
+          "label": "Combined Transfxr models",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "",
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "none",
+        "presentedCandidateIds": [
+          "8e1357460597651998e81894df26ba787e2dd0e6d3b74c2a45db365a2b9c0d45",
+          "1ef23e16c6c2cbf9f2ac7f0fcce65645f563dfb6c091f91ffe08d8e92dcf94dc"
+        ],
+        "auditionedCandidateIds": [
+          "8e1357460597651998e81894df26ba787e2dd0e6d3b74c2a45db365a2b9c0d45",
+          "1ef23e16c6c2cbf9f2ac7f0fcce65645f563dfb6c091f91ffe08d8e92dcf94dc"
+        ],
+        "preferredCandidateIds": []
+      }
+    }
+  ]
+}

@@ -13,6 +13,26 @@
 | `2026-10-04-temporal-v3-quick-01/` | 5 | 15 |
 | `2026-10-05-pitch-calibration-quick-01/` | 5 | 12 |
 | `2026-10-05-coverage-selection-quick-01/` | 3 | 6 |
+| `2026-10-05-transfxr-transfer-quick-01/` | 6 | 12 |
+
+The tenth archive retains all six robustness/transfer judgments, all 12 options
+recorded as auditioned, and 17 unique lossless reference/candidate PCM files.
+The compressed warble is a tie; the transposed warble favors the prediction from
+the altered input; the filtered texture favors the frozen clean-input prediction.
+Combined Transfxr models win the Bfxr and Boomr source comparisons. Both Pluckr
+recreations are rejected as not close. Four best choices yield four strict
+heard-only pairs; the tie and rejection remain separate evidence. No scalar
+scores or absolute likeness judgments for the winners were supplied.
+
+On the exact audition PCM, MatchObjective and the frozen preference-neural-v2
+scorer each agree with 2/4 preferences, on different pairs. MatchObjective favors
+the wrong transposition option and the old Boomr-source recreation. The MP3
+numerical regression is not an audible preference loss in this listening test.
+Perceptual-v5 is unavailable because its compatibility check fails; do not bypass
+that check. See [the transfer human review](../evaluations/transfxr-transfer-quick-01-human-review.json).
+For any future preference validation, keep transformed warble references with
+their clean warble source family, and filtered texture with its clean source
+family. Distinct reference PCM hashes do not make these independent holdouts.
 
 The ninth archive retains three held-out Transfxr self-inversion comparisons.
 The expanded expert wins Warbling sweep and Bouncing rise; Short texture is a

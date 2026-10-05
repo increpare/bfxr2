@@ -96,4 +96,41 @@ Listening page: `runs/transfxr-transfer-v1-listening/index.html`, experiment
 `8242b8603755b097d7cdba29233b686d1270e5caf185603987090011b080d5bd`.
 HTML, results and all 18 audition WAVs match hashes over the local HTTP server.
 The browser shows six available comparisons and zero judgments; no assistant
-ratings were entered. Likeness feedback on this batch is pending.
+ratings were entered during browser verification.
+
+## Human feedback received
+
+The six submitted comparisons were all auditioned:
+
+| Reference | Human choice |
+|---|---|
+| MP3 32 kbps warble | Tie |
+| Warble transposed up five semitones | Prediction from altered input |
+| Low-pass filtered texture | Frozen clean-input prediction |
+| New Bfxr sound | Combined Transfxr models |
+| New Boomr sound | Combined Transfxr models |
+| New Pluckr sound | Neither is close |
+
+This supports a relative benefit from responding to transposition and a relative
+filtering regression on the selected texture. The MP3 numerical regression does
+not establish an audible preference loss: the listener judged the two options
+equal. The Bfxr and Boomr wins are relative evidence, with absolute likeness
+still unspecified. The Pluckr rejection is explicit negative adequacy evidence.
+
+Recomputing scores from the exact normalized PCM16 audition gives MatchObjective
+agreement on only two of four strict preferences. It favors the frozen-clean
+transposed sweep (5.8333 versus 7.2716), contrary to the listener. Its tiny
+Boomr-source preference is also reversed (1.9904 old versus 2.0306 ensemble).
+It agrees on filtered texture and the Bfxr-source comparison. The older frozen
+preference-neural-v2 scorer agrees on two different pairs (transposition and
+Boomr); it is not a general fix. Perceptual-v5 failed its existing compatibility
+check and was excluded rather than loaded unsafely.
+
+Retained evidence: `listening_data/2026-10-05-transfxr-transfer-quick-01`, including
+original export, 12 candidate identities and 17 distinct reference/candidate
+PCM files. Review: `evaluations/transfxr-transfer-quick-01-human-review.json`.
+The clean-source warble candidate is identical across two different reference
+comparisons, explaining audio deduplication. Four strict heard-only pairs are
+available; no scores are invented for the tie or rejection. Transformed source
+families must stay grouped with the earlier clean references in future scorer
+validation. This review does not retrain or promote a model.

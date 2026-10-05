@@ -1,0 +1,567 @@
+{
+  "complete": true,
+  "scriptSha256": "7525211da12b42764aec1fb981c0a69987285b2b3944a594082e8f0fab019fc3",
+  "experimentId": "8242b8603755b097d7cdba29233b686d1270e5caf185603987090011b080d5bd",
+  "feedbackSha256": "6a5eab5ca0a5fbca08c59cfff04b094a8f4370c175ec5de57263b75580638bf5",
+  "manifestSha256": "48c53544894a683f4157001d05d8e5f9f18cee1165ccf3a26937b400f2544426",
+  "galleryReportSha256": "d0be93ba38440740dada1cf7fd1b39dbc8617b4ab191d5fe1bd40cb89ce8a93f",
+  "galleryAuditSha256": "5efa5d63a1b296efe6635ff195a7ed625a922ac47613cef72deb43f10600fdae",
+  "metricHashes": {
+    "preference-neural-v2": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b"
+  },
+  "unavailableMetrics": {
+    "perceptual-v5": "Incompatible perceptual model version/schema/hash"
+  },
+  "archiveSummary": {
+    "targets": 6,
+    "uniqueRatedCandidates": 0,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "choices": 6,
+    "choiceKinds": {
+      "best": 4,
+      "tie": 1,
+      "none": 1,
+      "skip": 0
+    }
+  },
+  "trainingPairSummary": {
+    "targets": 6,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "duplicateAudioAliases": 0,
+    "conflictingAudioRatingGroups": 0,
+    "tiedPairs": 0,
+    "duplicateSessionPairs": 0,
+    "directChoicePairs": 4,
+    "choices": 6,
+    "choiceKinds": {
+      "best": 4,
+      "tie": 1,
+      "none": 1,
+      "skip": 0
+    },
+    "validatedAudioFiles": 17,
+    "uniqueAudioPcm": 17
+  },
+  "strictHeardPairs": 4,
+  "rows": [
+    {
+      "name": "Warbling sweep \u00b7 MP3 32 kbps",
+      "targetId": "6404bb776d1404b16c439e8a53ef0883aba2bfc0a094438fddb8a0cab22b923f",
+      "referencePcmSha256": "abe7ecede307cc8e00faea35fd1283975671bcc6bee9f19609841c6e2583a703",
+      "referenceFamily": "Transfxr-selection-17860",
+      "kind": "tie",
+      "preferredRoles": [],
+      "options": [
+        {
+          "id": "0e057b6e5dfa8f53f44c35e9ab60b597bade0c46dc1bcc0a61311a84274e7cdd",
+          "role": "frozen-clean",
+          "pcmSha256": "1343d5c1954d6c7ced6672fd005b76cc01268207676fe01a61017ffd928b2b79",
+          "heard": true,
+          "preferred": false,
+          "auditionScores": {
+            "MatchObjective": 1.5939408178305832,
+            "preference-neural-v2": 0.2826004327612468
+          }
+        },
+        {
+          "id": "9188ad6b0ed4a56ec135e71a94d347fa58c1d467f035b07a52bba9669963867b",
+          "role": "adapted",
+          "pcmSha256": "fa5d45d26eb48697d115414b75df9d7596bee4ea5b8443c97e3091d1cd5a5e58",
+          "heard": true,
+          "preferred": false,
+          "auditionScores": {
+            "MatchObjective": 6.0707051626780295,
+            "preference-neural-v2": 0.3296336578655825
+          }
+        }
+      ],
+      "absoluteAdequacy": null,
+      "metricWinners": {
+        "MatchObjective": "frozen-clean",
+        "preference-neural-v2": "frozen-clean"
+      },
+      "note": ""
+    },
+    {
+      "name": "Warbling sweep \u00b7 up five semitones",
+      "targetId": "192844f67de769febc40fd842d366d743f569a43deb9699ece15071b640bb44a",
+      "referencePcmSha256": "eab9c295c8ad62e48fed3ade2f219b80e106becbdeaa5e9b30fa04505a6b52e3",
+      "referenceFamily": "Transfxr-selection-17860",
+      "kind": "best",
+      "preferredRoles": [
+        "adapted"
+      ],
+      "options": [
+        {
+          "id": "bd660f83f531b6ed5cbebf7e47a77fdb917a2af46515346386b9ffe372dd189d",
+          "role": "frozen-clean",
+          "pcmSha256": "1343d5c1954d6c7ced6672fd005b76cc01268207676fe01a61017ffd928b2b79",
+          "heard": true,
+          "preferred": false,
+          "auditionScores": {
+            "MatchObjective": 5.833304256332233,
+            "preference-neural-v2": 0.5710174022111236
+          }
+        },
+        {
+          "id": "c133c6a8d3b17353859dc41bf2f77601d4ed1681a6011d89d0c1bd9d6b0507c7",
+          "role": "adapted",
+          "pcmSha256": "e95f9f44c671cc5cad9e6e214a30e3a40c4c8232dd0770fb8b50d7624a8f7613",
+          "heard": true,
+          "preferred": true,
+          "auditionScores": {
+            "MatchObjective": 7.271633651258893,
+            "preference-neural-v2": 0.5196794707064685
+          }
+        }
+      ],
+      "absoluteAdequacy": null,
+      "metricWinners": {
+        "MatchObjective": "frozen-clean",
+        "preference-neural-v2": "adapted"
+      },
+      "note": ""
+    },
+    {
+      "name": "Short texture \u00b7 low-pass filtered",
+      "targetId": "cdb5b267b8e69032c52865a2c8692f9c4f686433c7034119b35c1d6463cb1e02",
+      "referencePcmSha256": "7ac3121fa9c129eeb26b506b14947da4ce91de7af3c3a871858dc035187675d0",
+      "referenceFamily": "Transfxr-selection-17445",
+      "kind": "best",
+      "preferredRoles": [
+        "frozen-clean"
+      ],
+      "options": [
+        {
+          "id": "a2025307641a9e21eb2b5dad9285adecd1109391f2367f9b8b936b9906d25e53",
+          "role": "frozen-clean",
+          "pcmSha256": "c2eeb75302bc5b3887a42141e8a87d8e72b0ae83a0894c7a18e8792308bf659d",
+          "heard": true,
+          "preferred": true,
+          "auditionScores": {
+            "MatchObjective": 1.391981361064704,
+            "preference-neural-v2": 0.8072399435344322
+          }
+        },
+        {
+          "id": "81e24fa11ce8d8060a710e80c6e443c04841ef6d4190c61af4a3174c178039c8",
+          "role": "adapted",
+          "pcmSha256": "9970648ad89b89f930f444caed29ff9b14122c8c5aebc521f87200115a68773e",
+          "heard": true,
+          "preferred": false,
+          "auditionScores": {
+            "MatchObjective": 2.3127652961191036,
+            "preference-neural-v2": 0.4846506043455866
+          }
+        }
+      ],
+      "absoluteAdequacy": null,
+      "metricWinners": {
+        "MatchObjective": "frozen-clean",
+        "preference-neural-v2": "adapted"
+      },
+      "note": ""
+    },
+    {
+      "name": "New sound from Bfxr",
+      "targetId": "840c12666323eb23027aeb919971cfcfd81dcf96e3263465cda7949be7c12726",
+      "referencePcmSha256": "a3c8803c2e3066a6fd82562c8e25ed793c907c86b6027160ecbd70e5bfc539ac",
+      "referenceFamily": "external-Bfxr",
+      "kind": "best",
+      "preferredRoles": [
+        "ensemble"
+      ],
+      "options": [
+        {
+          "id": "d7b82524e423bf18625d08b0c8cce5163315621ed08f4d5fe260b3a6e8109d8f",
+          "role": "old",
+          "pcmSha256": "6b01b6fdf1d0a9fb3d9114604c1389ca82eaab5532a1cdce06654f7a3aa609a9",
+          "heard": true,
+          "preferred": false,
+          "auditionScores": {
+            "MatchObjective": 7.548987269368055,
+            "preference-neural-v2": 1.1608453166709383
+          }
+        },
+        {
+          "id": "f749a5b3a9581042a08add2e2291adbaf24b7a9236fc0d88a5e7b9f74ed2c7d4",
+          "role": "ensemble",
+          "pcmSha256": "986edecc0d01c5bf4a77186102796822d526cddc8eb8a6d72a44aa4daaa6ac87",
+          "heard": true,
+          "preferred": true,
+          "auditionScores": {
+            "MatchObjective": 2.8721038786493054,
+            "preference-neural-v2": 1.1791060209124566
+          }
+        }
+      ],
+      "absoluteAdequacy": null,
+      "metricWinners": {
+        "MatchObjective": "ensemble",
+        "preference-neural-v2": "old"
+      },
+      "note": ""
+    },
+    {
+      "name": "New sound from Boomr",
+      "targetId": "579f71170b9d98f3e10c8433af3166afc8d3305586f16d0f881acbebf8d48178",
+      "referencePcmSha256": "56870d7272881b9525806f48730fc91ae23ee8386b4d014add75a7c812216e31",
+      "referenceFamily": "external-Boomr",
+      "kind": "best",
+      "preferredRoles": [
+        "ensemble"
+      ],
+      "options": [
+        {
+          "id": "1ab4e8f64f4a7a4ed6b089aa6ddb29684791ee9a689964b8f202ba653f14c672",
+          "role": "old",
+          "pcmSha256": "a4d848f8e12954cdefcee0b04abae3b4fa47f3cac6387f79ad63d092722bd82b",
+          "heard": true,
+          "preferred": false,
+          "auditionScores": {
+            "MatchObjective": 1.9904229561625524,
+            "preference-neural-v2": 1.0220447740332528
+          }
+        },
+        {
+          "id": "97140776f55cfa86618a5c01dc47c116abdfb0df43289eb9cc6e6bfee218a0f4",
+          "role": "ensemble",
+          "pcmSha256": "f69fa1cbd13a479a29983d1315e53cd287e1970ca7f2dad9cddaeadff562f9cc",
+          "heard": true,
+          "preferred": true,
+          "auditionScores": {
+            "MatchObjective": 2.0305680760515026,
+            "preference-neural-v2": 1.0202755553395142
+          }
+        }
+      ],
+      "absoluteAdequacy": null,
+      "metricWinners": {
+        "MatchObjective": "old",
+        "preference-neural-v2": "ensemble"
+      },
+      "note": ""
+    },
+    {
+      "name": "New sound from Pluckr",
+      "targetId": "0868c181622a94140d2af4b36bcef7f5ccb94a0c1377c25f461b2d1d158a2a2e",
+      "referencePcmSha256": "d10a4b8bff71e925c31403419c2debbd20ecda16a88c69c6f9cd43d64e1f7e8d",
+      "referenceFamily": "external-Pluckr",
+      "kind": "none",
+      "preferredRoles": [],
+      "options": [
+        {
+          "id": "1ef23e16c6c2cbf9f2ac7f0fcce65645f563dfb6c091f91ffe08d8e92dcf94dc",
+          "role": "old",
+          "pcmSha256": "4c2c36441731b73f54bccfb85f2e8a73bae71cea727bbb7eb7be6dfaa72866b2",
+          "heard": true,
+          "preferred": false,
+          "auditionScores": {
+            "MatchObjective": 8.277570954818431,
+            "preference-neural-v2": 1.3662617012401055
+          }
+        },
+        {
+          "id": "8e1357460597651998e81894df26ba787e2dd0e6d3b74c2a45db365a2b9c0d45",
+          "role": "ensemble",
+          "pcmSha256": "26fb71f2d19ba10030cc857aef5c253bd8509e7e955b1f5031c6e3dc796a6153",
+          "heard": true,
+          "preferred": false,
+          "auditionScores": {
+            "MatchObjective": 7.877280559824381,
+            "preference-neural-v2": 1.322261107726811
+          }
+        }
+      ],
+      "absoluteAdequacy": "Both rejected as not close",
+      "metricWinners": {
+        "MatchObjective": "ensemble",
+        "preference-neural-v2": "ensemble"
+      },
+      "note": ""
+    }
+  ],
+  "pairs": [
+    {
+      "archive": "2026-10-05-transfxr-transfer-quick-01",
+      "experimentId": "8242b8603755b097d7cdba29233b686d1270e5caf185603987090011b080d5bd",
+      "target": "Warbling sweep \u00b7 up five semitones",
+      "referencePcmSha256": "eab9c295c8ad62e48fed3ade2f219b80e106becbdeaa5e9b30fa04505a6b52e3",
+      "candidateA": "c133c6a8d3b17353859dc41bf2f77601d4ed1681a6011d89d0c1bd9d6b0507c7",
+      "candidateB": "bd660f83f531b6ed5cbebf7e47a77fdb917a2af46515346386b9ffe372dd189d",
+      "candidateAliasesA": [
+        "c133c6a8d3b17353859dc41bf2f77601d4ed1681a6011d89d0c1bd9d6b0507c7"
+      ],
+      "candidateAliasesB": [
+        "bd660f83f531b6ed5cbebf7e47a77fdb917a2af46515346386b9ffe372dd189d"
+      ],
+      "candidatePcmSha256A": "e95f9f44c671cc5cad9e6e214a30e3a40c4c8232dd0770fb8b50d7624a8f7613",
+      "candidatePcmSha256B": "1343d5c1954d6c7ced6672fd005b76cc01268207676fe01a61017ffd928b2b79",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.15471048653125763,
+        0.054708847776055336,
+        0.015898088458925486,
+        0.010614603757858276,
+        0.0045362901873886585,
+        0.03674161434173584,
+        0.05245263688266277,
+        0.0009234553435817361,
+        0.07962366566061974,
+        0.008064516129032258,
+        0.0459694005548954,
+        0.01874166941371263,
+        -0.042219992727041245,
+        0.03396047092974186,
+        0.05932660400867462,
+        -0.047727227210998535,
+        0.04995489865541458,
+        -0.02788202092051506,
+        -0.03433622047305107,
+        -0.049798060208559036
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "c133c6a8d3b17353859dc41bf2f77601d4ed1681a6011d89d0c1bd9d6b0507c7",
+          "bd660f83f531b6ed5cbebf7e47a77fdb917a2af46515346386b9ffe372dd189d"
+        ],
+        "auditionedCandidateIds": [
+          "c133c6a8d3b17353859dc41bf2f77601d4ed1681a6011d89d0c1bd9d6b0507c7",
+          "bd660f83f531b6ed5cbebf7e47a77fdb917a2af46515346386b9ffe372dd189d"
+        ],
+        "preferredCandidateIds": [
+          "c133c6a8d3b17353859dc41bf2f77601d4ed1681a6011d89d0c1bd9d6b0507c7"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "adapted",
+      "loserRole": "frozen-clean",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preference-neural-v2": true
+      }
+    },
+    {
+      "archive": "2026-10-05-transfxr-transfer-quick-01",
+      "experimentId": "8242b8603755b097d7cdba29233b686d1270e5caf185603987090011b080d5bd",
+      "target": "Short texture \u00b7 low-pass filtered",
+      "referencePcmSha256": "7ac3121fa9c129eeb26b506b14947da4ce91de7af3c3a871858dc035187675d0",
+      "candidateA": "a2025307641a9e21eb2b5dad9285adecd1109391f2367f9b8b936b9906d25e53",
+      "candidateB": "81e24fa11ce8d8060a710e80c6e443c04841ef6d4190c61af4a3174c178039c8",
+      "candidateAliasesA": [
+        "a2025307641a9e21eb2b5dad9285adecd1109391f2367f9b8b936b9906d25e53"
+      ],
+      "candidateAliasesB": [
+        "81e24fa11ce8d8060a710e80c6e443c04841ef6d4190c61af4a3174c178039c8"
+      ],
+      "candidatePcmSha256A": "c2eeb75302bc5b3887a42141e8a87d8e72b0ae83a0894c7a18e8792308bf659d",
+      "candidatePcmSha256B": "9970648ad89b89f930f444caed29ff9b14122c8c5aebc521f87200115a68773e",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.28342272341251373,
+        0.0098380446434021,
+        -0.004962509963661432,
+        0.0,
+        0.0,
+        -0.002876473590731621,
+        -0.2233695387840271,
+        -0.0019914648146368563,
+        0.021322406828403473,
+        0.02419354838709676,
+        -0.020759830872217815,
+        -0.022007035172161613,
+        0.05950634740293026,
+        -0.0019583776593208313,
+        0.0,
+        0.0,
+        -0.2127329409122467,
+        0.09563171118497849,
+        0.0958213284611702,
+        0.09485402703285217
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "81e24fa11ce8d8060a710e80c6e443c04841ef6d4190c61af4a3174c178039c8",
+          "a2025307641a9e21eb2b5dad9285adecd1109391f2367f9b8b936b9906d25e53"
+        ],
+        "auditionedCandidateIds": [
+          "81e24fa11ce8d8060a710e80c6e443c04841ef6d4190c61af4a3174c178039c8",
+          "a2025307641a9e21eb2b5dad9285adecd1109391f2367f9b8b936b9906d25e53"
+        ],
+        "preferredCandidateIds": [
+          "a2025307641a9e21eb2b5dad9285adecd1109391f2367f9b8b936b9906d25e53"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "frozen-clean",
+      "loserRole": "adapted",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preference-neural-v2": false
+      }
+    },
+    {
+      "archive": "2026-10-05-transfxr-transfer-quick-01",
+      "experimentId": "8242b8603755b097d7cdba29233b686d1270e5caf185603987090011b080d5bd",
+      "target": "New sound from Bfxr",
+      "referencePcmSha256": "a3c8803c2e3066a6fd82562c8e25ed793c907c86b6027160ecbd70e5bfc539ac",
+      "candidateA": "f749a5b3a9581042a08add2e2291adbaf24b7a9236fc0d88a5e7b9f74ed2c7d4",
+      "candidateB": "d7b82524e423bf18625d08b0c8cce5163315621ed08f4d5fe260b3a6e8109d8f",
+      "candidateAliasesA": [
+        "f749a5b3a9581042a08add2e2291adbaf24b7a9236fc0d88a5e7b9f74ed2c7d4"
+      ],
+      "candidateAliasesB": [
+        "d7b82524e423bf18625d08b0c8cce5163315621ed08f4d5fe260b3a6e8109d8f"
+      ],
+      "candidatePcmSha256A": "986edecc0d01c5bf4a77186102796822d526cddc8eb8a6d72a44aa4daaa6ac87",
+      "candidatePcmSha256B": "6b01b6fdf1d0a9fb3d9114604c1389ca82eaab5532a1cdce06654f7a3aa609a9",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.037965476512908936,
+        -0.019034236669540405,
+        -0.013253675773739815,
+        7.11679458618164e-05,
+        -0.004989922046661377,
+        0.014562912285327911,
+        -0.040340788662433624,
+        3.131222911179066e-05,
+        -0.009827032685279846,
+        0.11290322580645162,
+        -0.023423946152130764,
+        -0.030347523089468753,
+        -0.01817142963409424,
+        0.03142271190881729,
+        -0.005942094139754772,
+        0.12509191036224365,
+        -0.03841979801654816,
+        -0.00334717333316803,
+        -0.012945547699928284,
+        -0.014613032341003418
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "f749a5b3a9581042a08add2e2291adbaf24b7a9236fc0d88a5e7b9f74ed2c7d4",
+          "d7b82524e423bf18625d08b0c8cce5163315621ed08f4d5fe260b3a6e8109d8f"
+        ],
+        "auditionedCandidateIds": [
+          "f749a5b3a9581042a08add2e2291adbaf24b7a9236fc0d88a5e7b9f74ed2c7d4",
+          "d7b82524e423bf18625d08b0c8cce5163315621ed08f4d5fe260b3a6e8109d8f"
+        ],
+        "preferredCandidateIds": [
+          "f749a5b3a9581042a08add2e2291adbaf24b7a9236fc0d88a5e7b9f74ed2c7d4"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "ensemble",
+      "loserRole": "old",
+      "metricAgrees": {
+        "MatchObjective": true,
+        "preference-neural-v2": false
+      }
+    },
+    {
+      "archive": "2026-10-05-transfxr-transfer-quick-01",
+      "experimentId": "8242b8603755b097d7cdba29233b686d1270e5caf185603987090011b080d5bd",
+      "target": "New sound from Boomr",
+      "referencePcmSha256": "56870d7272881b9525806f48730fc91ae23ee8386b4d014add75a7c812216e31",
+      "candidateA": "97140776f55cfa86618a5c01dc47c116abdfb0df43289eb9cc6e6bfee218a0f4",
+      "candidateB": "1ab4e8f64f4a7a4ed6b089aa6ddb29684791ee9a689964b8f202ba653f14c672",
+      "candidateAliasesA": [
+        "97140776f55cfa86618a5c01dc47c116abdfb0df43289eb9cc6e6bfee218a0f4"
+      ],
+      "candidateAliasesB": [
+        "1ab4e8f64f4a7a4ed6b089aa6ddb29684791ee9a689964b8f202ba653f14c672"
+      ],
+      "candidatePcmSha256A": "f69fa1cbd13a479a29983d1315e53cd287e1970ca7f2dad9cddaeadff562f9cc",
+      "candidatePcmSha256B": "a4d848f8e12954cdefcee0b04abae3b4fa47f3cac6387f79ad63d092722bd82b",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.04085135459899902,
+        0.008848920464515686,
+        0.010961342137306929,
+        -0.030739573761820793,
+        -0.02358870580792427,
+        -0.002584986388683319,
+        0.010226354002952576,
+        -0.00020522437989711761,
+        0.009351342916488647,
+        -0.016129032258064516,
+        0.016184523701667786,
+        -0.00025656156153484877,
+        0.04679248481988907,
+        -0.05172361433506012,
+        -0.009243359789252281,
+        0.03846257925033569,
+        0.00973936915397644,
+        -0.020934611558914185,
+        -0.01657409965991974,
+        -0.014310479164123535
+      ],
+      "choice": {
+        "protocol": "feel-choice-v1",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "97140776f55cfa86618a5c01dc47c116abdfb0df43289eb9cc6e6bfee218a0f4",
+          "1ab4e8f64f4a7a4ed6b089aa6ddb29684791ee9a689964b8f202ba653f14c672"
+        ],
+        "auditionedCandidateIds": [
+          "97140776f55cfa86618a5c01dc47c116abdfb0df43289eb9cc6e6bfee218a0f4",
+          "1ab4e8f64f4a7a4ed6b089aa6ddb29684791ee9a689964b8f202ba653f14c672"
+        ],
+        "preferredCandidateIds": [
+          "97140776f55cfa86618a5c01dc47c116abdfb0df43289eb9cc6e6bfee218a0f4"
+        ]
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "winnerRole": "ensemble",
+      "loserRole": "old",
+      "metricAgrees": {
+        "MatchObjective": false,
+        "preference-neural-v2": true
+      }
+    }
+  ],
+  "metricAgreement": {
+    "MatchObjective": {
+      "correct": 2,
+      "pairs": 4
+    },
+    "preference-neural-v2": {
+      "correct": 2,
+      "pairs": 4
+    }
+  },
+  "interpretation": [
+    "Compression sweep is a human tie despite the numerical regression; do not report a perceptually confirmed codec failure from this example.",
+    "Transposed-input prediction beats its frozen-clean prediction; filtering the short texture produces a worse preferred recreation than keeping its clean-input prediction.",
+    "Combined Transfxr models beat old-eight for the Bfxr and Boomr sources. These are relative preferences; no absolute likeness judgments supplied for those winners.",
+    "Both Pluckr-source recreations are rejected as not close. A slightly better score does not establish a useful imitation.",
+    "Four strict heard-only pairs are available. Preserve tie and rejection without invented scalar ratings or directional labels.",
+    "MP3 and transposed warble share a source family with each other and with the earlier human-approved clean warble. Filtered texture shares its earlier clean source family. Any future preference validation must group these relatives together, not merely split distinct reference PCM hashes.",
+    "No model retrained or promoted by this review. Targets are selected diagnostics; do not infer population success rates."
+  ]
+}
