@@ -1,0 +1,24 @@
+{
+  "complete": true,
+  "scriptSha256": "c9dbaf828d0bcebc1447819b93dd40af10f2b4b11322d844a8c2d884374d16d2",
+  "sourceManifestSha256": "5162ae6d90328f098389bfc762437bc29083eea4d5a446eb2fef14edced5e87c",
+  "expandedManifestSha256": "12c3b1f9a0fa87c77dc185e22bd0d753fe3531902411ea1173598fbc79beaacb",
+  "originalRows": 12288,
+  "totalRows": 45056,
+  "originalPrefixByteExact": true,
+  "originalSplitsUnchanged": true,
+  "counts": {
+    "oldTrain": 10445,
+    "oldVal": 1843,
+    "newTrain": 27827,
+    "newVal": 4941,
+    "reserved": 0
+  },
+  "exactTrainHoldoutOverlaps": {
+    "parameterHash": 0,
+    "audioHash": 0,
+    "packedFeatureHash": 0
+  },
+  "replayVerification": "Builder independently re-rendered16 randomly selected rows per new shard and reproduced packed features exactly; see bound expanded manifest. This audit does not repeat all DSP renders.",
+  "generalizationScope": "Distinct generated control draws; preset families are shared, not held out."
+}

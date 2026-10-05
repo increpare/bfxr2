@@ -1,0 +1,234 @@
+{
+  "complete": true,
+  "scriptSha256": "08cb4866730295a8aae9fbcbbf3e5b071492ab0af9bdcb3f5a06abb4388c4556",
+  "rawReportSha256": "81e6c7792ffd111359ad97c65bdaf94ebf6f0a28798ddc0a8e88b47e7a97065a",
+  "scope": "All candidate PCM/file hashes; selected actual-DSP replays/rescores; summary/gate recomputation from retained pitch diagnostics. Does not independently re-estimate pitch.",
+  "diagnosticCodeHashes": {
+    "tools/match/objective.py": "ea3768c5ff641f68e398a7a39f902345f5f3a1a69277b66f8df556f7eeb2278e",
+    "tools/match/headroom.py": "42756fb86e95559b70b61da5693c28f241ad75fbe24915e9aecda987cdabd910",
+    "tools/match/renderer.py": "c389dba1354cdccac284ee1b34831b5e17e03b4225474aebdde10041bfb37609",
+    "tools/match/batch.py": "3ea21d7ee8145197f5b7183fd911eb41aa2a6c09ab4ebd62206dc14d324fc829",
+    "tools/match/bfxr_io.py": "80777afd6d211dc5862e7827b536acd91733e9145fe4ab2cef4133c6c4c34f8e",
+    "tools/match/refine.py": "9141097014c65adebd12971a75e4f23423f95e53197a57dd2381bd2d8283978f",
+    "tools/match/metric_bakeoff.py": "5c97c728c9cc41241b8b657b9e0db1e4138fc1a5f21ec5ac218e111790c92de1",
+    "tools/match/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tools/match/features.py": "dc8d2c049f9940215387d2f2500cfa0dbdd2a5b27e07eced41f16fc69cba6859",
+    "tools/match/listen_compare.py": "e45f0f0651902ec1d8df2ab9ffd13cbeaacc300140019ef46d456a327d649909",
+    "tools/match/notes.py": "78a7e09b0a5e07f09432a5302646d18344fcb1ad39ebc66d8de01b0f0c4ccf89",
+    "tools/match/structure_probes.py": "79c397de858075ce69c9150589443cf8885ef491a495ce3f75ea16ac929a51df",
+    "tools/match/alt_metrics.py": "3fb79bb4832a126909cf9b260ce75229fa9d9352dca006c892ae684a73f64942",
+    "tools/match/structure.py": "1fef062dcd488b6a2f52c0fcdb03921296770972235253fe7a2b876e183d5aa2",
+    "tools/match/optimizer.py": "427c729e7605da863bfdda41b338edf19b3b6ee14e53e846d6a61156c81b8972",
+    "tools/match/audio.py": "90bd5aa0dd1e885f0cdd1057e2a0d9c06c25bcf7584e8e7ab92fd5edeb14fa52",
+    "tools/match/listen_refine_compare.py": "e2cd3d3a4bc833e61dbe886317482d9c35c453fc48d6ebe5ce5ae06c8745d558",
+    "tools/match/report.py": "95f6353b5844a9eadf6707dca3b7e869c78d27b58b76191a0cb55304ad8fcfa2",
+    "tools/match/match.py": "dfbd46019a6bf9dee378de53d0117a4164cc427a6db64cb20e3e6b38f064fc34",
+    "tools/match/length_report.py": "f295404ba1054b50fa1c87ef9ea62b1a7d7476cb4fd30bb78276d7d223454b20",
+    "tools/neural_invert/pitch_v5_features.py": "9b69ca66840c45b3746c704b8783c6bfec8b9e6cdb178853e35f4939555465d0",
+    "tools/neural_invert/pitch_v5_gallery.py": "0648004c07d64ec24a039400478e2f92809651b056d4b1f92bbd9d2ed79b0575",
+    "tools/neural_invert/pitch_v5_temporal.py": "ff584712fb9cbbc9b0d2c3c868fb1040cf821559ed0541f4f5e83c63f6f9ed22",
+    "tools/neural_invert/pitch_v5_eval.py": "e28791fe02760dbf9a99855fe69883a684647e7c37208ee59fb21922e19447a6",
+    "tools/neural_invert/pitch_v5_data.py": "00a020c044d62e26749b909e37ed5770b60e5f7f300db74c07645a09ec6d1a13"
+  },
+  "sets": {
+    "validation": {
+      "summaries": {
+        "control": {
+          "targets": 32,
+          "missing": 0,
+          "failures": 0,
+          "silence": 0,
+          "meanObjective": 3.4584020454204456,
+          "staticPass": 10,
+          "movingTargets": 19,
+          "movingDirectionPass": 14,
+          "movingContourCoverage": 0.3028011209617365,
+          "reliablePitch": 29
+        },
+        "expanded": {
+          "targets": 32,
+          "missing": 0,
+          "failures": 0,
+          "silence": 0,
+          "meanObjective": 3.061841652085878,
+          "staticPass": 11,
+          "movingTargets": 19,
+          "movingDirectionPass": 16,
+          "movingContourCoverage": 0.3647102277778644,
+          "reliablePitch": 29
+        },
+        "frozen-v3": {
+          "targets": 32,
+          "missing": 0,
+          "failures": 0,
+          "silence": 0,
+          "meanObjective": 3.4584020454204456,
+          "staticPass": 10,
+          "movingTargets": 19,
+          "movingDirectionPass": 14,
+          "movingContourCoverage": 0.3028011209617365,
+          "reliablePitch": 29
+        }
+      },
+      "gate": {
+        "passed": true,
+        "checks": {
+          "complete": true,
+          "objective": true,
+          "renderFailures": true,
+          "silence": true,
+          "staticPitch": true,
+          "reliablePitch": true,
+          "movingDirection": true,
+          "contourCoverage": true
+        }
+      },
+      "verifiedCandidateFiles": 384,
+      "selectedDspReplays": 96,
+      "maxRescoreError": 0.0,
+      "individualRegressions": [
+        {
+          "id": "Transfxr-val-10044",
+          "reasons": [
+            "voicedSpanDirection"
+          ]
+        }
+      ]
+    },
+    "probes": {
+      "summaries": {
+        "control": {
+          "targets": 10,
+          "missing": 0,
+          "failures": 0,
+          "silence": 0,
+          "meanObjective": 2.6138475613697514,
+          "staticPass": 4,
+          "movingTargets": 4,
+          "movingDirectionPass": 3,
+          "movingContourCoverage": 0.5268085106382978,
+          "reliablePitch": 10
+        },
+        "expanded": {
+          "targets": 10,
+          "missing": 0,
+          "failures": 0,
+          "silence": 0,
+          "meanObjective": 2.195132287391781,
+          "staticPass": 5,
+          "movingTargets": 4,
+          "movingDirectionPass": 4,
+          "movingContourCoverage": 0.22872340425531915,
+          "reliablePitch": 10
+        },
+        "frozen-v3": {
+          "targets": 10,
+          "missing": 0,
+          "failures": 0,
+          "silence": 0,
+          "meanObjective": 2.6138475613697514,
+          "staticPass": 4,
+          "movingTargets": 4,
+          "movingDirectionPass": 3,
+          "movingContourCoverage": 0.5268085106382978,
+          "reliablePitch": 10
+        }
+      },
+      "gate": {
+        "passed": false,
+        "checks": {
+          "complete": true,
+          "objective": true,
+          "renderFailures": true,
+          "silence": true,
+          "staticPitch": true,
+          "reliablePitch": true,
+          "movingDirection": true,
+          "contourCoverage": false
+        }
+      },
+      "verifiedCandidateFiles": 120,
+      "selectedDspReplays": 30,
+      "maxRescoreError": 0.0,
+      "individualRegressions": []
+    },
+    "fresh-native": {
+      "summaries": {
+        "control": {
+          "targets": 32,
+          "missing": 0,
+          "failures": 0,
+          "silence": 0,
+          "meanObjective": 6.045879857262107,
+          "staticPass": 2,
+          "movingTargets": 19,
+          "movingDirectionPass": 15,
+          "movingContourCoverage": 0.21127865152647277,
+          "reliablePitch": 17
+        },
+        "expanded": {
+          "targets": 32,
+          "missing": 0,
+          "failures": 0,
+          "silence": 0,
+          "meanObjective": 5.493431005069605,
+          "staticPass": 2,
+          "movingTargets": 19,
+          "movingDirectionPass": 14,
+          "movingContourCoverage": 0.2952923889958312,
+          "reliablePitch": 19
+        },
+        "frozen-v3": {
+          "targets": 32,
+          "missing": 0,
+          "failures": 0,
+          "silence": 0,
+          "meanObjective": 6.045879857262107,
+          "staticPass": 2,
+          "movingTargets": 19,
+          "movingDirectionPass": 15,
+          "movingContourCoverage": 0.21127865152647277,
+          "reliablePitch": 17
+        }
+      },
+      "gate": {
+        "passed": false,
+        "checks": {
+          "complete": true,
+          "objective": true,
+          "renderFailures": true,
+          "silence": true,
+          "staticPitch": true,
+          "reliablePitch": true,
+          "movingDirection": false,
+          "contourCoverage": true
+        }
+      },
+      "verifiedCandidateFiles": 384,
+      "selectedDspReplays": 96,
+      "maxRescoreError": 0.0,
+      "individualRegressions": [
+        {
+          "id": "Transfxr-fresh-37218",
+          "reasons": [
+            "voicedSpanDirection"
+          ]
+        },
+        {
+          "id": "Transfxr-fresh-22859",
+          "reasons": [
+            "voicedSpanDirection"
+          ]
+        },
+        {
+          "id": "Transfxr-fresh-42511",
+          "reasons": [
+            "voicedSpanDirection"
+          ]
+        }
+      ]
+    }
+  },
+  "listeningEligible": false,
+  "conclusion": "No promotion: mean objective improved, but fresh-native direction and probe contour coverage regressed."
+}

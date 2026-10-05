@@ -1,0 +1,54 @@
+{
+  "complete": true,
+  "scriptSha256": "ed2f791066f49263f61036759650299257dda9148dddd2c13698f329997a8d25",
+  "dataManifestSha256": "12c3b1f9a0fa87c77dc185e22bd0d753fe3531902411ea1173598fbc79beaacb",
+  "scope": "Saved-checkpoint CPU replay using shared acoustic energy; not independent formula or perceptual validation.",
+  "arms": {
+    "control": {
+      "checkpointSha256": "c0e4426098e13aa79cd8cfee76e5a06cd0bb74ec1683541790adb04f0244cec4",
+      "trainingReportSha256": "28e4cc249273fb77cd96622f71de82bfb7dbe7ec97c1a13fbd1b17ba1bbf2506",
+      "selectedStep": 0,
+      "updates": 4000,
+      "nativePoolRows": 1730,
+      "structuredPoolRows": 8715,
+      "cpu": {
+        "originalValidation": 0.5718714544065479,
+        "freshNativeValidation": 1.030643573537864,
+        "originalNativeValidation": 1.0599470198529322,
+        "originalStructuredValidation": 0.08379595271876601
+      },
+      "saved": {
+        "originalValidation": 0.571871481314342,
+        "freshNativeValidation": 1.030643629125438,
+        "originalNativeValidation": 1.0599470198529322,
+        "originalStructuredValidation": 0.08379593708476082
+      },
+      "maxError": 5.558757387724711e-08,
+      "weightsEqualFrozenV3": true
+    },
+    "expanded": {
+      "checkpointSha256": "a9c492976fd4a4ed45791ac223d238751ff669ad91f6364ec496937618db38fe",
+      "trainingReportSha256": "32f3b11545d4db92d62aa4f1abc37f29fc7e3c83c1d557d2a2cadfd45b8de3b8",
+      "selectedStep": 4000,
+      "updates": 4000,
+      "nativePoolRows": 29557,
+      "structuredPoolRows": 8715,
+      "cpu": {
+        "originalValidation": 0.3843468269186698,
+        "freshNativeValidation": 0.6985492246929293,
+        "originalNativeValidation": 0.6884606679280599,
+        "originalStructuredValidation": 0.08023293229400134
+      },
+      "saved": {
+        "originalValidation": 0.384346789273631,
+        "freshNativeValidation": 0.6985492216047308,
+        "originalNativeValidation": 0.6884606439362532,
+        "originalStructuredValidation": 0.08023293104328093
+      },
+      "maxError": 3.764503880843151e-08,
+      "weightsEqualFrozenV3": false
+    }
+  },
+  "freshTargetManifestSha256": "7461b8445842f1d0452e6be08254686bcf0c8d58356cc6c297078829a45a89d8",
+  "freshTargetsExcluded": true
+}
