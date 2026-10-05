@@ -1,0 +1,97 @@
+{
+  "complete": true,
+  "scriptSha256": "71c877c125d3a6e3c978f0e1241e4fc66469b9e072ef9325b8e7977d0a3f9415",
+  "reportSha256": "9a3b29adb8844dc1f82b802e09ed9baf7caab5ecbebfd4527939fa6a52b89129",
+  "candidateFilesVerified": 384,
+  "distinctSelectedDspReplays": 70,
+  "maxRescoreError": 0.0,
+  "scope": "Reuses pitch diagnostics; numerical safeguard outcomes are partly guaranteed by construction.",
+  "freshSummary": {
+    "old-four": {
+      "meanObjective": 5.172335110246831,
+      "selectedExpanded": 0,
+      "individualGuardRegressions": 0
+    },
+    "unguarded-ensemble": {
+      "meanObjective": 4.299898958832419,
+      "selectedExpanded": 18,
+      "individualGuardRegressions": 10
+    },
+    "guarded-ensemble": {
+      "meanObjective": 4.584392382090966,
+      "selectedExpanded": 9,
+      "individualGuardRegressions": 0
+    },
+    "old-eight": {
+      "meanObjective": 4.79808919219651,
+      "selectedExpanded": 0,
+      "individualGuardRegressions": 5
+    },
+    "guarded-old-eight": {
+      "meanObjective": 4.825212920882999,
+      "selectedExpanded": 0,
+      "individualGuardRegressions": 0
+    }
+  },
+  "checks": {
+    "fivePercentOverOldFour": true,
+    "beatsOldEight": true,
+    "individualGuards": true
+  },
+  "improvementOverOldFourFraction": 0.113670656603649,
+  "improvementOverOldEightFraction": 0.04453789863954494,
+  "objectiveGainRejectedBySafeguard": 0.28449342325854765,
+  "retrospectiveSummary": {
+    "validation": {
+      "old-four": {
+        "meanObjective": 3.4584020454204456,
+        "selectedExpanded": 0,
+        "individualGuardRegressions": 0
+      },
+      "unguarded-ensemble": {
+        "meanObjective": 2.6670502097011166,
+        "selectedExpanded": 18,
+        "individualGuardRegressions": 6
+      },
+      "guarded-ensemble": {
+        "meanObjective": 2.8492024297629803,
+        "selectedExpanded": 12,
+        "individualGuardRegressions": 0
+      }
+    },
+    "probes": {
+      "old-four": {
+        "meanObjective": 2.6138475613697514,
+        "selectedExpanded": 0,
+        "individualGuardRegressions": 0
+      },
+      "unguarded-ensemble": {
+        "meanObjective": 1.9948195726802922,
+        "selectedExpanded": 6,
+        "individualGuardRegressions": 3
+      },
+      "guarded-ensemble": {
+        "meanObjective": 2.055423482390731,
+        "selectedExpanded": 3,
+        "individualGuardRegressions": 0
+      }
+    },
+    "fresh-native": {
+      "old-four": {
+        "meanObjective": 6.045879857262107,
+        "selectedExpanded": 0,
+        "individualGuardRegressions": 0
+      },
+      "unguarded-ensemble": {
+        "meanObjective": 4.746922494766509,
+        "selectedExpanded": 21,
+        "individualGuardRegressions": 5
+      },
+      "guarded-ensemble": {
+        "meanObjective": 4.99247395740138,
+        "selectedExpanded": 16,
+        "individualGuardRegressions": 0
+      }
+    }
+  }
+}
