@@ -71,7 +71,7 @@ CLI accepts `--benchmark` (one frozen v5 comparison results file) and fresh
 
 ## Task3: useful short listening checkpoint, conditional on actual evidence
 
-- [ ] Use `evaluations/pitch-calibration-listening-targets.json`, frozen from input
+- [x] Use `evaluations/pitch-calibration-listening-targets.json`, frozen from input
   profiles before calibration outputs: charm2, battleStart, Select Beep, heavy
   impact bell003, Descending Fall Whistle. Bird/spinout/book/Egg have insufficient
   global pitch confidence for this conservative component; don't rerate unchanged
@@ -79,17 +79,17 @@ CLI accepts `--benchmark` (one frozen v5 comparison results file) and fresh
   against archived reports/audit before using as model proposals. Bind source
   artifacts; human choices only choose historical comparison anchors, never
   calibration or automatic selection.
-- [ ] For fresh targets, obtain frozen-v3 proposals and same384 guarded trials
+- [x] For fresh targets, obtain frozen-v3 proposals and same384 guarded trials
   per available engine plus original Bfxr baseline with declared2000 budget
   (record actual evaluations). These define the common pre-calibration pool;
   calibration adds only Task1's bounded pitch trials. Retain uncalibrated winner
   and original Bfxr for comparison, deduplicating exact heard PCM. No claim of
   equal computation versus a raw inverse or learned-model improvement.
-- [ ] Create a separately named calibration listening run. Apply frozen Task1
+- [x] Create a separately named calibration listening run. Apply frozen Task1
   without extra tuning to these candidate pools, preserve all attempts and exact
   historical heard PCM. Skip redundant unchanged comparison sets; max5 items.
   Keep <=3 distinct options, both relevant charm histories, cached-WebAudio UX.
-- [ ] Test provenance/alias/pool/selection/export behavior; spec and quality
+- [x] Test provenance/alias/pool/selection/export behavior; spec and quality
   reviews; actual-DSP/PCM audit and isolated-origin browser QA. Publish a LAN-safe
   link and ask best/tie/none plus optional adequacy notes. Retain outcome as a
   human-quality checkpoint, not a claim that the full goal is complete.
@@ -157,3 +157,29 @@ wrong median pitch in this case. Keep this counterexample, do not silently
 change the frozen rule, and retain uncalibrated baselines in human comparisons.
 Auditory preference is unresolved; aggregate pass is permission to test, not
 promotion of the selector as generally superior.
+
+
+## Completed listening checkpoint — human review pending
+
+Generator frozen at `925a643` after specification and quality review, including
+24 focused gallery tests. Run `pitch-calibration-listening-v1` contains all five
+fixed references, with 2/2/3/3/2 distinct options. The independent replay audit
+passed exact references, historical anchors, all actual original/correction
+PCM, selections, and full exported feedback identities. Browser QA passed on
+isolated port8766; production localhost and LAN page/audio bytes match.
+
+Calibration changed the selected audio on Select Beep and heavy impact bell.
+It fell back unchanged on charm2, battleStart and Descending Fall Whistle.
+All 79 originals are retained; 70 additional pitch renders, zero failed render
+calls. One native original Bfxr result differs from shipped-JS replay; its actual
+PCM stays in the baseline pool and its calibration is explicitly skipped.
+The synthetic gate therefore has only partial transfer to these tagged sounds.
+The battleStart correction reaches the measured register in some Transfxr
+proposals but fails voiced-coverage eligibility; do not claim pitch/likeness is
+solved. No human preference or adequacy verdict exists for this new run yet.
+
+Listening URL: `http://127.0.0.1:8765/tools/multisynth/runs/pitch-calibration-listening-v1/index.html`.
+LAN URL uses `192.168.178.131:8765` with the same path. Request best/tie/none;
+optional adequacy wording should distinguish convincing, closeish, same genre,
+and still off. Preserve the user's prior qualitative calibration and all old
+ratings. Broader multisynth inverse goal remains active.

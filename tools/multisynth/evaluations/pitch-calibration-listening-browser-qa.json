@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "a5d5dc9a2f3892807b671ec24ecddc61002ab06ed7d5fe8133b056002402cf60",
+  "pageSha256": "2a10e231c808a0912b75de21300f62fce5371366957920c25efed3b8293bd1f6",
+  "origin": "http://127.0.0.1:8766",
+  "method": "Actual in-app browser interactions on isolated test origin; no human ratings submitted or imported.",
+  "checks": {
+    "sequencePlayback": true,
+    "rapidReplayRestartsAtBeginning": true,
+    "bestSavesAndAutoAdvances": true,
+    "tieSavesAndAutoAdvances": true,
+    "noneSavesAndAutoAdvances": true,
+    "stopAndUndo": true,
+    "reloadResumesSavedProgress": true,
+    "copyableJsonParsesAndPreservesChoices": true,
+    "threeOptionNarrowLayout": true,
+    "browserWarnErrorLogEmpty": true
+  },
+  "httpExactByteChecks": {
+    "127.0.0.1:8765": [
+      "index.html",
+      "001/target.wav",
+      "004/selected.wav"
+    ],
+    "192.168.178.131:8765": [
+      "index.html",
+      "001/target.wav",
+      "004/selected.wav"
+    ]
+  },
+  "note": "Playback state and progress verified; no agent claim of audible quality. Clipboard was not overwritten. Test origin closed and temporary server stopped. Existing 8765 servers left running."
+}

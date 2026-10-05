@@ -84,7 +84,14 @@
       "status": "automated-selector-counterexample-auditory-effect-unresolved",
       "evidence": "pitch-calibration-v1/paired/031-Pluckr-static: baseline Pluckr median error0.00566semitone and objective0.422535; target-active pitch coverage0.7045 fails the0.75eligibility rule. Selected Bfxr has coverage1.0 but objective3.076493. Target/baseline/selected voicedframes44/31/47. This demonstrates the selector tradeoff; no human preference has been established.",
       "nextTest": "Retain uncalibrated baselines in short listening comparisons. Examine attack/tail and event feel when pitch constraints change the winning engine; do not silently treat voicing coverage as perceptual ground truth.",
-      "source": "evaluations/pitch-calibration-audit.json"
+      "source": "evaluations/pitch-calibration-audit.json",
+      "observations": [
+        {
+          "session": "2026-10-05-pitch-calibration-listening-v1",
+          "finding": "On the five fixed tagged references, selection changes only Select Beep and heavy impact bell; charm2, battleStart and Descending Fall Whistle fall back unchanged. battleStart has adjusted Transfxr proposals near measured register but only 0.435 target-active pitch coverage, so none qualifies. This is partial diagnostic transfer, not human evidence that the conservative rule is correct. Human comparison pending.",
+          "source": "evaluations/pitch-calibration-listening-audit.json"
+        }
+      ]
     }
   ]
 }
