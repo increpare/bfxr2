@@ -64,6 +64,17 @@ external generalization.
 | `2026-10-06-memory-inverse-v1-quick-01/` | 8 references | 24 |
 | `2026-10-06-legacy-transfer-v1-quick-01/` | 6 references | 18 |
 | `2026-10-06-stackr-events-v1-quick-01/` | 4 references | 11 |
+| `2026-10-06-learned-events-v1-quick-01/` | 5 references | 13 |
+
+The thirtieth archive completes all five learned-timing comparisons.
+**Every winner is the exact earlier clip; learned timing wins zero.** Coin's
+heuristic/previous aliases refer to one unchanged Stackr recording. All13
+options were heard, yielding eight strict pairs and five immediate mismatch
+notes;18 exact reference/candidate PCM files are retained. Three winners are
+least-bad and two similar, none very-close. Legacy agrees with5/8 strict pairs;
+preference and soft each4/8. Improved native schedule detection did not improve
+these external recreations. The checkpoint stays experimental.
+See the [human review](../evaluations/learned-events-v1-quick-01-human-review.json).
 
 The twenty-ninth archive completes all four native Stackr event trials.
 **Scheduled Stackr wins coin as similar; exact earlier clips win the other three.**
