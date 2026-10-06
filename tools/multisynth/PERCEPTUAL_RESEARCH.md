@@ -70,3 +70,24 @@ Next: five predeclared controlled changes to tagged originals, preserving immedi
 adequacy and exact audio. These local comparisons can test perceptual priorities
 more directly than remote candidate failures, but effects are not perfectly pure:
 filtering and phase-vocoder processing can change several audible properties.
+
+## Texture-statistics ablation, 2026-10-06
+
+The latest memory-head feedback identifies texture/timbre in six of seven scoped
+notes. We implemented a compact ERB-envelope descriptor in `texture.py`, motivated
+by the McDermott–Simoncelli paper above: envelope marginals, cross-band correlations
+and modulation power. It is not a replication of their model. The existing 21
+ordered spectrum/gesture/pitch components remain, since global statistics cannot
+represent event order. Gain/polarity and controlled modulation/correlation tests
+pass; a quiet-band numerical-noise problem was corrected before evaluation.
+
+The fixed five-fold experiment covers 219 external strict human pairs, 72 references
+and 44 connected source/tag groups. The texture-extended ranker scores68.09%
+reference-balanced accuracy, versus67.99% for the same-data baseline. It fails
+the predeclared three-point improvement gate and trails the frozen historical
+preference model's70.16%. The newest batch improves to8/12 from base21's6/12,
+but that selected subset does not override the overall failure. No full-data
+checkpoint is saved or promoted. These historical data informed the design;
+the result is retrospective development evidence, not a prospective validation.
+See [evaluation](evaluations/texture-listener-v1-evaluation.json) and
+[independent fold/scaling verification](evaluations/texture-listener-v1-verification.json).

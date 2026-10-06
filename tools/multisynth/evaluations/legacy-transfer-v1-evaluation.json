@@ -1,0 +1,399 @@
+{
+  "complete": true,
+  "reportSha256": "cb1c4e5b6e2fbfcb743992ffadc51d5c6d9fdeb9da2c9d75312a56787dd5b3d4",
+  "targetsSha256": "e71d7dd88e0dc8794054d48e2ca573b050b08fe41b4a6563810d17596c2a0190",
+  "scriptSha256": "58e6bf51cf7747e7a5d3a79f95ccf0f16d5cfd27d273d253e5021510cf93e611",
+  "rows": [
+    {
+      "source": {
+        "name": "card/bookFlip2.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/card/bookFlip2.ogg",
+        "sha256": "3409042acbfaebc24c1a6327dc073e36f9250841712e96c5040da566a97df73c",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "legacy",
+          "rawIndex": 42,
+          "synth": "Transfxr",
+          "budget": 512
+        },
+        {
+          "scorer": "legacy",
+          "rawIndex": 3,
+          "synth": "Footsteppr",
+          "budget": 512
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 42,
+          "synth": "Transfxr",
+          "budget": 512
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 20,
+          "synth": "Fractr",
+          "budget": 512
+        }
+      ],
+      "originalEvaluations": 2015,
+      "finalists": [
+        {
+          "role": "legacy",
+          "synth": "Transfxr",
+          "origin": "Transfxr-mixture",
+          "soft": 1.6329313795869245,
+          "preference": 1.1705077542062794,
+          "legacy": 0.9903741460149182
+        },
+        {
+          "role": "preference",
+          "synth": "Transfxr",
+          "origin": "Transfxr-mixture",
+          "soft": 4.04286148276184,
+          "preference": 0.822583271049453,
+          "legacy": 9.227626720488502
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 1.636024840681254,
+          "preference": 1.0661318122043508,
+          "legacy": 1.2233450864836566
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "footstep/impactMetal_003.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/impactMetal_003.ogg",
+        "sha256": "ef29c3943ee701616f65e3d596c13eb3ff6b11ca5b3ac01e7bc923366a5c6f76",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "legacy",
+          "rawIndex": 52,
+          "synth": "Footsteppr",
+          "budget": 512
+        },
+        {
+          "scorer": "legacy",
+          "rawIndex": 48,
+          "synth": "Boomr",
+          "budget": 512
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 29,
+          "synth": "Pluckr",
+          "budget": 512
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 46,
+          "synth": "Boomr",
+          "budget": 512
+        }
+      ],
+      "originalEvaluations": 3003,
+      "finalists": [
+        {
+          "role": "legacy",
+          "synth": "Boomr",
+          "origin": "Boomr-specialist",
+          "soft": 3.2522892259075453,
+          "preference": 1.138401303493484,
+          "legacy": 2.1111623590560114
+        },
+        {
+          "role": "preference",
+          "synth": "Pluckr",
+          "origin": "shared22",
+          "soft": 2.7375092673314647,
+          "preference": 0.5561775868426293,
+          "legacy": 12.453633016756866
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 3.6857390945989867,
+          "preference": 0.7627728670255232,
+          "legacy": 2.338192953903546
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "hit/attack.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/attack.wav",
+        "sha256": "ac3025a70e3f89168b373b7187e6db7be156d2bdc4a95cb92d959a8a4fea26e6",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "legacy",
+          "rawIndex": 51,
+          "synth": "Footsteppr",
+          "budget": 512
+        },
+        {
+          "scorer": "legacy",
+          "rawIndex": 48,
+          "synth": "Boomr",
+          "budget": 512
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 50,
+          "synth": "Footsteppr",
+          "budget": 512
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 14,
+          "synth": "Choirr",
+          "budget": 512
+        }
+      ],
+      "originalEvaluations": 3003,
+      "finalists": [
+        {
+          "role": "legacy",
+          "synth": "Boomr",
+          "origin": "Boomr-specialist",
+          "soft": 2.8277622273267964,
+          "preference": 1.8242113508844189,
+          "legacy": 1.8950223257841328
+        },
+        {
+          "role": "preference",
+          "synth": "Choirr",
+          "origin": "shared22",
+          "soft": 4.819302717456093,
+          "preference": 1.0477506568174193,
+          "legacy": 10.74991942406582
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 3.010041261877915,
+          "preference": 1.479418853558535,
+          "legacy": 2.1155463826321568
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "bell/impactBell_heavy_004.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/impactBell_heavy_004.ogg",
+        "sha256": "49fe4fafa2001bd0d312976796824571ca8429851f285997e1327d17bb34fd00",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "legacy",
+          "rawIndex": 2,
+          "synth": "Footsteppr",
+          "budget": 512
+        },
+        {
+          "scorer": "legacy",
+          "rawIndex": 46,
+          "synth": "Boomr",
+          "budget": 512
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 37,
+          "synth": "Squishr",
+          "budget": 512
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 30,
+          "synth": "Riftr",
+          "budget": 512
+        }
+      ],
+      "originalEvaluations": 3003,
+      "finalists": [
+        {
+          "role": "legacy",
+          "synth": "Boomr",
+          "origin": "Boomr-specialist",
+          "soft": 3.789513791934076,
+          "preference": 1.0971615383953264,
+          "legacy": 2.21472850520409
+        },
+        {
+          "role": "preference",
+          "synth": "Riftr",
+          "origin": "shared22",
+          "soft": 3.7972096763519563,
+          "preference": 0.5349332504380213,
+          "legacy": 6.932602115901
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 4.416635683521918,
+          "preference": 1.7506212877105618,
+          "legacy": 3.576298805330577
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "laser/laserLarge_000.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/laserLarge_000.ogg",
+        "sha256": "a56d95794cd732d6c2d66ce488c14cf557fe526c282897c9a77675c2bd9b77e6",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "legacy",
+          "rawIndex": 48,
+          "synth": "Boomr",
+          "budget": 512
+        },
+        {
+          "scorer": "legacy",
+          "rawIndex": 12,
+          "synth": "Breathr",
+          "budget": 512
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 44,
+          "synth": "Transfxr",
+          "budget": 512
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 57,
+          "synth": "Squishr",
+          "budget": 512
+        }
+      ],
+      "originalEvaluations": 3003,
+      "finalists": [
+        {
+          "role": "legacy",
+          "synth": "Boomr",
+          "origin": "Boomr-specialist",
+          "soft": 3.8168967431340937,
+          "preference": 1.7816930018809058,
+          "legacy": 2.9397732958935703
+        },
+        {
+          "role": "preference",
+          "synth": "Squishr",
+          "origin": "Squishr-specialist",
+          "soft": 3.9491260296321653,
+          "preference": 0.8817619987268218,
+          "legacy": 9.740911596136531
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 5.2617570460923195,
+          "preference": 2.318609145751205,
+          "legacy": 4.418924674902532
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "collect/Mario - Super Jump Coin Hit.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/Mario - Super Jump Coin Hit.wav",
+        "sha256": "efa14b57daad3cf3c0f072163f1eaaeb9020ff27fd270f5546098c42f35643b0",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "legacy",
+          "rawIndex": 43,
+          "synth": "Transfxr",
+          "budget": 512
+        },
+        {
+          "scorer": "legacy",
+          "rawIndex": 38,
+          "synth": "Swarmr",
+          "budget": 512
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 45,
+          "synth": "Transfxr",
+          "budget": 512
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 35,
+          "synth": "Signlr",
+          "budget": 512
+        }
+      ],
+      "originalEvaluations": 3001,
+      "finalists": [
+        {
+          "role": "legacy",
+          "synth": "Transfxr",
+          "origin": "Transfxr-mixture",
+          "soft": 2.918000109758565,
+          "preference": 0.8136592943957914,
+          "legacy": 1.6019445437985955
+        },
+        {
+          "role": "preference",
+          "synth": "Transfxr",
+          "origin": "Transfxr-mixture",
+          "soft": 2.9985281583873804,
+          "preference": 0.37400369388641774,
+          "legacy": 1.3447254104702189
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 5.244616712462898,
+          "preference": 1.9438395627002631,
+          "legacy": 3.937740924917318
+        }
+      ]
+    }
+  ],
+  "scope": "Six preselected new-to-listening tagged files. Existing inverses. Same raw pool and1024 native mutation attempts per general-pool scorer; original Bfxr independent optimizer2000. Arm winners use only their own refinements. No human quality claim."
+}

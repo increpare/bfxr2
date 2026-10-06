@@ -61,6 +61,26 @@ external generalization.
 | `2026-10-06-pair-inverse-v1-quick-01/` | 8 references | 24 |
 | `2026-10-06-fresh-gesture-v1-quick-01/` | 8 references | 24 |
 | `2026-10-06-control-diagnosis-v1-quick-01/` | 7 trials / 5 references | 21 |
+| `2026-10-06-memory-inverse-v1-quick-01/` | 8 references | 24 |
+
+The twenty-seventh archive completes all eight memory-versus-regression trials.
+**Memory wins zero, earlier clips win five, regression wins two, one tie.** The
+two regression wins (Transfxr case, Riftr laser) are least-bad; carpet ties
+least-bad. Original Bfxr collect is very-close. Earlier Bfxr cloth/water-jump,
+Transfxr mixture footstep and shared Pluckr bell are similar. All 32 exact PCM
+files are retained. Twenty-two of 24 options were recorded heard: unplayed memory
+footstep and regression bell contribute no strict preference pairs.
+
+Twelve strict heard pairs agree with frozen preference on 3, soft on 8 and legacy
+on9. Ten candidate-scoped adequacy labels include 4 similar, 5 least-bad and 1
+very-close. Seven immediately collected mismatch notes preserve exact chosen/tied
+IDs: six texture/timbre, one pitch (water-jump). Every scoped candidate was heard.
+Retain prior same-audio judgments separately; do not rewrite their context.
+See the [human review](../evaluations/memory-inverse-v1-quick-01-human-review.json).
+
+These labels motivated a texture-feature ablation, whose fixed group-held-out
+gate failed. Do not promote the memory head or the new texture metric from their
+numerical gains on this selected batch. Neither changes the default pipeline.
 
 The twenty-sixth archive completes the native-control diagnosis: **zero variant
 wins, four ties, three unchanged-anchor wins**, and no very-close judgments.

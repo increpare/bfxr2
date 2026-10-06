@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All twenty-six feedback archives,
+do not establish general success on real recordings. All twenty-seven feedback archives,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
@@ -267,6 +267,68 @@ references and 24 distinct comparison options, with exact final native replay
 and unchanged prior-choice audio verified. See the
 [listening audit](evaluations/memory-inverse-v1-listening-audit.json) and
 [served-file audit](evaluations/memory-inverse-v1-http-audit.json).
+
+The [memory-head human verdict](evaluations/memory-inverse-v1-quick-01-human-review.json)
+rejects it as an improvement: **zero memory wins, five earlier-clip wins, two
+new regression wins and one tie**. Both regression winners (Transfxr case closure
+and Riftr laser) are least-bad. The only very-close choice is earlier original
+Bfxr collect. Earlier cloth, footstep, water-jump and bell win as similar; carpet
+ties least-bad. Twenty-two of 24 options were recorded heard. Six of seven scoped
+notes identify texture/timbre; water-jump identifies pitch. On12 strict heard
+pairs, preference scores agree on 3, soft on 8, legacy MatchObjective on9.
+Memory's six numerical score improvements did not yield a human win.
+
+The [texture-listener experiment](evaluations/texture-listener-v1-evaluation.json)
+adds six auditory-envelope blocks (marginals, cross-band correlation and modulation)
+to the 21 existing listener components. The new representation is a compact
+research-inspired approximation, not a reproduction of a validated auditory model.
+Five fixed folds hold out connected source/tag groups across 219 external strict
+pairs, 72 exact references and44 groups. Training scales and reference weights
+use only each fold's training data. The same-data21-component ablation is explicit.
+
+The fixed gate **failed**: texture68.09% reference-balanced accuracy versus
+base21 67.99%, frozen preference70.16% and soft67.44%. Texture improves the latest
+batch from base21's6/12 to8/12, but that selected subset cannot override the broader
+failure. No full-data texture checkpoint is saved, no default changes, and no
+generated quality improvement is claimed. The code, tests and negative result
+remain available for future hypotheses. See the
+[frozen protocol](evaluations/texture-listener-v1-protocol.json) and
+[design](../../docs/superpowers/plans/2026-10-06-texture-listener.md).
+
+The next [six-reference scorer comparison](runs/legacy-transfer-v1-listening/index.html)
+uses fresh-to-listening card, footstep, hit, bell, laser and collect files.
+Both general-synth arms receive the same 58 proposals from the existing shared
+and specialist inverses. Each chooses two distinct engines and makes 512 native
+mutation attempts per start, one under original MatchObjective and one under
+frozen preference-neural-v2. Each selects only its own fits and the common raw
+pool; neither borrows the competing scorer's refinements. Original Bfxr remains
+the independent third option with its historical neural model and 2000-budget
+StagedOptimizer. Only the two general-synth arms have matched search budgets.
+
+The clothes category had no eligible short unjudged file, so card handling was
+substituted before inference. All six references are new to retained listening
+feedback, but occur in original Bfxr's historical training list. Source families
+can overlap prior trials. No inverse weights or failed texture metric are used
+as a new default. This tests matching objectives on external inputs; human
+likeness is unknown until the next response. The page retains immediate adequacy
+and optional mismatch questions, with exact native replay and audio verification.
+
+The completed run rendered all 348 raw proposals, made 12,288 general-arm mutation
+attempts, and recorded 17,028 actual original-Bfxr evaluations (its adaptive
+optimizer can exceed the nominal budget). All 18 finalists replay exactly and
+their audition scores reproduce. The six-reference page serves 24 WAVs plus its
+HTML/report successfully; browser loading has no logged warnings or errors and
+was checked at 0/6 judged. See [targets](evaluations/legacy-transfer-v1-targets.json),
+[results](evaluations/legacy-transfer-v1-evaluation.json),
+[listening audit](evaluations/legacy-transfer-v1-listening-audit.json), and
+[delivery/accounting verification](evaluations/legacy-transfer-v1-http-audit.json).
+
+A read-only [Soundboard branch inspection](evaluations/soundboard-e006519-inspection.json)
+records `claude/determined-sagan-khz12h` at `e006519`: nine synth-class recipe/variety
+changes and updated examples since the earlier `db9f5f8` snapshot, with no changed
+`js/audio` files. Those recipes are a possible future synthetic sampling source,
+not new target-likeness labels. They are kept outside this frozen scorer experiment;
+native parameter replay still needs verification before incorporating them.
 
 
 Reproduction commands, from the repository root with `PYTHONPATH=tools` and the

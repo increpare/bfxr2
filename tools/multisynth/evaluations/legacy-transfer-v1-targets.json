@@ -1,0 +1,243 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "source": {
+        "name": "card/bookFlip2.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/card/bookFlip2.ogg",
+        "sha256": "3409042acbfaebc24c1a6327dc073e36f9250841712e96c5040da566a97df73c",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "tag": "card",
+      "sourceSeconds": 0.4304375,
+      "auditionHash": "d4da02a412d50a598198a37758c7de23fecd8d56f3655bf73f56e7f8ee4d1cd6",
+      "auditionSamples": 18081,
+      "seed": 20261101,
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/card/bookFlip2.ogg",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "referenceWavSha256": "9e955f785ae8e62135084686dacae4a2910a2d678048dc1f2c315bace53ed569"
+    },
+    {
+      "source": {
+        "name": "footstep/impactMetal_003.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/impactMetal_003.ogg",
+        "sha256": "ef29c3943ee701616f65e3d596c13eb3ff6b11ca5b3ac01e7bc923366a5c6f76",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "tag": "footstep",
+      "sourceSeconds": 0.7767800453514739,
+      "auditionHash": "b41fa8750537f85d7acd15344c08ad53be6ecb5811b9d79af7f864feb7f51ff5",
+      "auditionSamples": 34256,
+      "seed": 20262110,
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/impactMetal_003.ogg",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "referenceWavSha256": "3a351a8361128dff40ab36fc379c655e8dbdd028cc377b5465b84a59bea1ffb2"
+    },
+    {
+      "source": {
+        "name": "hit/attack.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/attack.wav",
+        "sha256": "ac3025a70e3f89168b373b7187e6db7be156d2bdc4a95cb92d959a8a4fea26e6",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "tag": "hit",
+      "sourceSeconds": 0.2681422351233672,
+      "auditionHash": "1366807c4774eb0aaa068f1ee9845aec63ccf76b11b2796b1e6b5416d032e4bc",
+      "auditionSamples": 11826,
+      "seed": 20263119,
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/attack.wav",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "referenceWavSha256": "dea69cbf6b5dbe0717af66a2f846fadae6ebc951db6f5640b5803b66f7413e81"
+    },
+    {
+      "source": {
+        "name": "bell/impactBell_heavy_004.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/impactBell_heavy_004.ogg",
+        "sha256": "49fe4fafa2001bd0d312976796824571ca8429851f285997e1327d17bb34fd00",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "tag": "bell",
+      "sourceSeconds": 0.3014512471655329,
+      "auditionHash": "c915db4c19ee450be3e046cba505d54bfd62480f7b14250f491f852e67271e39",
+      "auditionSamples": 13294,
+      "seed": 20264128,
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/impactBell_heavy_004.ogg",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "referenceWavSha256": "57c64ea6e2aa53218d56ee98dc6489abf360bcd0f024569b86c34828427893f9"
+    },
+    {
+      "source": {
+        "name": "laser/laserLarge_000.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/laserLarge_000.ogg",
+        "sha256": "a56d95794cd732d6c2d66ce488c14cf557fe526c282897c9a77675c2bd9b77e6",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "tag": "laser",
+      "sourceSeconds": 0.6766439909297052,
+      "auditionHash": "5fddfb082edb8771d806e7cdd56358e331c5ddc6a29d15083c6a76258093c503",
+      "auditionSamples": 29840,
+      "seed": 20265137,
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/kenney_sci-fi-sounds/Audio/laserLarge_000.ogg",
+          "pack": "kenney_sci-fi-sounds",
+          "split": "train"
+        },
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/laserLarge_000.ogg",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "referenceWavSha256": "cb47d153f773d1cd430fde6c4e35ea7f249435ca99dca4c6fa917554401e7f4a"
+    },
+    {
+      "source": {
+        "name": "collect/Mario - Super Jump Coin Hit.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/Mario - Super Jump Coin Hit.wav",
+        "sha256": "efa14b57daad3cf3c0f072163f1eaaeb9020ff27fd270f5546098c42f35643b0",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "tag": "collect",
+      "sourceSeconds": 0.6654377304255452,
+      "auditionHash": "bca9ecdad36005f82aabb4facc4b8145167af8a4ac70e7b9f67ad4233bb8c7ed",
+      "auditionSamples": 23373,
+      "seed": 20266146,
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/Mario - Super Jump Coin Hit.wav",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "referenceWavSha256": "2fdb979368cb212ca2e4a18c3a9fe4d70fdd68b475a930bc6a75380538dd072d"
+    }
+  ],
+  "rejected": [
+    {
+      "name": "bell/impactBell_heavy_002.ogg",
+      "reason": "previously-judged-file"
+    },
+    {
+      "name": "laser/laser1.ogg",
+      "reason": "previously-judged-file"
+    },
+    {
+      "name": "collect/mario 3 - get item.WAV",
+      "reason": "previously-judged-file"
+    },
+    {
+      "name": "collect/coin (nes).wav",
+      "reason": "previously-judged-file"
+    },
+    {
+      "name": "collect/coin (snes).WAV",
+      "reason": "previously-judged-file"
+    }
+  ],
+  "priorArchives": {
+    "tools/multisynth/listening_data/2026-10-03-coverage-v3/manifest.json": "72403c7fb0088b036f4a785bf74cb43b6ccd82febc97dc5282f6b29ef106a9f6",
+    "tools/multisynth/listening_data/2026-10-03-real-v1/manifest.json": "c28456efac1be70c3b65b76900aa0aa49bb1021526cd49543e999f25d2504c6a",
+    "tools/multisynth/listening_data/2026-10-03-tagged-v2/manifest.json": "c24ef8d61d352257d76f9a53b55a015a971c5368404e37b6eaf7fd192aa93bed",
+    "tools/multisynth/listening_data/2026-10-04-big-v4/manifest.json": "66698fa235ffb20f4ecf3526d223f6bb15f051f68822ca30f2647862d9111bcd",
+    "tools/multisynth/listening_data/2026-10-04-neural-v1-quick-01/manifest.json": "eaa4cc29a8f452c52d2a71124b9eba63e9fcf5b2517ed3e4413b358a5e9221ea",
+    "tools/multisynth/listening_data/2026-10-04-neural-v2-quick-01/manifest.json": "3cdfa538ba9ece002678cfcead888dcc5656911d39cfb5fcbd11ee37d5216f44",
+    "tools/multisynth/listening_data/2026-10-04-temporal-v3-quick-01/manifest.json": "4a8e731fc3eb48f16433497e64784cad69106fe358dddbab7bfe0fa58615bd00",
+    "tools/multisynth/listening_data/2026-10-05-coverage-selection-quick-01/manifest.json": "4f9045fcab21f25459e0099adadf65af6102da44c18163f8999bf4fab0349ad1",
+    "tools/multisynth/listening_data/2026-10-05-cue-calibration-quick-01/manifest.json": "321462b40348d89731ddcb68ae2eca828bbcf887dcd9b9b0c02b68ea58a0d090",
+    "tools/multisynth/listening_data/2026-10-05-native-mixture-quick-01/manifest.json": "b0e3e3f11da8fe6630d7ee82a530b2261bb4910e4ea1b60d4dbd3fa0f504cc88",
+    "tools/multisynth/listening_data/2026-10-05-pitch-calibration-quick-01/manifest.json": "2daa265339a65fcfd87015143b070063c00604fcb46fba0f2270b4f7aab68f78",
+    "tools/multisynth/listening_data/2026-10-05-soft-periodicity-quick-01/manifest.json": "5ea93c515442df53794ff4b273dcc37ccc5bab038800a7dbfd8eabe82ec48553",
+    "tools/multisynth/listening_data/2026-10-05-specialists-quick-01/manifest.json": "de39d4def82cca02d42f213303f2e7030b785772e1f5a42694c2c4bd4b2e1266",
+    "tools/multisynth/listening_data/2026-10-05-specialists-tagged-quick-01/manifest.json": "4130dbeaf340c74e899148e0295ac79cb8276cfd53e336d91796aea75752a837",
+    "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01/manifest.json": "62d17eb894bbcef482893c4bea2e3af3b90b842efd2c3c4b06b23902b360ddcb",
+    "tools/multisynth/listening_data/2026-10-05-transfxr-transfer-quick-01/manifest.json": "48c53544894a683f4157001d05d8e5f9f18cee1165ccf3a26937b400f2544426",
+    "tools/multisynth/listening_data/2026-10-06-control-diagnosis-v1-quick-01/manifest.json": "f831adad1f907a33174366c7a6dc7a5d465e28534b4524750aa78f0365f24fbf",
+    "tools/multisynth/listening_data/2026-10-06-fresh-gesture-v1-quick-01/manifest.json": "eab464417c24755a00029c14625a192a2f03eee2d151185a8316ffc871c3b3f9",
+    "tools/multisynth/listening_data/2026-10-06-memory-inverse-v1-quick-01/manifest.json": "97c3145f3017811614c312ed7209a321dce0ec232446596fd69d4f8c9d90a66f",
+    "tools/multisynth/listening_data/2026-10-06-mixr-joint-v1-quick-01/manifest.json": "1e9459377ea695ac82c6f8d9176bc81b19b4c546e4fd977a0b6efa1b4b4d1540",
+    "tools/multisynth/listening_data/2026-10-06-mixr-joint-v1-quick-02/manifest.json": "eab52391a5ae4ca82709bfbc61e2c2401a09cface392af6658b43e303fd33219",
+    "tools/multisynth/listening_data/2026-10-06-mixr-transfer-v1-quick-01/manifest.json": "9bfa8e5e98ca3f87fec5d5db3a99d6c97b0f33014aa66001393d2c70f93d55bd",
+    "tools/multisynth/listening_data/2026-10-06-off-model-transfer-v1-quick-01/manifest.json": "9894f033397fe2501004795419692891ec3ec77aea2e66ca81667247516261ab",
+    "tools/multisynth/listening_data/2026-10-06-off-model-transfer-v1-quick-02/manifest.json": "929d62763d43eb85ad61998a19d329d09641f3cd4770de69ee53c08cb2fa8aaf",
+    "tools/multisynth/listening_data/2026-10-06-pair-inverse-v1-quick-01/manifest.json": "f462f9f844112396dbf6a97072dfc9d6f2a21c44d11ccba49196db9649599153",
+    "tools/multisynth/listening_data/2026-10-06-squishr-v1-quick-01/manifest.json": "b4905929fbb7f9696a365d7f1a7bfca764fcaafe0c8b18eb44ec640d13802360",
+    "tools/multisynth/listening_data/2026-10-06-squishr-v1-quick-02/manifest.json": "4643871fa05e81def8f9b3270ace69e3d4e6e13de72c5217a8f72835569760d2"
+  },
+  "bfxrBackend": {
+    "command": [
+      "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+    ],
+    "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+  },
+  "historicalBfxrManifestSha256": "c222380bbe7dd6dfb34aa2223b3fdb91f82d79d0e37b1ee811933955bbaa48ef",
+  "scriptSha256": "58e6bf51cf7747e7a5d3a79f95ccf0f16d5cfd27d273d253e5021510cf93e611",
+  "designSha256": "63f5c08c717b916d799726ed475c937164ebdbfafd346d166873c635cfb5bff1",
+  "checkpoints": {
+    "shared": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+    "Transfxr": "a816f97284cdd4ec0bfcfbcdbdbd11ab6e8b0230d4fa0b1388e758958694e73f",
+    "Boomr": "e8fefa597fc7698e3d12f0a0d60618ac5007ddd8f60110619117b7da4a6c502a",
+    "Footsteppr": "d5cb9d2c88ab6f9cfb1b9bc5ee3a24d9458f54ff5c82c0ccb3b566ba1c60f733",
+    "Squishr": "232e19d4425cc9210ae6c348bbe3983d2b19f623cc8265564bf8de737c4a2c18",
+    "originalBfxr": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98"
+  },
+  "preferenceMetricSha256": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+  "seed": 20261101,
+  "policy": "Freeze six short tagged sources before inference; exclude previously judged exact files and PCM. Categories are sampling strata, never model inputs. Not a family-disjoint test.",
+  "oldPool": "Original Bfxr inverse + StagedOptimizer legacy2000; independent baseline with different optimizer budget",
+  "newPool": "Shared22 two/head, Transfxr mixture four, Boomr Footsteppr Squishr four/head; same raw pool for legacy/preference, two distinct engine starts per scorer,512/start",
+  "listeningPolicy": "Each arm selects only from common raw plus its own refinements. Legacy winner, preference winner, original Bfxr. Deduplicate exact PCM with role aliases; no replacement to force variety. All six references.",
+  "codeHashes": {
+    "tools/neural_invert/predict.py": "953a5a79b089d42c1be2d8a9c92d02e8a39d25f4ba019899b840502769db51d4",
+    "tools/neural_invert/temporal.py": "a382766fbb7279637003ae5bff83da98742c4b77c1208fb55da4c3242b41082a",
+    "tools/neural_invert/evaluate.py": "b5e174c099028b4d39ec807bd29a67cb280d278a376d23744527f6fc4b441c83",
+    "tools/multisynth/soft_periodicity.py": "3ade081f6b3700ff254a9428d91fedd54da793f5904fd9b9948fc66b18a4dbfd",
+    "tools/multisynth/preference.py": "37377ef14673d60ddae4cc8a0a64f8e580a0044b7eba93a6d01f3d4bf07531cb",
+    "tools/multisynth/features.py": "7553a92b0caeb442b2f693752c0a94f788479e47cfc5a9d4a37dab893f3ab91c",
+    "tools/multisynth/gesture.py": "407d5a21571aba977f124f4dd3425f9538f27f0001348ff70f46f908866d9207",
+    "tools/multisynth/renderer.py": "a64863bbd4d104ef1ee36d49d5973de9dc2a8998298ae4f4d12b2d11c1ad28b0",
+    "tools/match/structure.py": "1fef062dcd488b6a2f52c0fcdb03921296770972235253fe7a2b876e183d5aa2",
+    "tools/match/objective.py": "ea3768c5ff641f68e398a7a39f902345f5f3a1a69277b66f8df556f7eeb2278e",
+    "tools/match/features.py": "dc8d2c049f9940215387d2f2500cfa0dbdd2a5b27e07eced41f16fc69cba6859",
+    "tools/match/audio.py": "90bd5aa0dd1e885f0cdd1057e2a0d9c06c25bcf7584e8e7ab92fd5edeb14fa52",
+    "tools/neural_invert/experiment.py": "07bb2ead5eff152991c28e3725efd54764cfb8a9f306cc3a94ec4c2740af4d36"
+  },
+  "preflightCorrection": {
+    "previousTargetsSha256": "06a28ffac36ef27035ce7e519238c561d06d6c54b09d14acf15f877ec1895bd6",
+    "previousPlanSha256": "1ea489c2a0ef072d951d490af16994e8abf16785fb39888ec9dddf2e2b048b79",
+    "reason": "Correct count in availability explanation before inference: five previously judged clothes files, one unjudged but too long. Selected six target files, seeds and all experiment settings unchanged."
+  },
+  "targetsSha256": "e71d7dd88e0dc8794054d48e2ca573b050b08fe41b4a6563810d17596c2a0190"
+}

@@ -1,0 +1,26 @@
+{
+  "branch": "claude/determined-sagan-khz12h",
+  "revision": "e006519a42dfdc0d82e866273aa13782e393539e",
+  "previousSnapshotRevision": "db9f5f8a8bf50b951b44a163dd6685222bfae859",
+  "files": {
+    "examples/Soundboard/Soundboard.bcol": "d9fcda46d89bac18cb4e361d5affbeaf4d464aa9275b4bf4474d9eddf3daa54c",
+    "examples/Soundboard/index.html": "a6d882bdf9b7caa1dad1ed09a295d1a5e48ccd3d6496f8248bcb57e9148a8925",
+    "examples/Soundboard/validation.json": "43369dabc613915203d7e07e8667d4f52829aa8f07375e64847b85c82cad9859",
+    "js/synths/Boomr.js": "9993f70b9adb3a063ca402759c5bbbd18b9049781380fa2dded57cb60a5e4648",
+    "js/synths/Breathr.js": "85c31eccf578542495895eb6bf0c0c84bd84e38a7ff02225dbdc905eaf7d78dd",
+    "js/synths/Crittr.js": "602d750ee80784c424e98e0137d291d73205a803ac956360814bd538d86957f1",
+    "js/synths/Machinr.js": "7da892f14add69c2c7b11b9b4414ae90ecf092a88d2680cc719e3487f6e4e284",
+    "js/synths/Rustlr.js": "f0a2c85700f4e039f1be05433d0be7f53a87e04eb25b5edc3b8b049d4a830fee",
+    "js/synths/Soundboard.js": "b456ce179ca80b575147aa30eaf851dc433d6088093c7ff26c8fe84e6302f500",
+    "js/synths/Squishr.js": "f5910d7b75bae536603c9f0cf431dbedffa6550cc581f7f5fce1e23f8a927a9b",
+    "js/synths/Transfxr.js": "837e491081c01e871b44ed34fbef129a62bf1b3e578bb9b635edea675a7a30a6",
+    "js/synths/Whooshr.js": "4b315d3093234ba7a16b79a91bcb5eccddf4f14b9e9f5eede73298f13a9ec022"
+  },
+  "audioDspFilesChanged": [],
+  "sourceSnapshotManifestSha256": "7a4aa4cdf936db710db0fab4c8d3d0875c8defcc8dcdd8e45d15582838e7a221",
+  "observations": [
+    "Later Soundboard recipe/variation and example changes are present for nine synth classes. No js/audio file differs from the earlier snapshot.",
+    "Potential future synthetic sampling source; branch commit messages are not target-likeness labels.",
+    "Not imported into the running matched-objective experiment, whose checkpoint/renderer/candidate-generation source hashes stay frozen. Native parameter replay must be checked before future use."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "protocolSha256": "49287000ac767f56b4ef076c5895d880783b1bf176349c5b1e7510a3046a389a",
+  "evaluationSha256": "dbc77ea2764f5b81f34c0044da921ef5f265bdb42a3a82b90a6d2ac398a4334a",
+  "verifierSha256": "4442bef11046245da0accd291706b2362556212766aa88c85b64e7a514f942db",
+  "externalPairs": 219,
+  "references": 72,
+  "groups": 44,
+  "folds": 5,
+  "gatePassed": false,
+  "fullDataModelSaved": false,
+  "verified": [
+    "one held-out prediction per pair",
+    "reference/group separation",
+    "training-only component scales",
+    "pair component reconstruction",
+    "prediction scores",
+    "fixed gate failure"
+  ],
+  "scope": "Numerical experiment integrity only; no human quality claim."
+}
