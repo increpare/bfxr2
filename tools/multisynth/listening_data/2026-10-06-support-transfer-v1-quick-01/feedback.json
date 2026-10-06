@@ -1,0 +1,827 @@
+{
+  "schemaVersion": 3,
+  "experimentId": "dd13710072276544ed95f87bf110aa8db1fc6fbad3e3ad7ba763118c53be49b6",
+  "provenance": {
+    "experiment": "support-transfer-v1-listening",
+    "complete": true,
+    "targetCount": 6,
+    "humanReviewRequired": true,
+    "galleryTitle": "Six fresh sounds — does event fitting transfer?",
+    "galleryIntro": [
+      "Six tagged sounds not used in earlier listening rounds. Choose the closest and say how close it feels.",
+      "Whole-sound fitting, event-by-event fitting and original Bfxr are compared. Identical results are merged.",
+      "Newer experts were trained on synthetic sounds. Historical Bfxr overlap is recorded; these are not certified independent source families."
+    ],
+    "scope": "Six unjudged tagged external files, excluding retained exact file/PCM. Historical Bfxr overlaps disclosed; source-family independence not certified. Frozen experts; no retraining. Each segment128 source mutations, each patch512 joint attempts. Event arms use more total work with more events. Original Bfxr has independent historical2000-budget optimizer.",
+    "auditionPolicy": {
+      "version": "signal-support-half-v1",
+      "relativeAmplitudeFloor": 0.001,
+      "exposure": "halfway through first/last above-threshold sample support; full completion also counts",
+      "playback": "unchanged"
+    },
+    "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df",
+    "reportSha256": "9049f06b03c819b12dedf20202d3db3fb17d4ba263f071e1fa30a1ce4e9f6a04",
+    "uiCodeHashes": {
+      "quick_choice.js": "0bb2e27258fa918053f77e737b45200eb9389ec90fd0e185e71ef85bef4f911e",
+      "coverage_feedback.js": "db4cd83adfa7f788378ac0b0941f473376a730d4c55133f6d797250eeeee1d61",
+      "coverage_feedback.py": "50b9b03368addb2729f1689a208070347544f4f62150158bbcd08f4360b73b75",
+      "quick_audio_support.js": "b315a6cf88a76e287443238a750e9de9ac39bfc18464451d9e167cbc7354d45a",
+      "quick_listening.html": "167c746f5ec3f77802b799cd1659dd85c8d0fe599ffc365b4376cf4fc2777cd4",
+      "quick_listening.css": "833a39c37a9140b9e995d693dcd648266204cc022107b2c398c32468d231f7a7",
+      "quick_mismatch.js": "177bd0dd544d3bbc058b25f0ef2357b18723e9884449626a5e3a1423d9d82a2f",
+      "quick_mismatch.css": "81a2bc1a435c3a6afe87a9e7ff27c86b5b7d398053ed90dd7f5108bd57b211f0",
+      "quick_listening_diagnostic.js": "8a3b3d082f9653e27c17b7f7c989ddbf79592fd847e536d2745f72a9f5d71b41"
+    },
+    "diagnosticQuestion": {
+      "version": "quick-mismatch-v1",
+      "optional": true,
+      "trigger": "similar, least-bad, or none close"
+    }
+  },
+  "ratingScales": {
+    "likeness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Likeness to reference: 1 = far off, 5 = very close"
+    },
+    "usefulness": {
+      "min": 1,
+      "max": 5,
+      "meaning": "Useful/fun game sound: 1 = not useful, 5 = very useful or fun"
+    }
+  },
+  "targets": [
+    {
+      "id": "9c21440c70e8ad5f1aac59bcdce67fcbce4a114f64e7cdc6a0b0c6c7b5b77be1",
+      "name": "card/card-place-4.ogg",
+      "sha256": "18e3ba713b7259605fd27cdc048085ed56cf86b32403f070b6cb125019f77183",
+      "folder": "001",
+      "referenceAudioSha256": "254ddbc533fac44c6a0f9752f3056486a170f4e1847ccb0d4c53a05b5dbd4b00",
+      "candidates": [
+        {
+          "id": "2b8bab8e078a3ffed6bf31c3b3de534012a44305cbb000f52fdd9376d5b14612",
+          "synth": "Stackr",
+          "paramsSha256": "2742531c41c874f5a5691f447c05e978e8cdf9b0fa78f39354133da0953fa9b5",
+          "seed": 0,
+          "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+          "audioSha256": "79c8b8b45dd46534e1e720b7274df24cb6efd446428c4e5fc92c90dcfdfb1c0c",
+          "provenance": {
+            "origin": "native-whole-or-events",
+            "neuralWeightsRetrained": false,
+            "boundaries": [
+              0,
+              26494
+            ],
+            "nativeSeed": 0.5,
+            "seedFieldMeaning": "Gallery ID only; actual seed in params",
+            "segmentBudget": 128,
+            "jointBudget": 512,
+            "selectionAliases": [
+              "whole"
+            ],
+            "nativeHash": "eafbc60ae3dc7809078312daca8d9f5a411bcac88884c4f18f83fef709e61bfc",
+            "auditionHash": "6d0f1ecd403405706ba1fbb9589f003e525019b6014772c5fdc8efefec4dac47",
+            "supportScore": 3.33839001944817,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "whole.wav",
+          "role": "whole",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b",
+          "synth": "Stackr",
+          "paramsSha256": "d60df9fc0cf0f823d2e45cc4f294670eb64d453890a1193c95b86aa532d2ac02",
+          "seed": 0,
+          "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+          "audioSha256": "4d234d650fd689f44686bf3789fa9e3f59825889f02823d6a362da37873d3fd6",
+          "provenance": {
+            "origin": "native-whole-or-events",
+            "neuralWeightsRetrained": false,
+            "boundaries": [
+              0,
+              14592,
+              26494
+            ],
+            "nativeSeed": 0.5,
+            "seedFieldMeaning": "Gallery ID only; actual seed in params",
+            "segmentBudget": 128,
+            "jointBudget": 512,
+            "selectionAliases": [
+              "events"
+            ],
+            "nativeHash": "f338df3ab31565a34eb2164d4c7a7e311237c47fcd871e3d6dffd899666a4c36",
+            "auditionHash": "6785ef9a0f18ca473caf0cb1165de3b0be784b18c79745d60e5f80214c755e4a",
+            "supportScore": 2.4659438752201,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "events.wav",
+          "role": "events",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "16563a1c129031dd0f819e79ae396b4d1b00073c4ad60e7d4267dad847b57a42",
+          "synth": "Bfxr",
+          "paramsSha256": "f03af37793e92fd1677610e5612875e8f2e55f3e9c2b1a753b6609cfadf07021",
+          "seed": 1234,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "32146a0967528be29205795c0e3ed40e7de4abe7338fd602585d90887eb03f45",
+          "provenance": {
+            "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+            "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+            "budget": 2000,
+            "evaluations": 3003,
+            "allowPitchShift": false,
+            "allowTimeStretch": false,
+            "structureObjective": false,
+            "optimizer": "original StagedOptimizer with neural seeds",
+            "origin": "original-bfxr",
+            "backend": {
+              "command": [
+                "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+              ],
+              "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+            },
+            "selectionAliases": [
+              "bfxr"
+            ],
+            "nativeHash": "0bfd2a81778615e7e39a956e0bb9690584d4f6861437bfdf7799830ab936ae03",
+            "auditionHash": "72e8b5f4c80a79b8e47dde36e5de35fd3e310af16f9b481d527094004ecaa403",
+            "supportScore": 3.907877622065752,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "bfxr.wav",
+          "role": "bfxr",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "[quick-mismatch-v1] chosen [\"347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b\"]: movement/rhythm",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b",
+          "16563a1c129031dd0f819e79ae396b4d1b00073c4ad60e7d4267dad847b57a42",
+          "2b8bab8e078a3ffed6bf31c3b3de534012a44305cbb000f52fdd9376d5b14612"
+        ],
+        "auditionedCandidateIds": [
+          "347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b",
+          "16563a1c129031dd0f819e79ae396b4d1b00073c4ad60e7d4267dad847b57a42",
+          "2b8bab8e078a3ffed6bf31c3b3de534012a44305cbb000f52fdd9376d5b14612"
+        ],
+        "preferredCandidateIds": [
+          "347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b"
+          ]
+        }
+      }
+    },
+    {
+      "id": "674f18725c48078319393016b60c780c12865e3ea9a0f8483e3f43bc7d4121fb",
+      "name": "footstep/footstep_snow_001.ogg",
+      "sha256": "980fb9a1c9227aed7995067b0357f373053337f2416316db8ea0438418542fb4",
+      "folder": "002",
+      "referenceAudioSha256": "d807133d969b6410bad5ea0826e52eb2a4d7d2e37d8f12e3ca97770058e195f4",
+      "candidates": [
+        {
+          "id": "214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8",
+          "synth": "Stackr",
+          "paramsSha256": "94c40d9bd8b073de1be46780e379f0c0c4e19f6611db6f1d0fbbcc024551c007",
+          "seed": 0,
+          "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+          "audioSha256": "3fda424e1fb2073199c9356a25e66e30705c3b3fcf37779b63baba2e3971ef09",
+          "provenance": {
+            "origin": "native-whole-or-events",
+            "neuralWeightsRetrained": false,
+            "boundaries": [
+              0,
+              16503
+            ],
+            "nativeSeed": 0.5,
+            "seedFieldMeaning": "Gallery ID only; actual seed in params",
+            "segmentBudget": 128,
+            "jointBudget": 512,
+            "selectionAliases": [
+              "whole"
+            ],
+            "nativeHash": "654f3e58c8892e63ec018196b6d98c3121f11b059d4f563861d7c7df2c566c50",
+            "auditionHash": "0ab305863954fa18aafdebd0917e084fd83cbb9c79cda0eb66eea8fc82bc8a1f",
+            "supportScore": 2.2687013349217366,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "whole.wav",
+          "role": "whole",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "53eb91176c04ca7c472555d8bf26d5710585f0a3659fff8ff4d7e629f543801a",
+          "synth": "Stackr",
+          "paramsSha256": "2aade7e4bf44999bf9048ae90454f38a0041ee745423068a08de45aa6d16163a",
+          "seed": 0,
+          "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+          "audioSha256": "b89dcf786d3d3ca449cf75bc603eae0c16138761728430579a2689a056536f54",
+          "provenance": {
+            "origin": "native-whole-or-events",
+            "neuralWeightsRetrained": false,
+            "boundaries": [
+              0,
+              4096,
+              16503
+            ],
+            "nativeSeed": 0.5,
+            "seedFieldMeaning": "Gallery ID only; actual seed in params",
+            "segmentBudget": 128,
+            "jointBudget": 512,
+            "selectionAliases": [
+              "events"
+            ],
+            "nativeHash": "ba254317ce05a9b0d625f5083cf0b1b18ae91c2e1b505629ceabc90a028f4a55",
+            "auditionHash": "88b266269b49e86a10fbe38327c7b69f77afe32080f335b6168ebdd7d9d2e105",
+            "supportScore": 1.3944158840254912,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "events.wav",
+          "role": "events",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "c4857c2f7fecb6b89aae1dd6838dc1a24e868b0bf8b046e9d9dd97b5ac4317bf",
+          "synth": "Bfxr",
+          "paramsSha256": "f8b19110f60f9e707d7396d6252eaf211454cbd22c051e46628715a8ee29bee4",
+          "seed": 1234,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "b5602bd8d8bd4c65ebecdf48c8ad3f069391c654abde06470b856b651a362eb7",
+          "provenance": {
+            "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+            "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+            "budget": 2000,
+            "evaluations": 2015,
+            "allowPitchShift": false,
+            "allowTimeStretch": false,
+            "structureObjective": false,
+            "optimizer": "original StagedOptimizer with neural seeds",
+            "origin": "original-bfxr",
+            "backend": {
+              "command": [
+                "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+              ],
+              "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+            },
+            "selectionAliases": [
+              "bfxr"
+            ],
+            "nativeHash": "acbd4d2a01777c2d21ef9735e842deba3dfe47b796f6714c053f94405427c833",
+            "auditionHash": "e5cdace46ceabd54536717baec73681fad4827f0458bde0a8f69da17f00e0433",
+            "supportScore": 2.4297386550492424,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "bfxr.wav",
+          "role": "bfxr",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "[quick-mismatch-v1] chosen [\"214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8\"]: pitch",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "c4857c2f7fecb6b89aae1dd6838dc1a24e868b0bf8b046e9d9dd97b5ac4317bf",
+          "214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8",
+          "53eb91176c04ca7c472555d8bf26d5710585f0a3659fff8ff4d7e629f543801a"
+        ],
+        "auditionedCandidateIds": [
+          "c4857c2f7fecb6b89aae1dd6838dc1a24e868b0bf8b046e9d9dd97b5ac4317bf",
+          "214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8",
+          "53eb91176c04ca7c472555d8bf26d5710585f0a3659fff8ff4d7e629f543801a"
+        ],
+        "preferredCandidateIds": [
+          "214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8"
+          ]
+        }
+      }
+    },
+    {
+      "id": "61681ee5c5a3b441b72790d16e70613a2b7a3cb9806a2d3a96cace894439c6d8",
+      "name": "hit/FGHTImpt_Combat Punch Impact Light Hit Delay Crunchy Vintage Quick Smack 05_ESM_AG.wav",
+      "sha256": "55cb8102db4d8728c2607279b4e381f27336db35bb966e5f4993c9ace2cd9ecd",
+      "folder": "003",
+      "referenceAudioSha256": "11f85d929fdda717564ea30a7386eb89d0c2ec6cdd3c39fd80942b1e57fd17c1",
+      "candidates": [
+        {
+          "id": "6e4fa4231bba43c15d9a4ead25814bfd97d97faa977b5533b8253e728c187e2b",
+          "synth": "Stackr",
+          "paramsSha256": "9b73f134188d05f19b6b4393ce42f0cecec2d4f086e0a415cd8bf010dbb911fe",
+          "seed": 0,
+          "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+          "audioSha256": "3d7e5e6af84afb1ec50f73f308cbc6621760a372cb344f8249ff99c82bc2c120",
+          "provenance": {
+            "origin": "native-whole-or-events",
+            "neuralWeightsRetrained": false,
+            "boundaries": [
+              0,
+              40572
+            ],
+            "nativeSeed": 0.5,
+            "seedFieldMeaning": "Gallery ID only; actual seed in params",
+            "segmentBudget": 128,
+            "jointBudget": 512,
+            "selectionAliases": [
+              "whole"
+            ],
+            "nativeHash": "2edfeb269fce87ad429903841e6af093f8c1048ef1ed90da763c37de7e6aefd8",
+            "auditionHash": "058d588efe97d4fefc48a486191ff4de6771d35aa475d2c6d67adc4c6d95de1a",
+            "supportScore": 0.6193776591393613,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "whole.wav",
+          "role": "whole",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "ff042e1a5930530bd695f7d2d50ca6625403a5a3c34a3dbb1959522570dbc410",
+          "synth": "Stackr",
+          "paramsSha256": "f575c30f7b7e46339c760dab7e35497107d75ecd761319935258fe163167eb3d",
+          "seed": 0,
+          "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+          "audioSha256": "c50e87dcda000d732111451c125ed329053af078642d08fa2228cf84fd828f36",
+          "provenance": {
+            "origin": "native-whole-or-events",
+            "neuralWeightsRetrained": false,
+            "boundaries": [
+              0,
+              7680,
+              11520,
+              40572
+            ],
+            "nativeSeed": 0.5,
+            "seedFieldMeaning": "Gallery ID only; actual seed in params",
+            "segmentBudget": 128,
+            "jointBudget": 512,
+            "selectionAliases": [
+              "events"
+            ],
+            "nativeHash": "f25a2a05d6dcf1daa5d6b5f8139f789007abd3d4a394a41688c273283dfc75bb",
+            "auditionHash": "167490b599fe8ba341e52f777326d601edf5e5b86496fabb9681b22c490d1d2d",
+            "supportScore": 0.6534318578042924,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "events.wav",
+          "role": "events",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983",
+          "synth": "Bfxr",
+          "paramsSha256": "ff40c04a7e1bc2ff2cf7ba49f530766654a27bca29d11b5e9b5e4f78cd9ce473",
+          "seed": 1234,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "158f76c64dd6455a05cc541333e759059daa191963d8810a2f0a8f1a44e5b801",
+          "provenance": {
+            "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+            "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+            "budget": 2000,
+            "evaluations": 2015,
+            "allowPitchShift": false,
+            "allowTimeStretch": false,
+            "structureObjective": false,
+            "optimizer": "original StagedOptimizer with neural seeds",
+            "origin": "original-bfxr",
+            "backend": {
+              "command": [
+                "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+              ],
+              "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+            },
+            "selectionAliases": [
+              "bfxr"
+            ],
+            "nativeHash": "1491af7120428d8b5798c64664b492bbd5d0876e04dc0189c9e80fb0d5bd40f7",
+            "auditionHash": "b4c43311d8aed72e3a158f371743351b1b7795a1cf6458253291ea9b01bd7492",
+            "supportScore": 1.1865787505483496,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "bfxr.wav",
+          "role": "bfxr",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "[quick-mismatch-v1] chosen [\"66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983\"]: texture/timbre",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "ff042e1a5930530bd695f7d2d50ca6625403a5a3c34a3dbb1959522570dbc410",
+          "66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983",
+          "6e4fa4231bba43c15d9a4ead25814bfd97d97faa977b5533b8253e728c187e2b"
+        ],
+        "auditionedCandidateIds": [
+          "ff042e1a5930530bd695f7d2d50ca6625403a5a3c34a3dbb1959522570dbc410",
+          "66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983",
+          "6e4fa4231bba43c15d9a4ead25814bfd97d97faa977b5533b8253e728c187e2b"
+        ],
+        "preferredCandidateIds": [
+          "66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983"
+          ]
+        }
+      }
+    },
+    {
+      "id": "f76944a8d14f23e464dd12a532f91c98f25a6d288ff314921aa9ad029d9d4d70",
+      "name": "bell/clothBelt.ogg",
+      "sha256": "f29560a2aea95bbfeb643e1e8f56ec2b6f7e32f32ce4e140645a36db81de3253",
+      "folder": "004",
+      "referenceAudioSha256": "3a13530042e04a88a412e94d5cf4b81d67b4765b617744e34173d833e4e82ea7",
+      "candidates": [
+        {
+          "id": "e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b",
+          "synth": "Stackr",
+          "paramsSha256": "4e3debff015f8f0c3af67e410f97114d75916642b022fbb798a8554786538bdd",
+          "seed": 0,
+          "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+          "audioSha256": "65bf6f709aaa159276ade1a9d39204c363dfd661ced8a72d84a69522bf474095",
+          "provenance": {
+            "origin": "native-whole-or-events",
+            "neuralWeightsRetrained": false,
+            "boundaries": [
+              0,
+              31311
+            ],
+            "nativeSeed": 0.5,
+            "seedFieldMeaning": "Gallery ID only; actual seed in params",
+            "segmentBudget": 128,
+            "jointBudget": 512,
+            "selectionAliases": [
+              "whole"
+            ],
+            "nativeHash": "b0f1ebec84dec73b2ed4e0338ed9bfb7e3482a30dd13f2f6ec54771232fb4b97",
+            "auditionHash": "75d84372bf1bbf434b554dbdda375afb1029a4e11a47e229cbd6a41956041cd6",
+            "supportScore": 1.7071744830669733,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "whole.wav",
+          "role": "whole",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "5ef9999a0163d9839ecd2efa5024ea538d443c9e7641c07bef47e81c7f97743c",
+          "synth": "Stackr",
+          "paramsSha256": "c4af69a5809a1f2bdbdc0debc6c2d61d5e6d918ed551ea421d60b0101899ea04",
+          "seed": 0,
+          "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+          "audioSha256": "c78b01c848e8cdd9f479ea4c8e73bfaac001952f03fd07e67b9775c14bf1c1a0",
+          "provenance": {
+            "origin": "native-whole-or-events",
+            "neuralWeightsRetrained": false,
+            "boundaries": [
+              0,
+              8960,
+              24064,
+              31311
+            ],
+            "nativeSeed": 0.5,
+            "seedFieldMeaning": "Gallery ID only; actual seed in params",
+            "segmentBudget": 128,
+            "jointBudget": 512,
+            "selectionAliases": [
+              "events"
+            ],
+            "nativeHash": "32bb39b8dfa97aca921ef4cc4befc606ac15f332989da32dd6af5a5382d4dab0",
+            "auditionHash": "6f8fcaaba15aebbd201f03648d96300db3e6d216f489e7990496a945ac9b5db2",
+            "supportScore": 1.471711309176124,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "events.wav",
+          "role": "events",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "4bb3aaa9d2ae1c44684f5c4474b1f1f9cd6fbc12df0de2a37d7a3d633bb54080",
+          "synth": "Bfxr",
+          "paramsSha256": "8f0df632d26a026bea842cc9970a80daac6bba47cfb7e418b73974b984b48fd0",
+          "seed": 1234,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "b5892260728d68625d604137fff2f91ece2e83c9357059d28def96c622968458",
+          "provenance": {
+            "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+            "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+            "budget": 2000,
+            "evaluations": 2015,
+            "allowPitchShift": false,
+            "allowTimeStretch": false,
+            "structureObjective": false,
+            "optimizer": "original StagedOptimizer with neural seeds",
+            "origin": "original-bfxr",
+            "backend": {
+              "command": [
+                "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+              ],
+              "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+            },
+            "selectionAliases": [
+              "bfxr"
+            ],
+            "nativeHash": "ca05ba8aaa41c30e2e9655fcbd1f9ecc50a22467aa5c89d2c55ceb9d7ef5f25b",
+            "auditionHash": "a6543dd54723a723e252bc97776c7d45c13af702db1c855556e08b7c22802a39",
+            "supportScore": 2.3703120185316586,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "bfxr.wav",
+          "role": "bfxr",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "[quick-mismatch-v1] chosen [\"e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b\"]: several things",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b",
+          "5ef9999a0163d9839ecd2efa5024ea538d443c9e7641c07bef47e81c7f97743c",
+          "4bb3aaa9d2ae1c44684f5c4474b1f1f9cd6fbc12df0de2a37d7a3d633bb54080"
+        ],
+        "auditionedCandidateIds": [
+          "e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b",
+          "5ef9999a0163d9839ecd2efa5024ea538d443c9e7641c07bef47e81c7f97743c",
+          "4bb3aaa9d2ae1c44684f5c4474b1f1f9cd6fbc12df0de2a37d7a3d633bb54080"
+        ],
+        "preferredCandidateIds": [
+          "e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b"
+          ]
+        }
+      }
+    },
+    {
+      "id": "213da9ac2bdb0a8475107a4d671805e843e63fdc342332a190fd104829b2a95e",
+      "name": "laser/laserRetro_002.ogg",
+      "sha256": "df6112dc4eba5444bc28a1c8b80f6ce942bb2696beb466ac8e736b2ebf3e15b9",
+      "folder": "005",
+      "referenceAudioSha256": "431164dabc18632a193eb083e8da4b81c981084de610d04a64e8b51fd111a68d",
+      "candidates": [
+        {
+          "id": "ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4",
+          "synth": "Stackr",
+          "paramsSha256": "fbfecf42a78319481e11f87bf2c50c898d09a2dd171812a10f9e880fa1203c9b",
+          "seed": 0,
+          "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+          "audioSha256": "06059c8fa12918f8bb09cda8e9ea0b6efd7f6063e71cfe9fb8a2f1427506e40c",
+          "provenance": {
+            "origin": "native-whole-or-events",
+            "neuralWeightsRetrained": false,
+            "boundaries": [
+              0,
+              11248
+            ],
+            "nativeSeed": 0.5,
+            "seedFieldMeaning": "Gallery ID only; actual seed in params",
+            "segmentBudget": 128,
+            "jointBudget": 512,
+            "selectionAliases": [
+              "whole",
+              "events"
+            ],
+            "nativeHash": "05be374f9a5c3fed8ad4160efcedac89246860279e7d6a96444bf0e447b7b6cf",
+            "auditionHash": "dbe0993d1491aa3f0a998854fe3765e205552c15bff7d370e9e9b0ee73424057",
+            "supportScore": 0.7728246851769882,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "whole.wav",
+          "role": "whole",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "b244d3ea8d75f470ffb280f7eddf9051ff7fddd4c5012c09749499f18d4f52f8",
+          "synth": "Bfxr",
+          "paramsSha256": "1590b7fbbfc70e6ceec93257fcc879654fd077411f9c86b5fbd9f982616ad607",
+          "seed": 1234,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "eac2ce6df7445d4482da868a26e6add0e809b9f9e36618f1ebe4a2f79885dfe1",
+          "provenance": {
+            "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+            "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+            "budget": 2000,
+            "evaluations": 2015,
+            "allowPitchShift": false,
+            "allowTimeStretch": false,
+            "structureObjective": false,
+            "optimizer": "original StagedOptimizer with neural seeds",
+            "origin": "original-bfxr",
+            "backend": {
+              "command": [
+                "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+              ],
+              "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+            },
+            "selectionAliases": [
+              "bfxr"
+            ],
+            "nativeHash": "a77a48e4e2b2d265e14d88671995b3410029c368739efd01693b944a7dfc5bb2",
+            "auditionHash": "3f06c3962eb767cb0d858da37b4a4d9cb478fac799fb28a9fbeb34c42146ec89",
+            "supportScore": 3.5876630263045053,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "bfxr.wav",
+          "role": "bfxr",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "[quick-mismatch-v1] chosen [\"ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4\"]: texture/timbre",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4",
+          "b244d3ea8d75f470ffb280f7eddf9051ff7fddd4c5012c09749499f18d4f52f8"
+        ],
+        "auditionedCandidateIds": [
+          "ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4",
+          "b244d3ea8d75f470ffb280f7eddf9051ff7fddd4c5012c09749499f18d4f52f8"
+        ],
+        "preferredCandidateIds": [
+          "ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4"
+          ]
+        }
+      }
+    },
+    {
+      "id": "57bc5f5a675057bf41df5e300184e5cc54262de94233ca34f231fc17991afa93",
+      "name": "collect/Mario World - 1up.wav",
+      "sha256": "86002dd9a8ee19486bea412057912842f5703060c21af77b5675b22f98b40f31",
+      "folder": "006",
+      "referenceAudioSha256": "8cd4723b32c019554a01ceff23a2be5a38c1dd85c00002f45edef67e76975e03",
+      "candidates": [
+        {
+          "id": "076e32d64e58f94357c50b8d186c8e3002ac1d144634ea14e8cadc6f9b06e20b",
+          "synth": "Stackr",
+          "paramsSha256": "fa2ac44d6d90b19677ce5127cb289e622f38b14083dd572834e11e26c0dbdd26",
+          "seed": 0,
+          "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+          "audioSha256": "9c31c82e4029ffe50e563f464f1b22a6d9051b752a663cda4f87164f0547c9b4",
+          "provenance": {
+            "origin": "native-whole-or-events",
+            "neuralWeightsRetrained": false,
+            "boundaries": [
+              0,
+              22066
+            ],
+            "nativeSeed": 0.5,
+            "seedFieldMeaning": "Gallery ID only; actual seed in params",
+            "segmentBudget": 128,
+            "jointBudget": 512,
+            "selectionAliases": [
+              "whole"
+            ],
+            "nativeHash": "8ca3237759dccc2a286725596a28d2bee1e21e23ec399a5cc0abb34aebceec82",
+            "auditionHash": "a2ad7567806a1f9d5c1d5ce8ee9218b49a66187f737b77d5b2cd944ae0f6fb6e",
+            "supportScore": 3.5597611385993044,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "whole.wav",
+          "role": "whole",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "7fffeeb36e0837c3efc66683e943d77f646021de0020d1a8f796677ba42638d4",
+          "synth": "Stackr",
+          "paramsSha256": "e7f6de0ee521114f87ab207bf873501521d864e43d65e75208b7f0ffe1a0ea46",
+          "seed": 0,
+          "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+          "audioSha256": "b101f9e5ddac551dd12a8391e538b28885b266a9c26dde2c4a0a15e51a12cce0",
+          "provenance": {
+            "origin": "native-whole-or-events",
+            "neuralWeightsRetrained": false,
+            "boundaries": [
+              0,
+              10752,
+              13824,
+              22066
+            ],
+            "nativeSeed": 0.5,
+            "seedFieldMeaning": "Gallery ID only; actual seed in params",
+            "segmentBudget": 128,
+            "jointBudget": 512,
+            "selectionAliases": [
+              "events"
+            ],
+            "nativeHash": "f035ef9f0310f9eb910a3e8dff688fb6961f23ab2fc60ec78144edb6e43d98ba",
+            "auditionHash": "d71490e55aa8991713f4af6f86aac651a7635c576c7a6a33645cb3572838b535",
+            "supportScore": 4.122998875418157,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "events.wav",
+          "role": "events",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        },
+        {
+          "id": "59d999127f5293c5271be7b72eff79525a3625eb87f581ba3343d91081c05d80",
+          "synth": "Bfxr",
+          "paramsSha256": "5877f4d27f82401193854113fa7ff548862cc8e3d8bb7194c1eb31ccb46f10d0",
+          "seed": 1234,
+          "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "audioSha256": "451f3b6d6ab12e5f2340ba3efeb2c788523dacaa1c2e27ba1af2eb0d321d0845",
+          "provenance": {
+            "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+            "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+            "budget": 2000,
+            "evaluations": 3001,
+            "allowPitchShift": false,
+            "allowTimeStretch": false,
+            "structureObjective": false,
+            "optimizer": "original StagedOptimizer with neural seeds",
+            "origin": "original-bfxr",
+            "backend": {
+              "command": [
+                "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+              ],
+              "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+            },
+            "selectionAliases": [
+              "bfxr"
+            ],
+            "nativeHash": "88711b402c4dd9b9648c0b1cc04296e462ee26fa89d2e0aaad9b0f0668cdb01d",
+            "auditionHash": "338db703b46e40122b0a3eb13bfd112e9a8065288cbfc17f5b94d4eb2b517408",
+            "supportScore": 3.9230700500934033,
+            "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+          },
+          "file": "bfxr.wav",
+          "role": "bfxr",
+          "label": "Comparison option",
+          "likeness": null,
+          "usefulness": null
+        }
+      ],
+      "note": "[quick-mismatch-v1] all presented [\"7fffeeb36e0837c3efc66683e943d77f646021de0020d1a8f796677ba42638d4\",\"076e32d64e58f94357c50b8d186c8e3002ac1d144634ea14e8cadc6f9b06e20b\",\"59d999127f5293c5271be7b72eff79525a3625eb87f581ba3343d91081c05d80\"]: several things",
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "none",
+        "presentedCandidateIds": [
+          "7fffeeb36e0837c3efc66683e943d77f646021de0020d1a8f796677ba42638d4",
+          "076e32d64e58f94357c50b8d186c8e3002ac1d144634ea14e8cadc6f9b06e20b",
+          "59d999127f5293c5271be7b72eff79525a3625eb87f581ba3343d91081c05d80"
+        ],
+        "auditionedCandidateIds": [
+          "7fffeeb36e0837c3efc66683e943d77f646021de0020d1a8f796677ba42638d4",
+          "076e32d64e58f94357c50b8d186c8e3002ac1d144634ea14e8cadc6f9b06e20b",
+          "59d999127f5293c5271be7b72eff79525a3625eb87f581ba3343d91081c05d80"
+        ],
+        "preferredCandidateIds": [],
+        "adequacy": null
+      }
+    }
+  ]
+}

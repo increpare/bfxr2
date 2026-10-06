@@ -1,0 +1,1433 @@
+{
+  "schemaVersion": 3,
+  "experimentId": "dd13710072276544ed95f87bf110aa8db1fc6fbad3e3ad7ba763118c53be49b6",
+  "feedbackSha256": "1c53cd6cd19ffbea1c96a0220770ee40c18f1e6c0ab1007e37b274d9a7e36b30",
+  "provenance": {
+    "experiment": "support-transfer-v1-listening",
+    "complete": true,
+    "targetCount": 6,
+    "humanReviewRequired": true,
+    "galleryTitle": "Six fresh sounds \u2014 does event fitting transfer?",
+    "galleryIntro": [
+      "Six tagged sounds not used in earlier listening rounds. Choose the closest and say how close it feels.",
+      "Whole-sound fitting, event-by-event fitting and original Bfxr are compared. Identical results are merged.",
+      "Newer experts were trained on synthetic sounds. Historical Bfxr overlap is recorded; these are not certified independent source families."
+    ],
+    "scope": "Six unjudged tagged external files, excluding retained exact file/PCM. Historical Bfxr overlaps disclosed; source-family independence not certified. Frozen experts; no retraining. Each segment128 source mutations, each patch512 joint attempts. Event arms use more total work with more events. Original Bfxr has independent historical2000-budget optimizer.",
+    "auditionPolicy": {
+      "version": "signal-support-half-v1",
+      "relativeAmplitudeFloor": 0.001,
+      "exposure": "halfway through first/last above-threshold sample support; full completion also counts",
+      "playback": "unchanged"
+    },
+    "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df",
+    "reportSha256": "9049f06b03c819b12dedf20202d3db3fb17d4ba263f071e1fa30a1ce4e9f6a04",
+    "uiCodeHashes": {
+      "quick_choice.js": "0bb2e27258fa918053f77e737b45200eb9389ec90fd0e185e71ef85bef4f911e",
+      "coverage_feedback.js": "db4cd83adfa7f788378ac0b0941f473376a730d4c55133f6d797250eeeee1d61",
+      "coverage_feedback.py": "50b9b03368addb2729f1689a208070347544f4f62150158bbcd08f4360b73b75",
+      "quick_audio_support.js": "b315a6cf88a76e287443238a750e9de9ac39bfc18464451d9e167cbc7354d45a",
+      "quick_listening.html": "167c746f5ec3f77802b799cd1659dd85c8d0fe599ffc365b4376cf4fc2777cd4",
+      "quick_listening.css": "833a39c37a9140b9e995d693dcd648266204cc022107b2c398c32468d231f7a7",
+      "quick_mismatch.js": "177bd0dd544d3bbc058b25f0ef2357b18723e9884449626a5e3a1423d9d82a2f",
+      "quick_mismatch.css": "81a2bc1a435c3a6afe87a9e7ff27c86b5b7d398053ed90dd7f5108bd57b211f0",
+      "quick_listening_diagnostic.js": "8a3b3d082f9653e27c17b7f7c989ddbf79592fd847e536d2745f72a9f5d71b41"
+    },
+    "diagnosticQuestion": {
+      "version": "quick-mismatch-v1",
+      "optional": true,
+      "trigger": "similar, least-bad, or none close"
+    }
+  },
+  "summary": {
+    "targets": 6,
+    "uniqueRatedCandidates": 0,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "choices": 6,
+    "choiceKinds": {
+      "best": 5,
+      "tie": 0,
+      "none": 1,
+      "skip": 0
+    }
+  },
+  "targets": [
+    {
+      "id": "9c21440c70e8ad5f1aac59bcdce67fcbce4a114f64e7cdc6a0b0c6c7b5b77be1",
+      "source": {
+        "name": "card/card-place-4.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/card/card-place-4.ogg",
+        "sha256": "18e3ba713b7259605fd27cdc048085ed56cf86b32403f070b6cb125019f77183",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "note": "[quick-mismatch-v1] chosen [\"347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b\"]: movement/rhythm",
+      "referenceAudio": {
+        "file": "audio/15ab42a7ae9f013603d8d703133096526dd6bfa81db2364ae25b2ed236f3065b.flac",
+        "pcmSha256": "15ab42a7ae9f013603d8d703133096526dd6bfa81db2364ae25b2ed236f3065b",
+        "sampleRate": 44100,
+        "frames": 26494,
+        "channels": 1,
+        "auditionWavSha256": "254ddbc533fac44c6a0f9752f3056486a170f4e1847ccb0d4c53a05b5dbd4b00"
+      },
+      "candidates": [
+        {
+          "id": "2b8bab8e078a3ffed6bf31c3b3de534012a44305cbb000f52fdd9376d5b14612",
+          "role": "whole",
+          "label": "Comparison option",
+          "file": "whole.wav"
+        },
+        {
+          "id": "347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b",
+          "role": "events",
+          "label": "Comparison option",
+          "file": "events.wav"
+        },
+        {
+          "id": "16563a1c129031dd0f819e79ae396b4d1b00073c4ad60e7d4267dad847b57a42",
+          "role": "bfxr",
+          "label": "Comparison option",
+          "file": "bfxr.wav"
+        }
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b",
+          "16563a1c129031dd0f819e79ae396b4d1b00073c4ad60e7d4267dad847b57a42",
+          "2b8bab8e078a3ffed6bf31c3b3de534012a44305cbb000f52fdd9376d5b14612"
+        ],
+        "auditionedCandidateIds": [
+          "347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b",
+          "16563a1c129031dd0f819e79ae396b4d1b00073c4ad60e7d4267dad847b57a42",
+          "2b8bab8e078a3ffed6bf31c3b3de534012a44305cbb000f52fdd9376d5b14612"
+        ],
+        "preferredCandidateIds": [
+          "347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b"
+          ]
+        }
+      }
+    },
+    {
+      "id": "674f18725c48078319393016b60c780c12865e3ea9a0f8483e3f43bc7d4121fb",
+      "source": {
+        "name": "footstep/footstep_snow_001.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep_snow_001.ogg",
+        "sha256": "980fb9a1c9227aed7995067b0357f373053337f2416316db8ea0438418542fb4",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "note": "[quick-mismatch-v1] chosen [\"214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8\"]: pitch",
+      "referenceAudio": {
+        "file": "audio/1483cfef0381c0aca8127e8f5b7d526f3cfbe1579f55e286a5786ce1f706bc76.flac",
+        "pcmSha256": "1483cfef0381c0aca8127e8f5b7d526f3cfbe1579f55e286a5786ce1f706bc76",
+        "sampleRate": 44100,
+        "frames": 16503,
+        "channels": 1,
+        "auditionWavSha256": "d807133d969b6410bad5ea0826e52eb2a4d7d2e37d8f12e3ca97770058e195f4"
+      },
+      "candidates": [
+        {
+          "id": "214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8",
+          "role": "whole",
+          "label": "Comparison option",
+          "file": "whole.wav"
+        },
+        {
+          "id": "53eb91176c04ca7c472555d8bf26d5710585f0a3659fff8ff4d7e629f543801a",
+          "role": "events",
+          "label": "Comparison option",
+          "file": "events.wav"
+        },
+        {
+          "id": "c4857c2f7fecb6b89aae1dd6838dc1a24e868b0bf8b046e9d9dd97b5ac4317bf",
+          "role": "bfxr",
+          "label": "Comparison option",
+          "file": "bfxr.wav"
+        }
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "c4857c2f7fecb6b89aae1dd6838dc1a24e868b0bf8b046e9d9dd97b5ac4317bf",
+          "214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8",
+          "53eb91176c04ca7c472555d8bf26d5710585f0a3659fff8ff4d7e629f543801a"
+        ],
+        "auditionedCandidateIds": [
+          "c4857c2f7fecb6b89aae1dd6838dc1a24e868b0bf8b046e9d9dd97b5ac4317bf",
+          "214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8",
+          "53eb91176c04ca7c472555d8bf26d5710585f0a3659fff8ff4d7e629f543801a"
+        ],
+        "preferredCandidateIds": [
+          "214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8"
+          ]
+        }
+      }
+    },
+    {
+      "id": "61681ee5c5a3b441b72790d16e70613a2b7a3cb9806a2d3a96cace894439c6d8",
+      "source": {
+        "name": "hit/FGHTImpt_Combat Punch Impact Light Hit Delay Crunchy Vintage Quick Smack 05_ESM_AG.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/FGHTImpt_Combat Punch Impact Light Hit Delay Crunchy Vintage Quick Smack 05_ESM_AG.wav",
+        "sha256": "55cb8102db4d8728c2607279b4e381f27336db35bb966e5f4993c9ace2cd9ecd",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "note": "[quick-mismatch-v1] chosen [\"66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983\"]: texture/timbre",
+      "referenceAudio": {
+        "file": "audio/7f68499ad5a1eb887ed14fc113fa4a93accfeda32c354e6aeab30f9c2707dad8.flac",
+        "pcmSha256": "7f68499ad5a1eb887ed14fc113fa4a93accfeda32c354e6aeab30f9c2707dad8",
+        "sampleRate": 44100,
+        "frames": 40572,
+        "channels": 1,
+        "auditionWavSha256": "11f85d929fdda717564ea30a7386eb89d0c2ec6cdd3c39fd80942b1e57fd17c1"
+      },
+      "candidates": [
+        {
+          "id": "6e4fa4231bba43c15d9a4ead25814bfd97d97faa977b5533b8253e728c187e2b",
+          "role": "whole",
+          "label": "Comparison option",
+          "file": "whole.wav"
+        },
+        {
+          "id": "ff042e1a5930530bd695f7d2d50ca6625403a5a3c34a3dbb1959522570dbc410",
+          "role": "events",
+          "label": "Comparison option",
+          "file": "events.wav"
+        },
+        {
+          "id": "66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983",
+          "role": "bfxr",
+          "label": "Comparison option",
+          "file": "bfxr.wav"
+        }
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "ff042e1a5930530bd695f7d2d50ca6625403a5a3c34a3dbb1959522570dbc410",
+          "66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983",
+          "6e4fa4231bba43c15d9a4ead25814bfd97d97faa977b5533b8253e728c187e2b"
+        ],
+        "auditionedCandidateIds": [
+          "ff042e1a5930530bd695f7d2d50ca6625403a5a3c34a3dbb1959522570dbc410",
+          "66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983",
+          "6e4fa4231bba43c15d9a4ead25814bfd97d97faa977b5533b8253e728c187e2b"
+        ],
+        "preferredCandidateIds": [
+          "66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983"
+          ]
+        }
+      }
+    },
+    {
+      "id": "f76944a8d14f23e464dd12a532f91c98f25a6d288ff314921aa9ad029d9d4d70",
+      "source": {
+        "name": "bell/clothBelt.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/clothBelt.ogg",
+        "sha256": "f29560a2aea95bbfeb643e1e8f56ec2b6f7e32f32ce4e140645a36db81de3253",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "note": "[quick-mismatch-v1] chosen [\"e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b\"]: several things",
+      "referenceAudio": {
+        "file": "audio/94410cb40bbd9af14e4020b857fd3dbc291df8fb2ba11d8f4c829ce0941242c0.flac",
+        "pcmSha256": "94410cb40bbd9af14e4020b857fd3dbc291df8fb2ba11d8f4c829ce0941242c0",
+        "sampleRate": 44100,
+        "frames": 31311,
+        "channels": 1,
+        "auditionWavSha256": "3a13530042e04a88a412e94d5cf4b81d67b4765b617744e34173d833e4e82ea7"
+      },
+      "candidates": [
+        {
+          "id": "e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b",
+          "role": "whole",
+          "label": "Comparison option",
+          "file": "whole.wav"
+        },
+        {
+          "id": "5ef9999a0163d9839ecd2efa5024ea538d443c9e7641c07bef47e81c7f97743c",
+          "role": "events",
+          "label": "Comparison option",
+          "file": "events.wav"
+        },
+        {
+          "id": "4bb3aaa9d2ae1c44684f5c4474b1f1f9cd6fbc12df0de2a37d7a3d633bb54080",
+          "role": "bfxr",
+          "label": "Comparison option",
+          "file": "bfxr.wav"
+        }
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b",
+          "5ef9999a0163d9839ecd2efa5024ea538d443c9e7641c07bef47e81c7f97743c",
+          "4bb3aaa9d2ae1c44684f5c4474b1f1f9cd6fbc12df0de2a37d7a3d633bb54080"
+        ],
+        "auditionedCandidateIds": [
+          "e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b",
+          "5ef9999a0163d9839ecd2efa5024ea538d443c9e7641c07bef47e81c7f97743c",
+          "4bb3aaa9d2ae1c44684f5c4474b1f1f9cd6fbc12df0de2a37d7a3d633bb54080"
+        ],
+        "preferredCandidateIds": [
+          "e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b"
+          ]
+        }
+      }
+    },
+    {
+      "id": "213da9ac2bdb0a8475107a4d671805e843e63fdc342332a190fd104829b2a95e",
+      "source": {
+        "name": "laser/laserRetro_002.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/laserRetro_002.ogg",
+        "sha256": "df6112dc4eba5444bc28a1c8b80f6ce942bb2696beb466ac8e736b2ebf3e15b9",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "note": "[quick-mismatch-v1] chosen [\"ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4\"]: texture/timbre",
+      "referenceAudio": {
+        "file": "audio/6413a5603132e07e1eac3e68910b7b167fb02e6aefc85d4733d31749ba0ee71c.flac",
+        "pcmSha256": "6413a5603132e07e1eac3e68910b7b167fb02e6aefc85d4733d31749ba0ee71c",
+        "sampleRate": 44100,
+        "frames": 11248,
+        "channels": 1,
+        "auditionWavSha256": "431164dabc18632a193eb083e8da4b81c981084de610d04a64e8b51fd111a68d"
+      },
+      "candidates": [
+        {
+          "id": "ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4",
+          "role": "whole",
+          "label": "Comparison option",
+          "file": "whole.wav"
+        },
+        {
+          "id": "b244d3ea8d75f470ffb280f7eddf9051ff7fddd4c5012c09749499f18d4f52f8",
+          "role": "bfxr",
+          "label": "Comparison option",
+          "file": "bfxr.wav"
+        }
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4",
+          "b244d3ea8d75f470ffb280f7eddf9051ff7fddd4c5012c09749499f18d4f52f8"
+        ],
+        "auditionedCandidateIds": [
+          "ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4",
+          "b244d3ea8d75f470ffb280f7eddf9051ff7fddd4c5012c09749499f18d4f52f8"
+        ],
+        "preferredCandidateIds": [
+          "ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4"
+          ]
+        }
+      }
+    },
+    {
+      "id": "57bc5f5a675057bf41df5e300184e5cc54262de94233ca34f231fc17991afa93",
+      "source": {
+        "name": "collect/Mario World - 1up.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/Mario World - 1up.wav",
+        "sha256": "86002dd9a8ee19486bea412057912842f5703060c21af77b5675b22f98b40f31",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "note": "[quick-mismatch-v1] all presented [\"7fffeeb36e0837c3efc66683e943d77f646021de0020d1a8f796677ba42638d4\",\"076e32d64e58f94357c50b8d186c8e3002ac1d144634ea14e8cadc6f9b06e20b\",\"59d999127f5293c5271be7b72eff79525a3625eb87f581ba3343d91081c05d80\"]: several things",
+      "referenceAudio": {
+        "file": "audio/197e976db0508bc74a8f42a2d3a6af64be7151dcbb8695cfc11ecd4045bb3341.flac",
+        "pcmSha256": "197e976db0508bc74a8f42a2d3a6af64be7151dcbb8695cfc11ecd4045bb3341",
+        "sampleRate": 44100,
+        "frames": 22066,
+        "channels": 1,
+        "auditionWavSha256": "8cd4723b32c019554a01ceff23a2be5a38c1dd85c00002f45edef67e76975e03"
+      },
+      "candidates": [
+        {
+          "id": "076e32d64e58f94357c50b8d186c8e3002ac1d144634ea14e8cadc6f9b06e20b",
+          "role": "whole",
+          "label": "Comparison option",
+          "file": "whole.wav"
+        },
+        {
+          "id": "7fffeeb36e0837c3efc66683e943d77f646021de0020d1a8f796677ba42638d4",
+          "role": "events",
+          "label": "Comparison option",
+          "file": "events.wav"
+        },
+        {
+          "id": "59d999127f5293c5271be7b72eff79525a3625eb87f581ba3343d91081c05d80",
+          "role": "bfxr",
+          "label": "Comparison option",
+          "file": "bfxr.wav"
+        }
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "none",
+        "presentedCandidateIds": [
+          "7fffeeb36e0837c3efc66683e943d77f646021de0020d1a8f796677ba42638d4",
+          "076e32d64e58f94357c50b8d186c8e3002ac1d144634ea14e8cadc6f9b06e20b",
+          "59d999127f5293c5271be7b72eff79525a3625eb87f581ba3343d91081c05d80"
+        ],
+        "auditionedCandidateIds": [
+          "7fffeeb36e0837c3efc66683e943d77f646021de0020d1a8f796677ba42638d4",
+          "076e32d64e58f94357c50b8d186c8e3002ac1d144634ea14e8cadc6f9b06e20b",
+          "59d999127f5293c5271be7b72eff79525a3625eb87f581ba3343d91081c05d80"
+        ],
+        "preferredCandidateIds": [],
+        "adequacy": null
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "role": "whole",
+      "synth": "Stackr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "spacing": 1,
+        "layers": "[{\"synth\":\"Whooshr\",\"name\":\"Whooshr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.01780326385051012,\"duration\":0.7530214786529541,\"size\":0.8285229227051272,\"air\":0.7070018807433216,\"whistle\":0.5285818171261739,\"movement\":0.8871371651270438,\"focus\":0.6225943214154873,\"flutter\":0.6969514490348504},\"start\":0,\"gain\":0.01,\"pitch\":2.377650255473273}]"
+      },
+      "seed": 0,
+      "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+      "file": "whole.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "origin": "native-whole-or-events",
+        "neuralWeightsRetrained": false,
+        "boundaries": [
+          0,
+          26494
+        ],
+        "nativeSeed": 0.5,
+        "seedFieldMeaning": "Gallery ID only; actual seed in params",
+        "segmentBudget": 128,
+        "jointBudget": 512,
+        "selectionAliases": [
+          "whole"
+        ],
+        "nativeHash": "eafbc60ae3dc7809078312daca8d9f5a411bcac88884c4f18f83fef709e61bfc",
+        "auditionHash": "6d0f1ecd403405706ba1fbb9589f003e525019b6014772c5fdc8efefec4dac47",
+        "supportScore": 3.33839001944817,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "2b8bab8e078a3ffed6bf31c3b3de534012a44305cbb000f52fdd9376d5b14612",
+      "paramsSha256": "2742531c41c874f5a5691f447c05e978e8cdf9b0fa78f39354133da0953fa9b5",
+      "audioSha256": "79c8b8b45dd46534e1e720b7274df24cb6efd446428c4e5fc92c90dcfdfb1c0c",
+      "targetId": "9c21440c70e8ad5f1aac59bcdce67fcbce4a114f64e7cdc6a0b0c6c7b5b77be1",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/ba08cc5929c812e2ace8fb76d2379f5f804bbcee6f729f1fd7759996578cd5a9.flac",
+        "pcmSha256": "ba08cc5929c812e2ace8fb76d2379f5f804bbcee6f729f1fd7759996578cd5a9",
+        "sampleRate": 44100,
+        "frames": 28947,
+        "channels": 1,
+        "auditionWavSha256": "79c8b8b45dd46534e1e720b7274df24cb6efd446428c4e5fc92c90dcfdfb1c0c"
+      }
+    },
+    {
+      "role": "events",
+      "synth": "Stackr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "spacing": 1,
+        "layers": "[{\"synth\":\"Rustlr\",\"name\":\"Rustlr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6889248879160732,\"material\":2,\"gesture\":3,\"duration\":0.6145738929777628,\"grain\":0.5613823661454633,\"density\":0.5875488069657825,\"motion\":0.2599954217719757,\"pressure\":0.23875877255054095,\"folds\":5,\"brightness\":0.40895247949971275},\"start\":0,\"gain\":0.7661221417887574,\"pitch\":2.7633896542918275},{\"synth\":\"Boomr\",\"name\":\"Boomr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.08537919633090496,\"duration\":0.2539553552319381,\"size\":0.11008699283319319,\"pressure\":0.9224357954012747,\"blast\":0.5817541900339926,\"debris\":0.34210788804528114,\"gas\":0,\"aftershock\":0.04805530848912924,\"rubbleSize\":0.2675150408483242,\"spread\":0.2402574191857795,\"tail\":0,\"muffle\":0.03236828366723816,\"mechanism\":7,\"space\":0.4721795120150719},\"start\":0.35146323803625,\"gain\":1,\"pitch\":0.4115694189187331}]"
+      },
+      "seed": 0,
+      "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+      "file": "events.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "origin": "native-whole-or-events",
+        "neuralWeightsRetrained": false,
+        "boundaries": [
+          0,
+          14592,
+          26494
+        ],
+        "nativeSeed": 0.5,
+        "seedFieldMeaning": "Gallery ID only; actual seed in params",
+        "segmentBudget": 128,
+        "jointBudget": 512,
+        "selectionAliases": [
+          "events"
+        ],
+        "nativeHash": "f338df3ab31565a34eb2164d4c7a7e311237c47fcd871e3d6dffd899666a4c36",
+        "auditionHash": "6785ef9a0f18ca473caf0cb1165de3b0be784b18c79745d60e5f80214c755e4a",
+        "supportScore": 2.4659438752201,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b",
+      "paramsSha256": "d60df9fc0cf0f823d2e45cc4f294670eb64d453890a1193c95b86aa532d2ac02",
+      "audioSha256": "4d234d650fd689f44686bf3789fa9e3f59825889f02823d6a362da37873d3fd6",
+      "targetId": "9c21440c70e8ad5f1aac59bcdce67fcbce4a114f64e7cdc6a0b0c6c7b5b77be1",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/f7a643fed2698131dbae784395fd31827a5208c31669a7bc8807c897b6128511.flac",
+        "pcmSha256": "f7a643fed2698131dbae784395fd31827a5208c31669a7bc8807c897b6128511",
+        "sampleRate": 44100,
+        "frames": 26436,
+        "channels": 1,
+        "auditionWavSha256": "4d234d650fd689f44686bf3789fa9e3f59825889f02823d6a362da37873d3fd6"
+      }
+    },
+    {
+      "role": "bfxr",
+      "synth": "Bfxr",
+      "params": {
+        "attackTime": 0.4846945403208135,
+        "sustainTime": 0.11494335830522484,
+        "sustainPunch": 0.9350696913065352,
+        "decayTime": 0.07608465180350646,
+        "compressionAmount": 0.13180467422982156,
+        "frequency_start": 0.11301210709656757,
+        "frequency_slide": 0.08391087573332934,
+        "frequency_acceleration": 0.09303194130144266,
+        "min_frequency_relative_to_starting_frequency": 0.01575256643271874,
+        "vibratoDepth": 0.5478132510474328,
+        "vibratoSpeed": 0.6948967148344525,
+        "pitch_jump_repeat_speed": 0.00318801056860694,
+        "pitch_jump_amount": 0.019397697465826313,
+        "pitch_jump_onset_percent": 0.16147194254802963,
+        "pitch_jump_2_amount": 0.4020991632105613,
+        "pitch_jump_onset2_percent": 0.49811388268193163,
+        "overtones": 0.4581858726137806,
+        "overtoneFalloff": 0.452880617786217,
+        "squareDuty": 0.0,
+        "dutySweep": 0.0,
+        "repeatSpeed": 0.5031106149707409,
+        "flangerOffset": -0.20976063978097248,
+        "flangerSweep": 0.6271146276889703,
+        "lpFilterCutoff": 0.5605445717246811,
+        "lpFilterCutoffSweep": 0.10946359945921258,
+        "lpFilterResonance": 0.6427319628562888,
+        "hpFilterCutoff": 0.5898694066538562,
+        "hpFilterCutoffSweep": 0.129929803955392,
+        "bitCrush": 0.4145453200493401,
+        "bitCrushSweep": 0.09455104934121472,
+        "waveType": 5,
+        "masterVolume": 0.5
+      },
+      "seed": 1234,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "file": "bfxr.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+        "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+        "budget": 2000,
+        "evaluations": 3003,
+        "allowPitchShift": false,
+        "allowTimeStretch": false,
+        "structureObjective": false,
+        "optimizer": "original StagedOptimizer with neural seeds",
+        "origin": "original-bfxr",
+        "backend": {
+          "command": [
+            "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+          ],
+          "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+        },
+        "selectionAliases": [
+          "bfxr"
+        ],
+        "nativeHash": "0bfd2a81778615e7e39a956e0bb9690584d4f6861437bfdf7799830ab936ae03",
+        "auditionHash": "72e8b5f4c80a79b8e47dde36e5de35fd3e310af16f9b481d527094004ecaa403",
+        "supportScore": 3.907877622065752,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "16563a1c129031dd0f819e79ae396b4d1b00073c4ad60e7d4267dad847b57a42",
+      "paramsSha256": "f03af37793e92fd1677610e5612875e8f2e55f3e9c2b1a753b6609cfadf07021",
+      "audioSha256": "32146a0967528be29205795c0e3ed40e7de4abe7338fd602585d90887eb03f45",
+      "targetId": "9c21440c70e8ad5f1aac59bcdce67fcbce4a114f64e7cdc6a0b0c6c7b5b77be1",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/97a130363b3cb2f8bdfb13140d177b957ee4414ac8a5326897603b31f91fb845.flac",
+        "pcmSha256": "97a130363b3cb2f8bdfb13140d177b957ee4414ac8a5326897603b31f91fb845",
+        "sampleRate": 44100,
+        "frames": 25402,
+        "channels": 1,
+        "auditionWavSha256": "32146a0967528be29205795c0e3ed40e7de4abe7338fd602585d90887eb03f45"
+      }
+    },
+    {
+      "role": "whole",
+      "synth": "Stackr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "spacing": 1,
+        "layers": "[{\"synth\":\"Boomr\",\"name\":\"Boomr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.08537919633090496,\"duration\":0.2091150519780616,\"size\":0.24034949809417272,\"pressure\":0.08040466292077271,\"blast\":0.15496481430079836,\"debris\":0.38007229492553923,\"gas\":0.21618416125538215,\"aftershock\":0,\"rubbleSize\":0.410250308445156,\"spread\":0,\"tail\":0,\"muffle\":0.5413190217510288,\"mechanism\":2,\"space\":0},\"start\":0,\"gain\":0.5478281967516515,\"pitch\":0.8348126925803293}]"
+      },
+      "seed": 0,
+      "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+      "file": "whole.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "origin": "native-whole-or-events",
+        "neuralWeightsRetrained": false,
+        "boundaries": [
+          0,
+          16503
+        ],
+        "nativeSeed": 0.5,
+        "seedFieldMeaning": "Gallery ID only; actual seed in params",
+        "segmentBudget": 128,
+        "jointBudget": 512,
+        "selectionAliases": [
+          "whole"
+        ],
+        "nativeHash": "654f3e58c8892e63ec018196b6d98c3121f11b059d4f563861d7c7df2c566c50",
+        "auditionHash": "0ab305863954fa18aafdebd0917e084fd83cbb9c79cda0eb66eea8fc82bc8a1f",
+        "supportScore": 2.2687013349217366,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8",
+      "paramsSha256": "94c40d9bd8b073de1be46780e379f0c0c4e19f6611db6f1d0fbbcc024551c007",
+      "audioSha256": "3fda424e1fb2073199c9356a25e66e30705c3b3fcf37779b63baba2e3971ef09",
+      "targetId": "674f18725c48078319393016b60c780c12865e3ea9a0f8483e3f43bc7d4121fb",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/aed62a7d59ad3c19b5c35611c7b5089bf4771c89f894f4328b5335abab388f82.flac",
+        "pcmSha256": "aed62a7d59ad3c19b5c35611c7b5089bf4771c89f894f4328b5335abab388f82",
+        "sampleRate": 44100,
+        "frames": 8788,
+        "channels": 1,
+        "auditionWavSha256": "3fda424e1fb2073199c9356a25e66e30705c3b3fcf37779b63baba2e3971ef09"
+      }
+    },
+    {
+      "role": "events",
+      "synth": "Stackr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "spacing": 1,
+        "layers": "[{\"synth\":\"Pluckr\",\"name\":\"Pluckr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.10555893019773066,\"material\":3,\"duration\":1.1917616655187266,\"pitch\":0,\"strings\":6,\"damping\":0.82810371366802,\"brightness\":0.20556481534064275,\"pluck\":0.26738252572144794,\"coupling\":0.009060138387177678,\"strum\":0.21198022027106922,\"tremolo\":0.4771687409527372,\"vibrato\":0.04202172489437739,\"tremoloRate\":3.3905533707110123,\"inharmonic\":0.06513742029058592},\"start\":0,\"gain\":1,\"pitch\":-3.62513103914939},{\"synth\":\"Bouncr\",\"name\":\"Bouncr\",\"params\":{\"masterVolume\":0.5,\"material\":4,\"surface\":5,\"force\":0.9644001188360859,\"duration\":0.28936371145420664,\"size\":0.7042500729066332,\"hardness\":1,\"tail\":0.4698518725609025,\"seed\":0.5163146986160427,\"count\":1,\"bounce\":0.3004429195170147,\"gravity\":0.6624951951143702,\"spin\":0},\"start\":0.07686133840842019,\"gain\":0.5026975766750925,\"pitch\":-0.19487388284153487}]"
+      },
+      "seed": 0,
+      "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+      "file": "events.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "origin": "native-whole-or-events",
+        "neuralWeightsRetrained": false,
+        "boundaries": [
+          0,
+          4096,
+          16503
+        ],
+        "nativeSeed": 0.5,
+        "seedFieldMeaning": "Gallery ID only; actual seed in params",
+        "segmentBudget": 128,
+        "jointBudget": 512,
+        "selectionAliases": [
+          "events"
+        ],
+        "nativeHash": "ba254317ce05a9b0d625f5083cf0b1b18ae91c2e1b505629ceabc90a028f4a55",
+        "auditionHash": "88b266269b49e86a10fbe38327c7b69f77afe32080f335b6168ebdd7d9d2e105",
+        "supportScore": 1.3944158840254912,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "53eb91176c04ca7c472555d8bf26d5710585f0a3659fff8ff4d7e629f543801a",
+      "paramsSha256": "2aade7e4bf44999bf9048ae90454f38a0041ee745423068a08de45aa6d16163a",
+      "audioSha256": "b89dcf786d3d3ca449cf75bc603eae0c16138761728430579a2689a056536f54",
+      "targetId": "674f18725c48078319393016b60c780c12865e3ea9a0f8483e3f43bc7d4121fb",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/ba3bf945c92d9b2815da4c25347f5984a49dd98e498e290514459ba34ec4a7a1.flac",
+        "pcmSha256": "ba3bf945c92d9b2815da4c25347f5984a49dd98e498e290514459ba34ec4a7a1",
+        "sampleRate": 44100,
+        "frames": 64800,
+        "channels": 1,
+        "auditionWavSha256": "b89dcf786d3d3ca449cf75bc603eae0c16138761728430579a2689a056536f54"
+      }
+    },
+    {
+      "role": "bfxr",
+      "synth": "Bfxr",
+      "params": {
+        "attackTime": 0.15539204360073064,
+        "sustainTime": 0.3090191124449174,
+        "sustainPunch": 0.0444085301112326,
+        "decayTime": 0.38001118526872885,
+        "compressionAmount": 0.135077989968997,
+        "frequency_start": 0.24073593250518244,
+        "frequency_slide": -0.05968050985994283,
+        "frequency_acceleration": 0.9999634023230521,
+        "min_frequency_relative_to_starting_frequency": 0.11515226953924741,
+        "vibratoDepth": 0.9788041946116272,
+        "vibratoSpeed": 0.6362019562370433,
+        "pitch_jump_repeat_speed": 0.7307421492375634,
+        "pitch_jump_amount": 0.009557962973964607,
+        "pitch_jump_onset_percent": 0.050227406459173146,
+        "pitch_jump_2_amount": -0.9735761935405971,
+        "pitch_jump_onset2_percent": 0.3653279388251517,
+        "overtones": 0.037754516254788616,
+        "overtoneFalloff": 0.6545372579542766,
+        "squareDuty": 0.0,
+        "dutySweep": 0.0,
+        "repeatSpeed": 0.011589764271773821,
+        "flangerOffset": -0.5284600555079126,
+        "flangerSweep": -0.4337036454918055,
+        "lpFilterCutoff": 0.15928188530521695,
+        "lpFilterCutoffSweep": -0.9564469032342778,
+        "lpFilterResonance": 0.5341541659611015,
+        "hpFilterCutoff": 0.10876288783780377,
+        "hpFilterCutoffSweep": -0.14294587740558606,
+        "bitCrush": 0.052144003603037004,
+        "bitCrushSweep": -0.7953448668001062,
+        "waveType": 3,
+        "masterVolume": 0.5
+      },
+      "seed": 1234,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "file": "bfxr.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+        "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+        "budget": 2000,
+        "evaluations": 2015,
+        "allowPitchShift": false,
+        "allowTimeStretch": false,
+        "structureObjective": false,
+        "optimizer": "original StagedOptimizer with neural seeds",
+        "origin": "original-bfxr",
+        "backend": {
+          "command": [
+            "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+          ],
+          "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+        },
+        "selectionAliases": [
+          "bfxr"
+        ],
+        "nativeHash": "acbd4d2a01777c2d21ef9735e842deba3dfe47b796f6714c053f94405427c833",
+        "auditionHash": "e5cdace46ceabd54536717baec73681fad4827f0458bde0a8f69da17f00e0433",
+        "supportScore": 2.4297386550492424,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "c4857c2f7fecb6b89aae1dd6838dc1a24e868b0bf8b046e9d9dd97b5ac4317bf",
+      "paramsSha256": "f8b19110f60f9e707d7396d6252eaf211454cbd22c051e46628715a8ee29bee4",
+      "audioSha256": "b5602bd8d8bd4c65ebecdf48c8ad3f069391c654abde06470b856b651a362eb7",
+      "targetId": "674f18725c48078319393016b60c780c12865e3ea9a0f8483e3f43bc7d4121fb",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/2dd1d9878d1ab63acdb9cee5f4c0d7a47fe0d769bd23ed92831c0f97b9240dd3.flac",
+        "pcmSha256": "2dd1d9878d1ab63acdb9cee5f4c0d7a47fe0d769bd23ed92831c0f97b9240dd3",
+        "sampleRate": 44100,
+        "frames": 26244,
+        "channels": 1,
+        "auditionWavSha256": "b5602bd8d8bd4c65ebecdf48c8ad3f069391c654abde06470b856b651a362eb7"
+      }
+    },
+    {
+      "role": "whole",
+      "synth": "Stackr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "spacing": 1,
+        "layers": "[{\"synth\":\"Rustlr\",\"name\":\"Rustlr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.01780326385051012,\"material\":2,\"gesture\":0,\"duration\":1.0401309728622437,\"grain\":0.09513003500692685,\"density\":0.5692258901871253,\"motion\":-0.5555876004813258,\"pressure\":0.25707665157849846,\"folds\":10,\"brightness\":0.2661859349023606},\"start\":0,\"gain\":0.9649542277290094,\"pitch\":0.7774083358949745}]"
+      },
+      "seed": 0,
+      "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+      "file": "whole.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "origin": "native-whole-or-events",
+        "neuralWeightsRetrained": false,
+        "boundaries": [
+          0,
+          40572
+        ],
+        "nativeSeed": 0.5,
+        "seedFieldMeaning": "Gallery ID only; actual seed in params",
+        "segmentBudget": 128,
+        "jointBudget": 512,
+        "selectionAliases": [
+          "whole"
+        ],
+        "nativeHash": "2edfeb269fce87ad429903841e6af093f8c1048ef1ed90da763c37de7e6aefd8",
+        "auditionHash": "058d588efe97d4fefc48a486191ff4de6771d35aa475d2c6d67adc4c6d95de1a",
+        "supportScore": 0.6193776591393613,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "6e4fa4231bba43c15d9a4ead25814bfd97d97faa977b5533b8253e728c187e2b",
+      "paramsSha256": "9b73f134188d05f19b6b4393ce42f0cecec2d4f086e0a415cd8bf010dbb911fe",
+      "audioSha256": "3d7e5e6af84afb1ec50f73f308cbc6621760a372cb344f8249ff99c82bc2c120",
+      "targetId": "61681ee5c5a3b441b72790d16e70613a2b7a3cb9806a2d3a96cace894439c6d8",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/b9b313bf62928a3d02d219e7ea04f3ea4f63f5e1c0bf24edbdea90f795802793.flac",
+        "pcmSha256": "b9b313bf62928a3d02d219e7ea04f3ea4f63f5e1c0bf24edbdea90f795802793",
+        "sampleRate": 44100,
+        "frames": 43856,
+        "channels": 1,
+        "auditionWavSha256": "3d7e5e6af84afb1ec50f73f308cbc6621760a372cb344f8249ff99c82bc2c120"
+      }
+    },
+    {
+      "role": "events",
+      "synth": "Stackr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "spacing": 1,
+        "layers": "[{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":7,\"duration\":0.49679354668774706,\"pitch\":{\"start\":0.4268169790020081,\"end\":0.16479144187445954,\"curve\":\"Smooth\"},\"tone\":{\"start\":0.6801340616663499,\"end\":0.8719517138070683,\"curve\":\"Bounce\"},\"vibrato\":{\"start\":0.022473090312207334,\"end\":0.2413717238616698,\"curve\":\"Ease In\"},\"level\":{\"start\":0.5306840804944098,\"end\":0.7505724866539809,\"curve\":\"Smooth\"},\"attack\":0.02539202503659585,\"release\":0.5183266485623296,\"resonance\":0.2519856541312618,\"echo\":0.08686526447802143,\"waveTo\":7,\"morph\":{\"start\":0.8820605296288637,\"end\":0.9368958075874798,\"curve\":\"Pulse\"}},\"start\":0,\"gain\":0.8710990901041452,\"pitch\":0.17017519538782822},{\"synth\":\"Pluckr\",\"name\":\"Pluckr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.01780326385051012,\"material\":0,\"duration\":2.0754111467864735,\"pitch\":0.19535631932278133,\"strings\":3,\"damping\":1,\"brightness\":0.5608715097877157,\"pluck\":0.5096778315699909,\"coupling\":0.6124057220002602,\"strum\":0.5236146892904032,\"tremolo\":0,\"vibrato\":0.6908625046165883,\"tremoloRate\":4.275026725813113,\"inharmonic\":0.24254854160152234},\"start\":0.16378438861404646,\"gain\":1,\"pitch\":-1.3665791801993175},{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":11,\"duration\":0.5673578470539499,\"pitch\":{\"start\":0.3363354456132154,\"end\":0.5295511484146118,\"curve\":\"Triangle\"},\"tone\":{\"start\":0.6629103807890412,\"end\":0.49075346773531103,\"curve\":\"Steps\"},\"vibrato\":{\"start\":0.0712840877310903,\"end\":0.28058960881153566,\"curve\":\"Smooth\"},\"level\":{\"start\":0.6780988942765025,\"end\":0.00638851331189772,\"curve\":\"Ease Out\"},\"attack\":0.06007077070069959,\"release\":0.11868720531232992,\"resonance\":0.1950093227443089,\"echo\":0.2803164155645771,\"waveTo\":7,\"morph\":{\"start\":0.6269139013474576,\"end\":1,\"curve\":\"Linear\"}},\"start\":0.2374466692146344,\"gain\":0.6320726264186471,\"pitch\":1.1084633772726125}]"
+      },
+      "seed": 0,
+      "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+      "file": "events.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "origin": "native-whole-or-events",
+        "neuralWeightsRetrained": false,
+        "boundaries": [
+          0,
+          7680,
+          11520,
+          40572
+        ],
+        "nativeSeed": 0.5,
+        "seedFieldMeaning": "Gallery ID only; actual seed in params",
+        "segmentBudget": 128,
+        "jointBudget": 512,
+        "selectionAliases": [
+          "events"
+        ],
+        "nativeHash": "f25a2a05d6dcf1daa5d6b5f8139f789007abd3d4a394a41688c273283dfc75bb",
+        "auditionHash": "167490b599fe8ba341e52f777326d601edf5e5b86496fabb9681b22c490d1d2d",
+        "supportScore": 0.6534318578042924,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "ff042e1a5930530bd695f7d2d50ca6625403a5a3c34a3dbb1959522570dbc410",
+      "paramsSha256": "f575c30f7b7e46339c760dab7e35497107d75ecd761319935258fe163167eb3d",
+      "audioSha256": "c50e87dcda000d732111451c125ed329053af078642d08fa2228cf84fd828f36",
+      "targetId": "61681ee5c5a3b441b72790d16e70613a2b7a3cb9806a2d3a96cace894439c6d8",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/c1e689b4f1acd5f9f60597684549171ca71200faa2a69a7099b22598bc8e784b.flac",
+        "pcmSha256": "c1e689b4f1acd5f9f60597684549171ca71200faa2a69a7099b22598bc8e784b",
+        "sampleRate": 44100,
+        "frames": 106267,
+        "channels": 1,
+        "auditionWavSha256": "c50e87dcda000d732111451c125ed329053af078642d08fa2228cf84fd828f36"
+      }
+    },
+    {
+      "role": "bfxr",
+      "synth": "Bfxr",
+      "params": {
+        "attackTime": 0.0009377962874142582,
+        "sustainTime": 0.37878884786232025,
+        "sustainPunch": 0.48025547118294304,
+        "decayTime": 0.5324700911378242,
+        "compressionAmount": 0.7252856297653703,
+        "frequency_start": 0.3001612533340998,
+        "frequency_slide": 0.20095564978905656,
+        "frequency_acceleration": 0.6481836560446046,
+        "min_frequency_relative_to_starting_frequency": 0.2615743140688328,
+        "vibratoDepth": 0.8289923570554292,
+        "vibratoSpeed": 0.6394545844424017,
+        "pitch_jump_repeat_speed": 0.4816126747620446,
+        "pitch_jump_amount": 0.30155493667338673,
+        "pitch_jump_onset_percent": 0.5338814182209032,
+        "pitch_jump_2_amount": 0.7906389234311135,
+        "pitch_jump_onset2_percent": 0.4406015300906835,
+        "overtones": 0.016534288264778332,
+        "overtoneFalloff": 0.021536881928135947,
+        "squareDuty": 0.0,
+        "dutySweep": 0.0,
+        "repeatSpeed": 0.0895795480731693,
+        "flangerOffset": -0.013203890665805296,
+        "flangerSweep": 0.2015587315930758,
+        "lpFilterCutoff": 0.382598880240504,
+        "lpFilterCutoffSweep": -0.3514679355244943,
+        "lpFilterResonance": 0.39551064304871497,
+        "hpFilterCutoff": 0.6775117563343476,
+        "hpFilterCutoffSweep": 0.9126781793022041,
+        "bitCrush": 0.3958580078452316,
+        "bitCrushSweep": -0.5736051274077139,
+        "waveType": 3,
+        "masterVolume": 0.5
+      },
+      "seed": 1234,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "file": "bfxr.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+        "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+        "budget": 2000,
+        "evaluations": 2015,
+        "allowPitchShift": false,
+        "allowTimeStretch": false,
+        "structureObjective": false,
+        "optimizer": "original StagedOptimizer with neural seeds",
+        "origin": "original-bfxr",
+        "backend": {
+          "command": [
+            "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+          ],
+          "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+        },
+        "selectionAliases": [
+          "bfxr"
+        ],
+        "nativeHash": "1491af7120428d8b5798c64664b492bbd5d0876e04dc0189c9e80fb0d5bd40f7",
+        "auditionHash": "b4c43311d8aed72e3a158f371743351b1b7795a1cf6458253291ea9b01bd7492",
+        "supportScore": 1.1865787505483496,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983",
+      "paramsSha256": "ff40c04a7e1bc2ff2cf7ba49f530766654a27bca29d11b5e9b5e4f78cd9ce473",
+      "audioSha256": "158f76c64dd6455a05cc541333e759059daa191963d8810a2f0a8f1a44e5b801",
+      "targetId": "61681ee5c5a3b441b72790d16e70613a2b7a3cb9806a2d3a96cace894439c6d8",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/dcc1e9607744bb2643374f6d09fbbbc0b380183c49ecfc6bb117636627522ef9.flac",
+        "pcmSha256": "dcc1e9607744bb2643374f6d09fbbbc0b380183c49ecfc6bb117636627522ef9",
+        "sampleRate": 44100,
+        "frames": 42710,
+        "channels": 1,
+        "auditionWavSha256": "158f76c64dd6455a05cc541333e759059daa191963d8810a2f0a8f1a44e5b801"
+      }
+    },
+    {
+      "role": "whole",
+      "synth": "Stackr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "spacing": 1,
+        "layers": "[{\"synth\":\"Rustlr\",\"name\":\"Rustlr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.01780326385051012,\"material\":4,\"gesture\":0,\"duration\":0.8882899127636397,\"grain\":0,\"density\":0,\"motion\":0.03278119112642101,\"pressure\":0.9866960291080551,\"folds\":4,\"brightness\":0.07938937912234091},\"start\":0,\"gain\":0.6925959519608347,\"pitch\":1.8562062410093627}]"
+      },
+      "seed": 0,
+      "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+      "file": "whole.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "origin": "native-whole-or-events",
+        "neuralWeightsRetrained": false,
+        "boundaries": [
+          0,
+          31311
+        ],
+        "nativeSeed": 0.5,
+        "seedFieldMeaning": "Gallery ID only; actual seed in params",
+        "segmentBudget": 128,
+        "jointBudget": 512,
+        "selectionAliases": [
+          "whole"
+        ],
+        "nativeHash": "b0f1ebec84dec73b2ed4e0338ed9bfb7e3482a30dd13f2f6ec54771232fb4b97",
+        "auditionHash": "75d84372bf1bbf434b554dbdda375afb1029a4e11a47e229cbd6a41956041cd6",
+        "supportScore": 1.7071744830669733,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b",
+      "paramsSha256": "4e3debff015f8f0c3af67e410f97114d75916642b022fbb798a8554786538bdd",
+      "audioSha256": "65bf6f709aaa159276ade1a9d39204c363dfd661ced8a72d84a69522bf474095",
+      "targetId": "f76944a8d14f23e464dd12a532f91c98f25a6d288ff314921aa9ad029d9d4d70",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/36b107033c758f807d38d4b5d3266b5675309e3b4e4c1e191c66498427645c88.flac",
+        "pcmSha256": "36b107033c758f807d38d4b5d3266b5675309e3b4e4c1e191c66498427645c88",
+        "sampleRate": 44100,
+        "frames": 35192,
+        "channels": 1,
+        "auditionWavSha256": "65bf6f709aaa159276ade1a9d39204c363dfd661ced8a72d84a69522bf474095"
+      }
+    },
+    {
+      "role": "events",
+      "synth": "Stackr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "spacing": 1,
+        "layers": "[{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":4,\"duration\":0.22105048945612019,\"pitch\":{\"start\":0.7675436518620922,\"end\":0.48324814695024343,\"curve\":\"Smooth\"},\"tone\":{\"start\":0.7346686124801636,\"end\":0.927450075610643,\"curve\":\"Smooth\"},\"vibrato\":{\"start\":0.016966890299342438,\"end\":0.1435592919588089,\"curve\":\"Bounce\"},\"level\":{\"start\":0.3472510054251673,\"end\":0.7843111223695359,\"curve\":\"Pulse\"},\"attack\":0.3144896231022079,\"release\":0.241259036162718,\"resonance\":0.6763201658723274,\"echo\":0.07557762205406579,\"waveTo\":7,\"morph\":{\"start\":0.7515530137393215,\"end\":0.44613857558252434,\"curve\":\"Steps\"}},\"start\":0,\"gain\":0.3263292437894489,\"pitch\":-0.29477385264778255},{\"synth\":\"Rustlr\",\"name\":\"Rustlr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.38584170234389603,\"material\":3,\"gesture\":0,\"duration\":0.3833026922277566,\"grain\":0.17493416368961334,\"density\":0.3229359971968139,\"motion\":0.054627511779423626,\"pressure\":0.5209152999688377,\"folds\":4,\"brightness\":0.6223742942338025},\"start\":0.1845113746476431,\"gain\":0.8101690253258887,\"pitch\":0},{\"synth\":\"Fractr\",\"name\":\"Fractr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.43723154277540743,\"material\":0,\"duration\":1.3186506603073986,\"fragments\":3,\"fragmentSize\":0.20941760468935328,\"spread\":0,\"decay\":0.4094692826285644,\"gravity\":0.6915682554244995,\"bounce\":0.13873450858648467,\"stress\":0,\"shards\":0.22000582629895069,\"fracture\":0.5788932804442368},\"start\":0.5456689342403628,\"gain\":0.7799963205387332,\"pitch\":-0.4862778816879878}]"
+      },
+      "seed": 0,
+      "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+      "file": "events.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "origin": "native-whole-or-events",
+        "neuralWeightsRetrained": false,
+        "boundaries": [
+          0,
+          8960,
+          24064,
+          31311
+        ],
+        "nativeSeed": 0.5,
+        "seedFieldMeaning": "Gallery ID only; actual seed in params",
+        "segmentBudget": 128,
+        "jointBudget": 512,
+        "selectionAliases": [
+          "events"
+        ],
+        "nativeHash": "32bb39b8dfa97aca921ef4cc4befc606ac15f332989da32dd6af5a5382d4dab0",
+        "auditionHash": "6f8fcaaba15aebbd201f03648d96300db3e6d216f489e7990496a945ac9b5db2",
+        "supportScore": 1.471711309176124,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "5ef9999a0163d9839ecd2efa5024ea538d443c9e7641c07bef47e81c7f97743c",
+      "paramsSha256": "c4af69a5809a1f2bdbdc0debc6c2d61d5e6d918ed551ea421d60b0101899ea04",
+      "audioSha256": "c78b01c848e8cdd9f479ea4c8e73bfaac001952f03fd07e67b9775c14bf1c1a0",
+      "targetId": "f76944a8d14f23e464dd12a532f91c98f25a6d288ff314921aa9ad029d9d4d70",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/01ceaf7dde366b719d4a3cf9393ed9d13b1212154a628ab4f2ff73b29786ac26.flac",
+        "pcmSha256": "01ceaf7dde366b719d4a3cf9393ed9d13b1212154a628ab4f2ff73b29786ac26",
+        "sampleRate": 44100,
+        "frames": 83873,
+        "channels": 1,
+        "auditionWavSha256": "c78b01c848e8cdd9f479ea4c8e73bfaac001952f03fd07e67b9775c14bf1c1a0"
+      }
+    },
+    {
+      "role": "bfxr",
+      "synth": "Bfxr",
+      "params": {
+        "attackTime": 0.4307850216905037,
+        "sustainTime": 0.3145876907028573,
+        "sustainPunch": 0.8886368070794738,
+        "decayTime": 0.46522559038100614,
+        "compressionAmount": 0.011111183420255482,
+        "frequency_start": 0.869596750298669,
+        "frequency_slide": 0.04130946254310586,
+        "frequency_acceleration": 0.23066356523590636,
+        "min_frequency_relative_to_starting_frequency": 0.4017757393657316,
+        "vibratoDepth": 0.988800765379895,
+        "vibratoSpeed": 0.8653238016755583,
+        "pitch_jump_repeat_speed": 0.11485941062790134,
+        "pitch_jump_amount": 0.5189019861576687,
+        "pitch_jump_onset_percent": 0.02945466524271895,
+        "pitch_jump_2_amount": -0.8060249168770812,
+        "pitch_jump_onset2_percent": 0.40363940386330044,
+        "overtones": 0.403467718008384,
+        "overtoneFalloff": 0.876954456133628,
+        "squareDuty": 0.0,
+        "dutySweep": 0.0,
+        "repeatSpeed": 0.2509380920742218,
+        "flangerOffset": -0.6452791505532218,
+        "flangerSweep": -0.11968718481157403,
+        "lpFilterCutoff": 0.9997686000355478,
+        "lpFilterCutoffSweep": 0.26041707739540265,
+        "lpFilterResonance": 0.00032578955815602557,
+        "hpFilterCutoff": 0.6002204485355843,
+        "hpFilterCutoffSweep": -0.22995295822628692,
+        "bitCrush": 0.7298967165629238,
+        "bitCrushSweep": -0.6946641837797463,
+        "waveType": 11,
+        "masterVolume": 0.5
+      },
+      "seed": 1234,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "file": "bfxr.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+        "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+        "budget": 2000,
+        "evaluations": 2015,
+        "allowPitchShift": false,
+        "allowTimeStretch": false,
+        "structureObjective": false,
+        "optimizer": "original StagedOptimizer with neural seeds",
+        "origin": "original-bfxr",
+        "backend": {
+          "command": [
+            "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+          ],
+          "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+        },
+        "selectionAliases": [
+          "bfxr"
+        ],
+        "nativeHash": "ca05ba8aaa41c30e2e9655fcbd1f9ecc50a22467aa5c89d2c55ceb9d7ef5f25b",
+        "auditionHash": "a6543dd54723a723e252bc97776c7d45c13af702db1c855556e08b7c22802a39",
+        "supportScore": 2.3703120185316586,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "4bb3aaa9d2ae1c44684f5c4474b1f1f9cd6fbc12df0de2a37d7a3d633bb54080",
+      "paramsSha256": "8f0df632d26a026bea842cc9970a80daac6bba47cfb7e418b73974b984b48fd0",
+      "audioSha256": "b5892260728d68625d604137fff2f91ece2e83c9357059d28def96c622968458",
+      "targetId": "f76944a8d14f23e464dd12a532f91c98f25a6d288ff314921aa9ad029d9d4d70",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/c083ff383cc0350ecd4914ee6c69e6ae87e03454400a4e598a0e7024b8d10089.flac",
+        "pcmSha256": "c083ff383cc0350ecd4914ee6c69e6ae87e03454400a4e598a0e7024b8d10089",
+        "sampleRate": 44100,
+        "frames": 28010,
+        "channels": 1,
+        "auditionWavSha256": "b5892260728d68625d604137fff2f91ece2e83c9357059d28def96c622968458"
+      }
+    },
+    {
+      "role": "whole",
+      "synth": "Stackr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "spacing": 1,
+        "layers": "[{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":8,\"duration\":0.267616385574678,\"pitch\":{\"start\":0.5597887635231018,\"end\":0.4743755320089786,\"curve\":\"Smooth\"},\"tone\":{\"start\":0.6251948013761718,\"end\":0.6854198254178354,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0.08937599227393232,\"end\":0.01624032644969135,\"curve\":\"Pulse\"},\"level\":{\"start\":0.8565905573759611,\"end\":0.45218296599612084,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.1442550844315051,\"resonance\":0.7263879522366831,\"echo\":0,\"waveTo\":2,\"morph\":{\"start\":0.21291345346510826,\"end\":0.6553380335778486,\"curve\":\"Bounce\"}},\"start\":0,\"gain\":0.9743042930542128,\"pitch\":1.2124876561805902}]"
+      },
+      "seed": 0,
+      "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+      "file": "whole.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "origin": "native-whole-or-events",
+        "neuralWeightsRetrained": false,
+        "boundaries": [
+          0,
+          11248
+        ],
+        "nativeSeed": 0.5,
+        "seedFieldMeaning": "Gallery ID only; actual seed in params",
+        "segmentBudget": 128,
+        "jointBudget": 512,
+        "selectionAliases": [
+          "whole",
+          "events"
+        ],
+        "nativeHash": "05be374f9a5c3fed8ad4160efcedac89246860279e7d6a96444bf0e447b7b6cf",
+        "auditionHash": "dbe0993d1491aa3f0a998854fe3765e205552c15bff7d370e9e9b0ee73424057",
+        "supportScore": 0.7728246851769882,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4",
+      "paramsSha256": "fbfecf42a78319481e11f87bf2c50c898d09a2dd171812a10f9e880fa1203c9b",
+      "audioSha256": "06059c8fa12918f8bb09cda8e9ea0b6efd7f6063e71cfe9fb8a2f1427506e40c",
+      "targetId": "213da9ac2bdb0a8475107a4d671805e843e63fdc342332a190fd104829b2a95e",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/4697a6990a1e6d64b51c4585e76efc3b89f45aa73fd4480a5b185a8a502a2acc.flac",
+        "pcmSha256": "4697a6990a1e6d64b51c4585e76efc3b89f45aa73fd4480a5b185a8a502a2acc",
+        "sampleRate": 44100,
+        "frames": 11004,
+        "channels": 1,
+        "auditionWavSha256": "06059c8fa12918f8bb09cda8e9ea0b6efd7f6063e71cfe9fb8a2f1427506e40c"
+      }
+    },
+    {
+      "role": "bfxr",
+      "synth": "Bfxr",
+      "params": {
+        "attackTime": 0.14626167025613318,
+        "sustainTime": 0.33451497217742215,
+        "sustainPunch": 0.17709913113599313,
+        "decayTime": 0.2160445722600423,
+        "compressionAmount": 0.6275302952871639,
+        "frequency_start": 0.6306977780274022,
+        "frequency_slide": 0.16221227568242325,
+        "frequency_acceleration": -0.5071261701999827,
+        "min_frequency_relative_to_starting_frequency": 1.6464058848220134e-05,
+        "vibratoDepth": 0.6102607517974792,
+        "vibratoSpeed": 0.6029293723382505,
+        "pitch_jump_repeat_speed": 0.5170145285200922,
+        "pitch_jump_amount": 0.5157799308612263,
+        "pitch_jump_onset_percent": 0.32013076648936256,
+        "pitch_jump_2_amount": 0.7789469936983455,
+        "pitch_jump_onset2_percent": 0.09186704742516671,
+        "overtones": 0.6315896148776281,
+        "overtoneFalloff": 0.07980598640645567,
+        "squareDuty": 0.19859039706859674,
+        "dutySweep": -0.5129243830565455,
+        "repeatSpeed": 0.28800872842523234,
+        "flangerOffset": 0.5405797705434632,
+        "flangerSweep": 0.3801659425604549,
+        "lpFilterCutoff": 0.9842982411994808,
+        "lpFilterCutoffSweep": -0.6464324302381723,
+        "lpFilterResonance": 0.35629542847550627,
+        "hpFilterCutoff": 0.3432962711785452,
+        "hpFilterCutoffSweep": 0.7079374885753358,
+        "bitCrush": 0.04924290841836839,
+        "bitCrushSweep": 0.21688392870567252,
+        "waveType": 0,
+        "masterVolume": 0.5
+      },
+      "seed": 1234,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "file": "bfxr.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+        "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+        "budget": 2000,
+        "evaluations": 2015,
+        "allowPitchShift": false,
+        "allowTimeStretch": false,
+        "structureObjective": false,
+        "optimizer": "original StagedOptimizer with neural seeds",
+        "origin": "original-bfxr",
+        "backend": {
+          "command": [
+            "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+          ],
+          "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+        },
+        "selectionAliases": [
+          "bfxr"
+        ],
+        "nativeHash": "a77a48e4e2b2d265e14d88671995b3410029c368739efd01693b944a7dfc5bb2",
+        "auditionHash": "3f06c3962eb767cb0d858da37b4a4d9cb478fac799fb28a9fbeb34c42146ec89",
+        "supportScore": 3.5876630263045053,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "b244d3ea8d75f470ffb280f7eddf9051ff7fddd4c5012c09749499f18d4f52f8",
+      "paramsSha256": "1590b7fbbfc70e6ceec93257fcc879654fd077411f9c86b5fbd9f982616ad607",
+      "audioSha256": "eac2ce6df7445d4482da868a26e6add0e809b9f9e36618f1ebe4a2f79885dfe1",
+      "targetId": "213da9ac2bdb0a8475107a4d671805e843e63fdc342332a190fd104829b2a95e",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/8f379d1b69a2e1425abc7c2d9cad2d125a8c4a804214c4db7d8eef4432bd2cec.flac",
+        "pcmSha256": "8f379d1b69a2e1425abc7c2d9cad2d125a8c4a804214c4db7d8eef4432bd2cec",
+        "sampleRate": 44100,
+        "frames": 9871,
+        "channels": 1,
+        "auditionWavSha256": "eac2ce6df7445d4482da868a26e6add0e809b9f9e36618f1ebe4a2f79885dfe1"
+      }
+    },
+    {
+      "role": "whole",
+      "synth": "Stackr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "spacing": 1,
+        "layers": "[{\"synth\":\"Rustlr\",\"name\":\"Rustlr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.01780326385051012,\"material\":2,\"gesture\":3,\"duration\":0.5119520425796509,\"grain\":0.07054484642493752,\"density\":0.023508110177283492,\"motion\":-0.33716277498192376,\"pressure\":0.42773021202953126,\"folds\":2,\"brightness\":0.2324372776508062},\"start\":0,\"gain\":0.013548923158038333,\"pitch\":0}]"
+      },
+      "seed": 0,
+      "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+      "file": "whole.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "origin": "native-whole-or-events",
+        "neuralWeightsRetrained": false,
+        "boundaries": [
+          0,
+          22066
+        ],
+        "nativeSeed": 0.5,
+        "seedFieldMeaning": "Gallery ID only; actual seed in params",
+        "segmentBudget": 128,
+        "jointBudget": 512,
+        "selectionAliases": [
+          "whole"
+        ],
+        "nativeHash": "8ca3237759dccc2a286725596a28d2bee1e21e23ec399a5cc0abb34aebceec82",
+        "auditionHash": "a2ad7567806a1f9d5c1d5ce8ee9218b49a66187f737b77d5b2cd944ae0f6fb6e",
+        "supportScore": 3.5597611385993044,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "076e32d64e58f94357c50b8d186c8e3002ac1d144634ea14e8cadc6f9b06e20b",
+      "paramsSha256": "fa2ac44d6d90b19677ce5127cb289e622f38b14083dd572834e11e26c0dbdd26",
+      "audioSha256": "9c31c82e4029ffe50e563f464f1b22a6d9051b752a663cda4f87164f0547c9b4",
+      "targetId": "57bc5f5a675057bf41df5e300184e5cc54262de94233ca34f231fc17991afa93",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/e40d43d2b1ca500e592787394935ec0798f02963fb0cd063317d3eacfa97d07e.flac",
+        "pcmSha256": "e40d43d2b1ca500e592787394935ec0798f02963fb0cd063317d3eacfa97d07e",
+        "sampleRate": 44100,
+        "frames": 22577,
+        "channels": 1,
+        "auditionWavSha256": "9c31c82e4029ffe50e563f464f1b22a6d9051b752a663cda4f87164f0547c9b4"
+      }
+    },
+    {
+      "role": "events",
+      "synth": "Stackr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "spacing": 1,
+        "layers": "[{\"synth\":\"Breathr\",\"name\":\"Breathr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.08537919633090496,\"source\":2,\"mode\":0,\"duration\":0.21341436375246534,\"direction\":-0.5996366719488525,\"cycles\":1,\"effort\":0.7094933927451899,\"inhale\":0.6577280695405958,\"hold\":0.06730350928469292,\"throat\":0.1289981281180691,\"rasp\":0.9672496166843926,\"flutter\":0.6488476363290068,\"space\":0.058728726373948506},\"start\":0,\"gain\":0.8005653009348579,\"pitch\":0.0033827595700255636},{\"synth\":\"Bfxr\",\"name\":\"Bfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":10,\"attackTime\":0.022658378004350256,\"sustainTime\":0.4515098352459798,\"sustainPunch\":0,\"decayTime\":0.20609971079522696,\"compressionAmount\":0.12402453688291074,\"frequency_start\":0.8748946189880371,\"frequency_slide\":-0.33054601247627174,\"frequency_acceleration\":-0.7259651083732171,\"min_frequency_relative_to_starting_frequency\":0.6323989859375946,\"vibratoDepth\":0.06666240096092224,\"vibratoSpeed\":0.26320475225311796,\"pitch_jump_repeat_speed\":0.118351263562733,\"pitch_jump_amount\":0.8058598633547781,\"pitch_jump_onset_percent\":0.3913543954302122,\"pitch_jump_2_amount\":-0.3119958504918014,\"pitch_jump_onset2_percent\":0.14138458669185638,\"overtones\":0.1375381866797568,\"overtoneFalloff\":0.1887434376672022,\"squareDuty\":0.1626098478152584,\"dutySweep\":-0.17776080465355976,\"repeatSpeed\":0.061688996851444244,\"flangerOffset\":-0.07509774567017119,\"flangerSweep\":-0.48964621375066797,\"lpFilterCutoff\":0.711988281595271,\"lpFilterCutoffSweep\":-0.9365668350697536,\"lpFilterResonance\":0.28472806175725773,\"hpFilterCutoff\":0.04422708126818536,\"hpFilterCutoffSweep\":0.9477608064834689,\"bitCrush\":0.07071203971773708,\"bitCrushSweep\":-0.38160467100585066},\"start\":0.2438095238095238,\"gain\":0.4569680541227497,\"pitch\":0.018363663254368803},{\"synth\":\"Machinr\",\"name\":\"Machinr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.045258175348863006,\"mechanism\":3,\"duration\":0.12,\"speed\":1,\"load\":0.5969975839626157,\"roughness\":0.3544789851470089,\"looseness\":0.8995013507296584,\"size\":0.2284090965381053,\"startTime\":0,\"stopTime\":0.10266005643418422},\"start\":0.3134483497966917,\"gain\":1,\"pitch\":-0.2228930391998023}]"
+      },
+      "seed": 0,
+      "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+      "file": "events.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "origin": "native-whole-or-events",
+        "neuralWeightsRetrained": false,
+        "boundaries": [
+          0,
+          10752,
+          13824,
+          22066
+        ],
+        "nativeSeed": 0.5,
+        "seedFieldMeaning": "Gallery ID only; actual seed in params",
+        "segmentBudget": 128,
+        "jointBudget": 512,
+        "selectionAliases": [
+          "events"
+        ],
+        "nativeHash": "f035ef9f0310f9eb910a3e8dff688fb6961f23ab2fc60ec78144edb6e43d98ba",
+        "auditionHash": "d71490e55aa8991713f4af6f86aac651a7635c576c7a6a33645cb3572838b535",
+        "supportScore": 4.122998875418157,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "7fffeeb36e0837c3efc66683e943d77f646021de0020d1a8f796677ba42638d4",
+      "paramsSha256": "e7f6de0ee521114f87ab207bf873501521d864e43d65e75208b7f0ffe1a0ea46",
+      "audioSha256": "b101f9e5ddac551dd12a8391e538b28885b266a9c26dde2c4a0a15e51a12cce0",
+      "targetId": "57bc5f5a675057bf41df5e300184e5cc54262de94233ca34f231fc17991afa93",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/b2a92a285dd906562c77b53e039715f4eb7ef5f455639b69f80403572c79162f.flac",
+        "pcmSha256": "b2a92a285dd906562c77b53e039715f4eb7ef5f455639b69f80403572c79162f",
+        "sampleRate": 44100,
+        "frames": 19184,
+        "channels": 1,
+        "auditionWavSha256": "b101f9e5ddac551dd12a8391e538b28885b266a9c26dde2c4a0a15e51a12cce0"
+      }
+    },
+    {
+      "role": "bfxr",
+      "synth": "Bfxr",
+      "params": {
+        "attackTime": 0.2478995072664295,
+        "sustainTime": 0.0418419367874676,
+        "sustainPunch": 0.3668109941331367,
+        "decayTime": 0.44279954607533434,
+        "compressionAmount": 0.2601338672006138,
+        "frequency_start": 0.11211452544269962,
+        "frequency_slide": 0.31166291235602006,
+        "frequency_acceleration": 0.9989623017610023,
+        "min_frequency_relative_to_starting_frequency": 0.327099141319747,
+        "vibratoDepth": 0.5510325378939173,
+        "vibratoSpeed": 0.3002006218351358,
+        "pitch_jump_repeat_speed": 0.37134966851607043,
+        "pitch_jump_amount": -0.8960027748146568,
+        "pitch_jump_onset_percent": 0.8533219305970011,
+        "pitch_jump_2_amount": -0.9963950359914185,
+        "pitch_jump_onset2_percent": 0.9497211146314842,
+        "overtones": 0.7507782600314417,
+        "overtoneFalloff": 0.1771696527591089,
+        "squareDuty": 0.0,
+        "dutySweep": 0.0,
+        "repeatSpeed": 0.9358720824989821,
+        "flangerOffset": -0.15519907080507378,
+        "flangerSweep": 0.10640105139186518,
+        "lpFilterCutoff": 0.6742024916328586,
+        "lpFilterCutoffSweep": -0.9715097307614269,
+        "lpFilterResonance": 0.02445092342897498,
+        "hpFilterCutoff": 0.7034562425177299,
+        "hpFilterCutoffSweep": 0.9430598104249588,
+        "bitCrush": 0.736113340131125,
+        "bitCrushSweep": -0.23707390397405426,
+        "waveType": 10,
+        "masterVolume": 0.5
+      },
+      "seed": 1234,
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "file": "bfxr.wav",
+      "label": "Comparison option",
+      "provenance": {
+        "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+        "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+        "budget": 2000,
+        "evaluations": 3001,
+        "allowPitchShift": false,
+        "allowTimeStretch": false,
+        "structureObjective": false,
+        "optimizer": "original StagedOptimizer with neural seeds",
+        "origin": "original-bfxr",
+        "backend": {
+          "command": [
+            "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+          ],
+          "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+        },
+        "selectionAliases": [
+          "bfxr"
+        ],
+        "nativeHash": "88711b402c4dd9b9648c0b1cc04296e462ee26fa89d2e0aaad9b0f0668cdb01d",
+        "auditionHash": "338db703b46e40122b0a3eb13bfd112e9a8065288cbfc17f5b94d4eb2b517408",
+        "supportScore": 3.9230700500934033,
+        "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df"
+      },
+      "id": "59d999127f5293c5271be7b72eff79525a3625eb87f581ba3343d91081c05d80",
+      "paramsSha256": "5877f4d27f82401193854113fa7ff548862cc8e3d8bb7194c1eb31ccb46f10d0",
+      "audioSha256": "451f3b6d6ab12e5f2340ba3efeb2c788523dacaa1c2e27ba1af2eb0d321d0845",
+      "targetId": "57bc5f5a675057bf41df5e300184e5cc54262de94233ca34f231fc17991afa93",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/1d7965fb7f640485eb3d66141ca60817e067a7c69d513e7c8eaa9082d42fc031.flac",
+        "pcmSha256": "1d7965fb7f640485eb3d66141ca60817e067a7c69d513e7c8eaa9082d42fc031",
+        "sampleRate": 44100,
+        "frames": 25926,
+        "channels": 1,
+        "auditionWavSha256": "451f3b6d6ab12e5f2340ba3efeb2c788523dacaa1c2e27ba1af2eb0d321d0845"
+      }
+    }
+  ],
+  "ratingMeaning": {
+    "likeness": "Human likeness to reference",
+    "usefulness": "Useful/fun game sound"
+  },
+  "audioMeaning": "Exact decoded PCM from audition WAVs, losslessly stored as PCM16 FLAC"
+}

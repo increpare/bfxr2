@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All thirty-one feedback archives,
+do not establish general success on real recordings. All thirty-two feedback archives,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The latest [matched-objective human review](evaluations/legacy-transfer-v1-quick-01-human-review.json)
@@ -180,7 +180,14 @@ six independent nominal2000-budget fits. All final native patches replay exactly
 All six references remain regardless of scores; the single-event laser merges
 identical whole/event audio, leaving17 distinct options. All25 served assets
 match their recorded hashes, and the browser opens0/6 judged without warnings
-or errors. Human likeness is still unknown.
+or errors. The subsequent human response finds four similar winners, one
+least-bad winner, and no close coin option. None is very-close. Event fitting
+wins only the card; whole fitting wins the snow footstep and cloth belt, original
+Bfxr wins the punch, and the laser is a shared whole/event option. All17 options
+were logged heard. The user reports additional clicks/glitches and possible
+speaker trouble, so listening conditions remain uncertain. Exact judgments and
+that warning are retained in the
+[review](evaluations/support-transfer-v1-quick-01-review.json).
 
 Only this new page uses `quick_audio_support.js`: playback logging now measures
 halfway through signal support above .001 of peak, rather than half the allocated
@@ -196,6 +203,20 @@ See [frozen protocol](evaluations/support-transfer-v1-protocol.json),
 [delivery verification](evaluations/support-transfer-v1-http-audit.json).
 Reproduce with `support-transfer-v1.py freeze`, `run`, then `publish` using new
 output paths; do not overwrite this experiment.
+
+The separate [playback check](runs/playback-check-v1/index.html) compares a clean
+440Hz tone with exact clips from the completed round. Its new
+`quick_audio_release.js` adds a5ms gain release only when interrupting playback;
+natural playback remains unchanged. Each voice owns its release envelope,
+replacement playback waits at most5ms, and stale callbacks cannot record a new
+audition or finish another clip. A checkbox disables release for comparison.
+Five new player tests and28 existing interface tests pass. The previously
+published player and comparison page remain immutable. This fixes a known
+hard-stop discontinuity mechanism, but does not establish the cause of the
+user's reported glitches or correct artifacts already in the generated sounds.
+All23 archived files peak at0.5 without full-scale clipping; some have nonzero
+endpoints and large adjacent steps. Such steps also occur in the laser reference
+and must not be interpreted as a universal artifact detector.
 
 The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
 follows a **very-close** tagged wooden-footstep search result. Its 8,192-example

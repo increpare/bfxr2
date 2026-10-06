@@ -1,0 +1,38 @@
+{
+  "complete": true,
+  "files": [
+    {
+      "path": "tools/multisynth/runs/playback-check-v1/coin-whole.wav",
+      "sha256": "9c31c82e4029ffe50e563f464f1b22a6d9051b752a663cda4f87164f0547c9b4"
+    },
+    {
+      "path": "tools/multisynth/runs/playback-check-v1/index.html",
+      "sha256": "f21eecf5898d2ad0b22a01513b8319b7a98b7a6da98ded7b01259357ff50b33e"
+    },
+    {
+      "path": "tools/multisynth/runs/playback-check-v1/provenance.json",
+      "sha256": "137dc7256c33fb2119c19d10cfda617a60de8f588485b8e5d8529c64783d26e1"
+    },
+    {
+      "path": "tools/multisynth/runs/playback-check-v1/snow-bfxr.wav",
+      "sha256": "b5602bd8d8bd4c65ebecdf48c8ad3f069391c654abde06470b856b651a362eb7"
+    },
+    {
+      "path": "tools/multisynth/runs/playback-check-v1/snow-reference.wav",
+      "sha256": "d807133d969b6410bad5ea0826e52eb2a4d7d2e37d8f12e3ca97770058e195f4"
+    },
+    {
+      "path": "tools/multisynth/runs/playback-check-v1/snow-whole.wav",
+      "sha256": "3fda424e1fb2073199c9356a25e66e30705c3b3fcf37779b63baba2e3971ef09"
+    },
+    {
+      "path": "tools/multisynth/runs/playback-check-v1/tone.wav",
+      "sha256": "8693fcc6c8672688e946f9748b0832a2089aeb8d78f584e96d3508201fb8f070"
+    },
+    {
+      "path": "tools/multisynth/quick_audio_release.js",
+      "sha256": "aaa7ee235d559b27bf125fef934411c4a8e58cad6c381df7d992a696489ac1c7"
+    }
+  ],
+  "unchangedRatedExperiment": "dd13710072276544ed95f87bf110aa8db1fc6fbad3e3ad7ba763118c53be49b6"
+}

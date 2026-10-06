@@ -1,0 +1,549 @@
+{
+  "complete": true,
+  "experimentId": "dd13710072276544ed95f87bf110aa8db1fc6fbad3e3ad7ba763118c53be49b6",
+  "scriptSha256": "3ea12dc74310e758d3b0cca1cba9061af7f08f99613802ee6fd05ec66131f9be",
+  "feedbackSha256": "1c53cd6cd19ffbea1c96a0220770ee40c18f1e6c0ab1007e37b274d9a7e36b30",
+  "manifestSha256": "88035e85c963867c7d2d023a7394cb5c1224eecb46c08271d565046da256f9c2",
+  "rows": [
+    {
+      "name": "card/card-place-4.ogg",
+      "kind": "best",
+      "adequacy": {
+        "level": "similar",
+        "candidateIds": [
+          "347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b"
+        ]
+      },
+      "note": "[quick-mismatch-v1] chosen [\"347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b\"]: movement/rhythm",
+      "options": [
+        {
+          "id": "2b8bab8e078a3ffed6bf31c3b3de534012a44305cbb000f52fdd9376d5b14612",
+          "role": "whole",
+          "aliases": [
+            "whole"
+          ],
+          "heard": true,
+          "selected": false
+        },
+        {
+          "id": "347f6f620dad7b2a3c2f9aaed0f2e06e7e5c69de71b8fc294f97f024ca07c20b",
+          "role": "events",
+          "aliases": [
+            "events"
+          ],
+          "heard": true,
+          "selected": true
+        },
+        {
+          "id": "16563a1c129031dd0f819e79ae396b4d1b00073c4ad60e7d4267dad847b57a42",
+          "role": "bfxr",
+          "aliases": [
+            "bfxr"
+          ],
+          "heard": true,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "name": "footstep/footstep_snow_001.ogg",
+      "kind": "best",
+      "adequacy": {
+        "level": "similar",
+        "candidateIds": [
+          "214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8"
+        ]
+      },
+      "note": "[quick-mismatch-v1] chosen [\"214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8\"]: pitch",
+      "options": [
+        {
+          "id": "214b79d8b6a998eec90b89c94369508dfa5e9853cd04446bd6126b7d67b236e8",
+          "role": "whole",
+          "aliases": [
+            "whole"
+          ],
+          "heard": true,
+          "selected": true
+        },
+        {
+          "id": "53eb91176c04ca7c472555d8bf26d5710585f0a3659fff8ff4d7e629f543801a",
+          "role": "events",
+          "aliases": [
+            "events"
+          ],
+          "heard": true,
+          "selected": false
+        },
+        {
+          "id": "c4857c2f7fecb6b89aae1dd6838dc1a24e868b0bf8b046e9d9dd97b5ac4317bf",
+          "role": "bfxr",
+          "aliases": [
+            "bfxr"
+          ],
+          "heard": true,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "name": "hit/FGHTImpt_Combat Punch Impact Light Hit Delay Crunchy Vintage Quick Smack 05_ESM_AG.wav",
+      "kind": "best",
+      "adequacy": {
+        "level": "similar",
+        "candidateIds": [
+          "66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983"
+        ]
+      },
+      "note": "[quick-mismatch-v1] chosen [\"66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983\"]: texture/timbre",
+      "options": [
+        {
+          "id": "6e4fa4231bba43c15d9a4ead25814bfd97d97faa977b5533b8253e728c187e2b",
+          "role": "whole",
+          "aliases": [
+            "whole"
+          ],
+          "heard": true,
+          "selected": false
+        },
+        {
+          "id": "ff042e1a5930530bd695f7d2d50ca6625403a5a3c34a3dbb1959522570dbc410",
+          "role": "events",
+          "aliases": [
+            "events"
+          ],
+          "heard": true,
+          "selected": false
+        },
+        {
+          "id": "66ce57b907e61f75eb9ee3bb09ebbb30d6a82c86e153017680dbbdddf4561983",
+          "role": "bfxr",
+          "aliases": [
+            "bfxr"
+          ],
+          "heard": true,
+          "selected": true
+        }
+      ]
+    },
+    {
+      "name": "bell/clothBelt.ogg",
+      "kind": "best",
+      "adequacy": {
+        "level": "least-bad",
+        "candidateIds": [
+          "e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b"
+        ]
+      },
+      "note": "[quick-mismatch-v1] chosen [\"e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b\"]: several things",
+      "options": [
+        {
+          "id": "e6bcf72fff26a363884dea1a17cb018814486badf50c3f38e8422370e400d13b",
+          "role": "whole",
+          "aliases": [
+            "whole"
+          ],
+          "heard": true,
+          "selected": true
+        },
+        {
+          "id": "5ef9999a0163d9839ecd2efa5024ea538d443c9e7641c07bef47e81c7f97743c",
+          "role": "events",
+          "aliases": [
+            "events"
+          ],
+          "heard": true,
+          "selected": false
+        },
+        {
+          "id": "4bb3aaa9d2ae1c44684f5c4474b1f1f9cd6fbc12df0de2a37d7a3d633bb54080",
+          "role": "bfxr",
+          "aliases": [
+            "bfxr"
+          ],
+          "heard": true,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "name": "laser/laserRetro_002.ogg",
+      "kind": "best",
+      "adequacy": {
+        "level": "similar",
+        "candidateIds": [
+          "ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4"
+        ]
+      },
+      "note": "[quick-mismatch-v1] chosen [\"ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4\"]: texture/timbre",
+      "options": [
+        {
+          "id": "ef1482a75b4eba8d383d7bbeba09dda33313b43d92037c297cbbe6b05db7ffc4",
+          "role": "whole",
+          "aliases": [
+            "whole",
+            "events"
+          ],
+          "heard": true,
+          "selected": true
+        },
+        {
+          "id": "b244d3ea8d75f470ffb280f7eddf9051ff7fddd4c5012c09749499f18d4f52f8",
+          "role": "bfxr",
+          "aliases": [
+            "bfxr"
+          ],
+          "heard": true,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "name": "collect/Mario World - 1up.wav",
+      "kind": "none",
+      "adequacy": null,
+      "note": "[quick-mismatch-v1] all presented [\"7fffeeb36e0837c3efc66683e943d77f646021de0020d1a8f796677ba42638d4\",\"076e32d64e58f94357c50b8d186c8e3002ac1d144634ea14e8cadc6f9b06e20b\",\"59d999127f5293c5271be7b72eff79525a3625eb87f581ba3343d91081c05d80\"]: several things",
+      "options": [
+        {
+          "id": "076e32d64e58f94357c50b8d186c8e3002ac1d144634ea14e8cadc6f9b06e20b",
+          "role": "whole",
+          "aliases": [
+            "whole"
+          ],
+          "heard": true,
+          "selected": false
+        },
+        {
+          "id": "7fffeeb36e0837c3efc66683e943d77f646021de0020d1a8f796677ba42638d4",
+          "role": "events",
+          "aliases": [
+            "events"
+          ],
+          "heard": true,
+          "selected": false
+        },
+        {
+          "id": "59d999127f5293c5271be7b72eff79525a3625eb87f581ba3343d91081c05d80",
+          "role": "bfxr",
+          "aliases": [
+            "bfxr"
+          ],
+          "heard": true,
+          "selected": false
+        }
+      ]
+    }
+  ],
+  "adequacyCounts": {
+    "similar": 4,
+    "least-bad": 1,
+    "none": 1
+  },
+  "trainingPairSummary": {
+    "targets": 6,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "duplicateAudioAliases": 0,
+    "conflictingAudioRatingGroups": 0,
+    "tiedPairs": 0,
+    "duplicateSessionPairs": 0,
+    "directChoicePairs": 9,
+    "choices": 6,
+    "choiceKinds": {
+      "best": 5,
+      "tie": 0,
+      "none": 1,
+      "skip": 0
+    },
+    "validatedAudioFiles": 23,
+    "uniqueAudioPcm": 23
+  },
+  "waveformMeasurements": [
+    {
+      "name": "card/card-place-4.ogg",
+      "role": "reference",
+      "pcmSha256": "15ab42a7ae9f013603d8d703133096526dd6bfa81db2364ae25b2ed236f3065b",
+      "seconds": 0.6007709750566893,
+      "peak": 0.5,
+      "firstSample": 0.007293701171875,
+      "lastSample": -0.002655029296875,
+      "maxAdjacentStep": 0.4989013671875,
+      "mean": 1.3592036793852458e-06,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "card/card-place-4.ogg",
+      "role": "whole",
+      "pcmSha256": "ba08cc5929c812e2ace8fb76d2379f5f804bbcee6f729f1fd7759996578cd5a9",
+      "seconds": 0.6563945578231293,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": 0.0,
+      "maxAdjacentStep": 0.25274658203125,
+      "mean": 1.0797700269904453e-05,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "card/card-place-4.ogg",
+      "role": "events",
+      "pcmSha256": "f7a643fed2698131dbae784395fd31827a5208c31669a7bc8807c897b6128511",
+      "seconds": 0.5994557823129252,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": 0.0,
+      "maxAdjacentStep": 0.223541259765625,
+      "mean": -0.00016984839749056846,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "card/card-place-4.ogg",
+      "role": "bfxr",
+      "pcmSha256": "97a130363b3cb2f8bdfb13140d177b957ee4414ac8a5326897603b31f91fb845",
+      "seconds": 0.5760090702947845,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": 0.005096435546875,
+      "maxAdjacentStep": 0.742095947265625,
+      "mean": 0.004225609358400106,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "footstep/footstep_snow_001.ogg",
+      "role": "reference",
+      "pcmSha256": "1483cfef0381c0aca8127e8f5b7d526f3cfbe1579f55e286a5786ce1f706bc76",
+      "seconds": 0.37421768707482994,
+      "peak": 0.5,
+      "firstSample": 0.00067138671875,
+      "lastSample": -0.000885009765625,
+      "maxAdjacentStep": 0.047210693359375,
+      "mean": 6.644965469604358e-05,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "footstep/footstep_snow_001.ogg",
+      "role": "whole",
+      "pcmSha256": "aed62a7d59ad3c19b5c35611c7b5089bf4771c89f894f4328b5335abab388f82",
+      "seconds": 0.19927437641723356,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": 0.0,
+      "maxAdjacentStep": 0.078765869140625,
+      "mean": -0.0009481562883593142,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "footstep/footstep_snow_001.ogg",
+      "role": "events",
+      "pcmSha256": "ba3bf945c92d9b2815da4c25347f5984a49dd98e498e290514459ba34ec4a7a1",
+      "seconds": 1.469387755102041,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": 0.0,
+      "maxAdjacentStep": 0.219879150390625,
+      "mean": 0.00015917318523861468,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "footstep/footstep_snow_001.ogg",
+      "role": "bfxr",
+      "pcmSha256": "2dd1d9878d1ab63acdb9cee5f4c0d7a47fe0d769bd23ed92831c0f97b9240dd3",
+      "seconds": 0.5951020408163266,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": -0.04571533203125,
+      "maxAdjacentStep": 0.24371337890625,
+      "mean": 0.00047468184493482113,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "hit/FGHTImpt_Combat Punch Impact Light Hit Delay Crunchy Vintage Quick Smack 05_ESM_AG.wav",
+      "role": "reference",
+      "pcmSha256": "7f68499ad5a1eb887ed14fc113fa4a93accfeda32c354e6aeab30f9c2707dad8",
+      "seconds": 0.92,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": -0.000244140625,
+      "maxAdjacentStep": 0.315277099609375,
+      "mean": -1.5000789971963968e-05,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "hit/FGHTImpt_Combat Punch Impact Light Hit Delay Crunchy Vintage Quick Smack 05_ESM_AG.wav",
+      "role": "whole",
+      "pcmSha256": "b9b313bf62928a3d02d219e7ea04f3ea4f63f5e1c0bf24edbdea90f795802793",
+      "seconds": 0.9944671201814059,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": 0.0,
+      "maxAdjacentStep": 0.1649169921875,
+      "mean": 1.130213695432758e-05,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "hit/FGHTImpt_Combat Punch Impact Light Hit Delay Crunchy Vintage Quick Smack 05_ESM_AG.wav",
+      "role": "events",
+      "pcmSha256": "c1e689b4f1acd5f9f60597684549171ca71200faa2a69a7099b22598bc8e784b",
+      "seconds": 2.4096825396825396,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": 0.0,
+      "maxAdjacentStep": 0.3638916015625,
+      "mean": -0.0006873305537737906,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "hit/FGHTImpt_Combat Punch Impact Light Hit Delay Crunchy Vintage Quick Smack 05_ESM_AG.wav",
+      "role": "bfxr",
+      "pcmSha256": "dcc1e9607744bb2643374f6d09fbbbc0b380183c49ecfc6bb117636627522ef9",
+      "seconds": 0.9684807256235828,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": 0.009674072265625,
+      "maxAdjacentStep": 0.999969482421875,
+      "mean": -6.61383310216479e-05,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "bell/clothBelt.ogg",
+      "role": "reference",
+      "pcmSha256": "94410cb40bbd9af14e4020b857fd3dbc291df8fb2ba11d8f4c829ce0941242c0",
+      "seconds": 0.71,
+      "peak": 0.5,
+      "firstSample": -0.000579833984375,
+      "lastSample": 0.000518798828125,
+      "maxAdjacentStep": 0.37994384765625,
+      "mean": 1.9064349316977314e-06,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "bell/clothBelt.ogg",
+      "role": "whole",
+      "pcmSha256": "36b107033c758f807d38d4b5d3266b5675309e3b4e4c1e191c66498427645c88",
+      "seconds": 0.7980045351473923,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": 0.0,
+      "maxAdjacentStep": 0.50152587890625,
+      "mean": -1.5551026081084274e-05,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "bell/clothBelt.ogg",
+      "role": "events",
+      "pcmSha256": "01ceaf7dde366b719d4a3cf9393ed9d13b1212154a628ab4f2ff73b29786ac26",
+      "seconds": 1.9018820861678005,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": 0.0,
+      "maxAdjacentStep": 0.46795654296875,
+      "mean": -5.988901466480456e-05,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "bell/clothBelt.ogg",
+      "role": "bfxr",
+      "pcmSha256": "c083ff383cc0350ecd4914ee6c69e6ae87e03454400a4e598a0e7024b8d10089",
+      "seconds": 0.6351473922902494,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": -0.002166748046875,
+      "maxAdjacentStep": 0.928466796875,
+      "mean": -5.629681618302129e-05,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "laser/laserRetro_002.ogg",
+      "role": "reference",
+      "pcmSha256": "6413a5603132e07e1eac3e68910b7b167fb02e6aefc85d4733d31749ba0ee71c",
+      "seconds": 0.2550566893424036,
+      "peak": 0.5,
+      "firstSample": 0.00054931640625,
+      "lastSample": 0.000274658203125,
+      "maxAdjacentStep": 0.990631103515625,
+      "mean": -2.296686579938978e-05,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "laser/laserRetro_002.ogg",
+      "role": "whole",
+      "pcmSha256": "4697a6990a1e6d64b51c4585e76efc3b89f45aa73fd4480a5b185a8a502a2acc",
+      "seconds": 0.24952380952380954,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": 0.0,
+      "maxAdjacentStep": 0.408599853515625,
+      "mean": 0.01064436137676239,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "laser/laserRetro_002.ogg",
+      "role": "bfxr",
+      "pcmSha256": "8f379d1b69a2e1425abc7c2d9cad2d125a8c4a804214c4db7d8eef4432bd2cec",
+      "seconds": 0.22383219954648526,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": -0.022125244140625,
+      "maxAdjacentStep": 0.999664306640625,
+      "mean": -0.06758496910333633,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "collect/Mario World - 1up.wav",
+      "role": "reference",
+      "pcmSha256": "197e976db0508bc74a8f42a2d3a6af64be7151dcbb8695cfc11ecd4045bb3341",
+      "seconds": 0.5003628117913832,
+      "peak": 0.5,
+      "firstSample": -0.005462646484375,
+      "lastSample": 0.001556396484375,
+      "maxAdjacentStep": 0.14031982421875,
+      "mean": -0.00013713823864236474,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "collect/Mario World - 1up.wav",
+      "role": "whole",
+      "pcmSha256": "e40d43d2b1ca500e592787394935ec0798f02963fb0cd063317d3eacfa97d07e",
+      "seconds": 0.5119501133786848,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": 0.0,
+      "maxAdjacentStep": 0.2122802734375,
+      "mean": -2.0154009689576924e-05,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "collect/Mario World - 1up.wav",
+      "role": "events",
+      "pcmSha256": "b2a92a285dd906562c77b53e039715f4eb7ef5f455639b69f80403572c79162f",
+      "seconds": 0.43501133786848073,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": 0.0,
+      "maxAdjacentStep": 0.541839599609375,
+      "mean": -0.00253762467764318,
+      "fullScaleSamples": 0
+    },
+    {
+      "name": "collect/Mario World - 1up.wav",
+      "role": "bfxr",
+      "pcmSha256": "1d7965fb7f640485eb3d66141ca60817e067a7c69d513e7c8eaa9082d42fc031",
+      "seconds": 0.587891156462585,
+      "peak": 0.5,
+      "firstSample": 0.0,
+      "lastSample": -0.00201416015625,
+      "maxAdjacentStep": 0.767181396484375,
+      "mean": -0.006537528708577156,
+      "fullScaleSamples": 0
+    }
+  ],
+  "listenerContext": {
+    "verbatim": "i don't know if there's a problem with my speakers rn but I'm getting a lot more clicky/glitchy sounds on these pages",
+    "status": "Unresolved: may concern in-file texture, player transitions, browser/audio-device path, or more than one. Preserve ratings without claiming the listening conditions were clean."
+  },
+  "interpretation": [
+    "Card event fit similar; snow-footstep whole fit similar; punch original Bfxr similar; cloth belt whole fit least-bad; laser shared whole/event fit similar; 1up none close. No very-close judgment.",
+    "All17 options recorded heard; nine ordinal pairs and23 exact audio files. No broad event-fitting advantage.",
+    "Peak-normalized PCM stays at0.5, with no full-scale samples; this excludes file-output hard clipping, not distortion already produced inside a synth.",
+    "Nonzero endpoints and large adjacent steps are risk indicators, not proof of audible glitches; even the laser reference has near-full-range adjacent steps.",
+    "Existing player abruptly stops at the current sample. A separate diagnostic uses a5ms manual-stop release, preserving full natural playback and all published experiment assets. No speaker diagnosis is established."
+  ]
+}

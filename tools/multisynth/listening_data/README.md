@@ -66,6 +66,19 @@ external generalization.
 | `2026-10-06-stackr-events-v1-quick-01/` | 4 references | 11 |
 | `2026-10-06-learned-events-v1-quick-01/` | 5 references | 13 |
 | `2026-10-06-joint-support-v2-quick-01/` | 4 references | 12 |
+| `2026-10-06-support-transfer-v1-quick-01/` | 6 references | 17 |
+
+The thirty-second archive completes the fresh external test: event-fit card is
+similar; whole-fit snow footstep is similar; original Bfxr punch is similar;
+whole-fit cloth belt is least-bad; the identical whole/event laser is similar;
+all three coin options are rejected. None is very-close. All17 options were
+logged heard, providing nine ordinal pairs;23 exact audio files are retained.
+The user simultaneously reported more clicky/glitchy playback and uncertainty
+about their speakers. Preserve that context and do not treat this round as
+confirmed clean listening or discard its choices without evidence. The report
+retains the exact words and basic waveform measurements. The playback path is
+being diagnosed separately; no new model is trained from this round yet.
+See [review](../evaluations/support-transfer-v1-quick-01-review.json).
 
 The thirty-first archive records four choices: joint-fit coin similar,
 timing-only metal footstep similar, previous book least-bad and previous attack

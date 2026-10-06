@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Check the clicks</title>
+<style>body{font:18px/1.5 system-ui;background:#171923;color:#edf0fa;max-width:700px;margin:5vh auto;padding:24px}h1{font-size:30px}button,select{font:inherit;padding:12px;margin:6px 4px 6px 0;border-radius:8px;border:1px solid #758198;background:#252d40;color:inherit}button{cursor:pointer}label{display:block;margin:18px 0}small{color:#b8c5dc}#status{min-height:1.5em;color:#b4ddff}a{color:#b4ddff}</style>
+<h1>Check the clicks</h1>
+<p>First, play the clean tone all the way through. It should be a steady beep with gentle edges. This is a playback check, not another model rating.</p>
+<label>Sound <select id="sound"><option value="tone.wav">Clean 440 Hz tone</option><option value="snow-reference.wav">Snow footstep — reference</option><option value="snow-bfxr.wav">Snow footstep — original Bfxr</option><option value="snow-whole.wav">Snow footstep — whole-sound fit</option><option value="coin-whole.wav">1up coin — whole-sound fit</option></select></label>
+<button id="play">Play from start</button><button id="interrupt">Play, then interrupt</button><button id="stop">Stop</button>
+<label><input type="checkbox" id="smooth" checked> Soften manual stops (5 milliseconds)</label>
+<p id="status" role="status">Ready. Nothing plays until you press Play.</p>
+<p>To compare switching clicks, use <b>Play, then interrupt</b> with the checkbox on and off. It interrupts after about 137 milliseconds.</p>
+<p>The checkbox only affects interruptions. Letting a sound finish plays exactly the same file in both modes. The four SFX clips are exact copies from your completed round.</p>
+<p><small>If the clean tone crackles during uninterrupted playback, the fitted synth cannot explain that. If only the SFX crackle, it may be texture in those files. This alone cannot distinguish the browser, output device, and speakers.</small></p>
+<p>Tell me whether the <b>clean tone crackles when left to finish</b>, and whether <b>softening stops helps</b>. No need to rate the six sounds again.</p>
+<p><a href="../support-transfer-v1-listening/index.html">Back to your completed comparisons</a></p>
+<script src="../../quick_audio_release.js"></script>
+<script>
+'use strict';
+const el=id=>document.getElementById(id);let timer=null,revision=0;
+const context=new (window.AudioContext||window.webkitAudioContext)();
+const player=new BfxrQuickAudio.CachedAudioPlayer({context,fetch:window.fetch.bind(window),onState:s=>el('status').textContent=s==='playing'?'Playing…':s==='ended'?'Finished.':'Stopped.'});
+function stop(){revision++;clearTimeout(timer);player.stop();}
+async function play(interrupt){stop();const token=revision;player.stopFadeSeconds=el('smooth').checked?.005:0;try{const ok=await player.play(el('sound').value);if(ok&&interrupt&&token===revision)timer=setTimeout(()=>{if(token===revision)stop();},137);}catch(e){if(token===revision)el('status').textContent='Could not play: '+e.message;}}
+el('play').onclick=()=>play(false);el('interrupt').onclick=()=>play(true);el('stop').onclick=stop;el('sound').onchange=stop;
+el('smooth').onchange=()=>{stop();player.stopFadeSeconds=el('smooth').checked?.005:0;};
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
+</script></html>
