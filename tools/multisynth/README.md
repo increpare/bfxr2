@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All thirty feedback archives,
+do not establish general success on real recordings. All thirty-one feedback archives,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The latest [matched-objective human review](evaluations/legacy-transfer-v1-quick-01-human-review.json)
@@ -152,13 +152,50 @@ See [plan](../../docs/superpowers/plans/2026-10-06-joint-support.md),
 All eight fitted patches replay exactly, all12 options and four references have
 verified delivery hashes, and the browser loads0/4 judged without logged warnings
 or errors. The run made6144 attempts. Joint scoring is lower on three cases and
-higher on attack; these are numerical results, with human likeness still unknown.
+higher on attack. The completed human response selects joint coin as similar,
+timing-only metal footstep as similar, and the exact prior book/attack clips as
+least-bad/similar. Coin has all three options logged heard; footstep's chosen clip
+lacks a playback flag. All choices and labels remain intact; only three strict
+heard pairs qualify for training. No broad metric or joint-fitting promotion.
+See [human review](evaluations/joint-support-v2-quick-01-human-review.json).
 See [verification](evaluations/joint-support-v2-verification.json) and
 [served-file audit](evaluations/joint-support-v2-http-audit.json).
 
 Execute the corrected recipe with `joint-support-v2.py freeze`, then
 `joint-support-v2-parallel.py`, then `joint-support-v2.py publish`, using new paths
 for reproduction rather than overwriting any completed experiment.
+
+The next [six fresh external comparisons](runs/support-transfer-v1-listening/index.html)
+test whole-sound versus event-wise inversion, each followed by joint native
+source/timeline refinement, with independent original Bfxr as a third option.
+References were selected before inference from six tagged categories, excluding
+every previously retained exact source file and audition PCM. All six occur in
+historical Bfxr training; this is fresh listening evidence for synthetic-trained
+experts, not an unseen Bfxr test or certified source-family holdout. No neural
+weights were retrained. More events use more total search work.
+
+All836 compatible proposals rendered. The run made2432 segment-control and5632
+whole-patch mutation attempts; original Bfxr used14064 actual evaluations across
+six independent nominal2000-budget fits. All final native patches replay exactly.
+All six references remain regardless of scores; the single-event laser merges
+identical whole/event audio, leaving17 distinct options. All25 served assets
+match their recorded hashes, and the browser opens0/6 judged without warnings
+or errors. Human likeness is still unknown.
+
+Only this new page uses `quick_audio_support.js`: playback logging now measures
+halfway through signal support above .001 of peak, rather than half the allocated
+buffer. Leading silence and late events still count; silent/uninspectable buffers
+fall back to half duration. Audio playback and previous logs remain unchanged.
+Three new regression checks and25 existing quick-interface checks pass.
+The local server was restored on127.0.0.1:8765; LAN binding was rejected by
+automatic review because serving the entire workspace would expose its files.
+
+See [frozen protocol](evaluations/support-transfer-v1-protocol.json),
+[results](evaluations/support-transfer-v1-evaluation.json),
+[native verification](evaluations/support-transfer-v1-verification.json), and
+[delivery verification](evaluations/support-transfer-v1-http-audit.json).
+Reproduce with `support-transfer-v1.py freeze`, `run`, then `publish` using new
+output paths; do not overwrite this experiment.
 
 The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
 follows a **very-close** tagged wooden-footstep search result. Its 8,192-example

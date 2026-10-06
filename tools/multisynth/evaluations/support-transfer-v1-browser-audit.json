@@ -1,0 +1,18 @@
+{
+  "complete": true,
+  "experimentId": "dd13710072276544ed95f87bf110aa8db1fc6fbad3e3ad7ba763118c53be49b6",
+  "url": "http://127.0.0.1:8765/tools/multisynth/runs/support-transfer-v1-listening/index.html",
+  "tabId": "2",
+  "title": "Six fresh sounds \u2014 does event fitting transfer?",
+  "observedProgress": "0 / 6 judged",
+  "observedReference": "card/card-place-4.ogg",
+  "observedOptions": [
+    "A",
+    "B",
+    "C"
+  ],
+  "consoleWarningsAndErrors": [],
+  "interaction": "Read-only initial UI verification; no audio played or judgments entered.",
+  "htmlSha256": "63ea8d07858eb2d55e5889fd8bebfabf64ce2e7645cdf0bd3fa73f5f690ff22a",
+  "server": "Restored localhost-only binding after full-workspace LAN exposure was rejected by automatic review."
+}

@@ -1,0 +1,74 @@
+{
+  "complete": true,
+  "scriptSha256": "69ef3ccbc88f05c533cb6a68dbf8daf0851ee1127cef60afd822cb2813b809f5",
+  "protocolSha256": "04f4642535927058595bfb7520264c4601c3299980aa5624073e3d323268e5df",
+  "reportSha256": "9049f06b03c819b12dedf20202d3db3fb17d4ba263f071e1fa30a1ce4e9f6a04",
+  "experimentId": "dd13710072276544ed95f87bf110aa8db1fc6fbad3e3ad7ba763118c53be49b6",
+  "checks": [
+    {
+      "name": "card/card-place-4.ogg",
+      "events": 2,
+      "options": 3,
+      "nativeReplay": true,
+      "excludedPriorExactAudio": true,
+      "historicalBfxrSplits": [
+        "train"
+      ]
+    },
+    {
+      "name": "footstep/footstep_snow_001.ogg",
+      "events": 2,
+      "options": 3,
+      "nativeReplay": true,
+      "excludedPriorExactAudio": true,
+      "historicalBfxrSplits": [
+        "train"
+      ]
+    },
+    {
+      "name": "hit/FGHTImpt_Combat Punch Impact Light Hit Delay Crunchy Vintage Quick Smack 05_ESM_AG.wav",
+      "events": 3,
+      "options": 3,
+      "nativeReplay": true,
+      "excludedPriorExactAudio": true,
+      "historicalBfxrSplits": [
+        "train"
+      ]
+    },
+    {
+      "name": "bell/clothBelt.ogg",
+      "events": 3,
+      "options": 3,
+      "nativeReplay": true,
+      "excludedPriorExactAudio": true,
+      "historicalBfxrSplits": [
+        "train"
+      ]
+    },
+    {
+      "name": "laser/laserRetro_002.ogg",
+      "events": 1,
+      "options": 2,
+      "nativeReplay": true,
+      "excludedPriorExactAudio": true,
+      "historicalBfxrSplits": [
+        "train"
+      ]
+    },
+    {
+      "name": "collect/Mario World - 1up.wav",
+      "events": 3,
+      "options": 3,
+      "nativeReplay": true,
+      "excludedPriorExactAudio": true,
+      "historicalBfxrSplits": [
+        "train"
+      ]
+    }
+  ],
+  "segmentAttempts": 2432,
+  "jointAttempts": 5632,
+  "rawProposals": 836,
+  "originalBfxrEvaluations": 14064,
+  "humanLikeness": "Unknown until listening; no default promotion"
+}

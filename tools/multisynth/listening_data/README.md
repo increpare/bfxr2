@@ -65,6 +65,21 @@ external generalization.
 | `2026-10-06-legacy-transfer-v1-quick-01/` | 6 references | 18 |
 | `2026-10-06-stackr-events-v1-quick-01/` | 4 references | 11 |
 | `2026-10-06-learned-events-v1-quick-01/` | 5 references | 13 |
+| `2026-10-06-joint-support-v2-quick-01/` | 4 references | 12 |
+
+The thirty-first archive records four choices: joint-fit coin similar,
+timing-only metal footstep similar, previous book least-bad and previous attack
+similar. None is very-close. Coin has all three options recorded heard and
+prefers joint fitting over both alternatives; movement/rhythm remains imperfect.
+The selected footstep has a pitch note but lacks a playback flag. Preserve its
+explicit choice/adequacy without adding heard-only training pairs. Book logs two
+options, attack only the prior clip. Missing flags do not establish no listening:
+the old player required half the entire allocated buffer before logging exposure.
+All12 options and four references are retained, with eight recorded-heard options,
+three strict pairs, four scoped likeness labels and four immediate notes. Support,
+legacy and soft agree with2/3 pairs; preference3/3. This tiny selected sample does
+not validate a metric. See the
+[human review](../evaluations/joint-support-v2-quick-01-human-review.json).
 
 The thirtieth archive completes all five learned-timing comparisons.
 **Every winner is the exact earlier clip; learned timing wins zero.** Coin's

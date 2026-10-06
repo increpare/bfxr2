@@ -1,0 +1,317 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "source": {
+        "name": "card/card-place-4.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/card/card-place-4.ogg",
+        "sha256": "18e3ba713b7259605fd27cdc048085ed56cf86b32403f070b6cb125019f77183",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "seed": 20261108,
+      "samples": 26494,
+      "auditionHash": "35f6837c91b9678cd7299013842c77a9ddfdea4c973d191e50a77d90011611b3",
+      "boundaries": [
+        0,
+        14592,
+        26494
+      ],
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/card/card-place-4.ogg",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "wavSha256": "254ddbc533fac44c6a0f9752f3056486a170f4e1847ccb0d4c53a05b5dbd4b00"
+    },
+    {
+      "source": {
+        "name": "footstep/footstep_snow_001.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep_snow_001.ogg",
+        "sha256": "980fb9a1c9227aed7995067b0357f373053337f2416316db8ea0438418542fb4",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "seed": 20262117,
+      "samples": 16503,
+      "auditionHash": "130e005cf0640116a36bb3da4f21e73055bcd077d89be0ed41045711cd755bb9",
+      "boundaries": [
+        0,
+        4096,
+        16503
+      ],
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep_snow_001.ogg",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "wavSha256": "d807133d969b6410bad5ea0826e52eb2a4d7d2e37d8f12e3ca97770058e195f4"
+    },
+    {
+      "source": {
+        "name": "hit/FGHTImpt_Combat Punch Impact Light Hit Delay Crunchy Vintage Quick Smack 05_ESM_AG.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/FGHTImpt_Combat Punch Impact Light Hit Delay Crunchy Vintage Quick Smack 05_ESM_AG.wav",
+        "sha256": "55cb8102db4d8728c2607279b4e381f27336db35bb966e5f4993c9ace2cd9ecd",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "seed": 20263126,
+      "samples": 40572,
+      "auditionHash": "d123bed1b57e101b59a5e15e862a0580c9c0fbaee6229965c860f57a86b14d3b",
+      "boundaries": [
+        0,
+        7680,
+        11520,
+        40572
+      ],
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/FGHTImpt_Combat Punch Impact Light Hit Delay Crunchy Vintage Quick Smack 05_ESM_AG.wav",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "wavSha256": "11f85d929fdda717564ea30a7386eb89d0c2ec6cdd3c39fd80942b1e57fd17c1"
+    },
+    {
+      "source": {
+        "name": "bell/clothBelt.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/clothBelt.ogg",
+        "sha256": "f29560a2aea95bbfeb643e1e8f56ec2b6f7e32f32ce4e140645a36db81de3253",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "seed": 20264135,
+      "samples": 31311,
+      "auditionHash": "7fae19459aa3ca45e58d511797aff01e26026967e6ddb0e71e767553ef50afb5",
+      "boundaries": [
+        0,
+        8960,
+        24064,
+        31311
+      ],
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/clothBelt.ogg",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "wavSha256": "3a13530042e04a88a412e94d5cf4b81d67b4765b617744e34173d833e4e82ea7"
+    },
+    {
+      "source": {
+        "name": "laser/laserRetro_002.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/laserRetro_002.ogg",
+        "sha256": "df6112dc4eba5444bc28a1c8b80f6ce942bb2696beb466ac8e736b2ebf3e15b9",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "seed": 20265144,
+      "samples": 11248,
+      "auditionHash": "84597b301ea70fac1fad533217b060296579666f3ae89e4e5ac348b782e3323f",
+      "boundaries": [
+        0,
+        11248
+      ],
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/kenney_sci-fi-sounds/Audio/laserRetro_002.ogg",
+          "pack": "kenney_sci-fi-sounds",
+          "split": "train"
+        },
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/laserRetro_002.ogg",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "wavSha256": "431164dabc18632a193eb083e8da4b81c981084de610d04a64e8b51fd111a68d"
+    },
+    {
+      "source": {
+        "name": "collect/Mario World - 1up.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/Mario World - 1up.wav",
+        "sha256": "86002dd9a8ee19486bea412057912842f5703060c21af77b5675b22f98b40f31",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "seed": 20266153,
+      "samples": 22066,
+      "auditionHash": "242eb187b26063b49df269d5b4aaa9faad559abb75efdda277c3805f7450d2cd",
+      "boundaries": [
+        0,
+        10752,
+        13824,
+        22066
+      ],
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/Mario World - 1up.wav",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "wavSha256": "8cd4723b32c019554a01ceff23a2be5a38c1dd85c00002f45edef67e76975e03"
+    }
+  ],
+  "rejected": [
+    {
+      "name": "bell/impactBell_heavy_000.ogg",
+      "reason": "prior-file"
+    },
+    {
+      "name": "laser/laser1.ogg",
+      "reason": "prior-file"
+    },
+    {
+      "name": "collect/mario 3 - get item.WAV",
+      "reason": "prior-file"
+    },
+    {
+      "name": "collect/coin (nes).wav",
+      "reason": "prior-file"
+    }
+  ],
+  "priorArchives": {
+    "tools/multisynth/listening_data/2026-10-03-coverage-v3/manifest.json": "72403c7fb0088b036f4a785bf74cb43b6ccd82febc97dc5282f6b29ef106a9f6",
+    "tools/multisynth/listening_data/2026-10-03-real-v1/manifest.json": "c28456efac1be70c3b65b76900aa0aa49bb1021526cd49543e999f25d2504c6a",
+    "tools/multisynth/listening_data/2026-10-03-tagged-v2/manifest.json": "c24ef8d61d352257d76f9a53b55a015a971c5368404e37b6eaf7fd192aa93bed",
+    "tools/multisynth/listening_data/2026-10-04-big-v4/manifest.json": "66698fa235ffb20f4ecf3526d223f6bb15f051f68822ca30f2647862d9111bcd",
+    "tools/multisynth/listening_data/2026-10-04-neural-v1-quick-01/manifest.json": "eaa4cc29a8f452c52d2a71124b9eba63e9fcf5b2517ed3e4413b358a5e9221ea",
+    "tools/multisynth/listening_data/2026-10-04-neural-v2-quick-01/manifest.json": "3cdfa538ba9ece002678cfcead888dcc5656911d39cfb5fcbd11ee37d5216f44",
+    "tools/multisynth/listening_data/2026-10-04-temporal-v3-quick-01/manifest.json": "4a8e731fc3eb48f16433497e64784cad69106fe358dddbab7bfe0fa58615bd00",
+    "tools/multisynth/listening_data/2026-10-05-coverage-selection-quick-01/manifest.json": "4f9045fcab21f25459e0099adadf65af6102da44c18163f8999bf4fab0349ad1",
+    "tools/multisynth/listening_data/2026-10-05-cue-calibration-quick-01/manifest.json": "321462b40348d89731ddcb68ae2eca828bbcf887dcd9b9b0c02b68ea58a0d090",
+    "tools/multisynth/listening_data/2026-10-05-native-mixture-quick-01/manifest.json": "b0e3e3f11da8fe6630d7ee82a530b2261bb4910e4ea1b60d4dbd3fa0f504cc88",
+    "tools/multisynth/listening_data/2026-10-05-pitch-calibration-quick-01/manifest.json": "2daa265339a65fcfd87015143b070063c00604fcb46fba0f2270b4f7aab68f78",
+    "tools/multisynth/listening_data/2026-10-05-soft-periodicity-quick-01/manifest.json": "5ea93c515442df53794ff4b273dcc37ccc5bab038800a7dbfd8eabe82ec48553",
+    "tools/multisynth/listening_data/2026-10-05-specialists-quick-01/manifest.json": "de39d4def82cca02d42f213303f2e7030b785772e1f5a42694c2c4bd4b2e1266",
+    "tools/multisynth/listening_data/2026-10-05-specialists-tagged-quick-01/manifest.json": "4130dbeaf340c74e899148e0295ac79cb8276cfd53e336d91796aea75752a837",
+    "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01/manifest.json": "62d17eb894bbcef482893c4bea2e3af3b90b842efd2c3c4b06b23902b360ddcb",
+    "tools/multisynth/listening_data/2026-10-05-transfxr-transfer-quick-01/manifest.json": "48c53544894a683f4157001d05d8e5f9f18cee1165ccf3a26937b400f2544426",
+    "tools/multisynth/listening_data/2026-10-06-control-diagnosis-v1-quick-01/manifest.json": "f831adad1f907a33174366c7a6dc7a5d465e28534b4524750aa78f0365f24fbf",
+    "tools/multisynth/listening_data/2026-10-06-fresh-gesture-v1-quick-01/manifest.json": "eab464417c24755a00029c14625a192a2f03eee2d151185a8316ffc871c3b3f9",
+    "tools/multisynth/listening_data/2026-10-06-joint-support-v2-quick-01/manifest.json": "24230d7f8372797b11187061650226888e1faaa8d6881057d285e4faac098974",
+    "tools/multisynth/listening_data/2026-10-06-learned-events-v1-quick-01/manifest.json": "0067521a7c1a46c5c042b29fa0b96a2d814c78bf633b908ee6bca25661174023",
+    "tools/multisynth/listening_data/2026-10-06-legacy-transfer-v1-quick-01/manifest.json": "bf191d1642045fd74d71cee74a12dae5df534d7eb5b131e951c5cc0289fa4a25",
+    "tools/multisynth/listening_data/2026-10-06-memory-inverse-v1-quick-01/manifest.json": "97c3145f3017811614c312ed7209a321dce0ec232446596fd69d4f8c9d90a66f",
+    "tools/multisynth/listening_data/2026-10-06-mixr-joint-v1-quick-01/manifest.json": "1e9459377ea695ac82c6f8d9176bc81b19b4c546e4fd977a0b6efa1b4b4d1540",
+    "tools/multisynth/listening_data/2026-10-06-mixr-joint-v1-quick-02/manifest.json": "eab52391a5ae4ca82709bfbc61e2c2401a09cface392af6658b43e303fd33219",
+    "tools/multisynth/listening_data/2026-10-06-mixr-transfer-v1-quick-01/manifest.json": "9bfa8e5e98ca3f87fec5d5db3a99d6c97b0f33014aa66001393d2c70f93d55bd",
+    "tools/multisynth/listening_data/2026-10-06-off-model-transfer-v1-quick-01/manifest.json": "9894f033397fe2501004795419692891ec3ec77aea2e66ca81667247516261ab",
+    "tools/multisynth/listening_data/2026-10-06-off-model-transfer-v1-quick-02/manifest.json": "929d62763d43eb85ad61998a19d329d09641f3cd4770de69ee53c08cb2fa8aaf",
+    "tools/multisynth/listening_data/2026-10-06-pair-inverse-v1-quick-01/manifest.json": "f462f9f844112396dbf6a97072dfc9d6f2a21c44d11ccba49196db9649599153",
+    "tools/multisynth/listening_data/2026-10-06-squishr-v1-quick-01/manifest.json": "b4905929fbb7f9696a365d7f1a7bfca764fcaafe0c8b18eb44ec640d13802360",
+    "tools/multisynth/listening_data/2026-10-06-squishr-v1-quick-02/manifest.json": "4643871fa05e81def8f9b3270ace69e3d4e6e13de72c5217a8f72835569760d2",
+    "tools/multisynth/listening_data/2026-10-06-stackr-events-v1-quick-01/manifest.json": "1b55bd04cb2bb01e4ac6268a485fb1ea2cd7b88b169780150824362326d2ea9e"
+  },
+  "inventory": {
+    "ok": true,
+    "sourceHash": "811d1ed3f3045b7a1ba283e82843871aaf0a27d1c5655f5bc8b3fe7a9c2a9efd",
+    "baseSourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+    "dependencies": {
+      "tools/render/timeline_context.js": "36d7dd41b24450512fa3a9c6acd0a9cf7741ba60a54b5ef15856cf7248b4838a",
+      "tools/render/timeline_worker.js": "7f823a0dc023d5554f587e4a9f82b5a83ee943744ea5de157807679bb854a6b9",
+      "tools/multisynth/timeline.py": "d3af95b677b2e6f34765fcf70b52f270cb0878232ea8451aaf5231a06a911338",
+      "tests/helpers/synth-context.js": "537f3a32b720ca359391bc32b9d4c8a8496840e94769cb3b6a55c81908654364",
+      "js/audio/Stackr_DSP.js": "419ddd4ee2155888bf2ecd0ac7e8a6460d47c691d907f3bb3ab0da18e047795d",
+      "js/synths/Stackr.js": "2174d51cc1d8a618c374ee5484db56ca89073f7596b131a9abc3883b5c2db601"
+    },
+    "sampleRate": 44100,
+    "sources": [
+      "Bfxr",
+      "Transfxr",
+      "Birdr",
+      "Boomr",
+      "Bouncr",
+      "Breathr",
+      "Choirr",
+      "Clonkr",
+      "Crittr",
+      "Fractr",
+      "Glitchr",
+      "Holor",
+      "Jinglr",
+      "Machinr",
+      "Notifr",
+      "Pewpr",
+      "Pluckr",
+      "Pulser",
+      "Riftr",
+      "Rollr",
+      "Rumblr",
+      "Rustlr",
+      "Signlr",
+      "Squishr",
+      "Swarmr",
+      "Tappr",
+      "Tickr",
+      "Weathr",
+      "Whooshr",
+      "Zappr"
+    ],
+    "seedPolicy": "Actual Stackr seed; canonical layers have no individual renderSeed."
+  },
+  "codeHashes": {
+    "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/evaluations/support-transfer-v1.py": "614b2330304f5e53d639403875a643d65b388d8864b2669fe646e45ae5871f6b",
+    "docs/superpowers/plans/2026-10-06-support-transfer.md": "e6142020bef9fe50db533ed504ff4532f40f1e83cd28d03f4eed09fdfadc91b3",
+    "tools/multisynth/joint_timeline.py": "1ccb54464c85a031cfa6eabc7c3d16e18262f7dba3aacf41c7b8acd3ca520266",
+    "tools/multisynth/support_objective.py": "6c0da5c88f6cb6a84635b5f7795cd41364b875058d8c52c80bb89e14059cc50b",
+    "tools/neural_invert/evaluate.py": "b5e174c099028b4d39ec807bd29a67cb280d278a376d23744527f6fc4b441c83",
+    "tools/neural_invert/predict.py": "953a5a79b089d42c1be2d8a9c92d02e8a39d25f4ba019899b840502769db51d4",
+    "tools/neural_invert/temporal.py": "a382766fbb7279637003ae5bff83da98742c4b77c1208fb55da4c3242b41082a",
+    "tools/neural_invert/features.py": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+    "tools/neural_invert/coverage_mixture.py": "109290def4bc5e9a66779417554a57f42f92af9da39c44d2ef410b1dcc5538e1",
+    "tools/neural_invert/schema.py": "164371d97f58e7db447f794c618eedc146949d9d70d15689f44bbec65c75871e",
+    "tools/neural_invert/experiment.py": "07bb2ead5eff152991c28e3725efd54764cfb8a9f306cc3a94ec4c2740af4d36",
+    "tools/multisynth/event_split.py": "55c01a338a9d0d9d1a8599adcefde86f9e5e0102958ebfe36dd63bae7360b3c6",
+    "tools/match/objective.py": "ea3768c5ff641f68e398a7a39f902345f5f3a1a69277b66f8df556f7eeb2278e",
+    "tools/match/features.py": "dc8d2c049f9940215387d2f2500cfa0dbdd2a5b27e07eced41f16fc69cba6859",
+    "tools/match/audio.py": "90bd5aa0dd1e885f0cdd1057e2a0d9c06c25bcf7584e8e7ab92fd5edeb14fa52",
+    "tools/match/optimizer.py": "427c729e7605da863bfdda41b338edf19b3b6ee14e53e846d6a61156c81b8972"
+  },
+  "checkpoints": {
+    "tools/multisynth/runs/neural-v2/acoustic-model/best.pt": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+    "tools/multisynth/runs/native-mixture-v1/models/mixture/best.pt": "a816f97284cdd4ec0bfcfbcdbdbd11ab6e8b0230d4fa0b1388e758958694e73f",
+    "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98"
+  },
+  "bfxrBackend": {
+    "command": [
+      "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+    ],
+    "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+  },
+  "historicalBfxrManifestSha256": "c222380bbe7dd6dfb34aa2223b3fdb91f82d79d0e37b1ee811933955bbaa48ef",
+  "segmentBudget": 128,
+  "jointBudget": 512,
+  "bfxrBudget": 2000,
+  "uiHashes": {
+    "quick_choice.js": "0bb2e27258fa918053f77e737b45200eb9389ec90fd0e185e71ef85bef4f911e",
+    "coverage_feedback.js": "db4cd83adfa7f788378ac0b0941f473376a730d4c55133f6d797250eeeee1d61",
+    "coverage_feedback.py": "50b9b03368addb2729f1689a208070347544f4f62150158bbcd08f4360b73b75",
+    "quick_audio_support.js": "b315a6cf88a76e287443238a750e9de9ac39bfc18464451d9e167cbc7354d45a",
+    "quick_listening.html": "167c746f5ec3f77802b799cd1659dd85c8d0fe599ffc365b4376cf4fc2777cd4",
+    "quick_listening.css": "833a39c37a9140b9e995d693dcd648266204cc022107b2c398c32468d231f7a7",
+    "quick_mismatch.js": "177bd0dd544d3bbc058b25f0ef2357b18723e9884449626a5e3a1423d9d82a2f",
+    "quick_mismatch.css": "81a2bc1a435c3a6afe87a9e7ff27c86b5b7d398053ed90dd7f5108bd57b211f0",
+    "quick_listening_diagnostic.js": "8a3b3d082f9653e27c17b7f7c989ddbf79592fd847e536d2745f72a9f5d71b41"
+  },
+  "scope": "Six unjudged tagged external files, excluding retained exact file/PCM. Historical Bfxr overlaps disclosed; source-family independence not certified. Frozen experts; no retraining. Each segment128 source mutations, each patch512 joint attempts. Event arms use more total work with more events. Original Bfxr has independent historical2000-budget optimizer.",
+  "auditionPolicy": {
+    "version": "signal-support-half-v1",
+    "relativeAmplitudeFloor": 0.001,
+    "exposure": "halfway through first/last above-threshold sample support; full completion also counts",
+    "playback": "unchanged"
+  }
+}

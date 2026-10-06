@@ -1,0 +1,52 @@
+{
+  "complete": true,
+  "experimentId": "dd13710072276544ed95f87bf110aa8db1fc6fbad3e3ad7ba763118c53be49b6",
+  "targetCount": 6,
+  "optionCounts": [
+    3,
+    3,
+    3,
+    3,
+    2,
+    3
+  ],
+  "resultsSha256": "c7b41d5700de948c43e480d383a535d4cd48dafe2532061c6d281fc9ad2b1ae4",
+  "htmlSha256": "63ea8d07858eb2d55e5889fd8bebfabf64ce2e7645cdf0bd3fa73f5f690ff22a",
+  "reportSha256": "9049f06b03c819b12dedf20202d3db3fb17d4ba263f071e1fa30a1ce4e9f6a04",
+  "audioFiles": {
+    "001/bfxr.wav": "32146a0967528be29205795c0e3ed40e7de4abe7338fd602585d90887eb03f45",
+    "001/events.wav": "4d234d650fd689f44686bf3789fa9e3f59825889f02823d6a362da37873d3fd6",
+    "001/target.wav": "254ddbc533fac44c6a0f9752f3056486a170f4e1847ccb0d4c53a05b5dbd4b00",
+    "001/whole.wav": "79c8b8b45dd46534e1e720b7274df24cb6efd446428c4e5fc92c90dcfdfb1c0c",
+    "002/bfxr.wav": "b5602bd8d8bd4c65ebecdf48c8ad3f069391c654abde06470b856b651a362eb7",
+    "002/events.wav": "b89dcf786d3d3ca449cf75bc603eae0c16138761728430579a2689a056536f54",
+    "002/target.wav": "d807133d969b6410bad5ea0826e52eb2a4d7d2e37d8f12e3ca97770058e195f4",
+    "002/whole.wav": "3fda424e1fb2073199c9356a25e66e30705c3b3fcf37779b63baba2e3971ef09",
+    "003/bfxr.wav": "158f76c64dd6455a05cc541333e759059daa191963d8810a2f0a8f1a44e5b801",
+    "003/events.wav": "c50e87dcda000d732111451c125ed329053af078642d08fa2228cf84fd828f36",
+    "003/target.wav": "11f85d929fdda717564ea30a7386eb89d0c2ec6cdd3c39fd80942b1e57fd17c1",
+    "003/whole.wav": "3d7e5e6af84afb1ec50f73f308cbc6621760a372cb344f8249ff99c82bc2c120",
+    "004/bfxr.wav": "b5892260728d68625d604137fff2f91ece2e83c9357059d28def96c622968458",
+    "004/events.wav": "c78b01c848e8cdd9f479ea4c8e73bfaac001952f03fd07e67b9775c14bf1c1a0",
+    "004/target.wav": "3a13530042e04a88a412e94d5cf4b81d67b4765b617744e34173d833e4e82ea7",
+    "004/whole.wav": "65bf6f709aaa159276ade1a9d39204c363dfd661ced8a72d84a69522bf474095",
+    "005/bfxr.wav": "eac2ce6df7445d4482da868a26e6add0e809b9f9e36618f1ebe4a2f79885dfe1",
+    "005/target.wav": "431164dabc18632a193eb083e8da4b81c981084de610d04a64e8b51fd111a68d",
+    "005/whole.wav": "06059c8fa12918f8bb09cda8e9ea0b6efd7f6063e71cfe9fb8a2f1427506e40c",
+    "006/bfxr.wav": "451f3b6d6ab12e5f2340ba3efeb2c788523dacaa1c2e27ba1af2eb0d321d0845",
+    "006/events.wav": "b101f9e5ddac551dd12a8391e538b28885b266a9c26dde2c4a0a15e51a12cce0",
+    "006/target.wav": "8cd4723b32c019554a01ceff23a2be5a38c1dd85c00002f45edef67e76975e03",
+    "006/whole.wav": "9c31c82e4029ffe50e563f464f1b22a6d9051b752a663cda4f87164f0547c9b4"
+  },
+  "uiCodeHashes": {
+    "quick_choice.js": "0bb2e27258fa918053f77e737b45200eb9389ec90fd0e185e71ef85bef4f911e",
+    "coverage_feedback.js": "db4cd83adfa7f788378ac0b0941f473376a730d4c55133f6d797250eeeee1d61",
+    "coverage_feedback.py": "50b9b03368addb2729f1689a208070347544f4f62150158bbcd08f4360b73b75",
+    "quick_audio_support.js": "b315a6cf88a76e287443238a750e9de9ac39bfc18464451d9e167cbc7354d45a",
+    "quick_listening.html": "167c746f5ec3f77802b799cd1659dd85c8d0fe599ffc365b4376cf4fc2777cd4",
+    "quick_listening.css": "833a39c37a9140b9e995d693dcd648266204cc022107b2c398c32468d231f7a7",
+    "quick_mismatch.js": "177bd0dd544d3bbc058b25f0ef2357b18723e9884449626a5e3a1423d9d82a2f",
+    "quick_mismatch.css": "81a2bc1a435c3a6afe87a9e7ff27c86b5b7d398053ed90dd7f5108bd57b211f0",
+    "quick_listening_diagnostic.js": "8a3b3d082f9653e27c17b7f7c989ddbf79592fd847e536d2745f72a9f5d71b41"
+  }
+}
