@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All twenty-four feedback archives,
+do not establish general success on real recordings. All twenty-five feedback archives,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
@@ -205,6 +205,28 @@ movement/rhythm, texture/timbre, attack/decay, several things and unsure choices
 are stored as scoped notes identifying exact candidate IDs. Replay remains
 available; S skips the question. Undo restores the earlier note and judgment.
 Existing published controllers and feedback schemas remain unchanged.
+
+The [completed fresh human review](evaluations/fresh-gesture-v1-quick-01-human-review.json)
+has **three very-close, four similar and one least-bad** choices. Shared Pluckr's
+bell is an external success; the very-close water-jump and collect are original
+Bfxr with known real-training overlap. The collect's `soft` selection label does
+not make it a newer expert. All five mismatch notes are preserved with exact
+candidate scope. Twenty-three candidates were heard, yielding 15 strict pairs;
+preference/legacy agree on 8, soft on 6. No inverse checkpoint changed in this
+round and no global metric improvement follows from these choices.
+
+The [seven controlled follow-ups](runs/control-diagnosis-v1-listening/index.html)
+keep each exact chosen clip and vary one native control family. Two pitch-noted
+sounds test frequency-related controls separately from filter/noise colour;
+carpet and laser test texture controls. The previously very-close Pluckr bell
+is included as an agreement control. All variants are predetermined and shown,
+not selected by score; no waveform pitch shifting or time stretching is used.
+Some controls couple multiple audible cues, so these are interventions rather
+than pure perceptual axes. Five external development references appear in seven
+trials; repeated references test different adjustments. See the
+[protocol](evaluations/control-diagnosis-v1-protocol.json) and
+[native replay/score audit](evaluations/control-diagnosis-v1-evaluation.json).
+
 
 Reproduction commands, from the repository root with `PYTHONPATH=tools` and the
 existing Torch environment, are `python -m neural_invert.pair_data bank`,

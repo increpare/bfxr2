@@ -1,0 +1,2352 @@
+{
+  "complete": true,
+  "experimentId": "f8bf71af72b842302c3258cc4d2366a98dcec140845ca12af0d7ed6677aaa3f2",
+  "protocolSha256": "4f0dc27331870aba28bb2e3961582832141cd3d6a8316180ccfce5c2acb41203",
+  "archiveManifestSha256": "eab464417c24755a00029c14625a192a2f03eee2d151185a8316ffc871c3b3f9",
+  "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+  "bfxrBackend": {
+    "command": [
+      "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+    ],
+    "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+  },
+  "rows": [
+    {
+      "source": {
+        "name": "footstep/footstep08.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep08.ogg",
+        "sha256": "668f14dc1254d0d0f33025e9c7dbcdf2c2f00462ed0e07fb8f099c1d711c1337",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "folder": "001",
+      "axis": "pitch",
+      "parentChoice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "c1675785f00bd215aee49635582c54d49f25bf4ebde30dd69b3ec00ce22692b7",
+          "85a539cc3ae26a975893c707a8fe52edfbcc950910a1f2b6eee0d36e28f40887",
+          "e6162dc792df671aea083aab56b09c12d6c5c2f58690626c110f75a2b1e28d48"
+        ],
+        "auditionedCandidateIds": [
+          "c1675785f00bd215aee49635582c54d49f25bf4ebde30dd69b3ec00ce22692b7",
+          "85a539cc3ae26a975893c707a8fe52edfbcc950910a1f2b6eee0d36e28f40887",
+          "e6162dc792df671aea083aab56b09c12d6c5c2f58690626c110f75a2b1e28d48"
+        ],
+        "preferredCandidateIds": [
+          "e6162dc792df671aea083aab56b09c12d6c5c2f58690626c110f75a2b1e28d48"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "e6162dc792df671aea083aab56b09c12d6c5c2f58690626c110f75a2b1e28d48"
+          ]
+        }
+      },
+      "parentNote": "[quick-mismatch-v1] chosen [\"e6162dc792df671aea083aab56b09c12d6c5c2f58690626c110f75a2b1e28d48\"]: pitch",
+      "parentCandidateId": "e6162dc792df671aea083aab56b09c12d6c5c2f58690626c110f75a2b1e28d48",
+      "referencePitch": {
+        "activeFrames": 18,
+        "voicedFrames": 2,
+        "voicedFraction": 0.1111111111111111,
+        "medianHz": null,
+        "reliable": false,
+        "contourHz": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          4200.00048828125,
+          null,
+          4200.00048828125,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "contourTime": [
+          0.03125,
+          0.09375,
+          0.15625,
+          0.21875,
+          0.28125,
+          0.34375,
+          0.40625,
+          0.46875,
+          0.53125,
+          0.59375,
+          0.65625,
+          0.71875,
+          0.78125,
+          0.84375,
+          0.90625,
+          0.96875
+        ],
+        "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+        "startToEndSemitones": null,
+        "direction": null,
+        "excursionSemitones": null
+      },
+      "candidates": [
+        {
+          "variant": 0,
+          "scores": {
+            "softPeriodicity": 2.9167972990800743,
+            "preferenceNeuralV2": 0.49151045411740707,
+            "auditionMatchObjective": 1.8142687269975546
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "waveType": 8,
+            "duration": 0.05,
+            "pitch": {
+              "start": 0.12596538429882922,
+              "end": 0.21846480667591095,
+              "curve": "Triangle"
+            },
+            "tone": {
+              "start": 0.6510555492339974,
+              "end": 0.04640032417779868,
+              "curve": "Ease Out"
+            },
+            "vibrato": {
+              "start": 0.3356138315664475,
+              "end": 0,
+              "curve": "Ease Out"
+            },
+            "level": {
+              "start": 0.769704587962076,
+              "end": 0.4949865083685779,
+              "curve": "Smooth"
+            },
+            "attack": 0.07144233059226392,
+            "release": 0.5000818272838272,
+            "resonance": 0,
+            "echo": 0.21616261485593058,
+            "waveTo": 7,
+            "morph": {
+              "start": 0.6212388277053833,
+              "end": 0.71968600438147,
+              "curve": "Smooth"
+            }
+          },
+          "pitch": {
+            "activeFrames": 22,
+            "voicedFrames": 1,
+            "voicedFraction": 0.045454545454545456,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              4200.00048828125,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-1.wav",
+          "wavSha256": "76d345842c71a98a2ae1ea167db716ab6985187ee71f4038bb21b28991693eeb",
+          "exactNativeReplay": true
+        },
+        {
+          "variant": 1,
+          "scores": {
+            "softPeriodicity": 2.5641440265786435,
+            "preferenceNeuralV2": 0.4825035059775674,
+            "auditionMatchObjective": 1.454908908745824
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "waveType": 8,
+            "duration": 0.05,
+            "pitch": {
+              "start": 0.0545368128702578,
+              "end": 0.14703623524733953,
+              "curve": "Triangle"
+            },
+            "tone": {
+              "start": 0.6510555492339974,
+              "end": 0.04640032417779868,
+              "curve": "Ease Out"
+            },
+            "vibrato": {
+              "start": 0.3356138315664475,
+              "end": 0,
+              "curve": "Ease Out"
+            },
+            "level": {
+              "start": 0.769704587962076,
+              "end": 0.4949865083685779,
+              "curve": "Smooth"
+            },
+            "attack": 0.07144233059226392,
+            "release": 0.5000818272838272,
+            "resonance": 0,
+            "echo": 0.21616261485593058,
+            "waveTo": 7,
+            "morph": {
+              "start": 0.6212388277053833,
+              "end": 0.71968600438147,
+              "curve": "Smooth"
+            }
+          },
+          "pitch": {
+            "activeFrames": 23,
+            "voicedFrames": 1,
+            "voicedFraction": 0.043478260869565216,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              4200.00048828125,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-2.wav",
+          "wavSha256": "e5b2bf3be5dbfce51625851428e1643e49cd038b7469f93d596683400e0f8b73",
+          "exactNativeReplay": true
+        },
+        {
+          "variant": 2,
+          "scores": {
+            "softPeriodicity": 3.6022907509685105,
+            "preferenceNeuralV2": 0.6137832428648303,
+            "auditionMatchObjective": 1.929548274902557
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "waveType": 8,
+            "duration": 0.05,
+            "pitch": {
+              "start": 0.19739395572740065,
+              "end": 0.28989337810448235,
+              "curve": "Triangle"
+            },
+            "tone": {
+              "start": 0.6510555492339974,
+              "end": 0.04640032417779868,
+              "curve": "Ease Out"
+            },
+            "vibrato": {
+              "start": 0.3356138315664475,
+              "end": 0,
+              "curve": "Ease Out"
+            },
+            "level": {
+              "start": 0.769704587962076,
+              "end": 0.4949865083685779,
+              "curve": "Smooth"
+            },
+            "attack": 0.07144233059226392,
+            "release": 0.5000818272838272,
+            "resonance": 0,
+            "echo": 0.21616261485593058,
+            "waveTo": 7,
+            "morph": {
+              "start": 0.6212388277053833,
+              "end": 0.71968600438147,
+              "curve": "Smooth"
+            }
+          },
+          "pitch": {
+            "activeFrames": 23,
+            "voicedFrames": 0,
+            "voicedFraction": 0.0,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-3.wav",
+          "wavSha256": "f73dce2128f1ed061a6bbbed3a08c96f9b11e383c0826d61779e66d6a257bff4",
+          "exactNativeReplay": true
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "footstep/footstep08.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep08.ogg",
+        "sha256": "668f14dc1254d0d0f33025e9c7dbcdf2c2f00462ed0e07fb8f099c1d711c1337",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "folder": "002",
+      "axis": "tone",
+      "parentChoice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "c1675785f00bd215aee49635582c54d49f25bf4ebde30dd69b3ec00ce22692b7",
+          "85a539cc3ae26a975893c707a8fe52edfbcc950910a1f2b6eee0d36e28f40887",
+          "e6162dc792df671aea083aab56b09c12d6c5c2f58690626c110f75a2b1e28d48"
+        ],
+        "auditionedCandidateIds": [
+          "c1675785f00bd215aee49635582c54d49f25bf4ebde30dd69b3ec00ce22692b7",
+          "85a539cc3ae26a975893c707a8fe52edfbcc950910a1f2b6eee0d36e28f40887",
+          "e6162dc792df671aea083aab56b09c12d6c5c2f58690626c110f75a2b1e28d48"
+        ],
+        "preferredCandidateIds": [
+          "e6162dc792df671aea083aab56b09c12d6c5c2f58690626c110f75a2b1e28d48"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "e6162dc792df671aea083aab56b09c12d6c5c2f58690626c110f75a2b1e28d48"
+          ]
+        }
+      },
+      "parentNote": "[quick-mismatch-v1] chosen [\"e6162dc792df671aea083aab56b09c12d6c5c2f58690626c110f75a2b1e28d48\"]: pitch",
+      "parentCandidateId": "e6162dc792df671aea083aab56b09c12d6c5c2f58690626c110f75a2b1e28d48",
+      "referencePitch": {
+        "activeFrames": 18,
+        "voicedFrames": 2,
+        "voicedFraction": 0.1111111111111111,
+        "medianHz": null,
+        "reliable": false,
+        "contourHz": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          4200.00048828125,
+          null,
+          4200.00048828125,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "contourTime": [
+          0.03125,
+          0.09375,
+          0.15625,
+          0.21875,
+          0.28125,
+          0.34375,
+          0.40625,
+          0.46875,
+          0.53125,
+          0.59375,
+          0.65625,
+          0.71875,
+          0.78125,
+          0.84375,
+          0.90625,
+          0.96875
+        ],
+        "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+        "startToEndSemitones": null,
+        "direction": null,
+        "excursionSemitones": null
+      },
+      "candidates": [
+        {
+          "variant": 0,
+          "scores": {
+            "softPeriodicity": 2.9167972990800743,
+            "preferenceNeuralV2": 0.49151045411740707,
+            "auditionMatchObjective": 1.8142687269975546
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "waveType": 8,
+            "duration": 0.05,
+            "pitch": {
+              "start": 0.12596538429882922,
+              "end": 0.21846480667591095,
+              "curve": "Triangle"
+            },
+            "tone": {
+              "start": 0.6510555492339974,
+              "end": 0.04640032417779868,
+              "curve": "Ease Out"
+            },
+            "vibrato": {
+              "start": 0.3356138315664475,
+              "end": 0,
+              "curve": "Ease Out"
+            },
+            "level": {
+              "start": 0.769704587962076,
+              "end": 0.4949865083685779,
+              "curve": "Smooth"
+            },
+            "attack": 0.07144233059226392,
+            "release": 0.5000818272838272,
+            "resonance": 0,
+            "echo": 0.21616261485593058,
+            "waveTo": 7,
+            "morph": {
+              "start": 0.6212388277053833,
+              "end": 0.71968600438147,
+              "curve": "Smooth"
+            }
+          },
+          "pitch": {
+            "activeFrames": 22,
+            "voicedFrames": 1,
+            "voicedFraction": 0.045454545454545456,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              4200.00048828125,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-1.wav",
+          "wavSha256": "76d345842c71a98a2ae1ea167db716ab6985187ee71f4038bb21b28991693eeb",
+          "exactNativeReplay": true
+        },
+        {
+          "variant": 1,
+          "scores": {
+            "softPeriodicity": 2.92582389462971,
+            "preferenceNeuralV2": 0.5012736758003378,
+            "auditionMatchObjective": 1.8186089073517258
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "waveType": 8,
+            "duration": 0.05,
+            "pitch": {
+              "start": 0.12596538429882922,
+              "end": 0.21846480667591095,
+              "curve": "Triangle"
+            },
+            "tone": {
+              "start": 0.6169115373343769,
+              "end": 0.012256312278178146,
+              "curve": "Ease Out"
+            },
+            "vibrato": {
+              "start": 0.3356138315664475,
+              "end": 0,
+              "curve": "Ease Out"
+            },
+            "level": {
+              "start": 0.769704587962076,
+              "end": 0.4949865083685779,
+              "curve": "Smooth"
+            },
+            "attack": 0.07144233059226392,
+            "release": 0.5000818272838272,
+            "resonance": 0,
+            "echo": 0.21616261485593058,
+            "waveTo": 7,
+            "morph": {
+              "start": 0.6212388277053833,
+              "end": 0.71968600438147,
+              "curve": "Smooth"
+            }
+          },
+          "pitch": {
+            "activeFrames": 22,
+            "voicedFrames": 1,
+            "voicedFraction": 0.045454545454545456,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              4200.00048828125,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-2.wav",
+          "wavSha256": "5e3f95bc491657c750b9f313594e7170221f195a032ca8e45ca6dbc7940043f3",
+          "exactNativeReplay": true
+        },
+        {
+          "variant": 2,
+          "scores": {
+            "softPeriodicity": 2.990915143879577,
+            "preferenceNeuralV2": 0.5078327062907642,
+            "auditionMatchObjective": 1.8706582132899012
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "waveType": 8,
+            "duration": 0.05,
+            "pitch": {
+              "start": 0.12596538429882922,
+              "end": 0.21846480667591095,
+              "curve": "Triangle"
+            },
+            "tone": {
+              "start": 0.685199561133618,
+              "end": 0.0805443360774192,
+              "curve": "Ease Out"
+            },
+            "vibrato": {
+              "start": 0.3356138315664475,
+              "end": 0,
+              "curve": "Ease Out"
+            },
+            "level": {
+              "start": 0.769704587962076,
+              "end": 0.4949865083685779,
+              "curve": "Smooth"
+            },
+            "attack": 0.07144233059226392,
+            "release": 0.5000818272838272,
+            "resonance": 0,
+            "echo": 0.21616261485593058,
+            "waveTo": 7,
+            "morph": {
+              "start": 0.6212388277053833,
+              "end": 0.71968600438147,
+              "curve": "Smooth"
+            }
+          },
+          "pitch": {
+            "activeFrames": 22,
+            "voicedFrames": 1,
+            "voicedFraction": 0.045454545454545456,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              4200.00048828125,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-3.wav",
+          "wavSha256": "a53d78a9a855a0bb3ed84540dcebfc4bcdd73c7e664ae96e48146589a0796cd9",
+          "exactNativeReplay": true
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "hit/OBJLug_Case_Closed06_InMotionAudio_InstrumentCase.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/OBJLug_Case_Closed06_InMotionAudio_InstrumentCase.wav",
+        "sha256": "9d56118b0a4f351b33e9761b5f72873da78ad1c030f8a91a437ae1b443887208",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "folder": "003",
+      "axis": "voltage",
+      "parentChoice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "07bcb4d1dd68568d7be6214365cdca20825456cd6da93fb6c51aa6f1fbd34fa7",
+          "5addc0ab6e570126fe15df94756f9414889d0bbe80910d53439b1ca10f39c09b",
+          "4cd658078b321f65442a32d8749a292b260c79b5b84712a862b3635d6b981246"
+        ],
+        "auditionedCandidateIds": [
+          "07bcb4d1dd68568d7be6214365cdca20825456cd6da93fb6c51aa6f1fbd34fa7",
+          "5addc0ab6e570126fe15df94756f9414889d0bbe80910d53439b1ca10f39c09b"
+        ],
+        "preferredCandidateIds": [
+          "07bcb4d1dd68568d7be6214365cdca20825456cd6da93fb6c51aa6f1fbd34fa7"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "07bcb4d1dd68568d7be6214365cdca20825456cd6da93fb6c51aa6f1fbd34fa7"
+          ]
+        }
+      },
+      "parentNote": "[quick-mismatch-v1] chosen [\"07bcb4d1dd68568d7be6214365cdca20825456cd6da93fb6c51aa6f1fbd34fa7\"]: pitch",
+      "parentCandidateId": "07bcb4d1dd68568d7be6214365cdca20825456cd6da93fb6c51aa6f1fbd34fa7",
+      "referencePitch": {
+        "activeFrames": 25,
+        "voicedFrames": 3,
+        "voicedFraction": 0.12,
+        "medianHz": null,
+        "reliable": false,
+        "contourHz": [
+          null,
+          null,
+          871.283447265625,
+          3045.1611328125,
+          null,
+          null,
+          null,
+          4200.00048828125,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "contourTime": [
+          0.03125,
+          0.09375,
+          0.15625,
+          0.21875,
+          0.28125,
+          0.34375,
+          0.40625,
+          0.46875,
+          0.53125,
+          0.59375,
+          0.65625,
+          0.71875,
+          0.78125,
+          0.84375,
+          0.90625,
+          0.96875
+        ],
+        "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+        "startToEndSemitones": null,
+        "direction": null,
+        "excursionSemitones": null
+      },
+      "candidates": [
+        {
+          "variant": 0,
+          "scores": {
+            "softPeriodicity": 6.314668480876953,
+            "preferenceNeuralV2": 0.7540389319420819,
+            "auditionMatchObjective": 18.597009753811577
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "seed": 0.1918479052837938,
+            "duration": 0.3118554078424781,
+            "voltage": 0.2969790417323465,
+            "arcs": 8,
+            "branching": 0.47358834052409693,
+            "crackle": 0.029958148657136918,
+            "hum": 0.045082695718994384,
+            "spark": 0.1330319793704637,
+            "spread": 0,
+            "decay": 0.04599258303642273
+          },
+          "pitch": {
+            "activeFrames": 23,
+            "voicedFrames": 3,
+            "voicedFraction": 0.13043478260869565,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              null,
+              685.6867065429688,
+              1139.796875,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-1.wav",
+          "wavSha256": "44824873217e0bd7754b199998f907365de4a8b8b9223d6bf049f78a0a34b321",
+          "exactNativeReplay": true
+        },
+        {
+          "variant": 1,
+          "scores": {
+            "softPeriodicity": 6.138396936825457,
+            "preferenceNeuralV2": 0.9259380668472649,
+            "auditionMatchObjective": 4.62984041018527
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "seed": 0.1918479052837938,
+            "duration": 0.3118554078424781,
+            "voltage": 0.14848952086617326,
+            "arcs": 8,
+            "branching": 0.47358834052409693,
+            "crackle": 0.029958148657136918,
+            "hum": 0.045082695718994384,
+            "spark": 0.1330319793704637,
+            "spread": 0,
+            "decay": 0.04599258303642273
+          },
+          "pitch": {
+            "activeFrames": 23,
+            "voicedFrames": 2,
+            "voicedFraction": 0.08695652173913043,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              440.1195373535156,
+              440.1195373535156,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-2.wav",
+          "wavSha256": "2ac346ba76fea26aca52cfb3de5605db9aad796e8847e7d62e5274244eea6261",
+          "exactNativeReplay": true
+        },
+        {
+          "variant": 2,
+          "scores": {
+            "softPeriodicity": 6.5510328968064595,
+            "preferenceNeuralV2": 0.8011970952385497,
+            "auditionMatchObjective": 18.365449962292125
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "seed": 0.1918479052837938,
+            "duration": 0.3118554078424781,
+            "voltage": 0.44546856259851975,
+            "arcs": 8,
+            "branching": 0.47358834052409693,
+            "crackle": 0.029958148657136918,
+            "hum": 0.045082695718994384,
+            "spark": 0.1330319793704637,
+            "spread": 0,
+            "decay": 0.04599258303642273
+          },
+          "pitch": {
+            "activeFrames": 23,
+            "voicedFrames": 3,
+            "voicedFraction": 0.13043478260869565,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              null,
+              944.9856567382812,
+              1494.9151611328125,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-3.wav",
+          "wavSha256": "8a30ced857e5a8a093b14cca27483538d0d55d9f35a3b420fdd23b21a6180629",
+          "exactNativeReplay": true
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "hit/OBJLug_Case_Closed06_InMotionAudio_InstrumentCase.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/OBJLug_Case_Closed06_InMotionAudio_InstrumentCase.wav",
+        "sha256": "9d56118b0a4f351b33e9761b5f72873da78ad1c030f8a91a437ae1b443887208",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "folder": "004",
+      "axis": "spark",
+      "parentChoice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "07bcb4d1dd68568d7be6214365cdca20825456cd6da93fb6c51aa6f1fbd34fa7",
+          "5addc0ab6e570126fe15df94756f9414889d0bbe80910d53439b1ca10f39c09b",
+          "4cd658078b321f65442a32d8749a292b260c79b5b84712a862b3635d6b981246"
+        ],
+        "auditionedCandidateIds": [
+          "07bcb4d1dd68568d7be6214365cdca20825456cd6da93fb6c51aa6f1fbd34fa7",
+          "5addc0ab6e570126fe15df94756f9414889d0bbe80910d53439b1ca10f39c09b"
+        ],
+        "preferredCandidateIds": [
+          "07bcb4d1dd68568d7be6214365cdca20825456cd6da93fb6c51aa6f1fbd34fa7"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "07bcb4d1dd68568d7be6214365cdca20825456cd6da93fb6c51aa6f1fbd34fa7"
+          ]
+        }
+      },
+      "parentNote": "[quick-mismatch-v1] chosen [\"07bcb4d1dd68568d7be6214365cdca20825456cd6da93fb6c51aa6f1fbd34fa7\"]: pitch",
+      "parentCandidateId": "07bcb4d1dd68568d7be6214365cdca20825456cd6da93fb6c51aa6f1fbd34fa7",
+      "referencePitch": {
+        "activeFrames": 25,
+        "voicedFrames": 3,
+        "voicedFraction": 0.12,
+        "medianHz": null,
+        "reliable": false,
+        "contourHz": [
+          null,
+          null,
+          871.283447265625,
+          3045.1611328125,
+          null,
+          null,
+          null,
+          4200.00048828125,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "contourTime": [
+          0.03125,
+          0.09375,
+          0.15625,
+          0.21875,
+          0.28125,
+          0.34375,
+          0.40625,
+          0.46875,
+          0.53125,
+          0.59375,
+          0.65625,
+          0.71875,
+          0.78125,
+          0.84375,
+          0.90625,
+          0.96875
+        ],
+        "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+        "startToEndSemitones": null,
+        "direction": null,
+        "excursionSemitones": null
+      },
+      "candidates": [
+        {
+          "variant": 0,
+          "scores": {
+            "softPeriodicity": 6.314668480876953,
+            "preferenceNeuralV2": 0.7540389319420819,
+            "auditionMatchObjective": 18.597009753811577
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "seed": 0.1918479052837938,
+            "duration": 0.3118554078424781,
+            "voltage": 0.2969790417323465,
+            "arcs": 8,
+            "branching": 0.47358834052409693,
+            "crackle": 0.029958148657136918,
+            "hum": 0.045082695718994384,
+            "spark": 0.1330319793704637,
+            "spread": 0,
+            "decay": 0.04599258303642273
+          },
+          "pitch": {
+            "activeFrames": 23,
+            "voicedFrames": 3,
+            "voicedFraction": 0.13043478260869565,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              null,
+              685.6867065429688,
+              1139.796875,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-1.wav",
+          "wavSha256": "44824873217e0bd7754b199998f907365de4a8b8b9223d6bf049f78a0a34b321",
+          "exactNativeReplay": true
+        },
+        {
+          "variant": 1,
+          "scores": {
+            "softPeriodicity": 6.365234618984644,
+            "preferenceNeuralV2": 0.756696395265181,
+            "auditionMatchObjective": 18.545212037272584
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "seed": 0.1918479052837938,
+            "duration": 0.3118554078424781,
+            "voltage": 0.2969790417323465,
+            "arcs": 8,
+            "branching": 0.47358834052409693,
+            "crackle": 0.029958148657136918,
+            "hum": 0.045082695718994384,
+            "spark": 0.0,
+            "spread": 0,
+            "decay": 0.04599258303642273
+          },
+          "pitch": {
+            "activeFrames": 23,
+            "voicedFrames": 3,
+            "voicedFraction": 0.13043478260869565,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              null,
+              684.2084350585938,
+              1144.076904296875,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-2.wav",
+          "wavSha256": "949fe6cef8eedef1437a5c78db97d8ba819e5bdaab0c618c6a0abc5c70dd8239",
+          "exactNativeReplay": true
+        },
+        {
+          "variant": 2,
+          "scores": {
+            "softPeriodicity": 6.104269181504857,
+            "preferenceNeuralV2": 0.7463883906442639,
+            "auditionMatchObjective": 8.554102143115982
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "seed": 0.1918479052837938,
+            "duration": 0.3118554078424781,
+            "voltage": 0.2969790417323465,
+            "arcs": 8,
+            "branching": 0.47358834052409693,
+            "crackle": 0.029958148657136918,
+            "hum": 0.045082695718994384,
+            "spark": 0.5,
+            "spread": 0,
+            "decay": 0.04599258303642273
+          },
+          "pitch": {
+            "activeFrames": 23,
+            "voicedFrames": 2,
+            "voicedFraction": 0.08695652173913043,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              null,
+              688.3480224609375,
+              2236.0498046875,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-3.wav",
+          "wavSha256": "9836a73dd30b03894fae6faba463450974f34ad5fb6c94891ad577c112b2c197",
+          "exactNativeReplay": true
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "footstep/footstep_carpet_000.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep_carpet_000.ogg",
+        "sha256": "b9524658b52a99a20590f8feefc103088637fd13ea8ec35811aee785e1f2f330",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "folder": "005",
+      "axis": "wetness",
+      "parentChoice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "e69ecac617d392daf2df5f44bce1137617e46f0513c82d59f7705924bea8339f",
+          "e20f19cb1505e4d519b1de06e1a58bd68b4f8736787f7c16c4001576cae73534",
+          "030c783c4a8be27c361c9f15dc965a7c00d61ee50159533f8eea2ef9e908d500"
+        ],
+        "auditionedCandidateIds": [
+          "e69ecac617d392daf2df5f44bce1137617e46f0513c82d59f7705924bea8339f",
+          "e20f19cb1505e4d519b1de06e1a58bd68b4f8736787f7c16c4001576cae73534",
+          "030c783c4a8be27c361c9f15dc965a7c00d61ee50159533f8eea2ef9e908d500"
+        ],
+        "preferredCandidateIds": [
+          "030c783c4a8be27c361c9f15dc965a7c00d61ee50159533f8eea2ef9e908d500"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "030c783c4a8be27c361c9f15dc965a7c00d61ee50159533f8eea2ef9e908d500"
+          ]
+        }
+      },
+      "parentNote": "[quick-mismatch-v1] chosen [\"030c783c4a8be27c361c9f15dc965a7c00d61ee50159533f8eea2ef9e908d500\"]: texture/timbre",
+      "parentCandidateId": "030c783c4a8be27c361c9f15dc965a7c00d61ee50159533f8eea2ef9e908d500",
+      "referencePitch": {
+        "activeFrames": 9,
+        "voicedFrames": 3,
+        "voicedFraction": 0.3333333333333333,
+        "medianHz": null,
+        "reliable": false,
+        "contourHz": [
+          null,
+          null,
+          4200.00048828125,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1428.5333251953125,
+          null,
+          1428.5333251953125,
+          null
+        ],
+        "contourTime": [
+          0.03125,
+          0.09375,
+          0.15625,
+          0.21875,
+          0.28125,
+          0.34375,
+          0.40625,
+          0.46875,
+          0.53125,
+          0.59375,
+          0.65625,
+          0.71875,
+          0.78125,
+          0.84375,
+          0.90625,
+          0.96875
+        ],
+        "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+        "startToEndSemitones": null,
+        "direction": null,
+        "excursionSemitones": null
+      },
+      "candidates": [
+        {
+          "variant": 0,
+          "scores": {
+            "softPeriodicity": 4.2112199744125745,
+            "preferenceNeuralV2": 0.6226101071797021,
+            "auditionMatchObjective": 8.333545742485974
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "seed": 0.17582633765414357,
+            "texture": 3,
+            "viscosity": 0,
+            "stretch": 0.0009245736291873778,
+            "pressure": 0.352950564723809,
+            "wetness": 0.976544183179869,
+            "bubbleSize": 0.6016215582056673,
+            "duration": 0.1
+          },
+          "pitch": {
+            "activeFrames": 10,
+            "voicedFrames": 4,
+            "voicedFraction": 0.4,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              3109.123291015625,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              2778.339599609375,
+              null,
+              2778.339599609375,
+              2725.007568359375
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-1.wav",
+          "wavSha256": "5f2875530301e9ee1198b81ca0cdd0d9aa51e4fe478b16b5f280aaf9499c5a26",
+          "exactNativeReplay": true
+        },
+        {
+          "variant": 1,
+          "scores": {
+            "softPeriodicity": 4.561855672769719,
+            "preferenceNeuralV2": 0.6520610329437528,
+            "auditionMatchObjective": 8.85345094300605
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "seed": 0.17582633765414357,
+            "texture": 3,
+            "viscosity": 0,
+            "stretch": 0.0009245736291873778,
+            "pressure": 0.352950564723809,
+            "wetness": 0.35,
+            "bubbleSize": 0.6016215582056673,
+            "duration": 0.1
+          },
+          "pitch": {
+            "activeFrames": 10,
+            "voicedFrames": 4,
+            "voicedFraction": 0.4,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              3100.720458984375,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              3312.902587890625,
+              null,
+              3312.902587890625,
+              2672.14453125
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-2.wav",
+          "wavSha256": "85a5352f82f80fef475da5aa4416f58d611f8a364b019f39ae53cfce8645dfbb",
+          "exactNativeReplay": true
+        },
+        {
+          "variant": 2,
+          "scores": {
+            "softPeriodicity": 4.353978533340288,
+            "preferenceNeuralV2": 0.634860930028542,
+            "auditionMatchObjective": 8.458053418788108
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "seed": 0.17582633765414357,
+            "texture": 3,
+            "viscosity": 0,
+            "stretch": 0.0009245736291873778,
+            "pressure": 0.352950564723809,
+            "wetness": 0.65,
+            "bubbleSize": 0.6016215582056673,
+            "duration": 0.1
+          },
+          "pitch": {
+            "activeFrames": 10,
+            "voicedFrames": 4,
+            "voicedFraction": 0.4,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              3104.73828125,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              2767.0673828125,
+              null,
+              2767.0673828125,
+              2716.26904296875
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-3.wav",
+          "wavSha256": "7b16a1348eebde45a01030c8e4dd4cd0491e9dcce3229ded516ef2e2929dbe18",
+          "exactNativeReplay": true
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "laser/Fox - Laser Gun.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/Fox - Laser Gun.wav",
+        "sha256": "557f2d414f057388c3ad8f511061bce426934f8f25c10c3ed1f2634197c8b81d",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "folder": "006",
+      "axis": "bitCrush",
+      "parentChoice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "60cb5ed98a8f292e41d757f9adea6e9aa3c7eca8270741d9ea0dd40276a17685",
+          "aead3fcf7289ddb32a945a1abe42a9ecd15025ba48dfb34d7c81b9dda1f1be9b",
+          "5f7896739fba3b2270a51c636aad8cc801f0e17680ccfbcf0c08f0bfa2b6e114"
+        ],
+        "auditionedCandidateIds": [
+          "60cb5ed98a8f292e41d757f9adea6e9aa3c7eca8270741d9ea0dd40276a17685",
+          "aead3fcf7289ddb32a945a1abe42a9ecd15025ba48dfb34d7c81b9dda1f1be9b",
+          "5f7896739fba3b2270a51c636aad8cc801f0e17680ccfbcf0c08f0bfa2b6e114"
+        ],
+        "preferredCandidateIds": [
+          "aead3fcf7289ddb32a945a1abe42a9ecd15025ba48dfb34d7c81b9dda1f1be9b"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "aead3fcf7289ddb32a945a1abe42a9ecd15025ba48dfb34d7c81b9dda1f1be9b"
+          ]
+        }
+      },
+      "parentNote": "[quick-mismatch-v1] chosen [\"aead3fcf7289ddb32a945a1abe42a9ecd15025ba48dfb34d7c81b9dda1f1be9b\"]: texture/timbre",
+      "parentCandidateId": "aead3fcf7289ddb32a945a1abe42a9ecd15025ba48dfb34d7c81b9dda1f1be9b",
+      "referencePitch": {
+        "activeFrames": 29,
+        "voicedFrames": 23,
+        "voicedFraction": 0.7931034482758621,
+        "medianHz": 861.7931518554688,
+        "reliable": true,
+        "contourHz": [
+          null,
+          1397.3389892578125,
+          1991.6905517578125,
+          null,
+          1131.162841796875,
+          1058.005615234375,
+          959.95703125,
+          894.9723510742188,
+          830.7413330078125,
+          594.864501953125,
+          808.2495727539062,
+          null,
+          798.3189697265625,
+          782.3298950195312,
+          764.646728515625,
+          757.8052978515625
+        ],
+        "contourTime": [
+          0.03125,
+          0.09375,
+          0.15625,
+          0.21875,
+          0.28125,
+          0.34375,
+          0.40625,
+          0.46875,
+          0.53125,
+          0.59375,
+          0.65625,
+          0.71875,
+          0.78125,
+          0.84375,
+          0.90625,
+          0.96875
+        ],
+        "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+        "startToEndSemitones": -13.505670142430972,
+        "direction": -1,
+        "excursionSemitones": 20.920326233676036
+      },
+      "candidates": [
+        {
+          "variant": 0,
+          "scores": {
+            "softPeriodicity": 2.9886313721340017,
+            "preferenceNeuralV2": 1.8457975309058572,
+            "auditionMatchObjective": 2.7858434538705334
+          },
+          "params": {
+            "attackTime": 0.0008061545283185033,
+            "sustainTime": 0.0002703466419175333,
+            "sustainPunch": 0.5938909000832144,
+            "decayTime": 0.4320219067527299,
+            "compressionAmount": 0.08214550661803219,
+            "frequency_start": 0.4329977533066152,
+            "frequency_slide": 0.01509351444010043,
+            "frequency_acceleration": 0.09340300854737604,
+            "min_frequency_relative_to_starting_frequency": 0.054974868991950206,
+            "vibratoDepth": 0.3122172577362203,
+            "vibratoSpeed": 0.9294231946286116,
+            "pitch_jump_repeat_speed": 0.1011861308858894,
+            "pitch_jump_amount": 0.14181187032662712,
+            "pitch_jump_onset_percent": 0.4673226041181645,
+            "pitch_jump_2_amount": 0.1967022226087929,
+            "pitch_jump_onset2_percent": 0.6802766167148754,
+            "overtones": 0.25545361714685055,
+            "overtoneFalloff": 0.35527986260582217,
+            "squareDuty": 0.0,
+            "dutySweep": 0.0,
+            "repeatSpeed": 0.005077010629757434,
+            "flangerOffset": -0.9893302885846583,
+            "flangerSweep": -0.7037932891169791,
+            "lpFilterCutoff": 0.999050240106234,
+            "lpFilterCutoffSweep": -0.46712322947762297,
+            "lpFilterResonance": 0.021937521331995325,
+            "hpFilterCutoff": 0.4865073552101971,
+            "hpFilterCutoffSweep": 0.3545966382333101,
+            "bitCrush": 0.2919126522777664,
+            "bitCrushSweep": 0.029604349434216637,
+            "waveType": 5,
+            "masterVolume": 0.5
+          },
+          "pitch": {
+            "activeFrames": 33,
+            "voicedFrames": 1,
+            "voicedFraction": 0.030303030303030304,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              331.9268493652344
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-1.wav",
+          "wavSha256": "031c1d62153270a27f56b8cdaa774131293ea9312f2b675369c0b83f24e0a8bf",
+          "exactNativeReplay": true
+        },
+        {
+          "variant": 1,
+          "scores": {
+            "softPeriodicity": 3.0161641394672074,
+            "preferenceNeuralV2": 1.7357109084835856,
+            "auditionMatchObjective": 2.804764750742847
+          },
+          "params": {
+            "attackTime": 0.0008061545283185033,
+            "sustainTime": 0.0002703466419175333,
+            "sustainPunch": 0.5938909000832144,
+            "decayTime": 0.4320219067527299,
+            "compressionAmount": 0.08214550661803219,
+            "frequency_start": 0.4329977533066152,
+            "frequency_slide": 0.01509351444010043,
+            "frequency_acceleration": 0.09340300854737604,
+            "min_frequency_relative_to_starting_frequency": 0.054974868991950206,
+            "vibratoDepth": 0.3122172577362203,
+            "vibratoSpeed": 0.9294231946286116,
+            "pitch_jump_repeat_speed": 0.1011861308858894,
+            "pitch_jump_amount": 0.14181187032662712,
+            "pitch_jump_onset_percent": 0.4673226041181645,
+            "pitch_jump_2_amount": 0.1967022226087929,
+            "pitch_jump_onset2_percent": 0.6802766167148754,
+            "overtones": 0.25545361714685055,
+            "overtoneFalloff": 0.35527986260582217,
+            "squareDuty": 0.0,
+            "dutySweep": 0.0,
+            "repeatSpeed": 0.005077010629757434,
+            "flangerOffset": -0.9893302885846583,
+            "flangerSweep": -0.7037932891169791,
+            "lpFilterCutoff": 0.999050240106234,
+            "lpFilterCutoffSweep": -0.46712322947762297,
+            "lpFilterResonance": 0.021937521331995325,
+            "hpFilterCutoff": 0.4865073552101971,
+            "hpFilterCutoffSweep": 0.3545966382333101,
+            "bitCrush": 0.0,
+            "bitCrushSweep": 0.029604349434216637,
+            "waveType": 5,
+            "masterVolume": 0.5
+          },
+          "pitch": {
+            "activeFrames": 33,
+            "voicedFrames": 0,
+            "voicedFraction": 0.0,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-2.wav",
+          "wavSha256": "37b13d3bccc449263a3a532487b1d5492e7d55fb918132c5c3199490e547b278",
+          "exactNativeReplay": true
+        },
+        {
+          "variant": 2,
+          "scores": {
+            "softPeriodicity": 3.279320331479296,
+            "preferenceNeuralV2": 2.42029662401913,
+            "auditionMatchObjective": 3.028237613106951
+          },
+          "params": {
+            "attackTime": 0.0008061545283185033,
+            "sustainTime": 0.0002703466419175333,
+            "sustainPunch": 0.5938909000832144,
+            "decayTime": 0.4320219067527299,
+            "compressionAmount": 0.08214550661803219,
+            "frequency_start": 0.4329977533066152,
+            "frequency_slide": 0.01509351444010043,
+            "frequency_acceleration": 0.09340300854737604,
+            "min_frequency_relative_to_starting_frequency": 0.054974868991950206,
+            "vibratoDepth": 0.3122172577362203,
+            "vibratoSpeed": 0.9294231946286116,
+            "pitch_jump_repeat_speed": 0.1011861308858894,
+            "pitch_jump_amount": 0.14181187032662712,
+            "pitch_jump_onset_percent": 0.4673226041181645,
+            "pitch_jump_2_amount": 0.1967022226087929,
+            "pitch_jump_onset2_percent": 0.6802766167148754,
+            "overtones": 0.25545361714685055,
+            "overtoneFalloff": 0.35527986260582217,
+            "squareDuty": 0.0,
+            "dutySweep": 0.0,
+            "repeatSpeed": 0.005077010629757434,
+            "flangerOffset": -0.9893302885846583,
+            "flangerSweep": -0.7037932891169791,
+            "lpFilterCutoff": 0.999050240106234,
+            "lpFilterCutoffSweep": -0.46712322947762297,
+            "lpFilterResonance": 0.021937521331995325,
+            "hpFilterCutoff": 0.4865073552101971,
+            "hpFilterCutoffSweep": 0.3545966382333101,
+            "bitCrush": 0.6,
+            "bitCrushSweep": 0.029604349434216637,
+            "waveType": 5,
+            "masterVolume": 0.5
+          },
+          "pitch": {
+            "activeFrames": 24,
+            "voicedFrames": 1,
+            "voicedFraction": 0.041666666666666664,
+            "medianHz": null,
+            "reliable": false,
+            "contourHz": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              549.8229370117188,
+              null,
+              null
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": null,
+            "direction": null,
+            "excursionSemitones": null
+          },
+          "file": "option-3.wav",
+          "wavSha256": "511b833f80e4936110ad8b25f2d91e7d8dc69aec8d97afb3690d7a72d96f9636",
+          "exactNativeReplay": true
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "bell/impactBell_heavy_002.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/impactBell_heavy_002.ogg",
+        "sha256": "a4171ed1a4a17fb858a38de1c59b5b42e50d8f046c525706c0e3ac8671f189f5",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "folder": "007",
+      "axis": "pitch",
+      "parentChoice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "6f6cba4f0c7ad81fcc6903296190a0701ad7039e3d32fd9dfbbb8a660d3054a2",
+          "cf0d022e43a12f1b38f97ef27861f8a30add79ecd0194521bd239b384d4d8181",
+          "fa907ffff71ef200b182986eb0bbaadf6c6efb2794d8153566fdba15153b3163"
+        ],
+        "auditionedCandidateIds": [
+          "6f6cba4f0c7ad81fcc6903296190a0701ad7039e3d32fd9dfbbb8a660d3054a2",
+          "cf0d022e43a12f1b38f97ef27861f8a30add79ecd0194521bd239b384d4d8181",
+          "fa907ffff71ef200b182986eb0bbaadf6c6efb2794d8153566fdba15153b3163"
+        ],
+        "preferredCandidateIds": [
+          "cf0d022e43a12f1b38f97ef27861f8a30add79ecd0194521bd239b384d4d8181"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "cf0d022e43a12f1b38f97ef27861f8a30add79ecd0194521bd239b384d4d8181"
+          ]
+        }
+      },
+      "parentNote": "",
+      "parentCandidateId": "cf0d022e43a12f1b38f97ef27861f8a30add79ecd0194521bd239b384d4d8181",
+      "referencePitch": {
+        "activeFrames": 57,
+        "voicedFrames": 43,
+        "voicedFraction": 0.7543859649122807,
+        "medianHz": 112.15814208984375,
+        "reliable": true,
+        "contourHz": [
+          111.99866485595703,
+          111.77629852294922,
+          112.15814208984375,
+          112.34208679199219,
+          111.50965881347656,
+          111.55109405517578,
+          112.80166625976562,
+          112.80166625976562,
+          111.25516510009766,
+          112.91327667236328,
+          211.6410675048828,
+          111.78734588623047,
+          111.73023986816406,
+          112.61991119384766,
+          259.43133544921875,
+          331.06915283203125
+        ],
+        "contourTime": [
+          0.03125,
+          0.09375,
+          0.15625,
+          0.21875,
+          0.28125,
+          0.34375,
+          0.40625,
+          0.46875,
+          0.53125,
+          0.59375,
+          0.65625,
+          0.71875,
+          0.78125,
+          0.84375,
+          0.90625,
+          0.96875
+        ],
+        "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+        "startToEndSemitones": 14.542454547793682,
+        "direction": 1,
+        "excursionSemitones": 18.879123347798412
+      },
+      "candidates": [
+        {
+          "variant": 0,
+          "scores": {
+            "softPeriodicity": 2.601027788199274,
+            "preferenceNeuralV2": 0.4383714637464582,
+            "auditionMatchObjective": 5.134014728368599
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "seed": 0.01780326385051012,
+            "material": 0,
+            "duration": 4.133045506851039,
+            "pitch": 0.5133651586195075,
+            "strings": 7,
+            "damping": 0.6765669435633982,
+            "brightness": 0.1496274439777056,
+            "pluck": 0,
+            "coupling": 0.14638657870546523,
+            "strum": 0.00018483905777755434,
+            "tremolo": 0.25637106861501985,
+            "vibrato": 0.38563023192140916,
+            "tremoloRate": 8.779685922414211,
+            "inharmonic": 0.22759090384018338
+          },
+          "pitch": {
+            "activeFrames": 69,
+            "voicedFrames": 69,
+            "voicedFraction": 1.0,
+            "medianHz": 114.43436431884766,
+            "reliable": true,
+            "contourHz": [
+              110.49673461914062,
+              113.40277862548828,
+              111.03490447998047,
+              113.45582580566406,
+              112.72518920898438,
+              112.96448516845703,
+              113.90000915527344,
+              111.62319946289062,
+              225.79647827148438,
+              158.25314331054688,
+              228.72178649902344,
+              224.3129425048828,
+              226.4005126953125,
+              228.08253479003906,
+              224.2216339111328,
+              228.58273315429688
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": 12.462512522758644,
+            "direction": 1,
+            "excursionSemitones": 12.595080693058762
+          },
+          "file": "option-1.wav",
+          "wavSha256": "7398adca87e56070ae1ad509e8a270dd60f932baed7592e9804fdd89d31ee46c",
+          "exactNativeReplay": true
+        },
+        {
+          "variant": 1,
+          "scores": {
+            "softPeriodicity": 2.6314678409927703,
+            "preferenceNeuralV2": 0.5424470504028703,
+            "auditionMatchObjective": 6.830569758628173
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "seed": 0.01780326385051012,
+            "material": 0,
+            "duration": 4.133045506851039,
+            "pitch": 0.4716984919528408,
+            "strings": 7,
+            "damping": 0.6765669435633982,
+            "brightness": 0.1496274439777056,
+            "pluck": 0,
+            "coupling": 0.14638657870546523,
+            "strum": 0.00018483905777755434,
+            "tremolo": 0.25637106861501985,
+            "vibrato": 0.38563023192140916,
+            "tremoloRate": 8.779685922414211,
+            "inharmonic": 0.22759090384018338
+          },
+          "pitch": {
+            "activeFrames": 73,
+            "voicedFrames": 64,
+            "voicedFraction": 0.8767123287671232,
+            "medianHz": 102.07361602783203,
+            "reliable": true,
+            "contourHz": [
+              98.79685974121094,
+              102.17923736572266,
+              99.23451232910156,
+              102.13480377197266,
+              99.87169647216797,
+              102.1184310913086,
+              101.25006103515625,
+              100.92139434814453,
+              101.33606719970703,
+              100.03202056884766,
+              205.95751953125,
+              141.1983642578125,
+              102.39678955078125,
+              200.60488891601562,
+              202.67568969726562,
+              200.5146026611328
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": 12.185314855627695,
+            "direction": 1,
+            "excursionSemitones": 12.717716502463176
+          },
+          "file": "option-2.wav",
+          "wavSha256": "87b25525176b31d237d04aa39a4fc6eab307e0256c8abbe9024ac80cdda7154d",
+          "exactNativeReplay": true
+        },
+        {
+          "variant": 2,
+          "scores": {
+            "softPeriodicity": 2.900230626255081,
+            "preferenceNeuralV2": 0.5619835154261829,
+            "auditionMatchObjective": 7.532178384299902
+          },
+          "params": {
+            "masterVolume": 0.5,
+            "seed": 0.01780326385051012,
+            "material": 0,
+            "duration": 4.133045506851039,
+            "pitch": 0.5550318252861741,
+            "strings": 7,
+            "damping": 0.6765669435633982,
+            "brightness": 0.1496274439777056,
+            "pluck": 0,
+            "coupling": 0.14638657870546523,
+            "strum": 0.00018483905777755434,
+            "tremolo": 0.25637106861501985,
+            "vibrato": 0.38563023192140916,
+            "tremoloRate": 8.779685922414211,
+            "inharmonic": 0.22759090384018338
+          },
+          "pitch": {
+            "activeFrames": 68,
+            "voicedFrames": 68,
+            "voicedFraction": 1.0,
+            "medianHz": 251.36756896972656,
+            "reliable": true,
+            "contourHz": [
+              123.50848388671875,
+              127.68343353271484,
+              124.82010650634766,
+              127.56009674072266,
+              126.86386108398438,
+              127.3963623046875,
+              256.6781311035156,
+              250.88201904296875,
+              257.62615966796875,
+              251.35169982910156,
+              256.20855712890625,
+              252.9571075439453,
+              252.89892578125,
+              257.1159362792969,
+              250.80557250976562,
+              257.08465576171875
+            ],
+            "contourTime": [
+              0.03125,
+              0.09375,
+              0.15625,
+              0.21875,
+              0.28125,
+              0.34375,
+              0.40625,
+              0.46875,
+              0.53125,
+              0.59375,
+              0.65625,
+              0.71875,
+              0.78125,
+              0.84375,
+              0.90625,
+              0.96875
+            ],
+            "contourMeaning": "median voiced Hz in sixteen active-span time bins; null bins have no reliable voiced frames",
+            "startToEndSemitones": 12.508717882467465,
+            "direction": 1,
+            "excursionSemitones": 12.728027386715894
+          },
+          "file": "option-3.wav",
+          "wavSha256": "ccc4214f151dda1653ccd0c96920a22d75da28728d6d08fa78653f044683964b",
+          "exactNativeReplay": true
+        }
+      ]
+    }
+  ],
+  "resultsSha256": "61aeb5b0f4bcda3cc0f24c0aa0f721ccad6d84b6e03a9c6406bb0e108dbd1829",
+  "htmlSha256": "c901c9279e84558ca6f56740682f15e667e375f5495d86db8f385625113c5417",
+  "uiCodeHashes": {
+    "quick_choice.js": "0bb2e27258fa918053f77e737b45200eb9389ec90fd0e185e71ef85bef4f911e",
+    "coverage_feedback.js": "db4cd83adfa7f788378ac0b0941f473376a730d4c55133f6d797250eeeee1d61",
+    "coverage_feedback.py": "50b9b03368addb2729f1689a208070347544f4f62150158bbcd08f4360b73b75",
+    "quick_audio.js": "0abfac40fe8cd7a1c9f79143458b45c7ef79342892113fdc53f9ca15cab7f83a",
+    "quick_listening.html": "167c746f5ec3f77802b799cd1659dd85c8d0fe599ffc365b4376cf4fc2777cd4",
+    "quick_listening.css": "833a39c37a9140b9e995d693dcd648266204cc022107b2c398c32468d231f7a7",
+    "quick_mismatch.js": "177bd0dd544d3bbc058b25f0ef2357b18723e9884449626a5e3a1423d9d82a2f",
+    "quick_mismatch.css": "81a2bc1a435c3a6afe87a9e7ff27c86b5b7d398053ed90dd7f5108bd57b211f0",
+    "quick_listening_diagnostic.js": "8a3b3d082f9653e27c17b7f7c989ddbf79592fd847e536d2745f72a9f5d71b41"
+  },
+  "audioFiles": {
+    "001/option-1.wav": "76d345842c71a98a2ae1ea167db716ab6985187ee71f4038bb21b28991693eeb",
+    "001/option-2.wav": "e5b2bf3be5dbfce51625851428e1643e49cd038b7469f93d596683400e0f8b73",
+    "001/option-3.wav": "f73dce2128f1ed061a6bbbed3a08c96f9b11e383c0826d61779e66d6a257bff4",
+    "001/target.wav": "8ddb4f7fcfdfc1af17fde593c000ce986dcf9ede81e7a026f6c34216ecd08de2",
+    "002/option-1.wav": "76d345842c71a98a2ae1ea167db716ab6985187ee71f4038bb21b28991693eeb",
+    "002/option-2.wav": "5e3f95bc491657c750b9f313594e7170221f195a032ca8e45ca6dbc7940043f3",
+    "002/option-3.wav": "a53d78a9a855a0bb3ed84540dcebfc4bcdd73c7e664ae96e48146589a0796cd9",
+    "002/target.wav": "8ddb4f7fcfdfc1af17fde593c000ce986dcf9ede81e7a026f6c34216ecd08de2",
+    "003/option-1.wav": "44824873217e0bd7754b199998f907365de4a8b8b9223d6bf049f78a0a34b321",
+    "003/option-2.wav": "2ac346ba76fea26aca52cfb3de5605db9aad796e8847e7d62e5274244eea6261",
+    "003/option-3.wav": "8a30ced857e5a8a093b14cca27483538d0d55d9f35a3b420fdd23b21a6180629",
+    "003/target.wav": "a34e6c34f543fea6596ea720362ef9ee243aea2199d2cea5b88dc3ab0a301a3c",
+    "004/option-1.wav": "44824873217e0bd7754b199998f907365de4a8b8b9223d6bf049f78a0a34b321",
+    "004/option-2.wav": "949fe6cef8eedef1437a5c78db97d8ba819e5bdaab0c618c6a0abc5c70dd8239",
+    "004/option-3.wav": "9836a73dd30b03894fae6faba463450974f34ad5fb6c94891ad577c112b2c197",
+    "004/target.wav": "a34e6c34f543fea6596ea720362ef9ee243aea2199d2cea5b88dc3ab0a301a3c",
+    "005/option-1.wav": "5f2875530301e9ee1198b81ca0cdd0d9aa51e4fe478b16b5f280aaf9499c5a26",
+    "005/option-2.wav": "85a5352f82f80fef475da5aa4416f58d611f8a364b019f39ae53cfce8645dfbb",
+    "005/option-3.wav": "7b16a1348eebde45a01030c8e4dd4cd0491e9dcce3229ded516ef2e2929dbe18",
+    "005/target.wav": "846d1b9ef0c6f141356c09554df74a749a5fd58a1ea2659c3816352438399760",
+    "006/option-1.wav": "031c1d62153270a27f56b8cdaa774131293ea9312f2b675369c0b83f24e0a8bf",
+    "006/option-2.wav": "37b13d3bccc449263a3a532487b1d5492e7d55fb918132c5c3199490e547b278",
+    "006/option-3.wav": "511b833f80e4936110ad8b25f2d91e7d8dc69aec8d97afb3690d7a72d96f9636",
+    "006/target.wav": "a34cb27d0a8c443cbb1a73852340ffd8bbe9c06f20725a61cbe526f46d6f4d73",
+    "007/option-1.wav": "7398adca87e56070ae1ad509e8a270dd60f932baed7592e9804fdd89d31ee46c",
+    "007/option-2.wav": "87b25525176b31d237d04aa39a4fc6eab307e0256c8abbe9024ac80cdda7154d",
+    "007/option-3.wav": "ccc4214f151dda1653ccd0c96920a22d75da28728d6d08fa78653f044683964b",
+    "007/target.wav": "9788436fe82a3f105d9b2504235b6d6f66c93fbe37316152b3eb6fcf2c452386"
+  },
+  "nativeExactReplays": 21,
+  "scope": "Controlled native interventions on five external development references in seven trials. Human likeness is unknown for new variants; scores did not select them."
+}

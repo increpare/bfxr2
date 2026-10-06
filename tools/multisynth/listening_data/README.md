@@ -59,6 +59,28 @@ external generalization.
 | `2026-10-06-mixr-joint-v1-quick-01/` | 5 trials / 4 references | 15 |
 | `2026-10-06-mixr-joint-v1-quick-02/` | 8 trials / 4 references | 24 |
 | `2026-10-06-pair-inverse-v1-quick-01/` | 8 references | 24 |
+| `2026-10-06-fresh-gesture-v1-quick-01/` | 8 references | 24 |
+
+The twenty-fifth archive completes all eight fresh external trials: three
+very-close, four similar, one least-bad. All 32 exact reference/candidate PCM
+files are retained. Twenty-three of 24 candidates were recorded heard, yielding
+15 strict pairs. The missing case-closure audition contributes no pair.
+
+Very-close winners are shared Pluckr bell and original Bfxr water-jump/collect.
+The collect candidate's `soft` role denotes selection only: its generator is
+original Bfxr. Four winners originate there, three in shared22 (Squishr, Zappr,
+Pluckr), and one in the Transfxr mixture model. All original-Bfxr references have
+known historical training overlap. Pluckr's success follows native refinement;
+it is an existing-head transfer success, not a new-checkpoint win.
+
+All five optional notes retain exact candidate scope: pitch in similar Transfxr
+footstep08 and Zappr case closure; texture/timbre in similar Squishr carpet and
+Bfxr laser; several things in least-bad Bfxr cloth. Every noted candidate was
+heard. Preference and legacy scorers agree on 8/15 pairs, soft-periodicity 6/15.
+See the [human review](../evaluations/fresh-gesture-v1-quick-01-human-review.json).
+These are now development observations; earlier frozen metric results remain
+unchanged. The next seven controlled comparisons preserve exact chosen audio
+and vary native controls without metric-based option selection.
 
 The twenty-fourth archive completes all eight pair-inverse trials, with all
 24 candidates auditioned and 32 exact PCM files retained. The trained mixture

@@ -1,0 +1,21 @@
+# Native control diagnosis after fresh-gesture feedback
+
+The complete fresh external round has three very-close choices (shared Pluckr bell, historical original-Bfxr water jump and collect), four similar, one least-bad. Five immediate scoped notes identify pitch in Transfxr footstep08 and Zappr case closure, texture in shared Squishr carpet and original-Bfxr laser, and several problems in Bfxr cloth. Twenty-three of24 options were heard; retain15 strict pairs, never invent the missing audition. Preference/legacy agree8/15; soft6/15. Archive all exact audio, notes, adequacy, origin and comparisons; the soft-labelled collect winner is original Bfxr, not a newer expert.
+
+A new inverse training run, another unconstrained refinement, and controlled local variants were considered. More fitting with the same unreliable scores can erase the very features the listener wants. First use seven controlled comparisons to locate the failing perceptual cues. This is a development diagnostic, not improved or held-out model performance. The user's standing authorization to work autonomously and extend the questionnaire covers this small experiment; no design approval pause.
+
+Freeze seven trials and native parameter edits before rendering. Each has the exact earlier chosen clip and two variants. Keep source seed, other parameters and replay gain policy fixed. No waveform transposition, time stretching, target categories as model inputs, metric-selected variants, or discarded negative cases.
+
+1. Transfxr footstep08: pitch.start/end ±6 semitones, delta ±6/84 in native control units.
+2. Same footstep: tone.start/end ±3 semitones of filter cutoff, delta ±3/(12 log2(160)). This tests brightness separately from oscillator register; reject clipping rather than silently changing the intervention.
+3. Zappr case: voltage ×0.5 or ×1.5. This changes discharge/hum frequencies and also restrike modulation/distortion; it is explicitly a coupled control, not pure transposition.
+4. Same case: spark set to0 or0.5. This changes noisy/tonal discharge balance and amplitude; final peak normalization remains fixed.
+5. Squishr carpet: wetness set to0.35 or0.65, against chosen0.9765. Two drier alternatives, not falsely described as symmetric.
+6. Original Bfxr laser: bitCrush set to0 or0.6, against chosen0.2919. Quantization texture can affect apparent pitch too.
+7. Very-close Pluckr bell: pitch ±2 semitones, delta ±2/48. An agreement control; never manufacture a human label for either perturbation or assume the anchor will win.
+
+The choices remain shuffled and engine/control names are concealed in quick mode. Intro explains that some references repeat for different adjustments, and that original Bfxr sources overlap its historical training. Reuse the tested optional mismatch controller unchanged. Ask closest then adequacy, with optional reason on imperfect matches. All seven trials are included. No old clip is presented as newly generated; previous candidates carry their immutable parent identities. The questionnaire itself asks the questions needed while sounds remain available.
+
+Freeze archive/feedback/review, input candidate identities, exact parameters, native renderer source hash, original backend, scorer and code hashes, and this plan. Native replay must reproduce each anchor's archived audition PCM and every generated variant before scoring. Validate bounds/canonical params, non-silence, distinct PCM and one-control-family edits. Save controls, PCM, all scores and pitch diagnostics; scores do not select or drop options. Preserve unknown/unvoiced pitch rather than fabricate F0. Existing checkpoints and metric experiments remain frozen.
+
+Verification: archive reimport is idempotent; review independently reproduces scores/15 strict pairs and validates all five note scopes. Tests first for pure control edit formulas, bounds and immutable parents. Build seven native comparisons, verify exact replay of21 candidate presets, then verify the final HTML/report/28 WAV bytes over HTTP. Existing quick UI tests cover notes/undo/playback. Verify a clean initial browser view without simulating real judgments. Commit experiment and25th archive; deliver page and ask for these seven targeted judgments.

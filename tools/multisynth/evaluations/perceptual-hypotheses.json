@@ -254,6 +254,14 @@
       "evidence": "24 archives supply187 strict external pairs/64references/44 connected source-tag groups. Five-fold reference-balanced accuracy75.35%, historical preference72.65%, soft69.34%. Gain2.70pp misses frozen3pp threshold; no full-data model saved. Current12:10/12vs8/12vs11/12. Historical comparator trained on some older labels; this is ranking, not audible recreation.",
       "source": "evaluations/listener-metric-v1-evaluation.json",
       "nextTest": "Eight preselected fresh external tagged references with existing scorers; immediate optional mismatch notes to identify missing perceptual cues. Preserve none-close and adequacy separately from relative choices."
+    },
+    {
+      "id": "noisy-register-needs-more-than-voiced-f0",
+      "claim": "Perceived register in short noisy events can require spectral-colour or resonance cues even when the existing fundamental-pitch extractor reports little reliable voicing.",
+      "status": "human-notes-motivate-controlled-native-interventions",
+      "evidence": "Fresh human feedback identifies pitch in similar Transfxr footstep08 and Zappr case closure. Their reference/chosen active-frame voiced fractions are roughly11/5% and12/13%; neither pair has reliable median F0. This suggests a representation gap, not proof of its cause. Preference/legacy agree8/15 and soft6/15 new heard pairs.",
+      "source": "evaluations/fresh-gesture-v1-quick-01-human-review.json",
+      "nextTest": "Seven fixed anchor-plus-two-variant comparisons separate Transfxr oscillator register from filter colour, probe coupled Zappr frequency/noise controls, Squishr wetness and Bfxr bitcrush, and include the very-close Pluckr bell with small native pitch perturbations. No score-based selection or assumed perturbation labels."
     }
   ]
 }
