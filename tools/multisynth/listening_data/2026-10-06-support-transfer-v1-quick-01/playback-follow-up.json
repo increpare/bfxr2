@@ -1,0 +1,13 @@
+{
+  "userVerbatim": "clean tone is crackling",
+  "diagnosticUrl": "http://127.0.0.1:8765/tools/multisynth/runs/playback-check-v1/index.html",
+  "toneSha256": "8693fcc6c8672688e946f9748b0832a2089aeb8d78f584e96d3508201fb8f070",
+  "fileVerification": {
+    "sampleRate": 44100,
+    "seconds": 1.2,
+    "peak": 0.25,
+    "fadeSeconds": 0.02,
+    "matchesAnalyticToneWithinOnePcm16Step": true
+  },
+  "interpretation": "Crackling is reported on an independently generated clean tone as well as SFX. Synth fitting is not sufficient to explain it. Browser/player, OS audio path and output hardware remain unisolated. Do not treat the prior round as confirmed clean listening; preserve all ratings."
+}

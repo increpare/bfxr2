@@ -79,6 +79,11 @@ confirmed clean listening or discard its choices without evidence. The report
 retains the exact words and basic waveform measurements. The playback path is
 being diagnosed separately; no new model is trained from this round yet.
 See [review](../evaluations/support-transfer-v1-quick-01-review.json).
+The [subsequent playback follow-up](2026-10-06-support-transfer-v1-quick-01/playback-follow-up.json)
+reports crackling on the clean diagnostic tone too. Its stored PCM matches the
+analytic faded sine within one PCM16 step. This establishes that synth fitting
+alone cannot explain the complaint; the browser, OS/output path and hardware
+are not yet isolated. The exact tone was opened in QuickTime for comparison.
 
 The thirty-first archive records four choices: joint-fit coin similar,
 timing-only metal footstep similar, previous book least-bad and previous attack
