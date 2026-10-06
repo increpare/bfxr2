@@ -1,0 +1,721 @@
+{
+  "complete": true,
+  "reportSha256": "1a509d1d80e962ebf4ba1faee0c26d9231628f566c0fffb4a476ce8393619012",
+  "protocolSha256": "3e11f283560f99c3e1f11efe966f2d97e8ff24140732eede3257bd71f7a2d99a",
+  "fitSha256": "61bbf86c0f98101d183832e924ba52c7793bc62ddac5ea656f3e33277d1b2863",
+  "humanQuality": "Unknown pending listening",
+  "rows": [
+    {
+      "source": {
+        "name": "clothes/cloth1.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/clothes/cloth1.ogg",
+        "sha256": "ddb93a3671233f95da0e0b10367f082f7eb42fa6caaddcf776410aa8833c747d",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "memoryNativeTrainingReplays": 42,
+      "arms": {
+        "regression": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Boomr",
+            "origin": "shared22-regression",
+            "preferenceDistance": 0.7296794735100833,
+            "softDistance": 3.316093564334391,
+            "legacyDistance": 10.053370890261386,
+            "auditionHash": "1a8bd921ccbb44a6e2425ef425871f75a37572d0abbfe401c224b720e53af1ff"
+          }
+        },
+        "memory": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Boomr",
+            "origin": "shared22-memory",
+            "preferenceDistance": 0.7844438269660217,
+            "softDistance": 4.5718739051020805,
+            "legacyDistance": 4.857755301561154,
+            "auditionHash": "bd598bc616d11c22731551066d23e52b25f8f00a05afd320b805376fc65bf266"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "name": "footstep/footstep08.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep08.ogg",
+        "sha256": "668f14dc1254d0d0f33025e9c7dbcdf2c2f00462ed0e07fb8f099c1d711c1337",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "memoryNativeTrainingReplays": 42,
+      "arms": {
+        "regression": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Pluckr",
+            "origin": "shared22-regression",
+            "preferenceDistance": 0.6352828970920085,
+            "softDistance": 3.431493484558586,
+            "legacyDistance": 2.610593387069229,
+            "auditionHash": "fadf4fbb391fc3ecb2b034f188377ec1b61d195cf5428161fcbf731708f0acf5"
+          }
+        },
+        "memory": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Bouncr",
+            "origin": "shared22-memory",
+            "preferenceDistance": 0.45311436054280846,
+            "softDistance": 2.5896253775815765,
+            "legacyDistance": 0.9926944068333111,
+            "auditionHash": "2f14d1a46de13d6efaeb114f3148439f55c31568a3ab54636c9da7b1e82eafda"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "name": "footstep/footstep_carpet_000.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep_carpet_000.ogg",
+        "sha256": "b9524658b52a99a20590f8feefc103088637fd13ea8ec35811aee785e1f2f330",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "memoryNativeTrainingReplays": 42,
+      "arms": {
+        "regression": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Squishr",
+            "origin": "shared22-regression",
+            "preferenceDistance": 0.7880157941569796,
+            "softDistance": 7.506458875778135,
+            "legacyDistance": 9.379158106687482,
+            "auditionHash": "5bb8b11ee7af59d0db01924505197ee392aefa533c77a65fba09a9d75fd8df53"
+          }
+        },
+        "memory": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Pluckr",
+            "origin": "shared22-memory",
+            "preferenceDistance": 0.7418139765245779,
+            "softDistance": 3.8178538566827775,
+            "legacyDistance": 10.573853382070858,
+            "auditionHash": "e189184df8552d9c67d59587d7afba3201fce467aa42b7fe62fccaa6b7f034c5"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "name": "hit/OBJLug_Case_Closed06_InMotionAudio_InstrumentCase.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/OBJLug_Case_Closed06_InMotionAudio_InstrumentCase.wav",
+        "sha256": "9d56118b0a4f351b33e9761b5f72873da78ad1c030f8a91a437ae1b443887208",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "memoryNativeTrainingReplays": 42,
+      "arms": {
+        "regression": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Transfxr",
+            "origin": "shared22-regression",
+            "preferenceDistance": 0.804745431090743,
+            "softDistance": 3.749725290437981,
+            "legacyDistance": 2.789128423830315,
+            "auditionHash": "8430613e150d775c907c77b406d987366671d3bebba19a9fa51f721bb083a14c"
+          }
+        },
+        "memory": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Pluckr",
+            "origin": "shared22-memory",
+            "preferenceDistance": 0.7758969534013829,
+            "softDistance": 4.030121379431809,
+            "legacyDistance": 10.963485393461312,
+            "auditionHash": "ca9ce520ae83da31f4993a179e3e48bdf24bb2141cf17b80863472c1955147f0"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "name": "hit/Jump Water.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/Jump Water.wav",
+        "sha256": "0aa92d195996b6d25e57ca3540833671a10e792fcda41b65d3ecd0c2eb396cd0",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "memoryNativeTrainingReplays": 42,
+      "arms": {
+        "regression": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Boomr",
+            "origin": "shared22-regression",
+            "preferenceDistance": 0.7254007348192133,
+            "softDistance": 3.2881754781046086,
+            "legacyDistance": 2.9536160838509837,
+            "auditionHash": "3f8cb1686420ac4ca94e54bbe7c7b92a633eebd919799225e15e0e149f56668b"
+          }
+        },
+        "memory": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Bfxr",
+            "origin": "shared22-memory",
+            "preferenceDistance": 0.6258889611711715,
+            "softDistance": 1.3031810099158336,
+            "legacyDistance": 0.8820328869031848,
+            "auditionHash": "9eae4707fff3922bb559faa90a8815463d4e881e26537051d0cdc7af5ae504da"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "name": "bell/impactBell_heavy_002.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/impactBell_heavy_002.ogg",
+        "sha256": "a4171ed1a4a17fb858a38de1c59b5b42e50d8f046c525706c0e3ac8671f189f5",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "memoryNativeTrainingReplays": 42,
+      "arms": {
+        "regression": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Pluckr",
+            "origin": "shared22-regression",
+            "preferenceDistance": 0.4377729273570854,
+            "softDistance": 2.375250873651485,
+            "legacyDistance": 4.363182928599825,
+            "auditionHash": "3da367ac0a8be8523bb7dc7e5ae0ae218e14e07ca12a0555c26bb9618092c52d"
+          }
+        },
+        "memory": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Pluckr",
+            "origin": "shared22-memory",
+            "preferenceDistance": 0.42679862913016764,
+            "softDistance": 2.577748320567206,
+            "legacyDistance": 5.535855681893157,
+            "auditionHash": "1349ced91324805cdce822f46bedbc8a123f918fb3e10b217cadeb9a3682a813"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "name": "laser/Fox - Laser Gun.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/Fox - Laser Gun.wav",
+        "sha256": "557f2d414f057388c3ad8f511061bce426934f8f25c10c3ed1f2634197c8b81d",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "memoryNativeTrainingReplays": 42,
+      "arms": {
+        "regression": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Riftr",
+            "origin": "shared22-regression",
+            "preferenceDistance": 0.8838172988212442,
+            "softDistance": 3.0308653338898077,
+            "legacyDistance": 8.958899507533795,
+            "auditionHash": "b66440655a3a0b9daf7a1589e403c8d0f4a5a05bb3abd471efbab2506042da4f"
+          }
+        },
+        "memory": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Transfxr",
+            "origin": "shared22-memory",
+            "preferenceDistance": 0.9157513088202376,
+            "softDistance": 3.740274485630711,
+            "legacyDistance": 8.80330650483458,
+            "auditionHash": "02c6a3db31dcf142e772d69db84c202aa376f9615a5579ff040c8fe73a1f9ecd"
+          }
+        }
+      }
+    },
+    {
+      "source": {
+        "name": "collect/mario 3 - get item.WAV",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/mario 3 - get item.WAV",
+        "sha256": "37a90c80c1f9d2861c4e228a8067213f02a44a3811b2768ccdaff7da6aa41739",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "memoryNativeTrainingReplays": 42,
+      "arms": {
+        "regression": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Bfxr",
+            "origin": "shared22-regression",
+            "preferenceDistance": 0.9174138285132001,
+            "softDistance": 3.8743255326461963,
+            "legacyDistance": 3.79083169519273,
+            "auditionHash": "65cf316c4a4212d065531ae94c1b809dc93b91b37a8e9feb4233dc279eac095d"
+          }
+        },
+        "memory": {
+          "proposals": 42,
+          "validProposals": 42,
+          "failures": [],
+          "quotas": {
+            "Bfxr": 2,
+            "Footsteppr": 2,
+            "Transfxr": 2,
+            "Birdr": 2,
+            "Boomr": 2,
+            "Bouncr": 2,
+            "Breathr": 2,
+            "Choirr": 2,
+            "Clonkr": 2,
+            "Crittr": 2,
+            "Fractr": 2,
+            "Glitchr": 2,
+            "Jinglr": 2,
+            "Machinr": 2,
+            "Pluckr": 2,
+            "Riftr": 2,
+            "Rustlr": 2,
+            "Signlr": 2,
+            "Squishr": 2,
+            "Swarmr": 2,
+            "Whooshr": 1,
+            "Zappr": 1
+          },
+          "attemptedMutations": 256,
+          "selected": {
+            "synth": "Transfxr",
+            "origin": "shared22-memory",
+            "preferenceDistance": 0.8079920777781098,
+            "softDistance": 4.229987058523261,
+            "legacyDistance": 5.620607973822799,
+            "auditionHash": "ea419b3376ad8d4546679ec9423e90816220431f1211f2b198045c37191f1b2f"
+          }
+        }
+      }
+    }
+  ]
+}

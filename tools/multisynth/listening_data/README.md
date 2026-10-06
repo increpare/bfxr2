@@ -60,6 +60,30 @@ external generalization.
 | `2026-10-06-mixr-joint-v1-quick-02/` | 8 trials / 4 references | 24 |
 | `2026-10-06-pair-inverse-v1-quick-01/` | 8 references | 24 |
 | `2026-10-06-fresh-gesture-v1-quick-01/` | 8 references | 24 |
+| `2026-10-06-control-diagnosis-v1-quick-01/` | 7 trials / 5 references | 21 |
+
+The twenty-sixth archive completes the native-control diagnosis: **zero variant
+wins, four ties, three unchanged-anchor wins**, and no very-close judgments.
+Twenty of 21 options were recorded heard. Seven scoped mismatch notes yield
+15 candidate-level qualitative labels (10 least-bad, five similar), and five
+strict heard preference pairs; tied candidates are not converted into strict
+labels. The unplayed bell variant supplies neither a strict pair nor invented
+audition telemetry. Twenty-four unique exact PCM files preserve five references
+and 19 distinct candidate waveforms (some unchanged anchors repeat across trials).
+
+Both footstep interventions and the carpet wetness intervention tie as least-bad;
+the case spark intervention ties as similar. Unchanged case voltage is similar,
+unchanged Bfxr laser least-bad, and unchanged Pluckr bell similar. Pitch is noted
+for case/laser; texture/timbre for footstep/carpet/bell. Preference and soft scores
+agree on four of five strict pairs, legacy on three. See the
+[human review](../evaluations/control-diagnosis-v1-quick-01-human-review.json).
+
+Several identical anchors have lower adequacy here than in fresh-gesture.
+Retain **both contexts with exact audio and candidate scope**. Do not interpret
+this as changed synthesis or silently collapse contradictory absolute labels.
+This probe gives no support for promoting the tested local knob changes; the
+next initialization test retains all eight earlier external references, including
+prior successes, rather than selecting only cases that favor its numerical scores.
 
 The twenty-fifth archive completes all eight fresh external trials: three
 very-close, four similar, one least-bad. All 32 exact reference/candidate PCM

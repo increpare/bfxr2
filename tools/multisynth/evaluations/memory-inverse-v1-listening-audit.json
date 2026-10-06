@@ -1,0 +1,284 @@
+{
+  "complete": true,
+  "experimentId": "809a3454da58f4b44eb1ffced7bb1257be6e2e489f9f3cc8479a3ba14004a83b",
+  "targets": 8,
+  "candidates": 24,
+  "rows": [
+    {
+      "source": {
+        "name": "clothes/cloth1.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/clothes/cloth1.ogg",
+        "sha256": "ddb93a3671233f95da0e0b10367f082f7eb42fa6caaddcf776410aa8833c747d",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "candidateRoles": [
+        [
+          "previous"
+        ],
+        [
+          "regression"
+        ],
+        [
+          "memory"
+        ]
+      ],
+      "exactAnchorPcm": "078c432fc052c4c553559e41b23f8df389f1134319e4407421b7910626cd1d4b",
+      "nativeReplays": 3,
+      "candidatePcm": [
+        "078c432fc052c4c553559e41b23f8df389f1134319e4407421b7910626cd1d4b",
+        "1a8bd921ccbb44a6e2425ef425871f75a37572d0abbfe401c224b720e53af1ff",
+        "bd598bc616d11c22731551066d23e52b25f8f00a05afd320b805376fc65bf266"
+      ]
+    },
+    {
+      "source": {
+        "name": "footstep/footstep08.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep08.ogg",
+        "sha256": "668f14dc1254d0d0f33025e9c7dbcdf2c2f00462ed0e07fb8f099c1d711c1337",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "candidateRoles": [
+        [
+          "previous"
+        ],
+        [
+          "regression"
+        ],
+        [
+          "memory"
+        ]
+      ],
+      "exactAnchorPcm": "46612236203487c5ad682b8beef1dc8be11f3151e5106a56746a3986e0b87cbf",
+      "nativeReplays": 3,
+      "candidatePcm": [
+        "46612236203487c5ad682b8beef1dc8be11f3151e5106a56746a3986e0b87cbf",
+        "fadf4fbb391fc3ecb2b034f188377ec1b61d195cf5428161fcbf731708f0acf5",
+        "2f14d1a46de13d6efaeb114f3148439f55c31568a3ab54636c9da7b1e82eafda"
+      ]
+    },
+    {
+      "source": {
+        "name": "footstep/footstep_carpet_000.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep_carpet_000.ogg",
+        "sha256": "b9524658b52a99a20590f8feefc103088637fd13ea8ec35811aee785e1f2f330",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "candidateRoles": [
+        [
+          "previous"
+        ],
+        [
+          "regression"
+        ],
+        [
+          "memory"
+        ]
+      ],
+      "exactAnchorPcm": "ca32116e61a1275fe56603165730fa2e4e64fb778ce42258585fde8a2755e5d1",
+      "nativeReplays": 3,
+      "candidatePcm": [
+        "ca32116e61a1275fe56603165730fa2e4e64fb778ce42258585fde8a2755e5d1",
+        "5bb8b11ee7af59d0db01924505197ee392aefa533c77a65fba09a9d75fd8df53",
+        "e189184df8552d9c67d59587d7afba3201fce467aa42b7fe62fccaa6b7f034c5"
+      ]
+    },
+    {
+      "source": {
+        "name": "hit/OBJLug_Case_Closed06_InMotionAudio_InstrumentCase.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/OBJLug_Case_Closed06_InMotionAudio_InstrumentCase.wav",
+        "sha256": "9d56118b0a4f351b33e9761b5f72873da78ad1c030f8a91a437ae1b443887208",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "candidateRoles": [
+        [
+          "previous"
+        ],
+        [
+          "regression"
+        ],
+        [
+          "memory"
+        ]
+      ],
+      "exactAnchorPcm": "5fbd549875035fba3c94dfe3ecf84a607be6c18e78e5e95e620e5de87068b9d7",
+      "nativeReplays": 3,
+      "candidatePcm": [
+        "5fbd549875035fba3c94dfe3ecf84a607be6c18e78e5e95e620e5de87068b9d7",
+        "8430613e150d775c907c77b406d987366671d3bebba19a9fa51f721bb083a14c",
+        "ca9ce520ae83da31f4993a179e3e48bdf24bb2141cf17b80863472c1955147f0"
+      ]
+    },
+    {
+      "source": {
+        "name": "hit/Jump Water.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/Jump Water.wav",
+        "sha256": "0aa92d195996b6d25e57ca3540833671a10e792fcda41b65d3ecd0c2eb396cd0",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "candidateRoles": [
+        [
+          "previous"
+        ],
+        [
+          "regression"
+        ],
+        [
+          "memory"
+        ]
+      ],
+      "exactAnchorPcm": "c8accaa7b13d38c1aae24cb37b4bad2e2d8f228edc44301fb4bb307f8951f377",
+      "nativeReplays": 3,
+      "candidatePcm": [
+        "c8accaa7b13d38c1aae24cb37b4bad2e2d8f228edc44301fb4bb307f8951f377",
+        "3f8cb1686420ac4ca94e54bbe7c7b92a633eebd919799225e15e0e149f56668b",
+        "9eae4707fff3922bb559faa90a8815463d4e881e26537051d0cdc7af5ae504da"
+      ]
+    },
+    {
+      "source": {
+        "name": "bell/impactBell_heavy_002.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/impactBell_heavy_002.ogg",
+        "sha256": "a4171ed1a4a17fb858a38de1c59b5b42e50d8f046c525706c0e3ac8671f189f5",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "candidateRoles": [
+        [
+          "previous"
+        ],
+        [
+          "regression"
+        ],
+        [
+          "memory"
+        ]
+      ],
+      "exactAnchorPcm": "d0a1f9bf25e7dd8996d968445e8a48b81f3eeead0e7d39724107e730d9ca93e2",
+      "nativeReplays": 3,
+      "candidatePcm": [
+        "d0a1f9bf25e7dd8996d968445e8a48b81f3eeead0e7d39724107e730d9ca93e2",
+        "3da367ac0a8be8523bb7dc7e5ae0ae218e14e07ca12a0555c26bb9618092c52d",
+        "1349ced91324805cdce822f46bedbc8a123f918fb3e10b217cadeb9a3682a813"
+      ]
+    },
+    {
+      "source": {
+        "name": "laser/Fox - Laser Gun.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/Fox - Laser Gun.wav",
+        "sha256": "557f2d414f057388c3ad8f511061bce426934f8f25c10c3ed1f2634197c8b81d",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "candidateRoles": [
+        [
+          "previous"
+        ],
+        [
+          "regression"
+        ],
+        [
+          "memory"
+        ]
+      ],
+      "exactAnchorPcm": "eda83df74f5349a46ca55d90f704a70b5b590e1c4b6ac26a644966534a46f414",
+      "nativeReplays": 3,
+      "candidatePcm": [
+        "eda83df74f5349a46ca55d90f704a70b5b590e1c4b6ac26a644966534a46f414",
+        "b66440655a3a0b9daf7a1589e403c8d0f4a5a05bb3abd471efbab2506042da4f",
+        "02c6a3db31dcf142e772d69db84c202aa376f9615a5579ff040c8fe73a1f9ecd"
+      ]
+    },
+    {
+      "source": {
+        "name": "collect/mario 3 - get item.WAV",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/mario 3 - get item.WAV",
+        "sha256": "37a90c80c1f9d2861c4e228a8067213f02a44a3811b2768ccdaff7da6aa41739",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "candidateRoles": [
+        [
+          "previous"
+        ],
+        [
+          "regression"
+        ],
+        [
+          "memory"
+        ]
+      ],
+      "exactAnchorPcm": "3e694084b94607d1f48d986baec3133cc49e318aede2f8a10ac8d340a05fb8ba",
+      "nativeReplays": 3,
+      "candidatePcm": [
+        "3e694084b94607d1f48d986baec3133cc49e318aede2f8a10ac8d340a05fb8ba",
+        "65cf316c4a4212d065531ae94c1b809dc93b91b37a8e9feb4233dc279eac095d",
+        "ea419b3376ad8d4546679ec9423e90816220431f1211f2b198045c37191f1b2f"
+      ]
+    }
+  ],
+  "resultsSha256": "525d81b35c9ac0e1c716c78388b060652d20824043e97c6e94daa69ce408e31e",
+  "htmlSha256": "84d79303aa1a49aaadae01b9f6432e5dea1acd78f2aaf88ab94ca4ada799b01c",
+  "uiCodeHashes": {
+    "quick_choice.js": "0bb2e27258fa918053f77e737b45200eb9389ec90fd0e185e71ef85bef4f911e",
+    "coverage_feedback.js": "db4cd83adfa7f788378ac0b0941f473376a730d4c55133f6d797250eeeee1d61",
+    "coverage_feedback.py": "50b9b03368addb2729f1689a208070347544f4f62150158bbcd08f4360b73b75",
+    "quick_audio.js": "0abfac40fe8cd7a1c9f79143458b45c7ef79342892113fdc53f9ca15cab7f83a",
+    "quick_listening.html": "167c746f5ec3f77802b799cd1659dd85c8d0fe599ffc365b4376cf4fc2777cd4",
+    "quick_listening.css": "833a39c37a9140b9e995d693dcd648266204cc022107b2c398c32468d231f7a7",
+    "quick_mismatch.js": "177bd0dd544d3bbc058b25f0ef2357b18723e9884449626a5e3a1423d9d82a2f",
+    "quick_mismatch.css": "81a2bc1a435c3a6afe87a9e7ff27c86b5b7d398053ed90dd7f5108bd57b211f0",
+    "quick_listening_diagnostic.js": "8a3b3d082f9653e27c17b7f7c989ddbf79592fd847e536d2745f72a9f5d71b41"
+  },
+  "protocolSha256": "3e11f283560f99c3e1f11efe966f2d97e8ff24140732eede3257bd71f7a2d99a",
+  "fitSha256": "61bbf86c0f98101d183832e924ba52c7793bc62ddac5ea656f3e33277d1b2863",
+  "publicationScriptSha256": "b4a2fe1f1b945b4cfb46a07d9b197609ae048c679e8bb7cd0a1b1d08e0e930d0",
+  "reportSha256": "1a509d1d80e962ebf4ba1faee0c26d9231628f566c0fffb4a476ce8393619012",
+  "audioFiles": {
+    "001/option-1.wav": "b3ca352c62bf8a587cff9128d5a0e11fe3ddcb31861c1cea0be42b500924e17b",
+    "001/option-2.wav": "75b4b6ba2684724502b2f594bf193af279e5c49000e6be38d75242e53c3ac2b6",
+    "001/option-3.wav": "1c09cb720bc2107277f61675f7b2bdb581b5428ad641bb9ab03839868ad3e327",
+    "001/target.wav": "d46d38bf06569e0cfacc4f48e23942d8c6ab8b842f1bae4c25ef63b742f8ac40",
+    "002/option-1.wav": "76d345842c71a98a2ae1ea167db716ab6985187ee71f4038bb21b28991693eeb",
+    "002/option-2.wav": "7361f2287b5ef7bd2c1dd37cd21efeede58214581ceb830701e7a462ed938049",
+    "002/option-3.wav": "4fd65537b0b6fccc189e2d503a14bca348159b6c1882e11a41975e05dc00cd13",
+    "002/target.wav": "8ddb4f7fcfdfc1af17fde593c000ce986dcf9ede81e7a026f6c34216ecd08de2",
+    "003/option-1.wav": "5f2875530301e9ee1198b81ca0cdd0d9aa51e4fe478b16b5f280aaf9499c5a26",
+    "003/option-2.wav": "cb7cacbe1a4eddd421cdf89674cb308092ef94204175c2d11daa71c0e6f01aa8",
+    "003/option-3.wav": "c7918c727f4519b76ad7c35f5b0ff4500e5c36d9ceab6b55f0a294c2d3d02e87",
+    "003/target.wav": "846d1b9ef0c6f141356c09554df74a749a5fd58a1ea2659c3816352438399760",
+    "004/option-1.wav": "44824873217e0bd7754b199998f907365de4a8b8b9223d6bf049f78a0a34b321",
+    "004/option-2.wav": "abb4c16d40950673c7c5eee11a7c620495dd70590b9b28ab43c5f18028526e4b",
+    "004/option-3.wav": "deb8f6e493eb756d39d483165257fa8f50e3c2c04ee73f6b49ddda502c5f0cf7",
+    "004/target.wav": "a34e6c34f543fea6596ea720362ef9ee243aea2199d2cea5b88dc3ab0a301a3c",
+    "005/option-1.wav": "946e8c3e119a3c6ffb7fbe6f4644105520ad07ec4514c4e85f249ac95ffe1b8b",
+    "005/option-2.wav": "708c5d212834e3d533378c8617ade49d337afd3f0c5ec3ef416dab2194127a86",
+    "005/option-3.wav": "ef4a5f9178c53097e6200f7cb4f0ea875a30678e260ca8c19e74637e7fd870bf",
+    "005/target.wav": "9cac0fea546893b4a2ec274ec79ee44cce63a45b06981f9fdbcc9c75a3c768d7",
+    "006/option-1.wav": "7398adca87e56070ae1ad509e8a270dd60f932baed7592e9804fdd89d31ee46c",
+    "006/option-2.wav": "ab91b840243a19b00a71eb1eea97d900f5cac766924e27d06b331760a5798836",
+    "006/option-3.wav": "71bee9daf44f9b2939063068762d4c595df5be34b559b09279de928c19f77dc8",
+    "006/target.wav": "9788436fe82a3f105d9b2504235b6d6f66c93fbe37316152b3eb6fcf2c452386",
+    "007/option-1.wav": "031c1d62153270a27f56b8cdaa774131293ea9312f2b675369c0b83f24e0a8bf",
+    "007/option-2.wav": "5f54fc8cf761c17a7139dd31d9f53f1d5a996ff4daff398f55b0ccec2adf1f10",
+    "007/option-3.wav": "b1315e23a1c254e2524c9c2ebc912c1e3f1a23661c40a511c2ce8692bb220e35",
+    "007/target.wav": "a34cb27d0a8c443cbb1a73852340ffd8bbe9c06f20725a61cbe526f46d6f4d73",
+    "008/option-1.wav": "a23b04103a2af96b7df2b5c13a6e44626d24ab58227627ce8b68031d6f891bf0",
+    "008/option-2.wav": "1ac0ed5526b8b74c37e8102f3e52dc34ec6d5371a187d26f2975d28b7a8ba22f",
+    "008/option-3.wav": "eabb00bbc7b5f65e4b33a4e5990599c931eb3328162560459b2877f037a1116f",
+    "008/target.wav": "3800a1baea517c673a92eb441a270a1da8e8288301db78c32f6dd173eb134f43"
+  },
+  "scope": "Exact native final replays and earlier chosen auditions verified. No new candidate has human quality approval."
+}

@@ -1,0 +1,106 @@
+{
+  "complete": true,
+  "protocolSha256": "3e11f283560f99c3e1f11efe966f2d97e8ff24140732eede3257bd71f7a2d99a",
+  "checkpointSha256": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+  "dataManifestSha256": "2701d7907e824f9e34872c1bc4b99ccc1e3d85941040a42ff4029eb658564657",
+  "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+  "featureHash": "fa36498127a6b820ef7b576f708ac0aaa8826b82d2df6acc726511a0a0fff3b1",
+  "featureCodeHash": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+  "encoderFrozen": true,
+  "selection": "Synthetic train split only; no external audio or human labels in fitted memory",
+  "counts": {
+    "Bfxr": {
+      "train": 3482,
+      "excludedValidation": 614
+    },
+    "Footsteppr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Transfxr": {
+      "train": 3482,
+      "excludedValidation": 614
+    },
+    "Birdr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Boomr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Bouncr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Breathr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Choirr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Clonkr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Crittr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Fractr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Glitchr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Jinglr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Machinr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Pluckr": {
+      "train": 3482,
+      "excludedValidation": 614
+    },
+    "Riftr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Rustlr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Signlr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Squishr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Swarmr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Whooshr": {
+      "train": 1741,
+      "excludedValidation": 307
+    },
+    "Zappr": {
+      "train": 1741,
+      "excludedValidation": 307
+    }
+  },
+  "trainRows": 43525,
+  "embeddingDimensions": 256,
+  "indexJsonSha256": "598b94a2b7a330752cbec8f502c00841cd69d9bd41d80d1ee79dda9b443cbcf6",
+  "indexArraySha256": "9a5887b20b537dd0f7e2c862952e9237bccd6d9f2e88d73f4b9167013e4fe305",
+  "seconds": 7.804409875068814
+}

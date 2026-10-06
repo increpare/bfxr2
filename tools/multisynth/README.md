@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All twenty-five feedback archives,
+do not establish general success on real recordings. All twenty-six feedback archives,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
@@ -226,6 +226,47 @@ than pure perceptual axes. Five external development references appear in seven
 trials; repeated references test different adjustments. See the
 [protocol](evaluations/control-diagnosis-v1-protocol.json) and
 [native replay/score audit](evaluations/control-diagnosis-v1-evaluation.json).
+
+The [completed control feedback](evaluations/control-diagnosis-v1-quick-01-human-review.json)
+has **zero variant wins, four ties and three unchanged-clip wins**. No comparison
+was judged very close. Twenty of 21 options were recorded heard; the unplayed
+bell variant contributes no strict preference pair. All seven scoped notes and
+24 unique exact reference/candidate PCM files are retained. Five strict heard
+pairs agree with preference/soft scores on four and legacy on three; this tiny
+selected probe does not validate those scorers. Identical footstep, carpet,
+laser and bell audio received lower adequacy than in the previous context.
+Both sessions remain intact; neither is silently rewritten into a timeless label.
+
+The [memory-head initialization experiment](runs/memory-inverse-v1-listening/index.html)
+fits a nonparametric output head over the **frozen shared22 encoder**: 43,525
+synthetic training presets, excluding 7,675 validation rows. It retrieves complete
+native controls using standardized learned-embedding distance. No neural weights
+were retrained and no real reference or human-selected patch was added to memory.
+The same eight external development references compare this initialization with
+the current regressed controls and the exact earlier human choice. Both fitted
+arms use identical per-engine proposal quotas, frozen preference scorer, and
+two distinct-engine starts with 128 native mutation attempts each. Final listening
+options retain all predeclared cases and deduplicate exact audio aliases.
+
+This tests coherent preset initialization, not a new claim of perceptual quality.
+Memory also retains prototype text/random state and scans a dense bank, so equal
+rendered proposal/search budgets do not isolate regression averaging or total
+compute. These repeated references overlap original Bfxr's historical training.
+See the [protocol](evaluations/memory-inverse-v1-protocol.json),
+[fit receipt](evaluations/memory-inverse-v1-fit.json), and
+[numerical results](evaluations/memory-inverse-v1-evaluation.json). Reproduction:
+`PYTHONPATH=tools python tools/multisynth/evaluations/memory-inverse-v1.py freeze`,
+then `fit`, then `run`; publication uses `memory-inverse-v1-publish.py`.
+Existing experiment directories are deliberately preserved against overwrites.
+
+All 672 proposals rendered; all 336 memory proposals matched their original
+training audio hashes exactly. Both arms completed 4,096 combined mutation
+attempts. Memory achieved a lower selection score on six of eight references;
+that is **not a human likeness result**. The published batch retains all eight
+references and 24 distinct comparison options, with exact final native replay
+and unchanged prior-choice audio verified. See the
+[listening audit](evaluations/memory-inverse-v1-listening-audit.json) and
+[served-file audit](evaluations/memory-inverse-v1-http-audit.json).
 
 
 Reproduction commands, from the repository root with `PYTHONPATH=tools` and the
