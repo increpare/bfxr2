@@ -1,0 +1,83 @@
+{
+  "complete": true,
+  "scriptSha256": "b7d3f549c208a329b9ce72f8570398a0ae0f778f5f44f1c0dfa645107f2872ca",
+  "protocolSha256": "05376ed9655d6d36f471b86eb62abe276b5c3039ab9a50b4c185f5a09c100d93",
+  "reportSha256": "293710678d02dde15d13bfebfff6813829321cd455a7b3cbfaec23154a3db83c",
+  "experimentId": "4e989bea7bd5290b9d23e51bd9fce73d693ed1c867258699c51fd8ef64bae824",
+  "checks": [
+    {
+      "name": "card/bookFlip2.ogg",
+      "initialScore": 1.2680252931624516,
+      "scores": {
+        "timeline": 0.8540276753609131,
+        "joint": 0.73552683282517
+      },
+      "sourceLayersChanged": {
+        "timeline": 0,
+        "joint": 3
+      },
+      "initialOverlapSeconds": [
+        0.762209450106356,
+        0.0
+      ],
+      "exactEarlierWinnerVerified": true,
+      "nativeReplayVerified": true
+    },
+    {
+      "name": "footstep/impactMetal_003.ogg",
+      "initialScore": 3.9271761747884777,
+      "scores": {
+        "timeline": 3.862279690282303,
+        "joint": 2.5727349232639147
+      },
+      "sourceLayersChanged": {
+        "timeline": 0,
+        "joint": 3
+      },
+      "initialOverlapSeconds": [
+        0.016669550241517284,
+        0.0
+      ],
+      "exactEarlierWinnerVerified": true,
+      "nativeReplayVerified": true
+    },
+    {
+      "name": "hit/attack.wav",
+      "initialScore": 9.76362492742679,
+      "scores": {
+        "timeline": 1.6202800581973067,
+        "joint": 1.894827112335123
+      },
+      "sourceLayersChanged": {
+        "timeline": 0,
+        "joint": 3
+      },
+      "initialOverlapSeconds": [
+        0.06351436746896333,
+        0.013651563687638035
+      ],
+      "exactEarlierWinnerVerified": true,
+      "nativeReplayVerified": true
+    },
+    {
+      "name": "collect/Mario - Super Jump Coin Hit.wav",
+      "initialScore": 0.9426011502524707,
+      "scores": {
+        "timeline": 0.9392948684526089,
+        "joint": 0.76305147181483
+      },
+      "sourceLayersChanged": {
+        "timeline": 0,
+        "joint": 2
+      },
+      "initialOverlapSeconds": [
+        0.08541863883969543
+      ],
+      "exactEarlierWinnerVerified": true,
+      "nativeReplayVerified": true
+    }
+  ],
+  "attempts": 6144,
+  "neuralWeightsRetrained": false,
+  "perceptualImprovement": "Unknown until human feedback"
+}

@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "experimentId": "4e989bea7bd5290b9d23e51bd9fce73d693ed1c867258699c51fd8ef64bae824",
+  "htmlSha256": "9c19699f9e6968259ef5a3a7928ae3a3be646ae5dd93190f74ed60eb23404b54",
+  "tabId": "47",
+  "url": "http://127.0.0.1:8765/tools/multisynth/runs/joint-support-v2-listening/index.html",
+  "observed": "0 / 4 judged, reference bookFlip2, three A/B/C playback and choice buttons, Start listening; no warnings or errors in browser log",
+  "ratingsEnteredByAgent": false
+}

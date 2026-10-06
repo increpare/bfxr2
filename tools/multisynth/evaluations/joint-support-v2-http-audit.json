@@ -1,0 +1,116 @@
+{
+  "complete": true,
+  "scriptSha256": "5bcd3d4283dd678a4f80fb8ecc317d1c9982c4b955ae1edf7a5e3b86c33d96c5",
+  "experimentId": "4e989bea7bd5290b9d23e51bd9fce73d693ed1c867258699c51fd8ef64bae824",
+  "baseUrl": "http://127.0.0.1:8765/tools/multisynth/runs/joint-support-v2-listening/",
+  "files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "9c19699f9e6968259ef5a3a7928ae3a3be646ae5dd93190f74ed60eb23404b54",
+      "bytes": 120659
+    },
+    {
+      "path": "results.json",
+      "status": 200,
+      "sha256": "75b2bcd12866ad93eb559555a4081e05a67b94bfbb8b3093d8b3f4ccb8a9f00d",
+      "bytes": 80480
+    },
+    {
+      "path": "001/joint.wav",
+      "status": 200,
+      "sha256": "c84d2abe8860f3c854c77a956ec72e20bc0ffbedf48560032ec8da55e86a386f",
+      "bytes": 85170
+    },
+    {
+      "path": "001/previous.wav",
+      "status": 200,
+      "sha256": "b75efb06f56bf40d99a5b37f0008ca38d374e87196cd96d67fa505d129763d25",
+      "bytes": 32494
+    },
+    {
+      "path": "001/target.wav",
+      "status": 200,
+      "sha256": "9e955f785ae8e62135084686dacae4a2910a2d678048dc1f2c315bace53ed569",
+      "bytes": 36206
+    },
+    {
+      "path": "001/timeline.wav",
+      "status": 200,
+      "sha256": "d6e974ef474b69471fc80bebc9fef2881753e3a295cec9ee41c1402890a81197",
+      "bytes": 83618
+    },
+    {
+      "path": "002/joint.wav",
+      "status": 200,
+      "sha256": "128e1df6df2d90052aed7a55ba9de4b5aed29e7672d55865f1f18039cc481235",
+      "bytes": 123056
+    },
+    {
+      "path": "002/previous.wav",
+      "status": 200,
+      "sha256": "6775b59dbcf5e355c2aae8496a0588d7bcda2d9869bf0be55dd3c499c0e16f62",
+      "bytes": 70830
+    },
+    {
+      "path": "002/target.wav",
+      "status": 200,
+      "sha256": "3a351a8361128dff40ab36fc379c655e8dbdd028cc377b5465b84a59bea1ffb2",
+      "bytes": 68556
+    },
+    {
+      "path": "002/timeline.wav",
+      "status": 200,
+      "sha256": "9d0ec172e9aa2e0abdf039ffc82b835d83a370078b3c4820b9cd56c4b7b5111b",
+      "bytes": 179662
+    },
+    {
+      "path": "003/joint.wav",
+      "status": 200,
+      "sha256": "0dd7529fffc9002ae2c1b36ab1cd97edc4c625233bddce53700a967d98617d61",
+      "bytes": 46064
+    },
+    {
+      "path": "003/previous.wav",
+      "status": 200,
+      "sha256": "a412f122f53c4c2259aea4d8cb043f93942c3aad76cab634cafebec2f62f0782",
+      "bytes": 25816
+    },
+    {
+      "path": "003/target.wav",
+      "status": 200,
+      "sha256": "dea69cbf6b5dbe0717af66a2f846fadae6ebc951db6f5640b5803b66f7413e81",
+      "bytes": 23696
+    },
+    {
+      "path": "003/timeline.wav",
+      "status": 200,
+      "sha256": "ee9b76a815b29f9995664108c2c2a57921e641806b63a7ba04310651592029fd",
+      "bytes": 23658
+    },
+    {
+      "path": "004/joint.wav",
+      "status": 200,
+      "sha256": "da98e05e7fbd6c8790a361beb6ae792b3b5a7d1ab9e1ac687e1dc1d360dd65d5",
+      "bytes": 72410
+    },
+    {
+      "path": "004/previous.wav",
+      "status": 200,
+      "sha256": "c21a4a82c62af660af4a875c53052908dfe97367a6a0f4d971a9518baffdcf46",
+      "bytes": 72402
+    },
+    {
+      "path": "004/target.wav",
+      "status": 200,
+      "sha256": "2fdb979368cb212ca2e4a18c3a9fe4d70fdd68b475a930bc6a75380538dd072d",
+      "bytes": 46790
+    },
+    {
+      "path": "004/timeline.wav",
+      "status": 200,
+      "sha256": "fb670ea41a3f834c483c86cf68bdfe486bf1745f55e10608384f1e9ca9bfb5bf",
+      "bytes": 72418
+    }
+  ]
+}

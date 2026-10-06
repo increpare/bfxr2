@@ -1,0 +1,41 @@
+{
+  "complete": true,
+  "scriptSha256": "6c06a7ce48faef68fe07542c386f146440105960d6904b73c2d95462be08bcb4",
+  "protocolSha256": "05376ed9655d6d36f471b86eb62abe276b5c3039ab9a50b4c185f5a09c100d93",
+  "jobs": [
+    [
+      0,
+      "timeline"
+    ],
+    [
+      0,
+      "joint"
+    ],
+    [
+      1,
+      "timeline"
+    ],
+    [
+      1,
+      "joint"
+    ],
+    [
+      2,
+      "timeline"
+    ],
+    [
+      2,
+      "joint"
+    ],
+    [
+      3,
+      "timeline"
+    ],
+    [
+      3,
+      "joint"
+    ]
+  ],
+  "workers": 3,
+  "scope": "Independent exact frozen768-attempt fits; SupportObjective scores one audition conversion."
+}

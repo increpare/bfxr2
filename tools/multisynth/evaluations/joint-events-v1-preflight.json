@@ -1,0 +1,5 @@
+{
+  "reason": "Pre-freeze assertion exposed a fourth multi-event heuristic case: metal footstep. Include every eligible case, with no score filtering. No run folder, fit, or publication created.",
+  "originalScriptSha256": "61b1239a1a85eb72bbb2b6d86413c8b6b34027ca76145a30a6b81d0cd2c2ab10",
+  "originalPlanSha256": "86f73935feb150fa35824201e840b8e08ad1cacab2cfc24cb28064aa20902e3c"
+}

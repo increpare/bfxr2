@@ -1,0 +1,50 @@
+{
+  "complete": true,
+  "scriptSha256": "ca9aa96cf77eb7fec82fc9aaf85952086c4ed961bcbf6d5fc9d0df9deef3b3ee",
+  "protocolSha256": "f376a4e8b9743e164719bcc0b8a41a2c06335e1c47e6bc171d531034c81b11cc",
+  "reason": "Post-fit verifier normalized already exported PCM a second time. Search itself uses one export. Use bare MatchObjective for verification.",
+  "evidence": {
+    "path": "tools/multisynth/runs/joint-events-v1/002/joint.wav",
+    "samples": 455464,
+    "peak": 0.499969482421875,
+    "changedSamplesOnSecondNormalization": 21260,
+    "singleScore": 1.1733049921601075,
+    "doubleScore": 1.330623099725773,
+    "maxSampleDifference": 3.0517578125e-05
+  },
+  "preservedFiles": {
+    "tools/multisynth/runs/joint-events-v1/001/joint.json": "fc82e1ed3492a4b0ec0ef8d2416a1e4abdf1fd014b87bd82dffcce3b19ae3c9d",
+    "tools/multisynth/runs/joint-events-v1/001/joint.wav": "333005d346e2a2d09edf649a7cd20c3934b0c8128525cd109bb8ff5a938b98ed",
+    "tools/multisynth/runs/joint-events-v1/001/result.json": "e3c4d62e80143be034843fb8a11511b167e5a5a851ddd8a8975e5ec81dc1349f",
+    "tools/multisynth/runs/joint-events-v1/001/timeline.json": "82ecb72e3f2708bb308c2e4a064b3b64ba8fa32fe6947a73ec26b4dfef569f9e",
+    "tools/multisynth/runs/joint-events-v1/001/timeline.wav": "9d483ceba898973bc0fe159ba72ab8f8b370fed3caaed076b804a364d94cfb72",
+    "tools/multisynth/runs/joint-events-v1/002/joint.wav": "bc034f6555cc2c13f8a7d3f76f55dfbca020abc523ccb0ca99f7bbffc34dcc2a",
+    "tools/multisynth/runs/joint-events-v1/002/timeline.json": "34d8366d977981df2ffa91de1d5892ef6df97ff08e0314ef30035b59342eae90",
+    "tools/multisynth/runs/joint-events-v1/002/timeline.wav": "ac5cbaae3ac8e6a9bf218d0de8ac1a7fd8d0ca77f2c6939a8bde9bba5417b8b1"
+  },
+  "recomputedJobs": [
+    [
+      1,
+      "joint"
+    ],
+    [
+      2,
+      "timeline"
+    ],
+    [
+      2,
+      "joint"
+    ],
+    [
+      3,
+      "timeline"
+    ],
+    [
+      3,
+      "joint"
+    ]
+  ],
+  "workers": 3,
+  "scope": "Same exact frozen seeds, initial controls, budgets and search code. Parallel execution changes timing only. Interrupted footstep joint fit repeats2048 identical attempts and must reproduce saved PCM; disclose duplicate compute.",
+  "exactInterruptedReplayVerified": true
+}

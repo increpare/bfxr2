@@ -1,0 +1,43 @@
+{
+  "complete": true,
+  "experimentId": "f27b717a401e625776450b2de0d212eb7ff47218cd9e034e737388ec24b9647c",
+  "targetCount": 4,
+  "optionCounts": [
+    3,
+    3,
+    3,
+    3
+  ],
+  "reportSha256": "bd1e8068550a4db9eb976fbd4959bba423f1a856ccca1b4d46b5c7b85b24fec6",
+  "resultsSha256": "be0461edd1448e5b1978353c424855c86261540bdc3223fb3e94d23c8c9df9d7",
+  "htmlSha256": "1f4939289dff2b46ed834149fd16f94dd6da440f5c12e6e491708685aaa8ecca",
+  "audioFiles": {
+    "001/joint.wav": "333005d346e2a2d09edf649a7cd20c3934b0c8128525cd109bb8ff5a938b98ed",
+    "001/previous.wav": "b75efb06f56bf40d99a5b37f0008ca38d374e87196cd96d67fa505d129763d25",
+    "001/target.wav": "9e955f785ae8e62135084686dacae4a2910a2d678048dc1f2c315bace53ed569",
+    "001/timeline.wav": "9d483ceba898973bc0fe159ba72ab8f8b370fed3caaed076b804a364d94cfb72",
+    "002/joint.wav": "bc034f6555cc2c13f8a7d3f76f55dfbca020abc523ccb0ca99f7bbffc34dcc2a",
+    "002/previous.wav": "6775b59dbcf5e355c2aae8496a0588d7bcda2d9869bf0be55dd3c499c0e16f62",
+    "002/target.wav": "3a351a8361128dff40ab36fc379c655e8dbdd028cc377b5465b84a59bea1ffb2",
+    "002/timeline.wav": "ac5cbaae3ac8e6a9bf218d0de8ac1a7fd8d0ca77f2c6939a8bde9bba5417b8b1",
+    "003/joint.wav": "eb919cdc84187f46b8f7b81fe560947b8bf7f272fa32d2b090ac259aabb0e917",
+    "003/previous.wav": "a412f122f53c4c2259aea4d8cb043f93942c3aad76cab634cafebec2f62f0782",
+    "003/target.wav": "dea69cbf6b5dbe0717af66a2f846fadae6ebc951db6f5640b5803b66f7413e81",
+    "003/timeline.wav": "bf743e8f12b8515c15c598a585a65b7a43c25168489886eeeb642f071bf8f27b",
+    "004/joint.wav": "5a3c3e74191271656f0efdf7ac05ac5c3fc9dab98abe4005b3de8c4e81840f62",
+    "004/previous.wav": "c21a4a82c62af660af4a875c53052908dfe97367a6a0f4d971a9518baffdcf46",
+    "004/target.wav": "2fdb979368cb212ca2e4a18c3a9fe4d70fdd68b475a930bc6a75380538dd072d",
+    "004/timeline.wav": "5be164d39a0a179f51183dbdb04af1800ddb8089c20a8903ed4f0c1214b9b641"
+  },
+  "uiCodeHashes": {
+    "quick_choice.js": "0bb2e27258fa918053f77e737b45200eb9389ec90fd0e185e71ef85bef4f911e",
+    "coverage_feedback.js": "db4cd83adfa7f788378ac0b0941f473376a730d4c55133f6d797250eeeee1d61",
+    "coverage_feedback.py": "50b9b03368addb2729f1689a208070347544f4f62150158bbcd08f4360b73b75",
+    "quick_audio.js": "0abfac40fe8cd7a1c9f79143458b45c7ef79342892113fdc53f9ca15cab7f83a",
+    "quick_listening.html": "167c746f5ec3f77802b799cd1659dd85c8d0fe599ffc365b4376cf4fc2777cd4",
+    "quick_listening.css": "833a39c37a9140b9e995d693dcd648266204cc022107b2c398c32468d231f7a7",
+    "quick_mismatch.js": "177bd0dd544d3bbc058b25f0ef2357b18723e9884449626a5e3a1423d9d82a2f",
+    "quick_mismatch.css": "81a2bc1a435c3a6afe87a9e7ff27c86b5b7d398053ed90dd7f5108bd57b211f0",
+    "quick_listening_diagnostic.js": "8a3b3d082f9653e27c17b7f7c989ddbf79592fd847e536d2745f72a9f5d71b41"
+  }
+}

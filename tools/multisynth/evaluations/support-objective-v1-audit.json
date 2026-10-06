@@ -1,0 +1,107 @@
+{
+  "complete": true,
+  "scriptSha256": "6f5efaf8151e0abb05ac458d84c9bad94b430860daec59c2cec2e84d19f72d5e",
+  "codeSha256": "6c0da5c88f6cb6a84635b5f7795cd41364b875058d8c52c80bb89e14059cc50b",
+  "manifestSha256": "0067521a7c1a46c5c042b29fa0b96a2d814c78bf633b908ee6bca25661174023",
+  "policy": {
+    "version": "support-v1",
+    "sampleRate": 44100,
+    "relativeAmplitudeFloor": 0.001,
+    "guardSamples": 882,
+    "leadingSilence": "preserve",
+    "auditionWaveform": "unchanged"
+  },
+  "rows": [
+    {
+      "name": "card/bookFlip2.ogg",
+      "score": 9.491713287582218,
+      "checks": [
+        {
+          "paddedSeconds": 1,
+          "candidateScore": 9.491713287582218,
+          "targetScore": 9.491713287582218
+        },
+        {
+          "paddedSeconds": 4,
+          "candidateScore": 9.491713287582218,
+          "targetScore": 9.491713287582218
+        }
+      ],
+      "fullSamples": 16225,
+      "analysisSamples": 10485
+    },
+    {
+      "name": "footstep/impactMetal_003.ogg",
+      "score": 2.071539889670022,
+      "checks": [
+        {
+          "paddedSeconds": 1,
+          "candidateScore": 2.071539889670022,
+          "targetScore": 2.071539889670022
+        },
+        {
+          "paddedSeconds": 4,
+          "candidateScore": 2.071539889670022,
+          "targetScore": 2.071539889670022
+        }
+      ],
+      "fullSamples": 35393,
+      "analysisSamples": 36153
+    },
+    {
+      "name": "hit/attack.wav",
+      "score": 2.098317576118738,
+      "checks": [
+        {
+          "paddedSeconds": 1,
+          "candidateScore": 2.098317576118738,
+          "targetScore": 2.098317576118738
+        },
+        {
+          "paddedSeconds": 4,
+          "candidateScore": 2.098317576118738,
+          "targetScore": 2.098317576118738
+        }
+      ],
+      "fullSamples": 12886,
+      "analysisSamples": 13768
+    },
+    {
+      "name": "laser/laserLarge_000.ogg",
+      "score": 4.502898894531746,
+      "checks": [
+        {
+          "paddedSeconds": 1,
+          "candidateScore": 4.502898894531746,
+          "targetScore": 4.502898894531746
+        },
+        {
+          "paddedSeconds": 4,
+          "candidateScore": 4.502898894531746,
+          "targetScore": 4.502898894531746
+        }
+      ],
+      "fullSamples": 47710,
+      "analysisSamples": 48592
+    },
+    {
+      "name": "collect/Mario - Super Jump Coin Hit.wav",
+      "score": 0.9426011502524707,
+      "checks": [
+        {
+          "paddedSeconds": 1,
+          "candidateScore": 0.9426011502524707,
+          "targetScore": 0.9426011502524707
+        },
+        {
+          "paddedSeconds": 4,
+          "candidateScore": 0.9426011502524707,
+          "targetScore": 0.9426011502524707
+        }
+      ],
+      "fullSamples": 36179,
+      "analysisSamples": 24392
+    }
+  ],
+  "interpretation": "Zero-padding invariance verified. No claim of improved human ranking; threshold remains experimental."
+}

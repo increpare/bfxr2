@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All twenty-nine feedback archives,
+do not establish general success on real recordings. All thirty feedback archives,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The latest [matched-objective human review](evaluations/legacy-transfer-v1-quick-01-human-review.json)
@@ -103,9 +103,62 @@ metric or equal-total-budget superiority. All six repeated external sources
 are fitted, with exact PCM aliases merged. The bell is omitted from listening
 because its entire reference/option PCM set was already heard and judged; this
 filter uses no ratings or score outcomes. Historical Bfxr training overlap remains;
-no claim of external perceptual improvement is made before listening feedback.
+the completed feedback rejects external improvement: all five exact earlier
+clips win, with three least-bad and two similar labels. The learned timing model
+has zero wins and remains experimental. Coin is the unchanged heuristic Stackr
+winner, not a new gain. All13 options were heard, yielding eight strict pairs.
+See the [human review](evaluations/learned-events-v1-quick-01-human-review.json).
 See [frozen comparison protocol](evaluations/learned-events-v1-protocol.json) and
 [replay/provenance checks](evaluations/learned-events-v1-verification.json).
+
+The joint event-control pilot exposed a concrete scoring defect: adding digital
+silence lowers historical MatchObjective distance on all five latest exact human
+winners. The optimizer can exploit its envelope/mel averages over the longest
+buffer. One native footstep fit lasted10.328seconds, while its last sample above
+-60dB relative peak occurred at0.573seconds. See the
+[unchanged-audio padding probe](evaluations/joint-events-v1-padding-probe.json).
+The pilot's results are retained as a diagnostic, not the next requested audition.
+
+Its post-fit verifier also mistakenly exported PCM a second time. This changed
+21,260 samples by at most one PCM step and moved that clip's score from1.1733 to
+1.3306. Search itself used one export. The separate recovery script verifies the
+original PCM with bare MatchObjective and requires exact replay of the interrupted
+fit. Completed fits remain unchanged; the interrupted2048 attempts are repeated
+with the same seed, disclosed as duplicate compute. See the
+[recovery receipt](evaluations/joint-events-v1-recovery.json).
+
+The experimental `multisynth.support_objective.SupportObjective` analyzes through
+the final sample above .001 of peak plus20ms context, retaining onset delay and
+later audible events. It leaves audition PCM unchanged. This removes the silent
+buffer incentive; it is an explicit analysis policy, not a complete audibility
+model. Historical scoring and model defaults remain intact. Unit tests and20
+padding checks on all five external reference/candidate pairs verify exact
+invariance; neither those checks nor score gains establish better human ranking.
+See [the support audit](evaluations/support-objective-v1-audit.json).
+
+The [four-case corrected comparison](runs/joint-support-v2-listening/index.html)
+uses the same initial heuristic Stackr patches for book, metal footstep, attack
+and coin. Each gets768 timing-only and768 joint-control attempts under the
+experimental corrected objective. Joint fitting can adjust native source controls
+in the complete sound context; the old event pipeline locked these after fitting
+isolated crops. Engines, layer count and random seed remain fixed. Your latest
+human winner is copied exactly as a third option, and exact audio aliases merge.
+No neural weights are retrained. These repeated external development references
+overlap historical Bfxr training; all four remain regardless of score.
+
+See [plan](../../docs/superpowers/plans/2026-10-06-joint-support.md),
+[protocol](evaluations/joint-support-v2-protocol.json), and
+[native source-overlap audit](evaluations/joint-events-v1-context.json).
+All eight fitted patches replay exactly, all12 options and four references have
+verified delivery hashes, and the browser loads0/4 judged without logged warnings
+or errors. The run made6144 attempts. Joint scoring is lower on three cases and
+higher on attack; these are numerical results, with human likeness still unknown.
+See [verification](evaluations/joint-support-v2-verification.json) and
+[served-file audit](evaluations/joint-support-v2-http-audit.json).
+
+Execute the corrected recipe with `joint-support-v2.py freeze`, then
+`joint-support-v2-parallel.py`, then `joint-support-v2.py publish`, using new paths
+for reproduction rather than overwriting any completed experiment.
 
 The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
 follows a **very-close** tagged wooden-footstep search result. Its 8,192-example

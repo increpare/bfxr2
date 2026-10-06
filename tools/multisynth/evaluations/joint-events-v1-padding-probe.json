@@ -1,0 +1,92 @@
+{
+  "complete": true,
+  "scriptSha256": "7ab3662272d5769e2feba037081f1a46d268784be0ce4db526c070ddd308cf02",
+  "manifestSha256": "0067521a7c1a46c5c042b29fa0b96a2d814c78bf633b908ee6bca25661174023",
+  "rows": [
+    {
+      "name": "card/bookFlip2.ogg",
+      "candidateId": "30562cd5655c15cf8bc772c55d9d5ac0d7e554dd4f15618e659567d189abfd4a",
+      "audioSha256": "e4aeab3816cae82bed0afa1e7ab9344f31ac7c59feff37cedccee7e3b81653b7",
+      "scoresByAppendedZeroSeconds": {
+        "0": 9.227626720488502,
+        "1": 8.190750759146983,
+        "4": 7.89735753728249
+      }
+    },
+    {
+      "name": "footstep/impactMetal_003.ogg",
+      "candidateId": "bf26bc24728a64c76ece95c8249f29ef737e74190a875411146ebeadc56db213",
+      "audioSha256": "63d1eb3d5ed49d3262a5500ccfbc5a94ebc293c5bfe1217d96980571baa66956",
+      "scoresByAppendedZeroSeconds": {
+        "0": 2.1111623590560114,
+        "1": 1.8834515014329882,
+        "4": 1.7041296752100514
+      }
+    },
+    {
+      "name": "hit/attack.wav",
+      "candidateId": "01aa9cc06b11af41550a9f98aa64eb561102b16f42059a32e13d9fe2e0bf0bc6",
+      "audioSha256": "14c7bb9e2ae937c4f019fbce217f476c217a67cb7cf2348d6876c5c2a7550139",
+      "scoresByAppendedZeroSeconds": {
+        "0": 2.1155463826321568,
+        "1": 1.7699237392892995,
+        "4": 1.562519714072697
+      }
+    },
+    {
+      "name": "laser/laserLarge_000.ogg",
+      "candidateId": "dbf19768e70363588edb09eca49c9abcb06f80663a919642ee7ed92c253de328",
+      "audioSha256": "d64e83097a8f7a87f85fb90b00e3afb9937ba07a0e0c3c865501bea0c21ed408",
+      "scoresByAppendedZeroSeconds": {
+        "0": 4.418924674902532,
+        "1": 4.083152716174792,
+        "4": 3.7825925994693548
+      }
+    },
+    {
+      "name": "collect/Mario - Super Jump Coin Hit.wav",
+      "candidateId": "6ff38182a1a35ff361f650625aa0e47a83990e31681c35e9efa07959ddb4c930",
+      "audioSha256": "e6cde899bae1ddba7e984da5be16a53c0d70713d0ae9f92fd5ca94cc67a4b783",
+      "scoresByAppendedZeroSeconds": {
+        "0": 0.9555290757959403,
+        "1": 0.7255701876564011,
+        "4": 0.6110022066926134
+      }
+    }
+  ],
+  "interruptedWave": {
+    "path": "tools/multisynth/runs/joint-events-v1/002/joint.wav",
+    "sha256": "bc034f6555cc2c13f8a7d3f76f55dfbca020abc523ccb0ca99f7bbffc34dcc2a",
+    "seconds": 10.32798185941043,
+    "supportAboveOneThousandthPeakSeconds": 0.5730612244897959,
+    "changedSamples": 21260,
+    "maximumSampleDifference": 3.0517578125e-05,
+    "components": {
+      "once": {
+        "coverage": 0.5700227297755928,
+        "env": 0.05911937355995178,
+        "env_motion": 3.597140312194824e-05,
+        "pitch": 0.0,
+        "voiced_mismatch": 0.23333333333333334,
+        "pitch_slope": 0.0,
+        "pitch_movement": 0.0,
+        "timbre": 0.2919202698601617,
+        "mel": 0.01887331422794592,
+        "structure_pitch": 0.0
+      },
+      "twice": {
+        "coverage": 0.5691489526554953,
+        "env": 0.06297425627708435,
+        "env_motion": 0.0042551010847091675,
+        "pitch": 0.0,
+        "voiced_mismatch": 0.2872340425531915,
+        "pitch_slope": 0.0,
+        "pitch_movement": 0.0,
+        "timbre": 0.3879449722614694,
+        "mel": 0.019065774893823415,
+        "structure_pitch": 0.0
+      }
+    }
+  },
+  "scope": "Unchanged heard signals with appended digital silence. This is an objective-invariance diagnostic, not fresh human labels or evidence of audible improvement."
+}

@@ -1,0 +1,94 @@
+{
+  "complete": true,
+  "scriptSha256": "d895b769b238112e23791f9c6ddead99175b770b00477d31606534728128fd6c",
+  "protocolSha256": "f376a4e8b9743e164719bcc0b8a41a2c06335e1c47e6bc171d531034c81b11cc",
+  "rows": [
+    {
+      "name": "card/bookFlip2.ogg",
+      "sources": [
+        {
+          "synth": "Fractr",
+          "start": 0,
+          "end": 0.9769940306052222,
+          "overlapNextSeconds": 0.762209450106356
+        },
+        {
+          "synth": "Rustlr",
+          "start": 0.2147845804988662,
+          "end": 0.3339589396273053,
+          "overlapNextSeconds": 0.0
+        },
+        {
+          "synth": "Rustlr",
+          "start": 0.33668934240362813,
+          "end": 0.41668934240362815,
+          "overlapNextSeconds": null
+        }
+      ]
+    },
+    {
+      "name": "footstep/impactMetal_003.ogg",
+      "sources": [
+        {
+          "synth": "Glitchr",
+          "start": 0,
+          "end": 0.09296910910342708,
+          "overlapNextSeconds": 0.016669550241517284
+        },
+        {
+          "synth": "Transfxr",
+          "start": 0.0762995588619098,
+          "end": 0.12771849821828477,
+          "overlapNextSeconds": 0.0
+        },
+        {
+          "synth": "Fractr",
+          "start": 0.15039131871571054,
+          "end": 2.0364638232609042,
+          "overlapNextSeconds": null
+        }
+      ]
+    },
+    {
+      "name": "hit/attack.wav",
+      "sources": [
+        {
+          "synth": "Transfxr",
+          "start": 0,
+          "end": 0.19433106575963718,
+          "overlapNextSeconds": 0.06351436746896333
+        },
+        {
+          "synth": "Transfxr",
+          "start": 0.13081669829067386,
+          "end": 0.180969564110175,
+          "overlapNextSeconds": 0.013651563687638035
+        },
+        {
+          "synth": "Transfxr",
+          "start": 0.16731800042253697,
+          "end": 0.27860285549975017,
+          "overlapNextSeconds": null
+        }
+      ]
+    },
+    {
+      "name": "collect/Mario - Super Jump Coin Hit.wav",
+      "sources": [
+        {
+          "synth": "Crittr",
+          "start": 0,
+          "end": 0.1506173687844548,
+          "overlapNextSeconds": 0.08541863883969543
+        },
+        {
+          "synth": "Transfxr",
+          "start": 0.06519872994475938,
+          "end": 0.8203780101449322,
+          "overlapNextSeconds": null
+        }
+      ]
+    }
+  ],
+  "interpretation": "Waveform support overlap, not perceptual tail audibility. Sources have no crop-length constraint once assembled."
+}
