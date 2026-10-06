@@ -1,0 +1,8 @@
+{
+  "complete": true,
+  "rows": 2304,
+  "scriptSha256": "95a4cde9698878413d7dc6a9420b59c160e48e4693d44b589dd986eb5faae5ac",
+  "protocolSha256": "311b91a1d36e2684ddef3e886f512767f115f91b6a4623734e3b23485b4e94bb",
+  "rowsSha256": "a2be1536ef8382e348ba58fceff9b31024f44644f020c0539e83aa37ac9490b4",
+  "check": "Every schedule label and component identity matches the corresponding actual Stackr layer controls."
+}

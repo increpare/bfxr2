@@ -1,0 +1,7 @@
+{
+  "reason": "Tappr is supported by native synthesis but absent from the certified22-engine dataset. Attempt stopped before source-bank processing. Inspect catalog, select Squishr (398 short parent examples). All split/sample/training/gate rules unchanged.",
+  "artifacts": {
+    "tools/multisynth/runs/event-timing-v1-bank-rejected-02/executed.py": "91f8a668f73f5b65fb7293ce786821054f4c7de167563bf74dc7c6462b4032b3",
+    "tools/multisynth/runs/event-timing-v1-bank-rejected-02/original-plan.md": "14711711b86ce7e29d220966c0e3133342a42e1ae370dd6cb9d34bb61e37426f"
+  }
+}

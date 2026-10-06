@@ -1,0 +1,80 @@
+{
+  "complete": true,
+  "experimentId": "33a80290d5d4aedb213bff679675ee16265b6deb015b7cb7bbf6993ebc98bee7",
+  "targetCount": 5,
+  "optionCounts": [
+    3,
+    3,
+    3,
+    2,
+    2
+  ],
+  "skippedIdentical": [],
+  "skippedAlreadyHeard": [
+    {
+      "trialIndex": 3,
+      "source": {
+        "name": "bell/impactBell_heavy_004.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/impactBell_heavy_004.ogg",
+        "sha256": "49fe4fafa2001bd0d312976796824571ca8429851f285997e1327d17bb34fd00",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "reason": "Exact reference and all option PCM already judged and heard",
+      "duplicateOf": {
+        "archive": "tools/multisynth/listening_data/2026-10-06-stackr-events-v1-quick-01",
+        "experimentId": "afa615c4b3f627fec1beafb6aba91bb2ff57724831bcdcf12f5e17d63d1699b8",
+        "targetId": "0a5a08c0529afa9e88a508f7bd4df437322f0a1a10c50b0862c0345c7ed10501",
+        "referencePcm": "79d79ce4ffefc593049c26e52d8ed75bd989ce35e527dc7ae6e884bacc17b758",
+        "options": [
+          "157948fa2905bda04e13971721928ac975d22a4b75233812a3b4eb5b5abe27af",
+          "d0f837fcfa6e06f110489790ea1d5cd08675d270abbfa6984aaf7fe1ce6b834a"
+        ]
+      }
+    }
+  ],
+  "publication": {
+    "scriptSha256": "082700e84eb09bcfbd08afae9f17b32163103291bef3a62c5854feec7380335a",
+    "policy": "Omit a trial only when the exact reference PCM and complete distinct option PCM set already occurred in a completed, fully auditioned retained trial. Do not filter on ratings, scores or which arm wins.",
+    "archiveHashes": {
+      "tools/multisynth/listening_data/2026-10-06-legacy-transfer-v1-quick-01/manifest.json": "bf191d1642045fd74d71cee74a12dae5df534d7eb5b131e951c5cc0289fa4a25",
+      "tools/multisynth/listening_data/2026-10-06-stackr-events-v1-quick-01/manifest.json": "1b55bd04cb2bb01e4ac6268a485fb1ea2cd7b88b169780150824362326d2ea9e"
+    },
+    "fittingProtocolSha256": "2e5a2cfd761fcc1e072e4cf8050713698fd3aafdb6830d71dbe0d6ac2a3b6139"
+  },
+  "reportSha256": "d2c59ec174a987b7eb2d42fca03f0ff870f44390d47930fe9ce1b6ad2e18b9d6",
+  "resultsSha256": "a259e7f569baaad13f4102214483dc24e61c278226f5858c77da12e50ac7f0bd",
+  "htmlSha256": "e44193b0b6f2b685382b1e7b1da7bf5b05870bee452dfa5ce3d8015d239e733b",
+  "audioFiles": {
+    "001/heuristic.wav": "9390db90b5bec02604901849591b2284ff2ec69e2f9787ccbf10a08f4fcf5764",
+    "001/learned.wav": "56e0ef653f764c9515f0b76342794b2cfda4c6ec0a180677ab9a4b05927d3bc8",
+    "001/previous.wav": "b75efb06f56bf40d99a5b37f0008ca38d374e87196cd96d67fa505d129763d25",
+    "001/target.wav": "9e955f785ae8e62135084686dacae4a2910a2d678048dc1f2c315bace53ed569",
+    "002/heuristic.wav": "69ae37079ce7e670e05bd651270844b10c123cfc045bd285fecbd4004bed5976",
+    "002/learned.wav": "8ed296ddd432ff977293a740d9df9a2bccef99a4a34dabad8c7055afad4c021b",
+    "002/previous.wav": "6775b59dbcf5e355c2aae8496a0588d7bcda2d9869bf0be55dd3c499c0e16f62",
+    "002/target.wav": "3a351a8361128dff40ab36fc379c655e8dbdd028cc377b5465b84a59bea1ffb2",
+    "003/heuristic.wav": "f59da6c0f1bba13d988cf956f88b12c94c615d0d309167b19bb1be4e4be4d9eb",
+    "003/learned.wav": "ae49734b146cb453939b9a35c6c735089e1cda2f1ca3d8757d44c6f6bfdda155",
+    "003/previous.wav": "a412f122f53c4c2259aea4d8cb043f93942c3aad76cab634cafebec2f62f0782",
+    "003/target.wav": "dea69cbf6b5dbe0717af66a2f846fadae6ebc951db6f5640b5803b66f7413e81",
+    "005/learned.wav": "19080e4f4b38c85b284b198a59b218a8686154b995c144c6550f3bb6bddede67",
+    "005/previous.wav": "ff8fc255ecad841bc029d1c5e0c127860d7df5879d168b8d10ddce0d6e9143c5",
+    "005/target.wav": "cb47d153f773d1cd430fde6c4e35ea7f249435ca99dca4c6fa917554401e7f4a",
+    "006/heuristic.wav": "c21a4a82c62af660af4a875c53052908dfe97367a6a0f4d971a9518baffdcf46",
+    "006/learned.wav": "028ca8b019cb18aad01462363cfb9fd97d52c2a0624873079db3e3a87886e51f",
+    "006/target.wav": "2fdb979368cb212ca2e4a18c3a9fe4d70fdd68b475a930bc6a75380538dd072d"
+  },
+  "uiCodeHashes": {
+    "quick_choice.js": "0bb2e27258fa918053f77e737b45200eb9389ec90fd0e185e71ef85bef4f911e",
+    "coverage_feedback.js": "db4cd83adfa7f788378ac0b0941f473376a730d4c55133f6d797250eeeee1d61",
+    "coverage_feedback.py": "50b9b03368addb2729f1689a208070347544f4f62150158bbcd08f4360b73b75",
+    "quick_audio.js": "0abfac40fe8cd7a1c9f79143458b45c7ef79342892113fdc53f9ca15cab7f83a",
+    "quick_listening.html": "167c746f5ec3f77802b799cd1659dd85c8d0fe599ffc365b4376cf4fc2777cd4",
+    "quick_listening.css": "833a39c37a9140b9e995d693dcd648266204cc022107b2c398c32468d231f7a7",
+    "quick_mismatch.js": "177bd0dd544d3bbc058b25f0ef2357b18723e9884449626a5e3a1423d9d82a2f",
+    "quick_mismatch.css": "81a2bc1a435c3a6afe87a9e7ff27c86b5b7d398053ed90dd7f5108bd57b211f0",
+    "quick_listening_diagnostic.js": "8a3b3d082f9653e27c17b7f7c989ddbf79592fd847e536d2745f72a9f5d71b41"
+  }
+}

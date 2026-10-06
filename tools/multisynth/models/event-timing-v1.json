@@ -1,0 +1,11 @@
+{
+  "checkpointSha256": "f26c6892dfd3dddffdae9f9fe0c48df292e45f3981aa65f31336c7ed70f1ba8d",
+  "architecture": "neural_invert.event_timing.TimingNet",
+  "featureCodeSha256": "b01fa8242d9b525ad1afdd2045cbdbc669688477e45cda624e1678345c75e35c",
+  "protocolSha256": "311b91a1d36e2684ddef3e886f512767f115f91b6a4623734e3b23485b4e94bb",
+  "evaluationSha256": "ad2d3b7e7ea7f02e070a10c0b6dd40528c7d6dbc8aadcfd65be51f86fc61e925",
+  "stage": "experimental timing front end; not the default synthesis selector",
+  "input": "finite mono44.1kHz, at most65536 samples; event_timing.features then TimingNet.sigmoid then decode",
+  "training": "synthetic Stackr schedules,1536 train/384 validation/384 test, canonical component and source PCM disjoint",
+  "limitation": "Short prompt-onset native components; slower/overlapping/environmental event meaning remains unvalidated. Native timing performance is not audible recreation quality."
+}

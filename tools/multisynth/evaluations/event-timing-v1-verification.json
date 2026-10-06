@@ -1,0 +1,22 @@
+{
+  "complete": true,
+  "scriptSha256": "033016002e042d4e1f23d5f62268eeba42c37e3d8610962ef832219d1dda158a",
+  "evaluationSha256": "ad2d3b7e7ea7f02e070a10c0b6dd40528c7d6dbc8aadcfd65be51f86fc61e925",
+  "checkpointSha256": "f26c6892dfd3dddffdae9f9fe0c48df292e45f3981aa65f31336c7ed70f1ba8d",
+  "sourceComponents": {
+    "train": 128,
+    "val": 64,
+    "test": 64
+  },
+  "examples": 2304,
+  "independentUncachedReplays": 24,
+  "testRowsPerCondition": 384,
+  "reproducedValidation": 0.07648664837082227,
+  "gatePassed": true,
+  "checks": [
+    "Canonical controls and exact source PCM disjoint across splits",
+    "Exact40-epoch minimum-validation checkpoint",
+    "All labels reconstructed from native schedules",
+    "All metric counts and fixed gate independently reconstructed"
+  ]
+}

@@ -63,6 +63,23 @@ external generalization.
 | `2026-10-06-control-diagnosis-v1-quick-01/` | 7 trials / 5 references | 21 |
 | `2026-10-06-memory-inverse-v1-quick-01/` | 8 references | 24 |
 | `2026-10-06-legacy-transfer-v1-quick-01/` | 6 references | 18 |
+| `2026-10-06-stackr-events-v1-quick-01/` | 4 references | 11 |
+
+The twenty-ninth archive completes all four native Stackr event trials.
+**Scheduled Stackr wins coin as similar; exact earlier clips win the other three.**
+All11 distinct options were heard. Seven strict heard pairs, four qualitative
+winner labels and three immediate mismatch notes are retained with15 exact PCM
+files. Legacy agrees with5/7 strict pairs, preference4/7, soft3/7.
+
+The new coin improves over its previously least-bad Transfxr anchor and the
+simultaneous version of the same components, but still has movement/rhythm
+mismatch. This is a local human-supported gain, not a convincing recreation or
+general validation of event fitting. Book remains least-bad and attack similar,
+both with texture/timbre mismatch. Earlier Boomr bell is now very-close; its
+exact PCM is unchanged from the preceding similar rating. Preserve both contexts
+and do not describe the label change as a synthesis improvement. Scheduled and
+simultaneous bell are identical and correctly merge into one option.
+See the [human review](../evaluations/stackr-events-v1-quick-01-human-review.json).
 
 The twenty-eighth archive completes all six matched-objective comparisons.
 **Legacy wins two, learned preference wins two, original Bfxr wins two.** No

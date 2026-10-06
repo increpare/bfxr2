@@ -1,0 +1,151 @@
+{
+  "complete": true,
+  "scriptSha256": "d1cb725d392d59982a4441bfc22fab5ba0d6c2c6260d9b30f1fb4c82fbcb787b",
+  "protocolSha256": "2e5a2cfd761fcc1e072e4cf8050713698fd3aafdb6830d71dbe0d6ac2a3b6139",
+  "reportSha256": "d2c59ec174a987b7eb2d42fca03f0ff870f44390d47930fe9ce1b6ad2e18b9d6",
+  "experimentId": "33a80290d5d4aedb213bff679675ee16265b6deb015b7cb7bbf6993ebc98bee7",
+  "trials": [
+    {
+      "trialIndex": 0,
+      "name": "card/bookFlip2.ogg",
+      "arm": "learned",
+      "events": 3,
+      "proposed": 132,
+      "valid": 132,
+      "segmentAttempts": 384,
+      "timelineAttempts": 128,
+      "nativeReplayVerified": true
+    },
+    {
+      "trialIndex": 0,
+      "name": "card/bookFlip2.ogg",
+      "arm": "heuristic",
+      "events": 3,
+      "proposed": 132,
+      "valid": 132,
+      "segmentAttempts": 384,
+      "timelineAttempts": 128,
+      "nativeReplayVerified": true
+    },
+    {
+      "trialIndex": 1,
+      "name": "footstep/impactMetal_003.ogg",
+      "arm": "learned",
+      "events": 1,
+      "proposed": 44,
+      "valid": 44,
+      "segmentAttempts": 128,
+      "timelineAttempts": 128,
+      "nativeReplayVerified": true
+    },
+    {
+      "trialIndex": 1,
+      "name": "footstep/impactMetal_003.ogg",
+      "arm": "heuristic",
+      "events": 3,
+      "proposed": 132,
+      "valid": 132,
+      "segmentAttempts": 384,
+      "timelineAttempts": 128,
+      "nativeReplayVerified": true
+    },
+    {
+      "trialIndex": 2,
+      "name": "hit/attack.wav",
+      "arm": "learned",
+      "events": 2,
+      "proposed": 88,
+      "valid": 88,
+      "segmentAttempts": 256,
+      "timelineAttempts": 128,
+      "nativeReplayVerified": true
+    },
+    {
+      "trialIndex": 2,
+      "name": "hit/attack.wav",
+      "arm": "heuristic",
+      "events": 3,
+      "proposed": 132,
+      "valid": 132,
+      "segmentAttempts": 384,
+      "timelineAttempts": 128,
+      "nativeReplayVerified": true
+    },
+    {
+      "trialIndex": 3,
+      "name": "bell/impactBell_heavy_004.ogg",
+      "arm": "learned",
+      "events": 1,
+      "proposed": 44,
+      "valid": 44,
+      "segmentAttempts": 128,
+      "timelineAttempts": 128,
+      "nativeReplayVerified": true
+    },
+    {
+      "trialIndex": 3,
+      "name": "bell/impactBell_heavy_004.ogg",
+      "arm": "heuristic",
+      "events": 1,
+      "proposed": 44,
+      "valid": 44,
+      "segmentAttempts": 128,
+      "timelineAttempts": 128,
+      "nativeReplayVerified": true
+    },
+    {
+      "trialIndex": 4,
+      "name": "laser/laserLarge_000.ogg",
+      "arm": "learned",
+      "events": 1,
+      "proposed": 44,
+      "valid": 44,
+      "segmentAttempts": 128,
+      "timelineAttempts": 128,
+      "nativeReplayVerified": true
+    },
+    {
+      "trialIndex": 4,
+      "name": "laser/laserLarge_000.ogg",
+      "arm": "heuristic",
+      "events": 1,
+      "proposed": 44,
+      "valid": 44,
+      "segmentAttempts": 128,
+      "timelineAttempts": 128,
+      "nativeReplayVerified": true
+    },
+    {
+      "trialIndex": 5,
+      "name": "collect/Mario - Super Jump Coin Hit.wav",
+      "arm": "learned",
+      "events": 1,
+      "proposed": 44,
+      "valid": 44,
+      "segmentAttempts": 128,
+      "timelineAttempts": 128,
+      "nativeReplayVerified": true
+    },
+    {
+      "trialIndex": 5,
+      "name": "collect/Mario - Super Jump Coin Hit.wav",
+      "arm": "heuristic",
+      "events": 2,
+      "proposed": 88,
+      "valid": 88,
+      "segmentAttempts": 256,
+      "timelineAttempts": 128,
+      "nativeReplayVerified": true
+    }
+  ],
+  "targetCount": 5,
+  "optionCounts": [
+    3,
+    3,
+    3,
+    2,
+    2
+  ],
+  "earlierPcmPreserved": true,
+  "interpretation": "Native timing gate passed; external perceptual improvement remains unknown pending human feedback."
+}

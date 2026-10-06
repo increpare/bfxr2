@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All twenty-eight feedback archives,
+do not establish general success on real recordings. All twenty-nine feedback archives,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The latest [matched-objective human review](evaluations/legacy-transfer-v1-quick-01-human-review.json)
@@ -39,7 +39,7 @@ bell has no interior boundary and only two distinct options. All four references
 remain regardless of scores, including possible regressions. These are repeated
 external development references, not new-source validation, and historical Bfxr
 overlap remains. The comparison diagnoses representation rather than equal-budget
-model superiority. Human quality is unknown pending feedback.
+model superiority. The completed human review below supplies the outcome.
 
 See [protocol](evaluations/stackr-events-v1-protocol.json),
 [results](evaluations/stackr-events-v1-evaluation.json), and
@@ -47,6 +47,65 @@ See [protocol](evaluations/stackr-events-v1-protocol.json),
 Reproduce with `PYTHONPATH=tools python tools/multisynth/evaluations/stackr-events-v1.py`
 followed by `freeze`, `run`, and `publish` in a fresh output location. The existing
 paths are immutable; do not overwrite a published or partially completed run.
+
+The completed [Stackr event feedback](evaluations/stackr-events-v1-quick-01-human-review.json)
+finds one local gain: scheduled coin wins as similar against the previous
+least-bad Transfxr clip and the simultaneous ablation. Movement/rhythm remains
+imperfect. Previous book and attack win as least-bad and similar; previous Boomr
+bell is now very-close, but that is unchanged audio with a different contextual
+rating. All11 options were heard, supplying seven strict pairs and four scoped
+qualitative labels. No broad Stackr promotion follows from this result.
+
+A new **13,281-parameter event-timing CNN** is trained on1,536 actual native
+Stackr sequences, with384 validation and384 untouched test sequences. The
+256 constituent patches come from eight engines; canonical controls and exact
+source PCM are disjoint across splits. Preset families can overlap. Components
+are short and have prompt attacks, so this is a restricted timing model, not a
+new all-synth control inverse. Source-bank corrections happened before training
+and are retained in the preflight receipts.
+
+The fixed40-epoch CPU run chooses epoch38 by validation BCE (0.0764866484),
+reproduced after loading the checkpoint. Native interior-event F1 is85.85%,
+versus67.73% for the old waveform splitter; exact event-count accuracy is81.51%
+versus64.32%. On4-bit audio, F1 is84.62% versus69.89%; on1500Hz low-pass audio,
+83.21% versus64.08%. It passes the predeclared timing gate. These are native
+schedule-label measurements within25ms, **not perceptual recreation accuracy**.
+Neither real references nor human-selected patches enter this timing dataset.
+The small checkpoint is retained in version control at
+[models/event-timing-v1.pt](models/event-timing-v1.pt), with its feature/code
+bindings in [metadata](models/event-timing-v1.json). It remains experimental.
+
+See [protocol](evaluations/event-timing-v1-protocol.json),
+[data audit](evaluations/event-timing-v1-data-audit.json),
+[training](evaluations/event-timing-v1-training-audit.json),
+[test evaluation](evaluations/event-timing-v1-evaluation.json),
+[independent verification](evaluations/event-timing-v1-verification.json), and
+[all-row native source/label check](evaluations/event-timing-v1-source-label-check.json).
+An additional [tempo stress diagnostic](evaluations/event-timing-v1-tempo-stress.json)
+was explicitly exploratory after viewing external boundary proposals. Halving
+start spacing lowers learned F1 to72.78% (heuristic63.10%); stretching spacing
+by1.5 gives87.43% (heuristic65.01%). Source duration stays fixed, so overlap also
+changes. This exposes restricted tempo coverage and does not revise the original
+gate or checkpoint. The frozen external comparison remains unchanged.
+
+The implementation is `neural_invert.event_timing`; reproduce the fixed experiment
+with `evaluations/event-timing-v1.py bank`, `data`, `train`, `evaluate` using a fresh
+output directory. Preserve existing experiment paths.
+
+The [five-trial external timing comparison](runs/learned-events-v1-listening/index.html)
+compares learned and heuristic boundaries through the same frozen shared22 and
+Transfxr experts, alongside the exact latest human winner. This includes the
+newly preferred Stackr coin, not its superseded Transfxr anchor. Each event gets
+128 native control mutations and each timeline128 mutations; differing event
+counts mean different total work and different segment-conditioned proposals.
+This tests the full segmentation-assisted pipeline, not an isolated boundary
+metric or equal-total-budget superiority. All six repeated external sources
+are fitted, with exact PCM aliases merged. The bell is omitted from listening
+because its entire reference/option PCM set was already heard and judged; this
+filter uses no ratings or score outcomes. Historical Bfxr training overlap remains;
+no claim of external perceptual improvement is made before listening feedback.
+See [frozen comparison protocol](evaluations/learned-events-v1-protocol.json) and
+[replay/provenance checks](evaluations/learned-events-v1-verification.json).
 
 The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
 follows a **very-close** tagged wooden-footstep search result. Its 8,192-example

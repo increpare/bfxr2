@@ -1,0 +1,9 @@
+{
+  "reason": "Riftr eligible canonical bank exhausted: train16/16,val5/8,test6/8. No data sequences or training ran. Replace Riftr with Tappr before training; keep all sample/latency/split requirements unchanged.",
+  "artifacts": {
+    "tools/multisynth/runs/event-timing-v1-bank-rejected-01/protocol.json": "5a2de4a2034abdb5d9197e8d28eb31324accef8c35229c110bdc7b1be6f0aa0e",
+    "tools/multisynth/runs/event-timing-v1-bank-rejected-01/bank-failure.json": "5662b252ed92614875ce97f271c89a6661cb95a7dd032de80a3329e92ac1ce14",
+    "tools/multisynth/runs/event-timing-v1-bank-rejected-01/executed.py": "1b83aa77a6b36c8799a8f9f78685a14bc8c0c7a2a38fc16ebf2ab249470f18e6",
+    "tools/multisynth/runs/event-timing-v1-bank-rejected-01/original-plan.md": "e84b35c1ecdb99f9c5dc4f4392a034c48fdd35afdf153dbca58395c7451f0c89"
+  }
+}
