@@ -62,6 +62,25 @@ external generalization.
 | `2026-10-06-fresh-gesture-v1-quick-01/` | 8 references | 24 |
 | `2026-10-06-control-diagnosis-v1-quick-01/` | 7 trials / 5 references | 21 |
 | `2026-10-06-memory-inverse-v1-quick-01/` | 8 references | 24 |
+| `2026-10-06-legacy-transfer-v1-quick-01/` | 6 references | 18 |
+
+The twenty-eighth archive completes all six matched-objective comparisons.
+**Legacy wins two, learned preference wins two, original Bfxr wins two.** No
+winner is very-close: four are least-bad and two are similar (legacy Boomr bell,
+original Bfxr attack). All18 options were heard, all24 exact PCM files are retained,
+and twelve strict heard pairs agree with legacy on8, preference on6 and soft on5.
+
+Immediate winner-scoped notes identify movement/rhythm for learned Transfxr book
+flip and coin, several things for legacy metal footstep and original Bfxr laser,
+texture/timbre for Bfxr attack, and unsure for legacy bell. These labels apply
+only to the chosen candidates. A2/2/2 split on six sounds is not statistical
+equivalence, and original Bfxr has a different optimizer/budget and historical
+training overlap. Switching the newer-synth objective alone has not established
+convincing recreation. See the [human review](../evaluations/legacy-transfer-v1-quick-01-human-review.json).
+
+The next native Stackr pilot retains exact winners for book flip/coin and both
+similar controls. It tests separately fitted events with scheduled versus zeroed
+starts; it does not retrain a neural model or claim an unseen-source benchmark.
 
 The twenty-seventh archive completes all eight memory-versus-regression trials.
 **Memory wins zero, earlier clips win five, regression wins two, one tie.** The

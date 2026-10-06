@@ -1,0 +1,1570 @@
+{
+  "complete": true,
+  "partialSubmission": false,
+  "submittedTrials": 6,
+  "totalTrials": 6,
+  "distinctReferences": 6,
+  "experimentId": "64f8c69a13833a61d9bd5d3b5dfd55f3277aa29d03b44aed7f8fd06ec2c0af12",
+  "scriptSha256": "f52ab5584657a830820f6ab6cda08b97ab0d5e18261adf04979ff325131cc116",
+  "feedbackSha256": "eabeab5b5a10cce8faf476d557bc62e42a186e5ecdb7abf248705d0d0021c584",
+  "manifestSha256": "bf191d1642045fd74d71cee74a12dae5df534d7eb5b131e951c5cc0289fa4a25",
+  "galleryReportSha256": "c96f14ccbe3f0a7fa81afc60a13eaf3a35ab4db94cd3f9dce4e0e56ac14e2e47",
+  "galleryAuditSha256": "525e143cea82165fc605710ce16e9683676d29026aeecac9a3f323311eed7065",
+  "metricHashes": {
+    "preferenceNeuralV2": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b"
+  },
+  "archiveSummary": {
+    "targets": 6,
+    "uniqueRatedCandidates": 0,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "choices": 6,
+    "choiceKinds": {
+      "best": 6,
+      "tie": 0,
+      "none": 0,
+      "skip": 0
+    }
+  },
+  "trainingPairSummary": {
+    "targets": 6,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "duplicateAudioAliases": 0,
+    "conflictingAudioRatingGroups": 0,
+    "tiedPairs": 0,
+    "duplicateSessionPairs": 0,
+    "directChoicePairs": 12,
+    "choices": 6,
+    "choiceKinds": {
+      "best": 6,
+      "tie": 0,
+      "none": 0,
+      "skip": 0
+    },
+    "validatedAudioFiles": 24,
+    "uniqueAudioPcm": 24
+  },
+  "rows": [
+    {
+      "folder": "001",
+      "name": "card/bookFlip2.ogg",
+      "targetId": "369b3ba4280480444acfade0e91bd865b5b0689dc10bb667f4b66651ad527eff",
+      "referencePcmSha256": "1c6a3007a6e760f9420d2664503a7ee8910b39c90797fbc0dc064ec87fca07c9",
+      "kind": "best",
+      "adequacy": {
+        "level": "least-bad",
+        "candidateIds": [
+          "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9"
+        ]
+      },
+      "preferredRoles": [
+        "preference"
+      ],
+      "options": [
+        {
+          "id": "ae9595cc82a1903ffe11cd010ddf43016b79b76f5699f88a2bff9249c3a255e5",
+          "role": "legacy",
+          "origin": "Transfxr-mixture",
+          "selectionAliases": [
+            "legacy"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Transfxr",
+          "pcmSha256": "fa33ffa3f4e0076b4bb5f7ed02a2132249a07cf96357ef4e5e7907fe70957e0c",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 1.6329313795869245,
+            "MatchObjective": 0.9903741460149182,
+            "preferenceNeuralV2": 1.1705077542062794
+          }
+        },
+        {
+          "id": "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9",
+          "role": "preference",
+          "origin": "Transfxr-mixture",
+          "selectionAliases": [
+            "preference"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Transfxr",
+          "pcmSha256": "0d4922a88a5f638f356004009b110307f9dde8f948aab0f621cd2b69016245ba",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": true,
+          "responseScopedLikeness": "least-bad",
+          "scores": {
+            "softPeriodicity": 4.04286148276184,
+            "MatchObjective": 9.227626720488502,
+            "preferenceNeuralV2": 0.822583271049453
+          }
+        },
+        {
+          "id": "48872fb78334d3355485baa1775ce5a72b8145ada9df7f88bd9f4cef53f357cd",
+          "role": "original",
+          "origin": "original-bfxr",
+          "selectionAliases": [
+            "original"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Bfxr",
+          "pcmSha256": "eec53272da95c9d91f5c48480f4565bdb0edf2339e323caa8045260c246bd1a7",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 1.636024840681254,
+            "MatchObjective": 1.2233450864836566,
+            "preferenceNeuralV2": 1.0661318122043508
+          }
+        }
+      ],
+      "note": "[quick-mismatch-v1] chosen [\"97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9\"]: movement/rhythm"
+    },
+    {
+      "folder": "002",
+      "name": "footstep/impactMetal_003.ogg",
+      "targetId": "d01362258904f84cd181bd1ef25c5a2bf00bb2d3c0da6a710110b9748c10308d",
+      "referencePcmSha256": "1f9398531767247cf41a8bb99a9746dc5ddc4c75b698771667749fc7129e9ee8",
+      "kind": "best",
+      "adequacy": {
+        "level": "least-bad",
+        "candidateIds": [
+          "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d"
+        ]
+      },
+      "preferredRoles": [
+        "legacy"
+      ],
+      "options": [
+        {
+          "id": "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d",
+          "role": "legacy",
+          "origin": "Boomr-specialist",
+          "selectionAliases": [
+            "legacy"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Boomr",
+          "pcmSha256": "a5a40e1067ec858b021c765d103b3a8c88f80b212ffaad3a54e5198824f5b203",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": true,
+          "responseScopedLikeness": "least-bad",
+          "scores": {
+            "softPeriodicity": 3.2522892259075453,
+            "MatchObjective": 2.1111623590560114,
+            "preferenceNeuralV2": 1.138401303493484
+          }
+        },
+        {
+          "id": "1783b28a06ab85ea2e57049bf19c45f07ea63d65cc1fa913e4e46ce4446d79e3",
+          "role": "preference",
+          "origin": "shared22",
+          "selectionAliases": [
+            "preference"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Pluckr",
+          "pcmSha256": "bf69cedb3c1b4216c9b54ebe8407e025bab928f18194479f9ea983b70de9505d",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 2.7375092673314647,
+            "MatchObjective": 12.453633016756866,
+            "preferenceNeuralV2": 0.5561775868426293
+          }
+        },
+        {
+          "id": "6967f043b0e48be03b61a6921778615af06c20b9eb8f8e54e869b31dc60589af",
+          "role": "original",
+          "origin": "original-bfxr",
+          "selectionAliases": [
+            "original"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Bfxr",
+          "pcmSha256": "83f5f655823bd2f94bbaef5dbc8799f38adebe60d2d962fea92f306dd164a0a3",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 3.6857390945989867,
+            "MatchObjective": 2.338192953903546,
+            "preferenceNeuralV2": 0.7627728670255232
+          }
+        }
+      ],
+      "note": "[quick-mismatch-v1] chosen [\"129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d\"]: several things"
+    },
+    {
+      "folder": "003",
+      "name": "hit/attack.wav",
+      "targetId": "abd91fe22457833fd32ef1a7b2f16e01cf7507ae54d6b5ee3d3510024d15e1df",
+      "referencePcmSha256": "ff2ba6ba70abb4b1e6ced66c665a3e116fb1ee38c826108a750557333e5df850",
+      "kind": "best",
+      "adequacy": {
+        "level": "similar",
+        "candidateIds": [
+          "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531"
+        ]
+      },
+      "preferredRoles": [
+        "original"
+      ],
+      "options": [
+        {
+          "id": "9e1b67fb91794a88c838473033ad4ee1fb4e711aae27778c5094a0d1bd962447",
+          "role": "legacy",
+          "origin": "Boomr-specialist",
+          "selectionAliases": [
+            "legacy"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Boomr",
+          "pcmSha256": "a3fb0f3a7496185ee52d6d4c3a3427fafe61ddf359102acd62b27793a329ed49",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 2.8277622273267964,
+            "MatchObjective": 1.8950223257841328,
+            "preferenceNeuralV2": 1.8242113508844189
+          }
+        },
+        {
+          "id": "7aba658f225fb99af5ff998d7f56de2a2a1a32dbf73af1e3f12ecfbce74e64e8",
+          "role": "preference",
+          "origin": "shared22",
+          "selectionAliases": [
+            "preference"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Choirr",
+          "pcmSha256": "74c0276aebf1758aa63c597ac9db7a03d658800623a64793665d38f0b97f8e7a",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 4.819302717456093,
+            "MatchObjective": 10.74991942406582,
+            "preferenceNeuralV2": 1.0477506568174193
+          }
+        },
+        {
+          "id": "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531",
+          "role": "original",
+          "origin": "original-bfxr",
+          "selectionAliases": [
+            "original"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Bfxr",
+          "pcmSha256": "f0c6a0523ecfeac441e7bf4d91dab4d5598d2ba377c62113a4bdc71997fd3f64",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": true,
+          "responseScopedLikeness": "similar",
+          "scores": {
+            "softPeriodicity": 3.010041261877915,
+            "MatchObjective": 2.1155463826321568,
+            "preferenceNeuralV2": 1.479418853558535
+          }
+        }
+      ],
+      "note": "[quick-mismatch-v1] chosen [\"5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531\"]: texture/timbre"
+    },
+    {
+      "folder": "004",
+      "name": "bell/impactBell_heavy_004.ogg",
+      "targetId": "ac64f92ace3023a967bb59e9dab3c12d26c00dd76c14fe785b1d79c93f939790",
+      "referencePcmSha256": "79d79ce4ffefc593049c26e52d8ed75bd989ce35e527dc7ae6e884bacc17b758",
+      "kind": "best",
+      "adequacy": {
+        "level": "similar",
+        "candidateIds": [
+          "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6"
+        ]
+      },
+      "preferredRoles": [
+        "legacy"
+      ],
+      "options": [
+        {
+          "id": "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6",
+          "role": "legacy",
+          "origin": "Boomr-specialist",
+          "selectionAliases": [
+            "legacy"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Boomr",
+          "pcmSha256": "157948fa2905bda04e13971721928ac975d22a4b75233812a3b4eb5b5abe27af",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": true,
+          "responseScopedLikeness": "similar",
+          "scores": {
+            "softPeriodicity": 3.789513791934076,
+            "MatchObjective": 2.21472850520409,
+            "preferenceNeuralV2": 1.0971615383953264
+          }
+        },
+        {
+          "id": "e0ae4a5f37be74c6ad466ef471ebc9cb0686f24f91c497c7d7412639a9a9a158",
+          "role": "preference",
+          "origin": "shared22",
+          "selectionAliases": [
+            "preference"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Riftr",
+          "pcmSha256": "e60a644fa727a8cc89d56772c85f368f7de562af9e122aab64ee866667edaccf",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 3.7972096763519563,
+            "MatchObjective": 6.932602115901,
+            "preferenceNeuralV2": 0.5349332504380213
+          }
+        },
+        {
+          "id": "0006846982ef8fed2e9cce3f3bb3c18dde480cfe87aa284f12427e558b42d84a",
+          "role": "original",
+          "origin": "original-bfxr",
+          "selectionAliases": [
+            "original"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Bfxr",
+          "pcmSha256": "0d12775997dcf6d33272c7b3c107e3100f6409a4fe78a2f28599b919a36fd691",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 4.416635683521918,
+            "MatchObjective": 3.576298805330577,
+            "preferenceNeuralV2": 1.7506212877105618
+          }
+        }
+      ],
+      "note": "[quick-mismatch-v1] chosen [\"35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6\"]: unsure"
+    },
+    {
+      "folder": "005",
+      "name": "laser/laserLarge_000.ogg",
+      "targetId": "0252704225aee447523effebf7f3209199938e72036ddb13556750b53397285d",
+      "referencePcmSha256": "ff3633ee1f5699b390e2408c2c31c8abd1220bc3dc1109050d10c98bba247c7e",
+      "kind": "best",
+      "adequacy": {
+        "level": "least-bad",
+        "candidateIds": [
+          "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735"
+        ]
+      },
+      "preferredRoles": [
+        "original"
+      ],
+      "options": [
+        {
+          "id": "d0c9685ce84a8cfbe1b73785c01ddb3ec7eb7617b950064670fc5f52e6d7ba8e",
+          "role": "legacy",
+          "origin": "Boomr-specialist",
+          "selectionAliases": [
+            "legacy"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Boomr",
+          "pcmSha256": "5cafe4d2380eb9f74c61f9a6bd0ee6fb175f0e137ae121768e4924dcc7d730e5",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 3.8168967431340937,
+            "MatchObjective": 2.9397732958935703,
+            "preferenceNeuralV2": 1.7816930018809058
+          }
+        },
+        {
+          "id": "a70177cea481e2a0f3e1c7bae117793ca4280c8ee37c583d2543c70b3fed2fde",
+          "role": "preference",
+          "origin": "Squishr-specialist",
+          "selectionAliases": [
+            "preference"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Squishr",
+          "pcmSha256": "4d1a7ea6ca505d32b3544fab17d04870d4c331f234748161686c0bfeb5b24947",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 3.9491260296321653,
+            "MatchObjective": 9.740911596136531,
+            "preferenceNeuralV2": 0.8817619987268218
+          }
+        },
+        {
+          "id": "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735",
+          "role": "original",
+          "origin": "original-bfxr",
+          "selectionAliases": [
+            "original"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Bfxr",
+          "pcmSha256": "36024b16dd1e5c25b63a71a5d795e91d6b972b39f88a6436e732fa82458dfbeb",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": true,
+          "responseScopedLikeness": "least-bad",
+          "scores": {
+            "softPeriodicity": 5.2617570460923195,
+            "MatchObjective": 4.418924674902532,
+            "preferenceNeuralV2": 2.318609145751205
+          }
+        }
+      ],
+      "note": "[quick-mismatch-v1] chosen [\"158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735\"]: several things"
+    },
+    {
+      "folder": "006",
+      "name": "collect/Mario - Super Jump Coin Hit.wav",
+      "targetId": "2a68500e6da9a9a22cbe5b80a8c435b0932323a8b319e4da2ce5880afc502646",
+      "referencePcmSha256": "3176c431efbfb4ce25f481aeb1d05f17fd587cfd4908f0f5f5b517a55e059129",
+      "kind": "best",
+      "adequacy": {
+        "level": "least-bad",
+        "candidateIds": [
+          "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e"
+        ]
+      },
+      "preferredRoles": [
+        "preference"
+      ],
+      "options": [
+        {
+          "id": "c5bcb644474e250901d454770388969901a637fe0ea8c7e2408405acc6d17435",
+          "role": "legacy",
+          "origin": "Transfxr-mixture",
+          "selectionAliases": [
+            "legacy"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Transfxr",
+          "pcmSha256": "a2310ce5541917d5b1053460120e50dde219eb5409d64b40aded8816b72ed305",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 2.918000109758565,
+            "MatchObjective": 1.6019445437985955,
+            "preferenceNeuralV2": 0.8136592943957914
+          }
+        },
+        {
+          "id": "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e",
+          "role": "preference",
+          "origin": "Transfxr-mixture",
+          "selectionAliases": [
+            "preference"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Transfxr",
+          "pcmSha256": "34c7da172890359df48e9388936a01dfa5f90150f9a9c39d8fad015cd90bc90d",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": true,
+          "responseScopedLikeness": "least-bad",
+          "scores": {
+            "softPeriodicity": 2.9985281583873804,
+            "MatchObjective": 1.3447254104702189,
+            "preferenceNeuralV2": 0.37400369388641774
+          }
+        },
+        {
+          "id": "266982bdae2d3c135f60a141c88440776c6e98f9b4b7747f82242ed52444c7ce",
+          "role": "original",
+          "origin": "original-bfxr",
+          "selectionAliases": [
+            "original"
+          ],
+          "parentCandidateId": null,
+          "arm": null,
+          "synth": "Bfxr",
+          "pcmSha256": "ab0b6f56b00c82fa7bc7e699ae8523bce52d86eee0b6bbd909ef37b3d9c7dc14",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 5.244616712462898,
+            "MatchObjective": 3.937740924917318,
+            "preferenceNeuralV2": 1.9438395627002631
+          }
+        }
+      ],
+      "note": "[quick-mismatch-v1] chosen [\"feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e\"]: movement/rhythm"
+    }
+  ],
+  "pairs": [
+    {
+      "archive": "2026-10-06-legacy-transfer-v1-quick-01",
+      "experimentId": "64f8c69a13833a61d9bd5d3b5dfd55f3277aa29d03b44aed7f8fd06ec2c0af12",
+      "target": "card/bookFlip2.ogg",
+      "referencePcmSha256": "1c6a3007a6e760f9420d2664503a7ee8910b39c90797fbc0dc064ec87fca07c9",
+      "candidateA": "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9",
+      "candidateB": "48872fb78334d3355485baa1775ce5a72b8145ada9df7f88bd9f4cef53f357cd",
+      "candidateAliasesA": [
+        "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9"
+      ],
+      "candidateAliasesB": [
+        "48872fb78334d3355485baa1775ce5a72b8145ada9df7f88bd9f4cef53f357cd"
+      ],
+      "candidatePcmSha256A": "0d4922a88a5f638f356004009b110307f9dde8f948aab0f621cd2b69016245ba",
+      "candidatePcmSha256B": "eec53272da95c9d91f5c48480f4565bdb0edf2339e323caa8045260c246bd1a7",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.17409008741378784,
+        -0.05397491902112961,
+        -0.0007945820689201355,
+        -0.02017542626708746,
+        -0.019959676545113325,
+        -0.0008320100605487823,
+        0.31657136091962457,
+        0.00018535146955400705,
+        -0.055854424834251404,
+        -0.03225806451612903,
+        0.0558850181599458,
+        0.012205009837354425,
+        0.0025461316108703613,
+        -0.020618371665477753,
+        0.0007884702645242214,
+        -0.6954811215400696,
+        0.3014965057373047,
+        -0.06086964160203934,
+        -0.05870319902896881,
+        -0.0560612827539444
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "48872fb78334d3355485baa1775ce5a72b8145ada9df7f88bd9f4cef53f357cd",
+          "ae9595cc82a1903ffe11cd010ddf43016b79b76f5699f88a2bff9249c3a255e5",
+          "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9"
+        ],
+        "auditionedCandidateIds": [
+          "48872fb78334d3355485baa1775ce5a72b8145ada9df7f88bd9f4cef53f357cd",
+          "ae9595cc82a1903ffe11cd010ddf43016b79b76f5699f88a2bff9249c3a255e5",
+          "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9"
+        ],
+        "preferredCandidateIds": [
+          "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": false,
+        "MatchObjective": false,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-06-legacy-transfer-v1-quick-01",
+      "experimentId": "64f8c69a13833a61d9bd5d3b5dfd55f3277aa29d03b44aed7f8fd06ec2c0af12",
+      "target": "card/bookFlip2.ogg",
+      "referencePcmSha256": "1c6a3007a6e760f9420d2664503a7ee8910b39c90797fbc0dc064ec87fca07c9",
+      "candidateA": "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9",
+      "candidateB": "ae9595cc82a1903ffe11cd010ddf43016b79b76f5699f88a2bff9249c3a255e5",
+      "candidateAliasesA": [
+        "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9"
+      ],
+      "candidateAliasesB": [
+        "ae9595cc82a1903ffe11cd010ddf43016b79b76f5699f88a2bff9249c3a255e5"
+      ],
+      "candidatePcmSha256A": "0d4922a88a5f638f356004009b110307f9dde8f948aab0f621cd2b69016245ba",
+      "candidatePcmSha256B": "fa33ffa3f4e0076b4bb5f7ed02a2132249a07cf96357ef4e5e7907fe70957e0c",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.09947782754898071,
+        -0.0191371887922287,
+        0.006763138808310032,
+        -0.02017542626708746,
+        -0.019959676545113325,
+        0.0028330720961093903,
+        0.2790101282298565,
+        -0.00620527338469401,
+        -0.05650986731052399,
+        -0.05645161290322581,
+        -0.006219384570916503,
+        0.04308085801652761,
+        -0.01633366569876671,
+        -0.01905093342065811,
+        0.0007884702645242214,
+        -0.6954811215400696,
+        0.26572391390800476,
+        -0.05572383850812912,
+        -0.035760968923568726,
+        -0.03452327847480774
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "48872fb78334d3355485baa1775ce5a72b8145ada9df7f88bd9f4cef53f357cd",
+          "ae9595cc82a1903ffe11cd010ddf43016b79b76f5699f88a2bff9249c3a255e5",
+          "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9"
+        ],
+        "auditionedCandidateIds": [
+          "48872fb78334d3355485baa1775ce5a72b8145ada9df7f88bd9f4cef53f357cd",
+          "ae9595cc82a1903ffe11cd010ddf43016b79b76f5699f88a2bff9249c3a255e5",
+          "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9"
+        ],
+        "preferredCandidateIds": [
+          "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": false,
+        "MatchObjective": false,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-06-legacy-transfer-v1-quick-01",
+      "experimentId": "64f8c69a13833a61d9bd5d3b5dfd55f3277aa29d03b44aed7f8fd06ec2c0af12",
+      "target": "footstep/impactMetal_003.ogg",
+      "referencePcmSha256": "1f9398531767247cf41a8bb99a9746dc5ddc4c75b698771667749fc7129e9ee8",
+      "candidateA": "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d",
+      "candidateB": "6967f043b0e48be03b61a6921778615af06c20b9eb8f8e54e869b31dc60589af",
+      "candidateAliasesA": [
+        "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d"
+      ],
+      "candidateAliasesB": [
+        "6967f043b0e48be03b61a6921778615af06c20b9eb8f8e54e869b31dc60589af"
+      ],
+      "candidatePcmSha256A": "a5a40e1067ec858b021c765d103b3a8c88f80b212ffaad3a54e5198824f5b203",
+      "candidatePcmSha256B": "83f5f655823bd2f94bbaef5dbc8799f38adebe60d2d962fea92f306dd164a0a3",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.2746569439768791,
+        0.008245617151260376,
+        -0.00016316678375005722,
+        -0.012957461178302765,
+        -0.010433465242385864,
+        0.00027789175510406494,
+        -0.0436512203887105,
+        0.0009986904333345592,
+        -0.001244824379682541,
+        0.0,
+        0.007731846223274864,
+        0.035360567360815165,
+        0.05895234551280737,
+        -0.06763118505477905,
+        0.0845087319612503,
+        0.1014816164970398,
+        -0.041572585701942444,
+        0.0925726629793644,
+        0.09169327840209007,
+        0.09132150560617447
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "6967f043b0e48be03b61a6921778615af06c20b9eb8f8e54e869b31dc60589af",
+          "1783b28a06ab85ea2e57049bf19c45f07ea63d65cc1fa913e4e46ce4446d79e3",
+          "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d"
+        ],
+        "auditionedCandidateIds": [
+          "6967f043b0e48be03b61a6921778615af06c20b9eb8f8e54e869b31dc60589af",
+          "1783b28a06ab85ea2e57049bf19c45f07ea63d65cc1fa913e4e46ce4446d79e3",
+          "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d"
+        ],
+        "preferredCandidateIds": [
+          "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": true,
+        "MatchObjective": true,
+        "preferenceNeuralV2": false
+      }
+    },
+    {
+      "archive": "2026-10-06-legacy-transfer-v1-quick-01",
+      "experimentId": "64f8c69a13833a61d9bd5d3b5dfd55f3277aa29d03b44aed7f8fd06ec2c0af12",
+      "target": "footstep/impactMetal_003.ogg",
+      "referencePcmSha256": "1f9398531767247cf41a8bb99a9746dc5ddc4c75b698771667749fc7129e9ee8",
+      "candidateA": "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d",
+      "candidateB": "1783b28a06ab85ea2e57049bf19c45f07ea63d65cc1fa913e4e46ce4446d79e3",
+      "candidateAliasesA": [
+        "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d"
+      ],
+      "candidateAliasesB": [
+        "1783b28a06ab85ea2e57049bf19c45f07ea63d65cc1fa913e4e46ce4446d79e3"
+      ],
+      "candidatePcmSha256A": "a5a40e1067ec858b021c765d103b3a8c88f80b212ffaad3a54e5198824f5b203",
+      "candidatePcmSha256B": "bf69cedb3c1b4216c9b54ebe8407e025bab928f18194479f9ea983b70de9505d",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.2807926833629608,
+        0.009620504453778267,
+        0.0017999024130403996,
+        -0.007411979138851166,
+        0.03901209682226181,
+        0.04032403230667114,
+        0.00972353050019592,
+        0.0008708895766176283,
+        0.015556653961539268,
+        0.016129032258064516,
+        -0.010268868878483776,
+        0.04735098115413622,
+        0.04796701297163963,
+        0.16190561652183533,
+        0.08215057849884033,
+        0.6446377038955688,
+        0.009260512888431549,
+        0.09609059430658817,
+        0.09497656486928463,
+        0.09406599774956703
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "6967f043b0e48be03b61a6921778615af06c20b9eb8f8e54e869b31dc60589af",
+          "1783b28a06ab85ea2e57049bf19c45f07ea63d65cc1fa913e4e46ce4446d79e3",
+          "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d"
+        ],
+        "auditionedCandidateIds": [
+          "6967f043b0e48be03b61a6921778615af06c20b9eb8f8e54e869b31dc60589af",
+          "1783b28a06ab85ea2e57049bf19c45f07ea63d65cc1fa913e4e46ce4446d79e3",
+          "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d"
+        ],
+        "preferredCandidateIds": [
+          "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": false,
+        "MatchObjective": true,
+        "preferenceNeuralV2": false
+      }
+    },
+    {
+      "archive": "2026-10-06-legacy-transfer-v1-quick-01",
+      "experimentId": "64f8c69a13833a61d9bd5d3b5dfd55f3277aa29d03b44aed7f8fd06ec2c0af12",
+      "target": "hit/attack.wav",
+      "referencePcmSha256": "ff2ba6ba70abb4b1e6ced66c665a3e116fb1ee38c826108a750557333e5df850",
+      "candidateA": "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531",
+      "candidateB": "7aba658f225fb99af5ff998d7f56de2a2a1a32dbf73af1e3f12ecfbce74e64e8",
+      "candidateAliasesA": [
+        "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531"
+      ],
+      "candidateAliasesB": [
+        "7aba658f225fb99af5ff998d7f56de2a2a1a32dbf73af1e3f12ecfbce74e64e8"
+      ],
+      "candidatePcmSha256A": "f0c6a0523ecfeac441e7bf4d91dab4d5598d2ba377c62113a4bdc71997fd3f64",
+      "candidatePcmSha256B": "74c0276aebf1758aa63c597ac9db7a03d658800623a64793665d38f0b97f8e7a",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.42659473419189453,
+        0.035721197724342346,
+        -0.009615687653422356,
+        -0.01795470155775547,
+        0.0009072571992874146,
+        0.08752622455358505,
+        -0.2556808702647686,
+        -0.0011393334716558456,
+        0.036344416439533234,
+        0.04838709677419354,
+        0.06742387140790622,
+        -0.07736798990478982,
+        0.008732803165912628,
+        0.14030025899410248,
+        -0.041511598974466324,
+        0.14178957045078278,
+        -0.243505597114563,
+        0.1376204490661621,
+        0.1402563452720642,
+        0.14198921620845795
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "7aba658f225fb99af5ff998d7f56de2a2a1a32dbf73af1e3f12ecfbce74e64e8",
+          "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531",
+          "9e1b67fb91794a88c838473033ad4ee1fb4e711aae27778c5094a0d1bd962447"
+        ],
+        "auditionedCandidateIds": [
+          "7aba658f225fb99af5ff998d7f56de2a2a1a32dbf73af1e3f12ecfbce74e64e8",
+          "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531",
+          "9e1b67fb91794a88c838473033ad4ee1fb4e711aae27778c5094a0d1bd962447"
+        ],
+        "preferredCandidateIds": [
+          "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": true,
+        "MatchObjective": true,
+        "preferenceNeuralV2": false
+      }
+    },
+    {
+      "archive": "2026-10-06-legacy-transfer-v1-quick-01",
+      "experimentId": "64f8c69a13833a61d9bd5d3b5dfd55f3277aa29d03b44aed7f8fd06ec2c0af12",
+      "target": "hit/attack.wav",
+      "referencePcmSha256": "ff2ba6ba70abb4b1e6ced66c665a3e116fb1ee38c826108a750557333e5df850",
+      "candidateA": "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531",
+      "candidateB": "9e1b67fb91794a88c838473033ad4ee1fb4e711aae27778c5094a0d1bd962447",
+      "candidateAliasesA": [
+        "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531"
+      ],
+      "candidateAliasesB": [
+        "9e1b67fb91794a88c838473033ad4ee1fb4e711aae27778c5094a0d1bd962447"
+      ],
+      "candidatePcmSha256A": "f0c6a0523ecfeac441e7bf4d91dab4d5598d2ba377c62113a4bdc71997fd3f64",
+      "candidatePcmSha256B": "a3fb0f3a7496185ee52d6d4c3a3427fafe61ddf359102acd62b27793a329ed49",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.0679481029510498,
+        -0.2295859158039093,
+        -0.010156981647014618,
+        -0.003181168809533119,
+        -0.01769152283668518,
+        0.023927345871925354,
+        0.0007881969213485718,
+        -0.000285326037555933,
+        -0.2878773733973503,
+        -0.0967741935483871,
+        -0.04986915147552888,
+        -0.07216797089060142,
+        0.009242556989192963,
+        0.068479984998703,
+        2.456456422805786e-05,
+        0.0846434235572815,
+        0.0007506608963012695,
+        -0.01768895983695984,
+        -0.024685949087142944,
+        -0.022873610258102417
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "7aba658f225fb99af5ff998d7f56de2a2a1a32dbf73af1e3f12ecfbce74e64e8",
+          "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531",
+          "9e1b67fb91794a88c838473033ad4ee1fb4e711aae27778c5094a0d1bd962447"
+        ],
+        "auditionedCandidateIds": [
+          "7aba658f225fb99af5ff998d7f56de2a2a1a32dbf73af1e3f12ecfbce74e64e8",
+          "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531",
+          "9e1b67fb91794a88c838473033ad4ee1fb4e711aae27778c5094a0d1bd962447"
+        ],
+        "preferredCandidateIds": [
+          "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": false,
+        "MatchObjective": false,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-06-legacy-transfer-v1-quick-01",
+      "experimentId": "64f8c69a13833a61d9bd5d3b5dfd55f3277aa29d03b44aed7f8fd06ec2c0af12",
+      "target": "bell/impactBell_heavy_004.ogg",
+      "referencePcmSha256": "79d79ce4ffefc593049c26e52d8ed75bd989ce35e527dc7ae6e884bacc17b758",
+      "candidateA": "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6",
+      "candidateB": "0006846982ef8fed2e9cce3f3bb3c18dde480cfe87aa284f12427e558b42d84a",
+      "candidateAliasesA": [
+        "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6"
+      ],
+      "candidateAliasesB": [
+        "0006846982ef8fed2e9cce3f3bb3c18dde480cfe87aa284f12427e558b42d84a"
+      ],
+      "candidatePcmSha256A": "157948fa2905bda04e13971721928ac975d22a4b75233812a3b4eb5b5abe27af",
+      "candidatePcmSha256B": "0d12775997dcf6d33272c7b3c107e3100f6409a4fe78a2f28599b919a36fd691",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.11622072011232376,
+        -0.2626863345503807,
+        -0.02635741504491307,
+        0.01561245322227478,
+        0.03266128897666931,
+        0.031816884875297546,
+        0.03682819660753012,
+        -0.004890609910944477,
+        -0.3901222161948681,
+        -0.217741935483871,
+        -0.239925665819707,
+        -0.058685849365951004,
+        -0.029395658522844315,
+        0.10506695508956909,
+        -0.06601184606552124,
+        0.037910670042037964,
+        0.035074472427368164,
+        -0.03653404489159584,
+        -0.03784710168838501,
+        -0.03841027244925499
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6",
+          "0006846982ef8fed2e9cce3f3bb3c18dde480cfe87aa284f12427e558b42d84a",
+          "e0ae4a5f37be74c6ad466ef471ebc9cb0686f24f91c497c7d7412639a9a9a158"
+        ],
+        "auditionedCandidateIds": [
+          "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6",
+          "0006846982ef8fed2e9cce3f3bb3c18dde480cfe87aa284f12427e558b42d84a",
+          "e0ae4a5f37be74c6ad466ef471ebc9cb0686f24f91c497c7d7412639a9a9a158"
+        ],
+        "preferredCandidateIds": [
+          "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": true,
+        "MatchObjective": true,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-06-legacy-transfer-v1-quick-01",
+      "experimentId": "64f8c69a13833a61d9bd5d3b5dfd55f3277aa29d03b44aed7f8fd06ec2c0af12",
+      "target": "bell/impactBell_heavy_004.ogg",
+      "referencePcmSha256": "79d79ce4ffefc593049c26e52d8ed75bd989ce35e527dc7ae6e884bacc17b758",
+      "candidateA": "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6",
+      "candidateB": "e0ae4a5f37be74c6ad466ef471ebc9cb0686f24f91c497c7d7412639a9a9a158",
+      "candidateAliasesA": [
+        "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6"
+      ],
+      "candidateAliasesB": [
+        "e0ae4a5f37be74c6ad466ef471ebc9cb0686f24f91c497c7d7412639a9a9a158"
+      ],
+      "candidatePcmSha256A": "157948fa2905bda04e13971721928ac975d22a4b75233812a3b4eb5b5abe27af",
+      "candidatePcmSha256B": "e60a644fa727a8cc89d56772c85f368f7de562af9e122aab64ee866667edaccf",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.05317665636539459,
+        -0.040382493287324905,
+        -0.0008133166993502527,
+        0.09448448568582535,
+        0.15015120804309845,
+        0.15943675488233566,
+        -0.06036365404725075,
+        -0.0006066647183615714,
+        -0.06650622561573982,
+        0.008064516129032258,
+        -0.052214911168751627,
+        0.04493712392689486,
+        0.03441829793155193,
+        0.2912396341562271,
+        0.11256653815507889,
+        0.04594799876213074,
+        -0.057489216327667236,
+        0.017703033052384853,
+        0.018072472885251045,
+        0.018336644396185875
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6",
+          "0006846982ef8fed2e9cce3f3bb3c18dde480cfe87aa284f12427e558b42d84a",
+          "e0ae4a5f37be74c6ad466ef471ebc9cb0686f24f91c497c7d7412639a9a9a158"
+        ],
+        "auditionedCandidateIds": [
+          "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6",
+          "0006846982ef8fed2e9cce3f3bb3c18dde480cfe87aa284f12427e558b42d84a",
+          "e0ae4a5f37be74c6ad466ef471ebc9cb0686f24f91c497c7d7412639a9a9a158"
+        ],
+        "preferredCandidateIds": [
+          "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": true,
+        "MatchObjective": true,
+        "preferenceNeuralV2": false
+      }
+    },
+    {
+      "archive": "2026-10-06-legacy-transfer-v1-quick-01",
+      "experimentId": "64f8c69a13833a61d9bd5d3b5dfd55f3277aa29d03b44aed7f8fd06ec2c0af12",
+      "target": "laser/laserLarge_000.ogg",
+      "referencePcmSha256": "ff3633ee1f5699b390e2408c2c31c8abd1220bc3dc1109050d10c98bba247c7e",
+      "candidateA": "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735",
+      "candidateB": "d0c9685ce84a8cfbe1b73785c01ddb3ec7eb7617b950064670fc5f52e6d7ba8e",
+      "candidateAliasesA": [
+        "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735"
+      ],
+      "candidateAliasesB": [
+        "d0c9685ce84a8cfbe1b73785c01ddb3ec7eb7617b950064670fc5f52e6d7ba8e"
+      ],
+      "candidatePcmSha256A": "36024b16dd1e5c25b63a71a5d795e91d6b972b39f88a6436e732fa82458dfbeb",
+      "candidatePcmSha256B": "5cafe4d2380eb9f74c61f9a6bd0ee6fb175f0e137ae121768e4924dcc7d730e5",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.2460668683052063,
+        0.1468766201287508,
+        0.047844058950431645,
+        -0.0021042823791503906,
+        -0.007258087396621704,
+        -0.0927962213754654,
+        0.2201915979385376,
+        0.0008214169938582927,
+        0.17777456529438496,
+        0.08064516129032258,
+        0.09112867354027306,
+        0.05347390628288601,
+        0.03938630223274231,
+        -0.014766931533813477,
+        -0.03809879720211029,
+        0.21464282274246216,
+        0.20970627665519714,
+        0.027490273118019104,
+        0.07993447780609131,
+        0.08170248568058014
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "d0c9685ce84a8cfbe1b73785c01ddb3ec7eb7617b950064670fc5f52e6d7ba8e",
+          "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735",
+          "a70177cea481e2a0f3e1c7bae117793ca4280c8ee37c583d2543c70b3fed2fde"
+        ],
+        "auditionedCandidateIds": [
+          "d0c9685ce84a8cfbe1b73785c01ddb3ec7eb7617b950064670fc5f52e6d7ba8e",
+          "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735",
+          "a70177cea481e2a0f3e1c7bae117793ca4280c8ee37c583d2543c70b3fed2fde"
+        ],
+        "preferredCandidateIds": [
+          "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": false,
+        "MatchObjective": false,
+        "preferenceNeuralV2": false
+      }
+    },
+    {
+      "archive": "2026-10-06-legacy-transfer-v1-quick-01",
+      "experimentId": "64f8c69a13833a61d9bd5d3b5dfd55f3277aa29d03b44aed7f8fd06ec2c0af12",
+      "target": "laser/laserLarge_000.ogg",
+      "referencePcmSha256": "ff3633ee1f5699b390e2408c2c31c8abd1220bc3dc1109050d10c98bba247c7e",
+      "candidateA": "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735",
+      "candidateB": "a70177cea481e2a0f3e1c7bae117793ca4280c8ee37c583d2543c70b3fed2fde",
+      "candidateAliasesA": [
+        "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735"
+      ],
+      "candidateAliasesB": [
+        "a70177cea481e2a0f3e1c7bae117793ca4280c8ee37c583d2543c70b3fed2fde"
+      ],
+      "candidatePcmSha256A": "36024b16dd1e5c25b63a71a5d795e91d6b972b39f88a6436e732fa82458dfbeb",
+      "candidatePcmSha256B": "4d1a7ea6ca505d32b3544fab17d04870d4c331f234748161686c0bfeb5b24947",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.39507564902305603,
+        0.10569805279374123,
+        0.04235289106145501,
+        0.16199848055839539,
+        0.22590725868940353,
+        0.037412673234939575,
+        0.10686080157756805,
+        -0.0001416187733411789,
+        0.11712321639060974,
+        0.04838709677419355,
+        0.04562550439732149,
+        -0.017880013964916147,
+        0.11646946519613266,
+        0.28791525959968567,
+        -0.06037402153015137,
+        0.7896934151649475,
+        0.10177217423915863,
+        0.08169220015406609,
+        0.12985597923398018,
+        0.1316199228167534
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "d0c9685ce84a8cfbe1b73785c01ddb3ec7eb7617b950064670fc5f52e6d7ba8e",
+          "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735",
+          "a70177cea481e2a0f3e1c7bae117793ca4280c8ee37c583d2543c70b3fed2fde"
+        ],
+        "auditionedCandidateIds": [
+          "d0c9685ce84a8cfbe1b73785c01ddb3ec7eb7617b950064670fc5f52e6d7ba8e",
+          "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735",
+          "a70177cea481e2a0f3e1c7bae117793ca4280c8ee37c583d2543c70b3fed2fde"
+        ],
+        "preferredCandidateIds": [
+          "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": false,
+        "MatchObjective": true,
+        "preferenceNeuralV2": false
+      }
+    },
+    {
+      "archive": "2026-10-06-legacy-transfer-v1-quick-01",
+      "experimentId": "64f8c69a13833a61d9bd5d3b5dfd55f3277aa29d03b44aed7f8fd06ec2c0af12",
+      "target": "collect/Mario - Super Jump Coin Hit.wav",
+      "referencePcmSha256": "3176c431efbfb4ce25f481aeb1d05f17fd587cfd4908f0f5f5b517a55e059129",
+      "candidateA": "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e",
+      "candidateB": "266982bdae2d3c135f60a141c88440776c6e98f9b4b7747f82242ed52444c7ce",
+      "candidateAliasesA": [
+        "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e"
+      ],
+      "candidateAliasesB": [
+        "266982bdae2d3c135f60a141c88440776c6e98f9b4b7747f82242ed52444c7ce"
+      ],
+      "candidatePcmSha256A": "34c7da172890359df48e9388936a01dfa5f90150f9a9c39d8fad015cd90bc90d",
+      "candidatePcmSha256B": "ab0b6f56b00c82fa7bc7e699ae8523bce52d86eee0b6bbd909ef37b3d9c7dc14",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.8441464602947235,
+        -0.15997540764510632,
+        -0.04168075509369373,
+        -0.02430286630988121,
+        -0.019506048411130905,
+        -0.05450260452926159,
+        -0.11036321520805359,
+        -0.0037496244767680764,
+        -0.20359255746006966,
+        -0.0967741935483871,
+        -0.009299288193384804,
+        -0.09360883571679918,
+        -0.1704854965209961,
+        -0.07573132589459419,
+        0.002537965774536133,
+        0.026819050312042236,
+        -0.1051078587770462,
+        -0.2797354981303215,
+        -0.2780563347041607,
+        -0.27868929505348206
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "266982bdae2d3c135f60a141c88440776c6e98f9b4b7747f82242ed52444c7ce",
+          "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e",
+          "c5bcb644474e250901d454770388969901a637fe0ea8c7e2408405acc6d17435"
+        ],
+        "auditionedCandidateIds": [
+          "266982bdae2d3c135f60a141c88440776c6e98f9b4b7747f82242ed52444c7ce",
+          "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e",
+          "c5bcb644474e250901d454770388969901a637fe0ea8c7e2408405acc6d17435"
+        ],
+        "preferredCandidateIds": [
+          "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": true,
+        "MatchObjective": true,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-06-legacy-transfer-v1-quick-01",
+      "experimentId": "64f8c69a13833a61d9bd5d3b5dfd55f3277aa29d03b44aed7f8fd06ec2c0af12",
+      "target": "collect/Mario - Super Jump Coin Hit.wav",
+      "referencePcmSha256": "3176c431efbfb4ce25f481aeb1d05f17fd587cfd4908f0f5f5b517a55e059129",
+      "candidateA": "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e",
+      "candidateB": "c5bcb644474e250901d454770388969901a637fe0ea8c7e2408405acc6d17435",
+      "candidateAliasesA": [
+        "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e"
+      ],
+      "candidateAliasesB": [
+        "c5bcb644474e250901d454770388969901a637fe0ea8c7e2408405acc6d17435"
+      ],
+      "candidatePcmSha256A": "34c7da172890359df48e9388936a01dfa5f90150f9a9c39d8fad015cd90bc90d",
+      "candidatePcmSha256B": "a2310ce5541917d5b1053460120e50dde219eb5409d64b40aded8816b72ed305",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.1651482880115509,
+        -0.04675777070224285,
+        -0.004370953422039747,
+        -0.03698987141251564,
+        -0.030846774578094482,
+        -0.01424502208828926,
+        -0.1369650810956955,
+        -0.0009515256388112903,
+        -0.10293753817677498,
+        -0.07258064516129034,
+        -0.008482669790585831,
+        -0.008775178696888056,
+        -0.0029525458812713623,
+        -0.04822735860943794,
+        -0.026429839432239532,
+        0.003949224948883057,
+        -0.13044296205043793,
+        -0.06216968595981598,
+        -0.056285832077264786,
+        -0.05613088607788086
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "266982bdae2d3c135f60a141c88440776c6e98f9b4b7747f82242ed52444c7ce",
+          "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e",
+          "c5bcb644474e250901d454770388969901a637fe0ea8c7e2408405acc6d17435"
+        ],
+        "auditionedCandidateIds": [
+          "266982bdae2d3c135f60a141c88440776c6e98f9b4b7747f82242ed52444c7ce",
+          "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e",
+          "c5bcb644474e250901d454770388969901a637fe0ea8c7e2408405acc6d17435"
+        ],
+        "preferredCandidateIds": [
+          "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": false,
+        "MatchObjective": true,
+        "preferenceNeuralV2": true
+      }
+    }
+  ],
+  "metricAgreement": {
+    "softPeriodicity": {
+      "correct": 5,
+      "pairs": 12
+    },
+    "MatchObjective": {
+      "correct": 8,
+      "pairs": 12
+    },
+    "preferenceNeuralV2": {
+      "correct": 6,
+      "pairs": 12
+    }
+  },
+  "wins": {
+    "preference": 2,
+    "legacy": 2,
+    "original": 2
+  },
+  "winnerOrigins": {
+    "Transfxr-mixture": 2,
+    "Boomr-specialist": 2,
+    "original-bfxr": 2
+  },
+  "mismatches": [
+    {
+      "targetId": "369b3ba4280480444acfade0e91bd865b5b0689dc10bb667f4b66651ad527eff",
+      "name": "card/bookFlip2.ogg",
+      "candidateIds": [
+        "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9"
+      ],
+      "scope": "chosen",
+      "reason": "movement/rhythm",
+      "allScopedCandidatesHeard": true,
+      "rawNote": "[quick-mismatch-v1] chosen [\"97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9\"]: movement/rhythm"
+    },
+    {
+      "targetId": "d01362258904f84cd181bd1ef25c5a2bf00bb2d3c0da6a710110b9748c10308d",
+      "name": "footstep/impactMetal_003.ogg",
+      "candidateIds": [
+        "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d"
+      ],
+      "scope": "chosen",
+      "reason": "several things",
+      "allScopedCandidatesHeard": true,
+      "rawNote": "[quick-mismatch-v1] chosen [\"129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d\"]: several things"
+    },
+    {
+      "targetId": "abd91fe22457833fd32ef1a7b2f16e01cf7507ae54d6b5ee3d3510024d15e1df",
+      "name": "hit/attack.wav",
+      "candidateIds": [
+        "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531"
+      ],
+      "scope": "chosen",
+      "reason": "texture/timbre",
+      "allScopedCandidatesHeard": true,
+      "rawNote": "[quick-mismatch-v1] chosen [\"5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531\"]: texture/timbre"
+    },
+    {
+      "targetId": "ac64f92ace3023a967bb59e9dab3c12d26c00dd76c14fe785b1d79c93f939790",
+      "name": "bell/impactBell_heavy_004.ogg",
+      "candidateIds": [
+        "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6"
+      ],
+      "scope": "chosen",
+      "reason": "unsure",
+      "allScopedCandidatesHeard": true,
+      "rawNote": "[quick-mismatch-v1] chosen [\"35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6\"]: unsure"
+    },
+    {
+      "targetId": "0252704225aee447523effebf7f3209199938e72036ddb13556750b53397285d",
+      "name": "laser/laserLarge_000.ogg",
+      "candidateIds": [
+        "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735"
+      ],
+      "scope": "chosen",
+      "reason": "several things",
+      "allScopedCandidatesHeard": true,
+      "rawNote": "[quick-mismatch-v1] chosen [\"158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735\"]: several things"
+    },
+    {
+      "targetId": "2a68500e6da9a9a22cbe5b80a8c435b0932323a8b319e4da2ce5880afc502646",
+      "name": "collect/Mario - Super Jump Coin Hit.wav",
+      "candidateIds": [
+        "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e"
+      ],
+      "scope": "chosen",
+      "reason": "movement/rhythm",
+      "allScopedCandidatesHeard": true,
+      "rawNote": "[quick-mismatch-v1] chosen [\"feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e\"]: movement/rhythm"
+    }
+  ],
+  "responseScopedQualitativeLabels": [
+    {
+      "targetId": "369b3ba4280480444acfade0e91bd865b5b0689dc10bb667f4b66651ad527eff",
+      "candidateId": "97b7d3cc4d0c21a8631c4e97a0e7d760ac9ab5549541d00f3a53a2db562e90b9",
+      "referencePcmSha256": "1c6a3007a6e760f9420d2664503a7ee8910b39c90797fbc0dc064ec87fca07c9",
+      "candidatePcmSha256": "0d4922a88a5f638f356004009b110307f9dde8f948aab0f621cd2b69016245ba",
+      "label": "least-bad",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "d01362258904f84cd181bd1ef25c5a2bf00bb2d3c0da6a710110b9748c10308d",
+      "candidateId": "129e89d408169c7cba58b2a3d47464322836a6119035bf0855a14d7d530f3a1d",
+      "referencePcmSha256": "1f9398531767247cf41a8bb99a9746dc5ddc4c75b698771667749fc7129e9ee8",
+      "candidatePcmSha256": "a5a40e1067ec858b021c765d103b3a8c88f80b212ffaad3a54e5198824f5b203",
+      "label": "least-bad",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "abd91fe22457833fd32ef1a7b2f16e01cf7507ae54d6b5ee3d3510024d15e1df",
+      "candidateId": "5e97a2fa037e82b1736e117497469dab10c3ec7898dc167bdad9d5b9d6a05531",
+      "referencePcmSha256": "ff2ba6ba70abb4b1e6ced66c665a3e116fb1ee38c826108a750557333e5df850",
+      "candidatePcmSha256": "f0c6a0523ecfeac441e7bf4d91dab4d5598d2ba377c62113a4bdc71997fd3f64",
+      "label": "similar",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "ac64f92ace3023a967bb59e9dab3c12d26c00dd76c14fe785b1d79c93f939790",
+      "candidateId": "35e0570cab78870f2cb4ec90aa092babc9999d69ddcd2727cbb4c5af57e04fd6",
+      "referencePcmSha256": "79d79ce4ffefc593049c26e52d8ed75bd989ce35e527dc7ae6e884bacc17b758",
+      "candidatePcmSha256": "157948fa2905bda04e13971721928ac975d22a4b75233812a3b4eb5b5abe27af",
+      "label": "similar",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "0252704225aee447523effebf7f3209199938e72036ddb13556750b53397285d",
+      "candidateId": "158e6d13b7987d8835be0d7ff9ce918095274440a5afa60e85ecea046dc2f735",
+      "referencePcmSha256": "ff3633ee1f5699b390e2408c2c31c8abd1220bc3dc1109050d10c98bba247c7e",
+      "candidatePcmSha256": "36024b16dd1e5c25b63a71a5d795e91d6b972b39f88a6436e732fa82458dfbeb",
+      "label": "least-bad",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "2a68500e6da9a9a22cbe5b80a8c435b0932323a8b319e4da2ce5880afc502646",
+      "candidateId": "feef52651bbec24c3c947df6c283a8718e88342b4252649e776ddc290778058e",
+      "referencePcmSha256": "3176c431efbfb4ce25f481aeb1d05f17fd587cfd4908f0f5f5b517a55e059129",
+      "candidatePcmSha256": "34c7da172890359df48e9388936a01dfa5f90150f9a9c39d8fad015cd90bc90d",
+      "label": "least-bad",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    }
+  ],
+  "unsubmittedTrials": [],
+  "interpretation": [
+    "All six external trials complete, all18 candidates heard. Each arm wins two; no tie or none-close choices. Winner adequacy is four least-bad and two similar, zero very-close.",
+    "Legacy Boomr metal footstep is least-bad; legacy Boomr bell is similar. Learned-preference Transfxr book-flip and coin are least-bad, both with movement/rhythm mismatch. Original Bfxr attack is similar with texture mismatch; original Bfxr laser is least-bad.",
+    "Six candidate-scoped diagnostic notes: movement/rhythm2, several things2, texture/timbre1, unsure1. Twelve strict heard preference pairs, six qualitative winner labels. Unchosen candidates do not acquire winner adequacy.",
+    "Switching the newer-synth objective alone has not established convincing recreation. Equal2/2 wins between those arms across six files is not statistical equivalence. The original Bfxr baseline has a different optimizer/budget and all six files occur in its historical training manifest.",
+    "Preserve both objective branches. No metric/checkpoint promotion follows from relative wins. Next test ordered native Stackr events; current Mixr pilot combines sources simultaneously and does not test scheduled sequence inversion."
+  ]
+}

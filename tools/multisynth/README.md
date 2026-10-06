@@ -15,8 +15,38 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All twenty-seven feedback archives,
+do not establish general success on real recordings. All twenty-eight feedback archives,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
+
+The latest [matched-objective human review](evaluations/legacy-transfer-v1-quick-01-human-review.json)
+finds two wins each for legacy-scored newer synths, preference-scored newer synths,
+and original Bfxr. Four winners are least-bad, two similar, none very-close.
+All18 options were heard; all24 exact reference/candidate PCM files are retained.
+This rejects a claim that swapping the scorer alone has solved transfer. The
+six files occur in historical original-Bfxr training, and its budget differs.
+
+The [four-trial native Stackr pilot](runs/stackr-events-v1-listening/index.html)
+tests the book-flip and coin movement failures alongside the similar attack and
+bell controls. A separate native bridge preserves all earlier renderer identities.
+Waveform-only boundaries condition existing shared22/Transfxr inverse proposals
+on individual events, with128 native control mutations per event and128 timeline
+mutations per reference. Native Stackr owns placement, gain, pitch and saturation;
+no reference audio is inserted into a patch. No neural weights are retrained.
+
+Each trial retains the exact earlier human winner, a scheduled Stackr patch, and
+the same final components starting together. Exact duplicate options merge; the
+bell has no interior boundary and only two distinct options. All four references
+remain regardless of scores, including possible regressions. These are repeated
+external development references, not new-source validation, and historical Bfxr
+overlap remains. The comparison diagnoses representation rather than equal-budget
+model superiority. Human quality is unknown pending feedback.
+
+See [protocol](evaluations/stackr-events-v1-protocol.json),
+[results](evaluations/stackr-events-v1-evaluation.json), and
+[independent verification](evaluations/stackr-events-v1-verification.json).
+Reproduce with `PYTHONPATH=tools python tools/multisynth/evaluations/stackr-events-v1.py`
+followed by `freeze`, `run`, and `publish` in a fresh output location. The existing
+paths are immutable; do not overwrite a published or partially completed run.
 
 The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
 follows a **very-close** tagged wooden-footstep search result. Its 8,192-example

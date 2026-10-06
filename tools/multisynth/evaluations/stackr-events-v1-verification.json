@@ -1,0 +1,54 @@
+{
+  "complete": true,
+  "scriptSha256": "277dcf0047ff9a208e666d8ec3d5a71b550d3d48ce339c550656215944d874de",
+  "protocolSha256": "4ee3bcd049ef11e67f199479126097fa932ca7dcf779a643a34b0f73fd844aa4",
+  "reportSha256": "029fe1f83300bce21295e9783b1012bd21a006caf79dee57c6cf1f42f6ec6c77",
+  "experimentId": "afa615c4b3f627fec1beafb6aba91bb2ff57724831bcdcf12f5e17d63d1699b8",
+  "trials": [
+    {
+      "name": "card/bookFlip2.ogg",
+      "events": 3,
+      "proposed": 132,
+      "valid": 132,
+      "segmentAttempts": 384,
+      "timelineAttempts": 128,
+      "options": 3,
+      "previousCopiedExactly": true,
+      "nativeReplayVerified": true
+    },
+    {
+      "name": "hit/attack.wav",
+      "events": 3,
+      "proposed": 132,
+      "valid": 132,
+      "segmentAttempts": 384,
+      "timelineAttempts": 128,
+      "options": 3,
+      "previousCopiedExactly": true,
+      "nativeReplayVerified": true
+    },
+    {
+      "name": "bell/impactBell_heavy_004.ogg",
+      "events": 1,
+      "proposed": 44,
+      "valid": 44,
+      "segmentAttempts": 128,
+      "timelineAttempts": 128,
+      "options": 2,
+      "previousCopiedExactly": true,
+      "nativeReplayVerified": true
+    },
+    {
+      "name": "collect/Mario - Super Jump Coin Hit.wav",
+      "events": 2,
+      "proposed": 88,
+      "valid": 88,
+      "segmentAttempts": 256,
+      "timelineAttempts": 128,
+      "options": 3,
+      "previousCopiedExactly": true,
+      "nativeReplayVerified": true
+    }
+  ],
+  "humanQuality": "Unknown; numeric search improvement does not establish perceptual benefit."
+}
