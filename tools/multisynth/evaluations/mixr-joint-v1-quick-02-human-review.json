@@ -1,0 +1,1072 @@
+{
+  "complete": true,
+  "partialSubmission": false,
+  "submittedTrials": 8,
+  "totalTrials": 8,
+  "distinctReferences": 4,
+  "experimentId": "429b898ab5c16a77fb830bedc36901a0d8fb5b4599b382d72df9c7b361e50cae",
+  "scriptSha256": "a6ae938f0691af13be0582e4acf725a04625ceb17eeeb4988a27465367a99779",
+  "feedbackSha256": "bd7c718af3d837ed507dc8e603d23aa25f30453555289e6d86a63e1fb6d743ed",
+  "manifestSha256": "eab52391a5ae4ca82709bfbc61e2c2401a09cface392af6658b43e303fd33219",
+  "galleryReportSha256": "e596133ba211371b80e5672e1ea368627802d049697e03fff10765e94f82c0d0",
+  "galleryAuditSha256": "5ff00100f9cf1d7bc3a784b9ec4c1f5cb95d3313bad2d385c16f0c29fd7c000a",
+  "metricHashes": {
+    "preferenceNeuralV2": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b"
+  },
+  "archiveSummary": {
+    "targets": 8,
+    "uniqueRatedCandidates": 0,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "choices": 8,
+    "choiceKinds": {
+      "best": 3,
+      "tie": 1,
+      "none": 4,
+      "skip": 0
+    }
+  },
+  "trainingPairSummary": {
+    "targets": 8,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "duplicateAudioAliases": 0,
+    "conflictingAudioRatingGroups": 0,
+    "tiedPairs": 0,
+    "duplicateSessionPairs": 0,
+    "directChoicePairs": 4,
+    "choices": 8,
+    "choiceKinds": {
+      "best": 3,
+      "tie": 1,
+      "none": 4,
+      "skip": 0
+    },
+    "validatedAudioFiles": 24,
+    "uniqueAudioPcm": 24
+  },
+  "rows": [
+    {
+      "folder": "001",
+      "name": "hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+      "targetId": "fa0a632ca661f62dc59d9a4be1860a259af66584811f14eb384321ca4c57b816",
+      "referencePcmSha256": "e9af30f41e2c16297769dbe6d7838a747563f8005190213048fa4469bfcde76d",
+      "kind": "none",
+      "adequacy": null,
+      "preferredRoles": [],
+      "options": [
+        {
+          "id": "cc77de8da232e474ef5dc19c51840953625a924e938283a86a7bf1b0d182a452",
+          "role": "previous",
+          "arm": null,
+          "synth": "Mixr",
+          "pcmSha256": "42c4225aeb150940d557303db81ada28dfe1e47e0d2bb70993395e506a611f33",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": "not-close",
+          "scores": {
+            "softPeriodicity": 3.4197353193826343,
+            "MatchObjective": 9.871773451675518,
+            "preferenceNeuralV2": 2.1644509096068636
+          }
+        },
+        {
+          "id": "f004eeff9a9d6007f938f876c088fb691945e166ddb22023fbd12056c1cf45a2",
+          "role": "single",
+          "arm": "single-soft",
+          "synth": "Mixr",
+          "pcmSha256": "9f6a30ffb06d978c05fa1843f5937930e6a1eb4a1d82e616e9c5a5a9243e5344",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": "not-close",
+          "scores": {
+            "softPeriodicity": 2.920041428400397,
+            "MatchObjective": 10.073735642823895,
+            "preferenceNeuralV2": 1.3557445270777833
+          }
+        },
+        {
+          "id": "fe460532652adefd38aedfec0cc15f940659815a2774e46079165d12c97eacfb",
+          "role": "pair",
+          "arm": "pair-soft",
+          "synth": "Mixr",
+          "pcmSha256": "b7dc1375871779095ad106b5d29273bd906e6de84a1391792491851976f69b00",
+          "heardInThisTrial": false,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": "not-close",
+          "scores": {
+            "softPeriodicity": 2.0536216898261186,
+            "MatchObjective": 9.136064213294226,
+            "preferenceNeuralV2": 1.6154527400573402
+          }
+        }
+      ],
+      "note": ""
+    },
+    {
+      "folder": "002",
+      "name": "door/doorClose_3.ogg",
+      "targetId": "33fd0ad0b3f4a5a05dd350cb2334cc75754f9253b455caa4ef22da15d8739a01",
+      "referencePcmSha256": "4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf",
+      "kind": "none",
+      "adequacy": null,
+      "preferredRoles": [],
+      "options": [
+        {
+          "id": "21f7e0b1e95e76028dd56396e7251db41b88179a248f5ece0ee674d812971bd0",
+          "role": "previous",
+          "arm": null,
+          "synth": "Rustlr",
+          "pcmSha256": "36a86fc2a47814d79bfdf66f74ca6d3e94112801c7c65831cf9bc66cfb5cd1b8",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": "not-close",
+          "scores": {
+            "softPeriodicity": 2.913984553282882,
+            "MatchObjective": 2.085452919091895,
+            "preferenceNeuralV2": 1.2779835815137963
+          }
+        },
+        {
+          "id": "600aa5de0ec92ab007e04b92e41bc3d3e335c39ad416cf58118af12e08da7c89",
+          "role": "single",
+          "arm": "single-soft",
+          "synth": "Mixr",
+          "pcmSha256": "cc3b5c9902184dd5cbfd5b1cf0683dd57aa2616f19fbacc161d9b66af4547859",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": "not-close",
+          "scores": {
+            "softPeriodicity": 2.7504950911320436,
+            "MatchObjective": 7.790212526626281,
+            "preferenceNeuralV2": 1.1635762109563168
+          }
+        },
+        {
+          "id": "5796c01bde922f30f9dc6439b7be2678a6c0a0ebeea1f530ae9059fbfc01a928",
+          "role": "pair",
+          "arm": "pair-soft",
+          "synth": "Mixr",
+          "pcmSha256": "1b2389fae95712776e0eb9e9c39fb3166d70bf432180db065f77bb6c96622999",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": "not-close",
+          "scores": {
+            "softPeriodicity": 2.748105420026665,
+            "MatchObjective": 9.810744015213096,
+            "preferenceNeuralV2": 1.0862971462771216
+          }
+        }
+      ],
+      "note": ""
+    },
+    {
+      "folder": "003",
+      "name": "laser/laser1.ogg",
+      "targetId": "5184dbc455ce37889d05a3796120a9badc5109076c26d20d7917602f768a904e",
+      "referencePcmSha256": "6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8",
+      "kind": "none",
+      "adequacy": null,
+      "preferredRoles": [],
+      "options": [
+        {
+          "id": "093dbf0904caa7996a9ec7f45e456293718d5cc8e0d4d53f4e5284d56b2b0bfe",
+          "role": "previous",
+          "arm": null,
+          "synth": "Squishr",
+          "pcmSha256": "e919575185167ad99a3b6cd294fb599ece37d766672953941c5e61c86e9071ca",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": "not-close",
+          "scores": {
+            "softPeriodicity": 3.1115300437029063,
+            "MatchObjective": 15.346278332854295,
+            "preferenceNeuralV2": 1.2272781262296215
+          }
+        },
+        {
+          "id": "5657a53bc820a615f17326f130ab3cb6ea7561699638763383aea28a9c8373a4",
+          "role": "single",
+          "arm": "single-soft",
+          "synth": "Mixr",
+          "pcmSha256": "91086842c716c9b91f148aab8749dd8f1f7c8ab4cdaf89f6d8ab710ae90d226e",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": "not-close",
+          "scores": {
+            "softPeriodicity": 2.9775630918202114,
+            "MatchObjective": 11.036181986585285,
+            "preferenceNeuralV2": 1.279216192539403
+          }
+        },
+        {
+          "id": "fbff40a0d8070b1b14f25ba4426e2a4ae6e60f8467133955ada7e3e3caf7e81d",
+          "role": "pair",
+          "arm": "pair-soft",
+          "synth": "Mixr",
+          "pcmSha256": "e98bc6ffca74434f139707981798b0507b38ba5d673b90fefe4cbddf92910ee4",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": "not-close",
+          "scores": {
+            "softPeriodicity": 2.8057003905127815,
+            "MatchObjective": 15.574693385505944,
+            "preferenceNeuralV2": 1.0505849169015664
+          }
+        }
+      ],
+      "note": ""
+    },
+    {
+      "folder": "004",
+      "name": "clothes/cloth4.ogg",
+      "targetId": "a1b2728b981070a22b53845d95e28dd809eb09ea4bc1220ccc322375b7f3bcf9",
+      "referencePcmSha256": "1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e",
+      "kind": "tie",
+      "adequacy": {
+        "level": "similar",
+        "candidateIds": [
+          "510458c4274c8bd0940040ccd709a0a51b530e6dab3e266251ab7e28bcb58eb4",
+          "80ddb1396f0567f461338caba28440e1a38754aa6083503c4f92e2d0679af393",
+          "1fc1ec6de1a8abfc24fdd0ed9e8d783f314857f7011b5f5c527b05a31ee93b7f"
+        ]
+      },
+      "preferredRoles": [],
+      "options": [
+        {
+          "id": "80ddb1396f0567f461338caba28440e1a38754aa6083503c4f92e2d0679af393",
+          "role": "previous",
+          "arm": null,
+          "synth": "Rustlr",
+          "pcmSha256": "72394dda846b3618fc30235bc06286deea48e2cf35422b259695c8ab7564d3fb",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": "similar",
+          "scores": {
+            "softPeriodicity": 2.071679059004378,
+            "MatchObjective": 1.0895657483096832,
+            "preferenceNeuralV2": 0.7910136537864787
+          }
+        },
+        {
+          "id": "1fc1ec6de1a8abfc24fdd0ed9e8d783f314857f7011b5f5c527b05a31ee93b7f",
+          "role": "single",
+          "arm": "single-soft",
+          "synth": "Mixr",
+          "pcmSha256": "a839173e1822302b9ee844be8684196a1c51d5213d6209b1248c016d8bc8e738",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": "similar",
+          "scores": {
+            "softPeriodicity": 2.0475854641963194,
+            "MatchObjective": 1.1408048725892257,
+            "preferenceNeuralV2": 0.7601881379870826
+          }
+        },
+        {
+          "id": "510458c4274c8bd0940040ccd709a0a51b530e6dab3e266251ab7e28bcb58eb4",
+          "role": "pair",
+          "arm": "pair-soft",
+          "synth": "Mixr",
+          "pcmSha256": "6f1e905de27c0ab2e7b83e461a1602d333a7b1c126639933443f791ad5bc654b",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": "similar",
+          "scores": {
+            "softPeriodicity": 1.9942225696982443,
+            "MatchObjective": 1.0629108192862569,
+            "preferenceNeuralV2": 0.7637816035768182
+          }
+        }
+      ],
+      "note": ""
+    },
+    {
+      "folder": "005",
+      "name": "hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+      "targetId": "d9fe228f6a0dbd3d54817f1eddf23362302c2df6a9492c90510477afa596c1b5",
+      "referencePcmSha256": "e9af30f41e2c16297769dbe6d7838a747563f8005190213048fa4469bfcde76d",
+      "kind": "best",
+      "adequacy": {
+        "level": "similar",
+        "candidateIds": [
+          "9bd06746a64ae0c44831fe856d40b1cede8c95d1e258dd09592d8f0d4cb3e465"
+        ]
+      },
+      "preferredRoles": [
+        "previous"
+      ],
+      "options": [
+        {
+          "id": "9bd06746a64ae0c44831fe856d40b1cede8c95d1e258dd09592d8f0d4cb3e465",
+          "role": "previous",
+          "arm": null,
+          "synth": "Mixr",
+          "pcmSha256": "42c4225aeb150940d557303db81ada28dfe1e47e0d2bb70993395e506a611f33",
+          "heardInThisTrial": false,
+          "earlierHeardTrialIds": [
+            "fa0a632ca661f62dc59d9a4be1860a259af66584811f14eb384321ca4c57b816"
+          ],
+          "preferred": true,
+          "responseScopedLikeness": "similar",
+          "scores": {
+            "softPeriodicity": 3.4197353193826343,
+            "MatchObjective": 9.871773451675518,
+            "preferenceNeuralV2": 2.1644509096068636
+          }
+        },
+        {
+          "id": "90d09426fb84277460d21af59a1aff88b3fac82dd1f06816fb3c265db68092bd",
+          "role": "single",
+          "arm": "single-preference",
+          "synth": "Mixr",
+          "pcmSha256": "1e21e861158d8e2ba8a454b1d56455ec648dcc6f584381b8416785c3584d1520",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 6.1308319830707525,
+            "MatchObjective": 13.519218106009138,
+            "preferenceNeuralV2": 0.8704179246076371
+          }
+        },
+        {
+          "id": "91aed7f8129eb38d6f50094407d4cc7d65b5df44db528200454b283c7337ce8c",
+          "role": "pair",
+          "arm": "pair-preference",
+          "synth": "Mixr",
+          "pcmSha256": "9b4d530ab341fbc6c40de7054ee9f51ebaec66c2f8a81d3fb6951928d7545409",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 6.136333999464185,
+            "MatchObjective": 12.267779560884534,
+            "preferenceNeuralV2": 0.8631602608824941
+          }
+        }
+      ],
+      "note": ""
+    },
+    {
+      "folder": "006",
+      "name": "door/doorClose_3.ogg",
+      "targetId": "142bb1bb5c5f265e89a3b028d43bd96cfef0f66a870f479cd400a72285fe17ff",
+      "referencePcmSha256": "4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf",
+      "kind": "none",
+      "adequacy": null,
+      "preferredRoles": [],
+      "options": [
+        {
+          "id": "5056139cb71ae7e92c28a307b046d7a023a2f73bd275c0fe5a525c1c45fb4b3e",
+          "role": "previous",
+          "arm": null,
+          "synth": "Rustlr",
+          "pcmSha256": "36a86fc2a47814d79bfdf66f74ca6d3e94112801c7c65831cf9bc66cfb5cd1b8",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [
+            "33fd0ad0b3f4a5a05dd350cb2334cc75754f9253b455caa4ef22da15d8739a01"
+          ],
+          "preferred": false,
+          "responseScopedLikeness": "not-close",
+          "scores": {
+            "softPeriodicity": 2.913984553282882,
+            "MatchObjective": 2.085452919091895,
+            "preferenceNeuralV2": 1.2779835815137963
+          }
+        },
+        {
+          "id": "28eed4babf1511220e784a98effd4f74fe3d54d029ec4fcacc3b09480e1c5d48",
+          "role": "single",
+          "arm": "single-preference",
+          "synth": "Mixr",
+          "pcmSha256": "6df8f60f6865f747c12d29db532ecaa46897d7c9b7533a6c0508919b17df07f5",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": "not-close",
+          "scores": {
+            "softPeriodicity": 3.448113252646298,
+            "MatchObjective": 10.466978526590559,
+            "preferenceNeuralV2": 1.070307170712059
+          }
+        },
+        {
+          "id": "056211cf918caa123b080898569cfcc072678f3802c4bb946307380b1eff18ec",
+          "role": "pair",
+          "arm": "pair-preference",
+          "synth": "Mixr",
+          "pcmSha256": "b95b1a8abbf84762975ed12ea1f9ef63523f2cc64b03abe1498dbd90e050539e",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": "not-close",
+          "scores": {
+            "softPeriodicity": 3.503559947347994,
+            "MatchObjective": 9.590101559948451,
+            "preferenceNeuralV2": 0.9770024582653242
+          }
+        }
+      ],
+      "note": ""
+    },
+    {
+      "folder": "007",
+      "name": "laser/laser1.ogg",
+      "targetId": "7aea38e19e612bda0a8a9ebddea395ef94c85dd0ad174eb538e3a074d80812c3",
+      "referencePcmSha256": "6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8",
+      "kind": "best",
+      "adequacy": {
+        "level": "similar",
+        "candidateIds": [
+          "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400"
+        ]
+      },
+      "preferredRoles": [
+        "pair"
+      ],
+      "options": [
+        {
+          "id": "ac060ee97fbc783d82272025fc0838bc04e3d533095a35bb99ff39a36c29948c",
+          "role": "previous",
+          "arm": null,
+          "synth": "Squishr",
+          "pcmSha256": "e919575185167ad99a3b6cd294fb599ece37d766672953941c5e61c86e9071ca",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [
+            "5184dbc455ce37889d05a3796120a9badc5109076c26d20d7917602f768a904e"
+          ],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 3.1115300437029063,
+            "MatchObjective": 15.346278332854295,
+            "preferenceNeuralV2": 1.2272781262296215
+          }
+        },
+        {
+          "id": "e34cc9fdde88ff068ac64d1d13fae19dd7f6c78e9ce6ae175b7b279a96876809",
+          "role": "single",
+          "arm": "single-preference",
+          "synth": "Mixr",
+          "pcmSha256": "56f31bd920da8d223b052ddb69568ba13491a9e16edf779cd295fb9e316d2245",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 3.869813679829195,
+            "MatchObjective": 12.824649867283565,
+            "preferenceNeuralV2": 0.6037161000450537
+          }
+        },
+        {
+          "id": "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400",
+          "role": "pair",
+          "arm": "pair-preference",
+          "synth": "Mixr",
+          "pcmSha256": "5154ba90f30090a047c89d81e789584267c86e76b719d9e5e9e7163356504f01",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": true,
+          "responseScopedLikeness": "similar",
+          "scores": {
+            "softPeriodicity": 3.051019241985449,
+            "MatchObjective": 13.817461505723152,
+            "preferenceNeuralV2": 0.49616928449100794
+          }
+        }
+      ],
+      "note": ""
+    },
+    {
+      "folder": "008",
+      "name": "clothes/cloth4.ogg",
+      "targetId": "371d093a7503eee3aa29686e90088e869ff8e00c4e638a278ee4090a2657857b",
+      "referencePcmSha256": "1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e",
+      "kind": "best",
+      "adequacy": {
+        "level": "similar",
+        "candidateIds": [
+          "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754"
+        ]
+      },
+      "preferredRoles": [
+        "single"
+      ],
+      "options": [
+        {
+          "id": "4f318ccf5ef610a6ce8c43df00a1a4c8ffdd3403617fc1910b61816dcb4f7f34",
+          "role": "previous",
+          "arm": null,
+          "synth": "Rustlr",
+          "pcmSha256": "72394dda846b3618fc30235bc06286deea48e2cf35422b259695c8ab7564d3fb",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [
+            "a1b2728b981070a22b53845d95e28dd809eb09ea4bc1220ccc322375b7f3bcf9"
+          ],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 2.071679059004378,
+            "MatchObjective": 1.0895657483096832,
+            "preferenceNeuralV2": 0.7910136537864787
+          }
+        },
+        {
+          "id": "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754",
+          "role": "single",
+          "arm": "single-preference",
+          "synth": "Mixr",
+          "pcmSha256": "034364ba06ac4c4ca7dc2183d523dd2a9865410f737a337a0d7938e63eb20b7a",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": true,
+          "responseScopedLikeness": "similar",
+          "scores": {
+            "softPeriodicity": 2.672621476657846,
+            "MatchObjective": 1.4315253019408962,
+            "preferenceNeuralV2": 0.6169017456100796
+          }
+        },
+        {
+          "id": "05d3e91c16e8ab95c9b1ce85b3c1ba99bc4fd495b508c86c63b3270ab7bb139b",
+          "role": "pair",
+          "arm": "pair-preference",
+          "synth": "Mixr",
+          "pcmSha256": "107dd9eaed5022ee550839a9237352f6f71acb48f65d31925f01ca9e94b0e222",
+          "heardInThisTrial": true,
+          "earlierHeardTrialIds": [],
+          "preferred": false,
+          "responseScopedLikeness": null,
+          "scores": {
+            "softPeriodicity": 2.5768276394904666,
+            "MatchObjective": 1.3973070742190892,
+            "preferenceNeuralV2": 0.530291924851388
+          }
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "pairs": [
+    {
+      "archive": "2026-10-06-mixr-joint-v1-quick-02",
+      "experimentId": "429b898ab5c16a77fb830bedc36901a0d8fb5b4599b382d72df9c7b361e50cae",
+      "target": "laser/laser1.ogg",
+      "referencePcmSha256": "6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8",
+      "candidateA": "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400",
+      "candidateB": "e34cc9fdde88ff068ac64d1d13fae19dd7f6c78e9ce6ae175b7b279a96876809",
+      "candidateAliasesA": [
+        "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400"
+      ],
+      "candidateAliasesB": [
+        "e34cc9fdde88ff068ac64d1d13fae19dd7f6c78e9ce6ae175b7b279a96876809"
+      ],
+      "candidatePcmSha256A": "5154ba90f30090a047c89d81e789584267c86e76b719d9e5e9e7163356504f01",
+      "candidatePcmSha256B": "56f31bd920da8d223b052ddb69568ba13491a9e16edf779cd295fb9e316d2245",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.007744729518890381,
+        -0.019995328038930893,
+        -0.007859580218791962,
+        -0.0032860971987247467,
+        0.0022681504487991333,
+        0.00767110288143158,
+        -0.001840568846091628,
+        -0.0012494310503825545,
+        -0.046072494238615036,
+        -0.03225806451612903,
+        -0.0476166820153594,
+        -0.006107133033303354,
+        -0.0022467859089374542,
+        -0.021333813667297363,
+        -0.03936389833688736,
+        -0.06819312274456024,
+        -0.0017529241740703583,
+        0.004881557077169418,
+        -0.003858286887407303,
+        -0.002142801880836487
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "e34cc9fdde88ff068ac64d1d13fae19dd7f6c78e9ce6ae175b7b279a96876809",
+          "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400",
+          "ac060ee97fbc783d82272025fc0838bc04e3d533095a35bb99ff39a36c29948c"
+        ],
+        "auditionedCandidateIds": [
+          "e34cc9fdde88ff068ac64d1d13fae19dd7f6c78e9ce6ae175b7b279a96876809",
+          "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400",
+          "ac060ee97fbc783d82272025fc0838bc04e3d533095a35bb99ff39a36c29948c"
+        ],
+        "preferredCandidateIds": [
+          "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": true,
+        "MatchObjective": false,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-06-mixr-joint-v1-quick-02",
+      "experimentId": "429b898ab5c16a77fb830bedc36901a0d8fb5b4599b382d72df9c7b361e50cae",
+      "target": "laser/laser1.ogg",
+      "referencePcmSha256": "6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8",
+      "candidateA": "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400",
+      "candidateB": "ac060ee97fbc783d82272025fc0838bc04e3d533095a35bb99ff39a36c29948c",
+      "candidateAliasesA": [
+        "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400"
+      ],
+      "candidateAliasesB": [
+        "ac060ee97fbc783d82272025fc0838bc04e3d533095a35bb99ff39a36c29948c"
+      ],
+      "candidatePcmSha256A": "5154ba90f30090a047c89d81e789584267c86e76b719d9e5e9e7163356504f01",
+      "candidatePcmSha256B": "e919575185167ad99a3b6cd294fb599ece37d766672953941c5e61c86e9071ca",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.06385853886604309,
+        -0.18785301968455315,
+        -0.03241160325706005,
+        -0.02397756651043892,
+        -0.07212700694799423,
+        -0.07277052104473114,
+        -0.09339487482793629,
+        8.103565778583288e-05,
+        -0.2797994948923588,
+        -0.14516129032258063,
+        -0.02889374891916911,
+        -0.03716876695400729,
+        -0.03491777088493109,
+        -0.11960236728191376,
+        -0.02214875817298889,
+        -0.07127408683300018,
+        -0.08894749358296394,
+        -0.03905826807022095,
+        -0.030343707650899887,
+        -0.022821761667728424
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "e34cc9fdde88ff068ac64d1d13fae19dd7f6c78e9ce6ae175b7b279a96876809",
+          "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400",
+          "ac060ee97fbc783d82272025fc0838bc04e3d533095a35bb99ff39a36c29948c"
+        ],
+        "auditionedCandidateIds": [
+          "e34cc9fdde88ff068ac64d1d13fae19dd7f6c78e9ce6ae175b7b279a96876809",
+          "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400",
+          "ac060ee97fbc783d82272025fc0838bc04e3d533095a35bb99ff39a36c29948c"
+        ],
+        "preferredCandidateIds": [
+          "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": true,
+        "MatchObjective": true,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-06-mixr-joint-v1-quick-02",
+      "experimentId": "429b898ab5c16a77fb830bedc36901a0d8fb5b4599b382d72df9c7b361e50cae",
+      "target": "clothes/cloth4.ogg",
+      "referencePcmSha256": "1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e",
+      "candidateA": "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754",
+      "candidateB": "4f318ccf5ef610a6ce8c43df00a1a4c8ffdd3403617fc1910b61816dcb4f7f34",
+      "candidateAliasesA": [
+        "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754"
+      ],
+      "candidateAliasesB": [
+        "4f318ccf5ef610a6ce8c43df00a1a4c8ffdd3403617fc1910b61816dcb4f7f34"
+      ],
+      "candidatePcmSha256A": "034364ba06ac4c4ca7dc2183d523dd2a9865410f737a337a0d7938e63eb20b7a",
+      "candidatePcmSha256B": "72394dda846b3618fc30235bc06286deea48e2cf35422b259695c8ab7564d3fb",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        -0.02490764856338501,
+        -0.06790857017040253,
+        -0.004692933522164822,
+        -0.02321465313434601,
+        -0.026764117181301117,
+        -0.030353516340255737,
+        -0.03715868294239044,
+        0.002254612511023879,
+        -0.058156855404376984,
+        -0.06451612903225805,
+        0.009396918738881745,
+        0.01779249922127578,
+        0.010087193921208382,
+        -0.05052962899208069,
+        0.0003083720803260803,
+        -0.10686621069908142,
+        -0.035389214754104614,
+        0.008821465075016022,
+        -0.0010640621185302734,
+        -0.00531218945980072
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754",
+          "4f318ccf5ef610a6ce8c43df00a1a4c8ffdd3403617fc1910b61816dcb4f7f34",
+          "05d3e91c16e8ab95c9b1ce85b3c1ba99bc4fd495b508c86c63b3270ab7bb139b"
+        ],
+        "auditionedCandidateIds": [
+          "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754",
+          "4f318ccf5ef610a6ce8c43df00a1a4c8ffdd3403617fc1910b61816dcb4f7f34",
+          "05d3e91c16e8ab95c9b1ce85b3c1ba99bc4fd495b508c86c63b3270ab7bb139b"
+        ],
+        "preferredCandidateIds": [
+          "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": false,
+        "MatchObjective": false,
+        "preferenceNeuralV2": true
+      }
+    },
+    {
+      "archive": "2026-10-06-mixr-joint-v1-quick-02",
+      "experimentId": "429b898ab5c16a77fb830bedc36901a0d8fb5b4599b382d72df9c7b361e50cae",
+      "target": "clothes/cloth4.ogg",
+      "referencePcmSha256": "1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e",
+      "candidateA": "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754",
+      "candidateB": "05d3e91c16e8ab95c9b1ce85b3c1ba99bc4fd495b508c86c63b3270ab7bb139b",
+      "candidateAliasesA": [
+        "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754"
+      ],
+      "candidateAliasesB": [
+        "05d3e91c16e8ab95c9b1ce85b3c1ba99bc4fd495b508c86c63b3270ab7bb139b"
+      ],
+      "candidatePcmSha256A": "034364ba06ac4c4ca7dc2183d523dd2a9865410f737a337a0d7938e63eb20b7a",
+      "candidatePcmSha256B": "107dd9eaed5022ee550839a9237352f6f71acb48f65d31925f01ca9e94b0e222",
+      "likenessA": null,
+      "likenessB": null,
+      "labelSource": "direct-choice",
+      "preferenceSign": 1,
+      "componentDifference": [
+        0.035495325922966,
+        0.02041800320148468,
+        0.002584373112767935,
+        0.001467932015657425,
+        0.0009072571992874146,
+        -0.0020888149738311768,
+        -0.000984877347946167,
+        -0.0007559715304523706,
+        0.03540900722146034,
+        0.0,
+        0.005526458844542503,
+        0.011137963796171158,
+        0.016917207278311253,
+        0.00681731104850769,
+        0.007871437817811966,
+        -0.0071077048778533936,
+        -0.0009379684925079346,
+        0.010017085820436478,
+        0.01097823679447174,
+        0.012307286262512207
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754",
+          "4f318ccf5ef610a6ce8c43df00a1a4c8ffdd3403617fc1910b61816dcb4f7f34",
+          "05d3e91c16e8ab95c9b1ce85b3c1ba99bc4fd495b508c86c63b3270ab7bb139b"
+        ],
+        "auditionedCandidateIds": [
+          "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754",
+          "4f318ccf5ef610a6ce8c43df00a1a4c8ffdd3403617fc1910b61816dcb4f7f34",
+          "05d3e91c16e8ab95c9b1ce85b3c1ba99bc4fd495b508c86c63b3270ab7bb139b"
+        ],
+        "preferredCandidateIds": [
+          "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754"
+          ]
+        }
+      },
+      "usefulnessA": null,
+      "usefulnessB": null,
+      "metricAgrees": {
+        "softPeriodicity": false,
+        "MatchObjective": false,
+        "preferenceNeuralV2": false
+      }
+    }
+  ],
+  "metricAgreement": {
+    "softPeriodicity": {
+      "correct": 2,
+      "pairs": 4
+    },
+    "MatchObjective": {
+      "correct": 1,
+      "pairs": 4
+    },
+    "preferenceNeuralV2": {
+      "correct": 3,
+      "pairs": 4
+    }
+  },
+  "cumulativeExport": {
+    "earlierArchive": "tools/multisynth/listening_data/2026-10-06-mixr-joint-v1-quick-01",
+    "unchangedTrials": 5,
+    "newTrials": 3,
+    "newStrictPairs": 4,
+    "combinedStrictPairs": 4
+  },
+  "responseScopedQualitativeLabels": [
+    {
+      "targetId": "fa0a632ca661f62dc59d9a4be1860a259af66584811f14eb384321ca4c57b816",
+      "candidateId": "cc77de8da232e474ef5dc19c51840953625a924e938283a86a7bf1b0d182a452",
+      "referencePcmSha256": "e9af30f41e2c16297769dbe6d7838a747563f8005190213048fa4469bfcde76d",
+      "candidatePcmSha256": "42c4225aeb150940d557303db81ada28dfe1e47e0d2bb70993395e506a611f33",
+      "label": "not-close",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "fa0a632ca661f62dc59d9a4be1860a259af66584811f14eb384321ca4c57b816",
+      "candidateId": "f004eeff9a9d6007f938f876c088fb691945e166ddb22023fbd12056c1cf45a2",
+      "referencePcmSha256": "e9af30f41e2c16297769dbe6d7838a747563f8005190213048fa4469bfcde76d",
+      "candidatePcmSha256": "9f6a30ffb06d978c05fa1843f5937930e6a1eb4a1d82e616e9c5a5a9243e5344",
+      "label": "not-close",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "fa0a632ca661f62dc59d9a4be1860a259af66584811f14eb384321ca4c57b816",
+      "candidateId": "fe460532652adefd38aedfec0cc15f940659815a2774e46079165d12c97eacfb",
+      "referencePcmSha256": "e9af30f41e2c16297769dbe6d7838a747563f8005190213048fa4469bfcde76d",
+      "candidatePcmSha256": "b7dc1375871779095ad106b5d29273bd906e6de84a1391792491851976f69b00",
+      "label": "not-close",
+      "heardInThisTrial": false,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "33fd0ad0b3f4a5a05dd350cb2334cc75754f9253b455caa4ef22da15d8739a01",
+      "candidateId": "21f7e0b1e95e76028dd56396e7251db41b88179a248f5ece0ee674d812971bd0",
+      "referencePcmSha256": "4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf",
+      "candidatePcmSha256": "36a86fc2a47814d79bfdf66f74ca6d3e94112801c7c65831cf9bc66cfb5cd1b8",
+      "label": "not-close",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "33fd0ad0b3f4a5a05dd350cb2334cc75754f9253b455caa4ef22da15d8739a01",
+      "candidateId": "600aa5de0ec92ab007e04b92e41bc3d3e335c39ad416cf58118af12e08da7c89",
+      "referencePcmSha256": "4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf",
+      "candidatePcmSha256": "cc3b5c9902184dd5cbfd5b1cf0683dd57aa2616f19fbacc161d9b66af4547859",
+      "label": "not-close",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "33fd0ad0b3f4a5a05dd350cb2334cc75754f9253b455caa4ef22da15d8739a01",
+      "candidateId": "5796c01bde922f30f9dc6439b7be2678a6c0a0ebeea1f530ae9059fbfc01a928",
+      "referencePcmSha256": "4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf",
+      "candidatePcmSha256": "1b2389fae95712776e0eb9e9c39fb3166d70bf432180db065f77bb6c96622999",
+      "label": "not-close",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "5184dbc455ce37889d05a3796120a9badc5109076c26d20d7917602f768a904e",
+      "candidateId": "093dbf0904caa7996a9ec7f45e456293718d5cc8e0d4d53f4e5284d56b2b0bfe",
+      "referencePcmSha256": "6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8",
+      "candidatePcmSha256": "e919575185167ad99a3b6cd294fb599ece37d766672953941c5e61c86e9071ca",
+      "label": "not-close",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "5184dbc455ce37889d05a3796120a9badc5109076c26d20d7917602f768a904e",
+      "candidateId": "5657a53bc820a615f17326f130ab3cb6ea7561699638763383aea28a9c8373a4",
+      "referencePcmSha256": "6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8",
+      "candidatePcmSha256": "91086842c716c9b91f148aab8749dd8f1f7c8ab4cdaf89f6d8ab710ae90d226e",
+      "label": "not-close",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "5184dbc455ce37889d05a3796120a9badc5109076c26d20d7917602f768a904e",
+      "candidateId": "fbff40a0d8070b1b14f25ba4426e2a4ae6e60f8467133955ada7e3e3caf7e81d",
+      "referencePcmSha256": "6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8",
+      "candidatePcmSha256": "e98bc6ffca74434f139707981798b0507b38ba5d673b90fefe4cbddf92910ee4",
+      "label": "not-close",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "a1b2728b981070a22b53845d95e28dd809eb09ea4bc1220ccc322375b7f3bcf9",
+      "candidateId": "80ddb1396f0567f461338caba28440e1a38754aa6083503c4f92e2d0679af393",
+      "referencePcmSha256": "1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e",
+      "candidatePcmSha256": "72394dda846b3618fc30235bc06286deea48e2cf35422b259695c8ab7564d3fb",
+      "label": "similar",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "a1b2728b981070a22b53845d95e28dd809eb09ea4bc1220ccc322375b7f3bcf9",
+      "candidateId": "1fc1ec6de1a8abfc24fdd0ed9e8d783f314857f7011b5f5c527b05a31ee93b7f",
+      "referencePcmSha256": "1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e",
+      "candidatePcmSha256": "a839173e1822302b9ee844be8684196a1c51d5213d6209b1248c016d8bc8e738",
+      "label": "similar",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "a1b2728b981070a22b53845d95e28dd809eb09ea4bc1220ccc322375b7f3bcf9",
+      "candidateId": "510458c4274c8bd0940040ccd709a0a51b530e6dab3e266251ab7e28bcb58eb4",
+      "referencePcmSha256": "1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e",
+      "candidatePcmSha256": "6f1e905de27c0ab2e7b83e461a1602d333a7b1c126639933443f791ad5bc654b",
+      "label": "similar",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "d9fe228f6a0dbd3d54817f1eddf23362302c2df6a9492c90510477afa596c1b5",
+      "candidateId": "9bd06746a64ae0c44831fe856d40b1cede8c95d1e258dd09592d8f0d4cb3e465",
+      "referencePcmSha256": "e9af30f41e2c16297769dbe6d7838a747563f8005190213048fa4469bfcde76d",
+      "candidatePcmSha256": "42c4225aeb150940d557303db81ada28dfe1e47e0d2bb70993395e506a611f33",
+      "label": "similar",
+      "heardInThisTrial": false,
+      "earlierHeardTrialIds": [
+        "fa0a632ca661f62dc59d9a4be1860a259af66584811f14eb384321ca4c57b816"
+      ],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "142bb1bb5c5f265e89a3b028d43bd96cfef0f66a870f479cd400a72285fe17ff",
+      "candidateId": "5056139cb71ae7e92c28a307b046d7a023a2f73bd275c0fe5a525c1c45fb4b3e",
+      "referencePcmSha256": "4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf",
+      "candidatePcmSha256": "36a86fc2a47814d79bfdf66f74ca6d3e94112801c7c65831cf9bc66cfb5cd1b8",
+      "label": "not-close",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [
+        "33fd0ad0b3f4a5a05dd350cb2334cc75754f9253b455caa4ef22da15d8739a01"
+      ],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "142bb1bb5c5f265e89a3b028d43bd96cfef0f66a870f479cd400a72285fe17ff",
+      "candidateId": "28eed4babf1511220e784a98effd4f74fe3d54d029ec4fcacc3b09480e1c5d48",
+      "referencePcmSha256": "4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf",
+      "candidatePcmSha256": "6df8f60f6865f747c12d29db532ecaa46897d7c9b7533a6c0508919b17df07f5",
+      "label": "not-close",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "142bb1bb5c5f265e89a3b028d43bd96cfef0f66a870f479cd400a72285fe17ff",
+      "candidateId": "056211cf918caa123b080898569cfcc072678f3802c4bb946307380b1eff18ec",
+      "referencePcmSha256": "4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf",
+      "candidatePcmSha256": "b95b1a8abbf84762975ed12ea1f9ef63523f2cc64b03abe1498dbd90e050539e",
+      "label": "not-close",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "7aea38e19e612bda0a8a9ebddea395ef94c85dd0ad174eb538e3a074d80812c3",
+      "candidateId": "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400",
+      "referencePcmSha256": "6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8",
+      "candidatePcmSha256": "5154ba90f30090a047c89d81e789584267c86e76b719d9e5e9e7163356504f01",
+      "label": "similar",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    },
+    {
+      "targetId": "371d093a7503eee3aa29686e90088e869ff8e00c4e638a278ee4090a2657857b",
+      "candidateId": "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754",
+      "referencePcmSha256": "1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e",
+      "candidatePcmSha256": "034364ba06ac4c4ca7dc2183d523dd2a9865410f737a337a0d7938e63eb20b7a",
+      "label": "similar",
+      "heardInThisTrial": true,
+      "earlierHeardTrialIds": [],
+      "scope": "Preserved response scope, not inferred audition or numeric training label"
+    }
+  ],
+  "unsubmittedTrials": [],
+  "interpretation": [
+    "Complete cumulative8-trial export across4 repeated external references. First5 trials unchanged; remaining3 newly supplied. No very-close recreations.",
+    "Preference-block laser prefers the new Boomr+Transfxr pair and rates it similar. Preference-block cloth prefers the new Boomr single and rates it similar. Door again rejects all options. Thus layering contributes one relative external win but is not uniformly better.",
+    "The first five outcomes and their playback limitations remain unchanged. Retain the explicit earlier-hit preference/adequacy without fabricating current-trial audition. Exact earlier hit is none-close in one context and similar in another.",
+    "Four new strict heard pairs from laser and cloth. Eighteen response-scoped labels:12not-close,6similar;16 have playback in their own trial. No numeric ratings inferred, no duplicate labels from the partial export counted as new evidence.",
+    "The soft-hit pair is not independently audition-supported as a negative. No new fitting result is a verified convincing recreation or a gold real-audio control target.",
+    "Next investigate a bounded trained Boomr+Transfxr Mixr inverse on exact synthetic component labels. Learn both sources from their actual mixture, reserve component-disjoint native validation and tests, and check tagged external inputs separately. Do not distill rejected real fits as ground truth or claim native recovery proves transfer."
+  ]
+}

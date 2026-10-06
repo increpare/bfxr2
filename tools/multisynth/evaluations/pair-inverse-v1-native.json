@@ -1,0 +1,78 @@
+{
+  "complete": true,
+  "summary": {
+    "native": {
+      "soft": {
+        "trainedMedian": 2.3904265557125868,
+        "independentMedian": 2.366644894647685,
+        "trainedLower": 38,
+        "count": 96
+      },
+      "preference": {
+        "trainedMedian": 0.6476962535596937,
+        "independentMedian": 0.6593464714319075,
+        "trainedLower": 48,
+        "count": 96
+      }
+    },
+    "lowpass": {
+      "soft": {
+        "trainedMedian": 5.364087318330011,
+        "independentMedian": 3.692760668209325,
+        "trainedLower": 0,
+        "count": 8
+      },
+      "preference": {
+        "trainedMedian": 1.241627916641551,
+        "independentMedian": 1.0312292107935477,
+        "trainedLower": 2,
+        "count": 8
+      }
+    },
+    "8bit": {
+      "soft": {
+        "trainedMedian": 2.166599475995266,
+        "independentMedian": 2.1705614632434793,
+        "trainedLower": 3,
+        "count": 8
+      },
+      "preference": {
+        "trainedMedian": 0.475067287482128,
+        "independentMedian": 0.6406668919529658,
+        "trainedLower": 6,
+        "count": 8
+      }
+    },
+    "11025Hz": {
+      "soft": {
+        "trainedMedian": 2.7292460202771838,
+        "independentMedian": 2.7234437798661277,
+        "trainedLower": 4,
+        "count": 8
+      },
+      "preference": {
+        "trainedMedian": 0.7453564265897168,
+        "independentMedian": 0.817753597934131,
+        "trainedLower": 3,
+        "count": 8
+      }
+    },
+    "lowpass+8bit": {
+      "soft": {
+        "trainedMedian": 4.1911367299910385,
+        "independentMedian": 3.767998730987716,
+        "trainedLower": 5,
+        "count": 8
+      },
+      "preference": {
+        "trainedMedian": 0.9816860893518962,
+        "independentMedian": 1.0796202777220083,
+        "trainedLower": 6,
+        "count": 8
+      }
+    }
+  },
+  "reportSha256": "97b52eda826d03e212de7098d6ecd6adf2e50a5f6ffdf57f1ebba48f1773e87f",
+  "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+  "scope": "Fixed Boomr+Transfxr learned inverse; synthetic component-disjoint native tests, overlapping native families. External references are repeated development cases, never pair training labels. Original Bfxr historical real-fit overlap remains; old control clips retained exactly. Neither control loss nor score establishes audible likeness."
+}

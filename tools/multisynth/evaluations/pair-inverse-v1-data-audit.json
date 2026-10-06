@@ -1,0 +1,128 @@
+{
+  "complete": true,
+  "components": 1408,
+  "crossSplitIdenticalPCM": 0,
+  "uniqueNormalizedSourcePCM": 1408,
+  "crossSplitIdenticalNormalizedPCM": 0,
+  "examples": 7008,
+  "splitCounts": {
+    "train": 6144,
+    "val": 768,
+    "test": 96
+  },
+  "replayedRows": [
+    {
+      "index": 0,
+      "id": "train-both-00000",
+      "rawHash": "207b5e199154420e56dd66cd2991cf786dad51757b995d827729d5f9dea0d2d2",
+      "auditionHash": "482a388232ce7d55ab72dc789f8c8bf766a58eeedbf53abe76dc16efca07b0c4"
+    },
+    {
+      "index": 4095,
+      "id": "train-both-04095",
+      "rawHash": "7a29c4a72edafb0fdba72b4039db1daec6f97d8f949fdae1118957af491d4953",
+      "auditionHash": "03c9b915c21b698f3042865cb05d96bf9e9c7dfb73f31cf32ac1b99e7877baa2"
+    },
+    {
+      "index": 4096,
+      "id": "train-Boomr-00000",
+      "rawHash": "e25dd0d9893af648f9ae11850c31f8d8b2087f19f939fdb1969384f21baae8b1",
+      "auditionHash": "9aeba0ee887822b4d2018c988c126057e614375f28defc36373f8c61f097e316"
+    },
+    {
+      "index": 5119,
+      "id": "train-Boomr-01023",
+      "rawHash": "a47d135586e4f1c63b08720350ef97efca34d05007749806a741973bfb650577",
+      "auditionHash": "468c246cbf59b275c4eb54aeda151605aa73fda5f84f735c0a8463f27745df11"
+    },
+    {
+      "index": 5120,
+      "id": "train-Transfxr-00000",
+      "rawHash": "e6982e06e349dd9894b005082aebb6630de8afac99749b9f94307a54cd098632",
+      "auditionHash": "a2c589dba8651fd2015e0a5f69bfb26a3e54bf839151301cdecadbc040ac2bf5"
+    },
+    {
+      "index": 6143,
+      "id": "train-Transfxr-01023",
+      "rawHash": "11689c908bed555c45ee34c85e82219b410e753d2617d2d977af14f402aa2851",
+      "auditionHash": "62a9e4455dbd97beed9709c62108d5ac83e66952d49d2425d7dc6cabb06d0701"
+    },
+    {
+      "index": 6144,
+      "id": "val-both-00000",
+      "rawHash": "ce324b2a314ab7e9f655d98d10aef986761a2f875e3582bdbf772fbfb355c61d",
+      "auditionHash": "f7a2b4686d246df1c858080a75dbe85e1b5ea773fe25ba2a47cf37ae943499c2"
+    },
+    {
+      "index": 6655,
+      "id": "val-both-00511",
+      "rawHash": "2c12d56a048466ca7cce837b9f09f8a5cad7d3f33142362d2e6d5a6bbb0e6bf8",
+      "auditionHash": "449a661682898324be055526eb670e7b798b349d9738fb28c25bf9dfeff772b2"
+    },
+    {
+      "index": 6656,
+      "id": "val-Boomr-00000",
+      "rawHash": "062faec34f842cfb0682af4296b4b1f8a101b020ce4b554ece2beab826ef4ab9",
+      "auditionHash": "78e2c691459a84e9938abce0aaa6205937f28f4c3bea643eb9261a3f40a2deec"
+    },
+    {
+      "index": 6783,
+      "id": "val-Boomr-00127",
+      "rawHash": "46c0646cb0c40358afec29446751124e8cb5c6831b74052c6654876f6966a1a2",
+      "auditionHash": "eb16d88a13690beac915e7a717807fe5dff689bd76a0f1f2cbeb3cd993fb700e"
+    },
+    {
+      "index": 6784,
+      "id": "val-Transfxr-00000",
+      "rawHash": "441a00a6bc8a7be877ef169c587c47516d07803cc6bcf026ad88ebfc91f0aa9b",
+      "auditionHash": "e2e846bd6152a452a1782a3cee64afc385a59d5cac55daf2d10559c13904a12f"
+    },
+    {
+      "index": 6911,
+      "id": "val-Transfxr-00127",
+      "rawHash": "6d6dca076321a057e0c1eaa5713513372f6d5e23e3e5cc7f887d9706df4109f6",
+      "auditionHash": "e0a094684bf54ea5ce4bbffd2257a165c3d0daeb70a6a5a1f61b202646697394"
+    },
+    {
+      "index": 6912,
+      "id": "test-both-00000",
+      "rawHash": "412bb5fc569bdda0db13179bedb95240347fe239023e8c7fc3a4f30512ba85ee",
+      "auditionHash": "660e9d855764c6cc22b7494127fcbe4049ce5018cbd0b20e31eae9bdb69ebc66"
+    },
+    {
+      "index": 6975,
+      "id": "test-both-00063",
+      "rawHash": "13f431e6d95d675820f74394e4d339eb0a63ee9f26b1b372b671eff42edc18b1",
+      "auditionHash": "539abe8e2f59ccbc7f00030941c23d155481ae24df174e1fb323a90ae0bfa509"
+    },
+    {
+      "index": 6976,
+      "id": "test-Boomr-00000",
+      "rawHash": "9cc89673ec7be580904118d93c154a09f12ad7cb54743b9a99848f4e09fc1e77",
+      "auditionHash": "b223aa961cc5ccb7ffd14c86b9420bc0821375dfab088ff5c5e3e24857f1bfda"
+    },
+    {
+      "index": 6991,
+      "id": "test-Boomr-00015",
+      "rawHash": "58a1ca5d0d9256f135967bbace529f08247b24fe6d3cc182a48a1d32c1480417",
+      "auditionHash": "73f0c2b4b5a6f25f29bdebc2ad71c19c9e64bfb525a77f0f6708a1a09b0f9b28"
+    },
+    {
+      "index": 6992,
+      "id": "test-Transfxr-00000",
+      "rawHash": "28fe4d0aac77ced7d052fe170a56288da0b789b4d4afcd7a5016f0f652ec801c",
+      "auditionHash": "a1f3d2948e4acdabbf7a129a6b052b57e20a93d009164db9fa2cfe94b52817e9"
+    },
+    {
+      "index": 7007,
+      "id": "test-Transfxr-00015",
+      "rawHash": "975cb7b3aad556ed63280ef147b6f2aa3a5470c854a1bbbddda445a14c70016f",
+      "auditionHash": "729252cd10ef3cf68eb65c29c72a303cec82a22d1e1194715a0bf4f56f870dc9"
+    }
+  ],
+  "allBankFilesAndExactLabelsValidated": true,
+  "dataManifestSha256": "9563ebb69dc9a91c05375d7e5a55a7c967c7acff2b9c7ccd5785d9a3ee0ab3b7",
+  "scriptSha256": "d95d5bfaa3d6a7660bef7e9ade1aae76fa0a774e35554214bee0a695262181ee",
+  "compositionWrapperSha256": "8b8b25d8152c63001b4c79f19da208be15ef4db9b13ee3e4c498431a25fd1fd5",
+  "scope": "Exact component controls and source PCM disjoint; shared preset families and possible historical baseline component overlap remain.18stratified uncached native replays reproduce exact features and labels."
+}

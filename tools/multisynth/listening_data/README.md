@@ -57,6 +57,20 @@ external generalization.
 | `2026-10-06-off-model-transfer-v1-quick-02/` | 8 | 24 |
 | `2026-10-06-mixr-transfer-v1-quick-01/` | 4 | 11 |
 | `2026-10-06-mixr-joint-v1-quick-01/` | 5 trials / 4 references | 15 |
+| `2026-10-06-mixr-joint-v1-quick-02/` | 8 trials / 4 references | 24 |
+
+The twenty-third archive completes all eight joint-fitting trials. The first five
+responses are unchanged. The additional laser trial chooses the new Boomr +
+Transfxr pair as **roughly similar**; cloth chooses the new Boomr single as
+**roughly similar**; door again rejects every option. None is very-close.
+Twenty-four exact PCM files are retained. Four new strict heard preferences
+come from laser and cloth; loading both cumulative exports still yields four,
+not duplicated evidence. Eighteen response-scoped qualitative labels are kept,
+with sixteen supported by playback in their own trial. The unplayed soft-hit
+pair is not an independently audition-supported negative. The earlier hit clip
+remains none-close in one context and similar in another; neither response is
+rewritten. These are not gold real-audio control labels. See the
+[complete review](../evaluations/mixr-joint-v1-quick-02-human-review.json).
 
 The twenty-second archive is a **partial five-of-eight-trial export**, not a
 complete result. All four soft-score trials are present: hit, door and laser

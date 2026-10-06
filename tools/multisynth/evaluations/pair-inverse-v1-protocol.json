@@ -1,0 +1,169 @@
+{
+  "complete": true,
+  "inventory": {
+    "ok": true,
+    "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+    "baseSourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+    "sampleRate": 44100,
+    "sources": [
+      "Bfxr",
+      "Transfxr",
+      "Birdr",
+      "Boomr",
+      "Bouncr",
+      "Breathr",
+      "Choirr",
+      "Clonkr",
+      "Crittr",
+      "Fractr",
+      "Glitchr",
+      "Holor",
+      "Jinglr",
+      "Machinr",
+      "Notifr",
+      "Pewpr",
+      "Pluckr",
+      "Pulser",
+      "Riftr",
+      "Rollr",
+      "Rumblr",
+      "Rustlr",
+      "Signlr",
+      "Squishr",
+      "Swarmr",
+      "Tappr",
+      "Tickr",
+      "Weathr",
+      "Whooshr",
+      "Zappr"
+    ],
+    "dependencies": {
+      "tools/render/composition_context.js": "7bae1d1d6cbdc91b855b22cb0325701845df9835fe9d14a02fa571cb20e35eba",
+      "tools/render/composition_worker.js": "56664b7b33175eb962b4dbb6b9ad5c805847f9224d4a0562bb78f59acf5102ac",
+      "tools/multisynth/composition.py": "8b8b25d8152c63001b4c79f19da208be15ef4db9b13ee3e4c498431a25fd1fd5",
+      "tests/helpers/synth-context.js": "537f3a32b720ca359391bc32b9d4c8a8496840e94769cb3b6a55c81908654364",
+      "js/audio/Stackr_DSP.js": "419ddd4ee2155888bf2ecd0ac7e8a6460d47c691d907f3bb3ab0da18e047795d",
+      "js/synths/Stackr.js": "2174d51cc1d8a618c374ee5484db56ca89073f7596b131a9abc3883b5c2db601",
+      "js/audio/Mixr_DSP.js": "219cf10c4d3ec98ca16c1961852abf00bb678bab971d6712352eb01b6c2248d1",
+      "js/synths/Mixr.js": "9c00506f665f419732314aa7cdea1e7c6f3eae295dcb79c9a5011fdec7db7563"
+    },
+    "excluded": [
+      {
+        "name": "Footsteppr",
+        "reason": "Separate PureData host is not loaded in this first composition bridge."
+      }
+    ],
+    "seedPolicy": "Actual Stackr.render_source and SoundDSP.rng; source renderSeed in [0,1]."
+  },
+  "bindings": {
+    "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/evaluations/pair-inverse-v1.py": "9df6b413167331727809907bd9b21e3140c0ba84182c5ac0c081b8082f834756",
+    "tools/multisynth/joint_refine.py": "0448fb20f49eaa555419e563da3b8f40560c369fafa904efa12f1fff868ae741",
+    "tools/multisynth/search.py": "fcc4d6e93628e128d78d6fb8b0f9b53ad210705e982387003e8b78e0ae30a1b2",
+    "tools/multisynth/composition.py": "8b8b25d8152c63001b4c79f19da208be15ef4db9b13ee3e4c498431a25fd1fd5",
+    "tools/multisynth/renderer.py": "a64863bbd4d104ef1ee36d49d5973de9dc2a8998298ae4f4d12b2d11c1ad28b0",
+    "tools/multisynth/features.py": "7553a92b0caeb442b2f693752c0a94f788479e47cfc5a9d4a37dab893f3ab91c",
+    "tools/multisynth/gesture.py": "407d5a21571aba977f124f4dd3425f9538f27f0001348ff70f46f908866d9207",
+    "tools/multisynth/preference.py": "37377ef14673d60ddae4cc8a0a64f8e580a0044b7eba93a6d01f3d4bf07531cb",
+    "tools/multisynth/soft_periodicity.py": "3ade081f6b3700ff254a9428d91fedd54da793f5904fd9b9948fc66b18a4dbfd",
+    "tools/match/structure.py": "1fef062dcd488b6a2f52c0fcdb03921296770972235253fe7a2b876e183d5aa2",
+    "tools/match/objective.py": "ea3768c5ff641f68e398a7a39f902345f5f3a1a69277b66f8df556f7eeb2278e",
+    "tools/match/features.py": "dc8d2c049f9940215387d2f2500cfa0dbdd2a5b27e07eced41f16fc69cba6859",
+    "tools/match/audio.py": "90bd5aa0dd1e885f0cdd1057e2a0d9c06c25bcf7584e8e7ab92fd5edeb14fa52",
+    "tools/neural_invert/pair_train.py": "11b69e798db6f1862fb7f57010735cac937d82580a4a798eabc441579a5fe34e",
+    "tools/neural_invert/pair_model.py": "f5d4fdad93aad6bd68a894fb85f029624e7b38813bf814ce17f33f4db8889730",
+    "tools/neural_invert/predict.py": "953a5a79b089d42c1be2d8a9c92d02e8a39d25f4ba019899b840502769db51d4",
+    "tools/neural_invert/model.py": "1e7c07e7981582082aa832879db5b4a15b788a58ed10c4c3c4c92f7e3a2629cc",
+    "tools/neural_invert/temporal.py": "a382766fbb7279637003ae5bff83da98742c4b77c1208fb55da4c3242b41082a",
+    "tools/neural_invert/coverage_mixture.py": "109290def4bc5e9a66779417554a57f42f92af9da39c44d2ef410b1dcc5538e1",
+    "tools/neural_invert/coverage_train.py": "b995f9744cae3583b73c4c62fe8509b57389ef679a21fd3ba21d8cb271824b2e",
+    "tools/neural_invert/experiment.py": "07bb2ead5eff152991c28e3725efd54764cfb8a9f306cc3a94ec4c2740af4d36",
+    "tools/neural_invert/features.py": "468a5e4c6afcf5f3aee232ec1674e2ae5e1620cb6088f09209cf908e6dc0e0f8",
+    "tools/neural_invert/schema.py": "164371d97f58e7db447f794c618eedc146949d9d70d15689f44bbec65c75871e"
+  },
+  "planSha256": "9cc77c3fd5692f18f15d24aed572d4ef26440c31d966df73227cc3b0ca58c7d6",
+  "checkpointSha256": "e0444328cb6d96d5f9706bd78dcead51f9f135957830e3e2cb7c7ac7e6d4e7ba",
+  "dataManifestSha256": "9563ebb69dc9a91c05375d7e5a55a7c967c7acff2b9c7ccd5785d9a3ee0ab3b7",
+  "baselineHashes": {
+    "tools/multisynth/runs/specialists-v1/models/Boomr/best.pt": "e8fefa597fc7698e3d12f0a0d60618ac5007ddd8f60110619117b7da4a6c502a",
+    "tools/multisynth/runs/native-mixture-v1/models/mixture/best.pt": "a816f97284cdd4ec0bfcfbcdbdbd11ab6e8b0230d4fa0b1388e758958694e73f"
+  },
+  "archiveHashes": {
+    "tools/multisynth/listening_data/2026-10-06-off-model-transfer-v1-quick-02/manifest.json": "929d62763d43eb85ad61998a19d329d09641f3cd4770de69ee53c08cb2fa8aaf",
+    "tools/multisynth/listening_data/2026-10-06-mixr-joint-v1-quick-02/manifest.json": "eab52391a5ae4ca82709bfbc61e2c2401a09cface392af6658b43e303fd33219"
+  },
+  "metricSha256": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+  "seed": 20261021,
+  "budgetPerExternalArm": 256,
+  "baselinePolicy": "Four proposals: Boomr rank0 alone, Transfxr mode0 alone, paired ranks1/1 balance.35, paired ranks2/2 balance.65. All source seeds and gains .5. No known native source conditioning.",
+  "rawPolicy": "Four complete learned hypotheses, categorical argmax. Score every actual render under both frozen audio scorers.",
+  "perturbations": "First32 native tests cycling 129tap Hamming-sinc lowpass2500Hz, quantize8bit, anti-aliased decimate to11025Hz then linear interpolation to44100Hz, lowpass+8bit. No altered inputs enter training.",
+  "selection": "All8 external references, unchanged order. Exact archived earlier comparison plus preference-refined independent composition and preference-refined trained pair. Same256 mutation attempts, four raw proposals attempted per arm; valid starts only, failures retained; not equal total historical compute. At most3 options, exact duplicates removed.",
+  "scope": "Fixed Boomr+Transfxr learned inverse; synthetic component-disjoint native tests, overlapping native families. External references are repeated development cases, never pair training labels. Original Bfxr historical real-fit overlap remains; old control clips retained exactly. Neither control loss nor score establishes audible likeness.",
+  "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+  "targets": [
+    {
+      "name": "footstep/impactMetal_002.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/impactMetal_002.ogg",
+      "sha256": "0c1bb4db8a4d48b2b8c2e65a175d9056b845f1063837599995d81be1c5957d2c",
+      "historicalBfxrSplits": [
+        "train"
+      ]
+    },
+    {
+      "name": "clothes/cloth4.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/clothes/cloth4.ogg",
+      "sha256": "e7ab9a6c4466dea874196c61f59bf1da05cfe58748f42fadd695d441a154a99b",
+      "historicalBfxrSplits": [
+        "train"
+      ]
+    },
+    {
+      "name": "hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+      "sha256": "f723badf49fb5d2902efb259008c23cb2edc96b6ce59bf20448827f51a44e4ea",
+      "historicalBfxrSplits": [
+        "train"
+      ]
+    },
+    {
+      "name": "chains/beltHandle2.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/chains/beltHandle2.ogg",
+      "sha256": "f3b692d5c83263c25bce779805b212dbab515d18a603c695fc6a1e8650cf5366",
+      "historicalBfxrSplits": [
+        "train"
+      ]
+    },
+    {
+      "name": "door/doorClose_3.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/door/doorClose_3.ogg",
+      "sha256": "d0a2540e5e1639bc2fbeef34e76f28e9f9cb8a151736a0ac4c13859994328d0e",
+      "historicalBfxrSplits": [
+        "holdout"
+      ]
+    },
+    {
+      "name": "bell/clothBelt2.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/clothBelt2.ogg",
+      "sha256": "d545b1d9f20e6188140aaf551a96f1e82fe0d15f7ca066fac8b065e1231e0038",
+      "historicalBfxrSplits": [
+        "train"
+      ]
+    },
+    {
+      "name": "laser/laser1.ogg",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/laser1.ogg",
+      "sha256": "0bf468769b48a834dc1c6e38e457f2c71159b010225a9aedf84316795e8cc3e5",
+      "historicalBfxrSplits": [
+        "train"
+      ]
+    },
+    {
+      "name": "collect/coin (nes).wav",
+      "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/coin (nes).wav",
+      "sha256": "1ad33301e64df03d49b85008db26cd93e30314387e16f83cd5bf28e954d14372",
+      "historicalBfxrSplits": [
+        "holdout"
+      ]
+    }
+  ]
+}

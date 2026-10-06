@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All twenty-two feedback archives,
+do not establish general success on real recordings. All twenty-three feedback archives,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
@@ -127,6 +127,56 @@ the published run was restarted from the corrected protocol. The corrections
 passed independent review. Five joint-search tests, 44 feedback tests and five
 native composition tests passed; all 34 served page/audio assets match local
 hashes. No user choices or audition telemetry were fabricated during verification.
+
+The [complete joint-fitting feedback](evaluations/mixr-joint-v1-quick-02-human-review.json)
+now contains all eight judgments, with the first five unchanged. The additional
+laser comparison prefers Boomr + Transfxr and rates it roughly similar; cloth
+prefers the Boomr single, also roughly similar; door still fails. None is
+very-close. Four strict heard preference pairs are new. The complete archive
+preserves twenty-four exact PCM clips and all context-dependent adequacy labels.
+This motivates a genuine mixture-trained fixed Boomr/Transfxr inverse pilot;
+search results are not substituted for exact synthetic control supervision.
+
+A genuine mixture-supervised pilot now lives in `neural_invert.pair_model` and
+`neural_invert.pair_train`: a fixed **Boomr + Transfxr** Mixr inverse, not an
+all-synth replacement. Four complete hypotheses predict both sources, balance,
+and whether either source should be absent. The 879,012-parameter temporal CNN
+trains on 6,144 actual Mixr renders, validates on 768, and reserves 96 native
+tests. The 1,408 canonical component controls and their exact source PCM are
+disjoint across splits; preset families still overlap and old baseline experts
+may know those native components. No fitted real-audio patch becomes a label.
+
+The fixed 60-epoch run selects epoch 7: validation loss 0.523243, reproduced after
+reload on both MPS and CPU. Later training overfits, so its smaller training loss
+does not replace the selected checkpoint. This is a parameter-space result, not
+a claim of perceptual accuracy. See the [data audit](evaluations/pair-inverse-v1-data-audit.json),
+[training audit](evaluations/pair-inverse-v1-training-audit.json), and
+[frozen evaluation protocol](evaluations/pair-inverse-v1-protocol.json).
+
+Actual-render results do **not** establish an overall improvement. On the 96
+native tests the trained pair beats independent composition on 48 preference
+scores and 38 soft-periodicity scores. Eight low-pass cases expose a weakness:
+only 2/8 preference wins and 0/8 soft-periodicity wins. Other degradation groups
+are mixed. On eight repeated tagged external inputs, equal 256-attempt refinement
+gives 4/8 preference wins and 3/8 soft-periodicity wins. These are score comparisons,
+not listener judgments; no checkpoint is promoted. See the
+[native/perturbation results](evaluations/pair-inverse-v1-native.json) and
+[external results](evaluations/pair-inverse-v1-external.json).
+
+The [eight-trial listening page](runs/pair-inverse-v1-listening/index.html) preserves
+each earlier clip exactly and compares it with both newly fitted approaches.
+All eight references are external, all have three distinct visible choices, and
+all 34 served HTML/report/audio files match local hashes. Immediate likeness is
+collected in the existing buffered interface. Human feedback is still required;
+these are development cases, not evidence of unseen-source generalization.
+
+Reproduction commands, from the repository root with `PYTHONPATH=tools` and the
+existing Torch environment, are `python -m neural_invert.pair_data bank`,
+`python -m neural_invert.pair_data generate`, and
+`python -m neural_invert.pair_train --output tools/multisynth/runs/pair-inverse-v1/model`.
+These preserve existing artifacts by refusing to overwrite them. The Python
+`pair_train.load` / `predict` API returns four native Mixr parameter dictionaries;
+no default expert or production UI is replaced.
 
 The [first joint-fitting feedback](evaluations/mixr-joint-v1-quick-01-human-review.json)
 contains **five of eight trials**, with no very-close recreation. Soft-score hit,

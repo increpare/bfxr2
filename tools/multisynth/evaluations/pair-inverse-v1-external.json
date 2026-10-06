@@ -1,0 +1,22 @@
+{
+  "complete": true,
+  "summary": {
+    "external": {
+      "soft": {
+        "trainedMedian": 4.527496718918153,
+        "independentMedian": 3.7624133924103944,
+        "trainedLower": 3,
+        "count": 8
+      },
+      "preference": {
+        "trainedMedian": 0.8842043609332322,
+        "independentMedian": 0.894026826647672,
+        "trainedLower": 4,
+        "count": 8
+      }
+    }
+  },
+  "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+  "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+  "scope": "Fixed Boomr+Transfxr learned inverse; synthetic component-disjoint native tests, overlapping native families. External references are repeated development cases, never pair training labels. Original Bfxr historical real-fit overlap remains; old control clips retained exactly. Neither control loss nor score establishes audible likeness."
+}

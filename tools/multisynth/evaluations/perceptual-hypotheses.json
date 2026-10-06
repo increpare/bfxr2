@@ -226,6 +226,21 @@
           "source": "evaluations/squishr-v1-quick-02-human-review.json"
         }
       ]
+    },
+    {
+      "id": "learn-component-inference-from-mixtures",
+      "claim": "A network trained on actual mixtures may recover useful components better than combining networks trained to explain the whole sound.",
+      "status": "trained-pilot-no-overall-improvement-established",
+      "evidence": "Complete joint-fit feedback has one roughly similar Boomr+Transfxr laser win and one roughly similar Boomr single cloth win, no very-close recreations. More sources or lower fitting loss do not ensure better likeness.",
+      "nextTest": "Eight external listening comparisons retain exact older clips and both new approaches, with immediate adequacy. Interpret human quality separately from mixed score results. Investigate filtered-input failure and limited component diversity before broader promotion; no real fits become gold labels.",
+      "source": "evaluations/mixr-joint-v1-quick-02-human-review.json",
+      "observations": [
+        {
+          "experiment": "pair-inverse-v1",
+          "finding": "6144 actual mixture/single training rows,768 validation,96 component-disjoint native tests.60epochs select epoch7; later epochs overfit. Native trained vs independent scores:48/96 preference wins,38/96 soft-periodicity. Lowpass subgroup2/8 and0/8. Eight external equal-budget fits:4/8 preference wins,3/8 soft wins. No human verdict yet and no checkpoint promoted.",
+          "source": "evaluations/pair-inverse-v1-native.json"
+        }
+      ]
     }
   ]
 }
