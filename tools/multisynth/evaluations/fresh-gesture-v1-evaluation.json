@@ -1,0 +1,529 @@
+{
+  "complete": true,
+  "reportSha256": "86f00d5cd8b8660fafd6c552763822dccc36c1e5fa0d04987b293c57f9e9f5f4",
+  "targetsSha256": "242cd956660cd2e63041da8ee65304ab1ea7c0750e85414fcd4ab707768e5c94",
+  "scriptSha256": "2219c7583cdee829e929aa1d4a504a1e6d412ab233c8413ad4a65d8eb4fae0e8",
+  "rows": [
+    {
+      "source": {
+        "name": "clothes/cloth1.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/clothes/cloth1.ogg",
+        "sha256": "ddb93a3671233f95da0e0b10367f082f7eb42fa6caaddcf776410aa8833c747d",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 8,
+          "synth": "Boomr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 42,
+          "synth": "Transfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 46,
+          "synth": "Boomr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 56,
+          "synth": "Squishr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 2015,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Boomr",
+          "origin": "shared22",
+          "soft": 2.922094042846119,
+          "preference": 0.87446267029114,
+          "legacy": 7.278916712352192
+        },
+        {
+          "role": "preference",
+          "synth": "Boomr",
+          "origin": "Boomr-specialist",
+          "soft": 3.5603761306190735,
+          "preference": 0.7267032814557846,
+          "legacy": 10.297966514737485
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 3.7605796706692622,
+          "preference": 1.3624825039712314,
+          "legacy": 2.3471528244034694
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "footstep/footstep08.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep08.ogg",
+        "sha256": "668f14dc1254d0d0f33025e9c7dbcdf2c2f00462ed0e07fb8f099c1d711c1337",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 8,
+          "synth": "Boomr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 44,
+          "synth": "Transfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 29,
+          "synth": "Pluckr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 43,
+          "synth": "Transfxr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 2015,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Pluckr",
+          "origin": "shared22",
+          "soft": 1.9078345208265848,
+          "preference": 0.5578760411342918,
+          "legacy": 1.1865884074467883
+        },
+        {
+          "role": "preference",
+          "synth": "Transfxr",
+          "origin": "Transfxr-mixture",
+          "soft": 2.9167972990800743,
+          "preference": 0.49151045411740707,
+          "legacy": 1.8142687269975546
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 3.301825779002519,
+          "preference": 1.02557127513057,
+          "legacy": 1.8733620318985098
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "footstep/footstep_carpet_000.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep_carpet_000.ogg",
+        "sha256": "b9524658b52a99a20590f8feefc103088637fd13ea8ec35811aee785e1f2f330",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 4,
+          "synth": "Transfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 17,
+          "synth": "Clonkr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 36,
+          "synth": "Squishr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 8,
+          "synth": "Boomr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 2015,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Transfxr",
+          "origin": "shared22",
+          "soft": 2.8421084966391215,
+          "preference": 1.1403717267975395,
+          "legacy": 10.25839164715309
+        },
+        {
+          "role": "preference",
+          "synth": "Squishr",
+          "origin": "shared22",
+          "soft": 4.2112199744125745,
+          "preference": 0.6226101071797021,
+          "legacy": 8.333545742485974
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 3.4045636428034203,
+          "preference": 1.0826491458973084,
+          "legacy": 2.5074597073233025
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "hit/OBJLug_Case_Closed06_InMotionAudio_InstrumentCase.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/OBJLug_Case_Closed06_InMotionAudio_InstrumentCase.wav",
+        "sha256": "9d56118b0a4f351b33e9761b5f72873da78ad1c030f8a91a437ae1b443887208",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 5,
+          "synth": "Transfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 28,
+          "synth": "Pluckr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 41,
+          "synth": "Zappr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 5,
+          "synth": "Transfxr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 2015,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Pluckr",
+          "origin": "shared22",
+          "soft": 2.262176533367302,
+          "preference": 2.350643437281027,
+          "legacy": 1.975568879272606
+        },
+        {
+          "role": "preference",
+          "synth": "Zappr",
+          "origin": "shared22",
+          "soft": 6.314668480876953,
+          "preference": 0.7540389319420819,
+          "legacy": 18.597009753811577
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 4.244326263407949,
+          "preference": 1.1123723283646432,
+          "legacy": 3.226411155420805
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "hit/Jump Water.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/Jump Water.wav",
+        "sha256": "0aa92d195996b6d25e57ca3540833671a10e792fcda41b65d3ecd0c2eb396cd0",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 46,
+          "synth": "Boomr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 42,
+          "synth": "Transfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 47,
+          "synth": "Boomr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 50,
+          "synth": "Footsteppr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 2015,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Boomr",
+          "origin": "Boomr-specialist",
+          "soft": 1.2295445782864032,
+          "preference": 0.6978585241313323,
+          "legacy": 0.7842629518367121
+        },
+        {
+          "role": "preference",
+          "synth": "Boomr",
+          "origin": "Boomr-specialist",
+          "soft": 1.9448852420264187,
+          "preference": 0.5946813202379775,
+          "legacy": 1.4913414316455889
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 1.4559363690043576,
+          "preference": 0.842895915453119,
+          "legacy": 1.070584292248728
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "bell/impactBell_heavy_002.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/impactBell_heavy_002.ogg",
+        "sha256": "a4171ed1a4a17fb858a38de1c59b5b42e50d8f046c525706c0e3ac8671f189f5",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 29,
+          "synth": "Pluckr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 45,
+          "synth": "Transfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 28,
+          "synth": "Pluckr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 20,
+          "synth": "Fractr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 2015,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Pluckr",
+          "origin": "shared22",
+          "soft": 2.039815757601451,
+          "preference": 0.6354153834470908,
+          "legacy": 4.2306923176260085
+        },
+        {
+          "role": "preference",
+          "synth": "Pluckr",
+          "origin": "shared22",
+          "soft": 2.601027788199274,
+          "preference": 0.4383714637464582,
+          "legacy": 5.134014728368599
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 6.258162633745725,
+          "preference": 2.3316414559475342,
+          "legacy": 4.669194997518117
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "laser/Fox - Laser Gun.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/Fox - Laser Gun.wav",
+        "sha256": "557f2d414f057388c3ad8f511061bce426934f8f25c10c3ed1f2634197c8b81d",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 50,
+          "synth": "Footsteppr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 57,
+          "synth": "Squishr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 43,
+          "synth": "Transfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 30,
+          "synth": "Riftr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 3001,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Footsteppr",
+          "origin": "Footsteppr-specialist",
+          "soft": 2.5002504462003623,
+          "preference": 2.2272078027603532,
+          "legacy": 12.907764044116274
+        },
+        {
+          "role": "preference",
+          "synth": "Riftr",
+          "origin": "shared22",
+          "soft": 3.4969032283592973,
+          "preference": 0.8981189660840333,
+          "legacy": 10.13662851707279
+        },
+        {
+          "role": "original",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 2.9886313721340017,
+          "preference": 1.8457975309058572,
+          "legacy": 2.7858434538705334
+        }
+      ]
+    },
+    {
+      "source": {
+        "name": "collect/mario 3 - get item.WAV",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/mario 3 - get item.WAV",
+        "sha256": "37a90c80c1f9d2861c4e228a8067213f02a44a3811b2768ccdaff7da6aa41739",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "validProposals": 58,
+      "failures": [],
+      "starts": [
+        {
+          "scorer": "soft",
+          "rawIndex": 43,
+          "synth": "Transfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "soft",
+          "rawIndex": 35,
+          "synth": "Signlr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 42,
+          "synth": "Transfxr",
+          "budget": 128
+        },
+        {
+          "scorer": "preference",
+          "rawIndex": 31,
+          "synth": "Riftr",
+          "budget": 128
+        }
+      ],
+      "originalEvaluations": 3003,
+      "finalists": [
+        {
+          "role": "soft",
+          "synth": "Bfxr",
+          "origin": "original-bfxr",
+          "soft": 2.5173828687503583,
+          "preference": 1.2998301538486714,
+          "legacy": 3.2535568129701566
+        },
+        {
+          "role": "preference",
+          "synth": "Transfxr",
+          "origin": "Transfxr-mixture",
+          "soft": 3.5958902718465966,
+          "preference": 0.6436800992888925,
+          "legacy": 3.091100394133385
+        },
+        {
+          "role": "alternative",
+          "synth": "Transfxr",
+          "origin": "Transfxr-mixture",
+          "soft": 3.2930841320155984,
+          "preference": 1.0324330024113304,
+          "legacy": 6.117291813142631
+        }
+      ]
+    }
+  ],
+  "scope": "Eight preselected unjudged tagged files; source families may overlap. Existing frozen checkpoints. Broader candidate pool, not equal-compute model comparison. No human quality claims."
+}

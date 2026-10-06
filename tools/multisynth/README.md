@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All twenty-three feedback archives,
+do not establish general success on real recordings. All twenty-four feedback archives,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
@@ -167,8 +167,44 @@ The [eight-trial listening page](runs/pair-inverse-v1-listening/index.html) pres
 each earlier clip exactly and compares it with both newly fitted approaches.
 All eight references are external, all have three distinct visible choices, and
 all 34 served HTML/report/audio files match local hashes. Immediate likeness is
-collected in the existing buffered interface. Human feedback is still required;
-these are development cases, not evidence of unseen-source generalization.
+collected in the existing buffered interface. The completed [human review](evaluations/pair-inverse-v1-quick-01-human-review.json)
+selects no trained-pair candidate. Independent inference wins footstep as similar
+and hit as least-bad; retained cloth and original Bfxr coin are very-close, laser
+similar, chains least-bad, and door/bell none-close. All 24 candidates were heard.
+No pair checkpoint is promoted. These remain repeated development cases; the
+unchanged older cloth rating differs by session and is not a new recreation.
+
+The current preference fitting objective agrees with 8/12 new strict choices,
+versus 11/12 for frozen soft-periodicity. The separate [listener metric experiment](evaluations/listener-metric-v1-evaluation.json)
+fits 21 nonnegative weights on strict external preferences, holding connected
+source/tag groups out in five fixed folds. Across 187 pairs / 64 references /
+44 groups, reference-balanced agreement is 75.35%, versus 72.65% for the historical
+preference metric and 69.34% for soft-periodicity. The gain of 2.70 percentage
+points fails the predeclared 3-point gate, so no full-data checkpoint is saved
+or deployed. The historical comparator saw some older labels; these are
+retrospective ranking results, not new audible recreations or statistical proof.
+Both newest listener errors concern the least-bad chains choice. Inverse
+generation failures remain unresolved.
+
+The [fresh eight-reference batch](runs/fresh-gesture-v1-listening/index.html)
+uses the existing expert pool and two frozen scorers on unjudged clothes,
+footstep, hit, bell, laser and collect sounds. Its target identities are fixed
+before inference; all eight remain in the page. All eight occur in original
+Bfxr's historical real-training list, disclosed in both page views. These are
+external inputs for the newer synthetic-trained experts, not an unseen Bfxr test.
+No retrained model is promoted. See the [protocol/targets](evaluations/fresh-gesture-v1-targets.json)
+and [evaluation](evaluations/fresh-gesture-v1-evaluation.json). All 464 proposals
+rendered successfully, followed by 4,096 neural refinement attempts and 18,094
+original-Bfxr evaluations. All 24 final presets replay exactly; all 34 served
+HTML/report/audio files match their saved hashes in the
+[delivery audit](evaluations/fresh-gesture-v1-http-audit.json).
+
+A separately versioned quick controller offers an optional biggest-mismatch
+question immediately after similar, least-bad or none-close responses. Pitch,
+movement/rhythm, texture/timbre, attack/decay, several things and unsure choices
+are stored as scoped notes identifying exact candidate IDs. Replay remains
+available; S skips the question. Undo restores the earlier note and judgment.
+Existing published controllers and feedback schemas remain unchanged.
 
 Reproduction commands, from the repository root with `PYTHONPATH=tools` and the
 existing Torch environment, are `python -m neural_invert.pair_data bank`,

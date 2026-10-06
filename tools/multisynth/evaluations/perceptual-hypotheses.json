@@ -230,17 +230,30 @@
     {
       "id": "learn-component-inference-from-mixtures",
       "claim": "A network trained on actual mixtures may recover useful components better than combining networks trained to explain the whole sound.",
-      "status": "trained-pilot-no-overall-improvement-established",
+      "status": "pilot-not-supported-by-external-human-comparison",
       "evidence": "Complete joint-fit feedback has one roughly similar Boomr+Transfxr laser win and one roughly similar Boomr single cloth win, no very-close recreations. More sources or lower fitting loss do not ensure better likeness.",
-      "nextTest": "Eight external listening comparisons retain exact older clips and both new approaches, with immediate adequacy. Interpret human quality separately from mixed score results. Investigate filtered-input failure and limited component diversity before broader promotion; no real fits become gold labels.",
+      "nextTest": "Do not promote or increase this pair architecture blindly. Audit listener-based selection on all external judgments with conservative source/tag-held-out groups, while retaining generation failures as unresolved.",
       "source": "evaluations/mixr-joint-v1-quick-02-human-review.json",
       "observations": [
         {
           "experiment": "pair-inverse-v1",
           "finding": "6144 actual mixture/single training rows,768 validation,96 component-disjoint native tests.60epochs select epoch7; later epochs overfit. Native trained vs independent scores:48/96 preference wins,38/96 soft-periodicity. Lowpass subgroup2/8 and0/8. Eight external equal-budget fits:4/8 preference wins,3/8 soft wins. No human verdict yet and no checkpoint promoted.",
           "source": "evaluations/pair-inverse-v1-native.json"
+        },
+        {
+          "session": "2026-10-06-pair-inverse-v1-quick-01",
+          "finding": "Trained pair wins0/8; independent inference wins similar footstep and least-bad hit, earlier candidates win4, door/bell reject all. Earlier cloth and Bfxr coin are very-close; no new trained-pair convincing success. All candidates heard;12strict pairs. Frozen soft metric agrees11/12, fitting preference8/12.",
+          "source": "evaluations/pair-inverse-v1-quick-01-human-review.json"
         }
       ]
+    },
+    {
+      "id": "listener-weighted-external-ranking",
+      "claim": "A low-capacity combination of auditory components and soft periodicity may improve external preference prediction without learning reference-specific memorization.",
+      "status": "fixed-heldout-gate-failed-not-promoted",
+      "evidence": "24 archives supply187 strict external pairs/64references/44 connected source-tag groups. Five-fold reference-balanced accuracy75.35%, historical preference72.65%, soft69.34%. Gain2.70pp misses frozen3pp threshold; no full-data model saved. Current12:10/12vs8/12vs11/12. Historical comparator trained on some older labels; this is ranking, not audible recreation.",
+      "source": "evaluations/listener-metric-v1-evaluation.json",
+      "nextTest": "Eight preselected fresh external tagged references with existing scorers; immediate optional mismatch notes to identify missing perceptual cues. Preserve none-close and adequacy separately from relative choices."
     }
   ]
 }

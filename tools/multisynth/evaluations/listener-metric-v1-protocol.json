@@ -1,0 +1,253 @@
+{
+  "complete": true,
+  "archives": {
+    "tools/multisynth/listening_data/2026-10-03-coverage-v3": {
+      "manifestSha256": "72403c7fb0088b036f4a785bf74cb43b6ccd82febc97dc5282f6b29ef106a9f6",
+      "feedbackSha256": "d56f5685f08adf0882f02ea4aca4635c2b28a296f87ce48100537f018fcb8f9a"
+    },
+    "tools/multisynth/listening_data/2026-10-03-real-v1": {
+      "manifestSha256": "c28456efac1be70c3b65b76900aa0aa49bb1021526cd49543e999f25d2504c6a",
+      "feedbackSha256": "dcf72a32f2fbea1f707454655a76b3e475af2028706f51c1f576dedd462aa7c4"
+    },
+    "tools/multisynth/listening_data/2026-10-03-tagged-v2": {
+      "manifestSha256": "c24ef8d61d352257d76f9a53b55a015a971c5368404e37b6eaf7fd192aa93bed",
+      "feedbackSha256": "3dc851cdb94ea0ba8a5d6efae67cdd73fb926b888c8221765b5075ae0969f89b"
+    },
+    "tools/multisynth/listening_data/2026-10-04-big-v4": {
+      "manifestSha256": "66698fa235ffb20f4ecf3526d223f6bb15f051f68822ca30f2647862d9111bcd",
+      "feedbackSha256": "fbbbb715cc6797bf2e317558d099f20367a881c8d3a1b8c03e592b780ed62d7e"
+    },
+    "tools/multisynth/listening_data/2026-10-04-neural-v1-quick-01": {
+      "manifestSha256": "eaa4cc29a8f452c52d2a71124b9eba63e9fcf5b2517ed3e4413b358a5e9221ea",
+      "feedbackSha256": "c89f746a0db386f83d9ab5dd94b33d233e60c991aafd2ca7a018cb248549e24c"
+    },
+    "tools/multisynth/listening_data/2026-10-04-neural-v2-quick-01": {
+      "manifestSha256": "3cdfa538ba9ece002678cfcead888dcc5656911d39cfb5fcbd11ee37d5216f44",
+      "feedbackSha256": "8b7703f9cada6bf3c0d0aff3dfb835877cbd142ff324b369a624bd68074fa553"
+    },
+    "tools/multisynth/listening_data/2026-10-04-temporal-v3-quick-01": {
+      "manifestSha256": "4a8e731fc3eb48f16433497e64784cad69106fe358dddbab7bfe0fa58615bd00",
+      "feedbackSha256": "0db9633c4c2d843f0fca3d92a04ca7125e3578b41fb163b97bdb7edcb84667a6"
+    },
+    "tools/multisynth/listening_data/2026-10-05-coverage-selection-quick-01": {
+      "manifestSha256": "4f9045fcab21f25459e0099adadf65af6102da44c18163f8999bf4fab0349ad1",
+      "feedbackSha256": "3a44d3cc4e45df905f3a7006efb83d515edee32ce72cb782d1ec4bdf46d51da0"
+    },
+    "tools/multisynth/listening_data/2026-10-05-cue-calibration-quick-01": {
+      "manifestSha256": "321462b40348d89731ddcb68ae2eca828bbcf887dcd9b9b0c02b68ea58a0d090",
+      "feedbackSha256": "c2435b67c8ff1eed293f158afa2f4d24d85b3a983e4e405d5347b1ff7b9680e3"
+    },
+    "tools/multisynth/listening_data/2026-10-05-native-mixture-quick-01": {
+      "manifestSha256": "b0e3e3f11da8fe6630d7ee82a530b2261bb4910e4ea1b60d4dbd3fa0f504cc88",
+      "feedbackSha256": "49a070f911c4282456682b801a873e5b0173664289168a82d7a45a7903234ff4"
+    },
+    "tools/multisynth/listening_data/2026-10-05-pitch-calibration-quick-01": {
+      "manifestSha256": "2daa265339a65fcfd87015143b070063c00604fcb46fba0f2270b4f7aab68f78",
+      "feedbackSha256": "a6dedd959fe2cd3fd9d35b7e6dd57a05f4a300228da857fb528672eec4dd3c74"
+    },
+    "tools/multisynth/listening_data/2026-10-05-soft-periodicity-quick-01": {
+      "manifestSha256": "5ea93c515442df53794ff4b273dcc37ccc5bab038800a7dbfd8eabe82ec48553",
+      "feedbackSha256": "b8ca6288fca1694fb7d3c15f1cf565f2e3708f778f3770583fecd2f57f86bebd"
+    },
+    "tools/multisynth/listening_data/2026-10-05-specialists-quick-01": {
+      "manifestSha256": "de39d4def82cca02d42f213303f2e7030b785772e1f5a42694c2c4bd4b2e1266",
+      "feedbackSha256": "cf5b1e3b11aaa46a0baf4cada8db23bc2c64991cb16668b67f956d38206608ea"
+    },
+    "tools/multisynth/listening_data/2026-10-05-specialists-tagged-quick-01": {
+      "manifestSha256": "4130dbeaf340c74e899148e0295ac79cb8276cfd53e336d91796aea75752a837",
+      "feedbackSha256": "bcd94fb56b1c4ad89a9040d2bae0e125a3ff303ee5c1a87cc3970a2865b5961e"
+    },
+    "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01": {
+      "manifestSha256": "62d17eb894bbcef482893c4bea2e3af3b90b842efd2c3c4b06b23902b360ddcb",
+      "feedbackSha256": "fa8f30441f17fd9dd0196a9c2b8e0826f6203a0e0ed651544637af78a2838004"
+    },
+    "tools/multisynth/listening_data/2026-10-05-transfxr-transfer-quick-01": {
+      "manifestSha256": "48c53544894a683f4157001d05d8e5f9f18cee1165ccf3a26937b400f2544426",
+      "feedbackSha256": "6a5eab5ca0a5fbca08c59cfff04b094a8f4370c175ec5de57263b75580638bf5"
+    },
+    "tools/multisynth/listening_data/2026-10-06-mixr-joint-v1-quick-01": {
+      "manifestSha256": "1e9459377ea695ac82c6f8d9176bc81b19b4c546e4fd977a0b6efa1b4b4d1540",
+      "feedbackSha256": "a5c00ffb9b334c16e45015ee51f7b3816c7f3e6cd272eef93b1fe63993244fb9"
+    },
+    "tools/multisynth/listening_data/2026-10-06-mixr-joint-v1-quick-02": {
+      "manifestSha256": "eab52391a5ae4ca82709bfbc61e2c2401a09cface392af6658b43e303fd33219",
+      "feedbackSha256": "bd7c718af3d837ed507dc8e603d23aa25f30453555289e6d86a63e1fb6d743ed"
+    },
+    "tools/multisynth/listening_data/2026-10-06-mixr-transfer-v1-quick-01": {
+      "manifestSha256": "9bfa8e5e98ca3f87fec5d5db3a99d6c97b0f33014aa66001393d2c70f93d55bd",
+      "feedbackSha256": "963c3f1df808220369aff6f6cf88f3c54e0a35292a68e7c25fbb2c11fe5a43f5"
+    },
+    "tools/multisynth/listening_data/2026-10-06-off-model-transfer-v1-quick-01": {
+      "manifestSha256": "9894f033397fe2501004795419692891ec3ec77aea2e66ca81667247516261ab",
+      "feedbackSha256": "b9fe803eb4665964a07d09bb05f6c3a38229201465c9015209f84d8e82e0c619"
+    },
+    "tools/multisynth/listening_data/2026-10-06-off-model-transfer-v1-quick-02": {
+      "manifestSha256": "929d62763d43eb85ad61998a19d329d09641f3cd4770de69ee53c08cb2fa8aaf",
+      "feedbackSha256": "5684af2f2a2a5ad56e9cd8a592b9d5a8149f1db680e755581e96d965b6987098"
+    },
+    "tools/multisynth/listening_data/2026-10-06-pair-inverse-v1-quick-01": {
+      "manifestSha256": "f462f9f844112396dbf6a97072dfc9d6f2a21c44d11ccba49196db9649599153",
+      "feedbackSha256": "ec4956313ada2dd55f082f5ca24da9c2ad79177940f9e3bdd79a2932293e56b6"
+    },
+    "tools/multisynth/listening_data/2026-10-06-squishr-v1-quick-01": {
+      "manifestSha256": "b4905929fbb7f9696a365d7f1a7bfca764fcaafe0c8b18eb44ec640d13802360",
+      "feedbackSha256": "0bd1fa35602d8a33b0a9aace6c9f99f9df145920498c855d4a99d037fb694c30"
+    },
+    "tools/multisynth/listening_data/2026-10-06-squishr-v1-quick-02": {
+      "manifestSha256": "4643871fa05e81def8f9b3270ace69e3d4e6e13de72c5217a8f72835569760d2",
+      "feedbackSha256": "6ad3210302d27136992106b8664773b11ad238fc9439937f3642e7233ff84ccd"
+    }
+  },
+  "groups": {
+    "010599871b03d61ab4d42a0145f1f62f61f0747c905c8e229d7e3f4a7b5fb984": "file:086fd4ab3546a507ea5f5c759a9a10e535c95ade13705c238bc0eeffd7d4e8ba",
+    "02c47a87078e67e1292a9b01e11e4859f21ecb4ecaf92c0f60f9eac7a0b24cb9": "file:2218abe9327a3866cf6da4419add2b46d86ab957fc6fecb7518ce0ccccc204a5",
+    "02c66cc6fff016ad09aff234a803208f1fa3fd051a4bde3c5bc488a114c44ba9": "collection:kenney_digital-audio/Audio",
+    "041839601c0de5ad9d168f5617d0becccd03c9aa5783420b46e6ab425a2067a9": "file:08e24c35923307421abe87b93b25a8cf70bca7af9788d5aa3eefdedbf3d83dfc",
+    "046a581c5fb9eb7c10170e6db79b50d0fc8eba4672c1ca8228b82ea5d2ce3e25": "collection:kenney_voiceover-pack-fighter/Audio",
+    "067f81178f375df813a07eedeaa164a62a5747e8bccd6824264e329aff234be5": "collection:kenney_digital-audio/Audio",
+    "093e972370b0c8532720ffd1ec3a4da3b4d02a27d1214b8ccdf57cff6cbcf0ae": "file:1ad33301e64df03d49b85008db26cd93e30314387e16f83cd5bf28e954d14372",
+    "0dac834de9c46a22216912c9807d6aeb80ba596824c8cd7b942e1753bc6c4d75": "collection:kenney_sci-fi-sounds/Audio",
+    "0f986e8b4b79d52fdcf379eae49d89a32b4e05119f914028b2cfefb8b1561278": "file:18b55df7af255bc15b779081db03297a4456ba82d46dddd5451ce6252e5b315d",
+    "12f64170bb0ceb68ebf4f1b9f17c0bce3f0363eb16fccf025c3f753f38157b68": "collection:Sonniss.com-GDC2026-GameAudioBundle2of5/Epic Stock Media - Synthesized Nature Loops and Sounds",
+    "136718d52c87ddba84252c3ad7bde922455a6278de6d67bebcdbd2de5a0084db": "collection:Street Fighter Sound Pack",
+    "187483de38825becf2770c204ed5b5d1579ec15e2c04e8b37b2bfdd39f914c18": "file:73bfc925afff23db9c552f3003017c2926106ab446c9646ed2251b8506350091",
+    "1b23547ef0690160e2e64edbb719bec7ef24923e9af52c1cb90dbc515ea8683a": "file:5572ccdeb3b62373b86fa955355b3a222c36e815f0636ba16165189a21cf2514",
+    "1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e": "file:1846b563bf07a534a580dab0848d6c6d59b8f3d697bac328ad7d04e9dc6cdb30",
+    "1eb7d4a06268acf2ec67009867e6963edc14e2e73f038c59516ba398a5354959": "collection:kenney_impact-sounds/Audio",
+    "241ba0c881aea041ab67d95e9f36d6f88d221bc653e34e4850dfa3ccb2af6cf2": "collection:kenney_ui-audio/Audio",
+    "273219f413680d8344916f299c11743b8a227047fe8a2bc4eeea1faf7bc8300f": "collection:Sonniss.com-GDC2026-GameAudioBundle3of5/InMotionAudio - Christmas Cracker",
+    "278acf79845a0d2fa5106c3f1284f5fe1ba34185faf6827d5faf342092b425bd": "collection:kenney_interface-sounds/Audio",
+    "2865a2871938b3e8bbeae0d8b372edc936cc2d5469e0dfe0dd94f890c98b9e35": "collection:kenney_rpg-audio/Audio",
+    "2e81da4f5f86f25b89405a91fa49c803041a1f137d263f06500fd9e1f501ab9e": "file:2d12f6c922226d5213879739c2a09f67f27068463f41b29665f44d0cde761e1f",
+    "2ee31491b38034303cb35d2878a8bdd567c9db94886bf04b3c0bf6beb6729ef3": "file:d0a2540e5e1639bc2fbeef34e76f28e9f9cb8a151736a0ac4c13859994328d0e",
+    "33eadad69d1529a7a5611f8435bdddde044bbbe7f19ff2657ce59252a97269a0": "file:e87be0849ff537c726033271de80d6bdcdee87951b539120eaeaff019073c8bc",
+    "34147bfadbb3e9bb4a3d3528391248d98b4667622dc72a786e72f035ad2d68f4": "file:6efecb192b226ff495083b6094aa0b8503e23bfe3f9d6c63af0d23b1090923ea",
+    "373219b3317083b5106aa84a3ffbcf1aa5702ea7431910b8ec3b251c2cdc48e6": "file:58d302fd480f4311c9528c69b580b0ec2025c662aa6246c60dcd7feafe921779",
+    "3a34c99cee7fe4fc5679083fb569033b765ec88a07d4ddac08d76d2245d778be": "file:81e976532565f4372abd14e83d2684195fa548d0a28d345de221e56052454f32",
+    "3c62eed151fb3f669874c30b8300ebb4bde98cf7274dfb94ef67f2983b6a68d9": "file:ba9ba60b172b3ebc131a940f25793cd2e207aca7af73dc80d637277f060f1708",
+    "402bc01e951936966805b6c2e32af65095cc6588325e2e0d2e74e46ab75de55b": "collection:Sonniss.com-GDC2026-GameAudioBundle1of5/344 Audio - Antique Small Metals",
+    "429323674292b7c6ad3e9c83481dd2741e4aa680b7fd496eae3c54dfd435b44d": "file:e0b8c370503b2c5c2a72d311cccae30fe63a6afd48f2be32e771fcf1a98585d6",
+    "45d423cf5a051e07468581ac874e48e3458d9c467f3e4753379ed5db96884f58": "file:0bf468769b48a834dc1c6e38e457f2c71159b010225a9aedf84316795e8cc3e5",
+    "4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf": "file:d0a2540e5e1639bc2fbeef34e76f28e9f9cb8a151736a0ac4c13859994328d0e",
+    "4878c6d32f96b89e0021044dad64c8a9884337c771c2c6fc38eca3e9ed732761": "file:0bf468769b48a834dc1c6e38e457f2c71159b010225a9aedf84316795e8cc3e5",
+    "518fad2c62f26a3b8ae5cb37af7de61c735ddebe811f4e4fa82d84c0a3a58505": "file:5ec35171aa65bf5edd977e293523a649227accf36e682bf1ac9a84286f04c682",
+    "544e295124cda104e86d4efc30185a937c695ba4457be1819650542557901e7b": "file:086fd4ab3546a507ea5f5c759a9a10e535c95ade13705c238bc0eeffd7d4e8ba",
+    "5596ab379b5c67daa51e0a1786ed789e27e359fde7d8b0e8256eea0d126600eb": "collection:Sonniss.com-GDC2026-GameAudioBundle3of5/InMotionAudio - Medical Thermometer",
+    "56325aad3e4044d39dec4dfd7eeabbd42874c42945d310a106c6a5470fd3e08e": "file:086fd4ab3546a507ea5f5c759a9a10e535c95ade13705c238bc0eeffd7d4e8ba",
+    "5859e94857fb9da2bb209d06d80e011138eb139d78c610ff60125bd78d4bead1": "file:4422a2d1c23013ac655ff35f67477017f24b0ce330c8e896440252c1d4057994",
+    "58cb2a2fee74f70b05408de92f5fe0fcf96fcb0e328d6b2c9cb5b677854ab407": "collection:RAREVGSFX 1+2/RAREVGSFX 2/PLAYSTATION/UNDERWORLD THE ETERNAL WAR (PS2)",
+    "595925bb39239e6fe0062b396e24a2ebe82b8d6c20eb5132de91af517c242c02": "file:4cd96dc630bed9840c15f1dd2306da2cc56a4da26a5d3f1a03c5a7265ac5e54f",
+    "5cb3f3dc6ee87cd95b24b46511dba8a7c94ea363760079b51f6e33ef42af1baf": "collection:kenney_ui-audio/Audio",
+    "5f0c44ecda4835db1a5e0c8cde4306547c95b53ce4be9ad8ce14bc1417e32415": "file:1ad33301e64df03d49b85008db26cd93e30314387e16f83cd5bf28e954d14372",
+    "614c797eeb15fe1b6d3d3643bfb6a43dd87c45073c755517cbe920145d2d923d": "file:63f22019f9cb29641090eaa86c67b1beb58f40462d53554a4bb5e9c526634b73",
+    "655967d18d4fa1e48ee549c072ba2fe4509322c55a988fecb84d1e29da516e24": "file:0298f3405836720e064d1ff486f58fa032b03009d6f9e55e668b84e759dca360",
+    "65846b1877c418e7f6cc6f8a1a588979162674aa1d905bb930fd97588c20d69f": "file:63f22019f9cb29641090eaa86c67b1beb58f40462d53554a4bb5e9c526634b73",
+    "65f693ce40c82ddac6d9e6e39924ea38fbc5ec10bcd2e2c9a60decce5deaa1de": "file:2ef665bd8b65dbe669f4560be38a6d8f04a162e618b15a49e3e71b58e558aab0",
+    "68585c1e88491e30e08a1506c89784d4fadb261e49b0c25f3422f248c7a8989d": "collection:Sonniss.com-GDC2026-GameAudioBundle5of5/SoundBits - Cars - Mad Mustang Mercury",
+    "6aacbf2538610f64a8b38ef23dcd7549819f966674a8c57dd5aaaf281d19da49": "collection:mario_nes_snes_sounds",
+    "6ab726873ac32050b46778775e2a74dbc012d2d6687d8cf57dc40af21d3b3e93": "file:3d51ab42afb54d024ded5128a84aa102075398b270b67df8f71ecb0cfe9bd0a8",
+    "6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8": "file:0bf468769b48a834dc1c6e38e457f2c71159b010225a9aedf84316795e8cc3e5",
+    "73a3e294ebded1186baa985547a267feb8b5373f33e524581c3852a5a2985254": "collection:minecraft_legends_units",
+    "7d138bec295def0feeff7f47b57bf0ff032d515e7794aa2a900e62b49f6dc900": "file:76573984a769f834c55195ae517d102685efb84f9a075f94195a1fc3234cd0d6",
+    "80081825573f9054a5746ba0d3b7c8386a5a3f6d533d0a767a58a66c8e16d106": "file:2d12f6c922226d5213879739c2a09f67f27068463f41b29665f44d0cde761e1f",
+    "82669a50d82fcdad4d4de884a62a139648add050a9b4ec03d6d068b5e9ef8af1": "file:4381a8e14ac848595acf5b3812507f4ba1eeca17a5538a0efe8701aa9f10a1dc",
+    "8e8ddc54566fef1169deb8b80a47530355c7c02e75b0885afe472a090c404c92": "collection:kenney_voiceover-pack-fighter/Audio",
+    "8fcb2e9575f5eebf7f247f3b6b091c97e2a2c61de96f8bc36cb095dc993f7c97": "file:1846b563bf07a534a580dab0848d6c6d59b8f3d697bac328ad7d04e9dc6cdb30",
+    "999cfb1b20138f6c7cccd5f957afd39adc8137b0a90fb07f88edf7411aec9850": "file:d161711f9e872a84d289f26097f57028ef444959afd79c0233b74aef9f3ae24e",
+    "a05f73c1264b1157cbfc42e634dfe5e3129e87ac7ba4f3213476226d22338574": "collection:Street Fighter Sound Pack",
+    "a1167e4912205560af4f6075b6d6c5b79a08093cc627d13980f3e36f62bc886b": "file:eba17ecb2a426bfd4a8a6acff5f8a86202b6424a77af0fd842e37809a1ab6d81",
+    "a48028571fece94d0e1c9682e5e9cca2d9f25a30daf5a9a0232d211ea1cdc13b": "file:2ef665bd8b65dbe669f4560be38a6d8f04a162e618b15a49e3e71b58e558aab0",
+    "a8e1d09748d10348bedc6183f6d470fb826d0c21e88bd7ccc9cb72c766f8d4df": "collection:mega man Sound Samples/dwr",
+    "aad0aec3a74d8a980ebc076be87a6bd5ae27031f5e8940c1463c8d1b89d1ac90": "file:3711654774a0443a5decda6740d2584bcad6c7b7ec5147a6ffaf99d5ac2287e8",
+    "aca6fd8c9f4ffd7bd5ec49fdac54ddd67fabf72499e176f8ccaaf17e6e126c33": "file:08e24c35923307421abe87b93b25a8cf70bca7af9788d5aa3eefdedbf3d83dfc",
+    "ada7b738033568d48db79e1bf513816b7117b0665090ab6bf857d43a5f0640c6": "collection:kenney_rpg-audio/Audio",
+    "ae19aca4c5537fd49aac7af04ad2520a434eeef209785fd1debfb37070526656": "collection:mario_nes_snes_sounds",
+    "ae889d637ca7da47541e0d7afda558df1c9396e75c982baa4d061e143cf0a02f": "collection:chronotrigger_sounds",
+    "af9e658a99bf152b4b2d9cdbcddaa9ab716862c20e4c4e556b05f4e3eb04ed89": "collection:Sonniss.com-GDC2026-GameAudioBundle2of5/Cinematic Sound Design - Hybrid Game & UI Elements",
+    "b16c487b18b4cf55a6ea8c4cf96b4d7f339b80893d41f42caa7322ac650e6154": "collection:Sonniss.com-GDC2026-GameAudioBundle2of5/Cinematic Sound Design - Paper Foley",
+    "b2ee52ae258b954b522b2fddbabba07e569a488a2c6201dfe3522a3371c27ba1": "file:5572ccdeb3b62373b86fa955355b3a222c36e815f0636ba16165189a21cf2514",
+    "b5bd0d99719654bfb79a416c6f30f1678500ec3c3e4aa237273cbcc41f421ddd": "collection:minecraft_legends_units",
+    "bd9cc58871f7646112a4b9f1ab72b6b379d8d28e8c2480ddf623448e384a9853": "file:7e9d6131b1748ccfdc059a9f6a37cd46c98230b1cecc256cd5ec038cd43e4e94",
+    "be5252293a2e4fd822e5c114c7ca61eedc45bb2f050a8cf7ed715ccc6df45bd0": "collection:Sonniss.com-GDC2026-GameAudioBundle1of5/344 Audio - Dinosaurs Vol. 2",
+    "bf414abc51c7b062bfae8d7b57def6882bf61fc10608a1e75df6c22b4ec454a2": "file:ce444bf64841f7434a7a04876f9ae0487c893a250508fbcdf23431c5e813764e",
+    "bf5cb133b851a1fa11fcf11447959f4821b9cda0a8b6957c0dd0d9e0f3adee30": "collection:kenney_voiceover-pack/Male",
+    "c0d7c253eb58e7ad372e658a74f0e61952a28a5f1e2d884d74b87eb1e99e913b": "file:5895b006474523624e2571396270f3343cc117f39912e234c2328b550f2726c3",
+    "c27698d25537b9852e0de56a649929989882b45f8b686adf0636d9f4aa83cf8c": "collection:kenney_interface-sounds/Audio",
+    "c2cda6811c50f096961deacb3e5c3c88f635c85d0df2a4e15e61f8fb51508bb8": "collection:chronotrigger_sounds",
+    "c38282c538ab68ea258f8fbd94d623018df6358e658f939018b01394d8bdd2be": "file:1846b563bf07a534a580dab0848d6c6d59b8f3d697bac328ad7d04e9dc6cdb30",
+    "c4d28cc799bfbd022baeea21c1465248db099af594fdab11c218cac6dec127b1": "file:3711654774a0443a5decda6740d2584bcad6c7b7ec5147a6ffaf99d5ac2287e8",
+    "c7008a680b98d34967db9368a9be4d815c99fe270abe7ee7b7f5cff0a1abc738": "file:480ee82b690136ea9db6966a3c3033356b8274752795c4e37afd6b6defcfacff",
+    "cb353f5e727d25e09aa66afd7abcc1b5f73f5e8cbc80db9d6d9d68b5cfe3df99": "file:086fd4ab3546a507ea5f5c759a9a10e535c95ade13705c238bc0eeffd7d4e8ba",
+    "d2004564ec8aa554a9a1255b08f90718c98d5bc35bcbb560caf3710dfcf03a30": "collection:kenney_voiceover-pack/Male",
+    "d461ea2612b6c4b4159602c508a003412923f73c288abf397070a895049bdb04": "collection:mega man Sound Samples/iii-iv-v",
+    "db68adec97a5f13e92ac0b6f1131802eaa5938d3ace2132b6efaad10a563e0d9": "file:1846b563bf07a534a580dab0848d6c6d59b8f3d697bac328ad7d04e9dc6cdb30",
+    "dee55583717f394a868d1156347348b2cb17b7c8b8463fef17f757242ec2bccc": "file:086fd4ab3546a507ea5f5c759a9a10e535c95ade13705c238bc0eeffd7d4e8ba",
+    "def505e44f9ba3e8524ae8a5fee509619fb583eaec94b79ef31ab655472c9d9a": "file:73bfc925afff23db9c552f3003017c2926106ab446c9646ed2251b8506350091",
+    "df9c1455ed38b111491856e17cabe9c2cec92c120f6bbcb5f6fe52df64ea2ee8": "collection:kenney_impact-sounds/Audio",
+    "e0f588c7d2e53ab658bdd324ebaf51df4522d234ee9fb9e03b1b8fbfeca02fac": "file:b7e6a6985e2182452977e32c60e7fc705cf80a36151c6d49f4f1139bffb34370",
+    "e9af30f41e2c16297769dbe6d7838a747563f8005190213048fa4469bfcde76d": "file:08e24c35923307421abe87b93b25a8cf70bca7af9788d5aa3eefdedbf3d83dfc",
+    "eaa74a9d795ffb50f14308f74bfa290636f4f14af1aa200ffd0c7b158cb3fe2b": "file:08e24c35923307421abe87b93b25a8cf70bca7af9788d5aa3eefdedbf3d83dfc",
+    "eda284e27f7257854fb7e67fa6405c51f794b193b83ca3db76509adadf848596": "collection:Sonniss.com-GDC2026-GameAudioBundle1of5/344 Audio - Bass Drops & Downers Vol. 2",
+    "ee508ff3d7fd76bddf4c8cddbed6fd0d7ccb38649a4e7ce27ee701dd3ff8b5dd": "collection:kenney_sci-fi-sounds/Audio",
+    "ee95687a40f48e2a55c65860f6c4fa51ac114c8940526bb42e1c87121ec8222f": "collection:RAREVGSFX 1+2/RAREVGSFX/NINTENDO/PAPER MARIO (N64)",
+    "f42dbf000892e3acf1a7503e1fd6e7c392a2405b1f2724901c666a6bce1630f9": "file:405f8bbc7adcdae6815b249b1551423407f5b157947c386340faf161b94e6391",
+    "f47816c2254379c1f623c74325dfbe5df5c42838a4e8c75c0cc981919e2a70df": "file:a6f379d5d603e861eca095182848d89fc33025c187863fb526b1683febfc9173",
+    "f4dd6722495d064e998e068c8545fec9c4372ab39288239683d361052ee1eab2": "file:4381a8e14ac848595acf5b3812507f4ba1eeca17a5538a0efe8701aa9f10a1dc",
+    "facbb1d17dbc145c627c460e9832e0e99bc52e50c31e54c687702a6eae38f4ae": "file:5572ccdeb3b62373b86fa955355b3a222c36e815f0636ba16165189a21cf2514",
+    "fbfb24ab6936c8e030b2d999f4e5145cf6eea7d1074a3ea01feb225c9aadfb67": "collection:RAREVGSFX 1+2/RAREVGSFX/PLAYSTATION/SLY 3 (PS2)/Sly 3 Sound Effects"
+  },
+  "groupCount": 62,
+  "recipe": {
+    "steps": 800,
+    "learningRate": 0.03,
+    "temperature": 4.0,
+    "regularization": 0.08,
+    "scaleFloor": 0.01,
+    "folds": 5,
+    "foldSeed": 1729,
+    "prior": [
+      0.03125,
+      0.03125,
+      0.03125,
+      0.03125,
+      0.03125,
+      0.03125,
+      0.03125,
+      0.03125,
+      0.022222222222222223,
+      0.022222222222222223,
+      0.022222222222222223,
+      0.022222222222222223,
+      0.022222222222222223,
+      0.022222222222222223,
+      0.022222222222222223,
+      0.022222222222222223,
+      0.022222222222222223,
+      0.016666666666666666,
+      0.016666666666666666,
+      0.016666666666666666,
+      0.5
+    ],
+    "training": "strict external likeness; equal total weight per reference",
+    "validation": "connected source/tag groups held out; train-only scales",
+    "gateOldImprovement": 0.03,
+    "gateMustMatchSoft": true
+  },
+  "bindings": {
+    "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/listener_metric.py": "fa9daadc75e444c01abc2a067359796b29a0835f13bb49ea1611c8d97e5ec30c",
+    "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/preference.py": "37377ef14673d60ddae4cc8a0a64f8e580a0044b7eba93a6d01f3d4bf07531cb",
+    "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/features.py": "7553a92b0caeb442b2f693752c0a94f788479e47cfc5a9d4a37dab893f3ab91c",
+    "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/gesture.py": "407d5a21571aba977f124f4dd3425f9538f27f0001348ff70f46f908866d9207",
+    "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/soft_periodicity.py": "3ade081f6b3700ff254a9428d91fedd54da793f5904fd9b9948fc66b18a4dbfd",
+    "tools/match/structure.py": "1fef062dcd488b6a2f52c0fcdb03921296770972235253fe7a2b876e183d5aa2",
+    "tools/match/objective.py": "ea3768c5ff641f68e398a7a39f902345f5f3a1a69277b66f8df556f7eeb2278e",
+    "tools/match/features.py": "dc8d2c049f9940215387d2f2500cfa0dbdd2a5b27e07eced41f16fc69cba6859",
+    "tools/match/audio.py": "90bd5aa0dd1e885f0cdd1057e2a0d9c06c25bcf7584e8e7ab92fd5edeb14fa52"
+  },
+  "scriptSha256": "88091ec0dfc2a18a24c9f35a6a10073d189b15256deb0057db4662ebf4ba6291",
+  "planSha256": "7d2195789660d12c49a4e9f4611f6726a879c5862d2fb3c7fbe02f89a96077ac",
+  "oldMetricSha256": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+  "groupPolicy": "Connected exact reference PCM, source SHA and conservative tag/collection-directory labels. Native references excluded.",
+  "scope": "Retrospective grouped preference prediction, not generated likeness. Current frozen preference comparator trained on some older labels. No absolute score inferred from adequacy or none/tie.",
+  "protocolSha256": "5992a8b0f9e0b8a2d6f86bbbddde47e570e6f453323eb39b753799c8c2a1b09c"
+}

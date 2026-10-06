@@ -1,0 +1,268 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "source": {
+        "name": "clothes/cloth1.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/clothes/cloth1.ogg",
+        "sha256": "ddb93a3671233f95da0e0b10367f082f7eb42fa6caaddcf776410aa8833c747d",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "tag": "clothes",
+      "sourceSeconds": 0.6610416666666666,
+      "auditionHash": "e03f9de14009f5fcdaa54fd8eb5b59ee137a91dc4937ce1bfd391a60aa2b842c",
+      "auditionSamples": 26901,
+      "seed": 20261023,
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/clothes/cloth1.ogg",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "referenceWavSha256": "d46d38bf06569e0cfacc4f48e23942d8c6ab8b842f1bae4c25ef63b742f8ac40"
+    },
+    {
+      "source": {
+        "name": "footstep/footstep08.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep08.ogg",
+        "sha256": "668f14dc1254d0d0f33025e9c7dbcdf2c2f00462ed0e07fb8f099c1d711c1337",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "tag": "footstep",
+      "sourceSeconds": 0.25558333333333333,
+      "auditionHash": "c49b4b3727d6ab579c2b63724a61962ac1d47e6fcf1ad86224a6823bb66bad20",
+      "auditionSamples": 11025,
+      "seed": 20262032,
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep08.ogg",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "referenceWavSha256": "8ddb4f7fcfdfc1af17fde593c000ce986dcf9ede81e7a026f6c34216ecd08de2"
+    },
+    {
+      "source": {
+        "name": "footstep/footstep_carpet_000.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep_carpet_000.ogg",
+        "sha256": "b9524658b52a99a20590f8feefc103088637fd13ea8ec35811aee785e1f2f330",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "tag": "footstep",
+      "sourceSeconds": 0.14478458049886622,
+      "auditionHash": "f6617955bb4cf65c8207f97f37dcd43552d7d59f279aa7bce2dc03048f005a89",
+      "auditionSamples": 6385,
+      "seed": 20263041,
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/footstep_carpet_000.ogg",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "referenceWavSha256": "846d1b9ef0c6f141356c09554df74a749a5fd58a1ea2659c3816352438399760"
+    },
+    {
+      "source": {
+        "name": "hit/OBJLug_Case_Closed06_InMotionAudio_InstrumentCase.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/OBJLug_Case_Closed06_InMotionAudio_InstrumentCase.wav",
+        "sha256": "9d56118b0a4f351b33e9761b5f72873da78ad1c030f8a91a437ae1b443887208",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "tag": "hit",
+      "sourceSeconds": 0.9844270833333333,
+      "auditionHash": "ee92894467f8bb0d54dadb3c9d66a48d303d2c261f2b39f10aceb40feb71dde8",
+      "auditionSamples": 14553,
+      "seed": 20264050,
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/OBJLug_Case_Closed06_InMotionAudio_InstrumentCase.wav",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "referenceWavSha256": "a34e6c34f543fea6596ea720362ef9ee243aea2199d2cea5b88dc3ab0a301a3c"
+    },
+    {
+      "source": {
+        "name": "hit/Jump Water.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/Jump Water.wav",
+        "sha256": "0aa92d195996b6d25e57ca3540833671a10e792fcda41b65d3ecd0c2eb396cd0",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "tag": "hit",
+      "sourceSeconds": 0.5160997732426303,
+      "auditionHash": "523ed721fd4c74e9a5dad7417940a9e5c605678717776f14c5d60ffaecb256a4",
+      "auditionSamples": 15435,
+      "seed": 20265059,
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/Jump Water.wav",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "referenceWavSha256": "9cac0fea546893b4a2ec274ec79ee44cce63a45b06981f9fdbcc9c75a3c768d7"
+    },
+    {
+      "source": {
+        "name": "bell/impactBell_heavy_002.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/impactBell_heavy_002.ogg",
+        "sha256": "a4171ed1a4a17fb858a38de1c59b5b42e50d8f046c525706c0e3ac8671f189f5",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "tag": "bell",
+      "sourceSeconds": 0.6972789115646258,
+      "auditionHash": "4d4c6ea1f17d8bd92328b2f6620dd95fdbff90bbb1030bc07c44656695f2d027",
+      "auditionSamples": 30750,
+      "seed": 20266068,
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/impactBell_heavy_002.ogg",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "referenceWavSha256": "9788436fe82a3f105d9b2504235b6d6f66c93fbe37316152b3eb6fcf2c452386"
+    },
+    {
+      "source": {
+        "name": "laser/Fox - Laser Gun.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/Fox - Laser Gun.wav",
+        "sha256": "557f2d414f057388c3ad8f511061bce426934f8f25c10c3ed1f2634197c8b81d",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "tag": "laser",
+      "sourceSeconds": 0.3829906892457664,
+      "auditionHash": "19711c63a5092249e9d66ae33716c8c78163204c39e638120333b0f358d3c3c7",
+      "auditionSamples": 16890,
+      "seed": 20267077,
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/Fox - Laser Gun.wav",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "referenceWavSha256": "a34cb27d0a8c443cbb1a73852340ffd8bbe9c06f20725a61cbe526f46d6f4d73"
+    },
+    {
+      "source": {
+        "name": "collect/mario 3 - get item.WAV",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/mario 3 - get item.WAV",
+        "sha256": "37a90c80c1f9d2861c4e228a8067213f02a44a3811b2768ccdaff7da6aa41739",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "tag": "collect",
+      "sourceSeconds": 0.5370748299319728,
+      "auditionHash": "7f4733eee1d8b1d4d664be793a847e04b15f679a784959129c8acb49113b9528",
+      "auditionSamples": 23685,
+      "seed": 20268086,
+      "historicalBfxrMatches": [
+        {
+          "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/mario 3 - get item.WAV",
+          "pack": "tags",
+          "split": "train"
+        }
+      ],
+      "referenceWavSha256": "3800a1baea517c673a92eb441a270a1da8e8288301db78c32f6dd173eb134f43"
+    }
+  ],
+  "rejected": [
+    {
+      "name": "clothes/FOLYClth_ClothMovement29_InMotionAudio_FoleyT-Shirt.wav",
+      "reason": "previously-judged-file"
+    },
+    {
+      "name": "clothes/cloth2.ogg",
+      "reason": "previously-judged-file"
+    },
+    {
+      "name": "clothes/cloth4.ogg",
+      "reason": "previously-judged-file"
+    }
+  ],
+  "priorArchives": {
+    "tools/multisynth/listening_data/2026-10-03-coverage-v3/manifest.json": "72403c7fb0088b036f4a785bf74cb43b6ccd82febc97dc5282f6b29ef106a9f6",
+    "tools/multisynth/listening_data/2026-10-03-real-v1/manifest.json": "c28456efac1be70c3b65b76900aa0aa49bb1021526cd49543e999f25d2504c6a",
+    "tools/multisynth/listening_data/2026-10-03-tagged-v2/manifest.json": "c24ef8d61d352257d76f9a53b55a015a971c5368404e37b6eaf7fd192aa93bed",
+    "tools/multisynth/listening_data/2026-10-04-big-v4/manifest.json": "66698fa235ffb20f4ecf3526d223f6bb15f051f68822ca30f2647862d9111bcd",
+    "tools/multisynth/listening_data/2026-10-04-neural-v1-quick-01/manifest.json": "eaa4cc29a8f452c52d2a71124b9eba63e9fcf5b2517ed3e4413b358a5e9221ea",
+    "tools/multisynth/listening_data/2026-10-04-neural-v2-quick-01/manifest.json": "3cdfa538ba9ece002678cfcead888dcc5656911d39cfb5fcbd11ee37d5216f44",
+    "tools/multisynth/listening_data/2026-10-04-temporal-v3-quick-01/manifest.json": "4a8e731fc3eb48f16433497e64784cad69106fe358dddbab7bfe0fa58615bd00",
+    "tools/multisynth/listening_data/2026-10-05-coverage-selection-quick-01/manifest.json": "4f9045fcab21f25459e0099adadf65af6102da44c18163f8999bf4fab0349ad1",
+    "tools/multisynth/listening_data/2026-10-05-cue-calibration-quick-01/manifest.json": "321462b40348d89731ddcb68ae2eca828bbcf887dcd9b9b0c02b68ea58a0d090",
+    "tools/multisynth/listening_data/2026-10-05-native-mixture-quick-01/manifest.json": "b0e3e3f11da8fe6630d7ee82a530b2261bb4910e4ea1b60d4dbd3fa0f504cc88",
+    "tools/multisynth/listening_data/2026-10-05-pitch-calibration-quick-01/manifest.json": "2daa265339a65fcfd87015143b070063c00604fcb46fba0f2270b4f7aab68f78",
+    "tools/multisynth/listening_data/2026-10-05-soft-periodicity-quick-01/manifest.json": "5ea93c515442df53794ff4b273dcc37ccc5bab038800a7dbfd8eabe82ec48553",
+    "tools/multisynth/listening_data/2026-10-05-specialists-quick-01/manifest.json": "de39d4def82cca02d42f213303f2e7030b785772e1f5a42694c2c4bd4b2e1266",
+    "tools/multisynth/listening_data/2026-10-05-specialists-tagged-quick-01/manifest.json": "4130dbeaf340c74e899148e0295ac79cb8276cfd53e336d91796aea75752a837",
+    "tools/multisynth/listening_data/2026-10-05-tagged-coverage-quick-01/manifest.json": "62d17eb894bbcef482893c4bea2e3af3b90b842efd2c3c4b06b23902b360ddcb",
+    "tools/multisynth/listening_data/2026-10-05-transfxr-transfer-quick-01/manifest.json": "48c53544894a683f4157001d05d8e5f9f18cee1165ccf3a26937b400f2544426",
+    "tools/multisynth/listening_data/2026-10-06-mixr-joint-v1-quick-01/manifest.json": "1e9459377ea695ac82c6f8d9176bc81b19b4c546e4fd977a0b6efa1b4b4d1540",
+    "tools/multisynth/listening_data/2026-10-06-mixr-joint-v1-quick-02/manifest.json": "eab52391a5ae4ca82709bfbc61e2c2401a09cface392af6658b43e303fd33219",
+    "tools/multisynth/listening_data/2026-10-06-mixr-transfer-v1-quick-01/manifest.json": "9bfa8e5e98ca3f87fec5d5db3a99d6c97b0f33014aa66001393d2c70f93d55bd",
+    "tools/multisynth/listening_data/2026-10-06-off-model-transfer-v1-quick-01/manifest.json": "9894f033397fe2501004795419692891ec3ec77aea2e66ca81667247516261ab",
+    "tools/multisynth/listening_data/2026-10-06-off-model-transfer-v1-quick-02/manifest.json": "929d62763d43eb85ad61998a19d329d09641f3cd4770de69ee53c08cb2fa8aaf",
+    "tools/multisynth/listening_data/2026-10-06-pair-inverse-v1-quick-01/manifest.json": "f462f9f844112396dbf6a97072dfc9d6f2a21c44d11ccba49196db9649599153",
+    "tools/multisynth/listening_data/2026-10-06-squishr-v1-quick-01/manifest.json": "b4905929fbb7f9696a365d7f1a7bfca764fcaafe0c8b18eb44ec640d13802360",
+    "tools/multisynth/listening_data/2026-10-06-squishr-v1-quick-02/manifest.json": "4643871fa05e81def8f9b3270ace69e3d4e6e13de72c5217a8f72835569760d2"
+  },
+  "bfxrBackend": {
+    "command": [
+      "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+    ],
+    "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+  },
+  "historicalBfxrManifestSha256": "c222380bbe7dd6dfb34aa2223b3fdb91f82d79d0e37b1ee811933955bbaa48ef",
+  "scriptSha256": "2219c7583cdee829e929aa1d4a504a1e6d412ab233c8413ad4a65d8eb4fae0e8",
+  "designSha256": "a6d576198e51143535287a56c6bf2205e7635cbe2ce6bee31a3d4019462417b3",
+  "checkpoints": {
+    "shared": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+    "Transfxr": "a816f97284cdd4ec0bfcfbcdbdbd11ab6e8b0230d4fa0b1388e758958694e73f",
+    "Boomr": "e8fefa597fc7698e3d12f0a0d60618ac5007ddd8f60110619117b7da4a6c502a",
+    "Footsteppr": "d5cb9d2c88ab6f9cfb1b9bc5ee3a24d9458f54ff5c82c0ccb3b566ba1c60f733",
+    "Squishr": "232e19d4425cc9210ae6c348bbe3983d2b19f623cc8265564bf8de737c4a2c18",
+    "originalBfxr": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98"
+  },
+  "preferenceMetricSha256": "97499004605ae6b4ca365988bba200e6aa41ece29b8064081bb560a2ff55928b",
+  "seed": 20261023,
+  "policy": "Freeze eight short tagged sources before inference; exclude previously judged exact files and PCM. Categories are sampling strata, never model inputs. Not a family-disjoint test.",
+  "oldPool": "shared22 two/head + Transfxr mixture four + original Bfxr legacy2000",
+  "newPool": "Boomr Footsteppr Squishr four/head; combine neural pools; two distinct engine starts per scorer soft/preference,128/start",
+  "listeningPolicy": "Soft winner, preference winner, original Bfxr; deduplicate exact PCM then highest-ranked distinct preference alternative if fewer than three. All eight references, no score-based dropping.",
+  "codeHashes": {
+    "tools/neural_invert/predict.py": "953a5a79b089d42c1be2d8a9c92d02e8a39d25f4ba019899b840502769db51d4",
+    "tools/neural_invert/temporal.py": "a382766fbb7279637003ae5bff83da98742c4b77c1208fb55da4c3242b41082a",
+    "tools/neural_invert/evaluate.py": "b5e174c099028b4d39ec807bd29a67cb280d278a376d23744527f6fc4b441c83",
+    "tools/multisynth/soft_periodicity.py": "3ade081f6b3700ff254a9428d91fedd54da793f5904fd9b9948fc66b18a4dbfd",
+    "tools/multisynth/preference.py": "37377ef14673d60ddae4cc8a0a64f8e580a0044b7eba93a6d01f3d4bf07531cb",
+    "tools/multisynth/features.py": "7553a92b0caeb442b2f693752c0a94f788479e47cfc5a9d4a37dab893f3ab91c",
+    "tools/multisynth/gesture.py": "407d5a21571aba977f124f4dd3425f9538f27f0001348ff70f46f908866d9207",
+    "tools/multisynth/renderer.py": "a64863bbd4d104ef1ee36d49d5973de9dc2a8998298ae4f4d12b2d11c1ad28b0",
+    "tools/match/structure.py": "1fef062dcd488b6a2f52c0fcdb03921296770972235253fe7a2b876e183d5aa2",
+    "tools/match/objective.py": "ea3768c5ff641f68e398a7a39f902345f5f3a1a69277b66f8df556f7eeb2278e",
+    "tools/match/features.py": "dc8d2c049f9940215387d2f2500cfa0dbdd2a5b27e07eced41f16fc69cba6859",
+    "tools/match/audio.py": "90bd5aa0dd1e885f0cdd1057e2a0d9c06c25bcf7584e8e7ab92fd5edeb14fa52",
+    "tools/neural_invert/experiment.py": "07bb2ead5eff152991c28e3725efd54764cfb8a9f306cc3a94ec4c2740af4d36"
+  },
+  "targetsSha256": "242cd956660cd2e63041da8ee65304ab1ea7c0750e85414fcd4ab707768e5c94"
+}

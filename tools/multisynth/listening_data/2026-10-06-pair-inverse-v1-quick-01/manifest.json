@@ -1,0 +1,2270 @@
+{
+  "schemaVersion": 3,
+  "experimentId": "342eba0c2bbbc3bef44806f7a50159f985e9095d9b0c4571bfbb191495fa29c4",
+  "feedbackSha256": "ec4956313ada2dd55f082f5ca24da9c2ad79177940f9e3bdd79a2932293e56b6",
+  "provenance": {
+    "complete": true,
+    "experiment": "pair-inverse-v1-listening",
+    "targetCount": 8,
+    "galleryTitle": "Does learning from mixtures help?",
+    "galleryIntro": [
+      "Eight external sounds. Each compares the earlier clip with two approaches: independent models combined, and a new model trained directly on mixtures.",
+      "The new model covers Boomr and Transfxr only. Both approaches get the same short fitting budget. These references were excluded from its training.",
+      "Choose the closest, then how close. None close is useful evidence. Earlier Bfxr clips retain their historical training overlap."
+    ],
+    "scope": "Fixed Boomr+Transfxr learned inverse; synthetic component-disjoint native tests, overlapping native families. External references are repeated development cases, never pair training labels. Original Bfxr historical real-fit overlap remains; old control clips retained exactly. Neither control loss nor score establishes audible likeness.",
+    "selectionPolicy": "All8 external references, unchanged order. Exact archived earlier comparison plus preference-refined independent composition and preference-refined trained pair. Same256 mutation attempts, four raw proposals attempted per arm; valid starts only, failures retained; not equal total historical compute. At most3 options, exact duplicates removed.",
+    "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+    "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+    "humanReviewRequired": true,
+    "uiCodeHashes": {
+      "quick_listening.html": "167c746f5ec3f77802b799cd1659dd85c8d0fe599ffc365b4376cf4fc2777cd4",
+      "quick_choice.js": "0bb2e27258fa918053f77e737b45200eb9389ec90fd0e185e71ef85bef4f911e",
+      "quick_listening.css": "833a39c37a9140b9e995d693dcd648266204cc022107b2c398c32468d231f7a7",
+      "quick_audio.js": "0abfac40fe8cd7a1c9f79143458b45c7ef79342892113fdc53f9ca15cab7f83a",
+      "quick_listening.js": "36090e70e9915d9ecc5d26e038ff34754731921e66734da0de4fafbd9af45457",
+      "quick_feedback.py": "619e79872880d81831f0c0106f6b55fa78b0402977f4d728ce1dea45d34d2351"
+    }
+  },
+  "summary": {
+    "targets": 8,
+    "uniqueRatedCandidates": 0,
+    "likenessRatings": 0,
+    "usefulnessRatings": 0,
+    "choices": 8,
+    "choiceKinds": {
+      "best": 6,
+      "tie": 0,
+      "none": 2,
+      "skip": 0
+    }
+  },
+  "targets": [
+    {
+      "id": "f88df3b356903d22a83e5c40d350194a50dd26e2056c200fdbff1964a12924ae",
+      "source": {
+        "name": "footstep/impactMetal_002.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/footstep/impactMetal_002.ogg",
+        "sha256": "0c1bb4db8a4d48b2b8c2e65a175d9056b845f1063837599995d81be1c5957d2c",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "note": "",
+      "referenceAudio": {
+        "file": "audio/cb353f5e727d25e09aa66afd7abcc1b5f73f5e8cbc80db9d6d9d68b5cfe3df99.flac",
+        "pcmSha256": "cb353f5e727d25e09aa66afd7abcc1b5f73f5e8cbc80db9d6d9d68b5cfe3df99",
+        "sampleRate": 44100,
+        "frames": 20776,
+        "channels": 1,
+        "auditionWavSha256": "9ecd445772cf2f27a6921d09694c683925602932141a96a1d2d926b73b344564"
+      },
+      "candidates": [
+        {
+          "id": "aa29e251ad3ab2b8b4a48cf6e719cd29cad92cbae7a2880ecf03f27dfd5404c9",
+          "role": "previous",
+          "label": "Earlier comparison",
+          "file": "previous.wav"
+        },
+        {
+          "id": "9e2b589dd8a85cbbbb2b8f0ef6baef28cbc52d22f95ace9f9718d320d4d753de",
+          "role": "independent",
+          "label": "Independent models combined",
+          "file": "independent.wav"
+        },
+        {
+          "id": "28904873bbc485811324da7d1b7eedcdc6428764ae633c24adc0fdce45a64f2e",
+          "role": "trained",
+          "label": "Trained mixture model",
+          "file": "trained.wav"
+        }
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "9e2b589dd8a85cbbbb2b8f0ef6baef28cbc52d22f95ace9f9718d320d4d753de",
+          "aa29e251ad3ab2b8b4a48cf6e719cd29cad92cbae7a2880ecf03f27dfd5404c9",
+          "28904873bbc485811324da7d1b7eedcdc6428764ae633c24adc0fdce45a64f2e"
+        ],
+        "auditionedCandidateIds": [
+          "9e2b589dd8a85cbbbb2b8f0ef6baef28cbc52d22f95ace9f9718d320d4d753de",
+          "aa29e251ad3ab2b8b4a48cf6e719cd29cad92cbae7a2880ecf03f27dfd5404c9",
+          "28904873bbc485811324da7d1b7eedcdc6428764ae633c24adc0fdce45a64f2e"
+        ],
+        "preferredCandidateIds": [
+          "9e2b589dd8a85cbbbb2b8f0ef6baef28cbc52d22f95ace9f9718d320d4d753de"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "9e2b589dd8a85cbbbb2b8f0ef6baef28cbc52d22f95ace9f9718d320d4d753de"
+          ]
+        }
+      }
+    },
+    {
+      "id": "436e8ac06c0fe30ad90d1c7a72c05c4850080b03702db52fe317e529f5dda35d",
+      "source": {
+        "name": "clothes/cloth4.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/clothes/cloth4.ogg",
+        "sha256": "e7ab9a6c4466dea874196c61f59bf1da05cfe58748f42fadd695d441a154a99b",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "note": "",
+      "referenceAudio": {
+        "file": "audio/1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e.flac",
+        "pcmSha256": "1bcc3587123c64fc59c6eedf2bf7f83b37adb169f4bffa2444368a6370a3d58e",
+        "sampleRate": 44100,
+        "frames": 16950,
+        "channels": 1,
+        "auditionWavSha256": "0b52048821d5cd6009320da469868d7b82785714e8567ecbfe391b1214b113cc"
+      },
+      "candidates": [
+        {
+          "id": "fb30eefd9d59b512ceb949566d6daf4d61ab803b2f38b59498a4ed5db8dbca8f",
+          "role": "previous",
+          "label": "Earlier comparison",
+          "file": "previous.wav"
+        },
+        {
+          "id": "65a2ca500bc2601cea4b9d8bf793358e516c08a3af4cd63f646e623c55fe392d",
+          "role": "independent",
+          "label": "Independent models combined",
+          "file": "independent.wav"
+        },
+        {
+          "id": "b4e8b1dc43b7c5d3f0b7097c2fcce32c4f602cbc8736eb965d98ed0c7edc4ec0",
+          "role": "trained",
+          "label": "Trained mixture model",
+          "file": "trained.wav"
+        }
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "65a2ca500bc2601cea4b9d8bf793358e516c08a3af4cd63f646e623c55fe392d",
+          "fb30eefd9d59b512ceb949566d6daf4d61ab803b2f38b59498a4ed5db8dbca8f",
+          "b4e8b1dc43b7c5d3f0b7097c2fcce32c4f602cbc8736eb965d98ed0c7edc4ec0"
+        ],
+        "auditionedCandidateIds": [
+          "65a2ca500bc2601cea4b9d8bf793358e516c08a3af4cd63f646e623c55fe392d",
+          "fb30eefd9d59b512ceb949566d6daf4d61ab803b2f38b59498a4ed5db8dbca8f",
+          "b4e8b1dc43b7c5d3f0b7097c2fcce32c4f602cbc8736eb965d98ed0c7edc4ec0"
+        ],
+        "preferredCandidateIds": [
+          "fb30eefd9d59b512ceb949566d6daf4d61ab803b2f38b59498a4ed5db8dbca8f"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "fb30eefd9d59b512ceb949566d6daf4d61ab803b2f38b59498a4ed5db8dbca8f"
+          ]
+        }
+      }
+    },
+    {
+      "id": "7b4bb0251af98149229323cfde4c0a6a27771f00789303bfff1e34d752738aa0",
+      "source": {
+        "name": "hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/hit/FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+        "sha256": "f723badf49fb5d2902efb259008c23cb2edc96b6ce59bf20448827f51a44e4ea",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "note": "",
+      "referenceAudio": {
+        "file": "audio/e9af30f41e2c16297769dbe6d7838a747563f8005190213048fa4469bfcde76d.flac",
+        "pcmSha256": "e9af30f41e2c16297769dbe6d7838a747563f8005190213048fa4469bfcde76d",
+        "sampleRate": 44100,
+        "frames": 15876,
+        "channels": 1,
+        "auditionWavSha256": "a4379a7c998e2e6015729cdb2c36f1d452e5566f5300e2e82d6d18b34596c986"
+      },
+      "candidates": [
+        {
+          "id": "5f3c63d0128274a157da5a06a95a9ee632c095f4630e36262aedc9e498cb5663",
+          "role": "previous",
+          "label": "Earlier comparison",
+          "file": "previous.wav"
+        },
+        {
+          "id": "ff75a1751b4c9ba7d0ccada4e1964576d51a83aee7d741e3028d256ab3032271",
+          "role": "independent",
+          "label": "Independent models combined",
+          "file": "independent.wav"
+        },
+        {
+          "id": "ca8b81b27f0f618b2f51e703fbee91944b14f1ed4a3e3f6a450e23e8b9f563ea",
+          "role": "trained",
+          "label": "Trained mixture model",
+          "file": "trained.wav"
+        }
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "ca8b81b27f0f618b2f51e703fbee91944b14f1ed4a3e3f6a450e23e8b9f563ea",
+          "5f3c63d0128274a157da5a06a95a9ee632c095f4630e36262aedc9e498cb5663",
+          "ff75a1751b4c9ba7d0ccada4e1964576d51a83aee7d741e3028d256ab3032271"
+        ],
+        "auditionedCandidateIds": [
+          "ca8b81b27f0f618b2f51e703fbee91944b14f1ed4a3e3f6a450e23e8b9f563ea",
+          "5f3c63d0128274a157da5a06a95a9ee632c095f4630e36262aedc9e498cb5663",
+          "ff75a1751b4c9ba7d0ccada4e1964576d51a83aee7d741e3028d256ab3032271"
+        ],
+        "preferredCandidateIds": [
+          "ff75a1751b4c9ba7d0ccada4e1964576d51a83aee7d741e3028d256ab3032271"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "ff75a1751b4c9ba7d0ccada4e1964576d51a83aee7d741e3028d256ab3032271"
+          ]
+        }
+      }
+    },
+    {
+      "id": "c6442895c976b11d792417a0ad12de248c75ba6dfd463ecc0eb44a36cb3dd2f9",
+      "source": {
+        "name": "chains/beltHandle2.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/chains/beltHandle2.ogg",
+        "sha256": "f3b692d5c83263c25bce779805b212dbab515d18a603c695fc6a1e8650cf5366",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "note": "",
+      "referenceAudio": {
+        "file": "audio/a48028571fece94d0e1c9682e5e9cca2d9f25a30daf5a9a0232d211ea1cdc13b.flac",
+        "pcmSha256": "a48028571fece94d0e1c9682e5e9cca2d9f25a30daf5a9a0232d211ea1cdc13b",
+        "sampleRate": 44100,
+        "frames": 18963,
+        "channels": 1,
+        "auditionWavSha256": "b85a09898489baa099498029741375c6f7378c4c101075ed49d97ed7a01cfe5f"
+      },
+      "candidates": [
+        {
+          "id": "02ac3f7d2655f91c3c563bd7a4e2716f2f95f9fdf81f563f60cf8894ac08ee68",
+          "role": "previous",
+          "label": "Earlier comparison",
+          "file": "previous.wav"
+        },
+        {
+          "id": "06c66b61fec4ad75161e331942f8d15ec95428bd7c9da74493567bfe92e147f5",
+          "role": "independent",
+          "label": "Independent models combined",
+          "file": "independent.wav"
+        },
+        {
+          "id": "93a3b7ead5a7cce6dad4fc3fb286d3a2c03d8498f2efed5b565ab06cb23ba4fb",
+          "role": "trained",
+          "label": "Trained mixture model",
+          "file": "trained.wav"
+        }
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "93a3b7ead5a7cce6dad4fc3fb286d3a2c03d8498f2efed5b565ab06cb23ba4fb",
+          "06c66b61fec4ad75161e331942f8d15ec95428bd7c9da74493567bfe92e147f5",
+          "02ac3f7d2655f91c3c563bd7a4e2716f2f95f9fdf81f563f60cf8894ac08ee68"
+        ],
+        "auditionedCandidateIds": [
+          "93a3b7ead5a7cce6dad4fc3fb286d3a2c03d8498f2efed5b565ab06cb23ba4fb",
+          "06c66b61fec4ad75161e331942f8d15ec95428bd7c9da74493567bfe92e147f5",
+          "02ac3f7d2655f91c3c563bd7a4e2716f2f95f9fdf81f563f60cf8894ac08ee68"
+        ],
+        "preferredCandidateIds": [
+          "02ac3f7d2655f91c3c563bd7a4e2716f2f95f9fdf81f563f60cf8894ac08ee68"
+        ],
+        "adequacy": {
+          "level": "least-bad",
+          "candidateIds": [
+            "02ac3f7d2655f91c3c563bd7a4e2716f2f95f9fdf81f563f60cf8894ac08ee68"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cc0937dd996551d0e443b956b2afdb6b6da751786272c6d9ebdc199af36ae977",
+      "source": {
+        "name": "door/doorClose_3.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/door/doorClose_3.ogg",
+        "sha256": "d0a2540e5e1639bc2fbeef34e76f28e9f9cb8a151736a0ac4c13859994328d0e",
+        "historicalBfxrSplits": [
+          "holdout"
+        ]
+      },
+      "note": "",
+      "referenceAudio": {
+        "file": "audio/4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf.flac",
+        "pcmSha256": "4750ac9626516213ea22b7d9ed261869c343541f5851f9fc0789006cadacbaaf",
+        "sampleRate": 44100,
+        "frames": 31485,
+        "channels": 1,
+        "auditionWavSha256": "0f9d5430e7bfa5c0d84dcffda1b0ab0b72cda8f28f6fad4da53304482ade2482"
+      },
+      "candidates": [
+        {
+          "id": "fff621fe9233760c08c8e7dbb6c74d9e9d54e4612876667707f7bacad25152c8",
+          "role": "previous",
+          "label": "Earlier comparison",
+          "file": "previous.wav"
+        },
+        {
+          "id": "2331d3a4f41a4164bb1a22fc578ef2a26f5bf83c13500f952c2b8ed3e4b92aae",
+          "role": "independent",
+          "label": "Independent models combined",
+          "file": "independent.wav"
+        },
+        {
+          "id": "1fe08d1f769c18f1b48ccac1260f452a93bde724b6cd0191f8f6788d7aa138b0",
+          "role": "trained",
+          "label": "Trained mixture model",
+          "file": "trained.wav"
+        }
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "none",
+        "presentedCandidateIds": [
+          "2331d3a4f41a4164bb1a22fc578ef2a26f5bf83c13500f952c2b8ed3e4b92aae",
+          "fff621fe9233760c08c8e7dbb6c74d9e9d54e4612876667707f7bacad25152c8",
+          "1fe08d1f769c18f1b48ccac1260f452a93bde724b6cd0191f8f6788d7aa138b0"
+        ],
+        "auditionedCandidateIds": [
+          "2331d3a4f41a4164bb1a22fc578ef2a26f5bf83c13500f952c2b8ed3e4b92aae",
+          "fff621fe9233760c08c8e7dbb6c74d9e9d54e4612876667707f7bacad25152c8",
+          "1fe08d1f769c18f1b48ccac1260f452a93bde724b6cd0191f8f6788d7aa138b0"
+        ],
+        "preferredCandidateIds": [],
+        "adequacy": null
+      }
+    },
+    {
+      "id": "eefe0f79980c6eff57bea987fbdb0134699becb304e267647d3d62429c2f50ea",
+      "source": {
+        "name": "bell/clothBelt2.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/bell/clothBelt2.ogg",
+        "sha256": "d545b1d9f20e6188140aaf551a96f1e82fe0d15f7ca066fac8b065e1231e0038",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "note": "",
+      "referenceAudio": {
+        "file": "audio/1b23547ef0690160e2e64edbb719bec7ef24923e9af52c1cb90dbc515ea8683a.flac",
+        "pcmSha256": "1b23547ef0690160e2e64edbb719bec7ef24923e9af52c1cb90dbc515ea8683a",
+        "sampleRate": 44100,
+        "frames": 25578,
+        "channels": 1,
+        "auditionWavSha256": "78b43b26bb45b63759469027f12d43da72c6dd061ca0db5a2742d28a4dc00974"
+      },
+      "candidates": [
+        {
+          "id": "f18323d5a7d514ccceacc414ffad7b1da6f868dcbcdad921454b1279a3fddde3",
+          "role": "previous",
+          "label": "Earlier comparison",
+          "file": "previous.wav"
+        },
+        {
+          "id": "60417d99c3b50f2349b85f3829f4ebd047bc9d03ea2c99d40258514c2f5facd3",
+          "role": "independent",
+          "label": "Independent models combined",
+          "file": "independent.wav"
+        },
+        {
+          "id": "f9c3bfadaae6384bc51294e4f1fa2d0f8735b9a2cbec623c92f44f1dcd7b89da",
+          "role": "trained",
+          "label": "Trained mixture model",
+          "file": "trained.wav"
+        }
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "none",
+        "presentedCandidateIds": [
+          "60417d99c3b50f2349b85f3829f4ebd047bc9d03ea2c99d40258514c2f5facd3",
+          "f18323d5a7d514ccceacc414ffad7b1da6f868dcbcdad921454b1279a3fddde3",
+          "f9c3bfadaae6384bc51294e4f1fa2d0f8735b9a2cbec623c92f44f1dcd7b89da"
+        ],
+        "auditionedCandidateIds": [
+          "60417d99c3b50f2349b85f3829f4ebd047bc9d03ea2c99d40258514c2f5facd3",
+          "f18323d5a7d514ccceacc414ffad7b1da6f868dcbcdad921454b1279a3fddde3",
+          "f9c3bfadaae6384bc51294e4f1fa2d0f8735b9a2cbec623c92f44f1dcd7b89da"
+        ],
+        "preferredCandidateIds": [],
+        "adequacy": null
+      }
+    },
+    {
+      "id": "7aea38e19e612bda0a8a9ebddea395ef94c85dd0ad174eb538e3a074d80812c3",
+      "source": {
+        "name": "laser/laser1.ogg",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/laser/laser1.ogg",
+        "sha256": "0bf468769b48a834dc1c6e38e457f2c71159b010225a9aedf84316795e8cc3e5",
+        "historicalBfxrSplits": [
+          "train"
+        ]
+      },
+      "note": "",
+      "referenceAudio": {
+        "file": "audio/6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8.flac",
+        "pcmSha256": "6cdf364dc0b4271fa81c2bd117aacf2c9694e73354b823a453356fb244e2f3e8",
+        "sampleRate": 44100,
+        "frames": 41895,
+        "channels": 1,
+        "auditionWavSha256": "1860d14de1b4283cd52e8f367bee9581651efb397fe1d4fd88e1d241afcad695"
+      },
+      "candidates": [
+        {
+          "id": "93394407be4b7ed16085173fafee904a72f68ca64c4337d6a394956db845cb2d",
+          "role": "previous",
+          "label": "Earlier comparison",
+          "file": "previous.wav"
+        },
+        {
+          "id": "f18c71bea223f99ecf0dc45aad4a8c51d941564f0140bf0896ddf01df9244311",
+          "role": "independent",
+          "label": "Independent models combined",
+          "file": "independent.wav"
+        },
+        {
+          "id": "c22c3f2a7d5b53f0a578b1b1f8970b08dcd3ca1b0ee148b61d37c9dad3faba40",
+          "role": "trained",
+          "label": "Trained mixture model",
+          "file": "trained.wav"
+        }
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "93394407be4b7ed16085173fafee904a72f68ca64c4337d6a394956db845cb2d",
+          "f18c71bea223f99ecf0dc45aad4a8c51d941564f0140bf0896ddf01df9244311",
+          "c22c3f2a7d5b53f0a578b1b1f8970b08dcd3ca1b0ee148b61d37c9dad3faba40"
+        ],
+        "auditionedCandidateIds": [
+          "93394407be4b7ed16085173fafee904a72f68ca64c4337d6a394956db845cb2d",
+          "f18c71bea223f99ecf0dc45aad4a8c51d941564f0140bf0896ddf01df9244311",
+          "c22c3f2a7d5b53f0a578b1b1f8970b08dcd3ca1b0ee148b61d37c9dad3faba40"
+        ],
+        "preferredCandidateIds": [
+          "93394407be4b7ed16085173fafee904a72f68ca64c4337d6a394956db845cb2d"
+        ],
+        "adequacy": {
+          "level": "similar",
+          "candidateIds": [
+            "93394407be4b7ed16085173fafee904a72f68ca64c4337d6a394956db845cb2d"
+          ]
+        }
+      }
+    },
+    {
+      "id": "fea806ba44ac825db485a02395c6741687ffd02804ae76a5ec4dd3047e30a4cd",
+      "source": {
+        "name": "collect/coin (nes).wav",
+        "path": "/Users/stephenlavelle/Documents/bfxr2/tools/targets_non_bfxr_big/tags/collect/coin (nes).wav",
+        "sha256": "1ad33301e64df03d49b85008db26cd93e30314387e16f83cd5bf28e954d14372",
+        "historicalBfxrSplits": [
+          "holdout"
+        ]
+      },
+      "note": "",
+      "referenceAudio": {
+        "file": "audio/093e972370b0c8532720ffd1ec3a4da3b4d02a27d1214b8ccdf57cff6cbcf0ae.flac",
+        "pcmSha256": "093e972370b0c8532720ffd1ec3a4da3b4d02a27d1214b8ccdf57cff6cbcf0ae",
+        "sampleRate": 44100,
+        "frames": 36666,
+        "channels": 1,
+        "auditionWavSha256": "4e8718d7b2f082752cf37cd6108c3566e5aa65bd78733968f84337f2edddc50d"
+      },
+      "candidates": [
+        {
+          "id": "3352383bb7895d5fcf3b29a94240e7cd1db332898687cbabd0b72cf1dec09352",
+          "role": "previous",
+          "label": "Earlier comparison",
+          "file": "previous.wav"
+        },
+        {
+          "id": "5260d6945969c28b0108bf13e1fcb63756bde7b122b2b974aefdba290148d01f",
+          "role": "independent",
+          "label": "Independent models combined",
+          "file": "independent.wav"
+        },
+        {
+          "id": "cb7e9628591898a3120bc84760f4f88fa7190cb4a1f80e8aedf9a5b354eda9ae",
+          "role": "trained",
+          "label": "Trained mixture model",
+          "file": "trained.wav"
+        }
+      ],
+      "choice": {
+        "protocol": "feel-choice-v2",
+        "kind": "best",
+        "presentedCandidateIds": [
+          "cb7e9628591898a3120bc84760f4f88fa7190cb4a1f80e8aedf9a5b354eda9ae",
+          "5260d6945969c28b0108bf13e1fcb63756bde7b122b2b974aefdba290148d01f",
+          "3352383bb7895d5fcf3b29a94240e7cd1db332898687cbabd0b72cf1dec09352"
+        ],
+        "auditionedCandidateIds": [
+          "cb7e9628591898a3120bc84760f4f88fa7190cb4a1f80e8aedf9a5b354eda9ae",
+          "5260d6945969c28b0108bf13e1fcb63756bde7b122b2b974aefdba290148d01f",
+          "3352383bb7895d5fcf3b29a94240e7cd1db332898687cbabd0b72cf1dec09352"
+        ],
+        "preferredCandidateIds": [
+          "3352383bb7895d5fcf3b29a94240e7cd1db332898687cbabd0b72cf1dec09352"
+        ],
+        "adequacy": {
+          "level": "very-close",
+          "candidateIds": [
+            "3352383bb7895d5fcf3b29a94240e7cd1db332898687cbabd0b72cf1dec09352"
+          ]
+        }
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "synth": "Transfxr",
+      "params": {
+        "masterVolume": 0.5,
+        "waveType": 1,
+        "duration": 0.05,
+        "pitch": {
+          "start": 0.19104386049049155,
+          "end": 0.05174650496230784,
+          "curve": "Bounce"
+        },
+        "tone": {
+          "start": 0.4459033122173609,
+          "end": 0.40827337631625704,
+          "curve": "Ease In"
+        },
+        "vibrato": {
+          "start": 0.23698756207568886,
+          "end": 0.5062669759405055,
+          "curve": "Ease In"
+        },
+        "level": {
+          "start": 0.8578466204131237,
+          "end": 0.3043565058967055,
+          "curve": "Ease Out"
+        },
+        "attack": 0.0915257778005782,
+        "release": 0.1897367989410442,
+        "resonance": 0.06835018263796869,
+        "echo": 0.5051080326125896,
+        "waveTo": -1,
+        "morph": {
+          "start": 0.17738774849027256,
+          "end": 0.30695900995529996,
+          "curve": "Linear"
+        }
+      },
+      "seed": 20261010,
+      "provenance": {
+        "method": "neural-temporal-controls",
+        "neuralRaw": true,
+        "mode": 3,
+        "modeProbability": 0.6155207122395256,
+        "categoricalProposal": [
+          0,
+          6,
+          2,
+          0,
+          6,
+          0,
+          0
+        ],
+        "jointLogProbability": -6.424247115850449,
+        "proposalRank": 0,
+        "proposalSource": "mode-primary",
+        "checkpointHash": "a816f97284cdd4ec0bfcfbcdbdbd11ab6e8b0230d4fa0b1388e758958694e73f",
+        "anchorSeed": 20261010,
+        "encoderKind": "flat",
+        "fixedRandomness": [],
+        "randomAnchorPolicy": "schema-defaults; renderer seed supplied explicitly",
+        "proposalPolicy": "distinct mode primaries ranked by mode probability; fill with joint categorical beam; deduplicate canonical controls",
+        "refinement": {
+          "budget": 128,
+          "seed": 20261272,
+          "failures": 0,
+          "initialScore": 0.6777316271571308,
+          "finalScore": 0.5212172174536033,
+          "trace": [
+            0.6777316271571308,
+            0.6158568312726498,
+            0.6146560433113315,
+            0.6146560433113315,
+            0.6146044322087632,
+            0.6146044322087632,
+            0.6146044322087632,
+            0.6146044322087632,
+            0.6146044322087632,
+            0.6146044322087632,
+            0.6146044322087632,
+            0.6146044322087632,
+            0.6146044322087632,
+            0.6146044322087632,
+            0.6146044322087632,
+            0.6145620530126765,
+            0.6145620530126765,
+            0.6145620530126765,
+            0.6030154476007189,
+            0.6030154476007189,
+            0.6030154476007189,
+            0.5708558933805157,
+            0.5703879742333651,
+            0.553259294850406,
+            0.553259294850406,
+            0.5520890565741372,
+            0.5520890565741372,
+            0.5520890565741372,
+            0.550240770287519,
+            0.550240770287519,
+            0.550240770287519,
+            0.550240770287519,
+            0.5499688015205128,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.5499590530366012,
+            0.547729085089719,
+            0.547729085089719,
+            0.5477268712605682,
+            0.5477268712605682,
+            0.5477268712605682,
+            0.5477268712605682,
+            0.5477268712605682,
+            0.5477268712605682,
+            0.5473694572895154,
+            0.5473694572895154,
+            0.5473694572895154,
+            0.5473694572895154,
+            0.5473694572895154,
+            0.5473694572895154,
+            0.5468680848114021,
+            0.546736697102925,
+            0.5426588821071145,
+            0.5426588821071145,
+            0.5426588821071145,
+            0.5426588821071145,
+            0.542658123566079,
+            0.542658123566079,
+            0.542658123566079,
+            0.542658123566079,
+            0.542658123566079,
+            0.542658123566079,
+            0.542658123566079,
+            0.542658010264504,
+            0.542658010264504,
+            0.542658010264504,
+            0.542658010264504,
+            0.542658010264504,
+            0.542658010264504,
+            0.5426576124646434,
+            0.5426547052844855,
+            0.5426547052844855,
+            0.5426547052844855,
+            0.5426547052844855,
+            0.5426547052844855,
+            0.542650906267709,
+            0.542650906267709,
+            0.542650906267709,
+            0.542650906267709,
+            0.542650906267709,
+            0.5419714350948738,
+            0.5419714350948738,
+            0.5419710577794475,
+            0.5419710577794475,
+            0.5419710577794475,
+            0.5419710577794475,
+            0.5419710577794475,
+            0.5419710577794475,
+            0.5419710577794475,
+            0.5419710577794475,
+            0.5419710577794475,
+            0.5419710577794475,
+            0.5419710577794475,
+            0.5250790424857983,
+            0.5250790424857983,
+            0.5250790424857983,
+            0.5250790424857983,
+            0.5250790424857983,
+            0.5250790424857983,
+            0.5250790424857983,
+            0.5250790424857983,
+            0.5250790424857983,
+            0.5250790424857983,
+            0.5250790424857983,
+            0.5250780605806094,
+            0.5250780605806094,
+            0.5250780605806094,
+            0.5250780605806094,
+            0.5250768151314671,
+            0.5245251869847567,
+            0.5213162410555847,
+            0.5212641336318478,
+            0.5212641336318478,
+            0.5212172174536033,
+            0.5212172174536033
+          ],
+          "scope": "full numeric ranges and categorical controls"
+        },
+        "refinementObjective": "preference",
+        "rawStartIndex": 42,
+        "inputPcmHash": "a11de3118c482dcdc20bc8040aa13789dd8e5ab0bf0cb10d9c537daa92a41cec",
+        "origin": "Transfxr-mixture",
+        "softPeriodicity": 3.7563349749147505,
+        "preferenceNeuralV2": 0.5212172174536033,
+        "auditionMatchObjective": 2.3434904163578762,
+        "auditionWavSha256": "6dad7c10b6890ad75ad667afb3d2d04c976ace6fd2b2b4cf6635f530bee3e060",
+        "auditionTransform": "Exact archived PCM",
+        "targetsSha256": "44d9c678c1da175a933e86af2ca4061861c5addc77290734f2805bc8cb3986d6",
+        "reportSha256": "85a73e0ce9be154bd388200f3a0689911ee2f4f4665bbd13a091229dc93cfb48",
+        "selectionRole": "preference",
+        "retainedArchive": "tools/multisynth/listening_data/2026-10-06-off-model-transfer-v1-quick-02",
+        "retainedCandidateId": "4ab9593c92f342a7043ba51e4356031eedf2841d6484c32d932c69936490f368"
+      },
+      "origin": "Transfxr-mixture",
+      "score": 0.5212172174536033,
+      "waveFile": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/off-model-transfer-v1/001/preference-refined-1.wav",
+      "waveFileSha256": "af63223efdc1bb74a2996cb7d64faeb7cda16203b4c80127564fc6622111734c",
+      "audioHash": "a319e952dcffd9de03661eec2ce1d32e87c28bad094480002a34d6b049feb095",
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "auditionHash": "e9bc08605f6bdbd9405eb7b4fd4f01f60990065c3076b69ffcb0697a3ad04f6e",
+      "softDistance": 3.7563349749147505,
+      "preferenceDistance": 0.5212172174536033,
+      "legacyDistance": 2.3434904163578762,
+      "role": "previous",
+      "label": "Earlier comparison",
+      "file": "previous.wav",
+      "id": "aa29e251ad3ab2b8b4a48cf6e719cd29cad92cbae7a2880ecf03f27dfd5404c9",
+      "paramsSha256": "f1aca1396355b94548f71af75551da5526201d872a0698c7ddd88802802b5aa6",
+      "audioSha256": "6dad7c10b6890ad75ad667afb3d2d04c976ace6fd2b2b4cf6635f530bee3e060",
+      "targetId": "f88df3b356903d22a83e5c40d350194a50dd26e2056c200fdbff1964a12924ae",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/5e32abe7b0efcb57b90720134e8f943a4285734807a68d1ece5570c98e42973e.flac",
+        "pcmSha256": "5e32abe7b0efcb57b90720134e8f943a4285734807a68d1ece5570c98e42973e",
+        "sampleRate": 44100,
+        "frames": 31977,
+        "channels": 1,
+        "auditionWavSha256": "6dad7c10b6890ad75ad667afb3d2d04c976ace6fd2b2b4cf6635f530bee3e060"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 1,
+        "sources": "[null,{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":1,\"duration\":0.05,\"pitch\":{\"start\":0.20989949849368283,\"end\":0.07738863104604582,\"curve\":\"Linear\"},\"tone\":{\"start\":0.4113575420328583,\"end\":0.4272777874551699,\"curve\":\"Smooth\"},\"vibrato\":{\"start\":0.7884369354999146,\"end\":0.14459626402770553,\"curve\":\"Triangle\"},\"level\":{\"start\":0.44379618294410234,\"end\":0.21764498853475017,\"curve\":\"Steps\"},\"attack\":0.1722946254762545,\"release\":0.39315548307857384,\"resonance\":0,\"echo\":0.5449440293352003,\"waveTo\":-1,\"morph\":{\"start\":0.22763430260781942,\"end\":0.14305428224753414,\"curve\":\"Linear\"}},\"renderSeed\":0.5}]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "independent",
+      "label": "Independent models combined",
+      "file": "independent.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "independent",
+        "checkpointHash": null,
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 3.73653944673158,
+          "preference": 0.44334495348187186
+        },
+        "auditionHash": "21d3c25b126e39bff97621d77201202ec4b884c24894f30529d681c82558fccb",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "9e2b589dd8a85cbbbb2b8f0ef6baef28cbc52d22f95ace9f9718d320d4d753de",
+      "paramsSha256": "92226aea64f4a735c250e4933ed026bc885e9fd2709cf07ba0b637ed1c8b99cf",
+      "audioSha256": "77e97b0f65b7060e358c493440ff8372d9e961a60fef7ff0bbe974ec54f6b823",
+      "targetId": "f88df3b356903d22a83e5c40d350194a50dd26e2056c200fdbff1964a12924ae",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/f6a87f4c0382b236acefb328cf850e5f768b6cded0e74cc649a2b9fd398a3249.flac",
+        "pcmSha256": "f6a87f4c0382b236acefb328cf850e5f768b6cded0e74cc649a2b9fd398a3249",
+        "sampleRate": 44100,
+        "frames": 31977,
+        "channels": 1,
+        "auditionWavSha256": "77e97b0f65b7060e358c493440ff8372d9e961a60fef7ff0bbe974ec54f6b823"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.9,
+        "sources": "[{\"synth\":\"Boomr\",\"name\":\"Boomr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5,\"duration\":1.0501945786384699,\"size\":0.3890326317684656,\"pressure\":0.6063842883288617,\"blast\":0.8080790767649206,\"debris\":0.36708301780604635,\"gas\":0.2071518016507168,\"aftershock\":0.29219260336628616,\"rubbleSize\":0.38078380193886363,\"spread\":0.573239266872406,\"tail\":0,\"muffle\":0.4974095892267471,\"mechanism\":2,\"space\":0.507785975933075},\"renderSeed\":0.5},{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":0,\"duration\":0.16689063608646393,\"pitch\":{\"start\":0.31485045549119783,\"end\":0.0910405345147309,\"curve\":\"Bounce\"},\"tone\":{\"start\":0.7750431299209595,\"end\":0.7373568163628309,\"curve\":\"Ease Out\"},\"vibrato\":{\"start\":0.35790148863819504,\"end\":0.008571357298209202,\"curve\":\"Ease In\"},\"level\":{\"start\":0.6332864761352539,\"end\":0.9233261425768984,\"curve\":\"Bounce\"},\"attack\":0.05412771205606179,\"release\":0.267731636762619,\"resonance\":0.3138194813231858,\"echo\":0.058959332675019765,\"waveTo\":0,\"morph\":{\"start\":0,\"end\":0.5121105909347534,\"curve\":\"Ease Out\"}},\"renderSeed\":0.5}]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "trained",
+      "label": "Trained mixture model",
+      "file": "trained.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "trained",
+        "checkpointHash": "e0444328cb6d96d5f9706bd78dcead51f9f135957830e3e2cb7c7ac7e6d4e7ba",
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 5.395372504401015,
+          "preference": 0.7777601948467016
+        },
+        "auditionHash": "3aebe40fc03dd6ba44b733ec01f9ffb715c40e0c04400f32212d601b67b2aec0",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "28904873bbc485811324da7d1b7eedcdc6428764ae633c24adc0fdce45a64f2e",
+      "paramsSha256": "78c6bb73e7bf4fa50039d6814c406285e038768c2f206443c6a3429b91824014",
+      "audioSha256": "d53a996285f9d475b0e82bf1eb4d088c90c4fcc8f2a2587d3122dc964e550991",
+      "targetId": "f88df3b356903d22a83e5c40d350194a50dd26e2056c200fdbff1964a12924ae",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/f9641814fbce5a6a701513fde24eb6efa3126304973b7d045c2dada2e4bf8a3a.flac",
+        "pcmSha256": "f9641814fbce5a6a701513fde24eb6efa3126304973b7d045c2dada2e4bf8a3a",
+        "sampleRate": 44100,
+        "frames": 46314,
+        "channels": 1,
+        "auditionWavSha256": "d53a996285f9d475b0e82bf1eb4d088c90c4fcc8f2a2587d3122dc964e550991"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.5,
+        "sources": "[{\"synth\":\"Boomr\",\"name\":\"Boomr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.08537919633090496,\"duration\":0.40898627042770386,\"size\":0.16178808778779702,\"pressure\":0.6783611712813553,\"blast\":0.6344005811049398,\"debris\":0.957122535706004,\"gas\":0.21591851015672003,\"aftershock\":0,\"rubbleSize\":0,\"spread\":0.0014033082702304966,\"tail\":0.4036071270162599,\"muffle\":0.4181036299618929,\"mechanism\":7,\"space\":0.20684935750741112},\"renderSeed\":0.004717384233306484},null]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "previous",
+      "label": "Earlier comparison",
+      "file": "previous.wav",
+      "provenance": {
+        "method": "actual-Mixr-joint-search",
+        "arm": "single-preference",
+        "protocolSha256": "7ee470a5870a62f3fc01c27bd4ff7bb926908767427c38381005aa82b54503b0",
+        "reportSha256": "7eb47f578c9fd6a227495cd4a39b8d609f3493e962b0ab844bd188a4a4c8b3d6",
+        "renderSourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+        "searchAttempts": 512,
+        "searchSeed": 20261320,
+        "initialScore": 0.7340872229406448,
+        "softPeriodicity": 2.672621476657846,
+        "preferenceNeuralV2": 0.6169017456100796,
+        "auditionMatchObjective": 1.4315253019408962,
+        "auditionHash": "bcea8ce19f9fde074691ed5dbc6bc40f596e1f52a656727635aa06d0042886e2",
+        "actualMixrReplay": true,
+        "retainedArchive": "tools/multisynth/listening_data/2026-10-06-mixr-joint-v1-quick-02",
+        "retainedCandidateId": "892729c98ff27d0fcd12b93eaae745b23e991ee52de39c41400a60b503566754",
+        "auditionTransform": "Exact archived PCM"
+      },
+      "id": "fb30eefd9d59b512ceb949566d6daf4d61ab803b2f38b59498a4ed5db8dbca8f",
+      "paramsSha256": "7a489a77acfd35368f635e74ae2a2ca103d07442579391c67c94b59fa3300127",
+      "audioSha256": "2ae5e26d62f845220c2b6ce877e3997441182e79baec67f0a8fd0f588b6833c2",
+      "targetId": "436e8ac06c0fe30ad90d1c7a72c05c4850080b03702db52fe317e529f5dda35d",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/034364ba06ac4c4ca7dc2183d523dd2a9865410f737a337a0d7938e63eb20b7a.flac",
+        "pcmSha256": "034364ba06ac4c4ca7dc2183d523dd2a9865410f737a337a0d7938e63eb20b7a",
+        "sampleRate": 44100,
+        "frames": 18036,
+        "channels": 1,
+        "auditionWavSha256": "2ae5e26d62f845220c2b6ce877e3997441182e79baec67f0a8fd0f588b6833c2"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0,
+        "sources": "[{\"synth\":\"Boomr\",\"name\":\"Boomr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5,\"duration\":0.40898627042770386,\"size\":0.13004557812604892,\"pressure\":0.512051522731781,\"blast\":0.25987488075518755,\"debris\":0.6540468435233331,\"gas\":0.13227545438340005,\"aftershock\":0.15534914386678567,\"rubbleSize\":0.036268155308277136,\"spread\":0.43681802919492657,\"tail\":0.25391484080412763,\"muffle\":0.19696628275721567,\"mechanism\":4,\"space\":0.11365613341331482},\"renderSeed\":0.5},null]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "independent",
+      "label": "Independent models combined",
+      "file": "independent.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "independent",
+        "checkpointHash": null,
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 2.879280051959445,
+          "preference": 0.7785599054658681
+        },
+        "auditionHash": "609d7c6ec25a91c94c4bef25d621b2a258e1a73a618aa208220ffc606a8e101d",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "65a2ca500bc2601cea4b9d8bf793358e516c08a3af4cd63f646e623c55fe392d",
+      "paramsSha256": "c645a755aa8f7d33826aceb2db949d12b1d0561d5f2a1903451e7522f39d4fa5",
+      "audioSha256": "00af3ccddae98031cedcb4b2ae4abc8c300c0f1215d09343c2974dea94d8b8d5",
+      "targetId": "436e8ac06c0fe30ad90d1c7a72c05c4850080b03702db52fe317e529f5dda35d",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/000ab18adfde0c02cf1aa0c24948ab236622fb5b004241492c80224ac0de991d.flac",
+        "pcmSha256": "000ab18adfde0c02cf1aa0c24948ab236622fb5b004241492c80224ac0de991d",
+        "sampleRate": 44100,
+        "frames": 18036,
+        "channels": 1,
+        "auditionWavSha256": "00af3ccddae98031cedcb4b2ae4abc8c300c0f1215d09343c2974dea94d8b8d5"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 1,
+        "sources": "[null,{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":3,\"duration\":0.2985904812812805,\"pitch\":{\"start\":0.09672085497344377,\"end\":0.24021192305486483,\"curve\":\"Smooth\"},\"tone\":{\"start\":1,\"end\":0.7091825185087457,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0.38218113046590024,\"end\":0.012856237034974433,\"curve\":\"Ease Out\"},\"level\":{\"start\":0.1315754999219893,\"end\":0.821622176163696,\"curve\":\"Bounce\"},\"attack\":0.07454462755376057,\"release\":0.6071147705526792,\"resonance\":0.23918183147907257,\"echo\":0.03824262149300258,\"waveTo\":7,\"morph\":{\"start\":0.7196372885015022,\"end\":0.840315635922043,\"curve\":\"Smooth\"}},\"renderSeed\":0.5}]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "trained",
+      "label": "Trained mixture model",
+      "file": "trained.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "trained",
+        "checkpointHash": "e0444328cb6d96d5f9706bd78dcead51f9f135957830e3e2cb7c7ac7e6d4e7ba",
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 2.851343628367455,
+          "preference": 0.7380604961715103
+        },
+        "auditionHash": "bbe4fe1a207ad08684468d8088f081d85f2819e7d700b2b8a34f2171c325a460",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "b4e8b1dc43b7c5d3f0b7097c2fcce32c4f602cbc8736eb965d98ed0c7edc4ec0",
+      "paramsSha256": "f4b0be7d961beca7875d4dc36e0d0b86da716f11162fcd67e2eb469f357b8193",
+      "audioSha256": "6af89b28f1d4f18099a3e0e363ffcd2db54a7ee2e47e5813c49ab62f0fa26aa3",
+      "targetId": "436e8ac06c0fe30ad90d1c7a72c05c4850080b03702db52fe317e529f5dda35d",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/d5cdd2a151f8ff59daefd4a991f6048ec672080f73132f842b0ca4770bfcd8d4.flac",
+        "pcmSha256": "d5cdd2a151f8ff59daefd4a991f6048ec672080f73132f842b0ca4770bfcd8d4",
+        "sampleRate": 44100,
+        "frames": 23092,
+        "channels": 1,
+        "auditionWavSha256": "6af89b28f1d4f18099a3e0e363ffcd2db54a7ee2e47e5813c49ab62f0fa26aa3"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.2,
+        "sources": "[{\"synth\":\"Bfxr\",\"name\":\"Bfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":0,\"attackTime\":0.3313745224782169,\"sustainTime\":0.19071748779306286,\"sustainPunch\":0.6900384751637199,\"decayTime\":0.3283805196753252,\"compressionAmount\":0.07572354054849093,\"frequency_start\":0.04019402182382036,\"frequency_slide\":-0.10966080122642602,\"frequency_acceleration\":0.29490076118334785,\"min_frequency_relative_to_starting_frequency\":0.12070952387983318,\"vibratoDepth\":0.6298795165417577,\"vibratoSpeed\":0.7905550771575615,\"pitch_jump_repeat_speed\":0.0095627602748682,\"pitch_jump_amount\":-0.13092921022096682,\"pitch_jump_onset_percent\":0.005273620462512706,\"pitch_jump_2_amount\":0.3332834086137135,\"pitch_jump_onset2_percent\":0.521181351232485,\"overtones\":0.024222639157843538,\"overtoneFalloff\":0.4750276984443898,\"squareDuty\":0.24261847572881506,\"dutySweep\":0.24581118940932511,\"repeatSpeed\":0.05796617844597207,\"flangerOffset\":0.14128487189920946,\"flangerSweep\":-0.11434469921395451,\"lpFilterCutoff\":0.38179219902918626,\"lpFilterCutoffSweep\":-0.9996961143211288,\"lpFilterResonance\":0.22760789452856442,\"hpFilterCutoff\":0.10693597102099,\"hpFilterCutoffSweep\":0.5458994568208067,\"bitCrush\":0.30328142506859845,\"bitCrushSweep\":-0.816996052916662},\"renderSeed\":2.873130143357704e-7},{\"synth\":\"Pluckr\",\"name\":\"Pluckr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5411272917408496,\"material\":3,\"duration\":2.0534543991088867,\"pitch\":0.629930317401886,\"strings\":5,\"damping\":0.14279867708683014,\"brightness\":0.2594088912010193,\"pluck\":0.4962126612663269,\"coupling\":0.6198459267616272,\"strum\":0.7492995858192444,\"tremolo\":0.4187330901622772,\"vibrato\":0.5076493620872498,\"tremoloRate\":5.61957311630249,\"inharmonic\":0.627105176448822},\"renderSeed\":0.004717382603491979}]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "previous",
+      "label": "Earlier comparison",
+      "file": "previous.wav",
+      "provenance": {
+        "method": "actual-Mixr-pair-search",
+        "protocolSha256": "b91439aca0a274d6be9fa181e49da42219dfe7586f2c97f7330f5ea5e6a823c6",
+        "reportSha256": "02635865ee7b02292ccd03e3959a0c6e6712866e2de9666ef0b9026c1565624e",
+        "compositionInventory": {
+          "ok": true,
+          "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+          "baseSourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+          "sampleRate": 44100,
+          "sources": [
+            "Bfxr",
+            "Transfxr",
+            "Birdr",
+            "Boomr",
+            "Bouncr",
+            "Breathr",
+            "Choirr",
+            "Clonkr",
+            "Crittr",
+            "Fractr",
+            "Glitchr",
+            "Holor",
+            "Jinglr",
+            "Machinr",
+            "Notifr",
+            "Pewpr",
+            "Pluckr",
+            "Pulser",
+            "Riftr",
+            "Rollr",
+            "Rumblr",
+            "Rustlr",
+            "Signlr",
+            "Squishr",
+            "Swarmr",
+            "Tappr",
+            "Tickr",
+            "Weathr",
+            "Whooshr",
+            "Zappr"
+          ],
+          "dependencies": {
+            "tools/render/composition_context.js": "7bae1d1d6cbdc91b855b22cb0325701845df9835fe9d14a02fa571cb20e35eba",
+            "tools/render/composition_worker.js": "56664b7b33175eb962b4dbb6b9ad5c805847f9224d4a0562bb78f59acf5102ac",
+            "tools/multisynth/composition.py": "8b8b25d8152c63001b4c79f19da208be15ef4db9b13ee3e4c498431a25fd1fd5",
+            "tests/helpers/synth-context.js": "537f3a32b720ca359391bc32b9d4c8a8496840e94769cb3b6a55c81908654364",
+            "js/audio/Stackr_DSP.js": "419ddd4ee2155888bf2ecd0ac7e8a6460d47c691d907f3bb3ab0da18e047795d",
+            "js/synths/Stackr.js": "2174d51cc1d8a618c374ee5484db56ca89073f7596b131a9abc3883b5c2db601",
+            "js/audio/Mixr_DSP.js": "219cf10c4d3ec98ca16c1961852abf00bb678bab971d6712352eb01b6c2248d1",
+            "js/synths/Mixr.js": "9c00506f665f419732314aa7cdea1e7c6f3eae295dcb79c9a5011fdec7db7563"
+          },
+          "excluded": [
+            {
+              "name": "Footsteppr",
+              "reason": "Separate PureData host is not loaded in this first composition bridge."
+            }
+          ],
+          "seedPolicy": "Actual Stackr.render_source and SoundDSP.rng; source renderSeed in [0,1]."
+        },
+        "softPeriodicity": 3.4197353193826343,
+        "preferenceNeuralV2": 2.1644509096068636,
+        "auditionMatchObjective": 9.871773451675518,
+        "auditionHash": "756ed4799d1872d4b7d5481632c6fb169b4ba836455169585308618563d5ab35",
+        "auditionWavSha256": "eb23174f5df3d75f30f94cbfebcaaff41fd8c80a902b9e4d89e6ba420561ba25",
+        "auditionTransform": "Exact archived PCM",
+        "actualMixrReplay": true,
+        "retainedArchive": "tools/multisynth/listening_data/2026-10-06-mixr-joint-v1-quick-02",
+        "retainedCandidateId": "9bd06746a64ae0c44831fe856d40b1cede8c95d1e258dd09592d8f0d4cb3e465",
+        "archiveManifestSha256": "9bfa8e5e98ca3f87fec5d5db3a99d6c97b0f33014aa66001393d2c70f93d55bd"
+      },
+      "id": "5f3c63d0128274a157da5a06a95a9ee632c095f4630e36262aedc9e498cb5663",
+      "paramsSha256": "9cadc89679935bd720cdba3a3615af4d88ff0924986c240eaacd93e04ca31c95",
+      "audioSha256": "eb23174f5df3d75f30f94cbfebcaaff41fd8c80a902b9e4d89e6ba420561ba25",
+      "targetId": "7b4bb0251af98149229323cfde4c0a6a27771f00789303bfff1e34d752738aa0",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/42c4225aeb150940d557303db81ada28dfe1e47e0d2bb70993395e506a611f33.flac",
+        "pcmSha256": "42c4225aeb150940d557303db81ada28dfe1e47e0d2bb70993395e506a611f33",
+        "sampleRate": 44100,
+        "frames": 90557,
+        "channels": 1,
+        "auditionWavSha256": "eb23174f5df3d75f30f94cbfebcaaff41fd8c80a902b9e4d89e6ba420561ba25"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.152842345397905,
+        "sources": "[{\"synth\":\"Boomr\",\"name\":\"Boomr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5,\"duration\":0.39897721175646667,\"size\":0.6912013937441458,\"pressure\":0.8210448026657104,\"blast\":0.3583546195045625,\"debris\":0.6622664811526714,\"gas\":0.21532537043094635,\"aftershock\":0.16132888080982402,\"rubbleSize\":0.617057204246521,\"spread\":0.28761982917785645,\"tail\":0.05824938482707088,\"muffle\":0.3321949827234351,\"mechanism\":5,\"space\":0.08058153092861176},\"renderSeed\":0.5},{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":9,\"duration\":0.30554572220440557,\"pitch\":{\"start\":0.36755573749542236,\"end\":0.15483850177186548,\"curve\":\"Steps\"},\"tone\":{\"start\":0.5315427452372509,\"end\":0.7643727846298587,\"curve\":\"Ease In\"},\"vibrato\":{\"start\":0.12852764574129194,\"end\":0.17085769267727013,\"curve\":\"Linear\"},\"level\":{\"start\":0.27941975593629065,\"end\":0.5406647892762575,\"curve\":\"Triangle\"},\"attack\":0.6232246669418621,\"release\":0.07630152513731493,\"resonance\":0.42617090769122035,\"echo\":0.04452821376324914,\"waveTo\":6,\"morph\":{\"start\":0,\"end\":0.8667918558522452,\"curve\":\"Linear\"}},\"renderSeed\":0.5}]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "independent",
+      "label": "Independent models combined",
+      "file": "independent.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "independent",
+        "checkpointHash": null,
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 5.373829286251974,
+          "preference": 1.2842315781077547
+        },
+        "auditionHash": "1c553a280e63a6e8001d9c54ee04d395be2d376c70324f78e38b45552a7603fa",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "ff75a1751b4c9ba7d0ccada4e1964576d51a83aee7d741e3028d256ab3032271",
+      "paramsSha256": "d22b6cf79db3c3ef064cbbc5c3ab44c24d8ab3a2e442e531757d6d13f2a7d1bb",
+      "audioSha256": "6ba6334715efe8bce5ca0c37db236428769bef46ea19ff880f3f55de1b24e897",
+      "targetId": "7b4bb0251af98149229323cfde4c0a6a27771f00789303bfff1e34d752738aa0",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/ab009df57e01c10b37ab3a59ba3d7d12f13eafa8d7e8f17c6549f430d35c9ffe.flac",
+        "pcmSha256": "ab009df57e01c10b37ab3a59ba3d7d12f13eafa8d7e8f17c6549f430d35c9ffe",
+        "sampleRate": 44100,
+        "frames": 23399,
+        "channels": 1,
+        "auditionWavSha256": "6ba6334715efe8bce5ca0c37db236428769bef46ea19ff880f3f55de1b24e897"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.8606322251814469,
+        "sources": "[{\"synth\":\"Boomr\",\"name\":\"Boomr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5,\"duration\":0.12,\"size\":0.31202255499418496,\"pressure\":0.8662167411612746,\"blast\":0.17779462355027545,\"debris\":0.20748940609682898,\"gas\":0.004585100407560307,\"aftershock\":0.07525541577393889,\"rubbleSize\":0.4073055244434688,\"spread\":0.20002907397125294,\"tail\":0.4018784635549897,\"muffle\":0.22815155136304255,\"mechanism\":3,\"space\":0.5389002424086446},\"renderSeed\":0.5},{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":4,\"duration\":0.17172878980636597,\"pitch\":{\"start\":0.6342988014221191,\"end\":0.5889413952827454,\"curve\":\"Pulse\"},\"tone\":{\"start\":0.7218205528234823,\"end\":0.4795031146809241,\"curve\":\"Smooth\"},\"vibrato\":{\"start\":0.18343977630138397,\"end\":0.1379538952764349,\"curve\":\"Smooth\"},\"level\":{\"start\":1,\"end\":0.4687663797695488,\"curve\":\"Linear\"},\"attack\":0.12429532408714294,\"release\":0.2704187314245492,\"resonance\":0.28936525649959444,\"echo\":0.03130476468606271,\"waveTo\":6,\"morph\":{\"start\":0.4135167680984437,\"end\":0.5424867886306206,\"curve\":\"Linear\"}},\"renderSeed\":0.5}]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "trained",
+      "label": "Trained mixture model",
+      "file": "trained.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "trained",
+        "checkpointHash": "e0444328cb6d96d5f9706bd78dcead51f9f135957830e3e2cb7c7ac7e6d4e7ba",
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 7.872709753807659,
+          "preference": 0.9906485270197629
+        },
+        "auditionHash": "04ee0bb7b6a84d8242a254705bd8df1d7bdf04a94922dfbb5ddcacb87d7bb681",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "ca8b81b27f0f618b2f51e703fbee91944b14f1ed4a3e3f6a450e23e8b9f563ea",
+      "paramsSha256": "71b98a65fe69bd4fabda4f3cefd2393772d91042b66f8f2467b20243ac76f0ca",
+      "audioSha256": "cda85ca7b3248e978cc4fc76a1238ffb5f1840c334f046c383521290f990ce74",
+      "targetId": "7b4bb0251af98149229323cfde4c0a6a27771f00789303bfff1e34d752738aa0",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/6e9d2ad458e4a35c2b9f653c273284b9e25b6d7d916686784957188917e19856.flac",
+        "pcmSha256": "6e9d2ad458e4a35c2b9f653c273284b9e25b6d7d916686784957188917e19856",
+        "sampleRate": 44100,
+        "frames": 17497,
+        "channels": 1,
+        "auditionWavSha256": "cda85ca7b3248e978cc4fc76a1238ffb5f1840c334f046c383521290f990ce74"
+      }
+    },
+    {
+      "synth": "Bfxr",
+      "params": {
+        "attackTime": 0.07936178652917991,
+        "sustainTime": 0.02600102480831983,
+        "sustainPunch": 0.9998133756903743,
+        "decayTime": 0.4874188357502224,
+        "compressionAmount": 8.213942391970503e-06,
+        "frequency_start": 0.5184502596169261,
+        "frequency_slide": 0.15241524112626903,
+        "frequency_acceleration": 0.2567403122512202,
+        "min_frequency_relative_to_starting_frequency": 0.17697646523869495,
+        "vibratoDepth": 0.8717548114172339,
+        "vibratoSpeed": 0.7426698237743837,
+        "pitch_jump_repeat_speed": 0.14603256853999708,
+        "pitch_jump_amount": -0.2779315779182394,
+        "pitch_jump_onset_percent": 0.0021804459392186725,
+        "pitch_jump_2_amount": 0.14593887197146427,
+        "pitch_jump_onset2_percent": 0.4887632160174319,
+        "overtones": 0.09797380173599762,
+        "overtoneFalloff": 0.43516760198718124,
+        "squareDuty": 0.8641126432816406,
+        "dutySweep": 0.9522517471136891,
+        "repeatSpeed": 0.7821263624390061,
+        "flangerOffset": -0.25088552321891777,
+        "flangerSweep": 0.7947765979475399,
+        "lpFilterCutoff": 0.4604248296845431,
+        "lpFilterCutoffSweep": -0.021261538724087203,
+        "lpFilterResonance": 0.014805671695084186,
+        "hpFilterCutoff": 0.9326315631329439,
+        "hpFilterCutoffSweep": -0.2619520902846043,
+        "bitCrush": 0.23603078449093137,
+        "bitCrushSweep": -0.994830275805875,
+        "waveType": 0,
+        "masterVolume": 0.5
+      },
+      "seed": 1234,
+      "score": 2.088061414744308,
+      "expert": "original-bfxr",
+      "provenance": {
+        "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+        "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+        "budget": 2000,
+        "evaluations": 2015,
+        "allowPitchShift": false,
+        "allowTimeStretch": false,
+        "structureObjective": false,
+        "optimizer": "original StagedOptimizer with neural seeds",
+        "origin": "original-bfxr",
+        "inputPcmHash": "e331c5c8e930efcb48b81a5af5e82105ac00ccf2103b1df1a3061ad6934e7cd1",
+        "softPeriodicity": 2.472934366035132,
+        "preferenceNeuralV2": 2.183097391558959,
+        "auditionMatchObjective": 2.088061414744308,
+        "auditionWavSha256": "a8fce5478084b8fddffafb3cd46912fed9f0dc63efc7dc15289e460223dc8f01",
+        "auditionTransform": "Exact archived PCM",
+        "targetsSha256": "44d9c678c1da175a933e86af2ca4061861c5addc77290734f2805bc8cb3986d6",
+        "reportSha256": "85a73e0ce9be154bd388200f3a0689911ee2f4f4665bbd13a091229dc93cfb48",
+        "selectionRole": "soft",
+        "originalBfxrBackend": {
+          "command": [
+            "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+          ],
+          "backendSha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7",
+          "recordedAt": "during inference before gallery export",
+          "note": "Multisynth sourceHash does not cover this native original-Bfxr backend. Final verification must recheck this binary and replay all original candidates.",
+          "targetsSha256": "44d9c678c1da175a933e86af2ca4061861c5addc77290734f2805bc8cb3986d6"
+        },
+        "retainedArchive": "tools/multisynth/listening_data/2026-10-06-off-model-transfer-v1-quick-02",
+        "retainedCandidateId": "7ad183f7b580bfbc380c6116269d6c28aeffc4dfc80dff35faa13e4b268e99e7"
+      },
+      "origin": "original-bfxr",
+      "waveFile": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/off-model-transfer-v1/004/original-bfxr-float.wav",
+      "waveFileSha256": "7f9d45af3356bb792125a6c283014d27bebc0a06414c0e0aa007292e27f05b23",
+      "audioHash": "cff8d07e802e5990b2fb0c712517a71c82ff9994e46444f69e681b91efa9e904",
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "auditionHash": "315a413281b297394ef9ee044e80bb2780693abcdcb2cb260571d4a6712e14a5",
+      "softDistance": 2.472934366035132,
+      "preferenceDistance": 2.183097391558959,
+      "legacyDistance": 2.088061414744308,
+      "role": "previous",
+      "label": "Earlier comparison",
+      "file": "previous.wav",
+      "id": "02ac3f7d2655f91c3c563bd7a4e2716f2f95f9fdf81f563f60cf8894ac08ee68",
+      "paramsSha256": "7af3eac2be49eb0d45bfdf2c6618c1463e7361bbba7888ca25d98af68a6ebfd6",
+      "audioSha256": "a8fce5478084b8fddffafb3cd46912fed9f0dc63efc7dc15289e460223dc8f01",
+      "targetId": "c6442895c976b11d792417a0ad12de248c75ba6dfd463ecc0eb44a36cb3dd2f9",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/ad808bd22da078fa624fa2d8baa9b19faaf9c9a94867a13359c0645963c30ae9.flac",
+        "pcmSha256": "ad808bd22da078fa624fa2d8baa9b19faaf9c9a94867a13359c0645963c30ae9",
+        "sampleRate": 44100,
+        "frames": 18910,
+        "channels": 1,
+        "auditionWavSha256": "a8fce5478084b8fddffafb3cd46912fed9f0dc63efc7dc15289e460223dc8f01"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 1,
+        "sources": "[null,{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":8,\"duration\":0.7339062690734863,\"pitch\":{\"start\":1,\"end\":0.7978758539279684,\"curve\":\"Steps\"},\"tone\":{\"start\":0.39481298914442614,\"end\":0.9944701362326485,\"curve\":\"Ease Out\"},\"vibrato\":{\"start\":0.7400087481109969,\"end\":0.4290999174118042,\"curve\":\"Pulse\"},\"level\":{\"start\":0.6791360986722296,\"end\":0.3721404956677021,\"curve\":\"Linear\"},\"attack\":0.2810811286935659,\"release\":0.02121569628599862,\"resonance\":0.8012425288285402,\"echo\":0.01503301877528429,\"waveTo\":8,\"morph\":{\"start\":0.378524570307812,\"end\":0.5335092912361531,\"curve\":\"Pulse\"}},\"renderSeed\":0.5}]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "independent",
+      "label": "Independent models combined",
+      "file": "independent.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "independent",
+        "checkpointHash": null,
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 6.522701387832292,
+          "preference": 1.9972718160664669
+        },
+        "auditionHash": "b18c7fc875147bed3670540f6ad4142672d7d97e2cdacc51957173e75b6702f5",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "06c66b61fec4ad75161e331942f8d15ec95428bd7c9da74493567bfe92e147f5",
+      "paramsSha256": "215bbd23ae2986ac9819012352ce49c858b146375ff0aee3ad052a6f66a53a07",
+      "audioSha256": "4f8f6d3bbd478eed422258e2d9a5592de6844e87261816ec25b35b9c6f7ce8a1",
+      "targetId": "c6442895c976b11d792417a0ad12de248c75ba6dfd463ecc0eb44a36cb3dd2f9",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/0938fbfcac39876004ef1a8574a12d76f95cd08d67a58336770f8032e3f7dab9.flac",
+        "pcmSha256": "0938fbfcac39876004ef1a8574a12d76f95cd08d67a58336770f8032e3f7dab9",
+        "sampleRate": 44100,
+        "frames": 47253,
+        "channels": 1,
+        "auditionWavSha256": "4f8f6d3bbd478eed422258e2d9a5592de6844e87261816ec25b35b9c6f7ce8a1"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 1,
+        "sources": "[null,{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":8,\"duration\":0.28200474280541915,\"pitch\":{\"start\":0.07854926763589108,\"end\":0.8276131557705899,\"curve\":\"Smooth\"},\"tone\":{\"start\":0.5166084467148505,\"end\":0.8723602249996488,\"curve\":\"Bounce\"},\"vibrato\":{\"start\":0.31588324541579205,\"end\":0,\"curve\":\"Triangle\"},\"level\":{\"start\":0.16317908406033796,\"end\":0.8224475831987118,\"curve\":\"Ease In\"},\"attack\":0.9815730818691499,\"release\":0.0030076157097829164,\"resonance\":0.3557956017967706,\"echo\":0.10465948079211189,\"waveTo\":2,\"morph\":{\"start\":0,\"end\":0.3558844458654465,\"curve\":\"Ease Out\"}},\"renderSeed\":0.5}]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "trained",
+      "label": "Trained mixture model",
+      "file": "trained.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "trained",
+        "checkpointHash": "e0444328cb6d96d5f9706bd78dcead51f9f135957830e3e2cb7c7ac7e6d4e7ba",
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 3.8087613604196604,
+          "preference": 1.666412818619216
+        },
+        "auditionHash": "c174a7624f3c351a88448526b2c53e123467cd6b96f45c8f5da64eaa17e51926",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "93a3b7ead5a7cce6dad4fc3fb286d3a2c03d8498f2efed5b565ab06cb23ba4fb",
+      "paramsSha256": "2498f0fd4baddac2ac2d8f9c23fdbd63cec567b601e07ef8378d680779d3da2c",
+      "audioSha256": "d8ed42fc411890766e9edd77728ffc5354ac7f2ca57923277952ec97d4afc64e",
+      "targetId": "c6442895c976b11d792417a0ad12de248c75ba6dfd463ecc0eb44a36cb3dd2f9",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/dc03c534568acf0938a0d74e4a2a5e583a6d817830aff727bbb50956fd6fce79.flac",
+        "pcmSha256": "dc03c534568acf0938a0d74e4a2a5e583a6d817830aff727bbb50956fd6fce79",
+        "sampleRate": 44100,
+        "frames": 25668,
+        "channels": 1,
+        "auditionWavSha256": "d8ed42fc411890766e9edd77728ffc5354ac7f2ca57923277952ec97d4afc64e"
+      }
+    },
+    {
+      "synth": "Rustlr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.2976898842025548,
+        "material": 1,
+        "gesture": 3,
+        "duration": 0.733187735080719,
+        "grain": 0,
+        "density": 0.6725671271220809,
+        "motion": -0.9984208889699088,
+        "pressure": 0.4345332476251116,
+        "folds": 7,
+        "brightness": 0.27486890097837513
+      },
+      "seed": 20261009,
+      "provenance": {
+        "method": "neural-global-controls",
+        "neuralRaw": true,
+        "generator": "generate_cloth_fold",
+        "headMode": "acoustic",
+        "categoricalProposal": [
+          1,
+          1
+        ],
+        "generatorProbability": 0.6002939343452454,
+        "proposalRank": 0,
+        "checkpointHash": "d8beb6af7042a2fe52974bd6ad022f8c7ec27952b5a6a12fa9a247caea1cef97",
+        "anchorSeed": 20261009,
+        "fixedText": [],
+        "fixedRandomness": [
+          "seed"
+        ],
+        "structureScope": "numeric individual synth",
+        "refinement": {
+          "budget": 128,
+          "seed": 20265237,
+          "failures": 0,
+          "initialScore": 3.301955476508666,
+          "finalScore": 2.913984553282882,
+          "trace": [
+            3.301955476508666,
+            3.301955476508666,
+            3.301955476508666,
+            3.301955476508666,
+            3.2761543459776092,
+            3.2761543459776092,
+            3.2761543459776092,
+            3.2761543459776092,
+            3.1223771653406285,
+            3.1223771653406285,
+            3.1223771653406285,
+            3.109874399677492,
+            3.109874399677492,
+            3.109874399677492,
+            3.109874399677492,
+            3.020066669993323,
+            3.020066669993323,
+            3.020066669993323,
+            3.020066669993323,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.970021999058051,
+            2.9683602373652738,
+            2.9683602373652738,
+            2.9683602373652738,
+            2.9683602373652738,
+            2.9683602373652738,
+            2.9683602373652738,
+            2.9683602373652738,
+            2.9683602373652738,
+            2.9683602373652738,
+            2.9683602373652738,
+            2.9683602373652738,
+            2.9683602373652738,
+            2.9683602373652738,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9338674610547875,
+            2.9337496141263757,
+            2.9337496141263757,
+            2.9337496141263757,
+            2.9337496141263757,
+            2.9337496141263757,
+            2.9337496141263757,
+            2.9337496141263757,
+            2.9337496141263757,
+            2.9337496141263757,
+            2.9337496141263757,
+            2.9337496141263757,
+            2.9337496141263757,
+            2.9337496141263757,
+            2.9337496141263757,
+            2.918030352442168,
+            2.918030352442168,
+            2.918030352442168,
+            2.918030352442168,
+            2.913984553282882,
+            2.913984553282882,
+            2.913984553282882,
+            2.913984553282882,
+            2.913984553282882,
+            2.913984553282882,
+            2.913984553282882,
+            2.913984553282882,
+            2.913984553282882,
+            2.913984553282882
+          ],
+          "scope": "full numeric ranges and categorical controls"
+        },
+        "refinementObjective": "soft",
+        "rawStartIndex": 32,
+        "inputPcmHash": "d8d1588c9f8ec8e39ebf7d0f56a95b0327cca0351df9be358e7da72a4c789c01",
+        "origin": "shared22",
+        "softPeriodicity": 2.913984553282882,
+        "preferenceNeuralV2": 1.2779835815137963,
+        "auditionMatchObjective": 2.085452919091895,
+        "auditionWavSha256": "a6e00fe65ee1c7323bc596b7a430c410c92ff408e046385f5e966494760d899f",
+        "auditionTransform": "Exact archived PCM",
+        "targetsSha256": "44d9c678c1da175a933e86af2ca4061861c5addc77290734f2805bc8cb3986d6",
+        "reportSha256": "85a73e0ce9be154bd388200f3a0689911ee2f4f4665bbd13a091229dc93cfb48",
+        "selectionRole": "soft",
+        "retainedArchive": "tools/multisynth/listening_data/2026-10-06-mixr-joint-v1-quick-02",
+        "retainedCandidateId": "5056139cb71ae7e92c28a307b046d7a023a2f73bd275c0fe5a525c1c45fb4b3e",
+        "archiveManifestSha256": "9bfa8e5e98ca3f87fec5d5db3a99d6c97b0f33014aa66001393d2c70f93d55bd"
+      },
+      "origin": "shared22",
+      "score": 2.913984553282882,
+      "waveFile": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/off-model-transfer-v1/005/soft-refined-0.wav",
+      "waveFileSha256": "19c21d8b832eea80a51fee9d51ea3b670a5a3c7e4b8f123a7bba79dd7a6ec8e5",
+      "audioHash": "dca4f58ced12ee5d8fda95f6c3bef5579eac7f9bb47a089f10760ff4f9f51f09",
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "auditionHash": "bb57beb8f3c2a0feedcbd95f1ef7b2519486ed99ed3bfe8f56bf4de0348b94cf",
+      "softDistance": 2.913984553282882,
+      "preferenceDistance": 1.2779835815137963,
+      "legacyDistance": 2.085452919091895,
+      "role": "previous",
+      "label": "Earlier comparison",
+      "file": "previous.wav",
+      "id": "fff621fe9233760c08c8e7dbb6c74d9e9d54e4612876667707f7bacad25152c8",
+      "paramsSha256": "905785aaf2be03cf88ed1ba567ac229c7ac88745872a963beb7de81f29965b2d",
+      "audioSha256": "a6e00fe65ee1c7323bc596b7a430c410c92ff408e046385f5e966494760d899f",
+      "targetId": "cc0937dd996551d0e443b956b2afdb6b6da751786272c6d9ebdc199af36ae977",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/36a86fc2a47814d79bfdf66f74ca6d3e94112801c7c65831cf9bc66cfb5cd1b8.flac",
+        "pcmSha256": "36a86fc2a47814d79bfdf66f74ca6d3e94112801c7c65831cf9bc66cfb5cd1b8",
+        "sampleRate": 44100,
+        "frames": 32334,
+        "channels": 1,
+        "auditionWavSha256": "a6e00fe65ee1c7323bc596b7a430c410c92ff408e046385f5e966494760d899f"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0,
+        "sources": "[{\"synth\":\"Boomr\",\"name\":\"Boomr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5,\"duration\":0.7910616397857666,\"size\":0.06726855946489901,\"pressure\":0.2356865379293229,\"blast\":0.5695705752521084,\"debris\":0.9239349768849581,\"gas\":0.232899419179333,\"aftershock\":0.34320739567229813,\"rubbleSize\":0.14523838830979868,\"spread\":0.6319464885385914,\"tail\":0,\"muffle\":0.5131524328484496,\"mechanism\":7,\"space\":0},\"renderSeed\":0.5},null]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "independent",
+      "label": "Independent models combined",
+      "file": "independent.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "independent",
+        "checkpointHash": null,
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 3.578929385451571,
+          "preference": 1.0094937478294759
+        },
+        "auditionHash": "16e64ed396ab614f4d9ab569966e854d41024b03c72f6f59d21aad94d18fb67f",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "2331d3a4f41a4164bb1a22fc578ef2a26f5bf83c13500f952c2b8ed3e4b92aae",
+      "paramsSha256": "6494879ebe67041bd81b89e87542023b9b61f5dd23a15781257d501ca8e13e94",
+      "audioSha256": "95e2ff3f926e16081a962ebb9c516f74a08a832dd86621ae31678207e3764367",
+      "targetId": "cc0937dd996551d0e443b956b2afdb6b6da751786272c6d9ebdc199af36ae977",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/e56850b5dc356339ea14c95021963569ec2183b2f450b11d3c75ac80be890e36.flac",
+        "pcmSha256": "e56850b5dc356339ea14c95021963569ec2183b2f450b11d3c75ac80be890e36",
+        "sampleRate": 44100,
+        "frames": 34886,
+        "channels": 1,
+        "auditionWavSha256": "95e2ff3f926e16081a962ebb9c516f74a08a832dd86621ae31678207e3764367"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0,
+        "sources": "[{\"synth\":\"Boomr\",\"name\":\"Boomr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5,\"duration\":1.5814305543899536,\"size\":0.5858375137107421,\"pressure\":0.8888369401180052,\"blast\":0.061126116317599774,\"debris\":0.5871884538772372,\"gas\":0.23771214380123715,\"aftershock\":0.482344277597339,\"rubbleSize\":0.5598764080577987,\"spread\":0.29469446145432315,\"tail\":0.17597156381705176,\"muffle\":0.38216505462076766,\"mechanism\":6,\"space\":0.22207471229950992},\"renderSeed\":0.5},null]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "trained",
+      "label": "Trained mixture model",
+      "file": "trained.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "trained",
+        "checkpointHash": "e0444328cb6d96d5f9706bd78dcead51f9f135957830e3e2cb7c7ac7e6d4e7ba",
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 6.607382534314628,
+          "preference": 1.2293313203850247
+        },
+        "auditionHash": "94d599491c47dd336c28effde2a47ccfb29ad614121ea5b17d10ad882ada5b19",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "1fe08d1f769c18f1b48ccac1260f452a93bde724b6cd0191f8f6788d7aa138b0",
+      "paramsSha256": "09b2cc75f63a6fdb524157c8db7117aee23b070d144ae272bf51c19df7857588",
+      "audioSha256": "e7931ce124fd07601e4c8e08830924e8d0877df56de44b704aa6dde75c1ed403",
+      "targetId": "cc0937dd996551d0e443b956b2afdb6b6da751786272c6d9ebdc199af36ae977",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/ce0585a895f8d295161087a123723a4b1e89807f10cc275447c5aa5b6ac21da8.flac",
+        "pcmSha256": "ce0585a895f8d295161087a123723a4b1e89807f10cc275447c5aa5b6ac21da8",
+        "sampleRate": 44100,
+        "frames": 69741,
+        "channels": 1,
+        "auditionWavSha256": "e7931ce124fd07601e4c8e08830924e8d0877df56de44b704aa6dde75c1ed403"
+      }
+    },
+    {
+      "synth": "Squishr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.8200108828023076,
+        "texture": 0,
+        "viscosity": 0,
+        "stretch": 0.281398757287874,
+        "pressure": 0.8210933764288678,
+        "wetness": 0.34127093066294106,
+        "bubbleSize": 0.9033458021673282,
+        "duration": 0.4770983370978533
+      },
+      "seed": 20261012,
+      "provenance": {
+        "method": "neural-global-controls",
+        "neuralRaw": true,
+        "generator": "generate_water_drop",
+        "headMode": "acoustic",
+        "categoricalProposal": [
+          0
+        ],
+        "generatorProbability": 0.8494783639907837,
+        "proposalRank": 1,
+        "checkpointHash": "232e19d4425cc9210ae6c348bbe3983d2b19f623cc8265564bf8de737c4a2c18",
+        "anchorSeed": 20261012,
+        "fixedText": [],
+        "fixedRandomness": [
+          "seed"
+        ],
+        "structureScope": "numeric individual synth",
+        "refinement": {
+          "budget": 128,
+          "seed": 20266246,
+          "failures": 0,
+          "initialScore": 1.4464280555553672,
+          "finalScore": 1.256525148567142,
+          "trace": [
+            1.4464280555553672,
+            1.4464280555553672,
+            1.4464280555553672,
+            1.4464280555553672,
+            1.446112259426692,
+            1.446112259426692,
+            1.3871440809329618,
+            1.3871440809329618,
+            1.3871440809329618,
+            1.31700259895428,
+            1.31700259895428,
+            1.306692683614329,
+            1.306692683614329,
+            1.306692683614329,
+            1.306692683614329,
+            1.306692683614329,
+            1.306692683614329,
+            1.306692683614329,
+            1.306692683614329,
+            1.306692683614329,
+            1.306692683614329,
+            1.306692683614329,
+            1.306692683614329,
+            1.2874021440101953,
+            1.2874021440101953,
+            1.2874021440101953,
+            1.2874021440101953,
+            1.2874021440101953,
+            1.2874021440101953,
+            1.2874021440101953,
+            1.2874021440101953,
+            1.2874021440101953,
+            1.2874021440101953,
+            1.2874021440101953,
+            1.2874021440101953,
+            1.2874021440101953,
+            1.2874021440101953,
+            1.2874021440101953,
+            1.2874021440101953,
+            1.286354476477856,
+            1.286354476477856,
+            1.286354476477856,
+            1.2854654970566661,
+            1.2854654970566661,
+            1.2835514324951975,
+            1.2791444443861948,
+            1.2791444443861948,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.2744762423026126,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.269310059875151,
+            1.260808876220132,
+            1.260808876220132,
+            1.260808876220132,
+            1.260808876220132,
+            1.260808876220132,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142,
+            1.256525148567142
+          ],
+          "scope": "full numeric ranges and categorical controls"
+        },
+        "refinementObjective": "preference",
+        "rawStartIndex": 55,
+        "inputPcmHash": "051b62838ff20490e6cba1f1659e81f8de479989400f30173bdd36616c17b2a9",
+        "origin": "Squishr-specialist",
+        "softPeriodicity": 3.0756399317196603,
+        "preferenceNeuralV2": 1.256525148567142,
+        "auditionMatchObjective": 10.283943615602483,
+        "auditionWavSha256": "2e48910d944e7ec2c3c7ba7f534417e019c91769dd9d003f4b9b11a91330f77c",
+        "auditionTransform": "Exact archived PCM",
+        "targetsSha256": "44d9c678c1da175a933e86af2ca4061861c5addc77290734f2805bc8cb3986d6",
+        "reportSha256": "85a73e0ce9be154bd388200f3a0689911ee2f4f4665bbd13a091229dc93cfb48",
+        "selectionRole": "preference",
+        "retainedArchive": "tools/multisynth/listening_data/2026-10-06-off-model-transfer-v1-quick-02",
+        "retainedCandidateId": "5f14815762046fe646a37a86d6a3ab5fa7b9b5a80bc6670fc27aab1c0d15b207"
+      },
+      "origin": "Squishr-specialist",
+      "score": 1.256525148567142,
+      "waveFile": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/off-model-transfer-v1/006/preference-refined-0.wav",
+      "waveFileSha256": "1823ca48d8642b80e4f86bf4feabd80df84c920eb75b73f2a5723943ae9db4c1",
+      "audioHash": "d442eb95471ab0b7ac43367439cebe8289be0cb553f31c2499664c6ff4dfb3e5",
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "auditionHash": "aa1cbef2641494858fc60fd05d7b892c86ce9db0d4a99d37f90377268098048c",
+      "softDistance": 3.0756399317196603,
+      "preferenceDistance": 1.256525148567142,
+      "legacyDistance": 10.283943615602483,
+      "role": "previous",
+      "label": "Earlier comparison",
+      "file": "previous.wav",
+      "id": "f18323d5a7d514ccceacc414ffad7b1da6f868dcbcdad921454b1279a3fddde3",
+      "paramsSha256": "38903dd504d187de60a3b99d7ee619430fefb108d5dbd52d456ec6cbfd3558a7",
+      "audioSha256": "2e48910d944e7ec2c3c7ba7f534417e019c91769dd9d003f4b9b11a91330f77c",
+      "targetId": "eefe0f79980c6eff57bea987fbdb0134699becb304e267647d3d62429c2f50ea",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/9363d165659a432100785e8682e98300e774f57678b75edec2a3053020cfa477.flac",
+        "pcmSha256": "9363d165659a432100785e8682e98300e774f57678b75edec2a3053020cfa477",
+        "sampleRate": 44100,
+        "frames": 25300,
+        "channels": 1,
+        "auditionWavSha256": "2e48910d944e7ec2c3c7ba7f534417e019c91769dd9d003f4b9b11a91330f77c"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 1,
+        "sources": "[null,{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":1,\"duration\":0.771001303586911,\"pitch\":{\"start\":0.4447638756148833,\"end\":0.6701568349489592,\"curve\":\"Pulse\"},\"tone\":{\"start\":0.8387458510640217,\"end\":0.975669801235199,\"curve\":\"Smooth\"},\"vibrato\":{\"start\":0.17250268748541245,\"end\":0.02416307679414221,\"curve\":\"Linear\"},\"level\":{\"start\":0.8353733826238681,\"end\":0.7729978909061388,\"curve\":\"Ease In\"},\"attack\":0.7669680264876159,\"release\":0.21066489737350685,\"resonance\":0.8057619312842978,\"echo\":0.02023242167917867,\"waveTo\":7,\"morph\":{\"start\":0.5651460922028817,\"end\":0.4438619017601013,\"curve\":\"Bounce\"}},\"renderSeed\":0.5}]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "independent",
+      "label": "Independent models combined",
+      "file": "independent.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "independent",
+        "checkpointHash": null,
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 3.7882873380892095,
+          "preference": 1.2369744782314305
+        },
+        "auditionHash": "b0e4a407220dbe55d8dbacfcf4bab09031f6f33f407c73d19845ce56ec3cddff",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "60417d99c3b50f2349b85f3829f4ebd047bc9d03ea2c99d40258514c2f5facd3",
+      "paramsSha256": "cd96d9b2bf0c4105b3d32498917d7d914876c5d11ed2674b078ed500cdf6424a",
+      "audioSha256": "c524045ddc73f378752c1ba8839d7d68a95d236ea712961eb14d70c711ca9d26",
+      "targetId": "eefe0f79980c6eff57bea987fbdb0134699becb304e267647d3d62429c2f50ea",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/77dba4cc6801b33e8f552987eee8a974511ce1cf4bef00cfec9e549cd0edb881.flac",
+        "pcmSha256": "77dba4cc6801b33e8f552987eee8a974511ce1cf4bef00cfec9e549cd0edb881",
+        "sampleRate": 44100,
+        "frames": 57461,
+        "channels": 1,
+        "auditionWavSha256": "c524045ddc73f378752c1ba8839d7d68a95d236ea712961eb14d70c711ca9d26"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 1,
+        "sources": "[null,{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":9,\"duration\":0.45532587887874204,\"pitch\":{\"start\":0.416909629836159,\"end\":0.567994699739049,\"curve\":\"Triangle\"},\"tone\":{\"start\":0.7314205409375634,\"end\":0.9391436166126956,\"curve\":\"Pulse\"},\"vibrato\":{\"start\":0.22742135029191932,\"end\":0.5275833187760625,\"curve\":\"Ease In\"},\"level\":{\"start\":0.7868272322841511,\"end\":0.8841232943955872,\"curve\":\"Steps\"},\"attack\":0.5838464209609424,\"release\":0.4049218997498427,\"resonance\":0.48950079974498867,\"echo\":0.05970740939506601,\"waveTo\":7,\"morph\":{\"start\":0.31055497555069655,\"end\":0.9659845616164059,\"curve\":\"Steps\"}},\"renderSeed\":0.5}]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "trained",
+      "label": "Trained mixture model",
+      "file": "trained.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "trained",
+        "checkpointHash": "e0444328cb6d96d5f9706bd78dcead51f9f135957830e3e2cb7c7ac7e6d4e7ba",
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 2.4395042741423696,
+          "preference": 1.311538284948258
+        },
+        "auditionHash": "3e037a4fb0c53b73eff62c09150d8c1a663d2ded5e990a8bb3ad6e0a0b2acbdf",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "f9c3bfadaae6384bc51294e4f1fa2d0f8735b9a2cbec623c92f44f1dcd7b89da",
+      "paramsSha256": "df2219865f6de3335cf69fb967f6cefff5710895cd18d1f21d5098778dd1b0fa",
+      "audioSha256": "f14d0c1356f8281f603c1b0e784c4cec5e659680d9d201eb6c29749ad811e35d",
+      "targetId": "eefe0f79980c6eff57bea987fbdb0134699becb304e267647d3d62429c2f50ea",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/b50c0f923c82caa274c7d8dd346a7a9aaacade2422ff3a9981d65f99a6471ac5.flac",
+        "pcmSha256": "b50c0f923c82caa274c7d8dd346a7a9aaacade2422ff3a9981d65f99a6471ac5",
+        "sampleRate": 44100,
+        "frames": 33934,
+        "channels": 1,
+        "auditionWavSha256": "f14d0c1356f8281f603c1b0e784c4cec5e659680d9d201eb6c29749ad811e35d"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0.23745619622353556,
+        "sources": "[{\"synth\":\"Boomr\",\"name\":\"Boomr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.1633370469789952,\"duration\":0.944442287942919,\"size\":0.2509309352215908,\"pressure\":0.14583322877647542,\"blast\":0.8082049579750478,\"debris\":0.2741943634456985,\"gas\":0,\"aftershock\":0.39558183306663525,\"rubbleSize\":0.1312022844669935,\"spread\":0.6442834220608361,\"tail\":0,\"muffle\":0.7784618992084089,\"mechanism\":7,\"space\":0.24022281147821664},\"renderSeed\":0.004717382603491979},{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":4,\"duration\":0.43008437752723694,\"pitch\":{\"start\":0.5147705630823395,\"end\":0.01633170060813427,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.6282583690952431,\"end\":0.19810030318990549,\"curve\":\"Pulse\"},\"vibrato\":{\"start\":0.43444390219098433,\"end\":0.5016347021279459,\"curve\":\"Triangle\"},\"level\":{\"start\":0.6879626348860665,\"end\":0.13696285391769306,\"curve\":\"Smooth\"},\"attack\":0.19599414560239303,\"release\":0.20843981088074306,\"resonance\":0.3819747453780242,\"echo\":0.05665784219119124,\"waveTo\":4,\"morph\":{\"start\":0.029351190513273426,\"end\":0.43576325869305815,\"curve\":\"Steps\"}},\"renderSeed\":0.0047173846989677715}]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "previous",
+      "label": "Earlier comparison",
+      "file": "previous.wav",
+      "provenance": {
+        "method": "actual-Mixr-joint-search",
+        "arm": "pair-preference",
+        "protocolSha256": "7ee470a5870a62f3fc01c27bd4ff7bb926908767427c38381005aa82b54503b0",
+        "reportSha256": "7eb47f578c9fd6a227495cd4a39b8d609f3493e962b0ab844bd188a4a4c8b3d6",
+        "renderSourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+        "searchAttempts": 512,
+        "searchSeed": 20261222,
+        "initialScore": 0.6700806405395674,
+        "softPeriodicity": 3.051019241985449,
+        "preferenceNeuralV2": 0.49616928449100794,
+        "auditionMatchObjective": 13.817461505723152,
+        "auditionHash": "10bd33079485db3eb61ed4cb405b82ec202b6d7c11b465be7668db992a3a53d4",
+        "actualMixrReplay": true,
+        "retainedArchive": "tools/multisynth/listening_data/2026-10-06-mixr-joint-v1-quick-02",
+        "retainedCandidateId": "8704c92c6b738544978f5e8f0fb7d9bf9a6323ec2fa5dfce48affe93f602d400",
+        "auditionTransform": "Exact archived PCM"
+      },
+      "id": "93394407be4b7ed16085173fafee904a72f68ca64c4337d6a394956db845cb2d",
+      "paramsSha256": "511ae32168cb81d0c895560004e8abdb5c25eb271ce828e017bb98ba564e8b9c",
+      "audioSha256": "9658b6da419c2b926dfba5dc043b38ab7ab1bbbd41cd30bf5d6a744d3db38196",
+      "targetId": "7aea38e19e612bda0a8a9ebddea395ef94c85dd0ad174eb538e3a074d80812c3",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/5154ba90f30090a047c89d81e789584267c86e76b719d9e5e9e7163356504f01.flac",
+        "pcmSha256": "5154ba90f30090a047c89d81e789584267c86e76b719d9e5e9e7163356504f01",
+        "sampleRate": 44100,
+        "frames": 41650,
+        "channels": 1,
+        "auditionWavSha256": "9658b6da419c2b926dfba5dc043b38ab7ab1bbbd41cd30bf5d6a744d3db38196"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 0,
+        "sources": "[{\"synth\":\"Boomr\",\"name\":\"Boomr\",\"params\":{\"masterVolume\":0.5,\"seed\":0.5,\"duration\":0.8268522008380114,\"size\":1,\"pressure\":0.6475004396921776,\"blast\":0.9050564934703517,\"debris\":0.768346085059755,\"gas\":0.02752825538575737,\"aftershock\":0.010618796998947357,\"rubbleSize\":0,\"spread\":0.11788690965749751,\"tail\":0.07220887476415323,\"muffle\":1,\"mechanism\":6,\"space\":0.23178580115682063},\"renderSeed\":0.5},null]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "independent",
+      "label": "Independent models combined",
+      "file": "independent.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "independent",
+        "checkpointHash": null,
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 3.885916779145723,
+          "preference": 0.6749643610332792
+        },
+        "auditionHash": "9904b891b9c83d09bdb24c6116d3c6226b650cb61d76e87713cb71c8abc9f0c7",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "f18c71bea223f99ecf0dc45aad4a8c51d941564f0140bf0896ddf01df9244311",
+      "paramsSha256": "3afd24c84d80711ed49441367765578a16bed30fcbfed69b10df37664ac7653d",
+      "audioSha256": "b62d48cfcc8c07b23666151c239fc4d87c76c41a21cc9e690b02218a9704c2f4",
+      "targetId": "7aea38e19e612bda0a8a9ebddea395ef94c85dd0ad174eb538e3a074d80812c3",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/659822c4e4d0b27245eefdf79c8085d25bb54a1c76ab88687849845088311a17.flac",
+        "pcmSha256": "659822c4e4d0b27245eefdf79c8085d25bb54a1c76ab88687849845088311a17",
+        "sampleRate": 44100,
+        "frames": 36464,
+        "channels": 1,
+        "auditionWavSha256": "b62d48cfcc8c07b23666151c239fc4d87c76c41a21cc9e690b02218a9704c2f4"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 1,
+        "sources": "[null,{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":1,\"duration\":0.4285947571202322,\"pitch\":{\"start\":0.21255114674568176,\"end\":0.006582125999833949,\"curve\":\"Pulse\"},\"tone\":{\"start\":0.5402419614884182,\"end\":0.12371847500329947,\"curve\":\"Ease Out\"},\"vibrato\":{\"start\":0.14895852004880816,\"end\":0.08165507084516148,\"curve\":\"Steps\"},\"level\":{\"start\":0.805146009186811,\"end\":0.2256330248298135,\"curve\":\"Smooth\"},\"attack\":0.2779159794985776,\"release\":0.2976895428661056,\"resonance\":0.20294549065052647,\"echo\":0.41353165632559075,\"waveTo\":9,\"morph\":{\"start\":0.20568457275795907,\"end\":0.9931035096182236,\"curve\":\"Bounce\"}},\"renderSeed\":0.5}]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "trained",
+      "label": "Trained mixture model",
+      "file": "trained.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "trained",
+        "checkpointHash": "e0444328cb6d96d5f9706bd78dcead51f9f135957830e3e2cb7c7ac7e6d4e7ba",
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 5.2462320774166455,
+          "preference": 0.6296564016684867
+        },
+        "auditionHash": "4961a503adea38e18017b4d0ea2b3ab962ce7c4d8d7ba708eeb4db1430582a41",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "c22c3f2a7d5b53f0a578b1b1f8970b08dcd3ca1b0ee148b61d37c9dad3faba40",
+      "paramsSha256": "df76c7237ad479ce077c3b4064280173c0c1299ad9d7922006ac1349172cdf00",
+      "audioSha256": "2c881acdee9d10db9bef6e826b660544a5e34079cf4a26ac87fc2c5a697ba63d",
+      "targetId": "7aea38e19e612bda0a8a9ebddea395ef94c85dd0ad174eb538e3a074d80812c3",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/2ccea5440a1b5b818c155d9cb354cbd6233bbac8d5645d8be61fdd57de6710cd.flac",
+        "pcmSha256": "2ccea5440a1b5b818c155d9cb354cbd6233bbac8d5645d8be61fdd57de6710cd",
+        "sampleRate": 44100,
+        "frames": 53677,
+        "channels": 1,
+        "auditionWavSha256": "2c881acdee9d10db9bef6e826b660544a5e34079cf4a26ac87fc2c5a697ba63d"
+      }
+    },
+    {
+      "synth": "Bfxr",
+      "params": {
+        "attackTime": 0.0,
+        "sustainTime": 0.3829673615335908,
+        "sustainPunch": 0.0,
+        "decayTime": 0.5066181994362223,
+        "compressionAmount": 0.0,
+        "frequency_start": 0.5295034769570405,
+        "frequency_slide": 0.0,
+        "frequency_acceleration": 0.0,
+        "min_frequency_relative_to_starting_frequency": 0.0,
+        "vibratoDepth": 0.0,
+        "vibratoSpeed": 0.0,
+        "pitch_jump_repeat_speed": 0.0,
+        "pitch_jump_amount": 0.5306822239024063,
+        "pitch_jump_onset_percent": 0.14705882352941177,
+        "pitch_jump_2_amount": 0.0,
+        "pitch_jump_onset2_percent": 0.0,
+        "overtones": 0.0,
+        "overtoneFalloff": 0.0,
+        "squareDuty": 0.0,
+        "dutySweep": 0.0,
+        "repeatSpeed": 0.0,
+        "flangerOffset": 0.0,
+        "flangerSweep": 0.0,
+        "lpFilterCutoff": 1.0,
+        "lpFilterCutoffSweep": 0.0,
+        "lpFilterResonance": 0.0,
+        "hpFilterCutoff": 0.0,
+        "hpFilterCutoffSweep": 0.0,
+        "bitCrush": 0.0,
+        "bitCrushSweep": 0.0,
+        "waveType": 0,
+        "masterVolume": 0.5
+      },
+      "seed": 1234,
+      "score": 0.9753662961577332,
+      "expert": "original-bfxr",
+      "provenance": {
+        "checkpoint": "/Users/stephenlavelle/Documents/bfxr2/.worktrees/inverse-model-next/tools/invert/runs/v7_real_ft/best.pt",
+        "checkpointSha256": "47f2b5ff6bfdd4abc503810a3a0b9b0c8fed2398a66b3b75b18dcaf0b87f8d98",
+        "budget": 2000,
+        "evaluations": 3001,
+        "allowPitchShift": false,
+        "allowTimeStretch": false,
+        "structureObjective": false,
+        "optimizer": "original StagedOptimizer with neural seeds",
+        "origin": "original-bfxr",
+        "inputPcmHash": "50496a6a301b041d411135fbeb520f694b6967b49847255deca52efe63f1392a",
+        "softPeriodicity": 0.946332322784581,
+        "preferenceNeuralV2": 0.5560644422844656,
+        "auditionMatchObjective": 0.9753662961577332,
+        "auditionWavSha256": "9ec5a4e212e00ed65c9f48d7720555abbda947628684365980a851bc3cd4ef38",
+        "auditionTransform": "Exact archived PCM",
+        "targetsSha256": "44d9c678c1da175a933e86af2ca4061861c5addc77290734f2805bc8cb3986d6",
+        "reportSha256": "85a73e0ce9be154bd388200f3a0689911ee2f4f4665bbd13a091229dc93cfb48",
+        "selectionRole": "soft",
+        "originalBfxrBackend": {
+          "command": [
+            "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+          ],
+          "backendSha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7",
+          "recordedAt": "during inference before gallery export",
+          "note": "Multisynth sourceHash does not cover this native original-Bfxr backend. Final verification must recheck this binary and replay all original candidates.",
+          "targetsSha256": "44d9c678c1da175a933e86af2ca4061861c5addc77290734f2805bc8cb3986d6"
+        },
+        "retainedArchive": "tools/multisynth/listening_data/2026-10-06-off-model-transfer-v1-quick-02",
+        "retainedCandidateId": "c4b509134a70d27c61a254831c777a80299345783d49f651eeb6083ed92d07b5"
+      },
+      "origin": "original-bfxr",
+      "waveFile": "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/multisynth/runs/off-model-transfer-v1/008/original-bfxr-float.wav",
+      "waveFileSha256": "570a3cc1c25a966ad3206a95155c12a80ac2d34fabb84f715a18203b5825d874",
+      "audioHash": "b3d60080de441c142716484a8a28d29fbae1ff74d15912ce2011736a706e923f",
+      "sourceHash": "54f2d8de544b25a01f1952b4387fc89d35afa76fa467ab63986493abf5af75d7",
+      "auditionHash": "14902841d96e2cb566b11318b07707a25f592700b6e75e6a068e00c430ea5402",
+      "softDistance": 0.946332322784581,
+      "preferenceDistance": 0.5560644422844656,
+      "legacyDistance": 0.9753662961577332,
+      "role": "previous",
+      "label": "Earlier comparison",
+      "file": "previous.wav",
+      "id": "3352383bb7895d5fcf3b29a94240e7cd1db332898687cbabd0b72cf1dec09352",
+      "paramsSha256": "aa448d910d50bfedf91853240322db03044bbc9a6aa3b4f94ffaf6cdebe9da8c",
+      "audioSha256": "9ec5a4e212e00ed65c9f48d7720555abbda947628684365980a851bc3cd4ef38",
+      "targetId": "fea806ba44ac825db485a02395c6741687ffd02804ae76a5ec4dd3047e30a4cd",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/a2798deaef3eaef350a1924fe2589bb08f984c4721f7fca2826ec55740ac2ebd.flac",
+        "pcmSha256": "a2798deaef3eaef350a1924fe2589bb08f984c4721f7fca2826ec55740ac2ebd",
+        "sampleRate": 44100,
+        "frames": 39933,
+        "channels": 1,
+        "auditionWavSha256": "9ec5a4e212e00ed65c9f48d7720555abbda947628684365980a851bc3cd4ef38"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 1,
+        "sources": "[null,{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":2,\"duration\":0.7949059487445356,\"pitch\":{\"start\":0.6491467482385318,\"end\":0.7998373441472661,\"curve\":\"Triangle\"},\"tone\":{\"start\":0.7748632187894698,\"end\":0.8336918117707527,\"curve\":\"Ease In\"},\"vibrato\":{\"start\":0.05999437141690723,\"end\":0.4746116381113769,\"curve\":\"Ease In\"},\"level\":{\"start\":0.732619047164917,\"end\":0.3482623901324464,\"curve\":\"Ease Out\"},\"attack\":0,\"release\":0.34723765164611975,\"resonance\":0,\"echo\":0,\"waveTo\":7,\"morph\":{\"start\":0.14974734604808543,\"end\":0.32316175445576295,\"curve\":\"Smooth\"}},\"renderSeed\":0.5}]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "independent",
+      "label": "Independent models combined",
+      "file": "independent.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "independent",
+        "checkpointHash": null,
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 2.7722623577422745,
+          "preference": 0.48874666008665724
+        },
+        "auditionHash": "fe3607479f2eb04be84556f2bd9ea1ba3717ccbbbd446aa9b88089e1bc78736a",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "5260d6945969c28b0108bf13e1fcb63756bde7b122b2b974aefdba290148d01f",
+      "paramsSha256": "58746aa9ec9281d254e86e6488d03229e2c33f37d2af96be0a4cffcb9cbc4d6e",
+      "audioSha256": "ca22d968c5cf78538e71a5635961d8dcd7ea635174e3169226251d28696d23e9",
+      "targetId": "fea806ba44ac825db485a02395c6741687ffd02804ae76a5ec4dd3047e30a4cd",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/51bf21f4415e1947d43037ccc241925fc99ca9126ac07fce376cdbf39321dbc1.flac",
+        "pcmSha256": "51bf21f4415e1947d43037ccc241925fc99ca9126ac07fce376cdbf39321dbc1",
+        "sampleRate": 44100,
+        "frames": 35055,
+        "channels": 1,
+        "auditionWavSha256": "ca22d968c5cf78538e71a5635961d8dcd7ea635174e3169226251d28696d23e9"
+      }
+    },
+    {
+      "synth": "Mixr",
+      "params": {
+        "masterVolume": 0.5,
+        "seed": 0.5,
+        "balance": 1,
+        "sources": "[null,{\"synth\":\"Transfxr\",\"name\":\"Transfxr\",\"params\":{\"masterVolume\":0.5,\"waveType\":5,\"duration\":0.739727700626952,\"pitch\":{\"start\":0.5272095144597208,\"end\":0.7124031746996546,\"curve\":\"Steps\"},\"tone\":{\"start\":0.8184055348766786,\"end\":0.8717768492931374,\"curve\":\"Ease In\"},\"vibrato\":{\"start\":0.00769371827339999,\"end\":0.2442209715870743,\"curve\":\"Pulse\"},\"level\":{\"start\":0.731989184141022,\"end\":0.4428217687981662,\"curve\":\"Ease Out\"},\"attack\":0,\"release\":0.41846609756335784,\"resonance\":0,\"echo\":0.004256527412787332,\"waveTo\":2,\"morph\":{\"start\":0.4113504049202442,\"end\":0.3962028608820743,\"curve\":\"Ease In\"}},\"renderSeed\":0.5}]"
+      },
+      "seed": 0,
+      "sourceHash": "d19090bff8f845c8299fa0250457ae1aef74fab1be67f6d86c3d01dc7a4af7c5",
+      "role": "trained",
+      "label": "Trained mixture model",
+      "file": "trained.wav",
+      "provenance": {
+        "method": "pair-inverse-v1",
+        "arm": "trained",
+        "checkpointHash": "e0444328cb6d96d5f9706bd78dcead51f9f135957830e3e2cb7c7ac7e6d4e7ba",
+        "protocolSha256": "e1b2d2afc5bc8f1c8d9e3a5467a950eaaa70ede70e5313c8e9a23722e36740d4",
+        "reportSha256": "e4399120d425e7d5d2f4898b1e607c1523d37750c4252584f9f328d31eafd57f",
+        "scores": {
+          "soft": 2.975969769987664,
+          "preference": 0.6188448839620725
+        },
+        "auditionHash": "88f5c5d7ac25f1dc17b68cb6934443902cf79528fb6cc1b05406e45cbd105e5f",
+        "actualMixrReplay": true,
+        "searchAttempts": 256
+      },
+      "id": "cb7e9628591898a3120bc84760f4f88fa7190cb4a1f80e8aedf9a5b354eda9ae",
+      "paramsSha256": "7960ce668d3f0c9ddbdde9f48af08e6426ba2bc746ad775215a087990f9ef845",
+      "audioSha256": "f307d2e77a5256ca457906ec2c476dee6404f779c2d23b6f53107f852773d57a",
+      "targetId": "fea806ba44ac825db485a02395c6741687ffd02804ae76a5ec4dd3047e30a4cd",
+      "likeness": null,
+      "usefulness": null,
+      "audio": {
+        "file": "audio/44b99db4579d345d19fd0e4aea09a350ae6512e0603e0ca596a4e5e7faca7119.flac",
+        "pcmSha256": "44b99db4579d345d19fd0e4aea09a350ae6512e0603e0ca596a4e5e7faca7119",
+        "sampleRate": 44100,
+        "frames": 47628,
+        "channels": 1,
+        "auditionWavSha256": "f307d2e77a5256ca457906ec2c476dee6404f779c2d23b6f53107f852773d57a"
+      }
+    }
+  ],
+  "ratingMeaning": {
+    "likeness": "Human likeness to reference",
+    "usefulness": "Useful/fun game sound"
+  },
+  "audioMeaning": "Exact decoded PCM from audition WAVs, losslessly stored as PCM16 FLAC"
+}

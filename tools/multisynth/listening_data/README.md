@@ -58,6 +58,21 @@ external generalization.
 | `2026-10-06-mixr-transfer-v1-quick-01/` | 4 | 11 |
 | `2026-10-06-mixr-joint-v1-quick-01/` | 5 trials / 4 references | 15 |
 | `2026-10-06-mixr-joint-v1-quick-02/` | 8 trials / 4 references | 24 |
+| `2026-10-06-pair-inverse-v1-quick-01/` | 8 references | 24 |
+
+The twenty-fourth archive completes all eight pair-inverse trials, with all
+24 candidates auditioned and 32 exact PCM files retained. The trained mixture
+model wins none. Independent inference wins the footstep as similar (a Transfxr
+singleton) and hit as least-bad (Boomr + Transfxr). Earlier cloth and original
+Bfxr coin win as very-close; earlier laser is similar, earlier chains least-bad.
+Door and bell reject all options. Twelve strict heard pairs are retained, plus
+12 candidate-scoped qualitative labels: 6 not-close, 2 similar, 2 very-close, 2 least-bad.
+The earlier cloth clip is unchanged from its previous similar rating; preserve
+both contexts without claiming a new audio improvement. The soft-periodicity
+scorer agrees with 11/12 strict preferences, the fitting preference scorer 8/12,
+and MatchObjective 7/12. This motivates a separately validated listener-scorer
+experiment, not promotion of the failed pair inverse. See the
+[complete pair review](../evaluations/pair-inverse-v1-quick-01-human-review.json).
 
 The twenty-third archive completes all eight joint-fitting trials. The first five
 responses are unchanged. The additional laser trial chooses the new Boomr +

@@ -1,0 +1,101 @@
+{
+  "complete": true,
+  "experimentId": "35cb5ab0830e73963927be2f0912287584c84b78bb6644698e33386839372584",
+  "targetCount": 8,
+  "optionCounts": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+  ],
+  "resultsSha256": "1e87d69d8fd2f9f0f923bbf62e607e5a340a1addf1310daf493e9d6875ec640c",
+  "htmlSha256": "62b1c097999e47441946737059f2512c4745b61e8e9799cf22fc644942fc171b",
+  "reportSha256": "86f00d5cd8b8660fafd6c552763822dccc36c1e5fa0d04987b293c57f9e9f5f4",
+  "scriptSha256": "2219c7583cdee829e929aa1d4a504a1e6d412ab233c8413ad4a65d8eb4fae0e8",
+  "audioFiles": {
+    "001/option-1.wav": "f19149e34429046547a5ef39fd414443cc47b015f0fc7d1d5950ffcc629cd26e",
+    "001/option-2.wav": "493053a02f764d96cdb2577b9890fbf1596c760fad3d7463198868ce8ef826b4",
+    "001/option-3.wav": "b3ca352c62bf8a587cff9128d5a0e11fe3ddcb31861c1cea0be42b500924e17b",
+    "001/target.wav": "d46d38bf06569e0cfacc4f48e23942d8c6ab8b842f1bae4c25ef63b742f8ac40",
+    "002/option-1.wav": "fd159ccceb5fc9802423350a31201a0242d53ccf83b6d6ee0c05a638a53cce92",
+    "002/option-2.wav": "76d345842c71a98a2ae1ea167db716ab6985187ee71f4038bb21b28991693eeb",
+    "002/option-3.wav": "5d67fa25425fa0142e6d431d3820c5bbe44d54386021cad0e7d10146ad8a262d",
+    "002/target.wav": "8ddb4f7fcfdfc1af17fde593c000ce986dcf9ede81e7a026f6c34216ecd08de2",
+    "003/option-1.wav": "c2bbfc63738e2c801c9df7f1b70b2b0d07d28a6ab68e95d03a6273a32518ffd0",
+    "003/option-2.wav": "5f2875530301e9ee1198b81ca0cdd0d9aa51e4fe478b16b5f280aaf9499c5a26",
+    "003/option-3.wav": "310c6fefa1639cbe07679c80dd381aa9bbde8e40b99f53bddf08f43b4793ec84",
+    "003/target.wav": "846d1b9ef0c6f141356c09554df74a749a5fd58a1ea2659c3816352438399760",
+    "004/option-1.wav": "f279c44d8f9fa8ce6862a1c60205b5ebe3e45c9849938bb0d00c110c45040fe8",
+    "004/option-2.wav": "44824873217e0bd7754b199998f907365de4a8b8b9223d6bf049f78a0a34b321",
+    "004/option-3.wav": "c792f4af119f6dcd9e1f81d937decd05ea835118255290b6de42a7e491ae1854",
+    "004/target.wav": "a34e6c34f543fea6596ea720362ef9ee243aea2199d2cea5b88dc3ab0a301a3c",
+    "005/option-1.wav": "01fd935e4d64f4796dd51a7d4e504029402e64d8234af8ed7f597d2f5e0876c9",
+    "005/option-2.wav": "2c1e3a28cef1b13745de9e0cebe8721afbb4af978e87758d559e4e938ec05926",
+    "005/option-3.wav": "946e8c3e119a3c6ffb7fbe6f4644105520ad07ec4514c4e85f249ac95ffe1b8b",
+    "005/target.wav": "9cac0fea546893b4a2ec274ec79ee44cce63a45b06981f9fdbcc9c75a3c768d7",
+    "006/option-1.wav": "da48659b623019eace621f22790e9ac1374385d9ef8a2f77d9f99c48c394adc2",
+    "006/option-2.wav": "7398adca87e56070ae1ad509e8a270dd60f932baed7592e9804fdd89d31ee46c",
+    "006/option-3.wav": "d7e84c1cea862f45d6245178aa0bd66ead0c1504d100f714d22db245e17a4653",
+    "006/target.wav": "9788436fe82a3f105d9b2504235b6d6f66c93fbe37316152b3eb6fcf2c452386",
+    "007/option-1.wav": "e91a353ea1cfd05e35662eec044be61a6c110f4febd62a77a61fcfc360972d6f",
+    "007/option-2.wav": "8d65d89cca50e092029c47e26b32c34ed82a1c9a8a6c5d7a06a5c46c3b091853",
+    "007/option-3.wav": "031c1d62153270a27f56b8cdaa774131293ea9312f2b675369c0b83f24e0a8bf",
+    "007/target.wav": "a34cb27d0a8c443cbb1a73852340ffd8bbe9c06f20725a61cbe526f46d6f4d73",
+    "008/option-1.wav": "a23b04103a2af96b7df2b5c13a6e44626d24ab58227627ce8b68031d6f891bf0",
+    "008/option-2.wav": "80c8bf5c7434303054704caa95e5114ca9458d00d8290ae1a0e6bd75ed53366c",
+    "008/option-3.wav": "5662d420296695c09f192df5a0fa9d1b96a7e22a3585b08bfcd217f36c9c02ea",
+    "008/target.wav": "3800a1baea517c673a92eb441a270a1da8e8288301db78c32f6dd173eb134f43"
+  },
+  "uiCodeHashes": {
+    "quick_choice.js": "0bb2e27258fa918053f77e737b45200eb9389ec90fd0e185e71ef85bef4f911e",
+    "coverage_feedback.js": "db4cd83adfa7f788378ac0b0941f473376a730d4c55133f6d797250eeeee1d61",
+    "coverage_feedback.py": "50b9b03368addb2729f1689a208070347544f4f62150158bbcd08f4360b73b75",
+    "quick_audio.js": "0abfac40fe8cd7a1c9f79143458b45c7ef79342892113fdc53f9ca15cab7f83a",
+    "quick_listening.html": "167c746f5ec3f77802b799cd1659dd85c8d0fe599ffc365b4376cf4fc2777cd4",
+    "quick_listening.css": "833a39c37a9140b9e995d693dcd648266204cc022107b2c398c32468d231f7a7",
+    "quick_mismatch.js": "177bd0dd544d3bbc058b25f0ef2357b18723e9884449626a5e3a1423d9d82a2f",
+    "quick_mismatch.css": "81a2bc1a435c3a6afe87a9e7ff27c86b5b7d398053ed90dd7f5108bd57b211f0",
+    "quick_listening_diagnostic.js": "8a3b3d082f9653e27c17b7f7c989ddbf79592fd847e536d2745f72a9f5d71b41"
+  },
+  "publicationBindings": {
+    "scriptSha256": "bf44fce2da182b5bf33c2e1d10f3881b4d00846fe6455ff6653e921730acc9c6",
+    "bfxrBackend": {
+      "command": [
+        "/Users/stephenlavelle/.codex/worktrees/1136/bfxr2/tools/bfxr_native/build/bfxr_worker"
+      ],
+      "sha256": "2bd67399f64ba054d9588378c6a06132d3b618a1f4e2b662a4f88445330afcb7"
+    },
+    "historicalManifestSha256": "c222380bbe7dd6dfb34aa2223b3fdb91f82d79d0e37b1ee811933955bbaa48ef",
+    "backendHashTiming": "Frozen before inference and rechecked at publication."
+  },
+  "originalBfxrOverlap": {
+    "clothes/cloth1.ogg": [
+      "train"
+    ],
+    "footstep/footstep08.ogg": [
+      "train"
+    ],
+    "footstep/footstep_carpet_000.ogg": [
+      "train"
+    ],
+    "hit/OBJLug_Case_Closed06_InMotionAudio_InstrumentCase.wav": [
+      "train"
+    ],
+    "hit/Jump Water.wav": [
+      "train"
+    ],
+    "bell/impactBell_heavy_002.ogg": [
+      "train"
+    ],
+    "laser/Fox - Laser Gun.wav": [
+      "train"
+    ],
+    "collect/mario 3 - get item.WAV": [
+      "train"
+    ]
+  }
+}
