@@ -56,6 +56,26 @@ external generalization.
 | `2026-10-06-off-model-transfer-v1-quick-01/` | 5 | 15 |
 | `2026-10-06-off-model-transfer-v1-quick-02/` | 8 | 24 |
 | `2026-10-06-mixr-transfer-v1-quick-01/` | 4 | 11 |
+| `2026-10-06-mixr-joint-v1-quick-01/` | 5 trials / 4 references | 15 |
+
+The twenty-second archive is a **partial five-of-eight-trial export**, not a
+complete result. All four soft-score trials are present: hit, door and laser
+are none-close, and cloth is a similar tie. The fifth trial (preference-score
+hit) selects the exact earlier mixture as similar. No newly fitted candidate
+receives very-close. Trials 006–008 (preference-score door, laser, cloth) remain
+unsubmitted. Identify missing trials by target ID/folder, not repeated filename.
+
+Playback records require care: the first hit's pair is not logged as heard,
+and the fifth trial's chosen earlier clip is not logged as heard in that trial.
+The latter exact reference/candidate PCM was heard in trial 001. Retain the
+explicit choice and adequacy, but do not manufacture current-trial auditions:
+the existing conservative trainer creates **zero strict pairs** from this export.
+There are 13 response-scoped labels (nine not-close, four similar), 11 with
+playback recorded in the same trial. The unheard hit pair is not an independently
+audition-supported negative. The exact earlier hit clip receives none-close
+and similar in different contexts; preserve both without averaging or claiming
+that unchanged audio improved. See the
+[partial joint-fitting review](../evaluations/mixr-joint-v1-quick-01-human-review.json).
 
 The twenty-first archive contains all four Mixr composition trials, with all
 11 candidates recorded as heard. The two-source hit/pat wins but is **least-bad**;

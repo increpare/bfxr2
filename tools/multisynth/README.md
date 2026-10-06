@@ -15,7 +15,7 @@ Newer independent-expert experiments are retained alongside that baseline.
 human judgments for two additional native rises and one filtered bouncing rise.
 The same partial submission rejects both Footsteppr transfer options and prefers
 an older Boomr recreation rated **roughly similar**. Three native/altered positives
-do not establish general success on real recordings. All twenty-one feedback archives,
+do not establish general success on real recordings. All twenty-two feedback archives,
 including exact audition PCM and immediate candidate-scoped adequacy, are retained.
 
 The new [Squishr specialist](NEURAL_V2.md#dedicated-squishr-experiment-2026-10-05)
@@ -127,6 +127,17 @@ the published run was restarted from the corrected protocol. The corrections
 passed independent review. Five joint-search tests, 44 feedback tests and five
 native composition tests passed; all 34 served page/audio assets match local
 hashes. No user choices or audition telemetry were fabricated during verification.
+
+The [first joint-fitting feedback](evaluations/mixr-joint-v1-quick-01-human-review.json)
+contains **five of eight trials**, with no very-close recreation. Soft-score hit,
+door and laser are none-close; cloth is a similar tie. The first preference-score
+trial favors the exact earlier hit mixture as similar. No new pair has established
+improved audible likeness. The soft hit pair has no recorded audition, so its
+individual adequacy remains uncertain. The preference-block hit winner was heard
+in an earlier trial but not logged in the current one; preserve its explicit
+judgment without inventing a current-trial strict training pair. Three existing
+comparisons remain pending. These results are not verified training teachers,
+and the partial export must not be presented as a completed eight-trial verdict.
 
 The earlier [specialist experiment](evaluations/specialists-v1-plan.json) trains
 independent Boomr and Footsteppr models on 12,288 examples each. The older shared

@@ -168,7 +168,7 @@
       "status": "one-real-tagged-reachable-positive-after-smooth-search",
       "evidence": "Five tagged references yielded one similar and four least-bad winners. A frozen 64,415-training-preset search plus four bounded refinement starts per target produces ten novel scorer-selected alternatives, all from retrieved starts. All 1,065 retained candidate waveforms replay exactly. Numerical improvement does not yet establish useful teachers or audible recreation.",
       "source": "evaluations/tagged-coverage-v1-evaluation.json",
-      "nextTest": "Co-adapt actual Mixr source controls with fixed synth identities; equal512-mutation single-source controls, two frozen scorers, same four external development sources. Compare exact old audio and all fixed cases in eight three-option trials. Not neural retraining, independent generalization, or verified training teachers.",
+      "nextTest": "Complete existing preference-block door, laser and cloth judgments before concluding the fixed8-trial comparison. Do not regenerate the page, infer missing labels, discard contextual differences, or distill rejected/least-bad fits as successful teachers.",
       "observations": [
         {
           "session": "2026-10-05-tagged-coverage-quick-01",
@@ -194,6 +194,11 @@
           "session": "2026-10-06-mixr-transfer-v1-quick-01",
           "finding": "All four composition trials judged, all11 options heard. Mixture wins hit but least-bad; door none-close; laser least-bad tie; cloth similar tie. Zero very-close. One strict pair favors mixture despite soft and frozen-preference disagreement; legacy agrees. Blending whole-reference predictions without co-adapting controls did not establish adequate coverage.",
           "source": "evaluations/mixr-transfer-v1-quick-01-human-review.json"
+        },
+        {
+          "session": "2026-10-06-mixr-joint-v1-quick-01",
+          "finding": "Partial5/8 joint-fitting trials: soft hit/door/laser none-close, cloth similar tie; first preference trial favors exact earlier hit mixture as similar. Zero very-close. Soft hit pair not recorded heard; preferred earlier hit heard in prior trial only. Preserve responses but zero conservative current-trial strict pairs. Three preference-block trials pending. Lower losses have not established new adequate teachers.",
+          "source": "evaluations/mixr-joint-v1-quick-01-human-review.json"
         }
       ]
     },
