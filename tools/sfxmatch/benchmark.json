@@ -1,0 +1,1361 @@
+{
+ "version": 1,
+ "seed": 20261007,
+ "scale": {
+  "1": "unrelated",
+  "2": "same family, wrong sound",
+  "3": "roughly similar",
+  "4": "close",
+  "5": "very close"
+ },
+ "external": [
+  {
+   "tag": "animal",
+   "file": "animal/monsterRoar2.wav",
+   "sha256": "3e42c2190594f7d499e33662f8ae3911526805c84496f8745a557f3c415f510e",
+   "seconds": 0.808,
+   "heardBefore": false,
+   "id": "ext-001"
+  },
+  {
+   "tag": "attack",
+   "file": "attack/ICEBrk_Skill Freeze Whoosh Break Impact Layered Movement Shatter 03_ESM_TDG.wav",
+   "sha256": "ce74c26069a84d55ba7c5fa7a01369ec3b38f88fc787b02ced9d7d1e02ffcc55",
+   "seconds": 2.37,
+   "heardBefore": false,
+   "id": "ext-002"
+  },
+  {
+   "tag": "attack",
+   "file": "attack/slash2.wav",
+   "sha256": "b7080cd6117c0368a87e3ebfca63147b84b297bdac4ba0142f95eb0d7d335e95",
+   "seconds": 0.93,
+   "heardBefore": false,
+   "id": "ext-003"
+  },
+  {
+   "tag": "bell",
+   "file": "bell/clothBelt2.ogg",
+   "sha256": "d545b1d9f20e6188140aaf551a96f1e82fe0d15f7ca066fac8b065e1231e0038",
+   "seconds": 0.58,
+   "heardBefore": true,
+   "id": "ext-004"
+  },
+  {
+   "tag": "bird",
+   "file": "bird/Bird Sounds.WAV",
+   "sha256": "b7e6a6985e2182452977e32c60e7fc705cf80a36151c6d49f4f1139bffb34370",
+   "seconds": 0.356,
+   "heardBefore": true,
+   "id": "ext-005"
+  },
+  {
+   "tag": "bird",
+   "file": "bird/Birds 6.wav",
+   "sha256": "599b288f9dffb1f5ef6a104d1bad74f89f0e3b2a9078d443ddcd4c90526a866e",
+   "seconds": 0.653,
+   "heardBefore": false,
+   "id": "ext-006"
+  },
+  {
+   "tag": "carbeep",
+   "file": "carbeep/VEHHorn_Honda CB500F Horn Long 02_SNDBTS_MCH.wav",
+   "sha256": "050c8c8a66099e0dea295131c8fb96f1afcebb6eaebda18a7abde15e7a77c441",
+   "seconds": 1.19,
+   "heardBefore": false,
+   "id": "ext-007"
+  },
+  {
+   "tag": "card",
+   "file": "card/bookOpen.ogg",
+   "sha256": "953390534377222bee89ac8cd9e60a58fdc037c71a4d7c18c43cd647c7f34ba8",
+   "seconds": 0.154,
+   "heardBefore": false,
+   "id": "ext-008"
+  },
+  {
+   "tag": "card",
+   "file": "card/card-slide-5.ogg",
+   "sha256": "8638ab0c17f029aded0e27a4f9b9bb9f8c621b19a6e9975e855cb40ea63e2201",
+   "seconds": 0.601,
+   "heardBefore": false,
+   "id": "ext-009"
+  },
+  {
+   "tag": "chains",
+   "file": "chains/beltHandle1.ogg",
+   "sha256": "2ef665bd8b65dbe669f4560be38a6d8f04a162e618b15a49e3e71b58e558aab0",
+   "seconds": 0.27,
+   "heardBefore": true,
+   "id": "ext-010"
+  },
+  {
+   "tag": "chips",
+   "file": "chips/chip-lay-1.ogg",
+   "sha256": "4b2111252ccb64eed67f171e061053849cfbb29873536c03948646f244a3905c",
+   "seconds": 0.162,
+   "heardBefore": false,
+   "id": "ext-011"
+  },
+  {
+   "tag": "chips",
+   "file": "chips/chips-handle-6.ogg",
+   "sha256": "527d4d3de55cc261dc476329b71a750c296f3ad633ac50318d913976bb89857c",
+   "seconds": 0.46,
+   "heardBefore": false,
+   "id": "ext-012"
+  },
+  {
+   "tag": "click",
+   "file": "click/MUSCInst_KeyPress64_InMotionAudio_Saxophone.wav",
+   "sha256": "bc8bac5955e4a7b5c7a47120d402b1b58d4e28acb133cec96b1d01105371137e",
+   "seconds": 0.39,
+   "heardBefore": false,
+   "id": "ext-013"
+  },
+  {
+   "tag": "click",
+   "file": "click/SBvr_Mode Select Wheel 006.wav",
+   "sha256": "93d9dac69dc063d3b8e243f8d7dd8b100fba17567f67958840b318163af0a83b",
+   "seconds": 1.03,
+   "heardBefore": false,
+   "id": "ext-014"
+  },
+  {
+   "tag": "clothes",
+   "file": "clothes/cloth4.ogg",
+   "sha256": "e7ab9a6c4466dea874196c61f59bf1da05cfe58748f42fadd695d441a154a99b",
+   "seconds": 0.384,
+   "heardBefore": true,
+   "id": "ext-015"
+  },
+  {
+   "tag": "collect",
+   "file": "collect/Mario - Super Jump Coin Hit.wav",
+   "sha256": "efa14b57daad3cf3c0f072163f1eaaeb9020ff27fd270f5546098c42f35643b0",
+   "seconds": 0.53,
+   "heardBefore": true,
+   "id": "ext-016"
+  },
+  {
+   "tag": "computer",
+   "file": "computer/robo_talk.wav",
+   "sha256": "405f8bbc7adcdae6815b249b1551423407f5b157947c386340faf161b94e6391",
+   "seconds": 0.893,
+   "heardBefore": true,
+   "id": "ext-017"
+  },
+  {
+   "tag": "dice",
+   "file": "dice/dice-shake-2.ogg",
+   "sha256": "47e8e2cb0adb95bcd7348b58db8dc2bbfe3c553e50a4e9ef007e67891ed51ca2",
+   "seconds": 1.22,
+   "heardBefore": false,
+   "id": "ext-018"
+  },
+  {
+   "tag": "die",
+   "file": "die/charm2.wav",
+   "sha256": "d161711f9e872a84d289f26097f57028ef444959afd79c0233b74aef9f3ae24e",
+   "seconds": 2.11,
+   "heardBefore": true,
+   "id": "ext-019"
+  },
+  {
+   "tag": "door",
+   "file": "door/VEHDoor_Car Foley Car Door Open and Close Exterior 04 Perspective A_SNDBTS_CRS-MMM.wav",
+   "sha256": "e1fa457aad41930050a8b5723fd468f8c1a33ce46ea5944031c3585a9b2bd8d8",
+   "seconds": 2.67,
+   "heardBefore": true,
+   "id": "ext-020"
+  },
+  {
+   "tag": "door",
+   "file": "door/door_close01.wav",
+   "sha256": "cac71a82d78e6b40b7c3b675cc9eb6eaf128b82fe368774eb1ff266802fd58b3",
+   "seconds": 0.467,
+   "heardBefore": false,
+   "id": "ext-021"
+  },
+  {
+   "tag": "double_jump",
+   "file": "double_jump/flap_once.wav",
+   "sha256": "76573984a769f834c55195ae517d102685efb84f9a075f94195a1fc3234cd0d6",
+   "seconds": 0.17,
+   "heardBefore": true,
+   "id": "ext-022"
+  },
+  {
+   "tag": "draw_weapon",
+   "file": "draw_weapon/knifeSlice2.ogg",
+   "sha256": "6c2064d0ef988d1ec3d56868e823ea8823a5cac00f2742560052633529407def",
+   "seconds": 0.47,
+   "heardBefore": false,
+   "id": "ext-023"
+  },
+  {
+   "tag": "explode",
+   "file": "explode/GLASMvmt_Whoosh Glass Crystal Fragments Sharp Shards Dry 05_ESM_EMWI.wav",
+   "sha256": "3c9eecab76ef681d0e2476eedc9ad550c48f68ad42c1431acaf7ec36532f68c8",
+   "seconds": 2.42,
+   "heardBefore": false,
+   "id": "ext-024"
+  },
+  {
+   "tag": "explode",
+   "file": "explode/enemyDie.wav",
+   "sha256": "a3659e69a5298375076de111e18ebcc78dcd245d22c82eb63301beb1f322fe24",
+   "seconds": 1.093,
+   "heardBefore": false,
+   "id": "ext-025"
+  },
+  {
+   "tag": "fall",
+   "file": "fall/Falling.wav",
+   "sha256": "78ce89f3d3012d29c3c29e2188a99a03b1c2ced62bef7802322fd2c31755d45b",
+   "seconds": 1.443,
+   "heardBefore": false,
+   "id": "ext-026"
+  },
+  {
+   "tag": "footstep",
+   "file": "footstep/footstep04.ogg",
+   "sha256": "fd264d72a7cd622b82abde202f4ed09fa7de95d34c36473ee938ce66cdf39830",
+   "seconds": 0.3,
+   "heardBefore": false,
+   "id": "ext-027"
+  },
+  {
+   "tag": "footstep",
+   "file": "footstep/footstep_carpet_000.ogg",
+   "sha256": "b9524658b52a99a20590f8feefc103088637fd13ea8ec35811aee785e1f2f330",
+   "seconds": 0.145,
+   "heardBefore": true,
+   "id": "ext-028"
+  },
+  {
+   "tag": "forbidden",
+   "file": "forbidden/error_005.ogg",
+   "sha256": "3f75b11df5b06d68d2c25fbf0e9c9d9e7dd9250562a4007ee34856b8a309a2ae",
+   "seconds": 0.21,
+   "heardBefore": false,
+   "id": "ext-029"
+  },
+  {
+   "tag": "hit",
+   "file": "hit/C Falcon - Jump Flip Hit.wav",
+   "sha256": "a64f7c0ba9b3215e247e3ba1568f41c3bd0566dd484f67e1bf77c4f0b8359515",
+   "seconds": 1.23,
+   "heardBefore": true,
+   "id": "ext-030"
+  },
+  {
+   "tag": "hit",
+   "file": "hit/PUNCHIMPACTONHUMAN.WAV",
+   "sha256": "ecfd507d57f5f959a87ca64b5c8ce4df37dcb44205ad1f5e825656f1be06f2a6",
+   "seconds": 0.323,
+   "heardBefore": false,
+   "id": "ext-031"
+  },
+  {
+   "tag": "jump",
+   "file": "jump/Egg Jump.wav",
+   "sha256": "0c688fddf8a2a768d59d6d8c507ddca8d876a0762408870629e40dbc9b1fc43e",
+   "seconds": 0.252,
+   "heardBefore": false,
+   "id": "ext-032"
+  },
+  {
+   "tag": "jump",
+   "file": "jump/Mini-Jump.wav",
+   "sha256": "508a2dafa50d344acc603c54f1682fa421c509ff7f87aef4fe89fb1ed2b96025",
+   "seconds": 0.2,
+   "heardBefore": false,
+   "id": "ext-033"
+  },
+  {
+   "tag": "laser",
+   "file": "laser/Fox - Laser Gun.wav",
+   "sha256": "557f2d414f057388c3ad8f511061bce426934f8f25c10c3ed1f2634197c8b81d",
+   "seconds": 0.383,
+   "heardBefore": true,
+   "id": "ext-034"
+  },
+  {
+   "tag": "magic",
+   "file": "magic/fireMagic.wav",
+   "sha256": "b337316142e250fce62b63ff2a4b8e0e814448fd5cf926613ba07f1a35ff42dc",
+   "seconds": 1.187,
+   "heardBefore": false,
+   "id": "ext-035"
+  },
+  {
+   "tag": "misc",
+   "file": "misc/exhaust.wav",
+   "sha256": "e87be0849ff537c726033271de80d6bdcdee87951b539120eaeaff019073c8bc",
+   "seconds": 1.573,
+   "heardBefore": true,
+   "id": "ext-036"
+  },
+  {
+   "tag": "monster",
+   "file": "monster/SNDB2DIE.wav",
+   "sha256": "5895b006474523624e2571396270f3343cc117f39912e234c2328b550f2726c3",
+   "seconds": 1.396,
+   "heardBefore": true,
+   "id": "ext-037"
+  },
+  {
+   "tag": "motiv",
+   "file": "motiv/Interface Arp Reveal Down Long.wav",
+   "sha256": "b289ca1213e055d706da72741f4c2c4de7cbecbabd0601b9a8e21f64549a06eb",
+   "seconds": 0.78,
+   "heardBefore": false,
+   "id": "ext-038"
+  },
+  {
+   "tag": "motiv",
+   "file": "motiv/SBmb_Music Box A 013.wav",
+   "sha256": "18fca8bffc680194363e308a83d88b007231dec4217ed180061f929f57b839fe",
+   "seconds": 2.3,
+   "heardBefore": false,
+   "id": "ext-039"
+  },
+  {
+   "tag": "power_up",
+   "file": "power_up/Power Up.WAV",
+   "sha256": "321d7b85dcf15f0d7a81e15023eecdbf1bb99e8630f16fbff70f074f28d81e74",
+   "seconds": 0.71,
+   "heardBefore": false,
+   "id": "ext-040"
+  },
+  {
+   "tag": "select",
+   "file": "select/OBJTape_VelcroRip29_InMotionAudio_Velcro.wav",
+   "sha256": "49da8da82cc2a80ed523972d0cbf0924ca93e66efd7a8987b2e9702b795af76b",
+   "seconds": 0.23,
+   "heardBefore": false,
+   "id": "ext-041"
+  },
+  {
+   "tag": "select",
+   "file": "select/onscreen.wav",
+   "sha256": "640b20285fa34410d1fce6d07a0120b93011ff018a24ba4c3f9095fc725bc64d",
+   "seconds": 0.715,
+   "heardBefore": false,
+   "id": "ext-042"
+  },
+  {
+   "tag": "shoot",
+   "file": "shoot/FlecheteGunMinigunShoot.wav",
+   "sha256": "677ca6852bf3fb8daee3b16268d117f14b22bb4d524e7a33808764e3cf380b76",
+   "seconds": 0.151,
+   "heardBefore": false,
+   "id": "ext-043"
+  },
+  {
+   "tag": "shoot",
+   "file": "shoot/TekBowShoot.wav",
+   "sha256": "f75cb5b326d2e406e28b1a90dd96e300e2ca2100824dfab0f8dfc75392b1cc60",
+   "seconds": 1.387,
+   "heardBefore": false,
+   "id": "ext-044"
+  },
+  {
+   "tag": "slime",
+   "file": "slime/slime_000.ogg",
+   "sha256": "480ee82b690136ea9db6966a3c3033356b8274752795c4e37afd6b6defcfacff",
+   "seconds": 0.5,
+   "heardBefore": true,
+   "id": "ext-045"
+  },
+  {
+   "tag": "step",
+   "file": "step/Step_R_Forward.wav",
+   "sha256": "e8edd5f8f16efaa2ee737a237d334d1eddc45002ba64b1977114f71987503896",
+   "seconds": 0.517,
+   "heardBefore": false,
+   "id": "ext-046"
+  },
+  {
+   "tag": "step",
+   "file": "step/step2.wav",
+   "sha256": "73bfc925afff23db9c552f3003017c2926106ab446c9646ed2251b8506350091",
+   "seconds": 0.252,
+   "heardBefore": true,
+   "id": "ext-047"
+  },
+  {
+   "tag": "sword",
+   "file": "sword/Beam Sword Whiff 2.wav",
+   "sha256": "130dff730b267397fff99281b6537db0fed61b98e42d0773d4b740b80dd87102",
+   "seconds": 0.73,
+   "heardBefore": false,
+   "id": "ext-048"
+  },
+  {
+   "tag": "sword",
+   "file": "sword/ma_sword3.wav",
+   "sha256": "7e9d6131b1748ccfdc059a9f6a37cd46c98230b1cecc256cd5ec038cd43e4e94",
+   "seconds": 0.266,
+   "heardBefore": true,
+   "id": "ext-049"
+  },
+  {
+   "tag": "unlock",
+   "file": "unlock/metalLatch.ogg",
+   "sha256": "ba9ba60b172b3ebc131a940f25793cd2e207aca7af73dc80d637277f060f1708",
+   "seconds": 0.22,
+   "heardBefore": true,
+   "id": "ext-050"
+  }
+ ],
+ "native": [
+  {
+   "synth": "Bfxr",
+   "preset": "generate_laser_shoot",
+   "params": {
+    "masterVolume": 0.5,
+    "waveType": 0,
+    "attackTime": 0,
+    "sustainTime": 0.17067878311499954,
+    "sustainPunch": 0,
+    "decayTime": 0.3267082387581468,
+    "compressionAmount": 0,
+    "frequency_start": 0.7470200167736039,
+    "frequency_slide": -0.18460260396823286,
+    "frequency_acceleration": 0,
+    "min_frequency_relative_to_starting_frequency": 0.495906650996767,
+    "vibratoDepth": 0,
+    "vibratoSpeed": 0,
+    "pitch_jump_repeat_speed": 0,
+    "pitch_jump_amount": 0,
+    "pitch_jump_onset_percent": 0,
+    "pitch_jump_2_amount": 0,
+    "pitch_jump_onset2_percent": 0,
+    "overtones": 0,
+    "overtoneFalloff": 0,
+    "squareDuty": 0.12067741388455033,
+    "dutySweep": 0.09630513098090887,
+    "repeatSpeed": 0,
+    "flangerOffset": 0,
+    "flangerSweep": 0,
+    "lpFilterCutoff": 1,
+    "lpFilterCutoffSweep": 0,
+    "lpFilterResonance": 0,
+    "hpFilterCutoff": 0,
+    "hpFilterCutoffSweep": 0,
+    "bitCrush": 0,
+    "bitCrushSweep": 0
+   },
+   "seed": 1903562617,
+   "id": "nat-001"
+  },
+  {
+   "synth": "Bfxr",
+   "preset": "generate_pickup_coin",
+   "params": {
+    "masterVolume": 0.5,
+    "waveType": 0,
+    "attackTime": 0,
+    "sustainTime": 0.09378433447835541,
+    "sustainPunch": 0.5253979089194164,
+    "decayTime": 0.18513106316765732,
+    "compressionAmount": 0,
+    "frequency_start": 0.8603272051317618,
+    "frequency_slide": 0,
+    "frequency_acceleration": 0,
+    "min_frequency_relative_to_starting_frequency": 0,
+    "vibratoDepth": 0,
+    "vibratoSpeed": 0,
+    "pitch_jump_repeat_speed": 0,
+    "pitch_jump_amount": 0,
+    "pitch_jump_onset_percent": 0,
+    "pitch_jump_2_amount": 0,
+    "pitch_jump_onset2_percent": 0,
+    "overtones": 0,
+    "overtoneFalloff": 0,
+    "squareDuty": 0,
+    "dutySweep": 0,
+    "repeatSpeed": 0,
+    "flangerOffset": 0,
+    "flangerSweep": 0,
+    "lpFilterCutoff": 1,
+    "lpFilterCutoffSweep": 0,
+    "lpFilterResonance": 0,
+    "hpFilterCutoff": 0,
+    "hpFilterCutoffSweep": 0,
+    "bitCrush": 0,
+    "bitCrushSweep": 0
+   },
+   "seed": 4115472240,
+   "id": "nat-002"
+  },
+  {
+   "synth": "Footsteppr",
+   "preset": "randomize_params",
+   "params": {
+    "masterVolume": 0.5,
+    "terrain": 3,
+    "heel": 0.7893742327578366,
+    "roll": 0.18704352946951985,
+    "ball": 0.6951973892282695,
+    "swiftness": 0.12623789929784834
+   },
+   "seed": 1304492419,
+   "id": "nat-003"
+  },
+  {
+   "synth": "Transfxr",
+   "preset": "generate_family_static_flecks",
+   "params": {
+    "masterVolume": 0.5,
+    "waveType": 3,
+    "duration": 0.2247988776816751,
+    "pitch": {
+     "start": 0.8398467442404944,
+     "end": 0.5955931261472869,
+     "curve": "Linear"
+    },
+    "tone": {
+     "start": 0.4379873994342051,
+     "end": 0.7949030477157795,
+     "curve": "Smooth"
+    },
+    "vibrato": {
+     "start": 0,
+     "end": 0,
+     "curve": "Triangle"
+    },
+    "level": {
+     "start": 0.8520604017400183,
+     "end": 0.3214419276546687,
+     "curve": "Bounce"
+    },
+    "attack": 0.05565340401804034,
+    "release": 0.06614637755583584,
+    "resonance": 0.9262920907163061,
+    "echo": 0,
+    "waveTo": 7,
+    "morph": {
+     "start": 0.8898299873690121,
+     "end": 0.877260968030896,
+     "curve": "Pulse"
+    }
+   },
+   "seed": 2114166046,
+   "id": "nat-004"
+  },
+  {
+   "synth": "Transfxr",
+   "preset": "generate_family_wavering_calls",
+   "params": {
+    "masterVolume": 0.5,
+    "waveType": 1,
+    "duration": 1.0195246603225383,
+    "pitch": {
+     "start": 0.5061299110443265,
+     "end": 0.46707135033625446,
+     "curve": "Smooth"
+    },
+    "tone": {
+     "start": 0.6611196628243136,
+     "end": 0.645618345714204,
+     "curve": "Smooth"
+    },
+    "vibrato": {
+     "start": 0.7504969207616522,
+     "end": 0.72,
+     "curve": "Linear"
+    },
+    "level": {
+     "start": 0.8,
+     "end": 0.65,
+     "curve": "Smooth"
+    },
+    "attack": 0.02679079773434372,
+    "release": 0.36902963365678687,
+    "resonance": 0.18843687278936447,
+    "echo": 0,
+    "waveTo": 7,
+    "morph": {
+     "start": 0.039954941856440024,
+     "end": 0.06547159199267316,
+     "curve": "Linear"
+    }
+   },
+   "seed": 1202736318,
+   "id": "nat-005"
+  },
+  {
+   "synth": "Birdr",
+   "preset": "generate_canary",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.23292004014365375,
+    "voice": 0,
+    "duration": 0.9451266409480015,
+    "pitch": 0.6791554955858737,
+    "syllables": 1,
+    "gap": 0.1661766987107694,
+    "sweep": -0.012955802679061879,
+    "arch": 0.1871219613822177,
+    "trill": 0.869796473486349,
+    "trill_rate": 0.661243380245287,
+    "duet": 0.1,
+    "rasp": 0.0032309937360696494,
+    "breath": 0.013403150411322713,
+    "rhythm": 0.12,
+    "variation": 0.24523650589399043
+   },
+   "seed": 2236329597,
+   "id": "nat-006"
+  },
+  {
+   "synth": "Birdr",
+   "preset": "generate_parrot",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.3370997591409832,
+    "voice": 2,
+    "duration": 0.5714832177152858,
+    "pitch": 0.278760593093466,
+    "syllables": 1,
+    "gap": 0.18507844377309082,
+    "sweep": -0.006679434701800324,
+    "arch": 0.5328362883999944,
+    "trill": 0.18111558454111218,
+    "trill_rate": 0.4,
+    "duet": 0.2795889131957665,
+    "rasp": 0.5226909613935277,
+    "breath": 0.10815755133517087,
+    "rhythm": 0.12,
+    "variation": 0.25
+   },
+   "seed": 4267249110,
+   "id": "nat-007"
+  },
+  {
+   "synth": "Boomr",
+   "preset": "generate_barrel",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.4678702352102846,
+    "duration": 1.0048711758572608,
+    "size": 0.6248795582680031,
+    "pressure": 0.7711111267330124,
+    "blast": 0.7050861581228673,
+    "debris": 0.757445884484332,
+    "gas": 0.6893310319399462,
+    "aftershock": 0.1567967320792377,
+    "rubbleSize": 0.28695844195317477,
+    "spread": 0.2450129369273782,
+    "tail": 0.5061288337106816,
+    "muffle": 0.22131768418475983,
+    "mechanism": 1,
+    "space": 0.4752918979618699
+   },
+   "seed": 690260690,
+   "id": "nat-008"
+  },
+  {
+   "synth": "Boomr",
+   "preset": "generate_tiny_pop",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.49279082589782774,
+    "duration": 0.2407588542695157,
+    "size": 0.16781966742128135,
+    "pressure": 0.6190534482477233,
+    "blast": 0.16641390521544963,
+    "debris": 0.00523814108222723,
+    "gas": 0,
+    "aftershock": 0,
+    "rubbleSize": 0.07094894200563431,
+    "spread": 0.16891714587109163,
+    "tail": 0.14131626255344598,
+    "muffle": 0.05059452049434185,
+    "mechanism": 5,
+    "space": 0.06966666316613555
+   },
+   "seed": 877209674,
+   "id": "nat-009"
+  },
+  {
+   "synth": "Bouncr",
+   "preset": "generate_marble",
+   "params": {
+    "masterVolume": 0.5,
+    "material": 3,
+    "surface": 0,
+    "force": 0.4002535180421546,
+    "duration": 1.2153014915063978,
+    "size": 0.2679521391633898,
+    "hardness": 0.7040583169087767,
+    "tail": 0.5886943361721932,
+    "seed": 0.9792346034664661,
+    "count": 1,
+    "bounce": 0.65,
+    "gravity": 0.5,
+    "spin": 0
+   },
+   "seed": 1453309843,
+   "id": "nat-010"
+  },
+  {
+   "synth": "Bouncr",
+   "preset": "generate_cartoon_bounce",
+   "params": {
+    "masterVolume": 0.5,
+    "material": 1,
+    "surface": 0,
+    "force": 0.6609204552485608,
+    "duration": 0.9520817362936215,
+    "size": 0.3723176585510373,
+    "hardness": 0.46871228611562404,
+    "tail": 0.2691928854794241,
+    "seed": 0.13074091169983149,
+    "count": 1,
+    "bounce": 0.65,
+    "gravity": 0.5,
+    "spin": 0
+   },
+   "seed": 1989627660,
+   "id": "nat-011"
+  },
+  {
+   "synth": "Breathr",
+   "preset": "generate_exhale",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.9978955904953182,
+    "source": 0,
+    "mode": 0,
+    "duration": 0.86936462870799,
+    "direction": 0.7600003429455682,
+    "cycles": 1,
+    "effort": 0.45413573961704967,
+    "inhale": 0.42,
+    "hold": 0.04,
+    "throat": 0.5276921623386442,
+    "rasp": 0.09404518408700824,
+    "flutter": 0.10116241220384836,
+    "space": 0.0879328534193337
+   },
+   "seed": 3757987769,
+   "id": "nat-012"
+  },
+  {
+   "synth": "Breathr",
+   "preset": "generate_gasp",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.8320781905204058,
+    "source": 1,
+    "mode": 0,
+    "duration": 0.18444543515797704,
+    "direction": -0.9077432562597096,
+    "cycles": 1,
+    "effort": 0.8271989426575601,
+    "inhale": 0.29403635708615183,
+    "hold": 0.13304343879688532,
+    "throat": 0.11180512383114546,
+    "rasp": 0.32868770689237864,
+    "flutter": 0.30659337705001233,
+    "space": 0.09961603125091642
+   },
+   "seed": 2775394405,
+   "id": "nat-013"
+  },
+  {
+   "synth": "Choirr",
+   "preset": "generate_angelic",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.5164048513397574,
+    "harmony": 1,
+    "duration": 3.5840271185152233,
+    "pitch": 0.5240816206927411,
+    "voices": 7,
+    "vowel": 0.36520047247409826,
+    "detune": 0.3884773458773271,
+    "swell": 0.48475392507389187,
+    "breath": 0.0688718381198123,
+    "motion": 0.3744140579365194
+   },
+   "seed": 2067535138,
+   "id": "nat-014"
+  },
+  {
+   "synth": "Choirr",
+   "preset": "generate_robot_choir",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.6706446616444737,
+    "harmony": 0,
+    "duration": 1.6932481599040328,
+    "pitch": 0.5679235557839275,
+    "voices": 4,
+    "vowel": 0.6600130677805283,
+    "detune": 0.06090142508968711,
+    "swell": 0.07430932843126357,
+    "breath": 0.020867340697441252,
+    "motion": 0.027507706417236478
+   },
+   "seed": 2501768689,
+   "id": "nat-015"
+  },
+  {
+   "synth": "Clonkr",
+   "preset": "generate_wood_knock",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.8831426678225398,
+    "material": 0,
+    "action": 0,
+    "size": 0.5965421479940415,
+    "hollowness": 0.3601491758134216,
+    "hardness": 0.4608788622776046,
+    "damping": 0.4884742311714217,
+    "duration": 0.49907080149278044
+   },
+   "seed": 3979352146,
+   "id": "nat-016"
+  },
+  {
+   "synth": "Clonkr",
+   "preset": "generate_dungeon_gate",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.8560295824427158,
+    "material": 2,
+    "action": 1,
+    "size": 0.8684980439720675,
+    "hollowness": 0.9210262425243854,
+    "hardness": 0.6279741475824268,
+    "damping": 0.3470266055734828,
+    "duration": 1.3442098587751388
+   },
+   "seed": 3837377996,
+   "id": "nat-017"
+  },
+  {
+   "synth": "Crittr",
+   "preset": "generate_angry_blob",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.9740736710373312,
+    "voice": 2,
+    "duration": 1.2836656921077518,
+    "pitch": 0.259397621396929,
+    "size": 0.7776524932123721,
+    "morph": 0.701650443021208,
+    "calls": 4,
+    "gap": 0.1921004610136151,
+    "contour": -0.7462036534911021,
+    "growl": 0.7376402597874403,
+    "breath": 0.05557189160725101,
+    "flutter": 0.4780896949581802
+   },
+   "seed": 609583171,
+   "id": "nat-018"
+  },
+  {
+   "synth": "Crittr",
+   "preset": "generate_insect_call",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.6558519136160612,
+    "voice": 3,
+    "duration": 0.9163464094977825,
+    "pitch": 0.8656367592699825,
+    "size": 0.12404474914073946,
+    "morph": 0.07198864077217877,
+    "calls": 6,
+    "gap": 0.6204667661339045,
+    "contour": -0.10844032623106613,
+    "growl": 0.0497467519599013,
+    "breath": 0.11119114202447236,
+    "flutter": 0.7703997558914125
+   },
+   "seed": 3356184270,
+   "id": "nat-019"
+  },
+  {
+   "synth": "Fractr",
+   "preset": "randomize_params",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.04983883840031922,
+    "material": 1,
+    "duration": 1.756099982210435,
+    "fragments": 31,
+    "fragmentSize": 0.8459734831238166,
+    "spread": 0.8524226875044405,
+    "decay": 0.48532756415661427,
+    "gravity": 0.35006340481340886,
+    "bounce": 0.25136638330295685,
+    "stress": 0.7827295901020989,
+    "shards": 0.35,
+    "fracture": 0.7759693422354758
+   },
+   "seed": 1300533799,
+   "id": "nat-020"
+  },
+  {
+   "synth": "Fractr",
+   "preset": "generate_glass_snap",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.6654736918862909,
+    "material": 0,
+    "duration": 0.2986399415927008,
+    "fragments": 6,
+    "fragmentSize": 0.3229245969210751,
+    "spread": 0.01869609310757369,
+    "decay": 0.058974357722327106,
+    "gravity": 0.8010533293709159,
+    "bounce": 0.08042546185897663,
+    "stress": 0.14761451673693954,
+    "shards": 0.09994267859263345,
+    "fracture": 0.9175246839877218
+   },
+   "seed": 3904840169,
+   "id": "nat-021"
+  },
+  {
+   "synth": "Glitchr",
+   "preset": "generate_broken_terminal",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.5798926195129752,
+    "duration": 1.6455591725651177,
+    "pitch": 0.6110036200843751,
+    "fragment": 0.7074981976300478,
+    "repeat": 0.8241808456368744,
+    "chaos": 0.5724829521030188,
+    "dropout": 0.11975873885676265,
+    "crush": 0.3592507247813046,
+    "rate": 0.13156376854749396,
+    "mode": 7
+   },
+   "seed": 3830588290,
+   "id": "nat-022"
+  },
+  {
+   "synth": "Glitchr",
+   "preset": "generate_buffer_skip",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.579476157668978,
+    "duration": 1.0290270207449792,
+    "pitch": 0.635322544327937,
+    "fragment": 0.2701171639375389,
+    "repeat": 0.8761276936274953,
+    "chaos": 0.14204777295235546,
+    "dropout": 0.185864847805351,
+    "crush": 0.3462706571444869,
+    "rate": 0.1218932090792805,
+    "mode": 6
+   },
+   "seed": 558486265,
+   "id": "nat-023"
+  },
+  {
+   "synth": "Jinglr",
+   "preset": "generate_checkpoint",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.027270272702727028,
+    "instrumentSeed": 44067,
+    "phrase": "[{\"degree\":0,\"beats\":0.5},{\"degree\":8,\"beats\":0.5},{\"degree\":6,\"beats\":0.5},{\"degree\":0,\"beats\":1}]",
+    "instrument": 3,
+    "key": 7,
+    "scale": 0,
+    "contour": 2,
+    "rhythm": 0,
+    "noteCount": 4,
+    "octave": 5,
+    "tempo": 121.5153100155294,
+    "swing": 0,
+    "brightness": 0.41825777614722026,
+    "decay": 0.6126316881505773,
+    "echo": 0.10531277871923522
+   },
+   "seed": 2884031945,
+   "id": "nat-024"
+  },
+  {
+   "synth": "Jinglr",
+   "preset": "randomize_params",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.8543185431854319,
+    "instrumentSeed": 49185,
+    "phrase": "[{\"degree\":0,\"beats\":0.25},{\"degree\":-1,\"beats\":0.5},{\"degree\":-1,\"beats\":1}]",
+    "instrument": 6,
+    "key": 7,
+    "scale": 1,
+    "contour": 3,
+    "rhythm": 2,
+    "noteCount": 3,
+    "octave": 4,
+    "tempo": 195.11779218912125,
+    "swing": 0.40940580298192797,
+    "brightness": 0.015760905109345913,
+    "decay": 0.2793636869173497,
+    "echo": 0.2604848360642791
+   },
+   "seed": 239285989,
+   "id": "nat-025"
+  },
+  {
+   "synth": "Machinr",
+   "preset": "generate_windup_toy",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.422835475532338,
+    "mechanism": 6,
+    "duration": 1.7512841045856475,
+    "speed": 0.8144819472916425,
+    "load": 0.38664339794777336,
+    "roughness": 0.28843503093812617,
+    "looseness": 0.5367303255479783,
+    "size": 0.1813188964081928,
+    "startTime": 0.07992578717879951,
+    "stopTime": 0.7332257294096054
+   },
+   "seed": 206188538,
+   "id": "nat-026"
+  },
+  {
+   "synth": "Machinr",
+   "preset": "generate_servo",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.9182863410096616,
+    "mechanism": 5,
+    "duration": 0.5468953150324524,
+    "speed": 0.9363098881905898,
+    "load": 0.13256081788567828,
+    "roughness": 0.132596743311733,
+    "looseness": 0.03221118735149503,
+    "size": 0.3224993177922443,
+    "startTime": 0.05799753222521394,
+    "stopTime": 0.05186333185527474
+   },
+   "seed": 2407614737,
+   "id": "nat-027"
+  },
+  {
+   "synth": "Pluckr",
+   "preset": "generate_muted_guitar",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.05956453108228743,
+    "material": 0,
+    "duration": 0.8028587874490768,
+    "pitch": 0.3515523953083902,
+    "strings": 5,
+    "damping": 0.745608045887202,
+    "brightness": 0.14214711586013437,
+    "pluck": 0.6046166670508684,
+    "coupling": 0.4349215937079862,
+    "strum": 0.21825789857655764,
+    "tremolo": 0,
+    "vibrato": 0,
+    "tremoloRate": 4,
+    "inharmonic": 0.14115311848931014
+   },
+   "seed": 1881531896,
+   "id": "nat-028"
+  },
+  {
+   "synth": "Pluckr",
+   "preset": "generate_bass_pluck",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.3270951265003532,
+    "material": 0,
+    "duration": 1.5908827897161246,
+    "pitch": 0.08245874352287502,
+    "strings": 1,
+    "damping": 0.3236990608624183,
+    "brightness": 0.1394600204564631,
+    "pluck": 0.3795887640444562,
+    "coupling": 0.07304609967395664,
+    "strum": 0,
+    "tremolo": 0,
+    "vibrato": 0,
+    "tremoloRate": 4,
+    "inharmonic": 0.0966544095473364
+   },
+   "seed": 1757034192,
+   "id": "nat-029"
+  },
+  {
+   "synth": "Riftr",
+   "preset": "generate_reality_glitch",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.15889406227506697,
+    "excitation": 4,
+    "duration": 1.0802104833186603,
+    "pitch": 0.5292893790639936,
+    "bend": 0.7480835766298697,
+    "space": 0.29882560072699565,
+    "feedback": 0.48104883851483465,
+    "dispersion": 0.7524249905021861,
+    "motion": 0.893715806491673,
+    "field": 0.73972508860752,
+    "reverse": 0.5605603490257636
+   },
+   "seed": 1708768782,
+   "id": "nat-030"
+  },
+  {
+   "synth": "Riftr",
+   "preset": "generate_time_rewind",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.45120141725055873,
+    "excitation": 0,
+    "duration": 1.1438688162714243,
+    "pitch": 0.6505502991029062,
+    "bend": -0.08846368093509227,
+    "space": 0.5351148182526231,
+    "feedback": 0.9130645672767422,
+    "dispersion": 0.6276151832193136,
+    "motion": 0.38847459228709347,
+    "field": 0.7720910352189093,
+    "reverse": 0.9995531536918134
+   },
+   "seed": 1815164834,
+   "id": "nat-031"
+  },
+  {
+   "synth": "Rustlr",
+   "preset": "randomize_params",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.33336025197058916,
+    "material": 3,
+    "gesture": 3,
+    "duration": 0.13650703700259328,
+    "grain": 0.4914120405446738,
+    "density": 0.5527324459981173,
+    "motion": 0.2520202719606459,
+    "pressure": 0.9792301387060434,
+    "folds": 6,
+    "brightness": 0.9682608779985458
+   },
+   "seed": 2610343717,
+   "id": "nat-032"
+  },
+  {
+   "synth": "Rustlr",
+   "preset": "generate_page_turn",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.10920321429148316,
+    "material": 0,
+    "gesture": 1,
+    "duration": 0.5620123393833637,
+    "grain": 0.6744786203908735,
+    "density": 0.6362369852885603,
+    "motion": 0.3320730179315432,
+    "pressure": 0.32631911456119267,
+    "folds": 4,
+    "brightness": 0.4057166823744774
+   },
+   "seed": 3105038395,
+   "id": "nat-033"
+  },
+  {
+   "synth": "Signlr",
+   "preset": "generate_radar_blip",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.6585046814288944,
+    "encoding": 4,
+    "duration": 0.32373803313821553,
+    "carrier": 0.5962865568464621,
+    "deviation": 0.19922562163323165,
+    "symbols": 0.4,
+    "packets": 1,
+    "gap": 0.595684003457427,
+    "drift": 0,
+    "corruption": 0,
+    "interference": 0,
+    "echo": 0.2535980084026232
+   },
+   "seed": 1122068613,
+   "id": "nat-034"
+  },
+  {
+   "synth": "Signlr",
+   "preset": "generate_distress_burst",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.1321435181889683,
+    "encoding": 0,
+    "duration": 1.3033804634353146,
+    "carrier": 0.6287851364258676,
+    "deviation": 0.19951082751154903,
+    "symbols": 0.21776250941911712,
+    "packets": 6,
+    "gap": 0.4469544216990471,
+    "drift": 0.06461587712168694,
+    "corruption": 0.0629223931580782,
+    "interference": 0.2132983181020245,
+    "echo": 0.23192572863772515
+   },
+   "seed": 3875603907,
+   "id": "nat-035"
+  },
+  {
+   "synth": "Squishr",
+   "preset": "generate_water_drop",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.7876098593696952,
+    "texture": 1,
+    "viscosity": 0.10658568399492652,
+    "stretch": 0.12063135142903776,
+    "pressure": 0.163632654491812,
+    "wetness": 0.9034616911085322,
+    "bubbleSize": 0.036195712392218415,
+    "duration": 0.11469353837892414
+   },
+   "seed": 2812287322,
+   "id": "nat-036"
+  },
+  {
+   "synth": "Squishr",
+   "preset": "randomize_params",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.2581147581804544,
+    "texture": 1,
+    "viscosity": 0.24810100416652858,
+    "stretch": 0.3361693904735148,
+    "pressure": 0.6987239196896553,
+    "wetness": 0.3068207905162126,
+    "bubbleSize": 0.7834746786393225,
+    "duration": 2.572124621248804
+   },
+   "seed": 4045036871,
+   "id": "nat-037"
+  },
+  {
+   "synth": "Swarmr",
+   "preset": "generate_fireflies",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.2182129432912916,
+    "kind": 1,
+    "duration": 2.648676676559262,
+    "count": 5,
+    "speed": 0.22972886764910078,
+    "cohesion": 0.2041938613518141,
+    "agitation": 0.026923098973929884,
+    "size": 0.11786338263191283,
+    "movement": 0.2051227233139798,
+    "scatter": 0.20735022552544252
+   },
+   "seed": 4167228893,
+   "id": "nat-038"
+  },
+  {
+   "synth": "Swarmr",
+   "preset": "generate_cave_bats",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.8384306642692536,
+    "kind": 0,
+    "duration": 1.3061762233730405,
+    "count": 8,
+    "speed": 0.3009854704374447,
+    "cohesion": 0.1335964592406526,
+    "agitation": 0.6274474643170834,
+    "size": 0.6820218206848949,
+    "movement": 0.6823485978879035,
+    "scatter": 0.4826716551557183
+   },
+   "seed": 3617860024,
+   "id": "nat-039"
+  },
+  {
+   "synth": "Whooshr",
+   "preset": "generate_heavy_swing",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.4801980433985591,
+    "duration": 0.7712048317538575,
+    "size": 0.8011856898199767,
+    "air": 0.9853025230579078,
+    "whistle": 0.15519243668532,
+    "movement": 0.6507317920331843,
+    "focus": 0.5802081028232351,
+    "flutter": 0.14408202515915036
+   },
+   "seed": 160058907,
+   "id": "nat-040"
+  },
+  {
+   "synth": "Whooshr",
+   "preset": "generate_sword_swing",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.8889157606754452,
+    "duration": 0.27472617840394375,
+    "size": 0.41540736926253885,
+    "air": 0.7846898236311972,
+    "whistle": 0.4468801098875702,
+    "movement": 0.74768747582566,
+    "focus": 0.6619978172471747,
+    "flutter": 0.038981111440807584
+   },
+   "seed": 1582383408,
+   "id": "nat-041"
+  },
+  {
+   "synth": "Zappr",
+   "preset": "generate_static_spark",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.5022525785025209,
+    "duration": 0.2733258475922048,
+    "voltage": 0.7161066404893064,
+    "arcs": 2,
+    "branching": 0.04187941490672529,
+    "crackle": 0.12050743685103954,
+    "hum": 0.005429078391753137,
+    "spark": 0.8453878833912314,
+    "spread": 0.1482579443138093,
+    "decay": 0.10019496937282384
+   },
+   "seed": 984623768,
+   "id": "nat-042"
+  },
+  {
+   "synth": "Zappr",
+   "preset": "generate_lightning_arc",
+   "params": {
+    "masterVolume": 0.5,
+    "seed": 0.008520704926922917,
+    "duration": 0.5826868636533618,
+    "voltage": 0.8363325437065214,
+    "arcs": 3,
+    "branching": 0.9345123881590552,
+    "crackle": 0.07039041151292623,
+    "hum": 0.032061304617673154,
+    "spark": 0.5283882604213431,
+    "spread": 0.12974231738597156,
+    "decay": 0.6746567313792184
+   },
+   "seed": 2686618232,
+   "id": "nat-043"
+  }
+ ]
+}

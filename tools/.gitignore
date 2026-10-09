@@ -8,7 +8,9 @@ targets/*
 targets_non_bfxr_big
 targets_non_bfxr_big/
 bfxr_native/build/
+multisynth_native/build*/
 metric_lib/
 metric_compare/
 invert/data/
 invert/runs/
+sfxmatch/runs/

@@ -1,0 +1,206 @@
+{
+ "target": "ext-002",
+ "title": "attack/ICEBrk_Skill Freeze Whoosh Break Impact Layered Movement Shatter 03_ESM_TDG.wav",
+ "objective": 2,
+ "steps": [
+  {
+   "action": "pick",
+   "pick": "s0",
+   "sigma": 0.18,
+   "seconds": 21.4,
+   "screen": [
+    {
+     "id": "s0",
+     "synth": "Boomr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.6360252248123288,
+      "duration": 2.3361289501190186,
+      "size": 0.2844199538230896,
+      "pressure": 0.5342168211936951,
+      "blast": 0.4249657690525055,
+      "debris": 0.839652955532074,
+      "gas": 0.1562490463256836,
+      "aftershock": 0.48698005080223083,
+      "rubbleSize": 0.026614472270011902,
+      "spread": 0.5321141481399536,
+      "tail": 0.2815997898578644,
+      "muffle": 0.03783714398741722,
+      "mechanism": 7,
+      "space": 0.13517779111862183
+     },
+     "seed": 20261015,
+     "score": 3.3718875448511816
+    },
+    {
+     "id": "s1",
+     "synth": "Bfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 3,
+      "attackTime": 0.23346006870269775,
+      "sustainTime": 0.20477505028247833,
+      "sustainPunch": 0.508639931678772,
+      "decayTime": 0.9812859892845154,
+      "compressionAmount": 0.0013282167492434382,
+      "frequency_start": 0.07420254498720169,
+      "frequency_slide": -0.034207433462142944,
+      "frequency_acceleration": 0.0075495243072509766,
+      "min_frequency_relative_to_starting_frequency": 0.000556339742615819,
+      "vibratoDepth": 0.640495777130127,
+      "vibratoSpeed": 0.8822721242904663,
+      "pitch_jump_repeat_speed": 1.0228533028566744e-05,
+      "pitch_jump_amount": 0.3765221834182739,
+      "pitch_jump_onset_percent": 0.73502516746521,
+      "pitch_jump_2_amount": 0.4480466842651367,
+      "pitch_jump_onset2_percent": 0.6488254070281982,
+      "overtones": 0.7055704593658447,
+      "overtoneFalloff": 0.7448281049728394,
+      "squareDuty": 0.034319017082452774,
+      "dutySweep": 0.1788196563720703,
+      "repeatSpeed": 0.021540118381381035,
+      "flangerOffset": -0.28211504220962524,
+      "flangerSweep": -0.1349402666091919,
+      "lpFilterCutoff": 0.98981773853302,
+      "lpFilterCutoffSweep": 0.24716603755950928,
+      "lpFilterResonance": 0.33706265687942505,
+      "hpFilterCutoff": 0.001695118611678481,
+      "hpFilterCutoffSweep": 0.5688247680664062,
+      "bitCrush": 0.0006583138019777834,
+      "bitCrushSweep": -0.24563312530517578
+     },
+     "seed": 4245677443,
+     "score": 3.486500976881173
+    },
+    {
+     "id": "s2",
+     "synth": "Signlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.632217216771096,
+      "encoding": 0,
+      "duration": 2.08622145652771,
+      "carrier": 0.2250872254371643,
+      "deviation": 0.08354106545448303,
+      "symbols": 0.9449225068092346,
+      "packets": 1,
+      "gap": 0.5827970504760742,
+      "drift": 0.7574939727783203,
+      "corruption": 0.9061129689216614,
+      "interference": 0.19507314264774323,
+      "echo": 0.5142531394958496
+     },
+     "seed": 794655223,
+     "score": 3.622389813806435
+    },
+    {
+     "id": "s3",
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 5,
+      "duration": 1.460903286933899,
+      "pitch": {
+       "start": 0.2076050192117691,
+       "end": 0.999987781047821,
+       "curve": "Ease In"
+      },
+      "tone": {
+       "start": 0.9322893619537354,
+       "end": 0.9799842238426208,
+       "curve": "Ease In"
+      },
+      "vibrato": {
+       "start": 0.0006854300736449659,
+       "end": 0.7280146479606628,
+       "curve": "Ease In"
+      },
+      "level": {
+       "start": 0.523578941822052,
+       "end": 0.03153742104768753,
+       "curve": "Ease Out"
+      },
+      "attack": 0.3215276300907135,
+      "release": 0.2821619510650635,
+      "resonance": 0.298747718334198,
+      "echo": 0.5183049440383911,
+      "waveTo": 7,
+      "morph": {
+       "start": 0.0041293250396847725,
+       "end": 0.4097045958042145,
+       "curve": "Ease Out"
+      }
+     },
+     "seed": 1870664616,
+     "score": 3.690315493212199
+    },
+    {
+     "id": "s4",
+     "synth": "Squishr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.3267115284688771,
+      "texture": 3,
+      "viscosity": 0.00011605096369748935,
+      "stretch": 0.9114495515823364,
+      "pressure": 9.251516530639492e-06,
+      "wetness": 0.9365531206130981,
+      "bubbleSize": 0.848139762878418,
+      "duration": 2.367055654525757
+     },
+     "seed": 2240290508,
+     "score": 3.737257186913223
+    },
+    {
+     "id": "s5",
+     "synth": "Riftr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.4428115785121918,
+      "excitation": 3,
+      "duration": 2.3688461780548096,
+      "pitch": 0.41257065534591675,
+      "bend": 0.9509475231170654,
+      "space": 0.006437627132982016,
+      "feedback": 0.28452765941619873,
+      "dispersion": 0.15121543407440186,
+      "motion": 0.4510529339313507,
+      "field": 0.5204934477806091,
+      "reverse": 0.0005812587332911789
+     },
+     "seed": 3459682156,
+     "score": 4.240612653196568
+    }
+   ]
+  }
+ ],
+ "current": {
+  "synth": "Boomr",
+  "params": {
+   "masterVolume": 0.5,
+   "seed": 0.6360252248123288,
+   "duration": 2.3361289501190186,
+   "size": 0.2844199538230896,
+   "pressure": 0.5342168211936951,
+   "blast": 0.4249657690525055,
+   "debris": 0.839652955532074,
+   "gas": 0.1562490463256836,
+   "aftershock": 0.48698005080223083,
+   "rubbleSize": 0.026614472270011902,
+   "spread": 0.5321141481399536,
+   "tail": 0.2815997898578644,
+   "muffle": 0.03783714398741722,
+   "mechanism": 7,
+   "space": 0.13517779111862183
+  },
+  "seed": 20261015,
+  "score": 3.3718875448511816
+ },
+ "final": {
+  "rating": 2,
+  "verdict": "stuck",
+  "note": "",
+  "screens": 1,
+  "seconds": 38.5
+ }
+}

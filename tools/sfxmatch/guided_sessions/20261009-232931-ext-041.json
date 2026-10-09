@@ -1,0 +1,1195 @@
+{
+ "target": "ext-041",
+ "title": "select/OBJTape_VelcroRip29_InMotionAudio_Velcro.wav",
+ "objective": 2,
+ "steps": [
+  {
+   "action": "pick",
+   "pick": "s0",
+   "sigma": 0.18,
+   "seconds": 19.1,
+   "screen": [
+    {
+     "id": "s0",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.24906735295637
+    },
+    {
+     "id": "s1",
+     "synth": "Whooshr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.6119382188189775,
+      "duration": 0.258541077375412,
+      "size": 0.00848024059087038,
+      "air": 0.18969964981079102,
+      "whistle": 0.11323221027851105,
+      "movement": 0.04302341490983963,
+      "focus": 0.720124363899231,
+      "flutter": 0.9716187119483948
+     },
+     "seed": 481739577,
+     "score": 2.5077504523834326
+    },
+    {
+     "id": "s2",
+     "synth": "Swarmr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.785222357371822,
+      "kind": 0,
+      "duration": 0.25001978874206543,
+      "count": 14,
+      "speed": 0.37362685799598694,
+      "cohesion": 0.8905164003372192,
+      "agitation": 0.21293318271636963,
+      "size": 0.0028084178920835257,
+      "movement": 0.9987658262252808,
+      "scatter": 0.7375980019569397
+     },
+     "seed": 2610093312,
+     "score": 2.5794118472249834
+    },
+    {
+     "id": "s3",
+     "synth": "Bfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 1,
+      "attackTime": 0.21224530041217804,
+      "sustainTime": 0.397674024105072,
+      "sustainPunch": 0.5570953488349915,
+      "decayTime": 0.12081915885210037,
+      "compressionAmount": 0.0007571851019747555,
+      "frequency_start": 0.4358900487422943,
+      "frequency_slide": 0.08582109212875366,
+      "frequency_acceleration": 0.4438812732696533,
+      "min_frequency_relative_to_starting_frequency": 0.370034396648407,
+      "vibratoDepth": 0.7941853404045105,
+      "vibratoSpeed": 0.828165590763092,
+      "pitch_jump_repeat_speed": 0.22619988024234772,
+      "pitch_jump_amount": 0.7456989288330078,
+      "pitch_jump_onset_percent": 0.004068470094352961,
+      "pitch_jump_2_amount": 0.2567741870880127,
+      "pitch_jump_onset2_percent": 0.2518247365951538,
+      "overtones": 0.16906078159809113,
+      "overtoneFalloff": 0.6603795289993286,
+      "squareDuty": 0.029858490452170372,
+      "dutySweep": -0.2753031253814697,
+      "repeatSpeed": 0.007536307908594608,
+      "flangerOffset": -0.998823881149292,
+      "flangerSweep": 0.060401201248168945,
+      "lpFilterCutoff": 0.998757004737854,
+      "lpFilterCutoffSweep": 0.5366151332855225,
+      "lpFilterResonance": 0.040688928216695786,
+      "hpFilterCutoff": 0.9270353317260742,
+      "hpFilterCutoffSweep": 0.1863154172897339,
+      "bitCrush": 0.3938618004322052,
+      "bitCrushSweep": -0.7800236940383911
+     },
+     "seed": 1234,
+     "score": 3.05051045834223
+    },
+    {
+     "id": "s4",
+     "synth": "Zappr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.43543754797428846,
+      "duration": 0.22924143075942993,
+      "voltage": 0.9945855140686035,
+      "arcs": 2,
+      "branching": 0.17842760682106018,
+      "crackle": 0.23287595808506012,
+      "hum": 0.005612738896161318,
+      "spark": 0.9922299385070801,
+      "spread": 0.9696420431137085,
+      "decay": 0.003001120174303651
+     },
+     "seed": 583856523,
+     "score": 3.138629693029519
+    },
+    {
+     "id": "s5",
+     "synth": "Riftr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.2942965067923069,
+      "excitation": 1,
+      "duration": 0.24087877571582794,
+      "pitch": 0.9981122016906738,
+      "bend": 0.9934889078140259,
+      "space": 0.23051109910011292,
+      "feedback": 0.23625768721103668,
+      "dispersion": 0.5616248846054077,
+      "motion": 0.4853454530239105,
+      "field": 0.7364019155502319,
+      "reverse": 0.9827969074249268
+     },
+     "seed": 2561131080,
+     "score": 3.3861343569734035
+    }
+   ]
+  },
+  {
+   "action": "wider",
+   "pick": null,
+   "sigma": 0.18,
+   "seconds": 27.4,
+   "screen": [
+    {
+     "id": "current",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.24906735295637
+    },
+    {
+     "id": "g1-0",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 1,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.1996368871156147
+    },
+    {
+     "id": "g1-1",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.2632313370704651,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.8628063797950745
+     },
+     "seed": 1,
+     "score": 2.534786108581514
+    },
+    {
+     "id": "g1-2",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.30646657943725586,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.5485478469418688
+    },
+    {
+     "id": "g1-3",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.3265324532985687,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 1
+     },
+     "seed": 1,
+     "score": 2.442148292210941
+    },
+    {
+     "id": "g1-4",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.345708966255188,
+      "density": 0,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.512414349176251
+    }
+   ]
+  },
+  {
+   "action": "wider",
+   "pick": null,
+   "sigma": 0.306,
+   "seconds": 32.1,
+   "screen": [
+    {
+     "id": "current",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.24906735295637
+    },
+    {
+     "id": "g2-0",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.10243726521730423,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.562442063058338
+    },
+    {
+     "id": "g2-1",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 1,
+      "pressure": 1,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.190633961127675
+    },
+    {
+     "id": "g2-2",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.3985709846019745,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.562204961249055
+    },
+    {
+     "id": "g2-3",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.2723959982395172,
+      "density": 0,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.443536903316401
+    },
+    {
+     "id": "g2-4",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.2400682419538498
+     },
+     "seed": 1,
+     "score": 2.501613248833082
+    }
+   ]
+  },
+  {
+   "action": "wider",
+   "pick": null,
+   "sigma": 0.5,
+   "seconds": 36.5,
+   "screen": [
+    {
+     "id": "current",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.24906735295637
+    },
+    {
+     "id": "g3-0",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 1,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.7068103551864624,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.4853643709349225
+    },
+    {
+     "id": "g3-1",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.7315070629119873,
+      "pressure": 0.462458997964859,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.527396200890969
+    },
+    {
+     "id": "g3-2",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.21889415383338928,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.6966719031333923
+     },
+     "seed": 1,
+     "score": 2.4910730788577773
+    },
+    {
+     "id": "g3-3",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 1,
+      "pressure": 0.8539823889732361,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.1746304719778027
+    },
+    {
+     "id": "g3-4",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.33734944462776184,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.396378571874421
+    }
+   ]
+  },
+  {
+   "action": "wider",
+   "pick": null,
+   "sigma": 0.5,
+   "seconds": 44.0,
+   "screen": [
+    {
+     "id": "current",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.24906735295637
+    },
+    {
+     "id": "g4-0",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.04506547376513481,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.3946535081714906
+    },
+    {
+     "id": "g4-1",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 1,
+      "pressure": 1,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.190633961127675
+    },
+    {
+     "id": "g4-2",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 1,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.7153028249740601
+     },
+     "seed": 1,
+     "score": 2.4879917899271597
+    },
+    {
+     "id": "g4-3",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.05454428121447563,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.47187331555691
+    },
+    {
+     "id": "g4-4",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.7938299179077148,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 1
+     },
+     "seed": 1,
+     "score": 2.349664022957315
+    }
+   ]
+  },
+  {
+   "action": "synths",
+   "pick": null,
+   "sigma": 0.5,
+   "seconds": 49.6,
+   "screen": [
+    {
+     "id": "current",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.24906735295637
+    },
+    {
+     "id": "g5-0",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.07023455947637558,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.5208552516140506
+    },
+    {
+     "id": "g5-1",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 1,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9267734885215759,
+      "folds": 1,
+      "brightness": 1
+     },
+     "seed": 1,
+     "score": 2.438008971233886
+    },
+    {
+     "id": "g5-2",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.004510169383138418,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.374616159102063
+    },
+    {
+     "id": "g5-3",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0,
+      "density": 0.04606418311595917,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.4906639750085806
+    },
+    {
+     "id": "g5-4",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 1,
+      "pressure": 1,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.190633961127675
+    }
+   ]
+  },
+  {
+   "action": "more-synths",
+   "pick": null,
+   "sigma": 0.5,
+   "seconds": 60.1,
+   "screen": [
+    {
+     "id": "s0",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.24906735295637
+    },
+    {
+     "id": "s1",
+     "synth": "Whooshr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.6119382188189775,
+      "duration": 0.258541077375412,
+      "size": 0.00848024059087038,
+      "air": 0.18969964981079102,
+      "whistle": 0.11323221027851105,
+      "movement": 0.04302341490983963,
+      "focus": 0.720124363899231,
+      "flutter": 0.9716187119483948
+     },
+     "seed": 481739577,
+     "score": 2.5077504523834326
+    },
+    {
+     "id": "s2",
+     "synth": "Swarmr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.785222357371822,
+      "kind": 0,
+      "duration": 0.25001978874206543,
+      "count": 14,
+      "speed": 0.37362685799598694,
+      "cohesion": 0.8905164003372192,
+      "agitation": 0.21293318271636963,
+      "size": 0.0028084178920835257,
+      "movement": 0.9987658262252808,
+      "scatter": 0.7375980019569397
+     },
+     "seed": 2610093312,
+     "score": 2.5794118472249834
+    },
+    {
+     "id": "s3",
+     "synth": "Bfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 1,
+      "attackTime": 0.21224530041217804,
+      "sustainTime": 0.397674024105072,
+      "sustainPunch": 0.5570953488349915,
+      "decayTime": 0.12081915885210037,
+      "compressionAmount": 0.0007571851019747555,
+      "frequency_start": 0.4358900487422943,
+      "frequency_slide": 0.08582109212875366,
+      "frequency_acceleration": 0.4438812732696533,
+      "min_frequency_relative_to_starting_frequency": 0.370034396648407,
+      "vibratoDepth": 0.7941853404045105,
+      "vibratoSpeed": 0.828165590763092,
+      "pitch_jump_repeat_speed": 0.22619988024234772,
+      "pitch_jump_amount": 0.7456989288330078,
+      "pitch_jump_onset_percent": 0.004068470094352961,
+      "pitch_jump_2_amount": 0.2567741870880127,
+      "pitch_jump_onset2_percent": 0.2518247365951538,
+      "overtones": 0.16906078159809113,
+      "overtoneFalloff": 0.6603795289993286,
+      "squareDuty": 0.029858490452170372,
+      "dutySweep": -0.2753031253814697,
+      "repeatSpeed": 0.007536307908594608,
+      "flangerOffset": -0.998823881149292,
+      "flangerSweep": 0.060401201248168945,
+      "lpFilterCutoff": 0.998757004737854,
+      "lpFilterCutoffSweep": 0.5366151332855225,
+      "lpFilterResonance": 0.040688928216695786,
+      "hpFilterCutoff": 0.9270353317260742,
+      "hpFilterCutoffSweep": 0.1863154172897339,
+      "bitCrush": 0.3938618004322052,
+      "bitCrushSweep": -0.7800236940383911
+     },
+     "seed": 1234,
+     "score": 3.05051045834223
+    },
+    {
+     "id": "s4",
+     "synth": "Zappr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.43543754797428846,
+      "duration": 0.22924143075942993,
+      "voltage": 0.9945855140686035,
+      "arcs": 2,
+      "branching": 0.17842760682106018,
+      "crackle": 0.23287595808506012,
+      "hum": 0.005612738896161318,
+      "spark": 0.9922299385070801,
+      "spread": 0.9696420431137085,
+      "decay": 0.003001120174303651
+     },
+     "seed": 583856523,
+     "score": 3.138629693029519
+    },
+    {
+     "id": "s5",
+     "synth": "Riftr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.2942965067923069,
+      "excitation": 1,
+      "duration": 0.24087877571582794,
+      "pitch": 0.9981122016906738,
+      "bend": 0.9934889078140259,
+      "space": 0.23051109910011292,
+      "feedback": 0.23625768721103668,
+      "dispersion": 0.5616248846054077,
+      "motion": 0.4853454530239105,
+      "field": 0.7364019155502319,
+      "reverse": 0.9827969074249268
+     },
+     "seed": 2561131080,
+     "score": 3.3861343569734035
+    }
+   ]
+  },
+  {
+   "action": "more-synths",
+   "pick": null,
+   "sigma": 0.5,
+   "seconds": 66.2,
+   "screen": [
+    {
+     "id": "s6",
+     "synth": "Fractr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.41981466324068606,
+      "material": 0,
+      "duration": 0.8209255933761597,
+      "fragments": 18,
+      "fragmentSize": 0.5015611052513123,
+      "spread": 0.03465844318270683,
+      "decay": 0.16753152012825012,
+      "gravity": 0.7168232798576355,
+      "bounce": 0.5361770391464233,
+      "stress": 0.13478557765483856,
+      "shards": 0.681581974029541,
+      "fracture": 0.8580574989318848
+     },
+     "seed": 2429683080,
+     "score": 3.6311029676325144
+    },
+    {
+     "id": "s7",
+     "synth": "Pluckr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.045157012762501836,
+      "material": 4,
+      "duration": 4.152304172515869,
+      "pitch": 0.43699559569358826,
+      "strings": 6,
+      "damping": 0.9881895184516907,
+      "brightness": 0.8918401598930359,
+      "pluck": 0.008341367356479168,
+      "coupling": 0.9064741134643555,
+      "strum": 0.2924101948738098,
+      "tremolo": 0.9982892274856567,
+      "vibrato": 0.0065619125962257385,
+      "tremoloRate": 7.031281471252441,
+      "inharmonic": 0.6325089931488037
+     },
+     "seed": 2884202110,
+     "score": 3.71243723031413
+    },
+    {
+     "id": "s8",
+     "synth": "Footsteppr",
+     "params": {
+      "masterVolume": 0.5,
+      "terrain": 0,
+      "heel": 0.01595311425626278,
+      "roll": 0.8353483080863953,
+      "ball": 0.010507750324904919,
+      "swiftness": 0.796866238117218
+     },
+     "seed": 1980748657,
+     "score": 3.819739028565688
+    },
+    {
+     "id": "s9",
+     "synth": "Boomr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.4752991828136146,
+      "duration": 0.9600104689598083,
+      "size": 0.0001892641157610342,
+      "pressure": 0.9092994332313538,
+      "blast": 0.044385530054569244,
+      "debris": 0.005574912764132023,
+      "gas": 0.9864776730537415,
+      "aftershock": 0.0006399624398909509,
+      "rubbleSize": 0.09207738190889359,
+      "spread": 0.019403889775276184,
+      "tail": 0.0009232439333572984,
+      "muffle": 0.02108280174434185,
+      "mechanism": 5,
+      "space": 0.005391561426222324
+     },
+     "seed": 2899073370,
+     "score": 3.847271528445674
+    },
+    {
+     "id": "s10",
+     "synth": "Signlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.3079799273982644,
+      "encoding": 1,
+      "duration": 0.22775840759277344,
+      "carrier": 0.908234179019928,
+      "deviation": 0.20165589451789856,
+      "symbols": 0.57509845495224,
+      "packets": 3,
+      "gap": 0.686548113822937,
+      "drift": 0.9399024248123169,
+      "corruption": 0.6925390958786011,
+      "interference": 0.6681301593780518,
+      "echo": 0.6227967143058777
+     },
+     "seed": 4192495350,
+     "score": 4.904801838084205
+    },
+    {
+     "id": "s11",
+     "synth": "Squishr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.05487385159358382,
+      "texture": 4,
+      "viscosity": 0.006624198518693447,
+      "stretch": 0.0011559876147657633,
+      "pressure": 0.38596460223197937,
+      "wetness": 0.9999570846557617,
+      "bubbleSize": 0.07206504046916962,
+      "duration": 0.17180649936199188
+     },
+     "seed": 3899873462,
+     "score": 4.912834948723683
+    }
+   ]
+  },
+  {
+   "action": "pick",
+   "pick": "s2",
+   "sigma": 0.5,
+   "seconds": 76.8,
+   "screen": [
+    {
+     "id": "s0",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.03866216051392257,
+      "material": 3,
+      "gesture": 3,
+      "duration": 0.22572483122348785,
+      "grain": 0.20157955586910248,
+      "density": 0.02632095478475094,
+      "motion": 0.9743471145629883,
+      "pressure": 0.9314067363739014,
+      "folds": 1,
+      "brightness": 0.9734027981758118
+     },
+     "seed": 1,
+     "score": 2.24906735295637
+    },
+    {
+     "id": "s1",
+     "synth": "Whooshr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.6119382188189775,
+      "duration": 0.258541077375412,
+      "size": 0.00848024059087038,
+      "air": 0.18969964981079102,
+      "whistle": 0.11323221027851105,
+      "movement": 0.04302341490983963,
+      "focus": 0.720124363899231,
+      "flutter": 0.9716187119483948
+     },
+     "seed": 481739577,
+     "score": 2.5077504523834326
+    },
+    {
+     "id": "s2",
+     "synth": "Swarmr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.785222357371822,
+      "kind": 0,
+      "duration": 0.25001978874206543,
+      "count": 14,
+      "speed": 0.37362685799598694,
+      "cohesion": 0.8905164003372192,
+      "agitation": 0.21293318271636963,
+      "size": 0.0028084178920835257,
+      "movement": 0.9987658262252808,
+      "scatter": 0.7375980019569397
+     },
+     "seed": 2610093312,
+     "score": 2.5794118472249834
+    },
+    {
+     "id": "s3",
+     "synth": "Bfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 1,
+      "attackTime": 0.21224530041217804,
+      "sustainTime": 0.397674024105072,
+      "sustainPunch": 0.5570953488349915,
+      "decayTime": 0.12081915885210037,
+      "compressionAmount": 0.0007571851019747555,
+      "frequency_start": 0.4358900487422943,
+      "frequency_slide": 0.08582109212875366,
+      "frequency_acceleration": 0.4438812732696533,
+      "min_frequency_relative_to_starting_frequency": 0.370034396648407,
+      "vibratoDepth": 0.7941853404045105,
+      "vibratoSpeed": 0.828165590763092,
+      "pitch_jump_repeat_speed": 0.22619988024234772,
+      "pitch_jump_amount": 0.7456989288330078,
+      "pitch_jump_onset_percent": 0.004068470094352961,
+      "pitch_jump_2_amount": 0.2567741870880127,
+      "pitch_jump_onset2_percent": 0.2518247365951538,
+      "overtones": 0.16906078159809113,
+      "overtoneFalloff": 0.6603795289993286,
+      "squareDuty": 0.029858490452170372,
+      "dutySweep": -0.2753031253814697,
+      "repeatSpeed": 0.007536307908594608,
+      "flangerOffset": -0.998823881149292,
+      "flangerSweep": 0.060401201248168945,
+      "lpFilterCutoff": 0.998757004737854,
+      "lpFilterCutoffSweep": 0.5366151332855225,
+      "lpFilterResonance": 0.040688928216695786,
+      "hpFilterCutoff": 0.9270353317260742,
+      "hpFilterCutoffSweep": 0.1863154172897339,
+      "bitCrush": 0.3938618004322052,
+      "bitCrushSweep": -0.7800236940383911
+     },
+     "seed": 1234,
+     "score": 3.05051045834223
+    },
+    {
+     "id": "s4",
+     "synth": "Zappr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.43543754797428846,
+      "duration": 0.22924143075942993,
+      "voltage": 0.9945855140686035,
+      "arcs": 2,
+      "branching": 0.17842760682106018,
+      "crackle": 0.23287595808506012,
+      "hum": 0.005612738896161318,
+      "spark": 0.9922299385070801,
+      "spread": 0.9696420431137085,
+      "decay": 0.003001120174303651
+     },
+     "seed": 583856523,
+     "score": 3.138629693029519
+    },
+    {
+     "id": "s5",
+     "synth": "Riftr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.2942965067923069,
+      "excitation": 1,
+      "duration": 0.24087877571582794,
+      "pitch": 0.9981122016906738,
+      "bend": 0.9934889078140259,
+      "space": 0.23051109910011292,
+      "feedback": 0.23625768721103668,
+      "dispersion": 0.5616248846054077,
+      "motion": 0.4853454530239105,
+      "field": 0.7364019155502319,
+      "reverse": 0.9827969074249268
+     },
+     "seed": 2561131080,
+     "score": 3.3861343569734035
+    }
+   ]
+  }
+ ],
+ "current": {
+  "synth": "Swarmr",
+  "params": {
+   "masterVolume": 0.5,
+   "seed": 0.785222357371822,
+   "kind": 0,
+   "duration": 0.25001978874206543,
+   "count": 14,
+   "speed": 0.37362685799598694,
+   "cohesion": 0.8905164003372192,
+   "agitation": 0.21293318271636963,
+   "size": 0.0028084178920835257,
+   "movement": 0.9987658262252808,
+   "scatter": 0.7375980019569397
+  },
+  "seed": 2610093312,
+  "score": 2.5794118472249834
+ },
+ "final": {
+  "rating": 2,
+  "verdict": "stuck",
+  "note": "",
+  "screens": 9,
+  "seconds": 84.2
+ }
+}

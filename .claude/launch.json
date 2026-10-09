@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "sfxmatch-guided",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd tools && exec uv run --quiet python -m sfxmatch.guided --host 0.0.0.0 --port 8765 --jobs 6"
+      ],
+      "port": 8765
+    }
+  ]
+}

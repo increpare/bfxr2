@@ -127,6 +127,13 @@ Both expose the same persistent worker protocol used by Python (NDJSON on
 stdin, binary float32 frames on stdout). Renders are deterministic per seed
 (mulberry32 PRNG). See `bfxr_native/README.md`.
 
+### Other synths
+
+`multisynth_native/` ports 20 of the multi-synth engines to C++ behind the same
+worker framing; Node still samples presets and canonicalises controls. Build
+with `make -C multisynth_native`. See `multisynth_native/README.md` for the
+protocol, the measured parity and the speedups.
+
 ## Tests
 
 ```sh
@@ -154,6 +161,13 @@ uv run pytest -m slow      # round-trip: render known params -> re-find them
   so nothing renders much longer than the target.
 
 ## Multi-synth approximation
+
+Current work is in [sfxmatch](sfxmatch/README.md): fast rendering, a large
+synthetic library, a spectrogram inverse model, retrieval plus CMA-ES search,
+one fixed objective and one frozen listening benchmark. Results are in its
+[LOG.md](sfxmatch/LOG.md). The section below describes the earlier pipeline,
+kept as a baseline.
+
 
 The offline [multi-synth inverse model](multisynth/README.md) retrieves and
 refines editable presets across 22 active synths, selects a winner automatically,

@@ -1,0 +1,733 @@
+{
+ "target": "ext-003",
+ "title": "attack/slash2.wav",
+ "objective": 2,
+ "steps": [
+  {
+   "action": "pick",
+   "pick": "s5",
+   "sigma": 0.18,
+   "seconds": 6.3,
+   "screen": [
+    {
+     "id": "s0",
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.431767201051116,
+      "material": 2,
+      "gesture": 0,
+      "duration": 0.9507784247398376,
+      "grain": 0.8515065312385559,
+      "density": 0.990717351436615,
+      "motion": -0.44980645179748535,
+      "pressure": 0.6148784160614014,
+      "folds": 6,
+      "brightness": 0.9353290796279907
+     },
+     "seed": 1974360788,
+     "score": 2.1161354038708633
+    },
+    {
+     "id": "s1",
+     "synth": "Boomr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.9646915371995419,
+      "duration": 0.8752879500389099,
+      "size": 0.10246949642896652,
+      "pressure": 0.11546999216079712,
+      "blast": 0.7933351397514343,
+      "debris": 0.9832943081855774,
+      "gas": 0.14414219558238983,
+      "aftershock": 0.007561380974948406,
+      "rubbleSize": 0.02752658911049366,
+      "spread": 0.5882527828216553,
+      "tail": 0.007248867303133011,
+      "muffle": 0.11001556366682053,
+      "mechanism": 0,
+      "space": 0.0083865225315094
+     },
+     "seed": 3522572431,
+     "score": 2.178025966809206
+    },
+    {
+     "id": "s2",
+     "synth": "Squishr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.3855247148312628,
+      "texture": 3,
+      "viscosity": 0.10162927210330963,
+      "stretch": 0.003961862064898014,
+      "pressure": 0.977575957775116,
+      "wetness": 0.8379120230674744,
+      "bubbleSize": 0.1122521236538887,
+      "duration": 0.8458364009857178
+     },
+     "seed": 3745692638,
+     "score": 2.4133049778375573
+    },
+    {
+     "id": "s3",
+     "synth": "Pluckr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.9903526126872748,
+      "material": 4,
+      "duration": 0.8860478401184082,
+      "pitch": 0.05896688625216484,
+      "strings": 3,
+      "damping": 0.6061802506446838,
+      "brightness": 0.9851521253585815,
+      "pluck": 0.5293837785720825,
+      "coupling": 0.6464428305625916,
+      "strum": 0.4782201945781708,
+      "tremolo": 0.02017531543970108,
+      "vibrato": 0.004453844856470823,
+      "tremoloRate": 2.512134552001953,
+      "inharmonic": 0.9825781583786011
+     },
+     "seed": 1646209090,
+     "score": 2.6951021850789036
+    },
+    {
+     "id": "s4",
+     "synth": "Bfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 3,
+      "attackTime": 0.19037772715091705,
+      "sustainTime": 0.1287921667098999,
+      "sustainPunch": 0.2270742505788803,
+      "decayTime": 0.6851490139961243,
+      "compressionAmount": 0.010277967900037766,
+      "frequency_start": 0.1717781275510788,
+      "frequency_slide": 0.49100261926651,
+      "frequency_acceleration": -0.13940930366516113,
+      "min_frequency_relative_to_starting_frequency": 0.004150290507823229,
+      "vibratoDepth": 0.2841297388076782,
+      "vibratoSpeed": 0.8892104029655457,
+      "pitch_jump_repeat_speed": 0.5217992663383484,
+      "pitch_jump_amount": -0.9694662094116211,
+      "pitch_jump_onset_percent": 0.7133600115776062,
+      "pitch_jump_2_amount": -0.9673574566841125,
+      "pitch_jump_onset2_percent": 0.2717549800872803,
+      "overtones": 0.7099744081497192,
+      "overtoneFalloff": 0.35073259472846985,
+      "squareDuty": 0.008121549151837826,
+      "dutySweep": -0.12836754322052002,
+      "repeatSpeed": 0.0016471410635858774,
+      "flangerOffset": 0.9808504581451416,
+      "flangerSweep": 0.31083714962005615,
+      "lpFilterCutoff": 0.9960247874259949,
+      "lpFilterCutoffSweep": -0.12493014335632324,
+      "lpFilterResonance": 0.05437364801764488,
+      "hpFilterCutoff": 0.2714950740337372,
+      "hpFilterCutoffSweep": 0.49698150157928467,
+      "bitCrush": 0.09021066874265671,
+      "bitCrushSweep": -0.18941736221313477
+     },
+     "seed": 3291687466,
+     "score": 2.712912298767034
+    },
+    {
+     "id": "s5",
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 7,
+      "duration": 0.3471521735191345,
+      "pitch": {
+       "start": 0.2611614167690277,
+       "end": 0.8080993890762329,
+       "curve": "Pulse"
+      },
+      "tone": {
+       "start": 0.64695143699646,
+       "end": 0.9154378771781921,
+       "curve": "Steps"
+      },
+      "vibrato": {
+       "start": 0.07047015428543091,
+       "end": 0.38252002000808716,
+       "curve": "Ease In"
+      },
+      "level": {
+       "start": 0.9834562540054321,
+       "end": 0.3674789071083069,
+       "curve": "Smooth"
+      },
+      "attack": 0.007478863932192326,
+      "release": 0.05416079983115196,
+      "resonance": 0.6324719786643982,
+      "echo": 0.7999694347381592,
+      "waveTo": 5,
+      "morph": {
+       "start": 0.2987246811389923,
+       "end": 0.9609211087226868,
+       "curve": "Pulse"
+      }
+     },
+     "seed": 1,
+     "score": 2.760847738275785
+    }
+   ]
+  },
+  {
+   "action": "pick",
+   "pick": "current",
+   "sigma": 0.18,
+   "seconds": 18.3,
+   "screen": [
+    {
+     "id": "current",
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 7,
+      "duration": 0.3471521735191345,
+      "pitch": {
+       "start": 0.2611614167690277,
+       "end": 0.8080993890762329,
+       "curve": "Pulse"
+      },
+      "tone": {
+       "start": 0.64695143699646,
+       "end": 0.9154378771781921,
+       "curve": "Steps"
+      },
+      "vibrato": {
+       "start": 0.07047015428543091,
+       "end": 0.38252002000808716,
+       "curve": "Ease In"
+      },
+      "level": {
+       "start": 0.9834562540054321,
+       "end": 0.3674789071083069,
+       "curve": "Smooth"
+      },
+      "attack": 0.007478863932192326,
+      "release": 0.05416079983115196,
+      "resonance": 0.6324719786643982,
+      "echo": 0.7999694347381592,
+      "waveTo": 5,
+      "morph": {
+       "start": 0.2987246811389923,
+       "end": 0.9609211087226868,
+       "curve": "Pulse"
+      }
+     },
+     "seed": 1,
+     "score": 2.760847738275785
+    },
+    {
+     "id": "g1-0",
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 7,
+      "duration": 0.3471522033214569,
+      "pitch": {
+       "start": 0.2611614167690277,
+       "end": 0.76288241147995,
+       "curve": "Pulse"
+      },
+      "tone": {
+       "start": 0.64695143699646,
+       "end": 0.9154378771781921,
+       "curve": "Steps"
+      },
+      "vibrato": {
+       "start": 0.12013621628284454,
+       "end": 0.38252002000808716,
+       "curve": "Ease In"
+      },
+      "level": {
+       "start": 0.9834562540054321,
+       "end": 0.3674789071083069,
+       "curve": "Smooth"
+      },
+      "attack": 0.007478863932192326,
+      "release": 0.05416079983115196,
+      "resonance": 0.6324719786643982,
+      "echo": 0.7999694347381592,
+      "waveTo": 5,
+      "morph": {
+       "start": 0.5527480840682983,
+       "end": 0.9609211087226868,
+       "curve": "Pulse"
+      }
+     },
+     "seed": 1,
+     "score": 2.698347428745358
+    },
+    {
+     "id": "g1-1",
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 7,
+      "duration": 0.3471522033214569,
+      "pitch": {
+       "start": 0.2611614167690277,
+       "end": 0.5498114228248596,
+       "curve": "Pulse"
+      },
+      "tone": {
+       "start": 0.64695143699646,
+       "end": 0.9154378771781921,
+       "curve": "Steps"
+      },
+      "vibrato": {
+       "start": 0.07047015428543091,
+       "end": 0.38252002000808716,
+       "curve": "Ease In"
+      },
+      "level": {
+       "start": 0.9834562540054321,
+       "end": 0.10434986650943756,
+       "curve": "Smooth"
+      },
+      "attack": 0.007478863932192326,
+      "release": 0.05416079983115196,
+      "resonance": 0.6324719786643982,
+      "echo": 0.7999694347381592,
+      "waveTo": 5,
+      "morph": {
+       "start": 0.2987246811389923,
+       "end": 0.9609211087226868,
+       "curve": "Pulse"
+      }
+     },
+     "seed": 1,
+     "score": 3.1296030621923765
+    },
+    {
+     "id": "g1-2",
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 7,
+      "duration": 0.3471522033214569,
+      "pitch": {
+       "start": 0.2611614167690277,
+       "end": 0.8080993890762329,
+       "curve": "Bounce"
+      },
+      "tone": {
+       "start": 0.64695143699646,
+       "end": 0.9154378771781921,
+       "curve": "Linear"
+      },
+      "vibrato": {
+       "start": 0.07047015428543091,
+       "end": 0.38252002000808716,
+       "curve": "Ease In"
+      },
+      "level": {
+       "start": 0.9834562540054321,
+       "end": 0.3674789071083069,
+       "curve": "Smooth"
+      },
+      "attack": 0.12240830063819885,
+      "release": 0,
+      "resonance": 0.6324719786643982,
+      "echo": 0.7999694347381592,
+      "waveTo": 5,
+      "morph": {
+       "start": 0.2987246811389923,
+       "end": 0.908861517906189,
+       "curve": "Pulse"
+      }
+     },
+     "seed": 1,
+     "score": 3.0631699292230268
+    },
+    {
+     "id": "g1-3",
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 7,
+      "duration": 0.3471522033214569,
+      "pitch": {
+       "start": 0.2611614167690277,
+       "end": 0.8080993890762329,
+       "curve": "Steps"
+      },
+      "tone": {
+       "start": 0.6773183941841125,
+       "end": 0.9154378771781921,
+       "curve": "Steps"
+      },
+      "vibrato": {
+       "start": 0.07047015428543091,
+       "end": 0.38252002000808716,
+       "curve": "Ease In"
+      },
+      "level": {
+       "start": 0.9834562540054321,
+       "end": 0.3674789071083069,
+       "curve": "Ease In"
+      },
+      "attack": 0.007478863932192326,
+      "release": 0.05416079983115196,
+      "resonance": 0.7130661010742188,
+      "echo": 0.7999694347381592,
+      "waveTo": 5,
+      "morph": {
+       "start": 0.2987246811389923,
+       "end": 0.9609211087226868,
+       "curve": "Pulse"
+      }
+     },
+     "seed": 1,
+     "score": 2.9384738226302796
+    },
+    {
+     "id": "g1-4",
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 7,
+      "duration": 0.3471522033214569,
+      "pitch": {
+       "start": 0.20186205208301544,
+       "end": 0.9750347137451172,
+       "curve": "Pulse"
+      },
+      "tone": {
+       "start": 0.64695143699646,
+       "end": 0.7202072739601135,
+       "curve": "Steps"
+      },
+      "vibrato": {
+       "start": 0.023768693208694458,
+       "end": 0.38252002000808716,
+       "curve": "Ease In"
+      },
+      "level": {
+       "start": 0.9834562540054321,
+       "end": 0.3674789071083069,
+       "curve": "Smooth"
+      },
+      "attack": 0.007478863932192326,
+      "release": 0.05416079983115196,
+      "resonance": 0.6324719786643982,
+      "echo": 0.7999694347381592,
+      "waveTo": 5,
+      "morph": {
+       "start": 0.2579413652420044,
+       "end": 0.9609211087226868,
+       "curve": "Pulse"
+      }
+     },
+     "seed": 1,
+     "score": 2.8642413761649452
+    }
+   ]
+  },
+  {
+   "action": "pick",
+   "pick": "current",
+   "sigma": 0.108,
+   "seconds": 26.0,
+   "screen": [
+    {
+     "id": "current",
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 7,
+      "duration": 0.3471521735191345,
+      "pitch": {
+       "start": 0.2611614167690277,
+       "end": 0.8080993890762329,
+       "curve": "Pulse"
+      },
+      "tone": {
+       "start": 0.64695143699646,
+       "end": 0.9154378771781921,
+       "curve": "Steps"
+      },
+      "vibrato": {
+       "start": 0.07047015428543091,
+       "end": 0.38252002000808716,
+       "curve": "Ease In"
+      },
+      "level": {
+       "start": 0.9834562540054321,
+       "end": 0.3674789071083069,
+       "curve": "Smooth"
+      },
+      "attack": 0.007478863932192326,
+      "release": 0.05416079983115196,
+      "resonance": 0.6324719786643982,
+      "echo": 0.7999694347381592,
+      "waveTo": 5,
+      "morph": {
+       "start": 0.2987246811389923,
+       "end": 0.9609211087226868,
+       "curve": "Pulse"
+      }
+     },
+     "seed": 1,
+     "score": 2.760847738275785
+    },
+    {
+     "id": "g2-0",
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 7,
+      "duration": 0.3471522033214569,
+      "pitch": {
+       "start": 0.2611614167690277,
+       "end": 0.8080993890762329,
+       "curve": "Steps"
+      },
+      "tone": {
+       "start": 0.5935125946998596,
+       "end": 0.8600553870201111,
+       "curve": "Steps"
+      },
+      "vibrato": {
+       "start": 0.06448262184858322,
+       "end": 0.38252002000808716,
+       "curve": "Ease In"
+      },
+      "level": {
+       "start": 0.9834562540054321,
+       "end": 0.3674789071083069,
+       "curve": "Ease Out"
+      },
+      "attack": 0.007478863932192326,
+      "release": 0.05416079983115196,
+      "resonance": 0.6324719786643982,
+      "echo": 0.7999694347381592,
+      "waveTo": 5,
+      "morph": {
+       "start": 0.2987246811389923,
+       "end": 0.9609211087226868,
+       "curve": "Pulse"
+      }
+     },
+     "seed": 1,
+     "score": 2.9734103968853747
+    },
+    {
+     "id": "g2-1",
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 7,
+      "duration": 0.3471522033214569,
+      "pitch": {
+       "start": 0.2918030619621277,
+       "end": 0.8080993890762329,
+       "curve": "Pulse"
+      },
+      "tone": {
+       "start": 0.64695143699646,
+       "end": 0.9154378771781921,
+       "curve": "Steps"
+      },
+      "vibrato": {
+       "start": 0.07047015428543091,
+       "end": 0.38252002000808716,
+       "curve": "Ease Out"
+      },
+      "level": {
+       "start": 0.9834562540054321,
+       "end": 0.3674789071083069,
+       "curve": "Triangle"
+      },
+      "attack": 0.10146179795265198,
+      "release": 0.05416079983115196,
+      "resonance": 0.6324719786643982,
+      "echo": 0.7999694347381592,
+      "waveTo": 5,
+      "morph": {
+       "start": 0.2987246811389923,
+       "end": 0.9609211087226868,
+       "curve": "Steps"
+      }
+     },
+     "seed": 1,
+     "score": 3.1233457012588413
+    },
+    {
+     "id": "g2-2",
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 7,
+      "duration": 0.3004394471645355,
+      "pitch": {
+       "start": 0.21639074385166168,
+       "end": 0.8080993890762329,
+       "curve": "Ease Out"
+      },
+      "tone": {
+       "start": 0.64695143699646,
+       "end": 0.9154378771781921,
+       "curve": "Steps"
+      },
+      "vibrato": {
+       "start": 0.07047015428543091,
+       "end": 0.38252002000808716,
+       "curve": "Ease In"
+      },
+      "level": {
+       "start": 0.9834562540054321,
+       "end": 0.3674789071083069,
+       "curve": "Smooth"
+      },
+      "attack": 0.007478863932192326,
+      "release": 0.05416079983115196,
+      "resonance": 0.6324719786643982,
+      "echo": 0.8,
+      "waveTo": 5,
+      "morph": {
+       "start": 0.2987246811389923,
+       "end": 1,
+       "curve": "Pulse"
+      }
+     },
+     "seed": 1,
+     "score": 2.9142272333972192
+    },
+    {
+     "id": "g2-3",
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 7,
+      "duration": 0.3471522033214569,
+      "pitch": {
+       "start": 0.2611614167690277,
+       "end": 0.8080993890762329,
+       "curve": "Pulse"
+      },
+      "tone": {
+       "start": 0.64695143699646,
+       "end": 0.9154378771781921,
+       "curve": "Steps"
+      },
+      "vibrato": {
+       "start": 0.07047015428543091,
+       "end": 0.38252002000808716,
+       "curve": "Steps"
+      },
+      "level": {
+       "start": 0.9834562540054321,
+       "end": 0.3674789071083069,
+       "curve": "Smooth"
+      },
+      "attack": 0.007478863932192326,
+      "release": 0.06949156522750854,
+      "resonance": 0.6324719786643982,
+      "echo": 0.7999694347381592,
+      "waveTo": 5,
+      "morph": {
+       "start": 0.2987246811389923,
+       "end": 0.9609211087226868,
+       "curve": "Pulse"
+      }
+     },
+     "seed": 1,
+     "score": 2.6857376013869336
+    },
+    {
+     "id": "g2-4",
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 4,
+      "duration": 0.3471522033214569,
+      "pitch": {
+       "start": 0.2611614167690277,
+       "end": 0.8080993890762329,
+       "curve": "Pulse"
+      },
+      "tone": {
+       "start": 0.64695143699646,
+       "end": 0.9154378771781921,
+       "curve": "Ease In"
+      },
+      "vibrato": {
+       "start": 0.07047015428543091,
+       "end": 0.38252002000808716,
+       "curve": "Ease In"
+      },
+      "level": {
+       "start": 0.9834562540054321,
+       "end": 0.3674789071083069,
+       "curve": "Smooth"
+      },
+      "attack": 0.007478863932192326,
+      "release": 0.05416079983115196,
+      "resonance": 0.6324719786643982,
+      "echo": 0.7999694347381592,
+      "waveTo": 7,
+      "morph": {
+       "start": 0.2987246811389923,
+       "end": 0.9609211087226868,
+       "curve": "Smooth"
+      }
+     },
+     "seed": 1,
+     "score": 3.1048405563367916
+    }
+   ]
+  }
+ ],
+ "current": {
+  "synth": "Transfxr",
+  "params": {
+   "masterVolume": 0.5,
+   "waveType": 7,
+   "duration": 0.3471521735191345,
+   "pitch": {
+    "start": 0.2611614167690277,
+    "end": 0.8080993890762329,
+    "curve": "Pulse"
+   },
+   "tone": {
+    "start": 0.64695143699646,
+    "end": 0.9154378771781921,
+    "curve": "Steps"
+   },
+   "vibrato": {
+    "start": 0.07047015428543091,
+    "end": 0.38252002000808716,
+    "curve": "Ease In"
+   },
+   "level": {
+    "start": 0.9834562540054321,
+    "end": 0.3674789071083069,
+    "curve": "Smooth"
+   },
+   "attack": 0.007478863932192326,
+   "release": 0.05416079983115196,
+   "resonance": 0.6324719786643982,
+   "echo": 0.7999694347381592,
+   "waveTo": 5,
+   "morph": {
+    "start": 0.2987246811389923,
+    "end": 0.9609211087226868,
+    "curve": "Pulse"
+   }
+  },
+  "seed": 1,
+  "score": 2.760847738275785
+ },
+ "final": {
+  "rating": 2,
+  "verdict": "stuck",
+  "note": "",
+  "screens": 3,
+  "seconds": 35.0
+ }
+}

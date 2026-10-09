@@ -1,0 +1,186 @@
+{
+ "page": "layers-probe",
+ "saved": "2026-10-09T21:38:55.802Z",
+ "ratings": [
+  {
+   "target": "ext-001",
+   "system": "two layers",
+   "rating": 3
+  },
+  {
+   "target": "ext-001",
+   "system": "single best",
+   "rating": 2
+  },
+  {
+   "target": "ext-001",
+   "system": "two layers, other base",
+   "rating": 2
+  },
+  {
+   "target": "ext-005",
+   "system": "two layers",
+   "rating": 1
+  },
+  {
+   "target": "ext-005",
+   "system": "single best",
+   "rating": 1
+  },
+  {
+   "target": "ext-005",
+   "system": "two layers, other base",
+   "rating": 2
+  },
+  {
+   "target": "ext-009",
+   "system": "single best",
+   "rating": 2
+  },
+  {
+   "target": "ext-009",
+   "system": "two layers",
+   "rating": 1
+  },
+  {
+   "target": "ext-009",
+   "system": "two layers, other base",
+   "rating": 2
+  },
+  {
+   "target": "ext-013",
+   "system": "two layers",
+   "rating": 1
+  },
+  {
+   "target": "ext-013",
+   "system": "single best",
+   "rating": 1
+  },
+  {
+   "target": "ext-013",
+   "system": "two layers, other base",
+   "rating": 2
+  },
+  {
+   "target": "ext-017",
+   "system": "two layers",
+   "rating": 2
+  },
+  {
+   "target": "ext-017",
+   "system": "single best",
+   "rating": 2
+  },
+  {
+   "target": "ext-017",
+   "system": "two layers, other base",
+   "rating": 2
+  },
+  {
+   "target": "ext-021",
+   "system": "two layers",
+   "rating": 2
+  },
+  {
+   "target": "ext-021",
+   "system": "single best",
+   "rating": 2
+  },
+  {
+   "target": "ext-021",
+   "system": "two layers, other base",
+   "rating": 2
+  },
+  {
+   "target": "ext-025",
+   "system": "single best",
+   "rating": 2
+  },
+  {
+   "target": "ext-025",
+   "system": "two layers, other base",
+   "rating": 2
+  },
+  {
+   "target": "ext-025",
+   "system": "two layers",
+   "rating": 2
+  },
+  {
+   "target": "ext-029",
+   "system": "single best",
+   "rating": 1
+  },
+  {
+   "target": "ext-029",
+   "system": "two layers",
+   "rating": 1
+  },
+  {
+   "target": "ext-029",
+   "system": "two layers, other base",
+   "rating": 1
+  },
+  {
+   "target": "ext-033",
+   "system": "two layers",
+   "rating": 2
+  },
+  {
+   "target": "ext-033",
+   "system": "single best",
+   "rating": 2
+  },
+  {
+   "target": "ext-033",
+   "system": "two layers, other base",
+   "rating": 3
+  },
+  {
+   "target": "ext-037",
+   "system": "two layers",
+   "rating": 1
+  },
+  {
+   "target": "ext-037",
+   "system": "single best",
+   "rating": 1
+  },
+  {
+   "target": "ext-037",
+   "system": "two layers, other base",
+   "rating": 1
+  },
+  {
+   "target": "ext-041",
+   "system": "single best",
+   "rating": 1
+  },
+  {
+   "target": "ext-041",
+   "system": "two layers",
+   "rating": 2
+  },
+  {
+   "target": "ext-041",
+   "system": "two layers, other base",
+   "rating": 1
+  },
+  {
+   "target": "ext-045",
+   "system": "two layers, other base",
+   "rating": 1
+  },
+  {
+   "target": "ext-045",
+   "system": "two layers",
+   "rating": 2
+  },
+  {
+   "target": "ext-045",
+   "system": "single best",
+   "rating": 2
+  }
+ ]
+}
