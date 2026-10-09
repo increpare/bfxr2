@@ -78,25 +78,11 @@ test('glitch families select distinct buffer, codec, scrub, crush, data and grai
         'different mechanisms have different spectral textures');
 });
 
-test('deep rumble adds sub energy while harmonics remain audible above it', () => {
-    const {run} = createContext(['Rumblr']);
-    run('var s=new Rumblr();s.apply_params({duration:2,size:0.9,roughness:0.1,dust:0,tremor:0,attack:0.1,sweep:0,seed:0.18})');
-    assert.ok(run('"depth" in s.params && "harmonics" in s.params'));
-    const [shallow, deep, harmonic] = run(`[{depth:0,harmonics:0},{depth:1,harmonics:0},
-        {depth:1,harmonics:1}].map(change=>Rumblr_DSP.render({...s.params,...change}))`);
-    const shallowRatio = spectralEnergy(shallow,15,54) / spectralEnergy(shallow,60,180);
-    const deepRatio = spectralEnergy(deep,15,54) / spectralEnergy(deep,60,180);
-    assert.ok(deepRatio > shallowRatio * 3, 'depth transfers energy into the lowest octave');
-    assert.ok(spectralEnergy(harmonic,60,180) > spectralEnergy(deep,60,180) * 2,
-        'overtones keep the weight audible on smaller speakers');
-    assert.ok(rms(deep) > 0.015 && rms(harmonic) > 0.015);
-});
-
-for (const name of ['Bouncr','Glitchr','Rumblr']) {
+for (const name of ['Bouncr','Glitchr']) {
     test(name + ' preserves saved seeds, varies recipes and resets added controls on full legacy imports', () => {
         const {run} = createContext([name]);
         run(`var s=new ${name}();Math.random=SoundDSP.rng(0.718)`);
-        const extras = {Bouncr:['surface','force','tail'],Glitchr:['mode'],Rumblr:['depth','harmonics']}[name];
+        const extras = {Bouncr:['surface','force','tail'],Glitchr:['mode']}[name];
         const legacy = plain(run(`(() => {
             const old={...s.params}; for(const key of ${JSON.stringify(extras)})delete old[key];
             for(const key of ${JSON.stringify(extras)})s.set_param(key,s.param_max(key));

@@ -9,7 +9,6 @@ class Mixr extends PresetSynth {
         ['Balance', 'Balance between the two sounds.', 'balance', 0.5, 0, 1],
         {type:'TEXT', name:'sources', default_value:'[]', max_length:60000}
     ];
-    static retired = ['Chattr','Weathr','Tappr','Notifr','Tickr','Holor','Pewpr','Rollr','Pulser','Rumblr'];
     recipes = [
 
         //GOOD
@@ -46,20 +45,73 @@ class Mixr extends PresetSynth {
     create_random_template() { return super.create_random_template(); }
     get_sources() { return JSON.parse(this.params.sources); }
 
+    static sources() {
+        return [typeof Bfxr === 'undefined' ? null : Bfxr,
+            typeof Footsteppr === 'undefined' ? null : Footsteppr,
+            typeof Transfxr === 'undefined' ? null : Transfxr,
+            typeof Clonkr === 'undefined' ? null : Clonkr,
+            typeof Machinr === 'undefined' ? null : Machinr,
+            typeof Jinglr === 'undefined' ? null : Jinglr,
+            typeof Squishr === 'undefined' ? null : Squishr,
+            typeof Crittr === 'undefined' ? null : Crittr,
+            typeof Birdr === 'undefined' ? null : Birdr,
+            typeof Signlr === 'undefined' ? null : Signlr,
+            typeof Fractr === 'undefined' ? null : Fractr,
+            typeof Riftr === 'undefined' ? null : Riftr,
+            typeof Swarmr === 'undefined' ? null : Swarmr,
+            typeof Rustlr === 'undefined' ? null : Rustlr,
+            typeof Boomr === 'undefined' ? null : Boomr,
+            typeof Zappr === 'undefined' ? null : Zappr,
+            typeof Whooshr === 'undefined' ? null : Whooshr,
+            typeof Bouncr === 'undefined' ? null : Bouncr,
+            typeof Breathr === 'undefined' ? null : Breathr,
+            typeof Choirr === 'undefined' ? null : Choirr,
+            typeof Pluckr === 'undefined' ? null : Pluckr,
+            typeof Glitchr === 'undefined' ? null : Glitchr].filter(Boolean);
+    }
+    static source(name) { const Constructor = this.sources().find(c => c.name === name); return Constructor ? new Constructor() : null; }
+
+    static sanitize_source(synth, params) {
+        // Older synths' apply_params accepts arbitrary keys; validate each known control here.
+        // Apply editable scores last: generator controls can otherwise replace saved notes.
+        const controls = synth.param_info.map(info => synth.get_param_normalized(info));
+        controls.sort((a,b) => Number(a.type === 'TEXT') - Number(b.type === 'TEXT'));
+        const known={};
+        for(const info of controls)if(params&&Object.prototype.hasOwnProperty.call(params,info.name))known[info.name]=params[info.name];
+        // Specialized engines filter their own input, and migrations may need former controls.
+        // The legacy base setter accepts arbitrary keys, so only give it known controls.
+        synth.apply_params(synth.apply_params === SynthBase.prototype.apply_params ? known : params);
+        const migrated={...synth.params};
+        synth.params=synth.default_params();
+        for(const info of controls)synth.set_param(info.name,migrated[info.name]);
+        return JSON.parse(JSON.stringify(synth.params));
+    }
+
+    static render_source(source, seed = 0.5) {
+        const synth = this.source(source.synth);
+        if (!synth) return new Float32Array(1);
+        this.sanitize_source(synth,source.params);
+        const originalRandom = Math.random;
+        Math.random = SoundDSP.rng(seed);
+        try {
+            return synth.render();
+        } finally { Math.random = originalRandom; }
+    }
+
     static templates_for(synth) {
-        if (!synth || this.retired.includes(synth.name)) return [];
+        if (!synth) return [];
         return synth.templates.filter(t => typeof synth[t[2]] === 'function' &&
             (t[2].startsWith('generate_') || (synth.name === 'Footsteppr' && t[2] === 'randomize_params')));
     }
     static generators() {
-        return Stackr.sources().flatMap(Constructor => {
+        return Mixr.sources().flatMap(Constructor => {
             const synth=new Constructor();
             return this.templates_for(synth).map(([name,tip,generator]) =>
                 ({synth:synth.name, family:synth_display_name(synth.name), name, tip, generator}));
         });
     }
     static generated_source(name,generator,previousGenerator) {
-        const synth=Stackr.source(name);
+        const synth=Mixr.source(name);
         const templates=this.templates_for(synth);
         let template;
         if(generator==='*'){
@@ -78,10 +130,10 @@ class Mixr extends PresetSynth {
         let sources;
         try { sources = typeof value === 'string' ? JSON.parse(value.slice(0,60000)) : value; } catch { sources = []; }
         const clean = (Array.isArray(sources) ? sources : []).slice(0,2).map(source => {
-            const synth = source && Stackr.source(source.synth);
+            const synth = source && Mixr.source(source.synth);
             if (!synth) return null;
             const entry={synth:synth.name, name:typeof source.name === 'string' ? source.name.slice(0,60) : synth.name,
-                params:Stackr.sanitize_source(synth,source.params)};
+                params:Mixr.sanitize_source(synth,source.params)};
             const templates=Mixr.templates_for(synth);
             if(source.generator==='*' && templates.length){
                 entry.generator='*';
@@ -95,7 +147,7 @@ class Mixr extends PresetSynth {
     }
     set_source(slot,synth,name) {
         if (slot!==0 && slot!==1) return false;
-        if (synth && (synth.name === 'Mixr' || synth.name === 'Stackr')) return false;
+        if (synth && synth.name === 'Mixr') return false;
         const sources=this.get_sources();
         while(sources.length<=slot)sources.push(null);
         sources[slot]=synth ? {synth:synth.name,name:name||synth.name,params:synth.params} : null;
@@ -125,17 +177,6 @@ class Mixr extends PresetSynth {
             ? Mixr.generated_source(current.synth,current.generator,current.selectedGenerator) || current : current);
         this.set_param('sources',sources);
     }
-    // Older integrations can still reseed a copied character snapshot.
-    reseed_source(slot) {
-        const current=this.get_sources()[slot];
-        if(!current)return;
-        if(current.generator)return this.regenerate_source(slot);
-        if(current.synth==='Chattr') {
-            const source=Stackr.source(current.synth);source.apply_params(current.params);
-            const family=source.constructor.characters.find(c=>source.params.voiceMode===0?c.id==='clear_speaker':c.params.character===source.params.character);
-            if(family){source.generate_character(family.id);this.set_source(slot,source,family.name);}
-        }
-    }
     after_recipe(recipe) {
         if(this.locked_param('sources'))return;
         const sources=recipe.pair.map(name=>{
@@ -151,7 +192,7 @@ class Mixr extends PresetSynth {
         if(this.locked_param('sources'))return;
         const sources=this.get_sources().map(current=>{
             if(!current)return null;
-            const source=Stackr.source(current.synth);
+            const source=Mixr.source(current.synth);
             source.apply_params(current.params);source.mutate_params();
             return {...current,params:source.params};
         });

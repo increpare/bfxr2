@@ -3,14 +3,14 @@ const assert = require('node:assert/strict');
 const {createContext, plain} = require('./helpers/synth-context');
 
 function setup() {
-    const api = createContext(['Rustlr', 'Rollr']);
-    api.run(`var rustle = new Rustlr(), roll = new Rollr();
+    const api = createContext(['Rustlr']);
+    api.run(`var rustle = new Rustlr();
         var finish = SoundDSP.finish;
         SoundDSP.finish = function(buffer, volume, options) {
             if (!buffer.every(Number.isFinite)) throw new Error('non-finite raw contact PCM');
             globalThis.rawContact = buffer.slice();
             return finish.call(this, buffer, volume, options);
-        };`);
+};`);
     return api;
 }
 function rms(pcm) {
@@ -43,71 +43,7 @@ test('Rustlr pressure changes stick-slip and crease behaviour, beyond a gain adj
     assert.ok(rms(firm) > rms(light) * 1.3, 'firm contact still transfers more energy');
 });
 
-test('slow rolling maintains surface contact between broad wheel bumps', () => {
-    const {run} = setup();
-    const raw = run(`Rollr_DSP.render({...roll.params,duration:2,wheels:1,speed:0,
-        roughness:0.15,slowing:0,size:0.6,material:0,seed:0.5}); rawContact`);
-    const windows = [];
-    for (let i = 4410; i < raw.length - 4410; i += 882) windows.push(rms(raw.slice(i, i + 882)));
-    windows.sort((a, b) => a - b);
-    assert.ok(windows[Math.floor(windows.length * 0.1)] > rms(raw) * 0.32,
-        'the quietest moving sections retain rolling friction instead of isolated knocks');
-});
-
-test('rolling body sound is damped and broadband instead of an exposed periodic oscillator', () => {
-    const {run} = setup();
-    const pcm = run(`Rollr_DSP.render({...roll.params,duration:2,wheels:1,speed:0,
-        roughness:0,slowing:0,size:0.6,material:0,seed:0.5})`);
-    const correlations = [];
-    for (let lag = 80; lag < 700; lag += 2) correlations.push(correlation(pcm, pcm, lag));
-    let periodicity = 0;
-    // A broad lowpass field is locally correlated, but does not repeat after a period.
-    for (let i = 1; i < correlations.length - 1; i++) {
-        if (correlations[i] > correlations[i - 1] && correlations[i] > correlations[i + 1]) {
-            periodicity = Math.max(periodicity, correlations[i]);
-        }
-    }
-    assert.ok(periodicity < 0.65, 'long-lived narrow body ringing must not dominate rolling: ' + periodicity);
-});
-
-test('full legacy Rollr saves reset surface while partial updates and locks retain it', () => {
-    const {run} = setup();
-    const result = plain(run(`(() => {
-        const old = {...roll.params}; delete old.surface;
-        roll.set_param('surface',1); roll.apply_params({speed:0.2});
-        const partial = roll.params.surface;
-        roll.apply_params(old); const legacy = roll.params.surface;
-        roll.set_param('surface',3); roll.set_locked_param('surface',true);
-        roll.apply_params(old,true);
-        return {partial,legacy,locked:roll.params.surface,default:roll.default_params().surface};
-    })()`));
-    assert.equal(result.partial, 1);
-    assert.equal(result.legacy, result.default);
-    assert.equal(result.locked, 3);
-});
-
-test('rolling traverses different surfaces and faster travel raises texture frequency', () => {
-    const {run} = setup();
-    assert.ok(run('roll.param_info.some(info => info.name === "surface")'), 'surface has a compact selector');
-    const buffers = run(`[0,1,2,3].map(surface => Rollr_DSP.render({...roll.params,
-        duration:1,roughness:0.7,surface,seed:0.173,slowing:0}))`);
-    assert.equal(new Set(buffers.map(pcm => Buffer.from(pcm.buffer).toString('base64'))).size, 4);
-    const [slow, fast] = run(`[0.1,0.9].map(speed => Rollr_DSP.render({...roll.params,
-        duration:2,wheels:1,surface:2,roughness:0.8,speed,slowing:0,seed:0.173}))`);
-    assert.ok(brightness(fast) > brightness(slow) * 1.3, 'travel speed changes the rate of surface detail');
-});
-
-test('rolling slowdown loses kinetic energy and cloth remains softer than foil', () => {
-    const {run} = setup();
-    const roll = run(`Rollr_DSP.render({...roll.params,duration:3,speed:0.8,
-        slowing:1,roughness:0.6,seed:0.413})`);
-    assert.ok(rms(roll.slice(88200, 119070)) < rms(roll.slice(4410, 35280)) * 0.65);
-    const [cloth, foil] = run(`[1,4].map(material => Rustlr_DSP.render({...rustle.params,
-        duration:1,material,gesture:3,pressure:0.7,folds:7,seed:0.31}))`);
-    assert.ok(brightness(foil) > brightness(cloth) * 3);
-});
-
-for (const name of ['Rustlr', 'Rollr']) {
+for (const name of ['Rustlr']) {
     test(name + ' recipes preserve locks, vary physical controls and replay saved PCM', () => {
         const {run} = setup();
         run(`var synth = new ${name}(); Math.random = SoundDSP.rng(0.316);`);

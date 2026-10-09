@@ -1,7 +1,7 @@
 const test=require('node:test');
 const assert=require('node:assert/strict');
 const {createContext,plain}=require('./helpers/synth-context');
-const names=['Boomr','Pewpr','Zappr'];
+const names=['Boomr','Zappr'];
 function setup(name){const api=createContext([name]);api.run(`var s=new ${name}();Math.random=SoundDSP.rng(0.31827);`);return api;}
 function rms(pcm){return Math.sqrt(pcm.reduce((sum,v)=>sum+v*v,0)/pcm.length);}
 function safe(pcm,duration,audible=true){assert.equal(pcm.length,Math.round(duration*44100));assert.ok(pcm.every(v=>Number.isFinite(v)&&Math.abs(v)<1));assert.equal(Math.abs(pcm[0]),0);assert.equal(Math.abs(pcm.at(-1)),0);if(audible)assert.ok(rms(pcm)>0.001);}
@@ -30,23 +30,19 @@ for(const name of names){
   assert.ok(run(`s.set_param('masterVolume',0);${name}_DSP.render(s.params).every(v=>v===0)`));
  });
 }
-test('integer weapon shots and electrical arcs normalize imports without changing locked values',()=>{
- for(const [name,control] of [['Pewpr','shots'],['Zappr','arcs']]){
-  const {run}=setup(name);assert.equal(run(`s.set_param('${control}',3.6);s.params.${control}`),4);
-  assert.equal(run(`s.set_locked_param('${control}',true);s.set_param('${control}',7.7,true);s.params.${control}`),4);
-  assert.ok(run(`s.set_locked_param('${control}',false);s.set_param('${control}',NaN);Number.isInteger(s.params.${control})`));
- }
+
+test('electrical arc counts normalize imports without changing locked values',()=>{
+ const {run}=setup('Zappr');
+ assert.equal(run("s.set_param('arcs',3.6);s.params.arcs"),4);
+ assert.equal(run("s.set_locked_param('arcs',true);s.set_param('arcs',7.7,true);s.params.arcs"),4);
+ assert.ok(run("s.set_locked_param('arcs',false);s.set_param('arcs',NaN);Number.isInteger(s.params.arcs)"));
 });
 test('explosion muffling removes high-frequency blast energy',()=>{
  const {run}=setup('Boomr');const [a,b]=run(`s.apply_params({duration:1,pressure:0,debris:0,blast:1,tail:0.3,muffle:0});var a=Boomr_DSP.render(s.params);s.set_param('muffle',1);[a,Boomr_DSP.render(s.params)]`);
  function roughness(pcm){let energy=0,diff=0;for(let i=1;i<pcm.length;i++){energy+=pcm[i]*pcm[i];diff+=(pcm[i]-pcm[i-1])**2;}return diff/energy;}
  assert.ok(roughness(b)<roughness(a)*0.3);
 });
-test('weapon charging postpones the loud firing stage',()=>{
- const {run}=setup('Pewpr');const [a,b]=run(`s.apply_params({duration:1,shots:1,punch:1,body:0.75,grit:0,recoil:0,charge:0});var a=Pewpr_DSP.render(s.params);s.set_param('charge',0.9);[a,Pewpr_DSP.render(s.params)]`);
- function peakWindow(pcm){let peak=0,index=0;for(let i=0;i<pcm.length-441;i+=441){const energy=rms(pcm.slice(i,i+441));if(energy>peak){peak=energy;index=i;}}return index/44100;}
- assert.ok(peakWindow(b)>peakWindow(a)+0.25);
-});
+
 test('more electrical arcs fill more separate moments with sparks',()=>{
  const {run}=setup('Zappr');const [a,b]=run(`s.apply_params({duration:2,arcs:1,branching:0,crackle:0,hum:0,spark:1,spread:1,decay:0});var a=Zappr_DSP.render(s.params);s.set_param('arcs',20);[a,Zappr_DSP.render(s.params)]`);
  function active(pcm){let count=0;for(let i=0;i<pcm.length-441;i+=441)if(rms(pcm.slice(i,i+441))>0.008)count++;return count;}

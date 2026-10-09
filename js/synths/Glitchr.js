@@ -1,5 +1,6 @@
 class Glitchr extends PresetSynth {
     name='Glitchr';
+    canvas_bg_logo = 'img/logo_glitchr.png';
     tooltip='Lost buffers, codec warble, tape scrubbing and torn digital audio.';
     static DSP=Glitchr_DSP;
     param_info=[...PresetSynth.common_params,

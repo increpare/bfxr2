@@ -157,9 +157,13 @@ class Transfxr extends SynthBase {
         return Math.round(value * 100) + '%';
     }
 
+    render() {
+        return Transfxr_DSP.render(this.params);
+    }
+
     generate_sound() {
         if (this.sound) this.sound.stop();
-        this.sound = RealizedSound.from_buffer(Transfxr_DSP.render(this.params));
+        this.sound = RealizedSound.from_buffer(this.render());
         this.sound_params = JSON.stringify(this.params);
     }
 }

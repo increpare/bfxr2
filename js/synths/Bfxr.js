@@ -684,11 +684,16 @@ class Bfxr extends SynthBase {
     /* SOUND SYNTHESIS   */
     /*********************/
 
+    render() {
+        // The legacy DSP adjusts envelope values while rendering; keep saved data intact.
+        var dsp = new Bfxr_DSP({...this.params}, this);
+        dsp.generate_sound();
+        return dsp.buffer;
+    }
+
     generate_sound() {
         if (this.sound) this.sound.stop();
-        var dsp = new Bfxr_DSP(this.params, this);
-        dsp.generate_sound();
-        this.sound = RealizedSound.from_buffer(dsp.buffer);
+        this.sound = RealizedSound.from_buffer(this.render());
         this.sound_params = JSON.stringify(this.params);
     }
 

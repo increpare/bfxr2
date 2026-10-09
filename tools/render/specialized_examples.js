@@ -10,17 +10,15 @@ const {encodeWav16} = require('./wav');
 
 const rate = 44100;
 const output = path.resolve(process.argv[2] || path.join(root, 'examples/SoundCabinet'));
-const families = ['Clonkr', 'Machinr', 'Weathr', 'Jinglr', 'Squishr', 'Stackr'];
+const families = ['Clonkr', 'Machinr', 'Jinglr', 'Squishr'];
 const api = createContext(['Transfxr', ...families]);
-const counts = [10, 8, 9, 8, 10, 8];
+const counts = [10, 8, 12, 10];
 const descriptions = {
     Clonkr: 'Materials and contact: choose Wood, Glass, Metal, Ceramic, or Rubber, then Hit, Scrape, or Rattle. Size lowers the resonance as the object gets larger; Hollowness emphasizes its body. Strike Hardness changes the attack and upper modes, Damping shortens ringing, and Duration controls resonance and the length of continued contact.',
     Machinr: 'Mechanism chooses the moving parts. Speed and Load control their movement; Roughness and Gear Looseness add worn bearings, friction, and rattles. Size changes the register, while Duration, Start Time, and Stop Time shape the movement.',
-    Weathr: 'Environment chooses air, rain, fire, water, or electricity. Density adds activity, Turbulence changes the surges, Brightness opens the high frequencies, Scale changes the size of details, and Detail brings individual drops or crackles forward. Duration sets the full seamless loop length.',
+
     Jinglr: 'Choose an Instrument, Key, Scale, and Octave, then shape the phrase with Tempo, Swing, Brightness, Decay, and Echo. Contour, Rhythm and Notes shape the tune. The ten-digit seed combines five melody digits with five instrument-character digits.',
-    Squishr: 'Texture selects slime, bubbles, suction, splat, gulp, or spring. Viscosity thickens and muffles the material; Stretch lengthens its deformation; Pressure adds force and activity; Wetness brings bubbles forward; Bubble Size lowers their resonance as they grow. Duration sets the gesture length.',
-    Stackr: 'Build a complete event from snapshots of sounds in the other tabs. Each layer has a Start time, Level, and Pitch in semitones. Spacing stretches or compresses the gaps between layers.'
-};
+    Squishr: 'Texture selects slime, bubbles, suction, splat, gulp, or spring. Viscosity thickens and muffles the material; Stretch lengthens its deformation; Pressure adds force and activity; Wetness brings bubbles forward; Bubble Size lowers their resonance as they grow. Duration sets the gesture length.'};
 
 function seedFor(text) {
     let hash = 2166136261;
@@ -95,20 +93,18 @@ for (const [familyIndex, family] of families.entries()) {
     collection[family] = {files, selected_file_index:0, create_new_sound:true, play_on_change:true,
         locked_params:plain(api.run('synth.locked_params'))};
 }
-collection.active_tab_index = 4;
-assert.equal(sounds.length, 53);
+collection.active_tab_name = 'Clonkr';
+assert.equal(sounds.length, 40);
 fs.writeFileSync(path.join(output, 'SoundCabinet.bcol'), JSON.stringify(collection, null, 2) + '\n');
 
-// Solids → mechanisms → fire → wet creatures → music → ocean → complete events.
-// Only ambience is excerpted; gestures and musical phrases play to completion.
+// Solids → mechanisms → wet creatures → music.
+// Gestures and musical phrases play to completion.
 const showcasePlan = [
     ['Clonkr', 'wood_knock'], ['Clonkr', 'glass_ping'],
     ['Machinr', 'camera_shutter'], ['Machinr', 'rusty_winch'],
-    ['Weathr', 'campfire', 3.5],
+
     ['Squishr', 'water_drop'], ['Squishr', 'suction_cup'], ['Squishr', 'slime_step'],
-    ['Jinglr', 'discovery'], ['Jinglr', 'checkpoint'],
-    ['Weathr', 'ocean', 4], ['Stackr', 'door_unlock'], ['Stackr', 'treasure']
-];
+    ['Jinglr', 'discovery'], ['Jinglr', 'checkpoint']];
 const clips = [];
 const gap = Math.round(0.28 * rate);
 let frame = 0;
@@ -129,7 +125,7 @@ for (const [family, id, excerptSeconds] of showcasePlan) {
 const reel = new Float32Array(frame - gap);
 for (const clip of clips) reel.set(clip.pcm, Math.round(clip.start * rate));
 const reelMetrics = measure(reel, 'Sound Cabinet showcase');
-assert.ok(reelMetrics.duration >= 20 && reelMetrics.duration <= 40, 'showcase must last 20–40 seconds');
+assert.ok(reelMetrics.duration >= 10 && reelMetrics.duration <= 40, 'showcase must last 10–40 seconds');
 const showcaseFile = 'sound_cabinet_showcase.wav';
 fs.writeFileSync(path.join(output, showcaseFile), encodeWav16(reel, rate));
 
@@ -144,23 +140,21 @@ function timestamp(seconds) {
 }
 const readme = [
     '# Sound Cabinet examples', '',
-    '53 editable sounds, one from every category in Clonkr, Machinr, Weathr, Jinglr, Squishr, and Stackr. These are exact saved variants of the randomized category buttons; clicking a category in the app creates another sound in that family.', '',
+    '40 editable sounds, one from every category in Clonkr, Machinr, Jinglr, and Squishr. These are exact saved variants of the randomized category buttons; clicking a category in the app creates another sound in that family.', '',
     '## Load and explore', '',
-    'Use **Open Data** in Bfxr and choose [SoundCabinet.bcol](SoundCabinet.bcol), or drag the collection onto the app. It opens Clonkr and fills the six Sound Cabinet tabs. Loading replaces the sound lists in those six tabs; use **Save .bcol** first if you want to keep an existing collection.', '',
+    'Use **Open Data** in Bfxr and choose [SoundCabinet.bcol](SoundCabinet.bcol), or drag the collection onto the app. It opens Clonkr and fills the four Sound Cabinet tabs. Loading replaces the sound lists in those four tabs; use **Save .bcol** first if you want to keep an existing collection.', '',
     'Select a sound in a tab to play or edit it. **Export WAV** saves that sound; **Export All** exports sounds from all tabs into one ZIP. A row lock protects its control during category generation, Randomize, and Mutate. The saved examples start with only Sound Volume locked, so the other controls are ready to explore.', '',
     '## Rebuild the audio', '',
     'From the repository root:', '',
     '```sh', 'node tools/render/specialized_examples.js', '```', '',
-    'An optional final argument chooses another output folder. The script uses stable per-category seeds, selects representative variants within the normal recipe ranges, and writes 53 individual 44.1 kHz mono PCM16 WAVs, the editable collection, this guide, the showcase, and [validation.json](validation.json). WAVs are generated locally and ignored by Git. Rebuilding overwrites generated files in the chosen folder.', '',
+    'An optional final argument chooses another output folder. The script uses stable per-category seeds, selects representative variants within the normal recipe ranges, and writes 40 individual 44.1 kHz mono PCM16 WAVs, the editable collection, this guide, the showcase, and [validation.json](validation.json). WAVs are generated locally and ignored by Git. Rebuilding overwrites generated files in the chosen folder.', '',
     `Every example is checked for finite samples, peaks below full scale, audible RMS, and identical audio after loading its saved parameters. This render contains ${sounds.length} sounds with RMS ${Math.min(...sounds.map(s => s.rms)).toFixed(4)}–${Math.max(...sounds.map(s => s.rms)).toFixed(4)} and maximum peak ${Math.max(...sounds.map(s => s.peak)).toFixed(4)}.`, '',
     '## Short showcase', '',
-    `[Play the ${reelMetrics.duration.toFixed(1)}-second showcase](${showcaseFile}). Each gesture and musical phrase plays completely, with 0.28-second gaps. The two ambience excerpts have 120 ms fades at both cuts. The reel balances playback levels; individual WAVs retain exactly the levels stored in the collection.`, '',
+    `[Play the ${reelMetrics.duration.toFixed(1)}-second showcase](${showcaseFile}). Each gesture and musical phrase plays completely, with 0.28-second gaps. The reel balances playback levels; individual WAVs retain exactly the levels stored in the collection.`, '',
     '| Start | End | Tab | Sound |', '| --- | --- | --- | --- |',
     ...clips.map(clip => `| ${timestamp(clip.start)} | ${timestamp(clip.end)} | ${clip.synth} | ${clip.name}${clip.excerpt ? ' (excerpt)' : ''} |`), '',
-    '## Phrase, layer, and loop editing', '',
-    '**Jinglr:** the ten-digit **Seed** combines five melody digits and five instrument-character digits. **Reseed melody** changes the tune; buttons under **Reseed instrument** generate another voice in the chosen family. Each action leaves the other half alone. Exact phrases, family and seed settings travel in saved sounds and Stackr copies.', '',
-    '**Stackr:** use **Add layer** to copy a sound from another tab. Move its Start time, adjust its Level, or shift Pitch by semitones. The timeline shows how the layers overlap. Lock layers keeps those snapshots during category generation, Randomize, and Mutate. Up to six layers play in a twelve-second event; source copies are embedded in saved files. Changing the original sound in another tab does not change its existing layer copy.', '',
-    '**Weathr:** previews repeat continuously. Exported individual WAVs contain a full seamless loop with no start/end fades. Repeat the entire file in your game or audio editor. The showcase uses short faded excerpts for listening, so use the individual Weathr WAVs for looping.', ''
+    '## Phrase editing', '',
+    '**Jinglr:** reseed melody and instrument independently. Edited phrases and their settings travel together in saved sounds and Mixr copies.', ''
 ];
 for (const family of families) {
     readme.push(`## ${family}`, '', descriptions[family], '', '| Category | Character | Length |', '| --- | --- | --- |');

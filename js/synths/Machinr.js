@@ -1,5 +1,6 @@
 class Machinr extends PresetSynth {
     name = 'Machinr';
+    canvas_bg_logo = 'img/logo_machinr.png';
     tooltip = 'Motors, gears, shutters and stubborn mechanisms. Each category builds a new machine.';
     static DSP = Machinr_DSP;
     param_info = [

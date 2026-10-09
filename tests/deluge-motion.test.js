@@ -1,7 +1,7 @@
 const test=require('node:test');
 const assert=require('node:assert/strict');
 const {createContext,plain}=require('./helpers/synth-context');
-const names=['Whooshr','Bouncr','Rollr'];
+const names=['Whooshr','Bouncr'];
 function setup(name){const api=createContext([name]);api.run(`var s=new ${name}();Math.random=SoundDSP.rng(0.319);`);return api;}
 function rms(pcm){return Math.sqrt(pcm.reduce((n,v)=>n+v*v,0)/pcm.length);}
 function safe(pcm,duration){assert.equal(pcm.length,Math.round(duration*44100));assert.ok(pcm.every(v=>Number.isFinite(v)&&Math.abs(v)<1));assert.ok(pcm[0]===0&&pcm.at(-1)===0);assert.ok(rms(pcm)>0.0005);}
@@ -40,21 +40,12 @@ test('bounce flight times shrink and increased gravity shortens the bounce seque
  const [a,b]=run(`s.apply_params({duration:3,count:5,bounce:0.8,material:1,hardness:1,spin:0,gravity:0,masterVolume:1});var a=Bouncr_DSP.render(s.params);s.set_param('gravity',1);[a,Bouncr_DSP.render(s.params)]`);
  const slow=hits(a),fast=hits(b);assert.ok(slow.length>=4,slow);assert.ok(fast.length>=4,fast);assert.ok(slow[2]-slow[1]<slow[1]-slow[0]);assert.ok(fast.at(-1)<slow.at(-1)*0.75);
 });
-test('rolling speed raises contact repetition and wheel counts normalize without breaking locks',()=>{
- const {run}=setup('Rollr');
- function peaks(pcm){let count=0,last=-10;const bins=[];for(let i=0;i<pcm.length;i+=220)bins.push(rms(pcm.slice(i,i+220)));for(let i=1;i<bins.length-1;i++)if(bins[i]>0.012&&bins[i]>bins[i-1]&&bins[i]>bins[i+1]&&i-last>3){count++;last=i;}return count;}
- const [a,b]=run(`s.apply_params({duration:2,wheels:1,roughness:0,hardness:1,speed:0,slowing:0,material:0,masterVolume:1});var a=Rollr_DSP.render(s.params);s.set_param('speed',1);[a,Rollr_DSP.render(s.params)]`);
- assert.ok(peaks(b)>peaks(a)*1.5,[peaks(a),peaks(b)]);
- assert.equal(run(`s.set_param('wheels',3.7);s.params.wheels`),4);
- assert.equal(run(`s.set_locked_param('wheels',true);s.set_param('wheels',1.2,true);s.params.wheels`),4);
- const bounce=setup('Bouncr');assert.equal(bounce.run(`s.set_param('count',4.8);s.params.count`),5);
-});
 
 test('whoosh source levels can be independently silenced',()=>{
  const {run}=setup('Whooshr');assert.ok(run(`s.apply_params({air:0,whistle:0});Whooshr_DSP.render(s.params).every(v=>v===0)`));
 });
 test('all motion controls alter the rendered sound at a fixed seed',()=>{
- const controls={Whooshr:['size','air','whistle','focus','flutter'],Bouncr:['count','bounce','size','hardness','spin'],Rollr:['wheels','roughness','size','hardness','slowing']};
+ const controls={Whooshr:['size','air','whistle','focus','flutter'],Bouncr:['count','bounce','size','hardness','spin']};
  for(const [name,keys] of Object.entries(controls)){
   const {run}=setup(name);
   for(const key of keys){

@@ -1,7 +1,7 @@
 const test=require('node:test');
 const assert=require('node:assert/strict');
 const {createContext,plain}=require('./helpers/synth-context');
-const setup=()=>createContext(['Clonkr','Jinglr','Stackr','Mixr']);
+const setup=()=>createContext(['Clonkr','Jinglr','Mixr']);
 test('Mixr holds two independent snapshots and rejects recursive mixes',()=>{
  const {run}=setup();
  assert.equal(run(`(()=>{const mix=new Mixr(),source=new Clonkr();source.generate_recipe('glass_ping');
@@ -45,23 +45,20 @@ test('retired collections survive serialization and active tab names survive nav
  return [legacy,mix,opened,JSON.parse(SaveLoad.serialize_collection()).Weathr];})()`));
  assert.deepEqual(result.slice(0,3),['Pluckr','Mixr','Jinglr']);assert.equal(result[3].files[0][0],'Old weather');
 });
-test('explicit legacy sound imports open an archived engine on demand',()=>{
- const {run,load}=createContext(['Weathr','Stackr','Mixr']);load('js/SaveLoad.js');
- assert.equal(run(`(()=>{tabs=[];let loaded=false;class Tab{constructor(synth){this.synth=synth;tabs.push(this);}set_active_tab(){this.active=true;}create_new_sound_from_params(name,params){loaded=params.duration===.4;}}
- globalThis.Tab=Tab;SaveLoad.load_serialized_synth(JSON.stringify({synth_type:'Weathr',file_name:'Old wind',params:{duration:.4}}));
- return loaded&&tabs.length===1&&tabs[0].active&&tabs[0].synth.display_name==='Weathr (legacy)';})()`),true);
+
+test('Mixr preserves edited musical phrases through source sanitization',()=>{
+ const {run}=setup();
+ assert.equal(run(`(()=>{const mix=new Mixr(),source=new Jinglr();
+ source.set_param('phrase',JSON.stringify([{degree:null,beats:2},{degree:13,beats:.25}]));
+ const phrase=source.params.phrase;mix.set_source(0,source,'Hand edited');
+ const saved=mix.get_sources()[0],restored=new Jinglr();Mixr.sanitize_source(restored,saved.params);
+ return saved.params.phrase===phrase&&restored.params.phrase===phrase;})()`),true);
 });
-function characterSetup(){const api=createContext(['Pluckr','Stackr','Mixr']);for(const name of ['ChattrLexicon','ChattrFormants','Chattr_Pronunciation','Chattr_DSP'])api.load('js/audio/'+name+'.js');api.load('js/synths/Chattr.js');return api;}
-test('Mixr character reseeding retains words and rhythm while changing the voice',()=>{
- const {run}=characterSetup();
- assert.equal(run(`(()=>{const s=new Chattr();s.apply_params({text:'Keep my words!',speed:.8,seed:.123,character:3});const mix=new Mixr();mix.set_source(0,s,'Friend');
- mix.reseed_source(0);const a=mix.get_sources()[0].params;mix.reseed_source(0);const b=mix.get_sources()[0].params;
- return a.text==='Keep my words!'&&b.text===a.text&&a.speed===.8&&a.seed===.123&&a.character===3&&a.voiceSeed!==b.voiceSeed;})()`),true);
-});
-test('nested legacy sources run the same migrations as directly loaded sounds',()=>{
- const {run}=characterSetup();
- assert.equal(run(`(()=>{const voice=new Chattr(),oldVoice={...voice.params};for(const key of ['voiceMode','character','voiceSeed'])delete oldVoice[key];
- const strings=new Pluckr(),oldStrings={...strings.params,material:5};delete oldStrings.tremolo;delete oldStrings.tremoloRate;
- const a=Stackr.sanitize_source(new Chattr(),oldVoice),b=Stackr.sanitize_source(new Pluckr(),oldStrings);
- return a.voiceMode===0&&a.voiceSeed===.37&&b.material===4&&b.tremolo===.35&&b.tremoloRate===1.7;})()`),true);
+
+test('nested Pluckr snapshots run the same migrations as directly loaded sounds',()=>{
+ const {run}=createContext(['Pluckr','Mixr']);
+ assert.equal(run(`(()=>{const strings=new Pluckr(),old={...strings.params,material:5};
+ delete old.tremolo;delete old.tremoloRate;
+ const restored=Mixr.sanitize_source(new Pluckr(),old);
+ return restored.material===4&&restored.tremolo===.35&&restored.tremoloRate===1.7;})()`),true);
 });

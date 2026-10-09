@@ -1,5 +1,6 @@
 class Pluckr extends PresetSynth {
     name='Pluckr';
+    canvas_bg_logo = 'img/logo_pluckr.png';
     tooltip='Plucked strings, sympathetic bridges and small magical instruments.';
     static DSP=Pluckr_DSP;
     param_info=[...PresetSynth.common_params,

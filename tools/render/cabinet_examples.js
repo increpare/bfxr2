@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const {createContext,root,plain}=require('../../tests/helpers/synth-context');
 const {encodeWav16}=require('./wav');
-const names=['Bfxr','Transfxr','Clonkr','Machinr','Jinglr','Squishr','Crittr','Birdr','Signlr','Fractr','Riftr','Swarmr','Rustlr','Boomr','Zappr','Whooshr','Bouncr','Breathr','Choirr','Pluckr','Glitchr','Stackr','Mixr'];
+const names=['Bfxr','Transfxr','Clonkr','Machinr','Jinglr','Squishr','Crittr','Birdr','Signlr','Fractr','Riftr','Swarmr','Rustlr','Boomr','Zappr','Whooshr','Bouncr','Breathr','Choirr','Pluckr','Glitchr','Mixr'];
 const api=createContext(names),rate=44100,output=path.resolve(process.argv[2]||path.join(root,'examples/Cabinet'));
 fs.mkdirSync(output,{recursive:true});
 const demos=[
@@ -31,7 +31,7 @@ for(const [synth,id,name,overrides] of demos){
  const file=(synth+'-'+name).toLowerCase().replace(/[^a-z0-9]+/g,'-')+'.wav';
  fs.writeFileSync(path.join(output,file),encodeWav16(pcm,rate));
  const sourceClips=synth==='Mixr'?plain(api.run('s.get_sources()')).map((source,index)=>{
-  const a=api.run(`Stackr.render_source(${JSON.stringify(source)},${source.renderSeed})`),levels=metrics(a);
+  const a=api.run(`Mixr.render_source(${JSON.stringify(source)},${source.renderSeed})`),levels=metrics(a);
   const sourceFile=file.replace('.wav',index===0?'-a.wav':'-b.wav');fs.writeFileSync(path.join(output,sourceFile),encodeWav16(a,rate));
   return {name:source.synth+' · '+source.name,file:sourceFile,...levels};
  }):[];
@@ -40,7 +40,7 @@ for(const [synth,id,name,overrides] of demos){
  sounds.push({synth,name,file,params,sourceClips,duration:pcm.length/rate,...levels,sha256:hash(pcm),pcm});
 }
 collection.active_tab_name='Mixr';fs.writeFileSync(path.join(output,'Cabinet.bcol'),JSON.stringify(collection,null,2)+'\n');
-const reelIds=['haunted','crystal_prize','goo_machine','enchanted_string','clockwork_familiar','charged_swarm'];
+const reelIds=['haunted','crystal_prize','goo_machine','garden_lute','clockwork_familiar','spark_impact'];
 const reelNames=reelIds.map(id=>plain(api.run('new Mixr().recipes')).find(recipe=>recipe.id===id).name);
 const clips=reelNames.map(name=>sounds.find(s=>s.synth==='Mixr'&&s.name===name));
 const gap=Math.round(rate*.25),reel=new Float32Array(clips.reduce((n,s)=>n+s.pcm.length+gap,0)-gap);let offset=0;

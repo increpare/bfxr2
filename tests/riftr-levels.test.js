@@ -59,7 +59,7 @@ test('Riftr extreme fields stay finite before conditioning and deterministic aft
 });
 
 test('Mixr receives the same leveled Riftr audio as the standalone engine',()=>{
-    const {run}=createContext(['Riftr','Stackr','Mixr']);
+    const {run}=createContext(['Riftr','Mixr']);
     const result=run(`(()=>{
         const s=new Riftr();Math.random=SoundDSP.rng(.21);s.generate_recipe('portal_tear');
         const direct=Riftr_DSP.render(s.params),mix=new Mixr();mix.set_source(0,s);const pcm=Mixr_DSP.render(mix.params);

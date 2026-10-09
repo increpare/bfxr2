@@ -52,9 +52,13 @@ class PresetSynth extends SynthBase {
         return [recipe.name.replace(/[^a-zA-Z0-9]/g,''), this.params];
     }
 
+    render() {
+        return this.constructor.DSP.render(this.params);
+    }
+
     generate_sound() {
         if (this.sound) this.sound.stop();
-        this.sound = RealizedSound.from_buffer(this.constructor.DSP.render(this.params));
+        this.sound = RealizedSound.from_buffer(this.render());
         this.sound_params = JSON.stringify(this.params);
     }
 

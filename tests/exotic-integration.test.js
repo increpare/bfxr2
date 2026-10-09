@@ -3,11 +3,11 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const {createContext, root, plain} = require('./helpers/synth-context');
-const families = ['Crittr', 'Birdr', 'Signlr', 'Fractr', 'Riftr', 'Swarmr', 'Tappr', 'Rustlr', 'Notifr', 'Tickr', 'Holor', 'Boomr', 'Pewpr', 'Zappr', 'Whooshr', 'Bouncr', 'Rollr', 'Breathr', 'Choirr', 'Pluckr', 'Glitchr', 'Pulser', 'Rumblr'];
+const families = ['Crittr', 'Birdr', 'Signlr', 'Fractr', 'Riftr', 'Swarmr', 'Rustlr', 'Boomr', 'Zappr', 'Whooshr', 'Bouncr', 'Breathr', 'Choirr', 'Pluckr', 'Glitchr'];
 
 for (const family of families) {
-    test(`${family} survives sound files, share links, collections and Stackr copies`, () => {
-        const api = createContext([...families, 'Stackr']);
+    test(`${family} survives sound files, share links, collections and Mixr copies`, () => {
+        const api = createContext([...families, 'Mixr']);
         api.load('js/SaveLoad.js');
         api.load('js/Tab.js');
         const result = api.run(`
@@ -31,9 +31,9 @@ for (const family of families) {
             source.set_param('seed',0.23); tab.files=[];
             SaveLoad.load_serialized_collection(collection);
             var collectionOK=JSON.stringify(source.params)===original && tab.files.length===1;
-            var stack=new Stackr(); stack.add_source(source,'Copied example');
-            var copied=stack.get_layers()[0]; source.set_param('seed',0.79);
-            var rendered=Stackr.render_source(copied);
+            var mix=new Mixr(); mix.set_source(0,source,'Copied example');
+            var copied=mix.get_sources()[0]; source.set_param('seed',0.79);
+            var rendered=Mixr.render_source(copied);
             [JSON.parse(original),linked,fileOK,collectionOK,
                 rendered.length===expected.length && rendered.every((v,i)=>v===expected[i])];
         `);
@@ -42,12 +42,12 @@ for (const family of families) {
     });
 }
 
-test('navigation prunes redundant engines while retaining legacy renderers', () => {
+test('navigation registers only current engines', () => {
     const api = createContext(families);
     api.load('js/SaveLoad.js');
     api.run(`var window={}; var document={addEventListener(){}}; var tabs=[];
         class Tab {constructor(synth){this.synth=synth; tabs.push(this);} set_active_tab(){}}
-        var previous=['Mixr','Bfxr','Footsteppr','Transfxr','Chattr','Clonkr','Machinr','Weathr','Jinglr','Squishr','Stackr'];
+        var previous=['Mixr','Bfxr','Footsteppr','Transfxr','Clonkr','Machinr','Jinglr','Squishr'];
         previous.forEach(name=>globalThis[name]=class {constructor(){this.name=name;}});`);
     api.load('js/index.js');
     const names = plain(api.run('register_tabs(); tabs.map(tab=>tab.synth.name)'));
@@ -77,7 +77,7 @@ test('old collections leave new sound lists untouched', () => {
     const api = createContext(families);
     api.load('js/SaveLoad.js');
     assert.equal(api.run(`tabs=[{synth:{name:'Bfxr',locked_params:{}},update_ui(){},set_active_tab(){}},
-        ...[Crittr,Signlr,Fractr,Riftr,Swarmr,Tappr,Rustlr,Notifr,Tickr,Holor,Boomr,Pewpr,Zappr,Whooshr,Bouncr,Rollr,Breathr,Choirr,Pluckr,Glitchr,Pulser,Rumblr].map(C=>({synth:new C(),files:[['Keep me']]}))];
+        ...[Crittr,Signlr,Fractr,Riftr,Swarmr,Rustlr,Boomr,Zappr,Whooshr,Bouncr,Breathr,Choirr,Pluckr,Glitchr].map(C=>({synth:new C(),files:[['Keep me']]}))];
         SaveLoad.load_serialized_collection(JSON.stringify({Bfxr:{files:[],selected_file_index:-1,
             locked_params:{},create_new_sound:true,play_on_change:false},active_tab_index:0}));
         tabs.slice(1).every(tab=>tab.files[0][0]==='Keep me');`), true);

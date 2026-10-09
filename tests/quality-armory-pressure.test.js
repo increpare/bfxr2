@@ -9,7 +9,7 @@ function setup(name) {
         SoundDSP.finish=function(pcm,...args){
             if(!pcm.every(Number.isFinite)) throw new Error('nonfinite raw PCM');
             return finish.call(this,pcm,...args);
-        };`);
+};`);
     return api;
 }
 function energy(pcm, from=0, to=pcm.length) {
@@ -52,27 +52,8 @@ test('Boomr space produces an actual later pressure field',()=>{
     assert.ok(energy(space,18000)>energy(dry,18000)*3,'reflections extend pressure into the tail');
 });
 
-test('Pewpr offers eight independent armory mechanisms with different temporal behavior',()=>{
-    const {run}=setup('Pewpr');
-    assert.equal(run(`s.get_param_info('kind').values.length`),8);
-    const sounds=run(`Array.from({length:8},(_,kind)=>Pewpr_DSP.render({...s.params,
-        kind,duration:1.5,charge:0,body:0.7,punch:0.6,shots:1,seed:0.35}))`);
-    for(let i=0;i<sounds.length;i++) for(let j=0;j<i;j++)
-        assert.ok(distance(sounds[i],sounds[j])>0.45,`mechanisms ${i}/${j} are distinct`);
-    assert.ok(centroid(sounds[6])>centroid(sounds[2])*2,'beam sustains beyond ballistic discharge');
-});
-
-test('Pewpr character and modulation audibly reshape each firing mechanism',()=>{
-    const {run}=setup('Pewpr');
-    for(let kind=0;kind<8;kind++) for(const parameter of ['character','modulation']){
-        const [a,b]=run(`[0,1].map(value=>Pewpr_DSP.render({...s.params,kind:${kind},
-            duration:1.2,body:0.8,punch:0.7,${parameter}:value,seed:0.28}))`);
-        assert.ok(distance(a,b)>0.08,`${parameter} changes mechanism ${kind}`);
-    }
-});
-
 test('new engines sanitize raw imports, reproduce every recipe and retain finite output at extremes',()=>{
-    for(const name of ['Fractr','Boomr','Pewpr']){
+    for(const name of ['Fractr','Boomr']){
         const {run}=setup(name);
         for(const recipe of plain(run('s.recipes'))){
             const a=run(`s.generate_recipe('${recipe.id}');${name}_DSP.render(s.params)`);
@@ -84,19 +65,19 @@ test('new engines sanitize raw imports, reproduce every recipe and retain finite
             assert.ok(run(`${name}_DSP.render({...s.params,${control.name}:${invalid}}).every(Number.isFinite)`));
         }
         run(`s.reset_params();Math.random=()=>{throw new Error('unseeded DSP');};`);
-        const kinds=name==='Pewpr'?8:name==='Boomr'?6:7;
+        const kinds=name==='Boomr'?6:7;
         for(let kind=0;kind<kinds;kind++) for(const edge of ['min_value','max_value']){
             const pcm=run(`s.reset_params();s.param_info.forEach(raw=>{const p=s.get_param_normalized(raw);
                 if(p.type==='RANGE')s.set_param(p.name,p.${edge});});
                 s.set_param('masterVolume',1);${name}_DSP.render({...s.params,
-                    ${name==='Pewpr'?'kind':name==='Boomr'?'mechanism':'material'}:${kind}})`);
+                    ${name==='Boomr'?'mechanism':'material'}:${kind}})`);
             assert.ok(pcm.every(v=>Number.isFinite(v)&&Math.abs(v)<=0.951));
             assert.equal(Math.abs(pcm[0]),0);assert.equal(Math.abs(pcm.at(-1)),0);
         }
     }
 });
 
-for(const [name,added] of Object.entries({Fractr:['stress','fracture'],Boomr:['mechanism','space'],Pewpr:['character','modulation']})) {
+for(const [name,added] of Object.entries({Fractr:['stress','fracture'],Boomr:['mechanism','space']})) {
     test(name+' complete legacy presets restore missing defaults regardless of the selected sound',()=>{
         const {run}=setup(name);
         const [expected,loaded]=plain(run(`(()=>{

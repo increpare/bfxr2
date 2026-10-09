@@ -1,5 +1,6 @@
 class Jinglr extends PresetSynth {
     name = 'Jinglr';
+    canvas_bg_logo = 'img/logo_jinglr.png';
     tooltip = 'Little musical gestures for discoveries, victories, warnings and quiet moments.';
     static DSP = Jinglr_DSP;
     hide_params = ['masterVolume','phrase','instrument','instrumentSeed','seed'];

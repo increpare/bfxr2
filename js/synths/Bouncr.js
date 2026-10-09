@@ -1,6 +1,7 @@
 class Bouncr extends PresetSynth {
     // Keep the saved engine identity while showing its friendly name.
     name='Bouncr';
+    canvas_bg_logo = 'img/logo_bouncr.png';
     display_name='Bonks';
     hide_params=['masterVolume','count','bounce','gravity','spin'];
     tooltip='An object of one material striking a surface of another.';

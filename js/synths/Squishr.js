@@ -1,5 +1,6 @@
 class Squishr extends PresetSynth {
     name = 'Squishr';
+    canvas_bg_logo = 'img/logo_squishr.png';
     tooltip = 'Slime, bubbles, suction, and springy goo: tactile sounds from soft and liquid things.';
     static DSP = Squishr_DSP;
     header_properties = ['texture'];
