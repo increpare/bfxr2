@@ -5,14 +5,7 @@ class SaveLoad {
     static legacy_tabs = ['Bfxr','Footsteppr','Transfxr','Chattr','Clonkr','Machinr','Weathr','Jinglr','Squishr','Stackr','Crittr','Signlr','Fractr','Riftr','Swarmr','Tappr','Rustlr','Notifr','Tickr','Holor','Boomr','Pewpr','Zappr','Whooshr','Bouncr','Rollr','Breathr','Choirr','Pluckr','Glitchr','Pulser','Rumblr'];
 
     static tab_for_import(name) {
-        const existing=tabs.find(tab=>tab.synth.name===name);
-        if(existing)return existing;
-        const retired=['Chattr','Pewpr','Rumblr','Weathr','Stackr','Tappr','Notifr','Tickr','Holor','Rollr','Pulser'];
-        if(!retired.includes(name)||typeof Stackr==='undefined'||typeof Tab==='undefined')return null;
-        const synth=name==='Stackr'?new Stackr():Stackr.source(name);
-        if(!synth)return null;
-        synth.display_name=name+' (legacy)';
-        return new Tab(synth);
+        return tabs.find(tab=>tab.synth.name===name) || null;
     }
 
     static restore_active_tab(data) {
@@ -93,9 +86,9 @@ class SaveLoad {
                 const saved=JSON.parse(entries.slice(2).join('~'));
                 if(!saved.params || typeof saved.params!=='object')return;
                 const tab=tabs.find(tab=>tab.synth.name===synth_name);
-                const synth=tab ? new tab.synth.constructor() : (typeof Stackr==='undefined' ? null : Stackr.source(synth_name));
+                const synth=tab ? new tab.synth.constructor() : null;
                 if(synth){synth.apply_params(saved.params);return [synth_name,saved.filename,{...synth.params}];}
-                return [synth_name,saved.filename,saved.params];
+                return;
             } catch { return; }
         }
         //need to find the tab that matches the synth_name
@@ -117,21 +110,18 @@ class SaveLoad {
         // Links from earlier palettes omitted these controls. Their sorted,
         // positional fields must be read against the schema that wrote them.
         const additions = {
-            Chattr:[['voiceMode','character','voiceSeed'],['voiceMode','character','voiceSeed','waveType'],['voiceMode','character','voiceSeed','waveType','articulation']],
             Transfxr:[['waveTo','morph']],
-            Jinglr:[['instrumentSeed']], Notifr:[['instrumentSeed']],
-            Tappr:[['air','sweep']], Rollr:[['surface']],
+            Jinglr:[['instrumentSeed']],
             Breathr:[['mode','direction'],['mode','direction','source']], Pluckr:[['vibrato'],['vibrato','tremolo','tremoloRate'],['vibrato','tremolo','tremoloRate','material']],
             Fractr:[['shards'],['shards','stress','fracture']], Boomr:[['gas','aftershock','rubbleSize'],['gas','aftershock','rubbleSize','mechanism','space']],
-            Pewpr:[['character','modulation']], Bouncr:[['surface','force','tail']],
-            Glitchr:[['mode']], Rumblr:[['depth','harmonics']]
+            Bouncr:[['surface','force','tail']],
+            Glitchr:[['mode']]
         };
         const missing = (additions[synth_name] || []).find(fields =>
             entries.length - 2 === keys.length - fields.length) || [];
         keys = keys.filter(key => !missing.includes(key)).sort();
         var dict = {};
         for (const key of missing) dict[key] = default_params[key];
-        if(synth_name==='Chattr' && missing.includes('voiceMode'))dict.voiceMode=0;
         if(synth_name==='Breathr' && missing.includes('mode'))dict.mode=1;
         for (var i = 0; i < keys.length; i++){
             const entry = entries[i+2];

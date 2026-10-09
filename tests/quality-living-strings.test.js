@@ -1,10 +1,10 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const {createContext, plain} = require('./helpers/synth-context');
-const names = ['Breathr', 'Pulser', 'Pluckr'];
+const names = ['Breathr', 'Pluckr'];
 const categoryIds = {
     Breathr:['inhale','exhale','sigh','snore','tired_runner','deep_breath','held_breath','gasp','sleeping_beast','diver','helmet','ghost_breath'],
-    Pulser:['heartbeat','panic','giant_heart','android_core','poison','underwater','energy_core','last_life'],
+
     Pluckr:['harp','kalimba','muted_guitar','metal_string','magic_harp','bass_pluck','broken_string','quest_pluck']
 };
 function setup() {
@@ -49,19 +49,6 @@ test('Breathr sources cover airflow, retro noise and snoring without replacing i
         'drawn-in air is brighter than the softer outward flow');
     assert.ok(energy(sounds[0], 2.3, 2.4) < energy(sounds[0], 1.6, 1.7) * 0.04,
         'a breath rests before the next cycle');
-});
-
-test('Pulser heartbeat contains short pressure noise and independently controlled paired beats', () => {
-    const {run} = setup();
-    const [single, pair, late] = run(`(() => {
-        const p={duration:1,beats:1,pitch:0.2,size:0.5,separation:0.4,secondary:0,murmur:0,tension:0.1,irregular:0,seed:0.51};
-        return [Pulser_DSP.render(p),Pulser_DSP.render({...p,secondary:0.8}),Pulser_DSP.render({...p,secondary:0.8,separation:0.9})];
-    })()`);
-    assert.ok(energy(pair, 0.005, 0.12) > 1, 'first pressure transient is audible');
-    assert.ok(energy(pair, 0.27, 0.39) > energy(single, 0.27, 0.39) * 8 + 0.1, 'second transient is audible');
-    assert.ok(energy(late, 0.38, 0.52) > energy(pair, 0.38, 0.52) * 2, 'separation moves the second transient');
-    assert.ok(brightness(single, 0.008, 0.08) > 0.001,
-        'a heartbeat has a broad muffled contact transient, rather than only a ringing note');
 });
 
 test('Pluckr materials change loss, excitation and dispersion at identical tuning', () => {

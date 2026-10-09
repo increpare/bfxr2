@@ -84,7 +84,7 @@ const descriptions={
 };
 const lines=['# Exotic game sounds','',
     '40 editable sounds: eight randomized categories in each of five new tabs. Every preset click makes another variation.','',
-    'Open **Exotic.bcol** with **Open Data**, or drag it onto Bfxr. This replaces the lists in these five tabs; save your collection first if needed. Select an example to hear and edit it. All five also work as copied layers in Stackr.','',
+    'Open **Exotic.bcol** with **Open Data**, or drag it onto Bfxr. This replaces the lists in these five tabs; save your collection first if needed. Select an example to hear and edit it. All five also work as sources in Mixr.','',
     `The [${showcaseMetrics.duration.toFixed(1)}-second reel](${showcaseFile}) plays ten complete sounds with 0.3-second gaps. Levels are balanced for the reel; individual WAVs match their saved settings exactly.`,'',
     '| Start | Tab | Sound |','| --- | --- | --- |',
     ...clips.map(c=>`| ${c.start.toFixed(2)} s | ${c.synth} | ${c.name} |`),''];

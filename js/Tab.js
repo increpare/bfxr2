@@ -19,7 +19,6 @@ class Tab {
     sliders = {};
     lock_buttons = {};
     transition_controls = {};
-    text_controls = {};
 
     synth = null;
     ui_initialized = false;
@@ -269,10 +268,10 @@ class Tab {
             var paste_button = this.add_button("paste", "Paste", this.paste_button_clicked.bind(this), "Paste the current sound [CTRL+V]");
             right_panel_button_list.appendChild(paste_button);
 
-            if (this.name !== 'Mixr' && this.name !== 'Stackr' && typeof Mixr !== 'undefined') {
-                this.stack_button = this.add_button(this.name+'_mix_sound','Mix this sound',
+            if (this.name !== 'Mixr' && typeof Mixr !== 'undefined') {
+                this.mix_button = this.add_button(this.name+'_mix_sound','Mix this sound',
                     this.mix_sound.bind(this),'Copy this sound into Mixr.');
-                right_panel_button_list.appendChild(this.stack_button);
+                right_panel_button_list.appendChild(this.mix_button);
             }
 
             var copy_link_button = this.add_button("copy_link", "Copy Link", this.copy_link_button_clicked.bind(this), "Copy the current sound link");
@@ -334,19 +333,16 @@ class Tab {
         this.update_locks();
     }
 
-    update_stack_button(){
-        if (this.stack_button) {
+    update_mix_button(){
+        if (this.mix_button) {
             const mix=tabs.find(tab=>tab.name==='Mixr');
-            if(mix){this.stack_button.disabled=false;this.stack_button.title='Copy this sound into Mixr.';return;}
-            const stack=tabs.find(tab=>tab.name==='Stackr');
-            this.stack_button.disabled=!!stack && stack.synth.get_layers().length>=6;
-            this.stack_button.title=this.stack_button.disabled ? 'Stack full. Open Stackr and start a new stack or remove a layer.'
-                : 'Copy this sound into the current stack and open it.';
+            this.mix_button.disabled=!mix;
+            this.mix_button.title='Copy this sound into Mixr.';
         }
     }
 
     update_ablements(){
-        this.update_stack_button();
+        this.update_mix_button();
         if (this.selected_file_index===-1){
             return;
         }
@@ -430,9 +426,6 @@ class Tab {
                 }
             } else {
                 switch (param.type) {
-                    case "TEXT":
-                        if (this.text_controls[param.name]) this.text_controls[param.name].update();
-                        break;
                     case "BUTTONSELECT":
                         var value = this.synth.params[param.name];
                         var index=-1;
@@ -520,10 +513,9 @@ class Tab {
             this.redraw_waveform();
             if (preview) {
                 this.synth.sound.play(this.synth.loop_preview === true);
-                for (const editor of Object.values(this.text_controls)) editor.play();
             }
         }
-        this.update_stack_button();
+        this.update_mix_button();
         if (this.custom_editor) this.custom_editor.update();
     }
     
@@ -562,10 +554,6 @@ class Tab {
             this.add_slider(param_name, display_name, tooltip, min_value, max_value, default_value, header);
         } else {            
             switch (param.type) {
-                case "TEXT":
-                    this.text_controls[param.name] = new SpeechEditor(this, param, this.centre_header);
-                    this.centre_header.style.display = "block";
-                    break;
                 case "BUTTONSELECT":
                     this.add_button_grid(param.name, param.display_name, param.tooltip, param.columns, param.default_value, param.values, param.header === true ? true : false);
                     param_name = param.name;
@@ -625,12 +613,6 @@ class Tab {
         }
 
         slider.on("slideStop", handler_fn);
-        // A visual preview while dragging; audio and saved parameters commit on release.
-        slider.on("slide", value => {
-            for (const editor of Object.values(this.text_controls || {})) {
-                if (editor.preview_params) editor.preview_params({...this.synth.params, [slider_id]:value});
-            }
-        });
 
         this.sliders[slider_id] = slider;        
     }
@@ -1102,7 +1084,6 @@ class Tab {
 
     parameter_changed() {
         this.update_param_visibility();
-        for (const editor of Object.values(this.text_controls || {})) editor.update();
         if (this.selected_file_index < 0) {
             this.create_new_sound_from_params("Sfx", this.synth.params, true);
             return;
@@ -1264,13 +1245,6 @@ class Tab {
         }
         mix.synth.set_source(slot<0?0:slot,this.synth,this.get_current_file_name());
         mix.parameter_changed();
-    }
-
-    layer_in_stackr() {
-        const stack=tabs.find(tab=>tab.name==='Stackr');
-        if(!stack || !stack.synth.add_source(this.synth,this.get_current_file_name()))return;
-        stack.set_active_tab();
-        stack.parameter_changed();
     }
 
     copy_button_clicked() {
@@ -1445,7 +1419,6 @@ class Tab {
     play_sound(){
         this.synth.play();
         this.redraw_waveform();
-        for (const editor of Object.values(this.text_controls || {})) editor.play();
     }
 
     redraw_waveform(){

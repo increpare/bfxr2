@@ -1,10 +1,10 @@
 # Sound Cabinet examples
 
-53 editable sounds, one from every category in Clonkr, Machinr, Weathr, Jinglr, Squishr, and Stackr. These are exact saved variants of the randomized category buttons; clicking a category in the app creates another sound in that family.
+40 editable sounds, one from every category in Clonkr, Machinr, Jinglr, and Squishr. These are exact saved variants of the randomized category buttons; clicking a category in the app creates another sound in that family.
 
 ## Load and explore
 
-Use **Open Data** in Bfxr and choose [SoundCabinet.bcol](SoundCabinet.bcol), or drag the collection onto the app. It opens Clonkr and fills the six Sound Cabinet tabs. Loading replaces the sound lists in those six tabs; use **Save .bcol** first if you want to keep an existing collection.
+Use **Open Data** in Bfxr and choose [SoundCabinet.bcol](SoundCabinet.bcol), or drag the collection onto the app. It opens Clonkr and fills the four Sound Cabinet tabs. Loading replaces the sound lists in those four tabs; use **Save .bcol** first if you want to keep an existing collection.
 
 Select a sound in a tab to play or edit it. **Export WAV** saves that sound; **Export All** exports sounds from all tabs into one ZIP. A row lock protects its control during category generation, Randomize, and Mutate. The saved examples start with only Sound Volume locked, so the other controls are ready to explore.
 
@@ -16,13 +16,13 @@ From the repository root:
 node tools/render/specialized_examples.js
 ```
 
-An optional final argument chooses another output folder. The script uses stable per-category seeds, selects representative variants within the normal recipe ranges, and writes 53 individual 44.1 kHz mono PCM16 WAVs, the editable collection, this guide, the showcase, and [validation.json](validation.json). WAVs are generated locally and ignored by Git. Rebuilding overwrites generated files in the chosen folder.
+An optional final argument chooses another output folder. The script uses stable per-category seeds, selects representative variants within the normal recipe ranges, and writes 40 individual 44.1 kHz mono PCM16 WAVs, the editable collection, this guide, the showcase, and [validation.json](validation.json). WAVs are generated locally and ignored by Git. Rebuilding overwrites generated files in the chosen folder.
 
-Every example is checked for finite samples, peaks below full scale, audible RMS, and identical audio after loading its saved parameters. This render contains 53 sounds with RMS 0.0242–0.2071 and maximum peak 0.4750.
+Every example is checked for finite samples, peaks below full scale, audible RMS, and identical audio after loading its saved parameters. This render contains 40 sounds with RMS 0.0242–0.2071 and maximum peak 0.4750.
 
 ## Short showcase
 
-[Play the 28.5-second showcase](sound_cabinet_showcase.wav). Each gesture and musical phrase plays completely, with 0.28-second gaps. The two ambience excerpts have 120 ms fades at both cuts. The reel balances playback levels; individual WAVs retain exactly the levels stored in the collection.
+[Play the 14.3-second showcase](sound_cabinet_showcase.wav). Each gesture and musical phrase plays completely, with 0.28-second gaps. The reel balances playback levels; individual WAVs retain exactly the levels stored in the collection.
 
 | Start | End | Tab | Sound |
 | --- | --- | --- | --- |
@@ -30,23 +30,15 @@ Every example is checked for finite samples, peaks below full scale, audible RMS
 | 00:00.60 | 00:03.70 | Clonkr | Glass Ping |
 | 00:03.98 | 00:04.24 | Machinr | Camera Shutter |
 | 00:04.52 | 00:06.72 | Machinr | Rusty Winch |
-| 00:07.00 | 00:10.50 | Weathr | Campfire (excerpt) |
-| 00:10.78 | 00:11.00 | Squishr | Water Drop |
-| 00:11.28 | 00:12.06 | Squishr | Suction Cup |
-| 00:12.34 | 00:12.95 | Squishr | Slime Step |
-| 00:13.23 | 00:15.62 | Jinglr | Discovery |
-| 00:15.90 | 00:18.03 | Jinglr | Checkpoint |
-| 00:18.31 | 00:22.31 | Weathr | Ocean Surf (excerpt) |
-| 00:22.59 | 00:25.30 | Stackr | Door Unlock |
-| 00:25.58 | 00:28.52 | Stackr | Treasure |
+| 00:07.00 | 00:07.22 | Squishr | Water Drop |
+| 00:07.50 | 00:08.28 | Squishr | Suction Cup |
+| 00:08.56 | 00:09.17 | Squishr | Slime Step |
+| 00:09.45 | 00:11.84 | Jinglr | Discovery |
+| 00:12.12 | 00:14.25 | Jinglr | Checkpoint |
 
-## Phrase, layer, and loop editing
+## Phrase editing
 
-**Jinglr:** the ten-digit **Seed** combines five melody digits and five instrument-character digits. **Reseed melody** changes the tune; buttons under **Reseed instrument** generate another voice in the chosen family. Each action leaves the other half alone. Exact phrases, family and seed settings travel in saved sounds and Stackr copies.
-
-**Stackr:** use **Add layer** to copy a sound from another tab. Move its Start time, adjust its Level, or shift Pitch by semitones. The timeline shows how the layers overlap. Lock layers keeps those snapshots during category generation, Randomize, and Mutate. Up to six layers play in a twelve-second event; source copies are embedded in saved files. Changing the original sound in another tab does not change its existing layer copy.
-
-**Weathr:** previews repeat continuously. Exported individual WAVs contain a full seamless loop with no start/end fades. Repeat the entire file in your game or audio editor. The showcase uses short faded excerpts for listening, so use the individual Weathr WAVs for looping.
+**Jinglr:** reseed melody and instrument independently. Edited phrases and their settings travel together in saved sounds and Mixr copies.
 
 ## Clonkr
 
@@ -80,28 +72,16 @@ Mechanism chooses the moving parts. Speed and Load control their movement; Rough
 | [Windup Toy](machinr_windup_toy.wav) | A loose little spring-powered mechanism winding down. | 2.00 s |
 | [Heavy Door](machinr_heavy_door.wav) | A deep hinge creak with a weighty closing latch. | 2.00 s |
 
-## Weathr
-
-Environment chooses air, rain, fire, water, or electricity. Density adds activity, Turbulence changes the surges, Brightness opens the high frequencies, Scale changes the size of details, and Detail brings individual drops or crackles forward. Duration sets the full seamless loop length.
-
-| Category | Character | Length |
-| --- | --- | --- |
-| [Soft Wind](weathr_wind.wav) | A fresh breeze with slowly shifting gusts. | 6.67 s |
-| [Rainfall](weathr_rain.wav) | A new scattering of raindrops over steady rain. | 6.55 s |
-| [Campfire](weathr_campfire.wav) | Warm flame and a different set of snapping embers. | 6.52 s |
-| [Bubbling Stream](weathr_stream.wav) | Small water bubbles among irregular ripples. | 6.61 s |
-| [Electric Crackle](weathr_electric.wav) | A low electrical hum with scattered sizzling arcs. | 4.96 s |
-| [Storm Front](weathr_storm.wav) | Heavy rain building and receding in broad gusts. | 8.52 s |
-| [Ocean Surf](weathr_ocean.wav) | Broad waves rolling into a wash of foam. | 8.14 s |
-| [Blizzard](weathr_blizzard.wav) | Sharp, dense wind with a thin icy whistle. | 7.99 s |
-| [Waterfall](weathr_waterfall.wav) | A dense rush of water with deep churning detail. | 6.59 s |
-
 ## Jinglr
 
 Choose an Instrument, Key, Scale, and Octave, then shape the phrase with Tempo, Swing, Brightness, Decay, and Echo. Contour, Rhythm and Notes shape the tune. The ten-digit seed combines five melody digits with five instrument-character digits.
 
 | Category | Character | Length |
 | --- | --- | --- |
+| [Confirm](jinglr_confirm.wav) | A quick, bright yes. | 0.47 s |
+| [Message](jinglr_message.wav) | A small, soft arrival. | 0.67 s |
+| [Dismiss](jinglr_dismiss.wav) | A short downward reply. | 0.48 s |
+| [Denied](jinglr_denied.wav) | A compact, low refusal. | 0.55 s |
 | [Discovery](jinglr_discovery.wav) | An inquisitive rising sparkle. | 2.39 s |
 | [Victory](jinglr_victory.wav) | A brisk, bright upward fanfare. | 2.15 s |
 | [Failure](jinglr_failure.wav) | A drooping little minor-key defeat. | 3.95 s |
@@ -127,18 +107,3 @@ Texture selects slime, bubbles, suction, splat, gulp, or spring. Viscosity thick
 | [Mud Pull](squishr_mud_pull.wav) | Slowly pull something out of thick, sticky mud. | 1.59 s |
 | [Water Drop](squishr_water_drop.wav) | A light high droplet falling into water. | 0.22 s |
 | [Jelly Wobble](squishr_jelly_wobble.wav) | A large soft jelly shaking from side to side. | 1.45 s |
-
-## Stackr
-
-Build a complete event from snapshots of sounds in the other tabs. Each layer has a Start time, Level, and Pitch in semitones. Spacing stretches or compresses the gaps between layers.
-
-| Category | Character | Length |
-| --- | --- | --- |
-| [Spell Launch](stackr_spell_launch.wav) | A gathering glow, a bolt, and a small impact. | 4.32 s |
-| [Door Unlock](stackr_door_unlock.wav) | A lock clicks, a mechanism turns, the door settles. | 2.71 s |
-| [Treasure](stackr_treasure.wav) | A latch, a scattering of coins, a discovery. | 2.94 s |
-| [Slime Jump](stackr_slime_jump.wav) | Suction, a rubbery leap, and an undignified landing. | 1.32 s |
-| [Robot Boot](stackr_robot_boot.wav) | A servo wakes up and reports success. | 2.66 s |
-| [Glass Spell](stackr_glass_spell.wav) | A bright crack with a magical answering chime. | 3.80 s |
-| [Storm Portal](stackr_storm_portal.wav) | Wind passes through a shimmering doorway. | 4.59 s |
-| [Cartoon Crash](stackr_cartoon_crash.wav) | A spring, a thud, and loose pieces rolling away. | 3.84 s |

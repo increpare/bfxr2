@@ -1,87 +1,20 @@
 {
-  "Chattr": {
-    "files": [
-      [
-        "Village mouse",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.65,\"mouth\":0.27,\"speed\":0.78,\"expression\":0.75,\"inflection\":0.1,\"wobble\":0.18,\"breath\":0.12,\"grit\":0.12,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":0,\"voiceSeed\":0.37}",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.65,\"mouth\":0.27,\"speed\":0.78,\"expression\":0.75,\"inflection\":0.1,\"wobble\":0.18,\"breath\":0.12,\"grit\":0.12,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":0,\"voiceSeed\":0.37}"
-      ],
-      [
-        "Plush bear",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.12,\"mouth\":0.9,\"speed\":0.6,\"expression\":0.3,\"inflection\":0.1,\"wobble\":0.18,\"breath\":0.12,\"grit\":0.4,\"spacing\":0.65,\"seed\":0.37,\"voiceMode\":1,\"character\":1,\"voiceSeed\":0.37}",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.12,\"mouth\":0.9,\"speed\":0.6,\"expression\":0.3,\"inflection\":0.1,\"wobble\":0.18,\"breath\":0.12,\"grit\":0.4,\"spacing\":0.65,\"seed\":0.37,\"voiceMode\":1,\"character\":1,\"voiceSeed\":0.37}"
-      ],
-      [
-        "Reedy duck",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.53,\"mouth\":0.6,\"speed\":0.78,\"expression\":1,\"inflection\":0.5,\"wobble\":0.18,\"breath\":0.12,\"grit\":0.48,\"spacing\":0.1,\"seed\":0.37,\"voiceMode\":1,\"character\":2,\"voiceSeed\":0.37}",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.53,\"mouth\":0.6,\"speed\":0.78,\"expression\":1,\"inflection\":0.5,\"wobble\":0.18,\"breath\":0.12,\"grit\":0.48,\"spacing\":0.1,\"seed\":0.37,\"voiceMode\":1,\"character\":2,\"voiceSeed\":0.37}"
-      ],
-      [
-        "Bubbling alien",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":1,\"articulation\":0.8,\"pitch\":0.52,\"mouth\":0.8,\"speed\":0.78,\"expression\":0.9,\"inflection\":0.85,\"wobble\":0.65,\"breath\":0.12,\"grit\":0.12,\"spacing\":0.48,\"seed\":0.37,\"voiceMode\":1,\"character\":3,\"voiceSeed\":0.37}",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":1,\"articulation\":0.8,\"pitch\":0.52,\"mouth\":0.8,\"speed\":0.78,\"expression\":0.9,\"inflection\":0.85,\"wobble\":0.65,\"breath\":0.12,\"grit\":0.12,\"spacing\":0.48,\"seed\":0.37,\"voiceMode\":1,\"character\":3,\"voiceSeed\":0.37}"
-      ],
-      [
-        "Wispy sprite",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":1,\"articulation\":0.8,\"pitch\":0.86,\"mouth\":0.12,\"speed\":0.7,\"expression\":0.8,\"inflection\":0.1,\"wobble\":0.32,\"breath\":0.52,\"grit\":0,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":4,\"voiceSeed\":0.37}",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":1,\"articulation\":0.8,\"pitch\":0.86,\"mouth\":0.12,\"speed\":0.7,\"expression\":0.8,\"inflection\":0.1,\"wobble\":0.32,\"breath\":0.52,\"grit\":0,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":4,\"voiceSeed\":0.37}"
-      ],
-      [
-        "Tinny robot",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":2,\"articulation\":0.8,\"pitch\":0.4,\"mouth\":0.5,\"speed\":0.78,\"expression\":0.18,\"inflection\":0,\"wobble\":0,\"breath\":0,\"grit\":0.12,\"spacing\":0.48,\"seed\":0.37,\"voiceMode\":1,\"character\":5,\"voiceSeed\":0.37}",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":2,\"articulation\":0.8,\"pitch\":0.4,\"mouth\":0.5,\"speed\":0.78,\"expression\":0.18,\"inflection\":0,\"wobble\":0,\"breath\":0,\"grit\":0.12,\"spacing\":0.48,\"seed\":0.37,\"voiceMode\":1,\"character\":5,\"voiceSeed\":0.37}"
-      ],
-      [
-        "Gravel frog",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.26,\"mouth\":0.76,\"speed\":0.7,\"expression\":0.8,\"inflection\":-0.72,\"wobble\":0.8,\"breath\":0.12,\"grit\":0.55,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":6,\"voiceSeed\":0.37}",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":0,\"articulation\":0.8,\"pitch\":0.26,\"mouth\":0.76,\"speed\":0.7,\"expression\":0.8,\"inflection\":-0.72,\"wobble\":0.8,\"breath\":0.12,\"grit\":0.55,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":6,\"voiceSeed\":0.37}"
-      ],
-      [
-        "Radio critter",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":2,\"articulation\":0.8,\"pitch\":0.25,\"mouth\":0.25,\"speed\":0.78,\"expression\":0.4,\"inflection\":0.1,\"wobble\":0.1,\"breath\":0.65,\"grit\":0.88,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":7,\"voiceSeed\":0.37}",
-        "{\"masterVolume\":0.5,\"text\":\"Hello, neighbour!\",\"waveType\":-1,\"texture\":2,\"articulation\":0.8,\"pitch\":0.25,\"mouth\":0.25,\"speed\":0.78,\"expression\":0.4,\"inflection\":0.1,\"wobble\":0.1,\"breath\":0.65,\"grit\":0.88,\"spacing\":0.28,\"seed\":0.37,\"voiceMode\":1,\"character\":7,\"voiceSeed\":0.37}"
-      ]
-    ],
-    "selected_file_index": 0,
-    "create_new_sound": true,
-    "play_on_change": true,
-    "locked_params": {
-      "masterVolume": true,
-      "text": true,
-      "waveType": false,
-      "texture": false,
-      "articulation": false,
-      "pitch": false,
-      "mouth": false,
-      "speed": false,
-      "expression": false,
-      "inflection": false,
-      "wobble": false,
-      "breath": false,
-      "grit": false,
-      "spacing": false,
-      "seed": false,
-      "voiceMode": false,
-      "character": false,
-      "voiceSeed": false
-    }
-  },
   "Fractr": {
     "files": [
       [
         "Glass breaks",
-        "{\"masterVolume\":0.5,\"seed\":0.06104526715353131,\"material\":0,\"duration\":0.85,\"fragments\":33,\"fragmentSize\":0.45277471689507365,\"spread\":0.2,\"decay\":0.32126255473122,\"gravity\":0.3865951769053936,\"bounce\":0.5204774888581596,\"stress\":0.55,\"fracture\":1}",
-        "{\"masterVolume\":0.5,\"seed\":0.06104526715353131,\"material\":0,\"duration\":0.85,\"fragments\":33,\"fragmentSize\":0.45277471689507365,\"spread\":0.2,\"decay\":0.32126255473122,\"gravity\":0.3865951769053936,\"bounce\":0.5204774888581596,\"stress\":0.55,\"fracture\":1}"
+        "{\"masterVolume\":0.5,\"seed\":0.9469413745682687,\"material\":0,\"duration\":0.85,\"fragments\":71,\"fragmentSize\":0.44518622310832145,\"spread\":0.2,\"decay\":0.23136729449033738,\"gravity\":0.4204774888581596,\"bounce\":0.47136584350373595,\"stress\":0.55,\"shards\":0.6180132964625955,\"fracture\":1}",
+        "{\"masterVolume\":0.5,\"seed\":0.9469413745682687,\"material\":0,\"duration\":0.85,\"fragments\":71,\"fragmentSize\":0.44518622310832145,\"spread\":0.2,\"decay\":0.23136729449033738,\"gravity\":0.4204774888581596,\"bounce\":0.47136584350373595,\"stress\":0.55,\"shards\":0.6180132964625955,\"fracture\":1}"
       ],
       [
         "Ice splits",
-        "{\"masterVolume\":0.5,\"seed\":0.7361933451611549,\"material\":1,\"duration\":1.1,\"fragments\":29,\"fragmentSize\":0.719803693657741,\"spread\":0.7809657369740307,\"decay\":0.36278949477709826,\"gravity\":0.5664575704373419,\"bounce\":0.4519207988632843,\"stress\":0.7703658303013071,\"fracture\":1}",
-        "{\"masterVolume\":0.5,\"seed\":0.7361933451611549,\"material\":1,\"duration\":1.1,\"fragments\":29,\"fragmentSize\":0.719803693657741,\"spread\":0.7809657369740307,\"decay\":0.36278949477709826,\"gravity\":0.5664575704373419,\"bounce\":0.4519207988632843,\"stress\":0.7703658303013071,\"fracture\":1}"
+        "{\"masterVolume\":0.5,\"seed\":0.7361933451611549,\"material\":1,\"duration\":1.1,\"fragments\":29,\"fragmentSize\":0.719803693657741,\"spread\":0.7809657369740307,\"decay\":0.36278949477709826,\"gravity\":0.5664575704373419,\"bounce\":0.4519207988632843,\"stress\":0.7703658303013071,\"shards\":0.35,\"fracture\":1}",
+        "{\"masterVolume\":0.5,\"seed\":0.7361933451611549,\"material\":1,\"duration\":1.1,\"fragments\":29,\"fragmentSize\":0.719803693657741,\"spread\":0.7809657369740307,\"decay\":0.36278949477709826,\"gravity\":0.5664575704373419,\"bounce\":0.4519207988632843,\"stress\":0.7703658303013071,\"shards\":0.35,\"fracture\":1}"
       ],
       [
         "Dry snap",
-        "{\"masterVolume\":0.5,\"seed\":0.22458369005471468,\"material\":6,\"duration\":0.6,\"fragments\":12,\"fragmentSize\":0.20693030494730918,\"spread\":0.1,\"decay\":0.2984867203235626,\"gravity\":0.4523791530053131,\"bounce\":0.8728104618377983,\"stress\":0.2130070986691862,\"fracture\":1}",
-        "{\"masterVolume\":0.5,\"seed\":0.22458369005471468,\"material\":6,\"duration\":0.6,\"fragments\":12,\"fragmentSize\":0.20693030494730918,\"spread\":0.1,\"decay\":0.2984867203235626,\"gravity\":0.4523791530053131,\"bounce\":0.8728104618377983,\"stress\":0.2130070986691862,\"fracture\":1}"
+        "{\"masterVolume\":0.5,\"seed\":0.9899587871041149,\"material\":6,\"duration\":0.6,\"fragments\":12,\"fragmentSize\":0.7045968763530255,\"spread\":0.1,\"decay\":0.06217630523024127,\"gravity\":0.9273202639073134,\"bounce\":0.02695004280656576,\"stress\":0.280811357870698,\"shards\":0.1589526330307126,\"fracture\":1}",
+        "{\"masterVolume\":0.5,\"seed\":0.9899587871041149,\"material\":6,\"duration\":0.6,\"fragments\":12,\"fragmentSize\":0.7045968763530255,\"spread\":0.1,\"decay\":0.06217630523024127,\"gravity\":0.9273202639073134,\"bounce\":0.02695004280656576,\"stress\":0.280811357870698,\"shards\":0.1589526330307126,\"fracture\":1}"
       ]
     ],
     "selected_file_index": 0,
@@ -99,6 +32,7 @@
       "gravity": false,
       "bounce": false,
       "stress": false,
+      "shards": false,
       "fracture": false
     }
   },
@@ -106,23 +40,23 @@
     "files": [
       [
         "Grenade",
-        "{\"masterVolume\":0.5,\"seed\":0.29008437716402113,\"duration\":1.2,\"size\":0.4156759314937517,\"pressure\":0.7268808982800692,\"blast\":0.5395827001077124,\"debris\":0.8096423041075468,\"spread\":0.5632510357536376,\"tail\":0.3103573102736846,\"muffle\":0.21972745114471764,\"mechanism\":0,\"space\":0.1605694430414587}",
-        "{\"masterVolume\":0.5,\"seed\":0.29008437716402113,\"duration\":1.2,\"size\":0.4156759314937517,\"pressure\":0.7268808982800692,\"blast\":0.5395827001077124,\"debris\":0.8096423041075468,\"spread\":0.5632510357536376,\"tail\":0.3103573102736846,\"muffle\":0.21972745114471764,\"mechanism\":0,\"space\":0.1605694430414587}"
+        "{\"masterVolume\":0.5,\"seed\":0.8144463542848825,\"duration\":1.2,\"size\":0.44473172808066014,\"pressure\":0.8803446562844328,\"blast\":0.5787501953192986,\"debris\":0.8949590020813047,\"gas\":0.06580864135175943,\"aftershock\":0.1496085410239175,\"rubbleSize\":0.2156759314937517,\"spread\":0.41603375086560845,\"tail\":0.43215645069722086,\"muffle\":0.11122244888916612,\"mechanism\":0,\"space\":0.1393081215303391}",
+        "{\"masterVolume\":0.5,\"seed\":0.8144463542848825,\"duration\":1.2,\"size\":0.44473172808066014,\"pressure\":0.8803446562844328,\"blast\":0.5787501953192986,\"debris\":0.8949590020813047,\"gas\":0.06580864135175943,\"aftershock\":0.1496085410239175,\"rubbleSize\":0.2156759314937517,\"spread\":0.41603375086560845,\"tail\":0.43215645069722086,\"muffle\":0.11122244888916612,\"mechanism\":0,\"space\":0.1393081215303391}"
       ],
       [
         "Depth charge",
-        "{\"masterVolume\":0.5,\"seed\":0.3901634314097464,\"duration\":1.6,\"size\":0.880152450548485,\"pressure\":0.9953366629313678,\"blast\":0.7879270573146642,\"debris\":0.04509065165184438,\"spread\":0.4904925593174994,\"tail\":0.7515493421582505,\"muffle\":0.9158825523336418,\"mechanism\":2,\"space\":0.6131285554729402}",
-        "{\"masterVolume\":0.5,\"seed\":0.3901634314097464,\"duration\":1.6,\"size\":0.880152450548485,\"pressure\":0.9953366629313678,\"blast\":0.7879270573146642,\"debris\":0.04509065165184438,\"spread\":0.4904925593174994,\"tail\":0.7515493421582505,\"muffle\":0.9158825523336418,\"mechanism\":2,\"space\":0.6131285554729402}"
+        "{\"masterVolume\":0.5,\"seed\":0.20350834168493748,\"duration\":1.6,\"size\":0.8601208688691259,\"pressure\":0.8839347097440623,\"blast\":0.5160563910380006,\"debris\":0.09952953140018507,\"gas\":0.018944760486483574,\"aftershock\":0.7765567659167573,\"rubbleSize\":0.8202286758227273,\"spread\":0.5560653725638987,\"tail\":0.9541049695922993,\"muffle\":0.8928909439127892,\"mechanism\":2,\"space\":0.8360099887941033}",
+        "{\"masterVolume\":0.5,\"seed\":0.20350834168493748,\"duration\":1.6,\"size\":0.8601208688691259,\"pressure\":0.8839347097440623,\"blast\":0.5160563910380006,\"debris\":0.09952953140018507,\"gas\":0.018944760486483574,\"aftershock\":0.7765567659167573,\"rubbleSize\":0.8202286758227273,\"spread\":0.5560653725638987,\"tail\":0.9541049695922993,\"muffle\":0.8928909439127892,\"mechanism\":2,\"space\":0.8360099887941033}"
       ],
       [
         "Gas fireball",
-        "{\"masterVolume\":0.5,\"seed\":0.7621412558946759,\"duration\":1.3,\"size\":0.6099406186840497,\"pressure\":0.47814818427432326,\"blast\":0.8730453555937856,\"debris\":0.1890610588993877,\"spread\":0.2221245005610399,\"tail\":0.9057571600889787,\"muffle\":0.34874116617720574,\"mechanism\":1,\"space\":0.5007606293074787}",
-        "{\"masterVolume\":0.5,\"seed\":0.7621412558946759,\"duration\":1.3,\"size\":0.6099406186840497,\"pressure\":0.47814818427432326,\"blast\":0.8730453555937856,\"debris\":0.1890610588993877,\"spread\":0.2221245005610399,\"tail\":0.9057571600889787,\"muffle\":0.34874116617720574,\"mechanism\":1,\"space\":0.5007606293074787}"
+        "{\"masterVolume\":0.5,\"seed\":0.6775596248917282,\"duration\":1.3,\"size\":0.7458568530739286,\"pressure\":0.31896385762374846,\"blast\":0.9528785800444893,\"debris\":0.11916077745147051,\"gas\":0.813070471980609,\"aftershock\":0.1240409054607153,\"rubbleSize\":0.1913946392480284,\"spread\":0.4667494395631366,\"tail\":0.7812713037012144,\"muffle\":0.3350239607039839,\"mechanism\":1,\"space\":0.5875309123657644}",
+        "{\"masterVolume\":0.5,\"seed\":0.6775596248917282,\"duration\":1.3,\"size\":0.7458568530739286,\"pressure\":0.31896385762374846,\"blast\":0.9528785800444893,\"debris\":0.11916077745147051,\"gas\":0.813070471980609,\"aftershock\":0.1240409054607153,\"rubbleSize\":0.1913946392480284,\"spread\":0.4667494395631366,\"tail\":0.7812713037012144,\"muffle\":0.3350239607039839,\"mechanism\":1,\"space\":0.5875309123657644}"
       ],
       [
         "Structural collapse",
-        "{\"masterVolume\":0.5,\"seed\":0.20799390692263842,\"duration\":1.5,\"size\":0.8494049491593614,\"pressure\":0.7828732774709352,\"blast\":0.40688917688094084,\"debris\":0.8888939784606918,\"spread\":0.9035257247975096,\"tail\":0.8366875678300858,\"muffle\":0.34979655806673693,\"mechanism\":4,\"space\":0.778992285579443}",
-        "{\"masterVolume\":0.5,\"seed\":0.20799390692263842,\"duration\":1.5,\"size\":0.8494049491593614,\"pressure\":0.7828732774709352,\"blast\":0.40688917688094084,\"debris\":0.8888939784606918,\"spread\":0.9035257247975096,\"tail\":0.8366875678300858,\"muffle\":0.34979655806673693,\"mechanism\":4,\"space\":0.778992285579443}"
+        "{\"masterVolume\":0.5,\"seed\":0.9862467013299465,\"duration\":1.5,\"size\":0.7277879569213838,\"pressure\":0.8196047706645914,\"blast\":0.6900156758725643,\"debris\":0.9698779348400421,\"gas\":0.17764729995280504,\"aftershock\":0.7381237858906389,\"rubbleSize\":0.8658732655458152,\"spread\":0.7623981720767915,\"tail\":0.5551838894374669,\"muffle\":0.3325578483985737,\"mechanism\":4,\"space\":0.7125972439534962}",
+        "{\"masterVolume\":0.5,\"seed\":0.9862467013299465,\"duration\":1.5,\"size\":0.7277879569213838,\"pressure\":0.8196047706645914,\"blast\":0.6900156758725643,\"debris\":0.9698779348400421,\"gas\":0.17764729995280504,\"aftershock\":0.7381237858906389,\"rubbleSize\":0.8658732655458152,\"spread\":0.7623981720767915,\"tail\":0.5551838894374669,\"muffle\":0.3325578483985737,\"mechanism\":4,\"space\":0.7125972439534962}"
       ]
     ],
     "selected_file_index": 0,
@@ -136,6 +70,9 @@
       "pressure": false,
       "blast": false,
       "debris": false,
+      "gas": false,
+      "aftershock": false,
+      "rubbleSize": false,
       "spread": false,
       "tail": false,
       "muffle": false,
@@ -143,80 +80,27 @@
       "space": false
     }
   },
-  "Pewpr": {
-    "files": [
-      [
-        "Laser pistol",
-        "{\"masterVolume\":0.5,\"seed\":0.4466241258196533,\"kind\":0,\"duration\":1.1,\"pitch\":0.5576306943432427,\"sweep\":-0.3447468243772165,\"charge\":0.021254020966589453,\"punch\":0.8101860349997878,\"body\":0.33966117531526835,\"recoil\":0.18315499876625835,\"grit\":0.012143555972725152,\"shots\":1,\"character\":0.35401964578777556,\"modulation\":0.07103037233464421}",
-        "{\"masterVolume\":0.5,\"seed\":0.4466241258196533,\"kind\":0,\"duration\":1.1,\"pitch\":0.5576306943432427,\"sweep\":-0.3447468243772165,\"charge\":0.021254020966589453,\"punch\":0.8101860349997878,\"body\":0.33966117531526835,\"recoil\":0.18315499876625835,\"grit\":0.012143555972725152,\"shots\":1,\"character\":0.35401964578777556,\"modulation\":0.07103037233464421}"
-      ],
-      [
-        "Coil driver",
-        "{\"masterVolume\":0.5,\"seed\":0.12083723512478173,\"kind\":4,\"duration\":1.1,\"pitch\":0.4621405921061523,\"sweep\":-0.6007821199949831,\"charge\":0.3176578043960035,\"punch\":0.9921353943645954,\"body\":0.21387485498562453,\"recoil\":0.7473262007115409,\"grit\":0.18830865253694354,\"shots\":1,\"character\":0.4594127794727683,\"modulation\":0.518861761270091}",
-        "{\"masterVolume\":0.5,\"seed\":0.12083723512478173,\"kind\":4,\"duration\":1.1,\"pitch\":0.4621405921061523,\"sweep\":-0.6007821199949831,\"charge\":0.3176578043960035,\"punch\":0.9921353943645954,\"body\":0.21387485498562453,\"recoil\":0.7473262007115409,\"grit\":0.18830865253694354,\"shots\":1,\"character\":0.4594127794727683,\"modulation\":0.518861761270091}"
-      ],
-      [
-        "Spore cannon",
-        "{\"masterVolume\":0.5,\"seed\":0.8553172636311501,\"kind\":5,\"duration\":1.1,\"pitch\":0.51262820296688,\"sweep\":0.07079651108942919,\"charge\":0.018716571978293357,\"punch\":0.5967585829668678,\"body\":0.8719902407377959,\"recoil\":0.36989544674288477,\"grit\":0.3203149607172236,\"shots\":1,\"character\":0.5780684028286487,\"modulation\":0.8550758769852109}",
-        "{\"masterVolume\":0.5,\"seed\":0.8553172636311501,\"kind\":5,\"duration\":1.1,\"pitch\":0.51262820296688,\"sweep\":0.07079651108942919,\"charge\":0.018716571978293357,\"punch\":0.5967585829668678,\"body\":0.8719902407377959,\"recoil\":0.36989544674288477,\"grit\":0.3203149607172236,\"shots\":1,\"character\":0.5780684028286487,\"modulation\":0.8550758769852109}"
-      ],
-      [
-        "Prism lance",
-        "{\"masterVolume\":0.5,\"seed\":0.13341571646742523,\"kind\":3,\"duration\":1.1,\"pitch\":0.6733756735688076,\"sweep\":0.5546940764412285,\"charge\":0.008380351555533707,\"punch\":0.37844555798219515,\"body\":0.45978247446473686,\"recoil\":0.13945768382400275,\"grit\":0.06644345653010532,\"shots\":1,\"character\":0.1902510372805409,\"modulation\":0.3284759624861181}",
-        "{\"masterVolume\":0.5,\"seed\":0.13341571646742523,\"kind\":3,\"duration\":1.1,\"pitch\":0.6733756735688076,\"sweep\":0.5546940764412285,\"charge\":0.008380351555533707,\"punch\":0.37844555798219515,\"body\":0.45978247446473686,\"recoil\":0.13945768382400275,\"grit\":0.06644345653010532,\"shots\":1,\"character\":0.1902510372805409,\"modulation\":0.3284759624861181}"
-      ],
-      [
-        "Gravity well",
-        "{\"masterVolume\":0.5,\"seed\":0.3630224377848208,\"kind\":7,\"duration\":1.7,\"pitch\":0.14325234575662762,\"sweep\":-0.16668193228542805,\"charge\":0.7280195586150512,\"punch\":0.9120041511720046,\"body\":0.8833414194290526,\"recoil\":0.7249055259861052,\"grit\":0.057703339157160374,\"shots\":1,\"character\":0.6444529322907329,\"modulation\":0.9160076661384664}",
-        "{\"masterVolume\":0.5,\"seed\":0.3630224377848208,\"kind\":7,\"duration\":1.7,\"pitch\":0.14325234575662762,\"sweep\":-0.16668193228542805,\"charge\":0.7280195586150512,\"punch\":0.9120041511720046,\"body\":0.8833414194290526,\"recoil\":0.7249055259861052,\"grit\":0.057703339157160374,\"shots\":1,\"character\":0.6444529322907329,\"modulation\":0.9160076661384664}"
-      ],
-      [
-        "Ion beam",
-        "{\"masterVolume\":0.5,\"seed\":0.3854520502500236,\"kind\":6,\"duration\":1.1,\"pitch\":0.7937308455817402,\"sweep\":0.13783585857599978,\"charge\":0.2450455670012161,\"punch\":0.26819782903185113,\"body\":0.9347362614236772,\"recoil\":0.3880943394149654,\"grit\":0.0825337734632194,\"shots\":1,\"character\":0.7895039756782353,\"modulation\":0.4799854732467793}",
-        "{\"masterVolume\":0.5,\"seed\":0.3854520502500236,\"kind\":6,\"duration\":1.1,\"pitch\":0.7937308455817402,\"sweep\":0.13783585857599978,\"charge\":0.2450455670012161,\"punch\":0.26819782903185113,\"body\":0.9347362614236772,\"recoil\":0.3880943394149654,\"grit\":0.0825337734632194,\"shots\":1,\"character\":0.7895039756782353,\"modulation\":0.4799854732467793}"
-      ]
-    ],
-    "selected_file_index": 0,
-    "create_new_sound": true,
-    "play_on_change": true,
-    "locked_params": {
-      "masterVolume": true,
-      "seed": false,
-      "kind": false,
-      "duration": false,
-      "pitch": false,
-      "sweep": false,
-      "charge": false,
-      "punch": false,
-      "body": false,
-      "recoil": false,
-      "grit": false,
-      "shots": false,
-      "character": false,
-      "modulation": false
-    }
-  },
   "Bouncr": {
     "files": [
       [
         "Steel on concrete",
-        "{\"masterVolume\":0.5,\"seed\":0.8234482447151095,\"material\":2,\"duration\":0.85,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.4086348487995565,\"hardness\":0.962540683732368,\"spin\":0.16264976933598518,\"surface\":0,\"force\":0.7245020057307556,\"tail\":0.5718365868553519}",
-        "{\"masterVolume\":0.5,\"seed\":0.8234482447151095,\"material\":2,\"duration\":0.85,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.4086348487995565,\"hardness\":0.962540683732368,\"spin\":0.16264976933598518,\"surface\":0,\"force\":0.7245020057307556,\"tail\":0.5718365868553519}"
+        "{\"masterVolume\":0.5,\"material\":2,\"surface\":0,\"force\":0.7245020057307556,\"duration\":0.85,\"size\":0.4086348487995565,\"hardness\":0.962540683732368,\"tail\":0.5718365868553519,\"seed\":0.8234482447151095,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"spin\":0.16264976933598518}",
+        "{\"masterVolume\":0.5,\"material\":2,\"surface\":0,\"force\":0.7245020057307556,\"duration\":0.85,\"size\":0.4086348487995565,\"hardness\":0.962540683732368,\"tail\":0.5718365868553519,\"seed\":0.8234482447151095,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"spin\":0.16264976933598518}"
       ],
       [
         "Wood on metal",
-        "{\"masterVolume\":0.5,\"seed\":0.20854306034743786,\"material\":1,\"duration\":1.1,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.3383283774368465,\"hardness\":0.7872721170075238,\"spin\":0.022059115231968462,\"surface\":2,\"force\":0.8324170107720419,\"tail\":0.55060664198827}",
-        "{\"masterVolume\":0.5,\"seed\":0.20854306034743786,\"material\":1,\"duration\":1.1,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.3383283774368465,\"hardness\":0.7872721170075238,\"spin\":0.022059115231968462,\"surface\":2,\"force\":0.8324170107720419,\"tail\":0.55060664198827}"
+        "{\"masterVolume\":0.5,\"material\":1,\"surface\":2,\"force\":0.8324170107720419,\"duration\":1.1,\"size\":0.3383283774368465,\"hardness\":0.7872721170075238,\"tail\":0.55060664198827,\"seed\":0.20854306034743786,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"spin\":0.022059115231968462}",
+        "{\"masterVolume\":0.5,\"material\":1,\"surface\":2,\"force\":0.8324170107720419,\"duration\":1.1,\"size\":0.3383283774368465,\"hardness\":0.7872721170075238,\"tail\":0.55060664198827,\"seed\":0.20854306034743786,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"spin\":0.022059115231968462}"
       ],
       [
         "Coin on glass",
-        "{\"masterVolume\":0.5,\"seed\":0.45835797442123294,\"material\":2,\"duration\":1.2,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.2164857203490101,\"hardness\":0.8002291040262207,\"spin\":0.483913488057442,\"surface\":3,\"force\":0.3515657754614949,\"tail\":0.8302029800252058}",
-        "{\"masterVolume\":0.5,\"seed\":0.45835797442123294,\"material\":2,\"duration\":1.2,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.2164857203490101,\"hardness\":0.8002291040262207,\"spin\":0.483913488057442,\"surface\":3,\"force\":0.3515657754614949,\"tail\":0.8302029800252058}"
+        "{\"masterVolume\":0.5,\"material\":2,\"surface\":3,\"force\":0.3515657754614949,\"duration\":1.2,\"size\":0.2164857203490101,\"hardness\":0.8002291040262207,\"tail\":0.8302029800252058,\"seed\":0.45835797442123294,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"spin\":0.483913488057442}",
+        "{\"masterVolume\":0.5,\"material\":2,\"surface\":3,\"force\":0.3515657754614949,\"duration\":1.2,\"size\":0.2164857203490101,\"hardness\":0.8002291040262207,\"tail\":0.8302029800252058,\"seed\":0.45835797442123294,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"spin\":0.483913488057442}"
       ],
       [
         "Stone into earth",
-        "{\"masterVolume\":0.5,\"seed\":0.48187256418168545,\"material\":4,\"duration\":0.9,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.8251109347329475,\"hardness\":0.5980186837725341,\"spin\":0.7527546782861464,\"surface\":4,\"force\":0.7372997886384838,\"tail\":0.458794666826725}",
-        "{\"masterVolume\":0.5,\"seed\":0.48187256418168545,\"material\":4,\"duration\":0.9,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"size\":0.8251109347329475,\"hardness\":0.5980186837725341,\"spin\":0.7527546782861464,\"surface\":4,\"force\":0.7372997886384838,\"tail\":0.458794666826725}"
+        "{\"masterVolume\":0.5,\"material\":4,\"surface\":4,\"force\":0.7372997886384838,\"duration\":0.9,\"size\":0.8251109347329475,\"hardness\":0.5980186837725341,\"tail\":0.458794666826725,\"seed\":0.48187256418168545,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"spin\":0.7527546782861464}",
+        "{\"masterVolume\":0.5,\"material\":4,\"surface\":4,\"force\":0.7372997886384838,\"duration\":0.9,\"size\":0.8251109347329475,\"hardness\":0.5980186837725341,\"tail\":0.458794666826725,\"seed\":0.48187256418168545,\"count\":1,\"bounce\":0.65,\"gravity\":0.5,\"spin\":0.7527546782861464}"
       ]
     ],
     "selected_file_index": 0,
@@ -224,18 +108,18 @@
     "play_on_change": true,
     "locked_params": {
       "masterVolume": true,
-      "seed": false,
       "material": false,
+      "surface": false,
+      "force": false,
       "duration": false,
+      "size": false,
+      "hardness": false,
+      "tail": false,
+      "seed": false,
       "count": false,
       "bounce": false,
       "gravity": false,
-      "size": false,
-      "hardness": false,
-      "spin": false,
-      "surface": false,
-      "force": false,
-      "tail": false
+      "spin": false
     }
   },
   "Glitchr": {
@@ -319,8 +203,8 @@
     "files": [
       [
         "Snore",
-        "{\"masterVolume\":0.5,\"seed\":0.8156865499913692,\"source\":2,\"duration\":2.3,\"cycles\":1,\"effort\":0.21557450829539448,\"inhale\":0.518359503056854,\"hold\":0.21839689085260033,\"throat\":0.7318794300593436,\"rasp\":0.8708363814279436,\"flutter\":0.3697615481563844,\"space\":0.07918153282254935}",
-        "{\"masterVolume\":0.5,\"seed\":0.8156865499913692,\"source\":2,\"duration\":2.3,\"cycles\":1,\"effort\":0.21557450829539448,\"inhale\":0.518359503056854,\"hold\":0.21839689085260033,\"throat\":0.7318794300593436,\"rasp\":0.8708363814279436,\"flutter\":0.3697615481563844,\"space\":0.07918153282254935}"
+        "{\"masterVolume\":0.5,\"seed\":0.3578618853352964,\"source\":2,\"mode\":0,\"duration\":2.3,\"direction\":-0.6098579366807826,\"cycles\":1,\"effort\":0.282539254585281,\"inhale\":0.6477098440751434,\"hold\":0.20227136896923187,\"throat\":0.7047945623565466,\"rasp\":0.6470395115204156,\"flutter\":0.4631072946521454,\"space\":0.1305098479986191}",
+        "{\"masterVolume\":0.5,\"seed\":0.3578618853352964,\"source\":2,\"mode\":0,\"duration\":2.3,\"direction\":-0.6098579366807826,\"cycles\":1,\"effort\":0.282539254585281,\"inhale\":0.6477098440751434,\"hold\":0.20227136896923187,\"throat\":0.7047945623565466,\"rasp\":0.6470395115204156,\"flutter\":0.4631072946521454,\"space\":0.1305098479986191}"
       ]
     ],
     "selected_file_index": 0,
@@ -330,7 +214,9 @@
       "masterVolume": true,
       "seed": false,
       "source": false,
+      "mode": false,
       "duration": false,
+      "direction": false,
       "cycles": false,
       "effort": false,
       "inhale": false,
@@ -345,8 +231,8 @@
     "files": [
       [
         "Steel tremolo",
-        "{\"masterVolume\":0.5,\"seed\":0.39714274113066494,\"material\":1,\"duration\":1.5,\"pitch\":0.692095657158643,\"strings\":1,\"damping\":0.1493972745910287,\"brightness\":0.9163566173054278,\"pluck\":0.1576135388482362,\"coupling\":0.20500602480024102,\"strum\":0.16735703960061074,\"tremolo\":0.75,\"tremoloRate\":5.2,\"inharmonic\":0.29755602893419564}",
-        "{\"masterVolume\":0.5,\"seed\":0.39714274113066494,\"material\":1,\"duration\":1.5,\"pitch\":0.692095657158643,\"strings\":1,\"damping\":0.1493972745910287,\"brightness\":0.9163566173054278,\"pluck\":0.1576135388482362,\"coupling\":0.20500602480024102,\"strum\":0.16735703960061074,\"tremolo\":0.75,\"tremoloRate\":5.2,\"inharmonic\":0.29755602893419564}"
+        "{\"masterVolume\":0.5,\"seed\":0.39714274113066494,\"material\":1,\"duration\":1.5,\"pitch\":0.692095657158643,\"strings\":1,\"damping\":0.1493972745910287,\"brightness\":0.9163566173054278,\"pluck\":0.1576135388482362,\"coupling\":0.20500602480024102,\"strum\":0.16735703960061074,\"tremolo\":0.75,\"vibrato\":0,\"tremoloRate\":5.2,\"inharmonic\":0.29755602893419564}",
+        "{\"masterVolume\":0.5,\"seed\":0.39714274113066494,\"material\":1,\"duration\":1.5,\"pitch\":0.692095657158643,\"strings\":1,\"damping\":0.1493972745910287,\"brightness\":0.9163566173054278,\"pluck\":0.1576135388482362,\"coupling\":0.20500602480024102,\"strum\":0.16735703960061074,\"tremolo\":0.75,\"vibrato\":0,\"tremoloRate\":5.2,\"inharmonic\":0.29755602893419564}"
       ]
     ],
     "selected_file_index": 0,
@@ -365,34 +251,9 @@
       "coupling": false,
       "strum": false,
       "tremolo": false,
+      "vibrato": false,
       "tremoloRate": false,
       "inharmonic": false
-    }
-  },
-  "Rumblr": {
-    "files": [
-      [
-        "Deep pressure",
-        "{\"masterVolume\":0.5,\"seed\":0.48041292489506304,\"duration\":1.8,\"size\":0.9220839063869789,\"weight\":0.9712849464267492,\"roughness\":0.08588571225292982,\"tremor\":0.08838769627036527,\"dust\":0.029996255622245373,\"attack\":0.6845142194768414,\"sweep\":-0.079998116241768,\"depth\":0.95,\"harmonics\":0.25}",
-        "{\"masterVolume\":0.5,\"seed\":0.48041292489506304,\"duration\":1.8,\"size\":0.9220839063869789,\"weight\":0.9712849464267492,\"roughness\":0.08588571225292982,\"tremor\":0.08838769627036527,\"dust\":0.029996255622245373,\"attack\":0.6845142194768414,\"sweep\":-0.079998116241768,\"depth\":0.95,\"harmonics\":0.25}"
-      ]
-    ],
-    "selected_file_index": 0,
-    "create_new_sound": true,
-    "play_on_change": true,
-    "locked_params": {
-      "masterVolume": true,
-      "seed": false,
-      "duration": false,
-      "size": false,
-      "weight": false,
-      "roughness": false,
-      "tremor": false,
-      "dust": false,
-      "attack": false,
-      "sweep": false,
-      "depth": false,
-      "harmonics": false
     }
   },
   "Jinglr": {
@@ -444,8 +305,8 @@
     "files": [
       [
         "Whistle into FM",
-        "{\"masterVolume\":0.5,\"waveType\":6,\"duration\":1.1,\"pitch\":{\"start\":0.194751950786449,\"end\":0.5847519507864491,\"curve\":\"Bounce\"},\"tone\":{\"start\":0.8,\"end\":0.7753573259687982,\"curve\":\"Smooth\"},\"noise\":{\"start\":0,\"end\":0.0688402708247304,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0.20000330791808665,\"end\":0.16693876893259585,\"curve\":\"Ease In\"},\"level\":{\"start\":0.8507937512826174,\"end\":0,\"curve\":\"Linear\"},\"attack\":0.005039015306340117,\"release\":0.43671465988281016,\"resonance\":0.10843799086753278,\"echo\":0.15,\"waveTo\":11,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Ease Out\"}}",
-        "{\"masterVolume\":0.5,\"waveType\":6,\"duration\":1.1,\"pitch\":{\"start\":0.194751950786449,\"end\":0.5847519507864491,\"curve\":\"Bounce\"},\"tone\":{\"start\":0.8,\"end\":0.7753573259687982,\"curve\":\"Smooth\"},\"noise\":{\"start\":0,\"end\":0.0688402708247304,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0.20000330791808665,\"end\":0.16693876893259585,\"curve\":\"Ease In\"},\"level\":{\"start\":0.8507937512826174,\"end\":0,\"curve\":\"Linear\"},\"attack\":0.005039015306340117,\"release\":0.43671465988281016,\"resonance\":0.10843799086753278,\"echo\":0.15,\"waveTo\":11,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Ease Out\"}}"
+        "{\"masterVolume\":0.5,\"waveType\":6,\"duration\":1.1,\"pitch\":{\"start\":0.3915856556291692,\"end\":0.22650947969639673,\"curve\":\"Ease In\"},\"tone\":{\"start\":0.8,\"end\":0.8961976289283484,\"curve\":\"Smooth\"},\"vibrato\":{\"start\":0.20265287709189578,\"end\":0.21029090707888826,\"curve\":\"Ease In\"},\"level\":{\"start\":0.8650570876454002,\"end\":0.5502121824817732,\"curve\":\"Linear\"},\"attack\":0.013801947015709267,\"release\":0.06514779516323681,\"resonance\":0.3783284515771083,\"echo\":0.15,\"waveTo\":11,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Ease Out\"}}",
+        "{\"masterVolume\":0.5,\"waveType\":6,\"duration\":1.1,\"pitch\":{\"start\":0.3915856556291692,\"end\":0.22650947969639673,\"curve\":\"Ease In\"},\"tone\":{\"start\":0.8,\"end\":0.8961976289283484,\"curve\":\"Smooth\"},\"vibrato\":{\"start\":0.20265287709189578,\"end\":0.21029090707888826,\"curve\":\"Ease In\"},\"level\":{\"start\":0.8650570876454002,\"end\":0.5502121824817732,\"curve\":\"Linear\"},\"attack\":0.013801947015709267,\"release\":0.06514779516323681,\"resonance\":0.3783284515771083,\"echo\":0.15,\"waveTo\":11,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Ease Out\"}}"
       ]
     ],
     "selected_file_index": 0,
@@ -457,7 +318,6 @@
       "duration": false,
       "pitch": false,
       "tone": false,
-      "noise": false,
       "vibrato": false,
       "level": false,
       "attack": false,
@@ -472,13 +332,13 @@
     "files": [
       [
         "Air and ice",
-        "{\"masterVolume\":0.5,\"seed\":0.8272684714756906,\"balance\":0.5296927297953516,\"sources\":\"[{\\\"synth\\\":\\\"Whooshr\\\",\\\"name\\\":\\\"Sword Swing\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.17693056748248637,\\\"duration\\\":0.2655402878858149,\\\"size\\\":0.3669435653137043,\\\"air\\\":0.657946601207368,\\\"whistle\\\":0.45672038227785383,\\\"movement\\\":0.8754990382352844,\\\"focus\\\":0.6214127779123373,\\\"flutter\\\":0.05114317156840116}},{\\\"synth\\\":\\\"Fractr\\\",\\\"name\\\":\\\"Ice Wall\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.6199892214499414,\\\"material\\\":1,\\\"duration\\\":2.842980657494627,\\\"fragments\\\":35,\\\"fragmentSize\\\":0.6099419226637111,\\\"spread\\\":0.7213274970650673,\\\"decay\\\":0.4463233622722328,\\\"gravity\\\":0.5082702660933136,\\\"bounce\\\":0.41384958690032364,\\\"stress\\\":0.7658597456407733,\\\"fracture\\\":0.9594188849674538}}]\"}",
-        "{\"masterVolume\":0.5,\"seed\":0.8272684714756906,\"balance\":0.5296927297953516,\"sources\":\"[{\\\"synth\\\":\\\"Whooshr\\\",\\\"name\\\":\\\"Sword Swing\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.17693056748248637,\\\"duration\\\":0.2655402878858149,\\\"size\\\":0.3669435653137043,\\\"air\\\":0.657946601207368,\\\"whistle\\\":0.45672038227785383,\\\"movement\\\":0.8754990382352844,\\\"focus\\\":0.6214127779123373,\\\"flutter\\\":0.05114317156840116}},{\\\"synth\\\":\\\"Fractr\\\",\\\"name\\\":\\\"Ice Wall\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.6199892214499414,\\\"material\\\":1,\\\"duration\\\":2.842980657494627,\\\"fragments\\\":35,\\\"fragmentSize\\\":0.6099419226637111,\\\"spread\\\":0.7213274970650673,\\\"decay\\\":0.4463233622722328,\\\"gravity\\\":0.5082702660933136,\\\"bounce\\\":0.41384958690032364,\\\"stress\\\":0.7658597456407733,\\\"fracture\\\":0.9594188849674538}}]\"}"
+        "{\"masterVolume\":0.5,\"seed\":0.8272684714756906,\"balance\":0.677815637877211,\"sources\":\"[{\\\"synth\\\":\\\"Whooshr\\\",\\\"name\\\":\\\"Arrow Pass\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.3310278446879238,\\\"duration\\\":0.2722658227011562,\\\"size\\\":0.0982888343394734,\\\"air\\\":0.5411737793241628,\\\"whistle\\\":0.7577131865546107,\\\"movement\\\":0.8693787302356214,\\\"focus\\\":0.829001100489404,\\\"flutter\\\":0.01769305674824864},\\\"generator\\\":\\\"*\\\",\\\"selectedGenerator\\\":\\\"generate_arrow_pass\\\",\\\"renderSeed\\\":0.8647296165581793},{\\\"synth\\\":\\\"Fractr\\\",\\\"name\\\":\\\"Ice Crack\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.533174563664943,\\\"material\\\":1,\\\"duration\\\":0.47671927396440883,\\\"fragments\\\":8,\\\"fragmentSize\\\":0.7994911847170443,\\\"spread\\\":0.10439870657399296,\\\"decay\\\":0.113681381046772,\\\"gravity\\\":0.8605496011208743,\\\"bounce\\\":0.08533101251814515,\\\"stress\\\":0.4256479116156697,\\\"shards\\\":0.10828423572704196,\\\"fracture\\\":0.8856637485325337},\\\"generator\\\":\\\"*\\\",\\\"selectedGenerator\\\":\\\"generate_ice_crack\\\",\\\"renderSeed\\\":0.5545441096182913}]\"}",
+        "{\"masterVolume\":0.5,\"seed\":0.8272684714756906,\"balance\":0.677815637877211,\"sources\":\"[{\\\"synth\\\":\\\"Whooshr\\\",\\\"name\\\":\\\"Arrow Pass\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.3310278446879238,\\\"duration\\\":0.2722658227011562,\\\"size\\\":0.0982888343394734,\\\"air\\\":0.5411737793241628,\\\"whistle\\\":0.7577131865546107,\\\"movement\\\":0.8693787302356214,\\\"focus\\\":0.829001100489404,\\\"flutter\\\":0.01769305674824864},\\\"generator\\\":\\\"*\\\",\\\"selectedGenerator\\\":\\\"generate_arrow_pass\\\",\\\"renderSeed\\\":0.8647296165581793},{\\\"synth\\\":\\\"Fractr\\\",\\\"name\\\":\\\"Ice Crack\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.533174563664943,\\\"material\\\":1,\\\"duration\\\":0.47671927396440883,\\\"fragments\\\":8,\\\"fragmentSize\\\":0.7994911847170443,\\\"spread\\\":0.10439870657399296,\\\"decay\\\":0.113681381046772,\\\"gravity\\\":0.8605496011208743,\\\"bounce\\\":0.08533101251814515,\\\"stress\\\":0.4256479116156697,\\\"shards\\\":0.10828423572704196,\\\"fracture\\\":0.8856637485325337},\\\"generator\\\":\\\"*\\\",\\\"selectedGenerator\\\":\\\"generate_ice_crack\\\",\\\"renderSeed\\\":0.5545441096182913}]\"}"
       ],
       [
         "Steel and electricity",
-        "{\"masterVolume\":0.5,\"seed\":0.16487229522317648,\"balance\":0.48912243195809424,\"sources\":\"[{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"Metal Clang\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.24876506254076958,\\\"material\\\":2,\\\"action\\\":0,\\\"size\\\":0.58774033612106,\\\"hollowness\\\":0.38603759923717007,\\\"hardness\\\":0.7084180913749151,\\\"damping\\\":0.21043563379207625,\\\"duration\\\":1.0006278079003095}},{\\\"synth\\\":\\\"Zappr\\\",\\\"name\\\":\\\"Static Spark\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.09536103601567447,\\\"duration\\\":0.1575498381536454,\\\"voltage\\\":0.8462924517225474,\\\"arcs\\\":2,\\\"branching\\\":0.13952028283383697,\\\"crackle\\\":0.13553995075635614,\\\"hum\\\":0.007173319412395358,\\\"spark\\\":0.9261255546938628,\\\"spread\\\":0.15529878549277784,\\\"decay\\\":0.01814420375972986}}]\"}",
-        "{\"masterVolume\":0.5,\"seed\":0.16487229522317648,\"balance\":0.48912243195809424,\"sources\":\"[{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"Metal Clang\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.24876506254076958,\\\"material\\\":2,\\\"action\\\":0,\\\"size\\\":0.58774033612106,\\\"hollowness\\\":0.38603759923717007,\\\"hardness\\\":0.7084180913749151,\\\"damping\\\":0.21043563379207625,\\\"duration\\\":1.0006278079003095}},{\\\"synth\\\":\\\"Zappr\\\",\\\"name\\\":\\\"Static Spark\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.09536103601567447,\\\"duration\\\":0.1575498381536454,\\\"voltage\\\":0.8462924517225474,\\\"arcs\\\":2,\\\"branching\\\":0.13952028283383697,\\\"crackle\\\":0.13553995075635614,\\\"hum\\\":0.007173319412395358,\\\"spark\\\":0.9261255546938628,\\\"spread\\\":0.15529878549277784,\\\"decay\\\":0.01814420375972986}}]\"}"
+        "{\"masterVolume\":0.5,\"seed\":0.16487229522317648,\"balance\":0.6034734591748565,\"sources\":\"[{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"Rubber Thud\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.20861021196469665,\\\"material\\\":4,\\\"action\\\":0,\\\"size\\\":0.9340429705567658,\\\"hollowness\\\":0.3834544162498787,\\\"hardness\\\":0.2532704844954423,\\\"damping\\\":0.45031390395015475,\\\"duration\\\":0.4619442781433463},\\\"generator\\\":\\\"*\\\",\\\"selectedGenerator\\\":\\\"generate_rubber_thud\\\",\\\"renderSeed\\\":0.8465498620644212},{\\\"synth\\\":\\\"Zappr\\\",\\\"name\\\":\\\"Power Short\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.015556466532871127,\\\"duration\\\":1.4301352188922465,\\\"voltage\\\":0.48719491382362323,\\\"arcs\\\":8,\\\"branching\\\":0.45225110938772556,\\\"crackle\\\":0.9552987854927778,\\\"hum\\\":0.3529205942992121,\\\"spark\\\":0.6833763626054861,\\\"spread\\\":0.590282189915888,\\\"decay\\\":0.1651457877131179},\\\"generator\\\":\\\"*\\\",\\\"selectedGenerator\\\":\\\"generate_power_short\\\",\\\"renderSeed\\\":0.07451166375540197}]\"}",
+        "{\"masterVolume\":0.5,\"seed\":0.16487229522317648,\"balance\":0.6034734591748565,\"sources\":\"[{\\\"synth\\\":\\\"Clonkr\\\",\\\"name\\\":\\\"Rubber Thud\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.20861021196469665,\\\"material\\\":4,\\\"action\\\":0,\\\"size\\\":0.9340429705567658,\\\"hollowness\\\":0.3834544162498787,\\\"hardness\\\":0.2532704844954423,\\\"damping\\\":0.45031390395015475,\\\"duration\\\":0.4619442781433463},\\\"generator\\\":\\\"*\\\",\\\"selectedGenerator\\\":\\\"generate_rubber_thud\\\",\\\"renderSeed\\\":0.8465498620644212},{\\\"synth\\\":\\\"Zappr\\\",\\\"name\\\":\\\"Power Short\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.015556466532871127,\\\"duration\\\":1.4301352188922465,\\\"voltage\\\":0.48719491382362323,\\\"arcs\\\":8,\\\"branching\\\":0.45225110938772556,\\\"crackle\\\":0.9552987854927778,\\\"hum\\\":0.3529205942992121,\\\"spark\\\":0.6833763626054861,\\\"spread\\\":0.590282189915888,\\\"decay\\\":0.1651457877131179},\\\"generator\\\":\\\"*\\\",\\\"selectedGenerator\\\":\\\"generate_power_short\\\",\\\"renderSeed\\\":0.07451166375540197}]\"}"
       ]
     ],
     "selected_file_index": 0,
@@ -491,5 +351,5 @@
       "sources": false
     }
   },
-  "active_tab_name": "Chattr"
+  "active_tab_name": "Fractr"
 }

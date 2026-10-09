@@ -4,7 +4,7 @@ const {createContext, plain} = require('./helpers/synth-context');
 
 function setup() {
     let context;
-    assert.doesNotThrow(() => { context = createContext(['Tappr', 'Rustlr']); },
+    assert.doesNotThrow(() => { context = createContext([ 'Rustlr']); },
         'tactile and inventory sound engines must load');
     return context;
 }
@@ -35,32 +35,6 @@ function bounded(data, frames) {
     assert.ok(data.every(sample => Number.isFinite(sample) && Math.abs(sample) <= 0.951));
 }
 
-test('Tappr release strength and gap place a separate late contact', () => {
-    const {run} = setup();
-    run('const tap = new Tappr(); tap.apply_params({duration:0.8, material:0, body:0.2, damping:1, electronic:0, release:0, gap:0.8, seed:0.419})');
-    const down = run('Tappr_DSP.render(tap.params)');
-    const paired = run('tap.set_param("release",1); Tappr_DSP.render(tap.params)');
-    const close = run('tap.set_param("gap",0.1); Tappr_DSP.render(tap.params)');
-    assert.ok(energy(down, 0, 0.09) > 0.1, 'down contact is audible');
-    assert.ok(energy(paired, 0.3, 0.65) > energy(down, 0.3, 0.65) * 20 + 0.1,
-        'release adds an independently timed contact');
-    assert.ok(energy(close, 0.08, 0.25) > energy(paired, 0.08, 0.25) * 5,
-        'closing the gap moves the second contact earlier');
-    assert.ok(energy(close, 0.3, 0.65) < energy(paired, 0.3, 0.65) * 0.05);
-});
-
-test('Tappr damping suppresses spring ringing and larger contacts resonate lower', () => {
-    const {run} = setup();
-    run('const tap = new Tappr(); tap.apply_params({duration:0.8, material:3, size:0.5, hardness:0.4, body:0, release:0, electronic:0, damping:0, seed:0.71})');
-    const ringing = run('Tappr_DSP.render(tap.params)');
-    const damped = run('tap.set_param("damping",1); Tappr_DSP.render(tap.params)');
-    assert.ok(energy(ringing, 0.16, 0.6) > energy(damped, 0.16, 0.6) * 10,
-        'damping removes the late resonant spring energy');
-    const small = run('tap.apply_params({damping:0.2,size:0}); Tappr_DSP.render(tap.params)');
-    const large = run('tap.set_param("size",1); Tappr_DSP.render(tap.params)');
-    assert.ok(brightness(small) > brightness(large) * 3, 'larger contacts have lower resonances');
-});
-
 test('Rustlr travel moves friction energy and cloth filters bright foil microcontacts', () => {
     const {run} = setup();
     run('const rustle = new Rustlr(); rustle.apply_params({duration:1,material:0,gesture:2,grain:0.5,density:0.75,folds:4,pressure:0.6,motion:-1,seed:0.31})');
@@ -73,9 +47,9 @@ test('Rustlr travel moves friction energy and cloth filters bright foil microcon
     assert.ok(rms(cloth) > 0.002 && rms(foil) > 0.002);
 });
 
-test('all sixteen contact families are fresh, audible, seeded and replay saved parameters exactly', () => {
+test('all Rustlr contact families are fresh, audible, seeded and replay saved parameters exactly', () => {
     const {run} = setup();
-    for (const name of ['Tappr', 'Rustlr']) {
+    for (const name of [ 'Rustlr']) {
         const results = run(`(() => {
             const synth = new ${name}();
             const generateRandom = SoundDSP.rng(0.418);
@@ -117,7 +91,7 @@ test('quiet contact presets retain audible peaks across varied draws', () => {
     const {run} = setup();
     const levels = plain(run(`(() => {
         const result=[];
-        for(const C of [Tappr,Rustlr]) {
+        for(const C of [Rustlr]) {
             const synth=new C(); Math.random=SoundDSP.rng(0.381);
             for(const recipe of synth.recipes) {
                 for(let variation=0;variation<20;variation++) {
@@ -139,7 +113,7 @@ test('quiet contact presets retain audible peaks across varied draws', () => {
 
 test('contact controls honor locks, and Rustlr folds stay integral across every parameter path', () => {
     const {run} = setup();
-    for (const name of ['Tappr', 'Rustlr']) {
+    for (const name of [ 'Rustlr']) {
         const result = plain(run(`(() => {
             Math.random = SoundDSP.rng(0.88);
             const synth = new ${name}();
@@ -175,7 +149,7 @@ test('contact controls honor locks, and Rustlr folds stay integral across every 
 
 test('contact engines are bounded and muted for defaults, limits and malformed imports', () => {
     const {run} = setup();
-    for (const [name,low,high] of [['Tappr',0.04,2],['Rustlr',0.08,3]]) {
+    for (const [name,low,high] of [['Rustlr',0.08,3]]) {
         const variants = run(`(() => {
             const synth = new ${name}();
             const variants = [synth.params];
@@ -192,7 +166,7 @@ test('contact engines are bounded and muted for defaults, limits and malformed i
             return variants.map(params => ({params,pcm:${name}_DSP.render(params),muted:${name}_DSP.render({...params,masterVolume:0})}));
         })()`);
         for (const variant of variants) {
-            const expected = Number.isFinite(variant.params.duration) ? variant.params.duration : name === 'Tappr' ? 0.18 : 0.65;
+            const expected = Number.isFinite(variant.params.duration) ? variant.params.duration : 0.65;
             bounded(variant.pcm, Math.round(expected * 44100));
             assert.ok(variant.pcm.length >= low * 44100 && variant.pcm.length <= high * 44100);
             assert.ok(variant.muted.every(sample => sample === 0), name + ' mutes exactly');

@@ -113,7 +113,7 @@ test('Breathr mode button immediately swaps single and cycle controls',()=>{
     assert.equal(run(`(()=>{const tab=Object.create(Tab.prototype);tab.synth=new Breathr();tab.synth.generate_sound=()=>{};
         const rows={cycles:{},inhale:{},hold:{},direction:{}};
         tab.sliders=Object.fromEntries(Object.keys(rows).map(key=>[key,{sliderElem:{closest(){return rows[key];}}}]));
-        tab.files=[['Breath','{}','{}']];tab.selected_file_index=0;tab.text_controls={};tab.play_on_change=false;
+        tab.files=[['Breath','{}','{}']];tab.selected_file_index=0;tab.play_on_change=false;
         tab.update_ablements=()=>{};tab.redraw_waveform=()=>{};globalThis.SaveLoad={save_all_collections(){}};
         const children=[0,1].map(()=>({classList:{add(){},remove(){}}})),node={parentElement:{children}};
         tab.button_grid_button_clicked(node,'mode',0,0);const single=rows.cycles.hidden&&!rows.direction.hidden;

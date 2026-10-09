@@ -4,7 +4,7 @@ const {createContext, plain} = require('./helpers/synth-context');
 
 function context() {
     let result;
-    assert.doesNotThrow(() => { result = createContext(['Machinr', 'Weathr']); },
+    assert.doesNotThrow(() => { result = createContext(['Machinr']); },
         'both specialized synths and their renderers must load');
     return result;
 }
@@ -26,7 +26,7 @@ function renderCategories(name) {
         return synth.recipes.map((recipe,index) => {
             synth.generate_recipe(recipe.id);
             synth.set_param('seed', 0.4321);
-            synth.set_param('duration', '${name}' === 'Weathr' ? 4 : 0.55);
+            synth.set_param('duration', 0.55);
             const first = ${name}_DSP.render(synth.params);
             return [first,index === 0 ? ${name}_DSP.render(synth.params) : null];
         });
@@ -35,9 +35,9 @@ function renderCategories(name) {
     return result;
 }
 
-test('machine and weather categories generate fresh controls and respect locked values', () => {
+test('machine categories generate fresh controls and respect locked values', () => {
     const {run} = context();
-    for (const name of ['Machinr', 'Weathr']) {
+    for (const name of ['Machinr']) {
         const values = plain(run(`(() => {
             const synth = new ${name}();
             const results = synth.recipes.map(recipe => {
@@ -46,7 +46,7 @@ test('machine and weather categories generate fresh controls and respect locked 
                 synth.generate_recipe(recipe.id);
                 return {first, second:{...synth.params}, name:recipe.name};
             });
-            const key = '${name}' === 'Machinr' ? 'speed' : 'density';
+            const key = 'speed';
             synth.set_param(key, 0.123);
             synth.locked_params[key] = true;
             synth.locked_params.seed = true;
@@ -67,7 +67,7 @@ test('machine and weather categories generate fresh controls and respect locked 
 });
 
 test('all categories render audible, repeatable and differentiated sound', () => {
-    for (const name of ['Machinr', 'Weathr']) {
+    for (const name of ['Machinr']) {
         const buffers = renderCategories(name);
         const fingerprints = [];
         for (const [first,second] of buffers) {
@@ -78,50 +78,6 @@ test('all categories render audible, repeatable and differentiated sound', () =>
         }
         assert.equal(new Set(fingerprints).size, buffers.length);
     }
-});
-
-test('weather exports continuous four to ten second loops without silent edge padding', () => {
-    const {run} = context();
-    assert.equal(run('new Weathr().loop_preview'), true);
-    const loops = renderCategories('Weathr').map(pair => pair[0]);
-    for (const loop of loops) {
-        assert.equal(loop.length, 4*44100);
-        const edge = new Float32Array([...loop.slice(-512), ...loop.slice(0,512)]);
-        assert.ok(rms(edge) > rms(loop)*0.12, 'loop join remains alive');
-        let maxStep = 0;
-        for (let i=1; i<loop.length; i++) maxStep = Math.max(maxStep,Math.abs(loop[i]-loop[i-1]));
-        assert.ok(Math.abs(loop[0]-loop.at(-1)) <= maxStep, 'join is no sharper than the rendered texture');
-        // Repeating the actual export must preserve the same boundary at every repetition.
-        const repeated = new Float32Array(loop.length*3);
-        repeated.set(loop); repeated.set(loop,loop.length); repeated.set(loop,loop.length*2);
-        assert.equal(repeated[loop.length]-repeated[loop.length-1], repeated[2*loop.length]-repeated[2*loop.length-1]);
-    }
-});
-
-test('weather colour filtering has the same steady state across a rotated loop', () => {
-    const {run} = context();
-    const [original,rotated] = run(`(() => {
-        const input=Float32Array.from({length:400},(_,i) => i%13 === 0 ? 0.7 : -0.08);
-        const shifted=Float32Array.from(input,(_,i) => input[(i+137)%input.length]);
-        return [Weathr_DSP.circularLowpass(input,17), Weathr_DSP.circularLowpass(shifted,17)];
-    })()`);
-    for(let i=0;i<original.length;i++) {
-        assert.ok(Math.abs(rotated[i]-original[(i+137)%original.length])<1e-7,
-            'the filter has no special startup transient at the export boundary');
-    }
-});
-
-test('density changes environmental activity and brightness opens its spectrum', () => {
-    const {run} = context();
-    const [sparse,dense,dark,bright] = run(`(() => {
-        const synth = new Weathr();
-        synth.generate_recipe('rain');
-        Object.assign(synth.params,{duration:4, seed:0.256, turbulence:0.4, brightness:0.55});
-        return [{density:0.05},{density:0.95},{density:0.6,brightness:0},{density:0.6,brightness:1}]
-            .map(change => Weathr_DSP.render({...synth.params,...change}));
-    })()`);
-    assert.ok(rms(dense) > rms(sparse)*1.4, 'denser rain has stronger continuous activity');
-    assert.ok(roughness(bright) > roughness(dark)*2, 'brightness raises high frequency energy');
 });
 
 test('machine speed, load, looseness and start/stop controls change the mechanism', () => {
@@ -140,7 +96,7 @@ test('machine speed, load, looseness and start/stop controls change the mechanis
 
 test('extreme controls remain finite and bounded with exact requested durations', () => {
     const {run} = context();
-    for (const name of ['Machinr','Weathr']) {
+    for (const name of ['Machinr']) {
         const buffers = run(`(() => {
             const synth = new ${name}();
             return [0,1].map(high => {
@@ -149,13 +105,13 @@ test('extreme controls remain finite and bounded with exact requested durations'
                     if (info.type === 'RANGE') synth.set_param(info.name, high ? info.max_value : info.min_value);
                 }
                 synth.set_param('masterVolume', 1);
-                synth.set_param('duration', '${name}' === 'Weathr' ? (high ? 10 : 4) : 0.2);
+                synth.set_param('duration', 0.2);
                 return ${name}_DSP.render(synth.params);
             });
         })()`);
         for (const [i,buffer] of buffers.entries()) {
             bounded(buffer);
-            assert.equal(buffer.length, (name==='Weathr'?(i ? 10 : 4):0.2)*44100);
+            assert.equal(buffer.length, 0.2*44100);
         }
     }
 });

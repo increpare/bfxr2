@@ -1,25 +1,21 @@
 # The tab deluge
 
-96 editable sounds: eight randomized categories in each of twelve new tabs. Every preset click makes another variation.
+71 editable sounds: randomized categories across eight tabs. Every preset click makes another variation.
 
-Open **Deluge.bcol** with **Open Data**, or drag it onto Bfxr. This replaces the lists in these twelve tabs; save your collection first if needed. Select an example to hear and edit it. All twelve also work as copied layers in Stackr.
+Open **Deluge.bcol** with **Open Data**, or drag it onto Bfxr. This replaces the lists in these eight tabs; save your collection first if needed. Select an example to hear and edit it. All eight also work as sources in Mixr.
 
-The [20.5-second reel](deluge_showcase.wav) plays twelve complete sounds with 0.3-second gaps. Levels are balanced for the reel; individual WAVs match their saved settings exactly.
+The [12.8-second reel](deluge_showcase.wav) plays eight complete sounds with 0.3-second gaps. Levels are balanced for the reel; individual WAVs match their saved settings exactly.
 
 | Start | Tab | Sound |
 | --- | --- | --- |
 | 0.00 s | Boomr | Grenade |
-| 1.16 s | Pewpr | Railgun |
-| 2.31 s | Zappr | Tesla Coil |
-| 5.33 s | Whooshr | Sword Swing |
-| 5.98 s | Bouncr | Rubber Ball |
-| 8.34 s | Rollr | Minecart |
-| 11.13 s | Breathr | Gasp |
-| 11.98 s | Choirr | Angelic |
-| 15.56 s | Pluckr | Kalimba |
-| 17.07 s | Glitchr | Buffer Skip |
-| 18.04 s | Pulser | Android Core |
-| 19.21 s | Rumblr | Stone Door |
+| 1.38 s | Zappr | Tesla Coil |
+| 4.39 s | Whooshr | Sword Swing |
+| 5.05 s | Bouncr | Rubber on Wood |
+| 6.20 s | Breathr | Gasp |
+| 6.79 s | Choirr | Angelic |
+| 10.37 s | Pluckr | Kalimba |
+| 11.77 s | Glitchr | Phrase Stutter |
 
 ## Boomr
 
@@ -27,29 +23,17 @@ Pressure blasts, shockwaves and scattered debris.
 
 | Preset | Length |
 | --- | --- |
-| [Grenade](boomr_grenade.wav) | 0.86 s |
-| [Barrel](boomr_barrel.wav) | 1.29 s |
-| [Rocket](boomr_rocket.wav) | 1.28 s |
-| [Depth Charge](boomr_depth_charge.wav) | 1.89 s |
-| [Fireball](boomr_fireball.wav) | 2.01 s |
-| [Meteor](boomr_meteor.wav) | 2.75 s |
-| [Demolition](boomr_demolition.wav) | 3.48 s |
-| [Tiny Pop](boomr_tiny_pop.wav) | 0.15 s |
-
-## Pewpr
-
-Staged weapon pulses, charge, recoil and ricochets.
-
-| Preset | Length |
-| --- | --- |
-| [Laser Pistol](pewpr_laser_pistol.wav) | 0.46 s |
-| [Plasma Rifle](pewpr_plasma_rifle.wav) | 0.96 s |
-| [Railgun](pewpr_railgun.wav) | 0.86 s |
-| [Blaster](pewpr_blaster.wav) | 0.73 s |
-| [Shotgun](pewpr_shotgun.wav) | 0.64 s |
-| [Ricochet](pewpr_ricochet.wav) | 0.64 s |
-| [Charge Shot](pewpr_charge_shot.wav) | 1.61 s |
-| [Freeze Ray](pewpr_freeze_ray.wav) | 0.82 s |
+| [Grenade](boomr_grenade.wav) | 1.08 s |
+| [Barrel](boomr_barrel.wav) | 1.19 s |
+| [Rocket](boomr_rocket.wav) | 1.41 s |
+| [Depth Charge](boomr_depth_charge.wav) | 2.50 s |
+| [Fireball](boomr_fireball.wav) | 2.46 s |
+| [Meteor](boomr_meteor.wav) | 3.43 s |
+| [Demolition](boomr_demolition.wav) | 2.40 s |
+| [Tiny Pop](boomr_tiny_pop.wav) | 0.12 s |
+| [Gas Tank](boomr_gas_tank.wav) | 2.48 s |
+| [Implosion](boomr_implosion.wav) | 1.16 s |
+| [Distant Charge](boomr_distant_charge.wav) | 2.65 s |
 
 ## Zappr
 
@@ -87,29 +71,14 @@ Material contacts with shrinking bounce flights.
 
 | Preset | Length |
 | --- | --- |
-| [Rubber Ball](bouncr_rubber_ball.wav) | 2.06 s |
-| [Metal Ball](bouncr_metal_ball.wav) | 1.82 s |
-| [Wooden Dice](bouncr_wooden_dice.wav) | 0.65 s |
-| [Basketball](bouncr_basketball.wav) | 3.44 s |
-| [Marble](bouncr_marble.wav) | 1.58 s |
-| [Coin Spin](bouncr_coin_spin.wav) | 1.95 s |
-| [Cartoon Bounce](bouncr_cartoon_bounce.wav) | 2.40 s |
-| [Heavy Tumble](bouncr_heavy_tumble.wav) | 1.70 s |
-
-## Rollr
-
-Continuous rolling contacts, surfaces and wheel motion.
-
-| Preset | Length |
-| --- | --- |
-| [Wooden Wheels](rollr_wooden_wheels.wav) | 1.81 s |
-| [Stone Roll](rollr_stone_roll.wav) | 1.71 s |
-| [Skateboard](rollr_skateboard.wav) | 1.54 s |
-| [Minecart](rollr_minecart.wav) | 2.49 s |
-| [Shopping Cart](rollr_shopping_cart.wav) | 2.43 s |
-| [Suitcase](rollr_suitcase.wav) | 2.05 s |
-| [Metal Roller](rollr_metal_roller.wav) | 2.79 s |
-| [Snowball](rollr_snowball.wav) | 1.50 s |
+| [Rubber on Wood](bouncr_rubber_ball.wav) | 0.85 s |
+| [Steel on Concrete](bouncr_metal_ball.wav) | 1.17 s |
+| [Wood on Metal](bouncr_wooden_dice.wav) | 0.86 s |
+| [Heavy Soft Landing](bouncr_basketball.wav) | 0.71 s |
+| [Glass on Stone](bouncr_marble.wav) | 1.19 s |
+| [Coin on Glass](bouncr_coin_spin.wav) | 1.58 s |
+| [Wood on Concrete](bouncr_cartoon_bounce.wav) | 1.05 s |
+| [Stone into Earth](bouncr_heavy_tumble.wav) | 1.22 s |
 
 ## Breathr
 
@@ -117,14 +86,18 @@ Breathing, exertion and turbulent airflow.
 
 | Preset | Length |
 | --- | --- |
-| [Tired Runner](breathr_tired_runner.wav) | 2.70 s |
+| [Inhale](breathr_inhale.wav) | 0.35 s |
+| [Exhale](breathr_exhale.wav) | 0.71 s |
+| [Sigh](breathr_sigh.wav) | 1.21 s |
+| [Snore](breathr_snore.wav) | 0.94 s |
+| [Tired Runner](breathr_tired_runner.wav) | 2.17 s |
 | [Deep Breath](breathr_deep_breath.wav) | 3.86 s |
 | [Held Breath](breathr_held_breath.wav) | 3.20 s |
-| [Gasp](breathr_gasp.wav) | 0.55 s |
+| [Gasp](breathr_gasp.wav) | 0.29 s |
 | [Sleeping Beast](breathr_sleeping_beast.wav) | 4.75 s |
-| [Diver](breathr_diver.wav) | 2.86 s |
-| [Helmet](breathr_helmet.wav) | 1.79 s |
-| [Ghost Breath](breathr_ghost_breath.wav) | 4.00 s |
+| [Diver](breathr_diver.wav) | 1.70 s |
+| [Helmet](breathr_helmet.wav) | 2.87 s |
+| [Ghost Breath](breathr_ghost_breath.wav) | 2.24 s |
 
 ## Choirr
 
@@ -147,14 +120,14 @@ Feedback strings with excitation and damping.
 
 | Preset | Length |
 | --- | --- |
-| [Harp](pluckr_harp.wav) | 3.14 s |
-| [Kalimba](pluckr_kalimba.wav) | 1.22 s |
-| [Muted Guitar](pluckr_muted_guitar.wav) | 0.83 s |
+| [Harp](pluckr_harp.wav) | 3.27 s |
+| [Kalimba](pluckr_kalimba.wav) | 1.11 s |
+| [Muted Guitar](pluckr_muted_guitar.wav) | 0.81 s |
 | [Metal String](pluckr_metal_string.wav) | 3.12 s |
 | [Magic Harp](pluckr_magic_harp.wav) | 4.32 s |
-| [Bass Pluck](pluckr_bass_pluck.wav) | 2.12 s |
-| [Broken String](pluckr_broken_string.wav) | 1.40 s |
-| [Quest Pluck](pluckr_quest_pluck.wav) | 1.32 s |
+| [Bass Pluck](pluckr_bass_pluck.wav) | 2.07 s |
+| [Broken String](pluckr_broken_string.wav) | 1.33 s |
+| [Quest Pluck](pluckr_quest_pluck.wav) | 1.53 s |
 
 ## Glitchr
 
@@ -162,47 +135,17 @@ Repeated, corrupted and missing digital fragments.
 
 | Preset | Length |
 | --- | --- |
-| [Save Corruption](glitchr_save_corruption.wav) | 0.32 s |
-| [Teleport Error](glitchr_teleport_error.wav) | 0.83 s |
-| [Bit Rot](glitchr_bit_rot.wav) | 1.26 s |
-| [Buffer Skip](glitchr_buffer_skip.wav) | 0.67 s |
-| [Corrupt Pickup](glitchr_corrupt_pickup.wav) | 0.37 s |
-| [Broken Terminal](glitchr_broken_terminal.wav) | 0.84 s |
-| [Rewind Burst](glitchr_rewind_burst.wav) | 0.38 s |
-| [Digital Death](glitchr_digital_death.wav) | 1.06 s |
-
-## Pulser
-
-Double pressure beats and turbulent body rhythms.
-
-| Preset | Length |
-| --- | --- |
-| [Heartbeat](pulser_heartbeat.wav) | 2.00 s |
-| [Panic](pulser_panic.wav) | 1.23 s |
-| [Giant Heart](pulser_giant_heart.wav) | 2.63 s |
-| [Android Core](pulser_android_core.wav) | 0.87 s |
-| [Poison](pulser_poison.wav) | 1.77 s |
-| [Underwater](pulser_underwater.wav) | 2.69 s |
-| [Energy Core](pulser_energy_core.wav) | 1.08 s |
-| [Last Life](pulser_last_life.wav) | 1.61 s |
-
-## Rumblr
-
-Low structural modes, shuddering pressure and grit.
-
-| Preset | Length |
-| --- | --- |
-| [Earthquake](rumblr_earthquake.wav) | 2.81 s |
-| [Boss Approach](rumblr_boss_approach.wav) | 2.64 s |
-| [Stone Door](rumblr_stone_door.wav) | 1.24 s |
-| [Engine Room](rumblr_engine_room.wav) | 1.67 s |
-| [Space Hull](rumblr_space_hull.wav) | 1.68 s |
-| [Landslide](rumblr_landslide.wav) | 2.76 s |
-| [Deep Pressure](rumblr_deep_pressure.wav) | 2.91 s |
-| [Volcano](rumblr_volcano.wav) | 1.63 s |
+| [Buffer Underrun](glitchr_save_corruption.wav) | 0.65 s |
+| [Codec Warble](glitchr_teleport_error.wav) | 1.31 s |
+| [Bit Rot](glitchr_bit_rot.wav) | 1.22 s |
+| [Phrase Stutter](glitchr_buffer_skip.wav) | 0.98 s |
+| [Data Squeal](glitchr_corrupt_pickup.wav) | 0.73 s |
+| [Spectral Freeze](glitchr_broken_terminal.wav) | 1.08 s |
+| [Tape Scrub](glitchr_rewind_burst.wav) | 0.65 s |
+| [Granular Tear](glitchr_digital_death.wav) | 1.13 s |
 
 ## Rebuild
 
-`node tools/render/deluge_examples.js` regenerates this collection, 96 WAVs, the reel and validation report. An optional argument chooses another output directory. WAVs are generated locally and ignored by Git.
+`node tools/render/deluge_examples.js` regenerates this collection, 71 WAVs, the reel and validation report. An optional argument chooses another output directory. WAVs are generated locally and ignored by Git.
 
 Every example is checked for finite, bounded, audible audio, faded edges and bit-identical sound after reloading its saved parameters. See [validation.json](validation.json).

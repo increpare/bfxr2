@@ -1,259 +1,28 @@
 {
   "sounds": [
     {
-      "synth": "Chattr",
-      "name": "Village mouse",
-      "file": "chattr-village-mouse.wav",
-      "params": {
-        "masterVolume": 0.5,
-        "text": "Hello, neighbour!",
-        "waveType": -1,
-        "texture": 0,
-        "articulation": 0.8,
-        "pitch": 0.65,
-        "mouth": 0.27,
-        "speed": 0.78,
-        "expression": 0.75,
-        "inflection": 0.1,
-        "wobble": 0.18,
-        "breath": 0.12,
-        "grit": 0.12,
-        "spacing": 0.28,
-        "seed": 0.37,
-        "voiceMode": 1,
-        "character": 0,
-        "voiceSeed": 0.37
-      },
-      "duration": 1.235986394557823,
-      "peak": 0.3041241765022278,
-      "rms": 0.09454767669230446,
-      "sha256": "b08f306730802f5313bc2dea5e12a77688c08ad00a487220675e7693a2a8e0b0"
-    },
-    {
-      "synth": "Chattr",
-      "name": "Plush bear",
-      "file": "chattr-plush-bear.wav",
-      "params": {
-        "masterVolume": 0.5,
-        "text": "Hello, neighbour!",
-        "waveType": -1,
-        "texture": 0,
-        "articulation": 0.8,
-        "pitch": 0.12,
-        "mouth": 0.9,
-        "speed": 0.6,
-        "expression": 0.3,
-        "inflection": 0.1,
-        "wobble": 0.18,
-        "breath": 0.12,
-        "grit": 0.4,
-        "spacing": 0.65,
-        "seed": 0.37,
-        "voiceMode": 1,
-        "character": 1,
-        "voiceSeed": 0.37
-      },
-      "duration": 1.5511337868480726,
-      "peak": 0.28310999274253845,
-      "rms": 0.10218735035976374,
-      "sha256": "155bdd86c2af25d892e95baa505cf0121dc03bd32f58e578a1614e7c34af5ff7"
-    },
-    {
-      "synth": "Chattr",
-      "name": "Reedy duck",
-      "file": "chattr-reedy-duck.wav",
-      "params": {
-        "masterVolume": 0.5,
-        "text": "Hello, neighbour!",
-        "waveType": -1,
-        "texture": 0,
-        "articulation": 0.8,
-        "pitch": 0.53,
-        "mouth": 0.6,
-        "speed": 0.78,
-        "expression": 1,
-        "inflection": 0.5,
-        "wobble": 0.18,
-        "breath": 0.12,
-        "grit": 0.48,
-        "spacing": 0.1,
-        "seed": 0.37,
-        "voiceMode": 1,
-        "character": 2,
-        "voiceSeed": 0.37
-      },
-      "duration": 1.1936507936507936,
-      "peak": 0.39614835381507874,
-      "rms": 0.1160790394556433,
-      "sha256": "fdd4f7912e072a08ce99b1da76c67e011a1d667fbbe645b1824f0c49576ec85f"
-    },
-    {
-      "synth": "Chattr",
-      "name": "Bubbling alien",
-      "file": "chattr-bubbling-alien.wav",
-      "params": {
-        "masterVolume": 0.5,
-        "text": "Hello, neighbour!",
-        "waveType": -1,
-        "texture": 1,
-        "articulation": 0.8,
-        "pitch": 0.52,
-        "mouth": 0.8,
-        "speed": 0.78,
-        "expression": 0.9,
-        "inflection": 0.85,
-        "wobble": 0.65,
-        "breath": 0.12,
-        "grit": 0.12,
-        "spacing": 0.48,
-        "seed": 0.37,
-        "voiceMode": 1,
-        "character": 3,
-        "voiceSeed": 0.37
-      },
-      "duration": 1.2830385487528344,
-      "peak": 0.24598626792430878,
-      "rms": 0.09443882447887439,
-      "sha256": "7828581838dd97b071adc7988f466987d1526b5e94c9f6b9274fa9063fb5767d"
-    },
-    {
-      "synth": "Chattr",
-      "name": "Wispy sprite",
-      "file": "chattr-wispy-sprite.wav",
-      "params": {
-        "masterVolume": 0.5,
-        "text": "Hello, neighbour!",
-        "waveType": -1,
-        "texture": 1,
-        "articulation": 0.8,
-        "pitch": 0.86,
-        "mouth": 0.12,
-        "speed": 0.7,
-        "expression": 0.8,
-        "inflection": 0.1,
-        "wobble": 0.32,
-        "breath": 0.52,
-        "grit": 0,
-        "spacing": 0.28,
-        "seed": 0.37,
-        "voiceMode": 1,
-        "character": 4,
-        "voiceSeed": 0.37
-      },
-      "duration": 1.3215192743764173,
-      "peak": 0.21678100526332855,
-      "rms": 0.09089544959755982,
-      "sha256": "3a58335fc306aeeb2d46bb14601b9e041fd5f362357d89349fe1e9fa5357d2df"
-    },
-    {
-      "synth": "Chattr",
-      "name": "Tinny robot",
-      "file": "chattr-tinny-robot.wav",
-      "params": {
-        "masterVolume": 0.5,
-        "text": "Hello, neighbour!",
-        "waveType": -1,
-        "texture": 2,
-        "articulation": 0.8,
-        "pitch": 0.4,
-        "mouth": 0.5,
-        "speed": 0.78,
-        "expression": 0.18,
-        "inflection": 0,
-        "wobble": 0,
-        "breath": 0,
-        "grit": 0.12,
-        "spacing": 0.48,
-        "seed": 0.37,
-        "voiceMode": 1,
-        "character": 5,
-        "voiceSeed": 0.37
-      },
-      "duration": 1.2830385487528344,
-      "peak": 0.33951953053474426,
-      "rms": 0.0884357059936478,
-      "sha256": "52093ccb66dcd7950b8e5a274979829a6d7b0d3ca997baf045507a11955e183e"
-    },
-    {
-      "synth": "Chattr",
-      "name": "Gravel frog",
-      "file": "chattr-gravel-frog.wav",
-      "params": {
-        "masterVolume": 0.5,
-        "text": "Hello, neighbour!",
-        "waveType": -1,
-        "texture": 0,
-        "articulation": 0.8,
-        "pitch": 0.26,
-        "mouth": 0.76,
-        "speed": 0.7,
-        "expression": 0.8,
-        "inflection": -0.72,
-        "wobble": 0.8,
-        "breath": 0.12,
-        "grit": 0.55,
-        "spacing": 0.28,
-        "seed": 0.37,
-        "voiceMode": 1,
-        "character": 6,
-        "voiceSeed": 0.37
-      },
-      "duration": 1.3215192743764173,
-      "peak": 0.3819310963153839,
-      "rms": 0.11559186798812035,
-      "sha256": "555cdfc83650c700ed6db6a48cd2c49e9dcb2b46afc036f39b22e6212b5074ec"
-    },
-    {
-      "synth": "Chattr",
-      "name": "Radio critter",
-      "file": "chattr-radio-critter.wav",
-      "params": {
-        "masterVolume": 0.5,
-        "text": "Hello, neighbour!",
-        "waveType": -1,
-        "texture": 2,
-        "articulation": 0.8,
-        "pitch": 0.25,
-        "mouth": 0.25,
-        "speed": 0.78,
-        "expression": 0.4,
-        "inflection": 0.1,
-        "wobble": 0.1,
-        "breath": 0.65,
-        "grit": 0.88,
-        "spacing": 0.28,
-        "seed": 0.37,
-        "voiceMode": 1,
-        "character": 7,
-        "voiceSeed": 0.37
-      },
-      "duration": 1.235986394557823,
-      "peak": 0.3859856426715851,
-      "rms": 0.12700069933206795,
-      "sha256": "cec5469fa2b71508aeedf9a87288dd1c84c0654d196af5f713367bfd8296f277"
-    },
-    {
       "synth": "Fractr",
       "name": "Glass breaks",
       "file": "fractr-glass-breaks.wav",
       "params": {
         "masterVolume": 0.5,
-        "seed": 0.06104526715353131,
+        "seed": 0.9469413745682687,
         "material": 0,
         "duration": 0.85,
-        "fragments": 33,
-        "fragmentSize": 0.45277471689507365,
+        "fragments": 71,
+        "fragmentSize": 0.44518622310832145,
         "spread": 0.2,
-        "decay": 0.32126255473122,
-        "gravity": 0.3865951769053936,
-        "bounce": 0.5204774888581596,
+        "decay": 0.23136729449033738,
+        "gravity": 0.4204774888581596,
+        "bounce": 0.47136584350373595,
         "stress": 0.55,
+        "shards": 0.6180132964625955,
         "fracture": 1
       },
       "duration": 0.85,
-      "peak": 0.44934049248695374,
-      "rms": 0.051879331655793115,
-      "sha256": "88779ca8a10d0244ff3779998645b5412314526e73fc3f23fb727cecc951b883"
+      "peak": 0.4704202115535736,
+      "rms": 0.03838267051515702,
+      "sha256": "d6adb0fd1396f870d246f04e7a8f1a072b7c8f5dff3e14c70feb5a211b1832ce"
     },
     {
       "synth": "Fractr",
@@ -271,12 +40,13 @@
         "gravity": 0.5664575704373419,
         "bounce": 0.4519207988632843,
         "stress": 0.7703658303013071,
+        "shards": 0.35,
         "fracture": 1
       },
       "duration": 1.1,
-      "peak": 0.45778152346611023,
-      "rms": 0.05401924012758245,
-      "sha256": "84388e9489c9ed8b5f8c651cabd9dec3233425424bd8d9ab7c6cec5d949e6f58"
+      "peak": 0.47499948740005493,
+      "rms": 0.06362591816314747,
+      "sha256": "18481571767ee23db0a386c0eb7a09213586e76a6dd97338348c6a77f0f9bca8"
     },
     {
       "synth": "Fractr",
@@ -284,22 +54,23 @@
       "file": "fractr-dry-snap.wav",
       "params": {
         "masterVolume": 0.5,
-        "seed": 0.22458369005471468,
+        "seed": 0.9899587871041149,
         "material": 6,
         "duration": 0.6,
         "fragments": 12,
-        "fragmentSize": 0.20693030494730918,
+        "fragmentSize": 0.7045968763530255,
         "spread": 0.1,
-        "decay": 0.2984867203235626,
-        "gravity": 0.4523791530053131,
-        "bounce": 0.8728104618377983,
-        "stress": 0.2130070986691862,
+        "decay": 0.06217630523024127,
+        "gravity": 0.9273202639073134,
+        "bounce": 0.02695004280656576,
+        "stress": 0.280811357870698,
+        "shards": 0.1589526330307126,
         "fracture": 1
       },
       "duration": 0.6,
-      "peak": 0.47128424048423767,
-      "rms": 0.05478224692185867,
-      "sha256": "1953fd9854ba1595eabcc0029c436c3f9894f085bd97c59051f870e7aec05edf"
+      "peak": 0.4749999940395355,
+      "rms": 0.08501442276643016,
+      "sha256": "994d46be085e7ea26ff174b94f9696786674929cbfd0989af04d7662cf860afb"
     },
     {
       "synth": "Boomr",
@@ -307,22 +78,25 @@
       "file": "boomr-grenade.wav",
       "params": {
         "masterVolume": 0.5,
-        "seed": 0.29008437716402113,
+        "seed": 0.8144463542848825,
         "duration": 1.2,
-        "size": 0.4156759314937517,
-        "pressure": 0.7268808982800692,
-        "blast": 0.5395827001077124,
-        "debris": 0.8096423041075468,
-        "spread": 0.5632510357536376,
-        "tail": 0.3103573102736846,
-        "muffle": 0.21972745114471764,
+        "size": 0.44473172808066014,
+        "pressure": 0.8803446562844328,
+        "blast": 0.5787501953192986,
+        "debris": 0.8949590020813047,
+        "gas": 0.06580864135175943,
+        "aftershock": 0.1496085410239175,
+        "rubbleSize": 0.2156759314937517,
+        "spread": 0.41603375086560845,
+        "tail": 0.43215645069722086,
+        "muffle": 0.11122244888916612,
         "mechanism": 0,
-        "space": 0.1605694430414587
+        "space": 0.1393081215303391
       },
       "duration": 1.2,
-      "peak": 0.3057928681373596,
-      "rms": 0.026312118440299025,
-      "sha256": "0632745cab91307d130e5f96f54ceb9f5d78aab5dd5a6106a8f04c03292eddf5"
+      "peak": 0.32532215118408203,
+      "rms": 0.03537710187042066,
+      "sha256": "e370385446b8320bc6839ee9e01da5df912181ea5c6c21db4bbc1ea5ca43207b"
     },
     {
       "synth": "Boomr",
@@ -330,22 +104,25 @@
       "file": "boomr-depth-charge.wav",
       "params": {
         "masterVolume": 0.5,
-        "seed": 0.3901634314097464,
+        "seed": 0.20350834168493748,
         "duration": 1.6,
-        "size": 0.880152450548485,
-        "pressure": 0.9953366629313678,
-        "blast": 0.7879270573146642,
-        "debris": 0.04509065165184438,
-        "spread": 0.4904925593174994,
-        "tail": 0.7515493421582505,
-        "muffle": 0.9158825523336418,
+        "size": 0.8601208688691259,
+        "pressure": 0.8839347097440623,
+        "blast": 0.5160563910380006,
+        "debris": 0.09952953140018507,
+        "gas": 0.018944760486483574,
+        "aftershock": 0.7765567659167573,
+        "rubbleSize": 0.8202286758227273,
+        "spread": 0.5560653725638987,
+        "tail": 0.9541049695922993,
+        "muffle": 0.8928909439127892,
         "mechanism": 2,
-        "space": 0.6131285554729402
+        "space": 0.8360099887941033
       },
       "duration": 1.6,
-      "peak": 0.42558786273002625,
-      "rms": 0.0715557185498055,
-      "sha256": "bed051cd8a54ac49d08d901b7b6cde2f3c75c0004decfd7bbf839354ea6a35ad"
+      "peak": 0.3921809196472168,
+      "rms": 0.08526322529981083,
+      "sha256": "34cbf9fdd86f1b2c3936f82d62c0f0362d64604ad3c75196f3742cb7a11c8471"
     },
     {
       "synth": "Boomr",
@@ -353,22 +130,25 @@
       "file": "boomr-gas-fireball.wav",
       "params": {
         "masterVolume": 0.5,
-        "seed": 0.7621412558946759,
+        "seed": 0.6775596248917282,
         "duration": 1.3,
-        "size": 0.6099406186840497,
-        "pressure": 0.47814818427432326,
-        "blast": 0.8730453555937856,
-        "debris": 0.1890610588993877,
-        "spread": 0.2221245005610399,
-        "tail": 0.9057571600889787,
-        "muffle": 0.34874116617720574,
+        "size": 0.7458568530739286,
+        "pressure": 0.31896385762374846,
+        "blast": 0.9528785800444893,
+        "debris": 0.11916077745147051,
+        "gas": 0.813070471980609,
+        "aftershock": 0.1240409054607153,
+        "rubbleSize": 0.1913946392480284,
+        "spread": 0.4667494395631366,
+        "tail": 0.7812713037012144,
+        "muffle": 0.3350239607039839,
         "mechanism": 1,
-        "space": 0.5007606293074787
+        "space": 0.5875309123657644
       },
       "duration": 1.3,
-      "peak": 0.2948957681655884,
-      "rms": 0.05783532730494505,
-      "sha256": "8facccf649ea74dbd06b20d5fc3acfaeab5defd29861e076ed926f9f5749197a"
+      "peak": 0.3648782968521118,
+      "rms": 0.06926209612790271,
+      "sha256": "ded0e5d024f1a21d35b7959568e2b89f5e7a204c128f34da70695b8f7a892ee7"
     },
     {
       "synth": "Boomr",
@@ -376,172 +156,25 @@
       "file": "boomr-structural-collapse.wav",
       "params": {
         "masterVolume": 0.5,
-        "seed": 0.20799390692263842,
+        "seed": 0.9862467013299465,
         "duration": 1.5,
-        "size": 0.8494049491593614,
-        "pressure": 0.7828732774709352,
-        "blast": 0.40688917688094084,
-        "debris": 0.8888939784606918,
-        "spread": 0.9035257247975096,
-        "tail": 0.8366875678300858,
-        "muffle": 0.34979655806673693,
+        "size": 0.7277879569213838,
+        "pressure": 0.8196047706645914,
+        "blast": 0.6900156758725643,
+        "debris": 0.9698779348400421,
+        "gas": 0.17764729995280504,
+        "aftershock": 0.7381237858906389,
+        "rubbleSize": 0.8658732655458152,
+        "spread": 0.7623981720767915,
+        "tail": 0.5551838894374669,
+        "muffle": 0.3325578483985737,
         "mechanism": 4,
-        "space": 0.778992285579443
+        "space": 0.7125972439534962
       },
       "duration": 1.5,
-      "peak": 0.2988050878047943,
-      "rms": 0.06481889282007472,
-      "sha256": "7a5d23600442cb7a14a011b2fc3ddccd33e4b2ec3dace3ce74482f0841aaf3b5"
-    },
-    {
-      "synth": "Pewpr",
-      "name": "Laser pistol",
-      "file": "pewpr-laser-pistol.wav",
-      "params": {
-        "masterVolume": 0.5,
-        "seed": 0.4466241258196533,
-        "kind": 0,
-        "duration": 1.1,
-        "pitch": 0.5576306943432427,
-        "sweep": -0.3447468243772165,
-        "charge": 0.021254020966589453,
-        "punch": 0.8101860349997878,
-        "body": 0.33966117531526835,
-        "recoil": 0.18315499876625835,
-        "grit": 0.012143555972725152,
-        "shots": 1,
-        "character": 0.35401964578777556,
-        "modulation": 0.07103037233464421
-      },
-      "duration": 1.1,
-      "peak": 0.21786107122898102,
-      "rms": 0.033386758947569775,
-      "sha256": "93b3af32ac7b259fa85d81613d117acb262a694c490c34369baee62b4b160565"
-    },
-    {
-      "synth": "Pewpr",
-      "name": "Coil driver",
-      "file": "pewpr-coil-driver.wav",
-      "params": {
-        "masterVolume": 0.5,
-        "seed": 0.12083723512478173,
-        "kind": 4,
-        "duration": 1.1,
-        "pitch": 0.4621405921061523,
-        "sweep": -0.6007821199949831,
-        "charge": 0.3176578043960035,
-        "punch": 0.9921353943645954,
-        "body": 0.21387485498562453,
-        "recoil": 0.7473262007115409,
-        "grit": 0.18830865253694354,
-        "shots": 1,
-        "character": 0.4594127794727683,
-        "modulation": 0.518861761270091
-      },
-      "duration": 1.1,
-      "peak": 0.3492075800895691,
-      "rms": 0.0289198550622828,
-      "sha256": "0f74ccbb1ed33f748aef3b198a6fe76f4246c62bcf389ddf52147362fda7e662"
-    },
-    {
-      "synth": "Pewpr",
-      "name": "Spore cannon",
-      "file": "pewpr-spore-cannon.wav",
-      "params": {
-        "masterVolume": 0.5,
-        "seed": 0.8553172636311501,
-        "kind": 5,
-        "duration": 1.1,
-        "pitch": 0.51262820296688,
-        "sweep": 0.07079651108942919,
-        "charge": 0.018716571978293357,
-        "punch": 0.5967585829668678,
-        "body": 0.8719902407377959,
-        "recoil": 0.36989544674288477,
-        "grit": 0.3203149607172236,
-        "shots": 1,
-        "character": 0.5780684028286487,
-        "modulation": 0.8550758769852109
-      },
-      "duration": 1.1,
-      "peak": 0.340114951133728,
-      "rms": 0.11242914574065536,
-      "sha256": "0630f8c28fee740306b64f9df406e0eb536732df5c60c420a506231061b0432b"
-    },
-    {
-      "synth": "Pewpr",
-      "name": "Prism lance",
-      "file": "pewpr-prism-lance.wav",
-      "params": {
-        "masterVolume": 0.5,
-        "seed": 0.13341571646742523,
-        "kind": 3,
-        "duration": 1.1,
-        "pitch": 0.6733756735688076,
-        "sweep": 0.5546940764412285,
-        "charge": 0.008380351555533707,
-        "punch": 0.37844555798219515,
-        "body": 0.45978247446473686,
-        "recoil": 0.13945768382400275,
-        "grit": 0.06644345653010532,
-        "shots": 1,
-        "character": 0.1902510372805409,
-        "modulation": 0.3284759624861181
-      },
-      "duration": 1.1,
-      "peak": 0.28504616022109985,
-      "rms": 0.03465837127959236,
-      "sha256": "04a8d622b05b7f9c67d7b1703929ebe39f97dfdc9f92b468b6180578d9620f28"
-    },
-    {
-      "synth": "Pewpr",
-      "name": "Gravity well",
-      "file": "pewpr-gravity-well.wav",
-      "params": {
-        "masterVolume": 0.5,
-        "seed": 0.3630224377848208,
-        "kind": 7,
-        "duration": 1.7,
-        "pitch": 0.14325234575662762,
-        "sweep": -0.16668193228542805,
-        "charge": 0.7280195586150512,
-        "punch": 0.9120041511720046,
-        "body": 0.8833414194290526,
-        "recoil": 0.7249055259861052,
-        "grit": 0.057703339157160374,
-        "shots": 1,
-        "character": 0.6444529322907329,
-        "modulation": 0.9160076661384664
-      },
-      "duration": 1.7,
-      "peak": 0.3653359115123749,
-      "rms": 0.04540165042489663,
-      "sha256": "3d2ca06b289a63e3c889fdbb5fc2a74ac6da43bdb80ef0a905b396611abad48b"
-    },
-    {
-      "synth": "Pewpr",
-      "name": "Ion beam",
-      "file": "pewpr-ion-beam.wav",
-      "params": {
-        "masterVolume": 0.5,
-        "seed": 0.3854520502500236,
-        "kind": 6,
-        "duration": 1.1,
-        "pitch": 0.7937308455817402,
-        "sweep": 0.13783585857599978,
-        "charge": 0.2450455670012161,
-        "punch": 0.26819782903185113,
-        "body": 0.9347362614236772,
-        "recoil": 0.3880943394149654,
-        "grit": 0.0825337734632194,
-        "shots": 1,
-        "character": 0.7895039756782353,
-        "modulation": 0.4799854732467793
-      },
-      "duration": 1.1,
-      "peak": 0.29781627655029297,
-      "rms": 0.07598242815977954,
-      "sha256": "bc9bcad21e4c9968090876a0bae0ad7352888be4514857d84e958459fd80e754"
+      "peak": 0.36489051580429077,
+      "rms": 0.08377583406865535,
+      "sha256": "892c97985d15f857d0690f03b36c28da2e8ecace592455bdb9addac6bfaa85ca"
     },
     {
       "synth": "Bouncr",
@@ -549,18 +182,18 @@
       "file": "bouncr-steel-on-concrete.wav",
       "params": {
         "masterVolume": 0.5,
-        "seed": 0.8234482447151095,
         "material": 2,
+        "surface": 0,
+        "force": 0.7245020057307556,
         "duration": 0.85,
+        "size": 0.4086348487995565,
+        "hardness": 0.962540683732368,
+        "tail": 0.5718365868553519,
+        "seed": 0.8234482447151095,
         "count": 1,
         "bounce": 0.65,
         "gravity": 0.5,
-        "size": 0.4086348487995565,
-        "hardness": 0.962540683732368,
-        "spin": 0.16264976933598518,
-        "surface": 0,
-        "force": 0.7245020057307556,
-        "tail": 0.5718365868553519
+        "spin": 0.16264976933598518
       },
       "duration": 0.85,
       "peak": 0.3378116488456726,
@@ -573,18 +206,18 @@
       "file": "bouncr-wood-on-metal.wav",
       "params": {
         "masterVolume": 0.5,
-        "seed": 0.20854306034743786,
         "material": 1,
+        "surface": 2,
+        "force": 0.8324170107720419,
         "duration": 1.1,
+        "size": 0.3383283774368465,
+        "hardness": 0.7872721170075238,
+        "tail": 0.55060664198827,
+        "seed": 0.20854306034743786,
         "count": 1,
         "bounce": 0.65,
         "gravity": 0.5,
-        "size": 0.3383283774368465,
-        "hardness": 0.7872721170075238,
-        "spin": 0.022059115231968462,
-        "surface": 2,
-        "force": 0.8324170107720419,
-        "tail": 0.55060664198827
+        "spin": 0.022059115231968462
       },
       "duration": 1.1,
       "peak": 0.3373497426509857,
@@ -597,18 +230,18 @@
       "file": "bouncr-coin-on-glass.wav",
       "params": {
         "masterVolume": 0.5,
-        "seed": 0.45835797442123294,
         "material": 2,
+        "surface": 3,
+        "force": 0.3515657754614949,
         "duration": 1.2,
+        "size": 0.2164857203490101,
+        "hardness": 0.8002291040262207,
+        "tail": 0.8302029800252058,
+        "seed": 0.45835797442123294,
         "count": 1,
         "bounce": 0.65,
         "gravity": 0.5,
-        "size": 0.2164857203490101,
-        "hardness": 0.8002291040262207,
-        "spin": 0.483913488057442,
-        "surface": 3,
-        "force": 0.3515657754614949,
-        "tail": 0.8302029800252058
+        "spin": 0.483913488057442
       },
       "duration": 1.2,
       "peak": 0.13133001327514648,
@@ -621,18 +254,18 @@
       "file": "bouncr-stone-into-earth.wav",
       "params": {
         "masterVolume": 0.5,
-        "seed": 0.48187256418168545,
         "material": 4,
+        "surface": 4,
+        "force": 0.7372997886384838,
         "duration": 0.9,
+        "size": 0.8251109347329475,
+        "hardness": 0.5980186837725341,
+        "tail": 0.458794666826725,
+        "seed": 0.48187256418168545,
         "count": 1,
         "bounce": 0.65,
         "gravity": 0.5,
-        "size": 0.8251109347329475,
-        "hardness": 0.5980186837725341,
-        "spin": 0.7527546782861464,
-        "surface": 4,
-        "force": 0.7372997886384838,
-        "tail": 0.458794666826725
+        "spin": 0.7527546782861464
       },
       "duration": 0.9,
       "peak": 0.10593073070049286,
@@ -805,22 +438,24 @@
       "file": "breathr-snore.wav",
       "params": {
         "masterVolume": 0.5,
-        "seed": 0.8156865499913692,
+        "seed": 0.3578618853352964,
         "source": 2,
+        "mode": 0,
         "duration": 2.3,
+        "direction": -0.6098579366807826,
         "cycles": 1,
-        "effort": 0.21557450829539448,
-        "inhale": 0.518359503056854,
-        "hold": 0.21839689085260033,
-        "throat": 0.7318794300593436,
-        "rasp": 0.8708363814279436,
-        "flutter": 0.3697615481563844,
-        "space": 0.07918153282254935
+        "effort": 0.282539254585281,
+        "inhale": 0.6477098440751434,
+        "hold": 0.20227136896923187,
+        "throat": 0.7047945623565466,
+        "rasp": 0.6470395115204156,
+        "flutter": 0.4631072946521454,
+        "space": 0.1305098479986191
       },
       "duration": 2.3,
-      "peak": 0.4282001256942749,
-      "rms": 0.05362374207304989,
-      "sha256": "c90eb8b8e19a02767d3f4c7859a112547f45c5e97199b260aa04ad4c049ca33b"
+      "peak": 0.42430993914604187,
+      "rms": 0.06470945158151488,
+      "sha256": "60960fc387b5aef182cc50223add092bde1ea1e039da7d73765d4959019cf8ae"
     },
     {
       "synth": "Pluckr",
@@ -839,6 +474,7 @@
         "coupling": 0.20500602480024102,
         "strum": 0.16735703960061074,
         "tremolo": 0.75,
+        "vibrato": 0,
         "tremoloRate": 5.2,
         "inharmonic": 0.29755602893419564
       },
@@ -846,29 +482,6 @@
       "peak": 0.257215291261673,
       "rms": 0.01672403309604842,
       "sha256": "dbcee8810ec284875f0e57216b6d2c82302a326ae2fab3160c82fae2492bb84d"
-    },
-    {
-      "synth": "Rumblr",
-      "name": "Deep pressure",
-      "file": "rumblr-deep-pressure.wav",
-      "params": {
-        "masterVolume": 0.5,
-        "seed": 0.48041292489506304,
-        "duration": 1.8,
-        "size": 0.9220839063869789,
-        "weight": 0.9712849464267492,
-        "roughness": 0.08588571225292982,
-        "tremor": 0.08838769627036527,
-        "dust": 0.029996255622245373,
-        "attack": 0.6845142194768414,
-        "sweep": -0.079998116241768,
-        "depth": 0.95,
-        "harmonics": 0.25
-      },
-      "duration": 1.8,
-      "peak": 0.3065825402736664,
-      "rms": 0.1477559787720507,
-      "sha256": "8d65e3fe62a42f5b1f0903eadfb943f9ce9d25af2e4265b3170548ba2492a4b3"
     },
     {
       "synth": "Jinglr",
@@ -987,33 +600,28 @@
         "waveType": 6,
         "duration": 1.1,
         "pitch": {
-          "start": 0.194751950786449,
-          "end": 0.5847519507864491,
-          "curve": "Bounce"
+          "start": 0.3915856556291692,
+          "end": 0.22650947969639673,
+          "curve": "Ease In"
         },
         "tone": {
           "start": 0.8,
-          "end": 0.7753573259687982,
+          "end": 0.8961976289283484,
           "curve": "Smooth"
         },
-        "noise": {
-          "start": 0,
-          "end": 0.0688402708247304,
-          "curve": "Linear"
-        },
         "vibrato": {
-          "start": 0.20000330791808665,
-          "end": 0.16693876893259585,
+          "start": 0.20265287709189578,
+          "end": 0.21029090707888826,
           "curve": "Ease In"
         },
         "level": {
-          "start": 0.8507937512826174,
-          "end": 0,
+          "start": 0.8650570876454002,
+          "end": 0.5502121824817732,
           "curve": "Linear"
         },
-        "attack": 0.005039015306340117,
-        "release": 0.43671465988281016,
-        "resonance": 0.10843799086753278,
+        "attack": 0.013801947015709267,
+        "release": 0.06514779516323681,
+        "resonance": 0.3783284515771083,
         "echo": 0.15,
         "waveTo": 11,
         "morph": {
@@ -1023,9 +631,9 @@
         }
       },
       "duration": 2.06,
-      "peak": 0.3018064796924591,
-      "rms": 0.08212647738194677,
-      "sha256": "90a167dd230ffa8a497fca9f4f7a6d42e907f32c61d7aff66edeb11bec495fb4"
+      "peak": 0.32156771421432495,
+      "rms": 0.11504492653648037,
+      "sha256": "2eb2f84d50d5c2a5dbd87e3a4272f58aaba6b70020578ee54f257553f327d386"
     },
     {
       "synth": "Mixr",
@@ -1034,13 +642,13 @@
       "params": {
         "masterVolume": 0.5,
         "seed": 0.8272684714756906,
-        "balance": 0.5296927297953516,
-        "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Sword Swing\",\"params\":{\"masterVolume\":0.5,\"seed\":0.17693056748248637,\"duration\":0.2655402878858149,\"size\":0.3669435653137043,\"air\":0.657946601207368,\"whistle\":0.45672038227785383,\"movement\":0.8754990382352844,\"focus\":0.6214127779123373,\"flutter\":0.05114317156840116}},{\"synth\":\"Fractr\",\"name\":\"Ice Wall\",\"params\":{\"masterVolume\":0.5,\"seed\":0.6199892214499414,\"material\":1,\"duration\":2.842980657494627,\"fragments\":35,\"fragmentSize\":0.6099419226637111,\"spread\":0.7213274970650673,\"decay\":0.4463233622722328,\"gravity\":0.5082702660933136,\"bounce\":0.41384958690032364,\"stress\":0.7658597456407733,\"fracture\":0.9594188849674538}}]"
+        "balance": 0.677815637877211,
+        "sources": "[{\"synth\":\"Whooshr\",\"name\":\"Arrow Pass\",\"params\":{\"masterVolume\":0.5,\"seed\":0.3310278446879238,\"duration\":0.2722658227011562,\"size\":0.0982888343394734,\"air\":0.5411737793241628,\"whistle\":0.7577131865546107,\"movement\":0.8693787302356214,\"focus\":0.829001100489404,\"flutter\":0.01769305674824864},\"generator\":\"*\",\"selectedGenerator\":\"generate_arrow_pass\",\"renderSeed\":0.8647296165581793},{\"synth\":\"Fractr\",\"name\":\"Ice Crack\",\"params\":{\"masterVolume\":0.5,\"seed\":0.533174563664943,\"material\":1,\"duration\":0.47671927396440883,\"fragments\":8,\"fragmentSize\":0.7994911847170443,\"spread\":0.10439870657399296,\"decay\":0.113681381046772,\"gravity\":0.8605496011208743,\"bounce\":0.08533101251814515,\"stress\":0.4256479116156697,\"shards\":0.10828423572704196,\"fracture\":0.8856637485325337},\"generator\":\"*\",\"selectedGenerator\":\"generate_ice_crack\",\"renderSeed\":0.5545441096182913}]"
       },
-      "duration": 2.8429705215419503,
-      "peak": 0.2845098078250885,
-      "rms": 0.023443066966670204,
-      "sha256": "59ea33c6556ca97acb003334069977c307f27f39a1a525b74d3eec8cbd546862"
+      "duration": 0.47671201814058956,
+      "peak": 0.32309967279434204,
+      "rms": 0.06487431039715563,
+      "sha256": "9771176ae50e8c14d18138b1cfb574f9dad1d3710f0236e5d5621b3b280eea4d"
     },
     {
       "synth": "Mixr",
@@ -1049,193 +657,109 @@
       "params": {
         "masterVolume": 0.5,
         "seed": 0.16487229522317648,
-        "balance": 0.48912243195809424,
-        "sources": "[{\"synth\":\"Clonkr\",\"name\":\"Metal Clang\",\"params\":{\"masterVolume\":0.5,\"seed\":0.24876506254076958,\"material\":2,\"action\":0,\"size\":0.58774033612106,\"hollowness\":0.38603759923717007,\"hardness\":0.7084180913749151,\"damping\":0.21043563379207625,\"duration\":1.0006278079003095}},{\"synth\":\"Zappr\",\"name\":\"Static Spark\",\"params\":{\"masterVolume\":0.5,\"seed\":0.09536103601567447,\"duration\":0.1575498381536454,\"voltage\":0.8462924517225474,\"arcs\":2,\"branching\":0.13952028283383697,\"crackle\":0.13553995075635614,\"hum\":0.007173319412395358,\"spark\":0.9261255546938628,\"spread\":0.15529878549277784,\"decay\":0.01814420375972986}}]"
+        "balance": 0.6034734591748565,
+        "sources": "[{\"synth\":\"Clonkr\",\"name\":\"Rubber Thud\",\"params\":{\"masterVolume\":0.5,\"seed\":0.20861021196469665,\"material\":4,\"action\":0,\"size\":0.9340429705567658,\"hollowness\":0.3834544162498787,\"hardness\":0.2532704844954423,\"damping\":0.45031390395015475,\"duration\":0.4619442781433463},\"generator\":\"*\",\"selectedGenerator\":\"generate_rubber_thud\",\"renderSeed\":0.8465498620644212},{\"synth\":\"Zappr\",\"name\":\"Power Short\",\"params\":{\"masterVolume\":0.5,\"seed\":0.015556466532871127,\"duration\":1.4301352188922465,\"voltage\":0.48719491382362323,\"arcs\":8,\"branching\":0.45225110938772556,\"crackle\":0.9552987854927778,\"hum\":0.3529205942992121,\"spark\":0.6833763626054861,\"spread\":0.590282189915888,\"decay\":0.1651457877131179},\"generator\":\"*\",\"selectedGenerator\":\"generate_power_short\",\"renderSeed\":0.07451166375540197}]"
       },
-      "duration": 3.525011337868481,
-      "peak": 0.2717337906360626,
-      "rms": 0.034862023345943426,
-      "sha256": "05eadc56dbbe06df8db9e70f1133565ca2c6fa085a607afeb37aa46f1f52b104"
+      "duration": 1.4301360544217687,
+      "peak": 0.31605151295661926,
+      "rms": 0.0352359520055711,
+      "sha256": "607ca8edbc8f6f0eb5afc9470f3a579359e65baac6290f8504254094f940f9d2"
     }
   ],
   "reels": [
     {
       "file": "effects.wav",
-      "duration": 29.34798185941043,
+      "duration": 19.08172335600907,
       "clips": [
         {
           "name": "Glass breaks",
           "start": 0,
           "duration": 0.85,
-          "gain": 1.446564489219436
+          "gain": 1.3817433520837892
         },
         {
           "name": "Ice splits",
           "start": 1.07,
           "duration": 1.1,
-          "gain": 1.4198912946038107
+          "gain": 1.2573492424088348
         },
         {
           "name": "Grenade",
           "start": 2.39,
           "duration": 1.2,
-          "gain": 2.1256218431753138
+          "gain": 1.9980194943202638
         },
         {
           "name": "Depth charge",
           "start": 3.81,
           "duration": 1.6,
-          "gain": 1.118009875679146
+          "gain": 0.9382708631851099
         },
         {
           "name": "Gas fireball",
           "start": 5.63,
           "duration": 1.3,
-          "gain": 1.3832376114721119
-        },
-        {
-          "name": "Coil driver",
-          "start": 7.15,
-          "duration": 1.1,
-          "gain": 1.8613570754485913
-        },
-        {
-          "name": "Spore cannon",
-          "start": 8.47,
-          "duration": 1.1,
-          "gain": 0.711559262262288
-        },
-        {
-          "name": "Prism lance",
-          "start": 9.79,
-          "duration": 1.1,
-          "gain": 2.28033241877673
-        },
-        {
-          "name": "Gravity well",
-          "start": 11.11,
-          "duration": 1.7,
-          "gain": 1.7620504816743598
+          "gain": 1.1550329035995122
         },
         {
           "name": "Steel on concrete",
-          "start": 13.03,
+          "start": 7.15,
           "duration": 0.85,
           "gain": 1.2301729041693328
         },
         {
           "name": "Wood on metal",
-          "start": 14.1,
+          "start": 8.22,
           "duration": 1.1,
           "gain": 1.3546851154376758
         },
         {
           "name": "Codec warble",
-          "start": 15.42,
+          "start": 9.54,
           "duration": 0.8,
           "gain": 1.08562265925158
         },
         {
           "name": "Tape scrub",
-          "start": 16.44,
+          "start": 10.56,
           "duration": 0.8,
           "gain": 0.7300198804885369
         },
         {
           "name": "Radar blip",
-          "start": 17.46,
+          "start": 11.58,
           "duration": 0.5,
           "gain": 0.9178586591016621
         },
         {
           "name": "Target lock",
-          "start": 18.18,
+          "start": 12.3,
           "duration": 0.6,
           "gain": 0.7682475837415557
         },
         {
           "name": "Snore",
-          "start": 19,
+          "start": 13.12,
           "duration": 2.3,
-          "gain": 1.4918764880492412
-        },
-        {
-          "name": "Deep pressure",
-          "start": 21.52,
-          "duration": 1.8,
-          "gain": 0.5414332513976935
+          "gain": 1.2362954413115916
         },
         {
           "name": "Confirm",
-          "start": 23.54,
+          "start": 15.64,
           "duration": 0.4650113378684807,
           "gain": 0.6856945210914525
         },
         {
           "name": "Whistle into FM",
-          "start": 24.22501133786848,
+          "start": 16.32501133786848,
           "duration": 2.06,
-          "gain": 0.9741072861063171
+          "gain": 0.6953805127132857
         },
         {
           "name": "Air and ice",
-          "start": 26.50501133786848,
-          "duration": 2.8429705215419503,
-          "gain": 2.284631257420863
-        }
-      ]
-    },
-    {
-      "file": "characters.wav",
-      "duration": 11.965873015873015,
-      "clips": [
-        {
-          "name": "Village mouse",
-          "start": 0,
-          "duration": 1.235986394557823,
-          "gain": 0.846133959064395
-        },
-        {
-          "name": "Plush bear",
-          "start": 1.455986394557823,
-          "duration": 1.5511337868480726,
-          "gain": 0.7828757641562256
-        },
-        {
-          "name": "Reedy duck",
-          "start": 3.227120181405896,
-          "duration": 1.1936507936507936,
-          "gain": 0.6891855788535363
-        },
-        {
-          "name": "Bubbling alien",
-          "start": 4.6407709750566895,
-          "duration": 1.2830385487528344,
-          "gain": 0.8471092312028482
-        },
-        {
-          "name": "Wispy sprite",
-          "start": 6.143809523809524,
-          "duration": 1.3215192743764173,
-          "gain": 0.8801320677129659
-        },
-        {
-          "name": "Tinny robot",
-          "start": 7.685328798185941,
-          "duration": 1.2830385487528344,
-          "gain": 0.9046119901586613
-        },
-        {
-          "name": "Gravel frog",
-          "start": 9.188367346938776,
-          "duration": 1.3215192743764173,
-          "gain": 0.6920902083546379
-        },
-        {
-          "name": "Radio critter",
-          "start": 10.729886621315194,
-          "duration": 1.235986394557823,
-          "gain": 0.6299177911676257
+          "start": 18.60501133786848,
+          "duration": 0.47671201814058956,
+          "gain": 1.2331537631806186
         }
       ]
     }

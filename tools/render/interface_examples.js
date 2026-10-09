@@ -6,7 +6,7 @@ const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const {createContext, root, plain} = require('../../tests/helpers/synth-context');
 const {encodeWav16} = require('./wav');
-const families = ['Tappr', 'Rustlr', 'Notifr', 'Tickr', 'Holor'];
+const families = [ 'Rustlr'];
 const api = createContext(families), rate = 44100;
 const output = path.resolve(process.argv[2] || path.join(root, 'examples/Interface'));
 const collection = {}, sounds = [];
@@ -51,14 +51,11 @@ for (const family of families) {
     collection[family]={files,selected_file_index:0,create_new_sound:true,play_on_change:true,
         locked_params:plain(api.run('synth.locked_params'))};
 }
-collection.active_tab_index=15;
+collection.active_tab_name='Rustlr';
 fs.writeFileSync(path.join(output,'Interface.bcol'),JSON.stringify(collection,null,2)+'\n');
 
-const playlist=[['Tappr','focus'],['Tappr','select'],['Tappr','back'],
-    ['Rustlr','card_flick'],['Rustlr','bag_open'],['Rustlr','zip_pouch'],
-    ['Notifr','message'],['Notifr','denied'],['Notifr','achievement'],
-    ['Tickr','count_coins'],['Tickr','level_fill'],['Tickr','countdown'],
-    ['Holor','cursor_trail'],['Holor','target_lock'],['Holor','data_reveal']];
+const playlist=[
+    ['Rustlr','card_flick'],['Rustlr','bag_open'],['Rustlr','zip_pouch']];
 const clips=[], gap=Math.round(0.3*rate); let frame=0;
 for (const [family,id] of playlist) {
     const sound=sounds.find(s=>s.synth===family&&s.id===id);
@@ -76,16 +73,14 @@ const withoutPCM=({pcm,...entry})=>entry;
 fs.writeFileSync(path.join(output,'validation.json'),JSON.stringify({sampleRate:rate,format:'mono PCM16 WAV',
     sounds:sounds.map(withoutPCM),showcase:{file:showcaseFile,...showcaseMetrics,gap:gap/rate,clips:clips.map(withoutPCM)}},null,2)+'\n');
 const descriptions={
-    Tappr:'Tactile UI contacts: down and up strokes, small body resonances and an optional electronic accent.',
+
     Rustlr:'Inventory handling: textured paper, cloth, leather, plastic, foil and zipper movements.',
-    Notifr:'Short notifications shaped by tone groups, intervals, spacing and urgency.',
-    Tickr:'Progress clocks: counted ticks accelerate or slow down, climb or fall, and finish with a separate cue.',
-    Holor:'Holographic gestures: frequency sidebands, moving spectral bands and comb coloration.'
+
 };
 const lines=['# Interface sounds','',
-    '40 editable sounds: eight randomized categories in each of five new tabs. Every preset click makes another variation.','',
-    'Open **Interface.bcol** with **Open Data**, or drag it onto Bfxr. This replaces the lists in these five tabs; save your collection first if needed. Select an example to hear and edit it. All five also work as copied layers in Stackr.','',
-    `The [${showcaseMetrics.duration.toFixed(1)}-second reel](${showcaseFile}) plays fifteen complete sounds with 0.3-second gaps. Levels are balanced for the reel; individual WAVs match their saved settings exactly.`,'',
+    '8 editable inventory sounds from Rustlr. Every preset click makes another variation.','',
+    'Open **Interface.bcol** with **Open Data**, or drag it onto Bfxr. This replaces the lists in Rustlr; save your collection first if needed. Select an example to hear and edit it. These sounds also work as sources in Mixr.','',
+    `The [${showcaseMetrics.duration.toFixed(1)}-second reel](${showcaseFile}) plays three complete sounds with 0.3-second gaps. Levels are balanced for the reel; individual WAVs match their saved settings exactly.`,'',
     '| Start | Tab | Sound |','| --- | --- | --- |',
     ...clips.map(c=>`| ${c.start.toFixed(2)} s | ${c.synth} | ${c.name} |`),''];
 for (const family of families) {
@@ -93,7 +88,7 @@ for (const family of families) {
         ...sounds.filter(s=>s.synth===family).map(s=>`| [${s.name}](${s.file}) | ${s.duration.toFixed(2)} s |`),'');
 }
 lines.push('## Rebuild','',
-    '`node tools/render/interface_examples.js` regenerates this collection, 40 WAVs, the reel and validation report. An optional argument chooses another output directory. WAVs are generated locally and ignored by Git.','',
+    '`node tools/render/interface_examples.js` regenerates this collection, 8 WAVs, the reel and validation report. An optional argument chooses another output directory. WAVs are generated locally and ignored by Git.','',
     'Every example is checked for finite, bounded, audible audio, faded edges and bit-identical sound after reloading its saved parameters. See [validation.json](validation.json).','');
 fs.writeFileSync(path.join(output,'README.md'),lines.join('\n'));
 console.log(`Wrote ${sounds.length} examples and a ${showcaseMetrics.duration.toFixed(2)} s reel to ${output}`);

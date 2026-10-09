@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bfxrlib example</title>
+<style>
+  body {font: 18px/1.5 system-ui, sans-serif; max-width: 640px; margin: 60px auto; padding: 0 20px; color: #253429; background: #f4f3ed;}
+  h1 {font-size: 28px;}
+  label {display: block; margin: 14px 0;}
+  select, input, button {font: inherit; padding: 8px 12px;}
+  select {max-width: 100%;}
+  button {margin: 6px 4px 6px 0; cursor: pointer;}
+  pre {font-size: 14px; white-space: pre-wrap; padding: 18px; background: #e7e9df; border-radius: 6px;}
+  #status {min-height: 1.5em;}
+</style>
+<h1>bfxrlib</h1>
+<p>One script. Choose a sound and play it.</p>
+<label>Synth <select id="synth" onchange="chooseSynth()"></select></label>
+<label>Preset <select id="preset" onchange="chooseSound()"></select></label>
+<label>Seed <input id="seed" value="12345" onchange="chooseSound()"></label>
+<button id="play" onclick="playSound(false)">Play</button>
+<button id="mutated" onclick="playSound(true)">Play mutated</button>
+<button id="new" onclick="newSound()">New sound</button>
+<button id="stop" onclick="bfxr.stopAll()">Stop all</button>
+<p id="status" aria-live="polite"></p>
+<pre id="code"></pre>
+<p><a href="README.md">API documentation</a> · <a href="bfxrlib.min.js" download>Download JS</a></p>
+
+<script src="bfxrlib.min.js"></script>
+<script>
+  var sound;
+  var synthSelect = document.getElementById("synth");
+  var presetSelect = document.getElementById("preset");
+  var seedInput = document.getElementById("seed");
+  bfxr.synths().forEach(function(name) { synthSelect.add(new Option(name, name)); });
+
+  function chooseSynth() {
+    presetSelect.innerHTML = "";
+    bfxr.presets(synthSelect.value).forEach(function(id) { presetSelect.add(new Option(id, id)); });
+    if (synthSelect.value === "Bfxr") presetSelect.value = "jump";
+    chooseSound();
+  }
+  function chooseSound() {
+    sound = bfxr.preset(synthSelect.value, presetSelect.value, seedInput.value);
+    document.getElementById("code").textContent =
+      '<script src="bfxrlib.min.js"><' + '/script>\n' +
+      'var sound = bfxr.preset(' + JSON.stringify(synthSelect.value) + ', ' +
+      JSON.stringify(presetSelect.value) + ', ' + JSON.stringify(seedInput.value) + ');\n' +
+      'bfxr.play(sound);\nbfxr.playMutated(sound);';
+    document.getElementById("status").textContent = "Ready.";
+  }
+  function newSound() {
+    seedInput.value = String(Math.floor(Math.random() * 1000000000));
+    chooseSound();
+  }
+  function playSound(mutated) {
+    try {
+      if (mutated) bfxr.playMutated(sound); else bfxr.play(sound);
+      document.getElementById("status").textContent = mutated ? "Playing a variation." : "Playing.";
+    } catch (error) { document.getElementById("status").textContent = error.message; }
+  }
+  chooseSynth();
+</script>
+</html>

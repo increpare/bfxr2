@@ -1,7 +1,7 @@
 const test=require('node:test');
 const assert=require('node:assert/strict');
 const {createContext,plain}=require('./helpers/synth-context');
-const setup=()=>createContext(['Clonkr','Jinglr','Transfxr','Stackr','Mixr']);
+const setup=()=>createContext(['Clonkr','Jinglr','Transfxr','Mixr']);
 test('Mixr catalog exposes preset generators without generated files or retired engines',()=>{
  const {run}=setup();
  const list=plain(run('Mixr.generators()'));
@@ -10,10 +10,10 @@ test('Mixr catalog exposes preset generators without generated files or retired 
  assert.ok(list.some(g=>g.synth==='Clonkr'&&g.family==='Tangs'));
  assert.ok(list.some(g=>g.synth==='Jinglr'&&g.family==='Jingles'));
  assert.ok(list.some(g=>g.synth==='Transfxr'&&g.family==='Transfxr'));
- assert.ok(list.every(g=>!['Stackr','Mixr','Chattr','Pewpr','Rumblr'].includes(g.synth)));
+ assert.ok(list.every(g=>!['Mixr'].includes(g.synth)));
  assert.equal(run("new Mixr().recipes.find(recipe=>recipe.id==='haunted').tip"),'Choir × Sonar.');
- assert.deepEqual(plain(run("new Mixr().recipes.find(recipe=>recipe.id==='phase_step').pair")),['Breathr','Riftr']);
- assert.equal(run("new Mixr().recipes.find(recipe=>recipe.id==='phase_step').tip"),'Breath × Sonar.');
+ assert.deepEqual(plain(run("new Mixr().recipes.find(recipe=>recipe.id==='phase_step').pair")),['Whooshr','Riftr']);
+ assert.equal(run("new Mixr().recipes.find(recipe=>recipe.id==='phase_step').tip"),'Whoosh × Sonar.');
  assert.deepEqual(plain(run("new Mixr().recipes.find(recipe=>recipe.id==='reality_error').pair")),['Riftr','Glitchr']);
  assert.equal(run("new Mixr().recipes.find(recipe=>recipe.id==='reality_error').tip"),'Sonar × Glitches.');
 });
@@ -72,22 +72,22 @@ test('Legacy snapshots remain playable and are not silently regenerated as anoth
  s.regenerate_source(0);return s.params.sources===before;})()`),true);
 });
 test('curated Mixr pairs invoke only listed generators and create fresh playable snapshots',()=>{
- const names=['Bfxr','Transfxr','Clonkr','Machinr','Jinglr','Squishr','Crittr','Birdr','Signlr','Fractr','Riftr','Swarmr','Rustlr','Boomr','Zappr','Whooshr','Bouncr','Breathr','Choirr','Pluckr','Glitchr','Stackr','Mixr'];
+ const names=['Bfxr','Transfxr','Clonkr','Machinr','Jinglr','Squishr','Crittr','Birdr','Signlr','Fractr','Riftr','Swarmr','Rustlr','Boomr','Zappr','Whooshr','Bouncr','Breathr','Choirr','Pluckr','Glitchr','Mixr'];
  const {run}=createContext(names);
  const result=plain(run(`(()=>{Math.random=SoundDSP.rng(.613);const mix=new Mixr();return mix.recipes.map(recipe=>{
  mix.generate_recipe(recipe.id);const first=mix.params.sources;mix.generate_recipe(recipe.id);const sources=mix.get_sources();mix.generate_sound();const pcm=mix.sound.getBuffer();
- return {id:recipe.id,fresh:first!==mix.params.sources,valid:sources.every((s,i)=>s.synth===recipe.pair[i]&&s.generator==='*'&&Mixr.templates_for(Stackr.source(s.synth)).some(t=>t[2]===s.selectedGenerator)),
+ return {id:recipe.id,fresh:first!==mix.params.sources,valid:sources.every((s,i)=>s.synth===recipe.pair[i]&&s.generator==='*'&&Mixr.templates_for(Mixr.source(s.synth)).some(t=>t[2]===s.selectedGenerator)),
  audible:pcm.some(v=>Math.abs(v)>.025),finite:pcm.every(v=>Number.isFinite(v)&&Math.abs(v)<=1)};});})()`));
  for(const entry of result)assert.deepEqual({...entry,id:undefined},{id:undefined,fresh:true,valid:true,audible:true,finite:true});
 });
 test('old named Breathr links run cycle migration before merging defaults',()=>{
- const {run,load}=createContext(['Breathr','Stackr']);load('js/SaveLoad.js');
+ const {run,load}=createContext(['Breathr']);load('js/SaveLoad.js');
  assert.equal(run(`(()=>{const s=new Breathr(),old={...s.params,duration:2.7};delete old.mode;delete old.direction;tabs=[{synth:s}];
  const decoded=SaveLoad.shallow_dict_deserialize('Breathr~@2~'+JSON.stringify({filename:'Old breath',params:old}));
  return decoded[2].mode===1&&decoded[2].duration===2.7&&s.params.mode===0;})()`),true);
 });
 test('classic coin and explosion generators set valid pitch jump timing',()=>{
- const {run}=createContext(['Bfxr','Stackr','Mixr']);
+ const {run}=createContext(['Bfxr','Mixr']);
  const result=plain(run(`(()=>{const errors=[];console.error=(...args)=>errors.push(args.join(' '));Math.random=()=>.1;
  const coin=Mixr.generated_source('Bfxr','generate_pickup_coin'),boom=Mixr.generated_source('Bfxr','generate_explosion');
  return {errors,onsets:[coin.params.pitch_jump_onset_percent,boom.params.pitch_jump_onset_percent]};})()`));
@@ -115,14 +115,14 @@ test('synth-wide choices survive saved links and Regen Both retains both synth s
  copy.regenerate_both();return copy.params.balance===.6&&copy.get_sources().every((s,i)=>s.generator==='*'&&s.synth===sources[i].synth&&s.selectedGenerator!==sources[i].selectedGenerator);})()`),true);
 });
 test('synth-wide selection rejects retired or missing synths and supports a single available preset',()=>{
- const {run,load}=createContext(['Rumblr','Stackr','Mixr']);load('js/synths/Footsteppr.js');
- assert.equal(run(`(()=>{const mix=new Mixr();if(mix.set_generator(0,'Rumblr','*')!==false||mix.set_generator(0,'Missing','*')!==false)return false;
+ const {run,load}=createContext(['Mixr']);load('js/synths/Footsteppr.js');
+ assert.equal(run(`(()=>{const mix=new Mixr();if(mix.set_generator(0,'*')!==false||mix.set_generator(0,'Missing','*')!==false)return false;
  if(!mix.set_generator(0,'Footsteppr','*'))return false;const before=mix.params.sources;mix.regenerate_source(0);
  const source=mix.get_sources()[0];return source.generator==='*'&&source.selectedGenerator==='randomize_params'&&mix.params.sources!==before;})()`),true);
 });
 
 test('curated buttons select whole instruments and Regen Both explores each instrument',()=>{
- const names=['Bfxr','Transfxr','Clonkr','Machinr','Jinglr','Squishr','Crittr','Birdr','Signlr','Fractr','Riftr','Swarmr','Rustlr','Boomr','Zappr','Whooshr','Bouncr','Breathr','Choirr','Pluckr','Glitchr','Stackr','Mixr'];
+ const names=['Bfxr','Transfxr','Clonkr','Machinr','Jinglr','Squishr','Crittr','Birdr','Signlr','Fractr','Riftr','Swarmr','Rustlr','Boomr','Zappr','Whooshr','Bouncr','Breathr','Choirr','Pluckr','Glitchr','Mixr'];
  const {run}=createContext(names);
  assert.equal(run(`(()=>{Math.random=SoundDSP.rng(.153);const mix=new Mixr();return mix.recipes.every(recipe=>{
  mix.generate_recipe(recipe.id);const balance=mix.params.balance,seen=[new Set(),new Set()];

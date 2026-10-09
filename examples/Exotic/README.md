@@ -2,7 +2,7 @@
 
 40 editable sounds: eight randomized categories in each of five new tabs. Every preset click makes another variation.
 
-Open **Exotic.bcol** with **Open Data**, or drag it onto Bfxr. This replaces the lists in these five tabs; save your collection first if needed. Select an example to hear and edit it. All five also work as copied layers in Stackr.
+Open **Exotic.bcol** with **Open Data**, or drag it onto Bfxr. This replaces the lists in these five tabs; save your collection first if needed. Select an example to hear and edit it. All five also work as copied sources in Mixr.
 
 The [18.6-second reel](exotic_showcase.wav) plays ten complete sounds with 0.3-second gaps. Levels are balanced for the reel; individual WAVs match their saved settings exactly.
 

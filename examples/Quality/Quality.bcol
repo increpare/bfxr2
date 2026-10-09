@@ -3,13 +3,13 @@
     "files": [
       [
         "Glass crack",
-        "{\"masterVolume\":0.5,\"seed\":0.9552516213152558,\"material\":0,\"duration\":0.9,\"fragments\":40,\"fragmentSize\":0.41848224303685133,\"spread\":0.18,\"decay\":0.22,\"gravity\":0.6355261382297612,\"bounce\":0.6702853581169621}",
-        "{\"masterVolume\":0.5,\"seed\":0.9552516213152558,\"material\":0,\"duration\":0.9,\"fragments\":40,\"fragmentSize\":0.41848224303685133,\"spread\":0.18,\"decay\":0.22,\"gravity\":0.6355261382297612,\"bounce\":0.6702853581169621}"
+        "{\"masterVolume\":0.5,\"seed\":0.3213681059423834,\"material\":0,\"duration\":0.9,\"fragments\":40,\"fragmentSize\":0.408420910583809,\"spread\":0.18,\"decay\":0.22,\"gravity\":0.599503655405715,\"bounce\":0.673214534984436,\"stress\":0.12747738864272834,\"shards\":0.8406889186240734,\"fracture\":0.9303443540702574}",
+        "{\"masterVolume\":0.5,\"seed\":0.3213681059423834,\"material\":0,\"duration\":0.9,\"fragments\":40,\"fragmentSize\":0.408420910583809,\"spread\":0.18,\"decay\":0.22,\"gravity\":0.599503655405715,\"bounce\":0.673214534984436,\"stress\":0.12747738864272834,\"shards\":0.8406889186240734,\"fracture\":0.9303443540702574}"
       ],
       [
         "Stone fracture",
-        "{\"masterVolume\":0.5,\"seed\":0.6661635930649936,\"material\":3,\"duration\":1.1,\"fragments\":45,\"fragmentSize\":0.8817049275385216,\"spread\":0.35,\"decay\":0.46055054116295646,\"gravity\":0.5405221961438655,\"bounce\":0.48061730451881884}",
-        "{\"masterVolume\":0.5,\"seed\":0.6661635930649936,\"material\":3,\"duration\":1.1,\"fragments\":45,\"fragmentSize\":0.8817049275385216,\"spread\":0.35,\"decay\":0.46055054116295646,\"gravity\":0.5405221961438655,\"bounce\":0.48061730451881884}"
+        "{\"masterVolume\":0.5,\"seed\":0.4039408187381923,\"material\":3,\"duration\":1.1,\"fragments\":45,\"fragmentSize\":0.5955874706618488,\"spread\":0.35,\"decay\":0.5497736168792471,\"gravity\":0.5036499374546111,\"bounce\":0.6919076982885599,\"stress\":0.8054904800839722,\"shards\":0.8948488244786859,\"fracture\":0.837665998400189}",
+        "{\"masterVolume\":0.5,\"seed\":0.4039408187381923,\"material\":3,\"duration\":1.1,\"fragments\":45,\"fragmentSize\":0.5955874706618488,\"spread\":0.35,\"decay\":0.5497736168792471,\"gravity\":0.5036499374546111,\"bounce\":0.6919076982885599,\"stress\":0.8054904800839722,\"shards\":0.8948488244786859,\"fracture\":0.837665998400189}"
       ]
     ],
     "selected_file_index": 0,
@@ -25,20 +25,23 @@
       "spread": false,
       "decay": false,
       "gravity": false,
-      "bounce": false
+      "bounce": false,
+      "stress": false,
+      "shards": false,
+      "fracture": false
     }
   },
   "Boomr": {
     "files": [
       [
         "Grenade",
-        "{\"masterVolume\":0.5,\"seed\":0.862397505203262,\"duration\":1.1,\"size\":0.42577977827750146,\"pressure\":0.8432885867427103,\"blast\":0.5268808982800692,\"debris\":0.6523802286945284,\"spread\":0.5596423041075468,\"tail\":0.39743827681522814,\"muffle\":0.110928694200702}",
-        "{\"masterVolume\":0.5,\"seed\":0.862397505203262,\"duration\":1.1,\"size\":0.42577977827750146,\"pressure\":0.8432885867427103,\"blast\":0.5268808982800692,\"debris\":0.6523802286945284,\"spread\":0.5596423041075468,\"tail\":0.39743827681522814,\"muffle\":0.110928694200702}"
+        "{\"masterVolume\":0.5,\"seed\":0.8144463542848825,\"duration\":1.1,\"size\":0.44473172808066014,\"pressure\":0.8803446562844328,\"blast\":0.5787501953192986,\"debris\":0.8949590020813047,\"gas\":0.06580864135175943,\"aftershock\":0.1496085410239175,\"rubbleSize\":0.2156759314937517,\"spread\":0.41603375086560845,\"tail\":0.43215645069722086,\"muffle\":0.11122244888916612,\"mechanism\":0,\"space\":0.1393081215303391}",
+        "{\"masterVolume\":0.5,\"seed\":0.8144463542848825,\"duration\":1.1,\"size\":0.44473172808066014,\"pressure\":0.8803446562844328,\"blast\":0.5787501953192986,\"debris\":0.8949590020813047,\"gas\":0.06580864135175943,\"aftershock\":0.1496085410239175,\"rubbleSize\":0.2156759314937517,\"spread\":0.41603375086560845,\"tail\":0.43215645069722086,\"muffle\":0.11122244888916612,\"mechanism\":0,\"space\":0.1393081215303391}"
       ],
       [
         "Deep blast",
-        "{\"masterVolume\":0.5,\"seed\":0.3550393779296428,\"duration\":1.4,\"size\":0.8593170509207995,\"pressure\":0.9763335740892216,\"blast\":0.5602789856493473,\"debris\":0.020180344849359242,\"spread\":0.40662366477772593,\"tail\":0.6786712455679663,\"muffle\":0.8491755360155366}",
-        "{\"masterVolume\":0.5,\"seed\":0.3550393779296428,\"duration\":1.4,\"size\":0.8593170509207995,\"pressure\":0.9763335740892216,\"blast\":0.5602789856493473,\"debris\":0.020180344849359242,\"spread\":0.40662366477772593,\"tail\":0.6786712455679663,\"muffle\":0.8491755360155366}"
+        "{\"masterVolume\":0.5,\"seed\":0.14745487901382148,\"duration\":1.4,\"size\":0.8033118323888631,\"pressure\":0.8622876766719855,\"blast\":0.5586808576248586,\"debris\":0.053255906689446415,\"gas\":0.024772432744503022,\"aftershock\":0.788975576381199,\"rubbleSize\":0.9526671481784432,\"spread\":0.7435598791576923,\"tail\":0.9941297488636337,\"muffle\":0.8101770352222957,\"mechanism\":2,\"space\":0.5803138588555157}",
+        "{\"masterVolume\":0.5,\"seed\":0.14745487901382148,\"duration\":1.4,\"size\":0.8033118323888631,\"pressure\":0.8622876766719855,\"blast\":0.5586808576248586,\"debris\":0.053255906689446415,\"gas\":0.024772432744503022,\"aftershock\":0.788975576381199,\"rubbleSize\":0.9526671481784432,\"spread\":0.7435598791576923,\"tail\":0.9941297488636337,\"muffle\":0.8101770352222957,\"mechanism\":2,\"space\":0.5803138588555157}"
       ]
     ],
     "selected_file_index": 0,
@@ -52,39 +55,14 @@
       "pressure": false,
       "blast": false,
       "debris": false,
+      "gas": false,
+      "aftershock": false,
+      "rubbleSize": false,
       "spread": false,
       "tail": false,
-      "muffle": false
-    }
-  },
-  "Rollr": {
-    "files": [
-      [
-        "Wood over boards",
-        "{\"masterVolume\":0.5,\"seed\":0.42232090001925826,\"material\":0,\"surface\":1,\"duration\":1.25,\"wheels\":3,\"speed\":0.2649230028502643,\"roughness\":0.6444124975241721,\"size\":0.6768083358299919,\"hardness\":0.5163882370572537,\"slowing\":0.18198517819400878}",
-        "{\"masterVolume\":0.5,\"seed\":0.42232090001925826,\"material\":0,\"surface\":1,\"duration\":1.25,\"wheels\":3,\"speed\":0.2649230028502643,\"roughness\":0.6444124975241721,\"size\":0.6768083358299919,\"hardness\":0.5163882370572537,\"slowing\":0.18198517819400878}"
-      ],
-      [
-        "Skateboard over grit",
-        "{\"masterVolume\":0.5,\"seed\":0.28171868342906237,\"material\":0,\"surface\":2,\"duration\":1.25,\"wheels\":4,\"speed\":0.7763166701421141,\"roughness\":0.41750045293010773,\"size\":0.32166559393517674,\"hardness\":0.9575117076165043,\"slowing\":0.3340228657005355}",
-        "{\"masterVolume\":0.5,\"seed\":0.28171868342906237,\"material\":0,\"surface\":2,\"duration\":1.25,\"wheels\":4,\"speed\":0.7763166701421141,\"roughness\":0.41750045293010773,\"size\":0.32166559393517674,\"hardness\":0.9575117076165043,\"slowing\":0.3340228657005355}"
-      ]
-    ],
-    "selected_file_index": 0,
-    "create_new_sound": true,
-    "play_on_change": true,
-    "locked_params": {
-      "masterVolume": true,
-      "seed": false,
-      "material": false,
-      "surface": false,
-      "duration": false,
-      "wheels": false,
-      "speed": false,
-      "roughness": false,
-      "size": false,
-      "hardness": false,
-      "slowing": false
+      "muffle": false,
+      "mechanism": false,
+      "space": false
     }
   },
   "Rustlr": {
@@ -117,64 +95,22 @@
       "brightness": false
     }
   },
-  "Tappr": {
-    "files": [
-      [
-        "Focus",
-        "{\"masterVolume\":0.5,\"seed\":0.4251467864960432,\"material\":0,\"duration\":0.07704184314003215,\"size\":0.4946747077512555,\"hardness\":0.10444983161985874,\"body\":0.12858250156976284,\"release\":0,\"gap\":0.13455449043540285,\"electronic\":0.02699430159758777,\"sweep\":-0.0769459030777216,\"air\":0.02480833844281733,\"damping\":0.815032576583326}",
-        "{\"masterVolume\":0.5,\"seed\":0.4251467864960432,\"material\":0,\"duration\":0.07704184314003215,\"size\":0.4946747077512555,\"hardness\":0.10444983161985874,\"body\":0.12858250156976284,\"release\":0,\"gap\":0.13455449043540285,\"electronic\":0.02699430159758777,\"sweep\":-0.0769459030777216,\"air\":0.02480833844281733,\"damping\":0.815032576583326}"
-      ],
-      [
-        "Select",
-        "{\"masterVolume\":0.5,\"seed\":0.003512707306072116,\"material\":2,\"duration\":0.16570848317816855,\"size\":0.5488964655785822,\"hardness\":0.567779557062313,\"body\":0.4084330494049937,\"release\":0,\"gap\":0.19794836411019787,\"electronic\":0.12014082932844758,\"sweep\":0.3836461224476807,\"air\":0.023596880957484245,\"damping\":0.8872321842797101}",
-        "{\"masterVolume\":0.5,\"seed\":0.003512707306072116,\"material\":2,\"duration\":0.16570848317816855,\"size\":0.5488964655785822,\"hardness\":0.567779557062313,\"body\":0.4084330494049937,\"release\":0,\"gap\":0.19794836411019787,\"electronic\":0.12014082932844758,\"sweep\":0.3836461224476807,\"air\":0.023596880957484245,\"damping\":0.8872321842797101}"
-      ],
-      [
-        "Back",
-        "{\"masterVolume\":0.5,\"seed\":0.020649530226364732,\"material\":0,\"duration\":0.11382090465631337,\"size\":0.7431875781272538,\"hardness\":0.2100479077664204,\"body\":0.41640060117933897,\"release\":0,\"gap\":0.4828385339351371,\"electronic\":0.12361131036421284,\"sweep\":-0.3628935592714697,\"air\":0.08752319833263755,\"damping\":0.9018681302899494}",
-        "{\"masterVolume\":0.5,\"seed\":0.020649530226364732,\"material\":0,\"duration\":0.11382090465631337,\"size\":0.7431875781272538,\"hardness\":0.2100479077664204,\"body\":0.41640060117933897,\"release\":0,\"gap\":0.4828385339351371,\"electronic\":0.12361131036421284,\"sweep\":-0.3628935592714697,\"air\":0.08752319833263755,\"damping\":0.9018681302899494}"
-      ],
-      [
-        "Panel open",
-        "{\"masterVolume\":0.5,\"seed\":0.6590988591779023,\"material\":3,\"duration\":0.2722773766890168,\"size\":0.39993191634304825,\"hardness\":0.45719494374934583,\"body\":0.5650707092881202,\"release\":0,\"gap\":0.6650378198712134,\"electronic\":0.24801390913082286,\"sweep\":0.5428682125173508,\"air\":0.6175253772991709,\"damping\":0.47864709376357495}",
-        "{\"masterVolume\":0.5,\"seed\":0.6590988591779023,\"material\":3,\"duration\":0.2722773766890168,\"size\":0.39993191634304825,\"hardness\":0.45719494374934583,\"body\":0.5650707092881202,\"release\":0,\"gap\":0.6650378198712134,\"electronic\":0.24801390913082286,\"sweep\":0.5428682125173508,\"air\":0.6175253772991709,\"damping\":0.47864709376357495}"
-      ]
-    ],
-    "selected_file_index": 0,
-    "create_new_sound": true,
-    "play_on_change": true,
-    "locked_params": {
-      "masterVolume": true,
-      "seed": false,
-      "material": false,
-      "duration": false,
-      "size": false,
-      "hardness": false,
-      "body": false,
-      "release": false,
-      "gap": false,
-      "electronic": false,
-      "sweep": false,
-      "air": false,
-      "damping": false
-    }
-  },
   "Breathr": {
     "files": [
       [
         "Airflow breath",
-        "{\"masterVolume\":0.5,\"seed\":0.8251548646949232,\"source\":0,\"duration\":2.8,\"cycles\":1,\"effort\":0.3163951566675678,\"inhale\":0.5637762361764908,\"hold\":0.04222834075801074,\"throat\":0.5038846641662531,\"rasp\":0.06216585570015013,\"flutter\":0.09870899098459632,\"space\":0.07905551600269974}",
-        "{\"masterVolume\":0.5,\"seed\":0.8251548646949232,\"source\":0,\"duration\":2.8,\"cycles\":1,\"effort\":0.3163951566675678,\"inhale\":0.5637762361764908,\"hold\":0.04222834075801074,\"throat\":0.5038846641662531,\"rasp\":0.06216585570015013,\"flutter\":0.09870899098459632,\"space\":0.07905551600269974}"
+        "{\"masterVolume\":0.5,\"seed\":0.8251548646949232,\"source\":0,\"mode\":1,\"duration\":2.8,\"direction\":1,\"cycles\":1,\"effort\":0.3163951566675678,\"inhale\":0.5637762361764908,\"hold\":0.04222834075801074,\"throat\":0.5038846641662531,\"rasp\":0.06216585570015013,\"flutter\":0.09870899098459632,\"space\":0.07905551600269974}",
+        "{\"masterVolume\":0.5,\"seed\":0.8251548646949232,\"source\":0,\"mode\":1,\"duration\":2.8,\"direction\":1,\"cycles\":1,\"effort\":0.3163951566675678,\"inhale\":0.5637762361764908,\"hold\":0.04222834075801074,\"throat\":0.5038846641662531,\"rasp\":0.06216585570015013,\"flutter\":0.09870899098459632,\"space\":0.07905551600269974}"
       ],
       [
         "Retro breath",
-        "{\"masterVolume\":0.5,\"seed\":0.47258514491841197,\"source\":1,\"duration\":1.8,\"cycles\":2,\"effort\":0.6997224207851105,\"inhale\":0.37944467559456824,\"hold\":0.050509066488593816,\"throat\":0.36442770732101054,\"rasp\":0.35859579376410694,\"flutter\":0.35271135076181964,\"space\":0.09843839524313808}",
-        "{\"masterVolume\":0.5,\"seed\":0.47258514491841197,\"source\":1,\"duration\":1.8,\"cycles\":2,\"effort\":0.6997224207851105,\"inhale\":0.37944467559456824,\"hold\":0.050509066488593816,\"throat\":0.36442770732101054,\"rasp\":0.35859579376410694,\"flutter\":0.35271135076181964,\"space\":0.09843839524313808}"
+        "{\"masterVolume\":0.5,\"seed\":0.47258514491841197,\"source\":1,\"mode\":1,\"duration\":1.8,\"direction\":1,\"cycles\":2,\"effort\":0.6997224207851105,\"inhale\":0.37944467559456824,\"hold\":0.050509066488593816,\"throat\":0.36442770732101054,\"rasp\":0.35859579376410694,\"flutter\":0.35271135076181964,\"space\":0.09843839524313808}",
+        "{\"masterVolume\":0.5,\"seed\":0.47258514491841197,\"source\":1,\"mode\":1,\"duration\":1.8,\"direction\":1,\"cycles\":2,\"effort\":0.6997224207851105,\"inhale\":0.37944467559456824,\"hold\":0.050509066488593816,\"throat\":0.36442770732101054,\"rasp\":0.35859579376410694,\"flutter\":0.35271135076181964,\"space\":0.09843839524313808}"
       ],
       [
         "Snore",
-        "{\"masterVolume\":0.5,\"seed\":0.3578618853352964,\"source\":2,\"duration\":2.8,\"cycles\":1,\"effort\":0.302539254585281,\"inhale\":0.42851139864884313,\"hold\":0.18227136896923185,\"throat\":0.9604181907139718,\"rasp\":0.7349095725803636,\"flutter\":0.24846537404228006,\"space\":0.35392163749784233}",
-        "{\"masterVolume\":0.5,\"seed\":0.3578618853352964,\"source\":2,\"duration\":2.8,\"cycles\":1,\"effort\":0.302539254585281,\"inhale\":0.42851139864884313,\"hold\":0.18227136896923185,\"throat\":0.9604181907139718,\"rasp\":0.7349095725803636,\"flutter\":0.24846537404228006,\"space\":0.35392163749784233}"
+        "{\"masterVolume\":0.5,\"seed\":0.3578618853352964,\"source\":2,\"mode\":1,\"duration\":2.8,\"direction\":1,\"cycles\":1,\"effort\":0.302539254585281,\"inhale\":0.42851139864884313,\"hold\":0.18227136896923185,\"throat\":0.9604181907139718,\"rasp\":0.7349095725803636,\"flutter\":0.24846537404228006,\"space\":0.35392163749784233}",
+        "{\"masterVolume\":0.5,\"seed\":0.3578618853352964,\"source\":2,\"mode\":1,\"duration\":2.8,\"direction\":1,\"cycles\":1,\"effort\":0.302539254585281,\"inhale\":0.42851139864884313,\"hold\":0.18227136896923185,\"throat\":0.9604181907139718,\"rasp\":0.7349095725803636,\"flutter\":0.24846537404228006,\"space\":0.35392163749784233}"
       ]
     ],
     "selected_file_index": 0,
@@ -184,7 +120,9 @@
       "masterVolume": true,
       "seed": false,
       "source": false,
+      "mode": false,
       "duration": false,
+      "direction": false,
       "cycles": false,
       "effort": false,
       "inhale": false,
@@ -199,33 +137,33 @@
     "files": [
       [
         "Nylon string",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":0,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"inharmonic\":0.05}",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":0,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"inharmonic\":0.05}"
+        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":0,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"tremolo\":0,\"vibrato\":0,\"tremoloRate\":4,\"inharmonic\":0.05}",
+        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":0,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"tremolo\":0,\"vibrato\":0,\"tremoloRate\":4,\"inharmonic\":0.05}"
       ],
       [
         "Steel string",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":1,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"inharmonic\":0.05}",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":1,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"inharmonic\":0.05}"
+        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":1,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"tremolo\":0,\"vibrato\":0,\"tremoloRate\":4,\"inharmonic\":0.05}",
+        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":1,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"tremolo\":0,\"vibrato\":0,\"tremoloRate\":4,\"inharmonic\":0.05}"
       ],
       [
         "Gut string",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":2,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"inharmonic\":0.05}",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":2,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"inharmonic\":0.05}"
+        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":2,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"tremolo\":0,\"vibrato\":0,\"tremoloRate\":4,\"inharmonic\":0.05}",
+        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":2,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"tremolo\":0,\"vibrato\":0,\"tremoloRate\":4,\"inharmonic\":0.05}"
       ],
       [
         "Rubber string",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":3,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"inharmonic\":0.05}",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":3,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"inharmonic\":0.05}"
+        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":3,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"tremolo\":0,\"vibrato\":0,\"tremoloRate\":4,\"inharmonic\":0.05}",
+        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":3,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"tremolo\":0,\"vibrato\":0,\"tremoloRate\":4,\"inharmonic\":0.05}"
       ],
       [
         "Glass string",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":4,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"inharmonic\":0.05}",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":4,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"inharmonic\":0.05}"
+        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":4,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"tremolo\":0,\"vibrato\":0,\"tremoloRate\":4,\"inharmonic\":0.05}",
+        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":4,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"tremolo\":0,\"vibrato\":0,\"tremoloRate\":4,\"inharmonic\":0.05}"
       ],
       [
         "Gravity string",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":5,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"inharmonic\":0.05}",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":5,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"inharmonic\":0.05}"
+        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":4,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"tremolo\":0.35,\"vibrato\":0,\"tremoloRate\":1.7,\"inharmonic\":0.05}",
+        "{\"masterVolume\":0.5,\"seed\":0.312,\"material\":4,\"duration\":1.4,\"pitch\":0.43,\"strings\":2,\"damping\":0.12,\"brightness\":0.65,\"pluck\":0.28,\"coupling\":0.2,\"strum\":0.12,\"tremolo\":0.35,\"vibrato\":0,\"tremoloRate\":1.7,\"inharmonic\":0.05}"
       ]
     ],
     "selected_file_index": 0,
@@ -243,88 +181,28 @@
       "pluck": false,
       "coupling": false,
       "strum": false,
+      "tremolo": false,
+      "vibrato": false,
+      "tremoloRate": false,
       "inharmonic": false
-    }
-  },
-  "Notifr": {
-    "files": [
-      [
-        "Bell 1",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"instrumentSeed\":0.1,\"tone\":1,\"duration\":0.45,\"pitch\":0.55,\"interval\":5,\"tension\":0.014607982402667403,\"pulses\":2,\"spacing\":0.3798701129271649,\"urgency\":0.06550466462038457,\"softness\":0.18,\"ring\":0.7,\"echo\":0}",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"instrumentSeed\":0.1,\"tone\":1,\"duration\":0.45,\"pitch\":0.55,\"interval\":5,\"tension\":0.014607982402667403,\"pulses\":2,\"spacing\":0.3798701129271649,\"urgency\":0.06550466462038457,\"softness\":0.18,\"ring\":0.7,\"echo\":0}"
-      ],
-      [
-        "Bell 2",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"instrumentSeed\":0.5,\"tone\":1,\"duration\":0.45,\"pitch\":0.55,\"interval\":5,\"tension\":0.01567409940995276,\"pulses\":2,\"spacing\":0.3342229389818385,\"urgency\":0.09428872992284595,\"softness\":0.18,\"ring\":0.7,\"echo\":0}",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"instrumentSeed\":0.5,\"tone\":1,\"duration\":0.45,\"pitch\":0.55,\"interval\":5,\"tension\":0.01567409940995276,\"pulses\":2,\"spacing\":0.3342229389818385,\"urgency\":0.09428872992284595,\"softness\":0.18,\"ring\":0.7,\"echo\":0}"
-      ],
-      [
-        "Bell 3",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"instrumentSeed\":0.9,\"tone\":1,\"duration\":0.45,\"pitch\":0.55,\"interval\":5,\"tension\":0.006591808879747987,\"pulses\":2,\"spacing\":0.3850971220526844,\"urgency\":0.029477615430951117,\"softness\":0.18,\"ring\":0.7,\"echo\":0}",
-        "{\"masterVolume\":0.5,\"seed\":0.312,\"instrumentSeed\":0.9,\"tone\":1,\"duration\":0.45,\"pitch\":0.55,\"interval\":5,\"tension\":0.006591808879747987,\"pulses\":2,\"spacing\":0.3850971220526844,\"urgency\":0.029477615430951117,\"softness\":0.18,\"ring\":0.7,\"echo\":0}"
-      ]
-    ],
-    "selected_file_index": 0,
-    "create_new_sound": true,
-    "play_on_change": true,
-    "locked_params": {
-      "masterVolume": true,
-      "seed": false,
-      "instrumentSeed": false,
-      "tone": false,
-      "duration": false,
-      "pitch": false,
-      "interval": false,
-      "tension": false,
-      "pulses": false,
-      "spacing": false,
-      "urgency": false,
-      "softness": false,
-      "ring": false,
-      "echo": false
-    }
-  },
-  "Pulser": {
-    "files": [
-      [
-        "Panic pulse",
-        "{\"masterVolume\":0.5,\"seed\":0.8039752333424985,\"duration\":1.1,\"beats\":3,\"pitch\":0.43277427027001975,\"size\":0.34498254468664524,\"secondary\":0.7613982100738212,\"separation\":0.14013450238853692,\"murmur\":0.16677809787448497,\"tension\":0.6204380145622417,\"irregular\":0.1934842688543722}",
-        "{\"masterVolume\":0.5,\"seed\":0.8039752333424985,\"duration\":1.1,\"beats\":3,\"pitch\":0.43277427027001975,\"size\":0.34498254468664524,\"secondary\":0.7613982100738212,\"separation\":0.14013450238853692,\"murmur\":0.16677809787448497,\"tension\":0.6204380145622417,\"irregular\":0.1934842688543722}"
-      ]
-    ],
-    "selected_file_index": 0,
-    "create_new_sound": true,
-    "play_on_change": true,
-    "locked_params": {
-      "masterVolume": true,
-      "seed": false,
-      "duration": false,
-      "beats": false,
-      "pitch": false,
-      "size": false,
-      "secondary": false,
-      "separation": false,
-      "murmur": false,
-      "tension": false,
-      "irregular": false
     }
   },
   "Transfxr": {
     "files": [
       [
         "Whistle transition",
-        "{\"masterVolume\":0.5,\"waveType\":6,\"duration\":0.35,\"pitch\":{\"start\":0.82,\"end\":0.22,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.95,\"end\":0.25,\"curve\":\"Linear\"},\"noise\":{\"start\":0,\"end\":0,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.9,\"end\":0.25,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.14,\"resonance\":0.32,\"echo\":0}",
-        "{\"masterVolume\":0.5,\"waveType\":6,\"duration\":0.35,\"pitch\":{\"start\":0.82,\"end\":0.22,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.95,\"end\":0.25,\"curve\":\"Linear\"},\"noise\":{\"start\":0,\"end\":0,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.9,\"end\":0.25,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.14,\"resonance\":0.32,\"echo\":0}"
+        "{\"masterVolume\":0.5,\"waveType\":6,\"duration\":0.35,\"pitch\":{\"start\":0.82,\"end\":0.22,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.95,\"end\":0.25,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.9,\"end\":0.25,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.14,\"resonance\":0.32,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}}",
+        "{\"masterVolume\":0.5,\"waveType\":6,\"duration\":0.35,\"pitch\":{\"start\":0.82,\"end\":0.22,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.95,\"end\":0.25,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.9,\"end\":0.25,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.14,\"resonance\":0.32,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}}"
       ],
       [
         "Voice transition",
-        "{\"masterVolume\":0.5,\"waveType\":8,\"duration\":0.35,\"pitch\":{\"start\":0.82,\"end\":0.22,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.95,\"end\":0.25,\"curve\":\"Linear\"},\"noise\":{\"start\":0,\"end\":0,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.9,\"end\":0.25,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.14,\"resonance\":0.32,\"echo\":0}",
-        "{\"masterVolume\":0.5,\"waveType\":8,\"duration\":0.35,\"pitch\":{\"start\":0.82,\"end\":0.22,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.95,\"end\":0.25,\"curve\":\"Linear\"},\"noise\":{\"start\":0,\"end\":0,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.9,\"end\":0.25,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.14,\"resonance\":0.32,\"echo\":0}"
+        "{\"masterVolume\":0.5,\"waveType\":8,\"duration\":0.35,\"pitch\":{\"start\":0.82,\"end\":0.22,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.95,\"end\":0.25,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.9,\"end\":0.25,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.14,\"resonance\":0.32,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}}",
+        "{\"masterVolume\":0.5,\"waveType\":8,\"duration\":0.35,\"pitch\":{\"start\":0.82,\"end\":0.22,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.95,\"end\":0.25,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.9,\"end\":0.25,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.14,\"resonance\":0.32,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}}"
       ],
       [
         "FMSyn transition",
-        "{\"masterVolume\":0.5,\"waveType\":11,\"duration\":0.35,\"pitch\":{\"start\":0.82,\"end\":0.22,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.95,\"end\":0.25,\"curve\":\"Linear\"},\"noise\":{\"start\":0,\"end\":0,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.9,\"end\":0.25,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.14,\"resonance\":0.32,\"echo\":0}",
-        "{\"masterVolume\":0.5,\"waveType\":11,\"duration\":0.35,\"pitch\":{\"start\":0.82,\"end\":0.22,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.95,\"end\":0.25,\"curve\":\"Linear\"},\"noise\":{\"start\":0,\"end\":0,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.9,\"end\":0.25,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.14,\"resonance\":0.32,\"echo\":0}"
+        "{\"masterVolume\":0.5,\"waveType\":11,\"duration\":0.35,\"pitch\":{\"start\":0.82,\"end\":0.22,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.95,\"end\":0.25,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.9,\"end\":0.25,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.14,\"resonance\":0.32,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}}",
+        "{\"masterVolume\":0.5,\"waveType\":11,\"duration\":0.35,\"pitch\":{\"start\":0.82,\"end\":0.22,\"curve\":\"Ease Out\"},\"tone\":{\"start\":0.95,\"end\":0.25,\"curve\":\"Linear\"},\"vibrato\":{\"start\":0,\"end\":0.15,\"curve\":\"Ease In\"},\"level\":{\"start\":0.9,\"end\":0.25,\"curve\":\"Linear\"},\"attack\":0,\"release\":0.14,\"resonance\":0.32,\"echo\":0,\"waveTo\":-1,\"morph\":{\"start\":0,\"end\":1,\"curve\":\"Smooth\"}}"
       ]
     ],
     "selected_file_index": 0,
@@ -336,71 +214,15 @@
       "duration": false,
       "pitch": false,
       "tone": false,
-      "noise": false,
       "vibrato": false,
       "level": false,
       "attack": false,
       "release": false,
       "resonance": false,
-      "echo": false
+      "echo": false,
+      "waveTo": false,
+      "morph": false
     }
   },
-  "Chattr": {
-    "files": [
-      [
-        "Vocal hello",
-        "{\"masterVolume\":0.5,\"text\":\"Hello!\",\"waveType\":-1,\"texture\":0,\"articulation\":1,\"pitch\":0.35,\"mouth\":0.5,\"speed\":0.42,\"expression\":0.25,\"inflection\":0,\"wobble\":0,\"breath\":0,\"grit\":0,\"spacing\":0.3,\"seed\":0.3}",
-        "{\"masterVolume\":0.5,\"text\":\"Hello!\",\"waveType\":-1,\"texture\":0,\"articulation\":1,\"pitch\":0.35,\"mouth\":0.5,\"speed\":0.42,\"expression\":0.25,\"inflection\":0,\"wobble\":0,\"breath\":0,\"grit\":0,\"spacing\":0.3,\"seed\":0.3}"
-      ],
-      [
-        "Square hello",
-        "{\"masterVolume\":0.5,\"text\":\"Hello!\",\"waveType\":0,\"texture\":0,\"articulation\":1,\"pitch\":0.35,\"mouth\":0.5,\"speed\":0.42,\"expression\":0.25,\"inflection\":0,\"wobble\":0,\"breath\":0,\"grit\":0,\"spacing\":0.3,\"seed\":0.3}",
-        "{\"masterVolume\":0.5,\"text\":\"Hello!\",\"waveType\":0,\"texture\":0,\"articulation\":1,\"pitch\":0.35,\"mouth\":0.5,\"speed\":0.42,\"expression\":0.25,\"inflection\":0,\"wobble\":0,\"breath\":0,\"grit\":0,\"spacing\":0.3,\"seed\":0.3}"
-      ],
-      [
-        "Voice hello",
-        "{\"masterVolume\":0.5,\"text\":\"Hello!\",\"waveType\":11,\"texture\":0,\"articulation\":1,\"pitch\":0.35,\"mouth\":0.5,\"speed\":0.42,\"expression\":0.25,\"inflection\":0,\"wobble\":0,\"breath\":0,\"grit\":0,\"spacing\":0.3,\"seed\":0.3}",
-        "{\"masterVolume\":0.5,\"text\":\"Hello!\",\"waveType\":11,\"texture\":0,\"articulation\":1,\"pitch\":0.35,\"mouth\":0.5,\"speed\":0.42,\"expression\":0.25,\"inflection\":0,\"wobble\":0,\"breath\":0,\"grit\":0,\"spacing\":0.3,\"seed\":0.3}"
-      ]
-    ],
-    "selected_file_index": 0,
-    "create_new_sound": true,
-    "play_on_change": true,
-    "locked_params": {
-      "masterVolume": true,
-      "text": true,
-      "waveType": false,
-      "texture": false,
-      "articulation": false,
-      "pitch": false,
-      "mouth": false,
-      "speed": false,
-      "expression": false,
-      "inflection": false,
-      "wobble": false,
-      "breath": false,
-      "grit": false,
-      "spacing": false,
-      "seed": false
-    }
-  },
-  "Stackr": {
-    "files": [
-      [
-        "Whoosh into impact",
-        "{\"masterVolume\":0.5,\"seed\":0.5,\"spacing\":1,\"layers\":\"[{\\\"synth\\\":\\\"Whooshr\\\",\\\"name\\\":\\\"Incoming air\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.5537583029363304,\\\"duration\\\":0.6,\\\"size\\\":0.9160034969449043,\\\"air\\\":0.9810383349657059,\\\"whistle\\\":0.16080843219533564,\\\"movement\\\":0.6004682547412813,\\\"focus\\\":0.3537848161999136,\\\"flutter\\\":0.2439412580803037},\\\"start\\\":0,\\\"gain\\\":0.8,\\\"pitch\\\":0},{\\\"synth\\\":\\\"Boomr\\\",\\\"name\\\":\\\"Impact\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.5645617616828531,\\\"duration\\\":1.1,\\\"size\\\":0.44155388902872805,\\\"pressure\\\":0.736363418539986,\\\"blast\\\":0.6631950421840884,\\\"debris\\\":0.7124450628645718,\\\"spread\\\":0.5757669750601053,\\\"tail\\\":0.22264195526950062,\\\"muffle\\\":0.16477025527507067},\\\"start\\\":0.38,\\\"gain\\\":0.8,\\\"pitch\\\":0}]\"}",
-        "{\"masterVolume\":0.5,\"seed\":0.5,\"spacing\":1,\"layers\":\"[{\\\"synth\\\":\\\"Whooshr\\\",\\\"name\\\":\\\"Incoming air\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.5537583029363304,\\\"duration\\\":0.6,\\\"size\\\":0.9160034969449043,\\\"air\\\":0.9810383349657059,\\\"whistle\\\":0.16080843219533564,\\\"movement\\\":0.6004682547412813,\\\"focus\\\":0.3537848161999136,\\\"flutter\\\":0.2439412580803037},\\\"start\\\":0,\\\"gain\\\":0.8,\\\"pitch\\\":0},{\\\"synth\\\":\\\"Boomr\\\",\\\"name\\\":\\\"Impact\\\",\\\"params\\\":{\\\"masterVolume\\\":0.5,\\\"seed\\\":0.5645617616828531,\\\"duration\\\":1.1,\\\"size\\\":0.44155388902872805,\\\"pressure\\\":0.736363418539986,\\\"blast\\\":0.6631950421840884,\\\"debris\\\":0.7124450628645718,\\\"spread\\\":0.5757669750601053,\\\"tail\\\":0.22264195526950062,\\\"muffle\\\":0.16477025527507067},\\\"start\\\":0.38,\\\"gain\\\":0.8,\\\"pitch\\\":0}]\"}"
-      ]
-    ],
-    "selected_file_index": 0,
-    "create_new_sound": true,
-    "play_on_change": true,
-    "locked_params": {
-      "masterVolume": true,
-      "seed": false,
-      "spacing": false,
-      "layers": false
-    }
-  },
-  "active_tab_index": 12
+  "active_tab_name": "Fractr"
 }

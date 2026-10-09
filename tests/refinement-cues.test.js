@@ -21,10 +21,10 @@ test('Signlr ping seeds change resonator character with clean deterministic outp
  assert.deepEqual(a,replay);assert.notDeepEqual(a,b);assert.ok(a.every(v=>Number.isFinite(v)&&Math.abs(v)<1));
 });
 test('mode-specific controls are disabled when their mechanism does not use them',()=>{
- const {run}=createContext(['Signlr','Pewpr']);
+ const {run}=createContext(['Signlr']);
  assert.equal(run(`(()=>{const signal=new Signlr();signal.set_param('encoding',4);if(!['symbols','corruption','interference'].every(k=>signal.param_is_disabled(k)))return false;
  signal.set_param('encoding',0);if(signal.param_is_disabled('symbols'))return false;
- const weapon=new Pewpr();weapon.set_param('kind',2);if(!weapon.param_is_disabled('sweep'))return false;weapon.set_param('kind',0);return !weapon.param_is_disabled('sweep');})()`),true);
+ return true;})()`),true);
 });
 test('retired Gravity share links keep their modulation when migrated to explicit tremolo',()=>{
  const {run,load}=createContext(['Pluckr']);load('js/SaveLoad.js');

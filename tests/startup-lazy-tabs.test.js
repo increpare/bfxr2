@@ -91,11 +91,11 @@ test('clicking a different tab plays its selected preview even with play-on-chan
 test('clicking the active tab does not replay, while returning to it reuses the same rendered sound',()=>{
  const {run}=setup();
  const result=plain(run(`(()=>{const first=new Tab(makeSynth()),second=new Tab(new Choirr());second.set_active_tab();
- nodes.tab_button_Clonkr.click();const sound=first.synth.sound,source=sound.source;let animationPlays=0;
- first.text_controls={test:{play(){animationPlays++;}}};nodes.tab_button_Clonkr.click();
+ nodes.tab_button_Clonkr.click();const sound=first.synth.sound,source=sound.source;
+ nodes.tab_button_Clonkr.click();
  const unchanged=source===sound.source;second.set_active_tab();nodes.tab_button_Clonkr.click();
- return {played:!!source,unchanged,sameSound: sound===first.synth.sound,renders,animationPlays};})()`));
- assert.deepEqual(result,{played:true,unchanged:true,sameSound:true,renders:1,animationPlays:1});
+ return {played:!!source,unchanged,sameSound: sound===first.synth.sound,renders};})()`));
+ assert.deepEqual(result,{played:true,unchanged:true,sameSound:true,renders:1});
 });
 
 test('startup restoration and programmatic selection remain silent',()=>{
