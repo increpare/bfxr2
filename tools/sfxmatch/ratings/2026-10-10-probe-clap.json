@@ -1,0 +1,246 @@
+{
+ "page": "probe-clap",
+ "saved": "2026-10-10T09:08:50.468Z",
+ "ratings": [
+  {
+   "target": "ext-001",
+   "system": "CLAP neighbour 1",
+   "rating": 3
+  },
+  {
+   "target": "ext-001",
+   "system": "round 2 search (single synth)",
+   "rating": 2
+  },
+  {
+   "target": "ext-001",
+   "system": "CLAP neighbour 3",
+   "rating": 2
+  },
+  {
+   "target": "ext-001",
+   "system": "CLAP neighbour 2",
+   "rating": 2
+  },
+  {
+   "target": "ext-005",
+   "system": "CLAP neighbour 3",
+   "rating": 2
+  },
+  {
+   "target": "ext-005",
+   "system": "round 2 search (single synth)",
+   "rating": 1
+  },
+  {
+   "target": "ext-005",
+   "system": "CLAP neighbour 1",
+   "rating": 1
+  },
+  {
+   "target": "ext-005",
+   "system": "CLAP neighbour 2",
+   "rating": 2
+  },
+  {
+   "target": "ext-009",
+   "system": "CLAP neighbour 1",
+   "rating": 2
+  },
+  {
+   "target": "ext-009",
+   "system": "round 2 search (single synth)",
+   "rating": 2
+  },
+  {
+   "target": "ext-009",
+   "system": "CLAP neighbour 2",
+   "rating": 3
+  },
+  {
+   "target": "ext-009",
+   "system": "CLAP neighbour 3",
+   "rating": 1
+  },
+  {
+   "target": "ext-013",
+   "system": "CLAP neighbour 1",
+   "rating": 2
+  },
+  {
+   "target": "ext-013",
+   "system": "CLAP neighbour 2",
+   "rating": 1
+  },
+  {
+   "target": "ext-013",
+   "system": "round 2 search (single synth)",
+   "rating": 1
+  },
+  {
+   "target": "ext-013",
+   "system": "CLAP neighbour 3",
+   "rating": 2
+  },
+  {
+   "target": "ext-017",
+   "system": "CLAP neighbour 1",
+   "rating": 2
+  },
+  {
+   "target": "ext-017",
+   "system": "CLAP neighbour 3",
+   "rating": 2
+  },
+  {
+   "target": "ext-017",
+   "system": "CLAP neighbour 2",
+   "rating": 2
+  },
+  {
+   "target": "ext-017",
+   "system": "round 2 search (single synth)",
+   "rating": 2
+  },
+  {
+   "target": "ext-021",
+   "system": "CLAP neighbour 3",
+   "rating": 4
+  },
+  {
+   "target": "ext-021",
+   "system": "CLAP neighbour 2",
+   "rating": 3
+  },
+  {
+   "target": "ext-021",
+   "system": "round 2 search (single synth)",
+   "rating": 2
+  },
+  {
+   "target": "ext-021",
+   "system": "CLAP neighbour 1",
+   "rating": 2
+  },
+  {
+   "target": "ext-025",
+   "system": "CLAP neighbour 3",
+   "rating": 3
+  },
+  {
+   "target": "ext-025",
+   "system": "CLAP neighbour 2",
+   "rating": 1
+  },
+  {
+   "target": "ext-025",
+   "system": "CLAP neighbour 1",
+   "rating": 1
+  },
+  {
+   "target": "ext-025",
+   "system": "round 2 search (single synth)",
+   "rating": 1
+  },
+  {
+   "target": "ext-029",
+   "system": "round 2 search (single synth)",
+   "rating": 1
+  },
+  {
+   "target": "ext-029",
+   "system": "CLAP neighbour 2",
+   "rating": 2
+  },
+  {
+   "target": "ext-029",
+   "system": "CLAP neighbour 1",
+   "rating": 1
+  },
+  {
+   "target": "ext-029",
+   "system": "CLAP neighbour 3",
+   "rating": 1
+  },
+  {
+   "target": "ext-033",
+   "system": "CLAP neighbour 2",
+   "rating": 2
+  },
+  {
+   "target": "ext-033",
+   "system": "round 2 search (single synth)",
+   "rating": 2
+  },
+  {
+   "target": "ext-033",
+   "system": "CLAP neighbour 1",
+   "rating": 3
+  },
+  {
+   "target": "ext-033",
+   "system": "CLAP neighbour 3",
+   "rating": 3
+  },
+  {
+   "target": "ext-037",
+   "system": "CLAP neighbour 3",
+   "rating": 2
+  },
+  {
+   "target": "ext-037",
+   "system": "CLAP neighbour 1",
+   "rating": 2
+  },
+  {
+   "target": "ext-037",
+   "system": "round 2 search (single synth)",
+   "rating": 1
+  },
+  {
+   "target": "ext-037",
+   "system": "CLAP neighbour 2",
+   "rating": 2
+  },
+  {
+   "target": "ext-041",
+   "system": "CLAP neighbour 3",
+   "rating": 2
+  },
+  {
+   "target": "ext-041",
+   "system": "CLAP neighbour 1",
+   "rating": 1
+  },
+  {
+   "target": "ext-041",
+   "system": "round 2 search (single synth)",
+   "rating": 3
+  },
+  {
+   "target": "ext-041",
+   "system": "CLAP neighbour 2",
+   "rating": 2
+  },
+  {
+   "target": "ext-045",
+   "system": "CLAP neighbour 3",
+   "rating": 2
+  },
+  {
+   "target": "ext-045",
+   "system": "round 2 search (single synth)",
+   "rating": 3
+  },
+  {
+   "target": "ext-045",
+   "system": "CLAP neighbour 1",
+   "rating": 1
+  },
+  {
+   "target": "ext-045",
+   "system": "CLAP neighbour 2",
+   "rating": 1
+  }
+ ]
+}

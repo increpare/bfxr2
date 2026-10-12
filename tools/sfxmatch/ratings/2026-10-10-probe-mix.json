@@ -1,0 +1,186 @@
+{
+ "page": "probe-mix",
+ "saved": "2026-10-10T09:01:22.109Z",
+ "ratings": [
+  {
+   "target": "ext-001",
+   "system": "mix model, picked by CLAP",
+   "rating": 2
+  },
+  {
+   "target": "ext-001",
+   "system": "mix model, picked by objective",
+   "rating": 2
+  },
+  {
+   "target": "ext-001",
+   "system": "round 2 search (single synth)",
+   "rating": 2
+  },
+  {
+   "target": "ext-005",
+   "system": "round 2 search (single synth)",
+   "rating": 1
+  },
+  {
+   "target": "ext-005",
+   "system": "mix model, picked by CLAP",
+   "rating": 1
+  },
+  {
+   "target": "ext-005",
+   "system": "mix model, picked by objective",
+   "rating": 1
+  },
+  {
+   "target": "ext-009",
+   "system": "mix model, picked by CLAP",
+   "rating": 1
+  },
+  {
+   "target": "ext-009",
+   "system": "round 2 search (single synth)",
+   "rating": 2
+  },
+  {
+   "target": "ext-009",
+   "system": "mix model, picked by objective",
+   "rating": 1
+  },
+  {
+   "target": "ext-013",
+   "system": "mix model, picked by CLAP",
+   "rating": 3
+  },
+  {
+   "target": "ext-013",
+   "system": "round 2 search (single synth)",
+   "rating": 1
+  },
+  {
+   "target": "ext-013",
+   "system": "mix model, picked by objective",
+   "rating": 4
+  },
+  {
+   "target": "ext-017",
+   "system": "round 2 search (single synth)",
+   "rating": 2
+  },
+  {
+   "target": "ext-017",
+   "system": "mix model, picked by CLAP",
+   "rating": 2
+  },
+  {
+   "target": "ext-017",
+   "system": "mix model, picked by objective",
+   "rating": 2
+  },
+  {
+   "target": "ext-021",
+   "system": "round 2 search (single synth)",
+   "rating": 2
+  },
+  {
+   "target": "ext-021",
+   "system": "mix model, picked by objective",
+   "rating": 3
+  },
+  {
+   "target": "ext-021",
+   "system": "mix model, picked by CLAP",
+   "rating": 2
+  },
+  {
+   "target": "ext-025",
+   "system": "mix model, picked by CLAP",
+   "rating": 1
+  },
+  {
+   "target": "ext-025",
+   "system": "round 2 search (single synth)",
+   "rating": 2
+  },
+  {
+   "target": "ext-025",
+   "system": "mix model, picked by objective",
+   "rating": 2
+  },
+  {
+   "target": "ext-029",
+   "system": "mix model, picked by CLAP",
+   "rating": 1
+  },
+  {
+   "target": "ext-029",
+   "system": "mix model, picked by objective",
+   "rating": 1
+  },
+  {
+   "target": "ext-029",
+   "system": "round 2 search (single synth)",
+   "rating": 1
+  },
+  {
+   "target": "ext-033",
+   "system": "mix model, picked by CLAP",
+   "rating": 2
+  },
+  {
+   "target": "ext-033",
+   "system": "round 2 search (single synth)",
+   "rating": 3
+  },
+  {
+   "target": "ext-033",
+   "system": "mix model, picked by objective",
+   "rating": 1
+  },
+  {
+   "target": "ext-037",
+   "system": "mix model, picked by objective",
+   "rating": 1
+  },
+  {
+   "target": "ext-037",
+   "system": "mix model, picked by CLAP",
+   "rating": 2
+  },
+  {
+   "target": "ext-037",
+   "system": "round 2 search (single synth)",
+   "rating": 1
+  },
+  {
+   "target": "ext-041",
+   "system": "round 2 search (single synth)",
+   "rating": 4
+  },
+  {
+   "target": "ext-041",
+   "system": "mix model, picked by objective",
+   "rating": 4
+  },
+  {
+   "target": "ext-041",
+   "system": "mix model, picked by CLAP",
+   "rating": 4
+  },
+  {
+   "target": "ext-045",
+   "system": "mix model, picked by CLAP",
+   "rating": 1
+  },
+  {
+   "target": "ext-045",
+   "system": "mix model, picked by objective",
+   "rating": 1
+  },
+  {
+   "target": "ext-045",
+   "system": "round 2 search (single synth)",
+   "rating": 2
+  }
+ ]
+}

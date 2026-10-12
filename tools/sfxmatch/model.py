@@ -81,6 +81,13 @@ class InverseModel(nn.Module):
         b = self.relative(rel.float().unsqueeze(1)/255).flatten(1)
         return self.embed(torch.cat((a, b, duration.float().unsqueeze(1)/4), 1))
 
+    def split(self, raw, synth):
+        """Padded head output -> preset-family logits, control bins, categorical logits (padding masked out)."""
+        generator = raw[:, :self.G].masked_fill(~self.generator_mask[synth], -1e4)
+        bins = raw[:, self.G:self.G+self.C*BINS].reshape(-1, self.C, BINS)
+        options = raw[:, self.G+self.C*BINS:].reshape(-1, self.K, self.V).masked_fill(~self.option_mask[synth], -1e4)
+        return {'generator': generator, 'bins': bins, 'options': options}
+
     def controls_for(self, embedding, synth, counts=None):
         """Padded head outputs. With `counts` the batch must be sorted by synth
         (counts[i] rows of synth i); otherwise every row uses the one given synth index."""
@@ -94,20 +101,20 @@ class InverseModel(nn.Module):
                     parts.append(self.heads[index](embedding[start:start+count]))
                 start += count
             raw = torch.cat(parts)
-        generator = raw[:, :self.G].masked_fill(~self.generator_mask[synth], -1e4)
-        bins = raw[:, self.G:self.G+self.C*BINS].reshape(-1, self.C, BINS)
-        options = raw[:, self.G+self.C*BINS:].reshape(-1, self.K, self.V).masked_fill(~self.option_mask[synth], -1e4)
-        return {'generator': generator, 'bins': bins, 'options': options}
+        return self.split(raw, synth)
 
-    def control_loss(self, out, synth, continuous, categorical, generator):
-        """Mean over rows of (binned-control CE + categorical CE + half preset-family CE)."""
+    def row_loss(self, out, synth, continuous, categorical, generator):
+        """Per row: binned-control CE + categorical CE + half preset-family CE."""
         mask = self.control_mask[synth]
         binned = -(soft_bins(continuous[:, :self.C])*out['bins'].log_softmax(-1)).sum(-1)
         loss = (binned*mask).sum(1)/mask.sum(1)
         used = self.option_mask[synth].any(-1).float()
         picked = out['options'].log_softmax(-1).gather(-1, categorical[:, :self.K].unsqueeze(-1)).squeeze(-1)
         loss = loss - (picked*used).sum(1)/used.sum(1).clamp(min=1)
-        return (loss + .5*F.cross_entropy(out['generator'], generator, reduction='none')).mean()
+        return loss + .5*F.cross_entropy(out['generator'], generator, reduction='none', ignore_index=-1)
+
+    def control_loss(self, out, synth, continuous, categorical, generator):
+        return self.row_loss(out, synth, continuous, categorical, generator).mean()
 
     def control_error(self, out, synth, continuous):
         """Sum of |predicted - true| over real controls, and how many there were."""

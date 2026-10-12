@@ -21,7 +21,12 @@ Run everything from `tools/`.
 | `evaluate.py` | Score models by re-rendered audio on held-out native sounds. |
 | `benchmark.py` | The frozen benchmark, its blind rating page and the trend table. |
 | `agreement.py` | How often each objective agrees with archived human judgments. |
+| `mixdata.py` | Synthetic Mixr data: every pair of sources (and single sounds), rendered through the real Mixr. |
+| `mixmodel.py` | Inverse model for Mixr: which one or two synths, each one's controls, the balance. Order-free. |
+| `mixeval.py` | Whether the mix model reproduces Mixr's own output, by re-rendered audio; also joint search and the mix listening page. |
+| `tags.py` | Browsing pages over generated Mixr sounds: best three per game-audio tag (CLAP), per AudioSet label (EfficientAT), and the 100 sounds least like one another. |
 | `guided.py` | Listener-guided search: a local page where you pick the closest candidate and it searches around your pick. |
+| `sort.py` | The sorting page: file generated renders under species, one keyboard-driven input; queues for discovery, typical renders and the verify, chord and edge probes. Labels go to `labels/`. |
 
 ## Reproduce
 
@@ -48,6 +53,19 @@ External targets are read from `tools/targets_non_bfxr_big/tags` (symlink the
 corpus there, or set `SFX_TARGETS`). The `bfxr` system needs the old Bfxr
 inverse checkpoint; set `BFXR_INVERSE_CHECKPOINT` if it has moved.
 
+## Mixr
+
+```sh
+uv run python -m sfxmatch.mixdata  --out sfxmatch/runs/mix-val --total 20000 --seed 2
+uv run python -m sfxmatch.mixdata  --out sfxmatch/runs/mix-1m  --total 1000000
+uv run python -m sfxmatch.mixmodel --data sfxmatch/runs/mix-1m --val sfxmatch/runs/mix-val --out sfxmatch/runs/mixmodel \
+    --init sfxmatch/runs/model-1m/best.pt
+uv run python -m sfxmatch.mixeval  --checkpoint sfxmatch/runs/mixmodel/best.pt --single sfxmatch/runs/model-1m/best.pt \
+    --val sfxmatch/runs/mix-val
+uv run python -m sfxmatch.mixeval  --checkpoint sfxmatch/runs/mixmodel/best.pt --single sfxmatch/runs/model-1m/best.pt \
+    --bench mix-m1 --search 2000     # listening page over the frozen mixes in mixbench.json
+```
+
 ## Guided search
 
 ```sh
@@ -61,6 +79,25 @@ promising synth; after that each screen is the current sound plus five
 alternatives the objective rates about as good, chosen to sound different from
 one another. Finish by rating the result; sessions are saved to
 `guided_sessions/` and the current sound can be downloaded as a `.bcol`.
+
+## Sorting renders into species
+
+```sh
+uv run python -m sfxmatch.sort            # open http://127.0.0.1:8766
+uv run python -m sfxmatch.sort text       # once: cache the CLAP tag vectors used for hints
+```
+
+Everything happens in one input: type a few letters of a species and press
+Enter to add it (an unknown name becomes a new species on the spot), then
+Enter on the empty box, or the button, files the render and plays the next;
+"skip", "mute", "terrible" and "incoherent" are typed the same way. With the
+input empty, space replays the mix, 1 and 2 play each source alone, Backspace
+goes back. The buttons under the box say which render the label is about:
+the whole mix, or one source alone; that choice is click-only and never
+offered by the dropdown. The `revisit` queue serves renders that an earlier
+version of the dropdown filed under one source by accident.
+Labels append to `labels/<session>.jsonl`; species live in
+`labels/species.json`; renaming rewrites names, never ids.
 
 ## Tests
 

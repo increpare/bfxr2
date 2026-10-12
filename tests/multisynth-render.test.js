@@ -13,9 +13,9 @@ test('headless inventory describes numeric synths and transition endpoints', () 
     assert.equal(inventory.sampleRate, 44100);
     assert.match(inventory.sourceHash, /^[a-f0-9]{64}$/);
     assert.equal(inventory.synths.find(synth => synth.name === 'Bfxr').collectionCompatible, true);
-    assert.equal(inventory.synths.find(synth => synth.name === 'Rumblr').collectionCompatible, false);
-    assert.ok(inventory.synths.length >= 30);
-    for (const name of ['Bfxr', 'Transfxr', 'Footsteppr', 'Clonkr', 'Rumblr']) {
+    assert.ok(inventory.synths.every(synth => synth.collectionCompatible), 'retired synths are gone');
+    assert.equal(inventory.synths.length, 22);
+    for (const name of ['Bfxr', 'Transfxr', 'Footsteppr', 'Clonkr']) {
         const synth = inventory.synths.find(s => s.name === name);
         assert.ok(synth, name);
         assert.ok(synth.presets.length > 0);
@@ -27,7 +27,7 @@ test('headless inventory describes numeric synths and transition endpoints', () 
     assert.equal(pitch.min, 0);
     assert.equal(pitch.max, 1);
     assert.deepEqual(pitch.default, {start: 0.48, end: 0.25, curve: 'Ease Out'});
-    assert.deepEqual(inventory.excluded.map(s => s.name).sort(), ['Chattr', 'Mixr', 'Stackr']);
+    assert.deepEqual(inventory.excluded.map(s => s.name).sort(), ['Mixr']);
 });
 
 test('every advertised preset samples deterministically and each synth replays finite audio', () => {

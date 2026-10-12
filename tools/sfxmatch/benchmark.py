@@ -44,6 +44,12 @@ def targets(kind=None):
     return [t for key in ('external', 'native') if kind in (None, key) for t in data[key]]
 
 
+def mix_targets():
+    """Frozen held-out Mixr sounds for the self-reproduction test."""
+    path = HERE/'mixbench.json'
+    return json.loads(path.read_text())['targets'] if path.exists() else []
+
+
 def reference(target, renderer=None):
     """Trimmed, peak-normalised 44.1 kHz mono reference audio for a benchmark target."""
     from match.audio import normalize_peak, prepare_target, trim_silence
@@ -120,32 +126,34 @@ def write_wav(path, wave):
     Path(path).write_bytes(wav_bytes(wave))
 
 
-def page(name, systems, output=None, only=None, inline=False):
-    """inline=True embeds the audio in the HTML so the single file can be sent anywhere."""
-    from .render import FastRenderer
+def page(name, systems, output=None, only=None, inline=False, targets_with_audio=None):
+    """inline=True embeds the audio in the HTML so the single file can be sent anywhere.
+    targets_with_audio: [(id, title, reference wave)] to rate something other than the benchmark."""
     output = Path(output or HERE/'runs/pages'/name)
     (output/'audio').mkdir(parents=True, exist_ok=True)
+    if targets_with_audio is None:
+        from .render import FastRenderer
+        with FastRenderer() as renderer:
+            targets_with_audio = [(t['id'], t.get('file') or f'{t["synth"]} · {t["preset"]}', reference(t, renderer))
+                                  for t in targets() if (not only or t['id'] in only)
+                                  and any((Path(d)/f'{t["id"]}.wav').exists() for d in systems.values())]
     rows = []
-    with FastRenderer() as renderer:
-        for target in targets():
-            if only and target['id'] not in only:
-                continue
-            found = {label: Path(d)/f'{target["id"]}.wav' for label, d in systems.items()}
-            found = {label: path for label, path in found.items() if path.exists()}
-            if not found:
-                continue
-            write_wav(output/'audio'/f'{target["id"]}-ref.wav', reference(target, renderer))
-            order = sorted(found, key=lambda label: hashlib.sha256(f'{name}/{target["id"]}/{label}'.encode()).hexdigest())
-            candidates = []
-            for slot, label in enumerate(order):
-                wave, rate = sf.read(found[label], dtype='float32', always_2d=True)
-                if rate != 44100:
-                    raise ValueError(f'{found[label]} is not 44.1 kHz')
-                file = f'{target["id"]}-{slot}.wav'
-                write_wav(output/'audio'/file, wave[:, 0])
-                candidates.append({'system': label, 'file': file})
-            rows.append({'id': target['id'], 'title': target.get('file') or f'{target["synth"]} · {target["preset"]}',
-                         'candidates': candidates})
+    for target_id, title, wave in targets_with_audio:
+        found = {label: Path(d)/f'{target_id}.wav' for label, d in systems.items()}
+        found = {label: path for label, path in found.items() if path.exists()}
+        if not found:
+            continue
+        write_wav(output/'audio'/f'{target_id}-ref.wav', wave)
+        order = sorted(found, key=lambda label: hashlib.sha256(f'{name}/{target_id}/{label}'.encode()).hexdigest())
+        candidates = []
+        for slot, label in enumerate(order):
+            audio, rate = sf.read(found[label], dtype='float32', always_2d=True)
+            if rate != 44100:
+                raise ValueError(f'{found[label]} is not 44.1 kHz')
+            file = f'{target_id}-{slot}.wav'
+            write_wav(output/'audio'/file, audio[:, 0])
+            candidates.append({'system': label, 'file': file})
+        rows.append({'id': target_id, 'title': title, 'candidates': candidates})
     data = {'page': name, 'scale': SCALE, 'targets': rows}
     if inline:
         import base64
@@ -158,6 +166,7 @@ def page(name, systems, output=None, only=None, inline=False):
 
 def score(files):
     kinds = {t['id']: ('probe' if t['id'] in PROBE else 'external' if 'file' in t else 'native') for t in targets()}
+    kinds.update({t['id']: 'mix' if len(t['sources']) == 2 else 'mix-single' for t in mix_targets()})
     for file in files:
         data = json.loads(Path(file).read_text())
         print(f'\n{data["page"]}  ({file})')

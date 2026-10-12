@@ -12,7 +12,8 @@ const REPO_ROOT = path.resolve(__dirname, '../..');
 const contextFile = path.join(__dirname, 'multisynth_context.js');
 // The vm context stays the source of truth for inventory, sourceHash and the
 // HOST/BRIDGE shims; reuse them verbatim instead of maintaining a second copy.
-const inventory = require(contextFile).createMultisynthContext().inventory();
+const {createMultisynthContext, checkMix} = require(contextFile);
+const inventory = createMultisynthContext().inventory();
 const contextSource = fs.readFileSync(contextFile, 'utf8');
 const shim = name => {
     const match = contextSource.match(new RegExp('const ' + name + ' = `([\\s\\S]*?)`;'));
@@ -26,7 +27,8 @@ const wanted = new Set(['js/globals.js', 'js/audio/AKWF.js', 'js/audio/BfxrWavef
     'js/synths/templates.js', 'js/synths/SynthBase.js', 'js/synths/PresetSynth.js',
     'js/synths/PresetFamily.js', 'js/synths/TransfxrPresets.js',
     ...names.map(name => 'js/synths/' + name + '.js'),
-    ...names.filter(name => name !== 'Footsteppr').map(name => 'js/audio/' + name + '_DSP.js')]);
+    ...names.map(name => 'js/audio/' + name + '_DSP.js'),
+    'js/synths/Mixr.js', 'js/audio/Mixr_DSP.js']);
 const index = fs.readFileSync(path.join(REPO_ROOT, 'index.html'), 'utf8');
 const sources = [...index.matchAll(/<script\s+src="([^"?]+)(?:\?[^\"]*)?"/g)]
     .map(match => match[1]).filter(source => wanted.has(source));
@@ -42,7 +44,7 @@ for (const source of sources)
     vm.runInThisContext(fs.readFileSync(path.join(REPO_ROOT, source), 'utf8'), {filename: source});
 vm.runInThisContext(shim('BRIDGE'), {filename: 'multisynth-bridge.js'});
 // canonical: the controls a render would use, without rendering (for native engines).
-const bridge = vm.runInThisContext('({sample:__sample,render:__render,' +
+const bridge = vm.runInThisContext('({sample:__sample,render:__render,mix:__mix,' +
     'canonical:request=>__canonical(__newSynth(request.synth),request.params)})');
 
 function checkSeed(seed) {
@@ -69,6 +71,15 @@ lines.on('line', line => {
                 const {params, pcm} = bridge.render(request);
                 const audio = Buffer.from(pcm.buffer, pcm.byteOffset, pcm.byteLength).toString('base64');
                 response = {sampleRate: 44100, params: JSON.parse(JSON.stringify(params)), audio};
+                break;
+            }
+            case 'mix': {
+                const balance = request.balance ?? 0.5, offsetDb = request.offsetDb ?? null;
+                checkMix(request.sources, balance, offsetDb);
+                const result = bridge.mix({sources: request.sources, balance, offsetDb});
+                const audio = Buffer.from(result.pcm.buffer, result.pcm.byteOffset, result.pcm.byteLength).toString('base64');
+                response = {sampleRate: 44100, sources: JSON.parse(JSON.stringify(result.sources)), balance: result.balance,
+                            rms: Array.from(result.rms), audio};
                 break;
             }
             default: throw new Error('Unknown operation: ' + request.op);

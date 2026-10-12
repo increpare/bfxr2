@@ -6,9 +6,7 @@ const vm = require('node:vm');
 const crypto = require('node:crypto');
 const REPO_ROOT = path.resolve(__dirname, '../..');
 const EXCLUDED = [
-    {name: 'Chattr', reason: 'Text and pronunciation controls require a separate search representation.'},
     {name: 'Mixr', reason: 'Composition depends on external source sounds.'},
-    {name: 'Stackr', reason: 'Layer composition is outside the numeric single-synth search space.'},
 ];
 
 const HOST = `
@@ -96,7 +94,41 @@ function __render(request) {
         if (!Number.isFinite(pcm[i])) throw new Error('Synth returned nonfinite audio at sample ' + i);
     return {params, pcm};
 }
+function __mix(request) {
+    // The app's own path: Mixr sanitises each source, renders it with its saved
+    // seed, and Mixr_DSP combines them. Sources are rendered once here so their
+    // levels are known; an offset in dB then picks the balance that puts the
+    // second source that far above the first.
+    const sources = request.sources.map(source => {
+        const synth = Mixr.source(source.synth);
+        if (!synth) throw new Error('Unknown mix source: ' + source.synth);
+        return {synth: source.synth, params: Mixr.sanitize_source(synth, source.params), renderSeed: source.seed};
+    });
+    const rendered = sources.map(source => Mixr.render_source(source, source.renderSeed));
+    const rms = rendered.map(a => { let t = 0; for (let i = 0; i < a.length; i++) t += a[i] * a[i]; return Math.sqrt(t / Math.max(1, a.length)); });
+    let balance = request.balance;
+    if (sources.length === 2 && Number.isFinite(request.offsetDb)) {
+        const q = Math.pow(10, request.offsetDb / 20) * rms[0] / Math.max(rms[1], 1e-9);
+        balance = Math.min(0.98, Math.max(0.02, q / (1 + q)));
+    }
+    let next = 0;
+    const pcm = Mixr_DSP.render({sources: JSON.stringify(sources), balance, masterVolume: 0.5, seed: 0.5}, () => rendered[next++]);
+    for (let i = 0; i < pcm.length; i++)
+        if (!Number.isFinite(pcm[i])) throw new Error('Mix returned nonfinite audio at sample ' + i);
+    return {sources, balance, rms, pcm};
+}
 `;
+
+function checkMix(sources, balance, offsetDb) {
+    if (!Array.isArray(sources) || sources.length < 1 || sources.length > 2) throw new Error('A mix has one or two sources');
+    for (const source of sources) {
+        if (!source || typeof source.synth !== 'string' || !source.params || typeof source.params !== 'object')
+            throw new Error('Each mix source needs a synth and params');
+        if (!Number.isFinite(source.seed) || source.seed < 0 || source.seed >= 1) throw new Error('Mix source seed must be in [0, 1)');
+    }
+    if (!Number.isFinite(balance) || balance < 0 || balance > 1) throw new Error('Balance must be in [0, 1]');
+    if (offsetDb !== null && offsetDb !== undefined && !Number.isFinite(offsetDb)) throw new Error('offsetDb must be finite');
+}
 
 function createMultisynthContext({timeoutMs = 10000} = {}) {
     if (!Number.isInteger(timeoutMs) || timeoutMs < 1) throw new Error('timeoutMs must be a positive integer');
@@ -109,7 +141,8 @@ function createMultisynthContext({timeoutMs = 10000} = {}) {
         'js/synths/templates.js', 'js/synths/SynthBase.js', 'js/synths/PresetSynth.js',
         'js/synths/PresetFamily.js', 'js/synths/TransfxrPresets.js',
         ...names.map(name => 'js/synths/' + name + '.js'),
-        ...names.filter(name => name !== 'Footsteppr').map(name => 'js/audio/' + name + '_DSP.js')]);
+        ...names.map(name => 'js/audio/' + name + '_DSP.js'),
+        'js/synths/Mixr.js', 'js/audio/Mixr_DSP.js']);
     const index = fs.readFileSync(path.join(REPO_ROOT, 'index.html'), 'utf8');
     const sources = [...index.matchAll(/<script\s+src="([^"?]+)(?:\?[^\"]*)?"/g)]
         .map(match => match[1]).filter(source => wanted.has(source));
@@ -179,8 +212,13 @@ function createMultisynthContext({timeoutMs = 10000} = {}) {
             validate(synth, seed, params);
             const result = invoke('render', {synth,params,seed});
             return {params:plain(result.params),pcm:new Float32Array(result.pcm)};
+        },
+        mix(sources, balance = 0.5, offsetDb = null) {
+            checkMix(sources, balance, offsetDb);
+            const result = invoke('mix', {sources, balance, offsetDb});
+            return {sources:plain(result.sources), balance:result.balance, rms:plain(result.rms), pcm:new Float32Array(result.pcm)};
         }
     };
 }
 
-module.exports = {createMultisynthContext};
+module.exports = {createMultisynthContext, checkMix};

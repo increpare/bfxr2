@@ -1,0 +1,606 @@
+{
+ "page": "mix-m1",
+ "saved": "2026-10-10T08:49:42.278Z",
+ "ratings": [
+  {
+   "target": "mix-001",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-001",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-001",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-002",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-002",
+   "system": "mix model + search",
+   "rating": 3
+  },
+  {
+   "target": "mix-002",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-003",
+   "system": "single-synth model",
+   "rating": 4
+  },
+  {
+   "target": "mix-003",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-003",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-004",
+   "system": "mix model + search",
+   "rating": 5
+  },
+  {
+   "target": "mix-004",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-004",
+   "system": "mix model",
+   "rating": 5
+  },
+  {
+   "target": "mix-005",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-005",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-005",
+   "system": "single-synth model",
+   "rating": 1
+  },
+  {
+   "target": "mix-006",
+   "system": "mix model + search",
+   "rating": 5
+  },
+  {
+   "target": "mix-006",
+   "system": "single-synth model",
+   "rating": 1
+  },
+  {
+   "target": "mix-006",
+   "system": "mix model",
+   "rating": 5
+  },
+  {
+   "target": "mix-007",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-007",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-007",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-008",
+   "system": "mix model + search",
+   "rating": 3
+  },
+  {
+   "target": "mix-008",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-008",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-009",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-009",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-009",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-010",
+   "system": "single-synth model",
+   "rating": 1
+  },
+  {
+   "target": "mix-010",
+   "system": "mix model + search",
+   "rating": 5
+  },
+  {
+   "target": "mix-010",
+   "system": "mix model",
+   "rating": 5
+  },
+  {
+   "target": "mix-011",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-011",
+   "system": "mix model",
+   "rating": 5
+  },
+  {
+   "target": "mix-011",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-012",
+   "system": "mix model + search",
+   "rating": 5
+  },
+  {
+   "target": "mix-012",
+   "system": "single-synth model",
+   "rating": 4
+  },
+  {
+   "target": "mix-012",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-013",
+   "system": "mix model",
+   "rating": 5
+  },
+  {
+   "target": "mix-013",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-013",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-014",
+   "system": "mix model",
+   "rating": 2
+  },
+  {
+   "target": "mix-014",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-014",
+   "system": "mix model + search",
+   "rating": 2
+  },
+  {
+   "target": "mix-015",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-015",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-015",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-016",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-016",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-016",
+   "system": "single-synth model",
+   "rating": 4
+  },
+  {
+   "target": "mix-017",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-017",
+   "system": "mix model",
+   "rating": 5
+  },
+  {
+   "target": "mix-017",
+   "system": "single-synth model",
+   "rating": 5
+  },
+  {
+   "target": "mix-018",
+   "system": "mix model + search",
+   "rating": 5
+  },
+  {
+   "target": "mix-018",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-018",
+   "system": "mix model",
+   "rating": 5
+  },
+  {
+   "target": "mix-019",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-019",
+   "system": "mix model",
+   "rating": 5
+  },
+  {
+   "target": "mix-019",
+   "system": "single-synth model",
+   "rating": 5
+  },
+  {
+   "target": "mix-020",
+   "system": "single-synth model",
+   "rating": 3
+  },
+  {
+   "target": "mix-020",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-020",
+   "system": "mix model + search",
+   "rating": 3
+  },
+  {
+   "target": "mix-021",
+   "system": "single-synth model",
+   "rating": 5
+  },
+  {
+   "target": "mix-021",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-021",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-022",
+   "system": "single-synth model",
+   "rating": 3
+  },
+  {
+   "target": "mix-022",
+   "system": "mix model + search",
+   "rating": 3
+  },
+  {
+   "target": "mix-022",
+   "system": "mix model",
+   "rating": 3
+  },
+  {
+   "target": "mix-023",
+   "system": "mix model + search",
+   "rating": 5
+  },
+  {
+   "target": "mix-023",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-023",
+   "system": "single-synth model",
+   "rating": 3
+  },
+  {
+   "target": "mix-024",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-024",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-024",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-025",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-025",
+   "system": "mix model + search",
+   "rating": 2
+  },
+  {
+   "target": "mix-025",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-026",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-026",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-026",
+   "system": "single-synth model",
+   "rating": 4
+  },
+  {
+   "target": "mix-027",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-027",
+   "system": "mix model + search",
+   "rating": 2
+  },
+  {
+   "target": "mix-027",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-028",
+   "system": "single-synth model",
+   "rating": 4
+  },
+  {
+   "target": "mix-028",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-028",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-029",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-029",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-029",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-030",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-030",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-030",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-031",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-031",
+   "system": "single-synth model",
+   "rating": 5
+  },
+  {
+   "target": "mix-031",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-032",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-032",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-032",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-033",
+   "system": "mix model + search",
+   "rating": 5
+  },
+  {
+   "target": "mix-033",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-033",
+   "system": "single-synth model",
+   "rating": 5
+  },
+  {
+   "target": "mix-034",
+   "system": "mix model + search",
+   "rating": 5
+  },
+  {
+   "target": "mix-034",
+   "system": "single-synth model",
+   "rating": 4
+  },
+  {
+   "target": "mix-034",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-035",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-035",
+   "system": "single-synth model",
+   "rating": 4
+  },
+  {
+   "target": "mix-035",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-036",
+   "system": "mix model + search",
+   "rating": 3
+  },
+  {
+   "target": "mix-036",
+   "system": "single-synth model",
+   "rating": 3
+  },
+  {
+   "target": "mix-036",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-037",
+   "system": "single-synth model",
+   "rating": 3
+  },
+  {
+   "target": "mix-037",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-037",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-038",
+   "system": "mix model",
+   "rating": 3
+  },
+  {
+   "target": "mix-038",
+   "system": "mix model + search",
+   "rating": 1
+  },
+  {
+   "target": "mix-038",
+   "system": "single-synth model",
+   "rating": 3
+  },
+  {
+   "target": "mix-039",
+   "system": "single-synth model",
+   "rating": 2
+  },
+  {
+   "target": "mix-039",
+   "system": "mix model + search",
+   "rating": 4
+  },
+  {
+   "target": "mix-039",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-040",
+   "system": "single-synth model",
+   "rating": 1
+  },
+  {
+   "target": "mix-040",
+   "system": "mix model",
+   "rating": 4
+  },
+  {
+   "target": "mix-040",
+   "system": "mix model + search",
+   "rating": 4
+  }
+ ]
+}

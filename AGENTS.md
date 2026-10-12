@@ -1,7 +1,10 @@
 # Working agreement for the sound-matching work
 
 Goal: given a sound, produce an editable preset on one of the app's synths
-that a listener rates as close to it. Code lives in `tools/sfxmatch/`
+that a listener rates as close to it. The current focus is Mixr (two sources
+and a balance): it is the richest synth and must be explored across all pairs
+of sources, not only its shipped recipes. Stackr and the other retired synths
+are gone; do not bring them back. Code lives in `tools/sfxmatch/`
 (see its README). The older `tools/multisynth/` and `tools/neural_invert/`
 experiments are kept for reference and as baselines; do not extend them.
 

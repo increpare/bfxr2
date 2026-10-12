@@ -3,6 +3,349 @@
 One short entry per experiment: what was expected, what changed, the numbers,
 the verdict. Newest first.
 
+## 2026-10-10 — All 1,000,000 mixes through CLAP and the AudioSet model
+
+**Change.** `tags.py encode`: each mix rendered once, both spectrograms made
+in the render workers, both networks on the GPU, output stored per dataset
+shard (2.1 GB in all). The three pages now draw on the full million.
+
+**Numbers.** 47 sounds a second end to end, 5.8 hours; no failed renders.
+GPU alone: CLAP about 190 a second at batch 32, EfficientAT about 115, so the
+GPU, not rendering, sets the pace.
+
+- CLAP tags: smallest bucket "door" 2,518, largest "cloth" 51,040.
+- AudioSet: 326 of 527 labels now have a sound above 0.15 (213 from 20,000).
+  Most confident: Boing 0.96, Squeak, Zipper, Static 0.95, Caw, Hoot 0.94.
+- Most different 100: the hundredth pick is 0.58 from the rest (0.51 from
+  20,000), so the bigger pool does reach further out. 18 are single sounds.
+
+**Verdict.** Done. The stored vectors make any further tag list, threshold
+or selection a matter of seconds.
+
+## 2026-10-10 — Coverage pilot: uniform draws widen the set; hole recipes repeat
+
+Expected uniform controls to reach beyond generators and interpolation to fill
+CLAP holes. Added `mixcover.py`/`covereval.py`, source and mix gates (RMS ≥1e-4,
+0.05–4 s), a Bfxr envelope cap, resumable shards and training support for
+`generator=-1`. Rendered and embedded 20,000 rows, including 4,000 singles.
+
+Compared with a fixed 455,000-row encoded `mix-1m` snapshot; its encoder is still
+running. No failed encodings or misaligned shards.
+
+| Strategy | Rows | Gap > 0.1 from reference | Source rejection | Repeated audio recipes |
+| --- | ---: | ---: | ---: | ---: |
+| both uniform | 8,000 | 48.3% | 15.9% | 0 |
+| generator + uniform | 6,000 | 35.7% | 11.3% | 0 |
+| hole interpolation/crossing | 6,000 | 26.2% | 3.0% | 4,098 |
+
+Overall novelty: 37.9%. On 3,000 held-out queries, median gap fell
+0.05704 → 0.05690 and p90 0.11110 → 0.11054. Four of 100 merged spread picks
+came from the new set. Fixed same-label midpoint coverage rose 54.13% → 55.70%
+using a quarter of endpoint cosine distance; the quarter-Euclidean-chord measure
+stayed 0%. This sample/definition is not comparable to the handoff's 75%.
+The 3,000 midpoints contain 2,466 unique endpoint pairs.
+
+Hole rows missed their target by >0.11 in 94.1% of cases; 67.2% of bank targets
+remained far from the merged set. The bank has 232 entries but only 162 unique
+chords. Mining now deduplicates chords; bounded retries skip repeated endpoints
+and infeasible durations (five selections skipped). Full per-synth rates and
+measurements: `runs/cover-report.json`.
+
+**Verdict.** Uniform draws justify more sampling. Hold the million-row budget:
+the current 30% hole allocation repeats recipes in 68.3% of rows and rarely
+lands at its target. Pilot a larger, diverse bank or a different filling method
+first. These misses do not establish that the synths cannot reach the holes.
+
+## 2026-10-10 — Judges tested on the 719 stored ratings; no listening
+
+**Judges.** `judges.py` pairs every rated clip with its reference and asks
+each judge which of two differently rated candidates it prefers.
+
+| Judge | All (598 pairs) | Recordings (334) | Native (193) | Mixes (71) |
+| --- | ---: | ---: | ---: | ---: |
+| objective v2 | 72% | 64% | 86% | 76% |
+| CLAP likeness | 80% | 73% | 90% | 86% |
+| AudioSet-profile likeness | 80% | 75% | 87% | 80% |
+| all three, standardised and added | 83% | 78% | 90% | 87% |
+
+None is fitted to the ratings. The combined score rises steadily with rating
+(mean -2.1 for clips rated 1, -0.3 for 2, +1.1 for 3, +2.6 for 4, +3.3 for 5)
+and means the same on recordings as elsewhere (over-predicts them by 0.06).
+
+**Choosing was never the problem on recordings.** Across 110 rated sets the
+average candidate was 1.69 and the best one shown averaged 2.32. Each judge's
+first choice would have been rated 1.85 (objective) to 2.03 (combined).
+
+**Is a close match in the library?** For each of the 50 benchmark recordings,
+the best of 475,000 random mixes by the combined judge (CLAP and AudioSet
+shortlist of 300, then the objective): expected rating 1.9 on average, none
+of 50 reaching 3.5, one reaching 3 (a wing flap, Footsteppr + Whooshr). For
+the 12 probe recordings it expects 1.96; their actual best-of-three ratings
+were 2.2 to 2.6, so the prediction is, if anything, slightly low.
+
+**Verdict.** Random sampling of Mixr does not land near these recordings, and
+doubling the library will not change that. If close matches exist they are
+rare settings that have to be steered to. The combined judge replaces the
+objective for choosing between candidates; it is not yet tested as something
+to search on.
+
+## 2026-10-10 — Ratings: nearest library sounds by CLAP; and stop asking for ratings
+
+12 probe recordings; the three nearest of 380,000 library mixes by CLAP
+likeness, plus the round 2 anchor.
+
+| Candidate | Mean | Rated 3+ |
+| --- | ---: | ---: |
+| CLAP neighbour 1 | 1.75 | 2 |
+| CLAP neighbour 2 | 1.92 | 2 |
+| CLAP neighbour 3 | 2.17 | 3 |
+| Round 2 search (anchor) | 1.75 | 2 |
+
+Best of the three neighbours: 2.50 (better than the anchor on 9, same on 1,
+worse on 2). CLAP's own ranking of its three is backwards: its first choice
+rates lowest.
+
+**Verdict.** A fourth route to the same place. Search on two objectives, the
+mix model, and CLAP retrieval all land between 1.8 and 2.6 on these recordings.
+
+**Process.** The listener is tired of rating, and of re-rating these 12
+recordings in particular: seven sessions and 719 clips in four days, five of
+them on this set. That repeats the failure the original audit criticised. No
+more rating pages for small variations. The 719 ratings are now the test set
+for automatic judges (`judges.py`).
+
+## 2026-10-10 — Ratings: the mix model on recordings, no search
+
+12 probe recordings; the mix model's 96 proposals per recording, one chosen
+by the objective and one by CLAP likeness; round 2's searched result as anchor.
+
+| Candidate | Mean | Rated 3+ |
+| --- | ---: | ---: |
+| Mix model, objective's pick | 1.92 | 3 |
+| Mix model, CLAP's pick | 1.83 | 2 |
+| Round 2 search (anchor) | 1.92 | 2 |
+
+Objective's pick against CLAP's: better on 3, same on 7, worse on 2. Best of
+the three per recording: 2.33.
+
+**Verdict.** No gain, and neither judge is better at choosing. The model has
+only ever heard synth output, so this does not separate "cannot reach" from
+"cannot find": its proposals on recordings score far worse by the objective
+(3 to 7.7) than its proposals on Mixr's own sounds (2.7). Follow-up page
+`probe-clap`: the three nearest of 380,000 library sounds by CLAP, which uses
+neither the model nor the objective.
+
+## 2026-10-10 — Ratings: Mixr reproduces its own output; searching on the objective makes it worse
+
+40 frozen held-out Mixr sounds (`mixbench.json`), three blind candidates each.
+
+| System | Two-source sounds (34) | Rated 4+ | Single sounds (6) |
+| --- | ---: | ---: | ---: |
+| Mix model, best of 24 proposals | 4.12 | 32 of 34 | 4.00 |
+| Mix model + joint search (2,000 renders) | 3.88 | 26 of 34 | 3.67 |
+| Single-synth model | 2.50 | 7 of 34 | 4.33 |
+
+The mix model beat the single-synth model on 25 targets, tied 12, lost 3.
+
+**The search result matters most.** Joint search lowered the objective on
+every target (2.75 to 2.17 on average) and the listener rated the result
+lower on 11, higher on 4, the same on 25. Worst case: a Jinglr sound went
+from score 3.89 to 2.92 and from rating 3 to 1. Across the 120 clips rating
+and score correlate at only 0.38.
+
+**Verdict.** The gate is passed: a mix can be taken apart and rebuilt to
+"close". And the objective is now shown to be the weak part: below a score of
+about 3 it no longer points towards what sounds right. Every recording result
+so far came from searching on it, so those results say little about what the
+synths can reach. Do not refine model proposals with objective search.
+
+## 2026-10-10 — First 200 species labels: do species form regions in CLAP space?
+
+**Setup.** The listener filed 188 renders on the sorting page (`sort.py`),
+mostly in discovery order, into 61 species with 295 assignments (101
+renders carry two or more species); 19 of 142 two-source renders marked
+incoherent. Automatic checks only, no listening.
+
+**Numbers.** Leave-one-out: the nearest other labelled render shares a
+species 61% of the time (3-nearest vote 48%). Per species it splits
+cleanly. Tight, with a median chord between exemplars under 0.45 and a
+nearest neighbour to the midpoint within a quarter of it on 90% of chords:
+crash, strum, explosion, waves, bell, confirm, laser. Diffuse, median chord
+0.75 to 0.9 and nearest-neighbour agreement near zero: engine, hit,
+power-up, animal, alert, power-down, tear, swarm. Propagated to the million
+at a cosine radius of 0.10, the tight species hold 7,000 to 24,000 renders
+each and sit on the synths you would guess (explosion on Boomr, laser on
+Zappr, choir on Choirr, teleport on Riftr, strum on Pluckr). The CLAP hint
+named one of the listener's species in its top three on 44 of 104 renders
+where the names coincide.
+
+**Verdict.** As predicted: species named for what a sound is form regions,
+species named for what a game would use it for, or umbrella names, do not.
+Those need to be given as a list of tighter species, or named by hand on
+top of regions found by ear. Nothing here fits an objective. Enough signal
+to start the verify and chord queues on the tight species.
+
+## 2026-10-10 — The 100 Mixr sounds least like one another
+
+**Change.** `tags.py spread`: greedy farthest-point picks over the 20,000
+cached CLAP vectors (cosine distance), starting from the most typical sound.
+Blips under 50 ms are left out. Page `runs/pages/mix-spread`, with a
+play-all button; sounds are filed under their nearest CLAP tag for navigation.
+
+**Numbers.** Distance from earlier picks when chosen: 1.09 for the second,
+0.78 for the tenth, 0.59 for the fiftieth, 0.51 for the hundredth. The most
+typical sound stands for 15.6% of the set; 24 picks are single sounds (the
+pool is 20% singles); every one of the 22 synths appears.
+
+**Verdict.** A listening aid, not a measurement. Farthest-point picking
+favours extremes, so it shows the edges of the range rather than what is
+common; cluster centres would show the reverse.
+
+## 2026-10-10 — Mixr: full model (1M mixes) and joint search
+
+**Change.** 1,000,000 mixes (2 h 35 min to generate); the mix model
+continued from the 200k one through 340k to the full set, about 2.5 hours of
+training in all. Joint CMA-ES over both sources and the balance, 1,000 Mixr
+renders from each of the two best differently-structured proposals.
+
+**Numbers.** 300 held-out mixes, objective v2, floor 0.1:
+
+| | Singles (69) | Pairs (218) | Same synth twice (13) |
+| --- | ---: | ---: | ---: |
+| Structure right first time | 97% | 93% | 69% |
+| Mix model, one-shot | 2.90 | 3.00 | 3.86 |
+| Mix model, best of 24 | 2.55 | 2.70 | 3.13 |
+| Single-synth model, best of 24 | 2.25 | 3.70 | 3.59 |
+
+On the 40 frozen mixes in `mixbench.json` (32 pairs): single-synth model
+3.71, mix one-shot 3.31, best of 24 2.88, plus search 2.35. The mix model
+beats the single-synth model on 85% of two-source sounds.
+
+**Verdict.** Five times the data moved pairs from 2.87 to 2.70: useful, not
+transformative, the same flattening as for single sounds. Search from the
+model's proposal is the bigger step (2.88 to 2.35) and is nowhere near the
+floor, so search on mixes is still the weak link. Awaiting ratings on
+`runs/pages/mix-m1` before judging any of this on recordings.
+
+## 2026-10-10 — The same 20,000 mixes against AudioSet's 527 labels
+
+**Change.** `tags.py audioset`: EfficientAT mn10 (18 MB). A label is shown
+once some sound reaches probability 0.15; each keeps its three most probable.
+
+**Numbers.** 213 of 527 labels have at least one sound. Most confident:
+Boing 0.92, Ringtone 0.89, Caw 0.88, Frog 0.86 (Riftr), Explosion 0.85
+(Boomr), Ding, Clang, Machine gun 0.84 (Swarmr), Zipper 0.83. "Music"
+swallows 8,924 sounds and "Explosion" 1,363.
+
+**Gotcha.** The model needs ten-second input. On anything shorter it returns
+logits near 100 and probability 1.0 for unrelated labels. Padding with
+silence works and reads as a one-off event; looping the clip makes nearly
+everything "Music". Adding a noise floor does not help.
+
+**Verdict.** Complements CLAP: fixed vocabulary, but finds things nobody
+would think to ask for (frog, zipper, machine gun). Page:
+`runs/pages/mix-audioset`.
+
+## 2026-10-10 — Mixr: full mix model (1M mixes)
+
+**Change.** Continued the 200k model on 340k and then on the full 1,000,000
+mixes (4 epochs, 96 minutes).
+
+**Numbers.** 300 held-out mixes, objective v2 (floor 0.1):
+
+| | Singles (69) | Pairs (218) | Same synth twice (13) |
+| --- | ---: | ---: | ---: |
+| Structure right first time | 97% | 93% | 69% |
+| Within six guesses | 100% | 98% | 85% |
+| Mix model, one-shot | 2.90 | 3.00 | 3.86 |
+| Mix model, best of 24 | 2.55 | 2.70 | 3.13 |
+| Single-synth model, best of 24 | 2.25 | 3.70 | 3.59 |
+
+The mix model beats the single-synth model on 85% of two-source sounds
+(79% at 200k). Validation: structure exact 91.4%, kind 96.6%. Validation
+loss stopped improving in the last epoch (4.349 then 4.350) while training
+loss kept falling, so more passes over this data will not help.
+
+**Verdict.** Structure is close to solved; controls are not (2.7 against a
+floor of 0.1). Singles are worse than with the dedicated single-synth model.
+Awaiting the listening page over `mixbench.json`, which adds joint search.
+
+## 2026-10-10 — Pretrained audio taggers against the hand-tagged files
+
+441 readable files, 34 tags ('step' counted as 'footstep', the one 'misc'
+file left out). Always guessing "footstep" scores 12%.
+
+| Model | Zero-shot top-1 | Zero-shot top-3 | Nearest neighbours |
+| --- | ---: | ---: | ---: |
+| Microsoft CLAP 2023 | 34% | 57% | 64% |
+| LAION-CLAP larger | 23% | 45% | 66% |
+| LAION-CLAP base | 20% | 43% | 67% |
+| AST (AudioSet labels only) | – | – | 57% |
+| PANNs CNN14 (AudioSet labels only) | – | – | 37% |
+
+Zero-shot picks the tag whose plain description is nearest the sound.
+Nearest neighbours is leave-one-out over the files themselves (5 nearest,
+tags with 5+ files). PANNs called nearly every file "Music"; it may simply
+handle very short clips badly, which I did not investigate.
+
+**Verdict.** Describing these tags in words is unreliable: the tags say what
+a sound is for in a game, and short game sounds all look alike to a model
+trained on recordings ("a cartoon jump" swallowed footsteps, birds and
+swords). Tagging by example is much better and barely depends on the model.
+AST's own labels are too generic to use ("Sound effect", "Boing", "Beep").
+Prompt wording moved zero-shot by several points; I changed it once, to
+drop "video game" from the descriptions, and did not tune further.
+
+## 2026-10-10 — Sorting random Mixr sounds into game-audio tags with CLAP
+
+**Change.** `tags.py`: 20,000 random mixes from the training set, 55 tags
+written as phrases, `laion/clap-htsat-unfused`. Each sound goes to the tag it
+matches most unusually well (scores standardised per tag); each tag keeps
+its three best, from different pairs of synths.
+
+**Numbers.** All 55 tags filled. Smallest bucket "door" (42 sounds), largest
+"cloth" (1,026). The winners follow the synths' intent without being told:
+explosion picks Boomr mixes, bubbles Squishr, choir Choirr, plucked string
+Pluckr, wind Footsteppr, sword Whooshr pairs. About 13 sounds a second on CPU.
+
+**Verdict.** Works as a browser of what Mixr makes. Not yet checked against
+the 446 hand-tagged recordings, so how often CLAP's tag is the right one is
+unmeasured. Page: `runs/pages/mix-tags`; presets downloaded from it replay
+bit-identically through Mixr (12 of 12).
+
+## 2026-10-10 — Mixr: first mix-aware model (200k mixes)
+
+**Why.** The owner disputes that recordings are out of reach and points at
+Mixr as by far the richest synth. He is right that it was barely tested: the
+single-synth model has never seen a mix, and the two-layer probe searched
+only a second layer on top of a frozen first one. Stackr and the retired
+synths are gone from master; their bridges here were deleted.
+
+**Change.** Real Mixr rendering in the fast renderer (bit-identical to the
+sandboxed one). `mixdata`: every pair of the 22 sources equally likely,
+including a synth with itself, one row in five a single sound, balance set
+from a random level difference so both sources are audible. `mixmodel`:
+multi-label "which synths", per-synth heads conditioned on the partner,
+order-free loss for the same synth twice, balance head.
+
+**Numbers** after 200,000 mixes and 30 minutes, on 240 held-out mixes,
+objective v2 (true controls with new noise seeds score 0.11):
+
+| | Singles (52) | Pairs (179) | Same synth twice (9) |
+| --- | ---: | ---: | ---: |
+| Structure right first time | 98% | 87% | 56% |
+| Mix model, best of 24 | 2.76 | 2.87 | 3.55 |
+| Single-synth model, best of 24 | 2.30 | 3.69 | 3.33 |
+
+The mix model beats the single-synth model on 79% of two-source sounds. It
+is overfitting at this size (train loss 3.8, validation 5.0), so the 1M run
+should help more than it did for single sounds.
+
+**Verdict.** Mixes can be taken apart. Next: the full 1M model, joint search
+from its proposals, and a listening page over the frozen mixes in
+`mixbench.json`. Only if Mixr's own output comes back "close" is it fair to
+judge it on recordings.
+
 ## 2026-10-09 — Ratings: milestone m1, two-layer probe, guided sessions
 
 **m1** (mean likeness; external excludes the 12 probe targets):

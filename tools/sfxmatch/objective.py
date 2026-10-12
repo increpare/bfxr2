@@ -77,5 +77,8 @@ class Score:
         if self.objective is None:
             self.objective = Objective(self.target)
         synth, params, seed = task
+        if synth == '__mix__':            # a saved Mixr patch: {'sources', 'balance'}
+            sources, _, wave, _ = renderer.mix(params['sources'], params['balance'])
+            return sources, self.objective.score(wave)
         canonical, wave = renderer.render(synth, params, seed)
         return canonical, self.objective.score(wave)

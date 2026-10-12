@@ -20,6 +20,11 @@ lines.on('line', line => {
                 response = {sampleRate:44100,params,audio:buffer.toString('base64')};
                 break;
             }
+            case 'mix': {
+                const {sources,balance,rms,pcm} = api.mix(request.sources,request.balance ?? 0.5,request.offsetDb ?? null);
+                response = {sampleRate:44100,sources,balance,rms,audio:Buffer.from(pcm.buffer,pcm.byteOffset,pcm.byteLength).toString('base64')};
+                break;
+            }
             default: throw new Error('Unknown operation: ' + request.op);
         }
         response = {ok:true,...response};

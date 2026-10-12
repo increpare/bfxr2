@@ -1,0 +1,401 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sort</title>
+<style>
+:root{color-scheme:light dark;--fg:#1b1b1b;--bg:#f4f3ef;--card:#fff;--mut:#7d7c77;--faint:#b0afa9;--line:#e4e3de;--acc:#2c63c9;--on:#fff;--soft:#eef1f8;--hl:#f3f0e6}
+@media(prefers-color-scheme:dark){:root{--fg:#e9e9e6;--bg:#111;--card:#1a1a1a;--mut:#8f8f8a;--faint:#5c5c58;--line:#2c2c2c;--acc:#6f9ff5;--on:#0f0f0f;--soft:#1e2431;--hl:#242420}}
+*{box-sizing:border-box;min-width:0}
+html,body{height:100%}
+body{font:16px/1.5 system-ui,-apple-system,sans-serif;color:var(--fg);background:var(--bg);margin:0;padding:16px 16px 40px;max-width:600px;margin-inline:auto}
+header{display:flex;gap:16px;align-items:center;margin:0 4px 14px;font-size:13px;color:var(--mut)}
+header .grow{flex:1}
+header button{color:var(--mut);background:none;border:0;padding:0;font:inherit;cursor:pointer}
+header button:hover,header button.on{color:var(--fg)}
+select{font:inherit;color:var(--mut);background:transparent;border:0;padding:0;max-width:100%;cursor:pointer}select:hover{color:var(--fg)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 20px 16px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.probe{background:var(--soft);border-radius:10px;padding:9px 12px;margin:-4px 0 14px;font-size:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.probe .q{flex:1;min-width:160px}
+.probe button{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:8px;padding:3px 9px;cursor:pointer}
+.play{display:flex;align-items:center;gap:14px;width:100%;text-align:left;border:0;background:none;color:inherit;font:inherit;padding:4px 0;cursor:pointer;position:relative}
+.play .tri{width:46px;height:46px;border-radius:50%;background:var(--soft);display:grid;place-items:center;flex:none;font-size:17px;transition:background .1s;position:relative;overflow:hidden}
+.play .tri i{position:absolute;left:0;bottom:0;height:3px;background:var(--acc);width:0}
+.play.playing .tri{background:var(--acc);color:var(--on)}
+.play .t{flex:1}.play b{display:block;font-weight:650;font-size:20px;letter-spacing:-.01em;line-height:1.25}.play span{font-size:14px;color:var(--mut)}
+.play .k{font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
+.sources{display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;margin-top:10px}
+@media(max-width:440px){.sources{grid-template-columns:1fr}}
+.sources .play .tri{width:30px;height:30px;font-size:12px}.sources .play b{font-size:15px;font-weight:600}.sources .play span{font-size:13px}
+.hints{font-size:13px;color:var(--mut);margin:12px 0 0 60px;min-height:20px}
+.hints b{font-weight:500;color:var(--fg);opacity:.75}
+body.nohints .hints{visibility:hidden}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0 0;align-items:center}
+.chip{border-radius:999px;padding:4px 12px;font-size:14px;border:1px solid var(--line);background:transparent;color:inherit;font:inherit;cursor:pointer}
+.chip.on{background:var(--acc);border-color:var(--acc);color:var(--on)}
+.chip small{opacity:.55;margin-left:5px;font-size:12px}
+.chips .more{border:0;color:var(--mut);font-size:13px}
+.box{position:relative;margin-top:14px}
+#q{width:100%;font:inherit;font-size:19px;padding:10px 12px 10px 34px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:inherit;outline:0}
+#q:focus{border-color:var(--acc);background:var(--card)}
+.box::before{content:"›";position:absolute;left:14px;top:9px;font-size:20px;color:var(--faint)}
+#menu{position:absolute;left:0;right:0;top:calc(100% + 4px);background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:4;display:none;overflow:hidden}
+#menu.show{display:block}
+#menu div{padding:8px 14px;display:flex;gap:10px;align-items:baseline;cursor:pointer;font-size:16px}
+#menu div.hl{background:var(--hl)}
+#menu .tag{margin-left:auto;font-size:12px;color:var(--mut)}
+.actions{margin-top:12px}.go{font:inherit;font-size:14px;background:var(--acc);border:1px solid var(--acc);color:var(--on);border-radius:10px;padding:7px 14px;cursor:pointer}
+.scope{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:12px;font-size:13px}
+.scope button{font:inherit;font-size:13px;border:0;background:none;padding:5px 11px;color:var(--mut);cursor:pointer}
+.scope button+button{border-left:1px solid var(--line)}.scope button.on{background:var(--soft);color:var(--fg)}
+.keys{font-size:12.5px;color:var(--faint);margin:12px 2px 0;min-height:18px}
+.keys kbd{border:1px solid var(--line);border-radius:4px;padding:0 4px;font:inherit;color:var(--mut);margin-right:2px}
+.foot{display:flex;gap:14px;font-size:12.5px;color:var(--faint);margin:14px 6px 0;flex-wrap:wrap;align-items:center}
+.foot button{font:inherit;color:var(--faint);background:none;border:0;padding:0;cursor:pointer}.foot button:hover{color:var(--fg)}
+.foot .grow{flex:1}
+#note{display:none;width:100%;margin-top:10px;font:inherit;font-size:14px;border:0;border-bottom:1px solid var(--line);background:transparent;color:inherit;padding:4px 2px;outline:0}
+#note.show{display:block}
+.prev{font-size:13px;color:var(--mut);margin:0 0 12px}
+#panel{position:fixed;inset:0 0 0 auto;width:min(440px,100%);background:var(--card);border-left:1px solid var(--line);padding:18px 20px;overflow:auto;transform:translateX(100%);transition:transform .15s;z-index:6}
+#panel.show{transform:none}
+#panel h2{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--mut);margin:20px 0 6px}
+#panel h2:first-of-type{margin-top:0}
+.sp{display:flex;align-items:center;gap:8px;padding:5px 0;border-top:1px solid var(--line);font-size:15px}
+.sp:first-child{border-top:0}.sp .name{flex:1;cursor:pointer}.sp .name:hover{color:var(--acc)}
+.sp .k{font-size:12px;color:var(--mut)}.sp button{font:inherit;padding:2px 8px;font-size:12px;border:0;background:none;color:var(--mut);cursor:pointer}
+.ex{display:flex;gap:6px;align-items:center;padding:4px 0;border-top:1px solid var(--line);font-size:13px}
+.ex .who{flex:1}.ex button{font:inherit;padding:2px 8px;font-size:12px;border:1px solid var(--line);border-radius:6px;background:none;color:inherit;cursor:pointer}
+table{border-collapse:collapse;width:100%;font-size:13px}td,th{text-align:left;padding:3px 4px;border-top:1px solid var(--line)}th{color:var(--mut);font-weight:500}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+.close{float:right;border:0;background:none;color:var(--mut);font:inherit;cursor:pointer}
+#toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:8px 14px;border-radius:8px;display:none;font-size:14px;z-index:9}
+#toast.show{display:block}
+</style>
+<header>
+  <select id="queue" title="what to hear next">
+    <option value="alternate">discovery &amp; typical</option>
+    <option value="discovery">discovery</option>
+    <option value="typical">typical</option>
+    <option value="random">random</option>
+    <option value="verify">verify</option>
+    <option value="chord">chord</option>
+    <option value="edge">edge</option>
+    <option value="revisit">revisit half-filed</option>
+  </select>
+  <select id="probespecies" style="display:none"></select>
+  <span class="grow"></span>
+  <span id="count"></span>
+  <button id="hintstoggle" title="show the taggers' guesses">hints</button>
+  <button id="open">species</button>
+</header>
+<div class="card">
+  <div class="prev" id="prev" style="display:none"></div>
+  <div class="probe" id="probe" style="display:none"></div>
+  <div id="players"></div>
+  <div class="hints" id="hints"></div>
+  <div class="chips" id="chips"></div>
+  <div class="box">
+    <input id="q" placeholder="what is it?" autocomplete="off" spellcheck="false">
+    <div id="menu"></div>
+  </div>
+  <div class="scope" id="scope" style="display:none"></div>
+  <div class="actions"><button class="go" id="save">file &amp; next</button></div>
+  <div class="keys" id="keys"></div>
+  <input id="note" placeholder="note">
+  <div class="foot">
+    <span id="meta"></span><span class="grow"></span>
+    <button data-cmd="skip">skip</button><button data-cmd="mute">mute</button><button data-cmd="terrible">terrible</button><button data-cmd="incoherent">incoherent</button>
+    <button data-cmd="note">note</button><button data-cmd="back">back</button><button data-cmd="bcol">.bcol</button>
+  </div>
+</div>
+<div id="panel">
+  <button class="close" id="closepanel">close</button>
+  <h2>Species <span id="nspecies"></span></h2>
+  <div id="species"></div>
+  <div id="drawer" style="display:none"><h2 id="drawertitle"></h2><div id="exemplars"></div></div>
+  <h2>Probes</h2><table id="probes"></table>
+  <h2>Pairs of synths</h2><table id="pairs"></table>
+</div>
+<div id="toast"></div>
+<script>
+const $ = s => document.querySelector(s);
+const S = {species:{}, stats:{species:{}, pairs:{}}, item:null, selected:new Set(), scope:'mix', history:[], shownAt:0, session:0,
+           matches:[], hl:0, last:null, recent:[]};
+let player = null, playingButton = null;
+const q = $('#q');
+
+async function api(path, body){
+  const r = await fetch(path, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body||{})});
+  const data = await r.json();
+  if (!r.ok || data.error) throw new Error(data.error || r.statusText);
+  return data;
+}
+function toast(msg){ const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),2600); }
+function esc(s){ return String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function short(g){ return g ? g.replace(/^generate_/, '').replace(/_/g,' ') : ''; }
+function norm(s){ return s.trim().toLowerCase().replace(/\s+/g,' '); }
+function keys(html){ $('#keys').innerHTML = html; }
+
+/* ---------- audio ---------- */
+function play(id, scope, button){
+  if (player){ player.pause(); player = null; }
+  if (playingButton){ playingButton.classList.remove('playing'); const i = playingButton.querySelector('i'); if (i) i.style.width='0'; }
+  const a = new Audio(`/audio/${id}/${scope}.wav`);
+  player = a; playingButton = button || null;
+  if (button) button.classList.add('playing');
+  a.ontimeupdate = () => { const i = button && button.querySelector('i'); if (i && a.duration) i.style.width = (100*a.currentTime/a.duration)+'%'; };
+  a.onended = () => { if (button){ button.classList.remove('playing'); const i = button.querySelector('i'); if (i) i.style.width='0'; } };
+  a.onerror = () => toast('Could not render ' + id + ' ' + scope);
+  a.play().catch(()=>{});
+}
+function playSlot(n){ const b = document.querySelectorAll('#players .play')[n]; if (b) b.click(); }
+function warm(id, n){ for (const s of ['a','b'].slice(0, n)) fetch(`/audio/${id}/${s}.wav`).catch(()=>{}); }
+
+/* ---------- the item ---------- */
+function renderItem(){
+  const it = S.item, synths = it.synths, two = synths.length === 2;
+  const players = $('#players'); players.innerHTML = '';
+  const mk = (scope, title, sub, key) => {
+    const b = document.createElement('button'); b.className = 'play';
+    b.innerHTML = `<span class="tri">▶<i></i></span><span class="t"><b>${esc(title)}</b><span>${esc(sub)}</span></span><span class="k">${key}</span>`;
+    b.onclick = () => { play(it.id, scope, b); q.focus(); }; return b;
+  };
+  players.appendChild(mk('mix', two ? synths.join(' × ') : synths[0],
+    (two ? `balance ${it.balance.toFixed(2)} · ` : short(it.generators[0]) + ' · ') + `${it.seconds.toFixed(1)} s`, 'space'));
+  if (two){
+    const row = document.createElement('div'); row.className = 'sources';
+    synths.forEach((s,i) => row.appendChild(mk(i ? 'b' : 'a', `${s} alone`, short(it.generators[i]), String(i+1))));
+    players.appendChild(row);
+  }
+  const h = it.hints || {}, parts = [];
+  if (h.clap) parts.push('clap: ' + h.clap.map(([t])=>`<b>${esc(t)}</b>`).join(', '));
+  if (h.audioset && h.audioset.length) parts.push('audioset: ' + h.audioset.map(([t,p])=>`<b>${esc(t)}</b> ${p}`).join(', '));
+  $('#hints').innerHTML = parts.join(' &nbsp;·&nbsp; ');
+  S.selected = new Set(); S.scope = 'mix'; q.value = '';
+  $('#note').value = ''; $('#note').classList.remove('show');
+  const prev = it.previous; $('#prev').style.display = prev ? '' : 'none';
+  if (prev){
+    const what = prev.species.length ? prev.species.join(', ') + (prev.scope !== 'mix' ? ' (only ' + who(prev.scope==='a'?0:1) + ')' : '')
+      : (prev.negatives.join(', ') || (prev.probe ? 'not ' + prev.probe.species : 'nothing'));
+    $('#prev').textContent = prev.scope !== 'mix' && !prev.explicit ? `Filed before as ${what} by the old dropdown, which no longer counts. File it again.` : `Filed before as ${what}. Saving again replaces that.`;
+    prev.species.forEach(s => S.selected.add(s)); if (prev.explicit) S.scope = prev.scope;
+    if (prev.note){ $('#note').value = prev.note; $('#note').classList.add('show'); }
+  }
+  $('#meta').textContent = `${it.id} · ${it.queue}`;
+  renderProbe(); renderChips(); renderScope(); menu();
+  S.shownAt = Date.now();
+  play(it.id, 'mix', document.querySelector('#players .play'));
+  warm(it.id, two ? 2 : 0);
+  q.focus();
+}
+
+function who(i){ const it = S.item; return it.synths[i] + (it.generators[i] ? ' · ' + short(it.generators[i]) : ''); }
+function renderScope(){
+  /* click only: which render the label is about. Never offered in the dropdown or on a key. */
+  const box = $('#scope');
+  if (S.item.synths.length < 2){ box.style.display = 'none'; return; }
+  box.style.display = '';
+  box.innerHTML = [['mix','whole mix'],['a','only '+who(0)],['b','only '+who(1)]].map(([v,t]) => `<button data-scope="${v}" class="${S.scope===v?'on':''}">${esc(t)}</button>`).join('');
+  box.querySelectorAll('button').forEach(b => b.onclick = () => { S.scope = b.dataset.scope; renderScope(); hint(); q.focus(); });
+}
+
+function renderProbe(){
+  const p = S.item.probe, box = $('#probe');
+  if (!p){ box.style.display='none'; return; }
+  box.style.display='';
+  const sp = esc(p.species); let text = '';
+  if (p.kind==='chord') text = `Midway between two “${sp}” exemplars (chord ${p.chord}, gap ${p.gap}${p.gap > p.chord/4 ? ', a weak probe' : ''}).`;
+  if (p.kind==='edge') text = `Walking out from a “${sp}” exemplar: step ${p.step}, ${p.distance} away.`;
+  if (p.kind==='verify') text = `Its nearest exemplars say “${sp}” (margin ${p.margin}).`;
+  const ends = p.kind==='chord' ? p.ends : p.kind==='edge' ? [p.exemplar] : [];
+  box.innerHTML = `<span class="q">${text} Still “${sp}”?</span>` + ends.map((e,i)=>`<button data-play="${esc(e)}">▶ ${p.kind==='chord'?'end '+(i+1):'exemplar'}</button>`).join('');
+  box.querySelectorAll('[data-play]').forEach(b => b.onclick = () => { play(b.dataset.play, 'mix'); q.focus(); });
+}
+
+function speciesNames(){
+  /* nearest to the current render first (by its closest exemplar), then most recently used, then biggest */
+  const c = S.stats.species || {}, near = (S.item && S.item.nearby) || {};
+  return Object.keys(S.species).sort((a,b) => ((near[b] ?? -1) - (near[a] ?? -1)) || (S.recent.indexOf(b) - S.recent.indexOf(a)) || ((c[b]?.exemplars||0)-(c[a]?.exemplars||0)) || a.localeCompare(b));
+}
+function renderChips(){
+  const box = $('#chips'); box.innerHTML = '';
+  const c = S.stats.species || {}, names = speciesNames();
+  const shown = names.slice(0, 14).concat(names.slice(14).filter(n => S.selected.has(n)));
+  shown.forEach(n => {
+    const b = document.createElement('button'); b.className = 'chip' + (S.selected.has(n) ? ' on' : '');
+    b.innerHTML = esc(n) + `<small>${c[n]?.exemplars||0}</small>`;
+    b.onclick = () => { S.selected.has(n) ? S.selected.delete(n) : S.selected.add(n); renderChips(); q.focus(); };
+    box.appendChild(b);
+  });
+  if (names.length > shown.length){ const m = document.createElement('button'); m.className='chip more'; m.textContent = `+${names.length-shown.length} more, just type`; m.onclick = () => q.focus(); box.appendChild(m); }
+}
+
+/* ---------- the palette ---------- */
+function commands(){
+  const it = S.item, s = it ? it.synths : [], out = [
+    {name:'skip', tag:'command', run:() => save(['skip'])},
+    {name:'mute', tag:'command', run:() => save(['mute'])},
+    {name:'terrible', tag:'command', run:() => save(['terrible'])},
+    {name:'incoherent', tag:'the two sources do not belong together', run:() => save(['incoherent'])},
+    {name:'back', tag:'previous sound', run:back},
+    {name:'note', tag:'command', run:() => { $('#note').classList.add('show'); $('#note').focus(); }},
+    {name:'replay', tag:'command', run:() => playSlot(0)},
+  ];
+  if (it && it.probe) out.unshift({name:'no', tag:`not “${it.probe.species}”`, run:() => { S.selected.delete(it.probe.species); save([], true); }});
+  return out;
+}
+function matchesFor(text){
+  const t = norm(text);
+  if (!t) return [];
+  const starts = n => n.startsWith(t), word = n => n.split(' ').some(w => w.startsWith(t)), inside = n => n.includes(t);
+  const rank = n => starts(n) ? 0 : word(n) ? 1 : inside(n) ? 2 : 9;
+  const sp = speciesNames().map((n, i) => ({name:n, species:true, kind:S.species[n].kind, r:rank(n) + i/1000})).filter(m => m.r < 9);
+  const cm = commands().map(c => ({...c, r:rank(c.name) + .5})).filter(m => m.r < 9);
+  const all = sp.concat(cm).sort((a,b) => a.r-b.r);
+  if (!S.species[t] && !cm.some(c => c.name === t)) all.push({name:t, create:true, r:10});
+  return all.slice(0, 7);
+}
+function menu(){
+  const box = $('#menu'), text = q.value;
+  S.matches = matchesFor(text);
+  S.hl = Math.min(S.hl, Math.max(0, S.matches.length-1));
+  if (!S.matches.length){ box.classList.remove('show'); box.innerHTML = ''; hint(); return; }
+  box.innerHTML = S.matches.map((m, i) => `<div class="${i===S.hl?'hl':''}" data-i="${i}">${m.create ? 'new species “' + esc(m.name) + '”' : esc(m.name)}<span class="tag">${m.species ? (S.stats.species[m.name]?.exemplars||0) : m.create ? 'new · ⏎' : esc(m.tag)}</span></div>`).join('');
+  box.querySelectorAll('[data-i]').forEach(d => d.onmousedown = e => { e.preventDefault(); S.hl = +d.dataset.i; commit(); q.focus(); });
+  box.classList.add('show'); hint();
+}
+function hint(){
+  const it = S.item; if (!it) return;
+  const two = it.synths.length === 2, sel = S.selected.size, text = q.value;
+  if (it.probe && !text && !sel) return keys(`<kbd>⏎</kbd> yes, still “${esc(it.probe.species)}” &nbsp; type <kbd>no</kbd> or another species &nbsp; <kbd>space</kbd> replay`);
+  if (text) return keys(`<kbd>⏎</kbd> add &nbsp; <kbd>↑↓</kbd> choose &nbsp; then <kbd>⏎</kbd> again to file &amp; next`);
+  if (sel) return keys(`<kbd>⏎</kbd> file as ${esc([...S.selected].join(', '))}${S.scope !== 'mix' ? ' (only ' + esc(who(S.scope==='a'?0:1)) + ')' : ''} &amp; next &nbsp; type to add more &nbsp; <kbd>⌫</kbd> remove last`);
+  keys(`<kbd>space</kbd> replay${two ? ' &nbsp; <kbd>1</kbd> <kbd>2</kbd> each source alone' : ''} &nbsp; type a species or skip, mute, terrible &nbsp; <kbd>⌫</kbd> back`);
+}
+function commit(){
+  /* act on the highlighted match: add a species (never files), or run a command */
+  const m = S.matches[S.hl];
+  if (!m) return;
+  if (m.create){ q.value=''; createSpecies(m.name); return; }
+  if (m.species){ S.selected.add(m.name); q.value=''; renderChips(); menu(); return; }
+  q.value=''; menu(); m.run();
+}
+async function createSpecies(name){
+  try {
+    const d = await api('/api/species', {create:name, kind:'character'}); S.species = d.species; S.stats = d.stats;
+    S.selected.add(norm(name)); renderChips(); renderSide(); menu();
+  } catch(e){ toast(e.message); menu(); }
+}
+q.addEventListener('input', () => {
+  S.hl = 0;
+  if (q.value.includes(',')){            /* a comma commits what came before it and keeps the sound open */
+    const [head, ...rest] = q.value.split(',');
+    q.value = head; S.matches = matchesFor(head); S.hl = 0;
+    if (norm(head)) commit();
+    q.value = rest.join(',').trimStart();
+  }
+  menu();
+});
+q.addEventListener('keydown', e => {
+  const k = e.key, empty = !q.value;
+  if (k === 'ArrowDown'){ e.preventDefault(); if (S.matches.length){ S.hl = (S.hl+1) % S.matches.length; menu(); } }
+  else if (k === 'ArrowUp'){ e.preventDefault(); if (S.matches.length){ S.hl = (S.hl-1+S.matches.length) % S.matches.length; menu(); } }
+  else if (k === 'Enter'){ e.preventDefault(); if (empty) fileAndNext(); else commit(); }
+  else if (k === 'Escape'){ e.preventDefault(); if (!empty) { q.value=''; menu(); } else if (S.selected.size){ S.selected = new Set(); renderChips(); hint(); } else $('#panel').classList.remove('show'); }
+  else if (empty && k === ' '){ e.preventDefault(); playSlot(0); }
+  else if (empty && (k === '1' || k === '2') && S.item.synths.length === 2){ e.preventDefault(); playSlot(k === '1' ? 1 : 2); }
+  else if (empty && k === 'Backspace'){ e.preventDefault(); if (S.selected.size){ const last = [...S.selected].pop(); S.selected.delete(last); renderChips(); hint(); } else back(); }
+});
+document.addEventListener('keydown', e => {
+  if (document.activeElement === q || $('#panel').classList.contains('show')) return;
+  if (['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)) { if (e.key === 'Escape') { document.activeElement.blur(); q.focus(); } return; }
+  if (e.key === 'Escape') return;
+  q.focus();
+});
+$('#note').addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === 'Escape'){ e.preventDefault(); q.focus(); } });
+document.addEventListener('click', e => { if (!$('#panel').contains(e.target) && !['INPUT','SELECT'].includes(e.target.tagName)) q.focus(); });
+
+/* ---------- saving and moving on ---------- */
+async function save(negatives, allowEmpty){
+  const it = S.item; if (!it) return;
+  const species = [...S.selected];
+  if (!negatives.length && !species.length && !allowEmpty) return toast('Name a species, or skip, mute, terrible, incoherent.');
+  const body = {id: it.id, scope: S.scope, species, negatives, queue: it.queue, probe: it.probe, note: $('#note').value.trim(), seconds: Math.round((Date.now()-S.shownAt)/100)/10};
+  try {
+    const d = await api('/api/label', body);
+    S.stats = d.stats; S.session += 1;
+    species.forEach(n => { S.recent = [n].concat(S.recent.filter(x => x !== n)).slice(0, 30); });
+    S.last = {id: it.id, what: species.length ? species.join(', ') + (S.scope !== 'mix' ? ' (only ' + who(S.scope==='a'?0:1) + ')' : '') : negatives.join(', ') || 'not ' + (it.probe ? it.probe.species : '')};
+    renderSide();
+    await next();
+  } catch(e){ toast(e.message); }
+}
+async function next(resume){
+  const queue = $('#queue').value, species = $('#probespecies').value;
+  try {
+    const it = await api('/api/next', {queue, species, resume: !!resume});
+    if (S.item) S.history.push(S.item.id);
+    S.item = it; renderItem();
+    if (S.last){ $('#prev').style.display = ''; $('#prev').textContent = `Filed as ${S.last.what}.`; S.last = null; }
+  } catch(e){ toast(e.message); }
+}
+async function open(id){
+  try { if (S.item) S.history.push(S.item.id); const it = await api('/api/item', {id}); it.queue='back'; it.probe=null; S.item = it; renderItem(); } catch(e){ toast(e.message); }
+}
+function back(){ const id = S.history.pop(); if (!id) return toast('Nothing to go back to'); const keep = S.history; open(id).then(() => { S.history = keep; }); }
+
+/* ---------- the side panel ---------- */
+function renderSide(){
+  const st = S.stats, sp = st.species || {};
+  const names = Object.keys(S.species).sort((a,b)=>(sp[b]?.exemplars||0)-(sp[a]?.exemplars||0) || a.localeCompare(b));
+  $('#nspecies').textContent = names.length ? `· ${st.total} filed, ${st.skipped} skipped` : '';
+  $('#species').innerHTML = names.map(n => `<div class="sp"><span class="name" data-sp="${esc(n)}" title="hear its exemplars">${esc(n)}</span><span>${sp[n]?.exemplars||0}</span><button data-rename="${esc(n)}">rename</button></div>`).join('')
+    || '<div style="color:var(--mut);font-size:14px">none yet</div>';
+  $('#species').querySelectorAll('[data-sp]').forEach(e => e.onclick = () => drawer(e.dataset.sp));
+  $('#species').querySelectorAll('[data-rename]').forEach(b => b.onclick = async () => {
+    const to = prompt(`Rename “${b.dataset.rename}” to`, b.dataset.rename); if (!to || norm(to)===b.dataset.rename) return;
+    try { const d = await api('/api/species', {rename:b.dataset.rename, to}); S.species=d.species; S.stats=d.stats; renderChips(); renderSide(); } catch(e){ toast(e.message); }
+  });
+  const probes = names.filter(n => sp[n] && (sp[n].chord_probes || sp[n].verify_probes || sp[n].edge_radii.length));
+  $('#probes').innerHTML = '<tr><th>species</th><th>chord pass</th><th>verify agree</th><th>edge radius</th></tr>' + (probes.map(n => { const s=sp[n]; const radii = s.edge_radii.length ? (s.edge_radii.reduce((a,b)=>a+b,0)/s.edge_radii.length).toFixed(2)+` (${s.edge_radii.length})` : '–';
+    return `<tr><td>${esc(n)}</td><td class="n">${s.chord_probes?Math.round(100*s.chord_pass)+'% ('+s.chord_probes+')':'–'}</td><td class="n">${s.verify_probes?Math.round(100*s.verify_agree)+'% ('+s.verify_probes+')':'–'}</td><td class="n">${radii}</td></tr>`; }).join('') || '<tr><td colspan=4 style="color:var(--mut)">none yet: choose a species and the verify, chord or edge queue</td></tr>');
+  const pairs = Object.entries(st.pairs || {}).sort((a,b)=>b[1].judged-a[1].judged).slice(0,20);
+  $('#pairs').innerHTML = '<tr><th>pair</th><th>heard</th><th>coherent</th><th>one source</th><th>bad</th></tr>' + (pairs.map(([p,c]) => `<tr><td>${esc(p)}</td><td class="n">${c.judged}</td><td class="n">${Math.round(100*c.coherent/c.judged)}%</td><td class="n">${c.one_source}</td><td class="n">${c.terrible+c.incoherent}</td></tr>`).join('') || '<tr><td colspan=5 style="color:var(--mut)">nothing judged yet</td></tr>');
+  const sel = $('#probespecies'), cur = sel.value;
+  sel.innerHTML = '<option value="*">of every species in turn</option>' + names.filter(n => (sp[n]?.mix||0) > 0).map(n => `<option value="${esc(n)}">of ${esc(n)} (${sp[n].mix})</option>`).join('');
+  if ([...sel.options].some(o=>o.value===cur)) sel.value = cur;
+  $('#count').textContent = S.session ? `${S.session} filed` : '';
+}
+async function drawer(name){
+  try {
+    const d = await api('/api/exemplars', {species:name});
+    $('#drawer').style.display = ''; $('#drawertitle').textContent = `“${name}” exemplars (${d.exemplars.length})`;
+    $('#exemplars').innerHTML = d.exemplars.map(e => `<div class="ex"><span class="who">${esc(e.synths.join(' × '))}${e.scope !== 'mix' ? ' <span style="color:var(--mut)">(only ' + esc(e.synths[e.scope === 'a' ? 0 : 1] || e.scope) + ')</span>' : ''}</span>`
+      + `<button data-play="${esc(e.id)}" data-scope="${e.scope}">▶</button><button data-open="${esc(e.id)}">open</button></div>`).join('') || '<div style="color:var(--mut);font-size:13px">none</div>';
+    $('#exemplars').querySelectorAll('[data-play]').forEach(b => b.onclick = () => play(b.dataset.play, b.dataset.scope));
+    $('#exemplars').querySelectorAll('[data-open]').forEach(b => b.onclick = () => { $('#panel').classList.remove('show'); open(b.dataset.open); });
+  } catch(e){ toast(e.message); }
+}
+
+/* ---------- wiring ---------- */
+document.querySelectorAll('.foot [data-cmd]').forEach(b => b.onclick = () => {
+  const c = b.dataset.cmd;
+  if (c === 'bcol') return download();
+  const cmd = commands().find(x => x.name === c); if (cmd) cmd.run();
+});
+async function download(){
+  try { const c = await api('/api/preset', {id: S.item.id, scope: S.scope});
+    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(c)], {type:'application/json'}));
+    a.download = `${S.item.id.replace(':','-')}${S.scope === 'mix' ? '' : '-' + S.scope}.bcol`; a.click(); } catch(e){ toast(e.message); }
+}
+function fileAndNext(){ if (S.item.probe && !S.selected.size) S.selected.add(S.item.probe.species); save([]); }
+$('#save').onclick = () => { fileAndNext(); q.focus(); };
+$('#open').onclick = () => { $('#panel').classList.toggle('show'); if (!$('#panel').classList.contains('show')) q.focus(); };
+$('#closepanel').onclick = () => { $('#panel').classList.remove('show'); q.focus(); };
+$('#hintstoggle').onclick = () => { document.body.classList.toggle('nohints'); const off = document.body.classList.contains('nohints'); $('#hintstoggle').classList.toggle('on', !off); try { localStorage.setItem('sort.nohints', off ? '1' : ''); } catch(e){} q.focus(); };
+$('#queue').onchange = () => { $('#probespecies').style.display = ['verify','chord','edge'].includes($('#queue').value) ? '' : 'none'; next(); };
+$('#probespecies').onchange = () => next();
+(async () => {
+  try { if (localStorage.getItem('sort.nohints')) document.body.classList.add('nohints'); else $('#hintstoggle').classList.add('on'); } catch(e){}
+  try { const d = await api('/api/stats'); S.species = d.species; S.stats = d.stats; renderChips(); renderSide(); await next(true); } catch(e){ toast(e.message); }
+})();
+</script>

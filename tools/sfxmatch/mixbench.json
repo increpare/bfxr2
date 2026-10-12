@@ -1,0 +1,1742 @@
+{
+ "version": 1,
+ "seed": 3,
+ "targets": [
+  {
+   "id": "mix-001",
+   "sources": [
+    {
+     "synth": "Crittr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.9053275026381016,
+      "voice": 4,
+      "duration": 0.9885367930168286,
+      "pitch": 0.6519904405623674,
+      "size": 0.3081474895356223,
+      "morph": 0.578713495482225,
+      "calls": 3,
+      "gap": 0.29970135271549225,
+      "contour": 0.20467907227575782,
+      "growl": 0.1384946271777153,
+      "breath": 0.4401849322137423,
+      "flutter": 0.32383776030037553
+     },
+     "seed": 0.5921094151648606
+    },
+    {
+     "synth": "Jinglr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.8454684546845469,
+      "instrumentSeed": 64285,
+      "phrase": "[{\"degree\":1,\"beats\":0.75},{\"degree\":2,\"beats\":0.25},{\"degree\":5,\"beats\":0.75},{\"degree\":4,\"beats\":0.25},{\"degree\":5,\"beats\":0.75},{\"degree\":7,\"beats\":0.25},{\"degree\":9,\"beats\":1}]",
+      "instrument": 6,
+      "key": 7,
+      "scale": 2,
+      "contour": 0,
+      "rhythm": 1,
+      "noteCount": 7,
+      "octave": 5,
+      "tempo": 122.55536651611328,
+      "swing": 0,
+      "brightness": 0.580162763595581,
+      "decay": 0.4592537581920624,
+      "echo": 0.2889566123485565
+     },
+     "seed": 0.16370659634169016
+    }
+   ],
+   "balance": 0.3706836039118295
+  },
+  {
+   "id": "mix-002",
+   "sources": [
+    {
+     "synth": "Choirr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.47751319548115134,
+      "harmony": 4,
+      "duration": 3.5372071266174316,
+      "pitch": 0.18034109473228455,
+      "voices": 10,
+      "vowel": 0.45742908120155334,
+      "detune": 0.6678473353385925,
+      "swell": 0.4261721968650818,
+      "breath": 0.46934670209884644,
+      "motion": 0.8002489805221558
+     },
+     "seed": 0.847270025890623
+    },
+    {
+     "synth": "Fractr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.6185497671831399,
+      "material": 0,
+      "duration": 1.5672133683925495,
+      "fragments": 35,
+      "fragmentSize": 0.1937362840306014,
+      "spread": 0.8245666517876089,
+      "decay": 0.27422124093864114,
+      "gravity": 0.6220309712225571,
+      "bounce": 0.695259011653252,
+      "stress": 0.11084026535972953,
+      "shards": 0.7245942813344299,
+      "fracture": 0.7321014415472746
+     },
+     "seed": 0.361456218320911
+    }
+   ],
+   "balance": 0.6329016935856264
+  },
+  {
+   "id": "mix-003",
+   "sources": [
+    {
+     "synth": "Boomr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.4913695971481502,
+      "duration": 3.067338228225708,
+      "size": 0.7505149245262146,
+      "pressure": 0.8811755180358887,
+      "blast": 0.8010683655738831,
+      "debris": 0.9904786348342896,
+      "gas": 0.10528606176376343,
+      "aftershock": 0.7484564781188965,
+      "rubbleSize": 0.7646223902702332,
+      "spread": 0.8464701771736145,
+      "tail": 0.7233805060386658,
+      "muffle": 0.23822666704654694,
+      "mechanism": 4,
+      "space": 0.5263192653656006
+     },
+     "seed": 0.2616866837444928
+    }
+   ],
+   "balance": 0.5
+  },
+  {
+   "id": "mix-004",
+   "sources": [
+    {
+     "synth": "Clonkr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.8946635532192886,
+      "material": 3,
+      "action": 1,
+      "size": 0.9048548340797424,
+      "hollowness": 0.9359539151191711,
+      "hardness": 0.8481810092926025,
+      "damping": 0.7815670371055603,
+      "duration": 0.4465274512767792
+     },
+     "seed": 0.23956122288296378
+    },
+    {
+     "synth": "Squishr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.8641536412760615,
+      "texture": 2,
+      "viscosity": 0.967467064037919,
+      "stretch": 0.8768830103799701,
+      "pressure": 0.5090724686160684,
+      "wetness": 0.763931843219325,
+      "bubbleSize": 0.20509453932754695,
+      "duration": 1.767404690757394
+     },
+     "seed": 0.5104350095563942
+    }
+   ],
+   "balance": 0.3209002662167518
+  },
+  {
+   "id": "mix-005",
+   "sources": [
+    {
+     "synth": "Jinglr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.5218452184521846,
+      "instrumentSeed": 62116,
+      "phrase": "[{\"degree\":1,\"beats\":0.5},{\"degree\":6,\"beats\":1}]",
+      "instrument": 1,
+      "key": 0,
+      "scale": 0,
+      "contour": 0,
+      "rhythm": 0,
+      "noteCount": 2,
+      "octave": 4,
+      "tempo": 218.65133470389992,
+      "swing": 0,
+      "brightness": 0.7524529359303416,
+      "decay": 0.19846392299979926,
+      "echo": 0
+     },
+     "seed": 0.7077823621744331
+    },
+    {
+     "synth": "Machinr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.32377491937950253,
+      "mechanism": 5,
+      "duration": 1.0453154248767533,
+      "speed": 0.7971206558169797,
+      "load": 0.19296707153553144,
+      "roughness": 0.08306273268535731,
+      "looseness": 0.034558822312392296,
+      "size": 0.1439915633527562,
+      "startTime": 0.020052638976834715,
+      "stopTime": 0.08671281018294394
+     },
+     "seed": 0.12904680452134898
+    }
+   ],
+   "balance": 0.7193533434673701
+  },
+  {
+   "id": "mix-006",
+   "sources": [
+    {
+     "synth": "Fractr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.7210838855244219,
+      "material": 5,
+      "duration": 1.1132856607437134,
+      "fragments": 11,
+      "fragmentSize": 0.4494835436344147,
+      "spread": 0.09699191153049469,
+      "decay": 0.390447199344635,
+      "gravity": 0.79283607006073,
+      "bounce": 0.7082610726356506,
+      "stress": 0.31182095408439636,
+      "shards": 0.3070012629032135,
+      "fracture": 0.9662986993789673
+     },
+     "seed": 0.7118394298618899
+    },
+    {
+     "synth": "Swarmr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.4092885563150048,
+      "kind": 1,
+      "duration": 1.8227272033691406,
+      "count": 16,
+      "speed": 0.9888743162155151,
+      "cohesion": 0.9488816857337952,
+      "agitation": 0.26755690574645996,
+      "size": 0,
+      "movement": 0.47456735372543335,
+      "scatter": 0.7987594604492188
+     },
+     "seed": 0.6457211500775756
+    }
+   ],
+   "balance": 0.7074636853462738
+  },
+  {
+   "id": "mix-007",
+   "sources": [
+    {
+     "synth": "Birdr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.3926684092730284,
+      "voice": 1,
+      "duration": 0.34136199951171875,
+      "pitch": 0.3938811421394348,
+      "syllables": 1,
+      "gap": 0.32712894678115845,
+      "sweep": -0.528442919254303,
+      "arch": -0.5427001714706421,
+      "trill": 0.275089830160141,
+      "trill_rate": 0.4000000059604645,
+      "duet": 0.21641643345355988,
+      "rasp": 0.47940975427627563,
+      "breath": 0.16481156647205353,
+      "rhythm": 0.11999999731779099,
+      "variation": 0.13454453647136688
+     },
+     "seed": 0.2565421787160673
+    },
+    {
+     "synth": "Jinglr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.6184461844618446,
+      "instrumentSeed": 36867,
+      "phrase": "[{\"degree\":0,\"beats\":0.25},{\"degree\":4,\"beats\":0.5},{\"degree\":0,\"beats\":0.25},{\"degree\":3,\"beats\":0.75},{\"degree\":0,\"beats\":0.25},{\"degree\":4,\"beats\":0.5},{\"degree\":0,\"beats\":0.25},{\"degree\":5,\"beats\":1}]",
+      "instrument": 5,
+      "key": 1,
+      "scale": 1,
+      "contour": 4,
+      "rhythm": 2,
+      "noteCount": 8,
+      "octave": 5,
+      "tempo": 169.37061242293566,
+      "swing": 0,
+      "brightness": 0.9999464104417711,
+      "decay": 0.1089265622664243,
+      "echo": 0.03465896379202604
+     },
+     "seed": 0.26755690901663287
+    }
+   ],
+   "balance": 0.3586577841389518
+  },
+  {
+   "id": "mix-008",
+   "sources": [
+    {
+     "synth": "Bfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 0,
+      "attackTime": 0.07937231659889221,
+      "sustainTime": 0.09490248560905457,
+      "sustainPunch": 0.5610979795455933,
+      "decayTime": 0.3332943916320801,
+      "compressionAmount": 0,
+      "frequency_start": 0.521750271320343,
+      "frequency_slide": -0.11833739280700684,
+      "frequency_acceleration": 0.03838467597961426,
+      "min_frequency_relative_to_starting_frequency": 0,
+      "vibratoDepth": 0,
+      "vibratoSpeed": 0,
+      "pitch_jump_repeat_speed": 0,
+      "pitch_jump_amount": 0,
+      "pitch_jump_onset_percent": 0,
+      "pitch_jump_2_amount": -0.16230612993240356,
+      "pitch_jump_onset2_percent": 0.015008103102445602,
+      "overtones": 0,
+      "overtoneFalloff": 0,
+      "squareDuty": 0.1287865787744522,
+      "dutySweep": 0,
+      "repeatSpeed": 0,
+      "flangerOffset": 0,
+      "flangerSweep": 0.13370680809020996,
+      "lpFilterCutoff": 1,
+      "lpFilterCutoffSweep": 0,
+      "lpFilterResonance": 0,
+      "hpFilterCutoff": 0,
+      "hpFilterCutoffSweep": 0,
+      "bitCrush": 0,
+      "bitCrushSweep": 0
+     },
+     "seed": 0.18686322585040194
+    },
+    {
+     "synth": "Whooshr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.9949924086686224,
+      "duration": 2.060406446456909,
+      "size": 0.3595983386039734,
+      "air": 0.619912326335907,
+      "whistle": 0.5268544554710388,
+      "movement": 0.49044474959373474,
+      "focus": 0.9015716910362244,
+      "flutter": 0.9143869876861572
+     },
+     "seed": 0.13010872503664372
+    }
+   ],
+   "balance": 0.9531301780156427
+  },
+  {
+   "id": "mix-009",
+   "sources": [
+    {
+     "synth": "Choirr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.4806404032278806,
+      "harmony": 2,
+      "duration": 4.266885913815349,
+      "pitch": 0.09910972578451038,
+      "voices": 9,
+      "vowel": 0.13087290428578854,
+      "detune": 0.6740101151517592,
+      "swell": 0.3289711154997349,
+      "breath": 0.1383659951388836,
+      "motion": 0.31185154833365236
+     },
+     "seed": 0.4493909886321513
+    },
+    {
+     "synth": "Pluckr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.48120472533628345,
+      "material": 1,
+      "duration": 3.6876197984209282,
+      "pitch": 0.1167934478726238,
+      "strings": 8,
+      "damping": 0.21428350917994976,
+      "brightness": 0.5910938570741564,
+      "pluck": 0.807274519931525,
+      "coupling": 0.39380716485902667,
+      "strum": 0.19423999194987118,
+      "tremolo": 0.2712271870113909,
+      "vibrato": 0.5606990582309663,
+      "tremoloRate": 6.107694238284603,
+      "inharmonic": 0.5418939511291683
+     },
+     "seed": 0.9164011053856755
+    }
+   ],
+   "balance": 0.972324965921224
+  },
+  {
+   "id": "mix-010",
+   "sources": [
+    {
+     "synth": "Bouncr",
+     "params": {
+      "masterVolume": 0.5,
+      "material": 2,
+      "surface": 0,
+      "force": 0.6075490713119507,
+      "duration": 1.0183336734771729,
+      "size": 0.5621092915534973,
+      "hardness": 0.8700805306434631,
+      "tail": 0.8969536423683167,
+      "seed": 0.08575203293003142,
+      "count": 1,
+      "bounce": 0.6499999761581421,
+      "gravity": 0.5,
+      "spin": 0.09661366045475006
+     },
+     "seed": 0.17760447363117082
+    },
+    {
+     "synth": "Swarmr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.0715431016869843,
+      "kind": 3,
+      "duration": 1.0243073605466635,
+      "count": 24,
+      "speed": 0.7595647201873362,
+      "cohesion": 0.15859293618705125,
+      "agitation": 0.6814683357952163,
+      "size": 0.18883239710703492,
+      "movement": 0.3265196572989225,
+      "scatter": 0.3472413645125926
+     },
+     "seed": 0.2782778015368569
+    }
+   ],
+   "balance": 0.6608045554492908
+  },
+  {
+   "id": "mix-011",
+   "sources": [
+    {
+     "synth": "Fractr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.7812399324029684,
+      "material": 5,
+      "duration": 0.8570829629898071,
+      "fragments": 21,
+      "fragmentSize": 0.4016343951225281,
+      "spread": 0.1148480698466301,
+      "decay": 0.46414878964424133,
+      "gravity": 0.9227443933486938,
+      "bounce": 0.7405637502670288,
+      "stress": 0.6437612175941467,
+      "shards": 0.9796732664108276,
+      "fracture": 0.9253696203231812
+     },
+     "seed": 0.32273091363261164
+    },
+    {
+     "synth": "Swarmr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.06851174868643284,
+      "kind": 3,
+      "duration": 1.8086932599544525,
+      "count": 20,
+      "speed": 0.4818727818317712,
+      "cohesion": 0.1857192436233163,
+      "agitation": 0.4865131307393312,
+      "size": 0.7255590906832368,
+      "movement": 0.36299574201693763,
+      "scatter": 0.2145224719773978
+     },
+     "seed": 0.35279295186866755
+    }
+   ],
+   "balance": 0.8070189085237635
+  },
+  {
+   "id": "mix-012",
+   "sources": [
+    {
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.3057133189868182,
+      "material": 0,
+      "gesture": 0,
+      "duration": 0.2335778796393424,
+      "grain": 0.35981394616886975,
+      "density": 0.6213368129916489,
+      "motion": -0.27484864508733153,
+      "pressure": 0.5754606082104147,
+      "folds": 1,
+      "brightness": 0.5206508539291099
+     },
+     "seed": 0.3684622237821348
+    },
+    {
+     "synth": "Squishr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.21871021972037852,
+      "texture": 0,
+      "viscosity": 0.7161753293592483,
+      "stretch": 0.3480170688941143,
+      "pressure": 0.6071103094262071,
+      "wetness": 0.882503874390386,
+      "bubbleSize": 0.7408965344307944,
+      "duration": 0.42658511726884174
+     },
+     "seed": 0.5610691451056445
+    }
+   ],
+   "balance": 0.5126645122619292
+  },
+  {
+   "id": "mix-013",
+   "sources": [
+    {
+     "synth": "Birdr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.48713652649894357,
+      "voice": 0,
+      "duration": 0.24743324518203735,
+      "pitch": 0.6904101967811584,
+      "syllables": 1,
+      "gap": 0.06412758678197861,
+      "sweep": -0.3802154064178467,
+      "arch": 0.7333716154098511,
+      "trill": 0.026335306465625763,
+      "trill_rate": 0.4000000059604645,
+      "duet": 0.06237022578716278,
+      "rasp": 0.017855657264590263,
+      "breath": 0.049971070140600204,
+      "rhythm": 0.11999999731779099,
+      "variation": 0.25
+     },
+     "seed": 0.19382057823425325
+    },
+    {
+     "synth": "Squishr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.6840071361511946,
+      "texture": 1,
+      "viscosity": 0.7064869033289142,
+      "stretch": 0.4883206142461859,
+      "pressure": 0.7451492199907079,
+      "wetness": 0.8311329116113484,
+      "bubbleSize": 0.40217571109533307,
+      "duration": 2.6939269076567145
+     },
+     "seed": 0.0379096960861538
+    }
+   ],
+   "balance": 0.46809499105340135
+  },
+  {
+   "id": "mix-014",
+   "sources": [
+    {
+     "synth": "Breathr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.39403355796821415,
+      "source": 2,
+      "mode": 0,
+      "duration": 0.9618426561355591,
+      "direction": -0.9577072262763977,
+      "cycles": 1,
+      "effort": 0.36358287930488586,
+      "inhale": 0.622128963470459,
+      "hold": 0.19981318712234497,
+      "throat": 0.5851463675498962,
+      "rasp": 0.9236307144165039,
+      "flutter": 0.3543241322040558,
+      "space": 0.09243245422840118
+     },
+     "seed": 0.849587306235479
+    },
+    {
+     "synth": "Jinglr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.5096550965509655,
+      "instrumentSeed": 33100,
+      "phrase": "[{\"degree\":1,\"beats\":0.25},{\"degree\":4,\"beats\":0.5},{\"degree\":1,\"beats\":0.25},{\"degree\":6,\"beats\":0.75},{\"degree\":1,\"beats\":1}]",
+      "instrument": 2,
+      "key": 3,
+      "scale": 1,
+      "contour": 4,
+      "rhythm": 2,
+      "noteCount": 5,
+      "octave": 5,
+      "tempo": 213.48707285244018,
+      "swing": 0,
+      "brightness": 0.8426779682282358,
+      "decay": 0.1295294236391783,
+      "echo": 0.029830708596855403
+     },
+     "seed": 0.887490811118071
+    }
+   ],
+   "balance": 0.12841635270499632
+  },
+  {
+   "id": "mix-015",
+   "sources": [
+    {
+     "synth": "Clonkr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.9664333763066679,
+      "material": 3,
+      "action": 2,
+      "size": 0.3710532486438751,
+      "hollowness": 0.5055598616600037,
+      "hardness": 0.8457716107368469,
+      "damping": 0.7988043427467346,
+      "duration": 0.30483707785606384
+     },
+     "seed": 0.4935268335796573
+    },
+    {
+     "synth": "Swarmr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.5927998458500952,
+      "kind": 5,
+      "duration": 3.018818825483322,
+      "count": 6,
+      "speed": 0.8628308477345854,
+      "cohesion": 0.2062928054947406,
+      "agitation": 0.6355353917460889,
+      "size": 0.7536815924104303,
+      "movement": 0.15598258539102972,
+      "scatter": 0.6477173946332186
+     },
+     "seed": 0.16718868471720794
+    }
+   ],
+   "balance": 0.7000056049433258
+  },
+  {
+   "id": "mix-016",
+   "sources": [
+    {
+     "synth": "Bouncr",
+     "params": {
+      "masterVolume": 0.5,
+      "material": 0,
+      "surface": 5,
+      "force": 0.9295532681862824,
+      "duration": 0.5372196700656787,
+      "size": 0.8207965612877159,
+      "hardness": 0.3790801926283166,
+      "tail": 0.24525442895246669,
+      "seed": 0.007925743237137794,
+      "count": 1,
+      "bounce": 0.65,
+      "gravity": 0.5,
+      "spin": 0
+     },
+     "seed": 0.9870891022715507
+    },
+    {
+     "synth": "Squishr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.279958218568936,
+      "texture": 0,
+      "viscosity": 0.9386955014662817,
+      "stretch": 0.5114531882340088,
+      "pressure": 0.7319231216912158,
+      "wetness": 0.7843687679735012,
+      "bubbleSize": 0.6748073801165446,
+      "duration": 0.3919351030397229
+     },
+     "seed": 0.09510701458704462
+    }
+   ],
+   "balance": 0.08277536878794813
+  },
+  {
+   "id": "mix-017",
+   "sources": [
+    {
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 3,
+      "duration": 0.3035519068699902,
+      "pitch": {
+       "start": 0.688222197368741,
+       "end": 0.8921453639352693,
+       "curve": "Linear"
+      },
+      "tone": {
+       "start": 0.2937987611023709,
+       "end": 0.9319180997880175,
+       "curve": "Steps"
+      },
+      "vibrato": {
+       "start": 0.029184211813844743,
+       "end": 0.35944220384117215,
+       "curve": "Pulse"
+      },
+      "level": {
+       "start": 0.840329594768118,
+       "end": 0.8206043577287345,
+       "curve": "Smooth"
+      },
+      "attack": 0.0025783691160094287,
+      "release": 0.18564599865557166,
+      "resonance": 0.10897203085245565,
+      "echo": 0,
+      "waveTo": -1,
+      "morph": {
+       "start": 0,
+       "end": 0.9998520449502394,
+       "curve": "Smooth"
+      }
+     },
+     "seed": 0.5022791636961959
+    },
+    {
+     "synth": "Zappr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.8566287918947637,
+      "duration": 2.7538399565964937,
+      "voltage": 0.2617240221821703,
+      "arcs": 16,
+      "branching": 0.546278814249672,
+      "crackle": 0.6814044589176773,
+      "hum": 0.9282178075518459,
+      "spark": 0.1176538035972044,
+      "spread": 0.9171499154763296,
+      "decay": 0.6041848197579385
+     },
+     "seed": 0.4872421487406362
+    }
+   ],
+   "balance": 0.8413848839692608
+  },
+  {
+   "id": "mix-018",
+   "sources": [
+    {
+     "synth": "Birdr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.05248797731474042,
+      "voice": 0,
+      "duration": 0.8158761262893677,
+      "pitch": 0.6909440159797668,
+      "syllables": 3,
+      "gap": 0.0880684107542038,
+      "sweep": 0.09378015995025635,
+      "arch": 0.53526771068573,
+      "trill": 0.7637389898300171,
+      "trill_rate": 0.6975271701812744,
+      "duet": 0.10000000149011612,
+      "rasp": 0.010767030529677868,
+      "breath": 0.06848745048046112,
+      "rhythm": 0.11999999731779099,
+      "variation": 0.10058191418647766
+     },
+     "seed": 0.8273860504793284
+    },
+    {
+     "synth": "Zappr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.21697827870957553,
+      "duration": 0.15499616478569805,
+      "voltage": 0.6376603069249541,
+      "arcs": 2,
+      "branching": 0.03573024042416364,
+      "crackle": 0.07213291553780436,
+      "hum": 0.0029241195740178226,
+      "spark": 0.8439433333929629,
+      "spread": 0.03356655668467284,
+      "decay": 0.05681049560196697
+     },
+     "seed": 0.9031164920012218
+    }
+   ],
+   "balance": 0.8186696327406686
+  },
+  {
+   "id": "mix-019",
+   "sources": [
+    {
+     "synth": "Crittr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.5440622451715171,
+      "voice": 0,
+      "duration": 0.6350361108779907,
+      "pitch": 0.22611036896705627,
+      "size": 0.7748575806617737,
+      "morph": 0.6566084623336792,
+      "calls": 1,
+      "gap": 0.09854618459939957,
+      "contour": -0.884376049041748,
+      "growl": 0.6627993583679199,
+      "breath": 0.20458745956420898,
+      "flutter": 0.27830833196640015
+     },
+     "seed": 0.11926723372630399
+    }
+   ],
+   "balance": 0.5
+  },
+  {
+   "id": "mix-020",
+   "sources": [
+    {
+     "synth": "Bfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 0,
+      "attackTime": 0,
+      "sustainTime": 0.0900451396759436,
+      "sustainPunch": 0.3427874435893446,
+      "decayTime": 0.28363483414104224,
+      "compressionAmount": 0,
+      "frequency_start": 0.5841020252322778,
+      "frequency_slide": 0,
+      "frequency_acceleration": 0,
+      "min_frequency_relative_to_starting_frequency": 0,
+      "vibratoDepth": 0,
+      "vibratoSpeed": 0,
+      "pitch_jump_repeat_speed": 0,
+      "pitch_jump_amount": 0,
+      "pitch_jump_onset_percent": 0,
+      "pitch_jump_2_amount": 0,
+      "pitch_jump_onset2_percent": 0,
+      "overtones": 0,
+      "overtoneFalloff": 0,
+      "squareDuty": 0,
+      "dutySweep": 0,
+      "repeatSpeed": 0,
+      "flangerOffset": 0,
+      "flangerSweep": 0,
+      "lpFilterCutoff": 1,
+      "lpFilterCutoffSweep": 0,
+      "lpFilterResonance": 0,
+      "hpFilterCutoff": 0,
+      "hpFilterCutoffSweep": 0,
+      "bitCrush": 0,
+      "bitCrushSweep": 0
+     },
+     "seed": 0.8116952090070394
+    },
+    {
+     "synth": "Glitchr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.4603730740491301,
+      "duration": 3.520534038543701,
+      "pitch": 0.3949788808822632,
+      "fragment": 0.17963184416294098,
+      "repeat": 0.06912979483604431,
+      "chaos": 0.02849740721285343,
+      "dropout": 0.2212275266647339,
+      "crush": 0.21540355682373047,
+      "rate": 0.1318439543247223,
+      "mode": 6
+     },
+     "seed": 0.6969898841484407
+    }
+   ],
+   "balance": 0.8644505338614502
+  },
+  {
+   "id": "mix-021",
+   "sources": [
+    {
+     "synth": "Zappr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.16857768804766238,
+      "duration": 1.6205178499221802,
+      "voltage": 0.5616856813430786,
+      "arcs": 7,
+      "branching": 0.42748892307281494,
+      "crackle": 0.9918467402458191,
+      "hum": 0.6450872421264648,
+      "spark": 0.9383402466773987,
+      "spread": 0.5695123076438904,
+      "decay": 0.18237973749637604
+     },
+     "seed": 0.44369953881685553
+    },
+    {
+     "synth": "Zappr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.39891176065430045,
+      "duration": 1.28067193236202,
+      "voltage": 0.9884207285009324,
+      "arcs": 2,
+      "branching": 0.9088245440274477,
+      "crackle": 0.2185735248029232,
+      "hum": 0.07736410721205175,
+      "spark": 0.6856273510609754,
+      "spread": 0.05819547448307276,
+      "decay": 0.7053999254130758
+     },
+     "seed": 0.006799790417879481
+    }
+   ],
+   "balance": 0.6434426193561169
+  },
+  {
+   "id": "mix-022",
+   "sources": [
+    {
+     "synth": "Bouncr",
+     "params": {
+      "masterVolume": 0.5,
+      "material": 1,
+      "surface": 2,
+      "force": 0.5996789932250977,
+      "duration": 1.4887447357177734,
+      "size": 0.2942601144313812,
+      "hardness": 0.7904692888259888,
+      "tail": 0.8242220878601074,
+      "seed": 0.5791348146740347,
+      "count": 1,
+      "bounce": 0.6011098623275757,
+      "gravity": 0.4369940757751465,
+      "spin": 0.14803634583950043
+     },
+     "seed": 0.07687775753299197
+    },
+    {
+     "synth": "Glitchr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.5037823366001248,
+      "duration": 1.4119243621826172,
+      "pitch": 0.5417303442955017,
+      "fragment": 0.7436186671257019,
+      "repeat": 0.8854738473892212,
+      "chaos": 0.485069215297699,
+      "dropout": 0.22111797332763672,
+      "crush": 0.20978468656539917,
+      "rate": 0.053697291761636734,
+      "mode": 7
+     },
+     "seed": 0.7801680369977586
+    }
+   ],
+   "balance": 0.6886445269036959
+  },
+  {
+   "id": "mix-023",
+   "sources": [
+    {
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.11878559296019375,
+      "material": 2,
+      "gesture": 1,
+      "duration": 0.6171859607216903,
+      "grain": 0.5893566399393604,
+      "density": 0.7843788480758667,
+      "motion": 0.0865612098015845,
+      "pressure": 0.8123929519578814,
+      "folds": 4,
+      "brightness": 0.6961121198022737
+     },
+     "seed": 0.7364939066328381
+    },
+    {
+     "synth": "Zappr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.010071275988593698,
+      "duration": 1.2235665205866098,
+      "voltage": 0.9226256380788982,
+      "arcs": 2,
+      "branching": 0.9039091487415135,
+      "crackle": 0.19995149443857374,
+      "hum": 0.01154610970057547,
+      "spark": 0.6704805712681264,
+      "spread": 0.054574480541050435,
+      "decay": 0.915323021018412
+     },
+     "seed": 0.7934654548820974
+    }
+   ],
+   "balance": 0.4230890310704791
+  },
+  {
+   "id": "mix-024",
+   "sources": [
+    {
+     "synth": "Riftr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.3072272662539035,
+      "excitation": 0,
+      "duration": 0.9293848267290741,
+      "pitch": 0.8554440526990219,
+      "bend": -0.17830445664003491,
+      "space": 0.4736922512878664,
+      "feedback": 0.7873847764451056,
+      "dispersion": 0.47526056827045976,
+      "motion": 0.4915972301037982,
+      "field": 0.6083440867834725,
+      "reverse": 0.8617421074444428
+     },
+     "seed": 0.7345283933610103
+    },
+    {
+     "synth": "Signlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.09239787119440734,
+      "encoding": 0,
+      "duration": 1.0314702269039118,
+      "carrier": 0.5780530142853968,
+      "deviation": 0.7258182240999304,
+      "symbols": 0.3290565590839833,
+      "packets": 4,
+      "gap": 0.1228917290805839,
+      "drift": -0.25541241290047767,
+      "corruption": 0.0191805892623961,
+      "interference": 0.04951551863923669,
+      "echo": 0.27485261968337
+     },
+     "seed": 0.3223177897431171
+    }
+   ],
+   "balance": 0.17243886246012324
+  },
+  {
+   "id": "mix-025",
+   "sources": [
+    {
+     "synth": "Birdr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.7438190507236868,
+      "voice": 2,
+      "duration": 0.6539264412829653,
+      "pitch": 0.36681672907434404,
+      "syllables": 2,
+      "gap": 0.2034438420087099,
+      "sweep": 0.023425027355551742,
+      "arch": 0.7551100882235915,
+      "trill": 0.2428122625919059,
+      "trill_rate": 0.4,
+      "duet": 0.16932661808095872,
+      "rasp": 0.551089508854784,
+      "breath": 0.14305830601369962,
+      "rhythm": 0.12,
+      "variation": 0.25
+     },
+     "seed": 0.5590671163533434
+    },
+    {
+     "synth": "Clonkr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.5507394345477223,
+      "material": 2,
+      "action": 2,
+      "size": 0.09073767924681306,
+      "hollowness": 0.007968608697410673,
+      "hardness": 0.8951529564335943,
+      "damping": 0.3481655172770843,
+      "duration": 0.3957002723636106
+     },
+     "seed": 0.8007408151614235
+    }
+   ],
+   "balance": 0.6120089012814667
+  },
+  {
+   "id": "mix-026",
+   "sources": [
+    {
+     "synth": "Clonkr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.2628566038329154,
+      "material": 1,
+      "action": 0,
+      "size": 0.1787431180756539,
+      "hollowness": 0.38609563568606975,
+      "hardness": 0.8847467869054526,
+      "damping": 0.07052318773465231,
+      "duration": 1.025551868462935
+     },
+     "seed": 0.09853508412183976
+    },
+    {
+     "synth": "Clonkr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.466207318007946,
+      "material": 4,
+      "action": 0,
+      "size": 0.9303602709434926,
+      "hollowness": 0.38958834898658096,
+      "hardness": 0.3179400560865178,
+      "damping": 0.3594859789125621,
+      "duration": 0.6393092261976563
+     },
+     "seed": 0.18152316111209754
+    }
+   ],
+   "balance": 0.26719554853671185
+  },
+  {
+   "id": "mix-027",
+   "sources": [
+    {
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 3,
+      "duration": 0.2511638104915619,
+      "pitch": {
+       "start": 0.19972313940525055,
+       "end": 0.7998321056365967,
+       "curve": "Ease Out"
+      },
+      "tone": {
+       "start": 0.7734033465385437,
+       "end": 0.14031648635864258,
+       "curve": "Linear"
+      },
+      "vibrato": {
+       "start": 0,
+       "end": 0,
+       "curve": "Linear"
+      },
+      "level": {
+       "start": 0.770020067691803,
+       "end": 0.7512752413749695,
+       "curve": "Linear"
+      },
+      "attack": 0.007567506283521652,
+      "release": 0.15667055547237396,
+      "resonance": 0.12513397634029388,
+      "echo": 0,
+      "waveTo": 1,
+      "morph": {
+       "start": 0.003751111449673772,
+       "end": 1,
+       "curve": "Smooth"
+      }
+     },
+     "seed": 0.21387232998999306
+    },
+    {
+     "synth": "Swarmr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.7149370415136218,
+      "kind": 4,
+      "duration": 3.0039627263322473,
+      "count": 9,
+      "speed": 0.21648959404556078,
+      "cohesion": 0.5510660482337698,
+      "agitation": 0.26594106666743755,
+      "size": 0.3776001720689237,
+      "movement": 0.34181789492722603,
+      "scatter": 0.24128711610101164
+     },
+     "seed": 0.9264027461403374
+    }
+   ],
+   "balance": 0.6410536601426798
+  },
+  {
+   "id": "mix-028",
+   "sources": [
+    {
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 2,
+      "duration": 0.11205010116100311,
+      "pitch": {
+       "start": 0.43651771545410156,
+       "end": 0.70652174949646,
+       "curve": "Pulse"
+      },
+      "tone": {
+       "start": 0.8799999952316284,
+       "end": 0.6577978134155273,
+       "curve": "Ease Out"
+      },
+      "vibrato": {
+       "start": 0.08064096421003342,
+       "end": 0.02022836171090603,
+       "curve": "Linear"
+      },
+      "level": {
+       "start": 0.7658783197402954,
+       "end": 0.18797792494297028,
+       "curve": "Ease Out"
+      },
+      "attack": 0.002151407767087221,
+      "release": 0.07350991666316986,
+      "resonance": 0.1603410840034485,
+      "echo": 0,
+      "waveTo": 7,
+      "morph": {
+       "start": 0.22154578566551208,
+       "end": 0.12634989619255066,
+       "curve": "Linear"
+      }
+     },
+     "seed": 0.9426969975033037
+    },
+    {
+     "synth": "Machinr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.27800044300965965,
+      "mechanism": 6,
+      "duration": 1.7527592182159424,
+      "speed": 0.6227524280548096,
+      "load": 0.17858576774597168,
+      "roughness": 0.5051302909851074,
+      "looseness": 0.7254074215888977,
+      "size": 0.6902549266815186,
+      "startTime": 0.016751350834965706,
+      "stopTime": 0.8793119788169861
+     },
+     "seed": 0.8204529367314162
+    }
+   ],
+   "balance": 0.7435578057144251
+  },
+  {
+   "id": "mix-029",
+   "sources": [
+    {
+     "synth": "Birdr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.2880822310689837,
+      "voice": 0,
+      "duration": 1.1680700791999699,
+      "pitch": 0.6476614207820968,
+      "syllables": 6,
+      "gap": 0.20507081542164088,
+      "sweep": 0.01325041161617263,
+      "arch": 0.3735329242656007,
+      "trill": 0.3046919486601837,
+      "trill_rate": 0.32701531673083084,
+      "duet": 0.14528206119313836,
+      "rasp": 0.04,
+      "breath": 0.03,
+      "rhythm": 0.27920764612499627,
+      "variation": 0.6978021937422454
+     },
+     "seed": 0.9808208003883965
+    },
+    {
+     "synth": "Clonkr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.11265374184586108,
+      "material": 4,
+      "action": 0,
+      "size": 0.6205187724903226,
+      "hollowness": 0.7464393611997366,
+      "hardness": 0.28526852338109165,
+      "damping": 0.653909061383456,
+      "duration": 0.6127205117023551
+     },
+     "seed": 0.4782796170442679
+    }
+   ],
+   "balance": 0.17543859601167217
+  },
+  {
+   "id": "mix-030",
+   "sources": [
+    {
+     "synth": "Choirr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.0831204226706177,
+      "harmony": 4,
+      "duration": 3.7876622676849365,
+      "pitch": 0.21773327887058258,
+      "voices": 12,
+      "vowel": 0.47266528010368347,
+      "detune": 0.7036787867546082,
+      "swell": 0.3632701635360718,
+      "breath": 0.24823211133480072,
+      "motion": 0.8569803237915039
+     },
+     "seed": 0.10524535962006798
+    },
+    {
+     "synth": "Zappr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.6863884313497692,
+      "duration": 0.962095071002841,
+      "voltage": 0.8747216443764045,
+      "arcs": 3,
+      "branching": 0.7037896132096648,
+      "crackle": 0.00650188559666276,
+      "hum": 0.0714538555778563,
+      "spark": 0.1423880724236369,
+      "spread": 0.46846780572086577,
+      "decay": 0.7182303152629175
+     },
+     "seed": 0.8045539081676484
+    }
+   ],
+   "balance": 0.44605257145259497
+  },
+  {
+   "id": "mix-031",
+   "sources": [
+    {
+     "synth": "Bouncr",
+     "params": {
+      "masterVolume": 0.5,
+      "material": 1,
+      "surface": 0,
+      "force": 0.5550803542137146,
+      "duration": 0.8806253671646118,
+      "size": 0.3327203691005707,
+      "hardness": 0.587293267250061,
+      "tail": 0.5075048804283142,
+      "seed": 0.9850507599767298,
+      "count": 1,
+      "bounce": 0.6499999761581421,
+      "gravity": 0.5,
+      "spin": 0
+     },
+     "seed": 0.18075109249361732
+    }
+   ],
+   "balance": 0.5
+  },
+  {
+   "id": "mix-032",
+   "sources": [
+    {
+     "synth": "Jinglr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.23480234802348024,
+      "instrumentSeed": 8102,
+      "phrase": "[{\"degree\":-1,\"beats\":0.25},{\"degree\":2,\"beats\":0.5},{\"degree\":-1,\"beats\":0.25},{\"degree\":null,\"beats\":0.75},{\"degree\":-1,\"beats\":0.25},{\"degree\":2,\"beats\":0.5},{\"degree\":-1,\"beats\":1}]",
+      "instrument": 5,
+      "key": 6,
+      "scale": 1,
+      "contour": 4,
+      "rhythm": 2,
+      "noteCount": 7,
+      "octave": 5,
+      "tempo": 218.15362507943064,
+      "swing": 0,
+      "brightness": 0.8331514680525287,
+      "decay": 0.21726849130354825,
+      "echo": 0.04093048579990864
+     },
+     "seed": 0.0713927776479899
+    },
+    {
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.7716585076414049,
+      "material": 3,
+      "gesture": 2,
+      "duration": 0.35350417146459223,
+      "grain": 0.3511154771363363,
+      "density": 0.7976345265284182,
+      "motion": -0.17615153772057968,
+      "pressure": 0.5324820865015499,
+      "folds": 2,
+      "brightness": 0.421927371842321
+     },
+     "seed": 0.16667093224005958
+    }
+   ],
+   "balance": 0.8036314479949427
+  },
+  {
+   "id": "mix-033",
+   "sources": [
+    {
+     "synth": "Rustlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.30726043274626136,
+      "material": 0,
+      "gesture": 3,
+      "duration": 0.1381293088197708,
+      "grain": 0.31972867250442505,
+      "density": 0.5842407941818237,
+      "motion": -0.29876720905303955,
+      "pressure": 0.45094943046569824,
+      "folds": 9,
+      "brightness": 0.5730049014091492
+     },
+     "seed": 0.7358591996746527
+    }
+   ],
+   "balance": 0.5
+  },
+  {
+   "id": "mix-034",
+   "sources": [
+    {
+     "synth": "Bfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 0,
+      "attackTime": 0,
+      "sustainTime": 0.112613024818711,
+      "sustainPunch": 0,
+      "decayTime": 0.1931884446181357,
+      "compressionAmount": 0,
+      "frequency_start": 0.5944622298702598,
+      "frequency_slide": 0,
+      "frequency_acceleration": 0,
+      "min_frequency_relative_to_starting_frequency": 0,
+      "vibratoDepth": 0,
+      "vibratoSpeed": 0,
+      "pitch_jump_repeat_speed": 0,
+      "pitch_jump_amount": 0,
+      "pitch_jump_onset_percent": 0,
+      "pitch_jump_2_amount": 0,
+      "pitch_jump_onset2_percent": 0,
+      "overtones": 0,
+      "overtoneFalloff": 0,
+      "squareDuty": 0.11793132279999553,
+      "dutySweep": 0,
+      "repeatSpeed": 0,
+      "flangerOffset": 0,
+      "flangerSweep": 0,
+      "lpFilterCutoff": 1,
+      "lpFilterCutoffSweep": 0,
+      "lpFilterResonance": 0,
+      "hpFilterCutoff": 0.1,
+      "hpFilterCutoffSweep": 0,
+      "bitCrush": 0,
+      "bitCrushSweep": 0
+     },
+     "seed": 0.31907346224585387
+    },
+    {
+     "synth": "Signlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.4198432369157672,
+      "encoding": 0,
+      "duration": 0.6963440480176359,
+      "carrier": 0.5047549305274152,
+      "deviation": 0.22190660407766702,
+      "symbols": 0.05162387884454802,
+      "packets": 4,
+      "gap": 0.49968615315854553,
+      "drift": 0.05386390011757612,
+      "corruption": 0.036215766835957765,
+      "interference": 0.19920000000391153,
+      "echo": 0.08119558123871684
+     },
+     "seed": 0.258819674407871
+    }
+   ],
+   "balance": 0.8418515561682961
+  },
+  {
+   "id": "mix-035",
+   "sources": [
+    {
+     "synth": "Pluckr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.0990210110321641,
+      "material": 1,
+      "duration": 1.7465609697508624,
+      "pitch": 0.5426768879406154,
+      "strings": 2,
+      "damping": 0.4558453010395169,
+      "brightness": 0.1848912094719708,
+      "pluck": 0.8241852358914912,
+      "coupling": 0.622348534874618,
+      "strum": 0.6563197989016771,
+      "tremolo": 0.9361702429596335,
+      "vibrato": 0.2799768759869039,
+      "tremoloRate": 6.654813550272957,
+      "inharmonic": 0.9400221081450582
+     },
+     "seed": 0.8944687462146697
+    }
+   ],
+   "balance": 0.5
+  },
+  {
+   "id": "mix-036",
+   "sources": [
+    {
+     "synth": "Transfxr",
+     "params": {
+      "masterVolume": 0.5,
+      "waveType": 2,
+      "duration": 0.22,
+      "pitch": {
+       "start": 0.8304272019059863,
+       "end": 0.23042720190598628,
+       "curve": "Ease Out"
+      },
+      "tone": {
+       "start": 0.95,
+       "end": 0.25,
+       "curve": "Linear"
+      },
+      "vibrato": {
+       "start": 0,
+       "end": 0.15,
+       "curve": "Ease In"
+      },
+      "level": {
+       "start": 0.9,
+       "end": 0.25,
+       "curve": "Linear"
+      },
+      "attack": 0,
+      "release": 0.14,
+      "resonance": 0.32,
+      "echo": 0.14,
+      "waveTo": -1,
+      "morph": {
+       "start": 0,
+       "end": 1,
+       "curve": "Smooth"
+      }
+     },
+     "seed": 0.9987608557891632
+    },
+    {
+     "synth": "Zappr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.0011582823935896158,
+      "duration": 4.668711185455322,
+      "voltage": 0.29914453625679016,
+      "arcs": 22,
+      "branching": 0.05001867935061455,
+      "crackle": 0.8314473628997803,
+      "hum": 0.8200746774673462,
+      "spark": 0.26227763295173645,
+      "spread": 0.7691568732261658,
+      "decay": 0.591698944568634
+     },
+     "seed": 0.7381741127523139
+    }
+   ],
+   "balance": 0.37989442456525807
+  },
+  {
+   "id": "mix-037",
+   "sources": [
+    {
+     "synth": "Breathr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.9774348614737391,
+      "source": 2,
+      "mode": 0,
+      "duration": 0.9536513912724331,
+      "direction": -0.9674023159896024,
+      "cycles": 1,
+      "effort": 0.42363804613240064,
+      "inhale": 0.47494193040765825,
+      "hold": 0.12144572887569666,
+      "throat": 0.6244188020704314,
+      "rasp": 0.8013745899312198,
+      "flutter": 0.5472193279396742,
+      "space": 0.14455952681601048
+     },
+     "seed": 0.1480736002199703
+    },
+    {
+     "synth": "Riftr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.3855491813737899,
+      "excitation": 4,
+      "duration": 1.4612195491790771,
+      "pitch": 0.7533915638923645,
+      "bend": 0.12039387226104736,
+      "space": 0.47606343030929565,
+      "feedback": 0.5864611268043518,
+      "dispersion": 0.5443471670150757,
+      "motion": 0.19966645538806915,
+      "field": 0.7168566584587097,
+      "reverse": 0.6947963833808899
+     },
+     "seed": 0.48859220501344747
+    }
+   ],
+   "balance": 0.5147542500551578
+  },
+  {
+   "id": "mix-038",
+   "sources": [
+    {
+     "synth": "Jinglr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.4110841108411084,
+      "instrumentSeed": 23857,
+      "phrase": "[{\"degree\":1,\"beats\":0.75},{\"degree\":3,\"beats\":0.25},{\"degree\":3,\"beats\":0.75},{\"degree\":4,\"beats\":0.25},{\"degree\":4,\"beats\":0.75},{\"degree\":6,\"beats\":0.25},{\"degree\":7,\"beats\":1}]",
+      "instrument": 1,
+      "key": 4,
+      "scale": 0,
+      "contour": 0,
+      "rhythm": 1,
+      "noteCount": 7,
+      "octave": 4,
+      "tempo": 175.54934420157224,
+      "swing": 0,
+      "brightness": 0.916454276512377,
+      "decay": 0.5877362168044783,
+      "echo": 0.12523388331755997
+     },
+     "seed": 0.6054263537135208
+    }
+   ],
+   "balance": 0.5
+  },
+  {
+   "id": "mix-039",
+   "sources": [
+    {
+     "synth": "Breathr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.236602766206488,
+      "source": 2,
+      "mode": 1,
+      "duration": 3.4621413862565533,
+      "direction": 1,
+      "cycles": 1,
+      "effort": 0.3150770218856633,
+      "inhale": 0.15182381906779482,
+      "hold": 0.11724734753835946,
+      "throat": 0.6112431497778743,
+      "rasp": 0.6642420201562345,
+      "flutter": 0.6447060821577907,
+      "space": 0.6843765513040125
+     },
+     "seed": 0.7481167703197455
+    },
+    {
+     "synth": "Jinglr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.18461184611846118,
+      "instrumentSeed": 96957,
+      "phrase": "[{\"degree\":4,\"beats\":0.75},{\"degree\":-1,\"beats\":1}]",
+      "instrument": 5,
+      "key": 0,
+      "scale": 1,
+      "contour": 1,
+      "rhythm": 1,
+      "noteCount": 2,
+      "octave": 3,
+      "tempo": 219.17341858148575,
+      "swing": 0,
+      "brightness": 0.22781237838789822,
+      "decay": 0.07329154468607157,
+      "echo": 0
+     },
+     "seed": 0.03358860140074682
+    }
+   ],
+   "balance": 0.31432523681444646
+  },
+  {
+   "id": "mix-040",
+   "sources": [
+    {
+     "synth": "Bouncr",
+     "params": {
+      "masterVolume": 0.5,
+      "material": 1,
+      "surface": 2,
+      "force": 0.7372680548229255,
+      "duration": 1.7260975713841618,
+      "size": 0.31238349275663496,
+      "hardness": 0.6045752207748591,
+      "tail": 0.5150610402226448,
+      "seed": 0.6213017331901938,
+      "count": 1,
+      "bounce": 0.65,
+      "gravity": 0.5,
+      "spin": 0.10494442289927974
+     },
+     "seed": 0.3212853014027526
+    },
+    {
+     "synth": "Signlr",
+     "params": {
+      "masterVolume": 0.5,
+      "seed": 0.7089708922430873,
+      "encoding": 0,
+      "duration": 0.6707865682896227,
+      "carrier": 0.5800665304996073,
+      "deviation": 0.33037871952401476,
+      "symbols": 0.195580201940611,
+      "packets": 2,
+      "gap": 0.16252367258071898,
+      "drift": 0.16376203084364532,
+      "corruption": 0,
+      "interference": 0,
+      "echo": 0.13652749055996538
+     },
+     "seed": 0.025124373688649615
+    }
+   ],
+   "balance": 0.5707370571743914
+  }
+ ]
+}

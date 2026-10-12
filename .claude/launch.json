@@ -9,6 +9,15 @@
         "cd tools && exec uv run --quiet python -m sfxmatch.guided --host 0.0.0.0 --port 8765 --jobs 6"
       ],
       "port": 8765
+    },
+    {
+      "name": "sfxmatch-sort",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd tools && exec uv run --quiet python -m sfxmatch.sort --host 127.0.0.1 --port 8766"
+      ],
+      "port": 8766
     }
   ]
 }
