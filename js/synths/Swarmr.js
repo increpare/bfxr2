@@ -1,6 +1,6 @@
 class Swarmr extends PresetSynth {
     name='Swarmr';
-    canvas_bg_logo = 'img/logo_swarmr.png';
+    canvas_bg_logo = 'img/logo_swarmr.svg';
     tooltip='Flocks, clouds and coordinated little machines.';
     static DSP=Swarmr_DSP;
     param_info=[

@@ -1,7 +1,7 @@
 class Mixr extends PresetSynth {
     name = 'Mixr';
     tooltip = 'Two sounds together.';
-    canvas_bg_logo = "img/logo_mixr.png";
+    canvas_bg_logo = "img/logo_mixr.svg";
     static DSP = Mixr_DSP;
     hide_params = ['masterVolume', 'seed', 'sources'];
     param_info = [

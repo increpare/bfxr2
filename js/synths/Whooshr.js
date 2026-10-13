@@ -1,6 +1,6 @@
 class Whooshr extends PresetSynth {
     name='Whooshr';
-    canvas_bg_logo = 'img/logo_whooshr.png';
+    canvas_bg_logo = 'img/logo_whooshr.svg';
     tooltip='Swings, flybys and rushing air.';
     static DSP=Whooshr_DSP;
     param_info=[...PresetSynth.common_params,

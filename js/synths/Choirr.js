@@ -1,6 +1,6 @@
 class Choirr extends PresetSynth {
     name='Choirr';
-    canvas_bg_logo = 'img/logo_choirr.png';
+    canvas_bg_logo = 'img/logo_choirr.svg';
     tooltip='Sustained vowel ensembles, spectral choirs and wordless chords.';
     static DSP=Choirr_DSP;
     param_info=[PresetSynth.common_params[0],

@@ -1,6 +1,6 @@
 class Breathr extends PresetSynth {
     name='Breathr';
-    canvas_bg_logo = 'img/logo_breathr.png';
+    canvas_bg_logo = 'img/logo_breathr.svg';
     tooltip='Breathing, exertion and air moving through impossible lungs.';
     static DSP=Breathr_DSP;
     param_info=[...PresetSynth.common_params,

@@ -1,6 +1,6 @@
 class Zappr extends PresetSynth {
     name='Zappr';
-    canvas_bg_logo = 'img/logo_zappr.png';
+    canvas_bg_logo = 'img/logo_zappr.svg';
     tooltip='Branching arcs, charged fields and electrical failures.';
     static DSP=Zappr_DSP;
     param_info=[

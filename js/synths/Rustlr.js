@@ -1,6 +1,6 @@
 class Rustlr extends PresetSynth {
     name='Rustlr';
-    canvas_bg_logo = 'img/logo_rustlr.png';
+    canvas_bg_logo = 'img/logo_rustlr.svg';
     tooltip='Paper, fabric and small inventory-handling gestures.';
     static DSP=Rustlr_DSP;
     param_info=[

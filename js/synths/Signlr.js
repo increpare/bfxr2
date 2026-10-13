@@ -1,6 +1,6 @@
 class Signlr extends PresetSynth {
     name = 'Signlr';
-    canvas_bg_logo = 'img/logo_signlr.png';
+    canvas_bg_logo = 'img/logo_signlr.svg';
     tooltip = 'Coded transmissions, derelict beacons and mysterious receivers.';
     static DSP = Signlr_DSP;
     param_info = [

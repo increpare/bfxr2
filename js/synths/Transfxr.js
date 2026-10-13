@@ -2,7 +2,7 @@ class Transfxr extends SynthBase {
     name = 'Transfxr';
     version = '1.0.0';
     tooltip = 'Move between two sound states: set the start, the destination and the journey.';
-    canvas_bg_logo = 'img/logo_transfxr.png';
+    canvas_bg_logo = 'img/logo_transfxr.svg';
     header_properties = ['waveType'];
     permalocked = ['masterVolume'];
     hide_params = ['masterVolume','waveTo'];

@@ -1,6 +1,6 @@
 class Boomr extends PresetSynth {
     name='Boomr';
-    canvas_bg_logo = 'img/logo_boomr.png';
+    canvas_bg_logo = 'img/logo_boomr.svg';
     tooltip='Pressure waves, fireballs and falling fragments.';
     static DSP=Boomr_DSP;
     param_info=[

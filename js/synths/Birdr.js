@@ -1,6 +1,6 @@
 class Birdr extends PresetSynth {
     name = 'Birdr';
-    canvas_bg_logo = 'img/logo_birdr.png';
+    canvas_bg_logo = 'img/logo_birdr.svg';
     tooltip = 'Birdsong, chirps, trills and wild calls in short phrases.';
     static DSP = Birdr_DSP;
     param_info = [

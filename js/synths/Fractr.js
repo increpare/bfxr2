@@ -1,6 +1,6 @@
 class Fractr extends PresetSynth {
     name = 'Fractr';
-    canvas_bg_logo = 'img/logo_fractr.png';
+    canvas_bg_logo = 'img/logo_fractr.svg';
     tooltip = 'Structural snaps, brittle crunches, cracking ice and falling rubble.';
     static DSP = Fractr_DSP;
     param_info = [
