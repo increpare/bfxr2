@@ -21,7 +21,7 @@ class Mixr extends PresetSynth {
         {id:'alien_beacon',name:'Alien Broadcast',pair:['Signlr','Choirr'],balance:[0.44,0.62],tip:'Signlr × Choirr.'},
 
         {id:'garden_lute',name:'Garden Lute',pair:['Pluckr','Crittr'],balance:[0.11,0.29],tip:'Pluckr × Crittr.'},
-        {id:'reality_error',name:'Reality Error',pair:['Riftr','Glitchr'],balance:[0.37,0.55],tip:'Sonar × Glitches.'},
+        {id:'reality_error',name:'Reality Error',pair:['Riftr','Glitchr'],balance:[0.37,0.55],tip:'Sci-fi × Glitches.'},
         {id:'soft_landing',name:'Goo Collision',pair:['Bouncr','Squishr'],balance:[0.33,0.51],tip:'Bonks × Squishy.'},
 
         {id:'spark_impact',name:'Live Wire',pair:['Clonkr','Zappr'],balance:[0.52,0.7],tip:'Clonkr × Zappr.'},

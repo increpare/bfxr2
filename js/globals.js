@@ -5,8 +5,8 @@ Math.clamp = function(value, min, max){
 const SYNTH_DISPLAY_NAMES = {
     Transfxr:'Transfxr', Clonkr:'Tangs', Machinr:'Motors',
     Jinglr:'Jingles', Squishr:'Squishy', Mixr:'Mixfxr',
-    Crittr:'Beasts', Birdr:'Bird', Signlr:'Signal',
-    Fractr:'Cracker', Riftr:'Sonar', Swarmr:'Swarms',
+    Crittr:'Beasts', Birdr:'Bird', Signlr:'Sonar',
+    Fractr:'Cracker', Riftr:'Sci-fi', Swarmr:'Swarms',
     Rustlr:'Rustler', Boomr:'Boomer', Zappr:'Zapper',
     Whooshr:'Whoosh', Bouncr:'Bonks', Breathr:'Breath',
     Choirr:'Choir', Pluckr:'Plucked', Glitchr:'Glitches'

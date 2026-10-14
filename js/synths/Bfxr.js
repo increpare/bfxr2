@@ -7,7 +7,7 @@ class Bfxr extends SynthBase {
     version = Bfxr_DSP.version;
     tooltip = "Bfxr is a simple sound effect generator, based on DrPetter's Sfxr.";
 
-    canvas_bg_logo = "img/logo_bfxr.png";
+    canvas_bg_logo = "img/logo_bfxr.svg";
 
     header_properties = ["waveType"];
 

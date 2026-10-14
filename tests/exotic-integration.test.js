@@ -64,7 +64,7 @@ test('navigation registers only current engines', () => {
         'Jingles','Plucked','Choir',
         'Beasts','Bird','Swarms',
         'Tangs','Bonks','Cracker','Boomer','Rustler','Squishy',
-        'Motors','Breath','Whoosh','Signal','Sonar','Zapper','Glitches'
+        'Motors','Breath','Whoosh','Sonar','Sci-fi','Zapper','Glitches'
     ]);
     const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
     for (const family of families) {

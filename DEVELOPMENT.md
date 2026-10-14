@@ -1,6 +1,8 @@
 ## How to run
 
-Uh, it should work just fine. There's an optional compilation step if you want to make everything tiny, but as a default just hosting a local http server and loading index.html should work...
+Run `make serve` from the project directory (requires Node.js and Make). It serves the current directory on an available local port and prints a link to Bfxr. Open that link in your browser; press Ctrl+C in the terminal to stop the server.
+
+You can also run `node tools/serve.js` directly. No compilation or npm install is needed to serve the app. There's an optional compilation step if you want to make everything tiny.
 
 ## How to compile
 

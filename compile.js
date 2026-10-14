@@ -64,14 +64,6 @@ for (var i = 0; i < script_includes.length; i++) {
 
 // console.log(js_files);
 
-//concatenate all css files
-var css_content = '';
-for (var i = 0; i < css_files.length; i++) {
-    const css_file = css_files[i];
-    const css_file_content = fs.readFileSync(css_file, 'utf8');
-    css_content += "\n"+css_file_content;
-}
-
 //concatenate all js files
 var js_content = '';
 for (var i = 0; i < js_files.length; i++) {
@@ -85,7 +77,8 @@ var uglified_js_content = UglifyJS.minify(js_content).code;
 
 //clean css content
 var options = { 
-    
+    // Inline CSS lives beside index.html; copied images live in img/.
+    rebaseTo: process.cwd(),
     level: {
         1: {
             all: true
@@ -96,7 +89,7 @@ var options = {
     }
  };
 
-var cleaned_css_content = new CleanCSS(options).minify(css_content);
+var cleaned_css_content = new CleanCSS(options).minify(css_files);
 
 //if bin directory exists, remove it
 if (fs.existsSync('bin')){
@@ -121,19 +114,16 @@ index = index.replace( css, css_include_line);
 //write the new index.html
 fs.writeFileSync('bin/index.html', index);
 
-console.log("crushing images...");
+console.log("copying SVG images...");
 fs.mkdirSync('bin/img');
 fs.readdirSync('img').forEach(file => {
-    // First copy the file to bin/img
     fs.copyFileSync(`img/${file}`, `bin/img/${file}`);
-    var command = `pngcrush -rem allb -brute -reduce -ow ./bin/img/${file}`;
-    exec(command);
 });
+
+// Copy the SVG favicon and ICO fallback before compressing the output.
+fs.copyFileSync('favicon.ico', 'bin/favicon.ico');
+fs.copyFileSync('favicon.svg', 'bin/favicon.svg');
 
 //run ./gzipper perl script
 exec("perl gzipper");
-
-//move favicon.icon and favicon.png to bin
-fs.copyFileSync('favicon.ico', 'bin/favicon.ico');
-fs.copyFileSync('favicon.png', 'bin/favicon.png');
 

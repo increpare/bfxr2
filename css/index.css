@@ -41,7 +41,7 @@
     background-image:
         linear-gradient(to right, var(--page-background-color) var(--fade-left-solid), transparent var(--fade-left-end), transparent var(--fade-right-start), var(--page-background-color) var(--fade-right-solid)),
         linear-gradient(to bottom, var(--page-background-color) var(--fade-top-solid), transparent var(--fade-top-end), transparent var(--fade-bottom-start), var(--page-background-color) var(--fade-bottom-solid)),
-        url("../img/bg.png");
+        url("../img/bg.svg");
     background-attachment: fixed;
 }
 
@@ -553,13 +553,13 @@ button:active {
     margin:0;
     padding:0;
     margin-left: var(--ui-margin);
-    background-image: url("../img/locked.png");
+    background-image: url("../img/locked.svg");
     background-repeat: no-repeat;
     background-position: center;
  }
 
  .lockimage.unlocked {
-    background-image: url("../img/unlocked.png");
+    background-image: url("../img/unlocked.svg");
     opacity: 0.4;
  }
 
@@ -604,7 +604,7 @@ button:active {
   /* The search field */
   #myInput {
     box-sizing: border-box;
-    background-image: url('searchicon.png');
+    background-image: url('../img/searchicon.svg');
     background-position: 14px 12px;
     background-repeat: no-repeat;
     font-size: 16px;

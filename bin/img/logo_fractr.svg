@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="113" height="200" viewBox="0 0 113 200">
+  <!-- Fractr logo. Drawn behind the waveform display; the waveform is drawn
+       down the middle of the panel around the vertical line in the "guide" layer. -->
+  <g inkscape:groupmode="layer" inkscape:label="background">
+    <rect x="0" y="0" width="113" height="200" fill="#ccbda1"/>
+  </g>
+  
+  <g inkscape:groupmode="layer" inkscape:label="logo">
+    <text x="-196" y="107" transform="rotate(-90)"
+          font-family="sans-serif" font-size="24" fill="#e7d1a7">Cracker</text>
+  </g>
+  <g inkscape:groupmode="layer" inkscape:label="guide">
+    <line x1="56.5" y1="0" x2="56.5" y2="200" stroke="#663931" stroke-width="1"/>
+  </g>
+</svg>

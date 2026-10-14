@@ -11,11 +11,11 @@ test('Mixr catalog exposes preset generators without generated files or retired 
  assert.ok(list.some(g=>g.synth==='Jinglr'&&g.family==='Jingles'));
  assert.ok(list.some(g=>g.synth==='Transfxr'&&g.family==='Transfxr'));
  assert.ok(list.every(g=>!['Mixr'].includes(g.synth)));
- assert.equal(run("new Mixr().recipes.find(recipe=>recipe.id==='haunted').tip"),'Choir × Sonar.');
+ assert.equal(run("new Mixr().recipes.find(recipe=>recipe.id==='haunted').tip"),'Choir × Sci-fi.');
  assert.deepEqual(plain(run("new Mixr().recipes.find(recipe=>recipe.id==='phase_step').pair")),['Whooshr','Riftr']);
- assert.equal(run("new Mixr().recipes.find(recipe=>recipe.id==='phase_step').tip"),'Whoosh × Sonar.');
+ assert.equal(run("new Mixr().recipes.find(recipe=>recipe.id==='phase_step').tip"),'Whoosh × Sci-fi.');
  assert.deepEqual(plain(run("new Mixr().recipes.find(recipe=>recipe.id==='reality_error').pair")),['Riftr','Glitchr']);
- assert.equal(run("new Mixr().recipes.find(recipe=>recipe.id==='reality_error').tip"),'Sonar × Glitches.');
+ assert.equal(run("new Mixr().recipes.find(recipe=>recipe.id==='reality_error').tip"),'Sci-fi × Glitches.');
 });
 test('Mixfxr dropdowns select synths without listing their presets',()=>{
  const {run,load}=setup();load('js/MixEditor.js');
