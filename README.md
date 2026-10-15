@@ -72,6 +72,10 @@ Copy [bfxrlib.min.js](lib/bfxrlib.min.js) into your project and include it with 
 See the [library API](lib/README.md) and [standalone HTML example](lib/example.html). The complete build, including license texts, is approximately 326 kB minified, 106 kB gzip. Consumers need no npm install, module loader, external assets, or setup call. Rebuild with `node tools/build-library.js` or `npm run build:lib`.
 
 ## Development
+For the standalone Windows app with classic Windows 95 controls, see
+[the desktop guide](desktop/README.md). Run `npm start` to develop it or
+`npm run package:desktop` to build `dist/Bfxr95/Bfxr.exe`.
+
 cf. [DEVELOPMENT.md](https://github.com/increpare/bfxr2/blob/master/DEVELOPMENT.md).
 
 ## Archaeology

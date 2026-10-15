@@ -1,0 +1,14 @@
+Bfxr desktop interface
+
+Bfxr and its sound engines retain the repository's MIT license and original
+attributions. See LICENSE and the About dialog.
+
+The Windows 95 presentation is a new adaptation guided by the private Win95 UI
+reference collection (14 October 2026): Vector95 and ProcGen FM. Those reference
+applications are not bundled. Classic control colors and interaction patterns
+are used here with Bfxr's existing controls.
+
+System95 / MS Sans Serif recreation fonts by lou, CC BY-SA 3.0.
+Regular: https://fontstruct.com/fontstructions/show/1384746
+Bold: https://fontstruct.com/fontstructions/show/1384862
+Original font readmes and license texts are included in assets/.

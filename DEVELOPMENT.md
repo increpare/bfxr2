@@ -6,7 +6,11 @@ You can also run `node tools/serve.js` directly. No compilation or npm install i
 
 ## How to compile
 
-```node compile.js```, then everything should be in the bin directory.
+Install dependencies once with `npm ci` (`npm.cmd ci` in Windows PowerShell), then run `make` from the project directory to build the website. You need Node.js and Make; Perl and an external gzip command are not required. You can also run `make build` or `node compile.js`.
+
+The build refreshes templates, bundles JavaScript and CSS into `bin/index.html`, and generates `bin/index.html.gz`. Upload the **contents** of `bin/` to the website root: `index.html`, `index.html.gz`, `favicon.ico`, `favicon.svg`, and the entire `img/` folder. Replace both HTML files together to keep the compressed version current.
+
+Use `make serve` for the local development server.
 
 ## How to add new sound templates.
 

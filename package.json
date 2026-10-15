@@ -10,7 +10,11 @@
   "main": "compile.js",
   "scripts": {
     "test": "node --test tests/*.test.js",
-    "build:lib": "node tools/build-library.js"
+    "build:lib": "node tools/build-library.js",
+    "start": "node desktop/build.js && electron desktop/main.js",
+    "build:desktop": "node desktop/build.js",
+    "package:desktop": "node desktop/package.js",
+    "test:desktop": "node desktop/smoke-test.js"
   },
   "repository": {
     "type": "git",
@@ -29,5 +33,9 @@
   "bugs": {
     "url": "https://github.com/increpare/bfxr2/issues"
   },
-  "homepage": "https://github.com/increpare/bfxr2#readme"
+  "homepage": "https://github.com/increpare/bfxr2#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "electron": "^44.6.0"
+  }
 }

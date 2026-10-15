@@ -1,10 +1,11 @@
 const fs = require('fs');
 var UglifyJS = require("uglify-js");
 var CleanCSS = require('clean-css');
-const { exec, execSync } = require('child_process');
+const { execFileSync } = require('child_process');
+const { gzipSync } = require('zlib');
 
 //bring the templates up to date
-var output = execSync("node insert_templates.js");
+var output = execFileSync(process.execPath, ['insert_templates.js']);
 //print stdout of output
 console.log(output.toString());
 
@@ -91,13 +92,11 @@ var options = {
 
 var cleaned_css_content = new CleanCSS(options).minify(css_files);
 
-//if bin directory exists, remove it
-if (fs.existsSync('bin')){
-    fs.rmSync('bin', {recursive: true});
-}
-
-//create bin directory  
-fs.mkdirSync('bin');
+// Clear old output while keeping bin itself, which may be open on Windows.
+fs.mkdirSync('bin', { recursive: true });
+fs.readdirSync('bin').forEach(file => {
+    fs.rmSync(`bin/${file}`, { recursive: true, force: true, maxRetries: 3 });
+});
 
 // fs.writeFileSync('bin/style.css', cleaned_css_content.styles);
 // fs.writeFileSync('bin/bfxr.js', uglified_js_content);
@@ -124,6 +123,7 @@ fs.readdirSync('img').forEach(file => {
 fs.copyFileSync('favicon.ico', 'bin/favicon.ico');
 fs.copyFileSync('favicon.svg', 'bin/favicon.svg');
 
-//run ./gzipper perl script
-exec("perl gzipper");
+// Compress with Node.js so builds work on Windows without Perl or gzip.
+fs.writeFileSync('bin/index.html.gz', gzipSync(Buffer.from(index), { level: 9 }));
+console.log("Build complete. Upload the contents of bin/ to your website root.");
 
