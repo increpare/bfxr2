@@ -2,17 +2,34 @@
 const fs = require('node:fs');
 const path = require('node:path');
 require('./build');
-if (process.platform !== 'win32') throw new Error('The Windows desktop package must be built on Windows.');
+
 const root = path.resolve(__dirname, '..');
 const target = path.join(root, 'dist', 'Bfxr95');
-const runtime = path.dirname(require('electron'));
+const electronExecutable = require('electron');
+const runtime = process.platform === 'darwin' ? path.resolve(path.dirname(electronExecutable), '../../..') : path.dirname(electronExecutable);
 fs.mkdirSync(target, { recursive: true });
-fs.cpSync(runtime, target, { recursive: true, filter: source => path.basename(source) !== 'electron.exe' });
-fs.copyFileSync(path.join(runtime, 'electron.exe'), path.join(target, 'Bfxr.exe'));
-const app = path.join(target, 'resources', 'app');
+let resources, executable;
+if (process.platform === 'darwin') {
+  const bundle = path.join(target, 'Bfxr.app');
+  fs.cpSync(path.join(runtime, 'Electron.app'), bundle, { recursive: true });
+  const plist = path.join(bundle, 'Contents', 'Info.plist');
+  fs.writeFileSync(plist, fs.readFileSync(plist, 'utf8').replaceAll('com.github.Electron', 'net.bfxr.desktop').replace(/(<key>CFBundle(?:DisplayName|Name)<\/key>\s*<string>)Electron(<\/string>)/g, '$1Bfxr$2'));
+  resources = path.join(bundle, 'Contents', 'Resources');
+  executable = bundle;
+} else {
+  const binary = process.platform === 'win32' ? 'electron.exe' : 'electron';
+  const name = process.platform === 'win32' ? 'Bfxr.exe' : 'bfxr';
+  fs.cpSync(runtime, target, { recursive: true, filter: source => path.basename(source) !== binary });
+  executable = path.join(target, name);
+  fs.copyFileSync(path.join(runtime, binary), executable);
+  if (process.platform !== 'win32') fs.chmodSync(executable, 0o755);
+  resources = path.join(target, 'resources');
+}
+const app = path.join(resources, 'app');
 fs.mkdirSync(path.join(app, 'desktop'), { recursive: true });
 for (const name of ['main.js', 'preload.js', 'build']) fs.cpSync(path.join(__dirname, name), path.join(app, 'desktop', name), { recursive: true });
 const pkg = require('../package.json');
 fs.writeFileSync(path.join(app, 'package.json'), JSON.stringify({ name: 'bfxr95', productName: 'Bfxr', version: pkg.version, main: 'desktop/main.js', license: pkg.license }));
 fs.copyFileSync(path.join(root, 'LICENSE'), path.join(app, 'LICENSE'));
-console.log('Ready: ' + path.join(target, 'Bfxr.exe'));
+if (process.platform === 'darwin') require('node:child_process').execFileSync('codesign', ['--force', '--deep', '--sign', '-', executable]);
+console.log('Ready: ' + executable);

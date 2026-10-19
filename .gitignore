@@ -9,3 +9,7 @@ node_modules
 /desktop/build/
 /desktop/artifacts/
 /dist/
+
+# GUI95 delivery outputs
+gui95-dist/
+gui95-icons/

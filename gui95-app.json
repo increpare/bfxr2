@@ -1,0 +1,31 @@
+{
+  "apps": [
+    {
+      "id": "bfxr95",
+      "name": "Bfxr",
+      "version": "package.json",
+      "icon": "gui95-icons/app.png",
+      "builds": {
+        "windows": {
+          "dir": "dist/Bfxr95",
+          "exe": "Bfxr.exe"
+        },
+        "macos": {
+          "dir": "dist/Bfxr95",
+          "bundle": "Bfxr.app"
+        },
+        "linux": {
+          "dir": "dist/Bfxr95",
+          "exe": "bfxr"
+        }
+      }
+    }
+  ],
+  "icons": [
+    {
+      "name": "app",
+      "svg": "favicon.svg",
+      "style": "pixel"
+    }
+  ]
+}

@@ -1,3 +1,7 @@
+
+`make` shows help. Use `make desktop` for this platform, `make serve` for web preparation/serving,
+and `make distro` for archive assembly. See [root build commands](docs/build-commands.md).
+
 ## About
 [Bfxr2](https://www.bfxr.net/) a tool for making sound effects for games, a rewrite/refresh of the flash tool Bfxr in javascript.
 
