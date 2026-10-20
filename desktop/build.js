@@ -7,7 +7,7 @@ fs.mkdirSync(output, { recursive: true });
 for (const name of ['js', 'css', 'img', 'favicon.ico', 'favicon.svg', 'LICENSE']) {
   fs.cpSync(path.join(root, name), path.join(output, name), { recursive: true });
 }
-for (const name of ['renderer.js', 'win95.css', 'assets', 'NOTICES.txt']) {
+for (const name of ['renderer.js', 'win95.css', 'caption-controls.css', 'assets', 'NOTICES.txt']) {
   fs.cpSync(path.join(__dirname, name), path.join(output, name), { recursive: true });
 }
 // Compile bundled PureData terrain patches at build time, so the renderer
@@ -18,7 +18,7 @@ fs.writeFileSync(path.join(output,'js/audio/puredata_parser.js'), 'const puredat
 let html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 html = html.replace('<head>', `<head>
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">`)
-  .replace('</head>', '<link rel="stylesheet" href="win95.css"><script src="renderer.js" defer></script></head>')
+  .replace('</head>', '<link rel="stylesheet" href="win95.css"><link rel="stylesheet" href="caption-controls.css"><script src="renderer.js" defer></script></head>')
   .replace('<body>', '<body class="desktop95">')
   .replace('<title>Bfxr.  Make sound effects for your games.</title>', '<title>Bfxr — Sound Effects</title>');
 fs.writeFileSync(path.join(output, 'index.html'), html);

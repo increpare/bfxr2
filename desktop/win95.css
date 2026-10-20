@@ -21,11 +21,9 @@ button:focus-visible,[role=button]:focus-visible,[role=tab]:focus-visible,select
 input:not([type=checkbox]),select,textarea,.phrase-editor input,.phrase-editor select { border:0; border-radius:0; background:#fff; box-shadow:var(--sunken); padding:4px 5px; color:#000; }
 input[type=checkbox] { appearance:none; width:13px; height:13px; background:#fff; box-shadow:var(--sunken); vertical-align:middle; position:relative; }
 input[type=checkbox]:checked::after { content:''; position:absolute; left:3px; top:3px; width:7px; height:4px; border-left:2px solid #000; border-bottom:2px solid #000; transform:rotate(-45deg); }
-.caption95 { flex:none; display:flex; align-items:center; height:23px; padding:2px 3px; background:#000080; color:white; gap:5px; -webkit-app-region:drag; }
+.caption95 { flex:none; display:flex; align-items:center; height:22px; padding:2px 3px; background:#000080; color:white; gap:5px; -webkit-app-region:drag; }
 .caption95 strong { flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .caption95 .app-icon { width:16px; height:16px; image-rendering:pixelated; }
-.caption95 button { -webkit-app-region:no-drag; width:16px; height:14px; min-height:0; padding:0; display:grid; place-items:center; }
-.caption95 button:last-child { margin-left:2px; }
 .caption95 svg { width:10px; height:10px; shape-rendering:crispEdges; }
 .caption95 .app-icon svg { width:16px; height:16px; }
 .inactive95 .caption95 { background:#808080; }

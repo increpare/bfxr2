@@ -1,0 +1,92 @@
+/* GUI95 caption controls. MIT, Copyright (c) 2026 Stephen Lavelle.
+   Copy unchanged; see docs/caption-controls.md. No font glyphs or external assets. */
+.gui95-caption-controls {
+  display: flex;
+  align-items: center;
+  flex: none;
+  gap: 2px;
+  -webkit-app-region: no-drag;
+}
+button.gui95-caption-button {
+  appearance: none;
+  box-sizing: border-box;
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: #c0c0c0;
+  color: #000;
+  box-shadow: inset 1px 1px #fff, inset -1px -1px #000,
+    inset 2px 2px #dfdfdf, inset -2px -2px #808080;
+  font-size: 0;
+  line-height: 1;
+  text-shadow: none;
+  cursor: default;
+  -webkit-app-region: no-drag;
+}
+button.gui95-caption-button::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: currentColor;
+  mask: var(--gui95-caption-symbol) center / 10px 10px no-repeat;
+  pointer-events: none;
+}
+button.gui95-caption-button[data-caption-icon="minimize"] {
+  --gui95-caption-symbol: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1 7h8v2H1z'/%3E%3C/svg%3E");
+}
+button.gui95-caption-button[data-caption-icon="maximize"] {
+  --gui95-caption-symbol: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath fill-rule='evenodd' d='M0 0h10v9H0zM1 2v6h8V2z'/%3E%3C/svg%3E");
+}
+button.gui95-caption-button[data-caption-icon="restore"] {
+  --gui95-caption-symbol: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M3 0h7v7H8V6h1V2H4v1H3z'/%3E%3Cpath fill-rule='evenodd' d='M0 3h7v7H0zM1 5v4h5V5z'/%3E%3C/svg%3E");
+}
+button.gui95-caption-button[data-caption-icon="close"] {
+  margin-left: 2px;
+  --gui95-caption-symbol: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M0 0h2v1H0zM8 0h2v1H8zM1 1h2v1H1zM7 1h2v1H7zM2 2h2v1H2zM6 2h2v1H6zM3 3h4v1H3zM4 4h2v2H4zM3 6h4v1H3zM2 7h2v1H2zM6 7h2v1H6zM1 8h2v1H1zM7 8h2v1H7zM0 9h2v1H0zM8 9h2v1H8z'/%3E%3C/svg%3E");
+}
+button.gui95-caption-button:active:not(:disabled) {
+  padding: 0;
+  background: #c0c0c0;
+  box-shadow: inset 1px 1px #808080, inset -1px -1px #fff,
+    inset 2px 2px #000, inset -2px -2px #dfdfdf;
+}
+button.gui95-caption-button:active:not(:disabled)::before {
+  transform: translate(1px, 1px);
+}
+button.gui95-caption-button:focus-visible {
+  outline: 1px dotted currentColor;
+  outline-offset: -4px;
+}
+button.gui95-caption-button:disabled {
+  padding: 0;
+  color: #808080;
+  text-shadow: none;
+}
+button.gui95-caption-button:disabled::before {
+  filter: drop-shadow(1px 1px #fff);
+}
+@media (forced-colors: active) {
+  button.gui95-caption-button {
+    forced-color-adjust: none;
+    background: ButtonFace;
+    color: ButtonText;
+    border: 1px solid ButtonText;
+    box-shadow: none;
+  }
+  button.gui95-caption-button:active:not(:disabled) {
+    background: ButtonFace;
+    box-shadow: none;
+  }
+  button.gui95-caption-button:disabled { color: GrayText; }
+  button.gui95-caption-button:disabled::before { filter: none; }
+}

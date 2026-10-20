@@ -47,9 +47,9 @@ const icons95 = {
 document.addEventListener('DOMContentLoaded', () => {
   const shell = document.createElement('header');
   shell.innerHTML = `<div class="caption95"><span class="app-icon">${glyph95('<path fill="#fff" stroke="#000" d="M1 1h14v14H1z"/><path stroke="#000" fill="none" d="M2 8h2l2-5 3 10 2-5h3"/>')}</span><strong>Bfxr — Sound Effects</strong>
-    <button aria-label="Minimize" data-window="minimize"><svg viewBox="0 0 10 10"><path d="M1 7h7v2H1z"/></svg></button>
-    <button aria-label="Maximize" data-window="maximize"><svg viewBox="0 0 10 10"><path fill="none" stroke="#000" d="M.5 1.5h9v8h-9zM1 3h8"/></svg></button>
-    <button aria-label="Close window" data-window="close"><svg viewBox="0 0 10 10"><path stroke="#000" stroke-width="2" d="M1 1l8 8M9 1L1 9"/></svg></button></div>
+    <div class="gui95-caption-controls"><button type="button" class="gui95-caption-button" data-caption-icon="minimize" aria-label="Minimize" data-window="minimize"></button>
+    <button type="button" class="gui95-caption-button" data-caption-icon="maximize" aria-label="Maximize" data-window="maximize"></button>
+    <button type="button" class="gui95-caption-button" data-caption-icon="close" aria-label="Close window" data-window="close"></button></div></div>
     <nav class="menubar95" aria-label="Application menu" role="menubar"></nav>
     <div class="toolbar95" role="toolbar" aria-label="Sound commands">
       <button data-command="open">${icons95.open}Open...</button><button data-command="save">${icons95.save}Save</button>
@@ -257,7 +257,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.bfxrDesktop?.onWindowState(state => {
     document.body.classList.toggle('inactive95',!state.focused);
     const maximize = shell.querySelector('[data-window=maximize]');
+    maximize.dataset.captionIcon = state.maximized ? 'restore' : 'maximize';
     maximize.setAttribute('aria-label',state.maximized ? 'Restore window' : 'Maximize');
+    maximize.title = maximize.getAttribute('aria-label');
   });
   window.bfxrDesktop?.onDownload(setStatus);
   refresh();
