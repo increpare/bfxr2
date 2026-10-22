@@ -11,7 +11,9 @@ fs.mkdirSync(target, { recursive: true });
 let resources, executable;
 if (process.platform === 'darwin') {
   const bundle = path.join(target, 'Bfxr.app');
-  fs.cpSync(path.join(runtime, 'Electron.app'), bundle, { recursive: true });
+  fs.rmSync(bundle, { recursive: true, force: true });
+  // Framework symlinks must stay relative, or codesign rejects them as unsealed contents.
+  fs.cpSync(path.join(runtime, 'Electron.app'), bundle, { recursive: true, verbatimSymlinks: true });
   const plist = path.join(bundle, 'Contents', 'Info.plist');
   fs.writeFileSync(plist, fs.readFileSync(plist, 'utf8').replaceAll('com.github.Electron', 'net.bfxr.desktop').replace(/(<key>CFBundle(?:DisplayName|Name)<\/key>\s*<string>)Electron(<\/string>)/g, '$1Bfxr$2'));
   resources = path.join(bundle, 'Contents', 'Resources');
