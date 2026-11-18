@@ -45,7 +45,7 @@ body:has(dialog[open]) .caption95 { background:#808080; }
 #main_container { flex:1; min-height:0; width:100%; margin:0; display:flex; flex-direction:column; gap:0; padding:2px 5px 5px; }
 #tab_bar { display:flex; flex:none; flex-direction:column; flex-wrap:nowrap; align-items:stretch; gap:0; width:100%; height:auto; padding:2px 2px 0; overflow:visible; background:#c0c0c0; box-shadow:none; position:relative; z-index:2; }
 .tab-row95 { display:flex; flex:none; align-items:end; height:24px; }
-#tab_bar .tab_button { position:relative; flex:1 1 0; min-width:0; height:24px; min-height:24px; display:block; text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border:0; border-radius:2px 2px 0 0; margin:0; padding:5px 9px 4px; font-size:11px; background:#c0c0c0; color:#000; box-shadow:inset 1px 1px #fff,inset -1px 0 #000,inset -2px 0 #808080; cursor:default; }
+#tab_bar .tab_button { position:relative; flex:1 1 0; min-width:0; height:24px; min-height:24px; display:block; text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border:0; border-radius:0; margin:0; padding:5px 9px 4px; font-size:11px; background:#c0c0c0; color:#000; box-shadow:inset 1px 1px #fff,inset -1px 0 #000,inset -2px 0 #808080; cursor:default; }
 #tab_bar .tab_button.active_tab { height:27px; margin:0 -2px -2px; padding:5px 11px 6px; flex-grow:1; z-index:3; overflow:visible; background:#c0c0c0; color:#000; }
 #tab_bar .tab_button.active_tab::after { content:''; position:absolute; left:1px; right:2px; bottom:-1px; height:3px; background:#c0c0c0; }
 #tab_bar .tab_button:focus-visible { outline:1px dotted #000; outline-offset:-5px; }
@@ -82,6 +82,12 @@ body:has(dialog[open]) .caption95 { background:#808080; }
 .button_grid_button.selected:disabled,.phrase-instruments button[aria-pressed=true],.transition_shape[aria-pressed=true] { background:repeating-conic-gradient(#fff 0% 25%,#c0c0c0 0% 50%) 0 0/2px 2px; color:#000; text-shadow:none; box-shadow:var(--sunken); }
 .lockimage { margin-left:1px; filter:grayscale(1); cursor:default; }
 .lockimage:focus-visible { outline:1px dotted #000; }
+/* Period pass, 18 November 2026: nothing on the desktop is translucent or shows a hand cursor. The
+   open padlock is a paler opaque drawing; an unavailable slider keeps a stippled thumb. */
+.lockimage.unlocked { opacity:1; filter:grayscale(1) contrast(.4) brightness(1.25); }
+.slider.slider-horizontal .slider-track,.slider.slider-horizontal .slider-tick,.slider.slider-horizontal .slider-handle { cursor:default; }
+.slider.slider-disabled { opacity:1; }
+.slider.slider-horizontal.slider-disabled .slider-handle { background:repeating-conic-gradient(#fff 0% 25%,#c0c0c0 0% 50%) 0 0/2px 2px; }
 .right_panel { width:144px; flex:0 0 144px; overflow:auto; }
 .display_canvas_container { margin:0 0 7px; height:158px; padding:3px; border:0; background:#fff!important; box-shadow:var(--sunken); overflow:hidden; }
 .display_canvas_container::before { display:none; }
